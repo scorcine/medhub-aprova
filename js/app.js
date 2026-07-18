@@ -43,12 +43,19 @@ const APROVA_SPECIALTY_LABELS = {
   urgencia: "Urgência e emergência"
 };
 
-function aprovaGoTo (id) {
+function aprovaGoTo (id, options) {
+  const opts = options || {};
+
   if (id === "flashcards") {
-    if (AprovaFlashcards.mode !== "deck") {
-      AprovaFlashcards.rebuildTodayQueue();
+    if (opts.study) {
+      if (opts.mode === "today" || AprovaFlashcards.mode !== "deck") {
+        AprovaFlashcards.rebuildTodayQueue();
+      }
+      aprovaShowFlashcardStudy();
+      aprovaRenderFlashcard();
+    } else {
+      aprovaShowFlashcardBrowse();
     }
-    aprovaRenderFlashcard();
   }
   if (id === "hoje") aprovaRenderToday();
   if (id === "progresso") aprovaRenderProgress();
@@ -57,6 +64,82 @@ function aprovaGoTo (id) {
   if (id === "inicio") aprovaRenderDashboard();
   if (id === "especialidades") aprovaRenderEspecialidades();
   aprovaShowPanel(id);
+}
+
+function aprovaShowFlashcardBrowse () {
+  const browse = document.getElementById("fc-browse");
+  const card = document.getElementById("fc-card");
+  const hint = document.getElementById("fc-hint");
+  if (browse) browse.hidden = false;
+  if (card) card.hidden = true;
+  if (hint) hint.textContent = "Escolha um tema para estudar.";
+  aprovaRenderFlashcardBrowse();
+}
+
+function aprovaShowFlashcardStudy () {
+  const browse = document.getElementById("fc-browse");
+  const card = document.getElementById("fc-card");
+  const hint = document.getElementById("fc-hint");
+  if (browse) browse.hidden = true;
+  if (card) card.hidden = false;
+  if (hint) {
+    hint.textContent = AprovaFlashcards.mode === "deck"
+      ? "Estudo por tema · revelar · acertei / errei."
+      : "Fila de hoje · revelar · acertei / errei.";
+  }
+}
+
+function aprovaRenderFlashcardBrowse () {
+  const grid = document.getElementById("fc-browse-grid");
+  if (!grid) return;
+
+  const bySpecialty = {};
+  AprovaFlashcards.decks.forEach(deck => {
+    const key = deck.specialty || "geral";
+    if (!bySpecialty[key]) bySpecialty[key] = [];
+    bySpecialty[key].push(deck);
+  });
+
+  const order = ["pediatria", "clinica", "cirurgia", "go", "preventiva", "urgencia", "geral"];
+  const keys = Object.keys(bySpecialty).sort((a, b) => {
+    const ia = order.indexOf(a);
+    const ib = order.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+
+  grid.innerHTML = "";
+
+  if (!keys.length) {
+    grid.innerHTML = "<p class=\"muted\">Nenhum tema disponível ainda.</p>";
+    return;
+  }
+
+  keys.forEach(spec => {
+    const label = APROVA_SPECIALTY_LABELS[spec] || "Outros";
+    const decks = bySpecialty[spec];
+    const total = decks.reduce((n, d) => n + (d.cards || []).length, 0);
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "dash-card";
+    btn.innerHTML =
+      "<span class=\"dash-card-kicker\">Especialidade</span>" +
+      "<strong>" + label + "</strong>" +
+      "<span>" + decks.length + " tema" + (decks.length === 1 ? "" : "s") +
+      " · " + total + " card" + (total === 1 ? "" : "s") + "</span>";
+    btn.addEventListener("click", () => {
+      if (spec === "pediatria" && typeof aprovaOpenPediatria === "function") {
+        aprovaGoTo("especialidades");
+        aprovaOpenPediatria();
+        return;
+      }
+      if (typeof aprovaOpenSpecialty === "function") {
+        aprovaGoTo("especialidades");
+        aprovaOpenSpecialty(spec);
+      }
+    });
+    grid.appendChild(btn);
+  });
 }
 
 let aprovaActiveSpecialty = null;
@@ -118,7 +201,7 @@ function aprovaRenderDeckCards (specialty, grid) {
       "<span>" + n + " card" + (n === 1 ? "" : "s") + "</span>";
     btn.addEventListener("click", () => {
       AprovaFlashcards.startDeck(deck.id);
-      aprovaGoTo("flashcards");
+      aprovaGoTo("flashcards", { study: true });
     });
     grid.appendChild(btn);
   });
@@ -334,6 +417,9 @@ function aprovaRenderConfig () {
 }
 
 function aprovaRenderFlashcard () {
+  const studyCard = document.getElementById("fc-card");
+  if (studyCard && studyCard.hidden) return;
+
   const card = AprovaFlashcards.current();
   const front = document.getElementById("fc-front");
   const back = document.getElementById("fc-back");
@@ -343,10 +429,12 @@ function aprovaRenderFlashcard () {
   const easyBtn = document.getElementById("fc-easy");
   const hardBtn = document.getElementById("fc-hard");
   const backHoje = document.getElementById("fc-back-hoje");
+  const backBrowse = document.getElementById("fc-back-browse");
   const backEsp = document.getElementById("fc-back-esp");
   if (!front || !label) return;
 
   const fromDeck = AprovaFlashcards.mode === "deck";
+  const fromToday = AprovaFlashcards.mode === "today";
 
   if (!card) {
     label.textContent = fromDeck ? "Deck concluído" : "Fila de hoje";
@@ -358,12 +446,13 @@ function aprovaRenderFlashcard () {
     revealBtn.hidden = true;
     easyBtn.hidden = true;
     hardBtn.hidden = true;
-    if (backHoje) backHoje.hidden = fromDeck;
+    if (backHoje) backHoje.hidden = !fromToday;
+    if (backBrowse) backBrowse.hidden = false;
     if (backEsp) backEsp.hidden = !fromDeck;
     if (hint) {
       hint.textContent = fromDeck
-        ? "Volte às especialidades para escolher outro subtema."
-        : "Volte amanhã ou treine questões.";
+        ? "Escolha outro tema para continuar."
+        : "Volte amanhã ou escolha um tema.";
     }
     return;
   }
@@ -377,10 +466,11 @@ function aprovaRenderFlashcard () {
   easyBtn.hidden = !AprovaFlashcards.revealed;
   hardBtn.hidden = !AprovaFlashcards.revealed;
   if (backHoje) backHoje.hidden = true;
+  if (backBrowse) backBrowse.hidden = false;
   if (backEsp) backEsp.hidden = !fromDeck;
   if (hint) {
     hint.textContent = fromDeck
-      ? "Estudo por especialidade · revelar · acertei / errei."
+      ? "Estudo por tema · revelar · acertei / errei."
       : "Fila de hoje · revelar · acertei / errei.";
   }
 }
@@ -455,7 +545,7 @@ async function aprovaBoot () {
     await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
     aprovaRenderDashboard();
     aprovaRenderToday();
-    aprovaRenderFlashcard();
+    aprovaShowFlashcardBrowse();
     aprovaRenderQuestion();
     aprovaRenderProgress();
     aprovaRenderExamStats();
@@ -485,6 +575,14 @@ async function aprovaBoot () {
 
   document.getElementById("esp-open-revisao")?.addEventListener("click", () => {
     aprovaOpenSpecialtyReview(aprovaActiveFocusId || "geral");
+  });
+
+  document.getElementById("today-start")?.addEventListener("click", () => {
+    aprovaGoTo("flashcards", { study: true, mode: "today" });
+  });
+
+  document.getElementById("fc-back-browse")?.addEventListener("click", () => {
+    aprovaShowFlashcardBrowse();
   });
 
   document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
@@ -526,7 +624,7 @@ window.aprovaBootStudyModules = async function () {
   await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
   aprovaRenderDashboard();
   aprovaRenderToday();
-  aprovaRenderFlashcard();
+  aprovaShowFlashcardBrowse();
   aprovaRenderQuestion();
   aprovaRenderProgress();
   aprovaRenderExamStats();

@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718f">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718g">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -127,7 +127,7 @@
             <button type="button" class="dash-card" data-goto="flashcards">
               <span class="dash-card-kicker">Memória</span>
               <strong>Flashcards</strong>
-              <span>Revise com cards ativos e marque acertei / errei.</span>
+              <span>Escolha um tema e revise com acertei / errei.</span>
             </button>
             <button type="button" class="dash-card" data-goto="questoes">
               <span class="dash-card-kicker">Prova</span>
@@ -164,7 +164,7 @@
             <div class="label">Agenda</div>
             <p class="prompt" id="today-prompt">Carregando…</p>
             <div class="actions-row">
-              <button type="button" class="btn btn-primary" id="today-start" data-goto="flashcards">Começar revisão</button>
+              <button type="button" class="btn btn-primary" id="today-start">Começar revisão</button>
               <button type="button" class="btn btn-ghost" data-goto="questoes">Abrir questões</button>
             </div>
             <div class="stats" id="today-stats"></div>
@@ -173,8 +173,13 @@
 
         <section id="panel-flashcards" class="panel" aria-labelledby="fc-title" hidden>
           <h2 id="fc-title">Flashcards</h2>
-          <p class="muted" id="fc-hint">Fila de hoje · revelar · acertei / errei.</p>
-          <div class="study-card" id="fc-card">
+          <p class="muted" id="fc-hint">Escolha um tema para estudar.</p>
+
+          <div id="fc-browse">
+            <div class="dash-grid dash-grid--sm" id="fc-browse-grid"></div>
+          </div>
+
+          <div class="study-card" id="fc-card" hidden>
             <div class="label" id="fc-deck-label">Deck</div>
             <p class="prompt" id="fc-front">—</p>
             <p class="answer" id="fc-back" hidden>—</p>
@@ -183,6 +188,7 @@
               <button type="button" class="btn btn-primary" id="fc-easy" hidden>Acertei</button>
               <button type="button" class="btn btn-ghost" id="fc-hard" hidden>Errei</button>
               <button type="button" class="btn btn-ghost" id="fc-back-hoje" hidden data-goto="hoje">Voltar a Hoje</button>
+              <button type="button" class="btn btn-ghost" id="fc-back-browse" hidden>Voltar aos temas</button>
               <button type="button" class="btn btn-ghost" id="fc-back-esp" hidden data-goto="especialidades">Voltar às especialidades</button>
             </div>
           </div>
@@ -355,13 +361,13 @@
     </div>
   </div>
 
-  <script src="js/theme.js?v=20260718f"></script>
-  <script src="js/auth.js?v=20260718f"></script>
-  <script src="js/schedule.js?v=20260718f"></script>
-  <script src="js/exam-stats.js?v=20260718f"></script>
-  <script src="js/flashcards.js?v=20260718f"></script>
-  <script src="js/questions.js?v=20260718f"></script>
-  <script src="js/revisao.js?v=20260718f"></script>
-  <script src="js/app.js?v=20260718f"></script>
+  <script src="js/theme.js?v=20260718g"></script>
+  <script src="js/auth.js?v=20260718g"></script>
+  <script src="js/schedule.js?v=20260718g"></script>
+  <script src="js/exam-stats.js?v=20260718g"></script>
+  <script src="js/flashcards.js?v=20260718g"></script>
+  <script src="js/questions.js?v=20260718g"></script>
+  <script src="js/revisao.js?v=20260718g"></script>
+  <script src="js/app.js?v=20260718g"></script>
 </body>
 </html>
