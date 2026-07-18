@@ -164,8 +164,25 @@ img {
   box-shadow: 0 0 0 1px rgba(15, 159, 154, 0.2);
 }
 
-.brand-text span {
+.mark-r1 {
+  display: inline-flex;
+  align-items: baseline;
   color: var(--accent-deep);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.brand-text .mark-r1 {
+  margin-left: 0.15em;
+  padding: 0.05em 0.32em;
+  border: 1px solid rgba(15, 159, 154, 0.4);
+  border-radius: 0.3em;
+  background: rgba(15, 159, 154, 0.1);
+  font-size: 0.86em;
+  line-height: 1.15;
+  vertical-align: middle;
 }
 
 .header-tools {
@@ -464,28 +481,23 @@ html[data-theme="dark"] .theme-icon-sun {
   margin: 0 0 0.9rem;
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 8vw, 4.75rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   font-weight: 700;
 }
 
-.hero h1 span {
+.hero h1 .mark-r1 {
+  margin-left: 0.18em;
+  padding: 0.06em 0.28em 0.08em;
+  border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: 0.22em;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
   color: var(--accent-deep);
-  display: inline-block;
-  position: relative;
-}
-
-.hero h1 span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.08em;
-  height: 0.12em;
-  background: linear-gradient(90deg, var(--accent), rgba(26, 108, 255, 0.55));
-  border-radius: 2px;
-  transform-origin: left;
-  animation: underline-draw 0.9s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  vertical-align: middle;
+  transform: translateY(-0.04em);
+  animation: mark-in 0.55s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero p {
@@ -516,9 +528,9 @@ html[data-theme="dark"] .theme-icon-sun {
   to { transform: rotate(360deg); }
 }
 
-@keyframes underline-draw {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+@keyframes mark-in {
+  from { opacity: 0; transform: translateY(-0.04em) scale(0.94); }
+  to { opacity: 1; transform: translateY(-0.04em) scale(1); }
 }
 
 .section {
