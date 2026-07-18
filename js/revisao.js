@@ -171,6 +171,31 @@ const APROVA_REVISAO_MODULES = {
     label: "Espondiloartrites · AINEs (REU1)",
     file: "data/revisao-reu-spa.json?v=20260718bb",
     specialty: "clinica"
+  },
+  "reu-oa": {
+    label: "Osteoartrose (REU2)",
+    file: "data/revisao-reu-oa.json?v=20260718bc",
+    specialty: "clinica"
+  },
+  "reu-cristais": {
+    label: "Gota e cristais (REU2)",
+    file: "data/revisao-reu-cristais.json?v=20260718bc",
+    specialty: "clinica"
+  },
+  "reu-fr": {
+    label: "Febre reumática (REU2)",
+    file: "data/revisao-reu-fr.json?v=20260718bc",
+    specialty: "clinica"
+  },
+  "reu-infecciosa": {
+    label: "Artrites infecciosas (REU2)",
+    file: "data/revisao-reu-infecciosa.json?v=20260718bc",
+    specialty: "clinica"
+  },
+  "reu-extras2": {
+    label: "Extras REU2 · FFM · fibromialgia",
+    file: "data/revisao-reu-extras2.json?v=20260718bc",
+    specialty: "clinica"
   }
 };
 

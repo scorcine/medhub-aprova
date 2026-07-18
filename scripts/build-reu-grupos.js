@@ -185,39 +185,128 @@ write(
   }
 );
 
-/* Overview Clínica / Reumatologia (REU1 por enquanto) */
+/* REU2 */
+const oaDecks = ["reu2-oa-basico", "reu2-oa-tratamento"];
+const cristaisDecks = ["reu2-gota-basico", "reu2-gota-clinica-tx", "reu2-pseudogota"];
+const frDecks = ["reu2-fr-clinica", "reu2-fr-tratamento"];
+const infecDecks = ["reu2-septica", "reu2-tb-misc"];
+const extras2Decks = ["reu2-policondrite", "reu2-ffm", "reu2-fibromialgia"];
+
+const checklistReu2 = {
+  criterios: {
+    tema: "Critérios / diagnóstico",
+    yield: "Alto",
+    pegar: "Jones na FR; cristal no líquido na gota/CPPD; OA = clínica + Rx."
+  },
+  sorologia: {
+    tema: "Exames-chave",
+    yield: "Alto",
+    pegar: "Uricemia ≠ diagnóstico isolado; ASLO/evidência estreptocócica na FR; líquido + Gram na séptica."
+  },
+  conduta: {
+    tema: "Conduta",
+    yield: "Máximo",
+    pegar: "OA: não farmacológico 1º; crise gotosa: AINE/colchicina/GC; FR: penicilina + profilaxia; séptica: drenar+ATB."
+  },
+  dd: {
+    tema: "Diagnóstico diferencial",
+    yield: "Alto",
+    pegar: "Gota × pseudogota × séptica × OA × FR migratória."
+  }
+};
+
+write(
+  "revisao-reu-oa.json",
+  "Osteoartrose · REU2",
+  "reu-oa",
+  bankSet(oaDecks, "OA · Rx · não farmacológico · artroplastia"),
+  { checklistItems: checklistReu2, oneLiners: ["Não farmacológico 1º", "Heberden/Bouchard", "AINE só sintoma"] }
+);
+
+write(
+  "revisao-reu-cristais.json",
+  "Gota e cristais · REU2",
+  "reu-cristais",
+  bankSet(cristaisDecks, "Gota · pseudogota · hipouricemiantes"),
+  {
+    checklistItems: checklistReu2,
+    oneLiners: ["Podagra", "Não iniciar alopurinol na crise sem cobertura", "CPPD = joelho + condrocalcinose"]
+  }
+);
+
+write(
+  "revisao-reu-fr.json",
+  "Febre reumática · REU2",
+  "reu-fr",
+  bankSet(frDecks, "Jones · cardite · profilaxia secundária"),
+  {
+    checklistItems: checklistReu2,
+    oneLiners: ["Só após faringite (não pele)", "Profilaxia secundária salva valva", "Artrite migratória"]
+  }
+);
+
+write(
+  "revisao-reu-infecciosa.json",
+  "Artrites infecciosas · REU2",
+  "reu-infecciosa",
+  bankSet(infecDecks, "Séptica · gonocócica · TB · viral"),
+  {
+    checklistItems: checklistReu2,
+    oneLiners: ["Artrocentese antes do ATB", "Séptica = emergência", "Anti-TNF ↑ TB osteoarticular"]
+  }
+);
+
+write(
+  "revisao-reu-extras2.json",
+  "Extras REU2 · FFM · fibromialgia · policondrite",
+  "reu-extras2",
+  bankSet(extras2Decks, "FFM · fibromialgia · policondrite"),
+  {
+    checklistItems: checklistReu2,
+    oneLiners: ["FFM: colchicina + MEFV", "Fibro: exames normais", "Policondrite: orelha sem lóbulo"]
+  }
+);
+
+/* Overview Clínica / Reumatologia (REU1 + REU2) */
 const stats = {
-  title: "Reumatologia · o que mais cai (REU1)",
-  unitLabel: "% relativo neste bloco (REU1)",
-  note: "Primeiro grupo de Clínica médica no app. Base: apostila REU1 (AR, AIJ/Still, espondiloartrites, AINEs). REU2/REU3 entram em seguida.",
+  title: "Reumatologia · o que mais cai (REU1–REU2)",
+  unitLabel: "% relativo no bloco atual",
+  note: "Clínica médica · Reumatologia. REU1 (AR, AIJ, SpA) + REU2 (OA, cristais, FR, infecciosas, extras). REU3 (LES/vasculites) em seguida.",
   gaps: {
-    summary: "REU1 coberto em 3 grupos: AR, AIJ/Still, Espondiloartrites (+AINEs). REU2 (OA, gota, FR, infecciosas) e REU3 (LES, vasculites) ainda não no app.",
+    summary: "REU1+REU2 no app (8 grupos). Falta REU3: LES, SAF, esclerose sistêmica, miopatias, Sjögren, vasculites.",
     missingHighYield: [
-      { tema: "Gota / osteoartrite / febre reumática", status: "pendente", detalhe: "REU2" },
-      { tema: "LES / SAF / vasculites", status: "pendente", detalhe: "REU3" }
+      { tema: "LES / SAF / vasculites / colagenoses", status: "pendente", detalhe: "REU3" }
     ],
     covered: [
       { tema: "Artrite reumatoide", grupo: "reu-ar" },
       { tema: "AIJ / Still", grupo: "reu-aij" },
-      { tema: "Espondiloartrites + AINEs", grupo: "reu-spa" }
+      { tema: "Espondiloartrites + AINEs", grupo: "reu-spa" },
+      { tema: "Osteoartrose", grupo: "reu-oa" },
+      { tema: "Gota e cristais", grupo: "reu-cristais" },
+      { tema: "Febre reumática", grupo: "reu-fr" },
+      { tema: "Artrites infecciosas", grupo: "reu-infecciosa" },
+      { tema: "Extras REU2", grupo: "reu-extras2" }
     ]
   },
   profiles: [
     {
       id: "geral",
       label: "Brasil",
-      kicker: "Síntese REU1",
+      kicker: "Síntese REU1–2",
       featured: false,
       sourceType: "sintese",
-      source: "Estrutura da apostila REU1 + padrão de cobrança R1 em Reumatologia.",
-      verdict: "No REU1, AR e espondiloartrites concentram o ROI. Critérios ACR/EULAR, anti-CCP, HLA-B27 e escada AINE→biológico são o núcleo.",
-      foco: "AR · SpA · AIJ/Still · AINE",
-      estilo: "Síntese REU1",
+      source: "Apostilas REU1+REU2 + padrão de cobrança R1 em Reumatologia.",
+      verdict: "AR, SpA, gota, FR e artrite séptica concentram ROI. OA é ultra prevalente na prática; LES/vasculites vêm no REU3.",
+      foco: "AR · SpA · Gota · FR · Séptica · OA",
+      estilo: "Síntese REU1–2",
       priorities: [
-        { tema: "Artrite reumatoide", pct: 42, n: 42 },
-        { tema: "Espondiloartrites", pct: 36, n: 36 },
-        { tema: "AIJ / Still", pct: 12, n: 12 },
-        { tema: "AINEs (farmacologia)", pct: 10, n: 10 }
+        { tema: "Artrite reumatoide", pct: 22, n: 22 },
+        { tema: "Espondiloartrites", pct: 18, n: 18 },
+        { tema: "Gota / cristais", pct: 16, n: 16 },
+        { tema: "Febre reumática", pct: 14, n: 14 },
+        { tema: "Artrite séptica / TB", pct: 12, n: 12 },
+        { tema: "Osteoartrose", pct: 10, n: 10 },
+        { tema: "AIJ / Still / extras", pct: 8, n: 8 }
       ]
     },
     {
@@ -226,15 +315,16 @@ const stats = {
       kicker: "Nacional",
       featured: true,
       sourceType: "estimativa",
-      source: "Estimativa por padrão Enare/Enamed em Reumatologia (REU1).",
-      verdict: "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril.",
-      foco: "AR · EA · Reiter · Still",
+      source: "Estimativa Enare/Enamed · REU1–2.",
+      verdict: "Conduta: MTX, AINE na EA, crise gotosa, Jones/profilaxia, drenar séptica.",
+      foco: "AR · Gota · FR · Séptica · SpA",
       estilo: "Padrão Enamed",
       priorities: [
-        { tema: "Artrite reumatoide", pct: 40 },
-        { tema: "Espondiloartrites", pct: 38 },
-        { tema: "AIJ / Still", pct: 14 },
-        { tema: "AINEs", pct: 8 }
+        { tema: "AR / SpA", pct: 30 },
+        { tema: "Gota / cristais", pct: 22 },
+        { tema: "Febre reumática", pct: 20 },
+        { tema: "Séptica", pct: 16 },
+        { tema: "OA / extras", pct: 12 }
       ]
     },
     {
@@ -242,15 +332,16 @@ const stats = {
       label: "USP",
       kicker: "Prova USP",
       sourceType: "estimativa",
-      source: "Estimativa padrão USP · REU1.",
-      verdict: "ACR/EULAR detalhado, ACPA e DD AR×SpA×psoriásica.",
-      foco: "Critérios · Sorologia · DD",
+      source: "Estimativa USP · REU1–2.",
+      verdict: "Critérios, cristais no líquido, Jones e DD fino.",
+      foco: "Critérios · Cristais · FR · DD",
       estilo: "Padrão USP",
       priorities: [
-        { tema: "AR (critérios/sorologia)", pct: 44 },
-        { tema: "SpA / HLA-B27", pct: 34 },
-        { tema: "AIJ", pct: 12 },
-        { tema: "AINE", pct: 10 }
+        { tema: "AR / SpA", pct: 28 },
+        { tema: "Cristais", pct: 24 },
+        { tema: "FR", pct: 20 },
+        { tema: "Infecciosas", pct: 16 },
+        { tema: "OA", pct: 12 }
       ]
     },
     {
@@ -258,31 +349,32 @@ const stats = {
       label: "UNIFESP",
       kicker: "Prova UNIFESP",
       sourceType: "estimativa",
-      source: "Estimativa padrão UNIFESP · REU1.",
-      verdict: "Patogênese (sinovite, epítopo, êntese) + biológicos.",
-      foco: "Fisiopatologia · Biológicos",
+      source: "Estimativa UNIFESP · REU1–2.",
+      verdict: "Fisiopatologia (urato, estreptococo, êntese) + conduta.",
+      foco: "Fisiopatologia · Conduta",
       estilo: "Padrão UNIFESP",
       priorities: [
-        { tema: "AR", pct: 40 },
-        { tema: "SpA", pct: 35 },
-        { tema: "AIJ/Still", pct: 15 },
-        { tema: "AINE", pct: 10 }
+        { tema: "AR / SpA", pct: 30 },
+        { tema: "Gota", pct: 22 },
+        { tema: "FR", pct: 20 },
+        { tema: "Infecciosas", pct: 16 },
+        { tema: "OA / extras", pct: 12 }
       ]
     },
     {
       id: "enare",
       label: "Enare",
-      kicker: "2021–2024",
+      kicker: "Acesso",
       sourceType: "estimativa",
-      source: "Estimativa padrão Enare · REU1.",
-      verdict: "Mesmo eixo Enamed: conduta clara.",
+      source: "Estimativa Enare · REU1–2.",
+      verdict: "Mesmo eixo Enamed: respostas de conduta.",
       foco: "Conduta · Critérios",
       estilo: "Padrão Enare",
       priorities: [
-        { tema: "AR", pct: 42 },
-        { tema: "SpA", pct: 36 },
-        { tema: "AIJ/Still", pct: 14 },
-        { tema: "AINE", pct: 8 }
+        { tema: "AR / SpA", pct: 30 },
+        { tema: "Gota / FR", pct: 28 },
+        { tema: "Séptica", pct: 18 },
+        { tema: "OA / extras", pct: 24 }
       ]
     }
   ]

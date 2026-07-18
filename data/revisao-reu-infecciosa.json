@@ -1,0 +1,668 @@
+{
+  "title": "Artrites infecciosas · REU2",
+  "module": "reu-infecciosa",
+  "profiles": [
+    {
+      "checklist": [
+        "criterios",
+        "sorologia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnóstico",
+          "texto": "Critérios e sorologia."
+        },
+        {
+          "titulo": "Sessão 2 · Clínica",
+          "texto": "Padrões e diferenciais."
+        },
+        {
+          "titulo": "Sessão 3 · Conduta",
+          "texto": "Escada terapêutica."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila REU1 · MedHub R1 · Reumatologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese REU1",
+      "blurb": "Séptica · gonocócica · TB · viral",
+      "verdict": "Priorize critérios, sorologia e conduta treat-to-target / AINE→biológico conforme o grupo.",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Síntese nacional · Reumatologia",
+      "priorities": [
+        {
+          "tema": "Critérios / classificação",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica e DD",
+          "pct": 26
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 28
+        },
+        {
+          "tema": "Complicações / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare/Enamed · Reumatologia REU1.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Conduta objetiva.",
+      "verdict": "Foque jeitão clínico, critérios e 1ª linha terapêutica.",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica",
+          "pct": 24
+        },
+        {
+          "tema": "Extras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Reumatologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "Respostas curtas de conduta e critérios.",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Critérios",
+          "pct": 30
+        },
+        {
+          "tema": "Clínica",
+          "pct": 34
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Reumatologia · Artrites infecciosas · REU2 (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Conduta objetiva.",
+      "verdict": "Foque jeitão clínico, critérios e 1ª linha terapêutica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica",
+          "pct": 24
+        },
+        {
+          "tema": "Extras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "sorologia",
+        "dd",
+        "conduta"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão USP · Reumatologia.",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Detalhe de critérios e DD.",
+      "verdict": "ACR/EULAR, HLA-B27 e diferenciais AR × SpA caem bem.",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Critérios / sorologia",
+          "pct": 32
+        },
+        {
+          "tema": "DD",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "sorologia",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP · Reumatologia.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Fisiopatologia + conduta.",
+      "verdict": "Patogênese (sinovite, êntese, HLA) e escada terapêutica.",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Fisiopatologia",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Reumatologia · Artrites infecciosas · REU2 (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Conduta objetiva.",
+      "verdict": "Foque jeitão clínico, critérios e 1ª linha terapêutica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica",
+          "pct": 24
+        },
+        {
+          "tema": "Extras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Reumatologia · Artrites infecciosas · REU2 (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Conduta objetiva.",
+      "verdict": "Foque jeitão clínico, critérios e 1ª linha terapêutica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica",
+          "pct": 24
+        },
+        {
+          "tema": "Extras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "sorologia",
+        "dd",
+        "conduta"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Reumatologia · Artrites infecciosas · REU2 (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Detalhe de critérios e DD.",
+      "verdict": "ACR/EULAR, HLA-B27 e diferenciais AR × SpA caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Critérios / sorologia",
+          "pct": 32
+        },
+        {
+          "tema": "DD",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "sorologia",
+        "dd",
+        "conduta"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Reumatologia · Artrites infecciosas · REU2 (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Detalhe de critérios e DD.",
+      "verdict": "ACR/EULAR, HLA-B27 e diferenciais AR × SpA caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Critérios / sorologia",
+          "pct": 32
+        },
+        {
+          "tema": "DD",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "sorologia",
+        "dd",
+        "conduta"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Reumatologia · Artrites infecciosas · REU2 (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Detalhe de critérios e DD.",
+      "verdict": "ACR/EULAR, HLA-B27 e diferenciais AR × SpA caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Critérios / sorologia",
+          "pct": 32
+        },
+        {
+          "tema": "DD",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "sorologia",
+        "dd",
+        "conduta"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Reumatologia · Artrites infecciosas · REU2 (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Detalhe de critérios e DD.",
+      "verdict": "ACR/EULAR, HLA-B27 e diferenciais AR × SpA caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Critérios / sorologia",
+          "pct": 32
+        },
+        {
+          "tema": "DD",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "sorologia",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Reumatologia · Artrites infecciosas · REU2 (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Fisiopatologia + conduta.",
+      "verdict": "Patogênese (sinovite, êntese, HLA) e escada terapêutica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Fisiopatologia",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 24
+        },
+        {
+          "tema": "Clínica",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Reumatologia · Artrites infecciosas · REU2 (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Conduta objetiva.",
+      "verdict": "Foque jeitão clínico, critérios e 1ª linha terapêutica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica",
+          "pct": 24
+        },
+        {
+          "tema": "Extras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "sorologia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Reumatologia · Artrites infecciosas · REU2 (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Conduta objetiva.",
+      "verdict": "Foque jeitão clínico, critérios e 1ª linha terapêutica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Séptica · gonocócica · TB · viral",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Clínica",
+          "pct": 24
+        },
+        {
+          "tema": "Extras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "reu2-septica",
+        "reu2-tb-misc"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "criterios": {
+      "tema": "Critérios / diagnóstico",
+      "yield": "Alto",
+      "pegar": "Jones na FR; cristal no líquido na gota/CPPD; OA = clínica + Rx."
+    },
+    "sorologia": {
+      "tema": "Exames-chave",
+      "yield": "Alto",
+      "pegar": "Uricemia ≠ diagnóstico isolado; ASLO/evidência estreptocócica na FR; líquido + Gram na séptica."
+    },
+    "conduta": {
+      "tema": "Conduta",
+      "yield": "Máximo",
+      "pegar": "OA: não farmacológico 1º; crise gotosa: AINE/colchicina/GC; FR: penicilina + profilaxia; séptica: drenar+ATB."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial",
+      "yield": "Alto",
+      "pegar": "Gota × pseudogota × séptica × OA × FR migratória."
+    }
+  },
+  "oneLiners": [
+    "Artrocentese antes do ATB",
+    "Séptica = emergência",
+    "Anti-TNF ↑ TB osteoarticular"
+  ]
+}

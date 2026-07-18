@@ -192,7 +192,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Clínica médica",
       shortLabel: "Clínica médica",
       overviewCacheKey: "clinica",
-      overviewUrl: "data/stats-reumatologia-geral.json?v=20260718bb",
+      overviewUrl: "data/stats-reumatologia-geral.json?v=20260718bc",
       countNoun: "Clínica médica",
       openRoot: () => aprovaOpenClinica(),
       openModule: id => aprovaOpenClinicaModule(id)
@@ -254,8 +254,8 @@ function aprovaRenderEspecialidades () {
   }
   if (cli) {
     cli.textContent = cliN
-      ? cliN + " flashcards · Reumatologia (REU1) e próximos grupos"
-      : "Reumatologia (REU1) — próximos grupos em breve.";
+      ? cliN + " flashcards · Reumatologia REU1–REU2"
+      : "Reumatologia (REU1–REU2) — REU3 em breve.";
   }
 }
 
@@ -297,6 +297,11 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("reu1-ar-") === 0) return "Artrite reumatoide";
   if (id === "reu1-aij-still") return "AIJ · Still";
   if (id.indexOf("reu1-") === 0) return "Espondiloartrites";
+  if (id.indexOf("reu2-oa-") === 0) return "Osteoartrose";
+  if (id.indexOf("reu2-gota-") === 0 || id === "reu2-pseudogota") return "Gota e cristais";
+  if (id.indexOf("reu2-fr-") === 0) return "Febre reumática";
+  if (id === "reu2-septica" || id === "reu2-tb-misc") return "Artrites infecciosas";
+  if (id.indexOf("reu2-") === 0) return "Extras REU2";
   if (
     id === "cg-apendicite" ||
     id === "cg-colecistite" ||
@@ -768,7 +773,12 @@ const APROVA_PED_MODULE_PREFIXES = {
   "cir-especialidades": [],
   "reu-ar": ["reu1-ar-"],
   "reu-aij": ["reu1-aij-"],
-  "reu-spa": ["reu1-spa-", "reu1-ea", "reu1-artrite-", "reu1-psoriasica", "reu1-enteropatica", "reu1-aines"]
+  "reu-spa": ["reu1-spa-", "reu1-ea", "reu1-artrite-", "reu1-psoriasica", "reu1-enteropatica", "reu1-aines"],
+  "reu-oa": ["reu2-oa-"],
+  "reu-cristais": ["reu2-gota-", "reu2-pseudogota"],
+  "reu-fr": ["reu2-fr-"],
+  "reu-infecciosa": ["reu2-septica", "reu2-tb-"],
+  "reu-extras2": ["reu2-policondrite", "reu2-ffm", "reu2-fibromialgia"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
