@@ -1,29 +1,62 @@
 /* Revisões direcionadas a provas R1 */
 
+const APROVA_REVISAO_MODULES = {
+  neonatologia: {
+    label: "Neonatologia",
+    file: "data/revisao-neonatologia.json?v=20260718i"
+  },
+  alimentacao: {
+    label: "Alimentação",
+    file: "data/revisao-alimentacao.json?v=20260718i"
+  }
+};
+
 const AprovaRevisao = {
-  neo: null,
+  cache: {},
+  activeModuleId: "neonatologia",
   activeProfileId: "geral",
 
-  async loadNeonatologia () {
-    if (this.neo) return this.neo;
+  async loadModule (moduleId) {
+    const id = moduleId || this.activeModuleId || "neonatologia";
+    if (this.cache[id]) return this.cache[id];
+    const meta = APROVA_REVISAO_MODULES[id];
+    if (!meta) {
+      this.cache[id] = null;
+      return null;
+    }
     try {
-      const res = await fetch("data/revisao-neonatologia.json?v=20260718f");
+      const res = await fetch(meta.file);
       if (!res.ok) throw new Error("fail");
-      this.neo = await res.json();
-      return this.neo;
+      this.cache[id] = await res.json();
+      return this.cache[id];
     } catch {
-      this.neo = null;
+      this.cache[id] = null;
       return null;
     }
   },
 
-  async getProfiles () {
-    const data = await this.loadNeonatologia();
+  async loadNeonatologia () {
+    return this.loadModule("neonatologia");
+  },
+
+  listModules () {
+    return Object.keys(APROVA_REVISAO_MODULES).map(id => ({
+      id,
+      label: APROVA_REVISAO_MODULES[id].label
+    }));
+  },
+
+  setActiveModule (id) {
+    this.activeModuleId = APROVA_REVISAO_MODULES[id] ? id : "neonatologia";
+  },
+
+  async getProfiles (moduleId) {
+    const data = await this.loadModule(moduleId || this.activeModuleId);
     return data && Array.isArray(data.profiles) ? data.profiles : [];
   },
 
-  async getProfile (id) {
-    const profiles = await this.getProfiles();
+  async getProfile (id, moduleId) {
+    const profiles = await this.getProfiles(moduleId || this.activeModuleId);
     return profiles.find(p => p.id === id) || profiles[0] || null;
   },
 
@@ -47,14 +80,18 @@ function aprovaYieldClass (yieldLabel) {
   return "low";
 }
 
-async function aprovaRenderRevisaoNeo (profileId) {
+async function aprovaRenderRevisaoNeo (profileId, moduleId) {
   const root = document.getElementById("revisao-neo-root");
   const titleEl = document.getElementById("rev-neo-title");
   const subEl = document.getElementById("rev-neo-sub");
   if (!root) return;
 
+  const mid = moduleId || AprovaRevisao.activeModuleId || "neonatologia";
+  AprovaRevisao.setActiveModule(mid);
+  const moduleLabel = (APROVA_REVISAO_MODULES[mid] && APROVA_REVISAO_MODULES[mid].label) || "Pediatria";
+
   root.innerHTML = "<p class=\"muted\">Carregando revisão…</p>";
-  const data = await AprovaRevisao.loadNeonatologia();
+  const data = await AprovaRevisao.loadModule(mid);
   if (!data) {
     root.innerHTML = "<p class=\"muted\">Não foi possível carregar a revisão.</p>";
     return;
@@ -62,13 +99,13 @@ async function aprovaRenderRevisaoNeo (profileId) {
 
   const pid = profileId || AprovaRevisao.activeProfileId || "geral";
   AprovaRevisao.setActiveProfile(pid);
-  const profile = await AprovaRevisao.getProfile(pid);
+  const profile = await AprovaRevisao.getProfile(pid, mid);
   if (!profile) {
     root.innerHTML = "<p class=\"muted\">Perfil de prova não encontrado.</p>";
     return;
   }
 
-  if (titleEl) titleEl.textContent = "Neonatologia · " + profile.label;
+  if (titleEl) titleEl.textContent = moduleLabel + " · " + profile.label;
   if (subEl) {
     subEl.textContent = profile.id === "geral"
       ? "Estatística geral das principais provas R1."
@@ -103,7 +140,7 @@ async function aprovaRenderRevisaoNeo (profileId) {
     );
   }).join("");
 
-  const list = items => items.map(t => "<li>" + aprovaEscapeHtml(t) + "</li>").join("");
+  const list = items => (items || []).map(t => "<li>" + aprovaEscapeHtml(t) + "</li>").join("");
 
   const sessoes = (profile.sessoes || []).map(s => (
     "<article class=\"rev-session\">" +

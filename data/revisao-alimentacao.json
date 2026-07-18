@@ -1,0 +1,371 @@
+{
+  "title": "Alimentação infantil · revisão para provas R1",
+  "module": "alimentacao",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Média das principais provas R1 do país.",
+      "verdict": "Em Alimentação, ~75% do retorno está em quatro blocos: contraindicações, AME/recomendações, ferro/vitamina D e composição do leite humano.",
+      "foco": "Contraindicações · AME 6m/2a · Ferro e vit. D · Composição LH × LV",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "Contraindicações do AM", "score": 95 },
+        { "tema": "AME / recomendações MS-SBP", "score": 90 },
+        { "tema": "Ferro e vitamina D", "score": 86 },
+        { "tema": "Composição e fatores protetores", "score": 78 },
+        { "tema": "Fissura / ingurgitamento / mastite", "score": 68 },
+        { "tema": "Armazenamento do leite", "score": 62 },
+        { "tema": "Alimentação complementar", "score": 58 },
+        { "tema": "Fórmulas / leite de vaca", "score": 48 }
+      ],
+      "deckOrder": [
+        "ali-contraindicacoes",
+        "ali-definicoes",
+        "ali-suplementacao",
+        "ali-composicao",
+        "ali-complicacoes",
+        "ali-armazenamento",
+        "ali-complementar",
+        "ali-formulas",
+        "ali-pratica"
+      ],
+      "checklist": ["contra", "ame", "ferro", "vitd", "composicao", "complicacoes", "armazena", "ac"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Quem pode / não pode amamentar", "texto": "HIV, HTLV, galactosemia, Hep B, TB, CMV, herpes, Chagas. Decore absolutas vs especiais." },
+        { "titulo": "Sessão 2 · Números que caem", "texto": "AME 6m / AM 2a · geladeira 12h / freezer 15d · ferro SBP · vit. D 400/600 UI." },
+        { "titulo": "Sessão 3 · Composição + mama", "texto": "LH × LV, IgA, lactoferrina · fissura, ingurgitamento e mastite sem suspender AM." }
+      ],
+      "lacuna": "Listas longas de drogas compatíveis têm baixo ROI — foque nas contraindicações absolutas e nas situações especiais clássicas."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Casos clínicos de contraindicação e fisiologia.",
+      "verdict": "Na USP, Alimentação cobra muito contraindicação (HIV/HTLV/galactosemia) e diferenciação composição/fisiologia com caso clínico.",
+      "foco": "Contraindicações · Prolactina/ocitocina · LH × LV · Mastite",
+      "estilo": "Caso + mecanismo; detalhe de conduta",
+      "priorities": [
+        { "tema": "Contraindicações do AM", "score": 98 },
+        { "tema": "Composição e fatores protetores", "score": 88 },
+        { "tema": "Fisiologia / prática do AM", "score": 82 },
+        { "tema": "Fissura / mastite", "score": 75 },
+        { "tema": "Ferro e vitamina D", "score": 70 },
+        { "tema": "AME / recomendações", "score": 65 }
+      ],
+      "deckOrder": [
+        "ali-contraindicacoes",
+        "ali-composicao",
+        "ali-pratica",
+        "ali-complicacoes",
+        "ali-suplementacao",
+        "ali-definicoes",
+        "ali-armazenamento",
+        "ali-formulas",
+        "ali-complementar"
+      ],
+      "checklist": ["contra", "composicao", "pratica", "complicacoes", "ferro", "vitd"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Absolutas e pegadinhas", "texto": "HIV/HTLV/galactosemia vs Hep B, TB e COVID (pode amamentar)." },
+        { "titulo": "Sessão 2 · Fisiologia + composição", "texto": "Prolactina/ocitocina, anterior/posterior, IgA e ferro biodisponível." },
+        { "titulo": "Sessão 3 · Mama inflamada", "texto": "Fissura × ingurgitamento × mastite — manter drenagem." }
+      ],
+      "lacuna": "Guia alimentar completo dos 12 passos cai menos que contraindicação na USP — priorize conduta clínica."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Protocolos MS/SBP e suplementação.",
+      "verdict": "Na Unifesp, pesam recomendações oficiais: AME, suplementação de ferro/vit. D e introdução alimentar.",
+      "foco": "Ferro SBP/MS · Vit. D · AME · Alimentação complementar",
+      "estilo": "Protocolo + números de guideline",
+      "priorities": [
+        { "tema": "Ferro e vitamina D", "score": 96 },
+        { "tema": "AME / recomendações MS-SBP", "score": 90 },
+        { "tema": "Alimentação complementar", "score": 85 },
+        { "tema": "Contraindicações do AM", "score": 78 },
+        { "tema": "Fórmulas / leite de vaca", "score": 70 },
+        { "tema": "Armazenamento", "score": 55 }
+      ],
+      "deckOrder": [
+        "ali-suplementacao",
+        "ali-definicoes",
+        "ali-complementar",
+        "ali-contraindicacoes",
+        "ali-formulas",
+        "ali-armazenamento",
+        "ali-composicao",
+        "ali-complicacoes",
+        "ali-pratica"
+      ],
+      "checklist": ["ferro", "vitd", "ame", "ac", "contra", "formula"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Ferro por cenário", "texto": "Termo AME 180d × fator de risco 90d × prematuro por peso." },
+        { "titulo": "Sessão 2 · Vit. D + AME", "texto": "400/600 UI e regras de 6 meses / 2 anos." },
+        { "titulo": "Sessão 3 · Complementar + fórmula", "texto": "12 passos-chave e quando NÃO usar leite integral <1 ano." }
+      ],
+      "lacuna": "Tabela completa de drogas no leite: baixo ROI — foque absolutas."
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "Atenção básica e recomendações do MS.",
+      "verdict": "No SUS-SP, cai orientação de APS: AME, Hospital Amigo, armazenamento e introdução alimentar sem açúcar.",
+      "foco": "AME · 10 passos · Armazenamento · Complementar (sem açúcar)",
+      "estilo": "Conduta de atenção básica / MS",
+      "priorities": [
+        { "tema": "AME / recomendações MS-SBP", "score": 95 },
+        { "tema": "Alimentação complementar", "score": 88 },
+        { "tema": "Armazenamento do leite", "score": 82 },
+        { "tema": "Prática / 10 passos", "score": 78 },
+        { "tema": "Ferro (PNSF MS)", "score": 72 },
+        { "tema": "Contraindicações", "score": 65 }
+      ],
+      "deckOrder": [
+        "ali-definicoes",
+        "ali-complementar",
+        "ali-armazenamento",
+        "ali-pratica",
+        "ali-suplementacao",
+        "ali-contraindicacoes",
+        "ali-formulas",
+        "ali-complicacoes",
+        "ali-composicao"
+      ],
+      "checklist": ["ame", "ac", "armazena", "pratica", "ferro", "contra"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Mensagens do MS", "texto": "AME 6m, AM ≥2a, sem água no AME, sem açúcar <2a." },
+        { "titulo": "Sessão 2 · Ordenha na APS", "texto": "12h geladeira / 15d freezer; copo/colher; mãe no trabalho." },
+        { "titulo": "Sessão 3 · PNSF + contraindicações", "texto": "Ciclos de ferro 6–24m e absolutas (HIV/HTLV)." }
+      ],
+      "lacuna": "Fisiologia molecular da lactação cai pouco — priorize conduta de UBS."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Conceito + saúde pública.",
+      "verdict": "No SUS-BA, misturam conceito de AME com contraindicações e suplementação básica.",
+      "foco": "AME · Contraindicações · Ferro/vit. D · Composição básica",
+      "estilo": "Conceito claro + conduta",
+      "priorities": [
+        { "tema": "AME / recomendações", "score": 92 },
+        { "tema": "Contraindicações do AM", "score": 88 },
+        { "tema": "Ferro e vitamina D", "score": 80 },
+        { "tema": "Composição LH × LV", "score": 72 },
+        { "tema": "Alimentação complementar", "score": 65 },
+        { "tema": "Complicações da mama", "score": 50 }
+      ],
+      "deckOrder": [
+        "ali-definicoes",
+        "ali-contraindicacoes",
+        "ali-suplementacao",
+        "ali-composicao",
+        "ali-complementar",
+        "ali-complicacoes",
+        "ali-armazenamento",
+        "ali-formulas",
+        "ali-pratica"
+      ],
+      "checklist": ["ame", "contra", "ferro", "vitd", "composicao", "ac"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Definições", "texto": "AME vs predominante vs misto — pegadinha clássica." },
+        { "titulo": "Sessão 2 · Absolutas", "texto": "HIV, HTLV, galactosemia." },
+        { "titulo": "Sessão 3 · Suplementos", "texto": "Vit. D 400/600 e ferro por idade/risco." }
+      ],
+      "lacuna": "Detalhe de mastite complicada / abscesso: raro — saiba manter AM e ATB básico."
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Casos clínicos e situações especiais.",
+      "verdict": "No Einstein, predominam casos: mãe com infecção, prematuro, mastite e erro de metabolismo.",
+      "foco": "Situações especiais · Mastite · Prematuro (ferro/CMV) · Galactosemia",
+      "estilo": "Caso clínico com conduta",
+      "priorities": [
+        { "tema": "Contraindicações / especiais", "score": 96 },
+        { "tema": "Fissura / mastite", "score": 88 },
+        { "tema": "Ferro no prematuro", "score": 84 },
+        { "tema": "Composição e protetores", "score": 70 },
+        { "tema": "Fórmulas", "score": 62 },
+        { "tema": "AME básico", "score": 55 }
+      ],
+      "deckOrder": [
+        "ali-contraindicacoes",
+        "ali-complicacoes",
+        "ali-suplementacao",
+        "ali-composicao",
+        "ali-formulas",
+        "ali-definicoes",
+        "ali-pratica",
+        "ali-armazenamento",
+        "ali-complementar"
+      ],
+      "checklist": ["contra", "complicacoes", "ferro", "composicao", "formula"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Infecções maternas", "texto": "HIV/HTLV vs Hep B/TB/CMV/COVID." },
+        { "titulo": "Sessão 2 · Mama e RN especial", "texto": "Mastite + ferro do prematuro + galactosemia." },
+        { "titulo": "Sessão 3 · Se não puder AM", "texto": "Fórmula partida/seguimento e leite modificado." }
+      ],
+      "lacuna": "Memorizar todos os 12 passos literalmente rende pouco — pegue os de açúcar, ultraprocessados e 6 meses."
+    },
+    {
+      "id": "puc",
+      "label": "PUC/Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Guideline + composição.",
+      "verdict": "PUC/Unicamp equilibram composição do leite, contraindicações e suplementação.",
+      "foco": "Composição · Contraindicações · Ferro/vit. D · AME",
+      "estilo": "Conceito + tabela mental",
+      "priorities": [
+        { "tema": "Composição e fatores protetores", "score": 92 },
+        { "tema": "Contraindicações do AM", "score": 90 },
+        { "tema": "Ferro e vitamina D", "score": 85 },
+        { "tema": "AME / recomendações", "score": 78 },
+        { "tema": "Armazenamento", "score": 60 },
+        { "tema": "Complementar", "score": 55 }
+      ],
+      "deckOrder": [
+        "ali-composicao",
+        "ali-contraindicacoes",
+        "ali-suplementacao",
+        "ali-definicoes",
+        "ali-armazenamento",
+        "ali-complementar",
+        "ali-pratica",
+        "ali-complicacoes",
+        "ali-formulas"
+      ],
+      "checklist": ["composicao", "contra", "ferro", "vitd", "ame", "armazena"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · LH × LV", "texto": "Proteína, ferro 50%×10%, IgA, fator bífido." },
+        { "titulo": "Sessão 2 · Contraindicações", "texto": "Absolutas maternas e galactosemia." },
+        { "titulo": "Sessão 3 · Suplementos", "texto": "Vit. D universal e ferro por cenário." }
+      ],
+      "lacuna": "Crescimento/puberdade da Ped2 não é o foco desta revisão de alimentação."
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Conceito sólido e números.",
+      "verdict": "Na UFRJ, cobram definições limpas, contraindicações clássicas e números de armazenamento/suplementação.",
+      "foco": "Definições · Contraindicações · Armazenamento · Vit. D/ferro",
+      "estilo": "Conceito sólido; menos superspecialty",
+      "priorities": [
+        { "tema": "AME / definições", "score": 94 },
+        { "tema": "Contraindicações do AM", "score": 90 },
+        { "tema": "Armazenamento", "score": 82 },
+        { "tema": "Ferro e vitamina D", "score": 80 },
+        { "tema": "Composição básica", "score": 70 },
+        { "tema": "Complementar", "score": 60 }
+      ],
+      "deckOrder": [
+        "ali-definicoes",
+        "ali-contraindicacoes",
+        "ali-armazenamento",
+        "ali-suplementacao",
+        "ali-composicao",
+        "ali-complementar",
+        "ali-complicacoes",
+        "ali-formulas",
+        "ali-pratica"
+      ],
+      "checklist": ["ame", "contra", "armazena", "ferro", "vitd", "composicao"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Vocabulário", "texto": "AME × predominante × complementado × misto." },
+        { "titulo": "Sessão 2 · Absolutas + 12h/15d", "texto": "HIV/HTLV/galactosemia e armazenamento." },
+        { "titulo": "Sessão 3 · Suplementos", "texto": "400/600 UI e início do ferro." }
+      ],
+      "lacuna": "Crescimento estatural e alvo genético da Ped2: revise só se a banca pedir pediatria geral."
+    }
+  ],
+  "checklistItems": {
+    "contra": {
+      "tema": "Contraindicações",
+      "yield": "Máximo",
+      "pegar": "Absolutas: HIV, HTLV, psicose grave · Criança: galactosemia · Pode: Hep B (+vacina/HBIG 12h), TB com máscara, COVID, Chagas crônica sem lesão"
+    },
+    "ame": {
+      "tema": "AME e recomendações",
+      "yield": "Máximo",
+      "pegar": "AME 6 meses (sem água) · AM até ≥2 anos · Predominante ≠ misto · Início na sala de parto"
+    },
+    "ferro": {
+      "tema": "Ferro profilático",
+      "yield": "Alto",
+      "pegar": "SBP: termo AME sem risco 1 mg/kg desde 180d · com risco/fórmula desde 90d · prematuro 2–4 mg/kg desde ~30d · MS: ciclos 10–12,5 mg aos 6 e 12m"
+    },
+    "vitd": {
+      "tema": "Vitamina D",
+      "yield": "Alto",
+      "pegar": "SBP universal: 400 UI/dia 1ª semana–1 ano · 600 UI/dia 1–2 anos · Mesmo em AME"
+    },
+    "composicao": {
+      "tema": "Composição LH × LV",
+      "yield": "Alto",
+      "pegar": "Menos proteína no LH · soro > caseína · ferro 50%×10% · IgA secretória · lactoferrina · fator bífido · anterior/posterior"
+    },
+    "complicacoes": {
+      "tema": "Fissura / ingurgitamento / mastite",
+      "yield": "Alto",
+      "pegar": "Corrigir pega · NÃO suspender AM · Mastite: S. aureus · drenar leite · ATB se grave/sem resposta 12–24h"
+    },
+    "armazena": {
+      "tema": "Armazenamento",
+      "yield": "Médio-alto",
+      "pegar": "Geladeira 12h · Freezer 15d · Descongelar banho-maria (fogo off) · Sem micro-ondas · Oferecer em copo/colher"
+    },
+    "ac": {
+      "tema": "Alimentação complementar",
+      "yield": "Médio-alto",
+      "pegar": "Desde 6m · Sem açúcar e ultraprocessados até 2a · Comida amassada · Água em vez de suco · Manter AM"
+    },
+    "pratica": {
+      "tema": "Fisiologia / 10 passos",
+      "yield": "Médio",
+      "pegar": "Prolactina = produção · Ocitocina = ejeção · Livre demanda · Pele a pele · Alojamento conjunto"
+    },
+    "formula": {
+      "tema": "Fórmulas / leite de vaca",
+      "yield": "Médio",
+      "pegar": "Preferir fórmula · Integral <1a não recomendado · <4m: diluir 2/3 + óleo 3% · Sem açúcar/farinha <24m"
+    }
+  },
+  "numeros": [
+    "AME: 6 meses · AM: ≥2 anos",
+    "Geladeira: 12 h · Freezer: 15 dias · Doação: 10 dias",
+    "Vit. D: 400 UI (0–1a) · 600 UI (1–2a)",
+    "Ferro termo AME sem risco: 1 mg/kg desde 180 dias até 24 meses",
+    "Ferro com risco ou fórmula: 1 mg/kg desde 90 dias",
+    "Prematuro: 2–4 mg/kg/dia desde ~30 dias (por peso)",
+    "PNSF MS: 10–12,5 mg/dia em ciclos aos 6 e 12 meses",
+    "HTLV: transmissão pelo leite ~13–22%",
+    "Ferro LH × LV: absorção ~50% × ~10%",
+    "Vit. A campanha: 100.000 UI (6–11m) · 200.000 UI (12–59m / 6–6m)"
+  ],
+  "pegadinhas": [
+    "Água no AME NÃO é necessária",
+    "Leite de outra espécie NÃO conta como alimento complementar",
+    "Hep B NÃO contraindication — vacina + HBIG em 12h",
+    "TB: bacilo NÃO vai no leite; usar máscara se bacilífera",
+    "Galactosemia é a ÚNICA contraindicação absoluta da criança",
+    "Mastite: CONTINUAR amamentando / drenar",
+    "Leite integral <1 ano: SBP não recomenda",
+    "Não ferver nem micro-ondas no leite ordenhado",
+    "Vit. D é universal na SBP (não depende só do sol)",
+    "Açúcar proibido até 2 anos (Guia MS)"
+  ],
+  "baixoRoi": [
+    "Lista exaustiva de fármacos compatíveis com AM",
+    "Detalhes de crescimento/puberdade/alvo genético (capítulos finais da Ped2)",
+    "Memorizar os 12 passos palavra por palavra (saiba os de maior cobrança)",
+    "Marcas comerciais de fórmulas",
+    "Técnica de ordenha passo a passo completa (saiba higiene + prazos)"
+  ]
+}

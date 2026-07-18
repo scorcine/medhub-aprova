@@ -136,6 +136,7 @@ function aprovaRenderFlashcardBrowse () {
 
 let aprovaActiveSpecialty = null;
 let aprovaActiveFocusId = "geral";
+let aprovaActivePedModule = "neonatologia";
 
 function aprovaHideEspViews () {
   ["esp-list", "esp-decks", "esp-revisao"].forEach(id => {
@@ -163,8 +164,8 @@ function aprovaRenderEspecialidades () {
   const cliN = AprovaFlashcards.countBySpecialty("clinica");
   if (ped) {
     ped.textContent = pedN
-      ? pedN + " flashcards · Neonatologia"
-      : "Neonatologia, infecções e urgências.";
+      ? pedN + " flashcards · Neonatologia + Alimentação"
+      : "Neonatologia, alimentação e mais.";
   }
   if (cli) {
     cli.textContent = cliN
@@ -173,8 +174,25 @@ function aprovaRenderEspecialidades () {
   }
 }
 
+function aprovaDeckKicker (deck) {
+  const id = String(deck.id || "");
+  if (id.indexOf("neo-") === 0) return "Neonatologia";
+  if (id.indexOf("ali-") === 0) return "Alimentação";
+  if (id.indexOf("cardio") === 0) return "Cardiologia";
+  return "Subtema";
+}
+
 function aprovaRenderDeckCards (specialty, grid) {
-  const decks = AprovaFlashcards.decksBySpecialty(specialty);
+  const decks = AprovaFlashcards.decksBySpecialty(specialty).slice().sort((a, b) => {
+    const rank = id => {
+      const s = String(id || "");
+      if (s.indexOf("neo-") === 0) return 0;
+      if (s.indexOf("ali-") === 0) return 1;
+      return 2;
+    };
+    const d = rank(a.id) - rank(b.id);
+    return d !== 0 ? d : String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
+  });
   grid.innerHTML = "";
 
   if (!decks.length) {
@@ -188,7 +206,7 @@ function aprovaRenderDeckCards (specialty, grid) {
     btn.type = "button";
     btn.className = "dash-card";
     btn.innerHTML =
-      "<span class=\"dash-card-kicker\">Subtema</span>" +
+      "<span class=\"dash-card-kicker\">" + aprovaDeckKicker(deck) + "</span>" +
       "<strong>" + deck.name + "</strong>" +
       "<span>" + n + " card" + (n === 1 ? "" : "s") + "</span>";
     btn.addEventListener("click", () => {
@@ -199,40 +217,60 @@ function aprovaRenderDeckCards (specialty, grid) {
   });
 }
 
-async function aprovaRenderPediatriaStats (focusId) {
+async function aprovaRenderPediatriaStats (focusId, moduleId) {
   const stats = document.getElementById("esp-stats");
   const bars = document.getElementById("esp-stats-bars");
   const title = document.getElementById("esp-stats-title");
   const sub = document.getElementById("esp-stats-sub");
   const options = document.getElementById("esp-exam-options");
+  const modulesEl = document.getElementById("esp-module-options");
   if (!stats || !bars || !options) return;
 
   stats.hidden = false;
+  aprovaActivePedModule = moduleId || aprovaActivePedModule || "neonatologia";
   aprovaActiveFocusId = focusId || "geral";
+
   if (typeof AprovaRevisao !== "undefined") {
+    AprovaRevisao.setActiveModule(aprovaActivePedModule);
     AprovaRevisao.setActiveProfile(aprovaActiveFocusId);
   }
 
+  const modules = typeof AprovaRevisao !== "undefined"
+    ? AprovaRevisao.listModules()
+    : [];
   const profiles = typeof AprovaRevisao !== "undefined"
-    ? await AprovaRevisao.getProfiles()
+    ? await AprovaRevisao.getProfiles(aprovaActivePedModule)
     : [];
   const profile = typeof AprovaRevisao !== "undefined"
-    ? await AprovaRevisao.getProfile(aprovaActiveFocusId)
+    ? await AprovaRevisao.getProfile(aprovaActiveFocusId, aprovaActivePedModule)
     : null;
+
+  if (modulesEl) {
+    modulesEl.innerHTML = "";
+    modules.forEach(m => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "esp-exam-btn" + (m.id === aprovaActivePedModule ? " active" : "");
+      btn.textContent = m.label;
+      btn.addEventListener("click", () => aprovaRenderPediatriaStats("geral", m.id));
+      modulesEl.appendChild(btn);
+    });
+  }
 
   if (!profile) {
     bars.innerHTML = "<p class=\"muted\">Estatísticas indisponíveis.</p>";
     return;
   }
 
+  const moduleLabel = (modules.find(m => m.id === aprovaActivePedModule) || {}).label || "Pediatria";
   const chartTitle = profile.id === "geral"
-    ? "O que mais cai no Brasil"
-    : ("O que mais cai · " + profile.label);
+    ? ("O que mais cai no Brasil · " + moduleLabel)
+    : ("O que mais cai · " + profile.label + " · " + moduleLabel);
 
   if (title) title.textContent = chartTitle;
   if (sub) {
     sub.textContent = profile.id === "geral"
-      ? "Prioridade relativa dos assuntos de Neonatologia nas provas R1."
+      ? ("Prioridade relativa dos assuntos de " + moduleLabel + " nas provas R1.")
       : (profile.foco || profile.blurb);
   }
 
@@ -254,7 +292,7 @@ async function aprovaRenderPediatriaStats (focusId) {
     btn.type = "button";
     btn.className = "esp-exam-btn" + (p.id === aprovaActiveFocusId ? " active" : "");
     btn.textContent = p.id === "geral" ? "Brasil" : p.label;
-    btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id));
+    btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id, aprovaActivePedModule));
     options.appendChild(btn);
   });
 }
@@ -262,6 +300,7 @@ async function aprovaRenderPediatriaStats (focusId) {
 async function aprovaOpenPediatria () {
   aprovaActiveSpecialty = "pediatria";
   aprovaActiveFocusId = "geral";
+  if (!aprovaActivePedModule) aprovaActivePedModule = "neonatologia";
 
   const decksWrap = document.getElementById("esp-decks");
   const grid = document.getElementById("esp-deck-grid");
@@ -275,7 +314,7 @@ async function aprovaOpenPediatria () {
   if (hint) hint.textContent = "Escolha um subtema. Abaixo, veja o que mais cai nas provas.";
 
   aprovaRenderDeckCards("pediatria", grid);
-  await aprovaRenderPediatriaStats("geral");
+  await aprovaRenderPediatriaStats(aprovaActiveFocusId, aprovaActivePedModule);
 }
 
 function aprovaOpenSpecialtyReview (profileId) {
@@ -286,7 +325,10 @@ function aprovaOpenSpecialtyReview (profileId) {
   if (revisao) revisao.hidden = false;
   if (hint) hint.textContent = "Revisão da prova selecionada.";
   if (typeof aprovaRenderRevisaoNeo === "function") {
-    aprovaRenderRevisaoNeo(profileId || aprovaActiveFocusId || "geral");
+    aprovaRenderRevisaoNeo(
+      profileId || aprovaActiveFocusId || "geral",
+      aprovaActivePedModule || "neonatologia"
+    );
   }
 }
 

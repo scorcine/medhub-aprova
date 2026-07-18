@@ -2,8 +2,9 @@
 
 function aprovaDeckSpecialty (deck) {
   if (deck.specialty) return deck.specialty;
-  if (String(deck.id || "").indexOf("neo-") === 0) return "pediatria";
-  if (String(deck.id || "").indexOf("cardio") === 0) return "clinica";
+  const id = String(deck.id || "");
+  if (id.indexOf("neo-") === 0 || id.indexOf("ali-") === 0) return "pediatria";
+  if (id.indexOf("cardio") === 0) return "clinica";
   return "geral";
 }
 
@@ -20,7 +21,8 @@ const AprovaFlashcards = {
   async load () {
     const files = [
       "data/flashcards-sample.json",
-      "data/flashcards-neonatologia.json"
+      "data/flashcards-neonatologia.json",
+      "data/flashcards-alimentacao.json"
     ];
     const decks = [];
     for (const file of files) {
