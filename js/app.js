@@ -34,9 +34,20 @@ function aprovaShowPanel (id) {
   document.body.classList.remove("sidebar-open");
 }
 
+const APROVA_SPECIALTY_LABELS = {
+  clinica: "Clínica médica",
+  cirurgia: "Cirurgia",
+  pediatria: "Pediatria",
+  go: "Ginecologia e obstetrícia",
+  preventiva: "Preventiva",
+  urgencia: "Urgência e emergência"
+};
+
 function aprovaGoTo (id) {
   if (id === "flashcards") {
-    AprovaFlashcards.rebuildTodayQueue();
+    if (AprovaFlashcards.mode !== "deck") {
+      AprovaFlashcards.rebuildTodayQueue();
+    }
     aprovaRenderFlashcard();
   }
   if (id === "hoje") aprovaRenderToday();
@@ -44,7 +55,78 @@ function aprovaGoTo (id) {
   if (id === "estatisticas") aprovaRenderExamStats();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
+  if (id === "especialidades") aprovaRenderEspecialidades();
   aprovaShowPanel(id);
+}
+
+function aprovaShowSpecialtyList () {
+  const list = document.getElementById("esp-list");
+  const decks = document.getElementById("esp-decks");
+  const hint = document.getElementById("esp-hint");
+  if (list) list.hidden = false;
+  if (decks) decks.hidden = true;
+  if (hint) hint.textContent = "Escolha uma área e depois um subtema para estudar os flashcards.";
+}
+
+function aprovaRenderEspecialidades () {
+  aprovaShowSpecialtyList();
+  const ped = document.getElementById("esp-count-pediatria");
+  const cli = document.getElementById("esp-count-clinica");
+  const pedN = AprovaFlashcards.countBySpecialty("pediatria");
+  const cliN = AprovaFlashcards.countBySpecialty("clinica");
+  if (ped) {
+    ped.textContent = pedN
+      ? pedN + " flashcards · toque para ver os subtemas"
+      : "Neonatologia, infecções e urgências.";
+  }
+  if (cli) {
+    cli.textContent = cliN
+      ? cliN + " flashcards · toque para ver os subtemas"
+      : "Cardiologia, infecto, endocrino e mais.";
+  }
+}
+
+function aprovaOpenSpecialty (specialty) {
+  const list = document.getElementById("esp-list");
+  const decksWrap = document.getElementById("esp-decks");
+  const grid = document.getElementById("esp-deck-grid");
+  const title = document.getElementById("esp-decks-title");
+  const hint = document.getElementById("esp-hint");
+  if (!grid || !decksWrap) return;
+
+  const decks = AprovaFlashcards.decksBySpecialty(specialty);
+  const label = APROVA_SPECIALTY_LABELS[specialty] || specialty;
+
+  if (list) list.hidden = true;
+  decksWrap.hidden = false;
+  if (title) title.textContent = label + " · subtemas";
+  if (hint) {
+    hint.textContent = decks.length
+      ? "Escolha um subtema para estudar."
+      : "Ainda sem flashcards nesta área — em breve.";
+  }
+
+  if (!decks.length) {
+    grid.innerHTML = "<p class=\"muted\">Nenhum deck disponível ainda nesta especialidade.</p>";
+    return;
+  }
+
+  grid.innerHTML = "";
+  decks.forEach(deck => {
+    const n = (deck.cards || []).length;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "dash-card";
+    btn.innerHTML =
+      "<span class=\"dash-card-kicker\">Subtema</span>" +
+      "<strong>" + deck.name + "</strong>" +
+      "<span>" + n + " card" + (n === 1 ? "" : "s") + "</span>";
+    btn.addEventListener("click", () => {
+      AprovaFlashcards.startDeck(deck.id);
+      aprovaGoTo("flashcards");
+    });
+    grid.appendChild(btn);
+  });
 }
 
 function aprovaRenderExamStats () {
@@ -146,18 +228,28 @@ function aprovaRenderFlashcard () {
   const easyBtn = document.getElementById("fc-easy");
   const hardBtn = document.getElementById("fc-hard");
   const backHoje = document.getElementById("fc-back-hoje");
+  const backEsp = document.getElementById("fc-back-esp");
   if (!front || !label) return;
 
+  const fromDeck = AprovaFlashcards.mode === "deck";
+
   if (!card) {
-    label.textContent = "Fila de hoje";
-    front.textContent = "Nada pendente — agenda em dia.";
+    label.textContent = fromDeck ? "Deck concluído" : "Fila de hoje";
+    front.textContent = fromDeck
+      ? "Você terminou este subtema."
+      : "Nada pendente — agenda em dia.";
     back.hidden = true;
     back.textContent = "";
     revealBtn.hidden = true;
     easyBtn.hidden = true;
     hardBtn.hidden = true;
-    if (backHoje) backHoje.hidden = false;
-    if (hint) hint.textContent = "Volte amanhã ou treine questões.";
+    if (backHoje) backHoje.hidden = fromDeck;
+    if (backEsp) backEsp.hidden = !fromDeck;
+    if (hint) {
+      hint.textContent = fromDeck
+        ? "Volte às especialidades para escolher outro subtema."
+        : "Volte amanhã ou treine questões.";
+    }
     return;
   }
 
@@ -170,7 +262,12 @@ function aprovaRenderFlashcard () {
   easyBtn.hidden = !AprovaFlashcards.revealed;
   hardBtn.hidden = !AprovaFlashcards.revealed;
   if (backHoje) backHoje.hidden = true;
-  if (hint) hint.textContent = "Fila de hoje · revelar · acertei / errei.";
+  if (backEsp) backEsp.hidden = !fromDeck;
+  if (hint) {
+    hint.textContent = fromDeck
+      ? "Estudo por especialidade · revelar · acertei / errei."
+      : "Fila de hoje · revelar · acertei / errei.";
+  }
 }
 
 function aprovaRenderQuestion () {
@@ -247,6 +344,7 @@ async function aprovaBoot () {
     aprovaRenderQuestion();
     aprovaRenderProgress();
     aprovaRenderExamStats();
+    aprovaRenderEspecialidades();
     aprovaRenderConfig();
   }
 
@@ -256,6 +354,14 @@ async function aprovaBoot () {
 
   document.querySelectorAll("[data-goto]").forEach(btn => {
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
+  });
+
+  document.querySelectorAll("[data-specialty]").forEach(btn => {
+    btn.addEventListener("click", () => aprovaOpenSpecialty(btn.dataset.specialty));
+  });
+
+  document.getElementById("esp-back")?.addEventListener("click", () => {
+    aprovaShowSpecialtyList();
   });
 
   document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
@@ -301,5 +407,6 @@ window.aprovaBootStudyModules = async function () {
   aprovaRenderQuestion();
   aprovaRenderProgress();
   aprovaRenderExamStats();
+  aprovaRenderEspecialidades();
   aprovaRenderConfig();
 };

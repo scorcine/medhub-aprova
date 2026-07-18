@@ -183,6 +183,7 @@
               <button type="button" class="btn btn-primary" id="fc-easy" hidden>Acertei</button>
               <button type="button" class="btn btn-ghost" id="fc-hard" hidden>Errei</button>
               <button type="button" class="btn btn-ghost" id="fc-back-hoje" hidden data-goto="hoje">Voltar a Hoje</button>
+              <button type="button" class="btn btn-ghost" id="fc-back-esp" hidden data-goto="especialidades">Voltar às especialidades</button>
             </div>
           </div>
         </section>
@@ -204,14 +205,49 @@
 
         <section id="panel-especialidades" class="panel" aria-labelledby="esp-title" hidden>
           <h2 id="esp-title">Especialidades</h2>
-          <p class="muted">Escolha uma área para focar o estudo (conteúdo em expansão).</p>
-          <div class="dash-grid dash-grid--sm">
-            <div class="dash-card dash-card--static"><strong>Clínica médica</strong><span>Cardiologia, infecto, endocrino e mais.</span></div>
-            <div class="dash-card dash-card--static"><strong>Cirurgia</strong><span>Trauma, abdome agudo e pós-operatório.</span></div>
-            <div class="dash-card dash-card--static"><strong>Pediatria</strong><span>Neonatologia, infecções e urgências.</span></div>
-            <div class="dash-card dash-card--static"><strong>Ginecologia e obstetrícia</strong><span>Pré-natal, parto e sangramentos.</span></div>
-            <div class="dash-card dash-card--static"><strong>Preventiva</strong><span>Epidemiologia, vacinas e SUS.</span></div>
-            <div class="dash-card dash-card--static"><strong>Urgência e emergência</strong><span>ACLS, sepse, AVC e choque.</span></div>
+          <p class="muted" id="esp-hint">Escolha uma área e depois um subtema para estudar os flashcards.</p>
+
+          <div id="esp-list">
+            <div class="dash-grid dash-grid--sm">
+              <button type="button" class="dash-card" data-specialty="clinica">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Clínica médica</strong>
+                <span id="esp-count-clinica">Cardiologia, infecto, endocrino e mais.</span>
+              </button>
+              <button type="button" class="dash-card" data-specialty="cirurgia">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Cirurgia</strong>
+                <span>Trauma, abdome agudo e pós-operatório.</span>
+              </button>
+              <button type="button" class="dash-card" data-specialty="pediatria">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Pediatria</strong>
+                <span id="esp-count-pediatria">Neonatologia, infecções e urgências.</span>
+              </button>
+              <button type="button" class="dash-card" data-specialty="go">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Ginecologia e obstetrícia</strong>
+                <span>Pré-natal, parto e sangramentos.</span>
+              </button>
+              <button type="button" class="dash-card" data-specialty="preventiva">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Preventiva</strong>
+                <span>Epidemiologia, vacinas e SUS.</span>
+              </button>
+              <button type="button" class="dash-card" data-specialty="urgencia">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Urgência e emergência</strong>
+                <span>ACLS, sepse, AVC e choque.</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="esp-decks" hidden>
+            <div class="actions-row" style="margin-bottom:0.85rem">
+              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar às especialidades</button>
+            </div>
+            <h3 id="esp-decks-title" class="esp-decks-title">Subtemas</h3>
+            <div class="dash-grid dash-grid--sm" id="esp-deck-grid"></div>
           </div>
         </section>
 
