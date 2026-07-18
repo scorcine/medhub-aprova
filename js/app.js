@@ -1,4 +1,4 @@
-﻿/* Shell do app — abas + ligação dos módulos */
+﻿/* Shell do app — abas + fila de hoje (SRS) */
 
 function aprovaShowPanel (id) {
   document.querySelectorAll(".panel").forEach(panel => {
@@ -11,16 +11,34 @@ function aprovaShowPanel (id) {
   });
 }
 
+function aprovaGoTo (id) {
+  if (id === "flashcards") {
+    AprovaFlashcards.rebuildTodayQueue();
+    aprovaRenderFlashcard();
+  }
+  if (id === "hoje") aprovaRenderToday();
+  aprovaShowPanel(id);
+}
+
 function aprovaRenderToday () {
   const prompt = document.getElementById("today-prompt");
   const stats = document.getElementById("today-stats");
+  const startBtn = document.getElementById("today-start");
   if (!prompt || !stats) return;
+
   const summary = aprovaTodaySummary(
     AprovaFlashcards.allIds(),
     AprovaQuestions.items.length
   );
   prompt.textContent = summary.prompt;
   stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+
+  if (startBtn) {
+    startBtn.disabled = summary.pending === 0;
+    startBtn.textContent = summary.pending
+      ? "Começar revisão (" + summary.pending + ")"
+      : "Fila vazia";
+  }
 }
 
 function aprovaRenderFlashcard () {
@@ -28,18 +46,36 @@ function aprovaRenderFlashcard () {
   const front = document.getElementById("fc-front");
   const back = document.getElementById("fc-back");
   const label = document.getElementById("fc-deck-label");
+  const hint = document.getElementById("fc-hint");
   const revealBtn = document.getElementById("fc-reveal");
   const easyBtn = document.getElementById("fc-easy");
   const hardBtn = document.getElementById("fc-hard");
-  if (!card || !front) return;
+  const backHoje = document.getElementById("fc-back-hoje");
+  if (!front || !label) return;
 
-  label.textContent = card.deckName;
+  if (!card) {
+    label.textContent = "Fila de hoje";
+    front.textContent = "Nada pendente — agenda em dia.";
+    back.hidden = true;
+    back.textContent = "";
+    revealBtn.hidden = true;
+    easyBtn.hidden = true;
+    hardBtn.hidden = true;
+    if (backHoje) backHoje.hidden = false;
+    if (hint) hint.textContent = "Volte amanhã ou treine questões.";
+    return;
+  }
+
+  const left = AprovaFlashcards.remaining();
+  label.textContent = card.deckName + " · " + left + " restante" + (left === 1 ? "" : "s");
   front.textContent = card.front;
   back.textContent = card.back;
   back.hidden = !AprovaFlashcards.revealed;
   revealBtn.hidden = AprovaFlashcards.revealed;
   easyBtn.hidden = !AprovaFlashcards.revealed;
   hardBtn.hidden = !AprovaFlashcards.revealed;
+  if (backHoje) backHoje.hidden = true;
+  if (hint) hint.textContent = "Fila de hoje · revelar · acertei / errei.";
 }
 
 function aprovaRenderQuestion () {
@@ -90,14 +126,11 @@ async function aprovaBoot () {
   aprovaRenderQuestion();
 
   document.querySelectorAll(".tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      aprovaShowPanel(tab.dataset.panel);
-      if (tab.dataset.panel === "hoje") aprovaRenderToday();
-    });
+    tab.addEventListener("click", () => aprovaGoTo(tab.dataset.panel));
   });
 
   document.querySelectorAll("[data-goto]").forEach(btn => {
-    btn.addEventListener("click", () => aprovaShowPanel(btn.dataset.goto));
+    btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
   });
 
   document.getElementById("fc-reveal")?.addEventListener("click", () => {

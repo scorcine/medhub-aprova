@@ -22,12 +22,12 @@
   <main class="wrap app-main">
     <section id="panel-hoje" class="panel active" aria-labelledby="hoje-title">
       <h2 id="hoje-title">Revisão de hoje</h2>
-      <p class="muted">Resumo do que a agenda recomenda estudar agora.</p>
+      <p class="muted">Só entram cards novos ou com revisão vencida.</p>
       <div class="study-card" id="today-summary">
         <div class="label">Agenda</div>
         <p class="prompt" id="today-prompt">Carregando…</p>
         <div class="actions-row">
-          <button type="button" class="btn btn-primary" data-goto="flashcards">Abrir flashcards</button>
+          <button type="button" class="btn btn-primary" id="today-start" data-goto="flashcards">Começar revisão</button>
           <button type="button" class="btn btn-ghost" data-goto="questoes">Abrir questões</button>
         </div>
         <div class="stats" id="today-stats"></div>
@@ -36,7 +36,7 @@
 
     <section id="panel-flashcards" class="panel" aria-labelledby="fc-title" hidden>
       <h2 id="fc-title">Flashcards</h2>
-      <p class="muted">Toque para revelar · marque se acertou ou errou.</p>
+      <p class="muted" id="fc-hint">Fila de hoje · revelar · acertei / errei.</p>
       <div class="study-card" id="fc-card">
         <div class="label" id="fc-deck-label">Deck</div>
         <p class="prompt" id="fc-front">—</p>
@@ -45,6 +45,7 @@
           <button type="button" class="btn btn-ghost" id="fc-reveal">Mostrar resposta</button>
           <button type="button" class="btn btn-primary" id="fc-easy" hidden>Acertei</button>
           <button type="button" class="btn btn-ghost" id="fc-hard" hidden>Errei</button>
+          <button type="button" class="btn btn-ghost" id="fc-back-hoje" hidden data-goto="hoje">Voltar a Hoje</button>
         </div>
       </div>
     </section>

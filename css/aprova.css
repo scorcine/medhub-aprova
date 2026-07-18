@@ -107,6 +107,16 @@ img {
   border: 1px solid var(--line);
 }
 
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+}
+
 .hero {
   display: grid;
   align-items: end;

@@ -1,7 +1,8 @@
-﻿/* Flashcards — carrega data/flashcards-sample.json */
+﻿/* Flashcards — fila de hoje = cards novos + vencidos (SRS) */
 
 const AprovaFlashcards = {
   decks: [],
+  catalog: [],
   queue: [],
   index: 0,
   revealed: false,
@@ -9,15 +10,16 @@ const AprovaFlashcards = {
   async load () {
     const res = await fetch("data/flashcards-sample.json");
     this.decks = await res.json();
-    this.rebuildQueue();
+    this.rebuildCatalog();
+    this.rebuildTodayQueue();
     return this.decks;
   },
 
-  rebuildQueue () {
-    this.queue = [];
+  rebuildCatalog () {
+    this.catalog = [];
     this.decks.forEach(deck => {
       (deck.cards || []).forEach((card, i) => {
-        this.queue.push({
+        this.catalog.push({
           id: deck.id + "-" + i,
           deckName: deck.name,
           front: card.front,
@@ -25,17 +27,37 @@ const AprovaFlashcards = {
         });
       });
     });
-    this.index = 0;
-    this.revealed = false;
-  },
-
-  current () {
-    if (!this.queue.length) return null;
-    return this.queue[this.index % this.queue.length];
   },
 
   allIds () {
-    return this.queue.map(c => c.id);
+    return this.catalog.map(c => c.id);
+  },
+
+  /** Monta a fila só com cards novos ou com due <= agora. Revisões primeiro. */
+  rebuildTodayQueue () {
+    const now = Date.now();
+    const due = [];
+    const neu = [];
+
+    this.catalog.forEach(card => {
+      const status = aprovaCardStatus(card.id, now);
+      if (status === "due") due.push(card);
+      else if (status === "new") neu.push(card);
+    });
+
+    this.queue = due.concat(neu);
+    this.index = 0;
+    this.revealed = false;
+    return this.queue.length;
+  },
+
+  current () {
+    if (!this.queue.length || this.index >= this.queue.length) return null;
+    return this.queue[this.index];
+  },
+
+  remaining () {
+    return Math.max(0, this.queue.length - this.index);
   },
 
   reveal () {
@@ -44,10 +66,14 @@ const AprovaFlashcards = {
 
   rate (knewIt) {
     const card = this.current();
-    if (card && typeof aprovaScheduleCard === "function") {
+    if (!card) return null;
+
+    if (typeof aprovaScheduleCard === "function") {
       aprovaScheduleCard(card.id, knewIt);
     }
-    this.index = (this.index + 1) % Math.max(this.queue.length, 1);
+
+    // Remove da fila de hoje; o próximo ocupa o mesmo índice
+    this.queue.splice(this.index, 1);
     this.revealed = false;
     return this.current();
   }
