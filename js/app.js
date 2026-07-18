@@ -100,33 +100,25 @@ function aprovaRenderFlashcardBrowse () {
     bySpecialty[key].push(deck);
   });
 
-  const order = ["pediatria", "clinica", "cirurgia", "go", "preventiva", "urgencia", "geral"];
-  const keys = Object.keys(bySpecialty).sort((a, b) => {
-    const ia = order.indexOf(a);
-    const ib = order.indexOf(b);
-    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-  });
-
+  const keys = Object.keys(APROVA_SPECIALTY_LABELS);
   grid.innerHTML = "";
 
-  if (!keys.length) {
-    grid.innerHTML = "<p class=\"muted\">Nenhum tema disponível ainda.</p>";
-    return;
-  }
-
   keys.forEach(spec => {
-    const label = APROVA_SPECIALTY_LABELS[spec] || "Outros";
-    const decks = bySpecialty[spec];
+    const label = APROVA_SPECIALTY_LABELS[spec];
+    const decks = bySpecialty[spec] || [];
     const total = decks.reduce((n, d) => n + (d.cards || []).length, 0);
+    const hasContent = decks.length > 0;
 
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "dash-card";
+    btn.className = "dash-card" + (hasContent ? "" : " dash-card--muted");
     btn.innerHTML =
       "<span class=\"dash-card-kicker\">Especialidade</span>" +
       "<strong>" + label + "</strong>" +
-      "<span>" + decks.length + " tema" + (decks.length === 1 ? "" : "s") +
-      " · " + total + " card" + (total === 1 ? "" : "s") + "</span>";
+      "<span>" + (hasContent
+        ? (decks.length + " tema" + (decks.length === 1 ? "" : "s") +
+          " · " + total + " card" + (total === 1 ? "" : "s"))
+        : "Conteúdo em breve") + "</span>";
     btn.addEventListener("click", () => {
       if (spec === "pediatria" && typeof aprovaOpenPediatria === "function") {
         aprovaGoTo("especialidades");
