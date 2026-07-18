@@ -1,0 +1,243 @@
+{
+  "title": "Urologia R1",
+  "module": "cir-urologia",
+  "profiles": [
+    {
+      "checklist": [
+        "torcao",
+        "litíase",
+        "fournier",
+        "retenção",
+        "testiculo"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Urgências",
+          "texto": "Torção e Fournier."
+        },
+        {
+          "titulo": "Sessão 2 · Litíase",
+          "texto": "AINE, infectado+obstruído, URS/LECO."
+        },
+        {
+          "titulo": "Sessão 3 · Onco",
+          "texto": "Próstata, bexiga e testículo."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Reorganização por grupos de prova · MedHub Cirurgia R1.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "~4% Cirurgia",
+      "blurb": "Grupo próprio — não misturar com abdome agudo.",
+      "verdict": "Torção testicular, litíase (EAU), Fournier, retenção/HBP e onco urológico básico (próstrata/bexiga/testículo).",
+      "foco": "Torção · Litíase · Fournier · HBP · Onco uro",
+      "estilo": "Síntese Urologia R1",
+      "priorities": [
+        {
+          "tema": "Torção / urgências escrotais",
+          "pct": 24,
+          "n": 24
+        },
+        {
+          "tema": "Litíase / cólica",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "Fournier / infecção",
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "HBP / retenção",
+          "pct": 16,
+          "n": 16
+        },
+        {
+          "tema": "Onco urológico",
+          "pct": 20,
+          "n": 20
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "litíase",
+        "fournier",
+        "drenagem",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Urologia.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional",
+      "blurb": "Torção e litíase dominam.",
+      "verdict": "Dúvida torção×orquite = explorar. Cólica: AINE. Infectado + dilatação: drenar já.",
+      "foco": "Torção · Cólica · Obstrução infectada · Fournier",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Torção",
+          "pct": 30
+        },
+        {
+          "tema": "Litíase",
+          "pct": 28
+        },
+        {
+          "tema": "Fournier",
+          "pct": 18
+        },
+        {
+          "tema": "HBP / onco",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "testiculo",
+        "bexiga",
+        "enfisematosa",
+        "torcao",
+        "litíase"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão USP · Urologia.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Prova USP",
+      "blurb": "USP detalha onco e infecção.",
+      "verdict": "Tumor testicular (via inguinal), bexiga com hematúria e pielonefrite enfisematosa.",
+      "foco": "Testículo · Bexiga · Enfisematosa · Litíase",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Onco uro",
+          "pct": 32
+        },
+        {
+          "tema": "Infecção complicada",
+          "pct": 24
+        },
+        {
+          "tema": "Litíase",
+          "pct": 22
+        },
+        {
+          "tema": "Torção / HBP",
+          "pct": 22
+        }
+      ],
+      "deckOrder": [
+        "crr-urologia",
+        "cg-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "testiculo",
+        "fournier",
+        "litíase",
+        "prostata"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP · Urologia.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "~5% na Unifesp.",
+      "verdict": "Uro onco + urgências escrotais e Fournier.",
+      "foco": "Onco · Torção · Fournier",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Onco",
+          "pct": 30
+        },
+        {
+          "tema": "Urgências",
+          "pct": 30
+        },
+        {
+          "tema": "Litíase / HBP",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "fournier",
+        "drenagem",
+        "litíase",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Urologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Conduta uro.",
+      "verdict": "Explorar torção, desbridar Fournier, drenar rim infectado obstruído.",
+      "foco": "Torção · Fournier · Drenagem",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências uro",
+          "pct": 40
+        },
+        {
+          "tema": "Litíase",
+          "pct": 30
+        },
+        {
+          "tema": "Onco / HBP",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "torcao": "Torção = exploração urgente",
+    "litíase": "AINE · infectado → drenar",
+    "fournier": "Desbridamento + ATB",
+    "retenção": "Sonda ± HBP",
+    "testiculo": "Orquiectomia inguinal",
+    "drenagem": "Obstrução + infecção",
+    "hbp": "Retenção / cirurgia se refratário",
+    "bexiga": "Hematúria → cistoscopia",
+    "enfisematosa": "Gás no rim no DM",
+    "prostata": "PSA + conduta por estágio"
+  }
+}

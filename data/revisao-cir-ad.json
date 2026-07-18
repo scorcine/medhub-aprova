@@ -1,0 +1,309 @@
+{
+  "title": "Aparelho digestivo · eletivo e oncológico",
+  "module": "cir-ad",
+  "profiles": [
+    {
+      "checklist": [
+        "tme",
+        "whipple",
+        "milao",
+        "stepup",
+        "boerhaave"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Onco digestivo",
+          "texto": "Colorretal, estômago e esôfago."
+        },
+        {
+          "titulo": "Sessão 2 · Pancreatobiliar",
+          "texto": "Whipple, step-up e vesícula."
+        },
+        {
+          "titulo": "Sessão 3 · Portal",
+          "texto": "Child, HCC e Milão."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Reorganização por grupos de prova · MedHub Cirurgia R1.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "AD adulto",
+      "blurb": "Esôfago → reto, vesícula eletiva, pâncreas e portal.",
+      "verdict": "Separe do abdome agudo. Aqui caem CA colorretal/reto (TME), Whipple, HCC/Milão, úlcera perfurada/sangrante, pancreatite step-up e vesícula eletiva.",
+      "foco": "Colorretal · Pâncreas · Portal/HCC · Estômago · Esôfago",
+      "estilo": "Síntese AD R1",
+      "priorities": [
+        {
+          "tema": "Colorretal / reto",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "Estômago / úlcera / CA",
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "Fígado / portal / vias",
+          "pct": 20,
+          "n": 20
+        },
+        {
+          "tema": "Esôfago",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Vesícula eletiva",
+          "pct": 10,
+          "n": 10
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal"
+      ]
+    },
+    {
+      "checklist": [
+        "perfurada",
+        "stepup",
+        "tme",
+        "boerhaave",
+        "milao"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · AD.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional",
+      "blurb": "Conduta de úlcera, pancreatite e CA básico.",
+      "verdict": "Úlcera perfurada, step-up, TME/rastreio e Boerhaave são os clássicos.",
+      "foco": "Úlcera · Pancreatite · Colorretal · Boerhaave",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Estômago / úlcera",
+          "pct": 26
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 22
+        },
+        {
+          "tema": "Colorretal",
+          "pct": 22
+        },
+        {
+          "tema": "Esôfago / vias",
+          "pct": 16
+        },
+        {
+          "tema": "Portal",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "crr-estomago-onco",
+        "cg-estomago",
+        "crr-pancreas",
+        "cg-pancreas",
+        "crr-colorretal",
+        "cg-colon",
+        "crr-esofago",
+        "cg-vesicula",
+        "crr-figado-portal",
+        "cg-figado"
+      ]
+    },
+    {
+      "checklist": [
+        "child",
+        "milao",
+        "whipple",
+        "lynch",
+        "acalasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão USP · AD.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Prova USP",
+      "blurb": "USP ama hepatobiliar e hereditário.",
+      "verdict": "Child/Milão, Whipple, FAP/Lynch e acalasia.",
+      "foco": "Milão · Whipple · Lynch · Acalasia",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Fígado / portal",
+          "pct": 28
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 22
+        },
+        {
+          "tema": "Colorretal hereditário",
+          "pct": 20
+        },
+        {
+          "tema": "Esôfago",
+          "pct": 16
+        },
+        {
+          "tema": "Estômago / vesícula",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "crr-figado-portal",
+        "cg-figado",
+        "crr-pancreas",
+        "cg-pancreas",
+        "crr-colorretal",
+        "crr-esofago",
+        "crr-estomago-onco",
+        "cg-estomago",
+        "cg-colon",
+        "cg-vesicula"
+      ]
+    },
+    {
+      "checklist": [
+        "milao",
+        "mirizzi",
+        "tme",
+        "whipple",
+        "varizes"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP · AD.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "AD de suporte ao vascular/trauma.",
+      "verdict": "Portal, vias biliares iatrogênicas e CA gástrico/colorretal básico.",
+      "foco": "Portal · Vias · Colorretal · Estômago",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Portal / HCC",
+          "pct": 24
+        },
+        {
+          "tema": "Vias / vesícula",
+          "pct": 20
+        },
+        {
+          "tema": "Colorretal",
+          "pct": 20
+        },
+        {
+          "tema": "Estômago / esôfago",
+          "pct": 20
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal"
+      ]
+    },
+    {
+      "checklist": [
+        "perfurada",
+        "stepup",
+        "tme",
+        "boerhaave",
+        "varizes"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · AD.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Conduta de AD.",
+      "verdict": "Perfuração, step-up, Nigro vs TME e varizes/endoscopia.",
+      "foco": "Perfuração · Step-up · Reto · Varizes",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências AD eletivas",
+          "pct": 30
+        },
+        {
+          "tema": "Onco básico",
+          "pct": 28
+        },
+        {
+          "tema": "Pancreatobiliar",
+          "pct": 22
+        },
+        {
+          "tema": "Portal / esôfago",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "tme": "Reto: neo + TME",
+    "whipple": "Cabeça de pâncreas ressecável",
+    "milao": "HCC → critérios de Milão",
+    "stepup": "Necrose: step-up",
+    "boerhaave": "Ruptura esofágica",
+    "perfurada": "Úlcera perfurada → cirurgia",
+    "child": "Child-Pugh",
+    "lynch": "Lynch ≠ FAP",
+    "acalasia": "Heller + fundoplicatura",
+    "mirizzi": "Cálculo comprimindo via",
+    "varizes": "Endoscopia + vasoativo"
+  }
+}

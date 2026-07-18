@@ -1,0 +1,302 @@
+{
+  "title": "Abdome agudo · urgências abdominais",
+  "module": "cir-abdome-agudo",
+  "profiles": [
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Inflamatório",
+          "texto": "Apendicite, colecistite e diverticulite."
+        },
+        {
+          "titulo": "Sessão 2 · Obstrutivo",
+          "texto": "ASBO, volvo e hérnia estrangulada."
+        },
+        {
+          "titulo": "Sessão 3 · Vascular",
+          "texto": "Isquemia mesentérica e AAA roto."
+        }
+      ],
+      "lacuna": "Não misture este bloco com urologia ou AD eletivo — são grupos separados.",
+      "sourceType": "sintese",
+      "source": "WSES 2025 · TG18 · WSES Diverticulitis · ASBO Bologna · stats Cirurgia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Grupo #1 Enare / #2 Brasil",
+      "blurb": "Urgências abdominais do adulto — o bloco que mais cai.",
+      "verdict": "Priorize apendicite (WSES 2025), colecistite/colangite (TG18), diverticulite, obstrução (ASBO) e abdome vascular. Hérnia estrangulada e volvo fecham o grupo.",
+      "foco": "Apendicite · Colecistite · Diverticulite · Obstrução · Vascular",
+      "estilo": "Síntese nacional · abdome agudo",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 28,
+          "n": 28
+        },
+        {
+          "tema": "Colecistite / colangite",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16,
+          "n": 16
+        },
+        {
+          "tema": "Obstrução / hérnia complicada",
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "Abdome vascular",
+          "pct": 16,
+          "n": 16
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Top 2",
+          "texto": "Apendicite e colecistite."
+        },
+        {
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Não complicada sem ATB de rotina."
+        },
+        {
+          "titulo": "Sessão 3 · Obstrução",
+          "texto": "Expectante vs centro."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare Cirurgia · grupo Abdome agudo.",
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · ~24% da Cirurgia",
+      "featured": true,
+      "blurb": "Enare é abdome agudo.",
+      "verdict": "Quase 1 em cada 4 questões de Cirurgia no Enare. Domine conduta: laparoscopia/NOM na apendicite, TG18, diverticulite sem ATB de rotina na não complicada, e quando operar obstrução.",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 32
+        },
+        {
+          "tema": "Colecistite / vias",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 18
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular",
+          "pct": 10
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "crr-hernia-obstrucao",
+        "cg-abdome-vascular"
+      ]
+    },
+    {
+      "checklist": [
+        "asbo",
+        "apendicite",
+        "tg18",
+        "isquemia",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP · Abdome agudo.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Prova USP",
+      "blurb": "USP detalha algoritmo e imagem.",
+      "verdict": "Foque critérios de NOM, TC na obstrução e diferencial isquemia mesentérica × AAA.",
+      "foco": "NOM · TC · Isquemia · TG18",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 24
+        },
+        {
+          "tema": "Apendicite / NOM",
+          "pct": 22
+        },
+        {
+          "tema": "Vias biliares / TG18",
+          "pct": 20
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular / hérnia",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-obstrucao",
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-diverticulite",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
+        "isquemia",
+        "tg18",
+        "apendicite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP · Abdome agudo.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Menos dominante que vascular, mas cai.",
+      "verdict": "UNIFESP prioriza vascular sistêmico, mas abdome agudo ainda aparece — foque isquemia e TG18.",
+      "foco": "Isquemia · TG18 · Apendicite · Obstrução",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Abdome vascular",
+          "pct": 26
+        },
+        {
+          "tema": "Colecistite / TG18",
+          "pct": 22
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 20
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 18
+        },
+        {
+          "tema": "Diverticulite / hérnia",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "cg-abdome-vascular",
+        "cg-colecistite",
+        "cg-apendicite",
+        "cg-obstrucao",
+        "crr-hernia-obstrucao",
+        "cg-diverticulite"
+      ]
+    },
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Abdome agudo.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo padrão Enamed neste grupo.",
+      "verdict": "Conduta objetiva: operar/NOM certo, drenar abscesso, não atrasar isquemia/hérnia estrangulada.",
+      "foco": "Conduta · Timing · Sinais de alarme",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 30
+        },
+        {
+          "tema": "Colecistite",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 18
+        },
+        {
+          "tema": "Vascular",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "apendicite": "Apendicite WSES 2025",
+    "tg18": "Colecistite/colangite TG18",
+    "diverticulite": "Diverticulite — ATB seletiva",
+    "asbo": "Obstrução por brida ASBO",
+    "estrangulada": "Hérnia estrangulada = urgência",
+    "isquemia": "Isquemia mesentérica / AAA"
+  },
+  "oneLiners": [
+    "Enare: ~24% de Cirurgia = abdome agudo",
+    "Apendicite não complicada: laparoscopia ± NOM",
+    "TG18 guia colecistite e colangite",
+    "Estrangulada: não insistir em reduzir"
+  ]
+}

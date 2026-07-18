@@ -281,12 +281,33 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("obs4-") === 0) return "Sangramentos na gestação";
   if (id.indexOf("obs5-") === 0) return "HAS · Diabetes · Gemelaridade";
   if (id.indexOf("obs-") === 0) return "Obstetrícia";
-  if (id.indexOf("cg-") === 0) return "Lacunas · protocolos atuais";
+  if (
+    id === "cg-apendicite" ||
+    id === "cg-colecistite" ||
+    id === "cg-diverticulite" ||
+    id === "cg-obstrucao" ||
+    id === "cg-abdome-vascular" ||
+    id === "crr-hernia-obstrucao"
+  ) return "Abdome agudo · urgências";
+  if (
+    id === "cg-vesicula" ||
+    id === "cg-estomago" ||
+    id === "cg-colon" ||
+    id === "cg-pancreas" ||
+    id === "cg-figado" ||
+    id.indexOf("crr-esofago") === 0 ||
+    id.indexOf("crr-estomago") === 0 ||
+    id.indexOf("crr-colorretal") === 0 ||
+    id.indexOf("crr-pancreas") === 0 ||
+    id.indexOf("crr-figado") === 0
+  ) return "Aparelho digestivo";
+  if (id === "cg-urologia" || id.indexOf("crr-urologia") === 0) return "Urologia";
+  if (id === "cg-torax" || id.indexOf("crr-torax") === 0) return "Tórax eletivo";
   if (id.indexOf("cir1-") === 0) return "Cir1 · apostila";
-  if (id.indexOf("cir2-") === 0) return "Cir2 · Trauma / ATLS";
-  if (id.indexOf("cir3-") === 0) return "Cir3 · Pré/pós-op · Hérnias";
-  if (id.indexOf("ciresp-") === 0) return "CirEsp · Queimaduras / Choque";
-  if (id.indexOf("crr-") === 0) return "Cobertura R1 · sem apostila / reforço";
+  if (id.indexOf("cir2-") === 0) return "Trauma · ATLS";
+  if (id.indexOf("cir3-") === 0) return "Pré/pós-op · Hérnias";
+  if (id.indexOf("ciresp-") === 0) return "Queimaduras · Choque · Nutrição";
+  if (id.indexOf("crr-") === 0) return "Extras R1";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -682,12 +703,15 @@ const APROVA_PED_MODULE_PREFIXES = {
   obs3: ["obs3-"],
   obs4: ["obs4-"],
   obs5: ["obs5-"],
-  "cir-lacunas": ["cg-"],
+  "cir-abdome-agudo": [],
+  "cir-ad": [],
+  "cir-urologia": [],
+  "cir-torax": [],
+  "cir-extras": [],
   cir1: ["cir1-"],
   cir2: ["cir2-"],
   cir3: ["cir3-"],
-  ciresp: ["ciresp-"],
-  "cir-r1": ["crr-"]
+  ciresp: ["ciresp-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {

@@ -1,0 +1,213 @@
+{
+  "title": "Cirurgia torácica eletiva",
+  "module": "cir-torax",
+  "profiles": [
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "nsclc",
+        "mediastino"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Ar e pus",
+          "texto": "Pneumotórax e empiema."
+        },
+        {
+          "titulo": "Sessão 2 · Onco",
+          "texto": "Nódulo e NSCLC ressecável."
+        },
+        {
+          "titulo": "Sessão 3 · Mediastino",
+          "texto": "4 T do anterior."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Reorganização por grupos de prova · MedHub Cirurgia R1.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "~3% Cirurgia",
+      "blurb": "Tórax eletivo (trauma de tórax fica no Cir2).",
+      "verdict": "Pneumotórax espontâneo (indicação cirúrgica), empiema, derrame, nódulo/CA de pulmão e mediastino (4 T).",
+      "foco": "Pneumotórax · Empiema · CA pulmão · Mediastino",
+      "estilo": "Síntese tórax eletivo",
+      "priorities": [
+        {
+          "tema": "Pneumotórax espontâneo",
+          "pct": 28,
+          "n": 28
+        },
+        {
+          "tema": "Empiema / derrame",
+          "pct": 26,
+          "n": 26
+        },
+        {
+          "tema": "CA / nódulo pulmonar",
+          "pct": 26,
+          "n": 26
+        },
+        {
+          "tema": "Mediastino",
+          "pct": 20,
+          "n": 20
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Tórax.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional",
+      "blurb": "Indicação de VATS e dreno.",
+      "verdict": "Quando operar pneumotórax e como tratar empiema (dreno → VATS).",
+      "foco": "VATS · Empiema · Dreno",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Pneumotórax",
+          "pct": 34
+        },
+        {
+          "tema": "Empiema",
+          "pct": 30
+        },
+        {
+          "tema": "CA / mediastino",
+          "pct": 36
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "mediastino",
+        "light",
+        "nsclc",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão USP · Tórax.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Prova USP",
+      "blurb": "USP gosta de mediastino e staging.",
+      "verdict": "4 T, critérios de Light e indicação de lobectomia.",
+      "foco": "Mediastino · Light · Lobectomia",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Mediastino / CA",
+          "pct": 40
+        },
+        {
+          "tema": "Derrame / empiema",
+          "pct": 30
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "crr-torax-eletivo",
+        "cg-torax"
+      ]
+    },
+    {
+      "checklist": [
+        "empiema",
+        "pntx-esp",
+        "mediastino",
+        "nsclc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP · Tórax.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "~5% com uro/tórax.",
+      "verdict": "Empiema, pneumotórax recidivante e massa mediastinal.",
+      "foco": "Empiema · Recidiva · 4 T",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Empiema / pneumotórax",
+          "pct": 50
+        },
+        {
+          "tema": "Onco / mediastino",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Tórax.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Conduta tórax eletivo.",
+      "verdict": "Drenar empiema; operar pneumotórax com critério; não confundir com trauma (Cir2).",
+      "foco": "Dreno · VATS · Critérios",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Pneumotórax / empiema",
+          "pct": 55
+        },
+        {
+          "tema": "CA / mediastino",
+          "pct": 45
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "pntx-esp": "Quando operar pneumotórax espontâneo",
+    "empiema": "ATB + dreno ± VATS",
+    "nsclc": "Lobectomia se ressecável",
+    "mediastino": "Anterior = 4 T",
+    "vats": "Videotoracoscopia",
+    "light": "Transudato × exsudato"
+  }
+}
