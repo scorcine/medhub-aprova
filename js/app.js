@@ -478,16 +478,32 @@ async function aprovaRenderPedGroupCards (activeModuleId) {
     btn.addEventListener("click", e => {
       e.preventDefault();
       e.stopPropagation();
-      aprovaOpenPedDeckPicker(m.id);
+      aprovaOpenPedDeckPicker(m.id).catch(err => {
+        console.error("Falha ao abrir subtemas", m.id, err);
+      });
     });
     grid.appendChild(btn);
   }
 }
 
+let aprovaDeckModalIgnoreCloseUntil = 0;
+
 function aprovaClosePedDeckModal () {
+  if (Date.now() < aprovaDeckModalIgnoreCloseUntil) return;
   const modal = document.getElementById("esp-deck-modal");
   if (modal) modal.hidden = true;
   document.body.classList.remove("modal-open");
+}
+
+function aprovaShowPedDeckModal () {
+  const modal = document.getElementById("esp-deck-modal");
+  if (!modal) return;
+  if (modal.parentElement !== document.body) {
+    document.body.appendChild(modal);
+  }
+  aprovaDeckModalIgnoreCloseUntil = Date.now() + 400;
+  modal.hidden = false;
+  document.body.classList.add("modal-open");
 }
 
 function aprovaPedModalSelectedIds () {
@@ -612,12 +628,10 @@ async function aprovaOpenPedDeckPicker (moduleId, options) {
   const modules = typeof AprovaRevisao !== "undefined"
     ? AprovaRevisao.listModules(meta.id)
     : [];
-  let decks = [];
   let moduleLabel = meta.shortLabel;
 
   if (selectAll) {
     aprovaActivePedModule = null;
-    decks = await aprovaCollectAllPedDecks();
     moduleLabel = meta.shortLabel + " · todos os grupos";
   } else {
     aprovaActivePedModule = moduleId;
@@ -625,11 +639,31 @@ async function aprovaOpenPedDeckPicker (moduleId, options) {
       AprovaRevisao.setActiveModule(moduleId);
     }
     moduleLabel = (modules.find(m => m.id === moduleId) || {}).label || meta.shortLabel;
-    const stats = await aprovaPedModuleStats(moduleId);
-    decks = aprovaPedDecksForModule(moduleId, stats.deckOrder || []);
   }
 
   if (title) title.textContent = moduleLabel;
+  if (sub) sub.textContent = "Carregando subtemas…";
+  list.replaceChildren();
+  if (allBox) {
+    allBox.checked = false;
+    allBox.indeterminate = true;
+  }
+  aprovaUpdatePedModalCount();
+  aprovaShowPedDeckModal();
+
+  let decks = [];
+  try {
+    if (selectAll) {
+      decks = await aprovaCollectAllPedDecks();
+    } else {
+      const stats = await aprovaPedModuleStats(moduleId);
+      decks = aprovaPedDecksForModule(moduleId, stats.deckOrder || []);
+    }
+  } catch (err) {
+    console.error("Falha ao carregar subtemas do grupo", moduleId, err);
+    decks = aprovaPedDecksForModule(moduleId, []);
+  }
+
   if (sub) {
     sub.textContent = decks.length
       ? (selectAll
@@ -653,12 +687,7 @@ async function aprovaOpenPedDeckPicker (moduleId, options) {
   }
 
   aprovaUpdatePedModalCount();
-
-  // Evita que o mesmo clique que abriu o modal feche no backdrop
-  window.setTimeout(() => {
-    modal.hidden = false;
-    document.body.classList.add("modal-open");
-  }, 0);
+  aprovaShowPedDeckModal();
 }
 
 async function aprovaRenderPediatriaStats (focusId, moduleId) {
@@ -1208,7 +1237,9 @@ async function aprovaBoot () {
   document.getElementById("esp-groups-select-all")?.addEventListener("click", e => {
     e.preventDefault();
     e.stopPropagation();
-    aprovaOpenPedDeckPicker(null, { selectAll: true });
+    aprovaOpenPedDeckPicker(null, { selectAll: true }).catch(err => {
+      console.error("Falha ao abrir todos os subtemas", err);
+    });
   });
 
   document.getElementById("esp-deck-modal-all")?.addEventListener("change", e => {
