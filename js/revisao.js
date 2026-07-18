@@ -160,72 +160,128 @@ const APROVA_REVISAO_MODULES = {
   "reu-ar": {
     label: "Artrite reumatoide (REU1)",
     file: "data/revisao-reu-ar.json?v=20260718bb",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-aij": {
     label: "AIJ · Still (REU1)",
     file: "data/revisao-reu-aij.json?v=20260718bb",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-spa": {
     label: "Espondiloartrites · AINEs (REU1)",
     file: "data/revisao-reu-spa.json?v=20260718bb",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-oa": {
     label: "Osteoartrose (REU2)",
     file: "data/revisao-reu-oa.json?v=20260718bc",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-cristais": {
     label: "Gota e cristais (REU2)",
     file: "data/revisao-reu-cristais.json?v=20260718bc",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-fr": {
     label: "Febre reumática (REU2)",
     file: "data/revisao-reu-fr.json?v=20260718bc",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-infecciosa": {
     label: "Artrites infecciosas (REU2)",
     file: "data/revisao-reu-infecciosa.json?v=20260718bc",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-extras2": {
     label: "Extras REU2 · FFM · fibromialgia",
     file: "data/revisao-reu-extras2.json?v=20260718bc",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-les": {
     label: "LES (REU3)",
     file: "data/revisao-reu-les.json?v=20260718bd",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-saf": {
     label: "SAF (REU3)",
     file: "data/revisao-reu-saf.json?v=20260718bd",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-es": {
     label: "Esclerose sistêmica (REU3)",
     file: "data/revisao-reu-es.json?v=20260718bd",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-outras-colag": {
     label: "Miopatias · Sjögren · DMTC (REU3)",
     file: "data/revisao-reu-outras-colag.json?v=20260718bd",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-vasculites": {
     label: "Vasculites (REU3)",
     file: "data/revisao-reu-vasculites.json?v=20260718bd",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
   },
   "reu-amiloidose": {
     label: "Amiloidoses (REU3)",
     file: "data/revisao-reu-amiloidose.json?v=20260718bd",
-    specialty: "clinica"
+    specialty: "clinica",
+    area: "reumatologia"
+  },
+  "psi-substancias": {
+    label: "Substâncias · álcool · drogas",
+    file: "data/revisao-psi-substancias.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
+  },
+  "psi-humor": {
+    label: "Humor · depressão · bipolar",
+    file: "data/revisao-psi-humor.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
+  },
+  "psi-psicose": {
+    label: "Esquizofrenia · antipsicóticos",
+    file: "data/revisao-psi-psicose.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
+  },
+  "psi-ansiedade": {
+    label: "Ansiedade · TOC · trauma",
+    file: "data/revisao-psi-ansiedade.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
+  },
+  "psi-organicos": {
+    label: "Delirium · demência",
+    file: "data/revisao-psi-organicos.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
+  },
+  "psi-alimentares": {
+    label: "Transtornos alimentares",
+    file: "data/revisao-psi-alimentares.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
+  },
+  "psi-basico": {
+    label: "Psicopatologia · personalidade",
+    file: "data/revisao-psi-basico.json?v=20260718be",
+    specialty: "clinica",
+    area: "psiquiatria"
   }
 };
 
@@ -239,6 +295,19 @@ const APROVA_GO_AREAS = {
     id: "obstetricia",
     label: "Obstetrícia",
     blurb: "Pré-natal, parto, sangramentos, HAS, DM e gemelar"
+  }
+};
+
+const APROVA_CLI_AREAS = {
+  reumatologia: {
+    id: "reumatologia",
+    label: "Reumatologia",
+    blurb: "AR, LES, gota, SpA, vasculites e colagenoses"
+  },
+  psiquiatria: {
+    id: "psiquiatria",
+    label: "Psiquiatria",
+    blurb: "Substâncias, humor, psicose, ansiedade e orgânicos"
   }
 };
 
@@ -300,6 +369,14 @@ const AprovaRevisao = {
       id,
       label: APROVA_GO_AREAS[id].label,
       blurb: APROVA_GO_AREAS[id].blurb || ""
+    }));
+  },
+
+  listCliAreas () {
+    return Object.keys(APROVA_CLI_AREAS).map(id => ({
+      id,
+      label: APROVA_CLI_AREAS[id].label,
+      blurb: APROVA_CLI_AREAS[id].blurb || ""
     }));
   },
 

@@ -1,0 +1,669 @@
+{
+  "title": "Humor · depressão · bipolar · Psi",
+  "module": "psi-humor",
+  "profiles": [
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnóstico",
+          "texto": "Critérios e jeitão clínico."
+        },
+        {
+          "titulo": "Sessão 2 · Urgências",
+          "texto": "Abstinência, suicídio, SNM, agitação."
+        },
+        {
+          "titulo": "Sessão 3 · Manutenção",
+          "texto": "Fármacos e seguimento."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Psi · MedHub R1 · Psiquiatria.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Psi",
+      "blurb": "Depressão · mania · lítio · suicídio",
+      "verdict": "Priorize clínica clássica, critérios e conduta de urgência (abstinência, suicídio, SNM).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Síntese nacional · Psiquiatria",
+      "priorities": [
+        {
+          "tema": "Clínica / critérios",
+          "pct": 30
+        },
+        {
+          "tema": "Conduta",
+          "pct": 30
+        },
+        {
+          "tema": "Farmacologia",
+          "pct": 22
+        },
+        {
+          "tema": "DD / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Psiquiatria.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Conduta objetiva — substâncias e toxíndromes.",
+      "verdict": "Enare/Enamed cobram forte dependência (álcool, Prochaska) e intoxicações.",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Substâncias / intox",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 20
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Psiquiatria.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "Álcool, DT, Prochaska e efeitos do lítio.",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Substâncias",
+          "pct": 40
+        },
+        {
+          "tema": "Intox / conduta",
+          "pct": 30
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Conduta objetiva — substâncias e toxíndromes.",
+      "verdict": "Enare/Enamed cobram forte dependência (álcool, Prochaska) e intoxicações. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Substâncias / intox",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 20
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "farmaco",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Psiquiatria.",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Dependência + humor + farmaco.",
+      "verdict": "Prochaska, CAGE/álcool, depressão/bipolar e lítio caem bem.",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Substâncias",
+          "pct": 32
+        },
+        {
+          "tema": "Humor / farmaco",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 22
+        },
+        {
+          "tema": "Ansiedade / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Psiquiatria.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Humor e psicose em casos clínicos.",
+      "verdict": "Depressão, bipolar, esquizofrenia e abstinência alcoólica.",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Humor",
+          "pct": 28
+        },
+        {
+          "tema": "Psicose",
+          "pct": 24
+        },
+        {
+          "tema": "Substâncias",
+          "pct": 22
+        },
+        {
+          "tema": "Farmaco / ansiedade",
+          "pct": 26
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Conduta objetiva — substâncias e toxíndromes.",
+      "verdict": "Enare/Enamed cobram forte dependência (álcool, Prochaska) e intoxicações. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Substâncias / intox",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 20
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Conduta objetiva — substâncias e toxíndromes.",
+      "verdict": "Enare/Enamed cobram forte dependência (álcool, Prochaska) e intoxicações. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Substâncias / intox",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 20
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "criterios",
+        "farmaco",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Dependência + humor + farmaco.",
+      "verdict": "Prochaska, CAGE/álcool, depressão/bipolar e lítio caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Substâncias",
+          "pct": 32
+        },
+        {
+          "tema": "Humor / farmaco",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 22
+        },
+        {
+          "tema": "Ansiedade / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "farmaco",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Dependência + humor + farmaco.",
+      "verdict": "Prochaska, CAGE/álcool, depressão/bipolar e lítio caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Substâncias",
+          "pct": 32
+        },
+        {
+          "tema": "Humor / farmaco",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 22
+        },
+        {
+          "tema": "Ansiedade / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "farmaco",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Dependência + humor + farmaco.",
+      "verdict": "Prochaska, CAGE/álcool, depressão/bipolar e lítio caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Substâncias",
+          "pct": 32
+        },
+        {
+          "tema": "Humor / farmaco",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 22
+        },
+        {
+          "tema": "Ansiedade / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "farmaco",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Dependência + humor + farmaco.",
+      "verdict": "Prochaska, CAGE/álcool, depressão/bipolar e lítio caem bem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Substâncias",
+          "pct": 32
+        },
+        {
+          "tema": "Humor / farmaco",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 22
+        },
+        {
+          "tema": "Ansiedade / extras",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Humor e psicose em casos clínicos.",
+      "verdict": "Depressão, bipolar, esquizofrenia e abstinência alcoólica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Humor",
+          "pct": 28
+        },
+        {
+          "tema": "Psicose",
+          "pct": 24
+        },
+        {
+          "tema": "Substâncias",
+          "pct": 22
+        },
+        {
+          "tema": "Farmaco / ansiedade",
+          "pct": 26
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Conduta objetiva — substâncias e toxíndromes.",
+      "verdict": "Enare/Enamed cobram forte dependência (álcool, Prochaska) e intoxicações. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Substâncias / intox",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 20
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "farmaco",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Psiquiatria · Humor · depressão · bipolar · Psi (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Conduta objetiva — substâncias e toxíndromes.",
+      "verdict": "Enare/Enamed cobram forte dependência (álcool, Prochaska) e intoxicações. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Depressão · mania · lítio · suicídio",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Conduta",
+          "pct": 36
+        },
+        {
+          "tema": "Substâncias / intox",
+          "pct": 28
+        },
+        {
+          "tema": "Critérios",
+          "pct": 20
+        },
+        {
+          "tema": "Farmaco",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "psi-depressao",
+        "psi-bipolar-litio"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "criterios": {
+      "tema": "Critérios / jeitão clínico",
+      "yield": "Alto",
+      "pegar": "Duração (depressão ≥2 sem; esquizofrenia ≥6 meses); mania vs hipomania; CAGE/AUDIT."
+    },
+    "conduta": {
+      "tema": "Conduta e urgências",
+      "yield": "Máximo",
+      "pegar": "DT: BDZ+tiamina; suicídio: perguntar/plano; SNM: suspender neuroléptico; Wernicke: tiamina antes da glicose."
+    },
+    "farmaco": {
+      "tema": "Psicofarmacologia",
+      "yield": "Alto",
+      "pegar": "ISRS 1ª linha; lítio (tireoide/rim/DI); EPS vs SNM; naltrexona/dissulfiram no álcool."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial",
+      "yield": "Alto",
+      "pegar": "Delirium × demência × psicose; alucinose × DT; bipolar × depressão unipolar; TOC × TP obsessiva."
+    }
+  },
+  "oneLiners": [
+    "Depressão ≥2 semanas",
+    "Bipolar I = mania",
+    "Lítio: rim + tireoide",
+    "Perguntar suicídio"
+  ]
+}
