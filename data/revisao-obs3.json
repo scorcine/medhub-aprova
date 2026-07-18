@@ -1,0 +1,305 @@
+{
+  "title": "Obs3 · Parto · RPMO · Prematuridade",
+  "module": "obs3",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "O que mais cai neste bloco da apostila Obs3.",
+      "verdict": "No Obs3, o ROI está em assistência ao parto (partograma/períodos), RPMO, TPP (corticoide/tocólise) e distocia de ombro. Indução/Bishop e cesárea fecham o bloco prático; estática/trajeto é base para ler qualquer vinheta de parto.",
+      "foco": "Parto vaginal · RPMO · TPP · Ombro · Indução/cesárea",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "Assistência ao parto / partograma", "pct": 20, "n": 20 },
+        { "tema": "RPMO", "pct": 16, "n": 16 },
+        { "tema": "TPP / corticoide / tocólise", "pct": 16, "n": 16 },
+        { "tema": "Indução / Bishop", "pct": 14, "n": 14 },
+        { "tema": "Cesárea", "pct": 12, "n": 12 },
+        { "tema": "Distocia de ombro", "pct": 12, "n": 12 },
+        { "tema": "Estática / trajeto", "pct": 10, "n": 10 }
+      ],
+      "deckOrder": [
+        "obs3-parto-vaginal",
+        "obs3-rpmo",
+        "obs3-tpp",
+        "obs3-inducao",
+        "obs3-cesarea",
+        "obs3-distocia",
+        "obs3-estatica",
+        "obs3-conceitos"
+      ],
+      "checklist": [
+        "parto",
+        "rpmo",
+        "tpp",
+        "ombro",
+        "bishop"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Parto + indução",
+          "texto": "Períodos, partograma, Bishop e ocitócitos."
+        },
+        {
+          "titulo": "Sessão 2 · RPMO + TPP",
+          "texto": "Diagnóstico de RPMO, corticoide e tocólise com propósito."
+        },
+        {
+          "titulo": "Sessão 3 · Urgências do expulsivo",
+          "texto": "McRoberts e indicações de cesárea."
+        }
+      ],
+      "lacuna": "Memorizar todos os diâmetros da bacia em mm: saiba conjugata obstétrica e o que é insinuação.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada Enare/USP/UNIFESP (Obstetrícia) aplicada aos subtemas do Obs3 (parto, RPMO, prematuridade)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed/Enare cobram conduta: RPMO a termo → induzir, TPP → corticoide ± tocólise curta, ombro → McRoberts, Bishop antes de ocitocina. Cesárea por indicação clara.",
+      "foco": "RPMO · TPP · Ombro · Bishop · Cesárea",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (Obstetrícia) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        { "tema": "RPMO", "pct": 22 },
+        { "tema": "TPP / corticoide", "pct": 20 },
+        { "tema": "Assistência ao parto", "pct": 16 },
+        { "tema": "Indução / Bishop", "pct": 14 },
+        { "tema": "Distocia de ombro", "pct": 14 },
+        { "tema": "Cesárea", "pct": 14 }
+      ],
+      "deckOrder": [
+        "obs3-rpmo",
+        "obs3-tpp",
+        "obs3-parto-vaginal",
+        "obs3-inducao",
+        "obs3-distocia",
+        "obs3-cesarea",
+        "obs3-conceitos",
+        "obs3-estatica"
+      ],
+      "checklist": ["rpmo", "tpp", "ombro", "bishop", "parto"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · RPMO",
+          "texto": "Diagnóstico e conduta a termo vs pré-termo."
+        },
+        {
+          "titulo": "Sessão 2 · Prematuridade",
+          "texto": "Corticoide, tocólise com prazo, MgSO₄."
+        },
+        {
+          "titulo": "Sessão 3 · Ombro + Bishop",
+          "texto": "McRoberts primeiro; colo maduro ≥9."
+        }
+      ],
+      "lacuna": "Nomes de todas as manobras de ombro em ordem rara: saiba McRoberts + suprapúbica como 1ª linha."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Mecânica + parto",
+      "blurb": "USP-SP cobra estática e mecanismo.",
+      "verdict": "USP é parto-pesada: estática, trajeto, partograma e mecanismo. Indução/Bishop e distocia de ombro caem bem; RPMO/TPP aparecem com fisiopatologia.",
+      "foco": "Estática · Partograma · Indução · Ombro · RPMO",
+      "estilo": "Levantamento USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP (Obstetrícia ~parto) aplicado ao Obs3.",
+      "priorities": [
+        { "tema": "Estática / trajeto", "pct": 22 },
+        { "tema": "Assistência / partograma", "pct": 20 },
+        { "tema": "Indução / Bishop", "pct": 16 },
+        { "tema": "Distocia de ombro", "pct": 14 },
+        { "tema": "RPMO / TPP", "pct": 16 },
+        { "tema": "Cesárea", "pct": 12 }
+      ],
+      "deckOrder": [
+        "obs3-estatica",
+        "obs3-parto-vaginal",
+        "obs3-inducao",
+        "obs3-distocia",
+        "obs3-rpmo",
+        "obs3-tpp",
+        "obs3-cesarea",
+        "obs3-conceitos"
+      ],
+      "checklist": ["estatica", "parto", "bishop", "ombro", "rpmo"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Estática",
+          "texto": "Situação, apresentação, variedade, insinuação."
+        },
+        {
+          "titulo": "Sessão 2 · Evolução",
+          "texto": "Fase ativa, partograma, Bishop."
+        },
+        {
+          "titulo": "Sessão 3 · Distocia",
+          "texto": "Ombro e 3 P."
+        }
+      ],
+      "lacuna": "Todos os tempos do mecanismo do parto em latim: saiba a lógica (insinuação → descida → rotação → desprendimento)."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Intercorrência + conduta",
+      "blurb": "Vinheta de RPMO/TPP e urgência.",
+      "verdict": "Unifesp pesa intercorrências: RPMO, TPP e distocia. Cesárea e indução aparecem como decisão de via/timing. Episiotomia de rotina é pegadinha clássica (não fazer).",
+      "foco": "RPMO · TPP · Ombro · Cesárea · Parto",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP (Obstetrícia ~intercorrências) aplicado ao Obs3.",
+      "priorities": [
+        { "tema": "RPMO", "pct": 24 },
+        { "tema": "TPP", "pct": 22 },
+        { "tema": "Distocia de ombro", "pct": 16 },
+        { "tema": "Cesárea", "pct": 14 },
+        { "tema": "Assistência ao parto", "pct": 14 },
+        { "tema": "Indução", "pct": 10 }
+      ],
+      "deckOrder": [
+        "obs3-rpmo",
+        "obs3-tpp",
+        "obs3-distocia",
+        "obs3-cesarea",
+        "obs3-parto-vaginal",
+        "obs3-inducao",
+        "obs3-conceitos",
+        "obs3-estatica"
+      ],
+      "checklist": ["rpmo", "tpp", "ombro", "cesarea", "parto"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · RPMO complicada",
+          "texto": "Corioamnionite e compressão de cordão."
+        },
+        {
+          "titulo": "Sessão 2 · TPP",
+          "texto": "Quando tocolisar e quando resolver."
+        },
+        {
+          "titulo": "Sessão 3 · Urgência",
+          "texto": "Ombro e indicações de cesárea."
+        }
+      ],
+      "lacuna": "Protocolos institucionais de latência na RPMOP: saiba eixos (corticoide, ATB, vigilância)."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare gosta de definição (termo/pré-termo), Bishop, McRoberts, corticoide no TPP e conduta da RPMO a termo. Pouca pelvimetria fina.",
+      "foco": "Conceitos · Bishop · Ombro · RPMO · Corticoide",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare (Obstetrícia) aplicado ao Obs3.",
+      "priorities": [
+        { "tema": "RPMO / TPP", "pct": 26 },
+        { "tema": "Indução / Bishop", "pct": 18 },
+        { "tema": "Distocia de ombro", "pct": 16 },
+        { "tema": "Assistência ao parto", "pct": 16 },
+        { "tema": "Cesárea", "pct": 14 },
+        { "tema": "Conceitos / estática", "pct": 10 }
+      ],
+      "deckOrder": [
+        "obs3-rpmo",
+        "obs3-tpp",
+        "obs3-inducao",
+        "obs3-distocia",
+        "obs3-parto-vaginal",
+        "obs3-cesarea",
+        "obs3-conceitos",
+        "obs3-estatica"
+      ],
+      "checklist": ["rpmo", "tpp", "bishop", "ombro", "parto"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Cortes de IG",
+          "texto": "Termo, pré-termo, pós-termo."
+        },
+        {
+          "titulo": "Sessão 2 · Protocolos",
+          "texto": "Bishop, corticoide, RPMO a termo."
+        },
+        {
+          "titulo": "Sessão 3 · McRoberts",
+          "texto": "1ª manobra ± pressão suprapúbica."
+        }
+      ],
+      "lacuna": "Tabela completa do Bishop com cada ponto: saiba os cortes ≥9 / ≤6."
+    }
+  ],
+  "checklistItems": {
+    "parto": {
+      "tema": "Assistência ao parto",
+      "yield": "Máximo",
+      "pegar": "Períodos 1–3 · Fase ativa ~3–5 cm · Partograma · Episiotomia NÃO rotina · Manejo ativo do secundamento reduz HPP"
+    },
+    "rpmo": {
+      "tema": "RPMO",
+      "yield": "Máximo",
+      "pegar": "LA antes do TP · Dx: história + exame ± testes · A termo: induzir · Pré-termo: corticoide + ATB + vigilância · Corioamnionite/sofrimento → resolver"
+    },
+    "tpp": {
+      "tema": "TPP",
+      "yield": "Máximo",
+      "pegar": "<37s · Tocólise para corticoide/transferência · Corticoide reduz SAR/HIV/óbito · MgSO₄ neuroproteção em IG baixa · CI: infecção/sofrimento"
+    },
+    "ombro": {
+      "tema": "Distocia de ombro",
+      "yield": "Máximo",
+      "pegar": "McRoberts 1º ± pressão suprapúbica · Sem pressão fúndica · Depois Rubin/Woods/braço posterior"
+    },
+    "bishop": {
+      "tema": "Bishop / indução",
+      "yield": "Alto",
+      "pegar": "≥9 favorável a ocitocina · ≤6 desfavorável → amadurecer · Misoprostol/balão vs ocitocina · Vigiar hiperestimulação"
+    },
+    "cesarea": {
+      "tema": "Cesárea",
+      "yield": "Alto",
+      "pegar": "Indicações absolutas (prévia total, córmica, DCP…) · ATB profilático · Iterativa ≠ cesárea automática"
+    },
+    "estatica": {
+      "tema": "Estática / trajeto",
+      "yield": "Alto",
+      "pegar": "Situação → apresentação → variedade · Longitudinal: céfalo/pélvica · Transversa: córmica · Insinuação = DBP no estreito superior"
+    }
+  },
+  "numeros": [
+    "Termo: 37–41+6s · Pré-termo: <37s · Pós-termo: ≥42s",
+    "Abortamento: <20–22s ou <500 g (corte varia)",
+    "Bishop ≥9 favorável · ≤6 desfavorável",
+    "Fase ativa: dilatação tipicamente ~3–5 cm com contrações regulares",
+    "Conjugata vera anatômica ~11 cm",
+    "Prematuridade espontânea ~10% dos nascimentos (ordem de grandeza)",
+    "Corticoide clássico: ~24–34s (janelas estendidas em protocolos)",
+    "McRoberts resolve a maior parte das distocias de ombro"
+  ],
+  "pegadinhas": [
+    "Episiotomia de rotina está errada",
+    "Tocólise não é para “segurar” semanas a fio",
+    "Corioamnionite fecha expectante na RPMO",
+    "Pressão fúndica na distocia de ombro: não",
+    "Uma cesárea prévia não manda cesárea sempre",
+    "Bishop baixo + ocitocina pura = má escolha",
+    "Situação transversa ≠ apresentação cefálica",
+    "RPMO ≠ trabalho de parto (por definição, antes do TP)"
+  ],
+  "baixoRoi": [
+    "Todos os diâmetros da bacia em milímetros",
+    "Classificação completa de pelves de Caldwell-Moloy sem conduta",
+    "Lista exaustiva de tocolíticos com todas as doses",
+    "Técnica cirúrgica completa da cesárea passo a passo",
+    "Mecanismo do parto em latim palavra por palavra"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}

@@ -16,6 +16,12 @@ function aprovaDeckSpecialty (deck) {
     id.indexOf("gin4-") === 0 ||
     id.indexOf("gin5-") === 0 ||
     id.indexOf("gin6-") === 0 ||
+    id.indexOf("obs1-") === 0 ||
+    id.indexOf("obs2-") === 0 ||
+    id.indexOf("obs3-") === 0 ||
+    id.indexOf("obs4-") === 0 ||
+    id.indexOf("obs5-") === 0 ||
+    id.indexOf("obs-") === 0 ||
     id.indexOf("go-") === 0
   ) return "go";
   if (id.indexOf("cardio") === 0) return "clinica";
@@ -48,7 +54,12 @@ const AprovaFlashcards = {
       "data/flashcards-gin3.json",
       "data/flashcards-gin4.json",
       "data/flashcards-gin5.json",
-      "data/flashcards-gin6.json"
+      "data/flashcards-gin6.json",
+      "data/flashcards-obs1.json",
+      "data/flashcards-obs2.json",
+      "data/flashcards-obs3.json",
+      "data/flashcards-obs4.json",
+      "data/flashcards-obs5.json"
     ];
     const decks = [];
     for (const file of files) {

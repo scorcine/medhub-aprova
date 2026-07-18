@@ -149,6 +149,7 @@ let aprovaActiveGoArea = null;
 let aprovaActivePedOverviewFocus = "geral";
 let aprovaPedOverviewStatsCache = null;
 let aprovaGoOverviewStatsCache = null;
+let aprovaObsOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
   return specialty === "pediatria" || specialty === "go";
@@ -157,13 +158,16 @@ function aprovaIsRichSpecialty (specialty) {
 function aprovaRichSpecialtyMeta (specialty) {
   const spec = specialty || aprovaActiveSpecialty || "pediatria";
   if (spec === "go") {
+    const obs = aprovaActiveGoArea === "obstetricia";
     return {
       id: "go",
       label: "Ginecologia e obstetrícia",
-      shortLabel: "Ginecologia",
-      overviewCacheKey: "go",
-      overviewUrl: "data/stats-ginecologia-geral.json?v=20260718ak",
-      countNoun: "Ginecologia",
+      shortLabel: obs ? "Obstetrícia" : "Ginecologia",
+      overviewCacheKey: obs ? "obstetricia" : "ginecologia",
+      overviewUrl: obs
+        ? "data/stats-obstetricia-geral.json?v=20260718al"
+        : "data/stats-ginecologia-geral.json?v=20260718ak",
+      countNoun: obs ? "Obstetrícia" : "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
     };
@@ -258,6 +262,11 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("gin4-") === 0) return "Mastologia / ovário";
   if (id.indexOf("gin5-") === 0) return "Oncoginecologia";
   if (id.indexOf("gin6-") === 0) return "Infecto / IST";
+  if (id.indexOf("obs1-") === 0) return "Parto operatório · Med. fetal · Puerpério";
+  if (id.indexOf("obs2-") === 0) return "Diagnóstico de gravidez · Pré-natal";
+  if (id.indexOf("obs3-") === 0) return "Parto · RPMO · Prematuridade";
+  if (id.indexOf("obs4-") === 0) return "Sangramentos na gestação";
+  if (id.indexOf("obs5-") === 0) return "HAS · Diabetes · Gemelaridade";
   if (id.indexOf("obs-") === 0) return "Obstetrícia";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
@@ -324,6 +333,18 @@ function aprovaFormatPct (value) {
 async function aprovaLoadOverviewStats (specialty) {
   const meta = aprovaRichSpecialtyMeta(specialty);
   if (meta.id === "go") {
+    const obs = aprovaActiveGoArea === "obstetricia";
+    if (obs) {
+      if (aprovaObsOverviewStatsCache) return aprovaObsOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaObsOverviewStatsCache = await res.json();
+      } catch {
+        aprovaObsOverviewStatsCache = null;
+      }
+      return aprovaObsOverviewStatsCache;
+    }
     if (aprovaGoOverviewStatsCache) return aprovaGoOverviewStatsCache;
     try {
       const res = await fetch(meta.overviewUrl);
@@ -625,7 +646,12 @@ const APROVA_PED_MODULE_PREFIXES = {
   gin3: ["gin3-"],
   gin4: ["gin4-"],
   gin5: ["gin5-"],
-  gin6: ["gin6-"]
+  gin6: ["gin6-"],
+  obs1: ["obs1-"],
+  obs2: ["obs2-"],
+  obs3: ["obs3-"],
+  obs4: ["obs4-"],
+  obs5: ["obs5-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -991,7 +1017,8 @@ async function aprovaOpenGoArea (areaId) {
   decksWrap.hidden = false;
   if (stats) stats.hidden = true;
   if (subtemas) subtemas.hidden = true;
-  if (overview) overview.hidden = aprovaActiveGoArea !== "ginecologia";
+  const showOverview = aprovaActiveGoArea === "ginecologia" || aprovaActiveGoArea === "obstetricia";
+  if (overview) overview.hidden = !showOverview;
 
   const areaStats = await aprovaGoAreaStats(aprovaActiveGoArea);
   if (title) title.textContent = areaMeta.label;
@@ -1012,7 +1039,7 @@ async function aprovaOpenGoArea (areaId) {
     selectAll.textContent = "Selecionar todos";
   }
 
-  if (aprovaActiveGoArea === "ginecologia") {
+  if (showOverview) {
     await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
   }
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveGoArea });

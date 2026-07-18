@@ -1,0 +1,301 @@
+{
+  "title": "Obs1 · Parto operatório · Med. fetal · Puerpério",
+  "module": "obs1",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "O que mais cai neste bloco da apostila Obs1.",
+      "verdict": "No Obs1, o ROI está em CTG (categorias I–III + conduta), HPP (4 T + uterotônicos) e parto instrumental (praticabilidade). PBF/Doppler/CIUR e isoimunização (anti-D) fecham medicina fetal; puerpério fisiológico e infecção completam a cauda.",
+      "foco": "CTG · HPP · Fórcipe/vácuo · Doppler/CIUR · Anti-D",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "CTG / sofrimento fetal", "pct": 24, "n": 24 },
+        { "tema": "HPP (atonia / 4 T)", "pct": 18, "n": 18 },
+        { "tema": "Fórcipe e vácuo", "pct": 16, "n": 16 },
+        { "tema": "PBF · Doppler · CIUR", "pct": 16, "n": 16 },
+        { "tema": "Isoimunização / anti-D", "pct": 12, "n": 12 },
+        { "tema": "Puerpério fisiológico", "pct": 8, "n": 8 },
+        { "tema": "Infecção puerperal", "pct": 6, "n": 6 }
+      ],
+      "deckOrder": [
+        "obs1-ctg",
+        "obs1-hpp",
+        "obs1-forceps",
+        "obs1-vacuo",
+        "obs1-vitalidade",
+        "obs1-isoimunizacao",
+        "obs1-puerperio",
+        "obs1-infeccao-puerperal"
+      ],
+      "checklist": [
+        "ctg",
+        "hpp",
+        "forceps",
+        "vitalidade",
+        "antid"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · CTG",
+          "texto": "Categorias I/II/III, desacelerações e reanimação intrauterina."
+        },
+        {
+          "titulo": "Sessão 2 · Parto operatório + HPP",
+          "texto": "Praticabilidade do fórcipe, vácuo e protocolo dos 4 T."
+        },
+        {
+          "titulo": "Sessão 3 · Vitalidade + puerpério",
+          "texto": "PBF/Doppler, anti-D e endometrite."
+        }
+      ],
+      "lacuna": "Traçados CTG inteiros para decorar: saiba critérios NICHD e conduta — não cada artefato de monitor.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada Enare/USP/UNIFESP (Obstetrícia) aplicada aos subtemas do Obs1 (parto operatório, med. fetal, puerpério)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed/Enare cobram conduta: categoria III → resolução, HPP com ocitocina 1ª linha e anti-D no puerpério Rh−. Fórcipe aparece como checklist de praticabilidade.",
+      "foco": "CTG · HPP · Anti-D · Fórcipe",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (Obstetrícia) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        { "tema": "CTG / conduta", "pct": 28 },
+        { "tema": "HPP", "pct": 22 },
+        { "tema": "Isoimunização / anti-D", "pct": 16 },
+        { "tema": "Fórcipe / vácuo", "pct": 14 },
+        { "tema": "PBF / Doppler", "pct": 12 },
+        { "tema": "Infecção puerperal", "pct": 8 }
+      ],
+      "deckOrder": [
+        "obs1-ctg",
+        "obs1-hpp",
+        "obs1-isoimunizacao",
+        "obs1-forceps",
+        "obs1-vacuo",
+        "obs1-vitalidade",
+        "obs1-infeccao-puerperal",
+        "obs1-puerperio"
+      ],
+      "checklist": ["ctg", "hpp", "antid", "forceps", "vitalidade"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · CTG + resolução",
+          "texto": "I tranquiliza · III age · II vigia e reanima."
+        },
+        {
+          "titulo": "Sessão 2 · HPP",
+          "texto": "4 T, ocitocina, ergotrate (HAS)."
+        },
+        {
+          "titulo": "Sessão 3 · Anti-D",
+          "texto": "Rh− não sensibilizada + RN Rh+ · 300 mcg <72h."
+        }
+      ],
+      "lacuna": "Nomes comerciais de balões uterinos: saiba indicação de tamponamento, não a marca."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Med. fetal + parto",
+      "blurb": "USP-SP cobra vitalidade e instrumental.",
+      "verdict": "USP é medicina fetal–pesada: CTG, Doppler/CIUR e PBF. Parto instrumental (Simpson × Kielland, condições) e HPP fecham o bloco prático do Obs1.",
+      "foco": "CTG · Doppler/CIUR · Fórcipe · HPP",
+      "estilo": "Levantamento USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP (Obstetrícia ~parto + med. fetal) aplicado ao Obs1.",
+      "priorities": [
+        { "tema": "CTG / sofrimento", "pct": 26 },
+        { "tema": "PBF · Doppler · CIUR", "pct": 22 },
+        { "tema": "Fórcipe / vácuo", "pct": 20 },
+        { "tema": "HPP", "pct": 16 },
+        { "tema": "Isoimunização", "pct": 10 },
+        { "tema": "Puerpério / infecção", "pct": 6 }
+      ],
+      "deckOrder": [
+        "obs1-ctg",
+        "obs1-vitalidade",
+        "obs1-forceps",
+        "obs1-vacuo",
+        "obs1-hpp",
+        "obs1-isoimunizacao",
+        "obs1-puerperio",
+        "obs1-infeccao-puerperal"
+      ],
+      "checklist": ["ctg", "vitalidade", "forceps", "hpp", "antid"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Traçado",
+          "texto": "Base, variabilidade, desacelerações."
+        },
+        {
+          "titulo": "Sessão 2 · Doppler/CIUR",
+          "texto": "Umbilical → ACM → ducto venoso."
+        },
+        {
+          "titulo": "Sessão 3 · Instrumental",
+          "texto": "Praticabilidade e tipo de fórcipe."
+        }
+      ],
+      "lacuna": "Pelvimetria radiológica detalhada: cai pouco; foque praticabilidade clínica."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Urgência + conduta",
+      "blurb": "Caso clínico com ação imediata.",
+      "verdict": "Unifesp gosta de HPP e infecção puerperal em vinheta, CTG categoria III e falha de vácuo/fórcipe. Anti-D e blues × depressão aparecem como pegadinhas de puerpério.",
+      "foco": "HPP · Infecção · CTG III · Anti-D",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP (Obstetrícia) aplicado aos subtemas do Obs1.",
+      "priorities": [
+        { "tema": "HPP", "pct": 26 },
+        { "tema": "CTG / resolução", "pct": 22 },
+        { "tema": "Infecção puerperal", "pct": 16 },
+        { "tema": "Fórcipe / vácuo", "pct": 14 },
+        { "tema": "Isoimunização", "pct": 12 },
+        { "tema": "PBF / Doppler", "pct": 10 }
+      ],
+      "deckOrder": [
+        "obs1-hpp",
+        "obs1-ctg",
+        "obs1-infeccao-puerperal",
+        "obs1-forceps",
+        "obs1-vacuo",
+        "obs1-isoimunizacao",
+        "obs1-vitalidade",
+        "obs1-puerperio"
+      ],
+      "checklist": ["hpp", "ctg", "infeccao", "forceps", "antid"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Choque hemorrágico",
+          "texto": "ABC, massagem, uterotônicos, 4 T."
+        },
+        {
+          "titulo": "Sessão 2 · CTG III",
+          "texto": "Quando parar de esperar."
+        },
+        {
+          "titulo": "Sessão 3 · Febre puerperal",
+          "texto": "Endometrite vs febre do leite vs mastite."
+        }
+      ],
+      "lacuna": "Técnica cirúrgica de histerectomia puerperal passo a passo: saiba indicação."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare cobra protocolo: ocitocina na atonia, anti-D <72h, categoria III e condições do fórcipe. Menos fisiologia de Doppler que a USP.",
+      "foco": "HPP · CTG · Anti-D · Fórcipe",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare (Obstetrícia) aplicado ao Obs1.",
+      "priorities": [
+        { "tema": "HPP / uterotônicos", "pct": 26 },
+        { "tema": "CTG", "pct": 24 },
+        { "tema": "Anti-D / Rh", "pct": 18 },
+        { "tema": "Fórcipe / vácuo", "pct": 16 },
+        { "tema": "Puerpério / infecção", "pct": 10 },
+        { "tema": "PBF / Doppler", "pct": 6 }
+      ],
+      "deckOrder": [
+        "obs1-hpp",
+        "obs1-ctg",
+        "obs1-isoimunizacao",
+        "obs1-forceps",
+        "obs1-vacuo",
+        "obs1-puerperio",
+        "obs1-infeccao-puerperal",
+        "obs1-vitalidade"
+      ],
+      "checklist": ["hpp", "ctg", "antid", "forceps", "infeccao"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Protocolo HPP",
+          "texto": "Ocitocina → ergotrate/misoprostol → balão/cirurgia."
+        },
+        {
+          "titulo": "Sessão 2 · CTG",
+          "texto": "I / II / III em uma frase cada."
+        },
+        {
+          "titulo": "Sessão 3 · Rh",
+          "texto": "Quem recebe anti-D e quem não."
+        }
+      ],
+      "lacuna": "Dose de cada uterotônico de segunda linha: foque 1ª linha e contraindicação do ergotrate."
+    }
+  ],
+  "checklistItems": {
+    "ctg": {
+      "tema": "CTG",
+      "yield": "Máximo",
+      "pegar": "I: base 110–160 + var. moderada + sem tardias/variáveis · III: var. ausente + (tardias/variáveis recorrentes ou bradicardia) OU sinusoidal · II: o resto → vigiar/reanimar"
+    },
+    "hpp": {
+      "tema": "HPP",
+      "yield": "Máximo",
+      "pegar": "4 T: tônus (#1) · trauma · tecido · trombina · Ocitocina 1ª linha · Ergotrate contraindicado em HAS · Manejo ativo do secundamento previne"
+    },
+    "forceps": {
+      "tema": "Fórcipe / vácuo",
+      "yield": "Máximo",
+      "pegar": "Cabeça insinuada · dilatação total · membranas rotas · variedade conhecida · sem DCP · Simpson ≠ transversa · Kielland = transversa/rotação · Emergência: fórcipe > vácuo"
+    },
+    "vitalidade": {
+      "tema": "PBF / Doppler / CIUR",
+      "yield": "Alto",
+      "pegar": "PBF 8–10 ok · ≤4 preocupa · Umbilical ↑ → centralização ACM → ducto venoso · CIUR assimétrico = placentário tardio"
+    },
+    "antid": {
+      "tema": "Anti-D / isoimunização",
+      "yield": "Alto",
+      "pegar": "Rh− não sensibilizada · 300 mcg IM · preferencialmente <72h pós-parto se RN Rh+ · Não trata mãe já isoimunizada"
+    },
+    "infeccao": {
+      "tema": "Infecção puerperal",
+      "yield": "Alto",
+      "pegar": "Endometrite: febre + útero doloroso/loquios · Risco ↑ cesárea/RPMO · Clinda + genta clássico · Diferenciar febre do leite (<48h, sem foco)"
+    }
+  },
+  "numeros": [
+    "FCF basal normal: 110–160 bpm",
+    "Variabilidade moderada: 6–25 bpm",
+    "Desaceleração prolongada: >2 e <10 minutos",
+    "Anti-D: 300 mcg IM · preferencialmente <72h",
+    "PBF: cada item 0 ou 2 · máx. 10 com CTG",
+    "pH escalpe <7,20 ou lactato >4,8 → resolução rápida",
+    "HPP primária: primeiras 24h · secundária: após 24h",
+    "Alta típica: ~48h parto vaginal / ~72h cesárea",
+    "Misoprostol HPP: 600–1000 mcg (VO/SL/retal) — protocolo local"
+  ],
+  "pegadinhas": [
+    "Categoria II não é “normal” — vigiar e reanimar",
+    "Simpson não serve para variedade transversa",
+    "Vácuo não é 1ª escolha em emergência verdadeira",
+    "Ergotrate e hipertensão não combinam",
+    "Anti-D não trata mãe já sensibilizada",
+    "Febre do leite ≠ endometrite (duração + foco)",
+    "Blues autolimitado × depressão com prejuízo",
+    "Atonia é o T mais comum da HPP"
+  ],
+  "baixoRoi": [
+    "Memorizar traçados CTG página a página da apostila",
+    "Nomes comerciais de todos os balões uterinos",
+    "Técnica cirúrgica completa de histerectomia puerperal",
+    "Pelvimetria radiológica detalhada",
+    "Doses exóticas de uterotônicos de 3ª linha sem protocolo local"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}

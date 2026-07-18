@@ -1,0 +1,292 @@
+{
+  "title": "Obs4 · Sangramentos na gestação",
+  "module": "obs4",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "O que mais cai neste bloco da apostila Obs4.",
+      "verdict": "No Obs4, o ROI está em abortamento (formas clínicas), ectópica (MTX vs cirurgia), prévia × DPP e mola. Acretismo e rotura/vasa prévia fecham as urgências da 2ª metade — são menos frequentes, mas de altíssimo rendimento quando caem.",
+      "foco": "Aborto · Ectópica · Prévia × DPP · Mola · Acretismo",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "Abortamento (formas e conduta)", "pct": 22, "n": 22 },
+        { "tema": "Gestação ectópica", "pct": 18, "n": 18 },
+        { "tema": "Placenta prévia", "pct": 16, "n": 16 },
+        { "tema": "DPP", "pct": 16, "n": 16 },
+        { "tema": "Mola / DTG", "pct": 12, "n": 12 },
+        { "tema": "Acretismo", "pct": 8, "n": 8 },
+        { "tema": "Rotura / vasa / seio marginal", "pct": 8, "n": 8 }
+      ],
+      "deckOrder": [
+        "obs4-aborto",
+        "obs4-ectopica",
+        "obs4-previa",
+        "obs4-dpp",
+        "obs4-mola",
+        "obs4-acretismo",
+        "obs4-rotura-vasa"
+      ],
+      "checklist": [
+        "aborto",
+        "ectopica",
+        "previa",
+        "dpp",
+        "mola"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · 1ª metade",
+          "texto": "Ameaça → inevitável → incompleto/completo/retido/séptico + ectópica + mola."
+        },
+        {
+          "titulo": "Sessão 2 · Prévia × DPP",
+          "texto": "Dor, tônus uterino, sangue e conduta."
+        },
+        {
+          "titulo": "Sessão 3 · Acretismo e vasa",
+          "texto": "Cicatriz + prévia; sangramento fetal na amniotomia."
+        }
+      ],
+      "lacuna": "Estadiamento completo da NTG/FIGO: saiba follow-up de hCG pós-mola e quando pensar em neoplasia.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada Enare/USP/UNIFESP (Obstetrícia) aplicada aos subtemas do Obs4 (sangramentos)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed/Enare cobram conduta: ameaça (expectante), incompleto (esvaziar), ectópica estável (MTX), prévia indolor vs DPP doloroso, mola (aspirar + hCG). Diferencial da 2ª metade é o clássico.",
+      "foco": "Aborto · Ectópica · Prévia × DPP · Mola",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (Obstetrícia) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        { "tema": "Abortamento", "pct": 24 },
+        { "tema": "Ectópica", "pct": 20 },
+        { "tema": "Prévia × DPP", "pct": 28 },
+        { "tema": "Mola", "pct": 14 },
+        { "tema": "Acretismo / rotura / vasa", "pct": 14 }
+      ],
+      "deckOrder": [
+        "obs4-aborto",
+        "obs4-ectopica",
+        "obs4-previa",
+        "obs4-dpp",
+        "obs4-mola",
+        "obs4-acretismo",
+        "obs4-rotura-vasa"
+      ],
+      "checklist": ["aborto", "ectopica", "previa", "dpp", "mola"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Formas de aborto",
+          "texto": "Colo aberto/fechado e o que fazer."
+        },
+        {
+          "titulo": "Sessão 2 · Ectópica",
+          "texto": "MTX vs cirurgia."
+        },
+        {
+          "titulo": "Sessão 3 · 2ª metade",
+          "texto": "Prévia indolor × DPP doloroso."
+        }
+      ],
+      "lacuna": "Doses exatas de MTX em mg/m²: saiba critérios de elegibilidade e follow-up."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Diagnóstico fino",
+      "blurb": "USP-SP cobra diferencial e fisiopatologia.",
+      "verdict": "USP pesa ectópica (curva hCG/US), mola (citogenética completa vs parcial) e DPP (CIVD/Couvelaire). Prévia e aborto aparecem com critérios de US.",
+      "foco": "Ectópica · Mola · DPP · Aborto · Prévia",
+      "estilo": "Levantamento USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP (Obstetrícia) aplicado ao Obs4.",
+      "priorities": [
+        { "tema": "Ectópica / hCG-US", "pct": 22 },
+        { "tema": "Mola / DTG", "pct": 18 },
+        { "tema": "DPP / coagulação", "pct": 18 },
+        { "tema": "Abortamento", "pct": 18 },
+        { "tema": "Prévia / acretismo", "pct": 16 },
+        { "tema": "Vasa / rotura", "pct": 8 }
+      ],
+      "deckOrder": [
+        "obs4-ectopica",
+        "obs4-mola",
+        "obs4-dpp",
+        "obs4-aborto",
+        "obs4-previa",
+        "obs4-acretismo",
+        "obs4-rotura-vasa"
+      ],
+      "checklist": ["ectopica", "mola", "dpp", "aborto", "previa"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Ectópica",
+          "texto": "Limiar discriminatório e conduta."
+        },
+        {
+          "titulo": "Sessão 2 · Mola",
+          "texto": "Completa vs parcial + follow-up."
+        },
+        {
+          "titulo": "Sessão 3 · DPP",
+          "texto": "Clínica > US; Couvelaire e CIVD."
+        }
+      ],
+      "lacuna": "Cariótipos raros da mola: saiba completa 46XX (em geral) vs parcial triploide."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Urgência hemorrágica",
+      "blurb": "Vinheta de choque e via de parto.",
+      "verdict": "Unifesp é intercorrência-pesada: DPP, prévia, rotura e aborto séptico. Acretismo cai como planejamento de cesárea/histerectomia. Conduta rápida vale mais que classificação longa.",
+      "foco": "DPP · Prévia · Rotura · Aborto séptico · Acretismo",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP (Obstetrícia ~intercorrências) aplicado ao Obs4.",
+      "priorities": [
+        { "tema": "DPP", "pct": 22 },
+        { "tema": "Prévia", "pct": 18 },
+        { "tema": "Abortamento (séptico/incompleto)", "pct": 18 },
+        { "tema": "Ectópica rota", "pct": 14 },
+        { "tema": "Acretismo / rotura / vasa", "pct": 16 },
+        { "tema": "Mola", "pct": 12 }
+      ],
+      "deckOrder": [
+        "obs4-dpp",
+        "obs4-previa",
+        "obs4-aborto",
+        "obs4-ectopica",
+        "obs4-acretismo",
+        "obs4-rotura-vasa",
+        "obs4-mola"
+      ],
+      "checklist": ["dpp", "previa", "aborto", "ectopica", "acretismo"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Choque na 2ª metade",
+          "texto": "DPP vs prévia vs rotura."
+        },
+        {
+          "titulo": "Sessão 2 · 1ª metade grave",
+          "texto": "Séptico e ectópica rota."
+        },
+        {
+          "titulo": "Sessão 3 · Acretismo",
+          "texto": "Não forçar dequitação."
+        }
+      ],
+      "lacuna": "Técnica cirúrgica completa da histerectomia obstétrica: saiba indicação."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare gosta de classificação de aborto, diferencial prévia×DPP, critérios de MTX e esvaziamento da mola. Vasa prévia aparece como pegadinha de sangramento + sofrimento na amniotomia.",
+      "foco": "Aborto · Prévia × DPP · Ectópica · Mola",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare (Obstetrícia) aplicado ao Obs4.",
+      "priorities": [
+        { "tema": "Abortamento", "pct": 24 },
+        { "tema": "Prévia × DPP", "pct": 26 },
+        { "tema": "Ectópica", "pct": 18 },
+        { "tema": "Mola", "pct": 14 },
+        { "tema": "Acretismo / vasa / rotura", "pct": 18 }
+      ],
+      "deckOrder": [
+        "obs4-aborto",
+        "obs4-previa",
+        "obs4-dpp",
+        "obs4-ectopica",
+        "obs4-mola",
+        "obs4-rotura-vasa",
+        "obs4-acretismo"
+      ],
+      "checklist": ["aborto", "previa", "dpp", "ectopica", "mola"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Aborto em 1 frase cada",
+          "texto": "Ameaça, inevitável, incompleto, retido, séptico."
+        },
+        {
+          "titulo": "Sessão 2 · 2ª metade",
+          "texto": "Tabela mental prévia vs DPP."
+        },
+        {
+          "titulo": "Sessão 3 · MTX e mola",
+          "texto": "Quem pode clínico; quem aspira e segue hCG."
+        }
+      ],
+      "lacuna": "Subtipos anatômicos raros de ectópica: saiba trompa como #1 e quando operar."
+    }
+  ],
+  "checklistItems": {
+    "aborto": {
+      "tema": "Abortamento",
+      "yield": "Máximo",
+      "pegar": "Ameaça: colo fechado, expectante · Inevitável: colo aberto · Incompleto: esvaziar · Completo: observar · Retido: esvaziar programado · Séptico: ATB + esvaziar · Habitual: ≥3"
+    },
+    "ectopica": {
+      "tema": "Ectópica",
+      "yield": "Máximo",
+      "pegar": "Dor + sangramento + hCG+ sem IU · Trompa #1 · MTX se estável e critérios · Cirurgia se rotura/instável"
+    },
+    "previa": {
+      "tema": "Placenta prévia",
+      "yield": "Máximo",
+      "pegar": "Sangramento indolor vermelho vivo · Útero flácido · Dx por US · Sem toque se não excluída · Cesárea se cobre OI"
+    },
+    "dpp": {
+      "tema": "DPP",
+      "yield": "Máximo",
+      "pegar": "Dor + hipertonia + sangue ± oculto · Dx clínico · US limitada · Resolver rápido · CIVD / Couvelaire / HPP"
+    },
+    "mola": {
+      "tema": "Mola / DTG",
+      "yield": "Alto",
+      "pegar": "Completa sem feto / parcial com tecido fetal · hCG alto · Aspirar · Follow-up hCG · Anticoncepção no seguimento"
+    },
+    "acretismo": {
+      "tema": "Acretismo",
+      "yield": "Alto",
+      "pegar": "Prévia + cesárea prévia · Acreta/increta/percreta · Planejar cesárea ± histerectomia · Não forçar dequitação"
+    }
+  },
+  "numeros": [
+    "Até ~25% das gestações sangram na 1ª metade",
+    "Ameaça: 15–20% das gestações · ~50% progridem a aborto (menos se BCF+)",
+    ">80% dos abortos espontâneos <12 semanas",
+    "Até 8s: ~80% expulsão completa em até ~72h (inevitável/incompleto)",
+    "Abortamento habitual: ≥3 consecutivos",
+    "Acretismo: risco sobe com cesáreas (incidência moderna ~1:700 em séries)",
+    "Coágulo do DPP visível na US em apenas ~25–50%"
+  ],
+  "pegadinhas": [
+    "Não fazer toque se prévia não excluída",
+    "DPP pode ter pouco sangramento externo (oculto)",
+    "US negativa não exclui DPP",
+    "Ectópica pode ter sangramento que “parece” ameaça",
+    "Mola: esvaziar e seguir hCG — não “alta” após aspiração",
+    "Vasa prévia = sangue fetal (urgência máxima)",
+    "Prévia + cicatriz → pensar acretismo",
+    "Aborto séptico: ATB antes/junto do esvaziamento"
+  ],
+  "baixoRoi": [
+    "Estadiamento FIGO completo da NTG com todos os escores",
+    "Todas as doses e dias do protocolo MTX sem critérios",
+    "Técnica cirúrgica completa de histerectomia obstétrica",
+    "Subtipos histológicos raros de DTG sem impacto na conduta inicial",
+    "Classificações antigas de prévia (baixa inserção vs marginal) sem OI"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}

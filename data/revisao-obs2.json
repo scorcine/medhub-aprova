@@ -1,0 +1,307 @@
+{
+  "title": "Obs2 · Diagnóstico de gravidez · Pré-natal",
+  "module": "obs2",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "O que mais cai neste bloco da apostila Obs2.",
+      "verdict": "No Obs2, o ROI está em exames/sorologias do pré-natal, diagnóstico (hCG/certeza/US) e Nägele/datagem. Suplementação (fólico/ferro), infecções (sífilis/HIV/toxo) e TN/aconselhamento fecham o núcleo; vacinas são cauda de alto rendimento relativo.",
+      "foco": "Exames PN · Diagnóstico · Nägele · Sífilis/HIV/toxo · Fólico/ferro",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "Exames / sorologias do PN", "pct": 22, "n": 22 },
+        { "tema": "Diagnóstico de gravidez (hCG/clínica/US)", "pct": 18, "n": 18 },
+        { "tema": "Infecções no PN (sífilis/HIV/toxo/HBV)", "pct": 16, "n": 16 },
+        { "tema": "Cronograma e organização do PN", "pct": 14, "n": 14 },
+        { "tema": "Nägele / datagem", "pct": 12, "n": 12 },
+        { "tema": "Suplementação (fólico/ferro)", "pct": 10, "n": 10 },
+        { "tema": "TN / aconselhamento genético", "pct": 8, "n": 8 }
+      ],
+      "deckOrder": [
+        "obs2-exames",
+        "obs2-diagnostico",
+        "obs2-infeccoes-pn",
+        "obs2-prenatal",
+        "obs2-nagele",
+        "obs2-suplementacao",
+        "obs2-rastreio-genetico",
+        "obs2-vacinas-meds"
+      ],
+      "checklist": [
+        "exames",
+        "diagnostico",
+        "infeccoes",
+        "nagele",
+        "folico"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnóstico + DPP",
+          "texto": "hCG, certeza clínica, US inicial e Nägele."
+        },
+        {
+          "titulo": "Sessão 2 · Rotina do PN",
+          "texto": "≥6 consultas, exames da 1ª consulta e 3ºT."
+        },
+        {
+          "titulo": "Sessão 3 · Infecções + suplementos",
+          "texto": "Sífilis/HIV/toxo/HBV, fólico e ferro."
+        }
+      ],
+      "lacuna": "Embriologia molecular completa da implantação: baixo ROI se você já domina diagnóstico e rotina do PN.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada Enare/USP/UNIFESP (Obstetrícia) aplicada aos subtemas do Obs2 (diagnóstico e pré-natal)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed/Enare cobram protocolo MS: exames (sífilis/HIV), ≥6 consultas, fólico perioconcepcional e ferro. Diagnóstico com hCG/US e Nägele aparecem em vinhetas curtas.",
+      "foco": "Exames · Sífilis/HIV · Consultas · Fólico · Nägele",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (Obstetrícia) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        { "tema": "Exames / sífilis / HIV", "pct": 28 },
+        { "tema": "Cronograma do PN", "pct": 20 },
+        { "tema": "Suplementação", "pct": 16 },
+        { "tema": "Diagnóstico de gravidez", "pct": 14 },
+        { "tema": "Nägele", "pct": 12 },
+        { "tema": "Toxo / HBV / TN", "pct": 10 }
+      ],
+      "deckOrder": [
+        "obs2-exames",
+        "obs2-infeccoes-pn",
+        "obs2-prenatal",
+        "obs2-suplementacao",
+        "obs2-diagnostico",
+        "obs2-nagele",
+        "obs2-vacinas-meds",
+        "obs2-rastreio-genetico"
+      ],
+      "checklist": ["exames", "infeccoes", "prenatal", "folico", "nagele"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Cartão da gestante",
+          "texto": "O que pedir na 1ª consulta e no 3ºT."
+        },
+        {
+          "titulo": "Sessão 2 · Protocolo MS",
+          "texto": "6 consultas e cronograma 28/36."
+        },
+        {
+          "titulo": "Sessão 3 · Fólico e ferro",
+          "texto": "Perioconcepcional e dose de ferro elementar."
+        }
+      ],
+      "lacuna": "Marcas comerciais de suplementos: saiba doses elementares."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Fisiologia + datagem",
+      "blurb": "USP-SP cobra raciocínio de IG e diagnóstico.",
+      "verdict": "USP pesa diagnóstico (certeza vs probabilidade), US inicial, Nägele/datagem e TN. Exames e infecções aparecem, mas o diferencial é interpretar IG e rastreio genético.",
+      "foco": "Diagnóstico · Nägele/US · TN · Exames",
+      "estilo": "Levantamento USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP (Obstetrícia) aplicado ao Obs2.",
+      "priorities": [
+        { "tema": "Diagnóstico clínico/lab/US", "pct": 26 },
+        { "tema": "Nägele / datagem", "pct": 20 },
+        { "tema": "TN / aconselhamento", "pct": 18 },
+        { "tema": "Exames do PN", "pct": 16 },
+        { "tema": "Infecções", "pct": 12 },
+        { "tema": "Suplementação / vacinas", "pct": 8 }
+      ],
+      "deckOrder": [
+        "obs2-diagnostico",
+        "obs2-nagele",
+        "obs2-rastreio-genetico",
+        "obs2-exames",
+        "obs2-infeccoes-pn",
+        "obs2-prenatal",
+        "obs2-suplementacao",
+        "obs2-vacinas-meds"
+      ],
+      "checklist": ["diagnostico", "nagele", "tn", "exames", "infeccoes"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Certeza",
+          "texto": "hCG não é certeza; BCF/partes/movimentos são."
+        },
+        {
+          "titulo": "Sessão 2 · Datagem",
+          "texto": "Nägele e quando a US do 1ºT manda."
+        },
+        {
+          "titulo": "Sessão 3 · TN",
+          "texto": "11–14s, rastreio ≠ diagnóstico."
+        }
+      ],
+      "lacuna": "Tabelas longas de percentis de CCN: saiba a lógica da janela."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Caso + conduta",
+      "blurb": "Vinheta com exame e encaminhamento.",
+      "verdict": "Unifesp mistura infecções do PN (sífilis/HIV/toxo), estratificação de risco e suplementação. Diagnóstico precoce e exames da 1ª consulta fecham o bloco prático.",
+      "foco": "Infecções · Exames · Alto risco · Fólico",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP (Obstetrícia) aplicado aos subtemas do Obs2.",
+      "priorities": [
+        { "tema": "Infecções no PN", "pct": 26 },
+        { "tema": "Exames de rotina", "pct": 22 },
+        { "tema": "Alto risco / organização", "pct": 16 },
+        { "tema": "Diagnóstico", "pct": 14 },
+        { "tema": "Suplementação", "pct": 12 },
+        { "tema": "Nägele / TN", "pct": 10 }
+      ],
+      "deckOrder": [
+        "obs2-infeccoes-pn",
+        "obs2-exames",
+        "obs2-prenatal",
+        "obs2-diagnostico",
+        "obs2-suplementacao",
+        "obs2-nagele",
+        "obs2-rastreio-genetico",
+        "obs2-vacinas-meds"
+      ],
+      "checklist": ["infeccoes", "exames", "prenatal", "folico", "diagnostico"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Sorologias",
+          "texto": "Sífilis, HIV, toxo suscetível, HBsAg."
+        },
+        {
+          "titulo": "Sessão 2 · Quem vai ao alto risco",
+          "texto": "Critérios clássicos de encaminhamento."
+        },
+        {
+          "titulo": "Sessão 3 · Prevenção",
+          "texto": "Fólico perioconcepcional e ferro."
+        }
+      ],
+      "lacuna": "Fluxos longos de toxoplasmose congênita: saiba quem repetir e quando referenciar."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare cobra checklist: exames da 1ª consulta, VDRL/HIV no 3ºT, ≥6 consultas, fólico e ferro. Nägele em conta simples. Menos TN fina que a USP.",
+      "foco": "Exames · Consultas · Sífilis/HIV · Fólico · Nägele",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare (Obstetrícia) aplicado ao Obs2.",
+      "priorities": [
+        { "tema": "Exames do PN", "pct": 28 },
+        { "tema": "Infecções (sífilis/HIV)", "pct": 20 },
+        { "tema": "Cronograma (≥6)", "pct": 18 },
+        { "tema": "Suplementação", "pct": 14 },
+        { "tema": "Diagnóstico / Nägele", "pct": 12 },
+        { "tema": "Vacinas / TN", "pct": 8 }
+      ],
+      "deckOrder": [
+        "obs2-exames",
+        "obs2-infeccoes-pn",
+        "obs2-prenatal",
+        "obs2-suplementacao",
+        "obs2-diagnostico",
+        "obs2-nagele",
+        "obs2-vacinas-meds",
+        "obs2-rastreio-genetico"
+      ],
+      "checklist": ["exames", "infeccoes", "prenatal", "folico", "nagele"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Checklist da 1ª consulta",
+          "texto": "Hemograma, tipagem, sorologias, urina, glicemia."
+        },
+        {
+          "titulo": "Sessão 2 · 3º trimestre",
+          "texto": "Repetir VDRL, HIV, HBsAg, urina, glicemia."
+        },
+        {
+          "titulo": "Sessão 3 · Conta de Nägele",
+          "texto": "+7 dias e −3 meses (após março)."
+        }
+      ],
+      "lacuna": "Divergências de manuais antigos de PN: use MS como padrão da apostila."
+    }
+  ],
+  "checklistItems": {
+    "exames": {
+      "tema": "Exames do PN",
+      "yield": "Máximo",
+      "pegar": "1ª consulta: tipagem/Rh, hemograma, glicemia, EAS+urocultura, sífilis, HIV, HBsAg, toxo · 3ºT: repetir sífilis/HIV/HBsAg/glicemia/urina · TOTG 75 g 24–28s · Coombs se Rh−"
+    },
+    "diagnostico": {
+      "tema": "Diagnóstico de gravidez",
+      "yield": "Máximo",
+      "pegar": "β-hCG precoce · Certeza = BCF/partes/movimentos pelo examinador · hCG = probabilidade · US: SG~4s · VV~5s · embrião+BCF~6–7s"
+    },
+    "infeccoes": {
+      "tema": "Infecções no PN",
+      "yield": "Máximo",
+      "pegar": "Sífilis e HIV na 1ª + 3ºT · Toxo: se IgG− repetir 2–3/3 meses · HBsAg 1ª + 3ºT · Penicilina na sífilis · TARV no HIV"
+    },
+    "nagele": {
+      "tema": "Nägele / datagem",
+      "yield": "Alto",
+      "pegar": "DUM +7d +9m (ou −3m após março) · US do 1ºT manda se DUM fora do IC · Não redatar tardiamente sem critério"
+    },
+    "folico": {
+      "tema": "Fólico / ferro",
+      "yield": "Alto",
+      "pegar": "Fólico perioconcepcional (0,4 mg; alto risco ↑ dose) · Ferro elementar ~30–60 mg/dia ~a partir de 20s · Ferro não é suprido só pela dieta"
+    },
+    "prenatal": {
+      "tema": "Organização do PN",
+      "yield": "Alto",
+      "pegar": "≥6 consultas (1+2+3) · Até 28 mensal · 28–36 quinzenal · 36–41 semanal · Início <120 dias · Sem “alta” no termo"
+    },
+    "tn": {
+      "tema": "TN / genética",
+      "yield": "Alto",
+      "pegar": "11–14s · Rastreio de aneuploidia · TN↑ também cardiopatia/infecção · Diagnóstico = invasivo"
+    }
+  },
+  "numeros": [
+    "β-hCG detectável ~8–11 dias após concepção",
+    "US TV: SG ~4s · vesícula vitelina ~5s · embrião+BCF ~6–7s",
+    "Nägele: DUM + 7 dias + 9 meses (ou −3 meses)",
+    "PN: ≥6 consultas · 1 no 1ºT · 2 no 2ºT · 3 no 3ºT",
+    "Cronograma: mensal até 28s · quinzenal 28–36 · semanal 36–41",
+    "Início preferencial do PN: primeiros 120 dias",
+    "Ferro elementar: ~30–60 mg/dia",
+    "Fólico usual: 400 mcg/dia (alto risco: doses maiores)",
+    "TN: 11–14 semanas",
+    "TOTG 75 g: 24–28 semanas"
+  ],
+  "pegadinhas": [
+    "hCG positivo ≠ sinal de certeza",
+    "Mudanças mamárias são presunção, não certeza",
+    "Não dar alta do pré-natal no termo",
+    "Toxo IgG− precisa de repetição seriada",
+    "Rh−: lembrar Coombs e anti-D (Obs1) no momento certo",
+    "TN alterada não é sinônimo de Down",
+    "Vacina viva na gestação: regra geral = não",
+    "Ferro começa em geral no 2º trimestre (protocolo), fólico antes"
+  ],
+  "baixoRoi": [
+    "Embriologia celular completa da blastulação",
+    "Todas as tabelas de percentil de CCN",
+    "Marcas comerciais de polivitamínicos",
+    "Fluxos laboratoriais raros de cada sorologia sem impacto na conduta",
+    "Discussões longas entre manuais antigos de PN"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}

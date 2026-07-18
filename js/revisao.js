@@ -91,6 +91,36 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-gin6.json?v=20260718aj",
     specialty: "go",
     area: "ginecologia"
+  },
+  obs1: {
+    label: "Parto operatório · Med. fetal · Puerpério",
+    file: "data/revisao-obs1.json?v=20260718al",
+    specialty: "go",
+    area: "obstetricia"
+  },
+  obs2: {
+    label: "Diagnóstico de gravidez · Pré-natal",
+    file: "data/revisao-obs2.json?v=20260718am",
+    specialty: "go",
+    area: "obstetricia"
+  },
+  obs3: {
+    label: "Parto · RPMO · Prematuridade",
+    file: "data/revisao-obs3.json?v=20260718an",
+    specialty: "go",
+    area: "obstetricia"
+  },
+  obs4: {
+    label: "Sangramentos na gestação",
+    file: "data/revisao-obs4.json?v=20260718ao",
+    specialty: "go",
+    area: "obstetricia"
+  },
+  obs5: {
+    label: "HAS · Diabetes · Gemelaridade",
+    file: "data/revisao-obs5.json?v=20260718ap",
+    specialty: "go",
+    area: "obstetricia"
   }
 };
 
@@ -103,7 +133,7 @@ const APROVA_GO_AREAS = {
   obstetricia: {
     id: "obstetricia",
     label: "Obstetrícia",
-    blurb: "Pré-natal, parto, sangramentos e urgências — em breve"
+    blurb: "Pré-natal, parto, sangramentos, HAS, DM e gemelar"
   }
 };
 

@@ -1,0 +1,294 @@
+{
+  "title": "Obs5 · HAS · Diabetes · Gemelaridade",
+  "module": "obs5",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "O que mais cai neste bloco da apostila Obs5.",
+      "verdict": "No Obs5, o ROI está em pré-eclâmpsia (definição, gravidade, MgSO₄, crise) e DMG (jejum 92 / TOTG 75 g). Eclâmpsia/HELLP e gemelaridade (corionicidade) fecham o núcleo — HAS é a #1 causa de morte materna no Brasil.",
+      "foco": "PE · MgSO₄ · DMG · Crise hipertensiva · Corionicidade",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "Pré-eclâmpsia / gravidade", "pct": 26, "n": 26 },
+        { "tema": "DMG (rastreio e conduta)", "pct": 22, "n": 22 },
+        { "tema": "Eclâmpsia / HELLP / MgSO₄", "pct": 18, "n": 18 },
+        { "tema": "Classificação HAS / crise", "pct": 14, "n": 14 },
+        { "tema": "Gemelaridade", "pct": 12, "n": 12 },
+        { "tema": "DMG insulina / metformina", "pct": 8, "n": 8 }
+      ],
+      "deckOrder": [
+        "obs5-pe",
+        "obs5-dmg-diagnostico",
+        "obs5-eclampsia-hellp",
+        "obs5-has-classificacao",
+        "obs5-dmg-conduta",
+        "obs5-gemelar"
+      ],
+      "checklist": [
+        "pe",
+        "mgso4",
+        "dmg",
+        "crise",
+        "gemelar"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · HAS/PE",
+          "texto": "Classificação, gravidade, crise e MgSO₄."
+        },
+        {
+          "titulo": "Sessão 2 · DMG",
+          "texto": "Jejum 92, TOTG 75 g e insulina."
+        },
+        {
+          "titulo": "Sessão 3 · Gêmeos",
+          "texto": "Lambda vs T e riscos da monocoriônica."
+        }
+      ],
+      "lacuna": "Todos os esquemas de insulina e bombas: saiba quando indicar insulina e metas.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada Enare/USP/UNIFESP (Obstetrícia) aplicada aos subtemas do Obs5 (HAS, DM, gemelar)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed/Enare cobram protocolo: PE ≥140/90 + proteinúria, crise ≥160/110 com nifedipina, MgSO₄ na eclâmpsia, DMG com cortes IADPSG/MS. Conduta prática > fisiopatologia longa.",
+      "foco": "PE · Crise · MgSO₄ · DMG · Classificação",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (Obstetrícia) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        { "tema": "PE / eclâmpsia / MgSO₄", "pct": 32 },
+        { "tema": "DMG", "pct": 28 },
+        { "tema": "Crise hipertensiva", "pct": 16 },
+        { "tema": "Classificação HAS", "pct": 12 },
+        { "tema": "Gemelaridade", "pct": 12 }
+      ],
+      "deckOrder": [
+        "obs5-pe",
+        "obs5-eclampsia-hellp",
+        "obs5-dmg-diagnostico",
+        "obs5-dmg-conduta",
+        "obs5-has-classificacao",
+        "obs5-gemelar"
+      ],
+      "checklist": ["pe", "mgso4", "dmg", "crise", "classificacao"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Números da HAS",
+          "texto": "140/90 · 160/110 · proteinúria 300 mg."
+        },
+        {
+          "titulo": "Sessão 2 · DMG",
+          "texto": "92 / 180 / 153."
+        },
+        {
+          "titulo": "Sessão 3 · Convulsão",
+          "texto": "MgSO₄ Zuspan e sinais de intoxicação."
+        }
+      ],
+      "lacuna": "Nitroprussiato e doses raras: saiba que é última linha."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Fisiopatologia + protocolo",
+      "blurb": "USP-SP cobra mecanismo e cortes.",
+      "verdict": "USP pesa classificação fina, HELLP laboratorial, fisiopatologia da PE e corionicidade. DMG aparece com IADPSG e complicações fetais.",
+      "foco": "PE · HELLP · DMG · Corionicidade",
+      "estilo": "Levantamento USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP (Obstetrícia) aplicado ao Obs5.",
+      "priorities": [
+        { "tema": "PE / HELLP", "pct": 28 },
+        { "tema": "DMG / fisiopatologia", "pct": 22 },
+        { "tema": "Classificação HAS", "pct": 16 },
+        { "tema": "MgSO₄ / eclâmpsia", "pct": 14 },
+        { "tema": "Gemelaridade", "pct": 14 },
+        { "tema": "Conduta / timing", "pct": 6 }
+      ],
+      "deckOrder": [
+        "obs5-has-classificacao",
+        "obs5-pe",
+        "obs5-eclampsia-hellp",
+        "obs5-dmg-diagnostico",
+        "obs5-gemelar",
+        "obs5-dmg-conduta"
+      ],
+      "checklist": ["classificacao", "pe", "hellp", "dmg", "gemelar"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Classificar HAS",
+          "texto": "Crônica vs gestacional vs PE vs sobreposta."
+        },
+        {
+          "titulo": "Sessão 2 · HELLP",
+          "texto": "Hemólise, enzimas, plaquetas."
+        },
+        {
+          "titulo": "Sessão 3 · Corionicidade",
+          "texto": "Lambda, T, TTTS."
+        }
+      ],
+      "lacuna": "Estadiamento Quintero completo da TTTS: saiba conceito e que mono exige US seriada."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Urgência + conduta",
+      "blurb": "Vinheta de crise e convulsão.",
+      "verdict": "Unifesp gosta de eclâmpsia/HELLP, crise hipertensiva e DMG com complicação (ombro/macrossomia). Gemelar cai como prematuridade/PE. Conduta imediata vale ponto.",
+      "foco": "Eclâmpsia · Crise · HELLP · DMG · PE grave",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP (Obstetrícia) aplicado ao Obs5.",
+      "priorities": [
+        { "tema": "Eclâmpsia / MgSO₄", "pct": 24 },
+        { "tema": "PE grave / crise", "pct": 22 },
+        { "tema": "DMG conduta", "pct": 20 },
+        { "tema": "HELLP", "pct": 14 },
+        { "tema": "Gemelar", "pct": 12 },
+        { "tema": "Classificação", "pct": 8 }
+      ],
+      "deckOrder": [
+        "obs5-eclampsia-hellp",
+        "obs5-pe",
+        "obs5-dmg-conduta",
+        "obs5-dmg-diagnostico",
+        "obs5-gemelar",
+        "obs5-has-classificacao"
+      ],
+      "checklist": ["mgso4", "crise", "pe", "dmg", "hellp"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Sala de emergência",
+          "texto": "Convulsão + crise pressórica."
+        },
+        {
+          "titulo": "Sessão 2 · HELLP",
+          "texto": "Labs e indicação de resolução."
+        },
+        {
+          "titulo": "Sessão 3 · DMG grave",
+          "texto": "Insulina e timing do parto."
+        }
+      ],
+      "lacuna": "Protocolos locais de meta pressórica milímetro a milímetro: saiba ≥160/110 = tratar."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare cobra números: 140/90, 160/110, TOTG 92/180/153, MgSO₄ e nifedipina. Classificação HAS em vinheta curta. Gemelaridade menos detalhada que USP.",
+      "foco": "Números PE · DMG · MgSO₄ · Nifedipina",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare (Obstetrícia) aplicado ao Obs5.",
+      "priorities": [
+        { "tema": "PE / números", "pct": 28 },
+        { "tema": "DMG / TOTG", "pct": 26 },
+        { "tema": "MgSO₄ / eclâmpsia", "pct": 18 },
+        { "tema": "Crise (nifedipina)", "pct": 14 },
+        { "tema": "Gemelar / outros", "pct": 14 }
+      ],
+      "deckOrder": [
+        "obs5-pe",
+        "obs5-dmg-diagnostico",
+        "obs5-eclampsia-hellp",
+        "obs5-dmg-conduta",
+        "obs5-has-classificacao",
+        "obs5-gemelar"
+      ],
+      "checklist": ["pe", "dmg", "mgso4", "crise", "classificacao"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Decore os cortes",
+          "texto": "HAS, crise, proteinúria, TOTG."
+        },
+        {
+          "titulo": "Sessão 2 · MgSO₄",
+          "texto": "Ataque, manutenção, antídoto."
+        },
+        {
+          "titulo": "Sessão 3 · DMG",
+          "texto": "Dieta → insulina → metformina (MS)."
+        }
+      ],
+      "lacuna": "Comparar todos os consensos antigos de rastreio DMG: use IADPSG/MS atual da apostila."
+    }
+  ],
+  "checklistItems": {
+    "pe": {
+      "tema": "Pré-eclâmpsia",
+      "yield": "Máximo",
+      "pegar": "≥140×90 após 20s + proteinúria (≥300 mg/24h) ou disfunção de órgão · Grave se ≥160×110 / sintomas / labs · Cura = parto"
+    },
+    "mgso4": {
+      "tema": "MgSO₄ / eclâmpsia",
+      "yield": "Máximo",
+      "pegar": "Droga de escolha anticonvulsivante · Zuspan: ataque IV + manutenção BIC · Intoxicação: ↓reflexos/FR → gluconato de Ca · Não é anti-HIP"
+    },
+    "dmg": {
+      "tema": "DMG",
+      "yield": "Máximo",
+      "pegar": "Jejum 1ª consulta · ≥92 e <126 = DMG · TOTG 75 g: 92 / 180 / 153 · Dieta 1ª linha · Insulina se falha · Metformina em situações MS"
+    },
+    "crise": {
+      "tema": "Crise hipertensiva",
+      "yield": "Máximo",
+      "pegar": "≥160×110 · Nifedipina VO 1ª linha (apostila) · Alternativas hidralazina/labetalol · Evitar queda abrupta · + MgSO₄ se PE grave/eclâmpsia"
+    },
+    "gemelar": {
+      "tema": "Gemelaridade",
+      "yield": "Alto",
+      "pegar": "Corionicidade cedo · Lambda = di · T = mono · Mono = TTTS/maior risco · Prematuridade e PE ↑"
+    },
+    "classificacao": {
+      "tema": "Classificação HAS",
+      "yield": "Alto",
+      "pegar": "Crônica: <20s ou prévia · Gestacional: ≥20s sem proteinúria · PE: ≥20s + proteinúria/disfunção · Sobreposta: crônica + PE"
+    },
+    "hellp": {
+      "tema": "HELLP",
+      "yield": "Alto",
+      "pegar": "Hemólise + enzimas ↑ + plaquetas ↓ · Forma grave · Resolver gestação · Vigiar DPP e fígado"
+    }
+  },
+  "numeros": [
+    "HAS: ≥140 × 90 mmHg",
+    "Crise / gravidade pressórica: ≥160 × 110 mmHg",
+    "Proteinúria PE: ≥300 mg/24h",
+    "HAS crônica/gestacional: reavaliar PA até ~12 semanas pós-parto",
+    "DMG jejum: ≥92 e <126 mg/dl",
+    "TOTG 75 g: jejum ≥92 · 1h ≥180 · 2h ≥153",
+    "DM manifesto: jejum ≥126 · aleatória ≥200 + sintomas",
+    "MgSO₄ Zuspan: ataque 4–6 g IV + manutenção 2–3 g/h (protocolo)",
+    "Eclâmpsia: mais comum até 48h pós-parto (pode até ~10º dia)",
+    "Corionicidade: ideal no 1º trimestre (lambda / T)"
+  ],
+  "pegadinhas": [
+    "MgSO₄ não trata a pressão",
+    "IECA/BRA são contraindicação na gestação",
+    "Jejum 92–125 já é DMG — não precisa TOTG",
+    "Qualquer valor alterado no TOTG 75 g fecha DMG",
+    "Dicoriônica ≠ sempre sem risco (ainda há prematuridade/PE)",
+    "Sexo igual não prova monocoriônica",
+    "PE pode piorar / eclâmpsia no puerpério",
+    "Edema isolado não define PE"
+  ],
+  "baixoRoi": [
+    "Todos os estágios Quintero da TTTS em detalhe",
+    "Esquemas completos de bomba de insulina",
+    "Comparação histórica de todos os consensos de rastreio DMG",
+    "Farmacocinética completa do MgSO₄",
+    "Técnica de laser na TTTS passo a passo"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}
