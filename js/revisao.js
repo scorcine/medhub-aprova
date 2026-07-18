@@ -146,6 +146,11 @@ const APROVA_REVISAO_MODULES = {
     label: "Urgências · Vesícula · Urologia · AD (lacunas)",
     file: "data/revisao-cir-lacunas.json?v=20260718aq",
     specialty: "cirurgia"
+  },
+  "cir-r1": {
+    label: "Cobertura R1 · AD · Uro · Tórax · extras",
+    file: "data/revisao-cir-r1.json?v=20260718av",
+    specialty: "cirurgia"
   }
 };
 

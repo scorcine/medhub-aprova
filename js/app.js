@@ -286,6 +286,7 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("cir2-") === 0) return "Cir2 · Trauma / ATLS";
   if (id.indexOf("cir3-") === 0) return "Cir3 · Pré/pós-op · Hérnias";
   if (id.indexOf("ciresp-") === 0) return "CirEsp · Queimaduras / Choque";
+  if (id.indexOf("crr-") === 0) return "Cobertura R1 · sem apostila / reforço";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -685,7 +686,8 @@ const APROVA_PED_MODULE_PREFIXES = {
   cir1: ["cir1-"],
   cir2: ["cir2-"],
   cir3: ["cir3-"],
-  ciresp: ["ciresp-"]
+  ciresp: ["ciresp-"],
+  "cir-r1": ["crr-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
