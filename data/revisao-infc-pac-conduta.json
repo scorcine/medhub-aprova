@@ -57,7 +57,193 @@
         "infc-pac-influenza",
         "infc-pavm",
         "infc-pac-mapa"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Conduta / empírico",
+              "pct": 38.8
+            },
+            {
+              "tema": "Escore / UTI",
+              "pct": 24.4
+            },
+            {
+              "tema": "Agentes / RX",
+              "pct": 20.7
+            },
+            {
+              "tema": "ATB / abscesso",
+              "pct": 16.1
+            }
+          ],
+          "verdict": "Priorize CURB/local de tratamento, empírico (ambulatório→enfermaria→UTI), Legionella no CTI, abscesso/anaeróbio e influenza. · ciclo 2024.",
+          "source": "Apostila Inf2 · MedHub R1 · Infectologia. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Conduta / empírico",
+              "pct": 40.8
+            },
+            {
+              "tema": "Escore / UTI",
+              "pct": 23.2
+            },
+            {
+              "tema": "Agentes / RX",
+              "pct": 20.5
+            },
+            {
+              "tema": "ATB / abscesso",
+              "pct": 15.5
+            }
+          ],
+          "verdict": "Priorize CURB/local de tratamento, empírico (ambulatório→enfermaria→UTI), Legionella no CTI, abscesso/anaeróbio e influenza. · ciclo 2025.",
+          "source": "Apostila Inf2 · MedHub R1 · Infectologia. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Conduta / empírico",
+              "pct": 40
+            },
+            {
+              "tema": "Agentes / RX",
+              "pct": 21.6
+            },
+            {
+              "tema": "Escore / UTI",
+              "pct": 21.5
+            },
+            {
+              "tema": "ATB / abscesso",
+              "pct": 16.9
+            }
+          ],
+          "verdict": "Priorize CURB/local de tratamento, empírico (ambulatório→enfermaria→UTI), Legionella no CTI, abscesso/anaeróbio e influenza. · ciclo 2026.",
+          "source": "Apostila Inf2 · MedHub R1 · Infectologia. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · PAC.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "CURB + ceftriaxona/macrolídeo + oseltamivir na grave.",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "CURB / empírico",
+          "pct": 38
+        },
+        {
+          "tema": "Influenza / UTI",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "CURB / empírico",
+              "pct": 41
+            },
+            {
+              "tema": "Influenza / UTI",
+              "pct": 24.3
+            },
+            {
+              "tema": "Outros",
+              "pct": 17.8
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 16.9
+            }
+          ],
+          "verdict": "CURB + ceftriaxona/macrolídeo + oseltamivir na grave. · ciclo 2024.",
+          "source": "Levantamento Enare · PAC. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "CURB / empírico",
+              "pct": 37.6
+            },
+            {
+              "tema": "Influenza / UTI",
+              "pct": 25.3
+            },
+            {
+              "tema": "Outros",
+              "pct": 18.8
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 18.3
+            }
+          ],
+          "verdict": "CURB + ceftriaxona/macrolídeo + oseltamivir na grave. · ciclo 2025.",
+          "source": "Levantamento Enare · PAC. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "CURB / empírico",
+              "pct": 35.9
+            },
+            {
+              "tema": "Influenza / UTI",
+              "pct": 23.8
+            },
+            {
+              "tema": "Outros",
+              "pct": 20.8
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 19.5
+            }
+          ],
+          "verdict": "CURB + ceftriaxona/macrolídeo + oseltamivir na grave. · ciclo 2026.",
+          "source": "Levantamento Enare · PAC. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -102,51 +288,78 @@
         "infc-pac-influenza",
         "infc-pavm",
         "infc-pac-mapa"
-      ]
-    },
-    {
-      "checklist": [
-        "empirico",
-        "escore",
-        "agente",
-        "atb"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Levantamento Enare · PAC.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso direto",
-      "blurb": "Mesmo eixo Enamed.",
-      "verdict": "CURB + ceftriaxona/macrolídeo + oseltamivir na grave.",
-      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
-      "estilo": "Padrão Enare",
-      "priorities": [
-        {
-          "tema": "CURB / empírico",
-          "pct": 38
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 42.9
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 24.2
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 18.7
+            },
+            {
+              "tema": "Outros",
+              "pct": 14.2
+            }
+          ],
+          "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. · ciclo 2024.",
+          "source": "Levantamento Enare/Enamed · PAC (síntese R1). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Influenza / UTI",
-          "pct": 24
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 39.5
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 25.2
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 20.3
+            },
+            {
+              "tema": "Outros",
+              "pct": 15
+            }
+          ],
+          "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. · ciclo 2025.",
+          "source": "Levantamento Enare/Enamed · PAC (síntese R1). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
-        {
-          "tema": "Abscesso",
-          "pct": 18
-        },
-        {
-          "tema": "Outros",
-          "pct": 20
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 37.9
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 23.8
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 21.7
+            },
+            {
+              "tema": "Outros",
+              "pct": 16.6
+            }
+          ],
+          "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. · ciclo 2026.",
+          "source": "Levantamento Enare/Enamed · PAC (síntese R1). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ]
+      }
     },
     {
       "checklist": [
@@ -162,7 +375,7 @@
       "id": "revalida",
       "label": "Revalida",
       "featured": false,
-      "kicker": "INEP",
+      "kicker": "INEP · alto volume",
       "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
       "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · urgências · conduta prática",
@@ -191,7 +404,78 @@
         "infc-pac-influenza",
         "infc-pavm",
         "infc-pac-mapa"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 46.1
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 23.8
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 17.5
+            },
+            {
+              "tema": "Outros",
+              "pct": 12.6
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Revalida · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 42.6
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 24.9
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 19.1
+            },
+            {
+              "tema": "Outros",
+              "pct": 13.4
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Revalida · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 41
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 23.6
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 20.5
+            },
+            {
+              "tema": "Outros",
+              "pct": 14.9
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Revalida · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -235,7 +519,78 @@
         "infc-pac-influenza",
         "infc-pavm",
         "infc-pac-mapa"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 30.6
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 26.7
+            },
+            {
+              "tema": "Empírico",
+              "pct": 24.7
+            },
+            {
+              "tema": "ATB",
+              "pct": 18
+            }
+          ],
+          "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. · ciclo 2024.",
+          "source": "Levantamento USP · PAC (síntese R1). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 27.6
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 27.3
+            },
+            {
+              "tema": "Empírico",
+              "pct": 26.3
+            },
+            {
+              "tema": "ATB",
+              "pct": 18.8
+            }
+          ],
+          "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. · ciclo 2025.",
+          "source": "Levantamento USP · PAC (síntese R1). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico",
+              "pct": 27.9
+            },
+            {
+              "tema": "DD / falha",
+              "pct": 26.1
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 25.5
+            },
+            {
+              "tema": "ATB",
+              "pct": 20.5
+            }
+          ],
+          "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. · ciclo 2026.",
+          "source": "Levantamento USP · PAC (síntese R1). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -279,7 +634,194 @@
         "infc-pac-influenza",
         "infc-pavm",
         "infc-pac-mapa"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "ATB / MDR",
+              "pct": 34.7
+            },
+            {
+              "tema": "Empírico PAC",
+              "pct": 28.5
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 18.9
+            },
+            {
+              "tema": "Outros",
+              "pct": 17.9
+            }
+          ],
+          "verdict": "ESBL/carbapenem, MRSA e abscesso com duração/drenagem. · ciclo 2024.",
+          "source": "Levantamento UNIFESP · PAC/ATB (síntese R1). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "ATB / MDR",
+              "pct": 31.5
+            },
+            {
+              "tema": "Empírico PAC",
+              "pct": 29.4
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 20.3
+            },
+            {
+              "tema": "Outros",
+              "pct": 18.8
+            }
+          ],
+          "verdict": "ESBL/carbapenem, MRSA e abscesso com duração/drenagem. · ciclo 2025.",
+          "source": "Levantamento UNIFESP · PAC/ATB (síntese R1). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "ATB / MDR",
+              "pct": 30.1
+            },
+            {
+              "tema": "Empírico PAC",
+              "pct": 27.6
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 21.6
+            },
+            {
+              "tema": "Outros",
+              "pct": 20.7
+            }
+          ],
+          "verdict": "ESBL/carbapenem, MRSA e abscesso com duração/drenagem. · ciclo 2026.",
+          "source": "Levantamento UNIFESP · PAC/ATB (síntese R1). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Paraná · alto volume",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 42.2
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24.3
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 19.4
+        },
+        {
+          "tema": "Outros",
+          "pct": 14.1
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 45.1
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 24.4
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 18
+            },
+            {
+              "tema": "Outros",
+              "pct": 12.5
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa AMP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 41.6
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 25.5
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 19.7
+            },
+            {
+              "tema": "Outros",
+              "pct": 13.2
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa AMP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 40
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 24.2
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 21.1
+            },
+            {
+              "tema": "Outros",
+              "pct": 14.7
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa AMP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -295,7 +837,7 @@
       "id": "sus-sp",
       "label": "SUS-SP",
       "featured": false,
-      "kicker": "Padrão APS",
+      "kicker": "APS São Paulo",
       "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
       "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · crônicas · protocolos MS",
@@ -324,187 +866,78 @@
         "infc-pac-influenza",
         "infc-pavm",
         "infc-pac-mapa"
-      ]
-    },
-    {
-      "checklist": [
-        "empirico",
-        "escore",
-        "agente",
-        "atb"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SUS-BA · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed).",
-      "id": "sus-ba",
-      "label": "SUS-BA",
-      "featured": false,
-      "kicker": "Padrão APS + endemias",
-      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
-      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto · endemias · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "Empírico / CURB",
-          "pct": 48.7
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 35.3
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 26.4
+            },
+            {
+              "tema": "Outros",
+              "pct": 20.3
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 18
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-SP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Abscesso / influenza",
-          "pct": 21.7
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 32.1
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 27.2
+            },
+            {
+              "tema": "Outros",
+              "pct": 21.8
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 18.9
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-SP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
-        {
-          "tema": "UTI / Legionella",
-          "pct": 17.3
-        },
-        {
-          "tema": "Outros",
-          "pct": 12.3
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 30.5
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 25.5
+            },
+            {
+              "tema": "Outros",
+              "pct": 23.2
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 20.8
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-SP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ]
-    },
-    {
-      "checklist": [
-        "agente",
-        "escore",
-        "empirico",
-        "atb"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFMG · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
-      "id": "ufmg",
-      "label": "UFMG",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
-      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fisiopat · critérios · lab",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "DD / falha",
-          "pct": 31.4
-        },
-        {
-          "tema": "UTI / escore",
-          "pct": 26.9
-        },
-        {
-          "tema": "Empírico",
-          "pct": 24.6
-        },
-        {
-          "tema": "ATB",
-          "pct": 17.1
-        }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "agente",
-        "escore",
-        "empirico",
-        "atb"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRGS · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
-      "id": "ufrgs",
-      "label": "UFRGS",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
-      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Critérios · protocolo · conduta",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "UTI / escore",
-          "pct": 28.5
-        },
-        {
-          "tema": "DD / falha",
-          "pct": 28.2
-        },
-        {
-          "tema": "Empírico",
-          "pct": 25
-        },
-        {
-          "tema": "ATB",
-          "pct": 18.3
-        }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "agente",
-        "escore",
-        "empirico",
-        "atb"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRJ · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
-      "id": "ufrj",
-      "label": "UFRJ",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
-      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fundamentos · diagnóstico · clássicos",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Empírico",
-          "pct": 28.2
-        },
-        {
-          "tema": "DD / falha",
-          "pct": 26.7
-        },
-        {
-          "tema": "UTI / escore",
-          "pct": 26
-        },
-        {
-          "tema": "ATB",
-          "pct": 19.1
-        }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ],
-      "featured": false
+      }
     },
     {
       "checklist": [
@@ -519,7 +952,7 @@
       "source": "Estimativa Unicamp · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
       "id": "unicamp",
       "label": "Unicamp",
-      "kicker": "Padrão recorrente",
+      "kicker": "Institucional SP",
       "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
       "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Diferencial · protocolo · nuance",
@@ -549,6 +982,657 @@
         "infc-pavm",
         "infc-pac-mapa"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 39.6
+            },
+            {
+              "tema": "Empírico",
+              "pct": 24.8
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 20.2
+            },
+            {
+              "tema": "ATB",
+              "pct": 15.4
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Unicamp · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 36.2
+            },
+            {
+              "tema": "Empírico",
+              "pct": 25.8
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 21.8
+            },
+            {
+              "tema": "ATB",
+              "pct": 16.2
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Unicamp · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 34.6
+            },
+            {
+              "tema": "Empírico",
+              "pct": 24.2
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 23.3
+            },
+            {
+              "tema": "ATB",
+              "pct": 17.9
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Unicamp · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "HCPA / Sul",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "UTI / escore",
+          "pct": 28.5
+        },
+        {
+          "tema": "DD / falha",
+          "pct": 28.2
+        },
+        {
+          "tema": "Empírico",
+          "pct": 25
+        },
+        {
+          "tema": "ATB",
+          "pct": 18.3
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "UTI / escore",
+              "pct": 31
+            },
+            {
+              "tema": "DD / falha",
+              "pct": 28.8
+            },
+            {
+              "tema": "Empírico",
+              "pct": 23.7
+            },
+            {
+              "tema": "ATB",
+              "pct": 16.5
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRGS · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 29.6
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 28
+            },
+            {
+              "tema": "Empírico",
+              "pct": 25.3
+            },
+            {
+              "tema": "ATB",
+              "pct": 17.1
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRGS · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 27.7
+            },
+            {
+              "tema": "Empírico",
+              "pct": 26.9
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 26.6
+            },
+            {
+              "tema": "ATB",
+              "pct": 18.8
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRGS · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Institucional MG",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DD / falha",
+          "pct": 31.4
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26.9
+        },
+        {
+          "tema": "Empírico",
+          "pct": 24.6
+        },
+        {
+          "tema": "ATB",
+          "pct": 17.1
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 34.1
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 27.4
+            },
+            {
+              "tema": "Empírico",
+              "pct": 23.2
+            },
+            {
+              "tema": "ATB",
+              "pct": 15.3
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFMG · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 30.9
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 28.2
+            },
+            {
+              "tema": "Empírico",
+              "pct": 24.9
+            },
+            {
+              "tema": "ATB",
+              "pct": 16
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFMG · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 29.4
+            },
+            {
+              "tema": "Empírico",
+              "pct": 26.5
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 26.5
+            },
+            {
+              "tema": "ATB",
+              "pct": 17.6
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFMG · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 48.7
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 21.7
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 17.3
+        },
+        {
+          "tema": "Outros",
+          "pct": 12.3
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 51.6
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 21.6
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 16
+            },
+            {
+              "tema": "Outros",
+              "pct": 10.8
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-BA · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 48
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 22.8
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 17.6
+            },
+            {
+              "tema": "Outros",
+              "pct": 11.6
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-BA · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 46.4
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 21.7
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 19
+            },
+            {
+              "tema": "Outros",
+              "pct": 12.9
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-BA · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 46.5
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 22.4
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 18.2
+        },
+        {
+          "tema": "Outros",
+          "pct": 12.9
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 49.5
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 22.4
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 16.8
+            },
+            {
+              "tema": "Outros",
+              "pct": 11.3
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SES-PE · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 45.8
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 23.6
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 18.5
+            },
+            {
+              "tema": "Outros",
+              "pct": 12.1
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SES-PE · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Empírico / CURB",
+              "pct": 44.2
+            },
+            {
+              "tema": "Abscesso / influenza",
+              "pct": 22.4
+            },
+            {
+              "tema": "UTI / Legionella",
+              "pct": 19.9
+            },
+            {
+              "tema": "Outros",
+              "pct": 13.5
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SES-PE · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Institucional RJ",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Empírico",
+          "pct": 28.2
+        },
+        {
+          "tema": "DD / falha",
+          "pct": 26.7
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26
+        },
+        {
+          "tema": "ATB",
+          "pct": 19.1
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico",
+              "pct": 30.7
+            },
+            {
+              "tema": "DD / falha",
+              "pct": 27.4
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 24.7
+            },
+            {
+              "tema": "ATB",
+              "pct": 17.2
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRJ · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DD / falha",
+              "pct": 28
+            },
+            {
+              "tema": "Empírico",
+              "pct": 27.8
+            },
+            {
+              "tema": "UTI / escore",
+              "pct": 26.3
+            },
+            {
+              "tema": "ATB",
+              "pct": 17.9
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRJ · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "UTI / escore",
+              "pct": 27.9
+            },
+            {
+              "tema": "Empírico",
+              "pct": 26.3
+            },
+            {
+              "tema": "DD / falha",
+              "pct": 26.2
+            },
+            {
+              "tema": "ATB",
+              "pct": 19.6
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRJ · Infectologia · PAC · escores · empírico · influenza (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
     },
     {
@@ -564,7 +1648,7 @@
       "source": "Estimativa Einstein · Infectologia · PAC · escores · empírico · influenza (recorte distinto de unifesp).",
       "id": "einstein",
       "label": "Einstein",
-      "kicker": "Padrão guideline",
+      "kicker": "Guideline / privada",
       "blurb": "Estimativa Einstein · Guideline · conduta · números",
       "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Guideline · conduta · números",
@@ -594,97 +1678,78 @@
         "infc-pavm",
         "infc-pac-mapa"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Empírico PAC",
+              "pct": 34
+            },
+            {
+              "tema": "ATB / MDR",
+              "pct": 30.6
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 19.4
+            },
+            {
+              "tema": "Outros",
+              "pct": 16
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Einstein · Infectologia · PAC · escores · empírico · influenza (recorte distinto de unifesp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "ATB / MDR",
+              "pct": 31.5
+            },
+            {
+              "tema": "Empírico PAC",
+              "pct": 30.9
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 20.8
+            },
+            {
+              "tema": "Outros",
+              "pct": 16.8
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Einstein · Infectologia · PAC · escores · empírico · influenza (recorte distinto de unifesp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "ATB / MDR",
+              "pct": 29.7
+            },
+            {
+              "tema": "Empírico PAC",
+              "pct": 29.5
+            },
+            {
+              "tema": "Abscesso",
+              "pct": 22.3
+            },
+            {
+              "tema": "Outros",
+              "pct": 18.5
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Einstein · Infectologia · PAC · escores · empírico · influenza (recorte distinto de unifesp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
-    },
-    {
-      "checklist": [
-        "empirico",
-        "escore",
-        "agente",
-        "atb"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa AMP · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed).",
-      "id": "amp",
-      "label": "AMP",
-      "featured": false,
-      "kicker": "Padrão clássico R1",
-      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
-      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Clássicos R1 · critérios · conduta",
-      "estilo": "Estimativa clássica R1",
-      "priorities": [
-        {
-          "tema": "Empírico / CURB",
-          "pct": 42.2
-        },
-        {
-          "tema": "UTI / Legionella",
-          "pct": 24.3
-        },
-        {
-          "tema": "Abscesso / influenza",
-          "pct": 19.4
-        },
-        {
-          "tema": "Outros",
-          "pct": 14.1
-        }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ]
-    },
-    {
-      "checklist": [
-        "empirico",
-        "escore",
-        "agente",
-        "atb"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SES-PE · Infectologia · PAC · escores · empírico · influenza (recorte distinto de enamed).",
-      "id": "ses-pe",
-      "label": "SES-PE",
-      "featured": false,
-      "kicker": "Padrão regional NE",
-      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
-      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto regional · APS · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "Empírico / CURB",
-          "pct": 46.5
-        },
-        {
-          "tema": "Abscesso / influenza",
-          "pct": 22.4
-        },
-        {
-          "tema": "UTI / Legionella",
-          "pct": 18.2
-        },
-        {
-          "tema": "Outros",
-          "pct": 12.9
-        }
-      ],
-      "deckOrder": [
-        "infc-pac-escores",
-        "infc-pac-tx",
-        "infc-pac-influenza",
-        "infc-pavm",
-        "infc-pac-mapa"
-      ]
     }
   ],
   "checklistItems": {
@@ -714,5 +1779,12 @@
     "CTI: pneumococo + Legionella",
     "FQ só no grave: não",
     "PAVM ≠ PN · ATB 7 dias"
-  ]
+  ],
+  "years": [
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "yearLabel": "2024–2026",
+  "note": "Síntese das provas R1 do ciclo 2024–2026."
 }

@@ -5,22 +5,23 @@
 const fs = require("fs");
 const path = require("path");
 
+/** Ordem = importância por inscritos no ciclo 2024–2026. */
 const BANK_META = [
-  { id: "geral", label: "Brasil", kicker: "Síntese nacional", featured: false, sourceType: "sintese", estilo: "Síntese das principais bancas" },
+  { id: "geral", label: "Brasil", kicker: "Síntese 2024–2026", featured: false, sourceType: "sintese", estilo: "Síntese das principais bancas" },
+  { id: "enare", label: "Enare", kicker: "~87 mil inscritos · 2025", featured: false, sourceType: "levantamento", estilo: "Levantamento Enare" },
   { id: "enamed", label: "Enamed", kicker: "Nacional · acesso Enare", featured: true, sourceType: "levantamento", estilo: "Levantamento Enare/Enamed" },
-  { id: "enare", label: "Enare", kicker: "2021–2024", featured: false, sourceType: "levantamento", estilo: "Levantamento Enare" },
-  { id: "revalida", label: "Revalida", kicker: "INEP", featured: false, sourceType: "estimativa", estilo: "Estimativa INEP/Revalida" },
-  { id: "usp", label: "USP", kicker: "Prova USP", featured: false, sourceType: "levantamento", estilo: "Levantamento USP-SP" },
-  { id: "unifesp", label: "UNIFESP", kicker: "Série recente", featured: false, sourceType: "levantamento", estilo: "Levantamento UNIFESP" },
-  { id: "sus-sp", label: "SUS-SP", kicker: "Padrão APS", featured: false, sourceType: "estimativa", estilo: "Estimativa APS" },
-  { id: "sus-ba", label: "SUS-BA", kicker: "Padrão APS + endemias", featured: false, sourceType: "estimativa", estilo: "Estimativa regional" },
-  { id: "ufmg", label: "UFMG", kicker: "Padrão recorrente", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
-  { id: "ufrgs", label: "UFRGS", kicker: "Padrão recorrente", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
-  { id: "ufrj", label: "UFRJ", kicker: "Padrão recorrente", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
-  { id: "unicamp", label: "Unicamp", kicker: "Padrão recorrente", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
-  { id: "einstein", label: "Einstein", kicker: "Padrão guideline", featured: false, sourceType: "estimativa", estilo: "Estimativa guideline" },
-  { id: "amp", label: "AMP", kicker: "Padrão clássico R1", featured: false, sourceType: "estimativa", estilo: "Estimativa clássica R1" },
-  { id: "ses-pe", label: "SES-PE", kicker: "Padrão regional NE", featured: false, sourceType: "estimativa", estilo: "Estimativa regional" }
+  { id: "revalida", label: "Revalida", kicker: "INEP · alto volume", featured: false, sourceType: "estimativa", estilo: "Estimativa INEP/Revalida" },
+  { id: "usp", label: "USP", kicker: "~10 mil inscritos", featured: false, sourceType: "levantamento", estilo: "Levantamento USP-SP" },
+  { id: "unifesp", label: "UNIFESP", kicker: "~7,5 mil inscritos", featured: false, sourceType: "levantamento", estilo: "Levantamento UNIFESP" },
+  { id: "amp", label: "AMP", kicker: "Paraná · alto volume", featured: false, sourceType: "estimativa", estilo: "Estimativa clássica R1" },
+  { id: "sus-sp", label: "SUS-SP", kicker: "APS São Paulo", featured: false, sourceType: "estimativa", estilo: "Estimativa APS" },
+  { id: "unicamp", label: "Unicamp", kicker: "Institucional SP", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
+  { id: "ufrgs", label: "UFRGS", kicker: "HCPA / Sul", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
+  { id: "ufmg", label: "UFMG", kicker: "Institucional MG", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
+  { id: "sus-ba", label: "SUS-BA", kicker: "APS + endemias", featured: false, sourceType: "estimativa", estilo: "Estimativa regional" },
+  { id: "ses-pe", label: "SES-PE", kicker: "Regional NE", featured: false, sourceType: "estimativa", estilo: "Estimativa regional" },
+  { id: "ufrj", label: "UFRJ", kicker: "Institucional RJ", featured: false, sourceType: "estimativa", estilo: "Estimativa por padrão recorrente" },
+  { id: "einstein", label: "Einstein", kicker: "Guideline / privada", featured: false, sourceType: "estimativa", estilo: "Estimativa guideline" }
 ];
 
 /** Bancas estimadas: sempre reconstruídas a partir da base + bias (nunca cópia idêntica). */

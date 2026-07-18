@@ -1320,6 +1320,154 @@ body.app-body {
   gap: 0.45rem;
 }
 
+.esp-stat-filters {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.esp-stat-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.esp-exam-pick-btn {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.esp-exam-pick-btn:hover,
+.esp-exam-pick-btn.open {
+  border-color: rgba(15, 159, 154, 0.45);
+}
+
+.esp-exam-pick-btn--set {
+  border-color: rgba(15, 159, 154, 0.4);
+  background: rgba(15, 159, 154, 0.08);
+  color: var(--accent-deep);
+}
+
+.esp-year-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.esp-year-pick select {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.esp-exam-chooser {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 0.75rem;
+}
+
+.esp-exam-chooser-hint {
+  margin: 0 0 0.55rem;
+  font-size: 0.84rem;
+}
+
+.esp-exam-chooser-list {
+  display: grid;
+  gap: 0.35rem;
+  max-height: 16rem;
+  overflow: auto;
+}
+
+.esp-exam-chooser-item {
+  appearance: none;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr auto;
+  gap: 0.55rem;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0.5rem 0.55rem;
+  border-radius: calc(var(--radius) - 2px);
+  cursor: pointer;
+}
+
+.esp-exam-chooser-item:hover {
+  background: rgba(15, 159, 154, 0.06);
+}
+
+.esp-exam-chooser-item.active {
+  border-color: rgba(15, 159, 154, 0.4);
+  background: rgba(15, 159, 154, 0.1);
+}
+
+.esp-exam-chooser-item.featured .esp-exam-chooser-name {
+  font-weight: 700;
+}
+
+.esp-exam-chooser-rank {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.esp-exam-chooser-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.esp-exam-chooser-meta {
+  font-size: 0.78rem;
+  color: var(--muted, #5b6570);
+}
+
+@media (max-width: 640px) {
+  .esp-year-pick {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .esp-year-pick select {
+    flex: 1;
+  }
+
+  .esp-exam-chooser-item {
+    grid-template-columns: 1.4rem 1fr;
+  }
+
+  .esp-exam-chooser-meta {
+    grid-column: 2;
+  }
+}
+
 .esp-exam-btn {
   appearance: none;
   border: 1px solid var(--line-strong);

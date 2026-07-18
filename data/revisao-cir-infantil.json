@@ -52,7 +52,148 @@
         "cir1-ped-abdome",
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Abdome agudo ped",
+              "pct": 36.2
+            },
+            {
+              "tema": "Digestivo / malformação",
+              "pct": 36
+            },
+            {
+              "tema": "Parede / vias / HDC",
+              "pct": 27.8
+            }
+          ],
+          "verdict": "Invaginação, Meckel, atresia esofágica, piloro, Hirschsprung, Ladd, onfalocele/gastroschisis, atresia de vias e HDC. · ciclo 2024.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Digestivo / malformação",
+              "pct": 37.2
+            },
+            {
+              "tema": "Abdome agudo ped",
+              "pct": 32.9
+            },
+            {
+              "tema": "Parede / vias / HDC",
+              "pct": 29.9
+            }
+          ],
+          "verdict": "Invaginação, Meckel, atresia esofágica, piloro, Hirschsprung, Ladd, onfalocele/gastroschisis, atresia de vias e HDC. · ciclo 2025.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Digestivo / malformação",
+              "pct": 35.5
+            },
+            {
+              "tema": "Parede / vias / HDC",
+              "pct": 32.5
+            },
+            {
+              "tema": "Abdome agudo ped",
+              "pct": 32
+            }
+          ],
+          "verdict": "Invaginação, Meckel, atresia esofágica, piloro, Hirschsprung, Ladd, onfalocele/gastroschisis, atresia de vias e HDC. · ciclo 2026.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ladd",
+        "ae",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · infantil.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~8%",
+      "blurb": "Conduta infantil.",
+      "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo.",
+      "foco": "Enema · Piloro · Ladd",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências",
+          "pct": 45
+        },
+        {
+          "tema": "Malformações",
+          "pct": 55
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Malformações",
+              "pct": 53.4
+            },
+            {
+              "tema": "Urgências",
+              "pct": 46.6
+            }
+          ],
+          "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo. · ciclo 2024.",
+          "source": "Enare · infantil. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Malformações",
+              "pct": 56.6
+            },
+            {
+              "tema": "Urgências",
+              "pct": 43.4
+            }
+          ],
+          "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo. · ciclo 2025.",
+          "source": "Enare · infantil. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Malformações",
+              "pct": 56.2
+            },
+            {
+              "tema": "Urgências",
+              "pct": 43.8
+            }
+          ],
+          "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo. · ciclo 2026.",
+          "source": "Enare · infantil. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -92,42 +233,66 @@
         "cir1-ped-abdome",
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
-      ]
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "piloro",
-        "ladd",
-        "ae",
-        "hirschsprung"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · infantil.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso · ~8%",
-      "blurb": "Conduta infantil.",
-      "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo.",
-      "foco": "Enema · Piloro · Ladd",
-      "estilo": "Padrão Enare",
-      "priorities": [
-        {
-          "tema": "Urgências",
-          "pct": 45
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 42.3
+            },
+            {
+              "tema": "Malformações",
+              "pct": 34.7
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 23
+            }
+          ],
+          "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. · ciclo 2024.",
+          "source": "Enare · infantil. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Malformações",
-          "pct": 55
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 38.8
+            },
+            {
+              "tema": "Malformações",
+              "pct": 36.2
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 25
+            }
+          ],
+          "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. · ciclo 2025.",
+          "source": "Enare · infantil. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 37.9
+            },
+            {
+              "tema": "Malformações",
+              "pct": 34.8
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.3
+            }
+          ],
+          "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. · ciclo 2026.",
+          "source": "Enare · infantil. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ]
+      }
     },
     {
       "checklist": [
@@ -144,7 +309,7 @@
       "id": "revalida",
       "label": "Revalida",
       "featured": false,
-      "kicker": "INEP",
+      "kicker": "INEP · alto volume",
       "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
       "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · urgências · conduta prática",
@@ -167,7 +332,66 @@
         "cir1-ped-abdome",
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 45
+            },
+            {
+              "tema": "Malformações",
+              "pct": 33.7
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 21.3
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Revalida · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 41.5
+            },
+            {
+              "tema": "Malformações",
+              "pct": 35.3
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 23.2
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Revalida · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 40.6
+            },
+            {
+              "tema": "Malformações",
+              "pct": 34
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 25.4
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Revalida · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -206,7 +430,66 @@
         "cir1-ped-abdome",
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 42.4
+            },
+            {
+              "tema": "Urgências",
+              "pct": 29.9
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 27.7
+            }
+          ],
+          "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. · ciclo 2024.",
+          "source": "USP-SP · infantil. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 38.9
+            },
+            {
+              "tema": "Urgências",
+              "pct": 31.1
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 30
+            }
+          ],
+          "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. · ciclo 2025.",
+          "source": "USP-SP · infantil. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 37.8
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 32.5
+            },
+            {
+              "tema": "Urgências",
+              "pct": 29.7
+            }
+          ],
+          "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. · ciclo 2026.",
+          "source": "USP-SP · infantil. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -245,7 +528,165 @@
         "cir1-ped-abdome",
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Digestivo",
+              "pct": 42.3
+            },
+            {
+              "tema": "Urgências",
+              "pct": 34.7
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 23
+            }
+          ],
+          "verdict": "Bloco forte — revise os três decks. · ciclo 2024.",
+          "source": "UNIFESP · infantil. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Digestivo",
+              "pct": 38.8
+            },
+            {
+              "tema": "Urgências",
+              "pct": 36.2
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 25
+            }
+          ],
+          "verdict": "Bloco forte — revise os três decks. · ciclo 2025.",
+          "source": "UNIFESP · infantil. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Digestivo",
+              "pct": 37.9
+            },
+            {
+              "tema": "Urgências",
+              "pct": 34.8
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.3
+            }
+          ],
+          "verdict": "Bloco forte — revise os três decks. · ciclo 2026.",
+          "source": "UNIFESP · infantil. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Paraná · alto volume",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 41.4
+        },
+        {
+          "tema": "Malformações",
+          "pct": 34.8
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 23.8
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 43.7
+            },
+            {
+              "tema": "Malformações",
+              "pct": 34.5
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 21.8
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa AMP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 40.2
+            },
+            {
+              "tema": "Malformações",
+              "pct": 36
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 23.8
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa AMP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 39.3
+            },
+            {
+              "tema": "Malformações",
+              "pct": 34.7
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 26
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa AMP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -262,7 +703,7 @@
       "id": "sus-sp",
       "label": "SUS-SP",
       "featured": false,
-      "kicker": "Padrão APS",
+      "kicker": "APS São Paulo",
       "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
       "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · crônicas · protocolos MS",
@@ -285,167 +726,66 @@
         "cir1-ped-abdome",
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
-      ]
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "piloro",
-        "ae",
-        "ladd",
-        "hirschsprung"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SUS-BA · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed).",
-      "id": "sus-ba",
-      "label": "SUS-BA",
-      "featured": false,
-      "kicker": "Padrão APS + endemias",
-      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
-      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto · endemias · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "Urgências ped",
-          "pct": 48.2
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Malformações",
+              "pct": 44.5
+            },
+            {
+              "tema": "Urgências ped",
+              "pct": 32.4
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 23.1
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-SP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Parede / vias",
-          "pct": 26.8
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Malformações",
+              "pct": 40.9
+            },
+            {
+              "tema": "Urgências ped",
+              "pct": 33.9
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 25.2
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-SP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
-        {
-          "tema": "Malformações",
-          "pct": 25
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Malformações",
+              "pct": 39.9
+            },
+            {
+              "tema": "Urgências ped",
+              "pct": 32.6
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.5
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-SP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ]
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "hirschsprung",
-        "ae",
-        "hdc",
-        "ladd"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFMG · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
-      "id": "ufmg",
-      "label": "UFMG",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
-      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fisiopat · critérios · lab",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Diagnóstico / imagem",
-          "pct": 53.2
-        },
-        {
-          "tema": "Urgências",
-          "pct": 24.5
-        },
-        {
-          "tema": "Parede / HDC",
-          "pct": 22.3
-        }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "hirschsprung",
-        "ae",
-        "hdc",
-        "ladd"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRGS · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
-      "id": "ufrgs",
-      "label": "UFRGS",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
-      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Critérios · protocolo · conduta",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Diagnóstico / imagem",
-          "pct": 39.4
-        },
-        {
-          "tema": "Urgências",
-          "pct": 32.3
-        },
-        {
-          "tema": "Parede / HDC",
-          "pct": 28.3
-        }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "hirschsprung",
-        "ae",
-        "hdc",
-        "ladd"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRJ · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
-      "id": "ufrj",
-      "label": "UFRJ",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
-      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fundamentos · diagnóstico · clássicos",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Diagnóstico / imagem",
-          "pct": 46
-        },
-        {
-          "tema": "Parede / HDC",
-          "pct": 28.2
-        },
-        {
-          "tema": "Urgências",
-          "pct": 25.8
-        }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ],
-      "featured": false
+      }
     },
     {
       "checklist": [
@@ -461,7 +801,7 @@
       "source": "Estimativa Unicamp · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
       "id": "unicamp",
       "label": "Unicamp",
-      "kicker": "Padrão recorrente",
+      "kicker": "Institucional SP",
       "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
       "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Diferencial · protocolo · nuance",
@@ -485,6 +825,560 @@
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 42.9
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 31.5
+            },
+            {
+              "tema": "Urgências",
+              "pct": 25.6
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Unicamp · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 39.3
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 32.9
+            },
+            {
+              "tema": "Urgências",
+              "pct": 27.8
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Unicamp · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 38.3
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 31.5
+            },
+            {
+              "tema": "Urgências",
+              "pct": 30.2
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Unicamp · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "HCPA / Sul",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 39.4
+        },
+        {
+          "tema": "Urgências",
+          "pct": 32.3
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 28.3
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 41.7
+            },
+            {
+              "tema": "Urgências",
+              "pct": 32.2
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 26.1
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRGS · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 38.2
+            },
+            {
+              "tema": "Urgências",
+              "pct": 33.5
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 28.3
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRGS · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 37.3
+            },
+            {
+              "tema": "Urgências",
+              "pct": 32
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 30.7
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRGS · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Institucional MG",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 53.2
+        },
+        {
+          "tema": "Urgências",
+          "pct": 24.5
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 22.3
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 55.6
+            },
+            {
+              "tema": "Urgências",
+              "pct": 24.1
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 20.3
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFMG · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 52
+            },
+            {
+              "tema": "Urgências",
+              "pct": 25.6
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 22.4
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFMG · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 50.9
+            },
+            {
+              "tema": "Urgências",
+              "pct": 24.6
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 24.5
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFMG · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 48.2
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 26.8
+        },
+        {
+          "tema": "Malformações",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 50.6
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 26.5
+            },
+            {
+              "tema": "Malformações",
+              "pct": 22.9
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-BA · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 47
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.9
+            },
+            {
+              "tema": "Malformações",
+              "pct": 25.1
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-BA · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 45.8
+            },
+            {
+              "tema": "Malformações",
+              "pct": 27.4
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 26.8
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-BA · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 46
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 27.7
+        },
+        {
+          "tema": "Malformações",
+          "pct": 26.3
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 48.5
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.4
+            },
+            {
+              "tema": "Malformações",
+              "pct": 24.1
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SES-PE · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 44.8
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 28.8
+            },
+            {
+              "tema": "Malformações",
+              "pct": 26.4
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SES-PE · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Urgências ped",
+              "pct": 43.7
+            },
+            {
+              "tema": "Malformações",
+              "pct": 28.7
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.6
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SES-PE · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Institucional RJ",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 46
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 28.2
+        },
+        {
+          "tema": "Urgências",
+          "pct": 25.8
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 48.5
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 27.9
+            },
+            {
+              "tema": "Urgências",
+              "pct": 23.6
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRJ · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 44.8
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 29.3
+            },
+            {
+              "tema": "Urgências",
+              "pct": 25.9
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRJ · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Diagnóstico / imagem",
+              "pct": 43.7
+            },
+            {
+              "tema": "Urgências",
+              "pct": 28.2
+            },
+            {
+              "tema": "Parede / HDC",
+              "pct": 28.1
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRJ · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
     },
     {
@@ -501,7 +1395,7 @@
       "source": "Estimativa Einstein · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de unifesp).",
       "id": "einstein",
       "label": "Einstein",
-      "kicker": "Padrão guideline",
+      "kicker": "Guideline / privada",
       "blurb": "Estimativa Einstein · Guideline · conduta · números",
       "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Guideline · conduta · números",
@@ -525,87 +1419,66 @@
         "cir1-ped-digestivo",
         "cir1-ped-parede-biliar"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Urgências",
+              "pct": 40.4
+            },
+            {
+              "tema": "Digestivo",
+              "pct": 36.5
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 23.1
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Einstein · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de unifesp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Digestivo",
+              "pct": 38
+            },
+            {
+              "tema": "Urgências",
+              "pct": 37
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 25
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Einstein · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de unifesp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Digestivo",
+              "pct": 36.5
+            },
+            {
+              "tema": "Urgências",
+              "pct": 36.2
+            },
+            {
+              "tema": "Parede / vias",
+              "pct": 27.3
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Einstein · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de unifesp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "piloro",
-        "ae",
-        "ladd",
-        "hirschsprung"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa AMP · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed).",
-      "id": "amp",
-      "label": "AMP",
-      "featured": false,
-      "kicker": "Padrão clássico R1",
-      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
-      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Clássicos R1 · critérios · conduta",
-      "estilo": "Estimativa clássica R1",
-      "priorities": [
-        {
-          "tema": "Urgências ped",
-          "pct": 41.4
-        },
-        {
-          "tema": "Malformações",
-          "pct": 34.8
-        },
-        {
-          "tema": "Parede / vias",
-          "pct": 23.8
-        }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ]
-    },
-    {
-      "checklist": [
-        "invaginacao",
-        "piloro",
-        "ae",
-        "ladd",
-        "hirschsprung"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SES-PE · Cirurgia · Cirurgia infantil (~9%) (recorte distinto de enamed).",
-      "id": "ses-pe",
-      "label": "SES-PE",
-      "featured": false,
-      "kicker": "Padrão regional NE",
-      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
-      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto regional · APS · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "Urgências ped",
-          "pct": 46
-        },
-        {
-          "tema": "Parede / vias",
-          "pct": 27.7
-        },
-        {
-          "tema": "Malformações",
-          "pct": 26.3
-        }
-      ],
-      "deckOrder": [
-        "cir1-ped-abdome",
-        "cir1-ped-digestivo",
-        "cir1-ped-parede-biliar"
-      ]
     }
   ],
   "checklistLabels": {
@@ -615,5 +1488,12 @@
     "ladd": "Volvo neonatal → Ladd",
     "ae": "Atresia esofágica ± VACTERL",
     "hdc": "Hérnia diafragmática congênita"
-  }
+  },
+  "years": [
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "yearLabel": "2024–2026",
+  "note": "Síntese das provas R1 do ciclo 2024–2026."
 }

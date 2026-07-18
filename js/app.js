@@ -148,7 +148,172 @@ let aprovaActivePedModule = null;
 let aprovaActiveGoArea = null;
 let aprovaActiveCliArea = null;
 let aprovaActivePedOverviewFocus = "geral";
+let aprovaActiveOverviewYear = "geral";
+let aprovaActiveModuleYear = "geral";
+let aprovaOverviewExamChooserOpen = false;
+let aprovaModuleExamChooserOpen = false;
 const aprovaOverviewStatsCache = Object.create(null);
+
+/** Ordem por volume de inscritos no ciclo 2024–2026 (mais importantes primeiro). */
+const APROVA_EXAM_RANK = {
+  geral: 0,
+  enare: 1,
+  enamed: 2,
+  revalida: 3,
+  usp: 4,
+  unifesp: 5,
+  amp: 6,
+  "sus-sp": 7,
+  unicamp: 8,
+  ufrgs: 9,
+  ufmg: 10,
+  "sus-ba": 11,
+  "ses-pe": 12,
+  ufrj: 13,
+  einstein: 14
+};
+
+function aprovaExamRank (id) {
+  return Object.prototype.hasOwnProperty.call(APROVA_EXAM_RANK, id)
+    ? APROVA_EXAM_RANK[id]
+    : 50;
+}
+
+function aprovaExamLabel (profile) {
+  if (!profile) return "";
+  if (profile.id === "geral") return "Geral Brasil";
+  if (profile.id === "enamed") return "Enamed";
+  return profile.label || profile.id;
+}
+
+function aprovaYearLabel (year) {
+  if (!year || year === "geral") return "2024–2026";
+  return String(year);
+}
+
+function aprovaResolveYearSlice (profile, year) {
+  const y = year || "geral";
+  if (y !== "geral" && profile && profile.byYear && profile.byYear[y]) {
+    const slice = profile.byYear[y];
+    return {
+      priorities: slice.priorities || profile.priorities || [],
+      verdict: slice.verdict || profile.verdict || "",
+      source: slice.source || profile.source || "",
+      sampleSize: slice.sampleSize != null ? slice.sampleSize : profile.sampleSize,
+      note: slice.note || ""
+    };
+  }
+  return {
+    priorities: (profile && profile.priorities) || [],
+    verdict: (profile && profile.verdict) || "",
+    source: (profile && profile.source) || "",
+    sampleSize: profile && profile.sampleSize,
+    note: ""
+  };
+}
+
+function aprovaSortExamProfiles (profiles) {
+  return (profiles || []).slice().sort((a, b) => {
+    const d = aprovaExamRank(a.id) - aprovaExamRank(b.id);
+    return d !== 0 ? d : String(a.label || "").localeCompare(String(b.label || ""), "pt-BR");
+  });
+}
+
+/**
+ * Filtros compactos: Brasil padrão + painel para escolher prova + ano 2024–2026.
+ */
+function aprovaRenderExamYearFilters (container, opts) {
+  const options = opts || {};
+  const profiles = aprovaSortExamProfiles(options.profiles || []);
+  const activeId = options.activeId || "geral";
+  const activeYear = options.activeYear || "geral";
+  const chooserOpen = !!options.chooserOpen;
+  const onExam = typeof options.onExam === "function" ? options.onExam : () => {};
+  const onYear = typeof options.onYear === "function" ? options.onYear : () => {};
+  const onToggleChooser = typeof options.onToggleChooser === "function"
+    ? options.onToggleChooser
+    : () => {};
+
+  if (!container) return;
+
+  const active = profiles.find(p => p.id === activeId) || profiles[0];
+  const examChoices = profiles.filter(p => p.id !== "geral");
+  const pickLabel = active && active.id !== "geral"
+    ? aprovaExamLabel(active)
+    : "Escolher prova";
+
+  container.innerHTML = "";
+
+  const row = document.createElement("div");
+  row.className = "esp-stat-filters-row";
+
+  const brasilBtn = document.createElement("button");
+  brasilBtn.type = "button";
+  brasilBtn.className = "esp-exam-btn" + (activeId === "geral" ? " active" : "");
+  brasilBtn.textContent = "Geral Brasil";
+  brasilBtn.title = "Síntese nacional · ciclo 2024–2026";
+  brasilBtn.addEventListener("click", () => onExam("geral"));
+  row.appendChild(brasilBtn);
+
+  const pickBtn = document.createElement("button");
+  pickBtn.type = "button";
+  pickBtn.className = "esp-exam-pick-btn" + (activeId !== "geral" ? " esp-exam-pick-btn--set" : "") +
+    (chooserOpen ? " open" : "");
+  pickBtn.setAttribute("aria-expanded", chooserOpen ? "true" : "false");
+  pickBtn.textContent = pickLabel + (chooserOpen ? " ▴" : " ▾");
+  pickBtn.title = "Provas ordenadas por número de inscritos (2024–2026)";
+  pickBtn.addEventListener("click", () => onToggleChooser());
+  row.appendChild(pickBtn);
+
+  const yearWrap = document.createElement("label");
+  yearWrap.className = "esp-year-pick";
+  yearWrap.innerHTML = "<span>Ano</span>";
+  const yearSelect = document.createElement("select");
+  yearSelect.setAttribute("aria-label", "Ano da estatística");
+  [
+    { id: "geral", label: "2024–2026" },
+    { id: "2024", label: "2024" },
+    { id: "2025", label: "2025" },
+    { id: "2026", label: "2026" }
+  ].forEach(y => {
+    const opt = document.createElement("option");
+    opt.value = y.id;
+    opt.textContent = y.label;
+    if (y.id === activeYear) opt.selected = true;
+    yearSelect.appendChild(opt);
+  });
+  yearSelect.addEventListener("change", () => onYear(yearSelect.value));
+  yearWrap.appendChild(yearSelect);
+  row.appendChild(yearWrap);
+
+  container.appendChild(row);
+
+  const chooser = document.createElement("div");
+  chooser.className = "esp-exam-chooser";
+  chooser.hidden = !chooserOpen;
+  const hint = document.createElement("p");
+  hint.className = "muted esp-exam-chooser-hint";
+  hint.textContent = "Provas por volume de inscritos (2024–2026). Toque para ver o recorte.";
+  chooser.appendChild(hint);
+
+  const list = document.createElement("div");
+  list.className = "esp-exam-chooser-list";
+  examChoices.forEach((p, idx) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "esp-exam-chooser-item" +
+      (p.id === activeId ? " active" : "") +
+      (p.id === "enamed" || p.featured ? " featured" : "");
+    btn.innerHTML =
+      "<span class=\"esp-exam-chooser-rank\">" + (idx + 1) + "</span>" +
+      "<span class=\"esp-exam-chooser-name\">" + aprovaExamLabel(p) + "</span>" +
+      "<span class=\"esp-exam-chooser-meta\">" + (p.kicker || "Ciclo 2024–2026") + "</span>";
+    btn.addEventListener("click", () => onExam(p.id));
+    list.appendChild(btn);
+  });
+  chooser.appendChild(list);
+  container.appendChild(chooser);
+}
 
 function aprovaIsRichSpecialty (specialty) {
   return (
@@ -170,8 +335,8 @@ function aprovaRichSpecialtyMeta (specialty) {
       shortLabel: obs ? "Obstetrícia" : "Ginecologia",
       overviewCacheKey: obs ? "obstetricia" : "ginecologia",
       overviewUrl: obs
-        ? "data/stats-obstetricia-geral.json?v=20260718db"
-        : "data/stats-ginecologia-geral.json?v=20260718db",
+        ? "data/stats-obstetricia-geral.json?v=20260718dc"
+        : "data/stats-ginecologia-geral.json?v=20260718dc",
       countNoun: obs ? "Obstetrícia" : "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
@@ -183,7 +348,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Cirurgia",
       shortLabel: "Cirurgia",
       overviewCacheKey: "cirurgia",
-      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718db",
+      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718dc",
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)
@@ -195,7 +360,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Preventiva",
       shortLabel: "Preventiva",
       overviewCacheKey: "preventiva",
-      overviewUrl: "data/stats-preventiva-geral.json?v=20260718db",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718dc",
       countNoun: "Preventiva",
       openRoot: () => aprovaOpenPreventiva(),
       openModule: id => aprovaOpenPreventivaModule(id)
@@ -208,7 +373,7 @@ function aprovaRichSpecialtyMeta (specialty) {
         label: "Clínica médica",
         shortLabel: "Clínica médica",
         overviewCacheKey: "clinica",
-        overviewUrl: "data/stats-clinica-geral.json?v=20260718db",
+        overviewUrl: "data/stats-clinica-geral.json?v=20260718dc",
         countNoun: "Clínica médica",
         openRoot: () => aprovaOpenClinica(),
         openModule: id => aprovaOpenClinicaModule(id)
@@ -218,61 +383,61 @@ function aprovaRichSpecialtyMeta (specialty) {
       reumatologia: {
         shortLabel: "Reumatologia",
         overviewCacheKey: "reumatologia",
-        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718dc",
         countNoun: "Reumatologia"
       },
       psiquiatria: {
         shortLabel: "Psiquiatria",
         overviewCacheKey: "psiquiatria",
-        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718db",
+        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718dc",
         countNoun: "Psiquiatria"
       },
       pneumologia: {
         shortLabel: "Pneumologia",
         overviewCacheKey: "pneumologia",
-        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718dc",
         countNoun: "Pneumologia"
       },
       neurologia: {
         shortLabel: "Neurologia",
         overviewCacheKey: "neurologia",
-        overviewUrl: "data/stats-neurologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-neurologia-geral.json?v=20260718dc",
         countNoun: "Neurologia"
       },
       nefrologia: {
         shortLabel: "Nefrologia",
         overviewCacheKey: "nefrologia",
-        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718dc",
         countNoun: "Nefrologia"
       },
       infectologia: {
         shortLabel: "Infectologia",
         overviewCacheKey: "infectologia",
-        overviewUrl: "data/stats-infectologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-infectologia-geral.json?v=20260718dc",
         countNoun: "Infectologia"
       },
       hepatologia: {
         shortLabel: "Hepatologia",
         overviewCacheKey: "hepatologia",
-        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718dc",
         countNoun: "Hepatologia"
       },
       hematologia: {
         shortLabel: "Hematologia",
         overviewCacheKey: "hematologia",
-        overviewUrl: "data/stats-hematologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-hematologia-geral.json?v=20260718dc",
         countNoun: "Hematologia"
       },
       endocrinologia: {
         shortLabel: "Endocrinologia",
         overviewCacheKey: "endocrinologia",
-        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718dc",
         countNoun: "Endocrinologia"
       },
       cardiologia: {
         shortLabel: "Cardiologia",
         overviewCacheKey: "cardiologia",
-        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718db",
+        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718dc",
         countNoun: "Cardiologia"
       }
     };
@@ -293,7 +458,7 @@ function aprovaRichSpecialtyMeta (specialty) {
     label: "Pediatria",
     shortLabel: "Pediatria",
     overviewCacheKey: "pediatria",
-    overviewUrl: "data/stats-pediatria-geral.json?v=20260718db",
+    overviewUrl: "data/stats-pediatria-geral.json?v=20260718dc",
     countNoun: "Pediatria",
     openRoot: () => aprovaOpenPediatria(),
     openModule: id => aprovaOpenPediatriaModule(id)
@@ -799,7 +964,7 @@ function aprovaLoadPedOverviewStats () {
   return aprovaLoadOverviewStats("pediatria");
 }
 
-function aprovaRenderPedOverviewStats (focusId) {
+function aprovaRenderPedOverviewStats (focusId, yearId) {
   const meta = aprovaRichSpecialtyMeta(aprovaActiveSpecialty || "pediatria");
   const root = document.getElementById("esp-ped-overview");
   const options = document.getElementById("esp-ped-overview-options");
@@ -812,6 +977,9 @@ function aprovaRenderPedOverviewStats (focusId) {
   const banner = document.getElementById("esp-ped-enamed-banner");
   if (!root || !options || !bars) return Promise.resolve();
 
+  if (focusId != null) aprovaActivePedOverviewFocus = focusId;
+  if (yearId != null) aprovaActiveOverviewYear = yearId;
+
   return aprovaLoadOverviewStats(meta.id).then(data => {
     if (!data || !Array.isArray(data.profiles) || !data.profiles.length) {
       root.hidden = true;
@@ -819,66 +987,62 @@ function aprovaRenderPedOverviewStats (focusId) {
     }
 
     root.hidden = false;
-    const requested = focusId || aprovaActivePedOverviewFocus || "geral";
+    const requested = aprovaActivePedOverviewFocus || "geral";
     const profile = data.profiles.find(p => p.id === requested)
       || data.profiles.find(p => p.id === "geral")
       || data.profiles[0];
     aprovaActivePedOverviewFocus = profile.id;
+    if (!aprovaActiveOverviewYear) aprovaActiveOverviewYear = "geral";
 
-    const ordered = data.profiles.slice().sort((a, b) => {
-      const rank = p => {
-        if (p.id === "geral") return 0;
-        if (p.id === "enamed") return 1;
-        if (p.id === "revalida") return 2;
-        return 3;
-      };
-      const d = rank(a) - rank(b);
-      return d !== 0 ? d : String(a.label || "").localeCompare(String(b.label || ""), "pt-BR");
-    });
-
-    options.innerHTML = "";
-    ordered.forEach(p => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "esp-exam-btn" +
-        (p.id === "enamed" || p.featured ? " esp-exam-btn--enamed" : "") +
-        (p.id === profile.id ? " active" : "");
-      btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Geral Brasil" : p.label);
-      btn.title = p.kicker || p.label;
-      btn.addEventListener("click", () => aprovaRenderPedOverviewStats(p.id));
-      options.appendChild(btn);
+    aprovaRenderExamYearFilters(options, {
+      profiles: data.profiles,
+      activeId: profile.id,
+      activeYear: aprovaActiveOverviewYear,
+      chooserOpen: aprovaOverviewExamChooserOpen,
+      onExam: id => {
+        aprovaOverviewExamChooserOpen = false;
+        aprovaRenderPedOverviewStats(id, aprovaActiveOverviewYear);
+      },
+      onYear: y => {
+        aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus, y);
+      },
+      onToggleChooser: () => {
+        aprovaOverviewExamChooserOpen = !aprovaOverviewExamChooserOpen;
+        aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus, aprovaActiveOverviewYear);
+      }
     });
 
     if (banner) banner.hidden = profile.id !== "enamed";
 
+    const slice = aprovaResolveYearSlice(profile, aprovaActiveOverviewYear);
     const sourceType = profile.sourceType || "estimativa";
     const typeLabel = sourceType === "levantamento"
       ? "Levantamento de provas"
       : (sourceType === "sintese" ? "Síntese de levantamentos" : "Estimativa por padrão de banca");
+    const yearTxt = aprovaYearLabel(aprovaActiveOverviewYear);
     const countLabel = sourceType === "estimativa"
       ? (" questões de " + meta.countNoun + " (base ilustrativa)")
       : (" questões de " + meta.countNoun + " analisadas");
 
     if (title) {
       title.textContent = profile.id === "geral"
-        ? ("O que mais cai em " + meta.shortLabel + " · Geral Brasil")
-        : ("O que mais cai em " + meta.shortLabel + " · " + profile.label);
+        ? ("O que mais cai em " + meta.shortLabel + " · Geral Brasil · " + yearTxt)
+        : ("O que mais cai em " + meta.shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
     }
     if (sub) {
-      sub.textContent = typeLabel + (profile.sampleSize
-        ? (" · " + profile.sampleSize + countLabel)
-        : "");
+      sub.textContent = typeLabel + " · ciclo " + yearTxt +
+        (slice.sampleSize ? (" · " + slice.sampleSize + countLabel) : "");
     }
-    if (verdict) verdict.textContent = profile.verdict || "";
+    if (verdict) verdict.textContent = slice.verdict || "";
 
-    const unitLabel = data.unitLabel || ("% das questões de " + meta.countNoun);
     if (unitEl) {
       unitEl.hidden = false;
       unitEl.textContent = "Cada barra = % do tema · ao lado, quantas questões caíram (ou a estimativa proporcional). " +
-        (data.note || "");
+        (data.note || "Recorte 2024–2026.") +
+        (slice.note ? (" " + slice.note) : "");
     }
 
-    bars.innerHTML = (profile.priorities || []).map(p => {
+    bars.innerHTML = (slice.priorities || []).map(p => {
       const pct = Number(p.pct);
       const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
       const detail = p.n != null ? (" · " + p.n + " quest.") : "";
@@ -892,9 +1056,7 @@ function aprovaRenderPedOverviewStats (focusId) {
     }).join("");
 
     if (sourceEl) {
-      sourceEl.textContent = profile.source
-        ? ("Fonte: " + profile.source)
-        : "";
+      sourceEl.textContent = slice.source ? ("Fonte: " + slice.source) : "";
     }
   });
 }
@@ -1438,7 +1600,7 @@ async function aprovaOpenPedDeckPicker (moduleId, options) {
   aprovaShowPedDeckModal();
 }
 
-async function aprovaRenderPediatriaStats (focusId, moduleId) {
+async function aprovaRenderPediatriaStats (focusId, moduleId, yearId) {
   const stats = document.getElementById("esp-stats");
   const bars = document.getElementById("esp-stats-bars");
   const title = document.getElementById("esp-stats-title");
@@ -1454,7 +1616,10 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
   stats.hidden = false;
   if (subtemas) subtemas.hidden = false;
   aprovaActivePedModule = moduleId;
-  aprovaActiveFocusId = focusId || "geral";
+  if (focusId != null) aprovaActiveFocusId = focusId || "geral";
+  if (yearId != null) aprovaActiveModuleYear = yearId;
+  if (!aprovaActiveFocusId) aprovaActiveFocusId = "geral";
+  if (!aprovaActiveModuleYear) aprovaActiveModuleYear = "geral";
 
   if (typeof AprovaRevisao !== "undefined") {
     AprovaRevisao.setActiveModule(aprovaActivePedModule);
@@ -1486,26 +1651,22 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
       : null;
   await aprovaRenderPedGroupCards(aprovaActivePedModule, groupArea ? { area: groupArea } : {});
 
-  const orderedProfiles = profiles.slice().sort((a, b) => {
-    const rank = p => {
-      if (p.id === "geral") return 0;
-      if (p.id === "enamed") return 1;
-      return 2;
-    };
-    const d = rank(a) - rank(b);
-    return d !== 0 ? d : String(a.label || "").localeCompare(String(b.label || ""), "pt-BR");
-  });
-
-  options.innerHTML = "";
-  orderedProfiles.forEach(p => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "esp-exam-btn" +
-      (p.id === "enamed" || p.featured ? " esp-exam-btn--enamed" : "") +
-      (p.id === aprovaActiveFocusId ? " active" : "");
-    btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Geral Brasil" : p.label);
-    btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id, aprovaActivePedModule));
-    options.appendChild(btn);
+  aprovaRenderExamYearFilters(options, {
+    profiles,
+    activeId: aprovaActiveFocusId,
+    activeYear: aprovaActiveModuleYear,
+    chooserOpen: aprovaModuleExamChooserOpen,
+    onExam: id => {
+      aprovaModuleExamChooserOpen = false;
+      aprovaRenderPediatriaStats(id, aprovaActivePedModule, aprovaActiveModuleYear);
+    },
+    onYear: y => {
+      aprovaRenderPediatriaStats(aprovaActiveFocusId, aprovaActivePedModule, y);
+    },
+    onToggleChooser: () => {
+      aprovaModuleExamChooserOpen = !aprovaModuleExamChooserOpen;
+      aprovaRenderPediatriaStats(aprovaActiveFocusId, aprovaActivePedModule, aprovaActiveModuleYear);
+    }
   });
 
   if (banner) banner.hidden = aprovaActiveFocusId !== "enamed";
@@ -1517,10 +1678,12 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     return;
   }
 
+  const slice = aprovaResolveYearSlice(profile, aprovaActiveModuleYear);
+  const yearTxt = aprovaYearLabel(aprovaActiveModuleYear);
   const moduleLabel = (modules.find(m => m.id === aprovaActivePedModule) || {}).label || meta.shortLabel;
   const chartTitle = profile.id === "geral"
-    ? ("O que mais cai · Geral Brasil · " + moduleLabel)
-    : ("O que mais cai · " + profile.label + " · " + moduleLabel);
+    ? ("O que mais cai · Geral Brasil · " + moduleLabel + " · " + yearTxt)
+    : ("O que mais cai · " + aprovaExamLabel(profile) + " · " + moduleLabel + " · " + yearTxt);
 
   const sourceType = profile.sourceType || "estimativa";
   const typeLabel = sourceType === "levantamento"
@@ -1529,7 +1692,7 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
 
   if (title) title.textContent = chartTitle;
   if (sub) {
-    sub.textContent = typeLabel + (profile.foco ? (" — " + profile.foco) : "");
+    sub.textContent = typeLabel + " · ciclo " + yearTxt + (profile.foco ? (" — " + profile.foco) : "");
   }
 
   const unitLabel = (moduleData && moduleData.unitLabel) || "% das questões deste tema";
@@ -1539,7 +1702,7 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
       ((moduleData && moduleData.note) ? ". " + moduleData.note : "");
   }
 
-  bars.innerHTML = (profile.priorities || []).map(p => {
+  bars.innerHTML = (slice.priorities || []).map(p => {
     const pct = Number(p.pct != null ? p.pct : p.score);
     const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
     const detail = p.n ? (" · " + p.n + " quest.") : "";
@@ -1553,8 +1716,8 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
   }).join("");
 
   if (sourceEl) {
-    sourceEl.textContent = profile.source
-      ? ("Fonte: " + profile.source)
+    sourceEl.textContent = slice.source
+      ? ("Fonte: " + slice.source)
       : "";
   }
 
@@ -1635,7 +1798,9 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
   }
 
   aprovaActivePedOverviewFocus = "geral";
-  await aprovaRenderPedOverviewStats("geral");
+  aprovaActiveOverviewYear = "geral";
+  aprovaOverviewExamChooserOpen = false;
+  await aprovaRenderPedOverviewStats("geral", "geral");
   if (isGo) {
     await aprovaRenderGoAreaCards();
   } else if (isCli) {
@@ -1697,7 +1862,9 @@ async function aprovaOpenGoArea (areaId) {
 
   if (showOverview) {
     aprovaActivePedOverviewFocus = "geral";
-    await aprovaRenderPedOverviewStats("geral");
+    aprovaActiveOverviewYear = "geral";
+    aprovaOverviewExamChooserOpen = false;
+    await aprovaRenderPedOverviewStats("geral", "geral");
   }
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveGoArea });
 }
@@ -1752,7 +1919,9 @@ async function aprovaOpenCliArea (areaId) {
   }
 
   aprovaActivePedOverviewFocus = "geral";
-  await aprovaRenderPedOverviewStats("geral");
+  aprovaActiveOverviewYear = "geral";
+  aprovaOverviewExamChooserOpen = false;
+  await aprovaRenderPedOverviewStats("geral", "geral");
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveCliArea });
 }
 
@@ -1816,7 +1985,10 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
     selectAll.textContent = "Selecionar todos";
   }
 
-  await aprovaRenderPediatriaStats("geral", aprovaActivePedModule);
+  aprovaActiveFocusId = "geral";
+  aprovaActiveModuleYear = "geral";
+  aprovaModuleExamChooserOpen = false;
+  await aprovaRenderPediatriaStats("geral", aprovaActivePedModule, "geral");
 }
 
 async function aprovaOpenPediatria () {

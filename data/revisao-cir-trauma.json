@@ -76,7 +76,212 @@
         "crr-trm-face",
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "ATLS / choque",
+              "pct": 23
+            },
+            {
+              "tema": "Trauma de tórax",
+              "pct": 19.4
+            },
+            {
+              "tema": "Trauma abdominal / FAST",
+              "pct": 15.9
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 15.1
+            },
+            {
+              "tema": "Pelve / damage control",
+              "pct": 14.3
+            },
+            {
+              "tema": "Pescoço / vísceras",
+              "pct": 12.3
+            }
+          ],
+          "verdict": "ABCDE/choque, PNTX hipertensivo, hemotórax, FAST, TCE, pelve/GU, damage control e TRM. Fisiologia do choque e resposta ao trauma fecham o grupo. · ciclo 2024.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "ATLS / choque",
+              "pct": 20.6
+            },
+            {
+              "tema": "Trauma de tórax",
+              "pct": 19.7
+            },
+            {
+              "tema": "Trauma abdominal / FAST",
+              "pct": 16.9
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 15.6
+            },
+            {
+              "tema": "Pelve / damage control",
+              "pct": 14.9
+            },
+            {
+              "tema": "Pescoço / vísceras",
+              "pct": 12.3
+            }
+          ],
+          "verdict": "ABCDE/choque, PNTX hipertensivo, hemotórax, FAST, TCE, pelve/GU, damage control e TRM. Fisiologia do choque e resposta ao trauma fecham o grupo. · ciclo 2025.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "ATLS / choque",
+              "pct": 19.1
+            },
+            {
+              "tema": "Trauma de tórax",
+              "pct": 18.1
+            },
+            {
+              "tema": "Trauma abdominal / FAST",
+              "pct": 17.7
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 16.9
+            },
+            {
+              "tema": "Pelve / damage control",
+              "pct": 15.4
+            },
+            {
+              "tema": "Pescoço / vísceras",
+              "pct": 12.8
+            }
+          ],
+          "verdict": "ABCDE/choque, PNTX hipertensivo, hemotórax, FAST, TCE, pelve/GU, damage control e TRM. Fisiologia do choque e resposta ao trauma fecham o grupo. · ciclo 2026.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "damage"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · Trauma.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~6%",
+      "blurb": "Conduta de trauma.",
+      "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular.",
+      "foco": "PNTX · FAST · ABCDE",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Tórax / ATLS",
+          "pct": 40
+        },
+        {
+          "tema": "Abdome / TCE",
+          "pct": 35
+        },
+        {
+          "tema": "Demais",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax / ATLS",
+              "pct": 42.3
+            },
+            {
+              "tema": "Abdome / TCE",
+              "pct": 34.7
+            },
+            {
+              "tema": "Demais",
+              "pct": 23
+            }
+          ],
+          "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular. · ciclo 2024.",
+          "source": "Enare · Trauma. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax / ATLS",
+              "pct": 38.8
+            },
+            {
+              "tema": "Abdome / TCE",
+              "pct": 36.2
+            },
+            {
+              "tema": "Demais",
+              "pct": 25
+            }
+          ],
+          "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular. · ciclo 2025.",
+          "source": "Enare · Trauma. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tórax / ATLS",
+              "pct": 37.9
+            },
+            {
+              "tema": "Abdome / TCE",
+              "pct": 34.8
+            },
+            {
+              "tema": "Demais",
+              "pct": 27.3
+            }
+          ],
+          "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular. · ciclo 2026.",
+          "source": "Enare · Trauma. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -132,58 +337,78 @@
         "crr-trm-face",
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
-      ]
-    },
-    {
-      "checklist": [
-        "abcde",
-        "pntx",
-        "fast",
-        "glasgow",
-        "damage"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · Trauma.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso · ~6%",
-      "blurb": "Conduta de trauma.",
-      "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular.",
-      "foco": "PNTX · FAST · ABCDE",
-      "estilo": "Padrão Enare",
-      "priorities": [
-        {
-          "tema": "Tórax / ATLS",
-          "pct": 40
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 30.7
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 26.7
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 21.7
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 20.9
+            }
+          ],
+          "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. · ciclo 2024.",
+          "source": "Enare · Trauma. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Abdome / TCE",
-          "pct": 35
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 27.6
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 27.4
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 22.6
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 22.4
+            }
+          ],
+          "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. · ciclo 2025.",
+          "source": "Enare · Trauma. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
-        {
-          "tema": "Demais",
-          "pct": 25
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 26.2
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 25.5
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 24.7
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 23.6
+            }
+          ],
+          "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. · ciclo 2026.",
+          "source": "Enare · Trauma. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ]
+      }
     },
     {
       "checklist": [
@@ -200,7 +425,7 @@
       "id": "revalida",
       "label": "Revalida",
       "featured": false,
-      "kicker": "INEP",
+      "kicker": "INEP · alto volume",
       "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
       "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · urgências · conduta prática",
@@ -239,7 +464,78 @@
         "crr-trm-face",
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 33.5
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 26.8
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 20.7
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 19
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Revalida · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 30.4
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 27.6
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 22.2
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 19.8
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Revalida · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 28.8
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 25.8
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 23.6
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 21.8
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Revalida · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -294,7 +590,78 @@
         "crr-trm-face",
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 32.8
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 25.4
+            },
+            {
+              "tema": "Tórax",
+              "pct": 22.7
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 19.1
+            }
+          ],
+          "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. · ciclo 2024.",
+          "source": "USP-SP · Trauma. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 29.8
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 26.5
+            },
+            {
+              "tema": "Tórax",
+              "pct": 23.3
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 20.4
+            }
+          ],
+          "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. · ciclo 2025.",
+          "source": "USP-SP · Trauma. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "TCE / DC",
+              "pct": 28.8
+            },
+            {
+              "tema": "Trauma / imagem",
+              "pct": 28.1
+            },
+            {
+              "tema": "Tórax",
+              "pct": 21.6
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 21.5
+            }
+          ],
+          "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. · ciclo 2026.",
+          "source": "USP-SP · Trauma. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -349,7 +716,205 @@
         "crr-trm-face",
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "ATLS / choque",
+              "pct": 28.6
+            },
+            {
+              "tema": "Tórax",
+              "pct": 24.8
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 23.6
+            },
+            {
+              "tema": "Abdome",
+              "pct": 23
+            }
+          ],
+          "verdict": "ATLS sólido + tórax + abdome. · ciclo 2024.",
+          "source": "UNIFESP · Trauma. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "ATLS / choque",
+              "pct": 25.8
+            },
+            {
+              "tema": "Tórax",
+              "pct": 25.3
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 24.5
+            },
+            {
+              "tema": "Abdome",
+              "pct": 24.4
+            }
+          ],
+          "verdict": "ATLS sólido + tórax + abdome. · ciclo 2025.",
+          "source": "UNIFESP · Trauma. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "TCE / TRM",
+              "pct": 26.6
+            },
+            {
+              "tema": "Abdome",
+              "pct": 25.7
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 24.2
+            },
+            {
+              "tema": "Tórax",
+              "pct": 23.5
+            }
+          ],
+          "verdict": "ATLS sólido + tórax + abdome. · ciclo 2026.",
+          "source": "UNIFESP · Trauma. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Paraná · alto volume",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 30
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 26.8
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 21.7
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 21.5
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 32.7
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 27.4
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 20.6
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 19.3
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa AMP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 29.6
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 28.2
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 22
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 20.2
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa AMP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 28
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 26.4
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 23.4
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 22.2
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa AMP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -366,7 +931,7 @@
       "id": "sus-sp",
       "label": "SUS-SP",
       "featured": false,
-      "kicker": "Padrão APS",
+      "kicker": "APS São Paulo",
       "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
       "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · crônicas · protocolos MS",
@@ -405,231 +970,78 @@
         "crr-trm-face",
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
-      ]
-    },
-    {
-      "checklist": [
-        "abcde",
-        "pntx",
-        "fast",
-        "glasgow",
-        "trm"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SUS-BA · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed).",
-      "id": "sus-ba",
-      "label": "SUS-BA",
-      "featured": false,
-      "kicker": "Padrão APS + endemias",
-      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
-      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto · endemias · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "Tórax / PNTX",
-          "pct": 35.9
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "TCE / TRM",
+              "pct": 33.3
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 27.3
+            },
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 20.5
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 18.9
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-SP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Abdome / FAST",
-          "pct": 25
+        "2025": {
+          "priorities": [
+            {
+              "tema": "TCE / TRM",
+              "pct": 30.2
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 28.1
+            },
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 22
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 19.7
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-SP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
-        {
-          "tema": "ATLS / choque",
-          "pct": 19.7
-        },
-        {
-          "tema": "TCE / TRM",
-          "pct": 19.4
+        "2026": {
+          "priorities": [
+            {
+              "tema": "TCE / TRM",
+              "pct": 28.6
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 26.3
+            },
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 23.4
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 21.7
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-SP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ]
-    },
-    {
-      "checklist": [
-        "fast",
-        "glasgow",
-        "beckponamento",
-        "damage",
-        "abcde"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFMG · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
-      "id": "ufmg",
-      "label": "UFMG",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
-      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fisiopat · critérios · lab",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Trauma / imagem",
-          "pct": 34
-        },
-        {
-          "tema": "TCE / DC",
-          "pct": 24.1
-        },
-        {
-          "tema": "Tórax",
-          "pct": 22.9
-        },
-        {
-          "tema": "Abdome / FAST",
-          "pct": 19
-        }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "fast",
-        "glasgow",
-        "beckponamento",
-        "damage",
-        "abcde"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRGS · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
-      "id": "ufrgs",
-      "label": "UFRGS",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
-      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Critérios · protocolo · conduta",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Trauma / imagem",
-          "pct": 30.4
-        },
-        {
-          "tema": "TCE / DC",
-          "pct": 25.8
-        },
-        {
-          "tema": "Tórax",
-          "pct": 24.4
-        },
-        {
-          "tema": "Abdome / FAST",
-          "pct": 19.4
-        }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "fast",
-        "glasgow",
-        "beckponamento",
-        "damage",
-        "abcde"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRJ · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
-      "id": "ufrj",
-      "label": "UFRJ",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
-      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fundamentos · diagnóstico · clássicos",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "Trauma / imagem",
-          "pct": 28.9
-        },
-        {
-          "tema": "TCE / DC",
-          "pct": 26.9
-        },
-        {
-          "tema": "Tórax",
-          "pct": 22.2
-        },
-        {
-          "tema": "Abdome / FAST",
-          "pct": 22
-        }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ],
-      "featured": false
+      }
     },
     {
       "checklist": [
@@ -645,7 +1057,7 @@
       "source": "Estimativa Unicamp · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
       "id": "unicamp",
       "label": "Unicamp",
-      "kicker": "Padrão recorrente",
+      "kicker": "Institucional SP",
       "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
       "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Diferencial · protocolo · nuance",
@@ -685,6 +1097,712 @@
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 33.3
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 28
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 20.2
+            },
+            {
+              "tema": "Tórax",
+              "pct": 18.5
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Unicamp · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 30.2
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 28.8
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 21.7
+            },
+            {
+              "tema": "Tórax",
+              "pct": 19.3
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Unicamp · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 28.7
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 27
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 23.1
+            },
+            {
+              "tema": "Tórax",
+              "pct": 21.2
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Unicamp · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "HCPA / Sul",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 30.4
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 25.8
+        },
+        {
+          "tema": "Tórax",
+          "pct": 24.4
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 19.4
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 33.1
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 26.4
+            },
+            {
+              "tema": "Tórax",
+              "pct": 23.1
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 17.4
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRGS · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 30
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 27.1
+            },
+            {
+              "tema": "Tórax",
+              "pct": 24.7
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 18.2
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRGS · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 28.4
+            },
+            {
+              "tema": "Tórax",
+              "pct": 26.3
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 25.3
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 20
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRGS · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Institucional MG",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 34
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 24.1
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22.9
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 19
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 36.9
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 24.5
+            },
+            {
+              "tema": "Tórax",
+              "pct": 21.6
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 17
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFMG · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 33.5
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 25.4
+            },
+            {
+              "tema": "Tórax",
+              "pct": 23.2
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 17.9
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFMG · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 31.9
+            },
+            {
+              "tema": "Tórax",
+              "pct": 24.7
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 23.8
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 19.6
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFMG · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 35.9
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 25
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 19.7
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 19.4
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 38.8
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 25.4
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 18.5
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 17.3
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-BA · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 35.5
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 26.3
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 20
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 18.2
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-BA · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 33.9
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 24.7
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 21.3
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 20.1
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-BA · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 33.8
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 25.6
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 20.5
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 20.1
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 36.6
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 26.1
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 19.3
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 18
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SES-PE · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 33.4
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 26.9
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 20.8
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 18.9
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SES-PE · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tórax / PNTX",
+              "pct": 31.7
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 25.3
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 22.2
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 20.8
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SES-PE · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Institucional RJ",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 28.9
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 26.9
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22.2
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 22
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 31.5
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 27.6
+            },
+            {
+              "tema": "Tórax",
+              "pct": 21.1
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 19.8
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRJ · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 28.5
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 28.3
+            },
+            {
+              "tema": "Tórax",
+              "pct": 22.5
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 20.7
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRJ · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Trauma / imagem",
+              "pct": 27.1
+            },
+            {
+              "tema": "TCE / DC",
+              "pct": 26.4
+            },
+            {
+              "tema": "Tórax",
+              "pct": 23.9
+            },
+            {
+              "tema": "Abdome / FAST",
+              "pct": 22.6
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRJ · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
     },
     {
@@ -701,7 +1819,7 @@
       "source": "Estimativa Einstein · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de unifesp).",
       "id": "einstein",
       "label": "Einstein",
-      "kicker": "Padrão guideline",
+      "kicker": "Guideline / privada",
       "blurb": "Estimativa Einstein · Guideline · conduta · números",
       "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Guideline · conduta · números",
@@ -741,119 +1859,78 @@
         "ciresp-resposta-trauma",
         "ciresp-choque-tipos"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tórax",
+              "pct": 29.7
+            },
+            {
+              "tema": "Abdome",
+              "pct": 25.6
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 23.5
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 21.2
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Einstein · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de unifesp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tórax",
+              "pct": 26.8
+            },
+            {
+              "tema": "Abdome",
+              "pct": 26.2
+            },
+            {
+              "tema": "ATLS / choque",
+              "pct": 25
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 22
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Einstein · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de unifesp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "ATLS / choque",
+              "pct": 26.3
+            },
+            {
+              "tema": "Tórax",
+              "pct": 25.3
+            },
+            {
+              "tema": "Abdome",
+              "pct": 24.4
+            },
+            {
+              "tema": "TCE / TRM",
+              "pct": 24
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Einstein · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de unifesp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
-    },
-    {
-      "checklist": [
-        "abcde",
-        "pntx",
-        "fast",
-        "glasgow",
-        "trm"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa AMP · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed).",
-      "id": "amp",
-      "label": "AMP",
-      "featured": false,
-      "kicker": "Padrão clássico R1",
-      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
-      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Clássicos R1 · critérios · conduta",
-      "estilo": "Estimativa clássica R1",
-      "priorities": [
-        {
-          "tema": "Tórax / PNTX",
-          "pct": 30
-        },
-        {
-          "tema": "ATLS / choque",
-          "pct": 26.8
-        },
-        {
-          "tema": "Abdome / FAST",
-          "pct": 21.7
-        },
-        {
-          "tema": "TCE / TRM",
-          "pct": 21.5
-        }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ]
-    },
-    {
-      "checklist": [
-        "abcde",
-        "pntx",
-        "fast",
-        "glasgow",
-        "trm"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SES-PE · Cirurgia · Trauma · ATLS (~14%) (recorte distinto de enamed).",
-      "id": "ses-pe",
-      "label": "SES-PE",
-      "featured": false,
-      "kicker": "Padrão regional NE",
-      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
-      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto regional · APS · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "Tórax / PNTX",
-          "pct": 33.8
-        },
-        {
-          "tema": "Abdome / FAST",
-          "pct": 25.6
-        },
-        {
-          "tema": "ATLS / choque",
-          "pct": 20.5
-        },
-        {
-          "tema": "TCE / TRM",
-          "pct": 20.1
-        }
-      ],
-      "deckOrder": [
-        "cir2-atls",
-        "cir2-pneumotorax",
-        "cir2-hemotorax",
-        "cir2-torax-parede",
-        "cir2-coracao-aorta",
-        "cir2-abdome-inicial",
-        "cir2-figado-baco",
-        "cir2-gu-pelve",
-        "cir2-damage-control",
-        "cir2-tce",
-        "cir2-pescoco",
-        "cir2-visceras",
-        "crr-trm-face",
-        "ciresp-resposta-trauma",
-        "ciresp-choque-tipos"
-      ]
     }
   ],
   "checklistLabels": {
@@ -864,5 +1941,12 @@
     "damage": "Damage control se coagulopatia",
     "trm": "Imobilizar · evitar hipotensão",
     "tamponamento": "Beck → janela / esternotomia"
-  }
+  },
+  "years": [
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "yearLabel": "2024–2026",
+  "note": "Síntese das provas R1 do ciclo 2024–2026."
 }

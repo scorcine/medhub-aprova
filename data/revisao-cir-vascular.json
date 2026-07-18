@@ -58,7 +58,162 @@
         "cir1-dap",
         "cir1-oclusao-arterial",
         "cir1-ivc"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "AAA",
+              "pct": 30.7
+            },
+            {
+              "tema": "Oclusão arterial aguda",
+              "pct": 24.7
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 23.6
+            },
+            {
+              "tema": "DAP",
+              "pct": 21
+            }
+          ],
+          "verdict": "AAA (indicação/roto), DAP (Rutherford), oclusão arterial aguda (6 P), aneurisma poplíteo e IVC/varizes. · ciclo 2024.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "AAA",
+              "pct": 27.8
+            },
+            {
+              "tema": "Oclusão arterial aguda",
+              "pct": 25.3
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 24.5
+            },
+            {
+              "tema": "DAP",
+              "pct": 22.4
+            }
+          ],
+          "verdict": "AAA (indicação/roto), DAP (Rutherford), oclusão arterial aguda (6 P), aneurisma poplíteo e IVC/varizes. · ciclo 2025.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 26.8
+            },
+            {
+              "tema": "AAA",
+              "pct": 26.1
+            },
+            {
+              "tema": "DAP",
+              "pct": 23.6
+            },
+            {
+              "tema": "Oclusão arterial aguda",
+              "pct": 23.5
+            }
+          ],
+          "verdict": "AAA (indicação/roto), DAP (Rutherford), oclusão arterial aguda (6 P), aneurisma poplíteo e IVC/varizes. · ciclo 2026.",
+          "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · vascular.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "blurb": "Conduta vascular.",
+      "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça.",
+      "foco": "AAA · 6 P · Claudicação",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Arterial",
+          "pct": 70
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Arterial",
+              "pct": 71.3
+            },
+            {
+              "tema": "Venoso",
+              "pct": 28.7
+            }
+          ],
+          "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça. · ciclo 2024.",
+          "source": "Enare · vascular. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Arterial",
+              "pct": 68.6
+            },
+            {
+              "tema": "Venoso",
+              "pct": 31.4
+            }
+          ],
+          "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça. · ciclo 2025.",
+          "source": "Enare · vascular. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Arterial",
+              "pct": 69
+            },
+            {
+              "tema": "Venoso",
+              "pct": 31
+            }
+          ],
+          "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça. · ciclo 2026.",
+          "source": "Enare · vascular. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -96,44 +251,54 @@
         "cir1-dap",
         "cir1-oclusao-arterial",
         "cir1-ivc"
-      ]
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · vascular.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso",
-      "blurb": "Conduta vascular.",
-      "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça.",
-      "foco": "AAA · 6 P · Claudicação",
-      "estilo": "Padrão Enare",
-      "priorities": [
-        {
-          "tema": "Arterial",
-          "pct": 70
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 51.6
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 48.4
+            }
+          ],
+          "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. · ciclo 2024.",
+          "source": "Enare · vascular. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "Venoso",
-          "pct": 30
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 51.6
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 48.4
+            }
+          ],
+          "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. · ciclo 2025.",
+          "source": "Enare · vascular. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 51.2
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 48.8
+            }
+          ],
+          "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. · ciclo 2026.",
+          "source": "Enare · vascular. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ]
+      }
     },
     {
       "checklist": [
@@ -150,7 +315,7 @@
       "id": "revalida",
       "label": "Revalida",
       "featured": false,
-      "kicker": "INEP",
+      "kicker": "INEP · alto volume",
       "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
       "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · urgências · conduta prática",
@@ -171,7 +336,54 @@
         "cir1-dap",
         "cir1-oclusao-arterial",
         "cir1-ivc"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 53.9
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 46.1
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Revalida · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 50.7
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 49.3
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Revalida · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 51.1
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 48.9
+            }
+          ],
+          "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Revalida · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -212,7 +424,66 @@
         "cir1-dap",
         "cir1-oclusao-arterial",
         "cir1-ivc"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 40.1
+            },
+            {
+              "tema": "AAA",
+              "pct": 32
+            },
+            {
+              "tema": "Venoso",
+              "pct": 27.9
+            }
+          ],
+          "verdict": "Diâmetro do AAA, Rutherford e embolectomia. · ciclo 2024.",
+          "source": "USP-SP · vascular. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 41.2
+            },
+            {
+              "tema": "Venoso",
+              "pct": 29.8
+            },
+            {
+              "tema": "AAA",
+              "pct": 29
+            }
+          ],
+          "verdict": "Diâmetro do AAA, Rutherford e embolectomia. · ciclo 2025.",
+          "source": "USP-SP · vascular. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 39.4
+            },
+            {
+              "tema": "Venoso",
+              "pct": 32.4
+            },
+            {
+              "tema": "AAA",
+              "pct": 28.2
+            }
+          ],
+          "verdict": "Diâmetro do AAA, Rutherford e embolectomia. · ciclo 2026.",
+          "source": "USP-SP · vascular. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -253,7 +524,151 @@
         "cir1-dap",
         "cir1-oclusao-arterial",
         "cir1-ivc"
-      ]
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 40.1
+            },
+            {
+              "tema": "AAA",
+              "pct": 32
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 27.9
+            }
+          ],
+          "verdict": "Priorize os 5 decks — ROI máximo na Unifesp. · ciclo 2024.",
+          "source": "UNIFESP · vascular. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 41.2
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 29.8
+            },
+            {
+              "tema": "AAA",
+              "pct": 29
+            }
+          ],
+          "verdict": "Priorize os 5 decks — ROI máximo na Unifesp. · ciclo 2025.",
+          "source": "UNIFESP · vascular. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 39.4
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 32.4
+            },
+            {
+              "tema": "AAA",
+              "pct": 28.2
+            }
+          ],
+          "verdict": "Priorize os 5 decks — ROI máximo na Unifesp. · ciclo 2026.",
+          "source": "UNIFESP · vascular. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Paraná · alto volume",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 51.1
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 48.9
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 52.7
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 47.3
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa AMP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 50.5
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 49.5
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa AMP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 50.1
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 49.9
+            }
+          ],
+          "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa AMP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
     },
     {
       "checklist": [
@@ -270,7 +685,7 @@
       "id": "sus-sp",
       "label": "SUS-SP",
       "featured": false,
-      "kicker": "Padrão APS",
+      "kicker": "APS São Paulo",
       "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
       "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "APS · crônicas · protocolos MS",
@@ -291,171 +706,54 @@
         "cir1-dap",
         "cir1-oclusao-arterial",
         "cir1-ivc"
-      ]
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
       ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SUS-BA · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed).",
-      "id": "sus-ba",
-      "label": "SUS-BA",
-      "featured": false,
-      "kicker": "Padrão APS + endemias",
-      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
-      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto · endemias · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "AAA / oclusão",
-          "pct": 62.8
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 61
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 39
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-SP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
-        {
-          "tema": "DAP / IVC",
-          "pct": 37.2
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 57.9
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 42.1
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-SP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / IVC",
+              "pct": 58.3
+            },
+            {
+              "tema": "AAA / oclusão",
+              "pct": 41.7
+            }
+          ],
+          "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-SP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ]
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFMG · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
-      "id": "ufmg",
-      "label": "UFMG",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
-      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fisiopat · critérios · lab",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "DAP / oclusão",
-          "pct": 40
-        },
-        {
-          "tema": "AAA",
-          "pct": 32.6
-        },
-        {
-          "tema": "Venoso",
-          "pct": 27.4
-        }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRGS · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
-      "id": "ufrgs",
-      "label": "UFRGS",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
-      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Critérios · protocolo · conduta",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "DAP / oclusão",
-          "pct": 42.7
-        },
-        {
-          "tema": "AAA",
-          "pct": 29.3
-        },
-        {
-          "tema": "Venoso",
-          "pct": 28
-        }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ],
-      "featured": false
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa UFRJ · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
-      "id": "ufrj",
-      "label": "UFRJ",
-      "kicker": "Padrão recorrente",
-      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
-      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Fundamentos · diagnóstico · clássicos",
-      "estilo": "Estimativa por padrão recorrente",
-      "priorities": [
-        {
-          "tema": "DAP / oclusão",
-          "pct": 39.4
-        },
-        {
-          "tema": "Venoso",
-          "pct": 32.3
-        },
-        {
-          "tema": "AAA",
-          "pct": 28.3
-        }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ],
-      "featured": false
+      }
     },
     {
       "checklist": [
@@ -471,7 +769,7 @@
       "source": "Estimativa Unicamp · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
       "id": "unicamp",
       "label": "Unicamp",
-      "kicker": "Padrão recorrente",
+      "kicker": "Institucional SP",
       "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
       "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Diferencial · protocolo · nuance",
@@ -497,6 +795,538 @@
         "cir1-oclusao-arterial",
         "cir1-ivc"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 39.6
+            },
+            {
+              "tema": "Venoso",
+              "pct": 32
+            },
+            {
+              "tema": "AAA",
+              "pct": 28.4
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Unicamp · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 36.2
+            },
+            {
+              "tema": "Venoso",
+              "pct": 33.1
+            },
+            {
+              "tema": "AAA",
+              "pct": 30.7
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Unicamp · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 35.2
+            },
+            {
+              "tema": "AAA",
+              "pct": 33.2
+            },
+            {
+              "tema": "Venoso",
+              "pct": 31.6
+            }
+          ],
+          "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Unicamp · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "HCPA / Sul",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DAP / oclusão",
+          "pct": 42.7
+        },
+        {
+          "tema": "AAA",
+          "pct": 29.3
+        },
+        {
+          "tema": "Venoso",
+          "pct": 28
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 45.2
+            },
+            {
+              "tema": "AAA",
+              "pct": 29.1
+            },
+            {
+              "tema": "Venoso",
+              "pct": 25.7
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRGS · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 41.6
+            },
+            {
+              "tema": "AAA",
+              "pct": 30.4
+            },
+            {
+              "tema": "Venoso",
+              "pct": 28
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRGS · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 40.4
+            },
+            {
+              "tema": "Venoso",
+              "pct": 30.5
+            },
+            {
+              "tema": "AAA",
+              "pct": 29.1
+            }
+          ],
+          "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRGS · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Institucional MG",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "AAA",
+          "pct": 32.6
+        },
+        {
+          "tema": "Venoso",
+          "pct": 27.4
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 42.4
+            },
+            {
+              "tema": "AAA",
+              "pct": 32.4
+            },
+            {
+              "tema": "Venoso",
+              "pct": 25.2
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFMG · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 38.8
+            },
+            {
+              "tema": "AAA",
+              "pct": 33.8
+            },
+            {
+              "tema": "Venoso",
+              "pct": 27.4
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFMG · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 37.8
+            },
+            {
+              "tema": "AAA",
+              "pct": 32.4
+            },
+            {
+              "tema": "Venoso",
+              "pct": 29.8
+            }
+          ],
+          "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFMG · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 62.8
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 37.2
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 64.3
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 35.7
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SUS-BA · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 61.3
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 38.7
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SUS-BA · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 61.7
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 38.3
+            }
+          ],
+          "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SUS-BA · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 60.5
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 39.5
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 62
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 38
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SES-PE · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 58.9
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 41.1
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SES-PE · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "AAA / oclusão",
+              "pct": 59.3
+            },
+            {
+              "tema": "DAP / IVC",
+              "pct": 40.7
+            }
+          ],
+          "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SES-PE · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Institucional RJ",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DAP / oclusão",
+          "pct": 39.4
+        },
+        {
+          "tema": "Venoso",
+          "pct": 32.3
+        },
+        {
+          "tema": "AAA",
+          "pct": 28.3
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 41.7
+            },
+            {
+              "tema": "Venoso",
+              "pct": 32.2
+            },
+            {
+              "tema": "AAA",
+              "pct": 26.1
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRJ · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 38.2
+            },
+            {
+              "tema": "Venoso",
+              "pct": 33.5
+            },
+            {
+              "tema": "AAA",
+              "pct": 28.3
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRJ · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 37.3
+            },
+            {
+              "tema": "Venoso",
+              "pct": 32
+            },
+            {
+              "tema": "AAA",
+              "pct": 30.7
+            }
+          ],
+          "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRJ · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
     },
     {
@@ -513,7 +1343,7 @@
       "source": "Estimativa Einstein · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de unifesp).",
       "id": "einstein",
       "label": "Einstein",
-      "kicker": "Padrão guideline",
+      "kicker": "Guideline / privada",
       "blurb": "Estimativa Einstein · Guideline · conduta · números",
       "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Guideline · conduta · números",
@@ -539,83 +1369,66 @@
         "cir1-oclusao-arterial",
         "cir1-ivc"
       ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 45.5
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 29.5
+            },
+            {
+              "tema": "AAA",
+              "pct": 25
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Einstein · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de unifesp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 42
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 30.8
+            },
+            {
+              "tema": "AAA",
+              "pct": 27.2
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Einstein · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de unifesp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "DAP / oclusão",
+              "pct": 40.9
+            },
+            {
+              "tema": "AAA",
+              "pct": 29.6
+            },
+            {
+              "tema": "Poplítea / IVC",
+              "pct": 29.5
+            }
+          ],
+          "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Einstein · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de unifesp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      },
       "featured": false
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa AMP · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed).",
-      "id": "amp",
-      "label": "AMP",
-      "featured": false,
-      "kicker": "Padrão clássico R1",
-      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
-      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Clássicos R1 · critérios · conduta",
-      "estilo": "Estimativa clássica R1",
-      "priorities": [
-        {
-          "tema": "AAA / oclusão",
-          "pct": 51.1
-        },
-        {
-          "tema": "DAP / IVC",
-          "pct": 48.9
-        }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ]
-    },
-    {
-      "checklist": [
-        "aaa55",
-        "6p",
-        "rutherford",
-        "poplitea",
-        "ivc"
-      ],
-      "sessoes": [],
-      "lacuna": "",
-      "sourceType": "estimativa",
-      "source": "Estimativa SES-PE · Cirurgia · Cirurgia vascular (~8–16%) (recorte distinto de enamed).",
-      "id": "ses-pe",
-      "label": "SES-PE",
-      "featured": false,
-      "kicker": "Padrão regional NE",
-      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
-      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
-      "foco": "Infecto regional · APS · desidratação",
-      "estilo": "Estimativa regional",
-      "priorities": [
-        {
-          "tema": "AAA / oclusão",
-          "pct": 60.5
-        },
-        {
-          "tema": "DAP / IVC",
-          "pct": 39.5
-        }
-      ],
-      "deckOrder": [
-        "cir1-aaa",
-        "cir1-aneurismas-perifericos",
-        "cir1-dap",
-        "cir1-oclusao-arterial",
-        "cir1-ivc"
-      ]
     }
   ],
   "checklistLabels": {
@@ -624,5 +1437,12 @@
     "rutherford": "DAP · classificação",
     "poplitea": "Poplítea → tratar cedo",
     "ivc": "IVC / varizes · indicação"
-  }
+  },
+  "years": [
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "yearLabel": "2024–2026",
+  "note": "Síntese das provas R1 do ciclo 2024–2026."
 }
