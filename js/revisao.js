@@ -3,47 +3,88 @@
 const APROVA_REVISAO_MODULES = {
   neonatologia: {
     label: "Neonatologia",
-    file: "data/revisao-neonatologia.json?v=20260718t"
+    file: "data/revisao-neonatologia.json?v=20260718t",
+    specialty: "pediatria"
   },
   alimentacao: {
     label: "Alimentação",
-    file: "data/revisao-alimentacao.json?v=20260718t"
+    file: "data/revisao-alimentacao.json?v=20260718t",
+    specialty: "pediatria"
   },
   "avaliacao-nutricional": {
     label: "Avaliação nutricional",
-    file: "data/revisao-avaliacao-nutricional.json?v=20260718t"
+    file: "data/revisao-avaliacao-nutricional.json?v=20260718t",
+    specialty: "pediatria"
   },
   imunizacoes: {
     label: "Imunizações",
-    file: "data/revisao-imunizacoes.json?v=20260718t"
+    file: "data/revisao-imunizacoes.json?v=20260718t",
+    specialty: "pediatria"
   },
   diabetes: {
     label: "Diabetes",
-    file: "data/revisao-diabetes.json?v=20260718t"
+    file: "data/revisao-diabetes.json?v=20260718t",
+    specialty: "pediatria"
   },
   ped6: {
     label: "Nefro / Infecto / Cardio",
-    file: "data/revisao-ped6.json?v=20260718t"
+    file: "data/revisao-ped6.json?v=20260718t",
+    specialty: "pediatria"
   },
   respiratorio: {
     label: "Respiratório",
-    file: "data/revisao-respiratorio.json?v=20260718t"
+    file: "data/revisao-respiratorio.json?v=20260718t",
+    specialty: "pediatria"
   },
   "gastro-neuro": {
     label: "Gastro / Neuro",
-    file: "data/revisao-gastro-neuro.json?v=20260718t"
+    file: "data/revisao-gastro-neuro.json?v=20260718t",
+    specialty: "pediatria"
   },
   "nefro-extra": {
     label: "Nefro (SN / GNA)",
-    file: "data/revisao-nefro-extra.json?v=20260718t"
+    file: "data/revisao-nefro-extra.json?v=20260718t",
+    specialty: "pediatria"
   },
   "r1-extra": {
     label: "Dengue / Hemato / Orto",
-    file: "data/revisao-r1-extra.json?v=20260718t"
+    file: "data/revisao-r1-extra.json?v=20260718t",
+    specialty: "pediatria"
   },
   "r1-lacunas": {
     label: "Cirurgia / Alergia / Abuso",
-    file: "data/revisao-r1-lacunas.json?v=20260718t"
+    file: "data/revisao-r1-lacunas.json?v=20260718t",
+    specialty: "pediatria"
+  },
+  gin1: {
+    label: "Endócrino / ciclo (Gin1)",
+    file: "data/revisao-gin1.json?v=20260718z",
+    specialty: "go"
+  },
+  gin2: {
+    label: "SUA / miomatose (Gin2)",
+    file: "data/revisao-gin2.json?v=20260718z",
+    specialty: "go"
+  },
+  gin3: {
+    label: "Climatério / urogin (Gin3)",
+    file: "data/revisao-gin3.json?v=20260718aa",
+    specialty: "go"
+  },
+  gin4: {
+    label: "Mastologia / ovário (Gin4)",
+    file: "data/revisao-gin4.json?v=20260718ab",
+    specialty: "go"
+  },
+  gin5: {
+    label: "Oncoginecologia (Gin5)",
+    file: "data/revisao-gin5.json?v=20260718ac",
+    specialty: "go"
+  },
+  gin6: {
+    label: "Infecto / IST (Gin6)",
+    file: "data/revisao-gin6.json?v=20260718ad",
+    specialty: "go"
   }
 };
 
@@ -75,11 +116,22 @@ const AprovaRevisao = {
     return this.loadModule("neonatologia");
   },
 
-  listModules () {
-    return Object.keys(APROVA_REVISAO_MODULES).map(id => ({
-      id,
-      label: APROVA_REVISAO_MODULES[id].label
-    }));
+  moduleSpecialty (moduleId) {
+    const meta = APROVA_REVISAO_MODULES[moduleId];
+    return (meta && meta.specialty) || "pediatria";
+  },
+
+  listModules (specialty) {
+    return Object.keys(APROVA_REVISAO_MODULES)
+      .filter(id => {
+        if (!specialty) return true;
+        return this.moduleSpecialty(id) === specialty;
+      })
+      .map(id => ({
+        id,
+        label: APROVA_REVISAO_MODULES[id].label,
+        specialty: this.moduleSpecialty(id)
+      }));
   },
 
   setActiveModule (id) {
@@ -124,7 +176,9 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
 
   const mid = moduleId || AprovaRevisao.activeModuleId || "neonatologia";
   AprovaRevisao.setActiveModule(mid);
-  const moduleLabel = (APROVA_REVISAO_MODULES[mid] && APROVA_REVISAO_MODULES[mid].label) || "Pediatria";
+  const moduleSpec = AprovaRevisao.moduleSpecialty(mid);
+  const moduleLabel = (APROVA_REVISAO_MODULES[mid] && APROVA_REVISAO_MODULES[mid].label) ||
+    (moduleSpec === "go" ? "Ginecologia" : "Pediatria");
 
   root.innerHTML = "<p class=\"muted\">Carregando revisão…</p>";
   const data = await AprovaRevisao.loadModule(mid);
@@ -241,8 +295,18 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
     "</div>";
 
   document.getElementById("rev-open-ped")?.addEventListener("click", () => {
-    if (typeof aprovaOpenPediatriaModule === "function" && AprovaRevisao.activeModuleId) {
-      aprovaOpenPediatriaModule(AprovaRevisao.activeModuleId);
+    const activeId = AprovaRevisao.activeModuleId;
+    const spec = activeId ? AprovaRevisao.moduleSpecialty(activeId) : "pediatria";
+    if (spec === "go") {
+      if (typeof aprovaOpenGinecologiaModule === "function" && activeId) {
+        aprovaOpenGinecologiaModule(activeId);
+        return;
+      }
+      if (typeof aprovaOpenGinecologia === "function") aprovaOpenGinecologia();
+      return;
+    }
+    if (typeof aprovaOpenPediatriaModule === "function" && activeId) {
+      aprovaOpenPediatriaModule(activeId);
       return;
     }
     if (typeof aprovaOpenPediatria === "function") aprovaOpenPediatria();

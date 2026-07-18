@@ -9,6 +9,15 @@ function aprovaDeckSpecialty (deck) {
     "cir-", "par-", "alg-", "soc-"
   ];
   if (pedPrefixes.some(p => id.indexOf(p) === 0)) return "pediatria";
+  if (
+    id.indexOf("gin1-") === 0 ||
+    id.indexOf("gin2-") === 0 ||
+    id.indexOf("gin3-") === 0 ||
+    id.indexOf("gin4-") === 0 ||
+    id.indexOf("gin5-") === 0 ||
+    id.indexOf("gin6-") === 0 ||
+    id.indexOf("go-") === 0
+  ) return "go";
   if (id.indexOf("cardio") === 0) return "clinica";
   return "geral";
 }
@@ -33,7 +42,13 @@ const AprovaFlashcards = {
       "data/flashcards-diabetes.json",
       "data/flashcards-ped6.json",
       "data/flashcards-r1-complementar.json",
-      "data/flashcards-r1-lacunas.json"
+      "data/flashcards-r1-lacunas.json",
+      "data/flashcards-gin1.json",
+      "data/flashcards-gin2.json",
+      "data/flashcards-gin3.json",
+      "data/flashcards-gin4.json",
+      "data/flashcards-gin5.json",
+      "data/flashcards-gin6.json"
     ];
     const decks = [];
     for (const file of files) {

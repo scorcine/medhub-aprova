@@ -1,0 +1,110 @@
+{
+  "title": "Ginecologia · o que mais cai nas provas",
+  "unitLabel": "% das questões de Ginecologia",
+  "note": "Percentuais e contagens = participação dentro das questões de Ginecologia (não da prova inteira). Levantamentos usam a série citada; Brasil é síntese ponderada.",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese nacional",
+      "featured": false,
+      "sourceType": "sintese",
+      "sampleSize": 204,
+      "source": "Síntese ponderada de levantamentos USP-SP, UNIFESP e Enare (Estratégia MED) + top Enamed/CleverMed. Contagens proporcionais a 204 questões.",
+      "verdict": "Em Ginecologia, ~70% do retorno está em endócrino (amenorreia/SOP/SUA/TH), oncoginecologia (colo/endométrio) e infecções (vulvovaginite/IST/DIP). Mastologia e anticoncepção fecham o núcleo.",
+      "foco": "Endócrino · Onco · Infecto · Mama · Anticoncepção",
+      "estilo": "Síntese das principais bancas",
+      "priorities": [
+        { "tema": "Ginecologia endócrina (amenorreia, SOP, SUA, TH)", "pct": 28, "n": 57 },
+        { "tema": "Oncoginecologia (colo, endométrio, ovário)", "pct": 24, "n": 49 },
+        { "tema": "Infecções (vulvovaginite, IST, DIP)", "pct": 16, "n": 33 },
+        { "tema": "Mastologia", "pct": 12, "n": 25 },
+        { "tema": "Anticoncepção / planejamento familiar", "pct": 9, "n": 18 },
+        { "tema": "Uroginecologia", "pct": 6, "n": 12 },
+        { "tema": "Ginecologia geral (mioma, endometriose)", "pct": 5, "n": 10 }
+      ]
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "sourceType": "levantamento",
+      "sampleSize": 100,
+      "source": "CleverMed · top temas Enare/Enamed em Ginecologia (percentuais reportados). Contagens proporcionais em base ilustrativa de 100.",
+      "verdict": "No padrão Enamed/Enare, infecções e SUA lideram a Ginecologia prática; rastreamento de colo/mama e anticoncepção são pontos fáceis se você souber protocolo MS/Febrasgo.",
+      "foco": "Infecções · SUA · Mama · Colo · Anticoncepção",
+      "estilo": "Levantamento Enare/Enamed",
+      "priorities": [
+        { "tema": "Infecções em ginecologia", "pct": 20, "n": 20 },
+        { "tema": "Sangramento uterino anormal", "pct": 12, "n": 12 },
+        { "tema": "Câncer de mama", "pct": 10, "n": 10 },
+        { "tema": "Câncer de colo do útero", "pct": 10, "n": 10 },
+        { "tema": "Métodos contraceptivos", "pct": 10, "n": 10 },
+        { "tema": "Demais temas (endócrino, uro, ovário etc.)", "pct": 38, "n": 38 }
+      ]
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "featured": false,
+      "sourceType": "levantamento",
+      "sampleSize": 49,
+      "source": "Estratégia MED · Enare Ginecologia 2021–2024 — 49 questões classificadas por subdisciplina.",
+      "verdict": "Enare equilibra oncoginecologia (27%), endócrino (22%) e infecções (20%). Mastologia (14%) vem logo atrás — rastreamento de mama é clássico.",
+      "foco": "Onco · Endócrino · Infecções · Mastologia",
+      "estilo": "Levantamento Enare",
+      "priorities": [
+        { "tema": "Oncologia ginecológica", "pct": 26.5, "n": 13 },
+        { "tema": "Ginecologia endócrina", "pct": 22.4, "n": 11 },
+        { "tema": "Infecções em ginecologia", "pct": 20.4, "n": 10 },
+        { "tema": "Mastologia", "pct": 14.3, "n": 7 },
+        { "tema": "Ginecologia geral", "pct": 6.1, "n": 3 },
+        { "tema": "Uroginecologia", "pct": 6.1, "n": 3 },
+        { "tema": "Ginecologia básica", "pct": 4.1, "n": 2 }
+      ]
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "2017–2023",
+      "featured": false,
+      "sourceType": "levantamento",
+      "sampleSize": 83,
+      "source": "Estratégia MED · USP-SP Ginecologia 2017–2023 — 83 questões.",
+      "verdict": "USP é endócrino-pesada: ~41% só em ginecologia endócrina (amenorreia, climatério/TH). Onco, infecções e mama dividem o segundo bloco.",
+      "foco": "Endócrino · Onco · Infecções · Mama",
+      "estilo": "Levantamento USP-SP",
+      "priorities": [
+        { "tema": "Ginecologia endócrina", "pct": 41.0, "n": 34 },
+        { "tema": "Oncologia ginecológica", "pct": 14.5, "n": 12 },
+        { "tema": "Infecções em ginecologia", "pct": 12.0, "n": 10 },
+        { "tema": "Mastologia", "pct": 12.0, "n": 10 },
+        { "tema": "Ginecologia básica", "pct": 8.4, "n": 7 },
+        { "tema": "Ginecologia geral", "pct": 7.2, "n": 6 },
+        { "tema": "Uroginecologia", "pct": 4.8, "n": 4 }
+      ]
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Série recente",
+      "featured": false,
+      "sourceType": "levantamento",
+      "sampleSize": 73,
+      "source": "Estratégia MED · UNIFESP Ginecologia — 73 questões.",
+      "verdict": "Unifesp pesa endócrino (32%) e oncoginecologia (27%). Uroginecologia (14%) e mastologia (11%) têm peso acima da média nacional.",
+      "foco": "Endócrino · Onco · Uro · Mama",
+      "estilo": "Levantamento UNIFESP",
+      "priorities": [
+        { "tema": "Ginecologia endócrina", "pct": 31.5, "n": 23 },
+        { "tema": "Oncologia ginecológica", "pct": 27.4, "n": 20 },
+        { "tema": "Uroginecologia", "pct": 13.7, "n": 10 },
+        { "tema": "Ginecologia geral", "pct": 12.3, "n": 9 },
+        { "tema": "Mastologia", "pct": 11.0, "n": 8 },
+        { "tema": "Infecções em ginecologia", "pct": 4.1, "n": 3 }
+      ]
+    }
+  ]
+}
