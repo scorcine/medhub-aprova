@@ -3,11 +3,15 @@
 const APROVA_REVISAO_MODULES = {
   neonatologia: {
     label: "Neonatologia",
-    file: "data/revisao-neonatologia.json?v=20260718i"
+    file: "data/revisao-neonatologia.json?v=20260718j"
   },
   alimentacao: {
     label: "Alimentação",
-    file: "data/revisao-alimentacao.json?v=20260718i"
+    file: "data/revisao-alimentacao.json?v=20260718j"
+  },
+  "avaliacao-nutricional": {
+    label: "Avaliação nutricional",
+    file: "data/revisao-avaliacao-nutricional.json?v=20260718j"
   }
 };
 
