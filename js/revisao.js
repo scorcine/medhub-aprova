@@ -127,17 +127,15 @@ async function aprovaRenderRevisaoNeo () {
     "<div class=\"rev-callout rev-callout--warn\">" + aprovaEscapeHtml(data.lacuna) + "</div>" +
 
     "<div class=\"actions-row\" style=\"margin-top:1rem\">" +
-      "<button type=\"button\" class=\"btn btn-primary\" data-goto=\"especialidades\" id=\"rev-open-ped\">Abrir decks de Pediatria</button>" +
+      "<button type=\"button\" class=\"btn btn-primary\" id=\"rev-open-ped\">Voltar aos subtemas</button>" +
       "<button type=\"button\" class=\"btn btn-ghost\" data-goto=\"flashcards\">Ir aos flashcards</button>" +
     "</div>";
 
   document.getElementById("rev-open-ped")?.addEventListener("click", () => {
-    aprovaGoTo("especialidades");
-    aprovaOpenSpecialty("pediatria");
+    if (typeof aprovaOpenSpecialty === "function") aprovaOpenSpecialty("pediatria");
   });
 
   root.querySelectorAll("[data-goto]").forEach(btn => {
-    if (btn.id === "rev-open-ped") return;
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
   });
 }

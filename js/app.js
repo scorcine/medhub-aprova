@@ -6,7 +6,6 @@ const APROVA_PANEL_META = {
   flashcards: { title: "Flashcards", sub: "Memória ativa para o R1" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Especialidades", sub: "Foque por área clínica" },
-  "revisao-neo": { title: "Revisão Neonatologia", sub: "Alto rendimento para provas R1" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "Acertos, erros e temas" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
@@ -57,17 +56,39 @@ function aprovaGoTo (id) {
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
   if (id === "especialidades") aprovaRenderEspecialidades();
-  if (id === "revisao-neo") aprovaRenderRevisaoNeo();
   aprovaShowPanel(id);
 }
 
 function aprovaShowSpecialtyList () {
   const list = document.getElementById("esp-list");
   const decks = document.getElementById("esp-decks");
+  const revisao = document.getElementById("esp-revisao");
   const hint = document.getElementById("esp-hint");
   if (list) list.hidden = false;
   if (decks) decks.hidden = true;
+  if (revisao) revisao.hidden = true;
   if (hint) hint.textContent = "Escolha uma área e depois um subtema para estudar os flashcards.";
+}
+
+function aprovaShowSpecialtyDecks () {
+  const list = document.getElementById("esp-list");
+  const decks = document.getElementById("esp-decks");
+  const revisao = document.getElementById("esp-revisao");
+  if (list) list.hidden = true;
+  if (decks) decks.hidden = false;
+  if (revisao) revisao.hidden = true;
+}
+
+function aprovaOpenSpecialtyReview () {
+  const list = document.getElementById("esp-list");
+  const decks = document.getElementById("esp-decks");
+  const revisao = document.getElementById("esp-revisao");
+  const hint = document.getElementById("esp-hint");
+  if (list) list.hidden = true;
+  if (decks) decks.hidden = true;
+  if (revisao) revisao.hidden = false;
+  if (hint) hint.textContent = "Revisão de alto rendimento — use os decks depois para memorizar.";
+  if (typeof aprovaRenderRevisaoNeo === "function") aprovaRenderRevisaoNeo();
 }
 
 function aprovaRenderEspecialidades () {
@@ -89,7 +110,6 @@ function aprovaRenderEspecialidades () {
 }
 
 function aprovaOpenSpecialty (specialty) {
-  const list = document.getElementById("esp-list");
   const decksWrap = document.getElementById("esp-decks");
   const grid = document.getElementById("esp-deck-grid");
   const title = document.getElementById("esp-decks-title");
@@ -99,12 +119,11 @@ function aprovaOpenSpecialty (specialty) {
   const decks = AprovaFlashcards.decksBySpecialty(specialty);
   const label = APROVA_SPECIALTY_LABELS[specialty] || specialty;
 
-  if (list) list.hidden = true;
-  decksWrap.hidden = false;
+  aprovaShowSpecialtyDecks();
   if (title) title.textContent = label + " · subtemas";
   if (hint) {
     hint.textContent = decks.length
-      ? "Escolha um subtema para estudar."
+      ? "Escolha um subtema ou abra a revisão para provas."
       : "Ainda sem flashcards nesta área — em breve.";
   }
 
@@ -118,7 +137,7 @@ function aprovaOpenSpecialty (specialty) {
       "<span class=\"dash-card-kicker\">Provas R1</span>" +
       "<strong>Revisão Neonatologia</strong>" +
       "<span>O que mais cai em USP, Unifesp, SUS-SP/BA, Einstein, PUC, Unicamp e UFRJ.</span>";
-    revBtn.addEventListener("click", () => aprovaGoTo("revisao-neo"));
+    revBtn.addEventListener("click", () => aprovaOpenSpecialtyReview());
     grid.appendChild(revBtn);
   }
 
@@ -379,6 +398,10 @@ async function aprovaBoot () {
 
   document.getElementById("esp-back")?.addEventListener("click", () => {
     aprovaShowSpecialtyList();
+  });
+
+  document.getElementById("esp-rev-back")?.addEventListener("click", () => {
+    aprovaOpenSpecialty("pediatria");
   });
 
   document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
