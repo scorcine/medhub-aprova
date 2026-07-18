@@ -165,11 +165,11 @@ img {
 /* ——— Landing hero ——— */
 .hero {
   position: relative;
-  min-height: calc(100vh - 4.5rem);
+  min-height: min(72vh, 640px);
   display: grid;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
-  padding: 0 0 3.25rem;
+  padding: 2.25rem 0 2.5rem;
 }
 
 .hero-visual {
@@ -231,7 +231,6 @@ img {
   position: relative;
   z-index: 1;
   max-width: 38rem;
-  padding-top: 2rem;
   animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -547,7 +546,7 @@ body.app-body {
 
   .hero {
     min-height: auto;
-    padding: 2.5rem 0 2.75rem;
+    padding: 1.5rem 0 2rem;
   }
 
   .hero-scan,
