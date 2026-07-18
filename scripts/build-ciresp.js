@@ -1,0 +1,233 @@
+const fs = require("fs");
+const path = require("path");
+
+const decks = [
+  {
+    id: "ciresp-resposta-trauma",
+    name: "Resposta ao trauma · Ebb and Flow",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Fase Ebb (baixo fluxo) — o que acontece?",
+        back: "Logo após o trauma · ↓ débito cardíaco · ↑ RVS · Volume intravascular depletado · Hipometabolismo / ↓ temperatura central · Hormônios de estresse já elevados"
+      },
+      {
+        front: "Fase Flow (refluxo) — o que acontece?",
+        back: "Após restaurar volemia · Hipermetabolismo intenso · Febre pós-traumática (citocinas, esp. IL-1) até ~38,5°C · Proteólise acelerada (alanina e glutamina)"
+      },
+      {
+        front: "Papel da glutamina na resposta ao trauma?",
+        back: "Mobilizada do músculo · Combustível dos enterócitos · Substrato para gliconeogênese · Imunomodulação citada na literatura cirúrgica"
+      },
+      {
+        front: "Proteínas de fase aguda — ideia?",
+        back: "Síntese hepática sob citocinas · PCR, fibrinogênio etc. sobem · Albumina = reagente de fase aguda negativo (cai)"
+      },
+      {
+        front: "Fases clássicas de recuperação cirúrgica (Moore)?",
+        back: "Adrenergica-corticoide (catabolismo inicial) · Anabólica precoce · Anabólica tardia (reposição de reservas)"
+      }
+    ]
+  },
+  {
+    id: "ciresp-queimaduras-geral",
+    name: "Queimaduras · extensão · profundidade",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Regra dos nove (Wallace) no adulto?",
+        back: "Cabeça/pescoço 9% · Cada MS 9% · Cada MI 18% · Tronco 36% (18+18) · Períneo/genital 1% · Criança: cabeça maior, MI menores · Palma+dedos ≈ 1%"
+      },
+      {
+        front: "Profundidade — 1º / 2º / 3º / 4º grau?",
+        back: "1º: só epiderme (solar) — sem repercussão sistêmica · 2º: derme + bolhas · 3º: espessura total (pele ± subcutâneo) · 4º: músculo/osso (elétrica típica)"
+      },
+      {
+        front: "Grande queimado (ABA) — critérios que caem?",
+        back: "≥25% SCQ (10–40a) ou ≥20% (<10a ou >40a) · ≥10% 3º grau · Face/mãos/pés/períneo com risco funcional · Elétrica alta voltagem · Inalação / trauma associado / comorbidade grave"
+      },
+      {
+        front: "Via aérea na queimadura — quando intubar cedo?",
+        back: "Rouquidão, estridor, uso de acessórios · Queimadura face/cervical · SCQ extensa · Suspeita de inalação / ambiente fechado · Monóxido de carbono em recinto fechado"
+      },
+      {
+        front: "Escarotomia — indicações clássicas?",
+        back: "Queimadura circunferencial de tórax → insuficiência respiratória · Circunferencial de membro → hipoperfusão distal · Incisão até subcutâneo / longitudinal nos membros"
+      }
+    ]
+  },
+  {
+    id: "ciresp-parkland",
+    name: "Parkland · reposição · elétrica/química",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Fórmula de Parkland?",
+        back: "Ringer lactato: 4 ml × peso (kg) × %SCQ nas primeiras 24 h · Metade nas primeiras 8 h (a partir do horário da queimadura) · Metade nas 16 h restantes · Ajustar pela diurese"
+      },
+      {
+        front: "Meta clássica de diurese na reposição do queimado?",
+        back: "Adulto ~0,5 ml/kg/h (muitos usam 0,5–1) · Elétrica/rabdomiólise: meta maior (~1–2 ml/kg/h) para proteger rim"
+      },
+      {
+        front: "Queimadura elétrica — mensagem “ponta do iceberg”?",
+        back: "Pele resistente · Corrente segue nervo/vaso/músculo · Lesão profunda >> aparente · Alta voltagem (>1000 V) · Risco de síndrome compartimental / rabdomiólise / arritmia"
+      },
+      {
+        front: "Queimadura química — 1º passo?",
+        back: "Remover agente + irrigação abundante com água · Exceções específicas (ex.: alguns pós metálicos) conforme protocolo · Não “neutralizar” às cegas com ácido/base"
+      },
+      {
+        front: "Complicações temidas do grande queimado?",
+        back: "Choque da queimadura (permeabilidade) · Infecção/sepse · Lesão por inalação · Contraturas · Falência multiorgânica tardia"
+      }
+    ]
+  },
+  {
+    id: "ciresp-cicatrizacao",
+    name: "Cicatrização · fases · queloide",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Três fases da cicatrização?",
+        back: "Inflamatória (hemostasia + inflamação, ~1–4 dias) · Proliferativa / fibroplasia (granulação, colágeno, contração) · Maturação / remodelamento (meses; força tênsil sobe)"
+      },
+      {
+        front: "Células/mediadores iniciais clássicos?",
+        back: "Plaquetas (PDGF, TGF-β) · Neutrófilos → macrófagos · Depois fibroblastos e angiogênese · Malha de fibrina como scaffold"
+      },
+      {
+        front: "Fatores que prejudicam cicatrização?",
+        back: "Desnutrição / hipoalbuminemia · DM · Isquemia · Infecção · Corticoides / quimio · Tabagismo · Idade · Tensão excessiva na ferida"
+      },
+      {
+        front: "Queloide × cicatriz hipertrófica?",
+        back: "Queloide: ultrapassa limites da ferida · Não regride · Predisposição genética / pele pigmentada · Hipertrófica: respeita limites · Pode regredir em 12–18 meses · Áreas de tensão"
+      },
+      {
+        front: "1ª × 2ª intenção?",
+        back: "1ª: bordas aproximadas (sutura/enxerto) — melhor estética · 2ª: deixa granular (ISC, hemorroidectomia selecionada) · 3ª (terciária): fechar após controle de contaminação"
+      }
+    ]
+  },
+  {
+    id: "ciresp-choque-tipos",
+    name: "Choque · tipos · hemodinâmica",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Quatro categorias clássicas de choque?",
+        back: "Hipovolêmico · Cardiogênico · Obstrutivo extracardíaco · Distributivo (séptico, anafilático, neurogênico)"
+      },
+      {
+        front: "Exemplos de choque obstrutivo?",
+        back: "Tamponamento cardíaco · Pneumotórax hipertensivo · TEP maciço"
+      },
+      {
+        front: "Padrão hemodinâmico do distributivo (após volume)?",
+        back: "Alto débito · Baixa RVS · Vasodilatação inapropriada · Microcirculação alterada"
+      },
+      {
+        front: "Choque neurogênico — clínica clássica?",
+        back: "TRM / TCE grave · Vasoplegia · Extremidades quentes · Bradicardia relativa · Tratar: volume + vasopressor (NA / fenilefrina)"
+      },
+      {
+        front: "Choque hipovolêmico/hemorrágico — padrão?",
+        back: "↓ pré-carga · ↓ DC · ↑ RVS · Extremidades frias · Taquicardia · Tratar causa + reposição (sangue precoce no trauma)"
+      },
+      {
+        front: "Cardiogênico — diferença-chave do hipovolêmico?",
+        back: "Falha de bomba · ↑ pressões/volumes de enchimento · Congestão pulmonar possível · Não é “falta de volume” primária"
+      }
+    ]
+  },
+  {
+    id: "ciresp-sepse",
+    name: "Sepse · Sepsis-3 · conduta",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Sepse (Sepsis-3) — definição?",
+        back: "Disfunção orgânica ameaçadora à vida por resposta desregulada à infecção · Δ SOFA ≥ 2 pontos · Termo “sepse grave” abandonado"
+      },
+      {
+        front: "Choque séptico — definição prática?",
+        back: "Subset da sepse · Hipotensão persistente exigindo vasopressor após volume adequado · Lactato elevado tipicamente associado"
+      },
+      {
+        front: "Pilares iniciais do tratamento?",
+        back: "Culturas → ATB precoce · Ressuscitação volêmica · Controle de foco · Vasopressor (NA 1ª linha) se hipotensão persiste · Reavaliar hemodinâmica"
+      },
+      {
+        front: "qSOFA — papel atual (mensagem)?",
+        back: "Ferramenta à beira do leito (FR, PA, sensorium) · Não substitui SOFA / julgamento clínico · Triagem, não diagnóstico definitivo"
+      },
+      {
+        front: "SvO2 / extração de O2 na sepse — ideia?",
+        back: "Distributivo: entrega/utilização alteradas · SvO2 pode estar alta (má extração) apesar de hipoperfusão tecidual · Lactato ajuda no follow-up"
+      }
+    ]
+  },
+  {
+    id: "ciresp-nutricao",
+    name: "Nutrição cirúrgica · enteral · NP",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Marasmo × kwashiorkor (visão cirúrgica)?",
+        back: "Marasmo: privação calórica crônica / depleção de gordura · Kwashiorkor / desnutrição proteico-calórica inflamatória: consumo proteico rápido (sepse, politrauma) · Albumina cai"
+      },
+      {
+        front: "Via preferencial de suporte nutricional?",
+        back: "Enteral quando o intestino funciona · Mais fisiológica · Menos infecção que NP · Iniciar cedo no crítico estável o bastante"
+      },
+      {
+        front: "Indicações clássicas de NP exclusiva?",
+        back: "Íleo prolongado · Obstrução · Fístula de alto débito · Vômitos/diarreia intratáveis · Fase inicial de intestino curto · Quando enteral é impossível/insuficiente"
+      },
+      {
+        front: "Necessidades proteicas aproximadas?",
+        back: "~1–2 g/kg/dia na maioria dos cirúrgicos/estressados · Calorias: Harris-Benedict × fator ou calorimetria · Evitar overfeeding"
+      },
+      {
+        front: "Complicações da NP que caem?",
+        back: "Infecção de cateter · Hiperglicemia · Distúrbios eletrolíticos · Esteatose / colecistite acalculosa · Trombose de acesso"
+      },
+      {
+        front: "Imunonutrição — ideia geral?",
+        back: "Fórmulas com arginina, ômega-3, nucleotídeos etc. · Benefício mais citado em eletivas oncológicas selecionadas · Não é rotina universal em todos os críticos"
+      }
+    ]
+  },
+  {
+    id: "ciresp-plastica",
+    name: "Plástica · enxertos · retalhos · feridas",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Enxerto × retalho — diferença essencial?",
+        back: "Enxerto: tecido transferido SEM sua vascularização (depende do leito receptor) · Retalho: leva pedículo vascular (ou microanastomose se livre)"
+      },
+      {
+        front: "Enxerto de pele parcial — o que é?",
+        back: "Epiderme + parte da derme (STSG) · Mais comum · Dermátomo · Contração maior · Área doadora cicatriza sozinha"
+      },
+      {
+        front: "Enxerto de pele total — ideia?",
+        back: "Epiderme + derme completa (FTSG) · Melhor estética/menos contração · Área doadora precisa fechar · Em defeitos menores"
+      },
+      {
+        front: "Condição do leito para o enxerto pegar?",
+        back: "Bom leito vascularizado · Sem infecção ativa / necrose · Imobilização · Falha = hematoma, seroma, infecção, cisalhamento"
+      },
+      {
+        front: "Ferida crônica — definição prática da apostila?",
+        back: "Não resolve em ~3–4 meses · Fatores: etiologia, comorbidades, estado geral · Complexa se precisa método especial / ameaça membro / área extensa"
+      }
+    ]
+  }
+];
+
+const out = path.join(__dirname, "..", "data", "flashcards-ciresp.json");
+fs.writeFileSync(out, JSON.stringify(decks, null, 2) + "\n", "utf8");
+console.log("decks", decks.length, "cards", decks.reduce((a, d) => a + d.cards.length, 0));

@@ -137,6 +137,11 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-cir3.json?v=20260718at",
     specialty: "cirurgia"
   },
+  ciresp: {
+    label: "CirEsp · Queimaduras · Choque · Nutrição",
+    file: "data/revisao-ciresp.json?v=20260718au",
+    specialty: "cirurgia"
+  },
   "cir-lacunas": {
     label: "Urgências · Vesícula · Urologia · AD (lacunas)",
     file: "data/revisao-cir-lacunas.json?v=20260718aq",
