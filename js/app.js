@@ -216,8 +216,8 @@ function aprovaRenderEspecialidades () {
   }
   if (go) {
     go.textContent = goN
-      ? goN + " flashcards · Gin1–Gin6"
-      : "Gin1–Gin6 · endócrino, onco e infecto.";
+      ? goN + " flashcards · Ginecologia (+ Obstetrícia em breve)"
+      : "Ginecologia e Obstetrícia.";
   }
   if (cli) {
     cli.textContent = cliN
@@ -249,12 +249,8 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("soc-") === 0) return "Maus-tratos";
   if (id.indexOf("end-") === 0) return "Endócrino";
   if (id.indexOf("urg-") === 0) return "Urgências";
-  if (id.indexOf("gin1-") === 0) return "Ginecologia · Gin1";
-  if (id.indexOf("gin2-") === 0) return "Ginecologia · Gin2";
-  if (id.indexOf("gin3-") === 0) return "Ginecologia · Gin3";
-  if (id.indexOf("gin4-") === 0) return "Ginecologia · Gin4";
-  if (id.indexOf("gin5-") === 0) return "Ginecologia · Gin5";
-  if (id.indexOf("gin6-") === 0) return "Ginecologia · Gin6";
+  if (/^gin[1-6]-/.test(id)) return "Ginecologia";
+  if (id.indexOf("obs-") === 0) return "Obstetrícia";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -536,12 +532,8 @@ const APROVA_PED_MODULE_PREFIXES = {
   "nefro-extra": ["nef-"],
   "r1-extra": ["inf-", "hem-", "ort-", "end-", "urg-"],
   "r1-lacunas": ["cir-", "par-", "alg-", "soc-", "ort-"],
-  gin1: ["gin1-"],
-  gin2: ["gin2-"],
-  gin3: ["gin3-"],
-  gin4: ["gin4-"],
-  gin5: ["gin5-"],
-  gin6: ["gin6-"]
+  ginecologia: ["gin1-", "gin2-", "gin3-", "gin4-", "gin5-", "gin6-"],
+  obstetricia: ["obs-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {

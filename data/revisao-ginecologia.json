@@ -1,0 +1,656 @@
+{
+  "title": "Ginecologia · revisão para provas R1",
+  "module": "ginecologia",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese nacional",
+      "featured": false,
+      "blurb": "Síntese nacional",
+      "verdict": "Em Ginecologia, ~70% do retorno está em endócrino (amenorreia/SOP/SUA/TH), oncoginecologia (colo/endométrio) e infecções (vulvovaginite/IST/DIP). Mastologia e anticoncepção fecham o núcleo.",
+      "foco": "Endócrino · Onco · Infecto · Mama · Anticoncepção",
+      "estilo": "Síntese das principais bancas",
+      "priorities": [
+        {
+          "tema": "Ginecologia endócrina (amenorreia, SOP, SUA, TH)",
+          "pct": 28,
+          "n": 57
+        },
+        {
+          "tema": "Oncoginecologia (colo, endométrio, ovário)",
+          "pct": 24,
+          "n": 49
+        },
+        {
+          "tema": "Infecções (vulvovaginite, IST, DIP)",
+          "pct": 16,
+          "n": 33
+        },
+        {
+          "tema": "Mastologia",
+          "pct": 12,
+          "n": 25
+        },
+        {
+          "tema": "Anticoncepção / planejamento familiar",
+          "pct": 9,
+          "n": 18
+        },
+        {
+          "tema": "Uroginecologia",
+          "pct": 6,
+          "n": 12
+        },
+        {
+          "tema": "Ginecologia geral (mioma, endometriose)",
+          "pct": 5,
+          "n": 10
+        }
+      ],
+      "deckOrder": [
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-ciclo",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-spm",
+        "gin2-palm-coein",
+        "gin2-sua-tratamento",
+        "gin2-mioma-clinica",
+        "gin2-mioma-tratamento",
+        "gin2-sua-investigacao",
+        "gin2-sua-conceitos",
+        "gin2-endometriose",
+        "gin2-adenomiose",
+        "gin2-polipo",
+        "gin5-rastreamento-colo",
+        "gin5-citologia",
+        "gin5-hiperplasia",
+        "gin5-ca-endometrio",
+        "gin5-nic-tratamento",
+        "gin5-hpv",
+        "gin5-ca-colo",
+        "gin6-vulvovaginites",
+        "gin6-dip",
+        "gin6-sifilis",
+        "gin6-ulceras",
+        "gin6-cervicite",
+        "gin6-violencia-pep",
+        "gin4-rastreamento",
+        "gin4-birads",
+        "gin4-ca-mama",
+        "gin4-ca-mama-tratamento",
+        "gin4-massa-anexial",
+        "gin4-ca-ovario",
+        "gin4-benignas",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": [
+        "endocrino",
+        "onco",
+        "infecto",
+        "mama",
+        "sua",
+        "th"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Endócrino e SUA",
+          "texto": "Amenorreia, SOP, anticoncepção, PALM-COEIN e mioma."
+        },
+        {
+          "titulo": "Sessão 2 · Onco e infecto",
+          "texto": "Colo/HPV, endométrio, vulvovaginites e DIP."
+        },
+        {
+          "titulo": "Sessão 3 · Mama e urogin",
+          "texto": "Rastreamento/BI-RADS, TH e IUE/prolapso."
+        }
+      ],
+      "lacuna": "Obstetrícia entra no grupo próprio em seguida. Detalhes de subespecialidade (FIGO completo, todos os regimes): foque o high-yield.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada de levantamentos USP-SP, UNIFESP e Enare (Estratégia MED) + top Enamed/CleverMed. Contagens proporcionais a 204 questões."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Nacional · acesso Enare",
+      "verdict": "No padrão Enamed/Enare, infecções e SUA lideram a Ginecologia prática; rastreamento de colo/mama e anticoncepção são pontos fáceis se você souber protocolo MS/Febrasgo.",
+      "foco": "Infecções · SUA · Mama · Colo · Anticoncepção",
+      "estilo": "Levantamento Enare/Enamed",
+      "priorities": [
+        {
+          "tema": "Infecções em ginecologia",
+          "pct": 20,
+          "n": 20
+        },
+        {
+          "tema": "Sangramento uterino anormal",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Câncer de mama",
+          "pct": 10,
+          "n": 10
+        },
+        {
+          "tema": "Câncer de colo do útero",
+          "pct": 10,
+          "n": 10
+        },
+        {
+          "tema": "Métodos contraceptivos",
+          "pct": 10,
+          "n": 10
+        },
+        {
+          "tema": "Demais temas (endócrino, uro, ovário etc.)",
+          "pct": 38,
+          "n": 38
+        }
+      ],
+      "deckOrder": [
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-ciclo",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-spm",
+        "gin2-palm-coein",
+        "gin2-sua-tratamento",
+        "gin2-mioma-clinica",
+        "gin2-mioma-tratamento",
+        "gin2-sua-investigacao",
+        "gin2-sua-conceitos",
+        "gin2-endometriose",
+        "gin2-adenomiose",
+        "gin2-polipo",
+        "gin5-rastreamento-colo",
+        "gin5-citologia",
+        "gin5-hiperplasia",
+        "gin5-ca-endometrio",
+        "gin5-nic-tratamento",
+        "gin5-hpv",
+        "gin5-ca-colo",
+        "gin6-vulvovaginites",
+        "gin6-dip",
+        "gin6-sifilis",
+        "gin6-ulceras",
+        "gin6-cervicite",
+        "gin6-violencia-pep",
+        "gin4-rastreamento",
+        "gin4-birads",
+        "gin4-ca-mama",
+        "gin4-ca-mama-tratamento",
+        "gin4-massa-anexial",
+        "gin4-ca-ovario",
+        "gin4-benignas",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": [
+        "endocrino",
+        "onco",
+        "infecto",
+        "mama",
+        "sua",
+        "th"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Endócrino e SUA",
+          "texto": "Amenorreia, SOP, anticoncepção, PALM-COEIN e mioma."
+        },
+        {
+          "titulo": "Sessão 2 · Onco e infecto",
+          "texto": "Colo/HPV, endométrio, vulvovaginites e DIP."
+        },
+        {
+          "titulo": "Sessão 3 · Mama e urogin",
+          "texto": "Rastreamento/BI-RADS, TH e IUE/prolapso."
+        }
+      ],
+      "lacuna": "Obstetrícia entra no grupo próprio em seguida. Detalhes de subespecialidade (FIGO completo, todos os regimes): foque o high-yield.",
+      "sourceType": "levantamento",
+      "source": "CleverMed · top temas Enare/Enamed em Ginecologia (percentuais reportados). Contagens proporcionais em base ilustrativa de 100."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "featured": false,
+      "blurb": "2021–2024",
+      "verdict": "Enare equilibra oncoginecologia (27%), endócrino (22%) e infecções (20%). Mastologia (14%) vem logo atrás — rastreamento de mama é clássico.",
+      "foco": "Onco · Endócrino · Infecções · Mastologia",
+      "estilo": "Levantamento Enare",
+      "priorities": [
+        {
+          "tema": "Oncologia ginecológica",
+          "pct": 26.5,
+          "n": 13
+        },
+        {
+          "tema": "Ginecologia endócrina",
+          "pct": 22.4,
+          "n": 11
+        },
+        {
+          "tema": "Infecções em ginecologia",
+          "pct": 20.4,
+          "n": 10
+        },
+        {
+          "tema": "Mastologia",
+          "pct": 14.3,
+          "n": 7
+        },
+        {
+          "tema": "Ginecologia geral",
+          "pct": 6.1,
+          "n": 3
+        },
+        {
+          "tema": "Uroginecologia",
+          "pct": 6.1,
+          "n": 3
+        },
+        {
+          "tema": "Ginecologia básica",
+          "pct": 4.1,
+          "n": 2
+        }
+      ],
+      "deckOrder": [
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-ciclo",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-spm",
+        "gin2-palm-coein",
+        "gin2-sua-tratamento",
+        "gin2-mioma-clinica",
+        "gin2-mioma-tratamento",
+        "gin2-sua-investigacao",
+        "gin2-sua-conceitos",
+        "gin2-endometriose",
+        "gin2-adenomiose",
+        "gin2-polipo",
+        "gin5-rastreamento-colo",
+        "gin5-citologia",
+        "gin5-hiperplasia",
+        "gin5-ca-endometrio",
+        "gin5-nic-tratamento",
+        "gin5-hpv",
+        "gin5-ca-colo",
+        "gin6-vulvovaginites",
+        "gin6-dip",
+        "gin6-sifilis",
+        "gin6-ulceras",
+        "gin6-cervicite",
+        "gin6-violencia-pep",
+        "gin4-rastreamento",
+        "gin4-birads",
+        "gin4-ca-mama",
+        "gin4-ca-mama-tratamento",
+        "gin4-massa-anexial",
+        "gin4-ca-ovario",
+        "gin4-benignas",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": [
+        "endocrino",
+        "onco",
+        "infecto",
+        "mama",
+        "sua",
+        "th"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Endócrino e SUA",
+          "texto": "Amenorreia, SOP, anticoncepção, PALM-COEIN e mioma."
+        },
+        {
+          "titulo": "Sessão 2 · Onco e infecto",
+          "texto": "Colo/HPV, endométrio, vulvovaginites e DIP."
+        },
+        {
+          "titulo": "Sessão 3 · Mama e urogin",
+          "texto": "Rastreamento/BI-RADS, TH e IUE/prolapso."
+        }
+      ],
+      "lacuna": "Obstetrícia entra no grupo próprio em seguida. Detalhes de subespecialidade (FIGO completo, todos os regimes): foque o high-yield.",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED · Enare Ginecologia 2021–2024 — 49 questões classificadas por subdisciplina."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "2017–2023",
+      "featured": false,
+      "blurb": "2017–2023",
+      "verdict": "USP é endócrino-pesada: ~41% só em ginecologia endócrina (amenorreia, climatério/TH). Onco, infecções e mama dividem o segundo bloco.",
+      "foco": "Endócrino · Onco · Infecções · Mama",
+      "estilo": "Levantamento USP-SP",
+      "priorities": [
+        {
+          "tema": "Ginecologia endócrina",
+          "pct": 41,
+          "n": 34
+        },
+        {
+          "tema": "Oncologia ginecológica",
+          "pct": 14.5,
+          "n": 12
+        },
+        {
+          "tema": "Infecções em ginecologia",
+          "pct": 12,
+          "n": 10
+        },
+        {
+          "tema": "Mastologia",
+          "pct": 12,
+          "n": 10
+        },
+        {
+          "tema": "Ginecologia básica",
+          "pct": 8.4,
+          "n": 7
+        },
+        {
+          "tema": "Ginecologia geral",
+          "pct": 7.2,
+          "n": 6
+        },
+        {
+          "tema": "Uroginecologia",
+          "pct": 4.8,
+          "n": 4
+        }
+      ],
+      "deckOrder": [
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-ciclo",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-spm",
+        "gin2-palm-coein",
+        "gin2-sua-tratamento",
+        "gin2-mioma-clinica",
+        "gin2-mioma-tratamento",
+        "gin2-sua-investigacao",
+        "gin2-sua-conceitos",
+        "gin2-endometriose",
+        "gin2-adenomiose",
+        "gin2-polipo",
+        "gin5-rastreamento-colo",
+        "gin5-citologia",
+        "gin5-hiperplasia",
+        "gin5-ca-endometrio",
+        "gin5-nic-tratamento",
+        "gin5-hpv",
+        "gin5-ca-colo",
+        "gin6-vulvovaginites",
+        "gin6-dip",
+        "gin6-sifilis",
+        "gin6-ulceras",
+        "gin6-cervicite",
+        "gin6-violencia-pep",
+        "gin4-rastreamento",
+        "gin4-birads",
+        "gin4-ca-mama",
+        "gin4-ca-mama-tratamento",
+        "gin4-massa-anexial",
+        "gin4-ca-ovario",
+        "gin4-benignas",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": [
+        "endocrino",
+        "onco",
+        "infecto",
+        "mama",
+        "sua",
+        "th"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Endócrino e SUA",
+          "texto": "Amenorreia, SOP, anticoncepção, PALM-COEIN e mioma."
+        },
+        {
+          "titulo": "Sessão 2 · Onco e infecto",
+          "texto": "Colo/HPV, endométrio, vulvovaginites e DIP."
+        },
+        {
+          "titulo": "Sessão 3 · Mama e urogin",
+          "texto": "Rastreamento/BI-RADS, TH e IUE/prolapso."
+        }
+      ],
+      "lacuna": "Obstetrícia entra no grupo próprio em seguida. Detalhes de subespecialidade (FIGO completo, todos os regimes): foque o high-yield.",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED · USP-SP Ginecologia 2017–2023 — 83 questões."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Série recente",
+      "featured": false,
+      "blurb": "Série recente",
+      "verdict": "Unifesp pesa endócrino (32%) e oncoginecologia (27%). Uroginecologia (14%) e mastologia (11%) têm peso acima da média nacional.",
+      "foco": "Endócrino · Onco · Uro · Mama",
+      "estilo": "Levantamento UNIFESP",
+      "priorities": [
+        {
+          "tema": "Ginecologia endócrina",
+          "pct": 31.5,
+          "n": 23
+        },
+        {
+          "tema": "Oncologia ginecológica",
+          "pct": 27.4,
+          "n": 20
+        },
+        {
+          "tema": "Uroginecologia",
+          "pct": 13.7,
+          "n": 10
+        },
+        {
+          "tema": "Ginecologia geral",
+          "pct": 12.3,
+          "n": 9
+        },
+        {
+          "tema": "Mastologia",
+          "pct": 11,
+          "n": 8
+        },
+        {
+          "tema": "Infecções em ginecologia",
+          "pct": 4.1,
+          "n": 3
+        }
+      ],
+      "deckOrder": [
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-ciclo",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-spm",
+        "gin2-palm-coein",
+        "gin2-sua-tratamento",
+        "gin2-mioma-clinica",
+        "gin2-mioma-tratamento",
+        "gin2-sua-investigacao",
+        "gin2-sua-conceitos",
+        "gin2-endometriose",
+        "gin2-adenomiose",
+        "gin2-polipo",
+        "gin5-rastreamento-colo",
+        "gin5-citologia",
+        "gin5-hiperplasia",
+        "gin5-ca-endometrio",
+        "gin5-nic-tratamento",
+        "gin5-hpv",
+        "gin5-ca-colo",
+        "gin6-vulvovaginites",
+        "gin6-dip",
+        "gin6-sifilis",
+        "gin6-ulceras",
+        "gin6-cervicite",
+        "gin6-violencia-pep",
+        "gin4-rastreamento",
+        "gin4-birads",
+        "gin4-ca-mama",
+        "gin4-ca-mama-tratamento",
+        "gin4-massa-anexial",
+        "gin4-ca-ovario",
+        "gin4-benignas",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": [
+        "endocrino",
+        "onco",
+        "infecto",
+        "mama",
+        "sua",
+        "th"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Endócrino e SUA",
+          "texto": "Amenorreia, SOP, anticoncepção, PALM-COEIN e mioma."
+        },
+        {
+          "titulo": "Sessão 2 · Onco e infecto",
+          "texto": "Colo/HPV, endométrio, vulvovaginites e DIP."
+        },
+        {
+          "titulo": "Sessão 3 · Mama e urogin",
+          "texto": "Rastreamento/BI-RADS, TH e IUE/prolapso."
+        }
+      ],
+      "lacuna": "Obstetrícia entra no grupo próprio em seguida. Detalhes de subespecialidade (FIGO completo, todos os regimes): foque o high-yield.",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED · UNIFESP Ginecologia — 73 questões."
+    }
+  ],
+  "checklistItems": {
+    "endocrino": {
+      "tema": "Endócrino / ciclo",
+      "yield": "Máximo",
+      "pegar": "Amenorreia (fluxo) · SOP Rotterdam · ACO/LARC · HiperPRL"
+    },
+    "sua": {
+      "tema": "SUA / mioma",
+      "yield": "Máximo",
+      "pegar": "PALM-COEIN · SIU/tranexâmico · Submucoso → histeroscopia"
+    },
+    "onco": {
+      "tema": "Oncoginecologia",
+      "yield": "Máximo",
+      "pegar": "Rastreio colo 25–64 · HSIL/cone · HE atípica · CE pós-meno"
+    },
+    "infecto": {
+      "tema": "Infecto / IST",
+      "yield": "Máximo",
+      "pegar": "VB/Cândida/Trico · DIP empírica · Sífilis/penicilina · PEP"
+    },
+    "mama": {
+      "tema": "Mastologia",
+      "yield": "Alto",
+      "pegar": "MS 50–69 bienal · BI-RADS 4/5 → biópsia · RE/HER2"
+    },
+    "th": {
+      "tema": "Climatério / uro",
+      "yield": "Alto",
+      "pegar": "Janela TH <60a/<10a · Útero+progestogênio · IUE sling · POP"
+    }
+  },
+  "numeros": [
+    "GO ~21% das provas nacionais (série típica)",
+    "Rastreio colo: 25–64 · MMG MS: 50–69 bienal",
+    "Rotterdam SOP ≥2/3 · BI-RADS 3 ≤2% · 5 ≥95%",
+    "Vacina HPV <15a: 2 doses · PEP HIV até 72h",
+    "Menopausa: 12 meses · IOP <40a · Janela TH <60a/<10a"
+  ],
+  "pegadinhas": [
+    "Não misture MS (mama 50–69) com Febrasgo/CBR (40+)",
+    "Útero presente na TH → some progestogênio",
+    "SUD que não responde a hormônio → causa orgânica",
+    "Colo = estadiamento clínico; endométrio = cirúrgico",
+    "VB: não tratar parceiro · Trico: tratar",
+    "Sangramento pós-meno: investigar sempre"
+  ],
+  "baixoRoi": [
+    "Biossíntese esteróide completa",
+    "FIGO subestádio a subestádio",
+    "Todas as marcas de ACO/sling",
+    "Protocolos de FIV completos"
+  ],
+  "unitLabel": "% das questões de Ginecologia",
+  "note": "Percentuais = participação do tema dentro da Ginecologia (não da prova inteira). Subtemas = decks Gin1–Gin6 unificados."
+}

@@ -56,34 +56,14 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-r1-lacunas.json?v=20260718t",
     specialty: "pediatria"
   },
-  gin1: {
-    label: "Endócrino / ciclo (Gin1)",
-    file: "data/revisao-gin1.json?v=20260718z",
+  ginecologia: {
+    label: "Ginecologia",
+    file: "data/revisao-ginecologia.json?v=20260718af",
     specialty: "go"
   },
-  gin2: {
-    label: "SUA / miomatose (Gin2)",
-    file: "data/revisao-gin2.json?v=20260718z",
-    specialty: "go"
-  },
-  gin3: {
-    label: "Climatério / urogin (Gin3)",
-    file: "data/revisao-gin3.json?v=20260718aa",
-    specialty: "go"
-  },
-  gin4: {
-    label: "Mastologia / ovário (Gin4)",
-    file: "data/revisao-gin4.json?v=20260718ab",
-    specialty: "go"
-  },
-  gin5: {
-    label: "Oncoginecologia (Gin5)",
-    file: "data/revisao-gin5.json?v=20260718ac",
-    specialty: "go"
-  },
-  gin6: {
-    label: "Infecto / IST (Gin6)",
-    file: "data/revisao-gin6.json?v=20260718ad",
+  obstetricia: {
+    label: "Obstetrícia",
+    file: "data/revisao-obstetricia.json?v=20260718af",
     specialty: "go"
   }
 };
