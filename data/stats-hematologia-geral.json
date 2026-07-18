@@ -1,0 +1,503 @@
+{
+  "title": "Hematologia · o que mais cai (R1) — Hem1–3 completa",
+  "unitLabel": "% relativo no bloco",
+  "note": "Síntese R1 + apostilas Hem1–3 (série completa MedHub).",
+  "gaps": {
+    "summary": "Hematologia coberta em 11 grupos (Hem1–3 completa).",
+    "missingHighYield": [],
+    "covered": [
+      {
+        "tema": "Anemias / ferropriva / ADC",
+        "grupo": "hema-anemias"
+      },
+      {
+        "tema": "Megaloblástica",
+        "grupo": "hema-megaloblastica"
+      },
+      {
+        "tema": "Hemolíticas / hemoglobinopatias",
+        "grupo": "hema-hemoliticas"
+      },
+      {
+        "tema": "SMD / sideroblástica",
+        "grupo": "hema-smd"
+      },
+      {
+        "tema": "Leucemias",
+        "grupo": "hema-leucemias"
+      },
+      {
+        "tema": "NMP",
+        "grupo": "hema-nmp"
+      },
+      {
+        "tema": "Linfomas",
+        "grupo": "hema-linfomas"
+      },
+      {
+        "tema": "Mieloma",
+        "grupo": "hema-mieloma"
+      },
+      {
+        "tema": "Hemostasia",
+        "grupo": "hema-hemostasia"
+      },
+      {
+        "tema": "PTI / PTT",
+        "grupo": "hema-plaquetas"
+      },
+      {
+        "tema": "Coagulação / anticoagulação",
+        "grupo": "hema-coagulacao"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese bancas",
+      "featured": false,
+      "sourceType": "sintese",
+      "source": "Síntese R1 + apostilas Hem1–3 MedHub.",
+      "verdict": "Série completa: anemias, onco-hemato e hemostasia.",
+      "foco": "Ferropriva · leucemias · PTI/PTT · coagulação",
+      "estilo": "Síntese R1",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 28,
+          "n": 28
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 30,
+          "n": 30
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 26,
+          "n": 26
+        },
+        {
+          "tema": "Outros",
+          "pct": 16,
+          "n": 16
+        }
+      ]
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional",
+      "featured": true,
+      "sourceType": "levantamento",
+      "source": "Enare/Enamed · Hematologia (síntese Hem1–3).",
+      "verdict": "Anemias + PTI dominam provas gerais; leucemias nas urgências.",
+      "foco": "Ferropriva · PTI · LMA/LLA",
+      "estilo": "Padrão Enamed",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 40
+        },
+        {
+          "tema": "Leucemias",
+          "pct": 24
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ]
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "sourceType": "levantamento",
+      "source": "Enare · Hematologia Hem1–3.",
+      "verdict": "Urgências: PTT, LMA/CIVD e sangramento em hemofilia.",
+      "foco": "PTT · LMA · hemofilia",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências",
+          "pct": 38
+        },
+        {
+          "tema": "Anemias / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 14
+        }
+      ]
+    },
+    {
+      "id": "revalida",
+      "label": "Revalida",
+      "kicker": "INEP",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de enamed).",
+      "verdict": "Anemias + PTI dominam provas gerais; leucemias nas urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ferropriva · PTI · LMA/LLA",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 40
+        },
+        {
+          "tema": "Leucemias",
+          "pct": 24
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "blurb": "Padrão Revalida neste grupo."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "sourceType": "levantamento",
+      "source": "USP · Hematologia (síntese Hem1–3).",
+      "verdict": "Morfologia, citogenética e microangiopatias.",
+      "foco": "Esfregaço · BCR-ABL · PTT",
+      "estilo": "Padrão USP",
+      "priorities": [
+        {
+          "tema": "Lab / fisiopat",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ]
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "sourceType": "levantamento",
+      "source": "UNIFESP · Hematologia (síntese Hem1–3).",
+      "verdict": "Onco-hemato e anticoagulação.",
+      "foco": "LMA · mieloma · DOAC/varfarina",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Onco-hemato",
+          "pct": 34
+        },
+        {
+          "tema": "Anticoagulação",
+          "pct": 26
+        },
+        {
+          "tema": "Anemias",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ]
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Padrão APS",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de enamed).",
+      "verdict": "Anemias + PTI dominam provas gerais; leucemias nas urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ferropriva · PTI · LMA/LLA",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 40
+        },
+        {
+          "tema": "Leucemias",
+          "pct": 24
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "blurb": "Padrão SUS-SP neste grupo."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Padrão regional",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de enamed).",
+      "verdict": "Anemias + PTI dominam provas gerais; leucemias nas urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ferropriva · PTI · LMA/LLA",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 40
+        },
+        {
+          "tema": "Leucemias",
+          "pct": 24
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "blurb": "Padrão SUS-BA neste grupo."
+    },
+    {
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de usp).",
+      "verdict": "Morfologia, citogenética e microangiopatias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Esfregaço · BCR-ABL · PTT",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Lab / fisiopat",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFMG neste grupo."
+    },
+    {
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de usp).",
+      "verdict": "Morfologia, citogenética e microangiopatias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Esfregaço · BCR-ABL · PTT",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Lab / fisiopat",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFRGS neste grupo."
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de usp).",
+      "verdict": "Morfologia, citogenética e microangiopatias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Esfregaço · BCR-ABL · PTT",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Lab / fisiopat",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFRJ neste grupo."
+    },
+    {
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de usp).",
+      "verdict": "Morfologia, citogenética e microangiopatias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Esfregaço · BCR-ABL · PTT",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Lab / fisiopat",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão Unicamp neste grupo."
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de unifesp).",
+      "verdict": "Onco-hemato e anticoagulação. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "LMA · mieloma · DOAC/varfarina",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Onco-hemato",
+          "pct": 34
+        },
+        {
+          "tema": "Anticoagulação",
+          "pct": 26
+        },
+        {
+          "tema": "Anemias",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão Einstein neste grupo."
+    },
+    {
+      "id": "amp",
+      "label": "AMP",
+      "kicker": "Padrão clássico R1",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de enamed).",
+      "verdict": "Anemias + PTI dominam provas gerais; leucemias nas urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ferropriva · PTI · LMA/LLA",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 40
+        },
+        {
+          "tema": "Leucemias",
+          "pct": 24
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "blurb": "Padrão AMP neste grupo."
+    },
+    {
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "kicker": "Padrão regional",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Hematologia · Hematologia · o que mais cai (R1) — Hem1–3 completa (a partir de enamed).",
+      "verdict": "Anemias + PTI dominam provas gerais; leucemias nas urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ferropriva · PTI · LMA/LLA",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 40
+        },
+        {
+          "tema": "Leucemias",
+          "pct": 24
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "blurb": "Padrão SES-PE neste grupo."
+    }
+  ]
+}

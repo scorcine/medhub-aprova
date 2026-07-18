@@ -159,6 +159,8 @@ let aprovaNeuOverviewStatsCache = null;
 let aprovaNefOverviewStatsCache = null;
 let aprovaInfcOverviewStatsCache = null;
 let aprovaHepOverviewStatsCache = null;
+let aprovaHemaOverviewStatsCache = null;
+let aprovaEndoOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
   return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
@@ -237,6 +239,18 @@ function aprovaRichSpecialtyMeta (specialty) {
         overviewCacheKey: "hepatologia",
         overviewUrl: "data/stats-hepatologia-geral.json?v=20260718cb",
         countNoun: "Hepatologia"
+      },
+      hematologia: {
+        shortLabel: "Hematologia",
+        overviewCacheKey: "hematologia",
+        overviewUrl: "data/stats-hematologia-geral.json?v=20260718cf",
+        countNoun: "Hematologia"
+      },
+      endocrinologia: {
+        shortLabel: "Endocrinologia",
+        overviewCacheKey: "endocrinologia",
+        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718cm",
+        countNoun: "Endocrinologia"
       }
     };
     const a = cliMeta[area] || cliMeta.reumatologia;
@@ -315,7 +329,9 @@ async function aprovaRenderCliAreaCounts () {
     ["esp-count-neu", "neurologia", "AVC, epilepsia, coma e cefaleia."],
     ["esp-count-nef", "nefrologia", "Nefro 1–5 completa · glomérulos à uro."],
     ["esp-count-infc", "infectologia", "Inf1–5 completa · parasitoses à tropicais."],
-    ["esp-count-hep", "hepatologia", "Hep1–4 completa · virais à descompensação."]
+    ["esp-count-hep", "hepatologia", "Hep1–4 completa · virais à descompensação."],
+    ["esp-count-hema", "hematologia", "Hem1–3 completa · anemias à hemostasia."],
+    ["esp-count-endo", "endocrinologia", "End1–3 completa · tireoide à diabetes."]
   ];
   for (const [elId, areaId, fallback] of map) {
     const el = document.getElementById(elId);
@@ -424,19 +440,89 @@ function aprovaDeckKicker (deck) {
     return "Hepato · biliar";
   }
   if (id.indexOf("hep-") === 0) return "Hepatologia";
+  if (
+    id === "hema-anemia-intro" ||
+    id === "hema-ferropriva" ||
+    id === "hema-anemia-doenca-cronica"
+  ) {
+    return "Hemato · anemias";
+  }
+  if (id === "hema-megaloblastica") return "Hemato · megaloblástica";
+  if (
+    id === "hema-hemoliticas-geral" ||
+    id === "hema-ahai" ||
+    id === "hema-g6pd-esferocitose" ||
+    id === "hema-talassemia" ||
+    id === "hema-falciforme"
+  ) {
+    return "Hemato · hemolíticas";
+  }
+  if (id === "hema-smd" || id === "hema-sideroblastica") return "Hemato · SMD";
+  if (
+    id === "hema-lma" ||
+    id === "hema-lla" ||
+    id === "hema-lmc" ||
+    id === "hema-llc"
+  ) {
+    return "Hemato · leucemias";
+  }
+  if (id === "hema-pv" || id === "hema-mf" || id === "hema-te") return "Hemato · NMP";
+  if (id === "hema-hodgkin" || id === "hema-lnh") return "Hemato · linfomas";
+  if (id === "hema-mieloma") return "Hemato · mieloma";
+  if (id === "hema-hemostasia") return "Hemato · hemostasia";
+  if (id === "hema-pti" || id === "hema-ptt-shuh") return "Hemato · plaquetas";
+  if (
+    id === "hema-hemofilia" ||
+    id === "hema-von-willebrand" ||
+    id === "hema-cid" ||
+    id === "hema-anticoagulacao"
+  ) {
+    return "Hemato · coagulação";
+  }
+  if (id.indexOf("hema-") === 0) return "Hematologia";
+  if (
+    id === "endo-tireoide-basico" ||
+    id === "endo-hipertireoidismo" ||
+    id === "endo-graves"
+  ) {
+    return "Endo · tireoide";
+  }
+  if (id === "endo-hipotireoidismo" || id === "endo-tireoidites") {
+    return "Endo · hipotireo";
+  }
+  if (id === "endo-nodulos-cancer-tireoide") return "Endo · nódulos";
+  if (
+    id === "endo-cushing" ||
+    id === "endo-addison-insuficiencia-adrenal" ||
+    id === "endo-feocromocitoma" ||
+    id === "endo-hiperaldosteronismo"
+  ) {
+    return "Endo · adrenal";
+  }
+  if (id === "endo-paratireoide") return "Endo · paratireoide";
+  if (id === "endo-hipofise") return "Endo · hipófise";
+  if (id === "endo-dm-basico" || id === "endo-dm-tratamento") return "Endo · DM";
+  if (id === "endo-dm-cronicas" || id === "endo-pe-diabetico") {
+    return "Endo · DM crônicas";
+  }
+  if (id === "endo-dm-agudas" || id === "endo-hipoglicemia") {
+    return "Endo · urgências DM";
+  }
+  if (id === "endo-obesidade") return "Endo · obesidade";
+  if (id.indexOf("endo-") === 0) return "Endocrinologia";
   if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
   if (id.indexOf("inf-") === 0) return "Infecto · Dengue/Sepse";
   if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
   if (id.indexOf("resp-") === 0) return "Respiratório";
   if (id.indexOf("gast-") === 0) return "Gastro";
   if (id.indexOf("neu-") === 0) return "Neuro";
-  if (id.indexOf("hem-") === 0) return "Hemato";
+  if (id.indexOf("hem-") === 0) return "Hemato pediátrica";
   if (id.indexOf("ort-") === 0) return "Orto / Reumato";
   if (id.indexOf("cir-") === 0) return "Cirurgia pediátrica";
   if (id.indexOf("par-") === 0) return "Parasitoses";
   if (id.indexOf("alg-") === 0) return "Alergia";
   if (id.indexOf("soc-") === 0) return "Maus-tratos";
-  if (id.indexOf("end-") === 0) return "Endócrino";
+  if (id.indexOf("end-") === 0) return "Endócrino pediátrico";
   if (id.indexOf("urg-") === 0) return "Urgências";
   if (id.indexOf("gin1-") === 0) return "Endócrino / ciclo";
   if (id.indexOf("gin2-") === 0) return "SUA / miomatose";
@@ -717,6 +803,28 @@ async function aprovaLoadOverviewStats (specialty) {
       }
       return aprovaHepOverviewStatsCache;
     }
+    if (area === "hematologia") {
+      if (aprovaHemaOverviewStatsCache) return aprovaHemaOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaHemaOverviewStatsCache = await res.json();
+      } catch {
+        aprovaHemaOverviewStatsCache = null;
+      }
+      return aprovaHemaOverviewStatsCache;
+    }
+    if (area === "endocrinologia") {
+      if (aprovaEndoOverviewStatsCache) return aprovaEndoOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaEndoOverviewStatsCache = await res.json();
+      } catch {
+        aprovaEndoOverviewStatsCache = null;
+      }
+      return aprovaEndoOverviewStatsCache;
+    }
     if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
     try {
       const res = await fetch(meta.overviewUrl);
@@ -929,7 +1037,9 @@ async function aprovaRenderCliAreaCards () {
       { id: "neurologia", label: "Neurologia", blurb: "" },
       { id: "nefrologia", label: "Nefrologia", blurb: "" },
       { id: "infectologia", label: "Infectologia", blurb: "" },
-      { id: "hepatologia", label: "Hepatologia", blurb: "" }
+      { id: "hepatologia", label: "Hepatologia", blurb: "" },
+      { id: "hematologia", label: "Hematologia", blurb: "" },
+      { id: "endocrinologia", label: "Endocrinologia", blurb: "" }
     ];
 
   grid.innerHTML = "";
@@ -1169,7 +1279,39 @@ const APROVA_PED_MODULE_PREFIXES = {
     "hep-abscesso-piogenico",
     "hep-abscesso-amebiano",
     "hep-cisto-hidatico"
-  ]
+  ],
+  "hema-anemias": ["hema-anemia-intro", "hema-ferropriva", "hema-anemia-doenca-cronica"],
+  "hema-megaloblastica": ["hema-megaloblastica"],
+  "hema-hemoliticas": [
+    "hema-hemoliticas-geral",
+    "hema-ahai",
+    "hema-g6pd-esferocitose",
+    "hema-talassemia",
+    "hema-falciforme"
+  ],
+  "hema-smd": ["hema-smd", "hema-sideroblastica"],
+  "hema-leucemias": ["hema-lma", "hema-lla", "hema-lmc", "hema-llc"],
+  "hema-nmp": ["hema-pv", "hema-mf", "hema-te"],
+  "hema-linfomas": ["hema-hodgkin", "hema-lnh"],
+  "hema-mieloma": ["hema-mieloma"],
+  "hema-hemostasia": ["hema-hemostasia"],
+  "hema-plaquetas": ["hema-pti", "hema-ptt-shuh"],
+  "hema-coagulacao": ["hema-hemofilia", "hema-von-willebrand", "hema-cid", "hema-anticoagulacao"],
+  "endo-tireoide": ["endo-tireoide-basico", "endo-hipertireoidismo", "endo-graves"],
+  "endo-hipotireo": ["endo-hipotireoidismo", "endo-tireoidites"],
+  "endo-nodulos": ["endo-nodulos-cancer-tireoide"],
+  "endo-adrenal": [
+    "endo-cushing",
+    "endo-addison-insuficiencia-adrenal",
+    "endo-feocromocitoma",
+    "endo-hiperaldosteronismo"
+  ],
+  "endo-paratireoide": ["endo-paratireoide"],
+  "endo-hipofise": ["endo-hipofise"],
+  "endo-dm": ["endo-dm-basico", "endo-dm-tratamento"],
+  "endo-dm-complicacoes": ["endo-dm-cronicas", "endo-pe-diabetico"],
+  "endo-urgencias-dm": ["endo-dm-agudas", "endo-hipoglicemia"],
+  "endo-obesidade": ["endo-obesidade"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {

@@ -648,6 +648,132 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-hep-biliar.json?v=20260718cb",
     specialty: "clinica",
     area: "hepatologia"
+  },
+  "hema-anemias": {
+    label: "Anemias · ferropriva · ADC",
+    file: "data/revisao-hema-anemias.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-megaloblastica": {
+    label: "Anemia megaloblástica",
+    file: "data/revisao-hema-megaloblastica.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-hemoliticas": {
+    label: "Hemolíticas · hemoglobinopatias",
+    file: "data/revisao-hema-hemoliticas.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-smd": {
+    label: "SMD · sideroblástica",
+    file: "data/revisao-hema-smd.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-leucemias": {
+    label: "Leucemias",
+    file: "data/revisao-hema-leucemias.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-nmp": {
+    label: "Neoplasias mieloproliferativas",
+    file: "data/revisao-hema-nmp.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-linfomas": {
+    label: "Linfomas · Hodgkin · LNH",
+    file: "data/revisao-hema-linfomas.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-mieloma": {
+    label: "Mieloma · gamopatias",
+    file: "data/revisao-hema-mieloma.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-hemostasia": {
+    label: "Princípios da hemostasia",
+    file: "data/revisao-hema-hemostasia.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-plaquetas": {
+    label: "PTI · PTT · SHU",
+    file: "data/revisao-hema-plaquetas.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "hema-coagulacao": {
+    label: "Hemofilia · vW · CID · anticoagulação",
+    file: "data/revisao-hema-coagulacao.json?v=20260718cf",
+    specialty: "clinica",
+    area: "hematologia"
+  },
+  "endo-tireoide": {
+    label: "Tireoide · hipertireoidismo · Graves",
+    file: "data/revisao-endo-tireoide.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-hipotireo": {
+    label: "Hipotireoidismo · tireoidites",
+    file: "data/revisao-endo-hipotireo.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-nodulos": {
+    label: "Nódulos · câncer de tireoide",
+    file: "data/revisao-endo-nodulos.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-adrenal": {
+    label: "Suprarrenal",
+    file: "data/revisao-endo-adrenal.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-paratireoide": {
+    label: "Paratireoide · cálcio",
+    file: "data/revisao-endo-paratireoide.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-hipofise": {
+    label: "Hipófise · hipotálamo",
+    file: "data/revisao-endo-hipofise.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-dm": {
+    label: "Diabetes · diagnóstico · tratamento",
+    file: "data/revisao-endo-dm.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-dm-complicacoes": {
+    label: "DM · crônicas · pé",
+    file: "data/revisao-endo-dm-complicacoes.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-urgencias-dm": {
+    label: "CAD · HHNS · hipoglicemia",
+    file: "data/revisao-endo-urgencias-dm.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
+  },
+  "endo-obesidade": {
+    label: "Obesidade",
+    file: "data/revisao-endo-obesidade.json?v=20260718cm",
+    specialty: "clinica",
+    area: "endocrinologia"
   }
 };
 
@@ -699,6 +825,16 @@ const APROVA_CLI_AREAS = {
     id: "hepatologia",
     label: "Hepatologia",
     blurb: "Série completa Hep1–4 · virais à biliar/descompensação"
+  },
+  hematologia: {
+    id: "hematologia",
+    label: "Hematologia",
+    blurb: "Série completa Hem1–3 · anemias, onco-hemato e hemostasia"
+  },
+  endocrinologia: {
+    id: "endocrinologia",
+    label: "Endocrinologia",
+    blurb: "Série completa End1–3 · tireoide, adrenal e diabetes"
   }
 };
 

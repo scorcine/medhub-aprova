@@ -1,0 +1,657 @@
+{
+  "title": "Hemostasia · primária · secundária · provas",
+  "module": "hema-hemostasia",
+  "profiles": [
+    {
+      "checklist": [
+        "dx",
+        "conduta",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnóstico",
+          "texto": "Hemograma, esfregaço e marcadores."
+        },
+        {
+          "titulo": "Sessão 2 · Conduta",
+          "texto": "Drogas e algoritmos R1."
+        },
+        {
+          "titulo": "Sessão 3 · Urgências",
+          "texto": "Sangramento, blastos, PTT."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostilas Hem1–3 · MedHub R1 · Hematologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Hemato",
+      "blurb": "Adesão · agregação · vias · provas",
+      "verdict": "GP Ib/FvW, GP IIb/IIIa, TAP/TPTa e interpretação inicial.",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Síntese nacional · Hematologia",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / lab",
+          "pct": 30
+        },
+        {
+          "tema": "Conduta / droga",
+          "pct": 32
+        },
+        {
+          "tema": "Urgências",
+          "pct": 20
+        },
+        {
+          "tema": "DD / mapa",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Hematologia (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Anemias, PTI e leucemias caem bem nas provas gerais.",
+      "verdict": "Priorize ferropriva×ADC, B12, PTI e LMA/LLA urgências.",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 32
+        },
+        {
+          "tema": "Hemostasia / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Hematologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "Ferropriva, PTI, PTT e blastos primeiro.",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Anemias / PTI",
+          "pct": 36
+        },
+        {
+          "tema": "Urgências onco",
+          "pct": 26
+        },
+        {
+          "tema": "Coagulação",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Hematologia · Hemostasia · primária · secundária · provas (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Anemias, PTI e leucemias caem bem nas provas gerais.",
+      "verdict": "Priorize ferropriva×ADC, B12, PTI e LMA/LLA urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 32
+        },
+        {
+          "tema": "Hemostasia / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Hematologia (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de fisiopat, morfologia e critérios.",
+      "verdict": "Esfregaço, citogenética e critérios de PTT/CID.",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Fisiopat / lab",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Hematologia (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Conduta em urgências e onco-hemato.",
+      "verdict": "LMA/LLA, mieloma e anticoagulação.",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 30
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 28
+        },
+        {
+          "tema": "Anemias",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Hematologia · Hemostasia · primária · secundária · provas (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Anemias, PTI e leucemias caem bem nas provas gerais.",
+      "verdict": "Priorize ferropriva×ADC, B12, PTI e LMA/LLA urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 32
+        },
+        {
+          "tema": "Hemostasia / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Hematologia · Hemostasia · primária · secundária · provas (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Anemias, PTI e leucemias caem bem nas provas gerais.",
+      "verdict": "Priorize ferropriva×ADC, B12, PTI e LMA/LLA urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 32
+        },
+        {
+          "tema": "Hemostasia / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Hematologia · Hemostasia · primária · secundária · provas (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de fisiopat, morfologia e critérios.",
+      "verdict": "Esfregaço, citogenética e critérios de PTT/CID. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / lab",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Hematologia · Hemostasia · primária · secundária · provas (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de fisiopat, morfologia e critérios.",
+      "verdict": "Esfregaço, citogenética e critérios de PTT/CID. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / lab",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Hematologia · Hemostasia · primária · secundária · provas (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de fisiopat, morfologia e critérios.",
+      "verdict": "Esfregaço, citogenética e critérios de PTT/CID. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / lab",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Hematologia · Hemostasia · primária · secundária · provas (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de fisiopat, morfologia e critérios.",
+      "verdict": "Esfregaço, citogenética e critérios de PTT/CID. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / lab",
+          "pct": 34
+        },
+        {
+          "tema": "Onco-hemato",
+          "pct": 28
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Hematologia · Hemostasia · primária · secundária · provas (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Conduta em urgências e onco-hemato.",
+      "verdict": "LMA/LLA, mieloma e anticoagulação. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 30
+        },
+        {
+          "tema": "Hemostasia",
+          "pct": 28
+        },
+        {
+          "tema": "Anemias",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Hematologia · Hemostasia · primária · secundária · provas (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Anemias, PTI e leucemias caem bem nas provas gerais.",
+      "verdict": "Priorize ferropriva×ADC, B12, PTI e LMA/LLA urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 32
+        },
+        {
+          "tema": "Hemostasia / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "urgencia",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Hematologia · Hemostasia · primária · secundária · provas (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Anemias, PTI e leucemias caem bem nas provas gerais.",
+      "verdict": "Priorize ferropriva×ADC, B12, PTI e LMA/LLA urgências. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Adesão · agregação · vias · provas",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Anemias",
+          "pct": 32
+        },
+        {
+          "tema": "Hemostasia / PTI",
+          "pct": 28
+        },
+        {
+          "tema": "Leucemias / linfomas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hema-hemostasia"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "dx": {
+      "tema": "Diagnóstico / lab",
+      "yield": "Alto",
+      "pegar": "VCM/RDW; ferritina×ADC; B12; esquizócitos; blastos; BCR-ABL."
+    },
+    "conduta": {
+      "tema": "Conduta / droga",
+      "yield": "Máximo",
+      "pegar": "Ferro oral; B12 IM; hidroxiureia; imatinibe; rituximabe; IGIV/corticoide PTI."
+    },
+    "urgencia": {
+      "tema": "Urgências",
+      "yield": "Alto",
+      "pegar": "LMA+CIVD; PTT plasmaferese; hemofilia sangramento; CID."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial / mapa",
+      "yield": "Alto",
+      "pegar": "Ferropriva×ADC×talassemia; PTI×PTT; LNH×Hodgkin; vW×hemofilia."
+    }
+  },
+  "oneLiners": [
+    "Primária = plaqueta/vaso",
+    "Secundária = fatores",
+    "TAP×TPTa localizam a via"
+  ]
+}
