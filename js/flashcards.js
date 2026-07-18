@@ -5,7 +5,8 @@ function aprovaDeckSpecialty (deck) {
   const id = String(deck.id || "");
   const pedPrefixes = [
     "neo-", "ali-", "nut-", "imu-", "dm-", "itu-", "exa-", "crd-", "urg-",
-    "resp-", "gast-", "neu-", "nef-", "inf-", "hem-", "ort-", "end-"
+    "resp-", "gast-", "neu-", "nef-", "inf-", "hem-", "ort-", "end-",
+    "cir-", "par-", "alg-", "soc-"
   ];
   if (pedPrefixes.some(p => id.indexOf(p) === 0)) return "pediatria";
   if (id.indexOf("cardio") === 0) return "clinica";
@@ -31,7 +32,8 @@ const AprovaFlashcards = {
       "data/flashcards-imunizacoes.json",
       "data/flashcards-diabetes.json",
       "data/flashcards-ped6.json",
-      "data/flashcards-r1-complementar.json"
+      "data/flashcards-r1-complementar.json",
+      "data/flashcards-r1-lacunas.json"
     ];
     const decks = [];
     for (const file of files) {

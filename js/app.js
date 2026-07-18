@@ -191,6 +191,10 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("neu-") === 0) return "Neuro";
   if (id.indexOf("hem-") === 0) return "Hemato";
   if (id.indexOf("ort-") === 0) return "Orto / Reumato";
+  if (id.indexOf("cir-") === 0) return "Cirurgia pediátrica";
+  if (id.indexOf("par-") === 0) return "Parasitoses";
+  if (id.indexOf("alg-") === 0) return "Alergia";
+  if (id.indexOf("soc-") === 0) return "Maus-tratos";
   if (id.indexOf("end-") === 0) return "Endócrino";
   if (id.indexOf("urg-") === 0) return "Urgências";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
@@ -210,7 +214,8 @@ function aprovaRenderDeckCards (specialty, grid, deckOrder) {
         const order = [
           "neo-", "ali-", "nut-", "imu-", "dm-",
           "itu-", "nef-", "exa-", "inf-", "crd-",
-          "resp-", "gast-", "neu-", "hem-", "ort-", "end-", "urg-"
+          "resp-", "gast-", "neu-", "hem-", "ort-",
+          "cir-", "par-", "alg-", "soc-", "end-", "urg-"
         ];
         for (let i = 0; i < order.length; i++) {
           if (s.indexOf(order[i]) === 0) return i;
