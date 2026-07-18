@@ -192,7 +192,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Clínica médica",
       shortLabel: "Clínica médica",
       overviewCacheKey: "clinica",
-      overviewUrl: "data/stats-reumatologia-geral.json?v=20260718bc",
+      overviewUrl: "data/stats-reumatologia-geral.json?v=20260718bd",
       countNoun: "Clínica médica",
       openRoot: () => aprovaOpenClinica(),
       openModule: id => aprovaOpenClinicaModule(id)
@@ -254,8 +254,8 @@ function aprovaRenderEspecialidades () {
   }
   if (cli) {
     cli.textContent = cliN
-      ? cliN + " flashcards · Reumatologia REU1–REU2"
-      : "Reumatologia (REU1–REU2) — REU3 em breve.";
+      ? cliN + " flashcards · Reumatologia REU1–REU3"
+      : "Reumatologia (REU1–REU3).";
   }
 }
 
@@ -302,6 +302,15 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("reu2-fr-") === 0) return "Febre reumática";
   if (id === "reu2-septica" || id === "reu2-tb-misc") return "Artrites infecciosas";
   if (id.indexOf("reu2-") === 0) return "Extras REU2";
+  if (id.indexOf("reu3-les-") === 0) return "LES";
+  if (id === "reu3-saf") return "SAF";
+  if (id.indexOf("reu3-es-") === 0) return "Esclerose sistêmica";
+  if (id === "reu3-miopatias" || id === "reu3-sjogren" || id === "reu3-dmtc") {
+    return "Miopatias · Sjögren · DMTC";
+  }
+  if (id.indexOf("reu3-vasc-") === 0) return "Vasculites";
+  if (id === "reu3-amiloidose") return "Amiloidoses";
+  if (id.indexOf("reu3-") === 0) return "Reumatologia REU3";
   if (
     id === "cg-apendicite" ||
     id === "cg-colecistite" ||
@@ -778,7 +787,13 @@ const APROVA_PED_MODULE_PREFIXES = {
   "reu-cristais": ["reu2-gota-", "reu2-pseudogota"],
   "reu-fr": ["reu2-fr-"],
   "reu-infecciosa": ["reu2-septica", "reu2-tb-"],
-  "reu-extras2": ["reu2-policondrite", "reu2-ffm", "reu2-fibromialgia"]
+  "reu-extras2": ["reu2-policondrite", "reu2-ffm", "reu2-fibromialgia"],
+  "reu-les": ["reu3-les-"],
+  "reu-saf": ["reu3-saf"],
+  "reu-es": ["reu3-es-"],
+  "reu-outras-colag": ["reu3-miopatias", "reu3-sjogren", "reu3-dmtc"],
+  "reu-vasculites": ["reu3-vasc-"],
+  "reu-amiloidose": ["reu3-amiloidose"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {

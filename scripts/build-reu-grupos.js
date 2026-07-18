@@ -267,16 +267,122 @@ write(
   }
 );
 
-/* Overview Clínica / Reumatologia (REU1 + REU2) */
+/* REU3 */
+const lesDecks = [
+  "reu3-les-basico",
+  "reu3-les-clinica",
+  "reu3-les-lab-crit",
+  "reu3-les-tratamento",
+  "reu3-les-gravidez-dil"
+];
+const safDecks = ["reu3-saf"];
+const esDecks = ["reu3-es-basico", "reu3-es-clinica-tx"];
+const outrasColagDecks = ["reu3-miopatias", "reu3-sjogren", "reu3-dmtc"];
+const vascDecks = [
+  "reu3-vasc-acg-pmr",
+  "reu3-vasc-takayasu",
+  "reu3-vasc-anca",
+  "reu3-vasc-pan-behcet"
+];
+const amilDecks = ["reu3-amiloidose"];
+
+const checklistReu3 = {
+  criterios: {
+    tema: "Critérios / classificação",
+    yield: "Alto",
+    pegar: "EULAR/ACR 2019 no LES (FAN + ≥10); calibre/ANCA nas vasculites; anti-RNP na DMTC."
+  },
+  sorologia: {
+    tema: "Autoanticorpos",
+    yield: "Máximo",
+    pegar: "Anti-dsDNA/Sm (LES); aFL (SAF); Scl-70/centrômero (ES); Jo-1 (antissintetase); Ro/La (Sjögren); ANCA."
+  },
+  conduta: {
+    tema: "Conduta",
+    yield: "Máximo",
+    pegar: "HCQ base no LES; anticoagular SAF; IECA na crise renal da ES; GC imediato na ACG com ameaça visual."
+  },
+  dd: {
+    tema: "Diagnóstico diferencial",
+    yield: "Alto",
+    pegar: "Flare × infecção no LES; PAN × PAM no rim; ACG × Takayasu por idade/vaso; DM × LES cutâneo."
+  }
+};
+
+write(
+  "revisao-reu-les.json",
+  "LES · REU3",
+  "reu-les",
+  bankSet(lesDecks, "LES · EULAR/ACR · Ac · HCQ · nefrite"),
+  {
+    checklistItems: checklistReu3,
+    oneLiners: ["FAN ≥1:80 + ≥10 pontos", "HCQ quase sempre", "Strongyloides antes do pulso"]
+  }
+);
+
+write(
+  "revisao-reu-saf.json",
+  "SAF · REU3",
+  "reu-saf",
+  bankSet(safDecks, "SAF · trombose · obstétrico · aFL"),
+  {
+    checklistItems: checklistReu3,
+    oneLiners: ["TVP mais comum", "aFL persistente ×2", "Morte fetal >10 sem = específico"]
+  }
+);
+
+write(
+  "revisao-reu-es.json",
+  "Esclerose sistêmica · REU3",
+  "reu-es",
+  bankSet(esDecks, "ES · Raynaud · CREST · DIP/HAP · crise renal"),
+  {
+    checklistItems: checklistReu3,
+    oneLiners: ["Limitada ≠ só pele", "IECA na crise renal", "Scl-70 ↔ DIP"]
+  }
+);
+
+write(
+  "revisao-reu-outras-colag.json",
+  "Miopatias · Sjögren · DMTC · REU3",
+  "reu-outras-colag",
+  bankSet(outrasColagDecks, "PM/DM · Sjögren · DMTC"),
+  {
+    checklistItems: checklistReu3,
+    oneLiners: ["Gottron + heliótropo", "Anti-Ro/La + Schirmer", "Anti-RNP = DMTC"]
+  }
+);
+
+write(
+  "revisao-reu-vasculites.json",
+  "Vasculites · REU3",
+  "reu-vasculites",
+  bankSet(vascDecks, "ACG/PMR · Takayasu · ANCA · PAN · Behçet"),
+  {
+    checklistItems: checklistReu3,
+    oneLiners: ["ACG: GC antes da biópsia se ameaça visual", "GPA = ORL+pulmão+rim", "Behçet: afta oral obrigatória"]
+  }
+);
+
+write(
+  "revisao-reu-amiloidose.json",
+  "Amiloidoses · REU3",
+  "reu-amiloidose",
+  bankSet(amilDecks, "AA · AL · Congo-red"),
+  {
+    checklistItems: checklistReu3,
+    oneLiners: ["AA = inflamação crônica", "AL = cadeia leve", "Congo-red + verde"]
+  }
+);
+
+/* Overview Clínica / Reumatologia (REU1–REU3) */
 const stats = {
-  title: "Reumatologia · o que mais cai (REU1–REU2)",
+  title: "Reumatologia · o que mais cai (REU1–REU3)",
   unitLabel: "% relativo no bloco atual",
-  note: "Clínica médica · Reumatologia. REU1 (AR, AIJ, SpA) + REU2 (OA, cristais, FR, infecciosas, extras). REU3 (LES/vasculites) em seguida.",
+  note: "Clínica médica · Reumatologia completa (REU1–REU3): artropatias, cristais, colagenoses e vasculites.",
   gaps: {
-    summary: "REU1+REU2 no app (8 grupos). Falta REU3: LES, SAF, esclerose sistêmica, miopatias, Sjögren, vasculites.",
-    missingHighYield: [
-      { tema: "LES / SAF / vasculites / colagenoses", status: "pendente", detalhe: "REU3" }
-    ],
+    summary: "Cobertura REU1–REU3 no app (14 grupos). Bloco de Reumatologia da apostila MedHub R1 fechado.",
+    missingHighYield: [],
     covered: [
       { tema: "Artrite reumatoide", grupo: "reu-ar" },
       { tema: "AIJ / Still", grupo: "reu-aij" },
@@ -285,28 +391,34 @@ const stats = {
       { tema: "Gota e cristais", grupo: "reu-cristais" },
       { tema: "Febre reumática", grupo: "reu-fr" },
       { tema: "Artrites infecciosas", grupo: "reu-infecciosa" },
-      { tema: "Extras REU2", grupo: "reu-extras2" }
+      { tema: "Extras REU2", grupo: "reu-extras2" },
+      { tema: "LES", grupo: "reu-les" },
+      { tema: "SAF", grupo: "reu-saf" },
+      { tema: "Esclerose sistêmica", grupo: "reu-es" },
+      { tema: "Miopatias / Sjögren / DMTC", grupo: "reu-outras-colag" },
+      { tema: "Vasculites", grupo: "reu-vasculites" },
+      { tema: "Amiloidoses", grupo: "reu-amiloidose" }
     ]
   },
   profiles: [
     {
       id: "geral",
       label: "Brasil",
-      kicker: "Síntese REU1–2",
+      kicker: "Síntese REU1–3",
       featured: false,
       sourceType: "sintese",
-      source: "Apostilas REU1+REU2 + padrão de cobrança R1 em Reumatologia.",
-      verdict: "AR, SpA, gota, FR e artrite séptica concentram ROI. OA é ultra prevalente na prática; LES/vasculites vêm no REU3.",
-      foco: "AR · SpA · Gota · FR · Séptica · OA",
-      estilo: "Síntese REU1–2",
+      source: "Apostilas REU1–REU3 + padrão de cobrança R1 em Reumatologia.",
+      verdict: "AR, LES, SpA, gota, FR, séptica e ACG/ANCA concentram ROI. Colagenoses e vasculites fecham o bloco.",
+      foco: "AR · LES · SpA · Gota · Vasculites · FR",
+      estilo: "Síntese REU1–3",
       priorities: [
-        { tema: "Artrite reumatoide", pct: 22, n: 22 },
-        { tema: "Espondiloartrites", pct: 18, n: 18 },
-        { tema: "Gota / cristais", pct: 16, n: 16 },
-        { tema: "Febre reumática", pct: 14, n: 14 },
-        { tema: "Artrite séptica / TB", pct: 12, n: 12 },
-        { tema: "Osteoartrose", pct: 10, n: 10 },
-        { tema: "AIJ / Still / extras", pct: 8, n: 8 }
+        { tema: "Artrite reumatoide", pct: 16, n: 16 },
+        { tema: "LES / SAF", pct: 18, n: 18 },
+        { tema: "Espondiloartrites", pct: 12, n: 12 },
+        { tema: "Gota / cristais", pct: 12, n: 12 },
+        { tema: "Vasculites", pct: 14, n: 14 },
+        { tema: "Febre reumática / séptica", pct: 12, n: 12 },
+        { tema: "ES / miopatias / OA / extras", pct: 16, n: 16 }
       ]
     },
     {
@@ -315,15 +427,15 @@ const stats = {
       kicker: "Nacional",
       featured: true,
       sourceType: "estimativa",
-      source: "Estimativa Enare/Enamed · REU1–2.",
-      verdict: "Conduta: MTX, AINE na EA, crise gotosa, Jones/profilaxia, drenar séptica.",
-      foco: "AR · Gota · FR · Séptica · SpA",
+      source: "Estimativa Enare/Enamed · REU1–3.",
+      verdict: "Conduta: MTX, HCQ, crise gotosa, Jones, drenar séptica, GC na ACG, anticoagular SAF.",
+      foco: "AR · LES · Gota · Vasculites · FR",
       estilo: "Padrão Enamed",
       priorities: [
-        { tema: "AR / SpA", pct: 30 },
-        { tema: "Gota / cristais", pct: 22 },
-        { tema: "Febre reumática", pct: 20 },
-        { tema: "Séptica", pct: 16 },
+        { tema: "AR / LES", pct: 28 },
+        { tema: "Gota / FR / séptica", pct: 24 },
+        { tema: "Vasculites", pct: 20 },
+        { tema: "SpA / ES", pct: 16 },
         { tema: "OA / extras", pct: 12 }
       ]
     },
@@ -332,16 +444,16 @@ const stats = {
       label: "USP",
       kicker: "Prova USP",
       sourceType: "estimativa",
-      source: "Estimativa USP · REU1–2.",
-      verdict: "Critérios, cristais no líquido, Jones e DD fino.",
-      foco: "Critérios · Cristais · FR · DD",
+      source: "Estimativa USP · REU1–3.",
+      verdict: "Critérios EULAR/ACR, Ac específicos, ANCA e DD fino de colagenoses.",
+      foco: "Critérios · Ac · Vasculites · DD",
       estilo: "Padrão USP",
       priorities: [
-        { tema: "AR / SpA", pct: 28 },
-        { tema: "Cristais", pct: 24 },
-        { tema: "FR", pct: 20 },
-        { tema: "Infecciosas", pct: 16 },
-        { tema: "OA", pct: 12 }
+        { tema: "LES / colagenoses", pct: 30 },
+        { tema: "AR / SpA", pct: 22 },
+        { tema: "Vasculites", pct: 20 },
+        { tema: "Cristais / FR", pct: 16 },
+        { tema: "OA / extras", pct: 12 }
       ]
     },
     {
@@ -349,16 +461,16 @@ const stats = {
       label: "UNIFESP",
       kicker: "Prova UNIFESP",
       sourceType: "estimativa",
-      source: "Estimativa UNIFESP · REU1–2.",
-      verdict: "Fisiopatologia (urato, estreptococo, êntese) + conduta.",
+      source: "Estimativa UNIFESP · REU1–3.",
+      verdict: "Fisiopatologia (imunocomplexos, fibrose, ANCA) + conduta por órgão.",
       foco: "Fisiopatologia · Conduta",
       estilo: "Padrão UNIFESP",
       priorities: [
-        { tema: "AR / SpA", pct: 30 },
-        { tema: "Gota", pct: 22 },
-        { tema: "FR", pct: 20 },
-        { tema: "Infecciosas", pct: 16 },
-        { tema: "OA / extras", pct: 12 }
+        { tema: "LES / ES / miopatias", pct: 30 },
+        { tema: "AR / SpA", pct: 22 },
+        { tema: "Vasculites", pct: 20 },
+        { tema: "Gota / FR", pct: 16 },
+        { tema: "Infecciosas / extras", pct: 12 }
       ]
     },
     {
@@ -366,15 +478,15 @@ const stats = {
       label: "Enare",
       kicker: "Acesso",
       sourceType: "estimativa",
-      source: "Estimativa Enare · REU1–2.",
-      verdict: "Mesmo eixo Enamed: respostas de conduta.",
+      source: "Estimativa Enare · REU1–3.",
+      verdict: "Mesmo eixo Enamed: respostas curtas de conduta e critérios.",
       foco: "Conduta · Critérios",
       estilo: "Padrão Enare",
       priorities: [
-        { tema: "AR / SpA", pct: 30 },
-        { tema: "Gota / FR", pct: 28 },
-        { tema: "Séptica", pct: 18 },
-        { tema: "OA / extras", pct: 24 }
+        { tema: "AR / LES", pct: 28 },
+        { tema: "Gota / FR / séptica", pct: 24 },
+        { tema: "Vasculites / SAF", pct: 22 },
+        { tema: "SpA / ES / extras", pct: 26 }
       ]
     }
   ]

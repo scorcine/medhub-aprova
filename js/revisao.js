@@ -196,6 +196,36 @@ const APROVA_REVISAO_MODULES = {
     label: "Extras REU2 · FFM · fibromialgia",
     file: "data/revisao-reu-extras2.json?v=20260718bc",
     specialty: "clinica"
+  },
+  "reu-les": {
+    label: "LES (REU3)",
+    file: "data/revisao-reu-les.json?v=20260718bd",
+    specialty: "clinica"
+  },
+  "reu-saf": {
+    label: "SAF (REU3)",
+    file: "data/revisao-reu-saf.json?v=20260718bd",
+    specialty: "clinica"
+  },
+  "reu-es": {
+    label: "Esclerose sistêmica (REU3)",
+    file: "data/revisao-reu-es.json?v=20260718bd",
+    specialty: "clinica"
+  },
+  "reu-outras-colag": {
+    label: "Miopatias · Sjögren · DMTC (REU3)",
+    file: "data/revisao-reu-outras-colag.json?v=20260718bd",
+    specialty: "clinica"
+  },
+  "reu-vasculites": {
+    label: "Vasculites (REU3)",
+    file: "data/revisao-reu-vasculites.json?v=20260718bd",
+    specialty: "clinica"
+  },
+  "reu-amiloidose": {
+    label: "Amiloidoses (REU3)",
+    file: "data/revisao-reu-amiloidose.json?v=20260718bd",
+    specialty: "clinica"
   }
 };
 

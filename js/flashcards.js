@@ -36,6 +36,7 @@ function aprovaDeckSpecialty (deck) {
     id.indexOf("cardio") === 0 ||
     id.indexOf("reu1-") === 0 ||
     id.indexOf("reu2-") === 0 ||
+    id.indexOf("reu3-") === 0 ||
     id.indexOf("reu-") === 0
   ) {
     return "clinica";
@@ -82,7 +83,8 @@ const AprovaFlashcards = {
       "data/flashcards-ciresp.json",
       "data/flashcards-cir-r1.json",
       "data/flashcards-reu1.json",
-      "data/flashcards-reu2.json"
+      "data/flashcards-reu2.json",
+      "data/flashcards-reu3.json"
     ];
     const decks = [];
     for (const file of files) {
