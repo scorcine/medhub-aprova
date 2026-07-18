@@ -58,12 +58,12 @@ const APROVA_REVISAO_MODULES = {
   },
   ginecologia: {
     label: "Ginecologia",
-    file: "data/revisao-ginecologia.json?v=20260718af",
+    file: "data/revisao-ginecologia.json?v=20260718ag",
     specialty: "go"
   },
   obstetricia: {
     label: "Obstetrícia",
-    file: "data/revisao-obstetricia.json?v=20260718af",
+    file: "data/revisao-obstetricia.json?v=20260718ag",
     specialty: "go"
   }
 };

@@ -161,7 +161,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Ginecologia e obstetrícia",
       shortLabel: "Ginecologia",
       overviewCacheKey: "go",
-      overviewUrl: "data/stats-ginecologia-geral.json?v=20260718z",
+      overviewUrl: "data/stats-ginecologia-geral.json?v=20260718ag",
       countNoun: "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
