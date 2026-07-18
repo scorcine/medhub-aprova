@@ -137,7 +137,7 @@
             <button type="button" class="dash-card" data-goto="especialidades">
               <span class="dash-card-kicker">Conteúdo</span>
               <strong>Especialidades</strong>
-              <span>Clínica, cirurgia, pediatria, GO, preventiva e urgência.</span>
+              <span>Clínica, cirurgia, preventiva, pediatria e GO.</span>
             </button>
             <button type="button" class="dash-card" data-goto="simulados">
               <span class="dash-card-kicker">Performance</span>
@@ -215,60 +215,20 @@
 
           <div id="esp-list">
             <div class="dash-grid dash-grid--sm">
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="cardiologia">
-                <span class="dash-card-kicker">Área · alto peso</span>
-                <strong>Cardiologia</strong>
-                <span id="esp-count-cardio">Car1–3 · SCA, ICC, FA e HAS.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="reumatologia">
+              <button type="button" class="dash-card" data-specialty="clinica">
                 <span class="dash-card-kicker">Área</span>
-                <strong>Reumatologia</strong>
-                <span id="esp-count-reu">AR, LES, gota, SpA e vasculites.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="psiquiatria">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Psiquiatria</strong>
-                <span id="esp-count-psi">Substâncias, humor, psicose e ansiedade.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="pneumologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Pneumologia</strong>
-                <span id="esp-count-pnm">Asma, DPOC, TEP, intensiva e TB.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="neurologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Neurologia</strong>
-                <span id="esp-count-neu">AVC, epilepsia, coma e cefaleia.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="nefrologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Nefrologia</strong>
-                <span id="esp-count-nef">Nefro 1–5 completa · glomérulos à uro.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="infectologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Infectologia</strong>
-                <span id="esp-count-infc">Inf1–5 completa · parasitoses à tropicais.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="hepatologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Hepatologia</strong>
-                <span id="esp-count-hep">Hep1–4 completa · virais à descompensação.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="hematologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Hematologia</strong>
-                <span id="esp-count-hema">Hem1–3 completa · anemias à hemostasia.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="clinica" data-cli-area="endocrinologia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Endocrinologia</strong>
-                <span id="esp-count-endo">End1–3 completa · tireoide à diabetes.</span>
+                <strong>Clínica médica</strong>
+                <span id="esp-count-clinica">Cardio, infecto, endo e demais áreas.</span>
               </button>
               <button type="button" class="dash-card" data-specialty="cirurgia">
                 <span class="dash-card-kicker">Área</span>
                 <strong>Cirurgia</strong>
-                <span>Trauma, abdome agudo e pós-operatório.</span>
+                <span id="esp-count-cirurgia">Trauma, abdome agudo e pós-operatório.</span>
+              </button>
+              <button type="button" class="dash-card" data-specialty="preventiva">
+                <span class="dash-card-kicker">Área</span>
+                <strong>Preventiva</strong>
+                <span id="esp-count-preventiva">Prev1–4 · SUS, epi, vigilância e indicadores.</span>
               </button>
               <button type="button" class="dash-card" data-specialty="pediatria">
                 <span class="dash-card-kicker">Área</span>
@@ -279,16 +239,6 @@
                 <span class="dash-card-kicker">Área</span>
                 <strong>Ginecologia e obstetrícia</strong>
                 <span id="esp-count-go">Ginecologia e Obstetrícia.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="preventiva">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Preventiva</strong>
-                <span id="esp-count-preventiva">Prev1–4 · SUS, epi, vigilância e indicadores.</span>
-              </button>
-              <button type="button" class="dash-card" data-specialty="urgencia">
-                <span class="dash-card-kicker">Área</span>
-                <strong>Urgência e emergência</strong>
-                <span>ACLS, sepse, AVC e choque.</span>
               </button>
             </div>
           </div>
@@ -479,9 +429,9 @@
   <script src="js/auth.js?v=20260718x"></script>
   <script src="js/schedule.js?v=20260718x"></script>
   <script src="js/exam-stats.js?v=20260718x"></script>
-  <script src="js/flashcards.js?v=20260718cx"></script>
+  <script src="js/flashcards.js?v=20260718cy"></script>
   <script src="js/questions.js?v=20260718y"></script>
-  <script src="js/revisao.js?v=20260718cx"></script>
-  <script src="js/app.js?v=20260718cx"></script>
+  <script src="js/revisao.js?v=20260718cy"></script>
+  <script src="js/app.js?v=20260718cy"></script>
 </body>
 </html>

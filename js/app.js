@@ -329,12 +329,26 @@ function aprovaShowSpecialtyList () {
 
 function aprovaRenderEspecialidades () {
   aprovaShowSpecialtyList();
+  const cli = document.getElementById("esp-count-clinica");
+  const cir = document.getElementById("esp-count-cirurgia");
   const ped = document.getElementById("esp-count-pediatria");
   const go = document.getElementById("esp-count-go");
   const prev = document.getElementById("esp-count-preventiva");
+  const cliN = AprovaFlashcards.countBySpecialty("clinica");
+  const cirN = AprovaFlashcards.countBySpecialty("cirurgia");
   const pedN = AprovaFlashcards.countBySpecialty("pediatria");
   const goN = AprovaFlashcards.countBySpecialty("go");
   const prevN = AprovaFlashcards.countBySpecialty("preventiva");
+  if (cli) {
+    cli.textContent = cliN
+      ? cliN + " flashcards · Cardio, infecto, endo e demais áreas"
+      : "Cardio, infecto, endo e demais áreas.";
+  }
+  if (cir) {
+    cir.textContent = cirN
+      ? cirN + " flashcards · trauma, abdome e pós-op"
+      : "Trauma, abdome agudo e pós-operatório.";
+  }
   if (ped) {
     ped.textContent = pedN
       ? pedN + " flashcards · Pediatria R1 completa"
@@ -350,7 +364,6 @@ function aprovaRenderEspecialidades () {
       ? prevN + " flashcards · Prev1–4 · 4 grupos"
       : "Epidemiologia, vacinas e SUS.";
   }
-  aprovaRenderCliAreaCounts().catch(() => {});
 }
 
 async function aprovaRenderCliAreaCounts () {
@@ -1874,7 +1887,7 @@ async function aprovaOpenCliArea (areaId) {
   if (hint) {
     hint.textContent = "Toque em um grupo para abrir os subtemas neste quadro separado.";
   }
-  if (back) back.textContent = "← Voltar às especialidades";
+  if (back) back.textContent = "← Voltar à Clínica médica";
   if (groupsLabel) groupsLabel.textContent = "Grupos";
   if (selectAll) {
     selectAll.hidden = !areaStats.groups;
@@ -2320,7 +2333,7 @@ async function aprovaBoot () {
       return;
     }
     if (aprovaActiveSpecialty === "clinica" && aprovaActiveCliArea) {
-      aprovaShowSpecialtyList();
+      aprovaOpenClinica();
       return;
     }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty) && aprovaActivePedModule) {
@@ -2349,7 +2362,7 @@ async function aprovaBoot () {
         return;
       }
       if (aprovaActiveCliArea) {
-        aprovaShowSpecialtyList();
+        aprovaOpenClinica();
         return;
       }
       aprovaShowSpecialtyList();
