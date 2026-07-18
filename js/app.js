@@ -1,14 +1,36 @@
-﻿/* Shell do app — abas + fila de hoje (SRS) */
+﻿/* Shell do app — sidebar, dashboard e módulos de estudo */
+
+const APROVA_PANEL_META = {
+  inicio: { title: "Início", sub: "Escolha o que estudar agora" },
+  hoje: { title: "Revisão de hoje", sub: "Fila SRS · novos e vencidos" },
+  flashcards: { title: "Flashcards", sub: "Memória ativa para o R1" },
+  questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
+  especialidades: { title: "Especialidades", sub: "Foque por área clínica" },
+  simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
+  progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
+  config: { title: "Configurações", sub: "Conta e preferências" }
+};
 
 function aprovaShowPanel (id) {
+  const key = APROVA_PANEL_META[id] ? id : "inicio";
+
   document.querySelectorAll(".panel").forEach(panel => {
-    const active = panel.id === "panel-" + id;
+    const active = panel.id === "panel-" + key;
     panel.classList.toggle("active", active);
     panel.hidden = !active;
   });
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.setAttribute("aria-selected", String(tab.dataset.panel === id));
+
+  document.querySelectorAll(".side-link[data-panel]").forEach(link => {
+    link.classList.toggle("active", link.dataset.panel === key);
   });
+
+  const meta = APROVA_PANEL_META[key];
+  const title = document.getElementById("workspace-title");
+  const sub = document.getElementById("workspace-sub");
+  if (title) title.textContent = meta.title;
+  if (sub) sub.textContent = meta.sub;
+
+  document.body.classList.remove("sidebar-open");
 }
 
 function aprovaGoTo (id) {
@@ -17,7 +39,16 @@ function aprovaGoTo (id) {
     aprovaRenderFlashcard();
   }
   if (id === "hoje") aprovaRenderToday();
+  if (id === "progresso") aprovaRenderProgress();
+  if (id === "config") aprovaRenderConfig();
+  if (id === "inicio") aprovaRenderDashboard();
   aprovaShowPanel(id);
+}
+
+function aprovaRenderDashboard () {
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  const hello = document.getElementById("dash-hello");
+  if (hello) hello.textContent = (session && (session.name || session.login)) || "estudante";
 }
 
 function aprovaRenderToday () {
@@ -38,6 +69,28 @@ function aprovaRenderToday () {
     startBtn.textContent = summary.pending
       ? "Começar revisão (" + summary.pending + ")"
       : "Fila vazia";
+  }
+}
+
+function aprovaRenderProgress () {
+  const prompt = document.getElementById("progress-prompt");
+  const stats = document.getElementById("progress-stats");
+  if (!prompt || !stats) return;
+  const summary = aprovaTodaySummary(
+    AprovaFlashcards.allIds(),
+    AprovaQuestions.items.length
+  );
+  prompt.textContent = summary.prompt;
+  stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+}
+
+function aprovaRenderConfig () {
+  const el = document.getElementById("config-user");
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  if (el) {
+    el.textContent = session
+      ? ((session.name || session.login) + " · " + session.login)
+      : "Nenhuma sessão ativa";
   }
 }
 
@@ -119,18 +172,50 @@ function aprovaRenderQuestion () {
   stats.textContent = AprovaQuestions.statsText();
 }
 
-async function aprovaBoot () {
-  await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
-  aprovaRenderToday();
-  aprovaRenderFlashcard();
-  aprovaRenderQuestion();
+function aprovaSyncAppAuthUI () {
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  const gate = document.getElementById("login-gate");
+  const shell = document.getElementById("app-shell");
+  const sideUser = document.getElementById("sidebar-user-label");
 
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.addEventListener("click", () => aprovaGoTo(tab.dataset.panel));
+  if (!gate || !shell) return Boolean(session);
+
+  if (session && session.login) {
+    gate.hidden = true;
+    shell.hidden = false;
+    if (sideUser) sideUser.textContent = session.name || session.login;
+    aprovaRenderDashboard();
+    return true;
+  }
+
+  gate.hidden = false;
+  shell.hidden = true;
+  return false;
+}
+
+async function aprovaBoot () {
+  const logged = aprovaSyncAppAuthUI();
+
+  if (logged) {
+    await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
+    aprovaRenderDashboard();
+    aprovaRenderToday();
+    aprovaRenderFlashcard();
+    aprovaRenderQuestion();
+    aprovaRenderProgress();
+    aprovaRenderConfig();
+  }
+
+  document.querySelectorAll(".side-link[data-panel]").forEach(link => {
+    link.addEventListener("click", () => aprovaGoTo(link.dataset.panel));
   });
 
   document.querySelectorAll("[data-goto]").forEach(btn => {
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
+  });
+
+  document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
+    document.body.classList.toggle("sidebar-open");
   });
 
   document.getElementById("fc-reveal")?.addEventListener("click", () => {
@@ -154,6 +239,22 @@ async function aprovaBoot () {
     AprovaQuestions.next();
     aprovaRenderQuestion();
   });
+
+  document.getElementById("config-logout")?.addEventListener("click", () => {
+    document.getElementById("auth-logout")?.click();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", aprovaBoot);
+
+window.aprovaSyncAppAuthUI = aprovaSyncAppAuthUI;
+window.aprovaGoTo = aprovaGoTo;
+window.aprovaBootStudyModules = async function () {
+  await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
+  aprovaRenderDashboard();
+  aprovaRenderToday();
+  aprovaRenderFlashcard();
+  aprovaRenderQuestion();
+  aprovaRenderProgress();
+  aprovaRenderConfig();
+};

@@ -120,6 +120,16 @@ function aprovaLogin (login, password) {
   return true;
 }
 
+function aprovaEnterAppAfterLogin () {
+  if (document.getElementById("app-shell")) {
+    if (typeof aprovaSyncAppAuthUI === "function") aprovaSyncAppAuthUI();
+    if (typeof aprovaBootStudyModules === "function") aprovaBootStudyModules();
+    if (typeof aprovaGoTo === "function") aprovaGoTo("inicio");
+    return;
+  }
+  window.location.href = "app.html";
+}
+
 function aprovaBootSignupPage () {
   const form = document.getElementById("signup-form");
   if (!form) return false;
@@ -155,9 +165,25 @@ function aprovaBootSignupPage () {
   return true;
 }
 
+function aprovaBootGateLogin () {
+  const form = document.getElementById("gate-login-form");
+  if (!form) return false;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const { login, password } = aprovaReadCredentials(form);
+    if (!aprovaLogin(login, password)) return;
+    form.reset();
+    aprovaEnterAppAfterLogin();
+  });
+
+  return true;
+}
+
 function aprovaBootAuth () {
   if (aprovaBootSignupPage()) return;
 
+  const hasGate = aprovaBootGateLogin();
   const form = document.getElementById("auth-form");
   const logoutBtn = document.getElementById("auth-logout");
 
@@ -167,12 +193,16 @@ function aprovaBootAuth () {
     if (!aprovaLogin(login, password)) return;
     form.reset();
     aprovaRenderAuth();
+    aprovaEnterAppAfterLogin();
   });
 
   logoutBtn?.addEventListener("click", () => {
     aprovaSaveAuth(null);
     aprovaShowAuthMsg("");
     aprovaRenderAuth();
+    if (hasGate && typeof aprovaSyncAppAuthUI === "function") {
+      aprovaSyncAppAuthUI();
+    }
   });
 
   aprovaRenderAuth();

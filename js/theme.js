@@ -13,13 +13,12 @@ function aprovaApplyTheme (theme) {
   document.documentElement.setAttribute("data-theme", next);
   localStorage.setItem(APROVA_THEME_KEY, next);
 
-  const btn = document.getElementById("theme-toggle");
-  if (btn) {
-    const toLight = next === "dark";
+  const toLight = next === "dark";
+  document.querySelectorAll(".theme-toggle").forEach(btn => {
     btn.setAttribute("aria-label", toLight ? "Ativar modo claro" : "Ativar modo escuro");
     btn.setAttribute("title", toLight ? "Modo claro" : "Modo escuro");
     btn.setAttribute("aria-pressed", String(next === "dark"));
-  }
+  });
 }
 
 function aprovaToggleTheme () {
@@ -29,7 +28,9 @@ function aprovaToggleTheme () {
 
 function aprovaBootTheme () {
   aprovaApplyTheme(aprovaGetTheme());
-  document.getElementById("theme-toggle")?.addEventListener("click", aprovaToggleTheme);
+  document.querySelectorAll(".theme-toggle").forEach(btn => {
+    btn.addEventListener("click", aprovaToggleTheme);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", aprovaBootTheme);
