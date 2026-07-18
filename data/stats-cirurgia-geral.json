@@ -1,0 +1,236 @@
+{
+  "title": "Cirurgia · o que mais cai nas provas",
+  "unitLabel": "% das questões de Cirurgia",
+  "note": "Percentuais = participação dentro das questões de Cirurgia (não da prova inteira). Brasil = média ponderada Enare 2021–2024 (50q) + USP-SP 2017–2023 (129q) + UNIFESP 2017–2023 (87q). Levantamentos Estratégia MED. Mapeamento das apostilas Cir1–Cir3 + CirEsp em D:\\MedHub R1\\Cirurgia.",
+  "gaps": {
+    "summary": "As 4 apostilas cobrem bem Trauma, Vascular, Pré/Pós-op, Hérnias, Anestesia, Infantil, Queimaduras, Cicatrização, Nutrição, Choque, Procto, Bariátrica e Cabeça/Pescoço. O buraco crítico é Urgências Abdominais do adulto (apendicite, colecistite, diverticulite, oclusão, abdome vascular) — #1 no Enare e #2 no Brasil — sem capítulo dedicado. Também faltam capítulos densos de Vesícula/vias biliares adultas, Urologia R1 e Cirurgia torácica eletiva.",
+    "missingHighYield": [
+      {
+        "tema": "Urgências abdominais (adulto)",
+        "brasilPct": 12.4,
+        "status": "ausente",
+        "detalhe": "Apendicite, colecistite, diverticulite, abdome obstrutivo/vascular — só menções incidentais (classificação de ferida, procto, pediatria). Sem apostila Cir de abdome agudo do adulto."
+      },
+      {
+        "tema": "Vesícula e vias biliares (adulto)",
+        "brasilPct": 4.1,
+        "status": "ausente/fraco",
+        "detalhe": "Sem capítulo de colelitíase/colecistite/colangite/CA de vias biliares no adulto (há vias biliares na cirurgia infantil em Cir1)."
+      },
+      {
+        "tema": "Urologia",
+        "brasilPct": 4.1,
+        "status": "ausente/fraco",
+        "detalhe": "Sem bloco urológico adulto (litíase, HBP, urgências urológicas). Geniturinário aparece sobretudo na pediatria de Cir1."
+      },
+      {
+        "tema": "Cirurgia torácica (eletiva)",
+        "brasilPct": 3.0,
+        "status": "ausente/fraco",
+        "detalhe": "Trauma de tórax está em Cir2; falta torácica eletiva (pneumotórax espontâneo/indicação cirúrgica, neoplasia etc.)."
+      },
+      {
+        "tema": "Aparelho digestivo adulto (estômago/cólon/pâncreas/fígado)",
+        "brasilPct": null,
+        "status": "parcial",
+        "detalhe": "Bariátrica e procto em Cir1; sem capítulos clássicos de CA gástrico/colorretal, pancreatite, hipertensão portal — caem menos como bloco isolado, mas alimentam urgências/procto."
+      }
+    ],
+    "covered": [
+      { "tema": "Trauma / ATLS", "file": "Cir2.pdf" },
+      { "tema": "Cirurgia vascular", "file": "Cir1.pdf" },
+      { "tema": "Pré-operatório · pós-operatório · hérnias · anestesia · sutura", "file": "Cir3.pdf" },
+      { "tema": "Queimaduras · cicatrização · choque · nutrição · plástica básica", "file": "CirEsp.pdf" },
+      { "tema": "Cirurgia infantil · proctologia · bariátrica · cabeça/pescoço", "file": "Cir1.pdf" }
+    ]
+  },
+  "apostilas": [
+    {
+      "id": "cir1",
+      "file": "Cir1.pdf",
+      "pages": 164,
+      "label": "Vascular · Procto · Bariátrica · Infantil · Cabeça/pescoço",
+      "nucleo": [
+        "Cirurgia vascular (AAA, DAP, oclusão arterial, IVC)",
+        "Proctologia (hemorroidas, abscesso, Fournier, CA anal)",
+        "Cirurgia bariátrica",
+        "Cirurgia pediátrica (atresias, ECN, invaginação, Hirschsprung…)",
+        "Tumores de cabeça e pescoço / glândulas salivares"
+      ]
+    },
+    {
+      "id": "cir2",
+      "file": "Cir2.pdf",
+      "pages": 169,
+      "label": "Trauma",
+      "nucleo": [
+        "Abordagem inicial / ATLS (ABCDE)",
+        "Trauma de tórax",
+        "Trauma abdominal e controle de danos",
+        "TCE e trauma raquimedular",
+        "Trauma de pescoço e face"
+      ]
+    },
+    {
+      "id": "cir3",
+      "file": "Cir3.pdf",
+      "pages": 184,
+      "label": "Pré/pós-op · Hérnias · Anestesia",
+      "nucleo": [
+        "Avaliação e preparo pré-operatório (ASA, risco cardíaco)",
+        "Complicações pós-operatórias (ISC, deiscência, TEP, íleo)",
+        "Hérnias da parede abdominal",
+        "Princípios de anestesiologia",
+        "Suturas e fios"
+      ]
+    },
+    {
+      "id": "ciresp",
+      "file": "CirEsp.pdf",
+      "pages": 129,
+      "label": "Resposta ao trauma · Queimaduras · Cicatrização · Choque · Nutrição",
+      "nucleo": [
+        "Resposta endócrina/imune ao trauma",
+        "Queimaduras e trauma elétrico/químico",
+        "Cicatrização e feridas",
+        "Choque (tipos e conduta)",
+        "Nutrição em cirurgia · bases de cirurgia plástica (enxertos/retalhos)"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese nacional",
+      "featured": false,
+      "sourceType": "sintese",
+      "sampleSize": 266,
+      "source": "Média ponderada Estratégia MED: Enare 2021–2024 (50) + USP-SP 2017–2023 (129) + UNIFESP 2017–2023 (87) = 266 questões de Cirurgia.",
+      "verdict": "No Brasil, Trauma (~14%) e Urgências abdominais (~12%) lideram. Em seguida vêm Infantil e Anestesia (~9% cada) e Vascular (~8%). Com as apostilas atuais, o buraco mais grave é Urgências abdominais do adulto — alto ROI e praticamente sem capítulo dedicado.",
+      "foco": "Trauma · Urgências abdominais · Infantil · Anestesia · Vascular · Pré-op",
+      "estilo": "Síntese das principais bancas",
+      "priorities": [
+        { "tema": "Trauma", "pct": 14.3, "n": 38 },
+        { "tema": "Urgências abdominais", "pct": 12.4, "n": 33 },
+        { "tema": "Cirurgia infantil", "pct": 9.0, "n": 24 },
+        { "tema": "Princípios da anestesiologia", "pct": 9.0, "n": 24 },
+        { "tema": "Cirurgia vascular", "pct": 7.5, "n": 20 },
+        { "tema": "Avaliação pré-operatória", "pct": 6.8, "n": 18 },
+        { "tema": "Cirurgia plástica", "pct": 5.6, "n": 15 },
+        { "tema": "Complicações pós-operatórias", "pct": 4.5, "n": 12 },
+        { "tema": "Hérnias da parede abdominal", "pct": 4.1, "n": 11 },
+        { "tema": "Vesícula e vias biliares", "pct": 4.1, "n": 11 },
+        { "tema": "Urologia", "pct": 4.1, "n": 11 },
+        { "tema": "Cirurgia torácica", "pct": 3.0, "n": 8 },
+        { "tema": "Nutrição em cirurgia", "pct": 2.6, "n": 7 },
+        { "tema": "Cirurgia de cabeça e pescoço", "pct": 2.6, "n": 7 },
+        { "tema": "Queimaduras e trauma elétrico", "pct": 2.3, "n": 6 },
+        { "tema": "Cirurgia bariátrica", "pct": 2.3, "n": 6 },
+        { "tema": "Cicatrização de feridas", "pct": 1.9, "n": 5 },
+        { "tema": "Proctologia", "pct": 1.9, "n": 5 },
+        { "tema": "Temas gerais em cirurgia", "pct": 1.9, "n": 5 }
+      ]
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "sourceType": "levantamento",
+      "sampleSize": 50,
+      "source": "Estratégia MED · Enare Cirurgia 2021–2024 — 50 questões.",
+      "verdict": "No Enare/Enamed, Urgências abdominais dominam (24%). Pré-op e Anestesia (10% cada) vêm em seguida. Trauma pesa menos que na USP — o gap de abdome agudo adulto dói mais aqui.",
+      "foco": "Urgências abdominais · Pré-op · Anestesia · Infantil · Hérnias",
+      "estilo": "Levantamento Enare",
+      "priorities": [
+        { "tema": "Urgências abdominais", "pct": 24.0, "n": 12 },
+        { "tema": "Avaliação pré-operatória", "pct": 10.0, "n": 5 },
+        { "tema": "Princípios da anestesiologia", "pct": 10.0, "n": 5 },
+        { "tema": "Cirurgia infantil", "pct": 8.0, "n": 4 },
+        { "tema": "Hérnias da parede abdominal", "pct": 6.0, "n": 3 },
+        { "tema": "Trauma", "pct": 6.0, "n": 3 },
+        { "tema": "Cicatrização de feridas", "pct": 6.0, "n": 3 },
+        { "tema": "Vesícula e vias biliares", "pct": 4.0, "n": 2 },
+        { "tema": "Nutrição em cirurgia", "pct": 4.0, "n": 2 },
+        { "tema": "Cirurgia bariátrica", "pct": 4.0, "n": 2 },
+        { "tema": "Cirurgia plástica", "pct": 4.0, "n": 2 },
+        { "tema": "Temas gerais em cirurgia", "pct": 4.0, "n": 2 },
+        { "tema": "Demais (queimaduras, procto, urologia, torácica, cabeça/pescoço)", "pct": 10.0, "n": 5 }
+      ]
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "featured": false,
+      "sourceType": "levantamento",
+      "sampleSize": 50,
+      "source": "Estratégia MED · Enare Cirurgia 2021–2024 — 50 questões.",
+      "verdict": "Mesmo padrão Enamed: abdome agudo inflamatório é o carro-chefe. Foque apendicite/colecistite/diverticulite + pré-op/anestesia.",
+      "foco": "Urgências abdominais · Pré-op · Anestesia · Infantil",
+      "estilo": "Levantamento Enare",
+      "priorities": [
+        { "tema": "Urgências abdominais", "pct": 24.0, "n": 12 },
+        { "tema": "Avaliação pré-operatória", "pct": 10.0, "n": 5 },
+        { "tema": "Princípios da anestesiologia", "pct": 10.0, "n": 5 },
+        { "tema": "Cirurgia infantil", "pct": 8.0, "n": 4 },
+        { "tema": "Hérnias da parede abdominal", "pct": 6.0, "n": 3 },
+        { "tema": "Trauma", "pct": 6.0, "n": 3 },
+        { "tema": "Cicatrização de feridas", "pct": 6.0, "n": 3 },
+        { "tema": "Outros", "pct": 30.0, "n": 15 }
+      ]
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "2017–2023",
+      "featured": false,
+      "sourceType": "levantamento",
+      "sampleSize": 129,
+      "source": "Estratégia MED · USP-SP Cirurgia 2017–2023 — 129 questões.",
+      "verdict": "USP é trauma-pesada (~18%) com muita imagem (TC). Urgências (~11%) e complicações pós-op (~9%) fecham o pódio. Cir2 cobre o forte da banca; o gap de abdome agudo ainda importa.",
+      "foco": "Trauma · Urgências · Pós-op · Vesícula · Infantil · Anestesia/plástica",
+      "estilo": "Levantamento USP-SP",
+      "priorities": [
+        { "tema": "Trauma", "pct": 17.8, "n": 23 },
+        { "tema": "Urgências abdominais", "pct": 10.9, "n": 14 },
+        { "tema": "Complicações pós-operatórias", "pct": 8.5, "n": 11 },
+        { "tema": "Cirurgia infantil", "pct": 7.0, "n": 9 },
+        { "tema": "Vesícula e vias biliares", "pct": 6.2, "n": 8 },
+        { "tema": "Princípios da anestesiologia", "pct": 6.2, "n": 8 },
+        { "tema": "Cirurgia plástica", "pct": 6.2, "n": 8 },
+        { "tema": "Hérnias da parede abdominal", "pct": 5.4, "n": 7 },
+        { "tema": "Cirurgia vascular", "pct": 4.7, "n": 6 },
+        { "tema": "Avaliação pré-operatória", "pct": 4.7, "n": 6 },
+        { "tema": "Urologia", "pct": 4.7, "n": 6 },
+        { "tema": "Demais", "pct": 17.8, "n": 23 }
+      ]
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "2017–2023",
+      "featured": false,
+      "sourceType": "levantamento",
+      "sampleSize": 87,
+      "source": "Estratégia MED · UNIFESP Cirurgia 2017–2023 — 87 questões.",
+      "verdict": "Unifesp é vascular-pesada (~16%), depois Trauma (~14%), Infantil e Anestesia (~13% cada). Cir1 (vascular) e Cir3 (anestesia) alinham bem; urgências e vesícula pesam menos que no Enare/USP.",
+      "foco": "Vascular · Trauma · Infantil · Anestesia · Pré-op",
+      "estilo": "Levantamento UNIFESP",
+      "priorities": [
+        { "tema": "Cirurgia vascular", "pct": 16.1, "n": 14 },
+        { "tema": "Trauma", "pct": 13.8, "n": 12 },
+        { "tema": "Cirurgia infantil", "pct": 12.6, "n": 11 },
+        { "tema": "Princípios da anestesiologia", "pct": 12.6, "n": 11 },
+        { "tema": "Avaliação pré-operatória", "pct": 8.0, "n": 7 },
+        { "tema": "Urgências abdominais", "pct": 8.0, "n": 7 },
+        { "tema": "Cirurgia plástica", "pct": 5.7, "n": 5 },
+        { "tema": "Queimaduras e trauma elétrico", "pct": 4.6, "n": 4 },
+        { "tema": "Urologia", "pct": 4.6, "n": 4 },
+        { "tema": "Cirurgia torácica", "pct": 4.6, "n": 4 },
+        { "tema": "Demais", "pct": 9.2, "n": 8 }
+      ]
+    }
+  ]
+}

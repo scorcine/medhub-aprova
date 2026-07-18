@@ -150,9 +150,10 @@ let aprovaActivePedOverviewFocus = "geral";
 let aprovaPedOverviewStatsCache = null;
 let aprovaGoOverviewStatsCache = null;
 let aprovaObsOverviewStatsCache = null;
+let aprovaCirOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
-  return specialty === "pediatria" || specialty === "go";
+  return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia";
 }
 
 function aprovaRichSpecialtyMeta (specialty) {
@@ -170,6 +171,18 @@ function aprovaRichSpecialtyMeta (specialty) {
       countNoun: obs ? "Obstetrícia" : "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
+    };
+  }
+  if (spec === "cirurgia") {
+    return {
+      id: "cirurgia",
+      label: "Cirurgia",
+      shortLabel: "Cirurgia",
+      overviewCacheKey: "cirurgia",
+      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718aq",
+      countNoun: "Cirurgia",
+      openRoot: () => aprovaOpenCirurgia(),
+      openModule: id => aprovaOpenCirurgiaModule(id)
     };
   }
   return {
@@ -268,6 +281,7 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("obs4-") === 0) return "Sangramentos na gestação";
   if (id.indexOf("obs5-") === 0) return "HAS · Diabetes · Gemelaridade";
   if (id.indexOf("obs-") === 0) return "Obstetrícia";
+  if (id.indexOf("cg-") === 0) return "Lacunas · protocolos atuais";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -354,6 +368,17 @@ async function aprovaLoadOverviewStats (specialty) {
       aprovaGoOverviewStatsCache = null;
     }
     return aprovaGoOverviewStatsCache;
+  }
+  if (meta.id === "cirurgia") {
+    if (aprovaCirOverviewStatsCache) return aprovaCirOverviewStatsCache;
+    try {
+      const res = await fetch(meta.overviewUrl);
+      if (!res.ok) throw new Error("fail");
+      aprovaCirOverviewStatsCache = await res.json();
+    } catch {
+      aprovaCirOverviewStatsCache = null;
+    }
+    return aprovaCirOverviewStatsCache;
   }
   if (aprovaPedOverviewStatsCache) return aprovaPedOverviewStatsCache;
   try {
@@ -651,7 +676,8 @@ const APROVA_PED_MODULE_PREFIXES = {
   obs2: ["obs2-"],
   obs3: ["obs3-"],
   obs4: ["obs4-"],
-  obs5: ["obs5-"]
+  obs5: ["obs5-"],
+  "cir-lacunas": ["cg-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -1113,6 +1139,14 @@ async function aprovaOpenGinecologiaModule (moduleId) {
   await aprovaOpenRichSpecialtyModule("go", moduleId);
 }
 
+async function aprovaOpenCirurgia () {
+  await aprovaOpenRichSpecialtyRoot("cirurgia");
+}
+
+async function aprovaOpenCirurgiaModule (moduleId) {
+  await aprovaOpenRichSpecialtyModule("cirurgia", moduleId);
+}
+
 function aprovaOpenSpecialtyReview (profileId) {
   const decksWrap = document.getElementById("esp-decks");
   const revisao = document.getElementById("esp-revisao");
@@ -1138,6 +1172,10 @@ function aprovaOpenSpecialty (specialty) {
   }
   if (specialty === "go") {
     aprovaOpenGinecologia();
+    return;
+  }
+  if (specialty === "cirurgia") {
+    aprovaOpenCirurgia();
     return;
   }
 

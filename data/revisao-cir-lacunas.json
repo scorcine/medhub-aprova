@@ -1,0 +1,320 @@
+{
+  "title": "Cirurgia · lacunas R1 (protocolos 2024–2026)",
+  "module": "cir-lacunas",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Gap das apostilas",
+      "blurb": "Temas que faltam em Cir1–CirEsp e mais caem nas provas.",
+      "verdict": "Priorize urgências abdominais (apendicite WSES 2025, colecistite/colangite TG18, diverticulite WSES 2020, ASBO Bologna). Em seguida vesícula eletiva, urologia (EAU 2025) e torácica eletiva. AD (estômago/cólon/pâncreas/fígado) fecha o residual oncológico/urgência.",
+      "foco": "Apendicite · Colecistite/colangite · Diverticulite · Obstrução · Urologia",
+      "estilo": "Síntese de gaps × estatística Brasil",
+      "priorities": [
+        { "tema": "Apendicite (WSES 2025)", "pct": 22, "n": 22 },
+        { "tema": "Colecistite / colangite (TG18)", "pct": 18, "n": 18 },
+        { "tema": "Diverticulite (WSES 2020)", "pct": 14, "n": 14 },
+        { "tema": "Obstrução / ASBO", "pct": 12, "n": 12 },
+        { "tema": "Abdome vascular", "pct": 10, "n": 10 },
+        { "tema": "Urologia (EAU 2025)", "pct": 10, "n": 10 },
+        { "tema": "Vesícula eletiva · torácica · AD", "pct": 14, "n": 14 }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-vesicula",
+        "cg-torax",
+        "cg-estomago",
+        "cg-colon",
+        "cg-pancreas",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "urologia"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Abdome inflamatório",
+          "texto": "Apendicite, colecistite/colangite e diverticulite com cortes de conduta."
+        },
+        {
+          "titulo": "Sessão 2 · Obstrução e vascular",
+          "texto": "ASBO expectante vs cirurgia; isquemia mesentérica e AAA."
+        },
+        {
+          "titulo": "Sessão 3 · Urologia + AD",
+          "texto": "Cólica (AINE), cálculo infectado, e pilares de estômago/cólon/pâncreas."
+        }
+      ],
+      "lacuna": "Técnicas operatórias passo a passo e doses de cada ATB: saiba indicação e timing.",
+      "sourceType": "sintese",
+      "source": "WSES Appendicitis 2025 · TG18 · WSES Diverticulitis 2020 · WSES Bologna ASBO 2017 · EAU Urolithiasis 2025 · cruzado com stats-cirurgia-geral (Enare/USP/UNIFESP)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Enare ama urgências abdominais.",
+      "verdict": "No Enare, ~24% de Cirurgia é urgência abdominal. Domine apendicite (laparoscopia + NOM selecionado), TG18 e diverticulite sem ATB de rotina na não complicada.",
+      "foco": "Apendicite · Colecistite · Diverticulite · Obstrução",
+      "estilo": "Padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare Cirurgia aplicado às lacunas.",
+      "priorities": [
+        { "tema": "Apendicite", "pct": 28 },
+        { "tema": "Colecistite / vias biliares", "pct": 22 },
+        { "tema": "Diverticulite", "pct": 16 },
+        { "tema": "Obstrução", "pct": 14 },
+        { "tema": "Urologia / vascular / AD", "pct": 20 }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": ["apendicite", "tg18", "diverticulite", "asbo", "vesicula"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · FID e QHD",
+          "texto": "Apendicite e colecistite/colangite."
+        },
+        {
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Quando NÃO dar ATB e quando operar."
+        },
+        {
+          "titulo": "Sessão 3 · Oclusão",
+          "texto": "Expectante 48–72h vs estrangulamento."
+        }
+      ],
+      "lacuna": "Detalhe de cada classificação Hinchey antiga: saiba não complicada vs complicada + peritonite."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Imagem + conduta",
+      "blurb": "TC e decisão.",
+      "verdict": "USP cobra conduta com imagem: diverticulite na TC, ASBO, colecistite e apendicite. Vesícula/vias biliares têm peso (~6%). Foque leitura de cenário + próximo passo.",
+      "foco": "Diverticulite · Obstrução · Vesícula · Apendicite",
+      "estilo": "Padrão USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP Cirurgia aplicado às lacunas.",
+      "priorities": [
+        { "tema": "Diverticulite / TC", "pct": 20 },
+        { "tema": "Obstrução / ASBO", "pct": 18 },
+        { "tema": "Vesícula / vias biliares", "pct": 18 },
+        { "tema": "Apendicite", "pct": 16 },
+        { "tema": "Vascular / AD / urologia", "pct": 28 }
+      ],
+      "deckOrder": [
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-colecistite",
+        "cg-vesicula",
+        "cg-apendicite",
+        "cg-abdome-vascular",
+        "cg-colon",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-urologia",
+        "cg-figado",
+        "cg-torax"
+      ],
+      "checklist": ["diverticulite", "asbo", "tg18", "apendicite", "vesicula"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TC de abdome",
+          "texto": "Diverticulite e ASBO com/sem isquemia."
+        },
+        {
+          "titulo": "Sessão 2 · Biliar",
+          "texto": "TG18 e coledocolitíase."
+        },
+        {
+          "titulo": "Sessão 3 · Apendicite",
+          "texto": "Operar vs NOM."
+        }
+      ],
+      "lacuna": "Medidas milimétricas de abscesso: saiba pequeno vs drenável vs cirurgia."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Conduta direta",
+      "blurb": "Vinheta curta.",
+      "verdict": "Unifesp cobra menos urgência abdominal relativa que Enare, mas apendicite/colecistite e urologia/vascular ainda caem. Seja objetivo na conduta.",
+      "foco": "Apendicite · Colangite · Urologia · Vascular · Obstrução",
+      "estilo": "Padrão UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP Cirurgia aplicado às lacunas.",
+      "priorities": [
+        { "tema": "Apendicite / colecistite", "pct": 24 },
+        { "tema": "Abdome vascular", "pct": 18 },
+        { "tema": "Urologia", "pct": 16 },
+        { "tema": "Obstrução", "pct": 14 },
+        { "tema": "AD / torácica / diverticulite", "pct": 28 }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-obstrucao",
+        "cg-diverticulite",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-colon",
+        "cg-torax",
+        "cg-vesicula",
+        "cg-figado"
+      ],
+      "checklist": ["apendicite", "tg18", "vascular", "urologia", "asbo"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Conduta em 1 linha",
+          "texto": "Apendicite e colangite (CPRE)."
+        },
+        {
+          "titulo": "Sessão 2 · Vascular",
+          "texto": "Isquemia mesentérica e AAA."
+        },
+        {
+          "titulo": "Sessão 3 · Urologia",
+          "texto": "AINE na cólica; drenar se sepse + obstrução."
+        }
+      ],
+      "lacuna": "Protocolos institucionais de EVAR: saiba conceito de indicação vs aberto."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Protocolar.",
+      "verdict": "Decore fluxos: laparoscopia na apendicite, LC precoce na colecistite, sem ATB rotina na diverticulite não complicada, CPRE na colangite, NOM na ASBO sem isquemia.",
+      "foco": "Fluxos de urgência abdominal",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare Cirurgia aplicado às lacunas.",
+      "priorities": [
+        { "tema": "Urgências abdominais (bloco)", "pct": 40 },
+        { "tema": "Vesícula / vias", "pct": 16 },
+        { "tema": "Obstrução", "pct": 14 },
+        { "tema": "Urologia / outros", "pct": 30 }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-urologia",
+        "cg-abdome-vascular",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": ["apendicite", "tg18", "diverticulite", "asbo", "urologia"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Checklists",
+          "texto": "Apendicite · colecistite · diverticulite."
+        },
+        {
+          "titulo": "Sessão 2 · Colangite",
+          "texto": "ATB + drenagem — sempre."
+        },
+        {
+          "titulo": "Sessão 3 · ASBO",
+          "texto": "Quando parar de esperar."
+        }
+      ],
+      "lacuna": "Nomes comerciais de stents e drenos: saiba a indicação."
+    }
+  ],
+  "checklistItems": {
+    "apendicite": {
+      "tema": "Apendicite (WSES 2025)",
+      "yield": "Máximo",
+      "pegar": "Laparoscopia padrão · NOM ATB em não complicada selecionada · Cirurgia pode esperar ≤24h se estável · Complicada: ATB ± drenagem · ATB pós curto 2–3d se complicada"
+    },
+    "tg18": {
+      "tema": "Colecistite / colangite (TG18)",
+      "yield": "Máximo",
+      "pegar": "LC precoce grau I/II se operável · Drenagem se alto risco · Colangite: ATB + CPRE/descompressão · Graus I–III"
+    },
+    "diverticulite": {
+      "tema": "Diverticulite (WSES 2020)",
+      "yield": "Máximo",
+      "pegar": "Não complicada imunocompetente: sem ATB de rotina · Abscesso: ATB ± dreno · Peritonite: cirurgia · Eletiva caso a caso"
+    },
+    "asbo": {
+      "tema": "Obstrução adhesiva",
+      "yield": "Alto",
+      "pegar": "NOM se sem isquemia · NPO+SNG+fluidos · 48–72h · Estrangulamento → operar · Laparoscopia selecionada"
+    },
+    "urologia": {
+      "tema": "Urologia (EAU 2025)",
+      "yield": "Alto",
+      "pegar": "Cólica: AINE 1ª linha · Sepse + obstrução: drenar · Torção: explorar sem atrasar"
+    },
+    "vesicula": {
+      "tema": "Vesícula eletiva",
+      "yield": "Alto",
+      "pegar": "Assintomática observa · Cólica recorrente → LC · Coledocolitíase por risco · Pancreatite biliar leve: LC na internação"
+    },
+    "vascular": {
+      "tema": "Abdome vascular",
+      "yield": "Alto",
+      "pegar": "Dor desproporcional → angio-TC · AAA roto: corrigir · 6 P do membro → heparina + revascularizar"
+    }
+  },
+  "numeros": [
+    "Apendicite: atraso cirúrgico seguro até ~24h se não complicada (WSES 2025)",
+    "ATB pós apendicite complicada: ~2–3 dias se fonte controlada",
+    "Colecistectomia precoce: ideal <72h do início (janela precoce TG18)",
+    "Diverticulite não complicada: sem ATB de rotina (imunocompetente estável)",
+    "ASBO: trial conservador típico 48–72h",
+    "Cólica renal: AINE > opioide (EAU 2025)",
+    "Pólipo vesícula ≥10 mm: pensar colecistectomia",
+    "Torção testicular: meta <6h"
+  ],
+  "pegadinhas": [
+    "Diverticulite não complicada ≠ ATB automático",
+    "Colangite não se trata só com ATB",
+    "ASBO com peritonismo não é expectante",
+    "Apendicite não complicada não exige cirurgia na hora se estável",
+    "Pancreatite: sem ATB profilático de rotina",
+    "Cólica renal: opioide não é 1ª linha",
+    "Cálculo + febre/sepse: drenar a via urinária",
+    "Cirurgia eletiva após 2 diverticulites não é regra fixa"
+  ],
+  "baixoRoi": [
+    "Técnica completa de Whipple passo a passo",
+    "Todas as classificações históricas de diverticulite",
+    "Doses de cada esquema ATB por hospital",
+    "Protocolos de quimioterapia completa do CCR",
+    "Detalhe de cada endoleak do EVAR"
+  ],
+  "unitLabel": "% das questões deste bloco de lacunas",
+  "note": "Percentuais = prioridade relativa dentro deste módulo de lacunas (não da prova inteira). Fontes: WSES / TG18 / EAU 2025."
+}

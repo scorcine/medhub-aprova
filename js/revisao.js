@@ -121,6 +121,11 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-obs5.json?v=20260718ap",
     specialty: "go",
     area: "obstetricia"
+  },
+  "cir-lacunas": {
+    label: "Urgências · Vesícula · Urologia · AD (lacunas)",
+    file: "data/revisao-cir-lacunas.json?v=20260718aq",
+    specialty: "cirurgia"
   }
 };
 
@@ -242,7 +247,7 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
   AprovaRevisao.setActiveModule(mid);
   const moduleSpec = AprovaRevisao.moduleSpecialty(mid);
   const moduleLabel = (APROVA_REVISAO_MODULES[mid] && APROVA_REVISAO_MODULES[mid].label) ||
-    (moduleSpec === "go" ? "Ginecologia" : "Pediatria");
+    (moduleSpec === "go" ? "Ginecologia" : moduleSpec === "cirurgia" ? "Cirurgia" : "Pediatria");
 
   root.innerHTML = "<p class=\"muted\">Carregando revisão…</p>";
   const data = await AprovaRevisao.loadModule(mid);
@@ -367,6 +372,14 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
         return;
       }
       if (typeof aprovaOpenGinecologia === "function") aprovaOpenGinecologia();
+      return;
+    }
+    if (spec === "cirurgia") {
+      if (typeof aprovaOpenCirurgiaModule === "function" && activeId) {
+        aprovaOpenCirurgiaModule(activeId);
+        return;
+      }
+      if (typeof aprovaOpenCirurgia === "function") aprovaOpenCirurgia();
       return;
     }
     if (typeof aprovaOpenPediatriaModule === "function" && activeId) {
