@@ -108,11 +108,21 @@ const AprovaFlashcards = {
 
   /** Estuda todos os cards de um deck (ordem do arquivo). */
   startDeck (deckId) {
-    const cards = this.catalog.filter(c => c.deckId === deckId);
+    return this.startDecks([deckId]);
+  },
+
+  /** Estuda um ou mais decks na ordem informada. */
+  startDecks (deckIds) {
+    const ids = (deckIds || []).filter(Boolean);
+    const cards = [];
+    ids.forEach(id => {
+      this.catalog.filter(c => c.deckId === id).forEach(c => cards.push(c));
+    });
     this.mode = "deck";
-    this.activeDeckId = deckId;
+    this.activeDeckId = ids.length === 1 ? ids[0] : null;
+    this.activeDeckIds = ids.slice();
     this.activeSpecialty = cards[0] ? cards[0].specialty : null;
-    this.queue = cards.slice();
+    this.queue = cards;
     this.index = 0;
     this.revealed = false;
     return this.queue.length;

@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718t">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718u">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -319,6 +319,30 @@
             <p class="muted" id="rev-neo-sub">Alto rendimento para as principais provas R1.</p>
             <div id="revisao-neo-root"></div>
           </div>
+
+          <div id="esp-deck-modal" class="aprova-modal" hidden>
+            <div class="aprova-modal-backdrop" data-esp-modal-close></div>
+            <div class="aprova-modal-panel" role="dialog" aria-modal="true" aria-labelledby="esp-deck-modal-title">
+              <div class="aprova-modal-head">
+                <div>
+                  <p class="esp-exam-label" style="margin:0 0 0.25rem">Escolher subtemas</p>
+                  <h3 id="esp-deck-modal-title" class="esp-decks-title" style="margin:0">Grupo</h3>
+                </div>
+                <button type="button" class="btn btn-ghost btn-compact" data-esp-modal-close aria-label="Fechar">✕</button>
+              </div>
+              <p class="muted" id="esp-deck-modal-sub">Marque um ou mais subtemas para estudar.</p>
+              <label class="aprova-check aprova-check--all">
+                <input type="checkbox" id="esp-deck-modal-all" checked>
+                <span>Selecionar todos</span>
+              </label>
+              <div class="aprova-modal-list" id="esp-deck-modal-list"></div>
+              <p class="muted" id="esp-deck-modal-count"></p>
+              <div class="aprova-modal-actions">
+                <button type="button" class="btn btn-ghost" id="esp-deck-modal-stats">Ver estatísticas</button>
+                <button type="button" class="btn btn-primary" id="esp-deck-modal-start">Estudar selecionados</button>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="panel-simulados" class="panel" aria-labelledby="sim-title" hidden>
@@ -399,13 +423,13 @@
     </div>
   </div>
 
-  <script src="js/theme.js?v=20260718t"></script>
-  <script src="js/auth.js?v=20260718t"></script>
-  <script src="js/schedule.js?v=20260718t"></script>
-  <script src="js/exam-stats.js?v=20260718t"></script>
-  <script src="js/flashcards.js?v=20260718t"></script>
-  <script src="js/questions.js?v=20260718t"></script>
-  <script src="js/revisao.js?v=20260718t"></script>
-  <script src="js/app.js?v=20260718t"></script>
+  <script src="js/theme.js?v=20260718u"></script>
+  <script src="js/auth.js?v=20260718u"></script>
+  <script src="js/schedule.js?v=20260718u"></script>
+  <script src="js/exam-stats.js?v=20260718u"></script>
+  <script src="js/flashcards.js?v=20260718u"></script>
+  <script src="js/questions.js?v=20260718u"></script>
+  <script src="js/revisao.js?v=20260718u"></script>
+  <script src="js/app.js?v=20260718u"></script>
 </body>
 </html>

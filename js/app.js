@@ -83,8 +83,11 @@ function aprovaShowFlashcardStudy () {
   if (browse) browse.hidden = true;
   if (card) card.hidden = false;
   if (hint) {
+    const multi = AprovaFlashcards.activeDeckIds && AprovaFlashcards.activeDeckIds.length > 1;
     hint.textContent = AprovaFlashcards.mode === "deck"
-      ? "Estudo por tema · revelar · acertei / errei."
+      ? (multi
+        ? "Estudo de vários subtemas · revelar · acertei / errei."
+        : "Estudo por tema · revelar · acertei / errei.")
       : "Fila de hoje · revelar · acertei / errei.";
   }
 }
@@ -406,9 +409,95 @@ async function aprovaRenderPedGroupCards (activeModuleId) {
       "<strong>" + m.label + "</strong>" +
       "<span>" + stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
         " · " + stats.decks + " subtema" + (stats.decks === 1 ? "" : "s") + "</span>";
-    btn.addEventListener("click", () => aprovaOpenPediatriaModule(m.id));
+    btn.addEventListener("click", () => aprovaOpenPedDeckPicker(m.id));
     grid.appendChild(btn);
   }
+}
+
+function aprovaClosePedDeckModal () {
+  const modal = document.getElementById("esp-deck-modal");
+  if (modal) modal.hidden = true;
+  document.body.classList.remove("modal-open");
+}
+
+function aprovaPedModalSelectedIds () {
+  return Array.from(document.querySelectorAll("#esp-deck-modal-list input[type=checkbox]:checked"))
+    .map(el => el.value)
+    .filter(Boolean);
+}
+
+function aprovaUpdatePedModalCount () {
+  const countEl = document.getElementById("esp-deck-modal-count");
+  const startBtn = document.getElementById("esp-deck-modal-start");
+  const allBox = document.getElementById("esp-deck-modal-all");
+  const boxes = Array.from(document.querySelectorAll("#esp-deck-modal-list input[type=checkbox]"));
+  const selected = boxes.filter(b => b.checked);
+  let cards = 0;
+  selected.forEach(box => {
+    const deck = AprovaFlashcards.decks.find(d => d.id === box.value);
+    cards += deck && deck.cards ? deck.cards.length : 0;
+  });
+  if (countEl) {
+    countEl.textContent = selected.length
+      ? (selected.length + " subtema" + (selected.length === 1 ? "" : "s") +
+        " · " + cards + " card" + (cards === 1 ? "" : "s"))
+      : "Nenhum subtema selecionado.";
+  }
+  if (startBtn) startBtn.disabled = selected.length === 0;
+  if (allBox) {
+    allBox.checked = boxes.length > 0 && selected.length === boxes.length;
+    allBox.indeterminate = selected.length > 0 && selected.length < boxes.length;
+  }
+}
+
+async function aprovaOpenPedDeckPicker (moduleId) {
+  const modal = document.getElementById("esp-deck-modal");
+  const title = document.getElementById("esp-deck-modal-title");
+  const sub = document.getElementById("esp-deck-modal-sub");
+  const list = document.getElementById("esp-deck-modal-list");
+  const allBox = document.getElementById("esp-deck-modal-all");
+  if (!modal || !list || !moduleId) return;
+
+  aprovaActivePedModule = moduleId;
+  if (typeof AprovaRevisao !== "undefined") {
+    AprovaRevisao.setActiveModule(moduleId);
+  }
+
+  const modules = typeof AprovaRevisao !== "undefined" ? AprovaRevisao.listModules() : [];
+  const moduleLabel = (modules.find(m => m.id === moduleId) || {}).label || "Pediatria";
+  const stats = await aprovaPedModuleStats(moduleId);
+  const decks = (stats.deckOrder || [])
+    .map(id => AprovaFlashcards.decks.find(d => d.id === id))
+    .filter(Boolean);
+
+  if (title) title.textContent = moduleLabel;
+  if (sub) {
+    sub.textContent = decks.length
+      ? "Marque um ou mais subtemas. Dá para estudar vários de uma vez."
+      : "Nenhum subtema disponível neste grupo.";
+  }
+
+  list.innerHTML = "";
+  decks.forEach(deck => {
+    const n = (deck.cards || []).length;
+    const label = document.createElement("label");
+    label.className = "aprova-check";
+    label.innerHTML =
+      "<input type=\"checkbox\" value=\"" + deck.id + "\" checked>" +
+      "<span><strong>" + deck.name + "</strong>" +
+      "<small>" + n + " card" + (n === 1 ? "" : "s") + "</small></span>";
+    label.querySelector("input").addEventListener("change", aprovaUpdatePedModalCount);
+    list.appendChild(label);
+  });
+
+  if (allBox) {
+    allBox.checked = decks.length > 0;
+    allBox.indeterminate = false;
+  }
+
+  aprovaUpdatePedModalCount();
+  modal.hidden = false;
+  document.body.classList.add("modal-open");
 }
 
 async function aprovaRenderPediatriaStats (focusId, moduleId) {
@@ -555,11 +644,11 @@ async function aprovaOpenPediatria () {
   if (sub) {
     sub.hidden = false;
     sub.textContent = total
-      ? (total + " flashcards · " + modules.length + " grupos · escolha um grupo para ver os subtemas")
+      ? (total + " flashcards · " + modules.length + " grupos · toque em um grupo para escolher o que estudar")
       : "Escolha um grupo para estudar.";
   }
   if (hint) {
-    hint.textContent = "Pediatria em geral — veja o que mais cai nas provas e toque em um grupo.";
+    hint.textContent = "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
   }
   if (back) back.textContent = "← Voltar às especialidades";
 
@@ -914,6 +1003,38 @@ async function aprovaBoot () {
 
   document.getElementById("esp-open-revisao")?.addEventListener("click", () => {
     aprovaOpenSpecialtyReview(aprovaActiveFocusId || "geral");
+  });
+
+  document.querySelectorAll("[data-esp-modal-close]").forEach(el => {
+    el.addEventListener("click", () => aprovaClosePedDeckModal());
+  });
+
+  document.getElementById("esp-deck-modal-all")?.addEventListener("change", e => {
+    const checked = !!e.target.checked;
+    document.querySelectorAll("#esp-deck-modal-list input[type=checkbox]").forEach(box => {
+      box.checked = checked;
+    });
+    aprovaUpdatePedModalCount();
+  });
+
+  document.getElementById("esp-deck-modal-start")?.addEventListener("click", () => {
+    const ids = aprovaPedModalSelectedIds();
+    if (!ids.length) return;
+    AprovaFlashcards.startDecks(ids);
+    aprovaClosePedDeckModal();
+    aprovaGoTo("flashcards", { study: true });
+  });
+
+  document.getElementById("esp-deck-modal-stats")?.addEventListener("click", () => {
+    const moduleId = aprovaActivePedModule;
+    aprovaClosePedDeckModal();
+    if (moduleId) aprovaOpenPediatriaModule(moduleId);
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    const modal = document.getElementById("esp-deck-modal");
+    if (modal && !modal.hidden) aprovaClosePedDeckModal();
   });
 
   document.getElementById("today-start")?.addEventListener("click", () => {
