@@ -7,16 +7,40 @@
       "label": "Brasil",
       "kicker": "Estatística geral",
       "blurb": "Síntese do que mais cai em SUA e miomatose.",
-      "verdict": "No Gin2, o núcleo é PALM-COEIN + conduta do SUA (SIU/tranexâmico/ACO) e mioma (submucoso → histeroscopia). Adenomiose e endometriose fecham o bloco de dor/SUA estrutural.",
-      "foco": "PALM-COEIN · Tratamento do SUA · Mioma · Endometriose",
+      "verdict": "No Gin2, o núcleo é PALM-COEIN + conduta do SUA (SIU/tranexâmico/ACO) e mioma (submucoso → histeroscopia). Dismenorreia, adenomiose e endometriose fecham o bloco de dor/SUA estrutural.",
+      "foco": "PALM-COEIN · SUA · Mioma · Dismenorreia · Endometriose",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "PALM-COEIN / classificação", "pct": 22, "n": 22 },
-        { "tema": "Tratamento do SUA", "pct": 20, "n": 20 },
-        { "tema": "Miomatose (clínica + conduta)", "pct": 20, "n": 20 },
-        { "tema": "Investigação do SUA", "pct": 14, "n": 14 },
-        { "tema": "Endometriose", "pct": 12, "n": 12 },
-        { "tema": "Adenomiose / pólipo", "pct": 12, "n": 12 }
+        {
+          "tema": "PALM-COEIN / classificação",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "Tratamento do SUA",
+          "pct": 20,
+          "n": 20
+        },
+        {
+          "tema": "Miomatose (clínica + conduta)",
+          "pct": 20,
+          "n": 20
+        },
+        {
+          "tema": "Investigação do SUA",
+          "pct": 14,
+          "n": 14
+        },
+        {
+          "tema": "Endometriose",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Adenomiose / pólipo",
+          "pct": 12,
+          "n": 12
+        }
       ],
       "deckOrder": [
         "gin2-palm-coein",
@@ -26,10 +50,18 @@
         "gin2-sua-investigacao",
         "gin2-sua-conceitos",
         "gin2-endometriose",
+        "gin2-dismenorreia",
         "gin2-adenomiose",
         "gin2-polipo"
       ],
-      "checklist": ["palm", "sua-tx", "mioma", "invest", "endo", "adeno"],
+      "checklist": [
+        "palm",
+        "sua-tx",
+        "mioma",
+        "invest",
+        "endo",
+        "adeno"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · PALM-COEIN",
@@ -60,11 +92,26 @@
       "sourceType": "levantamento",
       "source": "Padrão Enamed/Enare (SUA entre os temas top de Ginecologia) aplicado ao Gin2.",
       "priorities": [
-        { "tema": "Tratamento do SUA", "pct": 28 },
-        { "tema": "PALM-COEIN", "pct": 24 },
-        { "tema": "Mioma", "pct": 20 },
-        { "tema": "Investigação / pós-menopausa", "pct": 16 },
-        { "tema": "Endometriose", "pct": 12 }
+        {
+          "tema": "Tratamento do SUA",
+          "pct": 28
+        },
+        {
+          "tema": "PALM-COEIN",
+          "pct": 24
+        },
+        {
+          "tema": "Mioma",
+          "pct": 20
+        },
+        {
+          "tema": "Investigação / pós-menopausa",
+          "pct": 16
+        },
+        {
+          "tema": "Endometriose",
+          "pct": 12
+        }
       ],
       "deckOrder": [
         "gin2-sua-tratamento",
@@ -74,10 +121,17 @@
         "gin2-sua-investigacao",
         "gin2-sua-conceitos",
         "gin2-endometriose",
+        "gin2-dismenorreia",
         "gin2-adenomiose",
         "gin2-polipo"
       ],
-      "checklist": ["sua-tx", "palm", "mioma", "invest", "endo"],
+      "checklist": [
+        "sua-tx",
+        "palm",
+        "mioma",
+        "invest",
+        "endo"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Conduta",
@@ -105,11 +159,26 @@
       "sourceType": "levantamento",
       "source": "Padrão USP aplicado aos subtemas do Gin2.",
       "priorities": [
-        { "tema": "PALM-COEIN / SUD", "pct": 28 },
-        { "tema": "Investigação do SUA", "pct": 22 },
-        { "tema": "Miomatose", "pct": 18 },
-        { "tema": "Endometriose", "pct": 16 },
-        { "tema": "Tratamento", "pct": 16 }
+        {
+          "tema": "PALM-COEIN / SUD",
+          "pct": 28
+        },
+        {
+          "tema": "Investigação do SUA",
+          "pct": 22
+        },
+        {
+          "tema": "Miomatose",
+          "pct": 18
+        },
+        {
+          "tema": "Endometriose",
+          "pct": 16
+        },
+        {
+          "tema": "Tratamento",
+          "pct": 16
+        }
       ],
       "deckOrder": [
         "gin2-palm-coein",
@@ -117,12 +186,19 @@
         "gin2-sua-investigacao",
         "gin2-mioma-clinica",
         "gin2-endometriose",
+        "gin2-dismenorreia",
         "gin2-sua-tratamento",
         "gin2-mioma-tratamento",
         "gin2-adenomiose",
         "gin2-polipo"
       ],
-      "checklist": ["palm", "invest", "mioma", "endo", "sua-tx"],
+      "checklist": [
+        "palm",
+        "invest",
+        "mioma",
+        "endo",
+        "sua-tx"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Etiologia",
@@ -150,24 +226,46 @@
       "sourceType": "levantamento",
       "source": "Padrão UNIFESP aplicado ao Gin2.",
       "priorities": [
-        { "tema": "Mioma · conduta cirúrgica", "pct": 28 },
-        { "tema": "Tratamento do SUA", "pct": 24 },
-        { "tema": "Endometriose", "pct": 18 },
-        { "tema": "PALM-COEIN", "pct": 16 },
-        { "tema": "Adenomiose / pólipo", "pct": 14 }
+        {
+          "tema": "Mioma · conduta cirúrgica",
+          "pct": 28
+        },
+        {
+          "tema": "Tratamento do SUA",
+          "pct": 24
+        },
+        {
+          "tema": "Endometriose",
+          "pct": 18
+        },
+        {
+          "tema": "PALM-COEIN",
+          "pct": 16
+        },
+        {
+          "tema": "Adenomiose / pólipo",
+          "pct": 14
+        }
       ],
       "deckOrder": [
         "gin2-mioma-tratamento",
         "gin2-sua-tratamento",
         "gin2-mioma-clinica",
         "gin2-endometriose",
+        "gin2-dismenorreia",
         "gin2-palm-coein",
         "gin2-adenomiose",
         "gin2-polipo",
         "gin2-sua-investigacao",
         "gin2-sua-conceitos"
       ],
-      "checklist": ["mioma", "sua-tx", "endo", "palm", "adeno"],
+      "checklist": [
+        "mioma",
+        "sua-tx",
+        "endo",
+        "palm",
+        "adeno"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Operar mioma",
@@ -195,11 +293,26 @@
       "sourceType": "levantamento",
       "source": "Padrão Enare aplicado ao Gin2.",
       "priorities": [
-        { "tema": "SUA (dx + tx)", "pct": 32 },
-        { "tema": "PALM-COEIN", "pct": 22 },
-        { "tema": "Mioma", "pct": 20 },
-        { "tema": "Endometriose", "pct": 14 },
-        { "tema": "Outros estruturais", "pct": 12 }
+        {
+          "tema": "SUA (dx + tx)",
+          "pct": 32
+        },
+        {
+          "tema": "PALM-COEIN",
+          "pct": 22
+        },
+        {
+          "tema": "Mioma",
+          "pct": 20
+        },
+        {
+          "tema": "Endometriose",
+          "pct": 14
+        },
+        {
+          "tema": "Outros estruturais",
+          "pct": 12
+        }
       ],
       "deckOrder": [
         "gin2-sua-tratamento",
@@ -209,10 +322,17 @@
         "gin2-mioma-tratamento",
         "gin2-sua-conceitos",
         "gin2-endometriose",
+        "gin2-dismenorreia",
         "gin2-polipo",
         "gin2-adenomiose"
       ],
-      "checklist": ["sua-tx", "palm", "mioma", "invest", "endo"],
+      "checklist": [
+        "sua-tx",
+        "palm",
+        "mioma",
+        "invest",
+        "endo"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Fluxo do SUA",

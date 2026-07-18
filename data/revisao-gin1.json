@@ -7,23 +7,53 @@
       "label": "Brasil",
       "kicker": "Estatística geral",
       "blurb": "Síntese do que mais cai em endócrino ginecológico.",
-      "verdict": "No Gin1, ~75% do retorno está em amenorreia (fluxo diagnóstico), SOP (Rotterdam + conduta) e anticoncepção (MEC/LARC/Pearl). Ciclo/HHO é base para ler qualquer caso.",
-      "foco": "Amenorreia · SOP · Anticoncepção · HiperPRL · Ciclo",
+      "verdict": "No Gin1, ~75% do retorno está em amenorreia (fluxo diagnóstico), SOP (Rotterdam + conduta) e anticoncepção (MEC/LARC/Pearl). Infertilidade e puberdade fecham lacunas clássicas do R1. Ciclo/HHO é base para ler qualquer caso.",
+      "foco": "Amenorreia · SOP · Infertilidade · Anticoncepção · Puberdade",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "Amenorreia (propedêutica)", "pct": 22, "n": 22 },
-        { "tema": "SOP (Rotterdam + conduta)", "pct": 20, "n": 20 },
-        { "tema": "Anticoncepção / LARC", "pct": 18, "n": 18 },
-        { "tema": "Ciclo menstrual / eixo HHO", "pct": 14, "n": 14 },
-        { "tema": "Hiperprolactinemia", "pct": 12, "n": 12 },
-        { "tema": "Hiperandrogenismo", "pct": 8, "n": 8 },
-        { "tema": "SPM / TPM", "pct": 6, "n": 6 }
+        {
+          "tema": "Amenorreia (propedêutica)",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "SOP (Rotterdam + conduta)",
+          "pct": 20,
+          "n": 20
+        },
+        {
+          "tema": "Anticoncepção / LARC",
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "Ciclo menstrual / eixo HHO",
+          "pct": 14,
+          "n": 14
+        },
+        {
+          "tema": "Hiperprolactinemia",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Hiperandrogenismo",
+          "pct": 8,
+          "n": 8
+        },
+        {
+          "tema": "SPM / TPM",
+          "pct": 6,
+          "n": 6
+        }
       ],
       "deckOrder": [
         "gin1-amenorreia",
         "gin1-amenorreia-primaria",
+        "gin1-puberdade",
         "gin1-amenorreia-secundaria",
         "gin1-sop",
+        "gin1-infertilidade",
         "gin1-anticoncepcao",
         "gin1-diu-lam",
         "gin1-ciclo",
@@ -31,7 +61,14 @@
         "gin1-hiperandrogenismo",
         "gin1-spm"
       ],
-      "checklist": ["amenorreia", "sop", "aco", "ciclo", "hiperprl", "larc"],
+      "checklist": [
+        "amenorreia",
+        "sop",
+        "aco",
+        "ciclo",
+        "hiperprl",
+        "larc"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Amenorreia",
@@ -46,7 +83,7 @@
           "texto": "Pearl, MEC do ACO, LARC e LAM."
         }
       ],
-      "lacuna": "Biossíntese esteróide passo a passo e todas as divergências de definição entre manuais: baixo ROI se você já domina o fluxo clínico.",
+      "lacuna": "Biossíntese esteróide passo a passo e protocolos completos de FIV: baixo ROI se você já domina investigação inicial e degraus de indução.",
       "sourceType": "sintese",
       "source": "Síntese ponderada de levantamentos de Ginecologia endócrina (USP/UNIFESP/Enare) aplicada aos subtemas do Gin1."
     },
@@ -62,25 +99,48 @@
       "sourceType": "levantamento",
       "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
       "priorities": [
-        { "tema": "Anticoncepção / LARC", "pct": 28 },
-        { "tema": "SOP", "pct": 24 },
-        { "tema": "Amenorreia", "pct": 22 },
-        { "tema": "Hiperprolactinemia", "pct": 14 },
-        { "tema": "Ciclo / outros", "pct": 12 }
+        {
+          "tema": "Anticoncepção / LARC",
+          "pct": 28
+        },
+        {
+          "tema": "SOP",
+          "pct": 24
+        },
+        {
+          "tema": "Amenorreia",
+          "pct": 22
+        },
+        {
+          "tema": "Hiperprolactinemia",
+          "pct": 14
+        },
+        {
+          "tema": "Ciclo / outros",
+          "pct": 12
+        }
       ],
       "deckOrder": [
         "gin1-anticoncepcao",
         "gin1-diu-lam",
         "gin1-sop",
+        "gin1-infertilidade",
         "gin1-amenorreia",
         "gin1-amenorreia-primaria",
+        "gin1-puberdade",
         "gin1-amenorreia-secundaria",
         "gin1-hiperprolactinemia",
         "gin1-ciclo",
         "gin1-hiperandrogenismo",
         "gin1-spm"
       ],
-      "checklist": ["aco", "larc", "sop", "amenorreia", "hiperprl"],
+      "checklist": [
+        "aco",
+        "larc",
+        "sop",
+        "amenorreia",
+        "hiperprl"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Contracepção",
@@ -108,25 +168,48 @@
       "sourceType": "levantamento",
       "source": "Padrão USP-SP (Ginecologia endócrina ~41% das questões de Gin) aplicado ao Gin1.",
       "priorities": [
-        { "tema": "Amenorreia / eixo", "pct": 30 },
-        { "tema": "Ciclo menstrual / HHO", "pct": 22 },
-        { "tema": "SOP", "pct": 20 },
-        { "tema": "Hiperprolactinemia", "pct": 14 },
-        { "tema": "Anticoncepção", "pct": 14 }
+        {
+          "tema": "Amenorreia / eixo",
+          "pct": 30
+        },
+        {
+          "tema": "Ciclo menstrual / HHO",
+          "pct": 22
+        },
+        {
+          "tema": "SOP",
+          "pct": 20
+        },
+        {
+          "tema": "Hiperprolactinemia",
+          "pct": 14
+        },
+        {
+          "tema": "Anticoncepção",
+          "pct": 14
+        }
       ],
       "deckOrder": [
         "gin1-ciclo",
         "gin1-amenorreia",
         "gin1-amenorreia-primaria",
+        "gin1-puberdade",
         "gin1-amenorreia-secundaria",
         "gin1-sop",
+        "gin1-infertilidade",
         "gin1-hiperprolactinemia",
         "gin1-hiperandrogenismo",
         "gin1-anticoncepcao",
         "gin1-diu-lam",
         "gin1-spm"
       ],
-      "checklist": ["ciclo", "amenorreia", "sop", "hiperprl", "aco"],
+      "checklist": [
+        "ciclo",
+        "amenorreia",
+        "sop",
+        "hiperprl",
+        "aco"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Fisiologia",
@@ -154,15 +237,32 @@
       "sourceType": "levantamento",
       "source": "Padrão UNIFESP aplicado aos subtemas do Gin1.",
       "priorities": [
-        { "tema": "SOP / indução ovulatória", "pct": 26 },
-        { "tema": "Amenorreia primária", "pct": 22 },
-        { "tema": "Anticoncepção / LARC", "pct": 20 },
-        { "tema": "Hiperandrogenismo", "pct": 16 },
-        { "tema": "Ciclo / hiperPRL", "pct": 16 }
+        {
+          "tema": "SOP / indução ovulatória",
+          "pct": 26
+        },
+        {
+          "tema": "Amenorreia primária",
+          "pct": 22
+        },
+        {
+          "tema": "Anticoncepção / LARC",
+          "pct": 20
+        },
+        {
+          "tema": "Hiperandrogenismo",
+          "pct": 16
+        },
+        {
+          "tema": "Ciclo / hiperPRL",
+          "pct": 16
+        }
       ],
       "deckOrder": [
         "gin1-sop",
+        "gin1-infertilidade",
         "gin1-amenorreia-primaria",
+        "gin1-puberdade",
         "gin1-amenorreia",
         "gin1-diu-lam",
         "gin1-anticoncepcao",
@@ -172,7 +272,13 @@
         "gin1-ciclo",
         "gin1-spm"
       ],
-      "checklist": ["sop", "amenorreia", "larc", "aco", "ciclo"],
+      "checklist": [
+        "sop",
+        "amenorreia",
+        "larc",
+        "aco",
+        "ciclo"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · SOP que engravida",
@@ -200,25 +306,48 @@
       "sourceType": "levantamento",
       "source": "Padrão Enare (Ginecologia) aplicado ao Gin1.",
       "priorities": [
-        { "tema": "Anticoncepção", "pct": 30 },
-        { "tema": "SOP", "pct": 24 },
-        { "tema": "Amenorreia secundária", "pct": 20 },
-        { "tema": "HiperPRL / tireoide", "pct": 14 },
-        { "tema": "Ciclo / SPM", "pct": 12 }
+        {
+          "tema": "Anticoncepção",
+          "pct": 30
+        },
+        {
+          "tema": "SOP",
+          "pct": 24
+        },
+        {
+          "tema": "Amenorreia secundária",
+          "pct": 20
+        },
+        {
+          "tema": "HiperPRL / tireoide",
+          "pct": 14
+        },
+        {
+          "tema": "Ciclo / SPM",
+          "pct": 12
+        }
       ],
       "deckOrder": [
         "gin1-anticoncepcao",
         "gin1-diu-lam",
         "gin1-sop",
+        "gin1-infertilidade",
         "gin1-amenorreia-secundaria",
         "gin1-amenorreia",
         "gin1-hiperprolactinemia",
         "gin1-amenorreia-primaria",
+        "gin1-puberdade",
         "gin1-ciclo",
         "gin1-hiperandrogenismo",
         "gin1-spm"
       ],
-      "checklist": ["aco", "sop", "amenorreia", "larc", "hiperprl"],
+      "checklist": [
+        "aco",
+        "sop",
+        "amenorreia",
+        "larc",
+        "hiperprl"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · MEC",
