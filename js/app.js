@@ -508,28 +508,62 @@ function aprovaAppendDeckCheckbox (list, deck) {
   list.appendChild(label);
 }
 
-async function aprovaOpenPedDeckPicker (moduleId) {
+async function aprovaCollectAllPedDecks () {
+  const modules = typeof AprovaRevisao !== "undefined" ? AprovaRevisao.listModules() : [];
+  const seen = new Set();
+  const decks = [];
+
+  for (const m of modules) {
+    const stats = await aprovaPedModuleStats(m.id);
+    const moduleDecks = aprovaPedDecksForModule(m.id, stats.deckOrder || []);
+    moduleDecks.forEach(deck => {
+      if (!deck || seen.has(deck.id)) return;
+      seen.add(deck.id);
+      decks.push(deck);
+    });
+  }
+
+  if (!decks.length) {
+    return AprovaFlashcards.decksBySpecialty("pediatria").slice();
+  }
+  return decks;
+}
+
+async function aprovaOpenPedDeckPicker (moduleId, options) {
+  const opts = options || {};
+  const selectAll = !!opts.selectAll;
   const modal = document.getElementById("esp-deck-modal");
   const title = document.getElementById("esp-deck-modal-title");
   const sub = document.getElementById("esp-deck-modal-sub");
   const list = document.getElementById("esp-deck-modal-list");
   const allBox = document.getElementById("esp-deck-modal-all");
-  if (!modal || !list || !moduleId) return;
-
-  aprovaActivePedModule = moduleId;
-  if (typeof AprovaRevisao !== "undefined") {
-    AprovaRevisao.setActiveModule(moduleId);
-  }
+  if (!modal || !list) return;
+  if (!selectAll && !moduleId) return;
 
   const modules = typeof AprovaRevisao !== "undefined" ? AprovaRevisao.listModules() : [];
-  const moduleLabel = (modules.find(m => m.id === moduleId) || {}).label || "Pediatria";
-  const stats = await aprovaPedModuleStats(moduleId);
-  const decks = aprovaPedDecksForModule(moduleId, stats.deckOrder || []);
+  let decks = [];
+  let moduleLabel = "Pediatria";
+
+  if (selectAll) {
+    aprovaActivePedModule = null;
+    decks = await aprovaCollectAllPedDecks();
+    moduleLabel = "Pediatria · todos os grupos";
+  } else {
+    aprovaActivePedModule = moduleId;
+    if (typeof AprovaRevisao !== "undefined") {
+      AprovaRevisao.setActiveModule(moduleId);
+    }
+    moduleLabel = (modules.find(m => m.id === moduleId) || {}).label || "Pediatria";
+    const stats = await aprovaPedModuleStats(moduleId);
+    decks = aprovaPedDecksForModule(moduleId, stats.deckOrder || []);
+  }
 
   if (title) title.textContent = moduleLabel;
   if (sub) {
     sub.textContent = decks.length
-      ? "Marque um ou mais subtemas. Dá para estudar vários de uma vez."
+      ? (selectAll
+        ? "Todos os subtemas de Pediatria estão marcados. Desmarque o que não quiser estudar."
+        : "Marque um ou mais subtemas. Dá para estudar vários de uma vez.")
       : "Nenhum subtema disponível neste grupo.";
   }
 
@@ -1063,6 +1097,12 @@ async function aprovaBoot () {
 
   document.querySelectorAll("[data-esp-modal-close]").forEach(el => {
     el.addEventListener("click", () => aprovaClosePedDeckModal());
+  });
+
+  document.getElementById("esp-groups-select-all")?.addEventListener("click", e => {
+    e.preventDefault();
+    e.stopPropagation();
+    aprovaOpenPedDeckPicker(null, { selectAll: true });
   });
 
   document.getElementById("esp-deck-modal-all")?.addEventListener("change", e => {
