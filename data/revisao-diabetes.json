@@ -1,0 +1,336 @@
+{
+  "title": "Diabetes mellitus · revisão para provas R1",
+  "module": "diabetes",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Média das principais provas R1 do país.",
+      "verdict": "Em Diabetes pediátrico, ~80% do retorno está em critérios diagnósticos, DM1×DM2, insulinoterapia basal-bolus e CAD (volume → K → insulina → edema cerebral).",
+      "foco": "Diagnóstico · DM1 · CAD · Dawn/Somogyi · Metformina",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "CAD (tratamento)", "score": 96 },
+        { "tema": "Critérios diagnósticos", "score": 90 },
+        { "tema": "DM1 × DM2 / clínica", "score": 86 },
+        { "tema": "Insulina basal-bolus", "score": 82 },
+        { "tema": "Dawn × Somogyi", "score": 75 },
+        { "tema": "Pré-diabetes / metformina", "score": 65 },
+        { "tema": "Hipoglicemia / EHH", "score": 60 },
+        { "tema": "Complicações crônicas", "score": 45 }
+      ],
+      "deckOrder": [
+        "dm-cad",
+        "dm-diagnostico",
+        "dm-classificacao",
+        "dm-tratamento-dm1",
+        "dm-hipoglicemia-ehh",
+        "dm-dm2",
+        "dm-complicacoes"
+      ],
+      "checklist": ["cad", "dx", "dm1", "insulina", "dawn", "dm2"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Diagnosticar", "texto": "Cortes de DM/pré-DM e clínica DM1 vs DM2." },
+        { "titulo": "Sessão 2 · Insulina no dia a dia", "texto": "Basal-bolus, 500/1500, dawn vs Somogyi." },
+        { "titulo": "Sessão 3 · CAD", "texto": "Volume, K<3,3, insulina IV, resolução, edema cerebral." }
+      ],
+      "lacuna": "Lista completa de análogos GLP-1/SGLT2 e estratificação lipídica adulta: baixo ROI na Ped5 se a banca for pediátrica pura."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Casos de CAD e insulinoterapia.",
+      "verdict": "Na USP, CAD e diferencial dawn/Somogyi são favoritos; critérios diagnósticos fecham a questão.",
+      "foco": "CAD · Dawn/Somogyi · Insulina · Diagnóstico",
+      "estilo": "Caso + conduta",
+      "priorities": [
+        { "tema": "CAD", "score": 98 },
+        { "tema": "Dawn × Somogyi", "score": 90 },
+        { "tema": "Insulina basal-bolus", "score": 85 },
+        { "tema": "Diagnóstico", "score": 78 },
+        { "tema": "DM1 clínica", "score": 70 },
+        { "tema": "EHH / hipoglicemia", "score": 60 }
+      ],
+      "deckOrder": [
+        "dm-cad",
+        "dm-tratamento-dm1",
+        "dm-diagnostico",
+        "dm-classificacao",
+        "dm-hipoglicemia-ehh",
+        "dm-dm2",
+        "dm-complicacoes"
+      ],
+      "checklist": ["cad", "dawn", "insulina", "dx", "dm1"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Fluxo da CAD", "texto": "SF → K → insulina → SG quando glicemia cai." },
+        { "titulo": "Sessão 2 · Hiperglicemia matinal", "texto": "Glicemia das 3h decide conduta." },
+        { "titulo": "Sessão 3 · Números", "texto": "126/200/6,5 e resolução pH/HCO₃." }
+      ],
+      "lacuna": "Retinopatia estágios detalhados: saiba rastreio, não a classificação inteira."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Protocolo e números.",
+      "verdict": "Na Unifesp, pesam critérios ADA/SBD, metas de HbA1c e protocolo de CAD.",
+      "foco": "Diagnóstico · CAD · Metas · Metformina",
+      "estilo": "Protocolo + números",
+      "priorities": [
+        { "tema": "Critérios diagnósticos", "score": 96 },
+        { "tema": "CAD", "score": 92 },
+        { "tema": "Metas HbA1c / monitorização", "score": 85 },
+        { "tema": "DM1 tratamento", "score": 78 },
+        { "tema": "Pré-diabetes", "score": 70 },
+        { "tema": "Complicações", "score": 55 }
+      ],
+      "deckOrder": [
+        "dm-diagnostico",
+        "dm-cad",
+        "dm-tratamento-dm1",
+        "dm-dm2",
+        "dm-classificacao",
+        "dm-hipoglicemia-ehh",
+        "dm-complicacoes"
+      ],
+      "checklist": ["dx", "cad", "insulina", "dm2", "dm1"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Cortes", "texto": "DM e pré-DM de cor." },
+        { "titulo": "Sessão 2 · CAD protocolo", "texto": "Doses de insulina e K." },
+        { "titulo": "Sessão 3 · Metas", "texto": "HbA1c <7% e glicemia capilar." }
+      ],
+      "lacuna": "Fármacos novos (duplo agonista etc.): saiba existência; foque metformina."
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "Atenção básica e reconhecimento.",
+      "verdict": "No SUS-SP, caem diagnóstico, diferenciação clínica e quando internar (CAD).",
+      "foco": "Diagnóstico · Clínica DM1 · CAD reconhecimento · MEV",
+      "estilo": "Conduta de atenção básica",
+      "priorities": [
+        { "tema": "Critérios diagnósticos", "score": 95 },
+        { "tema": "Clínica DM1/DM2", "score": 90 },
+        { "tema": "CAD (reconhecer/referir)", "score": 85 },
+        { "tema": "Pré-diabetes / MEV", "score": 78 },
+        { "tema": "Metformina", "score": 70 },
+        { "tema": "Insulina detalhada", "score": 55 }
+      ],
+      "deckOrder": [
+        "dm-diagnostico",
+        "dm-classificacao",
+        "dm-cad",
+        "dm-dm2",
+        "dm-tratamento-dm1",
+        "dm-hipoglicemia-ehh",
+        "dm-complicacoes"
+      ],
+      "checklist": ["dx", "dm1", "cad", "dm2"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Polis na UBS", "texto": "Quando pedir glicemia/HbA1c." },
+        { "titulo": "Sessão 2 · Internar", "texto": "CAD: sinais e laboratório." },
+        { "titulo": "Sessão 3 · Pré-DM", "texto": "MEV e quando metformina." }
+      ],
+      "lacuna": "Cálculo fino de bolus 500/1500 cai menos que reconhecer CAD."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Conceito + urgência.",
+      "verdict": "No SUS-BA, misturam conceito diagnóstico com manejo inicial de CAD e hipoglicemia.",
+      "foco": "Diagnóstico · CAD · Hipoglicemia · DM1",
+      "estilo": "Conceito claro + conduta",
+      "priorities": [
+        { "tema": "Diagnóstico", "score": 93 },
+        { "tema": "CAD", "score": 90 },
+        { "tema": "DM1 clínica", "score": 85 },
+        { "tema": "Hipoglicemia", "score": 75 },
+        { "tema": "Insulina básica", "score": 65 },
+        { "tema": "DM2", "score": 55 }
+      ],
+      "deckOrder": [
+        "dm-diagnostico",
+        "dm-cad",
+        "dm-classificacao",
+        "dm-hipoglicemia-ehh",
+        "dm-tratamento-dm1",
+        "dm-dm2",
+        "dm-complicacoes"
+      ],
+      "checklist": ["dx", "cad", "dm1", "insulina"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Critérios", "texto": "126 / 200 / 6,5." },
+        { "titulo": "Sessão 2 · CAD", "texto": "Tríade e ordem do tratamento." },
+        { "titulo": "Sessão 3 · Hipo", "texto": "Conduta imediata." }
+      ],
+      "lacuna": "MODY subtipos: saiba o conceito, não a genética."
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Casos de UTI/enfermaria.",
+      "verdict": "No Einstein, CAD com edema cerebral, EHH e ajuste fino de insulina caem forte.",
+      "foco": "CAD avançada · Edema cerebral · EHH · Basal-bolus",
+      "estilo": "Caso clínico com conduta",
+      "priorities": [
+        { "tema": "CAD + edema cerebral", "score": 98 },
+        { "tema": "EHH", "score": 88 },
+        { "tema": "Insulina / bombas", "score": 82 },
+        { "tema": "Dawn/Somogyi", "score": 75 },
+        { "tema": "Diagnóstico", "score": 60 },
+        { "tema": "Complicações", "score": 50 }
+      ],
+      "deckOrder": [
+        "dm-cad",
+        "dm-hipoglicemia-ehh",
+        "dm-tratamento-dm1",
+        "dm-diagnostico",
+        "dm-classificacao",
+        "dm-dm2",
+        "dm-complicacoes"
+      ],
+      "checklist": ["cad", "insulina", "dawn", "dx"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · CAD complicada", "texto": "K, bicarbonato, overlap SC." },
+        { "titulo": "Sessão 2 · Edema cerebral", "texto": "Red flags e manitol." },
+        { "titulo": "Sessão 3 · EHH", "texto": "Diferença da CAD e hidratação." }
+      ],
+      "lacuna": "Mucormicose: saiba a associação com CAD."
+    },
+    {
+      "id": "puc",
+      "label": "PUC/Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Fisiopatologia aplicada.",
+      "verdict": "PUC/Unicamp equilibram classificação etiológica, critérios e CAD.",
+      "foco": "DM1A/anticorpos · Diagnóstico · CAD · Insulina",
+      "estilo": "Conceito + tabela mental",
+      "priorities": [
+        { "tema": "Classificação / anticorpos", "score": 92 },
+        { "tema": "Diagnóstico", "score": 90 },
+        { "tema": "CAD", "score": 88 },
+        { "tema": "Insulina", "score": 80 },
+        { "tema": "Pré-diabetes", "score": 65 },
+        { "tema": "Complicações", "score": 55 }
+      ],
+      "deckOrder": [
+        "dm-classificacao",
+        "dm-diagnostico",
+        "dm-cad",
+        "dm-tratamento-dm1",
+        "dm-dm2",
+        "dm-hipoglicemia-ehh",
+        "dm-complicacoes"
+      ],
+      "checklist": ["dm1", "dx", "cad", "insulina", "dm2"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Etiologia", "texto": "DM1A, LADA, MODY, DM2." },
+        { "titulo": "Sessão 2 · Critérios", "texto": "Confirmação e pré-DM." },
+        { "titulo": "Sessão 3 · CAD", "texto": "Números de tratamento." }
+      ],
+      "lacuna": "Fisiologia GLUT1/2 detalhada: só o essencial (neurônio independente de insulina)."
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Conceito sólido.",
+      "verdict": "Na UFRJ, cobram critérios limpos, clínica DM1 e passos da CAD.",
+      "foco": "Diagnóstico · DM1 · CAD · Dawn/Somogyi",
+      "estilo": "Conceito sólido",
+      "priorities": [
+        { "tema": "Diagnóstico", "score": 95 },
+        { "tema": "DM1 clínica", "score": 90 },
+        { "tema": "CAD", "score": 88 },
+        { "tema": "Dawn × Somogyi", "score": 80 },
+        { "tema": "Metformina/DM2", "score": 65 },
+        { "tema": "Complicações", "score": 50 }
+      ],
+      "deckOrder": [
+        "dm-diagnostico",
+        "dm-classificacao",
+        "dm-cad",
+        "dm-tratamento-dm1",
+        "dm-dm2",
+        "dm-hipoglicemia-ehh",
+        "dm-complicacoes"
+      ],
+      "checklist": ["dx", "dm1", "cad", "dawn", "dm2"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Critérios", "texto": "Decore os 4." },
+        { "titulo": "Sessão 2 · Criança com polis", "texto": "DM1 e abertura com CAD." },
+        { "titulo": "Sessão 3 · Ajustes", "texto": "Dawn vs Somogyi." }
+      ],
+      "lacuna": "Estratificação de risco cardiovascular adulta completa: secundário."
+    }
+  ],
+  "checklistItems": {
+    "cad": {
+      "tema": "CAD",
+      "yield": "Máximo",
+      "pegar": "Volume primeiro · K<3,3 sem insulina · 0,1 U/kg/h · queda ≤100/h · SG quando ~200–250 · resolução pH>7,3 HCO₃>18 glic<200 · edema cerebral: manitol + lentificar"
+    },
+    "dx": {
+      "tema": "Diagnóstico",
+      "yield": "Máximo",
+      "pegar": "HbA1c ≥6,5 · jejum ≥126 · TOTG 2h ≥200 · aleatória ≥200 + sintomas · Pré: 100–125 / 140–199 / 5,7–6,4"
+    },
+    "dm1": {
+      "tema": "DM1 clínica",
+      "yield": "Alto",
+      "pegar": "Polis + emagrecimento · CAD · Anticorpos (GAD/ICA/IA-2) · Insulina obrigatória · Rastrear celíaca e tireoide"
+    },
+    "insulina": {
+      "tema": "Insulina",
+      "yield": "Alto",
+      "pegar": "Basal-bolus · 0,5–1 U/kg/dia · Regra 500 e 1500 · Ultrarrápida nas refeições · Bomba = ultrarrápida contínua"
+    },
+    "dawn": {
+      "tema": "Dawn × Somogyi",
+      "yield": "Alto",
+      "pegar": "Glicemia 3h: hipo = Somogyi (↓ NPH) · normal/alta = dawn (atrasar NPH para dormir)"
+    },
+    "dm2": {
+      "tema": "DM2 / metformina",
+      "yield": "Médio-alto",
+      "pegar": "Obesidade + acantose · Metformina 1ª linha · Pré-DM: MEV > droga · Metformina se muito alto risco"
+    }
+  },
+  "numeros": [
+    "DM: HbA1c ≥6,5% · jejum ≥126 · TOTG 2h ≥200 · aleatória ≥200 + sintomas",
+    "Pré-DM: jejum 100–125 · TOTG 140–199 · HbA1c 5,7–6,4%",
+    "Meta intensiva clássica: HbA1c <7%",
+    "Insulina inicial DM1: 0,3–0,5 U/kg/dia · manutenção ~0,5–1,0",
+    "I/CHO = 500/TDD · FS = 1500/TDD",
+    "CAD insulina: ataque 0,1–0,15 U/kg · manutenção 0,1 U/kg/h",
+    "Queda glicemia CAD: ≤100 mg/dl/h · alvo 150–200 até resolver",
+    "Resolução CAD: pH >7,3 · HCO₃ >18 · glicemia <200",
+    "K <3,3: sem insulina · repor 40 mEq",
+    "Deficit água CAD: ~100 ml/kg",
+    "MEV pré-DM: −7% peso · 150 min exercício/semana"
+  ],
+  "pegadinhas": [
+    "Sem sintomas + critério alterado: CONFIRMAR em 2ª amostra",
+    "Jejum alterado → faça TOTG antes de fechar só pré-DM",
+    "CAD: volume ANTES da insulina",
+    "K <3,3: NÃO começar insulina",
+    "Cetonúria pode piorar no tratamento (não guiar só por ela)",
+    "Hiperglicemia matinal: meça às 3h (Somogyi vs dawn)",
+    "Neurônio NÃO depende de insulina (GLUT constitutivo)",
+    "Bicarbonato NÃO é rotina na CAD",
+    "Overlap: IV continua 1–2h após 1ª SC",
+    "Acantose = resistência à insulina até prova em contrário"
+  ],
+  "baixoRoi": [
+    "Todos os subtipos MODY e genes",
+    "Lista completa de GLP-1/SGLT2/iDPP4 com doses",
+    "Estágios detalhados de retinopatia/nefropatia",
+    "Tabelas de estratificação lipídica adulta completas",
+    "Fisiologia pós-prandial exaustiva"
+  ]
+}
