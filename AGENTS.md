@@ -26,7 +26,7 @@ Você é o agente deste repositório: **MedHub Aprova**, app de revisão program
 - Idioma da UI e dos textos: **português (Brasil)**.
 - Prefixo global: `aprova` / `Aprova` (ex.: `aprovaShowPanel`, `AprovaFlashcards`).
 - Progresso no `localStorage`; sem backend neste estágio.
-- Preserve o visual existente (CSS variables, tipografia, tom editorial). Não troque por tema genérico purple/Inter.
+- Preserve o visual clínico-tech: Space Grotesk + Manrope, teal `--accent`, navy `--ink`, grade sutil. Evite purple/Inter/cream-terracotta.
 - Mantenha o app independente e leve; evite frameworks a menos que o usuário peça.
 
 ## Prioridades de produto
