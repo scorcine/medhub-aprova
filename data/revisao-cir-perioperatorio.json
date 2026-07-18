@@ -126,6 +126,103 @@
     },
     {
       "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · perioperatório.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~26% somado",
+      "blurb": "Segundo bloco do Enare.",
+      "verdict": "ASA, cefazolina no tempo certo, Lichtenstein e toxicidade de AL.",
+      "foco": "ASA · ATB · Hérnia · Anestesia",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Pré + anestesia",
+          "pct": 50
+        },
+        {
+          "tema": "Hérnias + pós-op",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Segundo maior bloco no Enare (depois do abdome).",
+      "verdict": "Pré-op, anestesia e hérnias somam ~26% no Enare — revise junto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Pré-op · Anestesia · Hérnia inguinal",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Pré-operatório",
+          "pct": 28
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
         "isc",
         "hesselbach",
         "asa",
@@ -137,7 +234,7 @@
       "sourceType": "levantamento",
       "source": "USP-SP · perioperatório.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "Pós-op ~9% USP",
       "blurb": "USP cobra complicações pós-op.",
       "verdict": "ISC, deiscência, TVP/TEP e hérnias com anatomia.",
@@ -234,23 +331,452 @@
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · perioperatório.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso · ~26% somado",
-      "blurb": "Segundo bloco do Enare.",
-      "verdict": "ASA, cefazolina no tempo certo, Lichtenstein e toxicidade de AL.",
-      "foco": "ASA · ATB · Hérnia · Anestesia",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Segundo maior bloco no Enare (depois do abdome).",
+      "verdict": "Pré-op, anestesia e hérnias somam ~26% no Enare — revise junto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Pré-op · Anestesia · Hérnia inguinal",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Pré + anestesia",
-          "pct": 50
+          "tema": "Pré-operatório",
+          "pct": 28
         },
         {
-          "tema": "Hérnias + pós-op",
-          "pct": 50
+          "tema": "Anestesia",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Segundo maior bloco no Enare (depois do abdome).",
+      "verdict": "Pré-op, anestesia e hérnias somam ~26% no Enare — revise junto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Pré-op · Anestesia · Hérnia inguinal",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Pré-operatório",
+          "pct": 28
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "isc",
+        "hesselbach",
+        "asa",
+        "mh",
+        "atb60"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra complicações pós-op.",
+      "verdict": "ISC, deiscência, TVP/TEP e hérnias com anatomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "ISC · Deiscência · Hérnia · Anestesia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 30
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 24
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 22
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-isc",
+        "cir3-posop-febre",
+        "cir3-posop-anastomose",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-anestesia",
+        "crr-anestesia-avancada",
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "crr-infeccao-cirurgica",
+        "cir3-suturas-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "isc",
+        "hesselbach",
+        "asa",
+        "mh",
+        "atb60"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra complicações pós-op.",
+      "verdict": "ISC, deiscência, TVP/TEP e hérnias com anatomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "ISC · Deiscência · Hérnia · Anestesia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 30
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 24
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 22
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-isc",
+        "cir3-posop-febre",
+        "cir3-posop-anastomose",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-anestesia",
+        "crr-anestesia-avancada",
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "crr-infeccao-cirurgica",
+        "cir3-suturas-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "isc",
+        "hesselbach",
+        "asa",
+        "mh",
+        "atb60"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra complicações pós-op.",
+      "verdict": "ISC, deiscência, TVP/TEP e hérnias com anatomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "ISC · Deiscência · Hérnia · Anestesia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 30
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 24
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 22
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-isc",
+        "cir3-posop-febre",
+        "cir3-posop-anastomose",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-anestesia",
+        "crr-anestesia-avancada",
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "crr-infeccao-cirurgica",
+        "cir3-suturas-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "isc",
+        "hesselbach",
+        "asa",
+        "mh",
+        "atb60"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra complicações pós-op.",
+      "verdict": "ISC, deiscência, TVP/TEP e hérnias com anatomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "ISC · Deiscência · Hérnia · Anestesia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 30
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 24
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 22
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-isc",
+        "cir3-posop-febre",
+        "cir3-posop-anastomose",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-anestesia",
+        "crr-anestesia-avancada",
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "crr-infeccao-cirurgica",
+        "cir3-suturas-hemostasia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mh",
+        "asa",
+        "hesselbach",
+        "atb60",
+        "isc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Unifesp pesa anestesia e pré-op.",
+      "verdict": "Anestesia + ASA/IRCR + hérnias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Anestesia · Pré-op · Hérnias",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Anestesia",
+          "pct": 32
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias / pós-op",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Segundo maior bloco no Enare (depois do abdome).",
+      "verdict": "Pré-op, anestesia e hérnias somam ~26% no Enare — revise junto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Pré-op · Anestesia · Hérnia inguinal",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Pré-operatório",
+          "pct": 28
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Pré/pós-op · Anestesia · Hérnias (~20%) (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Segundo maior bloco no Enare (depois do abdome).",
+      "verdict": "Pré-op, anestesia e hérnias somam ~26% no Enare — revise junto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Pré-op · Anestesia · Hérnia inguinal",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Pré-operatório",
+          "pct": 28
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 24
         }
       ],
       "deckOrder": [

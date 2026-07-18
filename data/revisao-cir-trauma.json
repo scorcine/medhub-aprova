@@ -136,6 +136,113 @@
     },
     {
       "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "damage"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · Trauma.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~6%",
+      "blurb": "Conduta de trauma.",
+      "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular.",
+      "foco": "PNTX · FAST · ABCDE",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Tórax / ATLS",
+          "pct": 40
+        },
+        {
+          "tema": "Abdome / TCE",
+          "pct": 35
+        },
+        {
+          "tema": "Demais",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Menos que abdome no Enare, mas clássicos caem.",
+      "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "PNTX · FAST · Choque · TCE",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 28
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 22
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
         "fast",
         "glasgow",
         "beckponamento",
@@ -147,7 +254,7 @@
       "sourceType": "levantamento",
       "source": "USP-SP · Trauma.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "#1 USP · ~18%",
       "blurb": "USP é trauma-pesada com muita imagem.",
       "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control.",
@@ -250,31 +357,484 @@
         "pntx",
         "fast",
         "glasgow",
-        "damage"
+        "trm"
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · Trauma.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso · ~6%",
-      "blurb": "Conduta de trauma.",
-      "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular.",
-      "foco": "PNTX · FAST · ABCDE",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Menos que abdome no Enare, mas clássicos caem.",
+      "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "PNTX · FAST · Choque · TCE",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Tórax / ATLS",
-          "pct": 40
+          "tema": "Tórax / PNTX",
+          "pct": 28
         },
         {
-          "tema": "Abdome / TCE",
-          "pct": 35
+          "tema": "ATLS / choque",
+          "pct": 26
         },
         {
-          "tema": "Demais",
-          "pct": 25
+          "tema": "Abdome / FAST",
+          "pct": 22
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Menos que abdome no Enare, mas clássicos caem.",
+      "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "PNTX · FAST · Choque · TCE",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 28
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 22
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP é trauma-pesada com muita imagem.",
+      "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "TC · FAST · TCE · Tamponamento · DC",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 30
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 20
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 28
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP é trauma-pesada com muita imagem.",
+      "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "TC · FAST · TCE · Tamponamento · DC",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 30
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 20
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 28
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP é trauma-pesada com muita imagem.",
+      "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "TC · FAST · TCE · Tamponamento · DC",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 30
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 20
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 28
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP é trauma-pesada com muita imagem.",
+      "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "TC · FAST · TCE · Tamponamento · DC",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 30
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 20
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 28
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Segundo lugar na Unifesp (atrás de vascular).",
+      "verdict": "ATLS sólido + tórax + abdome. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "ATLS · Tórax · Abdome · TCE",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Tórax",
+          "pct": 24
+        },
+        {
+          "tema": "Abdome",
+          "pct": 24
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 26
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Menos que abdome no Enare, mas clássicos caem.",
+      "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "PNTX · FAST · Choque · TCE",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 28
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 22
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Trauma · ATLS (~14%) (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Menos que abdome no Enare, mas clássicos caem.",
+      "verdict": "PNTX hipertensivo, FAST no instável e classes de choque. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "PNTX · FAST · Choque · TCE",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 28
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 22
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 24
         }
       ],
       "deckOrder": [

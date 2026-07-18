@@ -109,9 +109,84 @@
       "sessoes": [],
       "lacuna": "",
       "sourceType": "levantamento",
+      "source": "Enare · vascular.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "blurb": "Conduta vascular.",
+      "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça.",
+      "foco": "AAA · 6 P · Claudicação",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Arterial",
+          "pct": 70
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Cai menos no Enare, mas clássicos importam.",
+      "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · 6 P · DAP",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 50
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
       "source": "USP-SP · vascular.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "~5% USP",
       "blurb": "USP cobra indicação e imagem.",
       "verdict": "Diâmetro do AAA, Rutherford e embolectomia.",
@@ -190,23 +265,348 @@
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · vascular.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso",
-      "blurb": "Conduta vascular.",
-      "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça.",
-      "foco": "AAA · 6 P · Claudicação",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Cai menos no Enare, mas clássicos importam.",
+      "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · 6 P · DAP",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Arterial",
-          "pct": 70
+          "tema": "AAA / oclusão",
+          "pct": 50
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Cai menos no Enare, mas clássicos importam.",
+      "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · 6 P · DAP",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 50
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra indicação e imagem.",
+      "verdict": "Diâmetro do AAA, Rutherford e embolectomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · Rutherford · Embolectomia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
         },
         {
           "tema": "Venoso",
           "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra indicação e imagem.",
+      "verdict": "Diâmetro do AAA, Rutherford e embolectomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · Rutherford · Embolectomia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra indicação e imagem.",
+      "verdict": "Diâmetro do AAA, Rutherford e embolectomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · Rutherford · Embolectomia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra indicação e imagem.",
+      "verdict": "Diâmetro do AAA, Rutherford e embolectomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · Rutherford · Embolectomia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Banca mais vascular-pesada.",
+      "verdict": "Priorize os 5 decks — ROI máximo na Unifesp. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · DAP · Oclusão · Poplítea · IVC",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "Poplítea / IVC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Cai menos no Enare, mas clássicos importam.",
+      "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · 6 P · DAP",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 50
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Cirurgia vascular (~8–16%) (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Cai menos no Enare, mas clássicos importam.",
+      "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AAA · 6 P · DAP",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 50
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 50
         }
       ],
       "deckOrder": [

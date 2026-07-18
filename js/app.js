@@ -179,7 +179,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Cirurgia",
       shortLabel: "Cirurgia",
       overviewCacheKey: "cirurgia",
-      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718ay",
+      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718az",
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)

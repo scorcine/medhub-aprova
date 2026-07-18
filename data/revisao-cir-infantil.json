@@ -97,6 +97,81 @@
     {
       "checklist": [
         "invaginacao",
+        "piloro",
+        "ladd",
+        "ae",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · infantil.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~8%",
+      "blurb": "Conduta infantil.",
+      "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo.",
+      "foco": "Enema · Piloro · Ladd",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências",
+          "pct": 45
+        },
+        {
+          "tema": "Malformações",
+          "pct": 55
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Clássicos de conduta pediátrica.",
+      "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Invaginação · Piloro · AE · Ladd",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 40
+        },
+        {
+          "tema": "Malformações",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
         "hirschsprung",
         "ae",
         "hdc",
@@ -107,7 +182,7 @@
       "sourceType": "levantamento",
       "source": "USP-SP · infantil.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "~7% USP",
       "blurb": "USP gosta de imagem e diagnóstico.",
       "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung.",
@@ -176,29 +251,354 @@
       "checklist": [
         "invaginacao",
         "piloro",
-        "ladd",
         "ae",
+        "ladd",
         "hirschsprung"
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · infantil.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso · ~8%",
-      "blurb": "Conduta infantil.",
-      "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo.",
-      "foco": "Enema · Piloro · Ladd",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Clássicos de conduta pediátrica.",
+      "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Invaginação · Piloro · AE · Ladd",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Urgências",
-          "pct": 45
+          "tema": "Urgências ped",
+          "pct": 40
         },
         {
           "tema": "Malformações",
-          "pct": 55
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Clássicos de conduta pediátrica.",
+      "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Invaginação · Piloro · AE · Ladd",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 40
+        },
+        {
+          "tema": "Malformações",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP gosta de imagem e diagnóstico.",
+      "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Imagem · Hirschsprung · Vias",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 30
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP gosta de imagem e diagnóstico.",
+      "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Imagem · Hirschsprung · Vias",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 30
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP gosta de imagem e diagnóstico.",
+      "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Imagem · Hirschsprung · Vias",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 30
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP gosta de imagem e diagnóstico.",
+      "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Imagem · Hirschsprung · Vias",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 30
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "piloro",
+        "invaginacao",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Terceiro tema na Unifesp.",
+      "verdict": "Bloco forte — revise os três decks. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Digestivo · Urgências · Parede",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Digestivo",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Clássicos de conduta pediátrica.",
+      "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Invaginação · Piloro · AE · Ladd",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 40
+        },
+        {
+          "tema": "Malformações",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Cirurgia infantil (~9%) (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Clássicos de conduta pediátrica.",
+      "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Invaginação · Piloro · AE · Ladd",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 40
+        },
+        {
+          "tema": "Malformações",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
         }
       ],
       "deckOrder": [

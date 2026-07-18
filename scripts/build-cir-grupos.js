@@ -957,3 +957,4 @@ writeModule(
 );
 
 console.log("done · 7 grandes grupos por cobrança");
+require("./expand-cir-bancas.js");

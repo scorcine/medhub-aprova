@@ -132,6 +132,109 @@
     },
     {
       "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "sentinela"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · especialidades.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "blurb": "Condutas da cauda.",
+      "verdict": "Torção, Parkland, fascite e indicação de VATS no pneumotórax.",
+      "foco": "Torção · Parkland · Fascite · VATS",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências especialidades",
+          "pct": 40
+        },
+        {
+          "tema": "Plástica / queimadura",
+          "pct": 30
+        },
+        {
+          "tema": "Onco / misc",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "recorrente"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Torção, Parkland e fascite como conduta.",
+      "verdict": "Explorar torção; Parkland; desbridar fascite; operar pneumotórax com critério. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Torção · Parkland · Fascite · Pneumotórax",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Uro / tórax",
+          "pct": 30
+        },
+        {
+          "tema": "Queimaduras / plástica",
+          "pct": 35
+        },
+        {
+          "tema": "Mama / tireoide / misc",
+          "pct": 35
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
         "enxerto",
         "melanoma",
         "testiculo",
@@ -143,7 +246,7 @@
       "sourceType": "levantamento",
       "source": "USP · especialidades.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "Plástica ~6%",
       "blurb": "USP cobra plástica e onco uro.",
       "verdict": "Enxerto vs retalho, Breslow, tumor testicular e mediastino.",
@@ -246,31 +349,468 @@
         "parkland",
         "fascite",
         "pntx-esp",
-        "sentinela"
+        "recorrente"
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · especialidades.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso",
-      "blurb": "Condutas da cauda.",
-      "verdict": "Torção, Parkland, fascite e indicação de VATS no pneumotórax.",
-      "foco": "Torção · Parkland · Fascite · VATS",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Torção, Parkland e fascite como conduta.",
+      "verdict": "Explorar torção; Parkland; desbridar fascite; operar pneumotórax com critério. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Torção · Parkland · Fascite · Pneumotórax",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Urgências especialidades",
-          "pct": 40
-        },
-        {
-          "tema": "Plástica / queimadura",
+          "tema": "Uro / tórax",
           "pct": 30
         },
         {
-          "tema": "Onco / misc",
+          "tema": "Queimaduras / plástica",
+          "pct": 35
+        },
+        {
+          "tema": "Mama / tireoide / misc",
+          "pct": 35
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "recorrente"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Torção, Parkland e fascite como conduta.",
+      "verdict": "Explorar torção; Parkland; desbridar fascite; operar pneumotórax com critério. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Torção · Parkland · Fascite · Pneumotórax",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Uro / tórax",
           "pct": 30
+        },
+        {
+          "tema": "Queimaduras / plástica",
+          "pct": 35
+        },
+        {
+          "tema": "Mama / tireoide / misc",
+          "pct": 35
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "enxerto",
+        "melanoma",
+        "testiculo",
+        "mediastino",
+        "parkland"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra plástica e onco uro.",
+      "verdict": "Enxerto vs retalho, Breslow, tumor testicular e mediastino. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Plástica · Melanoma · Uro onco · Mediastino",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Plástica / melanoma",
+          "pct": 28
+        },
+        {
+          "tema": "Urologia",
+          "pct": 22
+        },
+        {
+          "tema": "Tórax / mediastino",
+          "pct": 20
+        },
+        {
+          "tema": "Demais",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "enxerto",
+        "melanoma",
+        "testiculo",
+        "mediastino",
+        "parkland"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra plástica e onco uro.",
+      "verdict": "Enxerto vs retalho, Breslow, tumor testicular e mediastino. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Plástica · Melanoma · Uro onco · Mediastino",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Plástica / melanoma",
+          "pct": 28
+        },
+        {
+          "tema": "Urologia",
+          "pct": 22
+        },
+        {
+          "tema": "Tórax / mediastino",
+          "pct": 20
+        },
+        {
+          "tema": "Demais",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "enxerto",
+        "melanoma",
+        "testiculo",
+        "mediastino",
+        "parkland"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra plástica e onco uro.",
+      "verdict": "Enxerto vs retalho, Breslow, tumor testicular e mediastino. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Plástica · Melanoma · Uro onco · Mediastino",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Plástica / melanoma",
+          "pct": 28
+        },
+        {
+          "tema": "Urologia",
+          "pct": 22
+        },
+        {
+          "tema": "Tórax / mediastino",
+          "pct": 20
+        },
+        {
+          "tema": "Demais",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "enxerto",
+        "melanoma",
+        "testiculo",
+        "mediastino",
+        "parkland"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP cobra plástica e onco uro.",
+      "verdict": "Enxerto vs retalho, Breslow, tumor testicular e mediastino. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Plástica · Melanoma · Uro onco · Mediastino",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Plástica / melanoma",
+          "pct": 28
+        },
+        {
+          "tema": "Urologia",
+          "pct": 22
+        },
+        {
+          "tema": "Tórax / mediastino",
+          "pct": 20
+        },
+        {
+          "tema": "Demais",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "parkland",
+        "recorrente",
+        "torcao",
+        "fascite",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Unifesp gosta de queimadura e tireoide.",
+      "verdict": "Parkland, elétrica, nervo recorrente e fasciotomia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Parkland · Tireoide · Fascite · Uro",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Queimaduras",
+          "pct": 24
+        },
+        {
+          "tema": "Uro / tórax",
+          "pct": 28
+        },
+        {
+          "tema": "Tireoide / plástica",
+          "pct": 28
+        },
+        {
+          "tema": "Demais",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "recorrente"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Torção, Parkland e fascite como conduta.",
+      "verdict": "Explorar torção; Parkland; desbridar fascite; operar pneumotórax com critério. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Torção · Parkland · Fascite · Pneumotórax",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Uro / tórax",
+          "pct": 30
+        },
+        {
+          "tema": "Queimaduras / plástica",
+          "pct": 35
+        },
+        {
+          "tema": "Mama / tireoide / misc",
+          "pct": 35
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "recorrente"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Especialidades R1 · uro · tórax · plástica (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Torção, Parkland e fascite como conduta.",
+      "verdict": "Explorar torção; Parkland; desbridar fascite; operar pneumotórax com critério. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Torção · Parkland · Fascite · Pneumotórax",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Uro / tórax",
+          "pct": 30
+        },
+        {
+          "tema": "Queimaduras / plástica",
+          "pct": 35
+        },
+        {
+          "tema": "Mama / tireoide / misc",
+          "pct": 35
         }
       ],
       "deckOrder": [

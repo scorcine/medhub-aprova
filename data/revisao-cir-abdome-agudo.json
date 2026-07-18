@@ -118,6 +118,107 @@
     },
     {
       "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · abdome agudo.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~24%",
+      "blurb": "Mesmo padrão Enamed.",
+      "verdict": "Conduta objetiva: timing de cirurgia e sinais de alarme.",
+      "foco": "Conduta · Timing · Alarme",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 30
+        },
+        {
+          "tema": "Colecistite",
+          "pct": 24
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 18
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Quase 1 em 4 questões de Cirurgia no Enare.",
+      "verdict": "Domine conduta: laparoscopia/NOM, TG18, diverticulite sem ATB de rotina, quando operar obstrução. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 32
+        },
+        {
+          "tema": "Colecistite / vias",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 18
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular",
+          "pct": 10
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
         "asbo",
         "apendicite",
         "tg18",
@@ -129,7 +230,7 @@
       "sourceType": "levantamento",
       "source": "USP-SP · abdome agudo.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "~11% USP",
       "blurb": "USP detalha algoritmo e imagem.",
       "verdict": "NOM, TC na obstrução e diferencial isquemia × AAA.",
@@ -226,35 +327,444 @@
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · abdome agudo.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso · ~24%",
-      "blurb": "Mesmo padrão Enamed.",
-      "verdict": "Conduta objetiva: timing de cirurgia e sinais de alarme.",
-      "foco": "Conduta · Timing · Alarme",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Quase 1 em 4 questões de Cirurgia no Enare.",
+      "verdict": "Domine conduta: laparoscopia/NOM, TG18, diverticulite sem ATB de rotina, quando operar obstrução. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
           "tema": "Apendicite",
-          "pct": 30
+          "pct": 32
         },
         {
-          "tema": "Colecistite",
+          "tema": "Colecistite / vias",
           "pct": 24
         },
         {
-          "tema": "Obstrução / hérnia",
+          "tema": "Diverticulite",
           "pct": 18
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular",
+          "pct": 10
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Quase 1 em 4 questões de Cirurgia no Enare.",
+      "verdict": "Domine conduta: laparoscopia/NOM, TG18, diverticulite sem ATB de rotina, quando operar obstrução. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 32
+        },
+        {
+          "tema": "Colecistite / vias",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 18
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular",
+          "pct": 10
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
+        "asbo",
+        "apendicite",
+        "tg18",
+        "isquemia",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP detalha algoritmo e imagem.",
+      "verdict": "NOM, TC na obstrução e diferencial isquemia × AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "NOM · TC · Isquemia · TG18",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 24
+        },
+        {
+          "tema": "Apendicite / NOM",
+          "pct": 22
+        },
+        {
+          "tema": "Vias / TG18",
+          "pct": 20
         },
         {
           "tema": "Diverticulite",
           "pct": 16
         },
         {
+          "tema": "Vascular / hérnia",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-obstrucao",
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-diverticulite",
+        "crr-hernia-obstrucao"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "asbo",
+        "apendicite",
+        "tg18",
+        "isquemia",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP detalha algoritmo e imagem.",
+      "verdict": "NOM, TC na obstrução e diferencial isquemia × AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "NOM · TC · Isquemia · TG18",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 24
+        },
+        {
+          "tema": "Apendicite / NOM",
+          "pct": 22
+        },
+        {
+          "tema": "Vias / TG18",
+          "pct": 20
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular / hérnia",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-obstrucao",
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-diverticulite",
+        "crr-hernia-obstrucao"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "asbo",
+        "apendicite",
+        "tg18",
+        "isquemia",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP detalha algoritmo e imagem.",
+      "verdict": "NOM, TC na obstrução e diferencial isquemia × AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "NOM · TC · Isquemia · TG18",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 24
+        },
+        {
+          "tema": "Apendicite / NOM",
+          "pct": 22
+        },
+        {
+          "tema": "Vias / TG18",
+          "pct": 20
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular / hérnia",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-obstrucao",
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-diverticulite",
+        "crr-hernia-obstrucao"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "asbo",
+        "apendicite",
+        "tg18",
+        "isquemia",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP detalha algoritmo e imagem.",
+      "verdict": "NOM, TC na obstrução e diferencial isquemia × AAA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "NOM · TC · Isquemia · TG18",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 24
+        },
+        {
+          "tema": "Apendicite / NOM",
+          "pct": 22
+        },
+        {
+          "tema": "Vias / TG18",
+          "pct": 20
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular / hérnia",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-obstrucao",
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-diverticulite",
+        "crr-hernia-obstrucao"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "isquemia",
+        "tg18",
+        "apendicite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Menos dominante que vascular, mas cai.",
+      "verdict": "Foque isquemia mesentérica e TG18. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Isquemia · TG18 · Apendicite",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Abdome vascular",
+          "pct": 26
+        },
+        {
+          "tema": "Colecistite / TG18",
+          "pct": 22
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 20
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 18
+        },
+        {
+          "tema": "Diverticulite / hérnia",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "cg-abdome-vascular",
+        "cg-colecistite",
+        "cg-apendicite",
+        "cg-obstrucao",
+        "crr-hernia-obstrucao",
+        "cg-diverticulite"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Quase 1 em 4 questões de Cirurgia no Enare.",
+      "verdict": "Domine conduta: laparoscopia/NOM, TG18, diverticulite sem ATB de rotina, quando operar obstrução. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 32
+        },
+        {
+          "tema": "Colecistite / vias",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 18
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 16
+        },
+        {
           "tema": "Vascular",
-          "pct": 12
+          "pct": 10
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
+      ]
+    },
+    {
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "estrangulada"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Abdome agudo · urgências (~12–24%) (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Quase 1 em 4 questões de Cirurgia no Enare.",
+      "verdict": "Domine conduta: laparoscopia/NOM, TG18, diverticulite sem ATB de rotina, quando operar obstrução. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 32
+        },
+        {
+          "tema": "Colecistite / vias",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 18
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular",
+          "pct": 10
         }
       ],
       "deckOrder": [

@@ -124,37 +124,37 @@ const APROVA_REVISAO_MODULES = {
   },
   "cir-abdome-agudo": {
     label: "Abdome agudo · urgências (~12–24%)",
-    file: "data/revisao-cir-abdome-agudo.json?v=20260718ax",
+    file: "data/revisao-cir-abdome-agudo.json?v=20260718az",
     specialty: "cirurgia"
   },
   "cir-trauma": {
     label: "Trauma · ATLS (~14%)",
-    file: "data/revisao-cir-trauma.json?v=20260718ax",
+    file: "data/revisao-cir-trauma.json?v=20260718az",
     specialty: "cirurgia"
   },
   "cir-perioperatorio": {
     label: "Pré/pós-op · Anestesia · Hérnias (~20%)",
-    file: "data/revisao-cir-perioperatorio.json?v=20260718ax",
+    file: "data/revisao-cir-perioperatorio.json?v=20260718az",
     specialty: "cirurgia"
   },
   "cir-infantil": {
     label: "Cirurgia infantil (~9%)",
-    file: "data/revisao-cir-infantil.json?v=20260718ax",
+    file: "data/revisao-cir-infantil.json?v=20260718az",
     specialty: "cirurgia"
   },
   "cir-vascular": {
     label: "Cirurgia vascular (~8–16%)",
-    file: "data/revisao-cir-vascular.json?v=20260718ax",
+    file: "data/revisao-cir-vascular.json?v=20260718az",
     specialty: "cirurgia"
   },
   "cir-ad": {
     label: "Aparelho digestivo · eletivo / onco / procto",
-    file: "data/revisao-cir-ad.json?v=20260718ax",
+    file: "data/revisao-cir-ad.json?v=20260718az",
     specialty: "cirurgia"
   },
   "cir-especialidades": {
     label: "Especialidades R1 · uro · tórax · plástica",
-    file: "data/revisao-cir-especialidades.json?v=20260718ax",
+    file: "data/revisao-cir-especialidades.json?v=20260718az",
     specialty: "cirurgia"
   }
 };

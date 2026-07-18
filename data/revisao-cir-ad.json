@@ -140,6 +140,117 @@
     },
     {
       "checklist": [
+        "perfurada",
+        "stepup",
+        "nigro",
+        "tme",
+        "bariatrica"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · AD.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "blurb": "Conduta de AD eletivo.",
+      "verdict": "Perfuração, step-up, Nigro vs TME e bariátrica.",
+      "foco": "Perfuração · Step-up · Nigro · Bypass",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências AD eletivas",
+          "pct": 30
+        },
+        {
+          "tema": "Onco / procto",
+          "pct": 40
+        },
+        {
+          "tema": "Bariátrica / portal",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ]
+    },
+    {
+      "checklist": [
+        "perfurada",
+        "stepup",
+        "tme",
+        "nigro",
+        "bariatrica"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Úlcera, pancreatite, CA básico e bariátrica.",
+      "verdict": "Perfuração, step-up, TME/Nigro e critérios bariátricos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Úlcera · Pancreatite · Colorretal · Bariátrica",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Estômago / úlcera",
+          "pct": 22
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 18
+        },
+        {
+          "tema": "Colorretal / procto",
+          "pct": 24
+        },
+        {
+          "tema": "Bariátrica / vias",
+          "pct": 18
+        },
+        {
+          "tema": "Portal / esôfago",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ]
+    },
+    {
+      "checklist": [
         "milao",
         "whipple",
         "lynch",
@@ -151,7 +262,7 @@
       "sourceType": "levantamento",
       "source": "USP · AD.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "Vesícula ~6% USP",
       "blurb": "USP ama hepatobiliar e hereditário.",
       "verdict": "Child/Milão, Whipple, FAP/Lynch e acalasia.",
@@ -256,33 +367,518 @@
       "checklist": [
         "perfurada",
         "stepup",
-        "nigro",
         "tme",
+        "nigro",
         "bariatrica"
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Enare · AD.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso",
-      "blurb": "Conduta de AD eletivo.",
-      "verdict": "Perfuração, step-up, Nigro vs TME e bariátrica.",
-      "foco": "Perfuração · Step-up · Nigro · Bypass",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Úlcera, pancreatite, CA básico e bariátrica.",
+      "verdict": "Perfuração, step-up, TME/Nigro e critérios bariátricos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Úlcera · Pancreatite · Colorretal · Bariátrica",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Urgências AD eletivas",
+          "tema": "Estômago / úlcera",
+          "pct": 22
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 18
+        },
+        {
+          "tema": "Colorretal / procto",
+          "pct": 24
+        },
+        {
+          "tema": "Bariátrica / vias",
+          "pct": 18
+        },
+        {
+          "tema": "Portal / esôfago",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ]
+    },
+    {
+      "checklist": [
+        "perfurada",
+        "stepup",
+        "tme",
+        "nigro",
+        "bariatrica"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Úlcera, pancreatite, CA básico e bariátrica.",
+      "verdict": "Perfuração, step-up, TME/Nigro e critérios bariátricos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Úlcera · Pancreatite · Colorretal · Bariátrica",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Estômago / úlcera",
+          "pct": 22
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 18
+        },
+        {
+          "tema": "Colorretal / procto",
+          "pct": 24
+        },
+        {
+          "tema": "Bariátrica / vias",
+          "pct": 18
+        },
+        {
+          "tema": "Portal / esôfago",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ]
+    },
+    {
+      "checklist": [
+        "milao",
+        "whipple",
+        "lynch",
+        "acalasia",
+        "tme"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP ama hepatobiliar e hereditário.",
+      "verdict": "Child/Milão, Whipple, FAP/Lynch e acalasia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Milão · Whipple · Lynch · Acalasia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fígado / portal / vias",
           "pct": 30
         },
         {
-          "tema": "Onco / procto",
-          "pct": 40
+          "tema": "Pâncreas",
+          "pct": 20
         },
         {
-          "tema": "Bariátrica / portal",
+          "tema": "Colorretal",
+          "pct": 20
+        },
+        {
+          "tema": "Esôfago / estômago",
+          "pct": 18
+        },
+        {
+          "tema": "Procto / bariátrica",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "milao",
+        "whipple",
+        "lynch",
+        "acalasia",
+        "tme"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP ama hepatobiliar e hereditário.",
+      "verdict": "Child/Milão, Whipple, FAP/Lynch e acalasia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Milão · Whipple · Lynch · Acalasia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fígado / portal / vias",
           "pct": 30
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 20
+        },
+        {
+          "tema": "Colorretal",
+          "pct": 20
+        },
+        {
+          "tema": "Esôfago / estômago",
+          "pct": 18
+        },
+        {
+          "tema": "Procto / bariátrica",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "milao",
+        "whipple",
+        "lynch",
+        "acalasia",
+        "tme"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP ama hepatobiliar e hereditário.",
+      "verdict": "Child/Milão, Whipple, FAP/Lynch e acalasia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Milão · Whipple · Lynch · Acalasia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fígado / portal / vias",
+          "pct": 30
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 20
+        },
+        {
+          "tema": "Colorretal",
+          "pct": 20
+        },
+        {
+          "tema": "Esôfago / estômago",
+          "pct": 18
+        },
+        {
+          "tema": "Procto / bariátrica",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "milao",
+        "whipple",
+        "lynch",
+        "acalasia",
+        "tme"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "USP ama hepatobiliar e hereditário.",
+      "verdict": "Child/Milão, Whipple, FAP/Lynch e acalasia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Milão · Whipple · Lynch · Acalasia",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fígado / portal / vias",
+          "pct": 30
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 20
+        },
+        {
+          "tema": "Colorretal",
+          "pct": 20
+        },
+        {
+          "tema": "Esôfago / estômago",
+          "pct": 18
+        },
+        {
+          "tema": "Procto / bariátrica",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "milao",
+        "tme",
+        "whipple",
+        "nigro",
+        "bariatrica"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "AD de suporte a vascular/trauma.",
+      "verdict": "Portal, vias e CA gástrico/colorretal básico. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Portal · Colorretal · Estômago",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Portal / vias",
+          "pct": 28
+        },
+        {
+          "tema": "Colorretal / procto",
+          "pct": 28
+        },
+        {
+          "tema": "Estômago / pâncreas",
+          "pct": 28
+        },
+        {
+          "tema": "Bariátrica",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "perfurada",
+        "stepup",
+        "tme",
+        "nigro",
+        "bariatrica"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Úlcera, pancreatite, CA básico e bariátrica.",
+      "verdict": "Perfuração, step-up, TME/Nigro e critérios bariátricos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Úlcera · Pancreatite · Colorretal · Bariátrica",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Estômago / úlcera",
+          "pct": 22
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 18
+        },
+        {
+          "tema": "Colorretal / procto",
+          "pct": 24
+        },
+        {
+          "tema": "Bariátrica / vias",
+          "pct": 18
+        },
+        {
+          "tema": "Portal / esôfago",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cg-vesicula",
+        "crr-esofago",
+        "cg-estomago",
+        "crr-estomago-onco",
+        "cg-colon",
+        "crr-colorretal",
+        "cg-pancreas",
+        "crr-pancreas",
+        "cg-figado",
+        "crr-figado-portal",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-prolapso",
+        "crr-procto-avancado",
+        "cir1-bariatrica"
+      ]
+    },
+    {
+      "checklist": [
+        "perfurada",
+        "stepup",
+        "tme",
+        "nigro",
+        "bariatrica"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cirurgia R1 · Aparelho digestivo · eletivo / onco / procto (estimativa a partir do perfil enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Úlcera, pancreatite, CA básico e bariátrica.",
+      "verdict": "Perfuração, step-up, TME/Nigro e critérios bariátricos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Úlcera · Pancreatite · Colorretal · Bariátrica",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Estômago / úlcera",
+          "pct": 22
+        },
+        {
+          "tema": "Pâncreas",
+          "pct": 18
+        },
+        {
+          "tema": "Colorretal / procto",
+          "pct": 24
+        },
+        {
+          "tema": "Bariátrica / vias",
+          "pct": 18
+        },
+        {
+          "tema": "Portal / esôfago",
+          "pct": 18
         }
       ],
       "deckOrder": [
