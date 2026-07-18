@@ -164,25 +164,11 @@ img {
   box-shadow: 0 0 0 1px rgba(15, 159, 154, 0.2);
 }
 
-.mark-r1 {
-  display: inline-flex;
-  align-items: baseline;
-  color: var(--accent-deep);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
-}
-
-.brand-text .mark-r1 {
-  margin-left: 0.15em;
-  padding: 0.05em 0.32em;
-  border: 1px solid rgba(15, 159, 154, 0.4);
-  border-radius: 0.3em;
-  background: rgba(15, 159, 154, 0.1);
-  font-size: 0.86em;
-  line-height: 1.15;
-  vertical-align: middle;
+.brand-logo--full {
+  width: auto;
+  height: 3.4rem;
+  aspect-ratio: 1;
+  border-radius: 0.65rem;
 }
 
 .header-tools {
@@ -389,7 +375,7 @@ html[data-theme="dark"] .theme-icon-sun {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(160px, 280px) minmax(0, 1fr);
+  grid-template-columns: minmax(200px, 360px) minmax(0, 1fr);
   gap: clamp(1.25rem, 4vw, 2.75rem);
   align-items: center;
 }
@@ -402,11 +388,11 @@ html[data-theme="dark"] .theme-icon-sun {
 }
 
 .hero-logo {
-  width: min(100%, 280px);
+  width: min(100%, 360px);
   height: auto;
   aspect-ratio: 1;
   display: block;
-  border-radius: 1.1rem;
+  border-radius: 1.15rem;
   object-fit: cover;
   border: 1px solid var(--line-strong);
   box-shadow:
@@ -473,31 +459,19 @@ html[data-theme="dark"] .theme-icon-sun {
 .hero-copy {
   position: relative;
   z-index: 1;
-  max-width: 36rem;
+  max-width: 34rem;
   animation: rise 0.75s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.hero h1 {
-  margin: 0 0 0.9rem;
+.hero-lead {
+  margin: 0 0 1.5rem;
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 8vw, 4.75rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  font-weight: 700;
-}
-
-.hero h1 .mark-r1 {
-  margin-left: 0.18em;
-  padding: 0.06em 0.28em 0.08em;
-  border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
-  border-radius: 0.22em;
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  color: var(--accent-deep);
-  letter-spacing: 0.06em;
-  line-height: 1;
-  vertical-align: middle;
-  transform: translateY(-0.04em);
-  animation: mark-in 0.55s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 28rem;
+  font-weight: 650;
 }
 
 .hero p {
@@ -528,10 +502,6 @@ html[data-theme="dark"] .theme-icon-sun {
   to { transform: rotate(360deg); }
 }
 
-@keyframes mark-in {
-  from { opacity: 0; transform: translateY(-0.04em) scale(0.94); }
-  to { opacity: 1; transform: translateY(-0.04em) scale(1); }
-}
 
 .section {
   padding: 2rem 0 3rem;
@@ -828,8 +798,12 @@ body.app-body {
   }
 
   .hero-logo {
-    width: min(42vw, 160px);
-    border-radius: 0.85rem;
+    width: min(58vw, 220px);
+    border-radius: 0.9rem;
+  }
+
+  .brand-logo--full {
+    height: 2.85rem;
   }
 
   .hero-scan,
