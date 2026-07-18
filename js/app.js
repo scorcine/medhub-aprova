@@ -154,6 +154,7 @@ let aprovaObsOverviewStatsCache = null;
 let aprovaCirOverviewStatsCache = null;
 let aprovaReuOverviewStatsCache = null;
 let aprovaPsiOverviewStatsCache = null;
+let aprovaPnmOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
   return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
@@ -189,16 +190,35 @@ function aprovaRichSpecialtyMeta (specialty) {
     };
   }
   if (spec === "clinica") {
-    const psi = aprovaActiveCliArea === "psiquiatria";
+    const area = aprovaActiveCliArea || "reumatologia";
+    const cliMeta = {
+      reumatologia: {
+        shortLabel: "Reumatologia",
+        overviewCacheKey: "reumatologia",
+        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718bd",
+        countNoun: "Reumatologia"
+      },
+      psiquiatria: {
+        shortLabel: "Psiquiatria",
+        overviewCacheKey: "psiquiatria",
+        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718be",
+        countNoun: "Psiquiatria"
+      },
+      pneumologia: {
+        shortLabel: "Pneumologia",
+        overviewCacheKey: "pneumologia",
+        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718bf",
+        countNoun: "Pneumologia"
+      }
+    };
+    const a = cliMeta[area] || cliMeta.reumatologia;
     return {
       id: "clinica",
       label: "Clínica médica",
-      shortLabel: psi ? "Psiquiatria" : "Reumatologia",
-      overviewCacheKey: psi ? "psiquiatria" : "reumatologia",
-      overviewUrl: psi
-        ? "data/stats-psiquiatria-geral.json?v=20260718be"
-        : "data/stats-reumatologia-geral.json?v=20260718bd",
-      countNoun: psi ? "Psiquiatria" : "Reumatologia",
+      shortLabel: a.shortLabel,
+      overviewCacheKey: a.overviewCacheKey,
+      overviewUrl: a.overviewUrl,
+      countNoun: a.countNoun,
       openRoot: () => aprovaOpenClinica(),
       openModule: id => aprovaOpenClinicaModule(id)
     };
@@ -260,8 +280,8 @@ function aprovaRenderEspecialidades () {
   }
   if (cli) {
     cli.textContent = cliN
-      ? cliN + " flashcards · Reumatologia + Psiquiatria"
-      : "Reumatologia e Psiquiatria.";
+      ? cliN + " flashcards · Reuma · Psi · Pneumo"
+      : "Reumatologia, Psiquiatria e Pneumologia.";
   }
 }
 
@@ -325,6 +345,16 @@ function aprovaDeckKicker (deck) {
   if (id === "psi-alimentares") return "Alimentares";
   if (id === "psi-psico-basico" || id === "psi-personalidade") return "Psicopatologia";
   if (id.indexOf("psi-") === 0) return "Psiquiatria";
+  if (id.indexOf("pnm-intensiva-") === 0) return "Intensiva";
+  if (id === "pnm-tep") return "TEP";
+  if (id.indexOf("pnm-asma-") === 0) return "Asma";
+  if (id === "pnm-dpoc") return "DPOC";
+  if (id === "pnm-derrame") return "Derrame";
+  if (id === "pnm-cancer") return "Câncer de pulmão";
+  if (id === "pnm-basico") return "Espirometria · gasometria";
+  if (id === "pnm-intersticial") return "Intersticiais";
+  if (id === "pnm-tb" || id === "pnm-pneumotorax-misc") return "TB · misc";
+  if (id.indexOf("pnm-") === 0) return "Pneumologia";
   if (
     id === "cg-apendicite" ||
     id === "cg-colecistite" ||
@@ -480,8 +510,8 @@ async function aprovaLoadOverviewStats (specialty) {
     return aprovaCirOverviewStatsCache;
   }
   if (meta.id === "clinica") {
-    const psi = aprovaActiveCliArea === "psiquiatria";
-    if (psi) {
+    const area = aprovaActiveCliArea || "reumatologia";
+    if (area === "psiquiatria") {
       if (aprovaPsiOverviewStatsCache) return aprovaPsiOverviewStatsCache;
       try {
         const res = await fetch(meta.overviewUrl);
@@ -491,6 +521,17 @@ async function aprovaLoadOverviewStats (specialty) {
         aprovaPsiOverviewStatsCache = null;
       }
       return aprovaPsiOverviewStatsCache;
+    }
+    if (area === "pneumologia") {
+      if (aprovaPnmOverviewStatsCache) return aprovaPnmOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaPnmOverviewStatsCache = await res.json();
+      } catch {
+        aprovaPnmOverviewStatsCache = null;
+      }
+      return aprovaPnmOverviewStatsCache;
     }
     if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
     try {
@@ -699,7 +740,8 @@ async function aprovaRenderCliAreaCards () {
     ? AprovaRevisao.listCliAreas()
     : [
       { id: "reumatologia", label: "Reumatologia", blurb: "" },
-      { id: "psiquiatria", label: "Psiquiatria", blurb: "" }
+      { id: "psiquiatria", label: "Psiquiatria", blurb: "" },
+      { id: "pneumologia", label: "Pneumologia", blurb: "" }
     ];
 
   grid.innerHTML = "";
@@ -872,7 +914,16 @@ const APROVA_PED_MODULE_PREFIXES = {
   "psi-ansiedade": ["psi-ansiedade-toc"],
   "psi-organicos": ["psi-delirium", "psi-demencia"],
   "psi-alimentares": ["psi-alimentares"],
-  "psi-basico": ["psi-psico-basico", "psi-personalidade"]
+  "psi-basico": ["psi-psico-basico", "psi-personalidade"],
+  "pnm-intensiva": ["pnm-intensiva-"],
+  "pnm-tep": ["pnm-tep"],
+  "pnm-asma": ["pnm-asma-"],
+  "pnm-dpoc": ["pnm-dpoc"],
+  "pnm-derrame": ["pnm-derrame"],
+  "pnm-cancer": ["pnm-cancer"],
+  "pnm-basico": ["pnm-basico"],
+  "pnm-intersticial": ["pnm-intersticial"],
+  "pnm-tb": ["pnm-tb", "pnm-pneumotorax-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -1209,7 +1260,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     hint.textContent = isGo
       ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
       : isCli
-        ? "Primeiro escolha Reumatologia ou Psiquiatria; depois um grupo; depois os subtemas."
+        ? "Primeiro escolha Reumatologia, Psiquiatria ou Pneumologia; depois um grupo; depois os subtemas."
         : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
   }
   if (back) back.textContent = "← Voltar às especialidades";

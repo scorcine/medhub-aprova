@@ -1,0 +1,482 @@
+{
+  "title": "Pneumologia · o que mais cai (R1)",
+  "unitLabel": "% relativo no bloco",
+  "note": "Síntese Enare/USP/UNIFESP + apostilas Pneumo1–2. Intensiva/TEP dominam USP/UNIFESP; asma e câncer lideram o Enare.",
+  "gaps": {
+    "summary": "Pneumologia da apostila coberta em 9 grupos (Pneumo1 + TB/Pneumo2).",
+    "missingHighYield": [],
+    "covered": [
+      {
+        "tema": "Intensiva / VM / SDRA",
+        "grupo": "pnm-intensiva"
+      },
+      {
+        "tema": "TEP",
+        "grupo": "pnm-tep"
+      },
+      {
+        "tema": "Asma",
+        "grupo": "pnm-asma"
+      },
+      {
+        "tema": "DPOC",
+        "grupo": "pnm-dpoc"
+      },
+      {
+        "tema": "Derrame pleural",
+        "grupo": "pnm-derrame"
+      },
+      {
+        "tema": "Câncer de pulmão",
+        "grupo": "pnm-cancer"
+      },
+      {
+        "tema": "Espirometria / gasometria",
+        "grupo": "pnm-basico"
+      },
+      {
+        "tema": "Intersticiais / sarcoidose",
+        "grupo": "pnm-intersticial"
+      },
+      {
+        "tema": "TB / pneumotórax / misc",
+        "grupo": "pnm-tb"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese bancas",
+      "featured": false,
+      "sourceType": "sintese",
+      "source": "Levantamentos Enare + USP-SP + UNIFESP + apostilas Pneumo.",
+      "verdict": "Monte o núcleo em intensiva, TEP, asma, DPOC e Light; complete com câncer e TB (Brasil).",
+      "foco": "Intensiva · TEP · Asma · DPOC · Derrame",
+      "estilo": "Síntese R1",
+      "priorities": [
+        {
+          "tema": "Intensiva / VM / SDRA",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "TEP",
+          "pct": 14,
+          "n": 14
+        },
+        {
+          "tema": "Asma",
+          "pct": 14,
+          "n": 14
+        },
+        {
+          "tema": "DPOC",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 14,
+          "n": 14
+        },
+        {
+          "tema": "Câncer",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "TB / interstício / extras",
+          "pct": 12,
+          "n": 12
+        }
+      ]
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional",
+      "featured": true,
+      "sourceType": "levantamento",
+      "source": "Enare 2021–2024 · Pneumologia (Estratégia).",
+      "verdict": "Asma ~33% e câncer ~33%; DPOC e derrame completam.",
+      "foco": "Asma · Câncer · Light",
+      "estilo": "Padrão Enamed",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer de pulmão",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ]
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "sourceType": "levantamento",
+      "source": "Enare · Pneumologia.",
+      "verdict": "Mesmo eixo Enamed: GINA e paraneoplásicas/Pancoast.",
+      "foco": "Asma · Câncer",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer",
+          "pct": 33
+        },
+        {
+          "tema": "Outros",
+          "pct": 34
+        }
+      ]
+    },
+    {
+      "id": "revalida",
+      "label": "Revalida",
+      "kicker": "INEP 2011–2025",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de enamed).",
+      "verdict": "Asma ~33% e câncer ~33%; DPOC e derrame completam. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Asma · Câncer · Light",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer de pulmão",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ],
+      "blurb": "Padrão Revalida neste grupo."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "sourceType": "levantamento",
+      "source": "USP-SP · Pneumologia (Estratégia).",
+      "verdict": "Intensiva ~34%, TEP ~16%, derrame ~12%.",
+      "foco": "VM · TEP · Derrame",
+      "estilo": "Padrão USP",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / câncer / outros",
+          "pct": 25
+        }
+      ]
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "sourceType": "levantamento",
+      "source": "UNIFESP 2017–2023 · Pneumologia (Estratégia).",
+      "verdict": "Intensiva ~20%, TEP ~17%, DPOC ~12%.",
+      "foco": "Hipoxemia · TEP · DPOC",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 20
+        },
+        {
+          "tema": "TEP",
+          "pct": 17
+        },
+        {
+          "tema": "DPOC",
+          "pct": 12
+        },
+        {
+          "tema": "Asma / intro / interstício",
+          "pct": 51
+        }
+      ]
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Padrão APS",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de enamed).",
+      "verdict": "Asma ~33% e câncer ~33%; DPOC e derrame completam. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Asma · Câncer · Light",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer de pulmão",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ],
+      "blurb": "Padrão SUS-SP neste grupo."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Padrão APS + endemias",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de enamed).",
+      "verdict": "Asma ~33% e câncer ~33%; DPOC e derrame completam. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Asma · Câncer · Light",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer de pulmão",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ],
+      "blurb": "Padrão SUS-BA neste grupo."
+    },
+    {
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de usp).",
+      "verdict": "Intensiva ~34%, TEP ~16%, derrame ~12%. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "VM · TEP · Derrame",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / câncer / outros",
+          "pct": 25
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFMG neste grupo."
+    },
+    {
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de usp).",
+      "verdict": "Intensiva ~34%, TEP ~16%, derrame ~12%. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "VM · TEP · Derrame",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / câncer / outros",
+          "pct": 25
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFRGS neste grupo."
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de usp).",
+      "verdict": "Intensiva ~34%, TEP ~16%, derrame ~12%. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "VM · TEP · Derrame",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / câncer / outros",
+          "pct": 25
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFRJ neste grupo."
+    },
+    {
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de usp).",
+      "verdict": "Intensiva ~34%, TEP ~16%, derrame ~12%. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "VM · TEP · Derrame",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / câncer / outros",
+          "pct": 25
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão Unicamp neste grupo."
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de unifesp).",
+      "verdict": "Intensiva ~20%, TEP ~17%, DPOC ~12%. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Hipoxemia · TEP · DPOC",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Pneumologia intensiva",
+          "pct": 20
+        },
+        {
+          "tema": "TEP",
+          "pct": 17
+        },
+        {
+          "tema": "DPOC",
+          "pct": 12
+        },
+        {
+          "tema": "Asma / intro / interstício",
+          "pct": 51
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão Einstein neste grupo."
+    },
+    {
+      "id": "amp",
+      "label": "AMP",
+      "kicker": "Padrão clássico R1",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de enamed).",
+      "verdict": "Asma ~33% e câncer ~33%; DPOC e derrame completam. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Asma · Câncer · Light",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer de pulmão",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ],
+      "blurb": "Padrão AMP neste grupo."
+    },
+    {
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "kicker": "Padrão regional",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Pneumologia · Pneumologia · o que mais cai (R1) (a partir de enamed).",
+      "verdict": "Asma ~33% e câncer ~33%; DPOC e derrame completam. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Asma · Câncer · Light",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer de pulmão",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ],
+      "blurb": "Padrão SES-PE neste grupo."
+    }
+  ]
+}

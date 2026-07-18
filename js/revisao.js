@@ -282,6 +282,60 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-psi-basico.json?v=20260718be",
     specialty: "clinica",
     area: "psiquiatria"
+  },
+  "pnm-intensiva": {
+    label: "Intensiva · VM · SDRA",
+    file: "data/revisao-pnm-intensiva.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-tep": {
+    label: "TEP · embolia pulmonar",
+    file: "data/revisao-pnm-tep.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-asma": {
+    label: "Asma · GINA",
+    file: "data/revisao-pnm-asma.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-dpoc": {
+    label: "DPOC · GOLD",
+    file: "data/revisao-pnm-dpoc.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-derrame": {
+    label: "Derrame pleural · Light",
+    file: "data/revisao-pnm-derrame.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-cancer": {
+    label: "Câncer de pulmão",
+    file: "data/revisao-pnm-cancer.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-basico": {
+    label: "Espirometria · gasometria",
+    file: "data/revisao-pnm-basico.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-intersticial": {
+    label: "Intersticiais · sarcoidose",
+    file: "data/revisao-pnm-intersticial.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-tb": {
+    label: "TB · pneumotórax · misc",
+    file: "data/revisao-pnm-tb.json?v=20260718bf",
+    specialty: "clinica",
+    area: "pneumologia"
   }
 };
 
@@ -308,6 +362,11 @@ const APROVA_CLI_AREAS = {
     id: "psiquiatria",
     label: "Psiquiatria",
     blurb: "Substâncias, humor, psicose, ansiedade e orgânicos"
+  },
+  pneumologia: {
+    id: "pneumologia",
+    label: "Pneumologia",
+    blurb: "Asma, DPOC, TEP, intensiva, derrame, câncer e TB"
   }
 };
 

@@ -1,0 +1,653 @@
+{
+  "title": "Intersticiais · sarcoidose",
+  "module": "pnm-intersticial",
+  "profiles": [
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnóstico",
+          "texto": "Espirometria, Light, scores de TEP."
+        },
+        {
+          "titulo": "Sessão 2 · Urgências",
+          "texto": "Exacerbação, TEP maciço, SDRA/VM, pneumotórax."
+        },
+        {
+          "titulo": "Sessão 3 · Crônico",
+          "texto": "GINA/GOLD, câncer, TB, interstício."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostilas Pneumo1–2 · MedHub R1 · Pneumologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Pneumo",
+      "blurb": "FPI · sarcoidose · PH",
+      "verdict": "Priorize intensiva/TEP, asma/DPOC, derrame (Light) e câncer (Pancoast/paraneoplásicas).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Síntese nacional · Pneumologia",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 32
+        },
+        {
+          "tema": "Fisiopatologia",
+          "pct": 20
+        },
+        {
+          "tema": "Extras / imagem",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Pneumologia.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Asma GINA e câncer (Pancoast/paraneoplásicas).",
+      "verdict": "Enare concentra asma e câncer de pulmão; revise também DPOC e Light.",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Asma / câncer",
+          "pct": 40
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "DPOC / derrame",
+          "pct": 20
+        },
+        {
+          "tema": "Extras",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Pneumologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "GINA, Pancoast e paraneoplásicas.",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Asma",
+          "pct": 33
+        },
+        {
+          "tema": "Câncer",
+          "pct": 33
+        },
+        {
+          "tema": "DPOC / derrame / outros",
+          "pct": 34
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Pneumologia · Intersticiais · sarcoidose (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP 2011–2025",
+      "blurb": "Asma GINA e câncer (Pancoast/paraneoplásicas).",
+      "verdict": "Enare concentra asma e câncer de pulmão; revise também DPOC e Light. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Asma / câncer",
+          "pct": 40
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "DPOC / derrame",
+          "pct": 20
+        },
+        {
+          "tema": "Extras",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Pneumologia.",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Intensiva, TEP e derrame.",
+      "verdict": "VM/SDRA/US, fluxograma de TEP e Light caem forte na USP-SP.",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Intensiva / VM",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / outros",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Pneumologia.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Intensiva + TEP + DPOC.",
+      "verdict": "Mecanismos de hipoxemia, ajustes de VM e TEP instável.",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Intensiva",
+          "pct": 20
+        },
+        {
+          "tema": "TEP",
+          "pct": 17
+        },
+        {
+          "tema": "DPOC / asma",
+          "pct": 22
+        },
+        {
+          "tema": "Intro / interstício / derrame",
+          "pct": 41
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Pneumologia · Intersticiais · sarcoidose (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Asma GINA e câncer (Pancoast/paraneoplásicas).",
+      "verdict": "Enare concentra asma e câncer de pulmão; revise também DPOC e Light. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Asma / câncer",
+          "pct": 40
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "DPOC / derrame",
+          "pct": 20
+        },
+        {
+          "tema": "Extras",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Pneumologia · Intersticiais · sarcoidose (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Asma GINA e câncer (Pancoast/paraneoplásicas).",
+      "verdict": "Enare concentra asma e câncer de pulmão; revise também DPOC e Light. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Asma / câncer",
+          "pct": 40
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "DPOC / derrame",
+          "pct": 20
+        },
+        {
+          "tema": "Extras",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Pneumologia · Intersticiais · sarcoidose (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Intensiva, TEP e derrame.",
+      "verdict": "VM/SDRA/US, fluxograma de TEP e Light caem forte na USP-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Intensiva / VM",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / outros",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Pneumologia · Intersticiais · sarcoidose (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Intensiva, TEP e derrame.",
+      "verdict": "VM/SDRA/US, fluxograma de TEP e Light caem forte na USP-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Intensiva / VM",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / outros",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Pneumologia · Intersticiais · sarcoidose (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Intensiva, TEP e derrame.",
+      "verdict": "VM/SDRA/US, fluxograma de TEP e Light caem forte na USP-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Intensiva / VM",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / outros",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Pneumologia · Intersticiais · sarcoidose (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Intensiva, TEP e derrame.",
+      "verdict": "VM/SDRA/US, fluxograma de TEP e Light caem forte na USP-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Intensiva / VM",
+          "pct": 34
+        },
+        {
+          "tema": "TEP",
+          "pct": 16
+        },
+        {
+          "tema": "Derrame / intro",
+          "pct": 25
+        },
+        {
+          "tema": "Asma / outros",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Pneumologia · Intersticiais · sarcoidose (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Intensiva + TEP + DPOC.",
+      "verdict": "Mecanismos de hipoxemia, ajustes de VM e TEP instável. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Intensiva",
+          "pct": 20
+        },
+        {
+          "tema": "TEP",
+          "pct": 17
+        },
+        {
+          "tema": "DPOC / asma",
+          "pct": 22
+        },
+        {
+          "tema": "Intro / interstício / derrame",
+          "pct": 41
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Pneumologia · Intersticiais · sarcoidose (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Asma GINA e câncer (Pancoast/paraneoplásicas).",
+      "verdict": "Enare concentra asma e câncer de pulmão; revise também DPOC e Light. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Asma / câncer",
+          "pct": 40
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "DPOC / derrame",
+          "pct": 20
+        },
+        {
+          "tema": "Extras",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Pneumologia · Intersticiais · sarcoidose (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Asma GINA e câncer (Pancoast/paraneoplásicas).",
+      "verdict": "Enare concentra asma e câncer de pulmão; revise também DPOC e Light. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "FPI · sarcoidose · PH",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Asma / câncer",
+          "pct": 40
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "DPOC / derrame",
+          "pct": 20
+        },
+        {
+          "tema": "Extras",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "pnm-intersticial"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "criterios": {
+      "tema": "Critérios / classificação",
+      "yield": "Alto",
+      "pegar": "Light; GOLD/GINA; PaO2/FiO2 na SDRA; Wells/D-dímero no TEP; VEF1/CVF <0,7 na DPOC."
+    },
+    "conduta": {
+      "tema": "Conduta",
+      "yield": "Máximo",
+      "pegar": "Exacerbação asma/DPOC; anticoagular TEP; trombólise se choque; dreno no empiema/pneumotórax hipertensivo; RHZE na TB."
+    },
+    "fisio": {
+      "tema": "Fisiopatologia",
+      "yield": "Alto",
+      "pegar": "Shunt × espaço morto × V/Q; PEEP/auto-PEEP; mecanismos de hipoxemia (UNIFESP/USP)."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial",
+      "yield": "Alto",
+      "pegar": "Asma × DPOC; transudato × exsudato; TB × sarcoidose; nódulo solitário."
+    }
+  },
+  "oneLiners": [
+    "UIP na FPI",
+    "Adenopatia hilar bilateral",
+    "Excluir TB antes de corticoide"
+  ]
+}
