@@ -1172,6 +1172,54 @@ body.app-body {
 
 .esp-groups {
   margin-bottom: 0.25rem;
+  margin-top: 1.35rem;
+}
+
+.esp-ped-overview {
+  margin-top: 0.35rem;
+}
+
+.esp-ped-overview-exams {
+  margin-top: 0.15rem;
+}
+
+.esp-ped-verdict {
+  margin: 0.55rem 0 0.85rem;
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.esp-enamed-banner {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.85rem 0 0;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(196, 112, 20, 0.35);
+  background: linear-gradient(135deg, rgba(196, 112, 20, 0.12), rgba(15, 159, 154, 0.08));
+}
+
+.esp-enamed-banner strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.esp-enamed-banner span {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--muted, #5b6570);
+}
+
+.esp-exam-btn--enamed {
+  border-color: rgba(196, 112, 20, 0.45);
+  background: linear-gradient(160deg, rgba(196, 112, 20, 0.14), var(--panel) 70%);
+  font-weight: 700;
+}
+
+.esp-exam-btn--enamed.active {
+  border-color: rgba(196, 112, 20, 0.65);
+  background: linear-gradient(160deg, rgba(196, 112, 20, 0.22), rgba(15, 159, 154, 0.1));
+  color: inherit;
 }
 
 .dash-card--active {

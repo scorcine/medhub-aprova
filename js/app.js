@@ -137,6 +137,8 @@ function aprovaRenderFlashcardBrowse () {
 let aprovaActiveSpecialty = null;
 let aprovaActiveFocusId = "geral";
 let aprovaActivePedModule = null;
+let aprovaActivePedOverviewFocus = "geral";
+let aprovaPedOverviewStatsCache = null;
 
 function aprovaHideEspViews () {
   ["esp-list", "esp-decks", "esp-revisao"].forEach(id => {
@@ -147,6 +149,8 @@ function aprovaHideEspViews () {
   if (stats) stats.hidden = true;
   const subtemas = document.getElementById("esp-subtemas");
   if (subtemas) subtemas.hidden = true;
+  const overview = document.getElementById("esp-ped-overview");
+  if (overview) overview.hidden = true;
 }
 
 function aprovaShowSpecialtyList () {
@@ -249,6 +253,94 @@ function aprovaRenderDeckCards (specialty, grid, deckOrder) {
       aprovaGoTo("flashcards", { study: true });
     });
     grid.appendChild(btn);
+  });
+}
+
+async function aprovaLoadPedOverviewStats () {
+  if (aprovaPedOverviewStatsCache) return aprovaPedOverviewStatsCache;
+  try {
+    const res = await fetch("data/stats-pediatria-geral.json?v=20260718q");
+    if (!res.ok) throw new Error("fail");
+    aprovaPedOverviewStatsCache = await res.json();
+  } catch {
+    aprovaPedOverviewStatsCache = null;
+  }
+  return aprovaPedOverviewStatsCache;
+}
+
+function aprovaRenderPedOverviewStats (focusId) {
+  const root = document.getElementById("esp-ped-overview");
+  const options = document.getElementById("esp-ped-overview-options");
+  const bars = document.getElementById("esp-ped-overview-bars");
+  const title = document.getElementById("esp-ped-overview-title");
+  const sub = document.getElementById("esp-ped-overview-sub");
+  const verdict = document.getElementById("esp-ped-overview-verdict");
+  const banner = document.getElementById("esp-ped-enamed-banner");
+  if (!root || !options || !bars) return Promise.resolve();
+
+  return aprovaLoadPedOverviewStats().then(data => {
+    if (!data || !Array.isArray(data.profiles) || !data.profiles.length) {
+      root.hidden = true;
+      return;
+    }
+
+    root.hidden = false;
+    const pid = focusId || aprovaActivePedOverviewFocus || "geral";
+    aprovaActivePedOverviewFocus = pid;
+    const profile = data.profiles.find(p => p.id === pid) || data.profiles[0];
+    aprovaActivePedOverviewFocus = profile.id;
+
+    // Enamed primeiro após Brasil
+    const ordered = data.profiles.slice().sort((a, b) => {
+      const rank = p => {
+        if (p.id === "geral") return 0;
+        if (p.id === "enamed") return 1;
+        return 2;
+      };
+      const d = rank(a) - rank(b);
+      return d !== 0 ? d : String(a.label || "").localeCompare(String(b.label || ""), "pt-BR");
+    });
+
+    options.innerHTML = "";
+    ordered.forEach(p => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "esp-exam-btn" +
+        (p.id === "enamed" || p.featured ? " esp-exam-btn--enamed" : "") +
+        (p.id === profile.id ? " active" : "");
+      btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Brasil" : p.label);
+      btn.title = p.kicker || p.label;
+      btn.addEventListener("click", () => aprovaRenderPedOverviewStats(p.id));
+      options.appendChild(btn);
+    });
+
+    if (banner) {
+      banner.hidden = profile.id !== "enamed";
+    }
+
+    if (title) {
+      title.textContent = profile.id === "geral"
+        ? "O que mais cai em Pediatria · Brasil"
+        : ("O que mais cai · " + profile.label);
+    }
+    if (sub) {
+      sub.textContent = profile.foco
+        ? (profile.estilo + " — " + profile.foco)
+        : (data.note || "Prioridade relativa nas principais provas.");
+    }
+    if (verdict) verdict.textContent = profile.verdict || "";
+
+    const maxScore = Math.max(...profile.priorities.map(p => p.score), 1);
+    bars.innerHTML = profile.priorities.map(p => {
+      const pct = Math.round((p.score / maxScore) * 100);
+      return (
+        "<div class=\"rev-bar-row\">" +
+          "<span>" + p.tema + "</span>" +
+          "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + pct + "%\"></i></div>" +
+          "<em>" + p.score + "</em>" +
+        "</div>"
+      );
+    }).join("");
   });
 }
 
@@ -382,12 +474,14 @@ async function aprovaOpenPediatria () {
   const back = document.getElementById("esp-back");
   const stats = document.getElementById("esp-stats");
   const subtemas = document.getElementById("esp-subtemas");
+  const overview = document.getElementById("esp-ped-overview");
   if (!decksWrap) return;
 
   aprovaHideEspViews();
   decksWrap.hidden = false;
   if (stats) stats.hidden = true;
   if (subtemas) subtemas.hidden = true;
+  if (overview) overview.hidden = false;
 
   const total = AprovaFlashcards.countBySpecialty("pediatria");
   const modules = typeof AprovaRevisao !== "undefined" ? AprovaRevisao.listModules() : [];
@@ -398,12 +492,15 @@ async function aprovaOpenPediatria () {
       ? (total + " flashcards · " + modules.length + " grupos · escolha um grupo para ver os subtemas")
       : "Escolha um grupo para estudar.";
   }
-  if (hint) hint.textContent = "Pediatria em geral — toque em um grupo para abrir os subtemas.";
+  if (hint) {
+    hint.textContent = "Pediatria em geral — veja o que mais cai nas provas e toque em um grupo.";
+  }
   if (back) back.textContent = "← Voltar às especialidades";
 
   const groupsLabel = document.getElementById("esp-groups-label");
   if (groupsLabel) groupsLabel.textContent = "Grupos";
 
+  await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
   await aprovaRenderPedGroupCards(null);
 }
 
@@ -419,10 +516,12 @@ async function aprovaOpenPediatriaModule (moduleId) {
   const hint = document.getElementById("esp-hint");
   const back = document.getElementById("esp-back");
   const sub = document.getElementById("esp-decks-sub");
+  const overview = document.getElementById("esp-ped-overview");
   if (!decksWrap) return;
 
   aprovaHideEspViews();
   decksWrap.hidden = false;
+  if (overview) overview.hidden = true;
   if (sub) {
     sub.hidden = false;
     sub.textContent = "Grupos no topo · subtemas e o que mais cai abaixo.";
@@ -473,7 +572,9 @@ function aprovaOpenSpecialty (specialty) {
 
   aprovaHideEspViews();
   decksWrap.hidden = false;
+  const overview = document.getElementById("esp-ped-overview");
   if (groups) groups.hidden = true;
+  if (overview) overview.hidden = true;
   if (subtemas) subtemas.hidden = false;
   if (stats) stats.hidden = true;
   if (sub) sub.hidden = true;
