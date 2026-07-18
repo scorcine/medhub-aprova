@@ -71,7 +71,7 @@ function aprovaRenderAuth () {
 function aprovaRegister (login, password, extras) {
   const name = String(extras?.name || "").trim();
   if (!login || !password) {
-    aprovaShowAuthMsg("Informe login e senha para cadastrar.", false);
+    aprovaShowAuthMsg("Informe e-mail e senha para cadastrar.", false);
     return false;
   }
   if (password.length < 4) {
@@ -82,7 +82,7 @@ function aprovaRegister (login, password, extras) {
   const users = aprovaLoadUsers();
   const key = login.toLowerCase();
   if (users[key]) {
-    aprovaShowAuthMsg("Este login já está cadastrado. Use Entrar.", false);
+    aprovaShowAuthMsg("Este e-mail já está cadastrado. Use Entrar.", false);
     return false;
   }
 
@@ -100,7 +100,7 @@ function aprovaRegister (login, password, extras) {
 
 function aprovaLogin (login, password) {
   if (!login || !password) {
-    aprovaShowAuthMsg("Informe login e senha.", false);
+    aprovaShowAuthMsg("Informe e-mail e senha.", false);
     return false;
   }
 
