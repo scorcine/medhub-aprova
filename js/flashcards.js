@@ -24,7 +24,7 @@ function aprovaDeckSpecialty (deck) {
     id.indexOf("obs-") === 0 ||
     id.indexOf("go-") === 0
   ) return "go";
-  if (id.indexOf("cg-") === 0) return "cirurgia";
+  if (id.indexOf("cg-") === 0 || id.indexOf("cir1-") === 0) return "cirurgia";
   if (id.indexOf("cardio") === 0) return "clinica";
   return "geral";
 }
@@ -61,7 +61,8 @@ const AprovaFlashcards = {
       "data/flashcards-obs3.json",
       "data/flashcards-obs4.json",
       "data/flashcards-obs5.json",
-      "data/flashcards-cir-lacunas.json"
+      "data/flashcards-cir-lacunas.json",
+      "data/flashcards-cir1.json"
     ];
     const decks = [];
     for (const file of files) {

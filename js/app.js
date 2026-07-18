@@ -282,6 +282,7 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("obs5-") === 0) return "HAS · Diabetes · Gemelaridade";
   if (id.indexOf("obs-") === 0) return "Obstetrícia";
   if (id.indexOf("cg-") === 0) return "Lacunas · protocolos atuais";
+  if (id.indexOf("cir1-") === 0) return "Cir1 · apostila";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -677,7 +678,8 @@ const APROVA_PED_MODULE_PREFIXES = {
   obs3: ["obs3-"],
   obs4: ["obs4-"],
   obs5: ["obs5-"],
-  "cir-lacunas": ["cg-"]
+  "cir-lacunas": ["cg-"],
+  cir1: ["cir1-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {

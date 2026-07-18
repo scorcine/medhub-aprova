@@ -122,6 +122,11 @@ const APROVA_REVISAO_MODULES = {
     specialty: "go",
     area: "obstetricia"
   },
+  cir1: {
+    label: "Cir1 · Vascular · Procto · Bariátrica · Infantil",
+    file: "data/revisao-cir1.json?v=20260718ar",
+    specialty: "cirurgia"
+  },
   "cir-lacunas": {
     label: "Urgências · Vesícula · Urologia · AD (lacunas)",
     file: "data/revisao-cir-lacunas.json?v=20260718aq",

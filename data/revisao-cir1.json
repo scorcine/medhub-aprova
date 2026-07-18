@@ -1,0 +1,416 @@
+{
+  "title": "Cir1 · Vascular · Procto · Bariátrica · Infantil · Cabeça/pescoço",
+  "module": "cir1",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Apostila Cir1",
+      "blurb": "O que mais cai deste volume nas provas.",
+      "verdict": "No Cir1, o ROI está em vascular (AAA ≥5,5 cm, ITB, oclusão arterial aguda) e cirurgia infantil (invaginação, piloro, Kasai). Procto (graus de hemorroida, abscesso/fístula) e bariátrica (IMC/critérios CFM) fecham o bloco; cabeça/pescoço é cauda (PAAF, parótida/facial).",
+      "foco": "AAA · DAP/OAA · Infantil · Hemorroidas/abscesso · Bariátrica",
+      "estilo": "Síntese Cir1 × estatística Brasil",
+      "priorities": [
+        {
+          "tema": "Cirurgia infantil",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "Cirurgia vascular (AAA/DAP/OAA)",
+          "pct": 20,
+          "n": 20
+        },
+        {
+          "tema": "Proctologia",
+          "pct": 16,
+          "n": 16
+        },
+        {
+          "tema": "Insuficiência venosa",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Bariátrica",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Cabeça e pescoço / salivares",
+          "pct": 10,
+          "n": 10
+        },
+        {
+          "tema": "Aneurismas periféricos",
+          "pct": 8,
+          "n": 8
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar",
+        "cir1-aaa",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-ivc",
+        "cir1-bariatrica",
+        "cir1-aneurismas-perifericos",
+        "cir1-prolapso",
+        "cir1-cabeca-pescoco"
+      ],
+      "checklist": [
+        "aaa55",
+        "itb",
+        "6p",
+        "invaginacao",
+        "bariatrica"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Vascular",
+          "texto": "AAA (indicação/triagem/ruptura), ITB/Fontaine e oclusão arterial aguda (6 P + FA)."
+        },
+        {
+          "titulo": "Sessão 2 · Infantil",
+          "texto": "Invaginação, piloro, atresia de esôfago, Ladd, Hirschsprung e Kasai."
+        },
+        {
+          "titulo": "Sessão 3 · Procto + bariátrica",
+          "texto": "Graus de hemorroida, abscesso/fístula e critérios IMC/CFM."
+        }
+      ],
+      "lacuna": "Passo a passo operatório longo: saiba indicação, complicação clássica e nome da cirurgia (Kasai, Ladd, Fredet, Sistrunk, Altemeier).",
+      "sourceType": "sintese",
+      "source": "Apostila Cir1 (Medcurso) cruzada com stats-cirurgia-geral (Enare/USP/UNIFESP)."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Enare cobra conduta vascular e pediátrica.",
+      "verdict": "No Enare, priorize AAA (quando operar), oclusão arterial aguda e invaginação/piloro. Hemorroida grau + drenagem de abscesso caem como conduta objetiva.",
+      "foco": "AAA · OAA · Invaginação · Piloro · Hemorroidas",
+      "estilo": "Padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare Cirurgia aplicado ao Cir1.",
+      "priorities": [
+        {
+          "tema": "Vascular (AAA/OAA/DAP)",
+          "pct": 26
+        },
+        {
+          "tema": "Cirurgia infantil",
+          "pct": 24
+        },
+        {
+          "tema": "Proctologia",
+          "pct": 18
+        },
+        {
+          "tema": "Bariátrica",
+          "pct": 12
+        },
+        {
+          "tema": "IVC / cabeça-pescoço",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-oclusao-arterial",
+        "cir1-dap",
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-bariatrica",
+        "cir1-ped-parede-biliar",
+        "cir1-ivc",
+        "cir1-aneurismas-perifericos",
+        "cir1-prolapso",
+        "cir1-cabeca-pescoco"
+      ],
+      "checklist": [
+        "aaa55",
+        "6p",
+        "invaginacao",
+        "piloro",
+        "hemorroidas"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Vascular emergência",
+          "texto": "Ruptura de AAA e 6 P da oclusão arterial."
+        },
+        {
+          "titulo": "Sessão 2 · Pediatria cirúrgica",
+          "texto": "Invaginação (redução) e piloro (Fredet)."
+        },
+        {
+          "titulo": "Sessão 3 · Procto",
+          "texto": "Graus I–IV e drenagem de abscesso."
+        }
+      ],
+      "lacuna": "Tabelas CEAP completas: saiba C1 esclerose vs C2 ablação/cirurgia."
+    },
+    {
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Prova USP",
+      "blurb": "USP mistura vascular e pediatria com detalhe.",
+      "verdict": "USP gosta de ITB/Fontaine, indicação de EVAR vs aberto e diferenciais pediátricos (onfalocele×gastrosquise, Kasai). Bariátrica aparece como critérios.",
+      "foco": "ITB · AAA/EVAR · Infantil · Bariátrica",
+      "estilo": "Padrão USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP Cirurgia aplicado ao Cir1.",
+      "priorities": [
+        {
+          "tema": "Vascular",
+          "pct": 28
+        },
+        {
+          "tema": "Cirurgia infantil",
+          "pct": 26
+        },
+        {
+          "tema": "Bariátrica",
+          "pct": 14
+        },
+        {
+          "tema": "Procto",
+          "pct": 14
+        },
+        {
+          "tema": "Cabeça/pescoço · IVC",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cir1-dap",
+        "cir1-aaa",
+        "cir1-oclusao-arterial",
+        "cir1-ped-parede-biliar",
+        "cir1-ped-digestivo",
+        "cir1-ped-abdome",
+        "cir1-bariatrica",
+        "cir1-aneurismas-perifericos",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-ivc",
+        "cir1-cabeca-pescoco",
+        "cir1-prolapso"
+      ],
+      "checklist": [
+        "itb",
+        "evar",
+        "kasai",
+        "onfalocele",
+        "bariatrica"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · DAP + AAA",
+          "texto": "ITB, Fontaine e critérios de intervenção."
+        },
+        {
+          "titulo": "Sessão 2 · Parede e vias",
+          "texto": "Onfalocele/gastrosquise e Kasai."
+        },
+        {
+          "titulo": "Sessão 3 · Bariátrica",
+          "texto": "IMC, sleeve vs bypass e contraindicações."
+        }
+      ],
+      "lacuna": "Anatomia arterial mm a mm: saiba nomes e sítios de embolia (femoral > ilíaca > sela)."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "UNIFESP é vascular-pesada.",
+      "verdict": "UNIFESP prioriza vascular (~16% de Cirurgia): AAA, DAP, oclusão aguda e poplítea. Infantil vem logo atrás; procto e bariátrica são suporte.",
+      "foco": "AAA · DAP · OAA · Poplítea · Infantil",
+      "estilo": "Padrão UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP Cirurgia aplicado ao Cir1.",
+      "priorities": [
+        {
+          "tema": "Cirurgia vascular",
+          "pct": 34
+        },
+        {
+          "tema": "Cirurgia infantil",
+          "pct": 24
+        },
+        {
+          "tema": "Procto / IVC",
+          "pct": 16
+        },
+        {
+          "tema": "Bariátrica",
+          "pct": 12
+        },
+        {
+          "tema": "Cabeça e pescoço",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-aneurismas-perifericos",
+        "cir1-ped-digestivo",
+        "cir1-ped-abdome",
+        "cir1-ped-parede-biliar",
+        "cir1-ivc",
+        "cir1-hemorroidas",
+        "cir1-abscesso-fistula",
+        "cir1-bariatrica",
+        "cir1-cabeca-pescoco",
+        "cir1-prolapso"
+      ],
+      "checklist": [
+        "aaa55",
+        "itb",
+        "6p",
+        "poplitea",
+        "invaginacao"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Vascular denso",
+          "texto": "AAA, ITB e êmbolo (FA → femoral)."
+        },
+        {
+          "titulo": "Sessão 2 · Poplítea + IVC",
+          "texto": "Tromboembolismo poplíteo vs ruptura de AAA; safena e TVP."
+        },
+        {
+          "titulo": "Sessão 3 · Infantil",
+          "texto": "Piloro, invaginação e atresia de esôfago."
+        }
+      ],
+      "lacuna": "Nomes de retopexia (Ripstein/Wells): saiba perineal vs abdominal no prolapso."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo padrão nacional do Enamed neste bloco.",
+      "verdict": "Foque conduta: AAA ≥5,5 cm, heparinizar/revascularizar na OAA, reduzir invaginação se estável, drenar abscesso. Critérios bariátricos fecham.",
+      "foco": "AAA · OAA · Invaginação · Abscesso · Bariátrica",
+      "estilo": "Padrão Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare Cirurgia aplicado ao Cir1.",
+      "priorities": [
+        {
+          "tema": "Vascular",
+          "pct": 28
+        },
+        {
+          "tema": "Infantil",
+          "pct": 24
+        },
+        {
+          "tema": "Procto",
+          "pct": 20
+        },
+        {
+          "tema": "Bariátrica",
+          "pct": 14
+        },
+        {
+          "tema": "Demais Cir1",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-oclusao-arterial",
+        "cir1-ped-abdome",
+        "cir1-abscesso-fistula",
+        "cir1-hemorroidas",
+        "cir1-dap",
+        "cir1-bariatrica",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar",
+        "cir1-ivc",
+        "cir1-aneurismas-perifericos",
+        "cir1-cabeca-pescoco",
+        "cir1-prolapso"
+      ],
+      "checklist": [
+        "aaa55",
+        "6p",
+        "invaginacao",
+        "abscesso",
+        "bariatrica"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Emergências",
+          "texto": "Ruptura de AAA e oclusão arterial aguda."
+        },
+        {
+          "titulo": "Sessão 2 · Lactente",
+          "texto": "Invaginação e abscesso anorretal."
+        },
+        {
+          "titulo": "Sessão 3 · Eletivo",
+          "texto": "Hemorroidas e indicação bariátrica."
+        }
+      ],
+      "lacuna": "Técnicas bariátricas disabsortivas raras: foque sleeve e Y-Roux."
+    }
+  ],
+  "checklistLabels": {
+    "aaa55": "AAA ≥ 5,5 cm / crescimento / sintomas",
+    "itb": "ITB normal · claudicação · crítica",
+    "6p": "6 P da isquemia aguda + FA",
+    "invaginacao": "Invaginação: clínica + redução × cirurgia",
+    "piloro": "Piloro: vômito em jato + Fredet-Ramstedt",
+    "hemorroidas": "Graus I–IV e conduta",
+    "abscesso": "Abscesso anorretal = drenar",
+    "bariatrica": "IMC >40 ou >35 + comorbidade",
+    "evar": "EVAR: colo infrarrenal adequado",
+    "kasai": "AVB → Kasai precoce",
+    "onfalocele": "Onfalocele × gastrosquise",
+    "poplitea": "Poplítea = tromboembolismo (não ruptura)"
+  },
+  "deckTips": {
+    "cir1-aaa": {
+      "pegar": "≥5,5 cm opera · Tabagismo #1 · Tríade da ruptura em 1/3 · USG triagem homem 65–75 ex-fumante",
+      "evitar": "Confundir limiar de diagnóstico (>3 cm) com limiar de cirurgia (≥5,5 cm)"
+    },
+    "cir1-dap": {
+      "pegar": "ITB · Fontaine · Óbito = coração · Pare de fumar",
+      "evitar": "Confiar no ITB se >1,3 (DM/DRC)"
+    },
+    "cir1-oclusao-arterial": {
+      "pegar": "FA → êmbolo → femoral · 6 P · Heparina + revascularizar",
+      "evitar": "Tratar trombose in situ como se fosse êmbolo puro sem olhar DAP prévia"
+    },
+    "cir1-ped-abdome": {
+      "pegar": "6–9 meses · geleia · redução se estável · Meckel = ponto de apoio",
+      "evitar": "Insistir em enema se peritonite/choque"
+    },
+    "cir1-bariatrica": {
+      "pegar": "IMC >40 ou >35+comorbidade · Sleeve cresce · Bypass clássico · Reposição vitamínica",
+      "evitar": "Indicar bariátrica em ASA IV / hipertensão porta com varizes"
+    }
+  },
+  "oneLiners": [
+    "AAA opera ≥5,5 cm (ou cresce/sintoma)",
+    "ITB ≤0,4 sugere isquemia crítica",
+    "Oclusão aguda: pense FA e 6 P",
+    "Invaginação estável: reduzir antes de operar",
+    "Abscesso anorretal: drenar",
+    "Bariátrica: IMC e comorbidade definem"
+  ]
+}
