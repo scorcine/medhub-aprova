@@ -164,8 +164,8 @@ function aprovaRenderEspecialidades () {
   const cliN = AprovaFlashcards.countBySpecialty("clinica");
   if (ped) {
     ped.textContent = pedN
-      ? pedN + " flashcards · Neo + Alimentação + Nutrição"
-      : "Neonatologia, alimentação e nutrição.";
+      ? pedN + " flashcards · Neo · Nutrição · Vacinas"
+      : "Neonatologia, nutrição e imunizações.";
   }
   if (cli) {
     cli.textContent = cliN
@@ -179,6 +179,7 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("neo-") === 0) return "Neonatologia";
   if (id.indexOf("ali-") === 0) return "Alimentação";
   if (id.indexOf("nut-") === 0) return "Avaliação nutricional";
+  if (id.indexOf("imu-") === 0) return "Imunizações";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -190,7 +191,8 @@ function aprovaRenderDeckCards (specialty, grid) {
       if (s.indexOf("neo-") === 0) return 0;
       if (s.indexOf("ali-") === 0) return 1;
       if (s.indexOf("nut-") === 0) return 2;
-      return 3;
+      if (s.indexOf("imu-") === 0) return 3;
+      return 4;
     };
     const d = rank(a.id) - rank(b.id);
     return d !== 0 ? d : String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
