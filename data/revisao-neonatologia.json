@@ -1,104 +1,328 @@
 {
   "title": "Neonatologia · revisão para provas R1",
-  "subtitle": "Alto rendimento para SUS-SP, SUS-BA, Einstein, PUC, Unicamp, USP, Unifesp e UFRJ",
-  "verdict": "Cerca de 70% do retorno da Ped1 está em três blocos: reanimação SBP, icterícia e diferencial de desconforto respiratório + triagens.",
-  "priorities": [
-    { "tema": "Reanimação SBP", "score": 95 },
-    { "tema": "Icterícia", "score": 88 },
-    { "tema": "Triagens", "score": 78 },
-    { "tema": "DR diferencial", "score": 72 },
-    { "tema": "Infecção neonatal", "score": 65 },
-    { "tema": "Classificações / CIUR", "score": 45 },
-    { "tema": "Apgar / rotina", "score": 38 },
-    { "tema": "DBP / apneia", "score": 28 }
-  ],
-  "bancas": [
+  "profiles": [
     {
-      "banca": "USP",
+      "id": "geral",
+      "label": "Visão geral R1",
+      "kicker": "Estatística geral",
+      "blurb": "Prioridade média das principais provas — bom ponto de partida.",
+      "verdict": "Cerca de 70% do retorno da Ped1 está em três blocos: reanimação SBP, icterícia e diferencial de DR + triagens.",
+      "foco": "Reanimação · Icterícia · Triagens · DR diferencial",
+      "estilo": "Cobertura ampla para quem ainda não escolheu banca",
+      "priorities": [
+        { "tema": "Reanimação SBP", "score": 95 },
+        { "tema": "Icterícia", "score": 88 },
+        { "tema": "Triagens", "score": 78 },
+        { "tema": "DR diferencial", "score": 72 },
+        { "tema": "Infecção neonatal", "score": 65 },
+        { "tema": "Classificações / CIUR", "score": 45 },
+        { "tema": "Apgar / rotina", "score": 38 },
+        { "tema": "DBP / apneia", "score": 28 }
+      ],
+      "deckOrder": [
+        "neo-reanimacao-34",
+        "neo-reanimacao-prematuro",
+        "neo-ictericia",
+        "neo-triagem",
+        "neo-respiratorio",
+        "neo-cuidados-iniciais",
+        "neo-classificacoes",
+        "neo-ciur"
+      ],
+      "checklist": ["reanim-34", "reanim-pre", "meconio", "ictericia", "triagens", "dr", "pneumonia", "classif"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Sala de parto", "texto": "Fluxogramas ≥34s e <34s + mecônio + HDC. Decks de reanimação até acertar em sequência." },
+        { "titulo": "Sessão 2 · Icterícia + triagens", "texto": "Fisiológica vs patológica, fototerapia, pezinho e coraçãozinho." },
+        { "titulo": "Sessão 3 · DR + infecção", "texto": "SDR × TTRN × SAM × HPPN × pneumonia precoce." }
+      ],
+      "lacuna": "TORCH e sepse tardia caem em várias bancas, mas a Ped1 só toca de leve — revise à parte depois."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Algoritmo SBP detalhado, icterícia e infecções.",
+      "verdict": "Na USP, Neonatologia costuma liderar a Pediatria: reanimação (especialmente VPP) é o subtema favorito, seguido de icterícia e infecções.",
       "foco": "Reanimação (VPP, FC, massagem) · Icterícia · Sepse / TORCH",
-      "estilo": "Caso + protocolo SBP; detalhe de algoritmo"
+      "estilo": "Caso + protocolo SBP; detalhe de algoritmo",
+      "priorities": [
+        { "tema": "Reanimação SBP", "score": 98 },
+        { "tema": "Icterícia", "score": 90 },
+        { "tema": "Infecção / TORCH", "score": 82 },
+        { "tema": "DR diferencial", "score": 70 },
+        { "tema": "Triagens", "score": 55 },
+        { "tema": "Classificações", "score": 35 }
+      ],
+      "deckOrder": [
+        "neo-reanimacao-34",
+        "neo-reanimacao-prematuro",
+        "neo-ictericia",
+        "neo-respiratorio",
+        "neo-triagem",
+        "neo-cuidados-iniciais",
+        "neo-classificacoes",
+        "neo-ciur"
+      ],
+      "checklist": ["reanim-34", "reanim-pre", "meconio", "ictericia", "dr", "pneumonia"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Algoritmo SBP", "texto": "Decore VPP, Sat pré-ductal, massagem 3:1 e adrenalina. Simule decisões do fluxograma." },
+        { "titulo": "Sessão 2 · Icterícia", "texto": "Red flags, fototerapia e diferenciais de hemólise/aleitamento." },
+        { "titulo": "Sessão 3 · Infecção", "texto": "Pneumonia precoce/GBS na Ped1 + planeje suplemento de TORCH." }
+      ],
+      "lacuna": "TORCH e sepse tardia são muito cobrados na USP — complete fora da Ped1."
     },
     {
-      "banca": "UNIFESP",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Reanimação, triagens e infecções congênitas.",
+      "verdict": "Na Unifesp, Neonatologia também é o bloco mais frequente da Pediatria: protocole SBP, triagens e infecções congênitas.",
       "foco": "Reanimação · Triagens · Infecções congênitas · Icterícia",
-      "estilo": "Protocolo + interpretação de testes"
+      "estilo": "Protocolo + interpretação de testes",
+      "priorities": [
+        { "tema": "Reanimação SBP", "score": 96 },
+        { "tema": "Triagens", "score": 92 },
+        { "tema": "Icterícia", "score": 85 },
+        { "tema": "Infecção congênita", "score": 80 },
+        { "tema": "DR diferencial", "score": 60 },
+        { "tema": "Classificações", "score": 40 }
+      ],
+      "deckOrder": [
+        "neo-reanimacao-34",
+        "neo-triagem",
+        "neo-ictericia",
+        "neo-reanimacao-prematuro",
+        "neo-respiratorio",
+        "neo-cuidados-iniciais",
+        "neo-classificacoes",
+        "neo-ciur"
+      ],
+      "checklist": ["reanim-34", "reanim-pre", "triagens", "ictericia", "pneumonia", "meconio"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Sala de parto", "texto": "Fluxogramas ≥34s/<34s com números exatos de O₂ e Sat." },
+        { "titulo": "Sessão 2 · Triagens", "texto": "Pezinho, coraçãozinho (critérios SBP), olhinho e orelhinha." },
+        { "titulo": "Sessão 3 · Icterícia + infecção", "texto": "Fototerapia + pneumonia precoce; reserve tempo para TORCH." }
+      ],
+      "lacuna": "Infecções congênitas detalhadas caem muito — Ped1 só introduz; complemente."
     },
     {
-      "banca": "SUS-SP",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "Infecções neonatais, sala de parto e conduta prática.",
+      "verdict": "No SUS-SP, Neonatologia aparece com força no período neonatal infeccioso e cuidados práticos de sala de parto.",
       "foco": "Infecções no período neonatal · Sala de parto · Cuidados básicos",
-      "estilo": "Mais clínico/prático; menos pegadinha rara"
+      "estilo": "Mais clínico/prático; menos pegadinha rara",
+      "priorities": [
+        { "tema": "Infecção neonatal", "score": 94 },
+        { "tema": "Reanimação / sala de parto", "score": 88 },
+        { "tema": "Icterícia", "score": 75 },
+        { "tema": "Triagens", "score": 70 },
+        { "tema": "Cuidados de rotina", "score": 65 },
+        { "tema": "DR diferencial", "score": 55 }
+      ],
+      "deckOrder": [
+        "neo-respiratorio",
+        "neo-reanimacao-34",
+        "neo-ictericia",
+        "neo-triagem",
+        "neo-cuidados-iniciais",
+        "neo-reanimacao-prematuro",
+        "neo-classificacoes",
+        "neo-ciur"
+      ],
+      "checklist": ["pneumonia", "reanim-34", "ictericia", "triagens", "cuidados", "dr"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Infecção precoce", "texto": "GBS, fatores de risco, amp+genta e diferencial com SDR." },
+        { "titulo": "Sessão 2 · Sala de parto", "texto": "Passos iniciais, VPP e quando ir para massagem." },
+        { "titulo": "Sessão 3 · Icterícia + triagens", "texto": "Red flags e testes de rotina da maternidade." }
+      ],
+      "lacuna": "Doenças exantemáticas e imunizações também pesam no SUS-SP, mas estão fora da Ped1."
     },
     {
-      "banca": "SUS-BA",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Sala de parto em destaque + classificações.",
+      "verdict": "No SUS-BA, sala de parto costuma ser o tema #1 da Pediatria — reanimação e classificações do RN valem muito.",
       "foco": "Sala de parto · Reanimação · Classificações",
-      "estilo": "Diretriz SBP + conduta imediata"
+      "estilo": "Diretriz SBP + conduta imediata",
+      "priorities": [
+        { "tema": "Sala de parto / reanimação", "score": 98 },
+        { "tema": "Classificações / CIUR", "score": 80 },
+        { "tema": "Icterícia", "score": 70 },
+        { "tema": "Infecção precoce", "score": 65 },
+        { "tema": "Apgar / rotina", "score": 60 },
+        { "tema": "Triagens", "score": 50 }
+      ],
+      "deckOrder": [
+        "neo-reanimacao-34",
+        "neo-reanimacao-prematuro",
+        "neo-classificacoes",
+        "neo-ciur",
+        "neo-cuidados-iniciais",
+        "neo-ictericia",
+        "neo-respiratorio",
+        "neo-triagem"
+      ],
+      "checklist": ["reanim-34", "reanim-pre", "classif", "meconio", "cuidados", "pneumonia"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Fluxogramas", "texto": "≥34s e <34s de ponta a ponta, com mecônio e HDC." },
+        { "titulo": "Sessão 2 · Classificações", "texto": "Peso, IG, AIG/PIG/GIG e CIUR simétrico/assimétrico." },
+        { "titulo": "Sessão 3 · Consolidar", "texto": "Apgar, rotina e um bloco curto de infecção precoce." }
+      ],
+      "lacuna": "Imunizações e pneumonia pediátrica também caem no SUS-BA — estão em outras apostilas."
     },
     {
-      "banca": "Einstein",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Guideline SBP atualizado e números exatos.",
+      "verdict": "No Einstein, cobram atualização de protocolo: O₂ inicial, Sat, mecônio e particularidades do prematuro <34s.",
       "foco": "Fluxograma SBP · O₂/Sat · Mecônio · Prematuro <34s",
-      "estilo": "Guideline atualizado; números exatos"
+      "estilo": "Guideline atualizado; números exatos",
+      "priorities": [
+        { "tema": "Reanimação ≥34s", "score": 97 },
+        { "tema": "Reanimação <34s", "score": 95 },
+        { "tema": "Mecônio / HDC", "score": 88 },
+        { "tema": "DR / HPPN", "score": 75 },
+        { "tema": "Triagens", "score": 70 },
+        { "tema": "Icterícia", "score": 65 }
+      ],
+      "deckOrder": [
+        "neo-reanimacao-34",
+        "neo-reanimacao-prematuro",
+        "neo-respiratorio",
+        "neo-triagem",
+        "neo-ictericia",
+        "neo-cuidados-iniciais",
+        "neo-classificacoes",
+        "neo-ciur"
+      ],
+      "checklist": ["reanim-34", "reanim-pre", "meconio", "dr", "triagens", "ictericia"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Números SBP", "texto": "21% vs 30%, alvos de Sat, PEEP 5, relação 3:1, doses." },
+        { "titulo": "Sessão 2 · Situações especiais", "texto": "Mecônio atualizado e hérnia diafragmática." },
+        { "titulo": "Sessão 3 · DR + triagens", "texto": "HPPN/SAM e coraçãozinho com critérios novos." }
+      ],
+      "lacuna": "Fique atento a updates da SBP — a prova gosta de mudança recente de conduta."
     },
     {
-      "banca": "PUC / Unicamp",
+      "id": "puc-unicamp",
+      "label": "PUC / Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Casos clássicos e diferencial de DR.",
+      "verdict": "PUC e Unicamp cobram bem o diferencial clínico: SDR vs TTRN vs SAM, além de icterícia e Apgar.",
       "foco": "SDR vs TTRN vs SAM · Icterícia · Apgar",
-      "estilo": "Diagnóstico diferencial + conduta"
+      "estilo": "Diagnóstico diferencial + conduta",
+      "priorities": [
+        { "tema": "DR diferencial", "score": 96 },
+        { "tema": "Icterícia", "score": 88 },
+        { "tema": "Reanimação", "score": 80 },
+        { "tema": "Apgar / rotina", "score": 72 },
+        { "tema": "Classificações", "score": 55 },
+        { "tema": "Triagens", "score": 50 }
+      ],
+      "deckOrder": [
+        "neo-respiratorio",
+        "neo-ictericia",
+        "neo-reanimacao-34",
+        "neo-cuidados-iniciais",
+        "neo-reanimacao-prematuro",
+        "neo-classificacoes",
+        "neo-triagem",
+        "neo-ciur"
+      ],
+      "checklist": ["dr", "ictericia", "reanim-34", "cuidados", "meconio", "classif"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Tabela mental DR", "texto": "SDR × TTRN × SAM × HPPN × pneumonia — clínica, Rx e conduta." },
+        { "titulo": "Sessão 2 · Icterícia", "texto": "Fisiológica vs patológica e condutas." },
+        { "titulo": "Sessão 3 · Sala + Apgar", "texto": "Reanimação essencial e o que o Apgar não decide." }
+      ],
+      "lacuna": "Menos foco em superspecialty; priorize casos clássicos bem resolvidos."
     },
     {
-      "banca": "UFRJ",
-      "foco": "Classificações, Apgar, fisiológica vs patológica, pezinho",
-      "estilo": "Conceito sólido; menos superspecialty"
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Fundamentos sólidos: classificações, Apgar e pezinho.",
+      "verdict": "Na UFRJ, o ganho está nos fundamentos: classificações, Apgar, icterícia fisiológica vs patológica e triagem do pezinho.",
+      "foco": "Classificações · Apgar · Icterícia · Pezinho",
+      "estilo": "Conceito sólido; menos superspecialty",
+      "priorities": [
+        { "tema": "Classificações / CIUR", "score": 90 },
+        { "tema": "Icterícia", "score": 88 },
+        { "tema": "Triagens", "score": 85 },
+        { "tema": "Apgar / rotina", "score": 80 },
+        { "tema": "Reanimação básica", "score": 70 },
+        { "tema": "DR diferencial", "score": 55 }
+      ],
+      "deckOrder": [
+        "neo-classificacoes",
+        "neo-ciur",
+        "neo-ictericia",
+        "neo-triagem",
+        "neo-cuidados-iniciais",
+        "neo-reanimacao-34",
+        "neo-reanimacao-prematuro",
+        "neo-respiratorio"
+      ],
+      "checklist": ["classif", "ictericia", "triagens", "cuidados", "reanim-34", "dr"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Classificar o RN", "texto": "Peso, IG, AIG/PIG/GIG e CIUR." },
+        { "titulo": "Sessão 2 · Icterícia + pezinho", "texto": "Fisiológica vs patológica e etapa 1 do PNTN." },
+        { "titulo": "Sessão 3 · Apgar + reanimação", "texto": "O que o Apgar mede e o básico da VPP." }
+      ],
+      "lacuna": "Menos detalhe de guideline avançado; foque clareza de conceito."
     }
   ],
-  "checklist": [
-    {
+  "checklistItems": {
+    "reanim-34": {
       "tema": "Reanimação ≥34s",
       "yield": "Máximo",
-      "pegar": "3 parâmetros · clampeamento 60s · passos 30s · VPP se apneia/FC<100 · ar 21% · Sat pré-ductal · massagem se FC<60 após VPP por cânula · 3:1 · adrenalina EV",
-      "bancas": "USP, Unifesp, Einstein, SUS-BA, Unicamp"
+      "pegar": "3 parâmetros · clampeamento 60s · passos 30s · VPP se apneia/FC<100 · ar 21% · Sat pré-ductal · massagem se FC<60 após VPP por cânula · 3:1 · adrenalina EV"
     },
-    {
+    "reanim-pre": {
       "tema": "Reanimação <34s",
       "yield": "Alto",
-      "pegar": "Clampeamento ≥30s · saco plástico · O₂ inicial 30% · T-piece · CPAP se DR com FC>100 · sem máscara laríngea",
-      "bancas": "Einstein, USP, Unifesp"
+      "pegar": "Clampeamento ≥30s · saco plástico · O₂ inicial 30% · T-piece · CPAP se DR com FC>100 · sem máscara laríngea"
     },
-    {
+    "meconio": {
       "tema": "Mecônio / HDC",
       "yield": "Alto",
-      "pegar": "Vigoroso fica com mãe · sem aspiração rotineira pré-VPP · HDC: intubar, nunca máscara",
-      "bancas": "USP, Einstein, PUC"
+      "pegar": "Vigoroso fica com mãe · sem aspiração rotineira pré-VPP · HDC: intubar, nunca máscara"
     },
-    {
+    "ictericia": {
       "tema": "Icterícia",
       "yield": "Máximo",
-      "pegar": "Fisiológica (2–3º dia) · red flags <24h · Kramer · aleitamento vs leite materno · fototerapia por gráfico · Kasai <8 sem",
-      "bancas": "USP, Unifesp, PUC, UFRJ, SUS-SP"
+      "pegar": "Fisiológica (2–3º dia) · red flags <24h · Kramer · aleitamento vs leite materno · fototerapia por gráfico · Kasai <8 sem"
     },
-    {
+    "triagens": {
       "tema": "Triagens",
       "yield": "Alto",
-      "pegar": "Pezinho 3–5º dia · TSH/FAL/IRT/17OHP · Coraçãozinho ≥35s, 24–48h · Olhinho/orelhinha",
-      "bancas": "Unifesp, UFRJ, SUS-SP, Einstein"
+      "pegar": "Pezinho 3–5º dia · TSH/FAL/IRT/17OHP · Coraçãozinho ≥35s, 24–48h · Olhinho/orelhinha"
     },
-    {
+    "dr": {
       "tema": "DR: SDR / TTRN / SAM / HPPN",
       "yield": "Alto",
-      "pegar": "SDR = surfactante + vidro fosco · TTRN = cesárea eletiva, suporte · SAM = pós-termo/asfixia · HPPN = hipoxemia refratária + NO",
-      "bancas": "PUC, Unicamp, USP, Einstein"
+      "pegar": "SDR = surfactante + vidro fosco · TTRN = cesárea eletiva, suporte · SAM = pós-termo/asfixia · HPPN = hipoxemia refratária + NO"
     },
-    {
+    "pneumonia": {
       "tema": "Pneumonia / GBS precoce",
       "yield": "Médio-alto",
-      "pegar": "Precoce ≤48h · GBS · RPM>18h, corioamnionite · amp+genta",
-      "bancas": "SUS-SP, SUS-BA, Unifesp"
+      "pegar": "Precoce ≤48h · GBS · RPM>18h, corioamnionite · amp+genta"
     },
-    {
+    "classif": {
       "tema": "Classificações / CIUR",
       "yield": "Médio",
-      "pegar": "Peso/IG · AIG/PIG/GIG · simétrico vs assimétrico · PIG ≠ CIUR",
-      "bancas": "UFRJ, SUS-BA, Unicamp"
+      "pegar": "Peso/IG · AIG/PIG/GIG · simétrico vs assimétrico · PIG ≠ CIUR"
+    },
+    "cuidados": {
+      "tema": "Apgar e cuidados de rotina",
+      "yield": "Médio",
+      "pegar": "Apgar não inicia reanimação · vit. K · profilaxia ocular · alojamento conjunto ≥1800g e ≥34s"
     }
-  ],
+  },
   "numeros": [
     "Clampeamento vigoroso ≥34s: ≥60 s",
     "Passos iniciais: ≤30 s",
@@ -129,20 +353,5 @@
     "Marcas comerciais de surfactante",
     "Etapas 2–5 da ampliação do pezinho",
     "Lista exaustiva de causas placentárias de CIUR"
-  ],
-  "sessoes": [
-    {
-      "titulo": "Sessão 1 · Sala de parto",
-      "texto": "Fluxogramas ≥34s e <34s + mecônio + HDC + medicações. Faça os decks de reanimação até acertar em sequência."
-    },
-    {
-      "titulo": "Sessão 2 · Icterícia + triagens",
-      "texto": "Fisiológica vs patológica, aleitamento, fototerapia, pezinho e coraçãozinho (SBP 2022)."
-    },
-    {
-      "titulo": "Sessão 3 · DR + infecção",
-      "texto": "Tabela mental SDR × TTRN × SAM × HPPN × pneumonia precoce. Classificações só se sobrar tempo."
-    }
-  ],
-  "lacuna": "Sepse neonatal tardia e TORCH (CMV, toxo, sífilis) caem muito em USP/Unifesp, mas a Ped1 só toca de leve. Vale um suplemento curto depois — sem substituir reanimação/icterícia."
+  ]
 }

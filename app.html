@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718d">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718e">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -242,11 +242,21 @@
             </div>
           </div>
 
+          <div id="esp-focus" hidden>
+            <div class="actions-row" style="margin-bottom:0.85rem">
+              <button type="button" class="btn btn-ghost btn-compact" id="esp-focus-back">← Voltar às especialidades</button>
+            </div>
+            <h3 class="esp-decks-title">Pediatria · como quer estudar?</h3>
+            <p class="muted" id="esp-focus-hint">Escolha estatística geral ou uma prova específica para priorizar os assuntos.</p>
+            <div class="dash-grid dash-grid--sm" id="esp-focus-grid"></div>
+          </div>
+
           <div id="esp-decks" hidden>
             <div class="actions-row" style="margin-bottom:0.85rem">
-              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar às especialidades</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar</button>
             </div>
             <h3 id="esp-decks-title" class="esp-decks-title">Subtemas</h3>
+            <p class="muted" id="esp-decks-hint" hidden></p>
             <div class="dash-grid dash-grid--sm" id="esp-deck-grid"></div>
           </div>
 
@@ -255,7 +265,7 @@
               <button type="button" class="btn btn-ghost btn-compact" id="esp-rev-back">← Voltar aos subtemas</button>
             </div>
             <h2 id="rev-neo-title" class="esp-decks-title">Neonatologia · revisão para provas</h2>
-            <p class="muted">Alto rendimento para SUS-SP, SUS-BA, Einstein, PUC, Unicamp, USP, Unifesp e UFRJ.</p>
+            <p class="muted" id="rev-neo-sub">Alto rendimento para as principais provas R1.</p>
             <div id="revisao-neo-root"></div>
           </div>
         </section>
@@ -338,13 +348,13 @@
     </div>
   </div>
 
-  <script src="js/theme.js?v=20260718d"></script>
-  <script src="js/auth.js?v=20260718d"></script>
-  <script src="js/schedule.js?v=20260718d"></script>
-  <script src="js/exam-stats.js?v=20260718d"></script>
-  <script src="js/flashcards.js?v=20260718d"></script>
-  <script src="js/questions.js?v=20260718d"></script>
-  <script src="js/revisao.js?v=20260718d"></script>
-  <script src="js/app.js?v=20260718d"></script>
+  <script src="js/theme.js?v=20260718e"></script>
+  <script src="js/auth.js?v=20260718e"></script>
+  <script src="js/schedule.js?v=20260718e"></script>
+  <script src="js/exam-stats.js?v=20260718e"></script>
+  <script src="js/flashcards.js?v=20260718e"></script>
+  <script src="js/questions.js?v=20260718e"></script>
+  <script src="js/revisao.js?v=20260718e"></script>
+  <script src="js/app.js?v=20260718e"></script>
 </body>
 </html>
