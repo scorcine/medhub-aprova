@@ -3,27 +3,43 @@
 const APROVA_REVISAO_MODULES = {
   neonatologia: {
     label: "Neonatologia",
-    file: "data/revisao-neonatologia.json?v=20260718m"
+    file: "data/revisao-neonatologia.json?v=20260718n"
   },
   alimentacao: {
     label: "Alimentação",
-    file: "data/revisao-alimentacao.json?v=20260718m"
+    file: "data/revisao-alimentacao.json?v=20260718n"
   },
   "avaliacao-nutricional": {
     label: "Avaliação nutricional",
-    file: "data/revisao-avaliacao-nutricional.json?v=20260718m"
+    file: "data/revisao-avaliacao-nutricional.json?v=20260718n"
   },
   imunizacoes: {
     label: "Imunizações",
-    file: "data/revisao-imunizacoes.json?v=20260718m"
+    file: "data/revisao-imunizacoes.json?v=20260718n"
   },
   diabetes: {
     label: "Diabetes",
-    file: "data/revisao-diabetes.json?v=20260718m"
+    file: "data/revisao-diabetes.json?v=20260718n"
   },
   ped6: {
     label: "Nefro / Infecto / Cardio",
-    file: "data/revisao-ped6.json?v=20260718m"
+    file: "data/revisao-ped6.json?v=20260718n"
+  },
+  respiratorio: {
+    label: "Respiratório",
+    file: "data/revisao-respiratorio.json?v=20260718n"
+  },
+  "gastro-neuro": {
+    label: "Gastro / Neuro",
+    file: "data/revisao-gastro-neuro.json?v=20260718n"
+  },
+  "nefro-extra": {
+    label: "Nefro (SN / GNA)",
+    file: "data/revisao-nefro-extra.json?v=20260718n"
+  },
+  "r1-extra": {
+    label: "Dengue / Hemato / Orto",
+    file: "data/revisao-r1-extra.json?v=20260718n"
   }
 };
 

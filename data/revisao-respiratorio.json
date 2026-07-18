@@ -1,0 +1,209 @@
+{
+  "title": "Respiratório pediátrico · revisão R1",
+  "module": "respiratorio",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Média das principais provas R1.",
+      "verdict": "No respiratório pediátrico, ~70% do retorno está em bronquiolite, crise asmática e pneumonia (agente + ATB + critérios de internação).",
+      "foco": "Bronquiolite · Asma · Pneumonia · Crupe/otite",
+      "estilo": "Visão geral Brasil",
+      "priorities": [
+        { "tema": "Bronquiolite / VSR", "score": 94 },
+        { "tema": "Crise asmática", "score": 92 },
+        { "tema": "Pneumonia (idade/ATB)", "score": 88 },
+        { "tema": "Crupe", "score": 70 },
+        { "tema": "Otite / amigdalite", "score": 65 },
+        { "tema": "Palivizumabe", "score": 40 }
+      ],
+      "deckOrder": ["resp-bronquiolite", "resp-asma", "resp-pneumonia"],
+      "checklist": ["bronq", "asma", "pneumo", "crupe"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Bronquiolite", "texto": "Suporte; o que NÃO fazer de rotina." },
+        { "titulo": "Sessão 2 · Asma", "texto": "SABA + corticoide; gravidade." },
+        { "titulo": "Sessão 3 · Pneumonia", "texto": "Agente por idade e amoxicilina." }
+      ],
+      "lacuna": "Fibrose cística e tuberculose pulmonar detalhada: revise à parte se a banca for pesada."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Casos de gravidade.",
+      "verdict": "USP cobra crise asmática grave, bronquiolite com critérios de internação e pneumonia complicada.",
+      "foco": "Asma grave · Bronquiolite · Pneumonia",
+      "estilo": "Caso + conduta",
+      "priorities": [
+        { "tema": "Asma grave", "score": 96 },
+        { "tema": "Bronquiolite", "score": 90 },
+        { "tema": "Pneumonia", "score": 85 },
+        { "tema": "Crupe", "score": 60 }
+      ],
+      "deckOrder": ["resp-asma", "resp-bronquiolite", "resp-pneumonia"],
+      "checklist": ["asma", "bronq", "pneumo"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Asma", "texto": "Magnésio, ipratrópio, UTI." },
+        { "titulo": "Sessão 2 · Bronquiolite", "texto": "Internar ou não." },
+        { "titulo": "Sessão 3 · Pneumonia", "texto": "ATB e falha." }
+      ],
+      "lacuna": "Espiroetria avançada: baixo ROI."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Protocolo.",
+      "verdict": "Unifesp pesa pneumonia por faixa etária, amoxicilina e bronquiolite baseada em evidência.",
+      "foco": "Pneumonia · Bronquiolite · Asma",
+      "estilo": "Protocolo",
+      "priorities": [
+        { "tema": "Pneumonia", "score": 95 },
+        { "tema": "Bronquiolite", "score": 90 },
+        { "tema": "Asma", "score": 85 },
+        { "tema": "Otite", "score": 55 }
+      ],
+      "deckOrder": ["resp-pneumonia", "resp-bronquiolite", "resp-asma"],
+      "checklist": ["pneumo", "bronq", "asma"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Pneumonia", "texto": "Agente × idade." },
+        { "titulo": "Sessão 2 · Bronquiolite", "texto": "Sem broncodilatador de rotina." },
+        { "titulo": "Sessão 3 · Asma", "texto": "Escalonamento básico." }
+      ],
+      "lacuna": "Vacina pneumocócica já está em Imunizações."
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "APS e emergência.",
+      "verdict": "SUS-SP: reconhecer gravidade, plano ambulatorial e quando referenciar.",
+      "foco": "Bronquiolite · Asma · Otite/amigdalite",
+      "estilo": "APS",
+      "priorities": [
+        { "tema": "Bronquiolite", "score": 94 },
+        { "tema": "Asma", "score": 90 },
+        { "tema": "Otite / amigdalite", "score": 80 },
+        { "tema": "Pneumonia ambulatorial", "score": 75 }
+      ],
+      "deckOrder": ["resp-bronquiolite", "resp-asma", "resp-pneumonia"],
+      "checklist": ["bronq", "asma", "pneumo", "crupe"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · UBS", "texto": "OMA e faringite." },
+        { "titulo": "Sessão 2 · Pronto-socorro", "texto": "Bronquiolite e asma." },
+        { "titulo": "Sessão 3 · Internar", "texto": "Sinais de hipoxemia." }
+      ],
+      "lacuna": "UTI respiratória avançada: secundário."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Conceito de suporte na bronquiolite e ATB racional na pneumonia.",
+      "foco": "Bronquiolite · Pneumonia · Crupe",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "Bronquiolite", "score": 93 },
+        { "tema": "Pneumonia", "score": 88 },
+        { "tema": "Crupe", "score": 75 },
+        { "tema": "Asma", "score": 70 }
+      ],
+      "deckOrder": ["resp-bronquiolite", "resp-pneumonia", "resp-asma"],
+      "checklist": ["bronq", "pneumo", "crupe", "asma"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · VSR", "texto": "Clínica e suporte." },
+        { "titulo": "Sessão 2 · ATB", "texto": "Quando amoxicilina." },
+        { "titulo": "Sessão 3 · Crupe", "texto": "Dexa + adrenalina." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Casos graves.",
+      "verdict": "Einstein: asma quase fatal, pneumonia complicada e bronquiolite com apneia.",
+      "foco": "Asma grave · Pneumonia · Bronquiolite",
+      "estilo": "Caso",
+      "priorities": [
+        { "tema": "Asma grave", "score": 97 },
+        { "tema": "Pneumonia grave", "score": 88 },
+        { "tema": "Bronquiolite", "score": 80 },
+        { "tema": "Crupe grave", "score": 60 }
+      ],
+      "deckOrder": ["resp-asma", "resp-pneumonia", "resp-bronquiolite"],
+      "checklist": ["asma", "pneumo", "bronq"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Asma", "texto": "Fluxo de gravidade." },
+        { "titulo": "Sessão 2 · Pneumonia", "texto": "Internação/UTI." },
+        { "titulo": "Sessão 3 · Apneia", "texto": "Lactente com VSR." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "puc",
+      "label": "PUC/Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Fisiopatologia aplicada.",
+      "verdict": "Equilibra agentes etiológicos e conduta.",
+      "foco": "Pneumonia · Asma · Bronquiolite",
+      "estilo": "Conceito + conduta",
+      "priorities": [
+        { "tema": "Pneumonia / agentes", "score": 94 },
+        { "tema": "Asma", "score": 88 },
+        { "tema": "Bronquiolite", "score": 85 },
+        { "tema": "VAS", "score": 60 }
+      ],
+      "deckOrder": ["resp-pneumonia", "resp-asma", "resp-bronquiolite"],
+      "checklist": ["pneumo", "asma", "bronq"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Agentes", "texto": "Por idade." },
+        { "titulo": "Sessão 2 · Asma", "texto": "Controlador vs alívio." },
+        { "titulo": "Sessão 3 · Evidência", "texto": "O que não fazer na bronquiolite." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Conceito sólido.",
+      "verdict": "Clínica clássica de bronquiolite, crupe e pneumonia.",
+      "foco": "Bronquiolite · Crupe · Pneumonia",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "Bronquiolite", "score": 94 },
+        { "tema": "Crupe", "score": 85 },
+        { "tema": "Pneumonia", "score": 82 },
+        { "tema": "Asma", "score": 75 }
+      ],
+      "deckOrder": ["resp-bronquiolite", "resp-pneumonia", "resp-asma"],
+      "checklist": ["bronq", "crupe", "pneumo", "asma"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Bronquiolite", "texto": "Idade e VSR." },
+        { "titulo": "Sessão 2 · Crupe", "texto": "Tosse metálica." },
+        { "titulo": "Sessão 3 · Pneumonia", "texto": "Amoxicilina." }
+      ],
+      "lacuna": "—"
+    }
+  ],
+  "checklistItems": {
+    "bronq": { "tema": "Bronquiolite", "yield": "Máximo", "pegar": "VSR · suporte · sem SABA/corticoide/ATB de rotina · internar se hipoxemia/apneia/má aceitação" },
+    "asma": { "tema": "Asma", "yield": "Máximo", "pegar": "SABA + corticoide sistêmico · ipratrópio/Mg se grave · CI inalatório no controle" },
+    "pneumo": { "tema": "Pneumonia", "yield": "Alto", "pegar": "Agente por idade · amoxicilina 1ª linha típica · macrolídeo se atípica · internar se hipoxemia/toxicidade" },
+    "crupe": { "tema": "Crupe/VAS", "yield": "Médio-alto", "pegar": "Dexa · adrenalina se estridor em repouso · OMA: amoxi · faringite GAS: penicilina" }
+  },
+  "numeros": [
+    "Bronquiolite: pico <12 meses",
+    "Crupe: dexametasona dose única clássica 0,15–0,6 mg/kg (conforme protocolo)",
+    "OMA: amoxicilina 1ª linha"
+  ],
+  "pegadinhas": [
+    "Bronquiolite ≠ asma: não bombar SABA de rotina",
+    "Amoxicilina na pneumonia típica; macrolídeo se atípica",
+    "Crupe: corticoide mesmo se leve"
+  ],
+  "baixoRoi": ["Fibrose cística genética completa", "Todos os vírus da VAS"]
+}

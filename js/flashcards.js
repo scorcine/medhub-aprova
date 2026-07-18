@@ -3,19 +3,11 @@
 function aprovaDeckSpecialty (deck) {
   if (deck.specialty) return deck.specialty;
   const id = String(deck.id || "");
-  if (
-    id.indexOf("neo-") === 0 ||
-    id.indexOf("ali-") === 0 ||
-    id.indexOf("nut-") === 0 ||
-    id.indexOf("imu-") === 0 ||
-    id.indexOf("dm-") === 0 ||
-    id.indexOf("itu-") === 0 ||
-    id.indexOf("exa-") === 0 ||
-    id.indexOf("crd-") === 0 ||
-    id.indexOf("urg-") === 0
-  ) {
-    return "pediatria";
-  }
+  const pedPrefixes = [
+    "neo-", "ali-", "nut-", "imu-", "dm-", "itu-", "exa-", "crd-", "urg-",
+    "resp-", "gast-", "neu-", "nef-", "inf-", "hem-", "ort-", "end-"
+  ];
+  if (pedPrefixes.some(p => id.indexOf(p) === 0)) return "pediatria";
   if (id.indexOf("cardio") === 0) return "clinica";
   return "geral";
 }
@@ -38,7 +30,8 @@ const AprovaFlashcards = {
       "data/flashcards-avaliacao-nutricional.json",
       "data/flashcards-imunizacoes.json",
       "data/flashcards-diabetes.json",
-      "data/flashcards-ped6.json"
+      "data/flashcards-ped6.json",
+      "data/flashcards-r1-complementar.json"
     ];
     const decks = [];
     for (const file of files) {

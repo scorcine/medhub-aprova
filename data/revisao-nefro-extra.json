@@ -1,0 +1,198 @@
+{
+  "title": "Nefro (síndromes) · revisão R1",
+  "module": "nefro-extra",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Média R1.",
+      "verdict": "Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3).",
+      "foco": "Síndrome nefrótica · GNA · Diferencial nefrítico/nefrótico",
+      "estilo": "Visão geral",
+      "priorities": [
+        { "tema": "Síndrome nefrótica", "score": 96 },
+        { "tema": "GNA pós-estreptocócica", "score": 92 },
+        { "tema": "Complicações da SN", "score": 80 },
+        { "tema": "Quando biopsiar", "score": 70 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · SN", "texto": "Definição + prednisona." },
+        { "titulo": "Sessão 2 · GNA", "texto": "C3 e latência." },
+        { "titulo": "Sessão 3 · Complicações", "texto": "Peritonite e trombose." }
+      ],
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6)."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Casos.",
+      "verdict": "USP: SN com indicação de biópsia e GNA com complementos.",
+      "foco": "SN · Biópsia · GNA",
+      "estilo": "Caso",
+      "priorities": [
+        { "tema": "SN / biópsia", "score": 96 },
+        { "tema": "GNA", "score": 90 },
+        { "tema": "Complicações", "score": 75 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · SN", "texto": "Quando NÃO empirizar só corticoide." },
+        { "titulo": "Sessão 2 · GNA", "texto": "C3 baixa transitória." },
+        { "titulo": "Sessão 3 · Infecção", "texto": "Pneumococo na SN." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Protocolo.",
+      "verdict": "Critérios diagnósticos e conduta inicial.",
+      "foco": "Definições · Corticoide · C3",
+      "estilo": "Protocolo",
+      "priorities": [
+        { "tema": "Definição SN/GNA", "score": 95 },
+        { "tema": "Tratamento inicial", "score": 90 },
+        { "tema": "C3", "score": 85 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Números", "texto": "Proteinúria e albumina." },
+        { "titulo": "Sessão 2 · Conduta", "texto": "Prednisona vs suporte na GNA." },
+        { "titulo": "Sessão 3 · Seguimento", "texto": "C3 em 6–8 semanas." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "APS.",
+      "verdict": "Reconhecer edema nefrótico vs nefrítico e encaminhar.",
+      "foco": "Reconhecer SN/GNA · Encaminhar",
+      "estilo": "APS",
+      "priorities": [
+        { "tema": "Reconhecer síndromes", "score": 94 },
+        { "tema": "GNA pós-estrepto", "score": 85 },
+        { "tema": "Complicações", "score": 70 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Edema", "texto": "Nefrótico vs nefrítico." },
+        { "titulo": "Sessão 2 · Pós-estrepto", "texto": "Urina cor de chá." },
+        { "titulo": "Sessão 3 · Urgência", "texto": "HAS/oligúria." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Conceito clássico SN e GNA.",
+      "foco": "SN · GNA",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "SN", "score": 93 },
+        { "tema": "GNA", "score": 90 },
+        { "tema": "Diferencial", "score": 80 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · SN", "texto": "Lesões mínimas." },
+        { "titulo": "Sessão 2 · GNA", "texto": "Latência." },
+        { "titulo": "Sessão 3 · Lab", "texto": "C3." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Casos.",
+      "verdict": "Complicações da SN e GNA atípica.",
+      "foco": "Complicações · Biópsia · C3 persistente",
+      "estilo": "Caso",
+      "priorities": [
+        { "tema": "Complicações SN", "score": 95 },
+        { "tema": "Biópsia", "score": 88 },
+        { "tema": "GNA", "score": 82 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Peritonite", "texto": "Pneumococo." },
+        { "titulo": "Sessão 2 · Trombose", "texto": "Risco." },
+        { "titulo": "Sessão 3 · C3", "texto": "Se não normalizar." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "puc",
+      "label": "PUC/Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Fisiopatologia e critérios.",
+      "foco": "SN · GNA · Complemento",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "SN", "score": 94 },
+        { "tema": "GNA / C3", "score": 92 },
+        { "tema": "Diferencial", "score": 85 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Definições", "texto": "Lab." },
+        { "titulo": "Sessão 2 · Histologia", "texto": "Lesões mínimas." },
+        { "titulo": "Sessão 3 · C3", "texto": "Tempo." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Clássicos de prova: SN e GNA.",
+      "foco": "SN · GNA",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "SN", "score": 95 },
+        { "tema": "GNA", "score": 92 },
+        { "tema": "Complicações", "score": 70 }
+      ],
+      "deckOrder": ["nef-sindromes"],
+      "checklist": ["sn", "gna"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · SN", "texto": "Corticoide." },
+        { "titulo": "Sessão 2 · GNA", "texto": "Clínica." },
+        { "titulo": "Sessão 3 · Diferença", "texto": "Nefrótico vs nefrítico." }
+      ],
+      "lacuna": "—"
+    }
+  ],
+  "checklistItems": {
+    "sn": { "tema": "Síndrome nefrótica", "yield": "Máximo", "pegar": "Proteinúria maciça + albumina <2,5 · lesões mínimas · prednisona · biópsia se atípico · risco infecção/trombose" },
+    "gna": { "tema": "GNA", "yield": "Máximo", "pegar": "Pós-faringite 1–2 sem / pele 3–6 sem · hematúria · HAS · C3↓ (normaliza 6–8 sem) · suporte" }
+  },
+  "numeros": [
+    "Albumina SN: <2,5 g/dl",
+    "C3 na GNA: normaliza em 6–8 semanas",
+    "Latência faringite→GNA: ~1–2 semanas"
+  ],
+  "pegadinhas": [
+    "SN ≠ GNA (proteinúria maciça vs hematúria/HAS)",
+    "C3 baixa persistente: NÃO é GNA clássica simples",
+    "Criança com SN: pensar peritonite pneumocócica"
+  ],
+  "baixoRoi": ["Todas as glomerulopatias raras", "Protocolos de imunossupressor de 3ª linha"]
+}

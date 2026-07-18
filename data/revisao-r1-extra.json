@@ -1,0 +1,213 @@
+{
+  "title": "Infecto / Hemato / Orto / Puberdade · revisão R1",
+  "module": "r1-extra",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Média R1.",
+      "verdict": "Fora das apostilas Ped1–6, dengue, sepse, falciforme, febre reumática e artrite séptica × sinovite caem com frequência.",
+      "foco": "Dengue · Sepse · Falciforme · Febre reumática · Quadril",
+      "estilo": "Visão geral",
+      "priorities": [
+        { "tema": "Dengue", "score": 95 },
+        { "tema": "Sepse / choque", "score": 90 },
+        { "tema": "Falciforme", "score": 85 },
+        { "tema": "Febre reumática", "score": 82 },
+        { "tema": "Artrite séptica × sinovite", "score": 78 },
+        { "tema": "Puberdade / HAC", "score": 60 },
+        { "tema": "Mono / PTI", "score": 55 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "hem-anemias", "ort-reu", "end-puberdade", "urg-avancado"],
+      "checklist": ["dengue", "sepse", "falci", "jones", "quadril"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Dengue", "texto": "Alarmes e grupos." },
+        { "titulo": "Sessão 2 · Sepse/falci", "texto": "Choque compensado e torácica aguda." },
+        { "titulo": "Sessão 3 · Orto/Jones", "texto": "Quadril quente e penicilina benzatina." }
+      ],
+      "lacuna": "Exantemas clássicos e Kawasaki estão no módulo Ped6."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Casos.",
+      "verdict": "USP: dengue grave, sepse e falciforme com síndrome torácica.",
+      "foco": "Dengue · Sepse · Falciforme · Jones",
+      "estilo": "Caso",
+      "priorities": [
+        { "tema": "Dengue grave", "score": 96 },
+        { "tema": "Sepse", "score": 92 },
+        { "tema": "Falciforme", "score": 88 },
+        { "tema": "Febre reumática", "score": 75 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "hem-anemias", "ort-reu", "urg-avancado", "end-puberdade"],
+      "checklist": ["dengue", "sepse", "falci", "jones"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Dengue C", "texto": "Extravasamento." },
+        { "titulo": "Sessão 2 · Sepse", "texto": "Volume + ATB." },
+        { "titulo": "Sessão 3 · Falci", "texto": "Torácica aguda." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Protocolo.",
+      "verdict": "Protocolos MS de dengue e critérios de Jones.",
+      "foco": "Dengue MS · Jones · Falciforme prevenção",
+      "estilo": "Protocolo",
+      "priorities": [
+        { "tema": "Dengue", "score": 97 },
+        { "tema": "Febre reumática", "score": 88 },
+        { "tema": "Falciforme", "score": 80 },
+        { "tema": "Sepse", "score": 75 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "ort-reu", "hem-anemias", "end-puberdade", "urg-avancado"],
+      "checklist": ["dengue", "jones", "falci", "sepse"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Dengue", "texto": "Grupos A/B/C." },
+        { "titulo": "Sessão 2 · Jones", "texto": "Maiores/menores." },
+        { "titulo": "Sessão 3 · Falci", "texto": "Penicilina profilática." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "APS.",
+      "verdict": "Dengue na UBS, anemia ferropriva e reconhecer artrite séptica.",
+      "foco": "Dengue · Ferropriva · Quadril · Jones",
+      "estilo": "APS",
+      "priorities": [
+        { "tema": "Dengue ambulatorial", "score": 96 },
+        { "tema": "Anemia ferropriva", "score": 85 },
+        { "tema": "Artrite séptica reconhecer", "score": 80 },
+        { "tema": "Febre reumática", "score": 70 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "hem-anemias", "ort-reu", "end-puberdade", "urg-avancado"],
+      "checklist": ["dengue", "falci", "quadril", "jones"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Dengue A/B", "texto": "Hidratação VO." },
+        { "titulo": "Sessão 2 · Anemia", "texto": "Microcítica." },
+        { "titulo": "Sessão 3 · Claudicação", "texto": "Quando é emergência." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Dengue, ferropriva e puberdade básica.",
+      "foco": "Dengue · Anemia · Puberdade",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "Dengue", "score": 94 },
+        { "tema": "Anemia", "score": 85 },
+        { "tema": "Puberdade", "score": 70 },
+        { "tema": "Jones", "score": 65 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "hem-anemias", "end-puberdade", "ort-reu", "urg-avancado"],
+      "checklist": ["dengue", "falci", "jones"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Dengue", "texto": "Alarmes." },
+        { "titulo": "Sessão 2 · Hemato", "texto": "Ferropriva." },
+        { "titulo": "Sessão 3 · Puberdade", "texto": "Cortes de idade." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Casos.",
+      "verdict": "Sepse, falciforme grave, HAC perde-sal e artrite séptica.",
+      "foco": "Sepse · Torácica aguda · HAC · Quadril séptico",
+      "estilo": "Caso",
+      "priorities": [
+        { "tema": "Sepse / anafilaxia", "score": 95 },
+        { "tema": "Falciforme grave", "score": 92 },
+        { "tema": "Artrite séptica", "score": 88 },
+        { "tema": "HAC / adrenal", "score": 75 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "hem-anemias", "ort-reu", "end-puberdade", "urg-avancado"],
+      "checklist": ["sepse", "falci", "quadril", "dengue"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Choque", "texto": "Compensado." },
+        { "titulo": "Sessão 2 · Falci", "texto": "Torácica." },
+        { "titulo": "Sessão 3 · Quadril", "texto": "Kocher." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "puc",
+      "label": "PUC/Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Jones, dengue e diferencial de anemias.",
+      "foco": "Jones · Dengue · Anemias · Puberdade",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "Febre reumática", "score": 94 },
+        { "tema": "Dengue", "score": 90 },
+        { "tema": "Anemias", "score": 85 },
+        { "tema": "Puberdade", "score": 70 }
+      ],
+      "deckOrder": ["ort-reu", "inf-dengue-sepse", "hem-anemias", "end-puberdade", "urg-avancado"],
+      "checklist": ["jones", "dengue", "falci", "quadril"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Jones", "texto": "Maiores." },
+        { "titulo": "Sessão 2 · Dengue", "texto": "Fases." },
+        { "titulo": "Sessão 3 · Microcitose", "texto": "Ferro vs talassemia." }
+      ],
+      "lacuna": "—"
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Conceito.",
+      "verdict": "Clássicos: dengue, Jones, ferropriva, puberdade.",
+      "foco": "Dengue · Jones · Ferropriva · Puberdade",
+      "estilo": "Conceito",
+      "priorities": [
+        { "tema": "Dengue", "score": 93 },
+        { "tema": "Febre reumática", "score": 90 },
+        { "tema": "Ferropriva", "score": 85 },
+        { "tema": "Puberdade", "score": 75 }
+      ],
+      "deckOrder": ["inf-dengue-sepse", "ort-reu", "hem-anemias", "end-puberdade", "urg-avancado"],
+      "checklist": ["dengue", "jones", "falci"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Dengue", "texto": "Sem AAS." },
+        { "titulo": "Sessão 2 · Jones", "texto": "Profilaxia." },
+        { "titulo": "Sessão 3 · Ferro", "texto": "Lab." }
+      ],
+      "lacuna": "—"
+    }
+  ],
+  "checklistItems": {
+    "dengue": { "tema": "Dengue", "yield": "Máximo", "pegar": "Fases · alarmes na defervescência · A/B/C · sem AAS/AINE · hematócrito↑ + plaquetas↓" },
+    "sepse": { "tema": "Sepse", "yield": "Alto", "pegar": "Choque compensado existe · volume + ATB precoce · vasoativo se refratário · adrenalina IM na anafilaxia" },
+    "falci": { "tema": "Falciforme", "yield": "Alto", "pegar": "Crises · torácica aguda · penicilina profilática · vacinas · hidroxiureia selecionada" },
+    "jones": { "tema": "Febre reumática", "yield": "Alto", "pegar": "Jones · evidência de strepto · benzatina · coreia pode ser isolada" },
+    "quadril": { "tema": "Orto urgente", "yield": "Alto", "pegar": "Séptica vs transitória · Kocher · epifisiólise no obeso adolescente · DDQ Ortolani/Barlow" }
+  },
+  "numeros": [
+    "Adrenalina anafilaxia: 0,01 mg/kg IM",
+    "Puberdade precoce: ♀ <8a · ♂ <9a",
+    "Aneurisma Kawasaki já no Ped6; aqui foque Jones/dengue"
+  ],
+  "pegadinhas": [
+    "Dengue: piora na queda da febre",
+    "Nunca AAS na dengue",
+    "Choque pediátrico pode ter PA normal",
+    "Dor no joelho do adolescente obeso: pensar epifisiólise",
+    "Amoxi na mono → rash"
+  ],
+  "baixoRoi": ["Todos os genótipos falciformes", "Protocolos longos de quimioterapia"]
+}

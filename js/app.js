@@ -164,8 +164,8 @@ function aprovaRenderEspecialidades () {
   const cliN = AprovaFlashcards.countBySpecialty("clinica");
   if (ped) {
     ped.textContent = pedN
-      ? pedN + " flashcards · Ped1–Ped6 completas"
-      : "Todas as apostilas de Pediatria.";
+      ? pedN + " flashcards · Pediatria R1 completa"
+      : "Ped1–Ped6 + blocos clássicos do R1.";
   }
   if (cli) {
     cli.textContent = cliN
@@ -182,31 +182,45 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("imu-") === 0) return "Imunizações";
   if (id.indexOf("dm-") === 0) return "Diabetes";
   if (id.indexOf("itu-") === 0) return "Nefro · ITU/RVU";
+  if (id.indexOf("nef-") === 0) return "Nefro · SN/GNA";
   if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
+  if (id.indexOf("inf-") === 0) return "Infecto · Dengue/Sepse";
   if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
+  if (id.indexOf("resp-") === 0) return "Respiratório";
+  if (id.indexOf("gast-") === 0) return "Gastro";
+  if (id.indexOf("neu-") === 0) return "Neuro";
+  if (id.indexOf("hem-") === 0) return "Hemato";
+  if (id.indexOf("ort-") === 0) return "Orto / Reumato";
+  if (id.indexOf("end-") === 0) return "Endócrino";
   if (id.indexOf("urg-") === 0) return "Urgências";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
 
-function aprovaRenderDeckCards (specialty, grid) {
-  const decks = AprovaFlashcards.decksBySpecialty(specialty).slice().sort((a, b) => {
-    const rank = id => {
-      const s = String(id || "");
-      if (s.indexOf("neo-") === 0) return 0;
-      if (s.indexOf("ali-") === 0) return 1;
-      if (s.indexOf("nut-") === 0) return 2;
-      if (s.indexOf("imu-") === 0) return 3;
-      if (s.indexOf("dm-") === 0) return 4;
-      if (s.indexOf("itu-") === 0) return 5;
-      if (s.indexOf("exa-") === 0) return 6;
-      if (s.indexOf("crd-") === 0) return 7;
-      if (s.indexOf("urg-") === 0) return 8;
-      return 9;
-    };
-    const d = rank(a.id) - rank(b.id);
-    return d !== 0 ? d : String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
-  });
+function aprovaRenderDeckCards (specialty, grid, deckOrder) {
+  let decks = AprovaFlashcards.decksBySpecialty(specialty).slice();
+  if (Array.isArray(deckOrder) && deckOrder.length) {
+    const allow = new Set(deckOrder);
+    decks = decks.filter(d => allow.has(d.id));
+    decks.sort((a, b) => deckOrder.indexOf(a.id) - deckOrder.indexOf(b.id));
+  } else {
+    decks.sort((a, b) => {
+      const rank = id => {
+        const s = String(id || "");
+        const order = [
+          "neo-", "ali-", "nut-", "imu-", "dm-",
+          "itu-", "nef-", "exa-", "inf-", "crd-",
+          "resp-", "gast-", "neu-", "hem-", "ort-", "end-", "urg-"
+        ];
+        for (let i = 0; i < order.length; i++) {
+          if (s.indexOf(order[i]) === 0) return i;
+        }
+        return 99;
+      };
+      const d = rank(a.id) - rank(b.id);
+      return d !== 0 ? d : String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
+    });
+  }
   grid.innerHTML = "";
 
   if (!decks.length) {
@@ -309,6 +323,11 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id, aprovaActivePedModule));
     options.appendChild(btn);
   });
+
+  const grid = document.getElementById("esp-deck-grid");
+  const decksTitle = document.getElementById("esp-decks-title");
+  if (grid) aprovaRenderDeckCards("pediatria", grid, profile.deckOrder || []);
+  if (decksTitle) decksTitle.textContent = "Pediatria · " + moduleLabel;
 }
 
 async function aprovaOpenPediatria () {
@@ -325,9 +344,8 @@ async function aprovaOpenPediatria () {
   aprovaHideEspViews();
   decksWrap.hidden = false;
   if (title) title.textContent = "Pediatria · subtemas";
-  if (hint) hint.textContent = "Escolha um subtema. Abaixo, veja o que mais cai nas provas.";
+  if (hint) hint.textContent = "Escolha o tema, a prova e um subtema. O gráfico mostra o que mais cai.";
 
-  aprovaRenderDeckCards("pediatria", grid);
   await aprovaRenderPediatriaStats(aprovaActiveFocusId, aprovaActivePedModule);
 }
 
