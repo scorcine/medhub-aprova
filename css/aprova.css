@@ -165,11 +165,10 @@ img {
 /* ——— Landing hero ——— */
 .hero {
   position: relative;
-  min-height: min(72vh, 640px);
   display: grid;
   align-items: center;
   overflow: hidden;
-  padding: 2.25rem 0 2.5rem;
+  padding: 2rem 0 1.75rem;
 }
 
 .hero-visual {
@@ -191,10 +190,10 @@ img {
 
 .hero-scan {
   position: absolute;
-  top: 12%;
+  top: -8%;
   right: -8%;
-  width: min(58vw, 560px);
-  height: min(58vw, 560px);
+  width: min(48vw, 420px);
+  height: min(48vw, 420px);
   border-radius: 50%;
   background:
     conic-gradient(from 210deg, transparent 0 62%, rgba(15, 159, 154, 0.22) 72%, transparent 88%),
@@ -205,10 +204,10 @@ img {
 
 .hero-orbit {
   position: absolute;
-  top: 22%;
-  right: 8%;
-  width: min(38vw, 360px);
-  height: min(38vw, 360px);
+  top: 4%;
+  right: 10%;
+  width: min(32vw, 280px);
+  height: min(32vw, 280px);
   border-radius: 50%;
   border: 1px dashed rgba(26, 108, 255, 0.28);
   animation: spin-slow 16s linear infinite reverse;
@@ -296,7 +295,7 @@ img {
 }
 
 .section {
-  padding: 4rem 0 3.5rem;
+  padding: 2rem 0 3rem;
 }
 
 .section h2 {
