@@ -1,0 +1,718 @@
+{
+  "title": "ITU · cistite · pielonefrite",
+  "module": "infc-itu",
+  "profiles": [
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "osteo",
+        "especial"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · ITU",
+          "texto": "Agentes, cultura, cistite/pielonefrite, gestante."
+        },
+        {
+          "titulo": "Sessão 2 · Pele",
+          "texto": "Impetigo, erisipela, celulite."
+        },
+        {
+          "titulo": "Sessão 3 · Osso",
+          "texto": "Vias, Salmonella, espondilodiscite."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Inf4 · MedHub R1 · Infectologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese ITU/pele",
+      "blurb": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "verdict": "Priorize cistite×pielonefrite, homem=complicada, gestante, erisipela×celulite e osteo (S.aureus/Salmonella/espondilodiscite).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Síntese nacional · ITU/pele/osteo",
+      "priorities": [
+        {
+          "tema": "Conduta ITU",
+          "pct": 36
+        },
+        {
+          "tema": "Pele / partes moles",
+          "pct": 24
+        },
+        {
+          "tema": "Osteomielite",
+          "pct": 22
+        },
+        {
+          "tema": "Diagnóstico / especiais",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "especial",
+        "osteo"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · ITU/pele (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "ITU e pele são cotidianos das provas gerais.",
+      "verdict": "Fosfo/nitro, pielonefrite e erisipela×celulite são o núcleo.",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "ITU conduta",
+          "pct": 40
+        },
+        {
+          "tema": "Pele",
+          "pct": 26
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "osteo",
+        "especial"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Inf4.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "Cistite ambulatorial e celulite/erisipela primeiro.",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "ITU",
+          "pct": 38
+        },
+        {
+          "tema": "Pele",
+          "pct": 28
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "especial",
+        "osteo"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Infectologia · ITU · cistite · pielonefrite (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "ITU e pele são cotidianos das provas gerais.",
+      "verdict": "Fosfo/nitro, pielonefrite e erisipela×celulite são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "ITU conduta",
+          "pct": 40
+        },
+        {
+          "tema": "Pele",
+          "pct": 26
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "especial",
+        "osteo",
+        "itu",
+        "pele"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · ITU/osteo (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de homem=complicada e osteo falcêmico.",
+      "verdict": "Cultura/cortes, Salmonella e Cierny-Mader.",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "ITU especiais",
+          "pct": 30
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "osteo",
+        "pele",
+        "especial"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · ITU/osteo (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Prostatite e osteo vertebral aparecem.",
+      "verdict": "30 dias na prostatite aguda; espondilodiscite + VHS.",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "ITU / próstata",
+          "pct": 32
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "especial",
+        "osteo"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Infectologia · ITU · cistite · pielonefrite (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "ITU e pele são cotidianos das provas gerais.",
+      "verdict": "Fosfo/nitro, pielonefrite e erisipela×celulite são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "ITU conduta",
+          "pct": 40
+        },
+        {
+          "tema": "Pele",
+          "pct": 26
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "especial",
+        "osteo"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Infectologia · ITU · cistite · pielonefrite (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "ITU e pele são cotidianos das provas gerais.",
+      "verdict": "Fosfo/nitro, pielonefrite e erisipela×celulite são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "ITU conduta",
+          "pct": 40
+        },
+        {
+          "tema": "Pele",
+          "pct": 26
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "especial",
+        "osteo",
+        "itu",
+        "pele"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Infectologia · ITU · cistite · pielonefrite (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de homem=complicada e osteo falcêmico.",
+      "verdict": "Cultura/cortes, Salmonella e Cierny-Mader. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ITU especiais",
+          "pct": 30
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "especial",
+        "osteo",
+        "itu",
+        "pele"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Infectologia · ITU · cistite · pielonefrite (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de homem=complicada e osteo falcêmico.",
+      "verdict": "Cultura/cortes, Salmonella e Cierny-Mader. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ITU especiais",
+          "pct": 30
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "especial",
+        "osteo",
+        "itu",
+        "pele"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Infectologia · ITU · cistite · pielonefrite (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de homem=complicada e osteo falcêmico.",
+      "verdict": "Cultura/cortes, Salmonella e Cierny-Mader. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ITU especiais",
+          "pct": 30
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "especial",
+        "osteo",
+        "itu",
+        "pele"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Infectologia · ITU · cistite · pielonefrite (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de homem=complicada e osteo falcêmico.",
+      "verdict": "Cultura/cortes, Salmonella e Cierny-Mader. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ITU especiais",
+          "pct": 30
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "itu",
+        "osteo",
+        "pele",
+        "especial"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Infectologia · ITU · cistite · pielonefrite (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Prostatite e osteo vertebral aparecem.",
+      "verdict": "30 dias na prostatite aguda; espondilodiscite + VHS. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "ITU / próstata",
+          "pct": 32
+        },
+        {
+          "tema": "Osteo",
+          "pct": 28
+        },
+        {
+          "tema": "Pele",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "especial",
+        "osteo"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Infectologia · ITU · cistite · pielonefrite (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "ITU e pele são cotidianos das provas gerais.",
+      "verdict": "Fosfo/nitro, pielonefrite e erisipela×celulite são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "ITU conduta",
+          "pct": 40
+        },
+        {
+          "tema": "Pele",
+          "pct": 26
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "itu",
+        "pele",
+        "especial",
+        "osteo"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Infectologia · ITU · cistite · pielonefrite (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "ITU e pele são cotidianos das provas gerais.",
+      "verdict": "Fosfo/nitro, pielonefrite e erisipela×celulite são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Agentes · cultura · cistite/pielonefrite · gestante · homem",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "ITU conduta",
+          "pct": 40
+        },
+        {
+          "tema": "Pele",
+          "pct": 26
+        },
+        {
+          "tema": "Osteo",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-itu-basico",
+        "infc-itu-dx",
+        "infc-itu-tx",
+        "infc-itu-especiais",
+        "infc-itu-mapa"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "itu": {
+      "tema": "ITU conduta",
+      "yield": "Máximo",
+      "pegar": "Fosfo/nitro na cistite; pielonefrite 7–14d; homem=complicada; profilaxia 5 indicações."
+    },
+    "pele": {
+      "tema": "Pele / partes moles",
+      "yield": "Alto",
+      "pegar": "Impetigo sem penicilina V; erisipela=strepto/limites nítidos; celulite cobrir S.aureus."
+    },
+    "osteo": {
+      "tema": "Osteomielite",
+      "yield": "Alto",
+      "pegar": "S.aureus #1; Salmonella no falcêmico; espondilodiscite; sequestro/biofilme; 4–6 sem."
+    },
+    "especial": {
+      "tema": "Especiais",
+      "yield": "Alto",
+      "pegar": "Gestante+cultura controle; cateter polimicrobiano; prostatite 30d/3 meses."
+    }
+  },
+  "oneLiners": [
+    "E. coli 80–85%",
+    "Homem = complicada",
+    "Fosfo ou nitro",
+    "Gestante: cultura controle"
+  ]
+}

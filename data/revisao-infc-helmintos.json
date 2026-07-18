@@ -1,0 +1,703 @@
+{
+  "title": "Nematoides intestinais",
+  "module": "infc-helmintos",
+  "profiles": [
+    {
+      "checklist": [
+        "ciclo",
+        "conduta",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Protozoários",
+          "texto": "Ameba e Giardia."
+        },
+        {
+          "titulo": "Sessão 2 · Helmintos",
+          "texto": "Ascaris, ancilostoma, strongyloides, oxiúro."
+        },
+        {
+          "titulo": "Sessão 3 · Tropical",
+          "texto": "Esquistossomose, tênias/NCC, toxocara."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Inf1 · MedHub R1 · Infectologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Infecto",
+      "blurb": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "verdict": "Priorize strongyloides/hiperinfecção, esquistossomose (Symmers/praziquantel), áscaris/Loeffler, amebíase/abscesso e NCC (ovos de solium).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Síntese nacional · Infectologia",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / ciclo",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta / droga",
+          "pct": 34
+        },
+        {
+          "tema": "Complicações",
+          "pct": 22
+        },
+        {
+          "tema": "DD / mapa",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Infectologia (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Parasitoses tropicais BR caem bem nas provas gerais.",
+      "verdict": "Strongyloides + esquistossomose + áscaris são o núcleo Enare/Enamed deste bloco.",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Strongyloides / esquito",
+          "pct": 32
+        },
+        {
+          "tema": "Ascaris / ancilostoma",
+          "pct": 26
+        },
+        {
+          "tema": "Ameba / NCC",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Infectologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "Hiperinfecção + praziquantel + albendazol primeiro.",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Strongyloides",
+          "pct": 28
+        },
+        {
+          "tema": "Esquistossomose",
+          "pct": 26
+        },
+        {
+          "tema": "Ascaris / ameba",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 22
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Infectologia · Nematoides intestinais (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Parasitoses tropicais BR caem bem nas provas gerais.",
+      "verdict": "Strongyloides + esquistossomose + áscaris são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Strongyloides / esquito",
+          "pct": 32
+        },
+        {
+          "tema": "Ascaris / ancilostoma",
+          "pct": 26
+        },
+        {
+          "tema": "Ameba / NCC",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "ciclo",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Infectologia (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de ciclo, droga e complicação mecânica/imune.",
+      "verdict": "Loeffler, hiperinfecção, Symmers e critérios de drenagem do abscesso amebiano.",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Fisiopat / ciclo",
+          "pct": 30
+        },
+        {
+          "tema": "Complicações",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 24
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Infectologia (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "NCC e esquistossomose aparecem com frequência.",
+      "verdict": "Solium ovos×carne, praziquantel e quando NÃO tratar NCC.",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "NCC / tênias",
+          "pct": 28
+        },
+        {
+          "tema": "Esquistossomose",
+          "pct": 26
+        },
+        {
+          "tema": "Strongyloides",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 22
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Infectologia · Nematoides intestinais (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Parasitoses tropicais BR caem bem nas provas gerais.",
+      "verdict": "Strongyloides + esquistossomose + áscaris são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Strongyloides / esquito",
+          "pct": 32
+        },
+        {
+          "tema": "Ascaris / ancilostoma",
+          "pct": 26
+        },
+        {
+          "tema": "Ameba / NCC",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Infectologia · Nematoides intestinais (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Parasitoses tropicais BR caem bem nas provas gerais.",
+      "verdict": "Strongyloides + esquistossomose + áscaris são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Strongyloides / esquito",
+          "pct": 32
+        },
+        {
+          "tema": "Ascaris / ancilostoma",
+          "pct": 26
+        },
+        {
+          "tema": "Ameba / NCC",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "ciclo",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Infectologia · Nematoides intestinais (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de ciclo, droga e complicação mecânica/imune.",
+      "verdict": "Loeffler, hiperinfecção, Symmers e critérios de drenagem do abscesso amebiano. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / ciclo",
+          "pct": 30
+        },
+        {
+          "tema": "Complicações",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 24
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "ciclo",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Infectologia · Nematoides intestinais (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de ciclo, droga e complicação mecânica/imune.",
+      "verdict": "Loeffler, hiperinfecção, Symmers e critérios de drenagem do abscesso amebiano. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / ciclo",
+          "pct": 30
+        },
+        {
+          "tema": "Complicações",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 24
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "ciclo",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Infectologia · Nematoides intestinais (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de ciclo, droga e complicação mecânica/imune.",
+      "verdict": "Loeffler, hiperinfecção, Symmers e critérios de drenagem do abscesso amebiano. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / ciclo",
+          "pct": 30
+        },
+        {
+          "tema": "Complicações",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 24
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "ciclo",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Infectologia · Nematoides intestinais (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de ciclo, droga e complicação mecânica/imune.",
+      "verdict": "Loeffler, hiperinfecção, Symmers e critérios de drenagem do abscesso amebiano. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / ciclo",
+          "pct": 30
+        },
+        {
+          "tema": "Complicações",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 24
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Infectologia · Nematoides intestinais (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "NCC e esquistossomose aparecem com frequência.",
+      "verdict": "Solium ovos×carne, praziquantel e quando NÃO tratar NCC. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "NCC / tênias",
+          "pct": 28
+        },
+        {
+          "tema": "Esquistossomose",
+          "pct": 26
+        },
+        {
+          "tema": "Strongyloides",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 22
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Infectologia · Nematoides intestinais (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Parasitoses tropicais BR caem bem nas provas gerais.",
+      "verdict": "Strongyloides + esquistossomose + áscaris são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Strongyloides / esquito",
+          "pct": 32
+        },
+        {
+          "tema": "Ascaris / ancilostoma",
+          "pct": 26
+        },
+        {
+          "tema": "Ameba / NCC",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "ciclo",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Infectologia · Nematoides intestinais (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Parasitoses tropicais BR caem bem nas provas gerais.",
+      "verdict": "Strongyloides + esquistossomose + áscaris são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Ascaris · ancilostoma · strongyloides · oxiúro",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Strongyloides / esquito",
+          "pct": 32
+        },
+        {
+          "tema": "Ascaris / ancilostoma",
+          "pct": 26
+        },
+        {
+          "tema": "Ameba / NCC",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-ascaris",
+        "infc-ancilostoma",
+        "infc-strongyloides",
+        "infc-oxiuro-tricuris"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "ciclo": {
+      "tema": "Ciclo / transmissão",
+      "yield": "Alto",
+      "pegar": "Cisto×trofozoíto; Loss/Loeffler; autoinfecção strongyloides; cercária/Biomphalaria; ovos solium = NCC."
+    },
+    "conduta": {
+      "tema": "Conduta / droga",
+      "yield": "Máximo",
+      "pegar": "Metro+luminal; albendazol; ivermectina; praziquantel 40 mg/kg; teclozan; quando drenar abscesso."
+    },
+    "complicacao": {
+      "tema": "Complicações",
+      "yield": "Alto",
+      "pegar": "Abscesso amebiano; obstrução por áscaris; hiperinfecção; Symmers/HTP; NCC."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial / mapa",
+      "yield": "Alto",
+      "pegar": "Ameba×giardia; ancilostoma=anemia; enterobius=prurido; solium carne×ovos."
+    }
+  },
+  "oneLiners": [
+    "Loeffler = áscaris",
+    "Anemia = ancilostoma",
+    "Corticoide → strongyloides",
+    "Graham = oxiúro"
+  ]
+}

@@ -157,6 +157,7 @@ let aprovaPsiOverviewStatsCache = null;
 let aprovaPnmOverviewStatsCache = null;
 let aprovaNeuOverviewStatsCache = null;
 let aprovaNefOverviewStatsCache = null;
+let aprovaInfcOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
   return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
@@ -223,6 +224,12 @@ function aprovaRichSpecialtyMeta (specialty) {
         overviewCacheKey: "nefrologia",
         overviewUrl: "data/stats-nefrologia-geral.json?v=20260718bo",
         countNoun: "Nefrologia"
+      },
+      infectologia: {
+        shortLabel: "Infectologia",
+        overviewCacheKey: "infectologia",
+        overviewUrl: "data/stats-infectologia-geral.json?v=20260718bu",
+        countNoun: "Infectologia"
       }
     };
     const a = cliMeta[area] || cliMeta.reumatologia;
@@ -299,7 +306,8 @@ async function aprovaRenderCliAreaCounts () {
     ["esp-count-psi", "psiquiatria", "Substâncias, humor, psicose e ansiedade."],
     ["esp-count-pnm", "pneumologia", "Asma, DPOC, TEP, intensiva e TB."],
     ["esp-count-neu", "neurologia", "AVC, epilepsia, coma e cefaleia."],
-    ["esp-count-nef", "nefrologia", "Nefro 1–5 completa · glomérulos à uro."]
+    ["esp-count-nef", "nefrologia", "Nefro 1–5 completa · glomérulos à uro."],
+    ["esp-count-infc", "infectologia", "Inf1–5 completa · parasitoses à tropicais."]
   ];
   for (const [elId, areaId, fallback] of map) {
     const el = document.getElementById(elId);
@@ -346,6 +354,34 @@ function aprovaDeckKicker (deck) {
   if (id === "nef-ca-uro") return "Nefro · oncouro";
   if (id === "nef-obstrucao-cistos") return "Nefro · obstrução/cistos";
   if (id.indexOf("nef-") === 0) return "Nefrologia";
+  if (id === "infc-amebiase" || id === "infc-giardia") return "Infecto · protozoários";
+  if (
+    id === "infc-ascaris" ||
+    id === "infc-ancilostoma" ||
+    id === "infc-strongyloides" ||
+    id === "infc-oxiuro-tricuris"
+  ) return "Infecto · helmintos";
+  if (id === "infc-tenias" || id === "infc-toxocara") return "Infecto · tênias";
+  if (id === "infc-esquisto" || id === "infc-parasito-mapa") return "Infecto · esquistossomose";
+  if (id === "infc-pavm") return "Infecto · PN/PAVM";
+  if (id.indexOf("infc-pac-") === 0) return "Infecto · PAC";
+  if (id === "infc-abscesso") return "Infecto · abscesso";
+  if (id.indexOf("infc-atb-") === 0) return "Infecto · ATB";
+  if (id.indexOf("infc-hiv-") === 0) return "Infecto · HIV";
+  if (id.indexOf("infc-itu-") === 0) return "Infecto · ITU";
+  if (id.indexOf("infc-pele-") === 0) return "Infecto · pele";
+  if (id === "infc-osteo") return "Infecto · osteo";
+  if (id.indexOf("infc-dengue-") === 0) return "Infecto · dengue";
+  if (id === "infc-chik-zika" || id === "infc-febre-amarela") return "Infecto · arbovírus";
+  if (id === "infc-malaria") return "Infecto · malária";
+  if (
+    id === "infc-lepto" ||
+    id === "infc-leishmania" ||
+    id === "infc-maculosa-tifoide" ||
+    id === "infc-emergentes" ||
+    id === "infc-tropicais-mapa"
+  ) return "Infecto · tropicais";
+  if (id.indexOf("infc-") === 0) return "Infectologia";
   if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
   if (id.indexOf("inf-") === 0) return "Infecto · Dengue/Sepse";
   if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
@@ -617,6 +653,17 @@ async function aprovaLoadOverviewStats (specialty) {
       }
       return aprovaNefOverviewStatsCache;
     }
+    if (area === "infectologia") {
+      if (aprovaInfcOverviewStatsCache) return aprovaInfcOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaInfcOverviewStatsCache = await res.json();
+      } catch {
+        aprovaInfcOverviewStatsCache = null;
+      }
+      return aprovaInfcOverviewStatsCache;
+    }
     if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
     try {
       const res = await fetch(meta.overviewUrl);
@@ -827,7 +874,8 @@ async function aprovaRenderCliAreaCards () {
       { id: "psiquiatria", label: "Psiquiatria", blurb: "" },
       { id: "pneumologia", label: "Pneumologia", blurb: "" },
       { id: "neurologia", label: "Neurologia", blurb: "" },
-      { id: "nefrologia", label: "Nefrologia", blurb: "" }
+      { id: "nefrologia", label: "Nefrologia", blurb: "" },
+      { id: "infectologia", label: "Infectologia", blurb: "" }
     ];
 
   grid.innerHTML = "";
@@ -1032,7 +1080,25 @@ const APROVA_PED_MODULE_PREFIXES = {
   "nef-drc": ["nef-drc-"],
   "nef-litiase": ["nef-litiase-"],
   "nef-prostata": ["nef-hpb", "nef-ca-prostata"],
-  "nef-uro-extra": ["nef-ca-uro", "nef-obstrucao-"]
+  "nef-uro-extra": ["nef-ca-uro", "nef-obstrucao-"],
+  "infc-protozoarios": ["infc-amebiase", "infc-giardia"],
+  "infc-helmintos": ["infc-ascaris", "infc-ancilostoma", "infc-strongyloides", "infc-oxiuro-tricuris"],
+  "infc-cestoides": ["infc-tenias", "infc-toxocara"],
+  "infc-esquisto": ["infc-esquisto", "infc-parasito-mapa"],
+  "infc-pac-clinica": ["infc-pac-basico", "infc-pac-rx", "infc-pac-agentes"],
+  "infc-pac-conduta": ["infc-pac-escores", "infc-pac-tx", "infc-pac-influenza", "infc-pavm", "infc-pac-mapa"],
+  "infc-abscesso": ["infc-abscesso"],
+  "infc-antibioticos": ["infc-atb-"],
+  "infc-hiv-oi": ["infc-hiv-mac", "infc-hiv-fungos", "infc-hiv-gi", "infc-hiv-hepato"],
+  "infc-hiv-snc": ["infc-hiv-neuro", "infc-hiv-ocular"],
+  "infc-hiv-neoplasias": ["infc-hiv-neoplasias", "infc-hiv-sistema", "infc-hiv-mapa"],
+  "infc-itu": ["infc-itu-"],
+  "infc-pele": ["infc-pele-"],
+  "infc-osteo": ["infc-osteo"],
+  "infc-dengue": ["infc-dengue-"],
+  "infc-arbovirus": ["infc-chik-zika", "infc-febre-amarela"],
+  "infc-malaria": ["infc-malaria"],
+  "infc-tropicais": ["infc-lepto", "infc-leishmania", "infc-maculosa-", "infc-emergentes", "infc-tropicais-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {

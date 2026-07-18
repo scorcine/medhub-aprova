@@ -1,0 +1,718 @@
+{
+  "title": "PAC · escores · empírico · influenza",
+  "module": "infc-pac-conduta",
+  "profiles": [
+    {
+      "checklist": [
+        "escore",
+        "empirico",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Onde tratar",
+          "texto": "CURB, PSI, critérios de UTI."
+        },
+        {
+          "titulo": "Sessão 2 · Empírico",
+          "texto": "Ambulatório, enfermaria, CTI, MDR."
+        },
+        {
+          "titulo": "Sessão 3 · Agentes/ATB",
+          "texto": "Pistas RX, abscesso, classes de ATB."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Inf2 · MedHub R1 · Infectologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese PAC",
+      "blurb": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "verdict": "Priorize CURB/local de tratamento, empírico (ambulatório→enfermaria→UTI), Legionella no CTI, abscesso/anaeróbio e influenza.",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Síntese nacional · Infectologia PAC",
+      "priorities": [
+        {
+          "tema": "Conduta / empírico",
+          "pct": 36
+        },
+        {
+          "tema": "Escore / UTI",
+          "pct": 24
+        },
+        {
+          "tema": "Agentes / RX",
+          "pct": 22
+        },
+        {
+          "tema": "ATB / abscesso",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · PAC (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "PAC lidera keywords de Infectologia nas provas gerais.",
+      "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed.",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 40
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · PAC.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "CURB + ceftriaxona/macrolídeo + oseltamivir na grave.",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "CURB / empírico",
+          "pct": 38
+        },
+        {
+          "tema": "Influenza / UTI",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Infectologia · PAC · escores · empírico · influenza (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "PAC lidera keywords de Infectologia nas provas gerais.",
+      "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 40
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · PAC (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de DD (Mendelson×aspirativa) e falha terapêutica.",
+      "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas.",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "DD / falha",
+          "pct": 28
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26
+        },
+        {
+          "tema": "Empírico",
+          "pct": 26
+        },
+        {
+          "tema": "ATB",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "atb",
+        "empirico",
+        "agente",
+        "escore"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · PAC/ATB (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "ATB e MDR aparecem com frequência.",
+      "verdict": "ESBL/carbapenem, MRSA e abscesso com duração/drenagem.",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "ATB / MDR",
+          "pct": 32
+        },
+        {
+          "tema": "Empírico PAC",
+          "pct": 28
+        },
+        {
+          "tema": "Abscesso",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Infectologia · PAC · escores · empírico · influenza (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "PAC lidera keywords de Infectologia nas provas gerais.",
+      "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 40
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Infectologia · PAC · escores · empírico · influenza (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "PAC lidera keywords de Infectologia nas provas gerais.",
+      "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 40
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Infectologia · PAC · escores · empírico · influenza (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD (Mendelson×aspirativa) e falha terapêutica.",
+      "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DD / falha",
+          "pct": 28
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26
+        },
+        {
+          "tema": "Empírico",
+          "pct": 26
+        },
+        {
+          "tema": "ATB",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Infectologia · PAC · escores · empírico · influenza (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD (Mendelson×aspirativa) e falha terapêutica.",
+      "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DD / falha",
+          "pct": 28
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26
+        },
+        {
+          "tema": "Empírico",
+          "pct": 26
+        },
+        {
+          "tema": "ATB",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Infectologia · PAC · escores · empírico · influenza (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD (Mendelson×aspirativa) e falha terapêutica.",
+      "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DD / falha",
+          "pct": 28
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26
+        },
+        {
+          "tema": "Empírico",
+          "pct": 26
+        },
+        {
+          "tema": "ATB",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "agente",
+        "escore",
+        "empirico",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Infectologia · PAC · escores · empírico · influenza (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD (Mendelson×aspirativa) e falha terapêutica.",
+      "verdict": "Pistas RX, critérios de UTI e quando escalar MRSA/Pseudomonas. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "DD / falha",
+          "pct": 28
+        },
+        {
+          "tema": "UTI / escore",
+          "pct": 26
+        },
+        {
+          "tema": "Empírico",
+          "pct": 26
+        },
+        {
+          "tema": "ATB",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "atb",
+        "empirico",
+        "agente",
+        "escore"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Infectologia · PAC · escores · empírico · influenza (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "ATB e MDR aparecem com frequência.",
+      "verdict": "ESBL/carbapenem, MRSA e abscesso com duração/drenagem. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "ATB / MDR",
+          "pct": 32
+        },
+        {
+          "tema": "Empírico PAC",
+          "pct": 28
+        },
+        {
+          "tema": "Abscesso",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Infectologia · PAC · escores · empírico · influenza (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "PAC lidera keywords de Infectologia nas provas gerais.",
+      "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 40
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "empirico",
+        "escore",
+        "agente",
+        "atb"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Infectologia · PAC · escores · empírico · influenza (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "PAC lidera keywords de Infectologia nas provas gerais.",
+      "verdict": "CURB + esquema empírico por cenário é o núcleo Enare/Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "CURB · UTI · ambulatorial/enfermaria/CTI · oseltamivir · PN/PAVM",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Empírico / CURB",
+          "pct": 40
+        },
+        {
+          "tema": "UTI / Legionella",
+          "pct": 24
+        },
+        {
+          "tema": "Abscesso / influenza",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "infc-pac-escores",
+        "infc-pac-tx",
+        "infc-pac-influenza",
+        "infc-pavm",
+        "infc-pac-mapa"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "escore": {
+      "tema": "Escore / local",
+      "yield": "Máximo",
+      "pegar": "CURB-65; CRB-65; 1 maior ou 3 menores ATS; conversão VO; afebril ≥3d."
+    },
+    "empirico": {
+      "tema": "Empírico por cenário",
+      "yield": "Máximo",
+      "pegar": "Amox/macro ambulatorial; ceftriaxona+macro enfermaria; CTI cobre Legionella; sem FQ só no grave."
+    },
+    "agente": {
+      "tema": "Agentes / RX",
+      "yield": "Alto",
+      "pegar": "Pneumococo #1; lobo pesado=Klebsiella; pneumatocele=S.aureus; Mendelson≠ATB."
+    },
+    "atb": {
+      "tema": "ATB / abscesso",
+      "yield": "Alto",
+      "pegar": "ESBL=carbapenem; MRSA=vanco/linezolida; abscesso=anaeróbio longo; metro só não."
+    }
+  },
+  "oneLiners": [
+    "CURB ≥2 → internar",
+    "CTI: pneumococo + Legionella",
+    "FQ só no grave: não",
+    "PAVM ≠ PN · ATB 7 dias"
+  ]
+}

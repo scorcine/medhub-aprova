@@ -1,0 +1,669 @@
+{
+  "title": "Dengue",
+  "module": "infc-dengue",
+  "profiles": [
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Arbovírus",
+          "texto": "Dengue, Chik, Zika, FA."
+        },
+        {
+          "titulo": "Sessão 2 · Malária",
+          "texto": "Vivax, falciparum, primaquina."
+        },
+        {
+          "titulo": "Sessão 3 · Outras febres",
+          "texto": "Lepto, calazar, maculosa, tifoide."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Inf5 · MedHub R1 · Infectologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese tropicais",
+      "blurb": "Alarme · fase crítica · Halstead · hidratação",
+      "verdict": "Priorize dengue (alarme/hidratação), malária (vivax/falciparum), lepto/Weil, calazar e febre maculosa.",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Síntese nacional · Arboviroses/tropicais",
+      "priorities": [
+        {
+          "tema": "Dengue / arbovírus",
+          "pct": 34
+        },
+        {
+          "tema": "Malária",
+          "pct": 26
+        },
+        {
+          "tema": "Lepto / calazar",
+          "pct": 22
+        },
+        {
+          "tema": "Maculosa / outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Tropicais (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Dengue e malária lideram o bloco tropical nas provas gerais.",
+      "verdict": "Sinais de alarme + hidratação e vivax/falciparum são o núcleo.",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 36
+        },
+        {
+          "tema": "Malária",
+          "pct": 28
+        },
+        {
+          "tema": "Lepto",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "lepto",
+        "malaria",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Inf5.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "Dengue alarme e lepto em enchente primeiro.",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 38
+        },
+        {
+          "tema": "Lepto / malária",
+          "pct": 30
+        },
+        {
+          "tema": "Outros",
+          "pct": 32
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Infectologia · Dengue (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Dengue e malária lideram o bloco tropical nas provas gerais.",
+      "verdict": "Sinais de alarme + hidratação e vivax/falciparum são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 36
+        },
+        {
+          "tema": "Malária",
+          "pct": 28
+        },
+        {
+          "tema": "Lepto",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Tropicais (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de Halstead, hipnozoíta e Weil.",
+      "verdict": "Patogênese dengue, G6PD/primaquina e tríade de Weil.",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Fisiopat / DD",
+          "pct": 32
+        },
+        {
+          "tema": "Malária",
+          "pct": 26
+        },
+        {
+          "tema": "Lepto / calazar",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "outro",
+        "dengue",
+        "malaria",
+        "lepto"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Tropicais (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Zika/SGB e calazar aparecem.",
+      "verdict": "Microcefalia/SGB, Glucantime e maculosa/doxi.",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Zika / Chik",
+          "pct": 26
+        },
+        {
+          "tema": "Calazar",
+          "pct": 26
+        },
+        {
+          "tema": "Dengue / malária",
+          "pct": 28
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Infectologia · Dengue (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Dengue e malária lideram o bloco tropical nas provas gerais.",
+      "verdict": "Sinais de alarme + hidratação e vivax/falciparum são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 36
+        },
+        {
+          "tema": "Malária",
+          "pct": 28
+        },
+        {
+          "tema": "Lepto",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Infectologia · Dengue (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Dengue e malária lideram o bloco tropical nas provas gerais.",
+      "verdict": "Sinais de alarme + hidratação e vivax/falciparum são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 36
+        },
+        {
+          "tema": "Malária",
+          "pct": 28
+        },
+        {
+          "tema": "Lepto",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Infectologia · Dengue (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de Halstead, hipnozoíta e Weil.",
+      "verdict": "Patogênese dengue, G6PD/primaquina e tríade de Weil. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / DD",
+          "pct": 32
+        },
+        {
+          "tema": "Malária",
+          "pct": 26
+        },
+        {
+          "tema": "Lepto / calazar",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Infectologia · Dengue (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de Halstead, hipnozoíta e Weil.",
+      "verdict": "Patogênese dengue, G6PD/primaquina e tríade de Weil. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / DD",
+          "pct": 32
+        },
+        {
+          "tema": "Malária",
+          "pct": 26
+        },
+        {
+          "tema": "Lepto / calazar",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Infectologia · Dengue (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de Halstead, hipnozoíta e Weil.",
+      "verdict": "Patogênese dengue, G6PD/primaquina e tríade de Weil. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / DD",
+          "pct": 32
+        },
+        {
+          "tema": "Malária",
+          "pct": 26
+        },
+        {
+          "tema": "Lepto / calazar",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Infectologia · Dengue (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de Halstead, hipnozoíta e Weil.",
+      "verdict": "Patogênese dengue, G6PD/primaquina e tríade de Weil. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Fisiopat / DD",
+          "pct": 32
+        },
+        {
+          "tema": "Malária",
+          "pct": 26
+        },
+        {
+          "tema": "Lepto / calazar",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "outro",
+        "dengue",
+        "malaria",
+        "lepto"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Infectologia · Dengue (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Zika/SGB e calazar aparecem.",
+      "verdict": "Microcefalia/SGB, Glucantime e maculosa/doxi. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Zika / Chik",
+          "pct": 26
+        },
+        {
+          "tema": "Calazar",
+          "pct": 26
+        },
+        {
+          "tema": "Dengue / malária",
+          "pct": 28
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Infectologia · Dengue (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Dengue e malária lideram o bloco tropical nas provas gerais.",
+      "verdict": "Sinais de alarme + hidratação e vivax/falciparum são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 36
+        },
+        {
+          "tema": "Malária",
+          "pct": 28
+        },
+        {
+          "tema": "Lepto",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    },
+    {
+      "checklist": [
+        "dengue",
+        "malaria",
+        "lepto",
+        "outro"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Infectologia · Dengue (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Dengue e malária lideram o bloco tropical nas provas gerais.",
+      "verdict": "Sinais de alarme + hidratação e vivax/falciparum são o núcleo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Alarme · fase crítica · Halstead · hidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Dengue",
+          "pct": 36
+        },
+        {
+          "tema": "Malária",
+          "pct": 28
+        },
+        {
+          "tema": "Lepto",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-dengue-clinica",
+        "infc-dengue-conduta"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "dengue": {
+      "tema": "Dengue / arbovírus",
+      "yield": "Máximo",
+      "pegar": "Sinais de alarme; fase crítica na defervescência; sem AAS; Halstead; Chik artralgia; Zika fetal/SGB."
+    },
+    "malaria": {
+      "tema": "Malária",
+      "yield": "Máximo",
+      "pegar": "Vivax 90% BR; falciparum=grave; hipnozoíta+primaquina/G6PD; Anopheles; sem cloroquina no falciparum."
+    },
+    "lepto": {
+      "tema": "Lepto / calazar",
+      "yield": "Alto",
+      "pegar": "Weil; enchente; penicilina/ceftriaxona; Lutzomyia; Glucantime; anfo lipossomal especiais."
+    },
+    "outro": {
+      "tema": "Maculosa / tifoide / emergentes",
+      "yield": "Alto",
+      "pegar": "Amblyomma+doxi; Typhi/roséola; COVID/mpox/Ebola (conceito)."
+    }
+  },
+  "oneLiners": [
+    "Alarme na defervescência",
+    "Ht↑ = extravasamento",
+    "Sem AAS/AINE",
+    "NS1 até D5"
+  ]
+}

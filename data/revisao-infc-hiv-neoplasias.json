@@ -1,0 +1,688 @@
+{
+  "title": "HIV · neoplasias · sistêmico",
+  "module": "infc-hiv-neoplasias",
+  "profiles": [
+    {
+      "checklist": [
+        "cd4",
+        "oi",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · OI",
+          "texto": "MAC, fungos BR, esofagite, diarreia."
+        },
+        {
+          "titulo": "Sessão 2 · SNC/olho",
+          "texto": "Toxo×linfoma, HAND, CMV retinal."
+        },
+        {
+          "titulo": "Sessão 3 · Neoplasias",
+          "texto": "Kaposi, LNH, colo."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Inf3 · MedHub R1 · Infectologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese HIV",
+      "blurb": "Kaposi · LNH · colo · cardio/heme/pele",
+      "verdict": "Priorize MAC/CD4<50, esofagite (Candida/CMV/HSV), toxo×linfoma, retinite CMV e neoplasias definidoras.",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Síntese nacional · HIV/OI",
+      "priorities": [
+        {
+          "tema": "OI / CD4",
+          "pct": 34
+        },
+        {
+          "tema": "SNC / olho",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "GI / hepato",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "oi",
+        "cd4",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · HIV (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "OI e massa cerebral caem bem nas provas gerais.",
+      "verdict": "MAC, esofagite e toxo×linfoma são o núcleo Enare/Enamed deste bloco.",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "OI / esofagite",
+          "pct": 34
+        },
+        {
+          "tema": "SNC",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "cd4",
+        "oi",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · HIV Inf3.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "CD4 thresholds + conduta de OI primeiro.",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "OI / CD4",
+          "pct": 36
+        },
+        {
+          "tema": "SNC / olho",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "oi",
+        "cd4",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Infectologia · HIV · neoplasias · sistêmico (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "OI e massa cerebral caem bem nas provas gerais.",
+      "verdict": "MAC, esofagite e toxo×linfoma são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "OI / esofagite",
+          "pct": 34
+        },
+        {
+          "tema": "SNC",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "snc",
+        "oi",
+        "cd4",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · HIV (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de DD imagem (toxo×linfoma) e fungos BR.",
+      "verdict": "PCM/histo, lesão única anelar e CMV “ketchup”.",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "SNC / imagem",
+          "pct": 32
+        },
+        {
+          "tema": "Fungos BR",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "neoplasia",
+        "oi",
+        "cd4",
+        "snc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · HIV (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Neoplasias e coinfecção viral aparecem.",
+      "verdict": "Kaposi/HHV-8, LNH/EBV e HIV-HBV (TDF+3TC).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Neoplasias",
+          "pct": 30
+        },
+        {
+          "tema": "Hepato / TARV",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "oi",
+        "cd4",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Infectologia · HIV · neoplasias · sistêmico (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "OI e massa cerebral caem bem nas provas gerais.",
+      "verdict": "MAC, esofagite e toxo×linfoma são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "OI / esofagite",
+          "pct": 34
+        },
+        {
+          "tema": "SNC",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "oi",
+        "cd4",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Infectologia · HIV · neoplasias · sistêmico (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "OI e massa cerebral caem bem nas provas gerais.",
+      "verdict": "MAC, esofagite e toxo×linfoma são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "OI / esofagite",
+          "pct": 34
+        },
+        {
+          "tema": "SNC",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "snc",
+        "oi",
+        "cd4",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Infectologia · HIV · neoplasias · sistêmico (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD imagem (toxo×linfoma) e fungos BR.",
+      "verdict": "PCM/histo, lesão única anelar e CMV “ketchup”. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "SNC / imagem",
+          "pct": 32
+        },
+        {
+          "tema": "Fungos BR",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "snc",
+        "oi",
+        "cd4",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Infectologia · HIV · neoplasias · sistêmico (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD imagem (toxo×linfoma) e fungos BR.",
+      "verdict": "PCM/histo, lesão única anelar e CMV “ketchup”. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "SNC / imagem",
+          "pct": 32
+        },
+        {
+          "tema": "Fungos BR",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "snc",
+        "oi",
+        "cd4",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Infectologia · HIV · neoplasias · sistêmico (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD imagem (toxo×linfoma) e fungos BR.",
+      "verdict": "PCM/histo, lesão única anelar e CMV “ketchup”. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "SNC / imagem",
+          "pct": 32
+        },
+        {
+          "tema": "Fungos BR",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "snc",
+        "oi",
+        "cd4",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Infectologia · HIV · neoplasias · sistêmico (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de DD imagem (toxo×linfoma) e fungos BR.",
+      "verdict": "PCM/histo, lesão única anelar e CMV “ketchup”. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "SNC / imagem",
+          "pct": 32
+        },
+        {
+          "tema": "Fungos BR",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "neoplasia",
+        "oi",
+        "cd4",
+        "snc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Infectologia · HIV · neoplasias · sistêmico (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Neoplasias e coinfecção viral aparecem.",
+      "verdict": "Kaposi/HHV-8, LNH/EBV e HIV-HBV (TDF+3TC). Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Neoplasias",
+          "pct": 30
+        },
+        {
+          "tema": "Hepato / TARV",
+          "pct": 26
+        },
+        {
+          "tema": "OI",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "oi",
+        "cd4",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Infectologia · HIV · neoplasias · sistêmico (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "OI e massa cerebral caem bem nas provas gerais.",
+      "verdict": "MAC, esofagite e toxo×linfoma são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "OI / esofagite",
+          "pct": 34
+        },
+        {
+          "tema": "SNC",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    },
+    {
+      "checklist": [
+        "oi",
+        "cd4",
+        "snc",
+        "neoplasia"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Infectologia · HIV · neoplasias · sistêmico (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "OI e massa cerebral caem bem nas provas gerais.",
+      "verdict": "MAC, esofagite e toxo×linfoma são o núcleo Enare/Enamed deste bloco. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Kaposi · LNH · colo · cardio/heme/pele",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "OI / esofagite",
+          "pct": 34
+        },
+        {
+          "tema": "SNC",
+          "pct": 28
+        },
+        {
+          "tema": "Neoplasias",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "infc-hiv-neoplasias",
+        "infc-hiv-sistema",
+        "infc-hiv-mapa"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "cd4": {
+      "tema": "CD4 / limiares",
+      "yield": "Máximo",
+      "pegar": "MAC <50 + azitro; Chagas <200; cripto/Isospora; suspender profilaxia com recuperação."
+    },
+    "oi": {
+      "tema": "Infecções oportunistas",
+      "yield": "Máximo",
+      "pegar": "MAC claritro+etambutol; esofagite Candida/CMV/HSV; PCM/histo; Isospora=SMX-TMP."
+    },
+    "snc": {
+      "tema": "SNC / olho",
+      "yield": "Alto",
+      "pegar": "Toxo múltipla × linfoma única; HAND; CMV ketchup; valganciclovir até CD4>100."
+    },
+    "neoplasia": {
+      "tema": "Neoplasias definidoras",
+      "yield": "Alto",
+      "pegar": "Kaposi/HHV-8; LNH; Ca colo; EBV no linfoma SNC."
+    }
+  },
+  "oneLiners": [
+    "3 definidoras",
+    "Kaposi = HHV-8",
+    "Linfoma SNC = EBV ~100%",
+    "Anemia = heme #1"
+  ]
+}

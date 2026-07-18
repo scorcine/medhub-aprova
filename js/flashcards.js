@@ -7,6 +7,8 @@ function aprovaDeckSpecialty (deck) {
   if (id.indexOf("nef-") === 0) {
     return id === "nef-sindromes" ? "pediatria" : "clinica";
   }
+  /* infc-* = Infectologia CM; inf-* continua pediatria (dengue/sepse) */
+  if (id.indexOf("infc-") === 0) return "clinica";
   const pedPrefixes = [
     "neo-", "ali-", "nut-", "imu-", "dm-", "itu-", "exa-", "crd-", "urg-",
     "resp-", "gast-", "neu-", "inf-", "hem-", "ort-", "end-",
@@ -95,7 +97,8 @@ const AprovaFlashcards = {
       "data/flashcards-psi.json",
       "data/flashcards-pneumo.json",
       "data/flashcards-neuro.json",
-      "data/flashcards-nefro.json"
+      "data/flashcards-nefro.json",
+      "data/flashcards-infecto.json"
     ];
     const decks = [];
     for (const file of files) {
