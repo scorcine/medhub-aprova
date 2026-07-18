@@ -59,15 +59,20 @@
       "featured": true,
       "sourceType": "levantamento",
       "sampleSize": 100,
-      "source": "CleverMed · top temas Enare/Enamed em Ginecologia (percentuais reportados). Contagens proporcionais em base ilustrativa de 100.",
-      "verdict": "No padrão Enamed/Enare, infecções e SUA lideram a Ginecologia prática; rastreamento de colo/mama e anticoncepção são pontos fáceis se você souber protocolo MS/Febrasgo.",
-      "foco": "Infecções · SUA · Mama · Colo · Anticoncepção",
-      "estilo": "Levantamento Enare/Enamed",
+      "source": "CleverMed · top 5 temas Enare/Enamed (62%). Os 38% restantes foram desagregados com base no padrão Enare/USP/Unifesp (endócrino, uro, ovário, endométrio e endometriose). Contagens em base ilustrativa de 100.",
+      "verdict": "Infecções e SUA lideram o top CleverMed; o bloco residual (~38%) concentra sobretudo endócrino (amenorreia/SOP/TH), depois urogin, ovário, endometriose e endométrio — não ignore esse segundo andar.",
+      "foco": "Infecções · SUA · Endócrino · Mama · Colo · Anticoncepção · Uro",
+      "estilo": "Levantamento Enare/Enamed + desagregação do residual",
       "priorities": [
         {
           "tema": "Infecções em ginecologia",
           "pct": 20,
           "n": 20
+        },
+        {
+          "tema": "Ginecologia endócrina (amenorreia, SOP, climatério/TH)",
+          "pct": 14,
+          "n": 14
         },
         {
           "tema": "Sangramento uterino anormal",
@@ -90,9 +95,29 @@
           "n": 10
         },
         {
-          "tema": "Demais temas (endócrino, uro, ovário etc.)",
-          "pct": 38,
-          "n": 38
+          "tema": "Uroginecologia",
+          "pct": 6,
+          "n": 6
+        },
+        {
+          "tema": "Ovário / massa anexial",
+          "pct": 6,
+          "n": 6
+        },
+        {
+          "tema": "Endometriose e patologia uterina",
+          "pct": 6,
+          "n": 6
+        },
+        {
+          "tema": "Endométrio (hiperplasia / câncer)",
+          "pct": 4,
+          "n": 4
+        },
+        {
+          "tema": "Outros (puberdade, infertilidade, dismenorreia)",
+          "pct": 2,
+          "n": 2
         }
       ]
     },
