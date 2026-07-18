@@ -837,22 +837,22 @@ const APROVA_REVISAO_MODULES = {
   },
   "prev-sus": {
     label: "SUS · APS · programas",
-    file: "data/revisao-prev-sus.json?v=20260718cx",
+    file: "data/revisao-prev-sus.json?v=20260718cz",
     specialty: "preventiva"
   },
   "prev-epidemiologia": {
     label: "Epidemiologia · estudos · testes",
-    file: "data/revisao-prev-epidemiologia.json?v=20260718cx",
+    file: "data/revisao-prev-epidemiologia.json?v=20260718cz",
     specialty: "preventiva"
   },
   "prev-vigilancia": {
     label: "Vigilância · HND · ética",
-    file: "data/revisao-prev-vigilancia.json?v=20260718cx",
+    file: "data/revisao-prev-vigilancia.json?v=20260718cz",
     specialty: "preventiva"
   },
   "prev-indicadores": {
-    label: "Indicadores · mortalidade · ISU",
-    file: "data/revisao-prev-indicadores.json?v=20260718cx",
+    label: "Indicadores · mortalidade · Swaroop-Uemura",
+    file: "data/revisao-prev-indicadores.json?v=20260718cz",
     specialty: "preventiva"
   }
 };

@@ -208,7 +208,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Preventiva",
       shortLabel: "Preventiva",
       overviewCacheKey: "preventiva",
-      overviewUrl: "data/stats-preventiva-geral.json?v=20260718cx",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718cz",
       countNoun: "Preventiva",
       openRoot: () => aprovaOpenPreventiva(),
       openModule: id => aprovaOpenPreventivaModule(id)

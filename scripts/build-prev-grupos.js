@@ -183,7 +183,7 @@ write(
 
 write(
   "revisao-prev-indicadores.json",
-  "Indicadores · mortalidade · ISU",
+  "Indicadores · mortalidade · Swaroop-Uemura",
   "prev-indicadores",
   bankSet(
     [
@@ -193,7 +193,7 @@ write(
       "pind-mortalidade",
       "pind-infantil-isu"
     ],
-    "Indicadores · MI · ISU",
+    "Indicadores · MI · Swaroop-Uemura",
     "Prevalência/incidência, mortalidade infantil e Swaroop-Uemura.",
     [
       { tema: "Morbidade", pct: 26 },
