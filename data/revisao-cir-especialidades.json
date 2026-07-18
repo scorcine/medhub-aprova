@@ -1,0 +1,307 @@
+{
+  "title": "Especialidades R1 · uro · tórax · plástica",
+  "module": "cir-especialidades",
+  "profiles": [
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "pntx-esp",
+        "fascite",
+        "sentinela"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Uro + tórax",
+          "texto": "Torção, litíase, pneumotórax e empiema."
+        },
+        {
+          "titulo": "Sessão 2 · Pele / queimadura",
+          "texto": "Parkland, fascite e enxertos."
+        },
+        {
+          "titulo": "Sessão 3 · Pescoço / mama",
+          "texto": "Tireoide, mama e salivares."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP).",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Uro ~4% · Plástica ~6% · Tórax ~3%",
+      "blurb": "Cauda de prova — temas que somam pontos.",
+      "verdict": "Urologia, tórax eletivo, queimaduras/Parkland, cicatrização, nutrição, plástica, fascite/melanoma, cabeça/pescoço, mama/tireoide e Tx.",
+      "foco": "Uro · Tórax · Queimaduras · Plástica · Mama/tireoide",
+      "estilo": "Síntese · especialidades",
+      "priorities": [
+        {
+          "tema": "Urologia",
+          "pct": 18
+        },
+        {
+          "tema": "Plástica / partes moles",
+          "pct": 20
+        },
+        {
+          "tema": "Queimaduras / cicatrização",
+          "pct": 16
+        },
+        {
+          "tema": "Tórax eletivo",
+          "pct": 14
+        },
+        {
+          "tema": "Mama / tireoide / pescoço",
+          "pct": 18
+        },
+        {
+          "tema": "Nutrição / sepse / Tx",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "recorrente"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · especialidades.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Cauda Enare",
+      "blurb": "Torção, Parkland e fascite como conduta.",
+      "verdict": "Explorar torção; Parkland; desbridar fascite; operar pneumotórax com critério.",
+      "foco": "Torção · Parkland · Fascite · Pneumotórax",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Uro / tórax",
+          "pct": 30
+        },
+        {
+          "tema": "Queimaduras / plástica",
+          "pct": 35
+        },
+        {
+          "tema": "Mama / tireoide / misc",
+          "pct": 35
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "enxerto",
+        "melanoma",
+        "testiculo",
+        "mediastino",
+        "parkland"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "USP · especialidades.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Plástica ~6%",
+      "blurb": "USP cobra plástica e onco uro.",
+      "verdict": "Enxerto vs retalho, Breslow, tumor testicular e mediastino.",
+      "foco": "Plástica · Melanoma · Uro onco · Mediastino",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Plástica / melanoma",
+          "pct": 28
+        },
+        {
+          "tema": "Urologia",
+          "pct": 22
+        },
+        {
+          "tema": "Tórax / mediastino",
+          "pct": 20
+        },
+        {
+          "tema": "Demais",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "parkland",
+        "recorrente",
+        "torcao",
+        "fascite",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "UNIFESP · especialidades.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Queimaduras ~5%",
+      "blurb": "Unifesp gosta de queimadura e tireoide.",
+      "verdict": "Parkland, elétrica, nervo recorrente e fasciotomia.",
+      "foco": "Parkland · Tireoide · Fascite · Uro",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Queimaduras",
+          "pct": 24
+        },
+        {
+          "tema": "Uro / tórax",
+          "pct": 28
+        },
+        {
+          "tema": "Tireoide / plástica",
+          "pct": 28
+        },
+        {
+          "tema": "Demais",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "parkland",
+        "fascite",
+        "pntx-esp",
+        "sentinela"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · especialidades.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "blurb": "Condutas da cauda.",
+      "verdict": "Torção, Parkland, fascite e indicação de VATS no pneumotórax.",
+      "foco": "Torção · Parkland · Fascite · VATS",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências especialidades",
+          "pct": 40
+        },
+        {
+          "tema": "Plástica / queimadura",
+          "pct": 30
+        },
+        {
+          "tema": "Onco / misc",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia",
+        "cg-torax",
+        "crr-torax-eletivo",
+        "ciresp-queimaduras-geral",
+        "ciresp-parkland",
+        "ciresp-cicatrizacao",
+        "ciresp-sepse",
+        "ciresp-nutricao",
+        "ciresp-plastica",
+        "crr-plastica-avancada",
+        "crr-partes-moles",
+        "cir1-cabeca-pescoco",
+        "crr-mama-tireoide",
+        "crr-transplante-miscelanea"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "torcao": "Torção = exploração",
+    "parkland": "Parkland 4 mL × peso × %",
+    "pntx-esp": "Quando operar pneumotórax espontâneo",
+    "fascite": "Dor desproporcional → centro",
+    "sentinela": "Axila clínica negativa",
+    "recorrente": "Nervo laríngeo na tireoidectomia",
+    "enxerto": "Enxerto sem vaso próprio",
+    "melanoma": "Breslow define margem",
+    "testiculo": "Orquiectomia inguinal",
+    "mediastino": "Anterior = 4 T"
+  }
+}

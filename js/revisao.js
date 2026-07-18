@@ -123,48 +123,38 @@ const APROVA_REVISAO_MODULES = {
     area: "obstetricia"
   },
   "cir-abdome-agudo": {
-    label: "Abdome agudo · urgências",
-    file: "data/revisao-cir-abdome-agudo.json?v=20260718aw",
+    label: "Abdome agudo · urgências (~12–24%)",
+    file: "data/revisao-cir-abdome-agudo.json?v=20260718ax",
     specialty: "cirurgia"
   },
-  cir2: {
-    label: "Trauma · ATLS (Cir2)",
-    file: "data/revisao-cir2.json?v=20260718as",
+  "cir-trauma": {
+    label: "Trauma · ATLS (~14%)",
+    file: "data/revisao-cir-trauma.json?v=20260718ax",
+    specialty: "cirurgia"
+  },
+  "cir-perioperatorio": {
+    label: "Pré/pós-op · Anestesia · Hérnias (~20%)",
+    file: "data/revisao-cir-perioperatorio.json?v=20260718ax",
+    specialty: "cirurgia"
+  },
+  "cir-infantil": {
+    label: "Cirurgia infantil (~9%)",
+    file: "data/revisao-cir-infantil.json?v=20260718ax",
+    specialty: "cirurgia"
+  },
+  "cir-vascular": {
+    label: "Cirurgia vascular (~8–16%)",
+    file: "data/revisao-cir-vascular.json?v=20260718ax",
     specialty: "cirurgia"
   },
   "cir-ad": {
-    label: "Aparelho digestivo · eletivo/onco",
-    file: "data/revisao-cir-ad.json?v=20260718aw",
+    label: "Aparelho digestivo · eletivo / onco / procto",
+    file: "data/revisao-cir-ad.json?v=20260718ax",
     specialty: "cirurgia"
   },
-  cir1: {
-    label: "Vascular · Procto · Bariátrica · Infantil (Cir1)",
-    file: "data/revisao-cir1.json?v=20260718ar",
-    specialty: "cirurgia"
-  },
-  "cir-urologia": {
-    label: "Urologia",
-    file: "data/revisao-cir-urologia.json?v=20260718aw",
-    specialty: "cirurgia"
-  },
-  cir3: {
-    label: "Pré/pós-op · Hérnias · Anestesia (Cir3)",
-    file: "data/revisao-cir3.json?v=20260718at",
-    specialty: "cirurgia"
-  },
-  "cir-torax": {
-    label: "Cirurgia torácica eletiva",
-    file: "data/revisao-cir-torax.json?v=20260718aw",
-    specialty: "cirurgia"
-  },
-  ciresp: {
-    label: "Queimaduras · Choque · Nutrição (CirEsp)",
-    file: "data/revisao-ciresp.json?v=20260718au",
-    specialty: "cirurgia"
-  },
-  "cir-extras": {
-    label: "Extras R1 · procto · TRM · mama/tireoide",
-    file: "data/revisao-cir-extras.json?v=20260718aw",
+  "cir-especialidades": {
+    label: "Especialidades R1 · uro · tórax · plástica",
+    file: "data/revisao-cir-especialidades.json?v=20260718ax",
     specialty: "cirurgia"
   }
 };

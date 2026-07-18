@@ -1,0 +1,279 @@
+{
+  "title": "Pré/pós-op · Anestesia · Hérnias (~20%)",
+  "module": "cir-perioperatorio",
+  "profiles": [
+    {
+      "checklist": [
+        "asa",
+        "hesselbach",
+        "atb60",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Pré-op + hérnias",
+          "texto": "ASA, IRCR e Hesselbach."
+        },
+        {
+          "titulo": "Sessão 2 · Pós-op",
+          "texto": "Febre, ISC e deiscência."
+        },
+        {
+          "titulo": "Sessão 3 · Anestesia",
+          "texto": "Raqui, via aérea e MH."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP).",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Pré ~7% · Anestesia ~9% · Hérnias ~4%",
+      "blurb": "Bases do cirurgião — alto volume somado.",
+      "verdict": "ASA/IRCR, antibioticoprofilaxia, hérnia inguinal, ISC/deiscência, febre pós-op e anestesia (raqui, via aérea, MH).",
+      "foco": "ASA · Hérnia · ATB · ISC · Anestesia",
+      "estilo": "Síntese · perioperatório",
+      "priorities": [
+        {
+          "tema": "Anestesia",
+          "pct": 22
+        },
+        {
+          "tema": "Pré-operatório",
+          "pct": 20
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 22
+        },
+        {
+          "tema": "Infecção / suturas",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · perioperatório.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Pré 10% + Anestesia 10% + Hérnias 6%",
+      "blurb": "Segundo maior bloco no Enare (depois do abdome).",
+      "verdict": "Pré-op, anestesia e hérnias somam ~26% no Enare — revise junto.",
+      "foco": "Pré-op · Anestesia · Hérnia inguinal",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Pré-operatório",
+          "pct": 28
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 20
+        },
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "isc",
+        "hesselbach",
+        "asa",
+        "mh",
+        "atb60"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "USP-SP · perioperatório.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "Pós-op ~9% USP",
+      "blurb": "USP cobra complicações pós-op.",
+      "verdict": "ISC, deiscência, TVP/TEP e hérnias com anatomia.",
+      "foco": "ISC · Deiscência · Hérnia · Anestesia",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Pós-op / ISC",
+          "pct": 30
+        },
+        {
+          "tema": "Hérnias",
+          "pct": 24
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 22
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir3-isc",
+        "cir3-posop-febre",
+        "cir3-posop-anastomose",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-anestesia",
+        "crr-anestesia-avancada",
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "crr-infeccao-cirurgica",
+        "cir3-suturas-hemostasia"
+      ]
+    },
+    {
+      "checklist": [
+        "mh",
+        "asa",
+        "hesselbach",
+        "atb60",
+        "isc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "UNIFESP · perioperatório.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Anestesia ~13%",
+      "blurb": "Unifesp pesa anestesia e pré-op.",
+      "verdict": "Anestesia + ASA/IRCR + hérnias.",
+      "foco": "Anestesia · Pré-op · Hérnias",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Anestesia",
+          "pct": 32
+        },
+        {
+          "tema": "Pré-op",
+          "pct": 28
+        },
+        {
+          "tema": "Hérnias / pós-op",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    },
+    {
+      "checklist": [
+        "asa",
+        "atb60",
+        "hesselbach",
+        "isc",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · perioperatório.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~26% somado",
+      "blurb": "Segundo bloco do Enare.",
+      "verdict": "ASA, cefazolina no tempo certo, Lichtenstein e toxicidade de AL.",
+      "foco": "ASA · ATB · Hérnia · Anestesia",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Pré + anestesia",
+          "pct": 50
+        },
+        {
+          "tema": "Hérnias + pós-op",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir3-asa",
+        "cir3-risco-cardiaco",
+        "cir3-jejum-atb",
+        "cir3-hernia-inguinal",
+        "cir3-hernia-outras",
+        "cir3-posop-febre",
+        "cir3-isc",
+        "cir3-anestesia",
+        "cir3-suturas-hemostasia",
+        "cir3-posop-anastomose",
+        "crr-anestesia-avancada",
+        "crr-infeccao-cirurgica"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "asa": "ASA + IRCR",
+    "hesselbach": "Triângulo de Hesselbach",
+    "atb60": "Cefazolina 30–60 min",
+    "isc": "ISC / deiscência",
+    "mh": "Hipertermia maligna → dantrolene"
+  }
+}

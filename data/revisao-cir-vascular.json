@@ -1,0 +1,228 @@
+{
+  "title": "Cirurgia vascular (~8–16%)",
+  "module": "cir-vascular",
+  "profiles": [
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Aorta",
+          "texto": "AAA eletivo vs roto."
+        },
+        {
+          "titulo": "Sessão 2 · Arterial",
+          "texto": "DAP e oclusão aguda."
+        },
+        {
+          "titulo": "Sessão 3 · Venoso",
+          "texto": "IVC e varizes."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP).",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "~8% Brasil",
+      "blurb": "Grupo próprio — #1 na Unifesp (~16%).",
+      "verdict": "AAA (indicação/roto), DAP (Rutherford), oclusão arterial aguda (6 P), aneurisma poplíteo e IVC/varizes.",
+      "foco": "AAA · DAP · Oclusão aguda · Poplítea · IVC",
+      "estilo": "Síntese · vascular",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 28
+        },
+        {
+          "tema": "Oclusão arterial aguda",
+          "pct": 24
+        },
+        {
+          "tema": "DAP",
+          "pct": 22
+        },
+        {
+          "tema": "Poplítea / IVC",
+          "pct": 26
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · vascular.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Cauda Enare",
+      "blurb": "Cai menos no Enare, mas clássicos importam.",
+      "verdict": "AAA roto, 6 P e indicação de cirurgia no AAA.",
+      "foco": "AAA · 6 P · DAP",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "AAA / oclusão",
+          "pct": 50
+        },
+        {
+          "tema": "DAP / IVC",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "USP-SP · vascular.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "~5% USP",
+      "blurb": "USP cobra indicação e imagem.",
+      "verdict": "Diâmetro do AAA, Rutherford e embolectomia.",
+      "foco": "AAA · Rutherford · Embolectomia",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "UNIFESP · vascular.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "#1 Unifesp · ~16%",
+      "blurb": "Banca mais vascular-pesada.",
+      "verdict": "Priorize os 5 decks — ROI máximo na Unifesp.",
+      "foco": "AAA · DAP · Oclusão · Poplítea · IVC",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "AAA",
+          "pct": 30
+        },
+        {
+          "tema": "DAP / oclusão",
+          "pct": 40
+        },
+        {
+          "tema": "Poplítea / IVC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    },
+    {
+      "checklist": [
+        "aaa55",
+        "6p",
+        "rutherford",
+        "poplitea",
+        "ivc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · vascular.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso",
+      "blurb": "Conduta vascular.",
+      "verdict": "AAA ≥5,5 cm; 6 P → embolectomia; claudicação vs ameaça.",
+      "foco": "AAA · 6 P · Claudicação",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Arterial",
+          "pct": 70
+        },
+        {
+          "tema": "Venoso",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-aaa",
+        "cir1-aneurismas-perifericos",
+        "cir1-dap",
+        "cir1-oclusao-arterial",
+        "cir1-ivc"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "aaa55": "AAA ≥5,5 cm ou sintomático",
+    "6p": "Oclusão aguda = 6 P",
+    "rutherford": "DAP · classificação",
+    "poplitea": "Poplítea → tratar cedo",
+    "ivc": "IVC / varizes · indicação"
+  }
+}

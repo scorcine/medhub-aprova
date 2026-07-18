@@ -1,0 +1,308 @@
+{
+  "title": "Trauma · ATLS (~14%)",
+  "module": "cir-trauma",
+  "profiles": [
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "damage"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Primário + tórax",
+          "texto": "ABCDE, PNTX e hemotórax."
+        },
+        {
+          "titulo": "Sessão 2 · Abdome + TCE",
+          "texto": "FAST, baço/fígado e Glasgow."
+        },
+        {
+          "titulo": "Sessão 3 · Especial",
+          "texto": "Pelve, TRM e damage control."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP).",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "#1 Brasil · ~14%",
+      "blurb": "Trauma e ATLS — o bloco que mais cai na média nacional.",
+      "verdict": "ABCDE/choque, PNTX hipertensivo, hemotórax, FAST, TCE, pelve/GU, damage control e TRM. Fisiologia do choque e resposta ao trauma fecham o grupo.",
+      "foco": "ATLS · Tórax · FAST · TCE · Damage control",
+      "estilo": "Síntese · Trauma",
+      "priorities": [
+        {
+          "tema": "ATLS / choque",
+          "pct": 20
+        },
+        {
+          "tema": "Trauma de tórax",
+          "pct": 18
+        },
+        {
+          "tema": "Trauma abdominal / FAST",
+          "pct": 16
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 16
+        },
+        {
+          "tema": "Pelve / damage control",
+          "pct": 16
+        },
+        {
+          "tema": "Pescoço / vísceras",
+          "pct": 14
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · Trauma.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "~6% Enare",
+      "blurb": "Menos que abdome no Enare, mas clássicos caem.",
+      "verdict": "PNTX hipertensivo, FAST no instável e classes de choque.",
+      "foco": "PNTX · FAST · Choque · TCE",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Tórax / PNTX",
+          "pct": 28
+        },
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 22
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "fast",
+        "glasgow",
+        "beckponamento",
+        "damage",
+        "abcde"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "USP-SP · Trauma.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "#1 USP · ~18%",
+      "blurb": "USP é trauma-pesada com muita imagem.",
+      "verdict": "TC, FAST, epidural vs subdural, tamponamento e damage control.",
+      "foco": "TC · FAST · TCE · Tamponamento · DC",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Trauma / imagem",
+          "pct": 30
+        },
+        {
+          "tema": "Tórax",
+          "pct": 22
+        },
+        {
+          "tema": "Abdome / FAST",
+          "pct": 20
+        },
+        {
+          "tema": "TCE / DC",
+          "pct": 28
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "trm"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "UNIFESP · Trauma.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "~14% Unifesp",
+      "blurb": "Segundo lugar na Unifesp (atrás de vascular).",
+      "verdict": "ATLS sólido + tórax + abdome.",
+      "foco": "ATLS · Tórax · Abdome · TCE",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "ATLS / choque",
+          "pct": 26
+        },
+        {
+          "tema": "Tórax",
+          "pct": 24
+        },
+        {
+          "tema": "Abdome",
+          "pct": 24
+        },
+        {
+          "tema": "TCE / TRM",
+          "pct": 26
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    },
+    {
+      "checklist": [
+        "abcde",
+        "pntx",
+        "fast",
+        "glasgow",
+        "damage"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · Trauma.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~6%",
+      "blurb": "Conduta de trauma.",
+      "verdict": "Descomprimir PNTX, FAST no instável, ABCDE sem pular.",
+      "foco": "PNTX · FAST · ABCDE",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Tórax / ATLS",
+          "pct": 40
+        },
+        {
+          "tema": "Abdome / TCE",
+          "pct": 35
+        },
+        {
+          "tema": "Demais",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-torax-parede",
+        "cir2-coracao-aorta",
+        "cir2-abdome-inicial",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-damage-control",
+        "cir2-tce",
+        "cir2-pescoco",
+        "cir2-visceras",
+        "crr-trm-face",
+        "ciresp-resposta-trauma",
+        "ciresp-choque-tipos"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "abcde": "ABCDE sem pular etapas",
+    "pntx": "PNTX hipertensivo → descomprimir",
+    "fast": "Instável + FAST+ → centro",
+    "glasgow": "TCE: Glasgow + pupilas",
+    "damage": "Damage control se coagulopatia",
+    "trm": "Imobilizar · evitar hipotensão",
+    "tamponamento": "Beck → janela / esternotomia"
+  }
+}

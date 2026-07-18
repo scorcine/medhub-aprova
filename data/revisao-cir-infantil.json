@@ -1,0 +1,219 @@
+{
+  "title": "Cirurgia infantil (~9%)",
+  "module": "cir-infantil",
+  "profiles": [
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "hirschsprung",
+        "ladd",
+        "ae"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Urgências",
+          "texto": "Invaginação e Meckel."
+        },
+        {
+          "titulo": "Sessão 2 · Digestivo",
+          "texto": "AE, piloro, Hirschsprung e Ladd."
+        },
+        {
+          "titulo": "Sessão 3 · Parede / vias",
+          "texto": "Gastrosquise, atresia biliar e HDC."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP).",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "~9% Brasil",
+      "blurb": "Grupo próprio — alto nas três bancas.",
+      "verdict": "Invaginação, Meckel, atresia esofágica, piloro, Hirschsprung, Ladd, onfalocele/gastroschisis, atresia de vias e HDC.",
+      "foco": "Invaginação · AE · Piloro · Hirschsprung · Ladd",
+      "estilo": "Síntese · infantil",
+      "priorities": [
+        {
+          "tema": "Abdome agudo ped",
+          "pct": 34
+        },
+        {
+          "tema": "Digestivo / malformação",
+          "pct": 36
+        },
+        {
+          "tema": "Parede / vias / HDC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · infantil.",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "~8% Enare",
+      "blurb": "Clássicos de conduta pediátrica.",
+      "verdict": "Invaginação (enema), piloro, AE com VACTERL e volvo/Ladd.",
+      "foco": "Invaginação · Piloro · AE · Ladd",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Urgências ped",
+          "pct": 40
+        },
+        {
+          "tema": "Malformações",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "hirschsprung",
+        "ae",
+        "hdc",
+        "ladd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "USP-SP · infantil.",
+      "id": "usp",
+      "label": "USP-SP",
+      "kicker": "~7% USP",
+      "blurb": "USP gosta de imagem e diagnóstico.",
+      "verdict": "Sinal do alvo, double bubble e biópsia em Hirschsprung.",
+      "foco": "Imagem · Hirschsprung · Vias",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / imagem",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 30
+        },
+        {
+          "tema": "Parede / HDC",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "piloro",
+        "invaginacao",
+        "ae",
+        "ladd",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "UNIFESP · infantil.",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "~13% Unifesp",
+      "blurb": "Terceiro tema na Unifesp.",
+      "verdict": "Bloco forte — revise os três decks.",
+      "foco": "Digestivo · Urgências · Parede",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Digestivo",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 35
+        },
+        {
+          "tema": "Parede / vias",
+          "pct": 25
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    },
+    {
+      "checklist": [
+        "invaginacao",
+        "piloro",
+        "ladd",
+        "ae",
+        "hirschsprung"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Enare · infantil.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso · ~8%",
+      "blurb": "Conduta infantil.",
+      "verdict": "Enema na invaginação estável; piloromiotomia; Ladd no volvo.",
+      "foco": "Enema · Piloro · Ladd",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências",
+          "pct": 45
+        },
+        {
+          "tema": "Malformações",
+          "pct": 55
+        }
+      ],
+      "deckOrder": [
+        "cir1-ped-abdome",
+        "cir1-ped-digestivo",
+        "cir1-ped-parede-biliar"
+      ]
+    }
+  ],
+  "checklistLabels": {
+    "invaginacao": "Invaginação → enema se estável",
+    "piloro": "Estenose hipertrófica → piloromiotomia",
+    "hirschsprung": "Biópsia / transição",
+    "ladd": "Volvo neonatal → Ladd",
+    "ae": "Atresia esofágica ± VACTERL",
+    "hdc": "Hérnia diafragmática congênita"
+  }
+}

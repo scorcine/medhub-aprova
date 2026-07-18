@@ -1,5 +1,5 @@
 {
-  "title": "Abdome agudo · urgências abdominais",
+  "title": "Abdome agudo · urgências (~12–24%)",
   "module": "cir-abdome-agudo",
   "profiles": [
     {
@@ -24,41 +24,36 @@
           "texto": "Isquemia mesentérica e AAA roto."
         }
       ],
-      "lacuna": "Não misture este bloco com urologia ou AD eletivo — são grupos separados.",
+      "lacuna": "",
       "sourceType": "sintese",
-      "source": "WSES 2025 · TG18 · WSES Diverticulitis · ASBO Bologna · stats Cirurgia.",
+      "source": "Grupos por cobrança · stats Cirurgia R1 (Enare/USP/UNIFESP).",
       "id": "geral",
       "label": "Brasil",
-      "kicker": "Grupo #1 Enare / #2 Brasil",
-      "blurb": "Urgências abdominais do adulto — o bloco que mais cai.",
-      "verdict": "Priorize apendicite (WSES 2025), colecistite/colangite (TG18), diverticulite, obstrução (ASBO) e abdome vascular. Hérnia estrangulada e volvo fecham o grupo.",
-      "foco": "Apendicite · Colecistite · Diverticulite · Obstrução · Vascular",
-      "estilo": "Síntese nacional · abdome agudo",
+      "kicker": "#2 Brasil · ~12%",
+      "blurb": "Urgências abdominais do adulto — grupo próprio.",
+      "verdict": "Apendicite, colecistite/colangite (TG18), diverticulite, obstrução (ASBO), abdome vascular e hérnia estrangulada. Não misture com urologia nem AD eletivo.",
+      "foco": "Apendicite · TG18 · Diverticulite · Obstrução · Vascular",
+      "estilo": "Síntese · abdome agudo",
       "priorities": [
         {
           "tema": "Apendicite",
-          "pct": 28,
-          "n": 28
+          "pct": 28
         },
         {
           "tema": "Colecistite / colangite",
-          "pct": 22,
-          "n": 22
+          "pct": 22
+        },
+        {
+          "tema": "Obstrução / hérnia",
+          "pct": 18
         },
         {
           "tema": "Diverticulite",
-          "pct": 16,
-          "n": 16
-        },
-        {
-          "tema": "Obstrução / hérnia complicada",
-          "pct": 18,
-          "n": 18
+          "pct": 16
         },
         {
           "tema": "Abdome vascular",
-          "pct": 16,
-          "n": 16
+          "pct": 16
         }
       ],
       "deckOrder": [
@@ -78,29 +73,16 @@
         "asbo",
         "estrangulada"
       ],
-      "sessoes": [
-        {
-          "titulo": "Sessão 1 · Top 2",
-          "texto": "Apendicite e colecistite."
-        },
-        {
-          "titulo": "Sessão 2 · Diverticulite",
-          "texto": "Não complicada sem ATB de rotina."
-        },
-        {
-          "titulo": "Sessão 3 · Obstrução",
-          "texto": "Expectante vs centro."
-        }
-      ],
+      "sessoes": [],
       "lacuna": "",
       "sourceType": "levantamento",
-      "source": "Padrão Enare Cirurgia · grupo Abdome agudo.",
+      "source": "Enare Cirurgia 2021–2024 · urgências abdominais.",
       "id": "enamed",
       "label": "Enamed",
-      "kicker": "Nacional · ~24% da Cirurgia",
       "featured": true,
-      "blurb": "Enare é abdome agudo.",
-      "verdict": "Quase 1 em cada 4 questões de Cirurgia no Enare. Domine conduta: laparoscopia/NOM na apendicite, TG18, diverticulite sem ATB de rotina na não complicada, e quando operar obstrução.",
+      "kicker": "#1 Enare · ~24%",
+      "blurb": "Quase 1 em 4 questões de Cirurgia no Enare.",
+      "verdict": "Domine conduta: laparoscopia/NOM, TG18, diverticulite sem ATB de rotina, quando operar obstrução.",
       "foco": "Apendicite · TG18 · Diverticulite · Obstrução",
       "estilo": "Padrão Enamed-Enare",
       "priorities": [
@@ -130,8 +112,8 @@
         "cg-colecistite",
         "cg-diverticulite",
         "cg-obstrucao",
-        "crr-hernia-obstrucao",
-        "cg-abdome-vascular"
+        "cg-abdome-vascular",
+        "crr-hernia-obstrucao"
       ]
     },
     {
@@ -145,12 +127,12 @@
       "sessoes": [],
       "lacuna": "",
       "sourceType": "levantamento",
-      "source": "Padrão USP-SP · Abdome agudo.",
+      "source": "USP-SP · abdome agudo.",
       "id": "usp",
       "label": "USP-SP",
-      "kicker": "Prova USP",
+      "kicker": "~11% USP",
       "blurb": "USP detalha algoritmo e imagem.",
-      "verdict": "Foque critérios de NOM, TC na obstrução e diferencial isquemia mesentérica × AAA.",
+      "verdict": "NOM, TC na obstrução e diferencial isquemia × AAA.",
       "foco": "NOM · TC · Isquemia · TG18",
       "estilo": "Padrão USP-SP",
       "priorities": [
@@ -163,7 +145,7 @@
           "pct": 22
         },
         {
-          "tema": "Vias biliares / TG18",
+          "tema": "Vias / TG18",
           "pct": 20
         },
         {
@@ -195,13 +177,13 @@
       "sessoes": [],
       "lacuna": "",
       "sourceType": "levantamento",
-      "source": "Padrão UNIFESP · Abdome agudo.",
+      "source": "UNIFESP · abdome agudo.",
       "id": "unifesp",
       "label": "UNIFESP",
-      "kicker": "Prova UNIFESP",
+      "kicker": "~8% Unifesp",
       "blurb": "Menos dominante que vascular, mas cai.",
-      "verdict": "UNIFESP prioriza vascular sistêmico, mas abdome agudo ainda aparece — foque isquemia e TG18.",
-      "foco": "Isquemia · TG18 · Apendicite · Obstrução",
+      "verdict": "Foque isquemia mesentérica e TG18.",
+      "foco": "Isquemia · TG18 · Apendicite",
       "estilo": "Padrão UNIFESP",
       "priorities": [
         {
@@ -245,13 +227,13 @@
       "sessoes": [],
       "lacuna": "",
       "sourceType": "levantamento",
-      "source": "Padrão Enare · Abdome agudo.",
+      "source": "Enare · abdome agudo.",
       "id": "enare",
       "label": "Enare",
-      "kicker": "Acesso direto",
-      "blurb": "Mesmo padrão Enamed neste grupo.",
-      "verdict": "Conduta objetiva: operar/NOM certo, drenar abscesso, não atrasar isquemia/hérnia estrangulada.",
-      "foco": "Conduta · Timing · Sinais de alarme",
+      "kicker": "Acesso · ~24%",
+      "blurb": "Mesmo padrão Enamed.",
+      "verdict": "Conduta objetiva: timing de cirurgia e sinais de alarme.",
+      "foco": "Conduta · Timing · Alarme",
       "estilo": "Padrão Enare",
       "priorities": [
         {
@@ -263,12 +245,12 @@
           "pct": 24
         },
         {
-          "tema": "Diverticulite",
-          "pct": 16
-        },
-        {
           "tema": "Obstrução / hérnia",
           "pct": 18
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
         },
         {
           "tema": "Vascular",
@@ -295,8 +277,6 @@
   },
   "oneLiners": [
     "Enare: ~24% de Cirurgia = abdome agudo",
-    "Apendicite não complicada: laparoscopia ± NOM",
-    "TG18 guia colecistite e colangite",
-    "Estrangulada: não insistir em reduzir"
+    "Grupo separado de urologia e AD eletivo"
   ]
 }

@@ -288,7 +288,24 @@ function aprovaDeckKicker (deck) {
     id === "cg-obstrucao" ||
     id === "cg-abdome-vascular" ||
     id === "crr-hernia-obstrucao"
-  ) return "Abdome agudo · urgências";
+  ) return "Abdome agudo";
+  if (
+    id.indexOf("cir2-") === 0 ||
+    id === "crr-trm-face" ||
+    id === "ciresp-resposta-trauma" ||
+    id === "ciresp-choque-tipos"
+  ) return "Trauma · ATLS";
+  if (id.indexOf("cir3-") === 0 || id === "crr-anestesia-avancada" || id === "crr-infeccao-cirurgica") {
+    return "Pré/pós-op · Anestesia · Hérnias";
+  }
+  if (id.indexOf("cir1-ped-") === 0) return "Cirurgia infantil";
+  if (
+    id === "cir1-aaa" ||
+    id === "cir1-aneurismas-perifericos" ||
+    id === "cir1-dap" ||
+    id === "cir1-oclusao-arterial" ||
+    id === "cir1-ivc"
+  ) return "Cirurgia vascular";
   if (
     id === "cg-vesicula" ||
     id === "cg-estomago" ||
@@ -299,15 +316,27 @@ function aprovaDeckKicker (deck) {
     id.indexOf("crr-estomago") === 0 ||
     id.indexOf("crr-colorretal") === 0 ||
     id.indexOf("crr-pancreas") === 0 ||
-    id.indexOf("crr-figado") === 0
+    id.indexOf("crr-figado") === 0 ||
+    id === "cir1-hemorroidas" ||
+    id === "cir1-abscesso-fistula" ||
+    id === "cir1-prolapso" ||
+    id === "cir1-bariatrica" ||
+    id === "crr-procto-avancado"
   ) return "Aparelho digestivo";
-  if (id === "cg-urologia" || id.indexOf("crr-urologia") === 0) return "Urologia";
-  if (id === "cg-torax" || id.indexOf("crr-torax") === 0) return "Tórax eletivo";
-  if (id.indexOf("cir1-") === 0) return "Cir1 · apostila";
-  if (id.indexOf("cir2-") === 0) return "Trauma · ATLS";
-  if (id.indexOf("cir3-") === 0) return "Pré/pós-op · Hérnias";
-  if (id.indexOf("ciresp-") === 0) return "Queimaduras · Choque · Nutrição";
-  if (id.indexOf("crr-") === 0) return "Extras R1";
+  if (
+    id === "cg-urologia" ||
+    id.indexOf("crr-urologia") === 0 ||
+    id === "cg-torax" ||
+    id.indexOf("crr-torax") === 0 ||
+    id.indexOf("ciresp-") === 0 ||
+    id === "cir1-cabeca-pescoco" ||
+    id === "crr-partes-moles" ||
+    id === "crr-plastica-avancada" ||
+    id === "crr-mama-tireoide" ||
+    id === "crr-transplante-miscelanea"
+  ) return "Especialidades R1";
+  if (id.indexOf("cir1-") === 0) return "Cirurgia";
+  if (id.indexOf("crr-") === 0) return "Especialidades R1";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -704,14 +733,12 @@ const APROVA_PED_MODULE_PREFIXES = {
   obs4: ["obs4-"],
   obs5: ["obs5-"],
   "cir-abdome-agudo": [],
+  "cir-trauma": [],
+  "cir-perioperatorio": [],
+  "cir-infantil": [],
+  "cir-vascular": [],
   "cir-ad": [],
-  "cir-urologia": [],
-  "cir-torax": [],
-  "cir-extras": [],
-  cir1: ["cir1-"],
-  cir2: ["cir2-"],
-  cir3: ["cir3-"],
-  ciresp: ["ciresp-"]
+  "cir-especialidades": []
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
