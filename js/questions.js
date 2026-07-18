@@ -27,6 +27,9 @@ const AprovaQuestions = {
     this.attempted += 1;
     const ok = choiceIndex === q.answer;
     if (ok) this.correct += 1;
+    if (typeof aprovaRecordExamAnswer === "function") {
+      aprovaRecordExamAnswer(q.theme, ok);
+    }
     return { ok, explain: q.explain, answer: q.answer };
   },
 

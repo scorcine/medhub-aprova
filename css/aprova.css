@@ -1175,6 +1175,89 @@ body.app-body {
   line-height: 1.4;
 }
 
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.stat-card {
+  padding: 0.95rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.stat-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.stat-card strong {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.stat-theme-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stat-theme-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.stat-theme-row strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.stat-theme-row span {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.stat-theme-row em {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-deep);
+}
+
+.stat-bar {
+  height: 0.45rem;
+  border-radius: 999px;
+  background: rgba(15, 159, 154, 0.12);
+  overflow: hidden;
+}
+
+.stat-bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--signal));
+  border-radius: inherit;
+}
+
+@media (max-width: 640px) {
+  .stat-theme-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .stat-bar {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 900px) {
   .app-shell {
     grid-template-columns: 1fr;

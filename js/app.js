@@ -7,6 +7,7 @@ const APROVA_PANEL_META = {
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Especialidades", sub: "Foque por área clínica" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
+  estatisticas: { title: "Estatísticas de provas", sub: "Acertos, erros e temas" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
   config: { title: "Configurações", sub: "Conta e preferências" }
 };
@@ -40,15 +41,56 @@ function aprovaGoTo (id) {
   }
   if (id === "hoje") aprovaRenderToday();
   if (id === "progresso") aprovaRenderProgress();
+  if (id === "estatisticas") aprovaRenderExamStats();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
   aprovaShowPanel(id);
+}
+
+function aprovaRenderExamStats () {
+  if (typeof aprovaExamStatsSummary !== "function") return;
+  const s = aprovaExamStatsSummary();
+
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+
+  set("stat-attempted", String(s.attempted));
+  set("stat-correct", String(s.correct));
+  set("stat-wrong", String(s.wrong));
+  set("stat-pct", s.pct + "%");
+  set("stat-streak", String(s.streak));
+  set("stat-best-streak", String(s.bestStreak));
+
+  const preview = document.getElementById("dash-exam-stats-preview");
+  if (preview) {
+    preview.textContent = s.attempted
+      ? s.correct + "/" + s.attempted + " acertos · " + s.pct + "% de aproveitamento"
+      : "Acertos, erros e desempenho por tema.";
+  }
+
+  const themes = document.getElementById("stat-themes");
+  if (!themes) return;
+  if (!s.themes.length) {
+    themes.innerHTML = "<p class=\"muted\">Responda questões para ver o desempenho por tema.</p>";
+    return;
+  }
+
+  themes.innerHTML = s.themes.map(t => (
+    "<div class=\"stat-theme-row\">" +
+      "<div><strong>" + t.name + "</strong><span>" + t.correct + "/" + t.attempted + " acertos</span></div>" +
+      "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + t.pct + "%\"></i></div>" +
+      "<em>" + t.pct + "%</em>" +
+    "</div>"
+  )).join("");
 }
 
 function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
   if (hello) hello.textContent = (session && (session.name || session.login)) || "estudante";
+  aprovaRenderExamStats();
 }
 
 function aprovaRenderToday () {
@@ -165,6 +207,7 @@ function aprovaRenderQuestion () {
       explain.hidden = false;
       nextBtn.hidden = false;
       stats.textContent = AprovaQuestions.statsText();
+      aprovaRenderExamStats();
     });
     choices.appendChild(btn);
   });
@@ -203,6 +246,7 @@ async function aprovaBoot () {
     aprovaRenderFlashcard();
     aprovaRenderQuestion();
     aprovaRenderProgress();
+    aprovaRenderExamStats();
     aprovaRenderConfig();
   }
 
@@ -256,5 +300,6 @@ window.aprovaBootStudyModules = async function () {
   aprovaRenderFlashcard();
   aprovaRenderQuestion();
   aprovaRenderProgress();
+  aprovaRenderExamStats();
   aprovaRenderConfig();
 };

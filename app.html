@@ -82,6 +82,7 @@
         <p class="sidebar-label">Estudo</p>
         <button type="button" class="side-link" data-panel="especialidades">Especialidades</button>
         <button type="button" class="side-link" data-panel="simulados">Simulados</button>
+        <button type="button" class="side-link" data-panel="estatisticas">Estatísticas de provas</button>
         <button type="button" class="side-link" data-panel="progresso">Meu progresso</button>
 
         <p class="sidebar-label">Conta</p>
@@ -142,6 +143,11 @@
               <span class="dash-card-kicker">Performance</span>
               <strong>Simulados</strong>
               <span>Blocos cronometrados no estilo das provas de R1.</span>
+            </button>
+            <button type="button" class="dash-card" data-goto="estatisticas">
+              <span class="dash-card-kicker">Números</span>
+              <strong>Estatísticas de provas</strong>
+              <span id="dash-exam-stats-preview">Acertos, erros e desempenho por tema.</span>
             </button>
             <button type="button" class="dash-card" data-goto="progresso">
               <span class="dash-card-kicker">Acompanhar</span>
@@ -221,6 +227,46 @@
           </div>
         </section>
 
+        <section id="panel-estatisticas" class="panel" aria-labelledby="stats-title" hidden>
+          <h2 id="stats-title">Estatísticas de provas</h2>
+          <p class="muted">Desempenho nas questões respondidas — atualiza a cada resposta.</p>
+          <div class="stat-grid" id="exam-stat-grid">
+            <article class="stat-card">
+              <span class="stat-card-label">Respondidas</span>
+              <strong id="stat-attempted">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Acertos</span>
+              <strong id="stat-correct">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Erros</span>
+              <strong id="stat-wrong">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Aproveitamento</span>
+              <strong id="stat-pct">0%</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Sequência atual</span>
+              <strong id="stat-streak">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Melhor sequência</span>
+              <strong id="stat-best-streak">0</strong>
+            </article>
+          </div>
+          <div class="study-card" style="margin-top:1rem">
+            <div class="label">Por tema</div>
+            <div id="stat-themes" class="stat-theme-list">
+              <p class="muted">Responda questões para ver o desempenho por tema.</p>
+            </div>
+            <div class="actions-row" style="margin-top:1rem">
+              <button type="button" class="btn btn-primary" data-goto="questoes">Treinar questões</button>
+            </div>
+          </div>
+        </section>
+
         <section id="panel-progresso" class="panel" aria-labelledby="prog-title" hidden>
           <h2 id="prog-title">Meu progresso</h2>
           <p class="muted">Resumo da sua agenda e treino nesta sessão.</p>
@@ -250,6 +296,7 @@
   <script src="js/theme.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/schedule.js"></script>
+  <script src="js/exam-stats.js"></script>
   <script src="js/flashcards.js"></script>
   <script src="js/questions.js"></script>
   <script src="js/app.js"></script>
