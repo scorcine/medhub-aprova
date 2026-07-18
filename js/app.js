@@ -164,8 +164,8 @@ function aprovaRenderEspecialidades () {
   const cliN = AprovaFlashcards.countBySpecialty("clinica");
   if (ped) {
     ped.textContent = pedN
-      ? pedN + " flashcards · Ped1–Ped5"
-      : "Neonatologia, nutrição, vacinas e diabetes.";
+      ? pedN + " flashcards · Ped1–Ped6 completas"
+      : "Todas as apostilas de Pediatria.";
   }
   if (cli) {
     cli.textContent = cliN
@@ -181,6 +181,10 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("nut-") === 0) return "Avaliação nutricional";
   if (id.indexOf("imu-") === 0) return "Imunizações";
   if (id.indexOf("dm-") === 0) return "Diabetes";
+  if (id.indexOf("itu-") === 0) return "Nefro · ITU/RVU";
+  if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
+  if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
+  if (id.indexOf("urg-") === 0) return "Urgências";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
 }
@@ -194,7 +198,11 @@ function aprovaRenderDeckCards (specialty, grid) {
       if (s.indexOf("nut-") === 0) return 2;
       if (s.indexOf("imu-") === 0) return 3;
       if (s.indexOf("dm-") === 0) return 4;
-      return 5;
+      if (s.indexOf("itu-") === 0) return 5;
+      if (s.indexOf("exa-") === 0) return 6;
+      if (s.indexOf("crd-") === 0) return 7;
+      if (s.indexOf("urg-") === 0) return 8;
+      return 9;
     };
     const d = rank(a.id) - rank(b.id);
     return d !== 0 ? d : String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");

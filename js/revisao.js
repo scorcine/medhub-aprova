@@ -3,23 +3,27 @@
 const APROVA_REVISAO_MODULES = {
   neonatologia: {
     label: "Neonatologia",
-    file: "data/revisao-neonatologia.json?v=20260718l"
+    file: "data/revisao-neonatologia.json?v=20260718m"
   },
   alimentacao: {
     label: "Alimentação",
-    file: "data/revisao-alimentacao.json?v=20260718l"
+    file: "data/revisao-alimentacao.json?v=20260718m"
   },
   "avaliacao-nutricional": {
     label: "Avaliação nutricional",
-    file: "data/revisao-avaliacao-nutricional.json?v=20260718l"
+    file: "data/revisao-avaliacao-nutricional.json?v=20260718m"
   },
   imunizacoes: {
     label: "Imunizações",
-    file: "data/revisao-imunizacoes.json?v=20260718l"
+    file: "data/revisao-imunizacoes.json?v=20260718m"
   },
   diabetes: {
     label: "Diabetes",
-    file: "data/revisao-diabetes.json?v=20260718l"
+    file: "data/revisao-diabetes.json?v=20260718m"
+  },
+  ped6: {
+    label: "Nefro / Infecto / Cardio",
+    file: "data/revisao-ped6.json?v=20260718m"
   }
 };
 

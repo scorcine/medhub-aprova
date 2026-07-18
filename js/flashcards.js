@@ -8,7 +8,11 @@ function aprovaDeckSpecialty (deck) {
     id.indexOf("ali-") === 0 ||
     id.indexOf("nut-") === 0 ||
     id.indexOf("imu-") === 0 ||
-    id.indexOf("dm-") === 0
+    id.indexOf("dm-") === 0 ||
+    id.indexOf("itu-") === 0 ||
+    id.indexOf("exa-") === 0 ||
+    id.indexOf("crd-") === 0 ||
+    id.indexOf("urg-") === 0
   ) {
     return "pediatria";
   }
@@ -33,7 +37,8 @@ const AprovaFlashcards = {
       "data/flashcards-alimentacao.json",
       "data/flashcards-avaliacao-nutricional.json",
       "data/flashcards-imunizacoes.json",
-      "data/flashcards-diabetes.json"
+      "data/flashcards-diabetes.json",
+      "data/flashcards-ped6.json"
     ];
     const decks = [];
     for (const file of files) {

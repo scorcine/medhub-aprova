@@ -1,0 +1,334 @@
+{
+  "title": "Ped6 · Nefro / Infecto / Cardio · revisão para provas R1",
+  "module": "ped6",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Média das principais provas R1 do país.",
+      "verdict": "Na Ped6, o retorno se concentra em ITU/RVU, Kawasaki, exantemas clássicos e Fallot/TGA/CoA — evite oncologia e urodinâmica fina.",
+      "foco": "ITU · Kawasaki · Fallot/crise · TGA/PGE1 · Exantemas",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "ITU / coleta / urocultura", "score": 94 },
+        { "tema": "Kawasaki", "score": 92 },
+        { "tema": "Fallot e crise hipercianótica", "score": 88 },
+        { "tema": "Exantemas (5ª/6ª/sarampo/varicela)", "score": 84 },
+        { "tema": "TGA / CoAo / PCA", "score": 78 },
+        { "tema": "RVU / imagem", "score": 72 },
+        { "tema": "Anafilaxia / RCP", "score": 60 },
+        { "tema": "Oncologia / abuso (conceito)", "score": 30 }
+      ],
+      "deckOrder": [
+        "itu-diagnostico",
+        "exa-kawasaki",
+        "crd-cianoticas",
+        "exa-exantemas",
+        "crd-acyanoticas",
+        "itu-imagem-rvu",
+        "urg-ped"
+      ],
+      "checklist": ["itu", "kawasaki", "fallot", "exa", "cardio", "urg"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · ITU", "texto": "Coleta, UFC e quando pedir USG/UCM/DMSA." },
+        { "titulo": "Sessão 2 · Infecto high-yield", "texto": "Kawasaki + 5ª/6ª + varicela neonatal." },
+        { "titulo": "Sessão 3 · Cardio", "texto": "Fallot (crise), TGA (PGE1/Rashkind), CoAo." }
+      ],
+      "lacuna": "Neuroblastoma/Wilms/rabdomiossarcoma e abuso detalhado: revise só se a banca for pesada nesses temas."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova específica",
+      "blurb": "Casos clínicos.",
+      "verdict": "Na USP, Kawasaki, crise de Fallot e ITU com interpretação de coleta caem muito.",
+      "foco": "Kawasaki · Fallot · ITU · TGA",
+      "estilo": "Caso + conduta",
+      "priorities": [
+        { "tema": "Kawasaki", "score": 97 },
+        { "tema": "Fallot / crise", "score": 93 },
+        { "tema": "ITU", "score": 88 },
+        { "tema": "TGA / ducto-dependente", "score": 80 },
+        { "tema": "Exantemas", "score": 70 },
+        { "tema": "Anafilaxia", "score": 55 }
+      ],
+      "deckOrder": [
+        "exa-kawasaki",
+        "crd-cianoticas",
+        "itu-diagnostico",
+        "crd-acyanoticas",
+        "exa-exantemas",
+        "itu-imagem-rvu",
+        "urg-ped"
+      ],
+      "checklist": ["kawasaki", "fallot", "itu", "cardio", "exa"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Kawasaki", "texto": "Critérios, IG 2 g/kg, AAS, ECO." },
+        { "titulo": "Sessão 2 · Fallot", "texto": "Joelho-peito, O₂, volume, morfina." },
+        { "titulo": "Sessão 3 · ITU", "texto": "Saco vs cateter e UFC." }
+      ],
+      "lacuna": "Prune belly e estudos urodinâmicos: baixo ROI."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova específica",
+      "blurb": "Protocolo e imagem.",
+      "verdict": "Na Unifesp, pesam propedêutica da ITU/RVU, Kawasaki e cardiopatias com imagem clássica.",
+      "foco": "ITU/imagem · Kawasaki · Rx Fallot · CoAo",
+      "estilo": "Protocolo + números",
+      "priorities": [
+        { "tema": "ITU / RVU / imagem", "score": 96 },
+        { "tema": "Kawasaki", "score": 90 },
+        { "tema": "Cardiopatias (Rx/clínica)", "score": 85 },
+        { "tema": "Exantemas", "score": 72 },
+        { "tema": "Urgências", "score": 60 },
+        { "tema": "Oncologia", "score": 35 }
+      ],
+      "deckOrder": [
+        "itu-diagnostico",
+        "itu-imagem-rvu",
+        "exa-kawasaki",
+        "crd-cianoticas",
+        "crd-acyanoticas",
+        "exa-exantemas",
+        "urg-ped"
+      ],
+      "checklist": ["itu", "kawasaki", "fallot", "cardio", "exa"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Fluxo ITU", "texto": "Cultura → USG → UCM/DMSA." },
+        { "titulo": "Sessão 2 · Kawasaki", "texto": "Tratamento e ECO." },
+        { "titulo": "Sessão 3 · Cardio", "texto": "Tamanco, CoAo, TGA." }
+      ],
+      "lacuna": "Detalhe de todos os graus de RVU radiográficos: saiba que grau alto piora prognóstico."
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Prova específica",
+      "blurb": "APS e reconhecimento.",
+      "verdict": "No SUS-SP, caem febre sem foco/ITU, exantemas e quando referenciar cardiopatia/Kawasaki.",
+      "foco": "ITU · Exantemas · Kawasaki reconhecer · Maus-tratos",
+      "estilo": "Conduta de atenção básica",
+      "priorities": [
+        { "tema": "ITU no lactente febril", "score": 95 },
+        { "tema": "Exantemas", "score": 90 },
+        { "tema": "Kawasaki (reconhecer)", "score": 85 },
+        { "tema": "Maus-tratos (notificação)", "score": 70 },
+        { "tema": "Cardiopatias (sinais de alarme)", "score": 65 },
+        { "tema": "RVU detalhado", "score": 50 }
+      ],
+      "deckOrder": [
+        "itu-diagnostico",
+        "exa-exantemas",
+        "exa-kawasaki",
+        "urg-ped",
+        "crd-acyanoticas",
+        "crd-cianoticas",
+        "itu-imagem-rvu"
+      ],
+      "checklist": ["itu", "exa", "kawasaki", "urg"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Febre sem foco", "texto": "Quando coletar urina e como." },
+        { "titulo": "Sessão 2 · Exantema", "texto": "5ª, 6ª, sarampo, escarlatina." },
+        { "titulo": "Sessão 3 · Red flags", "texto": "Kawasaki e notificação de abuso." }
+      ],
+      "lacuna": "Cirurgia de Fallot detalhada: saiba crise e quando é ducto-dependente."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Prova específica",
+      "blurb": "Conceito + urgência.",
+      "verdict": "No SUS-BA, misturam exantemas, ITU e urgências (anafilaxia/RCP).",
+      "foco": "Exantemas · ITU · Anafilaxia · Kawasaki",
+      "estilo": "Conceito claro + conduta",
+      "priorities": [
+        { "tema": "Exantemas", "score": 93 },
+        { "tema": "ITU", "score": 88 },
+        { "tema": "Anafilaxia / RCP", "score": 82 },
+        { "tema": "Kawasaki", "score": 78 },
+        { "tema": "Cardiopatias básicas", "score": 65 },
+        { "tema": "RVU", "score": 50 }
+      ],
+      "deckOrder": [
+        "exa-exantemas",
+        "itu-diagnostico",
+        "urg-ped",
+        "exa-kawasaki",
+        "crd-cianoticas",
+        "crd-acyanoticas",
+        "itu-imagem-rvu"
+      ],
+      "checklist": ["exa", "itu", "urg", "kawasaki", "fallot"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Exantemas", "texto": "Agente + pista clínica." },
+        { "titulo": "Sessão 2 · ITU", "texto": "Coleta e E. coli/Proteus." },
+        { "titulo": "Sessão 3 · Emergência", "texto": "Adrenalina IM e PCR." }
+      ],
+      "lacuna": "Oncologia pediátrica da Ped6: mínimo."
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Prova específica",
+      "blurb": "Casos de UTI/cardio.",
+      "verdict": "No Einstein, predominam crise de Fallot, TGA com PGE1, Kawasaki incompleto e ITU com imagem.",
+      "foco": "Fallot · TGA · Kawasaki incompleto · ITU/RVU",
+      "estilo": "Caso clínico com conduta",
+      "priorities": [
+        { "tema": "Cardiopatias cianóticas", "score": 96 },
+        { "tema": "Kawasaki", "score": 90 },
+        { "tema": "ITU / RVU", "score": 85 },
+        { "tema": "CoAo / PCA", "score": 75 },
+        { "tema": "Exantemas", "score": 55 },
+        { "tema": "Oncologia", "score": 40 }
+      ],
+      "deckOrder": [
+        "crd-cianoticas",
+        "exa-kawasaki",
+        "itu-diagnostico",
+        "itu-imagem-rvu",
+        "crd-acyanoticas",
+        "urg-ped",
+        "exa-exantemas"
+      ],
+      "checklist": ["fallot", "cardio", "kawasaki", "itu"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Cianose no RN", "texto": "TGA vs Fallot vs ducto-dependente." },
+        { "titulo": "Sessão 2 · Kawasaki atípico", "texto": "Lab + ECO." },
+        { "titulo": "Sessão 3 · ITU recidivante", "texto": "UCM e profilaxia selecionada." }
+      ],
+      "lacuna": "Tumores pediátricos: só se o enunciado for oncológico."
+    },
+    {
+      "id": "puc",
+      "label": "PUC/Unicamp",
+      "kicker": "Prova específica",
+      "blurb": "Fisiopatologia + critérios.",
+      "verdict": "PUC/Unicamp equilibram critérios de Kawasaki, fisiologia das cardiopatias e bacteriúria significativa.",
+      "foco": "Kawasaki · Cardio fisiologia · ITU · Exantemas",
+      "estilo": "Conceito + tabela mental",
+      "priorities": [
+        { "tema": "Kawasaki critérios", "score": 94 },
+        { "tema": "Cardiopatias", "score": 90 },
+        { "tema": "ITU / UFC", "score": 86 },
+        { "tema": "Exantemas", "score": 75 },
+        { "tema": "RVU", "score": 65 },
+        { "tema": "Urgências", "score": 50 }
+      ],
+      "deckOrder": [
+        "exa-kawasaki",
+        "crd-cianoticas",
+        "crd-acyanoticas",
+        "itu-diagnostico",
+        "exa-exantemas",
+        "itu-imagem-rvu",
+        "urg-ped"
+      ],
+      "checklist": ["kawasaki", "cardio", "itu", "fallot", "exa"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Kawasaki", "texto": "Clássico vs incompleto." },
+        { "titulo": "Sessão 2 · Shunts", "texto": "E→D vs D→E e ducto." },
+        { "titulo": "Sessão 3 · ITU", "texto": "Método de coleta muda o corte." }
+      ],
+      "lacuna": "Urodinâmica e disfunção miccional completa: saiba que impacta RVU."
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Prova específica",
+      "blurb": "Conceito sólido.",
+      "verdict": "Na UFRJ, cobram exantemas, critérios de Kawasaki e semiologia de CoAo/Fallot.",
+      "foco": "Exantemas · Kawasaki · CoAo · Fallot · ITU básica",
+      "estilo": "Conceito sólido",
+      "priorities": [
+        { "tema": "Exantemas", "score": 94 },
+        { "tema": "Kawasaki", "score": 90 },
+        { "tema": "Cardiopatias (semiologia)", "score": 85 },
+        { "tema": "ITU", "score": 78 },
+        { "tema": "Anafilaxia", "score": 60 },
+        { "tema": "RVU avançado", "score": 45 }
+      ],
+      "deckOrder": [
+        "exa-exantemas",
+        "exa-kawasaki",
+        "crd-acyanoticas",
+        "crd-cianoticas",
+        "itu-diagnostico",
+        "urg-ped",
+        "itu-imagem-rvu"
+      ],
+      "checklist": ["exa", "kawasaki", "cardio", "itu", "fallot"],
+      "sessoes": [
+        { "titulo": "Sessão 1 · Exantemas", "texto": "Agente e marca registrada." },
+        { "titulo": "Sessão 2 · Kawasaki", "texto": "5 critérios + tratamento." },
+        { "titulo": "Sessão 3 · Cardio", "texto": "Pulso femoral e tamanco." }
+      ],
+      "lacuna": "Capítulos finais de câncer/alergia da Ped6: baixo ROI geral."
+    }
+  ],
+  "checklistItems": {
+    "itu": {
+      "tema": "ITU",
+      "yield": "Máximo",
+      "pegar": "Cultura obriga · 2–24m: cateter/punção · Nelson >50 mil + EAS · E. coli / Proteus meninos · USG 1ª linha"
+    },
+    "kawasaki": {
+      "tema": "Kawasaki",
+      "yield": "Máximo",
+      "pegar": "Febre ≥5d + ≥4 critérios · IGIV 2 g/kg ≤10º dia · AAS alto→baixo · ECO seriado · incompleto: lab/ECO"
+    },
+    "fallot": {
+      "tema": "Fallot",
+      "yield": "Alto",
+      "pegar": "4 componentes · tamanco · crise: genupeitoral + O₂ + volume + morfina · sopro some na crise"
+    },
+    "exa": {
+      "tema": "Exantemas",
+      "yield": "Alto",
+      "pegar": "Sarampo/Koplik · 6ª HHV-6 · 5ª B19 · mão-pé-boca enterovírus · escarlatina GAS · varicela: IG neonatal de risco"
+    },
+    "cardio": {
+      "tema": "Outras cardiopatias",
+      "yield": "Alto",
+      "pegar": "CoAo: femorais fracos · PCA: sopro contínuo/PGE1 · TGA: circulações paralelas + PGE1/Rashkind · CIV: sopro + ICC lactente"
+    },
+    "urg": {
+      "tema": "Urgências",
+      "yield": "Médio-alto",
+      "pegar": "Anafilaxia: adrenalina IM 0,01 mg/kg · PCR: adrenalina 0,01 mg/kg 1:10.000 · Abuso → Conselho Tutelar"
+    }
+  },
+  "numeros": [
+    "ITU Nelson: >50.000 UFC/ml (cateter/punção) + EAS alterado",
+    "Jato médio clássico: >100.000 UFC/ml",
+    "Kawasaki: febre ≥5 dias · IGIV 2 g/kg · AAS 80–100 → 3–5 mg/kg/dia",
+    "Aneurisma gigante coronariano: ≥8 mm",
+    "Sem tratamento Kawasaki: 20–25% coronariopatia · com IG: 2–4%",
+    "Crise Fallot: volume 10–20 ml/kg",
+    "Anafilaxia: adrenalina 0,01 mg/kg IM (1:1000)",
+    "PCR: adrenalina 0,01 mg/kg EV/IO (1:10.000) 3–5/5 min",
+    "ITU lactente febril sem foco: ~3,5% prevalência global"
+  ],
+  "pegadinhas": [
+    "Saco coletor positivo ≠ fecha diagnóstico (confirme)",
+    "Urinocultura é obrigatória",
+    "Vesículas praticamente afastam Kawasaki",
+    "Na crise de Fallot o sopro DIMINUI",
+    "PGE1 abre/mantém canal — não ‘fecha’",
+    "CoAo: femoral fraco (não ‘mais forte’)",
+    "6ª doença: exantema DEPOIS que a febre cede",
+    "5ª doença: risco fetal/crise aplásica",
+    "Kawasaki: tratar idealmente até o 10º dia",
+    "Anafilaxia: IM na coxa, não SC"
+  ],
+  "baixoRoi": [
+    "Oncologia pediátrica completa (Wilms/neuroblastoma/RMS)",
+    "Capítulo extenso de maus-tratos (saiba notificar)",
+    "Urodinâmica e todos os subtipos de disfunção miccional",
+    "Prune belly detalhado",
+    "Todos os enterovírus e sorotipos"
+  ]
+}
