@@ -148,20 +148,7 @@ let aprovaActivePedModule = null;
 let aprovaActiveGoArea = null;
 let aprovaActiveCliArea = null;
 let aprovaActivePedOverviewFocus = "geral";
-let aprovaPedOverviewStatsCache = null;
-let aprovaGoOverviewStatsCache = null;
-let aprovaObsOverviewStatsCache = null;
-let aprovaCirOverviewStatsCache = null;
-let aprovaReuOverviewStatsCache = null;
-let aprovaPsiOverviewStatsCache = null;
-let aprovaPnmOverviewStatsCache = null;
-let aprovaNeuOverviewStatsCache = null;
-let aprovaNefOverviewStatsCache = null;
-let aprovaInfcOverviewStatsCache = null;
-let aprovaHepOverviewStatsCache = null;
-let aprovaHemaOverviewStatsCache = null;
-let aprovaEndoOverviewStatsCache = null;
-let aprovaCardioOverviewStatsCache = null;
+const aprovaOverviewStatsCache = Object.create(null);
 
 function aprovaIsRichSpecialty (specialty) {
   return (
@@ -208,14 +195,25 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Preventiva",
       shortLabel: "Preventiva",
       overviewCacheKey: "preventiva",
-      overviewUrl: "data/stats-preventiva-geral.json?v=20260718cz",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718da",
       countNoun: "Preventiva",
       openRoot: () => aprovaOpenPreventiva(),
       openModule: id => aprovaOpenPreventivaModule(id)
     };
   }
   if (spec === "clinica") {
-    const area = aprovaActiveCliArea || "reumatologia";
+    if (!aprovaActiveCliArea) {
+      return {
+        id: "clinica",
+        label: "Clínica médica",
+        shortLabel: "Clínica médica",
+        overviewCacheKey: "clinica",
+        overviewUrl: "data/stats-clinica-geral.json?v=20260718da",
+        countNoun: "Clínica médica",
+        openRoot: () => aprovaOpenClinica(),
+        openModule: id => aprovaOpenClinicaModule(id)
+      };
+    }
     const cliMeta = {
       reumatologia: {
         shortLabel: "Reumatologia",
@@ -274,11 +272,11 @@ function aprovaRichSpecialtyMeta (specialty) {
       cardiologia: {
         shortLabel: "Cardiologia",
         overviewCacheKey: "cardiologia",
-        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718co",
+        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718da",
         countNoun: "Cardiologia"
       }
     };
-    const a = cliMeta[area] || cliMeta.reumatologia;
+    const a = cliMeta[aprovaActiveCliArea] || cliMeta.reumatologia;
     return {
       id: "clinica",
       label: "Clínica médica",
@@ -783,160 +781,18 @@ function aprovaFormatPct (value) {
 
 async function aprovaLoadOverviewStats (specialty) {
   const meta = aprovaRichSpecialtyMeta(specialty);
-  if (meta.id === "go") {
-    const obs = aprovaActiveGoArea === "obstetricia";
-    if (obs) {
-      if (aprovaObsOverviewStatsCache) return aprovaObsOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaObsOverviewStatsCache = await res.json();
-      } catch {
-        aprovaObsOverviewStatsCache = null;
-      }
-      return aprovaObsOverviewStatsCache;
-    }
-    if (aprovaGoOverviewStatsCache) return aprovaGoOverviewStatsCache;
-    try {
-      const res = await fetch(meta.overviewUrl);
-      if (!res.ok) throw new Error("fail");
-      aprovaGoOverviewStatsCache = await res.json();
-    } catch {
-      aprovaGoOverviewStatsCache = null;
-    }
-    return aprovaGoOverviewStatsCache;
+  const key = meta.overviewCacheKey || meta.id;
+  if (Object.prototype.hasOwnProperty.call(aprovaOverviewStatsCache, key)) {
+    return aprovaOverviewStatsCache[key];
   }
-  if (meta.id === "cirurgia") {
-    if (aprovaCirOverviewStatsCache) return aprovaCirOverviewStatsCache;
-    try {
-      const res = await fetch(meta.overviewUrl);
-      if (!res.ok) throw new Error("fail");
-      aprovaCirOverviewStatsCache = await res.json();
-    } catch {
-      aprovaCirOverviewStatsCache = null;
-    }
-    return aprovaCirOverviewStatsCache;
-  }
-  if (meta.id === "clinica") {
-    const area = aprovaActiveCliArea || "reumatologia";
-    if (area === "psiquiatria") {
-      if (aprovaPsiOverviewStatsCache) return aprovaPsiOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaPsiOverviewStatsCache = await res.json();
-      } catch {
-        aprovaPsiOverviewStatsCache = null;
-      }
-      return aprovaPsiOverviewStatsCache;
-    }
-    if (area === "pneumologia") {
-      if (aprovaPnmOverviewStatsCache) return aprovaPnmOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaPnmOverviewStatsCache = await res.json();
-      } catch {
-        aprovaPnmOverviewStatsCache = null;
-      }
-      return aprovaPnmOverviewStatsCache;
-    }
-    if (area === "neurologia") {
-      if (aprovaNeuOverviewStatsCache) return aprovaNeuOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaNeuOverviewStatsCache = await res.json();
-      } catch {
-        aprovaNeuOverviewStatsCache = null;
-      }
-      return aprovaNeuOverviewStatsCache;
-    }
-    if (area === "nefrologia") {
-      if (aprovaNefOverviewStatsCache) return aprovaNefOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaNefOverviewStatsCache = await res.json();
-      } catch {
-        aprovaNefOverviewStatsCache = null;
-      }
-      return aprovaNefOverviewStatsCache;
-    }
-    if (area === "infectologia") {
-      if (aprovaInfcOverviewStatsCache) return aprovaInfcOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaInfcOverviewStatsCache = await res.json();
-      } catch {
-        aprovaInfcOverviewStatsCache = null;
-      }
-      return aprovaInfcOverviewStatsCache;
-    }
-    if (area === "hepatologia") {
-      if (aprovaHepOverviewStatsCache) return aprovaHepOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaHepOverviewStatsCache = await res.json();
-      } catch {
-        aprovaHepOverviewStatsCache = null;
-      }
-      return aprovaHepOverviewStatsCache;
-    }
-    if (area === "hematologia") {
-      if (aprovaHemaOverviewStatsCache) return aprovaHemaOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaHemaOverviewStatsCache = await res.json();
-      } catch {
-        aprovaHemaOverviewStatsCache = null;
-      }
-      return aprovaHemaOverviewStatsCache;
-    }
-    if (area === "endocrinologia") {
-      if (aprovaEndoOverviewStatsCache) return aprovaEndoOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaEndoOverviewStatsCache = await res.json();
-      } catch {
-        aprovaEndoOverviewStatsCache = null;
-      }
-      return aprovaEndoOverviewStatsCache;
-    }
-    if (area === "cardiologia") {
-      if (aprovaCardioOverviewStatsCache) return aprovaCardioOverviewStatsCache;
-      try {
-        const res = await fetch(meta.overviewUrl);
-        if (!res.ok) throw new Error("fail");
-        aprovaCardioOverviewStatsCache = await res.json();
-      } catch {
-        aprovaCardioOverviewStatsCache = null;
-      }
-      return aprovaCardioOverviewStatsCache;
-    }
-    if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
-    try {
-      const res = await fetch(meta.overviewUrl);
-      if (!res.ok) throw new Error("fail");
-      aprovaReuOverviewStatsCache = await res.json();
-    } catch {
-      aprovaReuOverviewStatsCache = null;
-    }
-    return aprovaReuOverviewStatsCache;
-  }
-  if (aprovaPedOverviewStatsCache) return aprovaPedOverviewStatsCache;
   try {
     const res = await fetch(meta.overviewUrl);
     if (!res.ok) throw new Error("fail");
-    aprovaPedOverviewStatsCache = await res.json();
+    aprovaOverviewStatsCache[key] = await res.json();
   } catch {
-    aprovaPedOverviewStatsCache = null;
+    aprovaOverviewStatsCache[key] = null;
   }
-  return aprovaPedOverviewStatsCache;
+  return aprovaOverviewStatsCache[key];
 }
 
 function aprovaLoadPedOverviewStats () {
@@ -963,8 +819,10 @@ function aprovaRenderPedOverviewStats (focusId) {
     }
 
     root.hidden = false;
-    const pid = focusId || aprovaActivePedOverviewFocus || "geral";
-    const profile = data.profiles.find(p => p.id === pid) || data.profiles[0];
+    const requested = focusId || aprovaActivePedOverviewFocus || "geral";
+    const profile = data.profiles.find(p => p.id === requested)
+      || data.profiles.find(p => p.id === "geral")
+      || data.profiles[0];
     aprovaActivePedOverviewFocus = profile.id;
 
     const ordered = data.profiles.slice().sort((a, b) => {
@@ -985,7 +843,7 @@ function aprovaRenderPedOverviewStats (focusId) {
       btn.className = "esp-exam-btn" +
         (p.id === "enamed" || p.featured ? " esp-exam-btn--enamed" : "") +
         (p.id === profile.id ? " active" : "");
-      btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Brasil" : p.label);
+      btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Geral Brasil" : p.label);
       btn.title = p.kicker || p.label;
       btn.addEventListener("click", () => aprovaRenderPedOverviewStats(p.id));
       options.appendChild(btn);
@@ -1003,8 +861,8 @@ function aprovaRenderPedOverviewStats (focusId) {
 
     if (title) {
       title.textContent = profile.id === "geral"
-        ? ("O que mais cai em " + meta.shortLabel + " · Brasil")
-        : ("O que mais cai · " + profile.label);
+        ? ("O que mais cai em " + meta.shortLabel + " · Geral Brasil")
+        : ("O que mais cai em " + meta.shortLabel + " · " + profile.label);
     }
     if (sub) {
       sub.textContent = typeLabel + (profile.sampleSize
@@ -1645,7 +1503,7 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     btn.className = "esp-exam-btn" +
       (p.id === "enamed" || p.featured ? " esp-exam-btn--enamed" : "") +
       (p.id === aprovaActiveFocusId ? " active" : "");
-    btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Brasil" : p.label);
+    btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Geral Brasil" : p.label);
     btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id, aprovaActivePedModule));
     options.appendChild(btn);
   });
@@ -1661,7 +1519,7 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
 
   const moduleLabel = (modules.find(m => m.id === aprovaActivePedModule) || {}).label || meta.shortLabel;
   const chartTitle = profile.id === "geral"
-    ? ("O que mais cai no Brasil · " + moduleLabel)
+    ? ("O que mais cai · Geral Brasil · " + moduleLabel)
     : ("O que mais cai · " + profile.label + " · " + moduleLabel);
 
   const sourceType = profile.sourceType || "estimativa";
@@ -1744,8 +1602,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
       ? AprovaRevisao.listCliAreas()
       : [];
 
-  if (overview) overview.hidden = isCli;
-  if (!isCli && overview) overview.hidden = false;
+  if (overview) overview.hidden = false;
 
   if (title) title.textContent = meta.label;
   if (sub) {
@@ -1765,7 +1622,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     hint.textContent = isGo
       ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
       : isCli
-        ? "Primeiro escolha a área da Clínica; depois um grupo; depois os subtemas."
+        ? "Veja as estatísticas da Clínica e escolha uma área (ex.: Cardiologia) para aprofundar."
         : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
   }
   if (back) back.textContent = "← Voltar às especialidades";
@@ -1777,9 +1634,8 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     selectAll.textContent = "Selecionar todos";
   }
 
-  if (!isCli) {
-    await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
-  }
+  aprovaActivePedOverviewFocus = "geral";
+  await aprovaRenderPedOverviewStats("geral");
   if (isGo) {
     await aprovaRenderGoAreaCards();
   } else if (isCli) {
@@ -1840,7 +1696,8 @@ async function aprovaOpenGoArea (areaId) {
   }
 
   if (showOverview) {
-    await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
+    aprovaActivePedOverviewFocus = "geral";
+    await aprovaRenderPedOverviewStats("geral");
   }
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveGoArea });
 }
@@ -1894,7 +1751,8 @@ async function aprovaOpenCliArea (areaId) {
     selectAll.textContent = "Selecionar todos";
   }
 
-  await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
+  aprovaActivePedOverviewFocus = "geral";
+  await aprovaRenderPedOverviewStats("geral");
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveCliArea });
 }
 

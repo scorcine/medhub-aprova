@@ -98,6 +98,87 @@
     },
     {
       "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Cardiologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "IAM com SST, ICC descompensada e PCR primeiro.",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências cardio",
+          "pct": 34
+        },
+        {
+          "tema": "SCA",
+          "pct": 26
+        },
+        {
+          "tema": "ICC / FA",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ]
+    },
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Cardiologia · Síndrome coronariana crônica (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "SCA, ICC e FA dominam provas gerais.",
+      "verdict": "Priorize STEMI/NSTEMI, ICC com FE reduzida e FA (CHA2DS2-VASc). Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "SCA / IAM",
+          "pct": 32
+        },
+        {
+          "tema": "ICC",
+          "pct": 22
+        },
+        {
+          "tema": "FA / arritmias",
+          "pct": 22
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ]
+    },
+    {
+      "checklist": [
         "dx",
         "urgencia",
         "conduta",
@@ -185,31 +266,360 @@
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Levantamento Enare · Cardiologia.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso direto",
-      "blurb": "Mesmo eixo Enamed.",
-      "verdict": "IAM com SST, ICC descompensada e PCR primeiro.",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Cardiologia · Síndrome coronariana crônica (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "SCA, ICC e FA dominam provas gerais.",
+      "verdict": "Priorize STEMI/NSTEMI, ICC com FE reduzida e FA (CHA2DS2-VASc). Estimativa por padrão da banca (não é ranking oficial deste módulo).",
       "foco": "Angina estável · tratamento clínico · revascularização",
-      "estilo": "Padrão Enare",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Urgências cardio",
-          "pct": 34
+          "tema": "SCA / IAM",
+          "pct": 32
+        },
+        {
+          "tema": "ICC",
+          "pct": 22
+        },
+        {
+          "tema": "FA / arritmias",
+          "pct": 22
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ]
+    },
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Cardiologia · Síndrome coronariana crônica (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "SCA, ICC e FA dominam provas gerais.",
+      "verdict": "Priorize STEMI/NSTEMI, ICC com FE reduzida e FA (CHA2DS2-VASc). Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "SCA / IAM",
+          "pct": 32
+        },
+        {
+          "tema": "ICC",
+          "pct": 22
+        },
+        {
+          "tema": "FA / arritmias",
+          "pct": 22
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ]
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Cardiologia · Síndrome coronariana crônica (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "ECG, fisiopat e critérios.",
+      "verdict": "STEMI critérios, Killip, BAV e sopros com localização. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ECG / arritmias",
+          "pct": 30
         },
         {
           "tema": "SCA",
-          "pct": 26
+          "pct": 28
         },
         {
-          "tema": "ICC / FA",
-          "pct": 22
+          "tema": "ICC / valvas",
+          "pct": 24
         },
         {
           "tema": "Outros",
           "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Cardiologia · Síndrome coronariana crônica (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "ECG, fisiopat e critérios.",
+      "verdict": "STEMI critérios, Killip, BAV e sopros com localização. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ECG / arritmias",
+          "pct": 30
+        },
+        {
+          "tema": "SCA",
+          "pct": 28
+        },
+        {
+          "tema": "ICC / valvas",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Cardiologia · Síndrome coronariana crônica (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "ECG, fisiopat e critérios.",
+      "verdict": "STEMI critérios, Killip, BAV e sopros com localização. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ECG / arritmias",
+          "pct": 30
+        },
+        {
+          "tema": "SCA",
+          "pct": 28
+        },
+        {
+          "tema": "ICC / valvas",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Cardiologia · Síndrome coronariana crônica (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "ECG, fisiopat e critérios.",
+      "verdict": "STEMI critérios, Killip, BAV e sopros com localização. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "ECG / arritmias",
+          "pct": 30
+        },
+        {
+          "tema": "SCA",
+          "pct": 28
+        },
+        {
+          "tema": "ICC / valvas",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "urgencia",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Cardiologia · Síndrome coronariana crônica (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Conduta de SCA e ICC.",
+      "verdict": "Reperfusão, DAPT, IECA/BB/ARM e anticoagulação na FA. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Conduta SCA/ICC",
+          "pct": 34
+        },
+        {
+          "tema": "FA / PCR",
+          "pct": 24
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Cardiologia · Síndrome coronariana crônica (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "SCA, ICC e FA dominam provas gerais.",
+      "verdict": "Priorize STEMI/NSTEMI, ICC com FE reduzida e FA (CHA2DS2-VASc). Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "SCA / IAM",
+          "pct": 32
+        },
+        {
+          "tema": "ICC",
+          "pct": 22
+        },
+        {
+          "tema": "FA / arritmias",
+          "pct": 22
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cardio-scc"
+      ]
+    },
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Cardiologia · Síndrome coronariana crônica (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "SCA, ICC e FA dominam provas gerais.",
+      "verdict": "Priorize STEMI/NSTEMI, ICC com FE reduzida e FA (CHA2DS2-VASc). Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Angina estável · tratamento clínico · revascularização",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "SCA / IAM",
+          "pct": 32
+        },
+        {
+          "tema": "ICC",
+          "pct": 22
+        },
+        {
+          "tema": "FA / arritmias",
+          "pct": 22
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 24
         }
       ],
       "deckOrder": [

@@ -317,6 +317,71 @@ const stats = {
         { tema: "Valvas / pericárdio", pct: 12, n: 12 },
         { tema: "Miopatias / outros", pct: 8, n: 8 }
       ]
+    },
+    {
+      id: "enamed",
+      label: "Enamed",
+      kicker: "Nacional",
+      featured: true,
+      sourceType: "levantamento",
+      source: "Enare/Enamed · Cardiologia (síntese Car1–3).",
+      verdict: "SCA e ICC lideram; FA e HAS fecham o núcleo generalista.",
+      foco: "SCA · ICC · FA",
+      estilo: "Padrão Enamed",
+      priorities: [
+        { tema: "SCA / IAM", pct: 32 },
+        { tema: "ICC", pct: 22 },
+        { tema: "FA / arritmias", pct: 22 },
+        { tema: "HAS / valvas", pct: 24 }
+      ]
+    },
+    {
+      id: "usp",
+      label: "USP",
+      kicker: "Prova USP",
+      sourceType: "levantamento",
+      source: "USP · Cardiologia (síntese Car1–3).",
+      verdict: "ECG, critérios de STEMI e fisiopatologia valvar/arritmia.",
+      foco: "ECG · SCA · valvas",
+      estilo: "Padrão USP",
+      priorities: [
+        { tema: "ECG / arritmias", pct: 30 },
+        { tema: "SCA", pct: 28 },
+        { tema: "ICC / valvas", pct: 24 },
+        { tema: "Outros", pct: 18 }
+      ]
+    },
+    {
+      id: "unifesp",
+      label: "UNIFESP",
+      kicker: "Prova UNIFESP",
+      sourceType: "levantamento",
+      source: "UNIFESP · Cardiologia (síntese Car1–3).",
+      verdict: "Conduta de SCA/ICC e anticoagulação na FA.",
+      foco: "Conduta · SCA · FA",
+      estilo: "Padrão UNIFESP",
+      priorities: [
+        { tema: "Conduta SCA/ICC", pct: 34 },
+        { tema: "FA / PCR", pct: 24 },
+        { tema: "HAS / valvas", pct: 22 },
+        { tema: "Outros", pct: 20 }
+      ]
+    },
+    {
+      id: "enare",
+      label: "Enare",
+      kicker: "Acesso",
+      sourceType: "levantamento",
+      source: "Enare · Cardiologia Car1–3.",
+      verdict: "Urgências: STEMI, ICC descompensada e PCR primeiro.",
+      foco: "Urgências · SCA · PCR",
+      estilo: "Padrão Enare",
+      priorities: [
+        { tema: "Urgências cardio", pct: 34 },
+        { tema: "SCA", pct: 26 },
+        { tema: "ICC / FA", pct: 22 },
+        { tema: "Outros", pct: 18 }
+      ]
     }
   ]
 };
@@ -327,3 +392,4 @@ fs.writeFileSync(
   "utf8"
 );
 console.log("wrote stats-cardiologia-geral.json");
+require("./expand-cardio-bancas.js");

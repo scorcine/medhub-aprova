@@ -246,6 +246,71 @@ const stats = {
         { tema: "Indicadores", pct: 22, n: 22 },
         { tema: "Vigilância / ética", pct: 20, n: 20 }
       ]
+    },
+    {
+      id: "enamed",
+      label: "Enamed",
+      kicker: "Nacional",
+      featured: true,
+      sourceType: "levantamento",
+      source: "Enare/Enamed · Preventiva (síntese Prev1–4).",
+      verdict: "SUS e epidemiologia dominam; indicadores fecham o bloco generalista.",
+      foco: "SUS · estudos · indicadores",
+      estilo: "Padrão Enamed",
+      priorities: [
+        { tema: "SUS / APS", pct: 34 },
+        { tema: "Epidemiologia / testes", pct: 30 },
+        { tema: "Indicadores", pct: 20 },
+        { tema: "Vigilância / ética", pct: 16 }
+      ]
+    },
+    {
+      id: "usp",
+      label: "USP",
+      kicker: "Prova USP",
+      sourceType: "levantamento",
+      source: "USP · Preventiva (síntese Prev1–4).",
+      verdict: "Cálculo epidemiológico, testes dx e financiamento/APS.",
+      foco: "Cálculos · SUS · MI",
+      estilo: "Padrão USP",
+      priorities: [
+        { tema: "Epidemiologia / testes", pct: 34 },
+        { tema: "SUS / APS", pct: 28 },
+        { tema: "Indicadores / MI", pct: 22 },
+        { tema: "Vigilância", pct: 16 }
+      ]
+    },
+    {
+      id: "unifesp",
+      label: "UNIFESP",
+      kicker: "Prova UNIFESP",
+      sourceType: "levantamento",
+      source: "UNIFESP · Preventiva (síntese Prev1–4).",
+      verdict: "APS/ESF, Previne Brasil e vigilância aplicada.",
+      foco: "APS · Previne · VE",
+      estilo: "Padrão UNIFESP",
+      priorities: [
+        { tema: "SUS / APS", pct: 36 },
+        { tema: "Vigilância", pct: 24 },
+        { tema: "Epidemiologia", pct: 22 },
+        { tema: "Indicadores", pct: 18 }
+      ]
+    },
+    {
+      id: "enare",
+      label: "Enare",
+      kicker: "Acesso",
+      sourceType: "levantamento",
+      source: "Enare · Preventiva Prev1–4.",
+      verdict: "Princípios do SUS, RR/OR e mortalidade infantil/Swaroop-Uemura.",
+      foco: "SUS · RR/OR · MI",
+      estilo: "Padrão Enare",
+      priorities: [
+        { tema: "SUS / princípios", pct: 32 },
+        { tema: "Epidemiologia", pct: 28 },
+        { tema: "Indicadores / MI", pct: 22 },
+        { tema: "Vigilância / ética", pct: 18 }
+      ]
     }
   ]
 };
@@ -256,3 +321,4 @@ fs.writeFileSync(
   "utf8"
 );
 console.log("wrote stats-preventiva-geral.json");
+require("./expand-prev-bancas.js");
