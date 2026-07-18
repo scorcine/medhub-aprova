@@ -11,19 +11,103 @@
       "foco": "Desidratação · Invaginação · Convulsão febril · Meningite",
       "estilo": "Visão geral",
       "priorities": [
-        { "tema": "Planos A/B/C", "score": 96 },
-        { "tema": "Convulsão febril", "score": 90 },
-        { "tema": "Meningite", "score": 88 },
-        { "tema": "Invaginação / apendicite", "score": 82 },
-        { "tema": "Diarreia / zinco", "score": 70 },
-        { "tema": "DRGE", "score": 45 }
+        {
+          "tema": "Planos A/B/C",
+          "pct": 20.4
+        },
+        {
+          "tema": "Convulsão febril",
+          "pct": 19.1
+        },
+        {
+          "tema": "Meningite",
+          "pct": 18.7
+        },
+        {
+          "tema": "Invaginação / apendicite",
+          "pct": 17.4
+        },
+        {
+          "tema": "Diarreia / zinco",
+          "pct": 14.9
+        },
+        {
+          "tema": "DRGE",
+          "pct": 9.5
+        }
       ],
-      "deckOrder": ["gast-desidratacao", "neu-convulsao-meningite"],
-      "checklist": ["plano", "febrile", "meningite", "invag"],
+      "deckOrder": [
+        "gast-desidratacao",
+        "neu-convulsao-meningite"
+      ],
+      "checklist": [
+        "plano",
+        "febrile",
+        "meningite",
+        "invag"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Hidratação", "texto": "A/B/C de cor." },
-        { "titulo": "Sessão 2 · Abdome", "texto": "Invaginação e apendicite." },
-        { "titulo": "Sessão 3 · Neuro", "texto": "Febril simples vs complexa + PL." }
+        {
+          "titulo": "Sessão 1 · Hidratação",
+          "texto": "A/B/C de cor."
+        },
+        {
+          "titulo": "Sessão 2 · Abdome",
+          "texto": "Invaginação e apendicite."
+        },
+        {
+          "titulo": "Sessão 3 · Neuro",
+          "texto": "Febril simples vs complexa + PL."
+        }
+      ],
+      "lacuna": "Doença celíaca e IBD detalhadas: revise se banca específica.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões das principais provas R1 para este tema."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Desidratação/AIDPI e convulsão febril são os temas mais cobrados desse bloco no padrão nacional.",
+      "foco": "Desidratação · Convulsão febril · Meningite",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        {
+          "tema": "Diarreia / desidratação",
+          "pct": 55
+        },
+        {
+          "tema": "Convulsão febril / meningite",
+          "pct": 45
+        }
+      ],
+      "deckOrder": [
+        "gast-desidratacao",
+        "neu-convulsao-meningite"
+      ],
+      "checklist": [
+        "plano",
+        "febrile",
+        "meningite",
+        "invag"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Hidratação",
+          "texto": "A/B/C de cor."
+        },
+        {
+          "titulo": "Sessão 2 · Abdome",
+          "texto": "Invaginação e apendicite."
+        },
+        {
+          "titulo": "Sessão 3 · Neuro",
+          "texto": "Febril simples vs complexa + PL."
+        }
       ],
       "lacuna": "Doença celíaca e IBD detalhadas: revise se banca específica."
     },
@@ -36,19 +120,50 @@
       "foco": "Meningite · Estado de mal · Invaginação · Plano C",
       "estilo": "Caso",
       "priorities": [
-        { "tema": "Meningite", "score": 97 },
-        { "tema": "Estado de mal", "score": 90 },
-        { "tema": "Invaginação", "score": 85 },
-        { "tema": "Desidratação grave", "score": 80 }
+        {
+          "tema": "Meningite",
+          "pct": 27.6
+        },
+        {
+          "tema": "Estado de mal",
+          "pct": 25.6
+        },
+        {
+          "tema": "Invaginação",
+          "pct": 24.1
+        },
+        {
+          "tema": "Desidratação grave",
+          "pct": 22.7
+        }
       ],
-      "deckOrder": ["neu-convulsao-meningite", "gast-desidratacao"],
-      "checklist": ["meningite", "febrile", "invag", "plano"],
+      "deckOrder": [
+        "neu-convulsao-meningite",
+        "gast-desidratacao"
+      ],
+      "checklist": [
+        "meningite",
+        "febrile",
+        "invag",
+        "plano"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Meningite", "texto": "Agentes e dexa." },
-        { "titulo": "Sessão 2 · Convulsão", "texto": "1ª/2ª linha." },
-        { "titulo": "Sessão 3 · Abdome", "texto": "USG alvo." }
+        {
+          "titulo": "Sessão 1 · Meningite",
+          "texto": "Agentes e dexa."
+        },
+        {
+          "titulo": "Sessão 2 · Convulsão",
+          "texto": "1ª/2ª linha."
+        },
+        {
+          "titulo": "Sessão 3 · Abdome",
+          "texto": "USG alvo."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "unifesp",
@@ -59,19 +174,49 @@
       "foco": "Planos MS · Convulsão febril · Meningite",
       "estilo": "Protocolo",
       "priorities": [
-        { "tema": "Planos A/B/C", "score": 98 },
-        { "tema": "Convulsão febril", "score": 92 },
-        { "tema": "Meningite", "score": 85 },
-        { "tema": "Zinco", "score": 70 }
+        {
+          "tema": "Planos A/B/C",
+          "pct": 28.4
+        },
+        {
+          "tema": "Convulsão febril",
+          "pct": 26.7
+        },
+        {
+          "tema": "Meningite",
+          "pct": 24.6
+        },
+        {
+          "tema": "Zinco",
+          "pct": 20.3
+        }
       ],
-      "deckOrder": ["gast-desidratacao", "neu-convulsao-meningite"],
-      "checklist": ["plano", "febrile", "meningite"],
+      "deckOrder": [
+        "gast-desidratacao",
+        "neu-convulsao-meningite"
+      ],
+      "checklist": [
+        "plano",
+        "febrile",
+        "meningite"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Planos", "texto": "Sinais de gravidade." },
-        { "titulo": "Sessão 2 · Febril", "texto": "Simples vs complexa." },
-        { "titulo": "Sessão 3 · PL", "texto": "Quando adiar." }
+        {
+          "titulo": "Sessão 1 · Planos",
+          "texto": "Sinais de gravidade."
+        },
+        {
+          "titulo": "Sessão 2 · Febril",
+          "texto": "Simples vs complexa."
+        },
+        {
+          "titulo": "Sessão 3 · PL",
+          "texto": "Quando adiar."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-sp",
@@ -82,19 +227,49 @@
       "foco": "Planos · Zinco · Convulsão febril",
       "estilo": "APS",
       "priorities": [
-        { "tema": "Planos A/B/C", "score": 97 },
-        { "tema": "Convulsão febril", "score": 88 },
-        { "tema": "Diarreia / zinco", "score": 82 },
-        { "tema": "Apendicite reconhecer", "score": 60 }
+        {
+          "tema": "Planos A/B/C",
+          "pct": 29.7
+        },
+        {
+          "tema": "Convulsão febril",
+          "pct": 26.9
+        },
+        {
+          "tema": "Diarreia / zinco",
+          "pct": 25.1
+        },
+        {
+          "tema": "Apendicite reconhecer",
+          "pct": 18.3
+        }
       ],
-      "deckOrder": ["gast-desidratacao", "neu-convulsao-meningite"],
-      "checklist": ["plano", "febrile", "invag"],
+      "deckOrder": [
+        "gast-desidratacao",
+        "neu-convulsao-meningite"
+      ],
+      "checklist": [
+        "plano",
+        "febrile",
+        "invag"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · UBS", "texto": "SRO e zinco." },
-        { "titulo": "Sessão 2 · Febril", "texto": "Orientação aos pais." },
-        { "titulo": "Sessão 3 · Encaminhar", "texto": "Plano C e abdome agudo." }
+        {
+          "titulo": "Sessão 1 · UBS",
+          "texto": "SRO e zinco."
+        },
+        {
+          "titulo": "Sessão 2 · Febril",
+          "texto": "Orientação aos pais."
+        },
+        {
+          "titulo": "Sessão 3 · Encaminhar",
+          "texto": "Plano C e abdome agudo."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-ba",
@@ -105,19 +280,50 @@
       "foco": "Desidratação · Meningite · Febril",
       "estilo": "Conceito",
       "priorities": [
-        { "tema": "Desidratação", "score": 94 },
-        { "tema": "Meningite", "score": 88 },
-        { "tema": "Convulsão febril", "score": 85 },
-        { "tema": "Invaginação", "score": 70 }
+        {
+          "tema": "Desidratação",
+          "pct": 27.9
+        },
+        {
+          "tema": "Meningite",
+          "pct": 26.1
+        },
+        {
+          "tema": "Convulsão febril",
+          "pct": 25.2
+        },
+        {
+          "tema": "Invaginação",
+          "pct": 20.8
+        }
       ],
-      "deckOrder": ["gast-desidratacao", "neu-convulsao-meningite"],
-      "checklist": ["plano", "meningite", "febrile", "invag"],
+      "deckOrder": [
+        "gast-desidratacao",
+        "neu-convulsao-meningite"
+      ],
+      "checklist": [
+        "plano",
+        "meningite",
+        "febrile",
+        "invag"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Planos", "texto": "A/B/C." },
-        { "titulo": "Sessão 2 · Neuro", "texto": "Líquor." },
-        { "titulo": "Sessão 3 · Abdome", "texto": "Geleia de morango." }
+        {
+          "titulo": "Sessão 1 · Planos",
+          "texto": "A/B/C."
+        },
+        {
+          "titulo": "Sessão 2 · Neuro",
+          "texto": "Líquor."
+        },
+        {
+          "titulo": "Sessão 3 · Abdome",
+          "texto": "Geleia de morango."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "einstein",
@@ -128,19 +334,50 @@
       "foco": "Plano C · Meningite · Invaginação/apendicite",
       "estilo": "Caso",
       "priorities": [
-        { "tema": "Plano C / choque hipovolêmico", "score": 95 },
-        { "tema": "Meningite", "score": 92 },
-        { "tema": "Invaginação", "score": 88 },
-        { "tema": "Estado de mal", "score": 80 }
+        {
+          "tema": "Plano C / choque hipovolêmico",
+          "pct": 26.8
+        },
+        {
+          "tema": "Meningite",
+          "pct": 25.9
+        },
+        {
+          "tema": "Invaginação",
+          "pct": 24.8
+        },
+        {
+          "tema": "Estado de mal",
+          "pct": 22.5
+        }
       ],
-      "deckOrder": ["gast-desidratacao", "neu-convulsao-meningite"],
-      "checklist": ["plano", "meningite", "invag", "febrile"],
+      "deckOrder": [
+        "gast-desidratacao",
+        "neu-convulsao-meningite"
+      ],
+      "checklist": [
+        "plano",
+        "meningite",
+        "invag",
+        "febrile"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Choque", "texto": "Expansão." },
-        { "titulo": "Sessão 2 · CNS", "texto": "ATB sem atrasar." },
-        { "titulo": "Sessão 3 · Cirurgia", "texto": "Quando enema vs SO." }
+        {
+          "titulo": "Sessão 1 · Choque",
+          "texto": "Expansão."
+        },
+        {
+          "titulo": "Sessão 2 · CNS",
+          "texto": "ATB sem atrasar."
+        },
+        {
+          "titulo": "Sessão 3 · Cirurgia",
+          "texto": "Quando enema vs SO."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "puc",
@@ -151,19 +388,50 @@
       "foco": "Meningite · Febril · Planos",
       "estilo": "Conceito",
       "priorities": [
-        { "tema": "Meningite / liquor", "score": 94 },
-        { "tema": "Convulsão febril", "score": 90 },
-        { "tema": "Planos", "score": 85 },
-        { "tema": "Abdome", "score": 70 }
+        {
+          "tema": "Meningite / liquor",
+          "pct": 27.7
+        },
+        {
+          "tema": "Convulsão febril",
+          "pct": 26.5
+        },
+        {
+          "tema": "Planos",
+          "pct": 25.1
+        },
+        {
+          "tema": "Abdome",
+          "pct": 20.7
+        }
       ],
-      "deckOrder": ["neu-convulsao-meningite", "gast-desidratacao"],
-      "checklist": ["meningite", "febrile", "plano", "invag"],
+      "deckOrder": [
+        "neu-convulsao-meningite",
+        "gast-desidratacao"
+      ],
+      "checklist": [
+        "meningite",
+        "febrile",
+        "plano",
+        "invag"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Líquor", "texto": "Bacteriano vs viral." },
-        { "titulo": "Sessão 2 · Febril", "texto": "Critérios." },
-        { "titulo": "Sessão 3 · SRO", "texto": "Planos." }
+        {
+          "titulo": "Sessão 1 · Líquor",
+          "texto": "Bacteriano vs viral."
+        },
+        {
+          "titulo": "Sessão 2 · Febril",
+          "texto": "Critérios."
+        },
+        {
+          "titulo": "Sessão 3 · SRO",
+          "texto": "Planos."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "ufrj",
@@ -174,26 +442,73 @@
       "foco": "Convulsão febril · Planos · Invaginação",
       "estilo": "Conceito",
       "priorities": [
-        { "tema": "Convulsão febril", "score": 95 },
-        { "tema": "Planos", "score": 90 },
-        { "tema": "Invaginação", "score": 80 },
-        { "tema": "Meningite", "score": 75 }
+        {
+          "tema": "Convulsão febril",
+          "pct": 27.9
+        },
+        {
+          "tema": "Planos",
+          "pct": 26.5
+        },
+        {
+          "tema": "Invaginação",
+          "pct": 23.5
+        },
+        {
+          "tema": "Meningite",
+          "pct": 22.1
+        }
       ],
-      "deckOrder": ["neu-convulsao-meningite", "gast-desidratacao"],
-      "checklist": ["febrile", "plano", "invag", "meningite"],
+      "deckOrder": [
+        "neu-convulsao-meningite",
+        "gast-desidratacao"
+      ],
+      "checklist": [
+        "febrile",
+        "plano",
+        "invag",
+        "meningite"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Febril", "texto": "Simples." },
-        { "titulo": "Sessão 2 · Planos", "texto": "A/B/C." },
-        { "titulo": "Sessão 3 · Invaginação", "texto": "Clínica." }
+        {
+          "titulo": "Sessão 1 · Febril",
+          "texto": "Simples."
+        },
+        {
+          "titulo": "Sessão 2 · Planos",
+          "texto": "A/B/C."
+        },
+        {
+          "titulo": "Sessão 3 · Invaginação",
+          "texto": "Clínica."
+        }
       ],
-      "lacuna": "—"
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     }
   ],
   "checklistItems": {
-    "plano": { "tema": "Planos A/B/C", "yield": "Máximo", "pegar": "A SRO domiciliar · B SRO supervisionada · C IV · zinco <5a · sem antimotilidade" },
-    "febrile": { "tema": "Convulsão febril", "yield": "Máximo", "pegar": "6m–5a · generalizada · <15 min · 1×/24h · sem déficit · sem AE crônico de rotina" },
-    "meningite": { "tema": "Meningite", "yield": "Alto", "pegar": "ATB precoce · agentes por idade · dexa se pneumococo · PL se estável · liquor típico" },
-    "invag": { "tema": "Abdome cirúrgico", "yield": "Alto", "pegar": "Invaginação: cólica + geleia + USG alvo · Apendicite: migração da dor · perfuração mais comum em menores" }
+    "plano": {
+      "tema": "Planos A/B/C",
+      "yield": "Máximo",
+      "pegar": "A SRO domiciliar · B SRO supervisionada · C IV · zinco <5a · sem antimotilidade"
+    },
+    "febrile": {
+      "tema": "Convulsão febril",
+      "yield": "Máximo",
+      "pegar": "6m–5a · generalizada · <15 min · 1×/24h · sem déficit · sem AE crônico de rotina"
+    },
+    "meningite": {
+      "tema": "Meningite",
+      "yield": "Alto",
+      "pegar": "ATB precoce · agentes por idade · dexa se pneumococo · PL se estável · liquor típico"
+    },
+    "invag": {
+      "tema": "Abdome cirúrgico",
+      "yield": "Alto",
+      "pegar": "Invaginação: cólica + geleia + USG alvo · Apendicite: migração da dor · perfuração mais comum em menores"
+    }
   },
   "numeros": [
     "Convulsão febril: 6 meses a 5 anos · <15 minutos",
@@ -206,5 +521,10 @@
     "Geleia de morango é TARDIA na invaginação",
     "Plano C = IV, não insistir só em SRO"
   ],
-  "baixoRoi": ["Doenças inflamatórias intestinais completas", "Todos os vírus entéricos"]
+  "baixoRoi": [
+    "Doenças inflamatórias intestinais completas",
+    "Todos os vírus entéricos"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
 }

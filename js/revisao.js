@@ -148,14 +148,20 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
       : ("Foco em " + profile.label + " — " + profile.estilo);
   }
 
-  const maxScore = Math.max(...profile.priorities.map(p => p.score), 1);
-  const priorities = profile.priorities.map(p => {
-    const pct = Math.round((p.score / maxScore) * 100);
+  const priorities = (profile.priorities || []).map(p => {
+    const pct = Number(p.pct != null ? p.pct : p.score);
+    const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
+    const label = Number.isFinite(pct)
+      ? pct.toLocaleString("pt-BR", {
+        minimumFractionDigits: Number.isInteger(pct) ? 0 : 1,
+        maximumFractionDigits: 1
+      }) + "%"
+      : "—";
     return (
       "<div class=\"rev-bar-row\">" +
         "<span>" + aprovaEscapeHtml(p.tema) + "</span>" +
-        "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + pct + "%\"></i></div>" +
-        "<em>" + p.score + "</em>" +
+        "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + width + "%\"></i></div>" +
+        "<em>" + label + "</em>" +
       "</div>"
     );
   }).join("");

@@ -11,14 +11,38 @@
       "foco": "Contraindicações · AME 6m/2a · Ferro e vit. D · Composição LH × LV",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "Contraindicações do AM", "score": 95 },
-        { "tema": "AME / recomendações MS-SBP", "score": 90 },
-        { "tema": "Ferro e vitamina D", "score": 86 },
-        { "tema": "Composição e fatores protetores", "score": 78 },
-        { "tema": "Fissura / ingurgitamento / mastite", "score": 68 },
-        { "tema": "Armazenamento do leite", "score": 62 },
-        { "tema": "Alimentação complementar", "score": 58 },
-        { "tema": "Fórmulas / leite de vaca", "score": 48 }
+        {
+          "tema": "Contraindicações do AM",
+          "pct": 16.2
+        },
+        {
+          "tema": "AME / recomendações MS-SBP",
+          "pct": 15.4
+        },
+        {
+          "tema": "Ferro e vitamina D",
+          "pct": 14.7
+        },
+        {
+          "tema": "Composição e fatores protetores",
+          "pct": 13.3
+        },
+        {
+          "tema": "Fissura / ingurgitamento / mastite",
+          "pct": 11.6
+        },
+        {
+          "tema": "Armazenamento do leite",
+          "pct": 10.6
+        },
+        {
+          "tema": "Alimentação complementar",
+          "pct": 9.9
+        },
+        {
+          "tema": "Fórmulas / leite de vaca",
+          "pct": 8.3
+        }
       ],
       "deckOrder": [
         "ali-contraindicacoes",
@@ -31,11 +55,105 @@
         "ali-formulas",
         "ali-pratica"
       ],
-      "checklist": ["contra", "ame", "ferro", "vitd", "composicao", "complicacoes", "armazena", "ac"],
+      "checklist": [
+        "contra",
+        "ame",
+        "ferro",
+        "vitd",
+        "composicao",
+        "complicacoes",
+        "armazena",
+        "ac"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Quem pode / não pode amamentar", "texto": "HIV, HTLV, galactosemia, Hep B, TB, CMV, herpes, Chagas. Decore absolutas vs especiais." },
-        { "titulo": "Sessão 2 · Números que caem", "texto": "AME 6m / AM 2a · geladeira 12h / freezer 15d · ferro SBP · vit. D 400/600 UI." },
-        { "titulo": "Sessão 3 · Composição + mama", "texto": "LH × LV, IgA, lactoferrina · fissura, ingurgitamento e mastite sem suspender AM." }
+        {
+          "titulo": "Sessão 1 · Quem pode / não pode amamentar",
+          "texto": "HIV, HTLV, galactosemia, Hep B, TB, CMV, herpes, Chagas. Decore absolutas vs especiais."
+        },
+        {
+          "titulo": "Sessão 2 · Números que caem",
+          "texto": "AME 6m / AM 2a · geladeira 12h / freezer 15d · ferro SBP · vit. D 400/600 UI."
+        },
+        {
+          "titulo": "Sessão 3 · Composição + mama",
+          "texto": "LH × LV, IgA, lactoferrina · fissura, ingurgitamento e mastite sem suspender AM."
+        }
+      ],
+      "lacuna": "Listas longas de drogas compatíveis têm baixo ROI — foque nas contraindicações absolutas e nas situações especiais clássicas.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões das principais provas R1 para este tema."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed privilegia aleitamento, introdução alimentar e contraindicações práticas — menos detalhe de fórmulas raras.",
+      "foco": "Aleitamento · Introdução · Suplementação · Contraindicações",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        {
+          "tema": "Aleitamento materno (prática)",
+          "pct": 32
+        },
+        {
+          "tema": "Introdução alimentar",
+          "pct": 22
+        },
+        {
+          "tema": "Composição / benefícios",
+          "pct": 14
+        },
+        {
+          "tema": "Suplementação",
+          "pct": 12
+        },
+        {
+          "tema": "Contraindicações / intercorrências",
+          "pct": 12
+        },
+        {
+          "tema": "Fórmulas",
+          "pct": 8
+        }
+      ],
+      "deckOrder": [
+        "ali-contraindicacoes",
+        "ali-definicoes",
+        "ali-suplementacao",
+        "ali-composicao",
+        "ali-complicacoes",
+        "ali-armazenamento",
+        "ali-complementar",
+        "ali-formulas",
+        "ali-pratica"
+      ],
+      "checklist": [
+        "contra",
+        "ame",
+        "ferro",
+        "vitd",
+        "composicao",
+        "complicacoes",
+        "armazena",
+        "ac"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Quem pode / não pode amamentar",
+          "texto": "HIV, HTLV, galactosemia, Hep B, TB, CMV, herpes, Chagas. Decore absolutas vs especiais."
+        },
+        {
+          "titulo": "Sessão 2 · Números que caem",
+          "texto": "AME 6m / AM 2a · geladeira 12h / freezer 15d · ferro SBP · vit. D 400/600 UI."
+        },
+        {
+          "titulo": "Sessão 3 · Composição + mama",
+          "texto": "LH × LV, IgA, lactoferrina · fissura, ingurgitamento e mastite sem suspender AM."
+        }
       ],
       "lacuna": "Listas longas de drogas compatíveis têm baixo ROI — foque nas contraindicações absolutas e nas situações especiais clássicas."
     },
@@ -48,12 +166,30 @@
       "foco": "Contraindicações · Prolactina/ocitocina · LH × LV · Mastite",
       "estilo": "Caso + mecanismo; detalhe de conduta",
       "priorities": [
-        { "tema": "Contraindicações do AM", "score": 98 },
-        { "tema": "Composição e fatores protetores", "score": 88 },
-        { "tema": "Fisiologia / prática do AM", "score": 82 },
-        { "tema": "Fissura / mastite", "score": 75 },
-        { "tema": "Ferro e vitamina D", "score": 70 },
-        { "tema": "AME / recomendações", "score": 65 }
+        {
+          "tema": "Contraindicações do AM",
+          "pct": 20.5
+        },
+        {
+          "tema": "Composição e fatores protetores",
+          "pct": 18.4
+        },
+        {
+          "tema": "Fisiologia / prática do AM",
+          "pct": 17.2
+        },
+        {
+          "tema": "Fissura / mastite",
+          "pct": 15.7
+        },
+        {
+          "tema": "Ferro e vitamina D",
+          "pct": 14.6
+        },
+        {
+          "tema": "AME / recomendações",
+          "pct": 13.6
+        }
       ],
       "deckOrder": [
         "ali-contraindicacoes",
@@ -66,13 +202,31 @@
         "ali-formulas",
         "ali-complementar"
       ],
-      "checklist": ["contra", "composicao", "pratica", "complicacoes", "ferro", "vitd"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Absolutas e pegadinhas", "texto": "HIV/HTLV/galactosemia vs Hep B, TB e COVID (pode amamentar)." },
-        { "titulo": "Sessão 2 · Fisiologia + composição", "texto": "Prolactina/ocitocina, anterior/posterior, IgA e ferro biodisponível." },
-        { "titulo": "Sessão 3 · Mama inflamada", "texto": "Fissura × ingurgitamento × mastite — manter drenagem." }
+      "checklist": [
+        "contra",
+        "composicao",
+        "pratica",
+        "complicacoes",
+        "ferro",
+        "vitd"
       ],
-      "lacuna": "Guia alimentar completo dos 12 passos cai menos que contraindicação na USP — priorize conduta clínica."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Absolutas e pegadinhas",
+          "texto": "HIV/HTLV/galactosemia vs Hep B, TB e COVID (pode amamentar)."
+        },
+        {
+          "titulo": "Sessão 2 · Fisiologia + composição",
+          "texto": "Prolactina/ocitocina, anterior/posterior, IgA e ferro biodisponível."
+        },
+        {
+          "titulo": "Sessão 3 · Mama inflamada",
+          "texto": "Fissura × ingurgitamento × mastite — manter drenagem."
+        }
+      ],
+      "lacuna": "Guia alimentar completo dos 12 passos cai menos que contraindicação na USP — priorize conduta clínica.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "unifesp",
@@ -83,12 +237,30 @@
       "foco": "Ferro SBP/MS · Vit. D · AME · Alimentação complementar",
       "estilo": "Protocolo + números de guideline",
       "priorities": [
-        { "tema": "Ferro e vitamina D", "score": 96 },
-        { "tema": "AME / recomendações MS-SBP", "score": 90 },
-        { "tema": "Alimentação complementar", "score": 85 },
-        { "tema": "Contraindicações do AM", "score": 78 },
-        { "tema": "Fórmulas / leite de vaca", "score": 70 },
-        { "tema": "Armazenamento", "score": 55 }
+        {
+          "tema": "Ferro e vitamina D",
+          "pct": 20.3
+        },
+        {
+          "tema": "AME / recomendações MS-SBP",
+          "pct": 19
+        },
+        {
+          "tema": "Alimentação complementar",
+          "pct": 17.9
+        },
+        {
+          "tema": "Contraindicações do AM",
+          "pct": 16.5
+        },
+        {
+          "tema": "Fórmulas / leite de vaca",
+          "pct": 14.8
+        },
+        {
+          "tema": "Armazenamento",
+          "pct": 11.5
+        }
       ],
       "deckOrder": [
         "ali-suplementacao",
@@ -101,13 +273,31 @@
         "ali-complicacoes",
         "ali-pratica"
       ],
-      "checklist": ["ferro", "vitd", "ame", "ac", "contra", "formula"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Ferro por cenário", "texto": "Termo AME 180d × fator de risco 90d × prematuro por peso." },
-        { "titulo": "Sessão 2 · Vit. D + AME", "texto": "400/600 UI e regras de 6 meses / 2 anos." },
-        { "titulo": "Sessão 3 · Complementar + fórmula", "texto": "12 passos-chave e quando NÃO usar leite integral <1 ano." }
+      "checklist": [
+        "ferro",
+        "vitd",
+        "ame",
+        "ac",
+        "contra",
+        "formula"
       ],
-      "lacuna": "Tabela completa de drogas no leite: baixo ROI — foque absolutas."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Ferro por cenário",
+          "texto": "Termo AME 180d × fator de risco 90d × prematuro por peso."
+        },
+        {
+          "titulo": "Sessão 2 · Vit. D + AME",
+          "texto": "400/600 UI e regras de 6 meses / 2 anos."
+        },
+        {
+          "titulo": "Sessão 3 · Complementar + fórmula",
+          "texto": "12 passos-chave e quando NÃO usar leite integral <1 ano."
+        }
+      ],
+      "lacuna": "Tabela completa de drogas no leite: baixo ROI — foque absolutas.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-sp",
@@ -118,12 +308,30 @@
       "foco": "AME · 10 passos · Armazenamento · Complementar (sem açúcar)",
       "estilo": "Conduta de atenção básica / MS",
       "priorities": [
-        { "tema": "AME / recomendações MS-SBP", "score": 95 },
-        { "tema": "Alimentação complementar", "score": 88 },
-        { "tema": "Armazenamento do leite", "score": 82 },
-        { "tema": "Prática / 10 passos", "score": 78 },
-        { "tema": "Ferro (PNSF MS)", "score": 72 },
-        { "tema": "Contraindicações", "score": 65 }
+        {
+          "tema": "AME / recomendações MS-SBP",
+          "pct": 19.8
+        },
+        {
+          "tema": "Alimentação complementar",
+          "pct": 18.3
+        },
+        {
+          "tema": "Armazenamento do leite",
+          "pct": 17.1
+        },
+        {
+          "tema": "Prática / 10 passos",
+          "pct": 16.3
+        },
+        {
+          "tema": "Ferro (PNSF MS)",
+          "pct": 15
+        },
+        {
+          "tema": "Contraindicações",
+          "pct": 13.5
+        }
       ],
       "deckOrder": [
         "ali-definicoes",
@@ -136,13 +344,31 @@
         "ali-complicacoes",
         "ali-composicao"
       ],
-      "checklist": ["ame", "ac", "armazena", "pratica", "ferro", "contra"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Mensagens do MS", "texto": "AME 6m, AM ≥2a, sem água no AME, sem açúcar <2a." },
-        { "titulo": "Sessão 2 · Ordenha na APS", "texto": "12h geladeira / 15d freezer; copo/colher; mãe no trabalho." },
-        { "titulo": "Sessão 3 · PNSF + contraindicações", "texto": "Ciclos de ferro 6–24m e absolutas (HIV/HTLV)." }
+      "checklist": [
+        "ame",
+        "ac",
+        "armazena",
+        "pratica",
+        "ferro",
+        "contra"
       ],
-      "lacuna": "Fisiologia molecular da lactação cai pouco — priorize conduta de UBS."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Mensagens do MS",
+          "texto": "AME 6m, AM ≥2a, sem água no AME, sem açúcar <2a."
+        },
+        {
+          "titulo": "Sessão 2 · Ordenha na APS",
+          "texto": "12h geladeira / 15d freezer; copo/colher; mãe no trabalho."
+        },
+        {
+          "titulo": "Sessão 3 · PNSF + contraindicações",
+          "texto": "Ciclos de ferro 6–24m e absolutas (HIV/HTLV)."
+        }
+      ],
+      "lacuna": "Fisiologia molecular da lactação cai pouco — priorize conduta de UBS.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-ba",
@@ -153,12 +379,30 @@
       "foco": "AME · Contraindicações · Ferro/vit. D · Composição básica",
       "estilo": "Conceito claro + conduta",
       "priorities": [
-        { "tema": "AME / recomendações", "score": 92 },
-        { "tema": "Contraindicações do AM", "score": 88 },
-        { "tema": "Ferro e vitamina D", "score": 80 },
-        { "tema": "Composição LH × LV", "score": 72 },
-        { "tema": "Alimentação complementar", "score": 65 },
-        { "tema": "Complicações da mama", "score": 50 }
+        {
+          "tema": "AME / recomendações",
+          "pct": 20.6
+        },
+        {
+          "tema": "Contraindicações do AM",
+          "pct": 19.7
+        },
+        {
+          "tema": "Ferro e vitamina D",
+          "pct": 17.9
+        },
+        {
+          "tema": "Composição LH × LV",
+          "pct": 16.1
+        },
+        {
+          "tema": "Alimentação complementar",
+          "pct": 14.5
+        },
+        {
+          "tema": "Complicações da mama",
+          "pct": 11.2
+        }
       ],
       "deckOrder": [
         "ali-definicoes",
@@ -171,13 +415,31 @@
         "ali-formulas",
         "ali-pratica"
       ],
-      "checklist": ["ame", "contra", "ferro", "vitd", "composicao", "ac"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Definições", "texto": "AME vs predominante vs misto — pegadinha clássica." },
-        { "titulo": "Sessão 2 · Absolutas", "texto": "HIV, HTLV, galactosemia." },
-        { "titulo": "Sessão 3 · Suplementos", "texto": "Vit. D 400/600 e ferro por idade/risco." }
+      "checklist": [
+        "ame",
+        "contra",
+        "ferro",
+        "vitd",
+        "composicao",
+        "ac"
       ],
-      "lacuna": "Detalhe de mastite complicada / abscesso: raro — saiba manter AM e ATB básico."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Definições",
+          "texto": "AME vs predominante vs misto — pegadinha clássica."
+        },
+        {
+          "titulo": "Sessão 2 · Absolutas",
+          "texto": "HIV, HTLV, galactosemia."
+        },
+        {
+          "titulo": "Sessão 3 · Suplementos",
+          "texto": "Vit. D 400/600 e ferro por idade/risco."
+        }
+      ],
+      "lacuna": "Detalhe de mastite complicada / abscesso: raro — saiba manter AM e ATB básico.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "einstein",
@@ -188,12 +450,30 @@
       "foco": "Situações especiais · Mastite · Prematuro (ferro/CMV) · Galactosemia",
       "estilo": "Caso clínico com conduta",
       "priorities": [
-        { "tema": "Contraindicações / especiais", "score": 96 },
-        { "tema": "Fissura / mastite", "score": 88 },
-        { "tema": "Ferro no prematuro", "score": 84 },
-        { "tema": "Composição e protetores", "score": 70 },
-        { "tema": "Fórmulas", "score": 62 },
-        { "tema": "AME básico", "score": 55 }
+        {
+          "tema": "Contraindicações / especiais",
+          "pct": 21.1
+        },
+        {
+          "tema": "Fissura / mastite",
+          "pct": 19.3
+        },
+        {
+          "tema": "Ferro no prematuro",
+          "pct": 18.5
+        },
+        {
+          "tema": "Composição e protetores",
+          "pct": 15.4
+        },
+        {
+          "tema": "Fórmulas",
+          "pct": 13.6
+        },
+        {
+          "tema": "AME básico",
+          "pct": 12.1
+        }
       ],
       "deckOrder": [
         "ali-contraindicacoes",
@@ -206,13 +486,30 @@
         "ali-armazenamento",
         "ali-complementar"
       ],
-      "checklist": ["contra", "complicacoes", "ferro", "composicao", "formula"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Infecções maternas", "texto": "HIV/HTLV vs Hep B/TB/CMV/COVID." },
-        { "titulo": "Sessão 2 · Mama e RN especial", "texto": "Mastite + ferro do prematuro + galactosemia." },
-        { "titulo": "Sessão 3 · Se não puder AM", "texto": "Fórmula partida/seguimento e leite modificado." }
+      "checklist": [
+        "contra",
+        "complicacoes",
+        "ferro",
+        "composicao",
+        "formula"
       ],
-      "lacuna": "Memorizar todos os 12 passos literalmente rende pouco — pegue os de açúcar, ultraprocessados e 6 meses."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Infecções maternas",
+          "texto": "HIV/HTLV vs Hep B/TB/CMV/COVID."
+        },
+        {
+          "titulo": "Sessão 2 · Mama e RN especial",
+          "texto": "Mastite + ferro do prematuro + galactosemia."
+        },
+        {
+          "titulo": "Sessão 3 · Se não puder AM",
+          "texto": "Fórmula partida/seguimento e leite modificado."
+        }
+      ],
+      "lacuna": "Memorizar todos os 12 passos literalmente rende pouco — pegue os de açúcar, ultraprocessados e 6 meses.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "puc",
@@ -223,12 +520,30 @@
       "foco": "Composição · Contraindicações · Ferro/vit. D · AME",
       "estilo": "Conceito + tabela mental",
       "priorities": [
-        { "tema": "Composição e fatores protetores", "score": 92 },
-        { "tema": "Contraindicações do AM", "score": 90 },
-        { "tema": "Ferro e vitamina D", "score": 85 },
-        { "tema": "AME / recomendações", "score": 78 },
-        { "tema": "Armazenamento", "score": 60 },
-        { "tema": "Complementar", "score": 55 }
+        {
+          "tema": "Composição e fatores protetores",
+          "pct": 20
+        },
+        {
+          "tema": "Contraindicações do AM",
+          "pct": 19.6
+        },
+        {
+          "tema": "Ferro e vitamina D",
+          "pct": 18.5
+        },
+        {
+          "tema": "AME / recomendações",
+          "pct": 17
+        },
+        {
+          "tema": "Armazenamento",
+          "pct": 13
+        },
+        {
+          "tema": "Complementar",
+          "pct": 11.9
+        }
       ],
       "deckOrder": [
         "ali-composicao",
@@ -241,13 +556,31 @@
         "ali-complicacoes",
         "ali-formulas"
       ],
-      "checklist": ["composicao", "contra", "ferro", "vitd", "ame", "armazena"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · LH × LV", "texto": "Proteína, ferro 50%×10%, IgA, fator bífido." },
-        { "titulo": "Sessão 2 · Contraindicações", "texto": "Absolutas maternas e galactosemia." },
-        { "titulo": "Sessão 3 · Suplementos", "texto": "Vit. D universal e ferro por cenário." }
+      "checklist": [
+        "composicao",
+        "contra",
+        "ferro",
+        "vitd",
+        "ame",
+        "armazena"
       ],
-      "lacuna": "Crescimento/puberdade da Ped2 não é o foco desta revisão de alimentação."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · LH × LV",
+          "texto": "Proteína, ferro 50%×10%, IgA, fator bífido."
+        },
+        {
+          "titulo": "Sessão 2 · Contraindicações",
+          "texto": "Absolutas maternas e galactosemia."
+        },
+        {
+          "titulo": "Sessão 3 · Suplementos",
+          "texto": "Vit. D universal e ferro por cenário."
+        }
+      ],
+      "lacuna": "Crescimento/puberdade da Ped2 não é o foco desta revisão de alimentação.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "ufrj",
@@ -258,12 +591,30 @@
       "foco": "Definições · Contraindicações · Armazenamento · Vit. D/ferro",
       "estilo": "Conceito sólido; menos superspecialty",
       "priorities": [
-        { "tema": "AME / definições", "score": 94 },
-        { "tema": "Contraindicações do AM", "score": 90 },
-        { "tema": "Armazenamento", "score": 82 },
-        { "tema": "Ferro e vitamina D", "score": 80 },
-        { "tema": "Composição básica", "score": 70 },
-        { "tema": "Complementar", "score": 60 }
+        {
+          "tema": "AME / definições",
+          "pct": 19.7
+        },
+        {
+          "tema": "Contraindicações do AM",
+          "pct": 18.9
+        },
+        {
+          "tema": "Armazenamento",
+          "pct": 17.2
+        },
+        {
+          "tema": "Ferro e vitamina D",
+          "pct": 16.8
+        },
+        {
+          "tema": "Composição básica",
+          "pct": 14.7
+        },
+        {
+          "tema": "Complementar",
+          "pct": 12.7
+        }
       ],
       "deckOrder": [
         "ali-definicoes",
@@ -276,13 +627,31 @@
         "ali-formulas",
         "ali-pratica"
       ],
-      "checklist": ["ame", "contra", "armazena", "ferro", "vitd", "composicao"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Vocabulário", "texto": "AME × predominante × complementado × misto." },
-        { "titulo": "Sessão 2 · Absolutas + 12h/15d", "texto": "HIV/HTLV/galactosemia e armazenamento." },
-        { "titulo": "Sessão 3 · Suplementos", "texto": "400/600 UI e início do ferro." }
+      "checklist": [
+        "ame",
+        "contra",
+        "armazena",
+        "ferro",
+        "vitd",
+        "composicao"
       ],
-      "lacuna": "Crescimento estatural e alvo genético da Ped2: revise só se a banca pedir pediatria geral."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Vocabulário",
+          "texto": "AME × predominante × complementado × misto."
+        },
+        {
+          "titulo": "Sessão 2 · Absolutas + 12h/15d",
+          "texto": "HIV/HTLV/galactosemia e armazenamento."
+        },
+        {
+          "titulo": "Sessão 3 · Suplementos",
+          "texto": "400/600 UI e início do ferro."
+        }
+      ],
+      "lacuna": "Crescimento estatural e alvo genético da Ped2: revise só se a banca pedir pediatria geral.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     }
   ],
   "checklistItems": {
@@ -367,5 +736,7 @@
     "Memorizar os 12 passos palavra por palavra (saiba os de maior cobrança)",
     "Marcas comerciais de fórmulas",
     "Técnica de ordenha passo a passo completa (saiba higiene + prazos)"
-  ]
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
 }

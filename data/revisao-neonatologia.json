@@ -10,14 +10,38 @@
       "foco": "Reanimação · Icterícia · Triagens · DR diferencial",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "Reanimação SBP", "score": 95 },
-        { "tema": "Icterícia", "score": 88 },
-        { "tema": "Triagens", "score": 78 },
-        { "tema": "DR diferencial", "score": 72 },
-        { "tema": "Infecção neonatal", "score": 65 },
-        { "tema": "Classificações / CIUR", "score": 45 },
-        { "tema": "Apgar / rotina", "score": 38 },
-        { "tema": "DBP / apneia", "score": 28 }
+        {
+          "tema": "Reanimação SBP",
+          "pct": 18.7
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 17.3
+        },
+        {
+          "tema": "Triagens",
+          "pct": 15.3
+        },
+        {
+          "tema": "DR diferencial",
+          "pct": 14.1
+        },
+        {
+          "tema": "Infecção neonatal",
+          "pct": 12.8
+        },
+        {
+          "tema": "Classificações / CIUR",
+          "pct": 8.8
+        },
+        {
+          "tema": "Apgar / rotina",
+          "pct": 7.5
+        },
+        {
+          "tema": "DBP / apneia",
+          "pct": 5.5
+        }
       ],
       "deckOrder": [
         "neo-reanimacao-34",
@@ -29,11 +53,112 @@
         "neo-classificacoes",
         "neo-ciur"
       ],
-      "checklist": ["reanim-34", "reanim-pre", "meconio", "ictericia", "triagens", "dr", "pneumonia", "classif"],
+      "checklist": [
+        "reanim-34",
+        "reanim-pre",
+        "meconio",
+        "ictericia",
+        "triagens",
+        "dr",
+        "pneumonia",
+        "classif"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Sala de parto", "texto": "Fluxogramas ≥34s e <34s + mecônio + HDC. Decks de reanimação até acertar em sequência." },
-        { "titulo": "Sessão 2 · Icterícia + triagens", "texto": "Fisiológica vs patológica, fototerapia, pezinho e coraçãozinho." },
-        { "titulo": "Sessão 3 · DR + infecção", "texto": "SDR × TTRN × SAM × HPPN × pneumonia precoce." }
+        {
+          "titulo": "Sessão 1 · Sala de parto",
+          "texto": "Fluxogramas ≥34s e <34s + mecônio + HDC. Decks de reanimação até acertar em sequência."
+        },
+        {
+          "titulo": "Sessão 2 · Icterícia + triagens",
+          "texto": "Fisiológica vs patológica, fototerapia, pezinho e coraçãozinho."
+        },
+        {
+          "titulo": "Sessão 3 · DR + infecção",
+          "texto": "SDR × TTRN × SAM × HPPN × pneumonia precoce."
+        }
+      ],
+      "lacuna": "TORCH e sepse tardia caem em várias bancas, mas a Ped1 só toca de leve — revise à parte depois.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões das principais provas R1 para este tema."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "No padrão Enamed/Enare, neonatologia pratica pesa: reanimação, cuidados/triagens e icterícia concentram a maior parte das questões do tema.",
+      "foco": "Reanimação · Triagens/cuidados · Icterícia · Infecção",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        {
+          "tema": "Reanimação SBP",
+          "pct": 34
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 18
+        },
+        {
+          "tema": "Triagens / cuidados iniciais",
+          "pct": 18
+        },
+        {
+          "tema": "Infecção neonatal / sepse",
+          "pct": 12
+        },
+        {
+          "tema": "DR diferencial",
+          "pct": 10
+        },
+        {
+          "tema": "Classificações / CIUR",
+          "pct": 4
+        },
+        {
+          "tema": "Apgar / rotina",
+          "pct": 2
+        },
+        {
+          "tema": "DBP / apneia",
+          "pct": 2
+        }
+      ],
+      "deckOrder": [
+        "neo-reanimacao-34",
+        "neo-reanimacao-prematuro",
+        "neo-ictericia",
+        "neo-triagem",
+        "neo-respiratorio",
+        "neo-cuidados-iniciais",
+        "neo-classificacoes",
+        "neo-ciur"
+      ],
+      "checklist": [
+        "reanim-34",
+        "reanim-pre",
+        "meconio",
+        "ictericia",
+        "triagens",
+        "dr",
+        "pneumonia",
+        "classif"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Sala de parto",
+          "texto": "Fluxogramas ≥34s e <34s + mecônio + HDC. Decks de reanimação até acertar em sequência."
+        },
+        {
+          "titulo": "Sessão 2 · Icterícia + triagens",
+          "texto": "Fisiológica vs patológica, fototerapia, pezinho e coraçãozinho."
+        },
+        {
+          "titulo": "Sessão 3 · DR + infecção",
+          "texto": "SDR × TTRN × SAM × HPPN × pneumonia precoce."
+        }
       ],
       "lacuna": "TORCH e sepse tardia caem em várias bancas, mas a Ped1 só toca de leve — revise à parte depois."
     },
@@ -46,12 +171,30 @@
       "foco": "Reanimação (VPP, FC, massagem) · Icterícia · Sepse / TORCH",
       "estilo": "Caso + protocolo SBP; detalhe de algoritmo",
       "priorities": [
-        { "tema": "Reanimação SBP", "score": 98 },
-        { "tema": "Icterícia", "score": 90 },
-        { "tema": "Infecção / TORCH", "score": 82 },
-        { "tema": "DR diferencial", "score": 70 },
-        { "tema": "Triagens", "score": 55 },
-        { "tema": "Classificações", "score": 35 }
+        {
+          "tema": "Reanimação SBP",
+          "pct": 22.8
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 20.9
+        },
+        {
+          "tema": "Infecção / TORCH",
+          "pct": 19.1
+        },
+        {
+          "tema": "DR diferencial",
+          "pct": 16.3
+        },
+        {
+          "tema": "Triagens",
+          "pct": 12.8
+        },
+        {
+          "tema": "Classificações",
+          "pct": 8.1
+        }
       ],
       "deckOrder": [
         "neo-reanimacao-34",
@@ -63,13 +206,31 @@
         "neo-classificacoes",
         "neo-ciur"
       ],
-      "checklist": ["reanim-34", "reanim-pre", "meconio", "ictericia", "dr", "pneumonia"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Algoritmo SBP", "texto": "Decore VPP, Sat pré-ductal, massagem 3:1 e adrenalina. Simule decisões do fluxograma." },
-        { "titulo": "Sessão 2 · Icterícia", "texto": "Red flags, fototerapia e diferenciais de hemólise/aleitamento." },
-        { "titulo": "Sessão 3 · Infecção", "texto": "Pneumonia precoce/GBS na Ped1 + planeje suplemento de TORCH." }
+      "checklist": [
+        "reanim-34",
+        "reanim-pre",
+        "meconio",
+        "ictericia",
+        "dr",
+        "pneumonia"
       ],
-      "lacuna": "TORCH e sepse tardia são muito cobrados na USP — complete fora da Ped1."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Algoritmo SBP",
+          "texto": "Decore VPP, Sat pré-ductal, massagem 3:1 e adrenalina. Simule decisões do fluxograma."
+        },
+        {
+          "titulo": "Sessão 2 · Icterícia",
+          "texto": "Red flags, fototerapia e diferenciais de hemólise/aleitamento."
+        },
+        {
+          "titulo": "Sessão 3 · Infecção",
+          "texto": "Pneumonia precoce/GBS na Ped1 + planeje suplemento de TORCH."
+        }
+      ],
+      "lacuna": "TORCH e sepse tardia são muito cobrados na USP — complete fora da Ped1.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "unifesp",
@@ -80,12 +241,30 @@
       "foco": "Reanimação · Triagens · Infecções congênitas · Icterícia",
       "estilo": "Protocolo + interpretação de testes",
       "priorities": [
-        { "tema": "Reanimação SBP", "score": 96 },
-        { "tema": "Triagens", "score": 92 },
-        { "tema": "Icterícia", "score": 85 },
-        { "tema": "Infecção congênita", "score": 80 },
-        { "tema": "DR diferencial", "score": 60 },
-        { "tema": "Classificações", "score": 40 }
+        {
+          "tema": "Reanimação SBP",
+          "pct": 21.2
+        },
+        {
+          "tema": "Triagens",
+          "pct": 20.3
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 18.8
+        },
+        {
+          "tema": "Infecção congênita",
+          "pct": 17.7
+        },
+        {
+          "tema": "DR diferencial",
+          "pct": 13.2
+        },
+        {
+          "tema": "Classificações",
+          "pct": 8.8
+        }
       ],
       "deckOrder": [
         "neo-reanimacao-34",
@@ -97,13 +276,31 @@
         "neo-classificacoes",
         "neo-ciur"
       ],
-      "checklist": ["reanim-34", "reanim-pre", "triagens", "ictericia", "pneumonia", "meconio"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Sala de parto", "texto": "Fluxogramas ≥34s/<34s com números exatos de O₂ e Sat." },
-        { "titulo": "Sessão 2 · Triagens", "texto": "Pezinho, coraçãozinho (critérios SBP), olhinho e orelhinha." },
-        { "titulo": "Sessão 3 · Icterícia + infecção", "texto": "Fototerapia + pneumonia precoce; reserve tempo para TORCH." }
+      "checklist": [
+        "reanim-34",
+        "reanim-pre",
+        "triagens",
+        "ictericia",
+        "pneumonia",
+        "meconio"
       ],
-      "lacuna": "Infecções congênitas detalhadas caem muito — Ped1 só introduz; complemente."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Sala de parto",
+          "texto": "Fluxogramas ≥34s/<34s com números exatos de O₂ e Sat."
+        },
+        {
+          "titulo": "Sessão 2 · Triagens",
+          "texto": "Pezinho, coraçãozinho (critérios SBP), olhinho e orelhinha."
+        },
+        {
+          "titulo": "Sessão 3 · Icterícia + infecção",
+          "texto": "Fototerapia + pneumonia precoce; reserve tempo para TORCH."
+        }
+      ],
+      "lacuna": "Infecções congênitas detalhadas caem muito — Ped1 só introduz; complemente.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-sp",
@@ -114,12 +311,30 @@
       "foco": "Infecções no período neonatal · Sala de parto · Cuidados básicos",
       "estilo": "Mais clínico/prático; menos pegadinha rara",
       "priorities": [
-        { "tema": "Infecção neonatal", "score": 94 },
-        { "tema": "Reanimação / sala de parto", "score": 88 },
-        { "tema": "Icterícia", "score": 75 },
-        { "tema": "Triagens", "score": 70 },
-        { "tema": "Cuidados de rotina", "score": 65 },
-        { "tema": "DR diferencial", "score": 55 }
+        {
+          "tema": "Infecção neonatal",
+          "pct": 21
+        },
+        {
+          "tema": "Reanimação / sala de parto",
+          "pct": 19.7
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 16.8
+        },
+        {
+          "tema": "Triagens",
+          "pct": 15.7
+        },
+        {
+          "tema": "Cuidados de rotina",
+          "pct": 14.5
+        },
+        {
+          "tema": "DR diferencial",
+          "pct": 12.3
+        }
       ],
       "deckOrder": [
         "neo-respiratorio",
@@ -131,13 +346,31 @@
         "neo-classificacoes",
         "neo-ciur"
       ],
-      "checklist": ["pneumonia", "reanim-34", "ictericia", "triagens", "cuidados", "dr"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Infecção precoce", "texto": "GBS, fatores de risco, amp+genta e diferencial com SDR." },
-        { "titulo": "Sessão 2 · Sala de parto", "texto": "Passos iniciais, VPP e quando ir para massagem." },
-        { "titulo": "Sessão 3 · Icterícia + triagens", "texto": "Red flags e testes de rotina da maternidade." }
+      "checklist": [
+        "pneumonia",
+        "reanim-34",
+        "ictericia",
+        "triagens",
+        "cuidados",
+        "dr"
       ],
-      "lacuna": "Doenças exantemáticas e imunizações também pesam no SUS-SP, mas estão fora da Ped1."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Infecção precoce",
+          "texto": "GBS, fatores de risco, amp+genta e diferencial com SDR."
+        },
+        {
+          "titulo": "Sessão 2 · Sala de parto",
+          "texto": "Passos iniciais, VPP e quando ir para massagem."
+        },
+        {
+          "titulo": "Sessão 3 · Icterícia + triagens",
+          "texto": "Red flags e testes de rotina da maternidade."
+        }
+      ],
+      "lacuna": "Doenças exantemáticas e imunizações também pesam no SUS-SP, mas estão fora da Ped1.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-ba",
@@ -148,12 +381,30 @@
       "foco": "Sala de parto · Reanimação · Classificações",
       "estilo": "Diretriz SBP + conduta imediata",
       "priorities": [
-        { "tema": "Sala de parto / reanimação", "score": 98 },
-        { "tema": "Classificações / CIUR", "score": 80 },
-        { "tema": "Icterícia", "score": 70 },
-        { "tema": "Infecção precoce", "score": 65 },
-        { "tema": "Apgar / rotina", "score": 60 },
-        { "tema": "Triagens", "score": 50 }
+        {
+          "tema": "Sala de parto / reanimação",
+          "pct": 23.2
+        },
+        {
+          "tema": "Classificações / CIUR",
+          "pct": 18.9
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 16.5
+        },
+        {
+          "tema": "Infecção precoce",
+          "pct": 15.4
+        },
+        {
+          "tema": "Apgar / rotina",
+          "pct": 14.2
+        },
+        {
+          "tema": "Triagens",
+          "pct": 11.8
+        }
       ],
       "deckOrder": [
         "neo-reanimacao-34",
@@ -165,13 +416,31 @@
         "neo-respiratorio",
         "neo-triagem"
       ],
-      "checklist": ["reanim-34", "reanim-pre", "classif", "meconio", "cuidados", "pneumonia"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Fluxogramas", "texto": "≥34s e <34s de ponta a ponta, com mecônio e HDC." },
-        { "titulo": "Sessão 2 · Classificações", "texto": "Peso, IG, AIG/PIG/GIG e CIUR simétrico/assimétrico." },
-        { "titulo": "Sessão 3 · Consolidar", "texto": "Apgar, rotina e um bloco curto de infecção precoce." }
+      "checklist": [
+        "reanim-34",
+        "reanim-pre",
+        "classif",
+        "meconio",
+        "cuidados",
+        "pneumonia"
       ],
-      "lacuna": "Imunizações e pneumonia pediátrica também caem no SUS-BA — estão em outras apostilas."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Fluxogramas",
+          "texto": "≥34s e <34s de ponta a ponta, com mecônio e HDC."
+        },
+        {
+          "titulo": "Sessão 2 · Classificações",
+          "texto": "Peso, IG, AIG/PIG/GIG e CIUR simétrico/assimétrico."
+        },
+        {
+          "titulo": "Sessão 3 · Consolidar",
+          "texto": "Apgar, rotina e um bloco curto de infecção precoce."
+        }
+      ],
+      "lacuna": "Imunizações e pneumonia pediátrica também caem no SUS-BA — estão em outras apostilas.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "einstein",
@@ -182,12 +451,30 @@
       "foco": "Fluxograma SBP · O₂/Sat · Mecônio · Prematuro <34s",
       "estilo": "Guideline atualizado; números exatos",
       "priorities": [
-        { "tema": "Reanimação ≥34s", "score": 97 },
-        { "tema": "Reanimação <34s", "score": 95 },
-        { "tema": "Mecônio / HDC", "score": 88 },
-        { "tema": "DR / HPPN", "score": 75 },
-        { "tema": "Triagens", "score": 70 },
-        { "tema": "Icterícia", "score": 65 }
+        {
+          "tema": "Reanimação ≥34s",
+          "pct": 19.8
+        },
+        {
+          "tema": "Reanimação <34s",
+          "pct": 19.4
+        },
+        {
+          "tema": "Mecônio / HDC",
+          "pct": 18
+        },
+        {
+          "tema": "DR / HPPN",
+          "pct": 15.3
+        },
+        {
+          "tema": "Triagens",
+          "pct": 14.3
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 13.2
+        }
       ],
       "deckOrder": [
         "neo-reanimacao-34",
@@ -199,13 +486,31 @@
         "neo-classificacoes",
         "neo-ciur"
       ],
-      "checklist": ["reanim-34", "reanim-pre", "meconio", "dr", "triagens", "ictericia"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Números SBP", "texto": "21% vs 30%, alvos de Sat, PEEP 5, relação 3:1, doses." },
-        { "titulo": "Sessão 2 · Situações especiais", "texto": "Mecônio atualizado e hérnia diafragmática." },
-        { "titulo": "Sessão 3 · DR + triagens", "texto": "HPPN/SAM e coraçãozinho com critérios novos." }
+      "checklist": [
+        "reanim-34",
+        "reanim-pre",
+        "meconio",
+        "dr",
+        "triagens",
+        "ictericia"
       ],
-      "lacuna": "Fique atento a updates da SBP — a prova gosta de mudança recente de conduta."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Números SBP",
+          "texto": "21% vs 30%, alvos de Sat, PEEP 5, relação 3:1, doses."
+        },
+        {
+          "titulo": "Sessão 2 · Situações especiais",
+          "texto": "Mecônio atualizado e hérnia diafragmática."
+        },
+        {
+          "titulo": "Sessão 3 · DR + triagens",
+          "texto": "HPPN/SAM e coraçãozinho com critérios novos."
+        }
+      ],
+      "lacuna": "Fique atento a updates da SBP — a prova gosta de mudança recente de conduta.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "puc-unicamp",
@@ -216,12 +521,30 @@
       "foco": "SDR vs TTRN vs SAM · Icterícia · Apgar",
       "estilo": "Diagnóstico diferencial + conduta",
       "priorities": [
-        { "tema": "DR diferencial", "score": 96 },
-        { "tema": "Icterícia", "score": 88 },
-        { "tema": "Reanimação", "score": 80 },
-        { "tema": "Apgar / rotina", "score": 72 },
-        { "tema": "Classificações", "score": 55 },
-        { "tema": "Triagens", "score": 50 }
+        {
+          "tema": "DR diferencial",
+          "pct": 21.8
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 20
+        },
+        {
+          "tema": "Reanimação",
+          "pct": 18.1
+        },
+        {
+          "tema": "Apgar / rotina",
+          "pct": 16.3
+        },
+        {
+          "tema": "Classificações",
+          "pct": 12.5
+        },
+        {
+          "tema": "Triagens",
+          "pct": 11.3
+        }
       ],
       "deckOrder": [
         "neo-respiratorio",
@@ -233,13 +556,31 @@
         "neo-triagem",
         "neo-ciur"
       ],
-      "checklist": ["dr", "ictericia", "reanim-34", "cuidados", "meconio", "classif"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Tabela mental DR", "texto": "SDR × TTRN × SAM × HPPN × pneumonia — clínica, Rx e conduta." },
-        { "titulo": "Sessão 2 · Icterícia", "texto": "Fisiológica vs patológica e condutas." },
-        { "titulo": "Sessão 3 · Sala + Apgar", "texto": "Reanimação essencial e o que o Apgar não decide." }
+      "checklist": [
+        "dr",
+        "ictericia",
+        "reanim-34",
+        "cuidados",
+        "meconio",
+        "classif"
       ],
-      "lacuna": "Menos foco em superspecialty; priorize casos clássicos bem resolvidos."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Tabela mental DR",
+          "texto": "SDR × TTRN × SAM × HPPN × pneumonia — clínica, Rx e conduta."
+        },
+        {
+          "titulo": "Sessão 2 · Icterícia",
+          "texto": "Fisiológica vs patológica e condutas."
+        },
+        {
+          "titulo": "Sessão 3 · Sala + Apgar",
+          "texto": "Reanimação essencial e o que o Apgar não decide."
+        }
+      ],
+      "lacuna": "Menos foco em superspecialty; priorize casos clássicos bem resolvidos.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "ufrj",
@@ -250,12 +591,30 @@
       "foco": "Classificações · Apgar · Icterícia · Pezinho",
       "estilo": "Conceito sólido; menos superspecialty",
       "priorities": [
-        { "tema": "Classificações / CIUR", "score": 90 },
-        { "tema": "Icterícia", "score": 88 },
-        { "tema": "Triagens", "score": 85 },
-        { "tema": "Apgar / rotina", "score": 80 },
-        { "tema": "Reanimação básica", "score": 70 },
-        { "tema": "DR diferencial", "score": 55 }
+        {
+          "tema": "Classificações / CIUR",
+          "pct": 19.2
+        },
+        {
+          "tema": "Icterícia",
+          "pct": 18.8
+        },
+        {
+          "tema": "Triagens",
+          "pct": 18.2
+        },
+        {
+          "tema": "Apgar / rotina",
+          "pct": 17.1
+        },
+        {
+          "tema": "Reanimação básica",
+          "pct": 15
+        },
+        {
+          "tema": "DR diferencial",
+          "pct": 11.7
+        }
       ],
       "deckOrder": [
         "neo-classificacoes",
@@ -267,13 +626,31 @@
         "neo-reanimacao-prematuro",
         "neo-respiratorio"
       ],
-      "checklist": ["classif", "ictericia", "triagens", "cuidados", "reanim-34", "dr"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Classificar o RN", "texto": "Peso, IG, AIG/PIG/GIG e CIUR." },
-        { "titulo": "Sessão 2 · Icterícia + pezinho", "texto": "Fisiológica vs patológica e etapa 1 do PNTN." },
-        { "titulo": "Sessão 3 · Apgar + reanimação", "texto": "O que o Apgar mede e o básico da VPP." }
+      "checklist": [
+        "classif",
+        "ictericia",
+        "triagens",
+        "cuidados",
+        "reanim-34",
+        "dr"
       ],
-      "lacuna": "Menos detalhe de guideline avançado; foque clareza de conceito."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Classificar o RN",
+          "texto": "Peso, IG, AIG/PIG/GIG e CIUR."
+        },
+        {
+          "titulo": "Sessão 2 · Icterícia + pezinho",
+          "texto": "Fisiológica vs patológica e etapa 1 do PNTN."
+        },
+        {
+          "titulo": "Sessão 3 · Apgar + reanimação",
+          "texto": "O que o Apgar mede e o básico da VPP."
+        }
+      ],
+      "lacuna": "Menos detalhe de guideline avançado; foque clareza de conceito.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     }
   ],
   "checklistItems": {
@@ -353,5 +730,7 @@
     "Marcas comerciais de surfactante",
     "Etapas 2–5 da ampliação do pezinho",
     "Lista exaustiva de causas placentárias de CIUR"
-  ]
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
 }

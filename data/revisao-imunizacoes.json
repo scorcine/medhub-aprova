@@ -11,14 +11,38 @@
       "foco": "Calendário · Contraindicações · Vivas×inativadas · DTP/dTpa · Rotavírus/VIP",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "Calendário PNI (idades)", "score": 95 },
-        { "tema": "Contraindicações / falsas", "score": 90 },
-        { "tema": "Vivas × inativadas / intervalos", "score": 85 },
-        { "tema": "DTP, dTpa e tétano", "score": 82 },
-        { "tema": "BCG e hepatite B", "score": 78 },
-        { "tema": "Pólio e rotavírus", "score": 74 },
-        { "tema": "SCR / FA / varicela / HPV", "score": 68 },
-        { "tema": "Raiva (pós-exposição)", "score": 45 }
+        {
+          "tema": "Calendário PNI (idades)",
+          "pct": 15.4
+        },
+        {
+          "tema": "Contraindicações / falsas",
+          "pct": 14.6
+        },
+        {
+          "tema": "Vivas × inativadas / intervalos",
+          "pct": 13.8
+        },
+        {
+          "tema": "DTP, dTpa e tétano",
+          "pct": 13.3
+        },
+        {
+          "tema": "BCG e hepatite B",
+          "pct": 12.6
+        },
+        {
+          "tema": "Pólio e rotavírus",
+          "pct": 12
+        },
+        {
+          "tema": "SCR / FA / varicela / HPV",
+          "pct": 11
+        },
+        {
+          "tema": "Raiva (pós-exposição)",
+          "pct": 7.3
+        }
       ],
       "deckOrder": [
         "imu-calendario",
@@ -30,11 +54,102 @@
         "imu-virais",
         "imu-conceitos"
       ],
-      "checklist": ["cal", "contra", "viva", "dtp", "bcg", "rota", "scr"],
+      "checklist": [
+        "cal",
+        "contra",
+        "viva",
+        "dtp",
+        "bcg",
+        "rota",
+        "scr"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Calendário mental", "texto": "Nascer → 2/4/6 → 9 → 12 → 15 → 4 anos. Decore o bloco, não a tabela inteira da SBP." },
-        { "titulo": "Sessão 2 · Pode / não pode", "texto": "Vivas em gestante/imuno · falsas contraindicações · FA×SCR <2a." },
-        { "titulo": "Sessão 3 · Esquemas-armadilha", "texto": "VORH janelas · VIP vs VOP · dTpa gestante · Hep B 12h + anti-HBs." }
+        {
+          "titulo": "Sessão 1 · Calendário mental",
+          "texto": "Nascer → 2/4/6 → 9 → 12 → 15 → 4 anos. Decore o bloco, não a tabela inteira da SBP."
+        },
+        {
+          "titulo": "Sessão 2 · Pode / não pode",
+          "texto": "Vivas em gestante/imuno · falsas contraindicações · FA×SCR <2a."
+        },
+        {
+          "titulo": "Sessão 3 · Esquemas-armadilha",
+          "texto": "VORH janelas · VIP vs VOP · dTpa gestante · Hep B 12h + anti-HBs."
+        }
+      ],
+      "lacuna": "Esquema completo de raiva e tabelas longas de IG pós-hemoderivado: revise só se a banca for pesada em infecto.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões das principais provas R1 para este tema."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "No Enamed, calendário PNI e condutas de atraso/contraindicação dominam imunizações — alto retorno por hora estudada.",
+      "foco": "Calendário PNI · Atrasos · Contraindicações · BCG/HepB",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        {
+          "tema": "Calendário PNI",
+          "pct": 34
+        },
+        {
+          "tema": "Conduta em atraso / intervals",
+          "pct": 18
+        },
+        {
+          "tema": "Contraindicações / eventos",
+          "pct": 16
+        },
+        {
+          "tema": "BCG / HepB",
+          "pct": 12
+        },
+        {
+          "tema": "DTP / tétano",
+          "pct": 10
+        },
+        {
+          "tema": "Polio / rota / virais",
+          "pct": 10
+        }
+      ],
+      "deckOrder": [
+        "imu-calendario",
+        "imu-contraindicacoes",
+        "imu-vias-intervalos",
+        "imu-dtp-tetano",
+        "imu-bcg-hepb",
+        "imu-polio-rota",
+        "imu-virais",
+        "imu-conceitos"
+      ],
+      "checklist": [
+        "cal",
+        "contra",
+        "viva",
+        "dtp",
+        "bcg",
+        "rota",
+        "scr"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Calendário mental",
+          "texto": "Nascer → 2/4/6 → 9 → 12 → 15 → 4 anos. Decore o bloco, não a tabela inteira da SBP."
+        },
+        {
+          "titulo": "Sessão 2 · Pode / não pode",
+          "texto": "Vivas em gestante/imuno · falsas contraindicações · FA×SCR <2a."
+        },
+        {
+          "titulo": "Sessão 3 · Esquemas-armadilha",
+          "texto": "VORH janelas · VIP vs VOP · dTpa gestante · Hep B 12h + anti-HBs."
+        }
       ],
       "lacuna": "Esquema completo de raiva e tabelas longas de IG pós-hemoderivado: revise só se a banca for pesada em infecto."
     },
@@ -47,12 +162,30 @@
       "foco": "Contraindicações · dTpa · DTP eventos · Intervalos FA/SCR",
       "estilo": "Caso + conduta",
       "priorities": [
-        { "tema": "Contraindicações / especiais", "score": 96 },
-        { "tema": "DTP / dTpa / tétano", "score": 92 },
-        { "tema": "Vivas × intervalos", "score": 88 },
-        { "tema": "Calendário", "score": 75 },
-        { "tema": "BCG / Hep B", "score": 70 },
-        { "tema": "Rotavírus / pólio", "score": 65 }
+        {
+          "tema": "Contraindicações / especiais",
+          "pct": 19.8
+        },
+        {
+          "tema": "DTP / dTpa / tétano",
+          "pct": 18.9
+        },
+        {
+          "tema": "Vivas × intervalos",
+          "pct": 18.1
+        },
+        {
+          "tema": "Calendário",
+          "pct": 15.4
+        },
+        {
+          "tema": "BCG / Hep B",
+          "pct": 14.4
+        },
+        {
+          "tema": "Rotavírus / pólio",
+          "pct": 13.4
+        }
       ],
       "deckOrder": [
         "imu-contraindicacoes",
@@ -64,13 +197,30 @@
         "imu-virais",
         "imu-conceitos"
       ],
-      "checklist": ["contra", "dtp", "viva", "cal", "bcg"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Quem não pode viva", "texto": "Gestante, corticoide imunossupressor, neoplasia." },
-        { "titulo": "Sessão 2 · DTP e gestante", "texto": "Encefalopatia 7 dias · dTpa ≥20 semanas." },
-        { "titulo": "Sessão 3 · Intervalos", "texto": "SCR×varicela 30d · FA×SCR <2a." }
+      "checklist": [
+        "contra",
+        "dtp",
+        "viva",
+        "cal",
+        "bcg"
       ],
-      "lacuna": "Raiva detalhada cai, mas menos que DTP/contraindicação na USP pediátrica."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Quem não pode viva",
+          "texto": "Gestante, corticoide imunossupressor, neoplasia."
+        },
+        {
+          "titulo": "Sessão 2 · DTP e gestante",
+          "texto": "Encefalopatia 7 dias · dTpa ≥20 semanas."
+        },
+        {
+          "titulo": "Sessão 3 · Intervalos",
+          "texto": "SCR×varicela 30d · FA×SCR <2a."
+        }
+      ],
+      "lacuna": "Raiva detalhada cai, mas menos que DTP/contraindicação na USP pediátrica.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "unifesp",
@@ -81,12 +231,30 @@
       "foco": "Calendário PNI · Rotavírus · Hep B · Pólio",
       "estilo": "Protocolo + números",
       "priorities": [
-        { "tema": "Calendário PNI", "score": 97 },
-        { "tema": "Rotavírus / pólio", "score": 90 },
-        { "tema": "BCG e hepatite B", "score": 86 },
-        { "tema": "Contraindicações", "score": 78 },
-        { "tema": "SCR / FA / HPV", "score": 70 },
-        { "tema": "DTP / dTpa", "score": 68 }
+        {
+          "tema": "Calendário PNI",
+          "pct": 19.8
+        },
+        {
+          "tema": "Rotavírus / pólio",
+          "pct": 18.4
+        },
+        {
+          "tema": "BCG e hepatite B",
+          "pct": 17.6
+        },
+        {
+          "tema": "Contraindicações",
+          "pct": 16
+        },
+        {
+          "tema": "SCR / FA / HPV",
+          "pct": 14.3
+        },
+        {
+          "tema": "DTP / dTpa",
+          "pct": 13.9
+        }
       ],
       "deckOrder": [
         "imu-calendario",
@@ -98,13 +266,30 @@
         "imu-vias-intervalos",
         "imu-conceitos"
       ],
-      "checklist": ["cal", "rota", "bcg", "contra", "scr"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Idades PNI", "texto": "2-4-6, 9, 12, 15, 4a." },
-        { "titulo": "Sessão 2 · Janelas VORH", "texto": "Limites de idade e não revacinar se regurgitar." },
-        { "titulo": "Sessão 3 · Nascer", "texto": "BCG ≥2 kg e Hep B 12h." }
+      "checklist": [
+        "cal",
+        "rota",
+        "bcg",
+        "contra",
+        "scr"
       ],
-      "lacuna": "Calendário privado SBP completo: foque diferenças que mudam conduta (VIP nos reforços, hexa etc.)."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Idades PNI",
+          "texto": "2-4-6, 9, 12, 15, 4a."
+        },
+        {
+          "titulo": "Sessão 2 · Janelas VORH",
+          "texto": "Limites de idade e não revacinar se regurgitar."
+        },
+        {
+          "titulo": "Sessão 3 · Nascer",
+          "texto": "BCG ≥2 kg e Hep B 12h."
+        }
+      ],
+      "lacuna": "Calendário privado SBP completo: foque diferenças que mudam conduta (VIP nos reforços, hexa etc.).",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-sp",
@@ -115,12 +300,30 @@
       "foco": "Calendário · Falsas contraindicações · Gestante · BCG/Hep B",
       "estilo": "Conduta de atenção básica",
       "priorities": [
-        { "tema": "Calendário PNI", "score": 98 },
-        { "tema": "Falsas contraindicações", "score": 92 },
-        { "tema": "Gestante (dTpa/influenza)", "score": 88 },
-        { "tema": "BCG e Hep B", "score": 80 },
-        { "tema": "Rotavírus", "score": 72 },
-        { "tema": "HPV", "score": 60 }
+        {
+          "tema": "Calendário PNI",
+          "pct": 20
+        },
+        {
+          "tema": "Falsas contraindicações",
+          "pct": 18.8
+        },
+        {
+          "tema": "Gestante (dTpa/influenza)",
+          "pct": 18
+        },
+        {
+          "tema": "BCG e Hep B",
+          "pct": 16.3
+        },
+        {
+          "tema": "Rotavírus",
+          "pct": 14.7
+        },
+        {
+          "tema": "HPV",
+          "pct": 12.2
+        }
       ],
       "deckOrder": [
         "imu-calendario",
@@ -132,13 +335,30 @@
         "imu-vias-intervalos",
         "imu-conceitos"
       ],
-      "checklist": ["cal", "contra", "dtp", "bcg", "rota"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Não adiar à toa", "texto": "Prematuro, IVAS, antibiótico, desnutrição." },
-        { "titulo": "Sessão 2 · Gestante na UBS", "texto": "dTpa ≥20 sem + influenza." },
-        { "titulo": "Sessão 3 · Calendário", "texto": "Blocos do cartão da criança." }
+      "checklist": [
+        "cal",
+        "contra",
+        "dtp",
+        "bcg",
+        "rota"
       ],
-      "lacuna": "CRIE e hexa acelular: saiba que existem; detalhe só se o enunciado citar CRIE."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Não adiar à toa",
+          "texto": "Prematuro, IVAS, antibiótico, desnutrição."
+        },
+        {
+          "titulo": "Sessão 2 · Gestante na UBS",
+          "texto": "dTpa ≥20 sem + influenza."
+        },
+        {
+          "titulo": "Sessão 3 · Calendário",
+          "texto": "Blocos do cartão da criança."
+        }
+      ],
+      "lacuna": "CRIE e hexa acelular: saiba que existem; detalhe só se o enunciado citar CRIE.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-ba",
@@ -149,12 +369,30 @@
       "foco": "Tipos de vacina · Calendário · Contraindicações · Hep B",
       "estilo": "Conceito claro + conduta",
       "priorities": [
-        { "tema": "Vivas × inativadas", "score": 94 },
-        { "tema": "Calendário", "score": 90 },
-        { "tema": "Contraindicações", "score": 85 },
-        { "tema": "BCG / Hep B", "score": 78 },
-        { "tema": "DTP / tétano", "score": 70 },
-        { "tema": "SCR / FA", "score": 60 }
+        {
+          "tema": "Vivas × inativadas",
+          "pct": 19.7
+        },
+        {
+          "tema": "Calendário",
+          "pct": 18.9
+        },
+        {
+          "tema": "Contraindicações",
+          "pct": 17.8
+        },
+        {
+          "tema": "BCG / Hep B",
+          "pct": 16.4
+        },
+        {
+          "tema": "DTP / tétano",
+          "pct": 14.7
+        },
+        {
+          "tema": "SCR / FA",
+          "pct": 12.5
+        }
       ],
       "deckOrder": [
         "imu-conceitos",
@@ -166,13 +404,30 @@
         "imu-polio-rota",
         "imu-vias-intervalos"
       ],
-      "checklist": ["viva", "cal", "contra", "bcg", "dtp"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Classificar a vacina", "texto": "Viva vs inativada vs conjugada." },
-        { "titulo": "Sessão 2 · Calendário", "texto": "Idades-chave." },
-        { "titulo": "Sessão 3 · Pode vacinar?", "texto": "Falsas vs verdadeiras." }
+      "checklist": [
+        "viva",
+        "cal",
+        "contra",
+        "bcg",
+        "dtp"
       ],
-      "lacuna": "Raiva silvestre detalhada: baixo ROI se não for questão de infecto."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Classificar a vacina",
+          "texto": "Viva vs inativada vs conjugada."
+        },
+        {
+          "titulo": "Sessão 2 · Calendário",
+          "texto": "Idades-chave."
+        },
+        {
+          "titulo": "Sessão 3 · Pode vacinar?",
+          "texto": "Falsas vs verdadeiras."
+        }
+      ],
+      "lacuna": "Raiva silvestre detalhada: baixo ROI se não for questão de infecto.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "einstein",
@@ -183,12 +438,30 @@
       "foco": "Especiais · Tétano ferimento · Bloqueio SCR · FA",
       "estilo": "Caso clínico com conduta",
       "priorities": [
-        { "tema": "Situações especiais / imuno", "score": 95 },
-        { "tema": "Tétano acidental", "score": 90 },
-        { "tema": "SCR bloqueio / varicela", "score": 85 },
-        { "tema": "Intervalos entre vivas", "score": 80 },
-        { "tema": "Calendário", "score": 65 },
-        { "tema": "Rotavírus", "score": 55 }
+        {
+          "tema": "Situações especiais / imuno",
+          "pct": 20.2
+        },
+        {
+          "tema": "Tétano acidental",
+          "pct": 19.1
+        },
+        {
+          "tema": "SCR bloqueio / varicela",
+          "pct": 18.1
+        },
+        {
+          "tema": "Intervalos entre vivas",
+          "pct": 17
+        },
+        {
+          "tema": "Calendário",
+          "pct": 13.8
+        },
+        {
+          "tema": "Rotavírus",
+          "pct": 11.8
+        }
       ],
       "deckOrder": [
         "imu-contraindicacoes",
@@ -200,13 +473,30 @@
         "imu-polio-rota",
         "imu-conceitos"
       ],
-      "checklist": ["contra", "dtp", "scr", "viva", "cal"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Ferimento e tétano", "texto": "SAT/IGHAT + vacina em locais diferentes." },
-        { "titulo": "Sessão 2 · Pós-exposição viral", "texto": "SCR 72h; varicela vacina vs IG." },
-        { "titulo": "Sessão 3 · Imuno", "texto": "Sem viva; vacinar conviventes." }
+      "checklist": [
+        "contra",
+        "dtp",
+        "scr",
+        "viva",
+        "cal"
       ],
-      "lacuna": "Memorizar todo apêndice de raiva: foque ‘não há contraindicação se risco real’ + IG/vacina."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Ferimento e tétano",
+          "texto": "SAT/IGHAT + vacina em locais diferentes."
+        },
+        {
+          "titulo": "Sessão 2 · Pós-exposição viral",
+          "texto": "SCR 72h; varicela vacina vs IG."
+        },
+        {
+          "titulo": "Sessão 3 · Imuno",
+          "texto": "Sem viva; vacinar conviventes."
+        }
+      ],
+      "lacuna": "Memorizar todo apêndice de raiva: foque ‘não há contraindicação se risco real’ + IG/vacina.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "puc",
@@ -217,12 +507,30 @@
       "foco": "Conjugadas · Intervalos · Calendário · Contraindicações",
       "estilo": "Conceito + tabela mental",
       "priorities": [
-        { "tema": "Tipos / conjugadas", "score": 93 },
-        { "tema": "Intervalos entre vacinas", "score": 90 },
-        { "tema": "Calendário", "score": 85 },
-        { "tema": "Contraindicações", "score": 80 },
-        { "tema": "Pólio / rotavírus", "score": 72 },
-        { "tema": "DTP", "score": 65 }
+        {
+          "tema": "Tipos / conjugadas",
+          "pct": 19.2
+        },
+        {
+          "tema": "Intervalos entre vacinas",
+          "pct": 18.6
+        },
+        {
+          "tema": "Calendário",
+          "pct": 17.5
+        },
+        {
+          "tema": "Contraindicações",
+          "pct": 16.5
+        },
+        {
+          "tema": "Pólio / rotavírus",
+          "pct": 14.8
+        },
+        {
+          "tema": "DTP",
+          "pct": 13.4
+        }
       ],
       "deckOrder": [
         "imu-conceitos",
@@ -234,13 +542,30 @@
         "imu-bcg-hepb",
         "imu-virais"
       ],
-      "checklist": ["viva", "cal", "contra", "rota", "dtp"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Imunologia aplicada", "texto": "T-dependente, memória, conjugada." },
-        { "titulo": "Sessão 2 · Intervalos", "texto": "Tabela mental viva×viva / inativada." },
-        { "titulo": "Sessão 3 · PNI", "texto": "Idades e armadilhas." }
+      "checklist": [
+        "viva",
+        "cal",
+        "contra",
+        "rota",
+        "dtp"
       ],
-      "lacuna": "Composição (timerosal/neomicina) só cai em pegadinhas pontuais."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Imunologia aplicada",
+          "texto": "T-dependente, memória, conjugada."
+        },
+        {
+          "titulo": "Sessão 2 · Intervalos",
+          "texto": "Tabela mental viva×viva / inativada."
+        },
+        {
+          "titulo": "Sessão 3 · PNI",
+          "texto": "Idades e armadilhas."
+        }
+      ],
+      "lacuna": "Composição (timerosal/neomicina) só cai em pegadinhas pontuais.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "ufrj",
@@ -251,12 +576,30 @@
       "foco": "Conceitos · Falsas contraindicações · Calendário · Hep B/BCG",
       "estilo": "Conceito sólido",
       "priorities": [
-        { "tema": "Conceitos (ativa/passiva, vivas)", "score": 94 },
-        { "tema": "Falsas contraindicações", "score": 90 },
-        { "tema": "Calendário", "score": 88 },
-        { "tema": "BCG / Hep B", "score": 80 },
-        { "tema": "SCR / FA", "score": 70 },
-        { "tema": "DTP", "score": 60 }
+        {
+          "tema": "Conceitos (ativa/passiva, vivas)",
+          "pct": 19.5
+        },
+        {
+          "tema": "Falsas contraindicações",
+          "pct": 18.7
+        },
+        {
+          "tema": "Calendário",
+          "pct": 18.3
+        },
+        {
+          "tema": "BCG / Hep B",
+          "pct": 16.6
+        },
+        {
+          "tema": "SCR / FA",
+          "pct": 14.5
+        },
+        {
+          "tema": "DTP",
+          "pct": 12.4
+        }
       ],
       "deckOrder": [
         "imu-conceitos",
@@ -268,13 +611,30 @@
         "imu-vias-intervalos",
         "imu-polio-rota"
       ],
-      "checklist": ["viva", "contra", "cal", "bcg", "scr"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Vocabulário", "texto": "Ativa/passiva, viva/inativada, conjugada." },
-        { "titulo": "Sessão 2 · Pode vacinar?", "texto": "Lista de falsas." },
-        { "titulo": "Sessão 3 · Idades", "texto": "Nascer, 2-4-6, 12, 15." }
+      "checklist": [
+        "viva",
+        "contra",
+        "cal",
+        "bcg",
+        "scr"
       ],
-      "lacuna": "CRIE e nonavalente HPV: secundário."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Vocabulário",
+          "texto": "Ativa/passiva, viva/inativada, conjugada."
+        },
+        {
+          "titulo": "Sessão 2 · Pode vacinar?",
+          "texto": "Lista de falsas."
+        },
+        {
+          "titulo": "Sessão 3 · Idades",
+          "texto": "Nascer, 2-4-6, 12, 15."
+        }
+      ],
+      "lacuna": "CRIE e nonavalente HPV: secundário.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     }
   ],
   "checklistItems": {
@@ -346,5 +706,7 @@
     "Todas as vacinas do CRIE/hexa acelular em detalhe",
     "História de Jenner e imunologia celular exaustiva",
     "Nonavalente HPV e dengue: saiba que existem"
-  ]
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
 }

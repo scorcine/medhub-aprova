@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718s">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718t">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -287,15 +287,22 @@
             </div>
 
             <div id="esp-stats" class="esp-stats" hidden>
-              <div class="study-card rev-block">
-                <div class="label" id="esp-stats-title">O que mais cai no Brasil</div>
-                <p class="muted" id="esp-stats-sub">Prioridade relativa dos assuntos nas provas R1.</p>
-                <div class="rev-bars" id="esp-stats-bars"></div>
-              </div>
-
               <div class="esp-exam-pick">
                 <p class="esp-exam-label">Escolha sua prova</p>
                 <div class="esp-exam-options" id="esp-exam-options"></div>
+              </div>
+
+              <div id="esp-module-enamed-banner" class="esp-enamed-banner" hidden>
+                <strong>Enamed</strong>
+                <span>Foque no que o generalista mais encontra: protocolo prático, APS e urgências do dia a dia neste tema.</span>
+              </div>
+
+              <div class="study-card rev-block">
+                <div class="label" id="esp-stats-title">O que mais cai no Brasil</div>
+                <p class="muted" id="esp-stats-sub">Participação de cada subtema nas questões deste grupo.</p>
+                <p class="esp-ped-unit" id="esp-stats-unit" hidden></p>
+                <div class="rev-bars" id="esp-stats-bars"></div>
+                <p class="muted esp-ped-source" id="esp-stats-source"></p>
               </div>
 
               <div class="actions-row" style="margin-top:0.85rem">
@@ -392,13 +399,13 @@
     </div>
   </div>
 
-  <script src="js/theme.js?v=20260718s"></script>
-  <script src="js/auth.js?v=20260718s"></script>
-  <script src="js/schedule.js?v=20260718s"></script>
-  <script src="js/exam-stats.js?v=20260718s"></script>
-  <script src="js/flashcards.js?v=20260718s"></script>
-  <script src="js/questions.js?v=20260718s"></script>
-  <script src="js/revisao.js?v=20260718s"></script>
-  <script src="js/app.js?v=20260718s"></script>
+  <script src="js/theme.js?v=20260718t"></script>
+  <script src="js/auth.js?v=20260718t"></script>
+  <script src="js/schedule.js?v=20260718t"></script>
+  <script src="js/exam-stats.js?v=20260718t"></script>
+  <script src="js/flashcards.js?v=20260718t"></script>
+  <script src="js/questions.js?v=20260718t"></script>
+  <script src="js/revisao.js?v=20260718t"></script>
+  <script src="js/app.js?v=20260718t"></script>
 </body>
 </html>

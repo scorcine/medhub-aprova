@@ -11,14 +11,38 @@
       "foco": "MS/OMS · Gomez/Waterlow · DEP grave · Baixa estatura · Obesidade (cortes)",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "Classificação MS / OMS", "score": 94 },
-        { "tema": "Marasmo × kwashiorkor", "score": 90 },
-        { "tema": "Tratamento DEP (fases/F75)", "score": 86 },
-        { "tema": "Gomez / Waterlow", "score": 82 },
-        { "tema": "Baixa estatura (familiar × ACCP)", "score": 78 },
-        { "tema": "Obesidade (diagnóstico)", "score": 70 },
-        { "tema": "Alvo genético / idade óssea", "score": 62 },
-        { "tema": "Transição nutricional", "score": 40 }
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 15.6
+        },
+        {
+          "tema": "Marasmo × kwashiorkor",
+          "pct": 15
+        },
+        {
+          "tema": "Tratamento DEP (fases/F75)",
+          "pct": 14.3
+        },
+        {
+          "tema": "Gomez / Waterlow",
+          "pct": 13.6
+        },
+        {
+          "tema": "Baixa estatura (familiar × ACCP)",
+          "pct": 13
+        },
+        {
+          "tema": "Obesidade (diagnóstico)",
+          "pct": 11.6
+        },
+        {
+          "tema": "Alvo genético / idade óssea",
+          "pct": 10.3
+        },
+        {
+          "tema": "Transição nutricional",
+          "pct": 6.6
+        }
       ],
       "deckOrder": [
         "nut-classificacao-ms",
@@ -29,11 +53,97 @@
         "nut-obesidade",
         "nut-conceitos"
       ],
-      "checklist": ["ms", "dep", "tx", "gomez", "baixa", "obeso", "alvo"],
+      "checklist": [
+        "ms",
+        "dep",
+        "tx",
+        "gomez",
+        "baixa",
+        "obeso",
+        "alvo"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Classificar a criança", "texto": "Índices por idade (MS) + Gomez + Waterlow aguda/crônica/pregressa." },
-        { "titulo": "Sessão 2 · DEP grave", "texto": "Marasmo×kwashiorkor, critérios de internação, F75→F100, ferro só na reabilitação." },
-        { "titulo": "Sessão 3 · Crescimento e peso a mais", "texto": "Familiar×ACCP, alvo genético e cortes de sobrepeso/obesidade." }
+        {
+          "titulo": "Sessão 1 · Classificar a criança",
+          "texto": "Índices por idade (MS) + Gomez + Waterlow aguda/crônica/pregressa."
+        },
+        {
+          "titulo": "Sessão 2 · DEP grave",
+          "texto": "Marasmo×kwashiorkor, critérios de internação, F75→F100, ferro só na reabilitação."
+        },
+        {
+          "titulo": "Sessão 3 · Crescimento e peso a mais",
+          "texto": "Familiar×ACCP, alvo genético e cortes de sobrepeso/obesidade."
+        }
+      ],
+      "lacuna": "Síndromes raras de alta/baixa estatura (Bloom, Seckel, Weaver…) têm baixo ROI — saiba só red flags e quando investigar.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões das principais provas R1 para este tema."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Crescimento, curvas e desnutrição/obesidade na APS são o núcleo Enamed dentro da avaliação nutricional.",
+      "foco": "Curvas · Desnutrição · Obesidade · Classificações",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        {
+          "tema": "Crescimento / curvas",
+          "pct": 30
+        },
+        {
+          "tema": "Desnutrição (diagnóstico)",
+          "pct": 24
+        },
+        {
+          "tema": "Obesidade",
+          "pct": 18
+        },
+        {
+          "tema": "Classificações (MS/Gomez/Waterlow)",
+          "pct": 16
+        },
+        {
+          "tema": "Baixa estatura",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "nut-classificacao-ms",
+        "nut-dep-clinica",
+        "nut-dep-tratamento",
+        "nut-gomez-waterlow",
+        "nut-baixa-estatura",
+        "nut-obesidade",
+        "nut-conceitos"
+      ],
+      "checklist": [
+        "ms",
+        "dep",
+        "tx",
+        "gomez",
+        "baixa",
+        "obeso",
+        "alvo"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Classificar a criança",
+          "texto": "Índices por idade (MS) + Gomez + Waterlow aguda/crônica/pregressa."
+        },
+        {
+          "titulo": "Sessão 2 · DEP grave",
+          "texto": "Marasmo×kwashiorkor, critérios de internação, F75→F100, ferro só na reabilitação."
+        },
+        {
+          "titulo": "Sessão 3 · Crescimento e peso a mais",
+          "texto": "Familiar×ACCP, alvo genético e cortes de sobrepeso/obesidade."
+        }
       ],
       "lacuna": "Síndromes raras de alta/baixa estatura (Bloom, Seckel, Weaver…) têm baixo ROI — saiba só red flags e quando investigar."
     },
@@ -46,12 +156,30 @@
       "foco": "DEP clínica · Estabilização · Waterlow · MS z-score",
       "estilo": "Caso + conduta",
       "priorities": [
-        { "tema": "Marasmo × kwashiorkor", "score": 98 },
-        { "tema": "Tratamento DEP", "score": 92 },
-        { "tema": "Classificação MS / OMS", "score": 85 },
-        { "tema": "Waterlow", "score": 78 },
-        { "tema": "Baixa estatura", "score": 65 },
-        { "tema": "Obesidade", "score": 55 }
+        {
+          "tema": "Marasmo × kwashiorkor",
+          "pct": 20.7
+        },
+        {
+          "tema": "Tratamento DEP",
+          "pct": 19.5
+        },
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 18
+        },
+        {
+          "tema": "Waterlow",
+          "pct": 16.5
+        },
+        {
+          "tema": "Baixa estatura",
+          "pct": 13.7
+        },
+        {
+          "tema": "Obesidade",
+          "pct": 11.6
+        }
       ],
       "deckOrder": [
         "nut-dep-clinica",
@@ -62,13 +190,30 @@
         "nut-obesidade",
         "nut-conceitos"
       ],
-      "checklist": ["dep", "tx", "ms", "gomez", "baixa"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Quadro clínico DEP", "texto": "Edema, flaky paint, bola de Bichat, apetite." },
-        { "titulo": "Sessão 2 · Estabilização", "texto": "Hipoglicemia, F75, sem ferro, vit. A ocular." },
-        { "titulo": "Sessão 3 · Classificar", "texto": "Z < −3, MUAC <115 mm, Waterlow." }
+      "checklist": [
+        "dep",
+        "tx",
+        "ms",
+        "gomez",
+        "baixa"
       ],
-      "lacuna": "Lista completa de comorbidades da obesidade rende menos que DEP na USP."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Quadro clínico DEP",
+          "texto": "Edema, flaky paint, bola de Bichat, apetite."
+        },
+        {
+          "titulo": "Sessão 2 · Estabilização",
+          "texto": "Hipoglicemia, F75, sem ferro, vit. A ocular."
+        },
+        {
+          "titulo": "Sessão 3 · Classificar",
+          "texto": "Z < −3, MUAC <115 mm, Waterlow."
+        }
+      ],
+      "lacuna": "Lista completa de comorbidades da obesidade rende menos que DEP na USP.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "unifesp",
@@ -79,12 +224,30 @@
       "foco": "MS/OMS · Fases DEP · Ferro/vit. A · Obesidade SBP",
       "estilo": "Protocolo + números",
       "priorities": [
-        { "tema": "Classificação MS / OMS", "score": 96 },
-        { "tema": "Tratamento DEP", "score": 90 },
-        { "tema": "Obesidade (cortes/exames)", "score": 80 },
-        { "tema": "Gomez / Waterlow", "score": 75 },
-        { "tema": "Marasmo × kwashiorkor", "score": 72 },
-        { "tema": "Baixa estatura", "score": 60 }
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 20.3
+        },
+        {
+          "tema": "Tratamento DEP",
+          "pct": 19
+        },
+        {
+          "tema": "Obesidade (cortes/exames)",
+          "pct": 16.9
+        },
+        {
+          "tema": "Gomez / Waterlow",
+          "pct": 15.9
+        },
+        {
+          "tema": "Marasmo × kwashiorkor",
+          "pct": 15.2
+        },
+        {
+          "tema": "Baixa estatura",
+          "pct": 12.7
+        }
       ],
       "deckOrder": [
         "nut-classificacao-ms",
@@ -95,13 +258,30 @@
         "nut-baixa-estatura",
         "nut-conceitos"
       ],
-      "checklist": ["ms", "tx", "obeso", "gomez", "dep"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Caderneta/OMS", "texto": "Quais índices por idade e critérios de grave." },
-        { "titulo": "Sessão 2 · 10 passos / fases", "texto": "F75→F100, ferro atrasado, vit. A." },
-        { "titulo": "Sessão 3 · Obesidade", "texto": "IMC OMS vs CDC e exames SBP." }
+      "checklist": [
+        "ms",
+        "tx",
+        "obeso",
+        "gomez",
+        "dep"
       ],
-      "lacuna": "Fisiopatologia hormonal completa da DEP: saiba o essencial (↓IGF-1, ↑cortisol) e foque conduta."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Caderneta/OMS",
+          "texto": "Quais índices por idade e critérios de grave."
+        },
+        {
+          "titulo": "Sessão 2 · 10 passos / fases",
+          "texto": "F75→F100, ferro atrasado, vit. A."
+        },
+        {
+          "titulo": "Sessão 3 · Obesidade",
+          "texto": "IMC OMS vs CDC e exames SBP."
+        }
+      ],
+      "lacuna": "Fisiopatologia hormonal completa da DEP: saiba o essencial (↓IGF-1, ↑cortisol) e foque conduta.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-sp",
@@ -112,12 +292,30 @@
       "foco": "MS/OMS · Transição nutricional · Obesidade · Waterlow básico",
       "estilo": "Conduta de atenção básica",
       "priorities": [
-        { "tema": "Classificação MS / OMS", "score": 97 },
-        { "tema": "Obesidade / transição nutricional", "score": 88 },
-        { "tema": "Gomez / Waterlow", "score": 75 },
-        { "tema": "DEP (reconhecer grave)", "score": 70 },
-        { "tema": "Baixa estatura", "score": 55 },
-        { "tema": "Tratamento hospitalar DEP", "score": 45 }
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 22.6
+        },
+        {
+          "tema": "Obesidade / transição nutricional",
+          "pct": 20.5
+        },
+        {
+          "tema": "Gomez / Waterlow",
+          "pct": 17.4
+        },
+        {
+          "tema": "DEP (reconhecer grave)",
+          "pct": 16.3
+        },
+        {
+          "tema": "Baixa estatura",
+          "pct": 12.8
+        },
+        {
+          "tema": "Tratamento hospitalar DEP",
+          "pct": 10.4
+        }
       ],
       "deckOrder": [
         "nut-classificacao-ms",
@@ -128,13 +326,29 @@
         "nut-baixa-estatura",
         "nut-dep-tratamento"
       ],
-      "checklist": ["ms", "obeso", "gomez", "dep"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Caderneta", "texto": "0–5 / 5–10 / 10–19: quais gráficos." },
-        { "titulo": "Sessão 2 · Epidemio", "texto": "Transição nutricional e cortes de sobrepeso." },
-        { "titulo": "Sessão 3 · Quando internar", "texto": "Z < −3, edema, anorexia." }
+      "checklist": [
+        "ms",
+        "obeso",
+        "gomez",
+        "dep"
       ],
-      "lacuna": "Esquema ATB completo da enfermaria cai menos que saber reconhecer e referenciar."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Caderneta",
+          "texto": "0–5 / 5–10 / 10–19: quais gráficos."
+        },
+        {
+          "titulo": "Sessão 2 · Epidemio",
+          "texto": "Transição nutricional e cortes de sobrepeso."
+        },
+        {
+          "titulo": "Sessão 3 · Quando internar",
+          "texto": "Z < −3, edema, anorexia."
+        }
+      ],
+      "lacuna": "Esquema ATB completo da enfermaria cai menos que saber reconhecer e referenciar.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-ba",
@@ -145,12 +359,30 @@
       "foco": "MS · DEP clínica · Obesidade · Gomez",
       "estilo": "Conceito claro + conduta",
       "priorities": [
-        { "tema": "Classificação MS / OMS", "score": 93 },
-        { "tema": "Marasmo × kwashiorkor", "score": 88 },
-        { "tema": "Gomez", "score": 80 },
-        { "tema": "Obesidade", "score": 72 },
-        { "tema": "Tratamento DEP", "score": 65 },
-        { "tema": "Baixa estatura", "score": 50 }
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 20.8
+        },
+        {
+          "tema": "Marasmo × kwashiorkor",
+          "pct": 19.6
+        },
+        {
+          "tema": "Gomez",
+          "pct": 17.9
+        },
+        {
+          "tema": "Obesidade",
+          "pct": 16.1
+        },
+        {
+          "tema": "Tratamento DEP",
+          "pct": 14.5
+        },
+        {
+          "tema": "Baixa estatura",
+          "pct": 11.1
+        }
       ],
       "deckOrder": [
         "nut-classificacao-ms",
@@ -161,13 +393,30 @@
         "nut-baixa-estatura",
         "nut-conceitos"
       ],
-      "checklist": ["ms", "dep", "gomez", "obeso", "tx"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Classificar", "texto": "MS + Gomez faixas." },
-        { "titulo": "Sessão 2 · Formas graves", "texto": "Marasmo vs kwashiorkor." },
-        { "titulo": "Sessão 3 · Obesidade", "texto": "IMC e pistas de causa endócrina." }
+      "checklist": [
+        "ms",
+        "dep",
+        "gomez",
+        "obeso",
+        "tx"
       ],
-      "lacuna": "Alta estatura sindrômica: mínimo — foque baixa estatura comum."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Classificar",
+          "texto": "MS + Gomez faixas."
+        },
+        {
+          "titulo": "Sessão 2 · Formas graves",
+          "texto": "Marasmo vs kwashiorkor."
+        },
+        {
+          "titulo": "Sessão 3 · Obesidade",
+          "texto": "IMC e pistas de causa endócrina."
+        }
+      ],
+      "lacuna": "Alta estatura sindrômica: mínimo — foque baixa estatura comum.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "einstein",
@@ -178,12 +427,30 @@
       "foco": "Baixa estatura · DEP tratamento · Obesidade secundária",
       "estilo": "Caso clínico com diferencial",
       "priorities": [
-        { "tema": "Baixa estatura (familiar × ACCP)", "score": 95 },
-        { "tema": "Tratamento DEP", "score": 88 },
-        { "tema": "Marasmo × kwashiorkor", "score": 82 },
-        { "tema": "Alvo genético / IO", "score": 80 },
-        { "tema": "Obesidade secundária", "score": 70 },
-        { "tema": "MS / Waterlow", "score": 60 }
+        {
+          "tema": "Baixa estatura (familiar × ACCP)",
+          "pct": 20
+        },
+        {
+          "tema": "Tratamento DEP",
+          "pct": 18.5
+        },
+        {
+          "tema": "Marasmo × kwashiorkor",
+          "pct": 17.3
+        },
+        {
+          "tema": "Alvo genético / IO",
+          "pct": 16.8
+        },
+        {
+          "tema": "Obesidade secundária",
+          "pct": 14.7
+        },
+        {
+          "tema": "MS / Waterlow",
+          "pct": 12.7
+        }
       ],
       "deckOrder": [
         "nut-baixa-estatura",
@@ -194,13 +461,30 @@
         "nut-gomez-waterlow",
         "nut-conceitos"
       ],
-      "checklist": ["baixa", "tx", "dep", "alvo", "obeso"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Familiar × ACCP", "texto": "IO, puberdade e estatura final." },
-        { "titulo": "Sessão 2 · DEP hospitalar", "texto": "Fases, realimentação, ferro." },
-        { "titulo": "Sessão 3 · Red flags", "texto": "Obesidade com baixa estatura = investigar endócrino." }
+      "checklist": [
+        "baixa",
+        "tx",
+        "dep",
+        "alvo",
+        "obeso"
       ],
-      "lacuna": "Memorizar síndromes raras de gigantismo rende pouco."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Familiar × ACCP",
+          "texto": "IO, puberdade e estatura final."
+        },
+        {
+          "titulo": "Sessão 2 · DEP hospitalar",
+          "texto": "Fases, realimentação, ferro."
+        },
+        {
+          "titulo": "Sessão 3 · Red flags",
+          "texto": "Obesidade com baixa estatura = investigar endócrino."
+        }
+      ],
+      "lacuna": "Memorizar síndromes raras de gigantismo rende pouco.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "puc",
@@ -211,12 +495,30 @@
       "foco": "Waterlow · Gomez · DEP · Alvo genético",
       "estilo": "Conceito + tabela mental",
       "priorities": [
-        { "tema": "Gomez / Waterlow", "score": 94 },
-        { "tema": "Classificação MS / OMS", "score": 88 },
-        { "tema": "Marasmo × kwashiorkor", "score": 85 },
-        { "tema": "Baixa estatura / alvo", "score": 78 },
-        { "tema": "Tratamento DEP", "score": 70 },
-        { "tema": "Obesidade", "score": 55 }
+        {
+          "tema": "Gomez / Waterlow",
+          "pct": 20
+        },
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 18.7
+        },
+        {
+          "tema": "Marasmo × kwashiorkor",
+          "pct": 18.1
+        },
+        {
+          "tema": "Baixa estatura / alvo",
+          "pct": 16.6
+        },
+        {
+          "tema": "Tratamento DEP",
+          "pct": 14.9
+        },
+        {
+          "tema": "Obesidade",
+          "pct": 11.7
+        }
       ],
       "deckOrder": [
         "nut-gomez-waterlow",
@@ -227,13 +529,31 @@
         "nut-obesidade",
         "nut-conceitos"
       ],
-      "checklist": ["gomez", "ms", "dep", "baixa", "alvo", "tx"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Gomez + Waterlow", "texto": "Faixas e aguda/crônica/pregressa." },
-        { "titulo": "Sessão 2 · Clínica DEP", "texto": "Diferenças e marcadores." },
-        { "titulo": "Sessão 3 · Crescimento", "texto": "Alvo genético e IO." }
+      "checklist": [
+        "gomez",
+        "ms",
+        "dep",
+        "baixa",
+        "alvo",
+        "tx"
       ],
-      "lacuna": "McLaren e classificações obscuras: baixo ROI."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Gomez + Waterlow",
+          "texto": "Faixas e aguda/crônica/pregressa."
+        },
+        {
+          "titulo": "Sessão 2 · Clínica DEP",
+          "texto": "Diferenças e marcadores."
+        },
+        {
+          "titulo": "Sessão 3 · Crescimento",
+          "texto": "Alvo genético e IO."
+        }
+      ],
+      "lacuna": "McLaren e classificações obscuras: baixo ROI.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "ufrj",
@@ -244,12 +564,30 @@
       "foco": "MS · Gomez · Familiar×ACCP · Obesidade CDC/OMS",
       "estilo": "Conceito sólido",
       "priorities": [
-        { "tema": "Classificação MS / OMS", "score": 95 },
-        { "tema": "Gomez", "score": 88 },
-        { "tema": "Baixa estatura familiar × ACCP", "score": 85 },
-        { "tema": "DEP clínica", "score": 75 },
-        { "tema": "Obesidade", "score": 70 },
-        { "tema": "Tratamento DEP", "score": 55 }
+        {
+          "tema": "Classificação MS / OMS",
+          "pct": 20.3
+        },
+        {
+          "tema": "Gomez",
+          "pct": 18.8
+        },
+        {
+          "tema": "Baixa estatura familiar × ACCP",
+          "pct": 18.2
+        },
+        {
+          "tema": "DEP clínica",
+          "pct": 16
+        },
+        {
+          "tema": "Obesidade",
+          "pct": 15
+        },
+        {
+          "tema": "Tratamento DEP",
+          "pct": 11.7
+        }
       ],
       "deckOrder": [
         "nut-classificacao-ms",
@@ -260,13 +598,30 @@
         "nut-dep-tratamento",
         "nut-conceitos"
       ],
-      "checklist": ["ms", "gomez", "baixa", "dep", "obeso"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Vocabulário antropométrico", "texto": "Índices, percentil, Z." },
-        { "titulo": "Sessão 2 · Gomez + familiar/ACCP", "texto": "Números e IO." },
-        { "titulo": "Sessão 3 · Formas graves", "texto": "Marasmo vs kwashiorkor." }
+      "checklist": [
+        "ms",
+        "gomez",
+        "baixa",
+        "dep",
+        "obeso"
       ],
-      "lacuna": "Detalhe de ATB hospitalar: secundário se a banca for mais conceitual."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Vocabulário antropométrico",
+          "texto": "Índices, percentil, Z."
+        },
+        {
+          "titulo": "Sessão 2 · Gomez + familiar/ACCP",
+          "texto": "Números e IO."
+        },
+        {
+          "titulo": "Sessão 3 · Formas graves",
+          "texto": "Marasmo vs kwashiorkor."
+        }
+      ],
+      "lacuna": "Detalhe de ATB hospitalar: secundário se a banca for mais conceitual.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     }
   ],
   "checklistItems": {
@@ -337,5 +692,7 @@
     "Classificação de McLaren em detalhe",
     "Fisiopatologia celular exaustiva da bomba Na/K",
     "Todos os critérios alternativos de síndrome metabólica"
-  ]
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
 }

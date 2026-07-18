@@ -416,6 +416,9 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
   const bars = document.getElementById("esp-stats-bars");
   const title = document.getElementById("esp-stats-title");
   const sub = document.getElementById("esp-stats-sub");
+  const unitEl = document.getElementById("esp-stats-unit");
+  const sourceEl = document.getElementById("esp-stats-source");
+  const banner = document.getElementById("esp-module-enamed-banner");
   const options = document.getElementById("esp-exam-options");
   const subtemas = document.getElementById("esp-subtemas");
   const grid = document.getElementById("esp-deck-grid");
@@ -437,14 +440,43 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
   const profiles = typeof AprovaRevisao !== "undefined"
     ? await AprovaRevisao.getProfiles(aprovaActivePedModule)
     : [];
+  const moduleData = typeof AprovaRevisao !== "undefined"
+    ? await AprovaRevisao.loadModule(aprovaActivePedModule)
+    : null;
   const profile = typeof AprovaRevisao !== "undefined"
     ? await AprovaRevisao.getProfile(aprovaActiveFocusId, aprovaActivePedModule)
     : null;
 
   await aprovaRenderPedGroupCards(aprovaActivePedModule);
 
+  const orderedProfiles = profiles.slice().sort((a, b) => {
+    const rank = p => {
+      if (p.id === "geral") return 0;
+      if (p.id === "enamed") return 1;
+      return 2;
+    };
+    const d = rank(a) - rank(b);
+    return d !== 0 ? d : String(a.label || "").localeCompare(String(b.label || ""), "pt-BR");
+  });
+
+  options.innerHTML = "";
+  orderedProfiles.forEach(p => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "esp-exam-btn" +
+      (p.id === "enamed" || p.featured ? " esp-exam-btn--enamed" : "") +
+      (p.id === aprovaActiveFocusId ? " active" : "");
+    btn.textContent = p.id === "enamed" ? "Enamed ★" : (p.id === "geral" ? "Brasil" : p.label);
+    btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id, aprovaActivePedModule));
+    options.appendChild(btn);
+  });
+
+  if (banner) banner.hidden = aprovaActiveFocusId !== "enamed";
+
   if (!profile) {
     bars.innerHTML = "<p class=\"muted\">Estatísticas indisponíveis.</p>";
+    if (unitEl) unitEl.hidden = true;
+    if (sourceEl) sourceEl.textContent = "";
     return;
   }
 
@@ -453,34 +485,41 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     ? ("O que mais cai no Brasil · " + moduleLabel)
     : ("O que mais cai · " + profile.label + " · " + moduleLabel);
 
+  const sourceType = profile.sourceType || "estimativa";
+  const typeLabel = sourceType === "levantamento"
+    ? "Levantamento / padrão nacional"
+    : (sourceType === "sintese" ? "Síntese de provas R1" : "Estimativa por padrão de banca");
+
   if (title) title.textContent = chartTitle;
   if (sub) {
-    sub.textContent = profile.id === "geral"
-      ? ("Prioridade relativa dos assuntos de " + moduleLabel + " nas provas R1.")
-      : (profile.foco || profile.blurb);
+    sub.textContent = typeLabel + (profile.foco ? (" — " + profile.foco) : "");
   }
 
-  const maxScore = Math.max(...profile.priorities.map(p => p.score), 1);
-  bars.innerHTML = profile.priorities.map(p => {
-    const pct = Math.round((p.score / maxScore) * 100);
+  const unitLabel = (moduleData && moduleData.unitLabel) || "% das questões deste tema";
+  if (unitEl) {
+    unitEl.hidden = false;
+    unitEl.textContent = "Cada barra = " + unitLabel +
+      ((moduleData && moduleData.note) ? ". " + moduleData.note : "");
+  }
+
+  bars.innerHTML = (profile.priorities || []).map(p => {
+    const pct = Number(p.pct != null ? p.pct : p.score);
+    const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
+    const detail = p.n ? (" · " + p.n + " quest.") : "";
     return (
       "<div class=\"rev-bar-row\">" +
-        "<span>" + p.tema + "</span>" +
-        "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + pct + "%\"></i></div>" +
-        "<em>" + p.score + "</em>" +
+        "<span>" + p.tema + detail + "</span>" +
+        "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + width + "%\"></i></div>" +
+        "<em>" + aprovaFormatPct(pct) + "</em>" +
       "</div>"
     );
   }).join("");
 
-  options.innerHTML = "";
-  profiles.forEach(p => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "esp-exam-btn" + (p.id === aprovaActiveFocusId ? " active" : "");
-    btn.textContent = p.id === "geral" ? "Brasil" : p.label;
-    btn.addEventListener("click", () => aprovaRenderPediatriaStats(p.id, aprovaActivePedModule));
-    options.appendChild(btn);
-  });
+  if (sourceEl) {
+    sourceEl.textContent = profile.source
+      ? ("Fonte: " + profile.source)
+      : "";
+  }
 
   if (grid) aprovaRenderDeckCards("pediatria", grid, profile.deckOrder || []);
   const decksTitle = document.getElementById("esp-decks-title");

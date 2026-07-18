@@ -11,14 +11,38 @@
       "foco": "Diagnóstico · DM1 · CAD · Dawn/Somogyi · Metformina",
       "estilo": "Visão geral do que mais cai no Brasil",
       "priorities": [
-        { "tema": "CAD (tratamento)", "score": 96 },
-        { "tema": "Critérios diagnósticos", "score": 90 },
-        { "tema": "DM1 × DM2 / clínica", "score": 86 },
-        { "tema": "Insulina basal-bolus", "score": 82 },
-        { "tema": "Dawn × Somogyi", "score": 75 },
-        { "tema": "Pré-diabetes / metformina", "score": 65 },
-        { "tema": "Hipoglicemia / EHH", "score": 60 },
-        { "tema": "Complicações crônicas", "score": 45 }
+        {
+          "tema": "CAD (tratamento)",
+          "pct": 16
+        },
+        {
+          "tema": "Critérios diagnósticos",
+          "pct": 15
+        },
+        {
+          "tema": "DM1 × DM2 / clínica",
+          "pct": 14.4
+        },
+        {
+          "tema": "Insulina basal-bolus",
+          "pct": 13.7
+        },
+        {
+          "tema": "Dawn × Somogyi",
+          "pct": 12.5
+        },
+        {
+          "tema": "Pré-diabetes / metformina",
+          "pct": 10.9
+        },
+        {
+          "tema": "Hipoglicemia / EHH",
+          "pct": 10
+        },
+        {
+          "tema": "Complicações crônicas",
+          "pct": 7.5
+        }
       ],
       "deckOrder": [
         "dm-cad",
@@ -29,11 +53,95 @@
         "dm-dm2",
         "dm-complicacoes"
       ],
-      "checklist": ["cad", "dx", "dm1", "insulina", "dawn", "dm2"],
+      "checklist": [
+        "cad",
+        "dx",
+        "dm1",
+        "insulina",
+        "dawn",
+        "dm2"
+      ],
       "sessoes": [
-        { "titulo": "Sessão 1 · Diagnosticar", "texto": "Cortes de DM/pré-DM e clínica DM1 vs DM2." },
-        { "titulo": "Sessão 2 · Insulina no dia a dia", "texto": "Basal-bolus, 500/1500, dawn vs Somogyi." },
-        { "titulo": "Sessão 3 · CAD", "texto": "Volume, K<3,3, insulina IV, resolução, edema cerebral." }
+        {
+          "titulo": "Sessão 1 · Diagnosticar",
+          "texto": "Cortes de DM/pré-DM e clínica DM1 vs DM2."
+        },
+        {
+          "titulo": "Sessão 2 · Insulina no dia a dia",
+          "texto": "Basal-bolus, 500/1500, dawn vs Somogyi."
+        },
+        {
+          "titulo": "Sessão 3 · CAD",
+          "texto": "Volume, K<3,3, insulina IV, resolução, edema cerebral."
+        }
+      ],
+      "lacuna": "Lista completa de análogos GLP-1/SGLT2 e estratificação lipídica adulta: baixo ROI na Ped5 se a banca for pediátrica pura.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões das principais provas R1 para este tema."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed cobra o essencial: diagnóstico, CAD e manejo inicial do DM1 — menos microdetalhe de bomba.",
+      "foco": "Diagnóstico · CAD · DM1 · Hipoglicemia",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        {
+          "tema": "CAD / descompensação",
+          "pct": 28
+        },
+        {
+          "tema": "Diagnóstico / critérios",
+          "pct": 22
+        },
+        {
+          "tema": "Tratamento DM1",
+          "pct": 20
+        },
+        {
+          "tema": "Hipoglicemia",
+          "pct": 14
+        },
+        {
+          "tema": "DM2 / outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "dm-cad",
+        "dm-diagnostico",
+        "dm-classificacao",
+        "dm-tratamento-dm1",
+        "dm-hipoglicemia-ehh",
+        "dm-dm2",
+        "dm-complicacoes"
+      ],
+      "checklist": [
+        "cad",
+        "dx",
+        "dm1",
+        "insulina",
+        "dawn",
+        "dm2"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnosticar",
+          "texto": "Cortes de DM/pré-DM e clínica DM1 vs DM2."
+        },
+        {
+          "titulo": "Sessão 2 · Insulina no dia a dia",
+          "texto": "Basal-bolus, 500/1500, dawn vs Somogyi."
+        },
+        {
+          "titulo": "Sessão 3 · CAD",
+          "texto": "Volume, K<3,3, insulina IV, resolução, edema cerebral."
+        }
       ],
       "lacuna": "Lista completa de análogos GLP-1/SGLT2 e estratificação lipídica adulta: baixo ROI na Ped5 se a banca for pediátrica pura."
     },
@@ -46,12 +154,30 @@
       "foco": "CAD · Dawn/Somogyi · Insulina · Diagnóstico",
       "estilo": "Caso + conduta",
       "priorities": [
-        { "tema": "CAD", "score": 98 },
-        { "tema": "Dawn × Somogyi", "score": 90 },
-        { "tema": "Insulina basal-bolus", "score": 85 },
-        { "tema": "Diagnóstico", "score": 78 },
-        { "tema": "DM1 clínica", "score": 70 },
-        { "tema": "EHH / hipoglicemia", "score": 60 }
+        {
+          "tema": "CAD",
+          "pct": 20.4
+        },
+        {
+          "tema": "Dawn × Somogyi",
+          "pct": 18.7
+        },
+        {
+          "tema": "Insulina basal-bolus",
+          "pct": 17.7
+        },
+        {
+          "tema": "Diagnóstico",
+          "pct": 16.2
+        },
+        {
+          "tema": "DM1 clínica",
+          "pct": 14.6
+        },
+        {
+          "tema": "EHH / hipoglicemia",
+          "pct": 12.4
+        }
       ],
       "deckOrder": [
         "dm-cad",
@@ -62,13 +188,30 @@
         "dm-dm2",
         "dm-complicacoes"
       ],
-      "checklist": ["cad", "dawn", "insulina", "dx", "dm1"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Fluxo da CAD", "texto": "SF → K → insulina → SG quando glicemia cai." },
-        { "titulo": "Sessão 2 · Hiperglicemia matinal", "texto": "Glicemia das 3h decide conduta." },
-        { "titulo": "Sessão 3 · Números", "texto": "126/200/6,5 e resolução pH/HCO₃." }
+      "checklist": [
+        "cad",
+        "dawn",
+        "insulina",
+        "dx",
+        "dm1"
       ],
-      "lacuna": "Retinopatia estágios detalhados: saiba rastreio, não a classificação inteira."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Fluxo da CAD",
+          "texto": "SF → K → insulina → SG quando glicemia cai."
+        },
+        {
+          "titulo": "Sessão 2 · Hiperglicemia matinal",
+          "texto": "Glicemia das 3h decide conduta."
+        },
+        {
+          "titulo": "Sessão 3 · Números",
+          "texto": "126/200/6,5 e resolução pH/HCO₃."
+        }
+      ],
+      "lacuna": "Retinopatia estágios detalhados: saiba rastreio, não a classificação inteira.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "unifesp",
@@ -79,12 +222,30 @@
       "foco": "Diagnóstico · CAD · Metas · Metformina",
       "estilo": "Protocolo + números",
       "priorities": [
-        { "tema": "Critérios diagnósticos", "score": 96 },
-        { "tema": "CAD", "score": 92 },
-        { "tema": "Metas HbA1c / monitorização", "score": 85 },
-        { "tema": "DM1 tratamento", "score": 78 },
-        { "tema": "Pré-diabetes", "score": 70 },
-        { "tema": "Complicações", "score": 55 }
+        {
+          "tema": "Critérios diagnósticos",
+          "pct": 20.2
+        },
+        {
+          "tema": "CAD",
+          "pct": 19.3
+        },
+        {
+          "tema": "Metas HbA1c / monitorização",
+          "pct": 17.9
+        },
+        {
+          "tema": "DM1 tratamento",
+          "pct": 16.4
+        },
+        {
+          "tema": "Pré-diabetes",
+          "pct": 14.7
+        },
+        {
+          "tema": "Complicações",
+          "pct": 11.5
+        }
       ],
       "deckOrder": [
         "dm-diagnostico",
@@ -95,13 +256,30 @@
         "dm-hipoglicemia-ehh",
         "dm-complicacoes"
       ],
-      "checklist": ["dx", "cad", "insulina", "dm2", "dm1"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Cortes", "texto": "DM e pré-DM de cor." },
-        { "titulo": "Sessão 2 · CAD protocolo", "texto": "Doses de insulina e K." },
-        { "titulo": "Sessão 3 · Metas", "texto": "HbA1c <7% e glicemia capilar." }
+      "checklist": [
+        "dx",
+        "cad",
+        "insulina",
+        "dm2",
+        "dm1"
       ],
-      "lacuna": "Fármacos novos (duplo agonista etc.): saiba existência; foque metformina."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Cortes",
+          "texto": "DM e pré-DM de cor."
+        },
+        {
+          "titulo": "Sessão 2 · CAD protocolo",
+          "texto": "Doses de insulina e K."
+        },
+        {
+          "titulo": "Sessão 3 · Metas",
+          "texto": "HbA1c <7% e glicemia capilar."
+        }
+      ],
+      "lacuna": "Fármacos novos (duplo agonista etc.): saiba existência; foque metformina.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-sp",
@@ -112,12 +290,30 @@
       "foco": "Diagnóstico · Clínica DM1 · CAD reconhecimento · MEV",
       "estilo": "Conduta de atenção básica",
       "priorities": [
-        { "tema": "Critérios diagnósticos", "score": 95 },
-        { "tema": "Clínica DM1/DM2", "score": 90 },
-        { "tema": "CAD (reconhecer/referir)", "score": 85 },
-        { "tema": "Pré-diabetes / MEV", "score": 78 },
-        { "tema": "Metformina", "score": 70 },
-        { "tema": "Insulina detalhada", "score": 55 }
+        {
+          "tema": "Critérios diagnósticos",
+          "pct": 20.1
+        },
+        {
+          "tema": "Clínica DM1/DM2",
+          "pct": 19
+        },
+        {
+          "tema": "CAD (reconhecer/referir)",
+          "pct": 18
+        },
+        {
+          "tema": "Pré-diabetes / MEV",
+          "pct": 16.5
+        },
+        {
+          "tema": "Metformina",
+          "pct": 14.8
+        },
+        {
+          "tema": "Insulina detalhada",
+          "pct": 11.6
+        }
       ],
       "deckOrder": [
         "dm-diagnostico",
@@ -128,13 +324,29 @@
         "dm-hipoglicemia-ehh",
         "dm-complicacoes"
       ],
-      "checklist": ["dx", "dm1", "cad", "dm2"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Polis na UBS", "texto": "Quando pedir glicemia/HbA1c." },
-        { "titulo": "Sessão 2 · Internar", "texto": "CAD: sinais e laboratório." },
-        { "titulo": "Sessão 3 · Pré-DM", "texto": "MEV e quando metformina." }
+      "checklist": [
+        "dx",
+        "dm1",
+        "cad",
+        "dm2"
       ],
-      "lacuna": "Cálculo fino de bolus 500/1500 cai menos que reconhecer CAD."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Polis na UBS",
+          "texto": "Quando pedir glicemia/HbA1c."
+        },
+        {
+          "titulo": "Sessão 2 · Internar",
+          "texto": "CAD: sinais e laboratório."
+        },
+        {
+          "titulo": "Sessão 3 · Pré-DM",
+          "texto": "MEV e quando metformina."
+        }
+      ],
+      "lacuna": "Cálculo fino de bolus 500/1500 cai menos que reconhecer CAD.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "sus-ba",
@@ -145,12 +357,30 @@
       "foco": "Diagnóstico · CAD · Hipoglicemia · DM1",
       "estilo": "Conceito claro + conduta",
       "priorities": [
-        { "tema": "Diagnóstico", "score": 93 },
-        { "tema": "CAD", "score": 90 },
-        { "tema": "DM1 clínica", "score": 85 },
-        { "tema": "Hipoglicemia", "score": 75 },
-        { "tema": "Insulina básica", "score": 65 },
-        { "tema": "DM2", "score": 55 }
+        {
+          "tema": "Diagnóstico",
+          "pct": 20.1
+        },
+        {
+          "tema": "CAD",
+          "pct": 19.4
+        },
+        {
+          "tema": "DM1 clínica",
+          "pct": 18.4
+        },
+        {
+          "tema": "Hipoglicemia",
+          "pct": 16.2
+        },
+        {
+          "tema": "Insulina básica",
+          "pct": 14
+        },
+        {
+          "tema": "DM2",
+          "pct": 11.9
+        }
       ],
       "deckOrder": [
         "dm-diagnostico",
@@ -161,13 +391,29 @@
         "dm-dm2",
         "dm-complicacoes"
       ],
-      "checklist": ["dx", "cad", "dm1", "insulina"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Critérios", "texto": "126 / 200 / 6,5." },
-        { "titulo": "Sessão 2 · CAD", "texto": "Tríade e ordem do tratamento." },
-        { "titulo": "Sessão 3 · Hipo", "texto": "Conduta imediata." }
+      "checklist": [
+        "dx",
+        "cad",
+        "dm1",
+        "insulina"
       ],
-      "lacuna": "MODY subtipos: saiba o conceito, não a genética."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Critérios",
+          "texto": "126 / 200 / 6,5."
+        },
+        {
+          "titulo": "Sessão 2 · CAD",
+          "texto": "Tríade e ordem do tratamento."
+        },
+        {
+          "titulo": "Sessão 3 · Hipo",
+          "texto": "Conduta imediata."
+        }
+      ],
+      "lacuna": "MODY subtipos: saiba o conceito, não a genética.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "einstein",
@@ -178,12 +424,30 @@
       "foco": "CAD avançada · Edema cerebral · EHH · Basal-bolus",
       "estilo": "Caso clínico com conduta",
       "priorities": [
-        { "tema": "CAD + edema cerebral", "score": 98 },
-        { "tema": "EHH", "score": 88 },
-        { "tema": "Insulina / bombas", "score": 82 },
-        { "tema": "Dawn/Somogyi", "score": 75 },
-        { "tema": "Diagnóstico", "score": 60 },
-        { "tema": "Complicações", "score": 50 }
+        {
+          "tema": "CAD + edema cerebral",
+          "pct": 21.6
+        },
+        {
+          "tema": "EHH",
+          "pct": 19.4
+        },
+        {
+          "tema": "Insulina / bombas",
+          "pct": 18.1
+        },
+        {
+          "tema": "Dawn/Somogyi",
+          "pct": 16.6
+        },
+        {
+          "tema": "Diagnóstico",
+          "pct": 13.2
+        },
+        {
+          "tema": "Complicações",
+          "pct": 11.1
+        }
       ],
       "deckOrder": [
         "dm-cad",
@@ -194,13 +458,29 @@
         "dm-dm2",
         "dm-complicacoes"
       ],
-      "checklist": ["cad", "insulina", "dawn", "dx"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · CAD complicada", "texto": "K, bicarbonato, overlap SC." },
-        { "titulo": "Sessão 2 · Edema cerebral", "texto": "Red flags e manitol." },
-        { "titulo": "Sessão 3 · EHH", "texto": "Diferença da CAD e hidratação." }
+      "checklist": [
+        "cad",
+        "insulina",
+        "dawn",
+        "dx"
       ],
-      "lacuna": "Mucormicose: saiba a associação com CAD."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · CAD complicada",
+          "texto": "K, bicarbonato, overlap SC."
+        },
+        {
+          "titulo": "Sessão 2 · Edema cerebral",
+          "texto": "Red flags e manitol."
+        },
+        {
+          "titulo": "Sessão 3 · EHH",
+          "texto": "Diferença da CAD e hidratação."
+        }
+      ],
+      "lacuna": "Mucormicose: saiba a associação com CAD.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "puc",
@@ -211,12 +491,30 @@
       "foco": "DM1A/anticorpos · Diagnóstico · CAD · Insulina",
       "estilo": "Conceito + tabela mental",
       "priorities": [
-        { "tema": "Classificação / anticorpos", "score": 92 },
-        { "tema": "Diagnóstico", "score": 90 },
-        { "tema": "CAD", "score": 88 },
-        { "tema": "Insulina", "score": 80 },
-        { "tema": "Pré-diabetes", "score": 65 },
-        { "tema": "Complicações", "score": 55 }
+        {
+          "tema": "Classificação / anticorpos",
+          "pct": 19.6
+        },
+        {
+          "tema": "Diagnóstico",
+          "pct": 19.1
+        },
+        {
+          "tema": "CAD",
+          "pct": 18.7
+        },
+        {
+          "tema": "Insulina",
+          "pct": 17
+        },
+        {
+          "tema": "Pré-diabetes",
+          "pct": 13.8
+        },
+        {
+          "tema": "Complicações",
+          "pct": 11.8
+        }
       ],
       "deckOrder": [
         "dm-classificacao",
@@ -227,13 +525,30 @@
         "dm-hipoglicemia-ehh",
         "dm-complicacoes"
       ],
-      "checklist": ["dm1", "dx", "cad", "insulina", "dm2"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Etiologia", "texto": "DM1A, LADA, MODY, DM2." },
-        { "titulo": "Sessão 2 · Critérios", "texto": "Confirmação e pré-DM." },
-        { "titulo": "Sessão 3 · CAD", "texto": "Números de tratamento." }
+      "checklist": [
+        "dm1",
+        "dx",
+        "cad",
+        "insulina",
+        "dm2"
       ],
-      "lacuna": "Fisiologia GLUT1/2 detalhada: só o essencial (neurônio independente de insulina)."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Etiologia",
+          "texto": "DM1A, LADA, MODY, DM2."
+        },
+        {
+          "titulo": "Sessão 2 · Critérios",
+          "texto": "Confirmação e pré-DM."
+        },
+        {
+          "titulo": "Sessão 3 · CAD",
+          "texto": "Números de tratamento."
+        }
+      ],
+      "lacuna": "Fisiologia GLUT1/2 detalhada: só o essencial (neurônio independente de insulina).",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     },
     {
       "id": "ufrj",
@@ -244,12 +559,30 @@
       "foco": "Diagnóstico · DM1 · CAD · Dawn/Somogyi",
       "estilo": "Conceito sólido",
       "priorities": [
-        { "tema": "Diagnóstico", "score": 95 },
-        { "tema": "DM1 clínica", "score": 90 },
-        { "tema": "CAD", "score": 88 },
-        { "tema": "Dawn × Somogyi", "score": 80 },
-        { "tema": "Metformina/DM2", "score": 65 },
-        { "tema": "Complicações", "score": 50 }
+        {
+          "tema": "Diagnóstico",
+          "pct": 20.3
+        },
+        {
+          "tema": "DM1 clínica",
+          "pct": 19.2
+        },
+        {
+          "tema": "CAD",
+          "pct": 18.8
+        },
+        {
+          "tema": "Dawn × Somogyi",
+          "pct": 17.1
+        },
+        {
+          "tema": "Metformina/DM2",
+          "pct": 13.9
+        },
+        {
+          "tema": "Complicações",
+          "pct": 10.7
+        }
       ],
       "deckOrder": [
         "dm-diagnostico",
@@ -260,13 +593,30 @@
         "dm-hipoglicemia-ehh",
         "dm-complicacoes"
       ],
-      "checklist": ["dx", "dm1", "cad", "dawn", "dm2"],
-      "sessoes": [
-        { "titulo": "Sessão 1 · Critérios", "texto": "Decore os 4." },
-        { "titulo": "Sessão 2 · Criança com polis", "texto": "DM1 e abertura com CAD." },
-        { "titulo": "Sessão 3 · Ajustes", "texto": "Dawn vs Somogyi." }
+      "checklist": [
+        "dx",
+        "dm1",
+        "cad",
+        "dawn",
+        "dm2"
       ],
-      "lacuna": "Estratificação de risco cardiovascular adulta completa: secundário."
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Critérios",
+          "texto": "Decore os 4."
+        },
+        {
+          "titulo": "Sessão 2 · Criança com polis",
+          "texto": "DM1 e abertura com CAD."
+        },
+        {
+          "titulo": "Sessão 3 · Ajustes",
+          "texto": "Dawn vs Somogyi."
+        }
+      ],
+      "lacuna": "Estratificação de risco cardiovascular adulta completa: secundário.",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital)."
     }
   ],
   "checklistItems": {
@@ -332,5 +682,7 @@
     "Estágios detalhados de retinopatia/nefropatia",
     "Tabelas de estratificação lipídica adulta completas",
     "Fisiologia pós-prandial exaustiva"
-  ]
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
 }
