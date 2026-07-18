@@ -61,14 +61,15 @@ function aprovaRenderAuth () {
   if (session && session.login) {
     form.hidden = true;
     sessionEl.hidden = false;
-    if (label) label.textContent = session.login;
+    if (label) label.textContent = session.name || session.login;
   } else {
     form.hidden = false;
     sessionEl.hidden = true;
   }
 }
 
-function aprovaRegister (login, password) {
+function aprovaRegister (login, password, extras) {
+  const name = String(extras?.name || "").trim();
   if (!login || !password) {
     aprovaShowAuthMsg("Informe login e senha para cadastrar.", false);
     return false;
@@ -85,9 +86,14 @@ function aprovaRegister (login, password) {
     return false;
   }
 
-  users[key] = { login, password, createdAt: Date.now() };
+  users[key] = {
+    login,
+    password,
+    name: name || login,
+    createdAt: Date.now()
+  };
   aprovaSaveUsers(users);
-  aprovaSaveAuth({ login, at: Date.now() });
+  aprovaSaveAuth({ login, name: users[key].name, at: Date.now() });
   aprovaShowAuthMsg("Cadastro feito. Bem-vindo!", true);
   return true;
 }
@@ -101,7 +107,7 @@ function aprovaLogin (login, password) {
   const users = aprovaLoadUsers();
   const user = users[login.toLowerCase()];
   if (!user) {
-    aprovaShowAuthMsg("Conta não encontrada. Clique em Cadastre-se.", false);
+    aprovaShowAuthMsg("Conta não encontrada. Cadastre-se para criar uma.", false);
     return false;
   }
   if (user.password !== password) {
@@ -109,28 +115,56 @@ function aprovaLogin (login, password) {
     return false;
   }
 
-  aprovaSaveAuth({ login: user.login, at: Date.now() });
+  aprovaSaveAuth({ login: user.login, name: user.name || user.login, at: Date.now() });
   aprovaShowAuthMsg("Sessão iniciada.", true);
   return true;
 }
 
+function aprovaBootSignupPage () {
+  const form = document.getElementById("signup-form");
+  if (!form) return false;
+
+  const session = aprovaLoadAuth();
+  if (session && session.login) {
+    window.location.href = "app.html";
+    return true;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = String(form.name?.value || "").trim();
+    const login = String(form.login?.value || "").trim();
+    const password = String(form.password?.value || "");
+    const password2 = String(form.password2?.value || "");
+
+    if (!name) {
+      aprovaShowAuthMsg("Informe seu nome.", false);
+      return;
+    }
+    if (password !== password2) {
+      aprovaShowAuthMsg("As senhas não coincidem.", false);
+      return;
+    }
+    if (!aprovaRegister(login, password, { name })) return;
+
+    window.setTimeout(() => {
+      window.location.href = "app.html";
+    }, 600);
+  });
+
+  return true;
+}
+
 function aprovaBootAuth () {
+  if (aprovaBootSignupPage()) return;
+
   const form = document.getElementById("auth-form");
   const logoutBtn = document.getElementById("auth-logout");
-  const registerBtn = document.getElementById("auth-register");
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
     if (!aprovaLogin(login, password)) return;
-    form.reset();
-    aprovaRenderAuth();
-  });
-
-  registerBtn?.addEventListener("click", () => {
-    if (!form) return;
-    const { login, password } = aprovaReadCredentials(form);
-    if (!aprovaRegister(login, password)) return;
     form.reset();
     aprovaRenderAuth();
   });
