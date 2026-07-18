@@ -145,6 +145,7 @@ function aprovaRenderFlashcardBrowse () {
 let aprovaActiveSpecialty = null;
 let aprovaActiveFocusId = "geral";
 let aprovaActivePedModule = null;
+let aprovaActiveGoArea = null;
 let aprovaActivePedOverviewFocus = "geral";
 let aprovaPedOverviewStatsCache = null;
 let aprovaGoOverviewStatsCache = null;
@@ -199,6 +200,8 @@ function aprovaShowSpecialtyList () {
   if (list) list.hidden = false;
   if (hint) hint.textContent = "Escolha uma área para focar o estudo.";
   aprovaActiveSpecialty = null;
+  aprovaActiveGoArea = null;
+  aprovaActivePedModule = null;
 }
 
 function aprovaRenderEspecialidades () {
@@ -249,7 +252,12 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("soc-") === 0) return "Maus-tratos";
   if (id.indexOf("end-") === 0) return "Endócrino";
   if (id.indexOf("urg-") === 0) return "Urgências";
-  if (/^gin[1-6]-/.test(id)) return "Ginecologia";
+  if (id.indexOf("gin1-") === 0) return "Endócrino / ciclo";
+  if (id.indexOf("gin2-") === 0) return "SUA / miomatose";
+  if (id.indexOf("gin3-") === 0) return "Climatério / urogin";
+  if (id.indexOf("gin4-") === 0) return "Mastologia / ovário";
+  if (id.indexOf("gin5-") === 0) return "Oncoginecologia";
+  if (id.indexOf("gin6-") === 0) return "Infecto / IST";
   if (id.indexOf("obs-") === 0) return "Obstetrícia";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
   return "Subtema";
@@ -453,17 +461,81 @@ async function aprovaPedModuleStats (moduleId) {
   return { decks: deckOrder.length, cards, deckOrder };
 }
 
-async function aprovaRenderPedGroupCards (activeModuleId) {
+async function aprovaGoAreaStats (areaId) {
+  const modules = typeof AprovaRevisao !== "undefined"
+    ? AprovaRevisao.listModules("go", areaId)
+    : [];
+  let cards = 0;
+  let decks = 0;
+  for (const m of modules) {
+    const stats = await aprovaPedModuleStats(m.id);
+    cards += stats.cards;
+    decks += stats.decks;
+  }
+  return { cards, decks, groups: modules.length, modules };
+}
+
+async function aprovaRenderGoAreaCards () {
+  const grid = document.getElementById("esp-group-grid");
+  const groups = document.getElementById("esp-groups");
+  if (!grid || !groups) return;
+
+  groups.hidden = false;
+  const areas = typeof AprovaRevisao !== "undefined" && typeof AprovaRevisao.listGoAreas === "function"
+    ? AprovaRevisao.listGoAreas()
+    : [
+      { id: "ginecologia", label: "Ginecologia", blurb: "" },
+      { id: "obstetricia", label: "Obstetrícia", blurb: "" }
+    ];
+
+  grid.innerHTML = "";
+  for (const area of areas) {
+    const stats = await aprovaGoAreaStats(area.id);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "dash-card";
+    const detail = stats.groups
+      ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
+        " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
+      : "Em breve";
+    btn.innerHTML =
+      "<span class=\"dash-card-kicker\">Área</span>" +
+      "<strong>" + area.label + "</strong>" +
+      "<span>" + detail + "</span>";
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      aprovaOpenGoArea(area.id).catch(err => {
+        console.error("Falha ao abrir área", area.id, err);
+      });
+    });
+    grid.appendChild(btn);
+  }
+}
+
+async function aprovaRenderPedGroupCards (activeModuleId, options) {
+  const opts = options || {};
   const grid = document.getElementById("esp-group-grid");
   const groups = document.getElementById("esp-groups");
   if (!grid || !groups) return;
 
   groups.hidden = false;
   const specialty = aprovaActiveSpecialty || "pediatria";
+  const area = opts.area || null;
   const modules = typeof AprovaRevisao !== "undefined"
-    ? AprovaRevisao.listModules(specialty)
+    ? AprovaRevisao.listModules(specialty, area)
     : [];
   grid.innerHTML = "";
+
+  if (!modules.length) {
+    const empty = document.createElement("p");
+    empty.className = "muted";
+    empty.textContent = specialty === "go"
+      ? "Grupos desta área entram em breve."
+      : "Nenhum grupo disponível.";
+    grid.appendChild(empty);
+    return;
+  }
 
   for (const m of modules) {
     const stats = await aprovaPedModuleStats(m.id);
@@ -548,8 +620,12 @@ const APROVA_PED_MODULE_PREFIXES = {
   "nefro-extra": ["nef-"],
   "r1-extra": ["inf-", "hem-", "ort-", "end-", "urg-"],
   "r1-lacunas": ["cir-", "par-", "alg-", "soc-", "ort-"],
-  ginecologia: ["gin1-", "gin2-", "gin3-", "gin4-", "gin5-", "gin6-"],
-  obstetricia: ["obs-"]
+  gin1: ["gin1-"],
+  gin2: ["gin2-"],
+  gin3: ["gin3-"],
+  gin4: ["gin4-"],
+  gin5: ["gin5-"],
+  gin6: ["gin6-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -591,8 +667,9 @@ function aprovaAppendDeckCheckbox (list, deck) {
 
 async function aprovaCollectAllPedDecks () {
   const specialty = aprovaActiveSpecialty || "pediatria";
+  const area = specialty === "go" ? aprovaActiveGoArea : null;
   const modules = typeof AprovaRevisao !== "undefined"
-    ? AprovaRevisao.listModules(specialty)
+    ? AprovaRevisao.listModules(specialty, area || undefined)
     : [];
   const seen = new Set();
   const decks = [];
@@ -632,7 +709,11 @@ async function aprovaOpenPedDeckPicker (moduleId, options) {
 
   if (selectAll) {
     aprovaActivePedModule = null;
-    moduleLabel = meta.shortLabel + " · todos os grupos";
+    if (meta.id === "go" && aprovaActiveGoArea && typeof APROVA_GO_AREAS !== "undefined") {
+      moduleLabel = (APROVA_GO_AREAS[aprovaActiveGoArea].label || meta.shortLabel) + " · todos os grupos";
+    } else {
+      moduleLabel = meta.shortLabel + " · todos os grupos";
+    }
   } else {
     aprovaActivePedModule = moduleId;
     if (typeof AprovaRevisao !== "undefined") {
@@ -727,7 +808,12 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     ? await AprovaRevisao.getProfile(aprovaActiveFocusId, aprovaActivePedModule)
     : null;
 
-  await aprovaRenderPedGroupCards(aprovaActivePedModule);
+  const groupArea = meta.id === "go"
+    ? (aprovaActiveGoArea || (typeof AprovaRevisao !== "undefined"
+      ? AprovaRevisao.moduleArea(aprovaActivePedModule)
+      : null))
+    : null;
+  await aprovaRenderPedGroupCards(aprovaActivePedModule, groupArea ? { area: groupArea } : {});
 
   const orderedProfiles = profiles.slice().sort((a, b) => {
     const rank = p => {
@@ -813,6 +899,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
   aprovaActiveSpecialty = meta.id;
   aprovaActiveFocusId = "geral";
   aprovaActivePedModule = null;
+  aprovaActiveGoArea = null;
 
   const decksWrap = document.getElementById("esp-decks");
   const title = document.getElementById("esp-decks-title");
@@ -822,6 +909,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
   const stats = document.getElementById("esp-stats");
   const subtemas = document.getElementById("esp-subtemas");
   const overview = document.getElementById("esp-ped-overview");
+  const selectAll = document.getElementById("esp-groups-select-all");
   if (!decksWrap) return;
 
   aprovaHideEspViews();
@@ -831,27 +919,103 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
   if (overview) overview.hidden = false;
 
   const total = AprovaFlashcards.countBySpecialty(meta.id);
+  const isGo = meta.id === "go";
   const modules = typeof AprovaRevisao !== "undefined"
     ? AprovaRevisao.listModules(meta.id)
     : [];
+  const areas = isGo && typeof AprovaRevisao !== "undefined" && typeof AprovaRevisao.listGoAreas === "function"
+    ? AprovaRevisao.listGoAreas()
+    : [];
+
   if (title) title.textContent = meta.label;
   if (sub) {
     sub.hidden = false;
-    sub.textContent = total
-      ? (total + " flashcards · " + modules.length + " grupo" + (modules.length === 1 ? "" : "s") +
-        " · toque em um grupo para escolher o que estudar")
-      : "Escolha um grupo para estudar.";
+    if (isGo) {
+      sub.textContent = total
+        ? (total + " flashcards · " + areas.length + " áreas · toque em uma área para ver os grupos")
+        : "Escolha uma área para estudar.";
+    } else {
+      sub.textContent = total
+        ? (total + " flashcards · " + modules.length + " grupo" + (modules.length === 1 ? "" : "s") +
+          " · toque em um grupo para escolher o que estudar")
+        : "Escolha um grupo para estudar.";
+    }
   }
   if (hint) {
-    hint.textContent = "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
+    hint.textContent = isGo
+      ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
+      : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
   }
   if (back) back.textContent = "← Voltar às especialidades";
 
   const groupsLabel = document.getElementById("esp-groups-label");
-  if (groupsLabel) groupsLabel.textContent = "Grupos";
+  if (groupsLabel) groupsLabel.textContent = isGo ? "Áreas" : "Grupos";
+  if (selectAll) {
+    selectAll.hidden = isGo;
+    selectAll.textContent = "Selecionar todos";
+  }
 
   await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
-  await aprovaRenderPedGroupCards(null);
+  if (isGo) {
+    await aprovaRenderGoAreaCards();
+  } else {
+    await aprovaRenderPedGroupCards(null);
+  }
+}
+
+async function aprovaOpenGoArea (areaId) {
+  const meta = aprovaRichSpecialtyMeta("go");
+  aprovaActiveSpecialty = "go";
+  aprovaActiveGoArea = areaId || null;
+  aprovaActivePedModule = null;
+  if (!aprovaActiveGoArea) {
+    await aprovaOpenRichSpecialtyRoot("go");
+    return;
+  }
+
+  const areaMeta = (typeof APROVA_GO_AREAS !== "undefined" && APROVA_GO_AREAS[aprovaActiveGoArea])
+    || { label: aprovaActiveGoArea };
+  const decksWrap = document.getElementById("esp-decks");
+  const title = document.getElementById("esp-decks-title");
+  const sub = document.getElementById("esp-decks-sub");
+  const hint = document.getElementById("esp-hint");
+  const back = document.getElementById("esp-back");
+  const stats = document.getElementById("esp-stats");
+  const subtemas = document.getElementById("esp-subtemas");
+  const overview = document.getElementById("esp-ped-overview");
+  const selectAll = document.getElementById("esp-groups-select-all");
+  const groupsLabel = document.getElementById("esp-groups-label");
+  if (!decksWrap) return;
+
+  aprovaHideEspViews();
+  decksWrap.hidden = false;
+  if (stats) stats.hidden = true;
+  if (subtemas) subtemas.hidden = true;
+  if (overview) overview.hidden = aprovaActiveGoArea !== "ginecologia";
+
+  const areaStats = await aprovaGoAreaStats(aprovaActiveGoArea);
+  if (title) title.textContent = areaMeta.label;
+  if (sub) {
+    sub.hidden = false;
+    sub.textContent = areaStats.groups
+      ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
+        (areaStats.groups === 1 ? "" : "s") + " · toque em um grupo para escolher os subtemas")
+      : "Grupos desta área entram em breve.";
+  }
+  if (hint) {
+    hint.textContent = "Toque em um grupo para abrir os subtemas neste quadro separado.";
+  }
+  if (back) back.textContent = "← Voltar a Ginecologia e obstetrícia";
+  if (groupsLabel) groupsLabel.textContent = "Grupos";
+  if (selectAll) {
+    selectAll.hidden = !areaStats.groups;
+    selectAll.textContent = "Selecionar todos";
+  }
+
+  if (aprovaActiveGoArea === "ginecologia") {
+    await aprovaRenderPedOverviewStats(aprovaActivePedOverviewFocus || "geral");
+  }
+  await aprovaRenderPedGroupCards(null, { area: aprovaActiveGoArea });
 }
 
 async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
@@ -859,8 +1023,17 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
   aprovaActiveSpecialty = meta.id;
   aprovaActivePedModule = moduleId || aprovaActivePedModule;
   if (!aprovaActivePedModule) {
+    if (meta.id === "go" && aprovaActiveGoArea) {
+      await aprovaOpenGoArea(aprovaActiveGoArea);
+      return;
+    }
     await aprovaOpenRichSpecialtyRoot(meta.id);
     return;
+  }
+
+  if (meta.id === "go" && typeof AprovaRevisao !== "undefined") {
+    const modArea = AprovaRevisao.moduleArea(aprovaActivePedModule);
+    if (modArea) aprovaActiveGoArea = modArea;
   }
 
   const decksWrap = document.getElementById("esp-decks");
@@ -868,6 +1041,7 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
   const back = document.getElementById("esp-back");
   const sub = document.getElementById("esp-decks-sub");
   const overview = document.getElementById("esp-ped-overview");
+  const selectAll = document.getElementById("esp-groups-select-all");
   if (!decksWrap) return;
 
   aprovaHideEspViews();
@@ -878,10 +1052,20 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
     sub.textContent = "Grupos no topo · subtemas e o que mais cai abaixo.";
   }
   if (hint) hint.textContent = "Escolha um subtema ou mude de grupo. O gráfico mostra o que mais cai na prova.";
-  if (back) back.textContent = "← Voltar à " + meta.shortLabel;
+  if (back) {
+    back.textContent = meta.id === "go" && aprovaActiveGoArea
+      ? ("← Voltar a " + ((typeof APROVA_GO_AREAS !== "undefined" && APROVA_GO_AREAS[aprovaActiveGoArea]
+        ? APROVA_GO_AREAS[aprovaActiveGoArea].label
+        : "área")))
+      : ("← Voltar à " + meta.shortLabel);
+  }
 
   const groupsLabel = document.getElementById("esp-groups-label");
   if (groupsLabel) groupsLabel.textContent = "Grupos";
+  if (selectAll) {
+    selectAll.hidden = false;
+    selectAll.textContent = "Selecionar todos";
+  }
 
   await aprovaRenderPediatriaStats("geral", aprovaActivePedModule);
 }
@@ -1202,6 +1386,14 @@ async function aprovaBoot () {
   });
 
   document.getElementById("esp-back")?.addEventListener("click", () => {
+    if (aprovaActiveSpecialty === "go" && aprovaActivePedModule) {
+      aprovaOpenGoArea(aprovaActiveGoArea || AprovaRevisao.moduleArea(aprovaActivePedModule));
+      return;
+    }
+    if (aprovaActiveSpecialty === "go" && aprovaActiveGoArea) {
+      aprovaOpenGinecologia();
+      return;
+    }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty) && aprovaActivePedModule) {
       aprovaRichSpecialtyMeta(aprovaActiveSpecialty).openRoot();
       return;
@@ -1210,6 +1402,18 @@ async function aprovaBoot () {
   });
 
   document.getElementById("esp-rev-back")?.addEventListener("click", () => {
+    if (aprovaActiveSpecialty === "go") {
+      if (aprovaActivePedModule) {
+        aprovaOpenGoArea(aprovaActiveGoArea || AprovaRevisao.moduleArea(aprovaActivePedModule));
+        return;
+      }
+      if (aprovaActiveGoArea) {
+        aprovaOpenGinecologia();
+        return;
+      }
+      aprovaOpenGinecologia();
+      return;
+    }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty)) {
       const meta = aprovaRichSpecialtyMeta(aprovaActiveSpecialty);
       if (aprovaActivePedModule) {

@@ -1,0 +1,290 @@
+{
+  "title": "Gin3 · Climatério / urogin · revisão para provas R1",
+  "module": "gin3",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Síntese de climatério e uroginecologia.",
+      "verdict": "No Gin3, o retorno está em TH (indicações, janela <60a/<10a, útero+progestogênio, contraindicações) e urogin (IUE × urgência × POP). Unifesp pesa uro acima da média nacional.",
+      "foco": "TH · Vasomotores · IUE · Urgência · Prolapso",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "TH (indicações / riscos / janela)", "pct": 28, "n": 28 },
+        { "tema": "IUE / sling", "pct": 18, "n": 18 },
+        { "tema": "Prolapso / POP-Q", "pct": 16, "n": 16 },
+        { "tema": "Urgência / bexiga hiperativa", "pct": 14, "n": 14 },
+        { "tema": "Conceitos do climatério / SGC", "pct": 14, "n": 14 },
+        { "tema": "Não hormonal / osteoporose", "pct": 10, "n": 10 }
+      ],
+      "deckOrder": [
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": ["th", "janela", "iue", "urgencia", "pop", "clim"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TH",
+          "texto": "Indicações, janela, útero+P, contraindicações."
+        },
+        {
+          "titulo": "Sessão 2 · IUE vs urgência",
+          "texto": "Clínica, 1ª linha e sling/anticolinérgico."
+        },
+        {
+          "titulo": "Sessão 3 · Prolapso",
+          "texto": "Compartimentos, pessário, quando operar."
+        }
+      ],
+      "lacuna": "STRAW+10 completo estágio a estágio e todas as doses de cada ISRS: saiba o conceito e as classes.",
+      "sourceType": "sintese",
+      "source": "Síntese de padrões de prova (urogin ~6–14% conforme banca; TH dentro do bloco endócrino) aplicada ao Gin3."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed cobra TH objetiva (quando indicar/contraindicar) e IU prática (esforço vs urgência). Prolapso aparece como conduta (pessário vs cirurgia).",
+      "foco": "TH · IUE · Urgência · Prolapso",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare aplicado aos subtemas do Gin3.",
+      "priorities": [
+        { "tema": "TH prática", "pct": 30 },
+        { "tema": "IUE", "pct": 22 },
+        { "tema": "Urgência / BH", "pct": 20 },
+        { "tema": "Prolapso", "pct": 16 },
+        { "tema": "Conceitos / SGC", "pct": 12 }
+      ],
+      "deckOrder": [
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-iue",
+        "gin3-urgencia",
+        "gin3-prolapso",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": ["th", "janela", "iue", "urgencia", "pop"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Ligar/desligar TH",
+          "texto": "Indicação × contraindicação."
+        },
+        {
+          "titulo": "Sessão 2 · Perda urinária",
+          "texto": "Esforço vs urgência em 1 vinheta."
+        },
+        {
+          "titulo": "Sessão 3 · Bola na vagina",
+          "texto": "Pessário e cirurgia."
+        }
+      ],
+      "lacuna": "Protocolos urodinâmicos longos: saiba quando pedir, não a curva inteira."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Endócrino-pesada",
+      "blurb": "TH e definições.",
+      "verdict": "USP valoriza conceitos (climatério/menopausa/IOP), janela da TH e proteção endometrial. Urogin aparece, mas TH é o diferencial.",
+      "foco": "Conceitos · TH · Janela · Osteoporose",
+      "estilo": "Levantamento USP-SP",
+      "sourceType": "levantamento",
+      "source": "Padrão USP (endócrino alto) aplicado ao Gin3.",
+      "priorities": [
+        { "tema": "TH / WHI / janela", "pct": 34 },
+        { "tema": "Conceitos do climatério", "pct": 22 },
+        { "tema": "Osteoporose / IOP", "pct": 16 },
+        { "tema": "IUE / prolapso", "pct": 16 },
+        { "tema": "Não hormonal", "pct": 12 }
+      ],
+      "deckOrder": [
+        "gin3-climaterio",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-osteoporose",
+        "gin3-nao-hormonal",
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia"
+      ],
+      "checklist": ["clim", "th", "janela", "iue", "pop"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Definir",
+          "texto": "Climatério, peri, meno, pós, IOP."
+        },
+        {
+          "titulo": "Sessão 2 · TH",
+          "texto": "Indicações e riscos."
+        },
+        {
+          "titulo": "Sessão 3 · Osso",
+          "texto": "TH e prevenção de fratura."
+        }
+      ],
+      "lacuna": "Tabelas STRAW+10 completas: foque menopausa como marco zero."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Uro acima da média",
+      "blurb": "Uroginecologia pesada.",
+      "verdict": "Unifesp tem urogin acima da média nacional (~14%): IUE, urgência, POP-Q e indicação de urodinâmica/sling caem forte. TH completa o pacote.",
+      "foco": "IUE · Urgência · POP · TH",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP (urogin elevada) aplicado ao Gin3.",
+      "priorities": [
+        { "tema": "IUE / sling", "pct": 28 },
+        { "tema": "Prolapso / POP-Q", "pct": 24 },
+        { "tema": "Urgência / anticolinérgico", "pct": 20 },
+        { "tema": "TH", "pct": 16 },
+        { "tema": "Urodinâmica / mista", "pct": 12 }
+      ],
+      "deckOrder": [
+        "gin3-iue",
+        "gin3-prolapso",
+        "gin3-urgencia",
+        "gin3-th-indicacoes",
+        "gin3-th-riscos",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": ["iue", "pop", "urgencia", "th", "janela"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · IUE",
+          "texto": "Fisio → sling."
+        },
+        {
+          "titulo": "Sessão 2 · POP",
+          "texto": "Compartimentos e pessário."
+        },
+        {
+          "titulo": "Sessão 3 · Urgência",
+          "texto": "Hábitos → anticolinérgico/mirabegrone."
+        }
+      ],
+      "lacuna": "Nomes comerciais de todas as telas: saiba sling miduretral como conceito."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare mistura TH (quando indicar) com IU e prolapso em vinhetas curtas. Foque contraindicação da TH e diferença esforço × urgência.",
+      "foco": "TH · IUE · Urgência · Prolapso",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare aplicado ao Gin3.",
+      "priorities": [
+        { "tema": "TH", "pct": 28 },
+        { "tema": "IUE", "pct": 22 },
+        { "tema": "Urgência", "pct": 20 },
+        { "tema": "Prolapso", "pct": 18 },
+        { "tema": "Outros", "pct": 12 }
+      ],
+      "deckOrder": [
+        "gin3-th-riscos",
+        "gin3-th-indicacoes",
+        "gin3-iue",
+        "gin3-urgencia",
+        "gin3-prolapso",
+        "gin3-climaterio",
+        "gin3-nao-hormonal",
+        "gin3-osteoporose"
+      ],
+      "checklist": ["th", "iue", "urgencia", "pop", "janela"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TH segura",
+          "texto": "Janela e contraindicações."
+        },
+        {
+          "titulo": "Sessão 2 · Perda urinária",
+          "texto": "Classificar e 1ª linha."
+        },
+        {
+          "titulo": "Sessão 3 · Prolapso",
+          "texto": "Assintomático observa; sintomático pessário/cirurgia."
+        }
+      ],
+      "lacuna": "Rotura perineal obstétrica detalhada: saiba graus 3–4."
+    }
+  ],
+  "checklistItems": {
+    "th": {
+      "tema": "TH",
+      "yield": "Máximo",
+      "pegar": "Indicações: vasomotor, SGC/atrofia, osso alto risco, IOP · Útero+ → some progestogênio · Dose mínima / tempo necessário"
+    },
+    "janela": {
+      "tema": "Janela de oportunidade",
+      "yield": "Máximo",
+      "pegar": "<60a ou <10a de pós-menopausa · WHI reanalisado favorece 50–59a · Início tardio ↑ risco CV"
+    },
+    "iue": {
+      "tema": "IUE",
+      "yield": "Máximo",
+      "pegar": "Perda no esforço · Fisio 1ª linha · Sling miduretral se falha · Cuidado com IUE oculta no prolapso"
+    },
+    "urgencia": {
+      "tema": "Urgência / BH",
+      "yield": "Alto",
+      "pegar": "Urgência ± frequência/noctúria · Hábitos + treino · Anticolinérgico ou mirabegrone · Excluir ITU/neoplasia se red flags"
+    },
+    "pop": {
+      "tema": "Prolapso",
+      "yield": "Alto",
+      "pegar": "“Bola” + peso · POP-Q/Baden · Assintomático observa · Pessário ou cirurgia se sintomático"
+    },
+    "clim": {
+      "tema": "Conceitos",
+      "yield": "Alto",
+      "pegar": "Climatério = período · Menopausa = data (12 meses) · IOP <40a · Vasomotor até 80% · SGC ~50%"
+    }
+  },
+  "numeros": [
+    "Menopausa média ~49a (46–52) · IOP <40a",
+    "Menopausa confirmada após 12 meses de amenorreia",
+    "Senectude a partir dos 65a",
+    "Vasomotores: até ~80% · Atrofia/SGC: ~50% pós-menopausa",
+    "Janela TH: <60a ou <10 anos de pós-menopausa",
+    "WHI: maior benefício relativo em 50–59a",
+    "Perimenopausa pode começar 2–8 anos antes",
+    "IU: prevalência sobe com idade; queixa frequente no ambulatório"
+  ],
+  "pegadinhas": [
+    "Climatério ≠ menopausa",
+    "Útero presente sem progestogênio = erro clássico",
+    "TH não se inicia só para “prevenir coração”",
+    "E2 vaginal ≠ mesma contraindicação absoluta da sistêmica (individualizar)",
+    "IUE ≠ urgência — condutas diferentes",
+    "Prolapso assintomático não opera por estética",
+    "Prolapso pode esconder IUE",
+    "Anticolinérgico no idoso: cuidado com delírio/constipação",
+    "IOP merece reposição até idade da menopausa natural"
+  ],
+  "baixoRoi": [
+    "STRAW+10 com todas as 10 caixas memorizadas",
+    "Lista completa de marcas de sling/tela",
+    "Curvas urodinâmicas inteiras",
+    "Todas as doses de cada ISRS para fogacho",
+    "Técnica cirúrgica passo a passo de cada colporrafia"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}

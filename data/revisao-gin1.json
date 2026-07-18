@@ -1,0 +1,302 @@
+{
+  "title": "Gin1 · Endócrino / ciclo · revisão para provas R1",
+  "module": "gin1",
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Estatística geral",
+      "blurb": "Síntese do que mais cai em endócrino ginecológico.",
+      "verdict": "No Gin1, ~75% do retorno está em amenorreia (fluxo diagnóstico), SOP (Rotterdam + conduta) e anticoncepção (MEC/LARC/Pearl). Ciclo/HHO é base para ler qualquer caso.",
+      "foco": "Amenorreia · SOP · Anticoncepção · HiperPRL · Ciclo",
+      "estilo": "Visão geral do que mais cai no Brasil",
+      "priorities": [
+        { "tema": "Amenorreia (propedêutica)", "pct": 22, "n": 22 },
+        { "tema": "SOP (Rotterdam + conduta)", "pct": 20, "n": 20 },
+        { "tema": "Anticoncepção / LARC", "pct": 18, "n": 18 },
+        { "tema": "Ciclo menstrual / eixo HHO", "pct": 14, "n": 14 },
+        { "tema": "Hiperprolactinemia", "pct": 12, "n": 12 },
+        { "tema": "Hiperandrogenismo", "pct": 8, "n": 8 },
+        { "tema": "SPM / TPM", "pct": 6, "n": 6 }
+      ],
+      "deckOrder": [
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-ciclo",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-spm"
+      ],
+      "checklist": ["amenorreia", "sop", "aco", "ciclo", "hiperprl", "larc"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Amenorreia",
+          "texto": "Primária vs secundária, fluxo com/sem mamas, Turner × MRKH × Morris."
+        },
+        {
+          "titulo": "Sessão 2 · SOP",
+          "texto": "Rotterdam, exclusões, endométrio, indução da ovulação."
+        },
+        {
+          "titulo": "Sessão 3 · Anticoncepção",
+          "texto": "Pearl, MEC do ACO, LARC e LAM."
+        }
+      ],
+      "lacuna": "Biossíntese esteróide passo a passo e todas as divergências de definição entre manuais: baixo ROI se você já domina o fluxo clínico.",
+      "sourceType": "sintese",
+      "source": "Síntese ponderada de levantamentos de Ginecologia endócrina (USP/UNIFESP/Enare) aplicada aos subtemas do Gin1."
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional · acesso Enare",
+      "featured": true,
+      "blurb": "Padrão nacional INEP/Ebserh.",
+      "verdict": "Enamed/Enare cobram anticoncepção e SOP de forma prática (conduta + contraindicação). Amenorreia aparece como caso clássico (Turner/MRKH/hiperPRL).",
+      "foco": "Anticoncepção · SOP · Amenorreia · HiperPRL",
+      "estilo": "Levantamento / padrão Enamed-Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo.",
+      "priorities": [
+        { "tema": "Anticoncepção / LARC", "pct": 28 },
+        { "tema": "SOP", "pct": 24 },
+        { "tema": "Amenorreia", "pct": 22 },
+        { "tema": "Hiperprolactinemia", "pct": 14 },
+        { "tema": "Ciclo / outros", "pct": 12 }
+      ],
+      "deckOrder": [
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-sop",
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-hiperprolactinemia",
+        "gin1-ciclo",
+        "gin1-hiperandrogenismo",
+        "gin1-spm"
+      ],
+      "checklist": ["aco", "larc", "sop", "amenorreia", "hiperprl"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Contracepção",
+          "texto": "MEC, Pearl, DIU/implante, LAM."
+        },
+        {
+          "titulo": "Sessão 2 · SOP",
+          "texto": "Diagnóstico e conduta por objetivo (ciclo vs gestar)."
+        },
+        {
+          "titulo": "Sessão 3 · Amenorreia",
+          "texto": "Casos clássicos de primária e secundária."
+        }
+      ],
+      "lacuna": "Detalhe de cada progestagênio do mercado: saiba grupos (androgênico vs drospirenona), não a lista de marcas."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Endócrino-pesada",
+      "blurb": "USP-SP cobra fisiologia e fluxos.",
+      "verdict": "USP é a banca mais endócrina: ciclo/HHO, amenorreia com gonadotrofinas e SOP com exclusões. Anticoncepção aparece, mas o diferencial é o raciocínio do eixo.",
+      "foco": "Ciclo · Amenorreia · SOP · HiperPRL",
+      "estilo": "Levantamento USP-SP / padrão endócrino",
+      "sourceType": "levantamento",
+      "source": "Padrão USP-SP (Ginecologia endócrina ~41% das questões de Gin) aplicado ao Gin1.",
+      "priorities": [
+        { "tema": "Amenorreia / eixo", "pct": 30 },
+        { "tema": "Ciclo menstrual / HHO", "pct": 22 },
+        { "tema": "SOP", "pct": 20 },
+        { "tema": "Hiperprolactinemia", "pct": 14 },
+        { "tema": "Anticoncepção", "pct": 14 }
+      ],
+      "deckOrder": [
+        "gin1-ciclo",
+        "gin1-amenorreia",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia-secundaria",
+        "gin1-sop",
+        "gin1-hiperprolactinemia",
+        "gin1-hiperandrogenismo",
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-spm"
+      ],
+      "checklist": ["ciclo", "amenorreia", "sop", "hiperprl", "aco"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Fisiologia",
+          "texto": "Pulsos de GnRH, feedback, fases."
+        },
+        {
+          "titulo": "Sessão 2 · Amenorreia",
+          "texto": "Classificar por FSH e anatomia."
+        },
+        {
+          "titulo": "Sessão 3 · SOP + PRL",
+          "texto": "Rotterdam e prolactinoma."
+        }
+      ],
+      "lacuna": "Divergências literárias longas sobre definição de amenorreia: use o fluxo da apostila e siga a banca quando citar referência."
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Caso + conduta",
+      "blurb": "Equilibra endócrino e conduta.",
+      "verdict": "Unifesp mistura fisiopatologia com escolha terapêutica: SOP que quer engravidar, amenorreia primária com cariótipo e LARC bem indicado.",
+      "foco": "SOP · Amenorreia primária · LARC · Hiperandrogenismo",
+      "estilo": "Levantamento UNIFESP",
+      "sourceType": "levantamento",
+      "source": "Padrão UNIFESP aplicado aos subtemas do Gin1.",
+      "priorities": [
+        { "tema": "SOP / indução ovulatória", "pct": 26 },
+        { "tema": "Amenorreia primária", "pct": 22 },
+        { "tema": "Anticoncepção / LARC", "pct": 20 },
+        { "tema": "Hiperandrogenismo", "pct": 16 },
+        { "tema": "Ciclo / hiperPRL", "pct": 16 }
+      ],
+      "deckOrder": [
+        "gin1-sop",
+        "gin1-amenorreia-primaria",
+        "gin1-amenorreia",
+        "gin1-diu-lam",
+        "gin1-anticoncepcao",
+        "gin1-hiperandrogenismo",
+        "gin1-amenorreia-secundaria",
+        "gin1-hiperprolactinemia",
+        "gin1-ciclo",
+        "gin1-spm"
+      ],
+      "checklist": ["sop", "amenorreia", "larc", "aco", "ciclo"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SOP que engravida",
+          "texto": "MEV → letrozol/clomifeno → próximos degraus."
+        },
+        {
+          "titulo": "Sessão 2 · Primária",
+          "texto": "Turner, MRKH, Morris."
+        },
+        {
+          "titulo": "Sessão 3 · LARC",
+          "texto": "DIU Cu vs LNG e implante."
+        }
+      ],
+      "lacuna": "Protocolos completos de FIV: só o conceito de quando encaminhar."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Direto e protocolar.",
+      "verdict": "Enare gosta de anticoncepção (contraindicação/escolha) e SOP/amenorreia em vinhetas curtas. Menos fisiologia pura que a USP.",
+      "foco": "Anticoncepção · SOP · Amenorreia secundária",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare (Ginecologia) aplicado ao Gin1.",
+      "priorities": [
+        { "tema": "Anticoncepção", "pct": 30 },
+        { "tema": "SOP", "pct": 24 },
+        { "tema": "Amenorreia secundária", "pct": 20 },
+        { "tema": "HiperPRL / tireoide", "pct": 14 },
+        { "tema": "Ciclo / SPM", "pct": 12 }
+      ],
+      "deckOrder": [
+        "gin1-anticoncepcao",
+        "gin1-diu-lam",
+        "gin1-sop",
+        "gin1-amenorreia-secundaria",
+        "gin1-amenorreia",
+        "gin1-hiperprolactinemia",
+        "gin1-amenorreia-primaria",
+        "gin1-ciclo",
+        "gin1-hiperandrogenismo",
+        "gin1-spm"
+      ],
+      "checklist": ["aco", "sop", "amenorreia", "larc", "hiperprl"],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · MEC",
+          "texto": "Quem NÃO pode usar ACO."
+        },
+        {
+          "titulo": "Sessão 2 · SOP",
+          "texto": "Rotterdam e proteção endometrial."
+        },
+        {
+          "titulo": "Sessão 3 · Secundária",
+          "texto": "β-hCG, TSH, PRL, FSH."
+        }
+      ],
+      "lacuna": "SPM detalhado com todos os critérios DSM: saiba ISRS/ACO como resposta."
+    }
+  ],
+  "checklistItems": {
+    "amenorreia": {
+      "tema": "Amenorreia",
+      "yield": "Máximo",
+      "pegar": "β-hCG sempre · Primária: mamas? útero? cariótipo · Secundária: TSH+PRL+FSH · Turner (45,X) · MRKH (46,XX) · Morris (46,XY)"
+    },
+    "sop": {
+      "tema": "SOP",
+      "yield": "Máximo",
+      "pegar": "Rotterdam ≥2/3 · Excluir HAC/PRL/tireoide · ACO para ciclo · Letrozol para engravidar · Proteger endométrio"
+    },
+    "aco": {
+      "tema": "ACO / MEC",
+      "yield": "Máximo",
+      "pegar": "Inibe ovulação · Categoria 4: TVP, aura, tabagismo ≥35a, CA mama, trombofilia · Pearl = falhas/100 mulheres-ano"
+    },
+    "larc": {
+      "tema": "LARC",
+      "yield": "Alto",
+      "pegar": "DIU Cu / DIU LNG / implante · Melhor efetividade no uso típico · LAM: amenorreia + AME + <6 meses"
+    },
+    "ciclo": {
+      "tema": "Ciclo / HHO",
+      "yield": "Alto",
+      "pegar": "GnRH pulsátil · LH-teca / FSH-granulosa · Feedback +: E2 → pico LH · Lútea ~14 dias · Menopausa = data (12 meses)"
+    },
+    "hiperprl": {
+      "tema": "Hiperprolactinemia",
+      "yield": "Alto",
+      "pegar": "Amenorreia + galactorreia · Excluir fármaco/hipotireoidismo · RM se persistente · Cabergolina 1ª linha"
+    }
+  },
+  "numeros": [
+    "Menarca aceitável: 9–16 anos (média ~11–14)",
+    "Amenorreia primária: 15a com caracteres OU 13a sem caracteres",
+    "Amenorreia secundária: 3 meses (regulares) ou 6 meses (irregulares)",
+    "Menopausa: confirme após 12 meses de amenorreia · IOP <40a",
+    "Rotterdam: ≥2 de 3 critérios · US 2018: ≥20 folículos 2–9 mm e/ou volume ≥10 ml",
+    "Microadenoma <10 mm · Macroadenoma ≥10 mm",
+    "LAM: amenorreia + AME + <6 meses pós-parto",
+    "AE com DIU de cobre: até ~5 dias da relação",
+    "Lútea ~14 dias · Ciclo típico ~28 dias (21–35)"
+  ],
+  "pegadinhas": [
+    "Amenorreia: gravidez primeiro — sempre",
+    "Sem útero + mamas: cariótipo antes de chutar MRKH",
+    "Morris é 46,XY (não é ‘mulher sem útero XX’)",
+    "SOP não é só ovário policístico na US",
+    "Virilização franca ≠ SOP típica → pense tumor",
+    "ACO não é 1ª linha para quem quer engravidar",
+    "LAM cai se voltar menstruação, complementar ou >6 meses",
+    "Hipotireoidismo pode subir PRL — trate a tireoide",
+    "Teste da progesterona positivo = tem estrogênio e útero ok"
+  ],
+  "baixoRoi": [
+    "Todas as vias da biossíntese esteróide com enzimas",
+    "Lista completa de marcas e doses de cada ACO",
+    "Divergências literárias longas sobre cortes de oligomenorreia",
+    "Protocolos completos de reprodução assistida",
+    "Classificações antigas de SPM sem impacto na conduta"
+  ],
+  "unitLabel": "% das questões deste tema",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira)."
+}

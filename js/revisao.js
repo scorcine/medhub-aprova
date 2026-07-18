@@ -56,15 +56,54 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-r1-lacunas.json?v=20260718t",
     specialty: "pediatria"
   },
+  gin1: {
+    label: "Endócrino / ciclo",
+    file: "data/revisao-gin1.json?v=20260718ai",
+    specialty: "go",
+    area: "ginecologia"
+  },
+  gin2: {
+    label: "SUA / miomatose",
+    file: "data/revisao-gin2.json?v=20260718ai",
+    specialty: "go",
+    area: "ginecologia"
+  },
+  gin3: {
+    label: "Climatério / urogin",
+    file: "data/revisao-gin3.json?v=20260718ai",
+    specialty: "go",
+    area: "ginecologia"
+  },
+  gin4: {
+    label: "Mastologia / ovário",
+    file: "data/revisao-gin4.json?v=20260718ai",
+    specialty: "go",
+    area: "ginecologia"
+  },
+  gin5: {
+    label: "Oncoginecologia",
+    file: "data/revisao-gin5.json?v=20260718ai",
+    specialty: "go",
+    area: "ginecologia"
+  },
+  gin6: {
+    label: "Infecto / IST",
+    file: "data/revisao-gin6.json?v=20260718ai",
+    specialty: "go",
+    area: "ginecologia"
+  }
+};
+
+const APROVA_GO_AREAS = {
   ginecologia: {
+    id: "ginecologia",
     label: "Ginecologia",
-    file: "data/revisao-ginecologia.json?v=20260718ag",
-    specialty: "go"
+    blurb: "Endócrino, SUA, onco, mama, infecto e urogin"
   },
   obstetricia: {
+    id: "obstetricia",
     label: "Obstetrícia",
-    file: "data/revisao-obstetricia.json?v=20260718ag",
-    specialty: "go"
+    blurb: "Pré-natal, parto, sangramentos e urgências — em breve"
   }
 };
 
@@ -101,17 +140,32 @@ const AprovaRevisao = {
     return (meta && meta.specialty) || "pediatria";
   },
 
-  listModules (specialty) {
+  moduleArea (moduleId) {
+    const meta = APROVA_REVISAO_MODULES[moduleId];
+    return (meta && meta.area) || null;
+  },
+
+  listModules (specialty, area) {
     return Object.keys(APROVA_REVISAO_MODULES)
       .filter(id => {
-        if (!specialty) return true;
-        return this.moduleSpecialty(id) === specialty;
+        if (specialty && this.moduleSpecialty(id) !== specialty) return false;
+        if (area && this.moduleArea(id) !== area) return false;
+        return true;
       })
       .map(id => ({
         id,
         label: APROVA_REVISAO_MODULES[id].label,
-        specialty: this.moduleSpecialty(id)
+        specialty: this.moduleSpecialty(id),
+        area: this.moduleArea(id)
       }));
+  },
+
+  listGoAreas () {
+    return Object.keys(APROVA_GO_AREAS).map(id => ({
+      id,
+      label: APROVA_GO_AREAS[id].label,
+      blurb: APROVA_GO_AREAS[id].blurb || ""
+    }));
   },
 
   setActiveModule (id) {
