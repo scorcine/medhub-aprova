@@ -132,6 +132,11 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-cir2.json?v=20260718as",
     specialty: "cirurgia"
   },
+  cir3: {
+    label: "Cir3 · Pré/pós-op · Hérnias · Anestesia",
+    file: "data/revisao-cir3.json?v=20260718at",
+    specialty: "cirurgia"
+  },
   "cir-lacunas": {
     label: "Urgências · Vesícula · Urologia · AD (lacunas)",
     file: "data/revisao-cir-lacunas.json?v=20260718aq",

@@ -1,0 +1,299 @@
+const fs = require("fs");
+const path = require("path");
+
+const decks = [
+  {
+    id: "cir3-asa",
+    name: "Pré-op · ASA · exames",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "O que a classificação ASA avalia?",
+        back: "Estado físico / comorbidades (subjetivo) pré-anestésico · Letra E = emergência (ex.: ASA IIE) · Limitação: não considera idade nem órgão específico"
+      },
+      {
+        front: "Mensagem clássica ASA I × ASA IV (mortalidade)?",
+        back: "ASA I: mortalidade operatória ~0,1% · ASA IV: >7% · Quanto maior a classe, maior o risco"
+      },
+      {
+        front: "ASA — níveis que caem na prova (ideia)?",
+        back: "I saudável · II doença sistêmica leve · III doença sistêmica grave · IV ameaça constante à vida · V moribundo · VI morte encefálica (doação)"
+      },
+      {
+        front: "Exames pré-op de rotina em hígido de baixo risco?",
+        back: "Muitas vezes nenhum obrigatório · Pedir conforme idade, comorbidade e magnitude da cirurgia · Evitar “check-up” cego"
+      },
+      {
+        front: "Alergia a látex — pista na anamnese?",
+        back: "Alergia a banana, kiwi, abacate, castanhas, mandioca etc. (cross-reactivity) · Usar luvas sem látex (vinil/neoprene)"
+      }
+    ]
+  },
+  {
+    id: "cir3-risco-cardiaco",
+    name: "Pré-op · risco cardíaco (IRCR)",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Preditores do Índice de Risco Cardíaco Revisado (IRCR)?",
+        back: "Cirurgia de alto risco (vascular / intraperitoneal / intratorácica aberta) · DAC · ICC · Doença cerebrovascular · DM em insulina · Creatinina > 2 mg/dl"
+      },
+      {
+        front: "IRCR — risco aproximado por número de preditores?",
+        back: "0 → ~0,4% · 1 → ~0,9% · 2 → ~6,6% · ≥3 → >11% (morte cardíaca / IAM / PCR não fatal)"
+      },
+      {
+        front: "Cirurgias de alto risco no IRCR?",
+        back: "Vascular · Intraperitoneal aberta · Intratorácica aberta"
+      },
+      {
+        front: "Após IAM — quanto esperar para eletiva (visão atual da apostila)?",
+        back: "Eletivas podem ser consideradas após ~4–6 semanas (visão moderna) · Escores antigos (Detsky/Goldman) ainda caem em algumas provas"
+      },
+      {
+        front: "Objetivo da estratificação cardíaca pré-op?",
+        back: "Estimar risco de IAM, arritmia maligna, PCR e morte cardíaca perioperatória · Guiar otimização / teste adicional / adiamento"
+      }
+    ]
+  },
+  {
+    id: "cir3-jejum-atb",
+    name: "Jejum · antibioticoprofilaxia · classes",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Jejum pré-op (ERAS/ACERTO/Sabiston) — tempos?",
+        back: "Líquidos claros: 2 h · Leite materno: 4 h · Fórmula / leite não humano: 6 h · Refeição leve: 6 h · Refeição pesada/fritura/carne: ≥8 h"
+      },
+      {
+        front: "Classes de cirurgia quanto à contaminação?",
+        back: "Limpa · Limpa-contaminada (potencialmente contaminada) · Contaminada · Infectada/suja"
+      },
+      {
+        front: "Exemplos clássicos de cada classe?",
+        back: "Limpa: herniorrafia, tireoide, cardíaca eletiva · Limpa-contaminada: colecistectomia VL, colorretal eletiva, cesárea · Contaminada: apendicite flegmonosa / falha de assepsia · Infectada: apendicite perfurada / peritonite fecal"
+      },
+      {
+        front: "Quando e qual ATB na profilaxia?",
+        back: "Dose ~30–60 min antes da incisão (120 min se vanco/FQ) · Cefazolina é a mais citada · Classes II e III se beneficiam claramente · Dose única basta em muitos procedimentos curtos"
+      },
+      {
+        front: "Quando interromper a profilaxia?",
+        back: "Na maioria: não prolongar além do tempo cirúrgico · Hernioplastia/colecistectomia VL eletiva: dose única · Prolongar só em indicações específicas (não “por precaução”)"
+      },
+      {
+        front: "Herniorrafia sem tela — profilaxia?",
+        back: "Apostila: sem tela, profilaxia geralmente não indicada · Com tela: costuma-se fazer (cefazolina)"
+      }
+    ]
+  },
+  {
+    id: "cir3-posop-febre",
+    name: "Pós-op · febre · atelectasia · TVP/TEP",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Causas infecciosas comuns de febre pós-op?",
+        back: "ISC · ITU · Infecção de cateter · Pneumonia · Também: flebite / celulite / outras síndromes inflamatórias"
+      },
+      {
+        front: "Atelectasia no pós-op — mensagem?",
+        back: "Complicação pulmonar frequente precoce · Prevenir com fisioterapia, deambulação, analgesia adequada · Associada a hipoxemia"
+      },
+      {
+        front: "TVP → TEP — ideia central?",
+        back: "TEP quase sempre começa como TVP · Êmbolo sobe → VD → artéria pulmonar · Prevenir conforme risco (mecânica ± heparina)"
+      },
+      {
+        front: "Fatores que elevam risco de TVP/TEP?",
+        back: "Cirurgia / imobilidade · Câncer · Trauma · Trombofilia · Idade · Obesidade · Cateter venoso central (TVP de membro superior)"
+      },
+      {
+        front: "Íleo adinâmico pós-op — conduta geral?",
+        back: "Esperado após cirurgia abdominal · Jejum + hidratação · Corrigir eletrólitos · Excluir obstrução mecânica / complicação se prolongado ou com peritonite"
+      }
+    ]
+  },
+  {
+    id: "cir3-isc",
+    name: "ISC · deiscência · evisceração",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Janela temporal da ISC?",
+        back: "Até 30 dias da cirurgia · Até 1 ano se houver implante/prótese/tela"
+      },
+      {
+        front: "Três tipos de ISC?",
+        back: "Incisional superficial (pele/TCS, acima da fáscia) · Incisional profunda (fáscia/músculo) · Órgão/cavidade (abscesso, empiema, etc.)"
+      },
+      {
+        front: "Deiscência aponeurótica — sinal clássico precoce?",
+        back: "Secreção sero-hemática “água de carne” / salmão pela ferida · Eventração: vísceras no subcutâneo · Evisceração: alças exteriorizadas"
+      },
+      {
+        front: "Quando a deiscência mais ocorre?",
+        back: "Pico entre 7º–10º dia (pode ser 1º–20º+) · Fatores: ISC profunda, ↑PIA, idade, desnutrição (albúmina <3 g/dl), técnica, tosse/DPOC"
+      },
+      {
+        front: "Hérnia incisional × deiscência aguda?",
+        back: "Deiscência discreta pode passar despercebida e cicatrizar como hérnia incisional (abaulamento na cicatriz + Valsalva)"
+      },
+      {
+        front: "Conduta na evisceração?",
+        back: "Cobrir com compressas úmidas estéreis · Ressuscitação · Retorno imediato ao centro para fechamento / controle"
+      }
+    ]
+  },
+  {
+    id: "cir3-hernia-inguinal",
+    name: "Hérnia inguinal · Hesselbach · reparo",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Indireta × direta — embriologia/mecanismo?",
+        back: "Indireta: persistência do conduto peritoneovaginal (congênita) · Direta: enfraquecimento da parede posterior / adquirida"
+      },
+      {
+        front: "Triângulo de Hesselbach — limites?",
+        back: "Inferior: ligamento inguinal · Medial: borda do reto · Lateral: vasos epigástricos inferiores · Sítio da hérnia direta"
+      },
+      {
+        front: "Como diferenciar direta × indireta no reparo?",
+        back: "Em relação aos epigástricos inferiores: medial = direta · Lateral = indireta · Pantalona = componente direto + indireto"
+      },
+      {
+        front: "Técnica com tela mais citada (aberta)?",
+        back: "Lichtenstein — tela de polipropileno no ligamento inguinal / tendão conjunto · Baixa recidiva · Padrão aberto tension-free"
+      },
+      {
+        front: "Bassini × Shouldice — mensagem?",
+        back: "Bassini: inaugurou era moderna, mas mais recidiva · Shouldice: reparo tecidual multicamadas, baixa recidiva em centros experientes"
+      },
+      {
+        front: "Videolaparoscopia — TEP × TAPP?",
+        back: "TEP: extraperitoneal (não entra na cavidade) · TAPP: via intraperitoneal com flap peritoneal · Indicadas em bilaterais/recidivas selecionadas"
+      }
+    ]
+  },
+  {
+    id: "cir3-hernia-outras",
+    name: "Femoral · umbilical · incisional · especiais",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Hérnia femoral — perfil e risco?",
+        back: "Mulher >45a obesa (mas a mais comum na mulher ainda é inguinal indireta) · Abaixo do ligamento inguinal · Canal rígido → ↑ encarceramento/estrangulamento (15–20%)"
+      },
+      {
+        front: "Limites do canal femoral (ideia)?",
+        back: "Teto: ligamento inguinal · Assoalho: Cooper (pectíneo) · Medial: lacunar · Lateral: veia femoral · Saco medial aos vasos"
+      },
+      {
+        front: "Hérnia umbilical adulta — conduta geral?",
+        back: "Reparar se sintomática / risco · Defeitos maiores: tela · Infantil: muitas fecham espontaneamente (ver Cir1)"
+      },
+      {
+        front: "Hérnia incisional — papel da tela?",
+        back: "Quase sempre tela (mesmo defeitos pequenos de trocarte) · 1–10 cm: tela obrigatória · Associada a ISC, obesidade, tensão, técnica inadequada"
+      },
+      {
+        front: "Hérnia de Richter — por que é perigosa?",
+        back: "Só a borda antimesentérica entra no saco · Pode estrangular/perfurar SEM obstrução intestinal · Atraso diagnóstico · Mais em femoral / portais de VL"
+      },
+      {
+        front: "Amyand × Garengeot × Littré?",
+        back: "Amyand: apêndice em saco inguinal · Garengeot: apêndice em saco femoral · Littré: Meckel no saco herniário"
+      },
+      {
+        front: "Hérnia por deslizamento — conteúdo típico?",
+        back: "Órgão forma parede do saco · Cólon ou bexiga · Cuidado ao dissecção/resecar saco"
+      }
+    ]
+  },
+  {
+    id: "cir3-anestesia",
+    name: "Anestesia · raqui · local · via aérea",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Mallampati — o que avalia?",
+        back: "Relação língua × abertura bucal / estruturas faríngeas visíveis · Prediz dificuldade de laringoscopia/intubação · Classes I–IV"
+      },
+      {
+        front: "Raquianestesia — onde e para quê?",
+        back: "Espaço subaracnoide (punção lombar ~L2–L3/L3–L4) · Abdome inferior, urologia, MMII, períneo · Bolus único habitual"
+      },
+      {
+        front: "Fatores que ↑ risco de bloqueio alto na raqui?",
+        back: "Dose/volume altos · Gravidez · Obesidade · ↑ pressão intra-abdominal · Anatomia alterada"
+      },
+      {
+        front: "Anestésicos locais — grupos?",
+        back: "Aminoamidas: lidocaína, bupivacaína, ropivacaína · Aminoésteres: procaína, tetracaína, clorprocaína · Amidas metabolizadas no fígado"
+      },
+      {
+        front: "Toxicidade sistêmica de AL — clínica?",
+        back: "Formigamento lábios/língua · Gosto metálico · Tinido · Escotomas · Cefaleia · → sonolência/convulsão · CV: arritmia/colapso · O₂ + benzos/tiopental se convulsão · Emulsão lipídica nos graves"
+      },
+      {
+        front: "Peridural × raqui — diferença-chave?",
+        back: "Raqui: subaracnoide, início rápido, dose menor · Peridural: espaço epidural, cateter possível, dose maior, início mais lento"
+      }
+    ]
+  },
+  {
+    id: "cir3-suturas-hemostasia",
+    name: "Suturas · fios · antiagregação",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Fios: monofilamentar × multifilamentar?",
+        back: "Mono: 1 filamento, menos atrito bacteriano, menos maleável · Multi: trançado, melhor manuseio, mais “ninho” para bactérias"
+      },
+      {
+        front: "Exemplos clássicos de fios?",
+        back: "Inabsorvíveis: náilon, polipropileno, seda, aço · Absorvíveis: catgut (histórico), vicryl/poliglecaprone etc. · Aponeurose: preferir mono inabsorvível (polipropileno) em muitos contextos"
+      },
+      {
+        front: "Fechamento aponeurótico — regra prática da apostila?",
+        back: "Pontos a cada 1–1,5 cm · Âncora ~2 cm da borda · Contínuo ou separado · Material mono inabsorvível frequente"
+      },
+      {
+        front: "Suspensão clássica de antiagregantes/anticoagulantes eletivos?",
+        back: "AAS: 7–10 dias · Clopidogrel: 5–6 dias · Varfarina: ~5 dias (INR ≤1,5) · Rivaroxabana: 2–3 dias · Individualizar risco trombótico"
+      },
+      {
+        front: "Prevenção de hematoma pós-op?",
+        back: "Anamnese de sangramento / von Willebrand · Suspender drogas · Hemostasia cuidadosa · Dreno em descolamentos amplos (incisionais)"
+      }
+    ]
+  },
+  {
+    id: "cir3-posop-anastomose",
+    name: "Deiscência de anastomose · GI",
+    specialty: "cirurgia",
+    cards: [
+      {
+        front: "Sinais de deiscência de anastomose?",
+        back: "Febre · Taquicardia · Dor · Peritonite · Débito purulento/entérico por dreno · Sepse · TC com extravasamento ajuda"
+      },
+      {
+        front: "Fatores de risco para falha de anastomose?",
+        back: "Tensão · Má perfusão / hipotensão · Desnutrição · Imunossupressão · Contaminação · Técnica / isquemia das bordas"
+      },
+      {
+        front: "Conduta geral na deiscência com sepse?",
+        back: "Ressuscitação · ATB · Controle de foco (reoperação / drenagem / estoma conforme cenário) · Não só ATB se há peritonite"
+      },
+      {
+        front: "Íleo × obstrução mecânica pós-op?",
+        back: "Íleo: sem mecanica óbvia, gases difusos, melhora gradual · Mecânica: níveis, dor cólica, falha em progredir — pensar brida/hérnia/técnico"
+      }
+    ]
+  }
+];
+
+const out = path.join(__dirname, "..", "data", "flashcards-cir3.json");
+fs.writeFileSync(out, JSON.stringify(decks, null, 2) + "\n", "utf8");
+console.log("decks", decks.length, "cards", decks.reduce((a, d) => a + d.cards.length, 0));
