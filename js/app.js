@@ -271,7 +271,7 @@ function aprovaFormatPct (value) {
 async function aprovaLoadPedOverviewStats () {
   if (aprovaPedOverviewStatsCache) return aprovaPedOverviewStatsCache;
   try {
-    const res = await fetch("data/stats-pediatria-geral.json?v=20260718s");
+    const res = await fetch("data/stats-pediatria-geral.json?v=20260718v");
     if (!res.ok) throw new Error("fail");
     aprovaPedOverviewStatsCache = await res.json();
   } catch {
@@ -333,6 +333,9 @@ function aprovaRenderPedOverviewStats (focusId) {
     const typeLabel = sourceType === "levantamento"
       ? "Levantamento de provas"
       : (sourceType === "sintese" ? "Síntese de levantamentos" : "Estimativa por padrão de banca");
+    const countLabel = sourceType === "estimativa"
+      ? " questões de Pediatria (base ilustrativa)"
+      : " questões de Pediatria analisadas";
 
     if (title) {
       title.textContent = profile.id === "geral"
@@ -341,7 +344,7 @@ function aprovaRenderPedOverviewStats (focusId) {
     }
     if (sub) {
       sub.textContent = typeLabel + (profile.sampleSize
-        ? (" · " + profile.sampleSize + " questões de Pediatria analisadas")
+        ? (" · " + profile.sampleSize + countLabel)
         : "");
     }
     if (verdict) verdict.textContent = profile.verdict || "";
@@ -349,14 +352,14 @@ function aprovaRenderPedOverviewStats (focusId) {
     const unitLabel = data.unitLabel || "% das questões de Pediatria";
     if (unitEl) {
       unitEl.hidden = false;
-      unitEl.textContent = "Cada barra = " + unitLabel +
-        (data.note ? ". " + data.note : "");
+      unitEl.textContent = "Cada barra = % do tema · ao lado, quantas questões caíram (ou a estimativa proporcional). " +
+        (data.note || "");
     }
 
     bars.innerHTML = (profile.priorities || []).map(p => {
       const pct = Number(p.pct);
       const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
-      const detail = p.n ? (" · " + p.n + " quest.") : "";
+      const detail = p.n != null ? (" · " + p.n + " quest.") : "";
       return (
         "<div class=\"rev-bar-row\">" +
           "<span>" + p.tema + detail + "</span>" +
