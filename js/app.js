@@ -6,6 +6,7 @@ const APROVA_PANEL_META = {
   flashcards: { title: "Flashcards", sub: "Memória ativa para o R1" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Especialidades", sub: "Foque por área clínica" },
+  "revisao-neo": { title: "Revisão Neonatologia", sub: "Alto rendimento para provas R1" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "Acertos, erros e temas" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
@@ -56,6 +57,7 @@ function aprovaGoTo (id) {
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
   if (id === "especialidades") aprovaRenderEspecialidades();
+  if (id === "revisao-neo") aprovaRenderRevisaoNeo();
   aprovaShowPanel(id);
 }
 
@@ -106,12 +108,27 @@ function aprovaOpenSpecialty (specialty) {
       : "Ainda sem flashcards nesta área — em breve.";
   }
 
+  grid.innerHTML = "";
+
+  if (specialty === "pediatria") {
+    const revBtn = document.createElement("button");
+    revBtn.type = "button";
+    revBtn.className = "dash-card dash-card--featured";
+    revBtn.innerHTML =
+      "<span class=\"dash-card-kicker\">Provas R1</span>" +
+      "<strong>Revisão Neonatologia</strong>" +
+      "<span>O que mais cai em USP, Unifesp, SUS-SP/BA, Einstein, PUC, Unicamp e UFRJ.</span>";
+    revBtn.addEventListener("click", () => aprovaGoTo("revisao-neo"));
+    grid.appendChild(revBtn);
+  }
+
   if (!decks.length) {
-    grid.innerHTML = "<p class=\"muted\">Nenhum deck disponível ainda nesta especialidade.</p>";
+    if (specialty !== "pediatria") {
+      grid.innerHTML = "<p class=\"muted\">Nenhum deck disponível ainda nesta especialidade.</p>";
+    }
     return;
   }
 
-  grid.innerHTML = "";
   decks.forEach(deck => {
     const n = (deck.cards || []).length;
     const btn = document.createElement("button");
