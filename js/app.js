@@ -256,10 +256,19 @@ function aprovaRenderDeckCards (specialty, grid, deckOrder) {
   });
 }
 
+function aprovaFormatPct (value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return n.toLocaleString("pt-BR", {
+    minimumFractionDigits: Number.isInteger(n) ? 0 : 1,
+    maximumFractionDigits: 1
+  }) + "%";
+}
+
 async function aprovaLoadPedOverviewStats () {
   if (aprovaPedOverviewStatsCache) return aprovaPedOverviewStatsCache;
   try {
-    const res = await fetch("data/stats-pediatria-geral.json?v=20260718q");
+    const res = await fetch("data/stats-pediatria-geral.json?v=20260718s");
     if (!res.ok) throw new Error("fail");
     aprovaPedOverviewStatsCache = await res.json();
   } catch {
@@ -275,6 +284,8 @@ function aprovaRenderPedOverviewStats (focusId) {
   const title = document.getElementById("esp-ped-overview-title");
   const sub = document.getElementById("esp-ped-overview-sub");
   const verdict = document.getElementById("esp-ped-overview-verdict");
+  const unitEl = document.getElementById("esp-ped-overview-unit");
+  const sourceEl = document.getElementById("esp-ped-overview-source");
   const banner = document.getElementById("esp-ped-enamed-banner");
   if (!root || !options || !bars) return Promise.resolve();
 
@@ -286,16 +297,15 @@ function aprovaRenderPedOverviewStats (focusId) {
 
     root.hidden = false;
     const pid = focusId || aprovaActivePedOverviewFocus || "geral";
-    aprovaActivePedOverviewFocus = pid;
     const profile = data.profiles.find(p => p.id === pid) || data.profiles[0];
     aprovaActivePedOverviewFocus = profile.id;
 
-    // Enamed primeiro após Brasil
     const ordered = data.profiles.slice().sort((a, b) => {
       const rank = p => {
         if (p.id === "geral") return 0;
         if (p.id === "enamed") return 1;
-        return 2;
+        if (p.id === "revalida") return 2;
+        return 3;
       };
       const d = rank(a) - rank(b);
       return d !== 0 ? d : String(a.label || "").localeCompare(String(b.label || ""), "pt-BR");
@@ -314,9 +324,12 @@ function aprovaRenderPedOverviewStats (focusId) {
       options.appendChild(btn);
     });
 
-    if (banner) {
-      banner.hidden = profile.id !== "enamed";
-    }
+    if (banner) banner.hidden = profile.id !== "enamed";
+
+    const sourceType = profile.sourceType || "estimativa";
+    const typeLabel = sourceType === "levantamento"
+      ? "Levantamento de provas"
+      : (sourceType === "sintese" ? "Síntese de levantamentos" : "Estimativa por padrão de banca");
 
     if (title) {
       title.textContent = profile.id === "geral"
@@ -324,23 +337,37 @@ function aprovaRenderPedOverviewStats (focusId) {
         : ("O que mais cai · " + profile.label);
     }
     if (sub) {
-      sub.textContent = profile.foco
-        ? (profile.estilo + " — " + profile.foco)
-        : (data.note || "Prioridade relativa nas principais provas.");
+      sub.textContent = typeLabel + (profile.sampleSize
+        ? (" · " + profile.sampleSize + " questões de Pediatria analisadas")
+        : "");
     }
     if (verdict) verdict.textContent = profile.verdict || "";
 
-    const maxScore = Math.max(...profile.priorities.map(p => p.score), 1);
-    bars.innerHTML = profile.priorities.map(p => {
-      const pct = Math.round((p.score / maxScore) * 100);
+    const unitLabel = data.unitLabel || "% das questões de Pediatria";
+    if (unitEl) {
+      unitEl.hidden = false;
+      unitEl.textContent = "Cada barra = " + unitLabel +
+        (data.note ? ". " + data.note : "");
+    }
+
+    bars.innerHTML = (profile.priorities || []).map(p => {
+      const pct = Number(p.pct);
+      const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
+      const detail = p.n ? (" · " + p.n + " quest.") : "";
       return (
         "<div class=\"rev-bar-row\">" +
-          "<span>" + p.tema + "</span>" +
-          "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + pct + "%\"></i></div>" +
-          "<em>" + p.score + "</em>" +
+          "<span>" + p.tema + detail + "</span>" +
+          "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + width + "%\"></i></div>" +
+          "<em>" + aprovaFormatPct(pct) + "</em>" +
         "</div>"
       );
     }).join("");
+
+    if (sourceEl) {
+      sourceEl.textContent = profile.source
+        ? ("Fonte: " + profile.source)
+        : "";
+    }
   });
 }
 
