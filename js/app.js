@@ -151,9 +151,10 @@ let aprovaPedOverviewStatsCache = null;
 let aprovaGoOverviewStatsCache = null;
 let aprovaObsOverviewStatsCache = null;
 let aprovaCirOverviewStatsCache = null;
+let aprovaCliOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
-  return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia";
+  return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
 }
 
 function aprovaRichSpecialtyMeta (specialty) {
@@ -183,6 +184,18 @@ function aprovaRichSpecialtyMeta (specialty) {
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)
+    };
+  }
+  if (spec === "clinica") {
+    return {
+      id: "clinica",
+      label: "Clínica médica",
+      shortLabel: "Clínica médica",
+      overviewCacheKey: "clinica",
+      overviewUrl: "data/stats-reumatologia-geral.json?v=20260718bb",
+      countNoun: "Clínica médica",
+      openRoot: () => aprovaOpenClinica(),
+      openModule: id => aprovaOpenClinicaModule(id)
     };
   }
   return {
@@ -241,8 +254,8 @@ function aprovaRenderEspecialidades () {
   }
   if (cli) {
     cli.textContent = cliN
-      ? cliN + " flashcards · toque para ver os subtemas"
-      : "Cardiologia, infecto, endocrino e mais.";
+      ? cliN + " flashcards · Reumatologia (REU1) e próximos grupos"
+      : "Reumatologia (REU1) — próximos grupos em breve.";
   }
 }
 
@@ -281,6 +294,9 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("obs4-") === 0) return "Sangramentos na gestação";
   if (id.indexOf("obs5-") === 0) return "HAS · Diabetes · Gemelaridade";
   if (id.indexOf("obs-") === 0) return "Obstetrícia";
+  if (id.indexOf("reu1-ar-") === 0) return "Artrite reumatoide";
+  if (id === "reu1-aij-still") return "AIJ · Still";
+  if (id.indexOf("reu1-") === 0) return "Espondiloartrites";
   if (
     id === "cg-apendicite" ||
     id === "cg-colecistite" ||
@@ -434,6 +450,17 @@ async function aprovaLoadOverviewStats (specialty) {
       aprovaCirOverviewStatsCache = null;
     }
     return aprovaCirOverviewStatsCache;
+  }
+  if (meta.id === "clinica") {
+    if (aprovaCliOverviewStatsCache) return aprovaCliOverviewStatsCache;
+    try {
+      const res = await fetch(meta.overviewUrl);
+      if (!res.ok) throw new Error("fail");
+      aprovaCliOverviewStatsCache = await res.json();
+    } catch {
+      aprovaCliOverviewStatsCache = null;
+    }
+    return aprovaCliOverviewStatsCache;
   }
   if (aprovaPedOverviewStatsCache) return aprovaPedOverviewStatsCache;
   try {
@@ -738,7 +765,10 @@ const APROVA_PED_MODULE_PREFIXES = {
   "cir-infantil": [],
   "cir-vascular": [],
   "cir-ad": [],
-  "cir-especialidades": []
+  "cir-especialidades": [],
+  "reu-ar": ["reu1-ar-"],
+  "reu-aij": ["reu1-aij-"],
+  "reu-spa": ["reu1-spa-", "reu1-ea", "reu1-artrite-", "reu1-psoriasica", "reu1-enteropatica", "reu1-aines"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -1208,6 +1238,14 @@ async function aprovaOpenCirurgiaModule (moduleId) {
   await aprovaOpenRichSpecialtyModule("cirurgia", moduleId);
 }
 
+async function aprovaOpenClinica () {
+  await aprovaOpenRichSpecialtyRoot("clinica");
+}
+
+async function aprovaOpenClinicaModule (moduleId) {
+  await aprovaOpenRichSpecialtyModule("clinica", moduleId);
+}
+
 function aprovaOpenSpecialtyReview (profileId) {
   const decksWrap = document.getElementById("esp-decks");
   const revisao = document.getElementById("esp-revisao");
@@ -1237,6 +1275,10 @@ function aprovaOpenSpecialty (specialty) {
   }
   if (specialty === "cirurgia") {
     aprovaOpenCirurgia();
+    return;
+  }
+  if (specialty === "clinica") {
+    aprovaOpenClinica();
     return;
   }
 

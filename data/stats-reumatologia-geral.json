@@ -1,0 +1,482 @@
+{
+  "title": "Reumatologia · o que mais cai (REU1)",
+  "unitLabel": "% relativo neste bloco (REU1)",
+  "note": "Primeiro grupo de Clínica médica no app. Base: apostila REU1 (AR, AIJ/Still, espondiloartrites, AINEs). REU2/REU3 entram em seguida.",
+  "gaps": {
+    "summary": "REU1 coberto em 3 grupos: AR, AIJ/Still, Espondiloartrites (+AINEs). REU2 (OA, gota, FR, infecciosas) e REU3 (LES, vasculites) ainda não no app.",
+    "missingHighYield": [
+      {
+        "tema": "Gota / osteoartrite / febre reumática",
+        "status": "pendente",
+        "detalhe": "REU2"
+      },
+      {
+        "tema": "LES / SAF / vasculites",
+        "status": "pendente",
+        "detalhe": "REU3"
+      }
+    ],
+    "covered": [
+      {
+        "tema": "Artrite reumatoide",
+        "grupo": "reu-ar"
+      },
+      {
+        "tema": "AIJ / Still",
+        "grupo": "reu-aij"
+      },
+      {
+        "tema": "Espondiloartrites + AINEs",
+        "grupo": "reu-spa"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese REU1",
+      "featured": false,
+      "sourceType": "sintese",
+      "source": "Estrutura da apostila REU1 + padrão de cobrança R1 em Reumatologia.",
+      "verdict": "No REU1, AR e espondiloartrites concentram o ROI. Critérios ACR/EULAR, anti-CCP, HLA-B27 e escada AINE→biológico são o núcleo.",
+      "foco": "AR · SpA · AIJ/Still · AINE",
+      "estilo": "Síntese REU1",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 42,
+          "n": 42
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 36,
+          "n": 36
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "AINEs (farmacologia)",
+          "pct": 10,
+          "n": 10
+        }
+      ]
+    },
+    {
+      "id": "enamed",
+      "label": "Enamed",
+      "kicker": "Nacional",
+      "featured": true,
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão Enare/Enamed em Reumatologia (REU1).",
+      "verdict": "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril.",
+      "foco": "AR · EA · Reiter · Still",
+      "estilo": "Padrão Enamed",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 40
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 38
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINEs",
+          "pct": 8
+        }
+      ]
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "sourceType": "estimativa",
+      "source": "Estimativa padrão Enare · REU1.",
+      "verdict": "Mesmo eixo Enamed: conduta clara.",
+      "foco": "Conduta · Critérios",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "AR",
+          "pct": 42
+        },
+        {
+          "tema": "SpA",
+          "pct": 36
+        },
+        {
+          "tema": "AIJ/Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINE",
+          "pct": 8
+        }
+      ]
+    },
+    {
+      "id": "revalida",
+      "label": "Revalida",
+      "kicker": "INEP 2011–2025",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de enamed).",
+      "verdict": "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AR · EA · Reiter · Still",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 40
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 38
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINEs",
+          "pct": 8
+        }
+      ],
+      "blurb": "Padrão Revalida neste grupo."
+    },
+    {
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "sourceType": "estimativa",
+      "source": "Estimativa padrão USP · REU1.",
+      "verdict": "ACR/EULAR detalhado, ACPA e DD AR×SpA×psoriásica.",
+      "foco": "Critérios · Sorologia · DD",
+      "estilo": "Padrão USP",
+      "priorities": [
+        {
+          "tema": "AR (critérios/sorologia)",
+          "pct": 44
+        },
+        {
+          "tema": "SpA / HLA-B27",
+          "pct": 34
+        },
+        {
+          "tema": "AIJ",
+          "pct": 12
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ]
+    },
+    {
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "sourceType": "estimativa",
+      "source": "Estimativa padrão UNIFESP · REU1.",
+      "verdict": "Patogênese (sinovite, epítopo, êntese) + biológicos.",
+      "foco": "Fisiopatologia · Biológicos",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "AR",
+          "pct": 40
+        },
+        {
+          "tema": "SpA",
+          "pct": 35
+        },
+        {
+          "tema": "AIJ/Still",
+          "pct": 15
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ]
+    },
+    {
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Padrão APS",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de enamed).",
+      "verdict": "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AR · EA · Reiter · Still",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 40
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 38
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINEs",
+          "pct": 8
+        }
+      ],
+      "blurb": "Padrão SUS-SP neste grupo."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Padrão APS + endemias",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de enamed).",
+      "verdict": "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AR · EA · Reiter · Still",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 40
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 38
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINEs",
+          "pct": 8
+        }
+      ],
+      "blurb": "Padrão SUS-BA neste grupo."
+    },
+    {
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de usp).",
+      "verdict": "ACR/EULAR detalhado, ACPA e DD AR×SpA×psoriásica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · Sorologia · DD",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AR (critérios/sorologia)",
+          "pct": 44
+        },
+        {
+          "tema": "SpA / HLA-B27",
+          "pct": 34
+        },
+        {
+          "tema": "AIJ",
+          "pct": 12
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFMG neste grupo."
+    },
+    {
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de usp).",
+      "verdict": "ACR/EULAR detalhado, ACPA e DD AR×SpA×psoriásica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · Sorologia · DD",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AR (critérios/sorologia)",
+          "pct": 44
+        },
+        {
+          "tema": "SpA / HLA-B27",
+          "pct": 34
+        },
+        {
+          "tema": "AIJ",
+          "pct": 12
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFRGS neste grupo."
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de usp).",
+      "verdict": "ACR/EULAR detalhado, ACPA e DD AR×SpA×psoriásica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · Sorologia · DD",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AR (critérios/sorologia)",
+          "pct": 44
+        },
+        {
+          "tema": "SpA / HLA-B27",
+          "pct": 34
+        },
+        {
+          "tema": "AIJ",
+          "pct": 12
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão UFRJ neste grupo."
+    },
+    {
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de usp).",
+      "verdict": "ACR/EULAR detalhado, ACPA e DD AR×SpA×psoriásica. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · Sorologia · DD",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "AR (critérios/sorologia)",
+          "pct": 44
+        },
+        {
+          "tema": "SpA / HLA-B27",
+          "pct": 34
+        },
+        {
+          "tema": "AIJ",
+          "pct": 12
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão Unicamp neste grupo."
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de unifesp).",
+      "verdict": "Patogênese (sinovite, epítopo, êntese) + biológicos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopatologia · Biológicos",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "AR",
+          "pct": 40
+        },
+        {
+          "tema": "SpA",
+          "pct": 35
+        },
+        {
+          "tema": "AIJ/Still",
+          "pct": 15
+        },
+        {
+          "tema": "AINE",
+          "pct": 10
+        }
+      ],
+      "featured": false,
+      "blurb": "Padrão Einstein neste grupo."
+    },
+    {
+      "id": "amp",
+      "label": "AMP",
+      "kicker": "Padrão clássico R1",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de enamed).",
+      "verdict": "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AR · EA · Reiter · Still",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 40
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 38
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINEs",
+          "pct": 8
+        }
+      ],
+      "blurb": "Padrão AMP neste grupo."
+    },
+    {
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "kicker": "Padrão regional",
+      "featured": false,
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Reumatologia · Reumatologia · o que mais cai (REU1) (a partir de enamed).",
+      "verdict": "Conduta e critérios: MTX na AR, AINE na EA, tríade de Reiter, Still febril. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "AR · EA · Reiter · Still",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Artrite reumatoide",
+          "pct": 40
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 38
+        },
+        {
+          "tema": "AIJ / Still",
+          "pct": 14
+        },
+        {
+          "tema": "AINEs",
+          "pct": 8
+        }
+      ],
+      "blurb": "Padrão SES-PE neste grupo."
+    }
+  ]
+}

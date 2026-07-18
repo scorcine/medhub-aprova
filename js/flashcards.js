@@ -32,7 +32,9 @@ function aprovaDeckSpecialty (deck) {
     id.indexOf("ciresp-") === 0 ||
     id.indexOf("crr-") === 0
   ) return "cirurgia";
-  if (id.indexOf("cardio") === 0) return "clinica";
+  if (id.indexOf("cardio") === 0 || id.indexOf("reu1-") === 0 || id.indexOf("reu-") === 0) {
+    return "clinica";
+  }
   return "geral";
 }
 
@@ -73,7 +75,8 @@ const AprovaFlashcards = {
       "data/flashcards-cir2.json",
       "data/flashcards-cir3.json",
       "data/flashcards-ciresp.json",
-      "data/flashcards-cir-r1.json"
+      "data/flashcards-cir-r1.json",
+      "data/flashcards-reu1.json"
     ];
     const decks = [];
     for (const file of files) {

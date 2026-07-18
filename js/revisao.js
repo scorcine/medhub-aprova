@@ -156,6 +156,21 @@ const APROVA_REVISAO_MODULES = {
     label: "Especialidades R1 · uro · tórax · plástica",
     file: "data/revisao-cir-especialidades.json?v=20260718az",
     specialty: "cirurgia"
+  },
+  "reu-ar": {
+    label: "Artrite reumatoide (REU1)",
+    file: "data/revisao-reu-ar.json?v=20260718bb",
+    specialty: "clinica"
+  },
+  "reu-aij": {
+    label: "AIJ · Still (REU1)",
+    file: "data/revisao-reu-aij.json?v=20260718bb",
+    specialty: "clinica"
+  },
+  "reu-spa": {
+    label: "Espondiloartrites · AINEs (REU1)",
+    file: "data/revisao-reu-spa.json?v=20260718bb",
+    specialty: "clinica"
   }
 };
 
@@ -277,7 +292,13 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
   AprovaRevisao.setActiveModule(mid);
   const moduleSpec = AprovaRevisao.moduleSpecialty(mid);
   const moduleLabel = (APROVA_REVISAO_MODULES[mid] && APROVA_REVISAO_MODULES[mid].label) ||
-    (moduleSpec === "go" ? "Ginecologia" : moduleSpec === "cirurgia" ? "Cirurgia" : "Pediatria");
+    (moduleSpec === "go"
+      ? "Ginecologia"
+      : moduleSpec === "cirurgia"
+        ? "Cirurgia"
+        : moduleSpec === "clinica"
+          ? "Clínica médica"
+          : "Pediatria");
 
   root.innerHTML = "<p class=\"muted\">Carregando revisão…</p>";
   const data = await AprovaRevisao.loadModule(mid);
@@ -320,7 +341,7 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
   }).join("");
 
   const checklist = (profile.checklist || []).map(key => {
-    const item = data.checklistItems[key];
+    const item = data.checklistItems && data.checklistItems[key];
     if (!item) return "";
     return (
       "<article class=\"rev-item\">" +
@@ -410,6 +431,14 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
         return;
       }
       if (typeof aprovaOpenCirurgia === "function") aprovaOpenCirurgia();
+      return;
+    }
+    if (spec === "clinica") {
+      if (typeof aprovaOpenClinicaModule === "function" && activeId) {
+        aprovaOpenClinicaModule(activeId);
+        return;
+      }
+      if (typeof aprovaOpenClinica === "function") aprovaOpenClinica();
       return;
     }
     if (typeof aprovaOpenPediatriaModule === "function" && activeId) {
