@@ -1189,6 +1189,53 @@ body.app-body {
   margin-top: 0.15rem;
 }
 
+.esp-stats {
+  margin-top: 1.5rem;
+}
+
+.esp-exam-pick {
+  margin-top: 1rem;
+}
+
+.esp-exam-label {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.esp-exam-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.esp-exam-btn {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.esp-exam-btn:hover {
+  border-color: rgba(15, 159, 154, 0.45);
+}
+
+.esp-exam-btn.active {
+  border-color: rgba(15, 159, 154, 0.55);
+  background: rgba(15, 159, 154, 0.12);
+  color: var(--accent-deep);
+}
+
 .rev-callout--warn {
   border-left-color: #d97706;
   margin-top: 0.85rem;

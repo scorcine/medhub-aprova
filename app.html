@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718e">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718f">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -242,22 +242,29 @@
             </div>
           </div>
 
-          <div id="esp-focus" hidden>
-            <div class="actions-row" style="margin-bottom:0.85rem">
-              <button type="button" class="btn btn-ghost btn-compact" id="esp-focus-back">← Voltar às especialidades</button>
-            </div>
-            <h3 class="esp-decks-title">Pediatria · como quer estudar?</h3>
-            <p class="muted" id="esp-focus-hint">Escolha estatística geral ou uma prova específica para priorizar os assuntos.</p>
-            <div class="dash-grid dash-grid--sm" id="esp-focus-grid"></div>
-          </div>
-
           <div id="esp-decks" hidden>
             <div class="actions-row" style="margin-bottom:0.85rem">
-              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar às especialidades</button>
             </div>
             <h3 id="esp-decks-title" class="esp-decks-title">Subtemas</h3>
-            <p class="muted" id="esp-decks-hint" hidden></p>
             <div class="dash-grid dash-grid--sm" id="esp-deck-grid"></div>
+
+            <div id="esp-stats" class="esp-stats" hidden>
+              <div class="study-card rev-block">
+                <div class="label" id="esp-stats-title">O que mais cai no Brasil</div>
+                <p class="muted" id="esp-stats-sub">Prioridade relativa dos assuntos de Neonatologia nas provas R1.</p>
+                <div class="rev-bars" id="esp-stats-bars"></div>
+              </div>
+
+              <div class="esp-exam-pick">
+                <p class="esp-exam-label">Escolha sua prova</p>
+                <div class="esp-exam-options" id="esp-exam-options"></div>
+              </div>
+
+              <div class="actions-row" style="margin-top:0.85rem">
+                <button type="button" class="btn btn-primary" id="esp-open-revisao">Abrir revisão desta prova</button>
+              </div>
+            </div>
           </div>
 
           <div id="esp-revisao" hidden>
@@ -348,13 +355,13 @@
     </div>
   </div>
 
-  <script src="js/theme.js?v=20260718e"></script>
-  <script src="js/auth.js?v=20260718e"></script>
-  <script src="js/schedule.js?v=20260718e"></script>
-  <script src="js/exam-stats.js?v=20260718e"></script>
-  <script src="js/flashcards.js?v=20260718e"></script>
-  <script src="js/questions.js?v=20260718e"></script>
-  <script src="js/revisao.js?v=20260718e"></script>
-  <script src="js/app.js?v=20260718e"></script>
+  <script src="js/theme.js?v=20260718f"></script>
+  <script src="js/auth.js?v=20260718f"></script>
+  <script src="js/schedule.js?v=20260718f"></script>
+  <script src="js/exam-stats.js?v=20260718f"></script>
+  <script src="js/flashcards.js?v=20260718f"></script>
+  <script src="js/questions.js?v=20260718f"></script>
+  <script src="js/revisao.js?v=20260718f"></script>
+  <script src="js/app.js?v=20260718f"></script>
 </body>
 </html>

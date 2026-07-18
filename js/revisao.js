@@ -7,7 +7,7 @@ const AprovaRevisao = {
   async loadNeonatologia () {
     if (this.neo) return this.neo;
     try {
-      const res = await fetch("data/revisao-neonatologia.json?v=20260718e");
+      const res = await fetch("data/revisao-neonatologia.json?v=20260718f");
       if (!res.ok) throw new Error("fail");
       this.neo = await res.json();
       return this.neo;
@@ -158,17 +158,10 @@ async function aprovaRenderRevisaoNeo (profileId) {
     "<div class=\"rev-callout rev-callout--warn\">" + aprovaEscapeHtml(profile.lacuna) + "</div>" +
 
     "<div class=\"actions-row\" style=\"margin-top:1rem\">" +
-      "<button type=\"button\" class=\"btn btn-primary\" id=\"rev-open-ped\">Estudar pelos subtemas</button>" +
-      "<button type=\"button\" class=\"btn btn-ghost\" id=\"rev-change-focus\">Trocar prova</button>" +
+      "<button type=\"button\" class=\"btn btn-primary\" id=\"rev-open-ped\">Voltar aos subtemas</button>" +
     "</div>";
 
   document.getElementById("rev-open-ped")?.addEventListener("click", () => {
-    if (typeof aprovaOpenPediatriaStudy === "function") {
-      aprovaOpenPediatriaStudy(AprovaRevisao.activeProfileId);
-    }
-  });
-
-  document.getElementById("rev-change-focus")?.addEventListener("click", () => {
-    if (typeof aprovaOpenPediatriaFocus === "function") aprovaOpenPediatriaFocus();
+    if (typeof aprovaOpenPediatria === "function") aprovaOpenPediatria();
   });
 }
