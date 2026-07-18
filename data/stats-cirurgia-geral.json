@@ -3,45 +3,35 @@
   "unitLabel": "% das questões de Cirurgia",
   "note": "Percentuais = participação dentro das questões de Cirurgia (não da prova inteira). Brasil = média ponderada Enare 2021–2024 (50q) + USP-SP 2017–2023 (129q) + UNIFESP 2017–2023 (87q). Levantamentos Estratégia MED. Mapeamento das apostilas Cir1–Cir3 + CirEsp em D:\\MedHub R1\\Cirurgia.",
   "gaps": {
-    "summary": "Cirurgia em 7 grandes grupos por cobrança: (1) Abdome agudo ~12–24%, (2) Trauma ~14%, (3) Pré/pós·Anestesia·Hérnias ~20%, (4) Infantil ~9%, (5) Vascular ~8–16%, (6) AD eletivo/onco/procto, (7) Especialidades (uro·tórax·plástica). Ordem prioriza Enare/Enamed; Vascular e Infantil saíram do Cir1 misturado.",
-    "missingHighYield": [
-      {
-        "tema": "Urgências abdominais (adulto)",
-        "brasilPct": 12.4,
-        "status": "ausente",
-        "detalhe": "Apendicite, colecistite, diverticulite, abdome obstrutivo/vascular — só menções incidentais (classificação de ferida, procto, pediatria). Sem apostila Cir de abdome agudo do adulto."
-      },
-      {
-        "tema": "Vesícula e vias biliares (adulto)",
-        "brasilPct": 4.1,
-        "status": "ausente/fraco",
-        "detalhe": "Sem capítulo de colelitíase/colecistite/colangite/CA de vias biliares no adulto (há vias biliares na cirurgia infantil em Cir1)."
-      },
-      {
-        "tema": "Urologia",
-        "brasilPct": 4.1,
-        "status": "ausente/fraco",
-        "detalhe": "Sem bloco urológico adulto (litíase, HBP, urgências urológicas). Geniturinário aparece sobretudo na pediatria de Cir1."
-      },
-      {
-        "tema": "Cirurgia torácica (eletiva)",
-        "brasilPct": 3.0,
-        "status": "ausente/fraco",
-        "detalhe": "Trauma de tórax está em Cir2; falta torácica eletiva (pneumotórax espontâneo/indicação cirúrgica, neoplasia etc.)."
-      },
-      {
-        "tema": "Aparelho digestivo adulto (estômago/cólon/pâncreas/fígado)",
-        "brasilPct": null,
-        "status": "parcial",
-        "detalhe": "Bariátrica e procto em Cir1; sem capítulos clássicos de CA gástrico/colorretal, pancreatite, hipertensão portal — caem menos como bloco isolado, mas alimentam urgências/procto."
-      }
-    ],
+    "summary": "Cobertura R1: 100% dos 19 temas da stats Brasil (Enare/USP/UNIFESP) têm deck dedicado ou reforço. 71 decks · ~410 cards em 7 grupos por cobrança. Lacunas antigas das apostilas (abdome agudo, uro, tórax eletivo, AD onco) foram fechadas com módulos cg-/crr-.",
+    "missingHighYield": [],
+    "coverageCheck": {
+      "statsThemesBrasil": 19,
+      "statsThemesCovered": 19,
+      "decks": 71,
+      "modules": 7,
+      "status": "completo"
+    },
     "covered": [
-      { "tema": "Trauma / ATLS", "file": "Cir2.pdf" },
-      { "tema": "Cirurgia vascular", "file": "Cir1.pdf" },
-      { "tema": "Pré-operatório · pós-operatório · hérnias · anestesia · sutura", "file": "Cir3.pdf" },
-      { "tema": "Queimaduras · cicatrização · choque · nutrição · plástica básica", "file": "CirEsp.pdf" },
-      { "tema": "Cirurgia infantil · proctologia · bariátrica · cabeça/pescoço", "file": "Cir1.pdf" }
+      { "tema": "Trauma / ATLS", "pct": 14.3, "grupo": "cir-trauma" },
+      { "tema": "Urgências abdominais", "pct": 12.4, "grupo": "cir-abdome-agudo" },
+      { "tema": "Cirurgia infantil", "pct": 9.0, "grupo": "cir-infantil" },
+      { "tema": "Princípios da anestesiologia", "pct": 9.0, "grupo": "cir-perioperatorio" },
+      { "tema": "Cirurgia vascular", "pct": 7.5, "grupo": "cir-vascular" },
+      { "tema": "Avaliação pré-operatória", "pct": 6.8, "grupo": "cir-perioperatorio" },
+      { "tema": "Cirurgia plástica", "pct": 5.6, "grupo": "cir-especialidades" },
+      { "tema": "Complicações pós-operatórias", "pct": 4.5, "grupo": "cir-perioperatorio" },
+      { "tema": "Hérnias da parede abdominal", "pct": 4.1, "grupo": "cir-perioperatorio" },
+      { "tema": "Vesícula e vias biliares", "pct": 4.1, "grupo": "cir-abdome-agudo + cir-ad" },
+      { "tema": "Urologia", "pct": 4.1, "grupo": "cir-especialidades" },
+      { "tema": "Cirurgia torácica", "pct": 3.0, "grupo": "cir-trauma + cir-especialidades" },
+      { "tema": "Nutrição em cirurgia", "pct": 2.6, "grupo": "cir-especialidades" },
+      { "tema": "Cirurgia de cabeça e pescoço", "pct": 2.6, "grupo": "cir-especialidades" },
+      { "tema": "Queimaduras e trauma elétrico", "pct": 2.3, "grupo": "cir-especialidades" },
+      { "tema": "Cirurgia bariátrica", "pct": 2.3, "grupo": "cir-ad" },
+      { "tema": "Cicatrização de feridas", "pct": 1.9, "grupo": "cir-especialidades" },
+      { "tema": "Proctologia", "pct": 1.9, "grupo": "cir-ad" },
+      { "tema": "Temas gerais em cirurgia", "pct": 1.9, "grupo": "cir-perioperatorio" }
     ]
   },
   "apostilas": [
