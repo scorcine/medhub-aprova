@@ -106,12 +106,24 @@ const AprovaFlashcards = {
     return this.queue.length;
   },
 
-  /** Estuda todos os cards de um deck (ordem do arquivo). */
+  /** Embaralha a fila (Fisher–Yates). */
+  shuffleQueue (cards) {
+    const arr = cards.slice();
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+    return arr;
+  },
+
+  /** Estuda todos os cards de um deck (ordem aleatória). */
   startDeck (deckId) {
     return this.startDecks([deckId]);
   },
 
-  /** Estuda um ou mais decks na ordem informada. */
+  /** Estuda um ou mais decks com cards embaralhados. */
   startDecks (deckIds) {
     const ids = (deckIds || []).filter(Boolean);
     const cards = [];
@@ -122,7 +134,7 @@ const AprovaFlashcards = {
     this.activeDeckId = ids.length === 1 ? ids[0] : null;
     this.activeDeckIds = ids.slice();
     this.activeSpecialty = cards[0] ? cards[0].specialty : null;
-    this.queue = cards;
+    this.queue = this.shuffleQueue(cards);
     this.index = 0;
     this.revealed = false;
     return this.queue.length;
