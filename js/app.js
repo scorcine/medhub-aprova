@@ -136,7 +136,7 @@ function aprovaRenderFlashcardBrowse () {
 
 let aprovaActiveSpecialty = null;
 let aprovaActiveFocusId = "geral";
-let aprovaActivePedModule = "neonatologia";
+let aprovaActivePedModule = null;
 
 function aprovaHideEspViews () {
   ["esp-list", "esp-decks", "esp-revisao"].forEach(id => {
@@ -145,6 +145,8 @@ function aprovaHideEspViews () {
   });
   const stats = document.getElementById("esp-stats");
   if (stats) stats.hidden = true;
+  const subtemas = document.getElementById("esp-subtemas");
+  if (subtemas) subtemas.hidden = true;
 }
 
 function aprovaShowSpecialtyList () {
@@ -250,17 +252,59 @@ function aprovaRenderDeckCards (specialty, grid, deckOrder) {
   });
 }
 
+async function aprovaPedModuleStats (moduleId) {
+  if (typeof AprovaRevisao === "undefined") {
+    return { decks: 0, cards: 0, deckOrder: [] };
+  }
+  const profile = await AprovaRevisao.getProfile("geral", moduleId);
+  const deckOrder = (profile && profile.deckOrder) || [];
+  let cards = 0;
+  deckOrder.forEach(id => {
+    const deck = AprovaFlashcards.decks.find(d => d.id === id);
+    cards += (deck && deck.cards ? deck.cards.length : 0);
+  });
+  return { decks: deckOrder.length, cards, deckOrder };
+}
+
+async function aprovaRenderPedGroupCards (activeModuleId) {
+  const grid = document.getElementById("esp-group-grid");
+  const groups = document.getElementById("esp-groups");
+  if (!grid || !groups) return;
+
+  groups.hidden = false;
+  const modules = typeof AprovaRevisao !== "undefined"
+    ? AprovaRevisao.listModules()
+    : [];
+  grid.innerHTML = "";
+
+  for (const m of modules) {
+    const stats = await aprovaPedModuleStats(m.id);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "dash-card" + (m.id === activeModuleId ? " dash-card--active" : "");
+    btn.innerHTML =
+      "<span class=\"dash-card-kicker\">Grupo</span>" +
+      "<strong>" + m.label + "</strong>" +
+      "<span>" + stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
+        " · " + stats.decks + " subtema" + (stats.decks === 1 ? "" : "s") + "</span>";
+    btn.addEventListener("click", () => aprovaOpenPediatriaModule(m.id));
+    grid.appendChild(btn);
+  }
+}
+
 async function aprovaRenderPediatriaStats (focusId, moduleId) {
   const stats = document.getElementById("esp-stats");
   const bars = document.getElementById("esp-stats-bars");
   const title = document.getElementById("esp-stats-title");
   const sub = document.getElementById("esp-stats-sub");
   const options = document.getElementById("esp-exam-options");
-  const modulesEl = document.getElementById("esp-module-options");
-  if (!stats || !bars || !options) return;
+  const subtemas = document.getElementById("esp-subtemas");
+  const grid = document.getElementById("esp-deck-grid");
+  if (!stats || !bars || !options || !moduleId) return;
 
   stats.hidden = false;
-  aprovaActivePedModule = moduleId || aprovaActivePedModule || "neonatologia";
+  if (subtemas) subtemas.hidden = false;
+  aprovaActivePedModule = moduleId;
   aprovaActiveFocusId = focusId || "geral";
 
   if (typeof AprovaRevisao !== "undefined") {
@@ -278,17 +322,7 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     ? await AprovaRevisao.getProfile(aprovaActiveFocusId, aprovaActivePedModule)
     : null;
 
-  if (modulesEl) {
-    modulesEl.innerHTML = "";
-    modules.forEach(m => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "esp-exam-btn" + (m.id === aprovaActivePedModule ? " active" : "");
-      btn.textContent = m.label;
-      btn.addEventListener("click", () => aprovaRenderPediatriaStats("geral", m.id));
-      modulesEl.appendChild(btn);
-    });
-  }
+  await aprovaRenderPedGroupCards(aprovaActivePedModule);
 
   if (!profile) {
     bars.innerHTML = "<p class=\"muted\">Estatísticas indisponíveis.</p>";
@@ -329,29 +363,77 @@ async function aprovaRenderPediatriaStats (focusId, moduleId) {
     options.appendChild(btn);
   });
 
-  const grid = document.getElementById("esp-deck-grid");
-  const decksTitle = document.getElementById("esp-decks-title");
   if (grid) aprovaRenderDeckCards("pediatria", grid, profile.deckOrder || []);
+  const decksTitle = document.getElementById("esp-decks-title");
+  const subtemasTitle = document.getElementById("esp-subtemas-title");
   if (decksTitle) decksTitle.textContent = "Pediatria · " + moduleLabel;
+  if (subtemasTitle) subtemasTitle.textContent = "Subtemas · " + moduleLabel;
 }
 
 async function aprovaOpenPediatria () {
   aprovaActiveSpecialty = "pediatria";
   aprovaActiveFocusId = "geral";
-  if (!aprovaActivePedModule) aprovaActivePedModule = "neonatologia";
+  aprovaActivePedModule = null;
 
   const decksWrap = document.getElementById("esp-decks");
-  const grid = document.getElementById("esp-deck-grid");
   const title = document.getElementById("esp-decks-title");
+  const sub = document.getElementById("esp-decks-sub");
   const hint = document.getElementById("esp-hint");
-  if (!grid || !decksWrap) return;
+  const back = document.getElementById("esp-back");
+  const stats = document.getElementById("esp-stats");
+  const subtemas = document.getElementById("esp-subtemas");
+  if (!decksWrap) return;
 
   aprovaHideEspViews();
   decksWrap.hidden = false;
-  if (title) title.textContent = "Pediatria · subtemas";
-  if (hint) hint.textContent = "Escolha o tema, a prova e um subtema. O gráfico mostra o que mais cai.";
+  if (stats) stats.hidden = true;
+  if (subtemas) subtemas.hidden = true;
 
-  await aprovaRenderPediatriaStats(aprovaActiveFocusId, aprovaActivePedModule);
+  const total = AprovaFlashcards.countBySpecialty("pediatria");
+  const modules = typeof AprovaRevisao !== "undefined" ? AprovaRevisao.listModules() : [];
+  if (title) title.textContent = "Pediatria";
+  if (sub) {
+    sub.hidden = false;
+    sub.textContent = total
+      ? (total + " flashcards · " + modules.length + " grupos · escolha um grupo para ver os subtemas")
+      : "Escolha um grupo para estudar.";
+  }
+  if (hint) hint.textContent = "Pediatria em geral — toque em um grupo para abrir os subtemas.";
+  if (back) back.textContent = "← Voltar às especialidades";
+
+  const groupsLabel = document.getElementById("esp-groups-label");
+  if (groupsLabel) groupsLabel.textContent = "Grupos";
+
+  await aprovaRenderPedGroupCards(null);
+}
+
+async function aprovaOpenPediatriaModule (moduleId) {
+  aprovaActiveSpecialty = "pediatria";
+  aprovaActivePedModule = moduleId || aprovaActivePedModule;
+  if (!aprovaActivePedModule) {
+    await aprovaOpenPediatria();
+    return;
+  }
+
+  const decksWrap = document.getElementById("esp-decks");
+  const hint = document.getElementById("esp-hint");
+  const back = document.getElementById("esp-back");
+  const sub = document.getElementById("esp-decks-sub");
+  if (!decksWrap) return;
+
+  aprovaHideEspViews();
+  decksWrap.hidden = false;
+  if (sub) {
+    sub.hidden = false;
+    sub.textContent = "Grupos no topo · subtemas e o que mais cai abaixo.";
+  }
+  if (hint) hint.textContent = "Escolha um subtema ou mude de grupo. O gráfico mostra o que mais cai na prova.";
+  if (back) back.textContent = "← Voltar à Pediatria";
+
+  const groupsLabel = document.getElementById("esp-groups-label");
+  if (groupsLabel) groupsLabel.textContent = "Grupos";
+
+  await aprovaRenderPediatriaStats("geral", aprovaActivePedModule);
 }
 
 function aprovaOpenSpecialtyReview (profileId) {
@@ -371,6 +453,7 @@ function aprovaOpenSpecialtyReview (profileId) {
 
 function aprovaOpenSpecialty (specialty) {
   aprovaActiveSpecialty = specialty;
+  aprovaActivePedModule = null;
 
   if (specialty === "pediatria") {
     aprovaOpenPediatria();
@@ -380,11 +463,21 @@ function aprovaOpenSpecialty (specialty) {
   const decksWrap = document.getElementById("esp-decks");
   const grid = document.getElementById("esp-deck-grid");
   const title = document.getElementById("esp-decks-title");
+  const sub = document.getElementById("esp-decks-sub");
   const hint = document.getElementById("esp-hint");
+  const back = document.getElementById("esp-back");
+  const groups = document.getElementById("esp-groups");
+  const subtemas = document.getElementById("esp-subtemas");
+  const stats = document.getElementById("esp-stats");
   if (!grid || !decksWrap) return;
 
   aprovaHideEspViews();
   decksWrap.hidden = false;
+  if (groups) groups.hidden = true;
+  if (subtemas) subtemas.hidden = false;
+  if (stats) stats.hidden = true;
+  if (sub) sub.hidden = true;
+  if (back) back.textContent = "← Voltar às especialidades";
 
   const label = APROVA_SPECIALTY_LABELS[specialty] || specialty;
   if (title) title.textContent = label + " · subtemas";
@@ -637,10 +730,18 @@ async function aprovaBoot () {
   });
 
   document.getElementById("esp-back")?.addEventListener("click", () => {
+    if (aprovaActiveSpecialty === "pediatria" && aprovaActivePedModule) {
+      aprovaOpenPediatria();
+      return;
+    }
     aprovaShowSpecialtyList();
   });
 
   document.getElementById("esp-rev-back")?.addEventListener("click", () => {
+    if (aprovaActivePedModule) {
+      aprovaOpenPediatriaModule(aprovaActivePedModule);
+      return;
+    }
     aprovaOpenPediatria();
   });
 

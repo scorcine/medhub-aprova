@@ -235,6 +235,10 @@ async function aprovaRenderRevisaoNeo (profileId, moduleId) {
     "</div>";
 
   document.getElementById("rev-open-ped")?.addEventListener("click", () => {
+    if (typeof aprovaOpenPediatriaModule === "function" && AprovaRevisao.activeModuleId) {
+      aprovaOpenPediatriaModule(AprovaRevisao.activeModuleId);
+      return;
+    }
     if (typeof aprovaOpenPediatria === "function") aprovaOpenPediatria();
   });
 }
