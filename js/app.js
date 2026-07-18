@@ -1,0 +1,126 @@
+﻿/* Shell do app — abas + ligação dos módulos */
+
+function aprovaShowPanel (id) {
+  document.querySelectorAll(".panel").forEach(panel => {
+    const active = panel.id === "panel-" + id;
+    panel.classList.toggle("active", active);
+    panel.hidden = !active;
+  });
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.setAttribute("aria-selected", String(tab.dataset.panel === id));
+  });
+}
+
+function aprovaRenderToday () {
+  const prompt = document.getElementById("today-prompt");
+  const stats = document.getElementById("today-stats");
+  if (!prompt || !stats) return;
+  const summary = aprovaTodaySummary(
+    AprovaFlashcards.allIds(),
+    AprovaQuestions.items.length
+  );
+  prompt.textContent = summary.prompt;
+  stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+}
+
+function aprovaRenderFlashcard () {
+  const card = AprovaFlashcards.current();
+  const front = document.getElementById("fc-front");
+  const back = document.getElementById("fc-back");
+  const label = document.getElementById("fc-deck-label");
+  const revealBtn = document.getElementById("fc-reveal");
+  const easyBtn = document.getElementById("fc-easy");
+  const hardBtn = document.getElementById("fc-hard");
+  if (!card || !front) return;
+
+  label.textContent = card.deckName;
+  front.textContent = card.front;
+  back.textContent = card.back;
+  back.hidden = !AprovaFlashcards.revealed;
+  revealBtn.hidden = AprovaFlashcards.revealed;
+  easyBtn.hidden = !AprovaFlashcards.revealed;
+  hardBtn.hidden = !AprovaFlashcards.revealed;
+}
+
+function aprovaRenderQuestion () {
+  const q = AprovaQuestions.current();
+  const theme = document.getElementById("q-theme");
+  const stem = document.getElementById("q-stem");
+  const choices = document.getElementById("q-choices");
+  const explain = document.getElementById("q-explain");
+  const nextBtn = document.getElementById("q-next");
+  const stats = document.getElementById("q-stats");
+  if (!q || !stem) return;
+
+  theme.textContent = q.theme;
+  stem.textContent = q.stem;
+  explain.hidden = true;
+  explain.textContent = "";
+  nextBtn.hidden = true;
+  choices.innerHTML = "";
+
+  q.choices.forEach((text, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "choice";
+    btn.textContent = text;
+    btn.addEventListener("click", () => {
+      const result = AprovaQuestions.choose(i);
+      if (!result) return;
+      choices.querySelectorAll(".choice").forEach((el, idx) => {
+        el.disabled = true;
+        if (idx === result.answer) el.classList.add("correct");
+        if (idx === i && !result.ok) el.classList.add("wrong");
+      });
+      explain.textContent = result.explain;
+      explain.hidden = false;
+      nextBtn.hidden = false;
+      stats.textContent = AprovaQuestions.statsText();
+    });
+    choices.appendChild(btn);
+  });
+
+  stats.textContent = AprovaQuestions.statsText();
+}
+
+async function aprovaBoot () {
+  await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
+  aprovaRenderToday();
+  aprovaRenderFlashcard();
+  aprovaRenderQuestion();
+
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      aprovaShowPanel(tab.dataset.panel);
+      if (tab.dataset.panel === "hoje") aprovaRenderToday();
+    });
+  });
+
+  document.querySelectorAll("[data-goto]").forEach(btn => {
+    btn.addEventListener("click", () => aprovaShowPanel(btn.dataset.goto));
+  });
+
+  document.getElementById("fc-reveal")?.addEventListener("click", () => {
+    AprovaFlashcards.reveal();
+    aprovaRenderFlashcard();
+  });
+
+  document.getElementById("fc-easy")?.addEventListener("click", () => {
+    AprovaFlashcards.rate(true);
+    aprovaRenderFlashcard();
+    aprovaRenderToday();
+  });
+
+  document.getElementById("fc-hard")?.addEventListener("click", () => {
+    AprovaFlashcards.rate(false);
+    aprovaRenderFlashcard();
+    aprovaRenderToday();
+  });
+
+  document.getElementById("q-next")?.addEventListener("click", () => {
+    AprovaQuestions.next();
+    aprovaRenderQuestion();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", aprovaBoot);

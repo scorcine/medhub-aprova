@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudar — MedHub Aprova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/aprova.css">
+</head>
+<body class="app-body">
+  <header class="wrap app-bar">
+    <a class="brand" href="index.html">MedHub <span>Aprova</span></a>
+    <nav class="app-nav" aria-label="Modos de estudo">
+      <button type="button" class="tab" data-panel="hoje" aria-selected="true">Hoje</button>
+      <button type="button" class="tab" data-panel="flashcards" aria-selected="false">Flashcards</button>
+      <button type="button" class="tab" data-panel="questoes" aria-selected="false">Questões</button>
+    </nav>
+  </header>
+
+  <main class="wrap app-main">
+    <section id="panel-hoje" class="panel active" aria-labelledby="hoje-title">
+      <h2 id="hoje-title">Revisão de hoje</h2>
+      <p class="muted">Resumo do que a agenda recomenda estudar agora.</p>
+      <div class="study-card" id="today-summary">
+        <div class="label">Agenda</div>
+        <p class="prompt" id="today-prompt">Carregando…</p>
+        <div class="actions-row">
+          <button type="button" class="btn btn-primary" data-goto="flashcards">Abrir flashcards</button>
+          <button type="button" class="btn btn-ghost" data-goto="questoes">Abrir questões</button>
+        </div>
+        <div class="stats" id="today-stats"></div>
+      </div>
+    </section>
+
+    <section id="panel-flashcards" class="panel" aria-labelledby="fc-title" hidden>
+      <h2 id="fc-title">Flashcards</h2>
+      <p class="muted">Toque para revelar · marque se acertou ou errou.</p>
+      <div class="study-card" id="fc-card">
+        <div class="label" id="fc-deck-label">Deck</div>
+        <p class="prompt" id="fc-front">—</p>
+        <p class="answer" id="fc-back" hidden>—</p>
+        <div class="actions-row">
+          <button type="button" class="btn btn-ghost" id="fc-reveal">Mostrar resposta</button>
+          <button type="button" class="btn btn-primary" id="fc-easy" hidden>Acertei</button>
+          <button type="button" class="btn btn-ghost" id="fc-hard" hidden>Errei</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="panel-questoes" class="panel" aria-labelledby="q-title" hidden>
+      <h2 id="q-title">Banco de questões</h2>
+      <p class="muted">Escolha a alternativa · feedback na hora.</p>
+      <div class="study-card" id="q-card">
+        <div class="label" id="q-theme">Tema</div>
+        <p class="prompt" id="q-stem">—</p>
+        <div id="q-choices"></div>
+        <p class="answer" id="q-explain" hidden></p>
+        <div class="actions-row">
+          <button type="button" class="btn btn-primary" id="q-next" hidden>Próxima</button>
+        </div>
+        <div class="stats" id="q-stats"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/schedule.js"></script>
+  <script src="js/flashcards.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
