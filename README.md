@@ -1,6 +1,6 @@
-# MedHub Aprova
+# MedHub R1
 
-Revisão programada para provas de **R1**: flashcards + banco de questões, feito para estudantes de medicina.
+Revisão programada para provas de **residência (R1)**: flashcards + banco de questões, feito para estudantes de medicina.
 
 App **independente** do MedHub clínico (`meu-app-medico`). Integração (link, conta, conteúdo compartilhado) fica para quando o produto estiver pronto.
 
@@ -37,10 +37,10 @@ Abre em `http://localhost:4173`.
 
 Quando estiver estável:
 
-1. Publicar este app (ex.: `aprova.medhub.ia.br` ou `medhub-aprova.vercel.app`)
+1. Publicar este app (ex.: `r1.medhub.ia.br` ou `medhub-aprova.vercel.app`)
 2. No MedHub, adicionar entrada na landing estudantes apontando para cá
 3. Opcional: login compartilhado e sync de progresso
 
 ## Status
 
-Protótipo inicial — landing + shell do app com módulos stub.
+Protótipo — landing + área de estudo (SRS, flashcards, questões).
