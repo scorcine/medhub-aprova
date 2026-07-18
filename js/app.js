@@ -249,7 +249,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       endocrinologia: {
         shortLabel: "Endocrinologia",
         overviewCacheKey: "endocrinologia",
-        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718cm",
+        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718cn",
         countNoun: "Endocrinologia"
       }
     };

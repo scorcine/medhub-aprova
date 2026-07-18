@@ -81,7 +81,9 @@ const newDecks = [
     ["CAD — critérios de resolução e transição SC?", "pH > 7,3 · bicarbonato > 18 mEq/L · glicemia < 200 mg/dL · suspender insulina IV apenas 1–2 h após a dose subcutânea"],
     ["CAD — quando usar bicarbonato no adulto?", "Apenas quando pH < 6,9 · entre 6,9 e 7,1 não houve benefício demonstrado · pode causar hipocalemia, arritmias e acidose liquórica paradoxal"],
     ["EHH — perfil, critérios ADA e mortalidade?", "Geralmente idoso com DM2 · glicose > 600 mg/dL, pH > 7,3, HCO3 > 18 e osmolalidade efetiva > 320 mOsm/kg · mortalidade de 10–17%"],
-    ["EHH — conduta inicial essencial?", "Reposição hídrica vigorosa antes da insulina · insulina sem corrigir o déficit hidroeletrolítico pode causar colapso vascular imediato"]
+    ["EHH — conduta inicial essencial?", "Reposição hídrica vigorosa antes da insulina · insulina sem corrigir o déficit hidroeletrolítico pode causar colapso vascular imediato"],
+    ["CAD — como a queda rápida da glicemia se relaciona ao edema cerebral?", "Queda muito rápida favorece edema cerebral · por isso evitar queda >100 mg/dL/h e, com glicemia 200–250, associar SG 5% mantendo 150–200 mg/dL"],
+    ["Mucormicose na CAD — risco, forma e tratamento?", "CAD é fator de risco clássico · forma rinocerebral (Rhizopus/Mucor) com secreção nasal enegrecida por necrose · anfotericina B IV + desbridamento cirúrgico amplo · fatal se atrasada"]
   ]),
   deck("endo-hipoglicemia", "Hipoglicemia", [
     ["Hipoglicemia no DM — causas precipitantes comuns?", "Omissão ou atraso de refeições · excesso de insulina ou hipoglicemiante oral · exercício imprevisto · álcool, falência renal e hepática podem predispor"],

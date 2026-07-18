@@ -46,7 +46,9 @@ const decks = [
       { front: "Quais medidas de suporte acompanham a crise adrenal?", back: "Corrigir depleção de volume, desidratação, eletrólitos e hipoglicemia · Tratar infecção ou outro fator precipitante" },
       { front: "Por que não é preciso fludrocortisona no início da crise adrenal?", back: "As doses preconizadas de hidrocortisona já possuem efeito mineralocorticoide" },
       { front: "Qual reposição de manutenção é usada na insuficiência adrenal crônica?", back: "Prednisona ou hidrocortisona em doses divididas · A dose deve dobrar em infecções e procedimentos como extração dentária" },
-      { front: "Quando a fludrocortisona é indicada na insuficiência adrenal?", back: "Apenas na insuficiência adrenal primária · Raramente necessária na secundária" }
+      { front: "Quando a fludrocortisona é indicada na insuficiência adrenal?", back: "Apenas na insuficiência adrenal primária · Raramente necessária na secundária" },
+      { front: "Hiperplasia adrenal congênita por 21-hidroxilase — mecanismo?", back: "Bloqueia cortisol e aldosterona · Precursor desvia para androgênios adrenais · Forma mais comum de HAC" },
+      { front: "HAC 21-OH — forma clássica mais frequente e rastreio?", back: "Perdedora de sal ~66% (virilizante simples ~32%) · Crise adrenal neonatal possível · Rastreio com 17-hidroxiprogesterona (teste do pezinho)" }
     ]
   },
   {
@@ -109,7 +111,9 @@ const decks = [
       { front: "Como a calcemia costuma se comportar no hiperpara secundário e terciário?", back: "Secundário: pode ser normal ou baixa · Hipercalcemia franca é esperada no terciário" },
       { front: "Qual é o papel do sestamibi no hiperparatireoidismo?", back: "Localização pré-operatória de tecido paratireoidiano ativo · Não confirma o diagnóstico" },
       { front: "Qual padrão laboratorial do hipoparatireoidismo primário?", back: "Hipocalcemia · Hiperfosfatemia · PTH baixo" },
-      { front: "Qual padrão cálcio-fósforo-PTH ocorre na deficiência de vitamina D?", back: "Hipocalcemia · Hipofosfatemia · PTH elevado por aumento da fosfatúria" }
+      { front: "Qual padrão cálcio-fósforo-PTH ocorre na deficiência de vitamina D?", back: "Hipocalcemia · Hipofosfatemia · PTH elevado por aumento da fosfatúria" },
+      { front: "Pseudo-hipoparatireoidismo — o que é e qual o laboratório?", back: "Resistência periférica ao PTH (hereditária) · Hipocalcemia + hiperfosfatemia como no hipopara · PTH elevado (>65 pg/mL) · Pode haver osteodistrofia de Albright (braquidactilia 4º/5º)" },
+      { front: "Crise hipercalcêmica — critérios e tratamento inicial?", back: "Ca total >15 mg/dL + encefalopatia, desidratação e IRA pré-renal · Hidratar vigorosamente com SF 0,9% primeiro · Depois furosemida · Graves/refratários: calcitonina e bifosfonato (pamidronato/zoledronato)" }
     ]
   },
   {
@@ -122,6 +126,7 @@ const decks = [
       { front: "Qual causa comum de diabetes insipidus em crianças é citada no texto?", back: "Granuloma eosinofílico ou síndrome X" },
       { front: "Qual causa mais comum de pan-hipopituitarismo?", back: "Adenoma hipofisário · Comprime a glândula funcionante" },
       { front: "Quais causas adquiridas clássicas de hipopituitarismo além do adenoma?", back: "Síndrome de Sheehan (necrose pós-parto) · Apoplexia hipofisária · Tumores hipotalâmicos · Hipofisite linfocítica · Cirurgia/radioterapia" },
+      { front: "Como a síndrome da sela vazia pode afetar a prolactina?", back: "Estiramento do pedículo hipofisário reduz inibição dopaminérgica · Pode elevar prolactina · Também citado junto a trauma e compressão do pedículo" },
       { front: "Qual é a principal causa de hiperprolactinemia não fisiológica?", back: "Uso de fármacos · Neurolépticos e metoclopramida bloqueiam receptores de dopamina" },
       { front: "Prolactina muito alta: qual valor sugere prolactinoma?", back: "> 150–200 ng/mL · Muito indicativo de prolactinoma" },
       { front: "Qual é o problema do efeito gancho no prolactinoma?", back: "Macroprolactinoma volumoso pode ter prolactina falsamente baixa no ensaio imunométrico · Repetir com soro diluído" },

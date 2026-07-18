@@ -80,7 +80,9 @@ const decks = [
     ["Quais achados sugerem coma mixedematoso?", "Rebaixamento da consciência · Hipoventilação · Hipotermia · Bradicardia · Hiponatremia · Hipoglicemia"],
     ["Qual é o principal precipitante do coma mixedematoso?", "Pneumonia bacteriana · Infecções respiratórias são os precipitantes mais comuns"],
     ["Quais são pilares do tratamento do coma mixedematoso?", "Levotiroxina venosa · Hidrocortisona venosa · Suporte ventilatório · Tratar infecção · Aquecimento passivo"],
-    ["O que sugere bócio mergulhante e sinal de Pemberton?", "Tosse, dispneia, disfagia ou rouquidão por compressão · Elevar os braços causa fraqueza, tontura e congestão facial"]
+    ["O que sugere bócio mergulhante e sinal de Pemberton?", "Tosse, dispneia, disfagia ou rouquidão por compressão · Elevar os braços causa fraqueza, tontura e congestão facial"],
+    ["O que é a síndrome do eutireóideo doente?", "Alteração de TSH/hormônios tireoidianos em doença sistêmica grave, sem tireoidopatia · Evitar dosar função tireoidiana no agudo, salvo forte suspeita"],
+    ["Padrão laboratorial mais frequente na SED?", "Síndrome do T3 baixo · T3 total/livre ↓ com T4 e TSH normais · ↑ rT3 por prejuízo da desiodase tipo 1 · Queda do T3 correlaciona com gravidade"]
   ]),
   deck("endo-tireoidites", "Tireoidites · Hashimoto e subagudas", [
     ["Qual evolução funcional é típica das tireoidites?", "Tireotoxicose inicial por liberação de hormônio estocado · Hipotireoidismo posterior · Recuperação nas subagudas"],

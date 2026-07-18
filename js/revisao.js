@@ -717,61 +717,61 @@ const APROVA_REVISAO_MODULES = {
   },
   "endo-tireoide": {
     label: "Tireoide · hipertireoidismo · Graves",
-    file: "data/revisao-endo-tireoide.json?v=20260718cm",
+    file: "data/revisao-endo-tireoide.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-hipotireo": {
     label: "Hipotireoidismo · tireoidites",
-    file: "data/revisao-endo-hipotireo.json?v=20260718cm",
+    file: "data/revisao-endo-hipotireo.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-nodulos": {
     label: "Nódulos · câncer de tireoide",
-    file: "data/revisao-endo-nodulos.json?v=20260718cm",
+    file: "data/revisao-endo-nodulos.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-adrenal": {
     label: "Suprarrenal",
-    file: "data/revisao-endo-adrenal.json?v=20260718cm",
+    file: "data/revisao-endo-adrenal.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-paratireoide": {
     label: "Paratireoide · cálcio",
-    file: "data/revisao-endo-paratireoide.json?v=20260718cm",
+    file: "data/revisao-endo-paratireoide.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-hipofise": {
     label: "Hipófise · hipotálamo",
-    file: "data/revisao-endo-hipofise.json?v=20260718cm",
+    file: "data/revisao-endo-hipofise.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-dm": {
     label: "Diabetes · diagnóstico · tratamento",
-    file: "data/revisao-endo-dm.json?v=20260718cm",
+    file: "data/revisao-endo-dm.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-dm-complicacoes": {
     label: "DM · crônicas · pé",
-    file: "data/revisao-endo-dm-complicacoes.json?v=20260718cm",
+    file: "data/revisao-endo-dm-complicacoes.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-urgencias-dm": {
     label: "CAD · HHNS · hipoglicemia",
-    file: "data/revisao-endo-urgencias-dm.json?v=20260718cm",
+    file: "data/revisao-endo-urgencias-dm.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-obesidade": {
     label: "Obesidade",
-    file: "data/revisao-endo-obesidade.json?v=20260718cm",
+    file: "data/revisao-endo-obesidade.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
   }
