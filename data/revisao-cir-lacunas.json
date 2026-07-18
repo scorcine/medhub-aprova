@@ -11,13 +11,41 @@
       "foco": "Apendicite · Colecistite/colangite · Diverticulite · Obstrução · Urologia",
       "estilo": "Síntese de gaps × estatística Brasil",
       "priorities": [
-        { "tema": "Apendicite (WSES 2025)", "pct": 22, "n": 22 },
-        { "tema": "Colecistite / colangite (TG18)", "pct": 18, "n": 18 },
-        { "tema": "Diverticulite (WSES 2020)", "pct": 14, "n": 14 },
-        { "tema": "Obstrução / ASBO", "pct": 12, "n": 12 },
-        { "tema": "Abdome vascular", "pct": 10, "n": 10 },
-        { "tema": "Urologia (EAU 2025)", "pct": 10, "n": 10 },
-        { "tema": "Vesícula eletiva · torácica · AD", "pct": 14, "n": 14 }
+        {
+          "tema": "Apendicite (WSES 2025)",
+          "pct": 22,
+          "n": 22
+        },
+        {
+          "tema": "Colecistite / colangite (TG18)",
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "Diverticulite (WSES 2020)",
+          "pct": 14,
+          "n": 14
+        },
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 12,
+          "n": 12
+        },
+        {
+          "tema": "Abdome vascular",
+          "pct": 10,
+          "n": 10
+        },
+        {
+          "tema": "Urologia (EAU 2025)",
+          "pct": 10,
+          "n": 10
+        },
+        {
+          "tema": "Vesícula eletiva · torácica · AD",
+          "pct": 14,
+          "n": 14
+        }
       ],
       "deckOrder": [
         "cg-apendicite",
@@ -70,11 +98,26 @@
       "sourceType": "levantamento",
       "source": "Padrão Enare Cirurgia aplicado às lacunas.",
       "priorities": [
-        { "tema": "Apendicite", "pct": 28 },
-        { "tema": "Colecistite / vias biliares", "pct": 22 },
-        { "tema": "Diverticulite", "pct": 16 },
-        { "tema": "Obstrução", "pct": 14 },
-        { "tema": "Urologia / vascular / AD", "pct": 20 }
+        {
+          "tema": "Apendicite",
+          "pct": 28
+        },
+        {
+          "tema": "Colecistite / vias biliares",
+          "pct": 22
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 16
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 14
+        },
+        {
+          "tema": "Urologia / vascular / AD",
+          "pct": 20
+        }
       ],
       "deckOrder": [
         "cg-apendicite",
@@ -90,7 +133,148 @@
         "cg-torax",
         "cg-figado"
       ],
-      "checklist": ["apendicite", "tg18", "diverticulite", "asbo", "vesicula"],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · FID e QHD",
+          "texto": "Apendicite e colecistite/colangite."
+        },
+        {
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Quando NÃO dar ATB e quando operar."
+        },
+        {
+          "titulo": "Sessão 3 · Oclusão",
+          "texto": "Expectante 48–72h vs estrangulamento."
+        }
+      ],
+      "lacuna": "Detalhe de cada classificação Hinchey antiga: saiba não complicada vs complicada + peritonite."
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "2021–2024",
+      "blurb": "Protocolar.",
+      "verdict": "Decore fluxos: laparoscopia na apendicite, LC precoce na colecistite, sem ATB rotina na diverticulite não complicada, CPRE na colangite, NOM na ASBO sem isquemia.",
+      "foco": "Fluxos de urgência abdominal",
+      "estilo": "Levantamento Enare",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare Cirurgia aplicado às lacunas.",
+      "priorities": [
+        {
+          "tema": "Urgências abdominais (bloco)",
+          "pct": 40
+        },
+        {
+          "tema": "Vesícula / vias",
+          "pct": 16
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 14
+        },
+        {
+          "tema": "Urologia / outros",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-urologia",
+        "cg-abdome-vascular",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "urologia"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Checklists",
+          "texto": "Apendicite · colecistite · diverticulite."
+        },
+        {
+          "titulo": "Sessão 2 · Colangite",
+          "texto": "ATB + drenagem — sempre."
+        },
+        {
+          "titulo": "Sessão 3 · ASBO",
+          "texto": "Quando parar de esperar."
+        }
+      ],
+      "lacuna": "Nomes comerciais de stents e drenos: saiba a indicação."
+    },
+    {
+      "id": "revalida",
+      "label": "Revalida",
+      "kicker": "INEP",
+      "featured": false,
+      "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
+      "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · urgências · conduta prática",
+      "estilo": "Estimativa INEP/Revalida",
+      "sourceType": "estimativa",
+      "source": "Estimativa Revalida · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 31.4
+        },
+        {
+          "tema": "Colecistite / vias biliares",
+          "pct": 22.5
+        },
+        {
+          "tema": "Urologia / vascular / AD",
+          "pct": 17.5
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 15.6
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 13
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "vesicula"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · FID e QHD",
@@ -118,11 +302,26 @@
       "sourceType": "levantamento",
       "source": "Padrão USP-SP Cirurgia aplicado às lacunas.",
       "priorities": [
-        { "tema": "Diverticulite / TC", "pct": 20 },
-        { "tema": "Obstrução / ASBO", "pct": 18 },
-        { "tema": "Vesícula / vias biliares", "pct": 18 },
-        { "tema": "Apendicite", "pct": 16 },
-        { "tema": "Vascular / AD / urologia", "pct": 28 }
+        {
+          "tema": "Diverticulite / TC",
+          "pct": 20
+        },
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 18
+        },
+        {
+          "tema": "Vesícula / vias biliares",
+          "pct": 18
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 16
+        },
+        {
+          "tema": "Vascular / AD / urologia",
+          "pct": 28
+        }
       ],
       "deckOrder": [
         "cg-diverticulite",
@@ -138,7 +337,13 @@
         "cg-figado",
         "cg-torax"
       ],
-      "checklist": ["diverticulite", "asbo", "tg18", "apendicite", "vesicula"],
+      "checklist": [
+        "diverticulite",
+        "asbo",
+        "tg18",
+        "apendicite",
+        "vesicula"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · TC de abdome",
@@ -166,11 +371,26 @@
       "sourceType": "levantamento",
       "source": "Padrão UNIFESP Cirurgia aplicado às lacunas.",
       "priorities": [
-        { "tema": "Apendicite / colecistite", "pct": 24 },
-        { "tema": "Abdome vascular", "pct": 18 },
-        { "tema": "Urologia", "pct": 16 },
-        { "tema": "Obstrução", "pct": 14 },
-        { "tema": "AD / torácica / diverticulite", "pct": 28 }
+        {
+          "tema": "Apendicite / colecistite",
+          "pct": 24
+        },
+        {
+          "tema": "Abdome vascular",
+          "pct": 18
+        },
+        {
+          "tema": "Urologia",
+          "pct": 16
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 14
+        },
+        {
+          "tema": "AD / torácica / diverticulite",
+          "pct": 28
+        }
       ],
       "deckOrder": [
         "cg-apendicite",
@@ -186,7 +406,13 @@
         "cg-vesicula",
         "cg-figado"
       ],
-      "checklist": ["apendicite", "tg18", "vascular", "urologia", "asbo"],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "vascular",
+        "urologia",
+        "asbo"
+      ],
       "sessoes": [
         {
           "titulo": "Sessão 1 · Conduta em 1 linha",
@@ -204,20 +430,37 @@
       "lacuna": "Protocolos institucionais de EVAR: saiba conceito de indicação vs aberto."
     },
     {
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "2021–2024",
-      "blurb": "Protocolar.",
-      "verdict": "Decore fluxos: laparoscopia na apendicite, LC precoce na colecistite, sem ATB rotina na diverticulite não complicada, CPRE na colangite, NOM na ASBO sem isquemia.",
-      "foco": "Fluxos de urgência abdominal",
-      "estilo": "Levantamento Enare",
-      "sourceType": "levantamento",
-      "source": "Padrão Enare Cirurgia aplicado às lacunas.",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "kicker": "Padrão APS",
+      "featured": false,
+      "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
+      "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · crônicas · protocolos MS",
+      "estilo": "Estimativa APS",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-SP · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de enamed).",
       "priorities": [
-        { "tema": "Urgências abdominais (bloco)", "pct": 40 },
-        { "tema": "Vesícula / vias", "pct": 16 },
-        { "tema": "Obstrução", "pct": 14 },
-        { "tema": "Urologia / outros", "pct": 30 }
+        {
+          "tema": "Colecistite / vias biliares",
+          "pct": 24.8
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 21.5
+        },
+        {
+          "tema": "Urologia / vascular / AD",
+          "pct": 20.8
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 17.7
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 15.2
+        }
       ],
       "deckOrder": [
         "cg-apendicite",
@@ -225,30 +468,596 @@
         "cg-diverticulite",
         "cg-obstrucao",
         "cg-vesicula",
-        "cg-urologia",
         "cg-abdome-vascular",
+        "cg-urologia",
         "cg-pancreas",
         "cg-estomago",
         "cg-colon",
         "cg-torax",
         "cg-figado"
       ],
-      "checklist": ["apendicite", "tg18", "diverticulite", "asbo", "urologia"],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "vesicula"
+      ],
       "sessoes": [
         {
-          "titulo": "Sessão 1 · Checklists",
-          "texto": "Apendicite · colecistite · diverticulite."
+          "titulo": "Sessão 1 · FID e QHD",
+          "texto": "Apendicite e colecistite/colangite."
         },
         {
-          "titulo": "Sessão 2 · Colangite",
-          "texto": "ATB + drenagem — sempre."
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Quando NÃO dar ATB e quando operar."
         },
         {
-          "titulo": "Sessão 3 · ASBO",
-          "texto": "Quando parar de esperar."
+          "titulo": "Sessão 3 · Oclusão",
+          "texto": "Expectante 48–72h vs estrangulamento."
         }
       ],
-      "lacuna": "Nomes comerciais de stents e drenos: saiba a indicação."
+      "lacuna": "Detalhe de cada classificação Hinchey antiga: saiba não complicada vs complicada + peritonite."
+    },
+    {
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "kicker": "Padrão APS + endemias",
+      "featured": false,
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 33.6
+        },
+        {
+          "tema": "Urologia / vascular / AD",
+          "pct": 23.1
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 17.1
+        },
+        {
+          "tema": "Colecistite / vias biliares",
+          "pct": 15.6
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 10.6
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · FID e QHD",
+          "texto": "Apendicite e colecistite/colangite."
+        },
+        {
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Quando NÃO dar ATB e quando operar."
+        },
+        {
+          "titulo": "Sessão 3 · Oclusão",
+          "texto": "Expectante 48–72h vs estrangulamento."
+        }
+      ],
+      "lacuna": "Detalhe de cada classificação Hinchey antiga: saiba não complicada vs complicada + peritonite."
+    },
+    {
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de usp).",
+      "priorities": [
+        {
+          "tema": "Vascular / AD / urologia",
+          "pct": 24
+        },
+        {
+          "tema": "Diverticulite / TC",
+          "pct": 23.8
+        },
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 19.7
+        },
+        {
+          "tema": "Vesícula / vias biliares",
+          "pct": 18
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 14.5
+        }
+      ],
+      "deckOrder": [
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-colecistite",
+        "cg-vesicula",
+        "cg-apendicite",
+        "cg-abdome-vascular",
+        "cg-colon",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-urologia",
+        "cg-figado",
+        "cg-torax"
+      ],
+      "checklist": [
+        "diverticulite",
+        "asbo",
+        "tg18",
+        "apendicite",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TC de abdome",
+          "texto": "Diverticulite e ASBO com/sem isquemia."
+        },
+        {
+          "titulo": "Sessão 2 · Biliar",
+          "texto": "TG18 e coledocolitíase."
+        },
+        {
+          "titulo": "Sessão 3 · Apendicite",
+          "texto": "Operar vs NOM."
+        }
+      ],
+      "lacuna": "Medidas milimétricas de abscesso: saiba pequeno vs drenável vs cirurgia.",
+      "featured": false
+    },
+    {
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de usp).",
+      "priorities": [
+        {
+          "tema": "Vascular / AD / urologia",
+          "pct": 25.3
+        },
+        {
+          "tema": "Diverticulite / TC",
+          "pct": 20.9
+        },
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 20.6
+        },
+        {
+          "tema": "Vesícula / vias biliares",
+          "pct": 18
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 15.2
+        }
+      ],
+      "deckOrder": [
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-colecistite",
+        "cg-vesicula",
+        "cg-apendicite",
+        "cg-abdome-vascular",
+        "cg-colon",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-urologia",
+        "cg-figado",
+        "cg-torax"
+      ],
+      "checklist": [
+        "diverticulite",
+        "asbo",
+        "tg18",
+        "apendicite",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TC de abdome",
+          "texto": "Diverticulite e ASBO com/sem isquemia."
+        },
+        {
+          "titulo": "Sessão 2 · Biliar",
+          "texto": "TG18 e coledocolitíase."
+        },
+        {
+          "titulo": "Sessão 3 · Apendicite",
+          "texto": "Operar vs NOM."
+        }
+      ],
+      "lacuna": "Medidas milimétricas de abscesso: saiba pequeno vs drenável vs cirurgia.",
+      "featured": false
+    },
+    {
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de usp).",
+      "priorities": [
+        {
+          "tema": "Vascular / AD / urologia",
+          "pct": 25.2
+        },
+        {
+          "tema": "Vesícula / vias biliares",
+          "pct": 20.4
+        },
+        {
+          "tema": "Diverticulite / TC",
+          "pct": 19.8
+        },
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 18.7
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 15.9
+        }
+      ],
+      "deckOrder": [
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-colecistite",
+        "cg-vesicula",
+        "cg-apendicite",
+        "cg-abdome-vascular",
+        "cg-colon",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-urologia",
+        "cg-figado",
+        "cg-torax"
+      ],
+      "checklist": [
+        "diverticulite",
+        "asbo",
+        "tg18",
+        "apendicite",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TC de abdome",
+          "texto": "Diverticulite e ASBO com/sem isquemia."
+        },
+        {
+          "titulo": "Sessão 2 · Biliar",
+          "texto": "TG18 e coledocolitíase."
+        },
+        {
+          "titulo": "Sessão 3 · Apendicite",
+          "texto": "Operar vs NOM."
+        }
+      ],
+      "lacuna": "Medidas milimétricas de abscesso: saiba pequeno vs drenável vs cirurgia.",
+      "featured": false
+    },
+    {
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
+      "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Diferencial · protocolo · nuance",
+      "estilo": "Estimativa por padrão recorrente",
+      "sourceType": "estimativa",
+      "source": "Estimativa Unicamp · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de usp).",
+      "priorities": [
+        {
+          "tema": "Vascular / AD / urologia",
+          "pct": 24.7
+        },
+        {
+          "tema": "Diverticulite / TC",
+          "pct": 21.4
+        },
+        {
+          "tema": "Vesícula / vias biliares",
+          "pct": 20.1
+        },
+        {
+          "tema": "Obstrução / ASBO",
+          "pct": 17.5
+        },
+        {
+          "tema": "Apendicite",
+          "pct": 16.3
+        }
+      ],
+      "deckOrder": [
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-colecistite",
+        "cg-vesicula",
+        "cg-apendicite",
+        "cg-abdome-vascular",
+        "cg-colon",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-urologia",
+        "cg-figado",
+        "cg-torax"
+      ],
+      "checklist": [
+        "diverticulite",
+        "asbo",
+        "tg18",
+        "apendicite",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · TC de abdome",
+          "texto": "Diverticulite e ASBO com/sem isquemia."
+        },
+        {
+          "titulo": "Sessão 2 · Biliar",
+          "texto": "TG18 e coledocolitíase."
+        },
+        {
+          "titulo": "Sessão 3 · Apendicite",
+          "texto": "Operar vs NOM."
+        }
+      ],
+      "lacuna": "Medidas milimétricas de abscesso: saiba pequeno vs drenável vs cirurgia.",
+      "featured": false
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão guideline",
+      "blurb": "Estimativa Einstein · Guideline · conduta · números",
+      "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Guideline · conduta · números",
+      "estilo": "Estimativa guideline",
+      "sourceType": "estimativa",
+      "source": "Estimativa Einstein · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de unifesp).",
+      "priorities": [
+        {
+          "tema": "AD / torácica / diverticulite",
+          "pct": 25
+        },
+        {
+          "tema": "Apendicite / colecistite",
+          "pct": 23.6
+        },
+        {
+          "tema": "Abdome vascular",
+          "pct": 21.1
+        },
+        {
+          "tema": "Urologia",
+          "pct": 17.2
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 13.1
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-obstrucao",
+        "cg-diverticulite",
+        "cg-estomago",
+        "cg-pancreas",
+        "cg-colon",
+        "cg-torax",
+        "cg-vesicula",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "vascular",
+        "urologia",
+        "asbo"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Conduta em 1 linha",
+          "texto": "Apendicite e colangite (CPRE)."
+        },
+        {
+          "titulo": "Sessão 2 · Vascular",
+          "texto": "Isquemia mesentérica e AAA."
+        },
+        {
+          "titulo": "Sessão 3 · Urologia",
+          "texto": "AINE na cólica; drenar se sepse + obstrução."
+        }
+      ],
+      "lacuna": "Protocolos institucionais de EVAR: saiba conceito de indicação vs aberto.",
+      "featured": false
+    },
+    {
+      "id": "amp",
+      "label": "AMP",
+      "kicker": "Padrão clássico R1",
+      "featured": false,
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 28.7
+        },
+        {
+          "tema": "Urologia / vascular / AD",
+          "pct": 22.7
+        },
+        {
+          "tema": "Colecistite / vias biliares",
+          "pct": 21.6
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 15
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 12
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · FID e QHD",
+          "texto": "Apendicite e colecistite/colangite."
+        },
+        {
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Quando NÃO dar ATB e quando operar."
+        },
+        {
+          "titulo": "Sessão 3 · Oclusão",
+          "texto": "Expectante 48–72h vs estrangulamento."
+        }
+      ],
+      "lacuna": "Detalhe de cada classificação Hinchey antiga: saiba não complicada vs complicada + peritonite."
+    },
+    {
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "kicker": "Padrão regional NE",
+      "featured": false,
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Cirurgia · lacunas R1 (protocolos 2024–2026) (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "Apendicite",
+          "pct": 32.6
+        },
+        {
+          "tema": "Urologia / vascular / AD",
+          "pct": 21.5
+        },
+        {
+          "tema": "Diverticulite",
+          "pct": 17.9
+        },
+        {
+          "tema": "Colecistite / vias biliares",
+          "pct": 16.7
+        },
+        {
+          "tema": "Obstrução",
+          "pct": 11.3
+        }
+      ],
+      "deckOrder": [
+        "cg-apendicite",
+        "cg-colecistite",
+        "cg-diverticulite",
+        "cg-obstrucao",
+        "cg-vesicula",
+        "cg-abdome-vascular",
+        "cg-urologia",
+        "cg-pancreas",
+        "cg-estomago",
+        "cg-colon",
+        "cg-torax",
+        "cg-figado"
+      ],
+      "checklist": [
+        "apendicite",
+        "tg18",
+        "diverticulite",
+        "asbo",
+        "vesicula"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · FID e QHD",
+          "texto": "Apendicite e colecistite/colangite."
+        },
+        {
+          "titulo": "Sessão 2 · Diverticulite",
+          "texto": "Quando NÃO dar ATB e quando operar."
+        },
+        {
+          "titulo": "Sessão 3 · Oclusão",
+          "texto": "Expectante 48–72h vs estrangulamento."
+        }
+      ],
+      "lacuna": "Detalhe de cada classificação Hinchey antiga: saiba não complicada vs complicada + peritonite."
     }
   ],
   "checklistItems": {

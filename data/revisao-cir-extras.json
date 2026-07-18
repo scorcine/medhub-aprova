@@ -128,6 +128,99 @@
     },
     {
       "checklist": [
+        "fascite",
+        "nigro",
+        "trm",
+        "sentinela",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Extras.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Condutas extras.",
+      "verdict": "Centro na fascite; Nigro no CA anal; não usar corticoide de rotina no TRM.",
+      "foco": "Fascite · Nigro · TRM",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Infecção grave",
+          "pct": 30
+        },
+        {
+          "tema": "Procto / TRM",
+          "pct": 28
+        },
+        {
+          "tema": "Mama / tireoide / anestesia",
+          "pct": 42
+        }
+      ],
+      "deckOrder": [
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-anestesia-avancada",
+        "crr-mama-tireoide",
+        "crr-infeccao-cirurgica",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "fascite",
+        "nigro",
+        "trm",
+        "recorrente",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Revalida · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
+      "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · urgências · conduta prática",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Fascite / infecção",
+          "pct": 31.1
+        },
+        {
+          "tema": "TRM / anestesia",
+          "pct": 29.3
+        },
+        {
+          "tema": "Procto",
+          "pct": 20.3
+        },
+        {
+          "tema": "Mama / tireoide",
+          "pct": 19.3
+        }
+      ],
+      "deckOrder": [
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-anestesia-avancada",
+        "crr-mama-tireoide",
+        "crr-infeccao-cirurgica",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
         "mh",
         "melanoma",
         "enxerto",
@@ -139,7 +232,7 @@
       "sourceType": "levantamento",
       "source": "Padrão USP · Extras.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "Prova USP",
       "blurb": "Anestesia e melanoma.",
       "verdict": "Hipertermia maligna, succinilcolina, Breslow e retalhos.",
@@ -227,32 +320,429 @@
         "fascite",
         "nigro",
         "trm",
+        "recorrente",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-SP · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
+      "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · crônicas · protocolos MS",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "TRM / anestesia",
+          "pct": 39.1
+        },
+        {
+          "tema": "Procto",
+          "pct": 21.8
+        },
+        {
+          "tema": "Fascite / infecção",
+          "pct": 20.8
+        },
+        {
+          "tema": "Mama / tireoide",
+          "pct": 18.3
+        }
+      ],
+      "deckOrder": [
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-anestesia-avancada",
+        "crr-mama-tireoide",
+        "crr-infeccao-cirurgica",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "fascite",
+        "nigro",
+        "trm",
+        "recorrente",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Fascite / infecção",
+          "pct": 36
+        },
+        {
+          "tema": "TRM / anestesia",
+          "pct": 25.9
+        },
+        {
+          "tema": "Mama / tireoide",
+          "pct": 22.9
+        },
+        {
+          "tema": "Procto",
+          "pct": 15.2
+        }
+      ],
+      "deckOrder": [
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-anestesia-avancada",
+        "crr-mama-tireoide",
+        "crr-infeccao-cirurgica",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "mh",
+        "melanoma",
+        "enxerto",
+        "milao-tx",
+        "fascite"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Anestesia",
+          "pct": 29.5
+        },
+        {
+          "tema": "Partes moles / melanoma",
+          "pct": 25.1
+        },
+        {
+          "tema": "Plástica / Tx",
+          "pct": 22.9
+        },
+        {
+          "tema": "Demais",
+          "pct": 22.5
+        }
+      ],
+      "deckOrder": [
+        "crr-anestesia-avancada",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-transplante-miscelanea",
+        "crr-mama-tireoide",
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-infeccao-cirurgica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mh",
+        "melanoma",
+        "enxerto",
+        "milao-tx",
+        "fascite"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Partes moles / melanoma",
+          "pct": 26.6
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 26.3
+        },
+        {
+          "tema": "Demais",
+          "pct": 23.9
+        },
+        {
+          "tema": "Plástica / Tx",
+          "pct": 23.2
+        }
+      ],
+      "deckOrder": [
+        "crr-anestesia-avancada",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-transplante-miscelanea",
+        "crr-mama-tireoide",
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-infeccao-cirurgica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mh",
+        "melanoma",
+        "enxerto",
+        "milao-tx",
+        "fascite"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Plástica / Tx",
+          "pct": 26.2
+        },
+        {
+          "tema": "Anestesia",
+          "pct": 24.9
+        },
+        {
+          "tema": "Demais",
+          "pct": 24.9
+        },
+        {
+          "tema": "Partes moles / melanoma",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "crr-anestesia-avancada",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-transplante-miscelanea",
+        "crr-mama-tireoide",
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-infeccao-cirurgica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mh",
+        "melanoma",
+        "enxerto",
+        "milao-tx",
+        "fascite"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Unicamp · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
+      "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Diferencial · protocolo · nuance",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Anestesia",
+          "pct": 26.6
+        },
+        {
+          "tema": "Plástica / Tx",
+          "pct": 25.6
+        },
+        {
+          "tema": "Demais",
+          "pct": 25.4
+        },
+        {
+          "tema": "Partes moles / melanoma",
+          "pct": 22.4
+        }
+      ],
+      "deckOrder": [
+        "crr-anestesia-avancada",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-transplante-miscelanea",
+        "crr-mama-tireoide",
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-infeccao-cirurgica"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "recorrente",
+        "fasciotomia",
+        "fascite",
         "sentinela",
         "mh"
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Padrão Enare · Extras.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso direto",
-      "blurb": "Condutas extras.",
-      "verdict": "Centro na fascite; Nigro no CA anal; não usar corticoide de rotina no TRM.",
-      "foco": "Fascite · Nigro · TRM",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Estimativa Einstein · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão guideline",
+      "blurb": "Estimativa Einstein · Guideline · conduta · números",
+      "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Guideline · conduta · números",
+      "estilo": "Estimativa guideline",
       "priorities": [
         {
-          "tema": "Infecção grave",
-          "pct": 30
+          "tema": "Partes moles",
+          "pct": 29.1
         },
         {
-          "tema": "Procto / TRM",
-          "pct": 28
+          "tema": "Tireoide / mama",
+          "pct": 26.4
         },
         {
-          "tema": "Mama / tireoide / anestesia",
-          "pct": 42
+          "tema": "TRM / anestesia",
+          "pct": 24.8
+        },
+        {
+          "tema": "Demais",
+          "pct": 19.7
+        }
+      ],
+      "deckOrder": [
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-anestesia-avancada",
+        "crr-mama-tireoide",
+        "crr-infeccao-cirurgica",
+        "crr-transplante-miscelanea"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fascite",
+        "nigro",
+        "trm",
+        "recorrente",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Fascite / infecção",
+          "pct": 28.1
+        },
+        {
+          "tema": "TRM / anestesia",
+          "pct": 26.8
+        },
+        {
+          "tema": "Mama / tireoide",
+          "pct": 25.8
+        },
+        {
+          "tema": "Procto",
+          "pct": 19.3
+        }
+      ],
+      "deckOrder": [
+        "crr-procto-avancado",
+        "crr-trm-face",
+        "crr-partes-moles",
+        "crr-plastica-avancada",
+        "crr-anestesia-avancada",
+        "crr-mama-tireoide",
+        "crr-infeccao-cirurgica",
+        "crr-transplante-miscelanea"
+      ]
+    },
+    {
+      "checklist": [
+        "fascite",
+        "nigro",
+        "trm",
+        "recorrente",
+        "mh"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Extras R1 · procto · TRM · partes moles · mama/tireoide (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Fascite / infecção",
+          "pct": 33.9
+        },
+        {
+          "tema": "TRM / anestesia",
+          "pct": 26.9
+        },
+        {
+          "tema": "Mama / tireoide",
+          "pct": 23.3
+        },
+        {
+          "tema": "Procto",
+          "pct": 15.9
         }
       ],
       "deckOrder": [

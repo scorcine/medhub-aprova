@@ -111,6 +111,87 @@
     },
     {
       "checklist": [
+        "torcao",
+        "fournier",
+        "drenagem",
+        "litíase",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Urologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Conduta uro.",
+      "verdict": "Explorar torção, desbridar Fournier, drenar rim infectado obstruído.",
+      "foco": "Torção · Fournier · Drenagem",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências uro",
+          "pct": 40
+        },
+        {
+          "tema": "Litíase",
+          "pct": 30
+        },
+        {
+          "tema": "Onco / HBP",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "litíase",
+        "fournier",
+        "drenagem",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Revalida · Cirurgia · Urologia R1 (recorte distinto de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
+      "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · urgências · conduta prática",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Torção",
+          "pct": 35.3
+        },
+        {
+          "tema": "Litíase",
+          "pct": 30
+        },
+        {
+          "tema": "Fournier",
+          "pct": 18.4
+        },
+        {
+          "tema": "HBP / onco",
+          "pct": 16.3
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
         "testiculo",
         "bexiga",
         "enfisematosa",
@@ -122,7 +203,7 @@
       "sourceType": "levantamento",
       "source": "Padrão USP · Urologia.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "Prova USP",
       "blurb": "USP detalha onco e infecção.",
       "verdict": "Tumor testicular (via inguinal), bexiga com hematúria e pielonefrite enfisematosa.",
@@ -192,34 +273,379 @@
     {
       "checklist": [
         "torcao",
+        "litíase",
         "fournier",
         "drenagem",
-        "litíase",
         "hbp"
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Padrão Enare · Urologia.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso direto",
-      "blurb": "Conduta uro.",
-      "verdict": "Explorar torção, desbridar Fournier, drenar rim infectado obstruído.",
-      "foco": "Torção · Fournier · Drenagem",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-SP · Cirurgia · Urologia R1 (recorte distinto de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
+      "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · crônicas · protocolos MS",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Urgências uro",
-          "pct": 40
+          "tema": "Litíase",
+          "pct": 34.5
+        },
+        {
+          "tema": "Torção",
+          "pct": 25.2
+        },
+        {
+          "tema": "HBP / onco",
+          "pct": 21.6
+        },
+        {
+          "tema": "Fournier",
+          "pct": 18.7
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "litíase",
+        "fournier",
+        "drenagem",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Urologia R1 (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Torção",
+          "pct": 38.6
         },
         {
           "tema": "Litíase",
-          "pct": 30
+          "pct": 21.4
         },
         {
-          "tema": "Onco / HBP",
-          "pct": 30
+          "tema": "Fournier",
+          "pct": 20.6
+        },
+        {
+          "tema": "HBP / onco",
+          "pct": 19.4
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "testiculo",
+        "bexiga",
+        "enfisematosa",
+        "torcao",
+        "litíase"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Urologia R1 (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Onco uro",
+          "pct": 35.9
+        },
+        {
+          "tema": "Infecção complicada",
+          "pct": 24.7
+        },
+        {
+          "tema": "Litíase",
+          "pct": 20.7
+        },
+        {
+          "tema": "Torção / HBP",
+          "pct": 18.7
+        }
+      ],
+      "deckOrder": [
+        "crr-urologia",
+        "cg-urologia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "testiculo",
+        "bexiga",
+        "enfisematosa",
+        "torcao",
+        "litíase"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Urologia R1 (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Onco uro",
+          "pct": 32.2
+        },
+        {
+          "tema": "Infecção complicada",
+          "pct": 26.4
+        },
+        {
+          "tema": "Litíase",
+          "pct": 21.2
+        },
+        {
+          "tema": "Torção / HBP",
+          "pct": 20.2
+        }
+      ],
+      "deckOrder": [
+        "crr-urologia",
+        "cg-urologia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "testiculo",
+        "bexiga",
+        "enfisematosa",
+        "torcao",
+        "litíase"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Urologia R1 (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Onco uro",
+          "pct": 30.7
+        },
+        {
+          "tema": "Infecção complicada",
+          "pct": 24.1
+        },
+        {
+          "tema": "Litíase",
+          "pct": 24.1
+        },
+        {
+          "tema": "Torção / HBP",
+          "pct": 21.1
+        }
+      ],
+      "deckOrder": [
+        "crr-urologia",
+        "cg-urologia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "testiculo",
+        "bexiga",
+        "enfisematosa",
+        "torcao",
+        "litíase"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Unicamp · Cirurgia · Urologia R1 (recorte distinto de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
+      "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Diferencial · protocolo · nuance",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Onco uro",
+          "pct": 32.7
+        },
+        {
+          "tema": "Litíase",
+          "pct": 23.4
+        },
+        {
+          "tema": "Infecção complicada",
+          "pct": 22.4
+        },
+        {
+          "tema": "Torção / HBP",
+          "pct": 21.5
+        }
+      ],
+      "deckOrder": [
+        "crr-urologia",
+        "cg-urologia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "torcao",
+        "testiculo",
+        "fournier",
+        "litíase",
+        "prostata"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Einstein · Cirurgia · Urologia R1 (recorte distinto de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão guideline",
+      "blurb": "Estimativa Einstein · Guideline · conduta · números",
+      "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Guideline · conduta · números",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Litíase / HBP",
+          "pct": 40
+        },
+        {
+          "tema": "Urgências",
+          "pct": 32.6
+        },
+        {
+          "tema": "Onco",
+          "pct": 27.4
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "torcao",
+        "litíase",
+        "fournier",
+        "drenagem",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Urologia R1 (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Torção",
+          "pct": 32.1
+        },
+        {
+          "tema": "Litíase",
+          "pct": 28.8
+        },
+        {
+          "tema": "HBP / onco",
+          "pct": 21.4
+        },
+        {
+          "tema": "Fournier",
+          "pct": 17.7
+        }
+      ],
+      "deckOrder": [
+        "cg-urologia",
+        "crr-urologia"
+      ]
+    },
+    {
+      "checklist": [
+        "torcao",
+        "litíase",
+        "fournier",
+        "drenagem",
+        "hbp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Urologia R1 (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Torção",
+          "pct": 39.3
+        },
+        {
+          "tema": "Litíase",
+          "pct": 24
+        },
+        {
+          "tema": "Fournier",
+          "pct": 22.6
+        },
+        {
+          "tema": "HBP / onco",
+          "pct": 14.1
         }
       ],
       "deckOrder": [

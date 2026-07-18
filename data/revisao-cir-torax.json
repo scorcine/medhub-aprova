@@ -100,6 +100,77 @@
     },
     {
       "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Padrão Enare · Tórax.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Conduta tórax eletivo.",
+      "verdict": "Drenar empiema; operar pneumotórax com critério; não confundir com trauma (Cir2).",
+      "foco": "Dreno · VATS · Critérios",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Pneumotórax / empiema",
+          "pct": 55
+        },
+        {
+          "tema": "CA / mediastino",
+          "pct": 45
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Revalida · Cirurgia · Cirurgia torácica eletiva (recorte distinto de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Estimativa Revalida · APS · urgências · conduta prática",
+      "verdict": "Perfil Revalida: generalista de APS e urgências básicas — menos detalhe terciário. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · urgências · conduta prática",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Pneumotórax",
+          "pct": 36.7
+        },
+        {
+          "tema": "CA / mediastino",
+          "pct": 33.8
+        },
+        {
+          "tema": "Empiema",
+          "pct": 29.5
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
         "mediastino",
         "light",
         "nsclc",
@@ -110,7 +181,7 @@
       "sourceType": "levantamento",
       "source": "Padrão USP · Tórax.",
       "id": "usp",
-      "label": "USP-SP",
+      "label": "USP",
       "kicker": "Prova USP",
       "blurb": "USP gosta de mediastino e staging.",
       "verdict": "4 T, critérios de Light e indicação de lobectomia.",
@@ -177,23 +248,328 @@
       ],
       "sessoes": [],
       "lacuna": "",
-      "sourceType": "levantamento",
-      "source": "Padrão Enare · Tórax.",
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "Acesso direto",
-      "blurb": "Conduta tórax eletivo.",
-      "verdict": "Drenar empiema; operar pneumotórax com critério; não confundir com trauma (Cir2).",
-      "foco": "Dreno · VATS · Critérios",
-      "estilo": "Padrão Enare",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-SP · Cirurgia · Cirurgia torácica eletiva (recorte distinto de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Estimativa SUS-SP · APS · crônicas · protocolos MS",
+      "verdict": "Perfil SUS-SP: atenção primária e protocolos — crônicas, rastreamento e manejo no posto. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "APS · crônicas · protocolos MS",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
-          "tema": "Pneumotórax / empiema",
-          "pct": 55
+          "tema": "CA / mediastino",
+          "pct": 36.3
+        },
+        {
+          "tema": "Empiema",
+          "pct": 36
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 27.7
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SUS-BA · Cirurgia · Cirurgia torácica eletiva (recorte distinto de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão APS + endemias",
+      "blurb": "Estimativa SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Perfil SUS-BA: APS com forte peso em infectologia, endemias e desidratação — diferente do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Pneumotórax",
+          "pct": 40.6
         },
         {
           "tema": "CA / mediastino",
-          "pct": 45
+          "pct": 38.2
+        },
+        {
+          "tema": "Empiema",
+          "pct": 21.2
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "mediastino",
+        "light",
+        "nsclc",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Cirurgia · Cirurgia torácica eletiva (recorte distinto de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFMG · Fisiopat · critérios · lab",
+      "verdict": "Perfil UFMG: fisiopatologia e critérios — mais analítico que a média Enamed. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Mediastino / CA",
+          "pct": 43.1
+        },
+        {
+          "tema": "Derrame / empiema",
+          "pct": 29.7
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 27.2
+        }
+      ],
+      "deckOrder": [
+        "crr-torax-eletivo",
+        "cg-torax"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mediastino",
+        "light",
+        "nsclc",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Cirurgia · Cirurgia torácica eletiva (recorte distinto de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Perfil UFRGS: equilíbrio entre critérios e conduta, com boa cobrança de protocolo. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Mediastino / CA",
+          "pct": 39.4
+        },
+        {
+          "tema": "Derrame / empiema",
+          "pct": 32.3
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 28.3
+        }
+      ],
+      "deckOrder": [
+        "crr-torax-eletivo",
+        "cg-torax"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mediastino",
+        "light",
+        "nsclc",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRJ · Cirurgia · Cirurgia torácica eletiva (recorte distinto de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Perfil UFRJ: fundamentos e casos clássicos — menos terciário, mais diagnóstico de base. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Mediastino / CA",
+          "pct": 37.9
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 32.4
+        },
+        {
+          "tema": "Derrame / empiema",
+          "pct": 29.7
+        }
+      ],
+      "deckOrder": [
+        "crr-torax-eletivo",
+        "cg-torax"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "mediastino",
+        "light",
+        "nsclc",
+        "pntx-esp"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Unicamp · Cirurgia · Cirurgia torácica eletiva (recorte distinto de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Estimativa Unicamp · Diferencial · protocolo · nuance",
+      "verdict": "Perfil Unicamp: diferencial diagnóstico e protocolo — cobra nuance e números. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Diferencial · protocolo · nuance",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Mediastino / CA",
+          "pct": 40.5
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 31.7
+        },
+        {
+          "tema": "Derrame / empiema",
+          "pct": 27.8
+        }
+      ],
+      "deckOrder": [
+        "crr-torax-eletivo",
+        "cg-torax"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "empiema",
+        "pntx-esp",
+        "mediastino",
+        "nsclc"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa Einstein · Cirurgia · Cirurgia torácica eletiva (recorte distinto de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão guideline",
+      "blurb": "Estimativa Einstein · Guideline · conduta · números",
+      "verdict": "Perfil Einstein: guidelines atualizados e conduta com números exatos. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Guideline · conduta · números",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Onco / mediastino",
+          "pct": 54.3
+        },
+        {
+          "tema": "Empiema / pneumotórax",
+          "pct": 45.7
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Cirurgia · Cirurgia torácica eletiva (recorte distinto de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Estimativa AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Perfil AMP: clássicos de R1 — critérios, condutas e temas que mais se repetem nas provas tradicionais. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Pneumotórax",
+          "pct": 35.5
+        },
+        {
+          "tema": "CA / mediastino",
+          "pct": 34.5
+        },
+        {
+          "tema": "Empiema",
+          "pct": 30
+        }
+      ],
+      "deckOrder": [
+        "cg-torax",
+        "crr-torax-eletivo"
+      ]
+    },
+    {
+      "checklist": [
+        "pntx-esp",
+        "empiema",
+        "vats",
+        "mediastino"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Cirurgia · Cirurgia torácica eletiva (recorte distinto de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional NE",
+      "blurb": "Estimativa SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Perfil SES-PE: regional Nordeste — infecto, desidratação e APS, próximo ao SUS-BA e distinto do SUS-SP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "CA / mediastino",
+          "pct": 39.3
+        },
+        {
+          "tema": "Pneumotórax",
+          "pct": 38.5
+        },
+        {
+          "tema": "Empiema",
+          "pct": 22.2
         }
       ],
       "deckOrder": [
