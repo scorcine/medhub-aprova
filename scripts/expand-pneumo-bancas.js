@@ -86,6 +86,8 @@ const FILES = [
   "revisao-pnm-basico.json",
   "revisao-pnm-intersticial.json",
   "revisao-pnm-tb.json",
+  "revisao-pnm-tb-extra.json",
+  "revisao-pnm-micoses.json",
   "stats-pneumologia-geral.json"
 ];
 

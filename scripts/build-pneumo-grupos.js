@@ -42,7 +42,7 @@ function bankSet(deckOrder, temaFoco) {
       sessoes: [
         { titulo: "Sessão 1 · Diagnóstico", texto: "Espirometria, Light, scores de TEP." },
         { titulo: "Sessão 2 · Urgências", texto: "Exacerbação, TEP maciço, SDRA/VM, pneumotórax." },
-        { titulo: "Sessão 3 · Crônico", texto: "GINA/GOLD, câncer, TB, interstício." }
+        { titulo: "Sessão 3 · Crônico", texto: "GINA/GOLD, câncer, TB/ILTB e interstício." }
       ]
     }),
     profileBase({
@@ -133,17 +133,17 @@ const checklistItems = {
   conduta: {
     tema: "Conduta",
     yield: "Máximo",
-    pegar: "Exacerbação asma/DPOC; anticoagular TEP; trombólise se choque; dreno no empiema/pneumotórax hipertensivo; RHZE na TB."
+    pegar: "Exacerbação asma/DPOC; anticoagular TEP; RIPE/TDO na TB; trombólise se choque; dreno no empiema; VNI na DPOC acidótica."
   },
   fisio: {
     tema: "Fisiopatologia",
     yield: "Alto",
-    pegar: "Shunt × espaço morto × V/Q; PEEP/auto-PEEP; mecanismos de hipoxemia (UNIFESP/USP)."
+    pegar: "Shunt × espaço morto × V/Q; PEEP/auto-PEEP; núcleos de Wells / caverna tuberculosa."
   },
   dd: {
     tema: "Diagnóstico diferencial",
     yield: "Alto",
-    pegar: "Asma × DPOC; transudato × exsudato; TB × sarcoidose; nódulo solitário."
+    pegar: "Asma × DPOC; transudato × exsudato; sarcoidose × TB; PCM × TB; nódulo solitário."
   }
 };
 
@@ -156,8 +156,8 @@ write("revisao-pnm-tep.json", "TEP · embolia pulmonar", "pnm-tep",
   { checklistItems, oneLiners: ["D-dímero afasta se baixa prob.", "Instável: eco ± trombólise", "Anticoagular estável"] });
 
 write("revisao-pnm-asma.json", "Asma · GINA · exacerbação", "pnm-asma",
-  bankSet(["pnm-asma-basico", "pnm-asma-exacerbacao"], "GINA · CI · crise grave"),
-  { checklistItems, oneLiners: ["CI é base", "SABA só não basta", "MgSO4 na crise grave"] });
+  bankSet(["pnm-asma-basico", "pnm-asma-farmaco-crise"], "GINA · CI · crise grave · fármacos"),
+  { checklistItems, oneLiners: ["CI é base", "SABA só não basta", "PaCO2 ‘normal’ na crise = alarme"] });
 
 write("revisao-pnm-dpoc.json", "DPOC · GOLD · exacerbação", "pnm-dpoc",
   bankSet(["pnm-dpoc"], "Espirometria · LABA/LAMA · VNI"),
@@ -180,15 +180,23 @@ write("revisao-pnm-intersticial.json", "Intersticiais · sarcoidose", "pnm-inter
   { checklistItems, oneLiners: ["UIP na FPI", "Adenopatia hilar bilateral", "Excluir TB antes de corticoide"] });
 
 write("revisao-pnm-tb.json", "Tuberculose · Pneumo2", "pnm-tb",
-  bankSet(["pnm-tb", "pnm-pneumotorax-misc"], "TB · pneumotórax · bronquiectasia"),
-  { checklistItems, oneLiners: ["RHZE 2+4", "Tosse >2–3 sem", "Pneumotórax hipertensivo = punção"] });
+  bankSet(["pnm-tb-basico", "pnm-tb-clinica-dx", "pnm-tb-tratamento", "pnm-tb-contatos"], "SR · TRM · RIPE · ILTB · BCG"),
+  { checklistItems, oneLiners: ["2 RIPE/4 RI", "TRM não acompanha cura", "PT ≥5 mm = ILTB no BR", "TDO para todos"] });
+
+write("revisao-pnm-tb-extra.json", "TB extrapulmonar", "pnm-tb-extra",
+  bankSet(["pnm-tb-extra"], "Pleural · meníngea · Pott · pericárdio"),
+  { checklistItems, oneLiners: ["Pleural = mais comum", "ADA >40", "Meningite: corticoide + RIPE longo"] });
+
+write("revisao-pnm-micoses.json", "Micoses pulmonares", "pnm-micoses",
+  bankSet(["pnm-micoses"], "PCM · histo · aspergiloma"),
+  { checklistItems, oneLiners: ["PCM não contagiosa", "Itraconazol", "Aspergiloma em caverna"] });
 
 const stats = {
   title: "Pneumologia · o que mais cai (R1)",
   unitLabel: "% relativo no bloco",
-  note: "Síntese Enare/USP/UNIFESP + apostilas Pneumo1–2. Intensiva/TEP dominam USP/UNIFESP; asma e câncer lideram o Enare.",
+  note: "Síntese Enare/USP/UNIFESP + apostilas Pneumo1–2. Intensiva/TEP dominam USP/UNIFESP; asma e câncer lideram o Enare; TB é núcleo Brasil.",
   gaps: {
-    summary: "Pneumologia da apostila coberta em 9 grupos (Pneumo1 + TB/Pneumo2).",
+    summary: "Pneumologia coberta em 11 grupos (Pneumo1 + TB/micoses da Pneumo2).",
     missingHighYield: [],
     covered: [
       { tema: "Intensiva / VM / SDRA", grupo: "pnm-intensiva" },
@@ -199,7 +207,9 @@ const stats = {
       { tema: "Câncer de pulmão", grupo: "pnm-cancer" },
       { tema: "Espirometria / gasometria", grupo: "pnm-basico" },
       { tema: "Intersticiais / sarcoidose", grupo: "pnm-intersticial" },
-      { tema: "TB / pneumotórax / misc", grupo: "pnm-tb" }
+      { tema: "Tuberculose pulmonar / ILTB", grupo: "pnm-tb" },
+      { tema: "TB extrapulmonar", grupo: "pnm-tb-extra" },
+      { tema: "Micoses pulmonares", grupo: "pnm-micoses" }
     ]
   },
   profiles: [
@@ -209,18 +219,18 @@ const stats = {
       kicker: "Síntese bancas",
       featured: false,
       sourceType: "sintese",
-      source: "Levantamentos Enare + USP-SP + UNIFESP + apostilas Pneumo.",
-      verdict: "Monte o núcleo em intensiva, TEP, asma, DPOC e Light; complete com câncer e TB (Brasil).",
-      foco: "Intensiva · TEP · Asma · DPOC · Derrame",
+      source: "Levantamentos Enare + USP-SP + UNIFESP + apostilas Pneumo1–2.",
+      verdict: "Núcleo: intensiva, TEP, asma, DPOC, Light e TB (RIPE/ILTB); complete com câncer e micoses.",
+      foco: "Intensiva · TEP · Asma · DPOC · TB",
       estilo: "Síntese R1",
       priorities: [
-        { tema: "Intensiva / VM / SDRA", pct: 22, n: 22 },
-        { tema: "TEP", pct: 14, n: 14 },
+        { tema: "Intensiva / VM / SDRA", pct: 18, n: 18 },
+        { tema: "TB / ILTB", pct: 16, n: 16 },
+        { tema: "TEP", pct: 12, n: 12 },
         { tema: "Asma", pct: 14, n: 14 },
         { tema: "DPOC", pct: 12, n: 12 },
-        { tema: "Derrame / intro", pct: 14, n: 14 },
-        { tema: "Câncer", pct: 12, n: 12 },
-        { tema: "TB / interstício / extras", pct: 12, n: 12 }
+        { tema: "Derrame / câncer", pct: 16, n: 16 },
+        { tema: "Interstício / micoses", pct: 12, n: 12 }
       ]
     },
     {

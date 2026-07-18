@@ -1,0 +1,657 @@
+{
+  "title": "Epilepsia · status",
+  "module": "neu-epilepsia",
+  "profiles": [
+    {
+      "checklist": [
+        "criterios",
+        "conduta",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Urgências",
+          "texto": "AVC, status, HIC/coma."
+        },
+        {
+          "titulo": "Sessão 2 · Crônico",
+          "texto": "Cefaleia, demência, Parkinson, EM."
+        },
+        {
+          "titulo": "Sessão 3 · Neuromuscular",
+          "texto": "MG, Guillain, ELA."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostila Neurologia · MedHub R1.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Neuro",
+      "blurb": "Crises · status · DAE",
+      "verdict": "Priorize AVC (rtPA/trombectomia), status epiléptico, coma/HIC, cefaleia com red flags e neuromuscular (MG/SGB/ELA).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Síntese nacional · Neurologia",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / critérios",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta",
+          "pct": 34
+        },
+        {
+          "tema": "Semiologia / fisiopat",
+          "pct": 20
+        },
+        {
+          "tema": "Extras / imagem",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare 2021–2024 · Neurologia (Estratégia).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "AVC e epilepsia lideram (~19% cada).",
+      "verdict": "Enare: AVEi conduta + epilepsia/status; TCE também aparece.",
+      "foco": "Crises · status · DAE",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "AVC / epilepsia",
+          "pct": 38
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "TCE / tumores",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Neurologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "AVC + epilepsia primeiro; depois TCE e miscelânea.",
+      "foco": "Crises · status · DAE",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Epilepsia",
+          "pct": 19
+        },
+        {
+          "tema": "AVC",
+          "pct": 19
+        },
+        {
+          "tema": "TCE",
+          "pct": 12
+        },
+        {
+          "tema": "Outros",
+          "pct": 50
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Neurologia · Epilepsia · status (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "AVC e epilepsia lideram (~19% cada).",
+      "verdict": "Enare: AVEi conduta + epilepsia/status; TCE também aparece. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "AVC / epilepsia",
+          "pct": 38
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "TCE / tumores",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP-SP · Neurologia (Estratégia).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Coma ~20% · AVC ~17% · cefaleia ~13%.",
+      "verdict": "USP-SP cobra semiologia do coma, delirium, trombólise/trombectomia e cefaleias.",
+      "foco": "Crises · status · DAE",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Coma / consciência",
+          "pct": 20
+        },
+        {
+          "tema": "AVC",
+          "pct": 17
+        },
+        {
+          "tema": "Cefaleia / epilepsia",
+          "pct": 23
+        },
+        {
+          "tema": "Demência / outros",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Neurologia (Estratégia).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Neuromuscular ~21% · coma ~18%.",
+      "verdict": "MG, Guillain e ELA são o núcleo; completar com coma e cefaleia.",
+      "foco": "Crises · status · DAE",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Neuromuscular",
+          "pct": 21
+        },
+        {
+          "tema": "Coma",
+          "pct": 18
+        },
+        {
+          "tema": "Cefaleia / demência",
+          "pct": 28
+        },
+        {
+          "tema": "AVC / outros",
+          "pct": 33
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Neurologia · Epilepsia · status (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "AVC e epilepsia lideram (~19% cada).",
+      "verdict": "Enare: AVEi conduta + epilepsia/status; TCE também aparece. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "AVC / epilepsia",
+          "pct": 38
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "TCE / tumores",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Neurologia · Epilepsia · status (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "AVC e epilepsia lideram (~19% cada).",
+      "verdict": "Enare: AVEi conduta + epilepsia/status; TCE também aparece. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "AVC / epilepsia",
+          "pct": 38
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "TCE / tumores",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Neurologia · Epilepsia · status (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Coma ~20% · AVC ~17% · cefaleia ~13%.",
+      "verdict": "USP-SP cobra semiologia do coma, delirium, trombólise/trombectomia e cefaleias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Coma / consciência",
+          "pct": 20
+        },
+        {
+          "tema": "AVC",
+          "pct": 17
+        },
+        {
+          "tema": "Cefaleia / epilepsia",
+          "pct": 23
+        },
+        {
+          "tema": "Demência / outros",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Neurologia · Epilepsia · status (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Coma ~20% · AVC ~17% · cefaleia ~13%.",
+      "verdict": "USP-SP cobra semiologia do coma, delirium, trombólise/trombectomia e cefaleias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Coma / consciência",
+          "pct": 20
+        },
+        {
+          "tema": "AVC",
+          "pct": 17
+        },
+        {
+          "tema": "Cefaleia / epilepsia",
+          "pct": 23
+        },
+        {
+          "tema": "Demência / outros",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Neurologia · Epilepsia · status (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Coma ~20% · AVC ~17% · cefaleia ~13%.",
+      "verdict": "USP-SP cobra semiologia do coma, delirium, trombólise/trombectomia e cefaleias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Coma / consciência",
+          "pct": 20
+        },
+        {
+          "tema": "AVC",
+          "pct": 17
+        },
+        {
+          "tema": "Cefaleia / epilepsia",
+          "pct": 23
+        },
+        {
+          "tema": "Demência / outros",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "fisio",
+        "conduta",
+        "criterios",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Neurologia · Epilepsia · status (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Coma ~20% · AVC ~17% · cefaleia ~13%.",
+      "verdict": "USP-SP cobra semiologia do coma, delirium, trombólise/trombectomia e cefaleias. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Coma / consciência",
+          "pct": 20
+        },
+        {
+          "tema": "AVC",
+          "pct": 17
+        },
+        {
+          "tema": "Cefaleia / epilepsia",
+          "pct": 23
+        },
+        {
+          "tema": "Demência / outros",
+          "pct": 40
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Neurologia · Epilepsia · status (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Neuromuscular ~21% · coma ~18%.",
+      "verdict": "MG, Guillain e ELA são o núcleo; completar com coma e cefaleia. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Neuromuscular",
+          "pct": 21
+        },
+        {
+          "tema": "Coma",
+          "pct": 18
+        },
+        {
+          "tema": "Cefaleia / demência",
+          "pct": 28
+        },
+        {
+          "tema": "AVC / outros",
+          "pct": 33
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Neurologia · Epilepsia · status (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "AVC e epilepsia lideram (~19% cada).",
+      "verdict": "Enare: AVEi conduta + epilepsia/status; TCE também aparece. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "AVC / epilepsia",
+          "pct": 38
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "TCE / tumores",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "criterios",
+        "fisio",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Neurologia · Epilepsia · status (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "AVC e epilepsia lideram (~19% cada).",
+      "verdict": "Enare: AVEi conduta + epilepsia/status; TCE também aparece. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Crises · status · DAE",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "AVC / epilepsia",
+          "pct": 38
+        },
+        {
+          "tema": "Conduta",
+          "pct": 28
+        },
+        {
+          "tema": "TCE / tumores",
+          "pct": 18
+        },
+        {
+          "tema": "Outros",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "neu-epilepsia"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "criterios": {
+      "tema": "Critérios / classificação",
+      "yield": "Alto",
+      "pegar": "Janela 4,5h rtPA; ABCD2; Hunt-Hess; Glasgow; critérios de migrânea/salvas."
+    },
+    "conduta": {
+      "tema": "Conduta",
+      "yield": "Máximo",
+      "pegar": "rtPA/trombectomia; BZD→fenitoína no status; manitol/HIC; O2 na salvas; IgIV/plasmaférese na SGB/crise MG."
+    },
+    "fisio": {
+      "tema": "Fisiopatologia / semiologia",
+      "yield": "Alto",
+      "pegar": "Penumbra; 1º×2º neurônio; fatigabilidade MG; herniação; PPC = PAM − PIC."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial",
+      "yield": "Alto",
+      "pegar": "AIT × AVEi; crise × síncope; cefaleia primária × secundária; MG × SGB × ELA; delirium × demência."
+    }
+  },
+  "oneLiners": [
+    "Status: BZD primeiro",
+    "Diazepam IV no BR",
+    "Refratário: IOT + anestesia"
+  ]
+}

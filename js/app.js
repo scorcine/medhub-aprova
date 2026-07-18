@@ -155,6 +155,8 @@ let aprovaCirOverviewStatsCache = null;
 let aprovaReuOverviewStatsCache = null;
 let aprovaPsiOverviewStatsCache = null;
 let aprovaPnmOverviewStatsCache = null;
+let aprovaNeuOverviewStatsCache = null;
+let aprovaNefOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
   return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
@@ -207,8 +209,20 @@ function aprovaRichSpecialtyMeta (specialty) {
       pneumologia: {
         shortLabel: "Pneumologia",
         overviewCacheKey: "pneumologia",
-        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718bf",
+        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718bh",
         countNoun: "Pneumologia"
+      },
+      neurologia: {
+        shortLabel: "Neurologia",
+        overviewCacheKey: "neurologia",
+        overviewUrl: "data/stats-neurologia-geral.json?v=20260718bj",
+        countNoun: "Neurologia"
+      },
+      nefrologia: {
+        shortLabel: "Nefrologia",
+        overviewCacheKey: "nefrologia",
+        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718bo",
+        countNoun: "Nefrologia"
       }
     };
     const a = cliMeta[area] || cliMeta.reumatologia;
@@ -264,10 +278,8 @@ function aprovaRenderEspecialidades () {
   aprovaShowSpecialtyList();
   const ped = document.getElementById("esp-count-pediatria");
   const go = document.getElementById("esp-count-go");
-  const cli = document.getElementById("esp-count-clinica");
   const pedN = AprovaFlashcards.countBySpecialty("pediatria");
   const goN = AprovaFlashcards.countBySpecialty("go");
-  const cliN = AprovaFlashcards.countBySpecialty("clinica");
   if (ped) {
     ped.textContent = pedN
       ? pedN + " flashcards · Pediatria R1 completa"
@@ -278,10 +290,24 @@ function aprovaRenderEspecialidades () {
       ? goN + " flashcards · Ginecologia (+ Obstetrícia em breve)"
       : "Ginecologia e Obstetrícia.";
   }
-  if (cli) {
-    cli.textContent = cliN
-      ? cliN + " flashcards · Reuma · Psi · Pneumo"
-      : "Reumatologia, Psiquiatria e Pneumologia.";
+  aprovaRenderCliAreaCounts().catch(() => {});
+}
+
+async function aprovaRenderCliAreaCounts () {
+  const map = [
+    ["esp-count-reu", "reumatologia", "AR, LES, gota, SpA e vasculites."],
+    ["esp-count-psi", "psiquiatria", "Substâncias, humor, psicose e ansiedade."],
+    ["esp-count-pnm", "pneumologia", "Asma, DPOC, TEP, intensiva e TB."],
+    ["esp-count-neu", "neurologia", "AVC, epilepsia, coma e cefaleia."],
+    ["esp-count-nef", "nefrologia", "Nefro 1–5 completa · glomérulos à uro."]
+  ];
+  for (const [elId, areaId, fallback] of map) {
+    const el = document.getElementById(elId);
+    if (!el) continue;
+    const stats = await aprovaCliAreaStats(areaId);
+    el.textContent = stats.groups
+      ? (stats.cards + " flashcards · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
+      : fallback;
   }
 }
 
@@ -293,7 +319,33 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("imu-") === 0) return "Imunizações";
   if (id.indexOf("dm-") === 0) return "Diabetes";
   if (id.indexOf("itu-") === 0) return "Nefro · ITU/RVU";
-  if (id.indexOf("nef-") === 0) return "Nefro · SN/GNA";
+  if (id === "nef-sindromes") return "Nefro · SN/GNA";
+  if (id === "nef-basico") return "Nefro · básico";
+  if (id.indexOf("nef-nefritica") === 0) return "Nefro · nefrítica";
+  if (id === "nef-nefrotica") return "Nefro · nefrótica";
+  if (id === "nef-dlm-gefs") return "Nefro · DLM/GEFS";
+  if (id === "nef-membranosa") return "Nefro · membranosa";
+  if (id === "nef-berger") return "Nefro · Berger";
+  if (id === "nef-gnrp") return "Nefro · GNRP";
+  if (id === "nef-sistemicas") return "Nefro · sistêmicas";
+  if (id === "nef-nta" || id.indexOf("nef-nta-") === 0) return "Nefro · NTA";
+  if (id === "nef-rabdo-slt") return "Nefro · rabdo/SLT";
+  if (id === "nef-nia") return "Nefro · NIA";
+  if (id === "nef-nic-papila") return "Nefro · NIC/papila";
+  if (id === "nef-atr-fanconi") return "Nefro · ATR";
+  if (id === "nef-renovascular") return "Nefro · renovascular";
+  if (id === "nef-ateroembolo") return "Nefro · ateroêmbolo";
+  if (id === "nef-cristaloides") return "Nefro · cristaloides";
+  if (id === "nef-magnesio") return "Nefro · Mg";
+  if (id === "nef-tampoes") return "Nefro · tampões";
+  if (id.indexOf("nef-ira-") === 0) return "Nefro · IRA";
+  if (id.indexOf("nef-drc-") === 0) return "Nefro · DRC";
+  if (id.indexOf("nef-litiase-") === 0) return "Nefro · litíase";
+  if (id === "nef-hpb") return "Nefro · HPB";
+  if (id === "nef-ca-prostata") return "Nefro · CA próstata";
+  if (id === "nef-ca-uro") return "Nefro · oncouro";
+  if (id === "nef-obstrucao-cistos") return "Nefro · obstrução/cistos";
+  if (id.indexOf("nef-") === 0) return "Nefrologia";
   if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
   if (id.indexOf("inf-") === 0) return "Infecto · Dengue/Sepse";
   if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
@@ -353,8 +405,18 @@ function aprovaDeckKicker (deck) {
   if (id === "pnm-cancer") return "Câncer de pulmão";
   if (id === "pnm-basico") return "Espirometria · gasometria";
   if (id === "pnm-intersticial") return "Intersticiais";
-  if (id === "pnm-tb" || id === "pnm-pneumotorax-misc") return "TB · misc";
+  if (id.indexOf("pnm-tb-extra") === 0) return "TB extrapulmonar";
+  if (id.indexOf("pnm-tb-") === 0) return "Tuberculose";
+  if (id === "pnm-micoses") return "Micoses";
   if (id.indexOf("pnm-") === 0) return "Pneumologia";
+  if (id.indexOf("neu-avc-") === 0) return "AVC";
+  if (id === "neu-epilepsia") return "Epilepsia";
+  if (id === "neu-coma-hic") return "Coma · HIC";
+  if (id === "neu-cefaleia") return "Cefaleias";
+  if (id === "neu-neuromuscular") return "Neuromuscular";
+  if (id === "neu-demencia-parkinson") return "Demências · Parkinson";
+  if (id === "neu-em-tumores") return "EM · tumores";
+  if (id.indexOf("neu-") === 0) return "Neurologia";
   if (
     id === "cg-apendicite" ||
     id === "cg-colecistite" ||
@@ -532,6 +594,28 @@ async function aprovaLoadOverviewStats (specialty) {
         aprovaPnmOverviewStatsCache = null;
       }
       return aprovaPnmOverviewStatsCache;
+    }
+    if (area === "neurologia") {
+      if (aprovaNeuOverviewStatsCache) return aprovaNeuOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaNeuOverviewStatsCache = await res.json();
+      } catch {
+        aprovaNeuOverviewStatsCache = null;
+      }
+      return aprovaNeuOverviewStatsCache;
+    }
+    if (area === "nefrologia") {
+      if (aprovaNefOverviewStatsCache) return aprovaNefOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaNefOverviewStatsCache = await res.json();
+      } catch {
+        aprovaNefOverviewStatsCache = null;
+      }
+      return aprovaNefOverviewStatsCache;
     }
     if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
     try {
@@ -741,7 +825,9 @@ async function aprovaRenderCliAreaCards () {
     : [
       { id: "reumatologia", label: "Reumatologia", blurb: "" },
       { id: "psiquiatria", label: "Psiquiatria", blurb: "" },
-      { id: "pneumologia", label: "Pneumologia", blurb: "" }
+      { id: "pneumologia", label: "Pneumologia", blurb: "" },
+      { id: "neurologia", label: "Neurologia", blurb: "" },
+      { id: "nefrologia", label: "Nefrologia", blurb: "" }
     ];
 
   grid.innerHTML = "";
@@ -873,7 +959,7 @@ const APROVA_PED_MODULE_PREFIXES = {
   ped6: ["itu-", "exa-", "crd-", "urg-"],
   respiratorio: ["resp-"],
   "gastro-neuro": ["gast-", "neu-"],
-  "nefro-extra": ["nef-"],
+  "nefro-extra": ["nef-sindromes"],
   "r1-extra": ["inf-", "hem-", "ort-", "end-", "urg-"],
   "r1-lacunas": ["cir-", "par-", "alg-", "soc-", "ort-"],
   gin1: ["gin1-"],
@@ -923,7 +1009,30 @@ const APROVA_PED_MODULE_PREFIXES = {
   "pnm-cancer": ["pnm-cancer"],
   "pnm-basico": ["pnm-basico"],
   "pnm-intersticial": ["pnm-intersticial"],
-  "pnm-tb": ["pnm-tb", "pnm-pneumotorax-"]
+  "pnm-tb": ["pnm-tb-basico", "pnm-tb-clinica", "pnm-tb-tratamento", "pnm-tb-contatos"],
+  "pnm-tb-extra": ["pnm-tb-extra"],
+  "pnm-micoses": ["pnm-micoses"],
+  "neu-avc": ["neu-avc-"],
+  "neu-epilepsia": ["neu-epilepsia"],
+  "neu-coma": ["neu-coma-"],
+  "neu-cefaleia": ["neu-cefaleia"],
+  "neu-neuromuscular": ["neu-neuromuscular"],
+  "neu-demencia": ["neu-demencia-"],
+  "neu-em": ["neu-em-"],
+  "nef-basico": ["nef-basico"],
+  "nef-nefritica": ["nef-nefritica-"],
+  "nef-nefrotica": ["nef-nefrotica"],
+  "nef-especificas": ["nef-dlm-", "nef-membranosa", "nef-berger", "nef-gnrp", "nef-sistemicas"],
+  "nef-nta": ["nef-nta", "nef-nta-", "nef-rabdo-"],
+  "nef-nia-nic": ["nef-nia", "nef-nic-"],
+  "nef-tubulares": ["nef-atr-"],
+  "nef-vascular": ["nef-renovascular", "nef-ateroembolo"],
+  "nef-solucoes": ["nef-cristaloides", "nef-magnesio", "nef-tampoes"],
+  "nef-ira": ["nef-ira-"],
+  "nef-drc": ["nef-drc-"],
+  "nef-litiase": ["nef-litiase-"],
+  "nef-prostata": ["nef-hpb", "nef-ca-prostata"],
+  "nef-uro-extra": ["nef-ca-uro", "nef-obstrucao-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -1260,7 +1369,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     hint.textContent = isGo
       ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
       : isCli
-        ? "Primeiro escolha Reumatologia, Psiquiatria ou Pneumologia; depois um grupo; depois os subtemas."
+        ? "Primeiro escolha a área da Clínica; depois um grupo; depois os subtemas."
         : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
   }
   if (back) back.textContent = "← Voltar às especialidades";
@@ -1382,7 +1491,7 @@ async function aprovaOpenCliArea (areaId) {
   if (hint) {
     hint.textContent = "Toque em um grupo para abrir os subtemas neste quadro separado.";
   }
-  if (back) back.textContent = "← Voltar à Clínica médica";
+  if (back) back.textContent = "← Voltar às especialidades";
   if (groupsLabel) groupsLabel.textContent = "Grupos";
   if (selectAll) {
     selectAll.hidden = !areaStats.groups;
@@ -1792,7 +1901,14 @@ async function aprovaBoot () {
   });
 
   document.querySelectorAll("[data-specialty]").forEach(btn => {
-    btn.addEventListener("click", () => aprovaOpenSpecialty(btn.dataset.specialty));
+    btn.addEventListener("click", () => {
+      const area = btn.dataset.cliArea;
+      if (btn.dataset.specialty === "clinica" && area) {
+        aprovaOpenCliArea(area).catch(err => console.error("Falha ao abrir área", area, err));
+        return;
+      }
+      aprovaOpenSpecialty(btn.dataset.specialty);
+    });
   });
 
   document.getElementById("esp-back")?.addEventListener("click", () => {
@@ -1809,7 +1925,7 @@ async function aprovaBoot () {
       return;
     }
     if (aprovaActiveSpecialty === "clinica" && aprovaActiveCliArea) {
-      aprovaOpenClinica();
+      aprovaShowSpecialtyList();
       return;
     }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty) && aprovaActivePedModule) {
@@ -1838,10 +1954,10 @@ async function aprovaBoot () {
         return;
       }
       if (aprovaActiveCliArea) {
-        aprovaOpenClinica();
+        aprovaShowSpecialtyList();
         return;
       }
-      aprovaOpenClinica();
+      aprovaShowSpecialtyList();
       return;
     }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty)) {

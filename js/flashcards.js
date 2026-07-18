@@ -3,9 +3,13 @@
 function aprovaDeckSpecialty (deck) {
   if (deck.specialty) return deck.specialty;
   const id = String(deck.id || "");
+  /* nef-sindromes = pediatria; demais nef-* = Nefrologia CM (Nefro 1+) */
+  if (id.indexOf("nef-") === 0) {
+    return id === "nef-sindromes" ? "pediatria" : "clinica";
+  }
   const pedPrefixes = [
     "neo-", "ali-", "nut-", "imu-", "dm-", "itu-", "exa-", "crd-", "urg-",
-    "resp-", "gast-", "neu-", "nef-", "inf-", "hem-", "ort-", "end-",
+    "resp-", "gast-", "neu-", "inf-", "hem-", "ort-", "end-",
     "cir-", "par-", "alg-", "soc-"
   ];
   if (pedPrefixes.some(p => id.indexOf(p) === 0)) return "pediatria";
@@ -39,7 +43,8 @@ function aprovaDeckSpecialty (deck) {
     id.indexOf("reu3-") === 0 ||
     id.indexOf("reu-") === 0 ||
     id.indexOf("psi-") === 0 ||
-    id.indexOf("pnm-") === 0
+    id.indexOf("pnm-") === 0 ||
+    id.indexOf("neu-") === 0
   ) {
     return "clinica";
   }
@@ -88,7 +93,9 @@ const AprovaFlashcards = {
       "data/flashcards-reu2.json",
       "data/flashcards-reu3.json",
       "data/flashcards-psi.json",
-      "data/flashcards-pneumo.json"
+      "data/flashcards-pneumo.json",
+      "data/flashcards-neuro.json",
+      "data/flashcards-nefro.json"
     ];
     const decks = [];
     for (const file of files) {

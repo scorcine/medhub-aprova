@@ -285,57 +285,195 @@ const APROVA_REVISAO_MODULES = {
   },
   "pnm-intensiva": {
     label: "Intensiva · VM · SDRA",
-    file: "data/revisao-pnm-intensiva.json?v=20260718bf",
+    file: "data/revisao-pnm-intensiva.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-tep": {
     label: "TEP · embolia pulmonar",
-    file: "data/revisao-pnm-tep.json?v=20260718bf",
+    file: "data/revisao-pnm-tep.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-asma": {
     label: "Asma · GINA",
-    file: "data/revisao-pnm-asma.json?v=20260718bf",
+    file: "data/revisao-pnm-asma.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-dpoc": {
     label: "DPOC · GOLD",
-    file: "data/revisao-pnm-dpoc.json?v=20260718bf",
+    file: "data/revisao-pnm-dpoc.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-derrame": {
     label: "Derrame pleural · Light",
-    file: "data/revisao-pnm-derrame.json?v=20260718bf",
+    file: "data/revisao-pnm-derrame.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-cancer": {
     label: "Câncer de pulmão",
-    file: "data/revisao-pnm-cancer.json?v=20260718bf",
+    file: "data/revisao-pnm-cancer.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-basico": {
     label: "Espirometria · gasometria",
-    file: "data/revisao-pnm-basico.json?v=20260718bf",
+    file: "data/revisao-pnm-basico.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-intersticial": {
     label: "Intersticiais · sarcoidose",
-    file: "data/revisao-pnm-intersticial.json?v=20260718bf",
+    file: "data/revisao-pnm-intersticial.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-tb": {
-    label: "TB · pneumotórax · misc",
-    file: "data/revisao-pnm-tb.json?v=20260718bf",
+    label: "TB · RIPE · ILTB",
+    file: "data/revisao-pnm-tb.json?v=20260718bh",
     specialty: "clinica",
     area: "pneumologia"
+  },
+  "pnm-tb-extra": {
+    label: "TB extrapulmonar",
+    file: "data/revisao-pnm-tb-extra.json?v=20260718bh",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "pnm-micoses": {
+    label: "Micoses pulmonares",
+    file: "data/revisao-pnm-micoses.json?v=20260718bh",
+    specialty: "clinica",
+    area: "pneumologia"
+  },
+  "neu-avc": {
+    label: "AVC · AIT · HSA",
+    file: "data/revisao-neu-avc.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "neu-epilepsia": {
+    label: "Epilepsia · status",
+    file: "data/revisao-neu-epilepsia.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "neu-coma": {
+    label: "Coma · HIC",
+    file: "data/revisao-neu-coma.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "neu-cefaleia": {
+    label: "Cefaleias",
+    file: "data/revisao-neu-cefaleia.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "neu-neuromuscular": {
+    label: "Neuromuscular",
+    file: "data/revisao-neu-neuromuscular.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "neu-demencia": {
+    label: "Demências · Parkinson",
+    file: "data/revisao-neu-demencia.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "neu-em": {
+    label: "EM · tumores · misc",
+    file: "data/revisao-neu-em.json?v=20260718bj",
+    specialty: "clinica",
+    area: "neurologia"
+  },
+  "nef-basico": {
+    label: "Básico glomerular",
+    file: "data/revisao-nef-basico.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-nefritica": {
+    label: "Nefrítica · GNPE",
+    file: "data/revisao-nef-nefritica.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-nefrotica": {
+    label: "Síndrome nefrótica",
+    file: "data/revisao-nef-nefrotica.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-especificas": {
+    label: "Glomerulopatias específicas",
+    file: "data/revisao-nef-especificas.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-nta": {
+    label: "NTA · tóxicos · rabdo",
+    file: "data/revisao-nef-nta.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-nia-nic": {
+    label: "NIA · NIC · papila",
+    file: "data/revisao-nef-nia-nic.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-tubulares": {
+    label: "ATR · Fanconi",
+    file: "data/revisao-nef-tubulares.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-vascular": {
+    label: "Vascular · ateroêmbolo",
+    file: "data/revisao-nef-vascular.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-solucoes": {
+    label: "Soluções · Mg · tampões",
+    file: "data/revisao-nef-solucoes.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-ira": {
+    label: "IRA · KDIGO · diálise",
+    file: "data/revisao-nef-ira.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-drc": {
+    label: "DRC · uremia · DMO",
+    file: "data/revisao-nef-drc.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-litiase": {
+    label: "Nefrolitíase",
+    file: "data/revisao-nef-litiase.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-prostata": {
+    label: "HPB · CA próstata",
+    file: "data/revisao-nef-prostata.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
+  },
+  "nef-uro-extra": {
+    label: "Oncouro · cistos · hematúria",
+    file: "data/revisao-nef-uro-extra.json?v=20260718bo",
+    specialty: "clinica",
+    area: "nefrologia"
   }
 };
 
@@ -366,7 +504,17 @@ const APROVA_CLI_AREAS = {
   pneumologia: {
     id: "pneumologia",
     label: "Pneumologia",
-    blurb: "Asma, DPOC, TEP, intensiva, derrame, câncer e TB"
+    blurb: "Asma, DPOC, TEP, intensiva, derrame, câncer, TB e micoses"
+  },
+  neurologia: {
+    id: "neurologia",
+    label: "Neurologia",
+    blurb: "AVC, epilepsia, coma, cefaleia e neuromuscular"
+  },
+  nefrologia: {
+    id: "nefrologia",
+    label: "Nefrologia",
+    blurb: "Série completa Nefro 1–5 · glomérulos à uro"
   }
 };
 

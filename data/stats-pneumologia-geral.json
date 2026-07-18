@@ -1,9 +1,9 @@
 {
   "title": "Pneumologia · o que mais cai (R1)",
   "unitLabel": "% relativo no bloco",
-  "note": "Síntese Enare/USP/UNIFESP + apostilas Pneumo1–2. Intensiva/TEP dominam USP/UNIFESP; asma e câncer lideram o Enare.",
+  "note": "Síntese Enare/USP/UNIFESP + apostilas Pneumo1–2. Intensiva/TEP dominam USP/UNIFESP; asma e câncer lideram o Enare; TB é núcleo Brasil.",
   "gaps": {
-    "summary": "Pneumologia da apostila coberta em 9 grupos (Pneumo1 + TB/Pneumo2).",
+    "summary": "Pneumologia coberta em 11 grupos (Pneumo1 + TB/micoses da Pneumo2).",
     "missingHighYield": [],
     "covered": [
       {
@@ -39,8 +39,16 @@
         "grupo": "pnm-intersticial"
       },
       {
-        "tema": "TB / pneumotórax / misc",
+        "tema": "Tuberculose pulmonar / ILTB",
         "grupo": "pnm-tb"
+      },
+      {
+        "tema": "TB extrapulmonar",
+        "grupo": "pnm-tb-extra"
+      },
+      {
+        "tema": "Micoses pulmonares",
+        "grupo": "pnm-micoses"
       }
     ]
   },
@@ -51,20 +59,25 @@
       "kicker": "Síntese bancas",
       "featured": false,
       "sourceType": "sintese",
-      "source": "Levantamentos Enare + USP-SP + UNIFESP + apostilas Pneumo.",
-      "verdict": "Monte o núcleo em intensiva, TEP, asma, DPOC e Light; complete com câncer e TB (Brasil).",
-      "foco": "Intensiva · TEP · Asma · DPOC · Derrame",
+      "source": "Levantamentos Enare + USP-SP + UNIFESP + apostilas Pneumo1–2.",
+      "verdict": "Núcleo: intensiva, TEP, asma, DPOC, Light e TB (RIPE/ILTB); complete com câncer e micoses.",
+      "foco": "Intensiva · TEP · Asma · DPOC · TB",
       "estilo": "Síntese R1",
       "priorities": [
         {
           "tema": "Intensiva / VM / SDRA",
-          "pct": 22,
-          "n": 22
+          "pct": 18,
+          "n": 18
+        },
+        {
+          "tema": "TB / ILTB",
+          "pct": 16,
+          "n": 16
         },
         {
           "tema": "TEP",
-          "pct": 14,
-          "n": 14
+          "pct": 12,
+          "n": 12
         },
         {
           "tema": "Asma",
@@ -77,17 +90,12 @@
           "n": 12
         },
         {
-          "tema": "Derrame / intro",
-          "pct": 14,
-          "n": 14
+          "tema": "Derrame / câncer",
+          "pct": 16,
+          "n": 16
         },
         {
-          "tema": "Câncer",
-          "pct": 12,
-          "n": 12
-        },
-        {
-          "tema": "TB / interstício / extras",
+          "tema": "Interstício / micoses",
           "pct": 12,
           "n": 12
         }
