@@ -1,0 +1,1140 @@
+{
+  "meta": {
+    "updated": "2026-07-18",
+    "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica.",
+    "sources": {
+      "estrategiaGuia": {
+        "name": "Estratégia MED — Guia Estatístico ENAMED",
+        "url": "https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+        "note": "Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026"
+      },
+      "clevermed": {
+        "name": "CleverMed — assuntos mais prevalentes ENARE/ENAMED",
+        "url": "https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea"
+      },
+      "estrategiaUsp": {
+        "name": "Estratégia MED — o que mais cai USP-SP",
+        "url": "https://portal.estrategia.com/medicina/residencia-medica/o-que-mais-cai-na-prova-de-residencia-medica-da-usp-sp/",
+        "note": "Levantamento 2017–2023 (publicado 2024)"
+      },
+      "medcofEnare": {
+        "name": "MedCof — temas quentes ENARE",
+        "url": "https://www.grupomedcof.com.br/blog/residencia-medica-enare-temas-quentes/"
+      }
+    }
+  },
+  "files": {
+    "stats-clinica-geral.json": {
+      "enare": {
+        "sourceKey": "clevermed",
+        "sourceType": "levantamento",
+        "kicker": "CleverMed · ENARE/ENAMED",
+        "estilo": "Levantamento CleverMed",
+        "foco": "Infecto · Cardio · Endo · Hemato",
+        "verdict": "Levantamento CleverMed (ENARE/ENAMED): Infectologia lidera o bloco de Clínica (~19%), seguida de Cardiologia e Endocrinologia. Dermatologia aparece na fonte original (~7%) e foi redistribuída entre as demais áreas do app.",
+        "priorities": [
+          { "tema": "Infectologia", "pct": 18.72 },
+          { "tema": "Cardiologia", "pct": 13.3 },
+          { "tema": "Endocrinologia", "pct": 9.36 },
+          { "tema": "Hematologia", "pct": 8.37 },
+          { "tema": "Pneumologia", "pct": 12.8 },
+          { "tema": "Neurologia", "pct": 12.0 },
+          { "tema": "Psiquiatria", "pct": 10.4 },
+          { "tema": "Reumatologia", "pct": 6.4 },
+          { "tema": "Nefrologia", "pct": 5.2 },
+          { "tema": "Hepatologia", "pct": 3.45 }
+        ]
+      },
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Infecto · Cardio · Endo · Pneumo",
+        "verdict": "Guia Estatístico Estratégia MED (Revalida INEP + ENAMED/ENARE 2025/2026): dentro da Clínica, Infectologia e Cardiologia concentram o maior volume; complete com Endócrino, Pneumo e Neuro.",
+        "priorities": [
+          { "tema": "Infectologia", "pct": 18.1 },
+          { "tema": "Cardiologia", "pct": 15.0 },
+          { "tema": "Pneumologia", "pct": 12.4 },
+          { "tema": "Neurologia", "pct": 11.6 },
+          { "tema": "Endocrinologia", "pct": 10.8 },
+          { "tema": "Psiquiatria", "pct": 10.0 },
+          { "tema": "Hematologia", "pct": 7.3 },
+          { "tema": "Reumatologia", "pct": 6.2 },
+          { "tema": "Nefrologia", "pct": 5.0 },
+          { "tema": "Hepatologia", "pct": 3.6 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Infecto · Cardio · Endo · Pneumo",
+        "verdict": "Mesma base do Guia Estratégia (inclui série Revalida INEP 2011–2025): Clínica puxada por Infecto e Cardio; perfil generalista com Endócrino e Pneumo fortes.",
+        "priorities": [
+          { "tema": "Infectologia", "pct": 18.1 },
+          { "tema": "Cardiologia", "pct": 15.0 },
+          { "tema": "Pneumologia", "pct": 12.4 },
+          { "tema": "Neurologia", "pct": 11.6 },
+          { "tema": "Endocrinologia", "pct": 10.8 },
+          { "tema": "Psiquiatria", "pct": 10.0 },
+          { "tema": "Hematologia", "pct": 7.3 },
+          { "tema": "Reumatologia", "pct": 6.2 },
+          { "tema": "Nefrologia", "pct": 5.0 },
+          { "tema": "Hepatologia", "pct": 3.6 }
+        ]
+      },
+      "usp": {
+        "sourceKey": "estrategiaUsp",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · USP 2017–2023",
+        "estilo": "Levantamento Estratégia USP",
+        "foco": "Infecto · Cardio · Pneumo · Neuro",
+        "verdict": "Levantamento Estratégia MED USP-SP (2017–2023): Infectologia é a área clínica mais cobrada; Cardiologia vem em seguida. Pneumo e Neuro pesam mais do que em provas puramente generalistas.",
+        "priorities": [
+          { "tema": "Infectologia", "pct": 18.2 },
+          { "tema": "Cardiologia", "pct": 15.1 },
+          { "tema": "Pneumologia", "pct": 12.4 },
+          { "tema": "Neurologia", "pct": 11.6 },
+          { "tema": "Endocrinologia", "pct": 10.8 },
+          { "tema": "Psiquiatria", "pct": 10.1 },
+          { "tema": "Hematologia", "pct": 7.3 },
+          { "tema": "Reumatologia", "pct": 6.2 },
+          { "tema": "Nefrologia", "pct": 5.0 },
+          { "tema": "Hepatologia", "pct": 3.3 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "clevermed",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Infecto · Cardio · Endo · Pneumo",
+        "verdict": "Síntese dos levantamentos públicos (CleverMed ENARE/ENAMED + Estratégia Guia/USP): Infectologia e Cardiologia lideram a Clínica; use a banca escolhida para afinar o peso de Neuro/Pneumo.",
+        "priorities": [
+          { "tema": "Infectologia", "pct": 18.3 },
+          { "tema": "Cardiologia", "pct": 14.5 },
+          { "tema": "Pneumologia", "pct": 12.5 },
+          { "tema": "Endocrinologia", "pct": 10.3 },
+          { "tema": "Neurologia", "pct": 11.7 },
+          { "tema": "Psiquiatria", "pct": 10.2 },
+          { "tema": "Hematologia", "pct": 7.7 },
+          { "tema": "Reumatologia", "pct": 6.3 },
+          { "tema": "Nefrologia", "pct": 5.1 },
+          { "tema": "Hepatologia", "pct": 3.4 }
+        ]
+      }
+    },
+    "stats-pediatria-geral.json": {
+      "enare": {
+        "sourceKey": "clevermed",
+        "sourceType": "levantamento",
+        "kicker": "CleverMed · ENARE/ENAMED",
+        "estilo": "Levantamento CleverMed",
+        "foco": "Puericultura · Neo · Infecto ped",
+        "verdict": "CleverMed (ENARE/ENAMED): Puericultura (~24%) e Neonatologia (~21%) dominam; Infecto pediátrica completa o núcleo. Gastro e pneumo ped fecham o top.",
+        "priorities": [
+          { "tema": "Puericultura (vacinas, crescimento, aleitamento)", "pct": 23.78 },
+          { "tema": "Neonatologia", "pct": 20.54 },
+          { "tema": "Infectologia pediátrica", "pct": 14.59 },
+          { "tema": "Gastroenterologia / desidratação", "pct": 7.57 },
+          { "tema": "Pneumologia / respiratório", "pct": 6.49 },
+          { "tema": "Urgências e emergências", "pct": 6.5 },
+          { "tema": "Reumatologia / orto pediátrica", "pct": 5.5 },
+          { "tema": "Nefrologia", "pct": 5.0 },
+          { "tema": "Endocrinologia / diabetes", "pct": 4.0 },
+          { "tema": "Maus-tratos / proteção", "pct": 3.5 },
+          { "tema": "Cardio / hemato / outros", "pct": 2.53 }
+        ]
+      },
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Puericultura · Neo · Pneumo ped",
+        "verdict": "Guia Estratégia: Puericultura (~30%) e Neonatologia (~21%) lideram Pediatria; Pneumo e Gastro pediátricas vêm a seguir. Imunizações e aleitamento são os assuntos mais citados no top 10.",
+        "priorities": [
+          { "tema": "Puericultura (vacinas, crescimento, aleitamento)", "pct": 29.9 },
+          { "tema": "Neonatologia", "pct": 20.93 },
+          { "tema": "Pneumologia / respiratório", "pct": 10.96 },
+          { "tema": "Gastroenterologia / desidratação", "pct": 8.64 },
+          { "tema": "Reumatologia / orto pediátrica", "pct": 6.98 },
+          { "tema": "Infectologia pediátrica", "pct": 8.5 },
+          { "tema": "Urgências e emergências", "pct": 5.5 },
+          { "tema": "Nefrologia", "pct": 3.5 },
+          { "tema": "Endocrinologia / diabetes", "pct": 2.5 },
+          { "tema": "Maus-tratos / proteção", "pct": 1.5 },
+          { "tema": "Cardio / hemato / outros", "pct": 1.09 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Puericultura · Neo · Pneumo ped",
+        "verdict": "Base Estratégia com série Revalida INEP: pediatria centrada em puericultura e neonatologia; respiratório e gastro completam o núcleo generalista.",
+        "priorities": [
+          { "tema": "Puericultura (vacinas, crescimento, aleitamento)", "pct": 29.9 },
+          { "tema": "Neonatologia", "pct": 20.93 },
+          { "tema": "Pneumologia / respiratório", "pct": 10.96 },
+          { "tema": "Gastroenterologia / desidratação", "pct": 8.64 },
+          { "tema": "Reumatologia / orto pediátrica", "pct": 6.98 },
+          { "tema": "Infectologia pediátrica", "pct": 8.5 },
+          { "tema": "Urgências e emergências", "pct": 5.5 },
+          { "tema": "Nefrologia", "pct": 3.5 },
+          { "tema": "Endocrinologia / diabetes", "pct": 2.5 },
+          { "tema": "Maus-tratos / proteção", "pct": 1.5 },
+          { "tema": "Cardio / hemato / outros", "pct": 1.09 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "clevermed",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Puericultura · Neo · Infecto ped",
+        "verdict": "Média dos levantamentos CleverMed + Estratégia: cerca de metade da Pediatria fica em puericultura + neonatologia; infecto/respiratório/gastro fecham o alto rendimento.",
+        "priorities": [
+          { "tema": "Puericultura (vacinas, crescimento, aleitamento)", "pct": 26.8 },
+          { "tema": "Neonatologia", "pct": 20.7 },
+          { "tema": "Infectologia pediátrica", "pct": 11.5 },
+          { "tema": "Pneumologia / respiratório", "pct": 8.7 },
+          { "tema": "Gastroenterologia / desidratação", "pct": 8.1 },
+          { "tema": "Urgências e emergências", "pct": 6.0 },
+          { "tema": "Reumatologia / orto pediátrica", "pct": 6.2 },
+          { "tema": "Nefrologia", "pct": 4.2 },
+          { "tema": "Endocrinologia / diabetes", "pct": 3.2 },
+          { "tema": "Maus-tratos / proteção", "pct": 2.5 },
+          { "tema": "Cardio / hemato / outros", "pct": 2.1 }
+        ]
+      }
+    },
+    "stats-cirurgia-geral.json": {
+      "enare": {
+        "sourceKey": "clevermed",
+        "sourceType": "levantamento",
+        "kicker": "CleverMed · ENARE/ENAMED",
+        "estilo": "Levantamento CleverMed",
+        "foco": "Trauma · Abdome · Perioperatório",
+        "verdict": "CleverMed: Trauma (~23%) + Abdome agudo (~18%) + Perioperatório (~17%) concentram a Cirurgia ENARE/ENAMED; Urologia e Coloprocto completam o top.",
+        "priorities": [
+          { "tema": "Trauma", "pct": 22.8 },
+          { "tema": "Urgências abdominais", "pct": 18.4 },
+          { "tema": "Avaliação pré-operatória", "pct": 10.0 },
+          { "tema": "Complicações pós-operatórias", "pct": 6.5 },
+          { "tema": "Urologia", "pct": 11.2 },
+          { "tema": "Proctologia", "pct": 8.3 },
+          { "tema": "Cirurgia infantil", "pct": 6.0 },
+          { "tema": "Vesícula e vias biliares", "pct": 4.5 },
+          { "tema": "Hérnias da parede abdominal", "pct": 3.5 },
+          { "tema": "Cirurgia vascular", "pct": 2.5 },
+          { "tema": "Queimaduras e trauma elétrico", "pct": 2.0 },
+          { "tema": "Temas gerais em cirurgia", "pct": 4.3 }
+        ]
+      },
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Trauma · Abdome · Cirurgia infantil",
+        "verdict": "Guia Estratégia: Trauma (~24%) e Urgências abdominais (~20%) lideram; Cirurgia infantil, Urologia e complicações pós-operatórias fecham o top 5 temático.",
+        "priorities": [
+          { "tema": "Trauma", "pct": 24.48 },
+          { "tema": "Urgências abdominais", "pct": 19.93 },
+          { "tema": "Cirurgia infantil", "pct": 11.54 },
+          { "tema": "Urologia", "pct": 6.64 },
+          { "tema": "Complicações pós-operatórias", "pct": 4.9 },
+          { "tema": "Proctologia", "pct": 6.5 },
+          { "tema": "Vesícula e vias biliares", "pct": 5.5 },
+          { "tema": "Avaliação pré-operatória", "pct": 5.0 },
+          { "tema": "Hérnias da parede abdominal", "pct": 4.0 },
+          { "tema": "Cirurgia vascular", "pct": 3.5 },
+          { "tema": "Queimaduras e trauma elétrico", "pct": 2.5 },
+          { "tema": "Temas gerais em cirurgia", "pct": 5.51 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Trauma · Abdome · Cirurgia infantil",
+        "verdict": "Base Estratégia (série Revalida + ENAMED): trauma e urgências abdominais são o núcleo; infantil e urologia aparecem com frequência estável.",
+        "priorities": [
+          { "tema": "Trauma", "pct": 24.48 },
+          { "tema": "Urgências abdominais", "pct": 19.93 },
+          { "tema": "Cirurgia infantil", "pct": 11.54 },
+          { "tema": "Urologia", "pct": 6.64 },
+          { "tema": "Complicações pós-operatórias", "pct": 4.9 },
+          { "tema": "Proctologia", "pct": 6.5 },
+          { "tema": "Vesícula e vias biliares", "pct": 5.5 },
+          { "tema": "Avaliação pré-operatória", "pct": 5.0 },
+          { "tema": "Hérnias da parede abdominal", "pct": 4.0 },
+          { "tema": "Cirurgia vascular", "pct": 3.5 },
+          { "tema": "Queimaduras e trauma elétrico", "pct": 2.5 },
+          { "tema": "Temas gerais em cirurgia", "pct": 5.51 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "clevermed",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Trauma · Abdome · Perioperatório",
+        "verdict": "Síntese CleverMed + Estratégia: Trauma e urgências abdominais definem Cirurgia; perioperatório/urologia/procto completam o núcleo de alto rendimento.",
+        "priorities": [
+          { "tema": "Trauma", "pct": 23.6 },
+          { "tema": "Urgências abdominais", "pct": 19.2 },
+          { "tema": "Cirurgia infantil", "pct": 8.8 },
+          { "tema": "Urologia", "pct": 8.9 },
+          { "tema": "Avaliação pré-operatória", "pct": 7.5 },
+          { "tema": "Proctologia", "pct": 7.4 },
+          { "tema": "Complicações pós-operatórias", "pct": 5.7 },
+          { "tema": "Vesícula e vias biliares", "pct": 5.0 },
+          { "tema": "Hérnias da parede abdominal", "pct": 3.8 },
+          { "tema": "Cirurgia vascular", "pct": 3.0 },
+          { "tema": "Queimaduras e trauma elétrico", "pct": 2.2 },
+          { "tema": "Temas gerais em cirurgia", "pct": 4.9 }
+        ]
+      }
+    },
+    "stats-preventiva-geral.json": {
+      "enare": {
+        "sourceKey": "clevermed",
+        "sourceType": "levantamento",
+        "kicker": "CleverMed · ENARE/ENAMED",
+        "estilo": "Levantamento CleverMed",
+        "foco": "MFC/APS · SUS · Ética · Epi",
+        "verdict": "CleverMed: Medicina de Família (~30%) + SUS (~20%) dominam Preventiva; Ética e Epidemiologia vêm em seguida (~15–16% cada).",
+        "priorities": [
+          { "tema": "SUS / APS", "pct": 50.0 },
+          { "tema": "Vigilância / ética", "pct": 23.17 },
+          { "tema": "Epidemiologia / testes", "pct": 15.24 },
+          { "tema": "Indicadores", "pct": 11.59 }
+        ]
+      },
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Epi · SUS · MFC · Ética",
+        "verdict": "Guia Estratégia: Epidemiologia (~35%) e SUS (~28%) lideram; MFC (~16%) e Ética médica (~15%) fecham o núcleo. Saúde do trabalhador aparece como bloco menor.",
+        "priorities": [
+          { "tema": "Epidemiologia / testes", "pct": 35.1 },
+          { "tema": "SUS / APS", "pct": 44.08 },
+          { "tema": "Vigilância / ética", "pct": 14.69 },
+          { "tema": "Indicadores", "pct": 6.13 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Epi · SUS · MFC · Ética",
+        "verdict": "Série Revalida/INEP no Guia Estratégia: Epidemiologia e SUS concentram Preventiva; ética e APS/MFC são alto rendimento estável.",
+        "priorities": [
+          { "tema": "Epidemiologia / testes", "pct": 35.1 },
+          { "tema": "SUS / APS", "pct": 44.08 },
+          { "tema": "Vigilância / ética", "pct": 14.69 },
+          { "tema": "Indicadores", "pct": 6.13 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "clevermed",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "SUS/APS · Epi · Ética",
+        "verdict": "Síntese CleverMed + Estratégia: SUS/APS e Epidemiologia concentram Preventiva; ética/vigilância e indicadores completam o bloco.",
+        "priorities": [
+          { "tema": "SUS / APS", "pct": 47.0 },
+          { "tema": "Epidemiologia / testes", "pct": 25.2 },
+          { "tema": "Vigilância / ética", "pct": 18.9 },
+          { "tema": "Indicadores", "pct": 8.9 }
+        ]
+      }
+    },
+    "stats-ginecologia-geral.json": {
+      "enare": {
+        "sourceKey": "clevermed",
+        "sourceType": "levantamento",
+        "kicker": "CleverMed · ENARE/ENAMED",
+        "estilo": "Levantamento CleverMed",
+        "foco": "Infecções · SUA · Mama/colo · ACO",
+        "verdict": "CleverMed: Infecções em ginecologia (~20%) lideram; SUA, câncer de mama/colo e anticoncepção (~10% cada) formam o núcleo previsível da prova.",
+        "priorities": [
+          { "tema": "Infecções (vulvovaginite, IST, DIP)", "pct": 20 },
+          { "tema": "Ginecologia endócrina (amenorreia, SOP, SUA, TH)", "pct": 22 },
+          { "tema": "Oncoginecologia (colo, endométrio, ovário)", "pct": 18 },
+          { "tema": "Mastologia", "pct": 14 },
+          { "tema": "Anticoncepção / planejamento familiar", "pct": 14 },
+          { "tema": "Ginecologia geral (mioma, endometriose)", "pct": 8 },
+          { "tema": "Uroginecologia", "pct": 4 }
+        ]
+      },
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Endócrina · Onco · Infecções · Mama",
+        "verdict": "Guia Estratégia: Ginecologia endócrina (~35%), oncoginecologia (~25%), infecções (~15%) e mastologia (~14%) concentram o bloco. Planejamento familiar aparece no top 10 de assuntos e foi alocado no mapa do app.",
+        "priorities": [
+          { "tema": "Ginecologia endócrina (amenorreia, SOP, SUA, TH)", "pct": 30 },
+          { "tema": "Oncoginecologia (colo, endométrio, ovário)", "pct": 22 },
+          { "tema": "Infecções (vulvovaginite, IST, DIP)", "pct": 14 },
+          { "tema": "Mastologia", "pct": 13 },
+          { "tema": "Anticoncepção / planejamento familiar", "pct": 10 },
+          { "tema": "Ginecologia geral (mioma, endometriose)", "pct": 8 },
+          { "tema": "Uroginecologia", "pct": 3 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Endócrina · Onco · Infecções · Mama",
+        "verdict": "Base Estratégia/Revalida: endócrina e oncoginecologia pesam; infecções, mastologia e planejamento familiar fecham o núcleo de alto rendimento.",
+        "priorities": [
+          { "tema": "Ginecologia endócrina (amenorreia, SOP, SUA, TH)", "pct": 30 },
+          { "tema": "Oncoginecologia (colo, endométrio, ovário)", "pct": 22 },
+          { "tema": "Infecções (vulvovaginite, IST, DIP)", "pct": 14 },
+          { "tema": "Mastologia", "pct": 13 },
+          { "tema": "Anticoncepção / planejamento familiar", "pct": 10 },
+          { "tema": "Ginecologia geral (mioma, endometriose)", "pct": 8 },
+          { "tema": "Uroginecologia", "pct": 3 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "clevermed",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Endócrina · Infecções · Onco · Mama",
+        "verdict": "Síntese CleverMed + Estratégia: endócrina/SUA, infecções e oncoginecologia/mama concentram Ginecologia nas provas nacionais.",
+        "priorities": [
+          { "tema": "Ginecologia endócrina (amenorreia, SOP, SUA, TH)", "pct": 28.4 },
+          { "tema": "Oncoginecologia (colo, endométrio, ovário)", "pct": 21.4 },
+          { "tema": "Infecções (vulvovaginite, IST, DIP)", "pct": 17.4 },
+          { "tema": "Mastologia", "pct": 13.9 },
+          { "tema": "Anticoncepção / planejamento familiar", "pct": 7.5 },
+          { "tema": "Ginecologia geral (mioma, endometriose)", "pct": 9.2 },
+          { "tema": "Uroginecologia", "pct": 2.2 }
+        ]
+      }
+    },
+    "stats-obstetricia-geral.json": {
+      "enare": {
+        "sourceKey": "clevermed",
+        "sourceType": "levantamento",
+        "kicker": "CleverMed · ENARE/ENAMED",
+        "estilo": "Levantamento CleverMed",
+        "foco": "Pré-natal · Infecções · Hemorragias · HAS",
+        "verdict": "CleverMed: Pré-natal (~16%), infecções na gestação (~14%), hemorragias (~13%) e síndromes hipertensivas (~11%) formam o núcleo; DMG aparece com menor peso isolado (~4,5%).",
+        "priorities": [
+          { "tema": "Pré-natal", "pct": 15.7 },
+          { "tema": "Doenças associadas à gestação (HAS, DM, infecções…)", "pct": 29.9 },
+          { "tema": "Intercorrências obstétricas (sangramentos, RPMO, TPP…)", "pct": 22.0 },
+          { "tema": "Parto (assistência, indução, distocia, cesárea)", "pct": 12.0 },
+          { "tema": "Medicina fetal (CTG, Doppler, RCIU, US)", "pct": 10.0 },
+          { "tema": "Puerpério (HPP, infecção)", "pct": 6.5 },
+          { "tema": "Obstetrícia fisiológica", "pct": 3.9 }
+        ]
+      },
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Doenças da gestação · Intercorrências · Pré-natal",
+        "verdict": "Guia Estratégia: Doenças associadas à gestação (~30%) e intercorrências (~23%) lideram; pré-natal, parto e medicina fetal (~13% cada) fecham o top. HAS gestacional e DMG são os assuntos mais citados.",
+        "priorities": [
+          { "tema": "Doenças associadas à gestação (HAS, DM, infecções…)", "pct": 30.14 },
+          { "tema": "Intercorrências obstétricas (sangramentos, RPMO, TPP…)", "pct": 23.44 },
+          { "tema": "Pré-natal", "pct": 13.88 },
+          { "tema": "Parto (assistência, indução, distocia, cesárea)", "pct": 12.92 },
+          { "tema": "Medicina fetal (CTG, Doppler, RCIU, US)", "pct": 12.92 },
+          { "tema": "Puerpério (HPP, infecção)", "pct": 4.0 },
+          { "tema": "Obstetrícia fisiológica", "pct": 2.7 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Doenças da gestação · Intercorrências · Pré-natal",
+        "verdict": "Base Estratégia/Revalida: doenças da gestação e intercorrências obstétricas concentram o bloco; pré-natal e parto fecham o núcleo generalista.",
+        "priorities": [
+          { "tema": "Doenças associadas à gestação (HAS, DM, infecções…)", "pct": 30.14 },
+          { "tema": "Intercorrências obstétricas (sangramentos, RPMO, TPP…)", "pct": 23.44 },
+          { "tema": "Pré-natal", "pct": 13.88 },
+          { "tema": "Parto (assistência, indução, distocia, cesárea)", "pct": 12.92 },
+          { "tema": "Medicina fetal (CTG, Doppler, RCIU, US)", "pct": 12.92 },
+          { "tema": "Puerpério (HPP, infecção)", "pct": 4.0 },
+          { "tema": "Obstetrícia fisiológica", "pct": 2.7 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "clevermed",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Doenças da gestação · Intercorrências · Pré-natal",
+        "verdict": "Síntese CleverMed + Estratégia: doenças associadas à gestação e intercorrências (hemorragias/HAS) + pré-natal concentram Obstetrícia.",
+        "priorities": [
+          { "tema": "Doenças associadas à gestação (HAS, DM, infecções…)", "pct": 30.0 },
+          { "tema": "Intercorrências obstétricas (sangramentos, RPMO, TPP…)", "pct": 22.7 },
+          { "tema": "Pré-natal", "pct": 14.8 },
+          { "tema": "Parto (assistência, indução, distocia, cesárea)", "pct": 12.5 },
+          { "tema": "Medicina fetal (CTG, Doppler, RCIU, US)", "pct": 11.5 },
+          { "tema": "Puerpério (HPP, infecção)", "pct": 5.2 },
+          { "tema": "Obstetrícia fisiológica", "pct": 3.3 }
+        ]
+      }
+    },
+    "stats-cardiologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "HAS · DAC/SCA · Arritmias · ICC",
+        "verdict": "Guia Estratégia: HAS, aterosclerose/DAC e arritmias aparecem com pesos próximos (~29% cada no recorte temático); ICC e valvulopatias (~6,5% cada) fecham o top. Top assuntos: tratamento de ICC/HAS, FA/flutter e SCA.",
+        "priorities": [
+          { "tema": "HAS", "pct": 28.57 },
+          { "tema": "SCA / IAM", "pct": 28.57 },
+          { "tema": "FA / arritmias / PCR", "pct": 28.57 },
+          { "tema": "ICC", "pct": 6.49 },
+          { "tema": "Valvas / pericárdio", "pct": 6.49 },
+          { "tema": "Miopatias / outros", "pct": 1.31 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "HAS · DAC/SCA · Arritmias",
+        "verdict": "Mesma base Estratégia (Revalida + ENAMED): HAS, doença coronariana e arritmias dominam Cardiologia; ICC e valvas completam.",
+        "priorities": [
+          { "tema": "HAS", "pct": 28.57 },
+          { "tema": "SCA / IAM", "pct": 28.57 },
+          { "tema": "FA / arritmias / PCR", "pct": 28.57 },
+          { "tema": "ICC", "pct": 6.49 },
+          { "tema": "Valvas / pericárdio", "pct": 6.49 },
+          { "tema": "Miopatias / outros", "pct": 1.31 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "medcofEnare",
+        "sourceType": "levantamento",
+        "kicker": "MedCof · temas quentes ENARE",
+        "estilo": "Levantamento MedCof",
+        "foco": "ICC · Arritmias · Valvas · SCA",
+        "verdict": "MedCof (temas quentes ENARE, contagens da edição analisada): ICC e arritmias lideram o bloco de Cardio; valvas aparecem com menor volume. Percentuais abaixo redistribuem essas contagens no mapa do app (SCA/HAS mantidos como núcleo clássico da banca).",
+        "priorities": [
+          { "tema": "ICC", "pct": 22 },
+          { "tema": "FA / arritmias / PCR", "pct": 22 },
+          { "tema": "SCA / IAM", "pct": 24 },
+          { "tema": "HAS", "pct": 16 },
+          { "tema": "Valvas / pericárdio", "pct": 10 },
+          { "tema": "Miopatias / outros", "pct": 6 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · fontes públicas",
+        "estilo": "Síntese de levantamentos",
+        "foco": "HAS · SCA · Arritmias · ICC",
+        "verdict": "Síntese Estratégia + MedCof: HAS, SCA/DAC e arritmias concentram Cardiologia; ICC e valvas fecham o núcleo.",
+        "priorities": [
+          { "tema": "HAS", "pct": 24 },
+          { "tema": "SCA / IAM", "pct": 26 },
+          { "tema": "FA / arritmias / PCR", "pct": 26 },
+          { "tema": "ICC", "pct": 12 },
+          { "tema": "Valvas / pericárdio", "pct": 8 },
+          { "tema": "Miopatias / outros", "pct": 4 }
+        ]
+      }
+    },
+    "stats-endocrinologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Diabetes · Tireoide · Obesidade",
+        "verdict": "Guia Estratégia: Diabetes (~46%) e Tireoide (~33%) dominam Endocrinologia; obesidade/SM (~10%) e metabolismo ósseo/adrenal (~10%) fecham o top.",
+        "priorities": [
+          { "tema": "Diabetes", "pct": 45.78 },
+          { "tema": "Tireoide", "pct": 32.53 },
+          { "tema": "Obesidade", "pct": 9.64 },
+          { "tema": "Adrenal / cálcio / hipófise", "pct": 12.05 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Diabetes · Tireoide · Obesidade",
+        "verdict": "Base Estratégia/Revalida: Diabetes e Tireoide concentram Endócrino; obesidade e adrenal/cálcio completam.",
+        "priorities": [
+          { "tema": "Diabetes", "pct": 45.78 },
+          { "tema": "Tireoide", "pct": 32.53 },
+          { "tema": "Obesidade", "pct": 9.64 },
+          { "tema": "Adrenal / cálcio / hipófise", "pct": 12.05 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Diabetes · Tireoide",
+        "verdict": "Mesma série Estratégia (inclui ENAMED/ENARE 2025/2026): Diabetes e Tireoide são o núcleo duro de Endocrinologia.",
+        "priorities": [
+          { "tema": "Diabetes", "pct": 45.78 },
+          { "tema": "Tireoide", "pct": 32.53 },
+          { "tema": "Obesidade", "pct": 9.64 },
+          { "tema": "Adrenal / cálcio / hipófise", "pct": 12.05 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Diabetes · Tireoide · Obesidade",
+        "verdict": "Levantamento Estratégia: quase 80% de Endócrino fica em Diabetes + Tireoide.",
+        "priorities": [
+          { "tema": "Diabetes", "pct": 45.78 },
+          { "tema": "Tireoide", "pct": 32.53 },
+          { "tema": "Obesidade", "pct": 9.64 },
+          { "tema": "Adrenal / cálcio / hipófise", "pct": 12.05 }
+        ]
+      }
+    },
+    "stats-infectologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "TB · Arboviroses · SNC · IST · HIV",
+        "verdict": "Guia Estratégia: Tuberculose e arboviroses (~13% cada) lideram Infectologia; infecções de SNC (~12%), IST (~8%) e HIV/AIDS (~7%) vêm a seguir. Percentuais mapeados para os blocos do app.",
+        "priorities": [
+          { "tema": "PAC / ITU / pele", "pct": 37.5 },
+          { "tema": "Arboviroses / malária / lepto", "pct": 25.0 },
+          { "tema": "Parasitoses / ATB", "pct": 25.0 },
+          { "tema": "HIV / OI", "pct": 12.5 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "TB · Arboviroses · HIV",
+        "verdict": "Base Estratégia/Revalida: TB, arboviroses e infecções graves (SNC) + HIV concentraram Infectologia na série analisada.",
+        "priorities": [
+          { "tema": "PAC / ITU / pele", "pct": 37.5 },
+          { "tema": "Arboviroses / malária / lepto", "pct": 25.0 },
+          { "tema": "Parasitoses / ATB", "pct": 25.0 },
+          { "tema": "HIV / OI", "pct": 12.5 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "TB · Arboviroses · HIV",
+        "verdict": "Série Estratégia com ENAMED/ENARE 2025/2026: TB e arboviroses no topo; HIV e infecções bacterianas comuns fecham o núcleo.",
+        "priorities": [
+          { "tema": "PAC / ITU / pele", "pct": 37.5 },
+          { "tema": "Arboviroses / malária / lepto", "pct": 25.0 },
+          { "tema": "Parasitoses / ATB", "pct": 25.0 },
+          { "tema": "HIV / OI", "pct": 12.5 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "TB · Arboviroses · HIV · PAC",
+        "verdict": "Levantamento Estratégia: Infectologia puxada por TB/arboviroses e infecções graves; HIV e infecções comuns completam.",
+        "priorities": [
+          { "tema": "PAC / ITU / pele", "pct": 37.5 },
+          { "tema": "Arboviroses / malária / lepto", "pct": 25.0 },
+          { "tema": "Parasitoses / ATB", "pct": 25.0 },
+          { "tema": "HIV / OI", "pct": 12.5 }
+        ]
+      }
+    },
+    "stats-nefrologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Glomerulopatias · ITU · DRC · LRA",
+        "verdict": "Guia Estratégia: Glomerulopatias (~28%) e ITU (~26%) lideram; DRC (~14%), LRA e distúrbios ácido-base (~10% cada) fecham o top.",
+        "priorities": [
+          { "tema": "Glomerulopatias", "pct": 28 },
+          { "tema": "Litíase / HPB / uro", "pct": 26 },
+          { "tema": "IRA / DRC", "pct": 24 },
+          { "tema": "NTA / NIA / ATR", "pct": 12 },
+          { "tema": "Vascular / soluções", "pct": 10 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Glomerulopatias · ITU · DRC",
+        "verdict": "Base Estratégia/Revalida: glomerulopatias e ITU concentram Nefro; DRC/LRA e distúrbios eletrolíticos completam.",
+        "priorities": [
+          { "tema": "Glomerulopatias", "pct": 28 },
+          { "tema": "Litíase / HPB / uro", "pct": 26 },
+          { "tema": "IRA / DRC", "pct": 24 },
+          { "tema": "NTA / NIA / ATR", "pct": 12 },
+          { "tema": "Vascular / soluções", "pct": 10 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Glomerulopatias · ITU · DRC",
+        "verdict": "Série Estratégia (ENAMED/ENARE): glomerulopatias e ITU no topo de Nefrologia.",
+        "priorities": [
+          { "tema": "Glomerulopatias", "pct": 28 },
+          { "tema": "Litíase / HPB / uro", "pct": 26 },
+          { "tema": "IRA / DRC", "pct": 24 },
+          { "tema": "NTA / NIA / ATR", "pct": 12 },
+          { "tema": "Vascular / soluções", "pct": 10 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Glomerulopatias · ITU · DRC",
+        "verdict": "Levantamento Estratégia: glomerulopatias + ITU + DRC/LRA formam o núcleo de Nefro.",
+        "priorities": [
+          { "tema": "Glomerulopatias", "pct": 28 },
+          { "tema": "Litíase / HPB / uro", "pct": 26 },
+          { "tema": "IRA / DRC", "pct": 24 },
+          { "tema": "NTA / NIA / ATR", "pct": 12 },
+          { "tema": "Vascular / soluções", "pct": 10 }
+        ]
+      }
+    },
+    "stats-neurologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Coma · Cefaleia · AVC · TCE",
+        "verdict": "Guia Estratégia: coma/alteração de consciência, cefaleias, AVC e TCE aparecem com pesos semelhantes no top temático (~17% cada no recorte); distúrbios do movimento (~13%) completam. Top assuntos: epilepsias, AVC e neuromuscular.",
+        "priorities": [
+          { "tema": "Coma / HIC", "pct": 16.67 },
+          { "tema": "Cefaleias", "pct": 16.67 },
+          { "tema": "AVC / AIT / HSA", "pct": 16.67 },
+          { "tema": "Epilepsia / status", "pct": 16.67 },
+          { "tema": "Demência / Parkinson", "pct": 13.33 },
+          { "tema": "Neuromuscular", "pct": 12.0 },
+          { "tema": "EM / tumores / extras", "pct": 7.99 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "AVC · Epilepsia · Coma · Cefaleia",
+        "verdict": "Base Estratégia/Revalida: urgências neurológicas (AVC, coma, epilepsia) e cefaleia concentram Neuro.",
+        "priorities": [
+          { "tema": "Coma / HIC", "pct": 16.67 },
+          { "tema": "Cefaleias", "pct": 16.67 },
+          { "tema": "AVC / AIT / HSA", "pct": 16.67 },
+          { "tema": "Epilepsia / status", "pct": 16.67 },
+          { "tema": "Demência / Parkinson", "pct": 13.33 },
+          { "tema": "Neuromuscular", "pct": 12.0 },
+          { "tema": "EM / tumores / extras", "pct": 7.99 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "AVC · Epilepsia · Coma",
+        "verdict": "Série Estratégia com ENAMED/ENARE: urgências neurológicas e cefaleia no núcleo de Neuro.",
+        "priorities": [
+          { "tema": "Coma / HIC", "pct": 16.67 },
+          { "tema": "Cefaleias", "pct": 16.67 },
+          { "tema": "AVC / AIT / HSA", "pct": 16.67 },
+          { "tema": "Epilepsia / status", "pct": 16.67 },
+          { "tema": "Demência / Parkinson", "pct": 13.33 },
+          { "tema": "Neuromuscular", "pct": 12.0 },
+          { "tema": "EM / tumores / extras", "pct": 7.99 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "AVC · Epilepsia · Coma · Cefaleia",
+        "verdict": "Levantamento Estratégia: AVC, epilepsia, coma e cefaleia concentram Neurologia.",
+        "priorities": [
+          { "tema": "Coma / HIC", "pct": 16.67 },
+          { "tema": "Cefaleias", "pct": 16.67 },
+          { "tema": "AVC / AIT / HSA", "pct": 16.67 },
+          { "tema": "Epilepsia / status", "pct": 16.67 },
+          { "tema": "Demência / Parkinson", "pct": 13.33 },
+          { "tema": "Neuromuscular", "pct": 12.0 },
+          { "tema": "EM / tumores / extras", "pct": 7.99 }
+        ]
+      }
+    },
+    "stats-hematologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Anemias · Hemostasia · Onco-hemato",
+        "verdict": "Guia Estratégia: Hemoglobinopatias (~21%), hemostasia (~15%), linfomas (~13%), anemias macrocíticas (~10%) e leucemias (~8%). Mapeado para Anemias / Hemostasia / Onco-hemato.",
+        "priorities": [
+          { "tema": "Anemias", "pct": 40 },
+          { "tema": "Onco-hemato", "pct": 30 },
+          { "tema": "Hemostasia", "pct": 20 },
+          { "tema": "Outros", "pct": 10 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Anemias · Hemostasia · Onco-hemato",
+        "verdict": "Base Estratégia/Revalida: anemias e onco-hemato concentram Hematologia; hemostasia completa o núcleo.",
+        "priorities": [
+          { "tema": "Anemias", "pct": 40 },
+          { "tema": "Onco-hemato", "pct": 30 },
+          { "tema": "Hemostasia", "pct": 20 },
+          { "tema": "Outros", "pct": 10 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Anemias · Onco-hemato · Hemostasia",
+        "verdict": "Série Estratégia: anemias (incl. hemoglobinopatias) e onco-hemato lideram Hemato.",
+        "priorities": [
+          { "tema": "Anemias", "pct": 40 },
+          { "tema": "Onco-hemato", "pct": 30 },
+          { "tema": "Hemostasia", "pct": 20 },
+          { "tema": "Outros", "pct": 10 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Anemias · Onco-hemato · Hemostasia",
+        "verdict": "Levantamento Estratégia: anemias + onco-hemato + hemostasia formam Hemato.",
+        "priorities": [
+          { "tema": "Anemias", "pct": 40 },
+          { "tema": "Onco-hemato", "pct": 30 },
+          { "tema": "Hemostasia", "pct": 20 },
+          { "tema": "Outros", "pct": 10 }
+        ]
+      }
+    },
+    "stats-pneumologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Asma · Derrame · DPOC · Câncer",
+        "verdict": "Guia Estratégia: Asma (~23%), derrame pleural (~20%), DPOC (~18%) e câncer de pulmão (~14%) lideram. Top assuntos também citam TEP e intensiva — mantidos no mapa do app.",
+        "priorities": [
+          { "tema": "Asma", "pct": 22.73 },
+          { "tema": "Derrame / câncer", "pct": 24.09 },
+          { "tema": "DPOC", "pct": 18.18 },
+          { "tema": "TEP", "pct": 12 },
+          { "tema": "Intensiva / VM / SDRA", "pct": 10 },
+          { "tema": "TB / ILTB", "pct": 7 },
+          { "tema": "Interstício / micoses", "pct": 6 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Asma · DPOC · Derrame",
+        "verdict": "Base Estratégia/Revalida: Asma, derrame e DPOC concentram Pneumologia; câncer e TEP completam.",
+        "priorities": [
+          { "tema": "Asma", "pct": 22.73 },
+          { "tema": "Derrame / câncer", "pct": 24.09 },
+          { "tema": "DPOC", "pct": 18.18 },
+          { "tema": "TEP", "pct": 12 },
+          { "tema": "Intensiva / VM / SDRA", "pct": 10 },
+          { "tema": "TB / ILTB", "pct": 7 },
+          { "tema": "Interstício / micoses", "pct": 6 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Asma · DPOC · Derrame · TEP",
+        "verdict": "Série Estratégia: Asma/DPOC/derrame no núcleo de Pneumo; TEP e intensiva aparecem no top de assuntos.",
+        "priorities": [
+          { "tema": "Asma", "pct": 22.73 },
+          { "tema": "Derrame / câncer", "pct": 24.09 },
+          { "tema": "DPOC", "pct": 18.18 },
+          { "tema": "TEP", "pct": 12 },
+          { "tema": "Intensiva / VM / SDRA", "pct": 10 },
+          { "tema": "TB / ILTB", "pct": 7 },
+          { "tema": "Interstício / micoses", "pct": 6 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Asma · DPOC · Derrame · TEP",
+        "verdict": "Levantamento Estratégia: Asma, derrame/câncer e DPOC concentram Pneumologia.",
+        "priorities": [
+          { "tema": "Asma", "pct": 22.73 },
+          { "tema": "Derrame / câncer", "pct": 24.09 },
+          { "tema": "DPOC", "pct": 18.18 },
+          { "tema": "TEP", "pct": 12 },
+          { "tema": "Intensiva / VM / SDRA", "pct": 10 },
+          { "tema": "TB / ILTB", "pct": 7 },
+          { "tema": "Interstício / micoses", "pct": 6 }
+        ]
+      }
+    },
+    "stats-psiquiatria-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Substâncias · Humor · Intoxicações",
+        "verdict": "Guia Estratégia: Dependência química lidera (~21%); transtornos de humor e intoxicações exógenas (~15% cada) vêm a seguir; psiquiatria infantil (~13%) e psicofarmacologia (~8%) fecham o top.",
+        "priorities": [
+          { "tema": "Substâncias / álcool", "pct": 21.15 },
+          { "tema": "Humor / bipolar", "pct": 15.38 },
+          { "tema": "Orgânicos / alimentares / extras", "pct": 20.0 },
+          { "tema": "Psicofarmacologia transversal", "pct": 13.0 },
+          { "tema": "Ansiedade / TOC", "pct": 15.0 },
+          { "tema": "Psicose / antipsicóticos", "pct": 15.47 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Substâncias · Humor · Ansiedade",
+        "verdict": "Base Estratégia/Revalida: substâncias e humor concentram Psiquiatria; ansiedade/TOC e psicose completam.",
+        "priorities": [
+          { "tema": "Substâncias / álcool", "pct": 21.15 },
+          { "tema": "Humor / bipolar", "pct": 15.38 },
+          { "tema": "Orgânicos / alimentares / extras", "pct": 20.0 },
+          { "tema": "Psicofarmacologia transversal", "pct": 13.0 },
+          { "tema": "Ansiedade / TOC", "pct": 15.0 },
+          { "tema": "Psicose / antipsicóticos", "pct": 15.47 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Substâncias · Humor · Psicose",
+        "verdict": "Série Estratégia: dependência química e humor no núcleo de Psiquiatria.",
+        "priorities": [
+          { "tema": "Substâncias / álcool", "pct": 21.15 },
+          { "tema": "Humor / bipolar", "pct": 15.38 },
+          { "tema": "Orgânicos / alimentares / extras", "pct": 20.0 },
+          { "tema": "Psicofarmacologia transversal", "pct": 13.0 },
+          { "tema": "Ansiedade / TOC", "pct": 15.0 },
+          { "tema": "Psicose / antipsicóticos", "pct": 15.47 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Substâncias · Humor · Ansiedade",
+        "verdict": "Levantamento Estratégia: substâncias e humor lideram Psiquiatria.",
+        "priorities": [
+          { "tema": "Substâncias / álcool", "pct": 21.15 },
+          { "tema": "Humor / bipolar", "pct": 15.38 },
+          { "tema": "Orgânicos / alimentares / extras", "pct": 20.0 },
+          { "tema": "Psicofarmacologia transversal", "pct": 13.0 },
+          { "tema": "Ansiedade / TOC", "pct": 15.0 },
+          { "tema": "Psicose / antipsicóticos", "pct": 15.47 }
+        ]
+      }
+    },
+    "stats-reumatologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "AR · Conectivopatias · Infecciosas · Vasculites",
+        "verdict": "Guia Estratégia: Artropatias inflamatórias e doenças autoimunes do tecido conjuntivo (~30% cada no top); síndromes dolorosas (~15%) e vasculites (~6%). Mapeado para os grupos do app (AR, LES/SAF, SpA, cristais, etc.).",
+        "priorities": [
+          { "tema": "Artrite reumatoide", "pct": 22 },
+          { "tema": "LES / SAF", "pct": 20 },
+          { "tema": "Espondiloartrites", "pct": 16 },
+          { "tema": "Gota / cristais", "pct": 12 },
+          { "tema": "Febre reumática / séptica", "pct": 12 },
+          { "tema": "Vasculites", "pct": 8 },
+          { "tema": "ES / miopatias / OA / extras", "pct": 10 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "AR · LES · SpA · Cristais",
+        "verdict": "Base Estratégia/Revalida: artropatias inflamatórias e conectivopatias concentram Reumatologia.",
+        "priorities": [
+          { "tema": "Artrite reumatoide", "pct": 22 },
+          { "tema": "LES / SAF", "pct": 20 },
+          { "tema": "Espondiloartrites", "pct": 16 },
+          { "tema": "Gota / cristais", "pct": 12 },
+          { "tema": "Febre reumática / séptica", "pct": 12 },
+          { "tema": "Vasculites", "pct": 8 },
+          { "tema": "ES / miopatias / OA / extras", "pct": 10 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "AR · LES · SpA",
+        "verdict": "Série Estratégia: AR e conectivopatias no núcleo de Reumatologia.",
+        "priorities": [
+          { "tema": "Artrite reumatoide", "pct": 22 },
+          { "tema": "LES / SAF", "pct": 20 },
+          { "tema": "Espondiloartrites", "pct": 16 },
+          { "tema": "Gota / cristais", "pct": 12 },
+          { "tema": "Febre reumática / séptica", "pct": 12 },
+          { "tema": "Vasculites", "pct": 8 },
+          { "tema": "ES / miopatias / OA / extras", "pct": 10 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "AR · LES · SpA · Cristais",
+        "verdict": "Levantamento Estratégia: AR e conectivopatias concentram Reumatologia.",
+        "priorities": [
+          { "tema": "Artrite reumatoide", "pct": 22 },
+          { "tema": "LES / SAF", "pct": 20 },
+          { "tema": "Espondiloartrites", "pct": 16 },
+          { "tema": "Gota / cristais", "pct": 12 },
+          { "tema": "Febre reumática / séptica", "pct": 12 },
+          { "tema": "Vasculites", "pct": 8 },
+          { "tema": "ES / miopatias / OA / extras", "pct": 10 }
+        ]
+      }
+    },
+    "stats-hepatologia-geral.json": {
+      "enamed": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Guia ENAMED",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Hepatites virais · Descompensação",
+        "verdict": "Guia Estratégia: Hepatites virais (~56%) dominam Hepatologia; outras hepatopatias e complicações da insuficiência hepática (~16% cada); cirrose e tumores (~4% cada).",
+        "priorities": [
+          { "tema": "Virais", "pct": 56 },
+          { "tema": "Descompensação HTP", "pct": 20 },
+          { "tema": "Etiologias cirrose", "pct": 14 },
+          { "tema": "Biliar / TX", "pct": 10 }
+        ]
+      },
+      "revalida": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · Revalida/INEP",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Hepatites virais · Descompensação",
+        "verdict": "Base Estratégia/Revalida: hepatites virais concentram Hepatologia.",
+        "priorities": [
+          { "tema": "Virais", "pct": 56 },
+          { "tema": "Descompensação HTP", "pct": 20 },
+          { "tema": "Etiologias cirrose", "pct": 14 },
+          { "tema": "Biliar / TX", "pct": 10 }
+        ]
+      },
+      "enare": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "levantamento",
+        "kicker": "Estratégia · ENAMED/ENARE",
+        "estilo": "Levantamento Estratégia",
+        "foco": "Hepatites virais · Descompensação",
+        "verdict": "Série Estratégia: hepatites virais no núcleo de Hepatologia.",
+        "priorities": [
+          { "tema": "Virais", "pct": 56 },
+          { "tema": "Descompensação HTP", "pct": 20 },
+          { "tema": "Etiologias cirrose", "pct": 14 },
+          { "tema": "Biliar / TX", "pct": 10 }
+        ]
+      },
+      "geral": {
+        "sourceKey": "estrategiaGuia",
+        "sourceType": "sintese",
+        "kicker": "Síntese · Estratégia",
+        "estilo": "Síntese de levantamentos",
+        "foco": "Hepatites virais · Descompensação",
+        "verdict": "Levantamento Estratégia: hepatites virais dominam Hepatologia.",
+        "priorities": [
+          { "tema": "Virais", "pct": 56 },
+          { "tema": "Descompensação HTP", "pct": 20 },
+          { "tema": "Etiologias cirrose", "pct": 14 },
+          { "tema": "Biliar / TX", "pct": 10 }
+        ]
+      }
+    }
+  }
+}

@@ -341,8 +341,8 @@ function aprovaRichSpecialtyMeta (specialty) {
       shortLabel: obs ? "Obstetrícia" : "Ginecologia",
       overviewCacheKey: obs ? "obstetricia" : "ginecologia",
       overviewUrl: obs
-        ? "data/stats-obstetricia-geral.json?v=20260718dd"
-        : "data/stats-ginecologia-geral.json?v=20260718dd",
+        ? "data/stats-obstetricia-geral.json?v=20260718ee"
+        : "data/stats-ginecologia-geral.json?v=20260718ee",
       countNoun: obs ? "Obstetrícia" : "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
@@ -354,7 +354,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Cirurgia",
       shortLabel: "Cirurgia",
       overviewCacheKey: "cirurgia",
-      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718dd",
+      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718ee",
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)
@@ -366,7 +366,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Preventiva",
       shortLabel: "Preventiva",
       overviewCacheKey: "preventiva",
-      overviewUrl: "data/stats-preventiva-geral.json?v=20260718dd",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718ee",
       countNoun: "Preventiva",
       openRoot: () => aprovaOpenPreventiva(),
       openModule: id => aprovaOpenPreventivaModule(id)
@@ -379,7 +379,7 @@ function aprovaRichSpecialtyMeta (specialty) {
         label: "Clínica médica",
         shortLabel: "Clínica médica",
         overviewCacheKey: "clinica",
-        overviewUrl: "data/stats-clinica-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-clinica-geral.json?v=20260718ee",
         countNoun: "Clínica médica",
         openRoot: () => aprovaOpenClinica(),
         openModule: id => aprovaOpenClinicaModule(id)
@@ -389,61 +389,61 @@ function aprovaRichSpecialtyMeta (specialty) {
       reumatologia: {
         shortLabel: "Reumatologia",
         overviewCacheKey: "reumatologia",
-        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718ee",
         countNoun: "Reumatologia"
       },
       psiquiatria: {
         shortLabel: "Psiquiatria",
         overviewCacheKey: "psiquiatria",
-        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718ee",
         countNoun: "Psiquiatria"
       },
       pneumologia: {
         shortLabel: "Pneumologia",
         overviewCacheKey: "pneumologia",
-        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718ee",
         countNoun: "Pneumologia"
       },
       neurologia: {
         shortLabel: "Neurologia",
         overviewCacheKey: "neurologia",
-        overviewUrl: "data/stats-neurologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-neurologia-geral.json?v=20260718ee",
         countNoun: "Neurologia"
       },
       nefrologia: {
         shortLabel: "Nefrologia",
         overviewCacheKey: "nefrologia",
-        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718ee",
         countNoun: "Nefrologia"
       },
       infectologia: {
         shortLabel: "Infectologia",
         overviewCacheKey: "infectologia",
-        overviewUrl: "data/stats-infectologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-infectologia-geral.json?v=20260718ee",
         countNoun: "Infectologia"
       },
       hepatologia: {
         shortLabel: "Hepatologia",
         overviewCacheKey: "hepatologia",
-        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718ee",
         countNoun: "Hepatologia"
       },
       hematologia: {
         shortLabel: "Hematologia",
         overviewCacheKey: "hematologia",
-        overviewUrl: "data/stats-hematologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-hematologia-geral.json?v=20260718ee",
         countNoun: "Hematologia"
       },
       endocrinologia: {
         shortLabel: "Endocrinologia",
         overviewCacheKey: "endocrinologia",
-        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718ee",
         countNoun: "Endocrinologia"
       },
       cardiologia: {
         shortLabel: "Cardiologia",
         overviewCacheKey: "cardiologia",
-        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718dd",
+        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718ee",
         countNoun: "Cardiologia"
       }
     };
@@ -464,7 +464,7 @@ function aprovaRichSpecialtyMeta (specialty) {
     label: "Pediatria",
     shortLabel: "Pediatria",
     overviewCacheKey: "pediatria",
-    overviewUrl: "data/stats-pediatria-geral.json?v=20260718dd",
+    overviewUrl: "data/stats-pediatria-geral.json?v=20260718ee",
     countNoun: "Pediatria",
     openRoot: () => aprovaOpenPediatria(),
     openModule: id => aprovaOpenPediatriaModule(id)
@@ -1023,8 +1023,8 @@ function aprovaRenderPedOverviewStats (focusId, yearId) {
     const slice = aprovaResolveYearSlice(profile, aprovaActiveOverviewYear);
     const sourceType = profile.sourceType || "estimativa";
     const typeLabel = sourceType === "levantamento"
-      ? "Levantamento de provas"
-      : (sourceType === "sintese" ? "Síntese de levantamentos" : "Estimativa por padrão de banca");
+      ? "Levantamento público (cursinho)"
+      : (sourceType === "sintese" ? "Síntese de levantamentos públicos" : "Estimativa por padrão de banca");
     const yearTxt = aprovaYearLabel(aprovaActiveOverviewYear);
     const countLabel = sourceType === "estimativa"
       ? (" questões de " + meta.countNoun + " (base ilustrativa)")
@@ -1693,8 +1693,8 @@ async function aprovaRenderPediatriaStats (focusId, moduleId, yearId) {
 
   const sourceType = profile.sourceType || "estimativa";
   const typeLabel = sourceType === "levantamento"
-    ? "Levantamento / padrão nacional"
-    : (sourceType === "sintese" ? "Síntese de provas R1" : "Estimativa por padrão de banca");
+    ? "Levantamento público (cursinho)"
+    : (sourceType === "sintese" ? "Síntese de levantamentos públicos" : "Estimativa por padrão de banca");
 
   if (title) title.textContent = chartTitle;
   if (sub) {

@@ -1,7 +1,7 @@
 {
   "title": "Clínica médica · o que mais cai (R1)",
   "unitLabel": "% relativo no bloco de Clínica",
-  "note": "Síntese das áreas da Clínica (Cardio → Endo). Ao abrir uma área, as estatísticas mudam para o recorte daquela especialidade. Recorte principal: provas 2024–2026. Escolha a prova no seletor para alinhar o estudo ao padrão dela.",
+  "note": "Síntese das áreas da Clínica (Cardio → Endo). Ao abrir uma área, as estatísticas mudam para o recorte daquela especialidade. Recorte principal: provas 2024–2026. Escolha a prova no seletor para alinhar o estudo ao padrão dela. Percentuais de Enamed/Enare/Revalida/USP/Geral Brasil vêm de levantamentos públicos de cursinho (Estratégia, CleverMed, MedCof) — ver fonte em cada prova.",
   "gaps": {
     "summary": "Clínica médica com 10 áreas (Car1–3, Reu, Psi, Pneumo, Neuro, Nefro, Infecto, Hepato, Hemato, Endo).",
     "missingHighYield": [],
@@ -52,631 +52,803 @@
     {
       "id": "geral",
       "label": "Brasil",
-      "kicker": "Síntese 2024–2026",
+      "kicker": "Síntese · fontes públicas",
       "featured": false,
       "sourceType": "sintese",
-      "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência).",
-      "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Cardio, infecto e endócrino concentram boa parte do bloco; complete com nefro, neuro e pneumo.",
-      "foco": "Cardio · Infecto · Endo · Nefro",
-      "estilo": "Síntese 2024–2026",
+      "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea",
+      "verdict": "Síntese dos levantamentos públicos (CleverMed ENARE/ENAMED + Estratégia Guia/USP): Infectologia e Cardiologia lideram a Clínica; use a banca escolhida para afinar o peso de Neuro/Pneumo.",
+      "foco": "Infecto · Cardio · Endo · Pneumo",
+      "estilo": "Síntese de levantamentos",
       "priorities": [
         {
-          "tema": "Cardiologia",
-          "pct": 18,
-          "n": 18
-        },
-        {
           "tema": "Infectologia",
-          "pct": 14,
-          "n": 14
+          "pct": 18.3
         },
         {
-          "tema": "Endocrinologia",
-          "pct": 12,
-          "n": 12
+          "tema": "Cardiologia",
+          "pct": 14.5
         },
         {
-          "tema": "Nefrologia",
-          "pct": 10,
-          "n": 10
+          "tema": "Pneumologia",
+          "pct": 12.5
         },
         {
           "tema": "Neurologia",
-          "pct": 10,
-          "n": 10
-        },
-        {
-          "tema": "Pneumologia",
-          "pct": 10,
-          "n": 10
-        },
-        {
-          "tema": "Hematologia",
-          "pct": 8,
-          "n": 8
-        },
-        {
-          "tema": "Hepatologia",
-          "pct": 6,
-          "n": 6
-        },
-        {
-          "tema": "Reumatologia",
-          "pct": 6,
-          "n": 6
-        },
-        {
-          "tema": "Psiquiatria",
-          "pct": 6,
-          "n": 6
-        }
-      ],
-      "byYear": {
-        "2024": {
-          "priorities": [
-            {
-              "tema": "Cardiologia",
-              "pct": 21.1,
-              "n": 21
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 15.5,
-              "n": 16
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 12.3,
-              "n": 12
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 9.7,
-              "n": 10
-            },
-            {
-              "tema": "Neurologia",
-              "pct": 9.2,
-              "n": 9
-            },
-            {
-              "tema": "Pneumologia",
-              "pct": 9,
-              "n": 9
-            },
-            {
-              "tema": "Hematologia",
-              "pct": 7,
-              "n": 7
-            },
-            {
-              "tema": "Reumatologia",
-              "pct": 5.5,
-              "n": 6
-            },
-            {
-              "tema": "Psiquiatria",
-              "pct": 5.5,
-              "n": 6
-            },
-            {
-              "tema": "Hepatologia",
-              "pct": 5.2,
-              "n": 5
-            }
-          ],
-          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Cardio, infecto e endócrino concentram boa parte do bloco; complete com nefro, neuro e pneumo. · ciclo 2024.",
-          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
-        },
-        "2025": {
-          "priorities": [
-            {
-              "tema": "Cardiologia",
-              "pct": 19,
-              "n": 19
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 15.8,
-              "n": 16
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 13.1,
-              "n": 13
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 10.1,
-              "n": 10
-            },
-            {
-              "tema": "Neurologia",
-              "pct": 9.6,
-              "n": 10
-            },
-            {
-              "tema": "Pneumologia",
-              "pct": 9.1,
-              "n": 9
-            },
-            {
-              "tema": "Hematologia",
-              "pct": 7.1,
-              "n": 7
-            },
-            {
-              "tema": "Reumatologia",
-              "pct": 5.5,
-              "n": 6
-            },
-            {
-              "tema": "Psiquiatria",
-              "pct": 5.5,
-              "n": 6
-            },
-            {
-              "tema": "Hepatologia",
-              "pct": 5.2,
-              "n": 5
-            }
-          ],
-          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Cardio, infecto e endócrino concentram boa parte do bloco; complete com nefro, neuro e pneumo. · ciclo 2025.",
-          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
-        },
-        "2026": {
-          "priorities": [
-            {
-              "tema": "Cardiologia",
-              "pct": 17.9,
-              "n": 18
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 14.7,
-              "n": 15
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 13.8,
-              "n": 14
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 11,
-              "n": 11
-            },
-            {
-              "tema": "Neurologia",
-              "pct": 10,
-              "n": 10
-            },
-            {
-              "tema": "Pneumologia",
-              "pct": 9.5,
-              "n": 10
-            },
-            {
-              "tema": "Hematologia",
-              "pct": 7.2,
-              "n": 7
-            },
-            {
-              "tema": "Reumatologia",
-              "pct": 5.4,
-              "n": 5
-            },
-            {
-              "tema": "Psiquiatria",
-              "pct": 5.4,
-              "n": 5
-            },
-            {
-              "tema": "Hepatologia",
-              "pct": 5.1,
-              "n": 5
-            }
-          ],
-          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Cardio, infecto e endócrino concentram boa parte do bloco; complete com nefro, neuro e pneumo. · ciclo 2026.",
-          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
-        }
-      }
-    },
-    {
-      "id": "enare",
-      "label": "Enare",
-      "kicker": "~87 mil inscritos · 2025",
-      "sourceType": "levantamento",
-      "source": "Enare · Clínica médica (síntese por áreas).",
-      "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Urgências clínicas: SCA, sepse, CAD e IRA.",
-      "foco": "Urgências · Cardio · Infecto",
-      "estilo": "Padrão Enare",
-      "priorities": [
-        {
-          "tema": "Cardiologia",
-          "pct": 22
-        },
-        {
-          "tema": "Infectologia",
-          "pct": 18
+          "pct": 11.7
         },
         {
           "tema": "Endocrinologia",
-          "pct": 12
+          "pct": 10.3
+        },
+        {
+          "tema": "Psiquiatria",
+          "pct": 10.2
+        },
+        {
+          "tema": "Hematologia",
+          "pct": 7.7
+        },
+        {
+          "tema": "Reumatologia",
+          "pct": 6.3
         },
         {
           "tema": "Nefrologia",
-          "pct": 12
+          "pct": 5.1
         },
         {
-          "tema": "Pneumologia",
-          "pct": 12
-        },
-        {
-          "tema": "Demais áreas",
-          "pct": 24
+          "tema": "Hepatologia",
+          "pct": 3.4
         }
       ],
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "Cardiologia",
-              "pct": 25.3
+              "tema": "Infectologia",
+              "pct": 21.5
             },
             {
-              "tema": "Demais áreas",
-              "pct": 21.1
+              "tema": "Cardiologia",
+              "pct": 16
             },
+            {
+              "tema": "Pneumologia",
+              "pct": 12.7
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.3
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 9.4
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.1
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.7
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.5
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.7
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.1
+            }
+          ],
+          "verdict": "Síntese dos levantamentos públicos (CleverMed ENARE/ENAMED + Estratégia Guia/USP): Infectologia e Cardiologia lideram a Clínica; use a banca escolhida para afinar o peso de Neuro/Pneumo. · ciclo 2024.",
+          "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
+        },
+        "2025": {
+          "priorities": [
             {
               "tema": "Infectologia",
               "pct": 19.4
             },
             {
-              "tema": "Endocrinologia",
-              "pct": 12
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 11.4
-            },
-            {
-              "tema": "Pneumologia",
-              "pct": 10.8
-            }
-          ],
-          "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Urgências clínicas: SCA, sepse, CAD e IRA. · ciclo 2024.",
-          "source": "Enare · Clínica médica (síntese por áreas). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
-        },
-        "2025": {
-          "priorities": [
-            {
               "tema": "Cardiologia",
-              "pct": 22.8
-            },
-            {
-              "tema": "Demais áreas",
-              "pct": 21.3
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 19.9
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 12.8
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 11.9
+              "pct": 16.3
             },
             {
               "tema": "Pneumologia",
-              "pct": 11.3
+              "pct": 13.6
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.8
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 9.8
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.2
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.8
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.4
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.6
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.1
             }
           ],
-          "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Urgências clínicas: SCA, sepse, CAD e IRA. · ciclo 2025.",
-          "source": "Enare · Clínica médica (síntese por áreas). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Síntese dos levantamentos públicos (CleverMed ENARE/ENAMED + Estratégia Guia/USP): Infectologia e Cardiologia lideram a Clínica; use a banca escolhida para afinar o peso de Neuro/Pneumo. · ciclo 2025.",
+          "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 22.2
+              "tema": "Infectologia",
+              "pct": 18.2
             },
             {
               "tema": "Cardiologia",
-              "pct": 21.4
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 18.4
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 13.4
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 12.9
+              "pct": 15.1
             },
             {
               "tema": "Pneumologia",
-              "pct": 11.7
+              "pct": 14.3
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 12.8
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 10.2
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.6
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.9
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.3
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.6
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3
             }
           ],
-          "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Urgências clínicas: SCA, sepse, CAD e IRA. · ciclo 2026.",
-          "source": "Enare · Clínica médica (síntese por áreas). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Síntese dos levantamentos públicos (CleverMed ENARE/ENAMED + Estratégia Guia/USP): Infectologia e Cardiologia lideram a Clínica; use a banca escolhida para afinar o peso de Neuro/Pneumo. · ciclo 2026.",
+          "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "clevermed",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
+      }
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "CleverMed · ENARE/ENAMED",
+      "sourceType": "levantamento",
+      "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea",
+      "verdict": "Levantamento CleverMed (ENARE/ENAMED): Infectologia lidera o bloco de Clínica (~19%), seguida de Cardiologia e Endocrinologia. Dermatologia aparece na fonte original (~7%) e foi redistribuída entre as demais áreas do app.",
+      "foco": "Infecto · Cardio · Endo · Hemato",
+      "estilo": "Levantamento CleverMed",
+      "priorities": [
+        {
+          "tema": "Infectologia",
+          "pct": 18.7
+        },
+        {
+          "tema": "Cardiologia",
+          "pct": 13.3
+        },
+        {
+          "tema": "Pneumologia",
+          "pct": 12.8
+        },
+        {
+          "tema": "Neurologia",
+          "pct": 12
+        },
+        {
+          "tema": "Psiquiatria",
+          "pct": 10.4
+        },
+        {
+          "tema": "Endocrinologia",
+          "pct": 9.4
+        },
+        {
+          "tema": "Hematologia",
+          "pct": 8.4
+        },
+        {
+          "tema": "Reumatologia",
+          "pct": 6.4
+        },
+        {
+          "tema": "Nefrologia",
+          "pct": 5.2
+        },
+        {
+          "tema": "Hepatologia",
+          "pct": 3.4
+        }
+      ],
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Infectologia",
+              "pct": 22
+            },
+            {
+              "tema": "Cardiologia",
+              "pct": 14.7
+            },
+            {
+              "tema": "Pneumologia",
+              "pct": 13.1
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.6
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.5
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 8.4
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 7.3
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.5
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.8
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.1
+            }
+          ],
+          "verdict": "Levantamento CleverMed (ENARE/ENAMED): Infectologia lidera o bloco de Clínica (~19%), seguida de Cardiologia e Endocrinologia. Dermatologia aparece na fonte original (~7%) e foi redistribuída entre as demais áreas do app. · ciclo 2024.",
+          "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Infectologia",
+              "pct": 19.8
+            },
+            {
+              "tema": "Cardiologia",
+              "pct": 15
+            },
+            {
+              "tema": "Pneumologia",
+              "pct": 13.9
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 12.1
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 10
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 8.5
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 7.4
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.5
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.7
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.1
+            }
+          ],
+          "verdict": "Levantamento CleverMed (ENARE/ENAMED): Infectologia lidera o bloco de Clínica (~19%), seguida de Cardiologia e Endocrinologia. Dermatologia aparece na fonte original (~7%) e foi redistribuída entre as demais áreas do app. · ciclo 2025.",
+          "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Infectologia",
+              "pct": 18.7
+            },
+            {
+              "tema": "Pneumologia",
+              "pct": 14.6
+            },
+            {
+              "tema": "Cardiologia",
+              "pct": 13.9
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 13.1
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 10.3
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 8.9
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 7.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.4
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.6
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3
+            }
+          ],
+          "verdict": "Levantamento CleverMed (ENARE/ENAMED): Infectologia lidera o bloco de Clínica (~19%), seguida de Cardiologia e Endocrinologia. Dermatologia aparece na fonte original (~7%) e foi redistribuída entre as demais áreas do app. · ciclo 2026.",
+          "source": "CleverMed — assuntos mais prevalentes ENARE/ENAMED. https://www.clevermed.com.br/post/assuntos-mais-prevalentes-nas-provas-de-resid%C3%AAncia-enare-enamed-o-que-mais-cai-em-cada-%C3%A1rea · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
+        }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "clevermed",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
       "id": "enamed",
       "label": "Enamed",
-      "kicker": "Nacional · acesso Enare · 2024–2026",
+      "kicker": "Estratégia · Guia ENAMED",
       "featured": true,
       "sourceType": "levantamento",
-      "source": "Enare/Enamed · Clínica médica (síntese por áreas).",
-      "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Perfil generalista: SCA/ICC, infecções comuns, DM/tireoide e IRA/IRC.",
-      "foco": "Cardio · Infecto · Endo",
-      "estilo": "Padrão Enamed",
+      "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+      "verdict": "Guia Estatístico Estratégia MED (Revalida INEP + ENAMED/ENARE 2025/2026): dentro da Clínica, Infectologia e Cardiologia concentram o maior volume; complete com Endócrino, Pneumo e Neuro.",
+      "foco": "Infecto · Cardio · Endo · Pneumo",
+      "estilo": "Levantamento Estratégia",
       "priorities": [
         {
-          "tema": "Cardiologia",
-          "pct": 20
-        },
-        {
           "tema": "Infectologia",
-          "pct": 16
+          "pct": 18.1
         },
         {
-          "tema": "Endocrinologia",
-          "pct": 14
-        },
-        {
-          "tema": "Nefrologia",
-          "pct": 12
+          "tema": "Cardiologia",
+          "pct": 15
         },
         {
           "tema": "Pneumologia",
-          "pct": 12
+          "pct": 12.4
         },
         {
-          "tema": "Demais áreas",
-          "pct": 26
+          "tema": "Neurologia",
+          "pct": 11.6
+        },
+        {
+          "tema": "Endocrinologia",
+          "pct": 10.8
+        },
+        {
+          "tema": "Psiquiatria",
+          "pct": 10
+        },
+        {
+          "tema": "Hematologia",
+          "pct": 7.3
+        },
+        {
+          "tema": "Reumatologia",
+          "pct": 6.2
+        },
+        {
+          "tema": "Nefrologia",
+          "pct": 5
+        },
+        {
+          "tema": "Hepatologia",
+          "pct": 3.6
         }
       ],
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "Cardiologia",
-              "pct": 23.1
-            },
-            {
-              "tema": "Demais áreas",
-              "pct": 23
-            },
-            {
               "tema": "Infectologia",
-              "pct": 17.4
+              "pct": 21.2
             },
             {
-              "tema": "Endocrinologia",
-              "pct": 14.1
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 11.5
+              "tema": "Cardiologia",
+              "pct": 16.5
             },
             {
               "tema": "Pneumologia",
-              "pct": 10.9
+              "pct": 12.6
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.2
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 9.9
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.3
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.4
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.6
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.3
             }
           ],
-          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Perfil generalista: SCA/ICC, infecções comuns, DM/tireoide e IRA/IRC. · ciclo 2024.",
-          "source": "Enare/Enamed · Clínica médica (síntese por áreas). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Guia Estatístico Estratégia MED (Revalida INEP + ENAMED/ENARE 2025/2026): dentro da Clínica, Infectologia e Cardiologia concentram o maior volume; complete com Endócrino, Pneumo e Neuro. · ciclo 2024.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 23.2
+              "tema": "Infectologia",
+              "pct": 19
             },
             {
               "tema": "Cardiologia",
-              "pct": 20.8
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 17.8
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 15
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 11.9
+              "pct": 16.9
             },
             {
               "tema": "Pneumologia",
-              "pct": 11.3
+              "pct": 13.5
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.7
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 10.3
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.3
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.5
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.3
             }
           ],
-          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Perfil generalista: SCA/ICC, infecções comuns, DM/tireoide e IRA/IRC. · ciclo 2025.",
-          "source": "Enare/Enamed · Clínica médica (síntese por áreas). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Guia Estatístico Estratégia MED (Revalida INEP + ENAMED/ENARE 2025/2026): dentro da Clínica, Infectologia e Cardiologia concentram o maior volume; complete com Endócrino, Pneumo e Neuro. · ciclo 2025.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 24
+              "tema": "Infectologia",
+              "pct": 18
             },
             {
               "tema": "Cardiologia",
-              "pct": 19.5
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 16.3
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 15.7
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 12.8
+              "pct": 15.6
             },
             {
               "tema": "Pneumologia",
-              "pct": 11.7
+              "pct": 14.2
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 12.7
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 10.7
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.4
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.2
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.5
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.2
             }
           ],
-          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Perfil generalista: SCA/ICC, infecções comuns, DM/tireoide e IRA/IRC. · ciclo 2026.",
-          "source": "Enare/Enamed · Clínica médica (síntese por áreas). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Guia Estatístico Estratégia MED (Revalida INEP + ENAMED/ENARE 2025/2026): dentro da Clínica, Infectologia e Cardiologia concentram o maior volume; complete com Endócrino, Pneumo e Neuro. · ciclo 2026.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaGuia",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
       "id": "usp",
       "label": "USP",
-      "kicker": "Alta concorrência · 2024–2026",
+      "kicker": "Estratégia · USP 2017–2023",
       "sourceType": "levantamento",
-      "source": "USP · Clínica médica (síntese por áreas).",
-      "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. Mais fisiopatologia e critérios diagnósticos; cardio e neuro pesam.",
-      "foco": "Cardio · Neuro · Nefro",
-      "estilo": "Padrão USP",
+      "source": "Estratégia MED — o que mais cai USP-SP · Levantamento 2017–2023 (publicado 2024). https://portal.estrategia.com/medicina/residencia-medica/o-que-mais-cai-na-prova-de-residencia-medica-da-usp-sp/",
+      "verdict": "Levantamento Estratégia MED USP-SP (2017–2023): Infectologia é a área clínica mais cobrada; Cardiologia vem em seguida. Pneumo e Neuro pesam mais do que em provas puramente generalistas.",
+      "foco": "Infecto · Cardio · Pneumo · Neuro",
+      "estilo": "Levantamento Estratégia USP",
       "priorities": [
         {
+          "tema": "Infectologia",
+          "pct": 18.2
+        },
+        {
           "tema": "Cardiologia",
-          "pct": 18
+          "pct": 15.1
+        },
+        {
+          "tema": "Pneumologia",
+          "pct": 12.4
         },
         {
           "tema": "Neurologia",
-          "pct": 14
-        },
-        {
-          "tema": "Nefrologia",
-          "pct": 14
-        },
-        {
-          "tema": "Infectologia",
-          "pct": 12
+          "pct": 11.6
         },
         {
           "tema": "Endocrinologia",
-          "pct": 12
+          "pct": 10.8
         },
         {
-          "tema": "Demais áreas",
-          "pct": 30
+          "tema": "Psiquiatria",
+          "pct": 10.1
+        },
+        {
+          "tema": "Hematologia",
+          "pct": 7.3
+        },
+        {
+          "tema": "Reumatologia",
+          "pct": 6.2
+        },
+        {
+          "tema": "Nefrologia",
+          "pct": 5
+        },
+        {
+          "tema": "Hepatologia",
+          "pct": 3.3
         }
       ],
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 26.8
+              "tema": "Infectologia",
+              "pct": 21.4
             },
             {
               "tema": "Cardiologia",
-              "pct": 21
+              "pct": 16.6
+            },
+            {
+              "tema": "Pneumologia",
+              "pct": 12.6
             },
             {
               "tema": "Neurologia",
-              "pct": 15.4
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 14.2
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 11.6
+              "pct": 11.2
             },
             {
               "tema": "Endocrinologia",
-              "pct": 11
+              "pct": 9.9
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.3
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.4
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.6
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3
             }
           ],
-          "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. Mais fisiopatologia e critérios diagnósticos; cardio e neuro pesam. · ciclo 2024.",
-          "source": "USP · Clínica médica (síntese por áreas). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Levantamento Estratégia MED USP-SP (2017–2023): Infectologia é a área clínica mais cobrada; Cardiologia vem em seguida. Pneumo e Neuro pesam mais do que em provas puramente generalistas. · ciclo 2024.",
+          "source": "Estratégia MED — o que mais cai USP-SP · Levantamento 2017–2023 (publicado 2024). https://portal.estrategia.com/medicina/residencia-medica/o-que-mais-cai-na-prova-de-residencia-medica-da-usp-sp/ · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 26.9
+              "tema": "Infectologia",
+              "pct": 19.1
             },
             {
               "tema": "Cardiologia",
-              "pct": 18.9
+              "pct": 17
+            },
+            {
+              "tema": "Pneumologia",
+              "pct": 13.5
             },
             {
               "tema": "Neurologia",
-              "pct": 15.7
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 15.1
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 12
+              "pct": 11.7
             },
             {
               "tema": "Endocrinologia",
-              "pct": 11.4
+              "pct": 10.3
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.1
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.3
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.5
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3
             }
           ],
-          "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. Mais fisiopatologia e critérios diagnósticos; cardio e neuro pesam. · ciclo 2025.",
-          "source": "USP · Clínica médica (síntese por áreas). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Levantamento Estratégia MED USP-SP (2017–2023): Infectologia é a área clínica mais cobrada; Cardiologia vem em seguida. Pneumo e Neuro pesam mais do que em provas puramente generalistas. · ciclo 2025.",
+          "source": "Estratégia MED — o que mais cai USP-SP · Levantamento 2017–2023 (publicado 2024). https://portal.estrategia.com/medicina/residencia-medica/o-que-mais-cai-na-prova-de-residencia-medica-da-usp-sp/ · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 27.8
+              "tema": "Infectologia",
+              "pct": 18.2
             },
             {
               "tema": "Cardiologia",
-              "pct": 17.6
-            },
-            {
-              "tema": "Nefrologia",
               "pct": 15.7
             },
             {
-              "tema": "Neurologia",
-              "pct": 14.3
+              "tema": "Pneumologia",
+              "pct": 14.1
             },
             {
-              "tema": "Infectologia",
-              "pct": 12.9
+              "tema": "Neurologia",
+              "pct": 12.7
             },
             {
               "tema": "Endocrinologia",
-              "pct": 11.7
+              "pct": 10.7
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.5
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.2
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.5
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 2.9
             }
           ],
-          "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. Mais fisiopatologia e critérios diagnósticos; cardio e neuro pesam. · ciclo 2026.",
-          "source": "USP · Clínica médica (síntese por áreas). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Levantamento Estratégia MED USP-SP (2017–2023): Infectologia é a área clínica mais cobrada; Cardiologia vem em seguida. Pneumo e Neuro pesam mais do que em provas puramente generalistas. · ciclo 2026.",
+          "source": "Estratégia MED — o que mais cai USP-SP · Levantamento 2017–2023 (publicado 2024). https://portal.estrategia.com/medicina/residencia-medica/o-que-mais-cai-na-prova-de-residencia-medica-da-usp-sp/ · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaUsp",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
@@ -813,37 +985,53 @@
     {
       "id": "revalida",
       "label": "Revalida",
-      "kicker": "INEP · alto volume",
+      "kicker": "Estratégia · Revalida/INEP",
       "featured": false,
-      "sourceType": "estimativa",
-      "source": "Estimativa Revalida · Clínica médica · Clínica médica · o que mais cai (R1) (recorte distinto de enamed).",
-      "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
-      "foco": "APS · urgências · conduta prática",
-      "estilo": "Estimativa INEP/Revalida",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+      "verdict": "Mesma base do Guia Estratégia (inclui série Revalida INEP 2011–2025): Clínica puxada por Infecto e Cardio; perfil generalista com Endócrino e Pneumo fortes.",
+      "foco": "Infecto · Cardio · Endo · Pneumo",
+      "estilo": "Levantamento Estratégia",
       "priorities": [
         {
-          "tema": "Cardiologia",
-          "pct": 23.5
-        },
-        {
-          "tema": "Demais áreas",
-          "pct": 22.5
-        },
-        {
           "tema": "Infectologia",
-          "pct": 17.1
+          "pct": 18.1
         },
         {
-          "tema": "Endocrinologia",
-          "pct": 14.3
-        },
-        {
-          "tema": "Nefrologia",
-          "pct": 11.6
+          "tema": "Cardiologia",
+          "pct": 15
         },
         {
           "tema": "Pneumologia",
-          "pct": 11
+          "pct": 12.4
+        },
+        {
+          "tema": "Neurologia",
+          "pct": 11.6
+        },
+        {
+          "tema": "Endocrinologia",
+          "pct": 10.8
+        },
+        {
+          "tema": "Psiquiatria",
+          "pct": 10
+        },
+        {
+          "tema": "Hematologia",
+          "pct": 7.3
+        },
+        {
+          "tema": "Reumatologia",
+          "pct": 6.2
+        },
+        {
+          "tema": "Nefrologia",
+          "pct": 5
+        },
+        {
+          "tema": "Hepatologia",
+          "pct": 3.6
         }
       ],
       "blurb": "Estudo dirigido · Revalida · APS · urgências · conduta prática",
@@ -851,96 +1039,149 @@
         "2024": {
           "priorities": [
             {
-              "tema": "Cardiologia",
-              "pct": 26.5
-            },
-            {
-              "tema": "Demais áreas",
-              "pct": 23.8
-            },
-            {
               "tema": "Infectologia",
-              "pct": 16.7
+              "pct": 21.2
             },
             {
-              "tema": "Endocrinologia",
-              "pct": 13.3
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 10.2
+              "tema": "Cardiologia",
+              "pct": 16.5
             },
             {
               "tema": "Pneumologia",
-              "pct": 9.5
+              "pct": 12.6
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.2
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 9.9
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.3
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.4
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.6
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.3
             }
           ],
-          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
-          "source": "Estimativa Revalida · Clínica médica · Clínica médica · o que mais cai (R1) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Mesma base do Guia Estratégia (inclui série Revalida INEP 2011–2025): Clínica puxada por Infecto e Cardio; perfil generalista com Endócrino e Pneumo fortes. · ciclo 2024.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 24.4
+              "tema": "Infectologia",
+              "pct": 19
             },
             {
               "tema": "Cardiologia",
-              "pct": 23.8
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 17.8
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 13.8
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 10.6
+              "pct": 16.9
             },
             {
               "tema": "Pneumologia",
-              "pct": 9.6
+              "pct": 13.5
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 11.7
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 10.3
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.3
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.5
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.3
             }
           ],
-          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
-          "source": "Estimativa Revalida · Clínica médica · Clínica médica · o que mais cai (R1) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Mesma base do Guia Estratégia (inclui série Revalida INEP 2011–2025): Clínica puxada por Infecto e Cardio; perfil generalista com Endócrino e Pneumo fortes. · ciclo 2025.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "Demais áreas",
-              "pct": 22.6
+              "tema": "Infectologia",
+              "pct": 18
             },
             {
               "tema": "Cardiologia",
-              "pct": 22.5
-            },
-            {
-              "tema": "Infectologia",
-              "pct": 18.8
-            },
-            {
-              "tema": "Endocrinologia",
-              "pct": 15
-            },
-            {
-              "tema": "Nefrologia",
-              "pct": 11.1
+              "pct": 15.6
             },
             {
               "tema": "Pneumologia",
-              "pct": 10
+              "pct": 14.2
+            },
+            {
+              "tema": "Neurologia",
+              "pct": 12.7
+            },
+            {
+              "tema": "Endocrinologia",
+              "pct": 10.7
+            },
+            {
+              "tema": "Psiquiatria",
+              "pct": 9.4
+            },
+            {
+              "tema": "Hematologia",
+              "pct": 6.5
+            },
+            {
+              "tema": "Reumatologia",
+              "pct": 5.2
+            },
+            {
+              "tema": "Nefrologia",
+              "pct": 4.5
+            },
+            {
+              "tema": "Hepatologia",
+              "pct": 3.2
             }
           ],
-          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
-          "source": "Estimativa Revalida · Clínica médica · Clínica médica · o que mais cai (R1) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Mesma base do Guia Estratégia (inclui série Revalida INEP 2011–2025): Clínica puxada por Infecto e Cardio; perfil generalista com Endócrino e Pneumo fortes. · ciclo 2026.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaGuia",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
@@ -2811,5 +3052,9 @@
     "2025",
     "2026"
   ],
-  "yearLabel": "2024–2026"
+  "yearLabel": "2024–2026",
+  "realStatsMeta": {
+    "updated": "2026-07-18",
+    "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
+  }
 }

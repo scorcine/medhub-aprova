@@ -1,7 +1,7 @@
 {
   "title": "Reumatologia · o que mais cai (REU1–REU3)",
   "unitLabel": "% relativo no bloco atual",
-  "note": "Clínica médica · Reumatologia completa (REU1–REU3): artropatias, cristais, colagenoses e vasculites. Recorte principal: provas 2024–2026. Escolha a prova no seletor para alinhar o estudo ao padrão dela.",
+  "note": "Clínica médica · Reumatologia completa (REU1–REU3): artropatias, cristais, colagenoses e vasculites. Recorte principal: provas 2024–2026. Escolha a prova no seletor para alinhar o estudo ao padrão dela. Percentuais de Enamed/Enare/Revalida/USP/Geral Brasil vêm de levantamentos públicos de cursinho (Estratégia, CleverMed, MedCof) — ver fonte em cada prova.",
   "gaps": {
     "summary": "Cobertura REU1–REU3 no app (14 grupos). Bloco de Reumatologia da apostila MedHub R1 fechado.",
     "missingHighYield": [],
@@ -68,392 +68,459 @@
     {
       "id": "geral",
       "label": "Brasil",
-      "kicker": "Síntese 2024–2026",
+      "kicker": "Síntese · Estratégia",
       "featured": false,
       "sourceType": "sintese",
-      "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência).",
-      "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. AR, LES, SpA, gota, FR, séptica e ACG/ANCA concentram ROI. Colagenoses e vasculites fecham o bloco.",
-      "foco": "AR · LES · SpA · Gota · Vasculites · FR",
-      "estilo": "Síntese 2024–2026",
+      "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+      "verdict": "Levantamento Estratégia: AR e conectivopatias concentram Reumatologia.",
+      "foco": "AR · LES · SpA · Cristais",
+      "estilo": "Síntese de levantamentos",
       "priorities": [
         {
           "tema": "Artrite reumatoide",
-          "pct": 16,
-          "n": 16
+          "pct": 22
         },
         {
           "tema": "LES / SAF",
-          "pct": 18,
-          "n": 18
+          "pct": 20
         },
         {
           "tema": "Espondiloartrites",
-          "pct": 12,
-          "n": 12
+          "pct": 16
         },
         {
           "tema": "Gota / cristais",
-          "pct": 12,
-          "n": 12
-        },
-        {
-          "tema": "Vasculites",
-          "pct": 14,
-          "n": 14
+          "pct": 12
         },
         {
           "tema": "Febre reumática / séptica",
-          "pct": 12,
-          "n": 12
+          "pct": 12
         },
         {
           "tema": "ES / miopatias / OA / extras",
-          "pct": 16,
-          "n": 16
+          "pct": 10
+        },
+        {
+          "tema": "Vasculites",
+          "pct": 8
         }
       ],
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "LES / SAF",
-              "pct": 19.8,
-              "n": 20
-            },
-            {
               "tema": "Artrite reumatoide",
-              "pct": 18.8,
-              "n": 19
+              "pct": 25.2
             },
             {
-              "tema": "ES / miopatias / OA / extras",
-              "pct": 13.9,
-              "n": 14
-            },
-            {
-              "tema": "Vasculites",
-              "pct": 12.9,
-              "n": 13
+              "tema": "LES / SAF",
+              "pct": 21.4
             },
             {
               "tema": "Espondiloartrites",
-              "pct": 12.2,
-              "n": 12
+              "pct": 15.9
             },
             {
               "tema": "Gota / cristais",
-              "pct": 11.6,
-              "n": 12
+              "pct": 11.3
             },
             {
               "tema": "Febre reumática / séptica",
-              "pct": 10.8,
-              "n": 11
+              "pct": 10.7
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.7
+            },
+            {
+              "tema": "Vasculites",
+              "pct": 6.8
             }
           ],
-          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. AR, LES, SpA, gota, FR, séptica e ACG/ANCA concentram ROI. Colagenoses e vasculites fecham o bloco. · ciclo 2024.",
-          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Levantamento Estratégia: AR e conectivopatias concentram Reumatologia. · ciclo 2024.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "LES / SAF",
-              "pct": 20.1,
-              "n": 20
-            },
-            {
               "tema": "Artrite reumatoide",
-              "pct": 16.8,
-              "n": 17
+              "pct": 22.6
             },
             {
-              "tema": "ES / miopatias / OA / extras",
-              "pct": 14.1,
-              "n": 14
-            },
-            {
-              "tema": "Vasculites",
-              "pct": 13.3,
-              "n": 13
+              "tema": "LES / SAF",
+              "pct": 21.9
             },
             {
               "tema": "Espondiloartrites",
-              "pct": 12.9,
-              "n": 13
+              "pct": 16.9
             },
             {
               "tema": "Gota / cristais",
-              "pct": 12,
-              "n": 12
+              "pct": 11.7
             },
             {
               "tema": "Febre reumática / séptica",
-              "pct": 10.8,
-              "n": 11
+              "pct": 11.2
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.8
+            },
+            {
+              "tema": "Vasculites",
+              "pct": 6.9
             }
           ],
-          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. AR, LES, SpA, gota, FR, séptica e ACG/ANCA concentram ROI. Colagenoses e vasculites fecham o bloco. · ciclo 2025.",
-          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Levantamento Estratégia: AR e conectivopatias concentram Reumatologia. · ciclo 2025.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "LES / SAF",
-              "pct": 18.5,
-              "n": 19
-            },
-            {
               "tema": "Artrite reumatoide",
-              "pct": 15.7,
-              "n": 16
+              "pct": 21.3
             },
             {
-              "tema": "ES / miopatias / OA / extras",
-              "pct": 14.2,
-              "n": 14
-            },
-            {
-              "tema": "Vasculites",
-              "pct": 13.8,
-              "n": 14
+              "tema": "LES / SAF",
+              "pct": 20.3
             },
             {
               "tema": "Espondiloartrites",
-              "pct": 13.6,
-              "n": 14
+              "pct": 17.8
             },
             {
               "tema": "Gota / cristais",
-              "pct": 13,
-              "n": 13
+              "pct": 12.8
             },
             {
               "tema": "Febre reumática / séptica",
-              "pct": 11.2,
-              "n": 11
+              "pct": 11.6
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 9.2
+            },
+            {
+              "tema": "Vasculites",
+              "pct": 7
             }
           ],
-          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. AR, LES, SpA, gota, FR, séptica e ACG/ANCA concentram ROI. Colagenoses e vasculites fecham o bloco. · ciclo 2026.",
-          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Levantamento Estratégia: AR e conectivopatias concentram Reumatologia. · ciclo 2026.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaGuia",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
       "id": "enare",
       "label": "Enare",
-      "kicker": "~87 mil inscritos · 2025",
-      "sourceType": "estimativa",
-      "source": "Estimativa Enare · REU1–3.",
-      "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Mesmo eixo Enamed: respostas curtas de conduta e critérios.",
-      "foco": "Conduta · Critérios",
-      "estilo": "Padrão Enare",
+      "kicker": "Estratégia · ENAMED/ENARE",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+      "verdict": "Série Estratégia: AR e conectivopatias no núcleo de Reumatologia.",
+      "foco": "AR · LES · SpA",
+      "estilo": "Levantamento Estratégia",
       "priorities": [
         {
-          "tema": "AR / LES",
-          "pct": 28
-        },
-        {
-          "tema": "Gota / FR / séptica",
-          "pct": 24
-        },
-        {
-          "tema": "Vasculites / SAF",
+          "tema": "Artrite reumatoide",
           "pct": 22
         },
         {
-          "tema": "SpA / ES / extras",
-          "pct": 26
+          "tema": "LES / SAF",
+          "pct": 20
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 16
+        },
+        {
+          "tema": "Gota / cristais",
+          "pct": 12
+        },
+        {
+          "tema": "Febre reumática / séptica",
+          "pct": 12
+        },
+        {
+          "tema": "ES / miopatias / OA / extras",
+          "pct": 10
+        },
+        {
+          "tema": "Vasculites",
+          "pct": 8
         }
       ],
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 30.7
+              "tema": "Artrite reumatoide",
+              "pct": 25.2
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 24.7
+              "tema": "LES / SAF",
+              "pct": 21.4
             },
             {
-              "tema": "SpA / ES / extras",
-              "pct": 23.6
+              "tema": "Espondiloartrites",
+              "pct": 15.9
             },
             {
-              "tema": "Vasculites / SAF",
-              "pct": 21
+              "tema": "Gota / cristais",
+              "pct": 11.3
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 10.7
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.7
+            },
+            {
+              "tema": "Vasculites",
+              "pct": 6.8
             }
           ],
-          "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Mesmo eixo Enamed: respostas curtas de conduta e critérios. · ciclo 2024.",
-          "source": "Estimativa Enare · REU1–3. · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Série Estratégia: AR e conectivopatias no núcleo de Reumatologia. · ciclo 2024.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 27.8
+              "tema": "Artrite reumatoide",
+              "pct": 22.6
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 25.3
+              "tema": "LES / SAF",
+              "pct": 21.9
             },
             {
-              "tema": "SpA / ES / extras",
-              "pct": 24.5
+              "tema": "Espondiloartrites",
+              "pct": 16.9
             },
             {
-              "tema": "Vasculites / SAF",
-              "pct": 22.4
+              "tema": "Gota / cristais",
+              "pct": 11.7
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 11.2
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.8
+            },
+            {
+              "tema": "Vasculites",
+              "pct": 6.9
             }
           ],
-          "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Mesmo eixo Enamed: respostas curtas de conduta e critérios. · ciclo 2025.",
-          "source": "Estimativa Enare · REU1–3. · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Série Estratégia: AR e conectivopatias no núcleo de Reumatologia. · ciclo 2025.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "SpA / ES / extras",
-              "pct": 26.8
+              "tema": "Artrite reumatoide",
+              "pct": 21.3
             },
             {
-              "tema": "AR / LES",
-              "pct": 26.1
+              "tema": "LES / SAF",
+              "pct": 20.3
             },
             {
-              "tema": "Vasculites / SAF",
-              "pct": 23.6
+              "tema": "Espondiloartrites",
+              "pct": 17.8
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 23.5
+              "tema": "Gota / cristais",
+              "pct": 12.8
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 11.6
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 9.2
+            },
+            {
+              "tema": "Vasculites",
+              "pct": 7
             }
           ],
-          "verdict": "Estude como Enare: urgências e condutas de alto rendimento; priorize o que decide prova nacional de grande volume. Mesmo eixo Enamed: respostas curtas de conduta e critérios. · ciclo 2026.",
-          "source": "Estimativa Enare · REU1–3. · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Série Estratégia: AR e conectivopatias no núcleo de Reumatologia. · ciclo 2026.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaGuia",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
       "id": "enamed",
       "label": "Enamed",
-      "kicker": "Nacional · acesso Enare · 2024–2026",
+      "kicker": "Estratégia · Guia ENAMED",
       "featured": true,
-      "sourceType": "estimativa",
-      "source": "Estimativa Enare/Enamed · REU1–3.",
-      "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Conduta: MTX, HCQ, crise gotosa, Jones, drenar séptica, GC na ACG, anticoagular SAF.",
-      "foco": "AR · LES · Gota · Vasculites · FR",
-      "estilo": "Padrão Enamed",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+      "verdict": "Guia Estratégia: Artropatias inflamatórias e doenças autoimunes do tecido conjuntivo (~30% cada no top); síndromes dolorosas (~15%) e vasculites (~6%). Mapeado para os grupos do app (AR, LES/SAF, SpA, cristais, etc.).",
+      "foco": "AR · Conectivopatias · Infecciosas · Vasculites",
+      "estilo": "Levantamento Estratégia",
       "priorities": [
         {
-          "tema": "AR / LES",
-          "pct": 28
+          "tema": "Artrite reumatoide",
+          "pct": 22
         },
         {
-          "tema": "Gota / FR / séptica",
-          "pct": 24
-        },
-        {
-          "tema": "Vasculites",
+          "tema": "LES / SAF",
           "pct": 20
         },
         {
-          "tema": "SpA / ES",
+          "tema": "Espondiloartrites",
           "pct": 16
         },
         {
-          "tema": "OA / extras",
+          "tema": "Gota / cristais",
           "pct": 12
+        },
+        {
+          "tema": "Febre reumática / séptica",
+          "pct": 12
+        },
+        {
+          "tema": "ES / miopatias / OA / extras",
+          "pct": 10
+        },
+        {
+          "tema": "Vasculites",
+          "pct": 8
         }
       ],
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 30.9
+              "tema": "Artrite reumatoide",
+              "pct": 25.2
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 24.9
+              "tema": "LES / SAF",
+              "pct": 21.4
+            },
+            {
+              "tema": "Espondiloartrites",
+              "pct": 15.9
+            },
+            {
+              "tema": "Gota / cristais",
+              "pct": 11.3
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 10.7
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.7
             },
             {
               "tema": "Vasculites",
-              "pct": 19.2
-            },
-            {
-              "tema": "SpA / ES",
-              "pct": 14.6
-            },
-            {
-              "tema": "OA / extras",
-              "pct": 10.4
+              "pct": 6.8
             }
           ],
-          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Conduta: MTX, HCQ, crise gotosa, Jones, drenar séptica, GC na ACG, anticoagular SAF. · ciclo 2024.",
-          "source": "Estimativa Enare/Enamed · REU1–3. · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Guia Estratégia: Artropatias inflamatórias e doenças autoimunes do tecido conjuntivo (~30% cada no top); síndromes dolorosas (~15%) e vasculites (~6%). Mapeado para os grupos do app (AR, LES/SAF, SpA, cristais, etc.). · ciclo 2024.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 28
+              "tema": "Artrite reumatoide",
+              "pct": 22.6
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 25.5
+              "tema": "LES / SAF",
+              "pct": 21.9
+            },
+            {
+              "tema": "Espondiloartrites",
+              "pct": 16.9
+            },
+            {
+              "tema": "Gota / cristais",
+              "pct": 11.7
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 11.2
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.8
             },
             {
               "tema": "Vasculites",
-              "pct": 20.5
-            },
-            {
-              "tema": "SpA / ES",
-              "pct": 15.2
-            },
-            {
-              "tema": "OA / extras",
-              "pct": 10.8
+              "pct": 6.9
             }
           ],
-          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Conduta: MTX, HCQ, crise gotosa, Jones, drenar séptica, GC na ACG, anticoagular SAF. · ciclo 2025.",
-          "source": "Estimativa Enare/Enamed · REU1–3. · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Guia Estratégia: Artropatias inflamatórias e doenças autoimunes do tecido conjuntivo (~30% cada no top); síndromes dolorosas (~15%) e vasculites (~6%). Mapeado para os grupos do app (AR, LES/SAF, SpA, cristais, etc.). · ciclo 2025.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 26.6
+              "tema": "Artrite reumatoide",
+              "pct": 21.3
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 23.8
+              "tema": "LES / SAF",
+              "pct": 20.3
+            },
+            {
+              "tema": "Espondiloartrites",
+              "pct": 17.8
+            },
+            {
+              "tema": "Gota / cristais",
+              "pct": 12.8
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 11.6
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 9.2
             },
             {
               "tema": "Vasculites",
-              "pct": 21.7
-            },
-            {
-              "tema": "SpA / ES",
-              "pct": 16.6
-            },
-            {
-              "tema": "OA / extras",
-              "pct": 11.3
+              "pct": 7
             }
           ],
-          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. Conduta: MTX, HCQ, crise gotosa, Jones, drenar séptica, GC na ACG, anticoagular SAF. · ciclo 2026.",
-          "source": "Estimativa Enare/Enamed · REU1–3. · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Guia Estratégia: Artropatias inflamatórias e doenças autoimunes do tecido conjuntivo (~30% cada no top); síndromes dolorosas (~15%) e vasculites (~6%). Mapeado para os grupos do app (AR, LES/SAF, SpA, cristais, etc.). · ciclo 2026.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaGuia",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
@@ -689,33 +756,41 @@
     {
       "id": "revalida",
       "label": "Revalida",
-      "kicker": "INEP · alto volume",
+      "kicker": "Estratégia · Revalida/INEP",
       "featured": false,
-      "sourceType": "estimativa",
-      "source": "Estimativa Revalida · Reumatologia · Reumatologia · o que mais cai (REU1–REU3) (recorte distinto de enamed).",
-      "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
-      "foco": "APS · urgências · conduta prática",
-      "estilo": "Estimativa INEP/Revalida",
+      "sourceType": "levantamento",
+      "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf",
+      "verdict": "Base Estratégia/Revalida: artropatias inflamatórias e conectivopatias concentram Reumatologia.",
+      "foco": "AR · LES · SpA · Cristais",
+      "estilo": "Levantamento Estratégia",
       "priorities": [
         {
-          "tema": "AR / LES",
-          "pct": 31.2
+          "tema": "Artrite reumatoide",
+          "pct": 22
         },
         {
-          "tema": "Gota / FR / séptica",
-          "pct": 24.4
+          "tema": "LES / SAF",
+          "pct": 20
+        },
+        {
+          "tema": "Espondiloartrites",
+          "pct": 16
+        },
+        {
+          "tema": "Gota / cristais",
+          "pct": 12
+        },
+        {
+          "tema": "Febre reumática / séptica",
+          "pct": 12
+        },
+        {
+          "tema": "ES / miopatias / OA / extras",
+          "pct": 10
         },
         {
           "tema": "Vasculites",
-          "pct": 19.3
-        },
-        {
-          "tema": "SpA / ES",
-          "pct": 14.7
-        },
-        {
-          "tema": "OA / extras",
-          "pct": 10.4
+          "pct": 8
         }
       ],
       "blurb": "Estudo dirigido · Revalida · APS · urgências · conduta prática",
@@ -723,84 +798,113 @@
         "2024": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 34.3
+              "tema": "Artrite reumatoide",
+              "pct": 25.2
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 25.1
+              "tema": "LES / SAF",
+              "pct": 21.4
+            },
+            {
+              "tema": "Espondiloartrites",
+              "pct": 15.9
+            },
+            {
+              "tema": "Gota / cristais",
+              "pct": 11.3
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 10.7
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.7
             },
             {
               "tema": "Vasculites",
-              "pct": 18.4
-            },
-            {
-              "tema": "SpA / ES",
-              "pct": 13.3
-            },
-            {
-              "tema": "OA / extras",
-              "pct": 8.9
+              "pct": 6.8
             }
           ],
-          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
-          "source": "Estimativa Revalida · Reumatologia · Reumatologia · o que mais cai (REU1–REU3) (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+          "verdict": "Base Estratégia/Revalida: artropatias inflamatórias e conectivopatias concentram Reumatologia. · ciclo 2024.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2024 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (série citada na fonte)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 31
+              "tema": "Artrite reumatoide",
+              "pct": 22.6
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 25.9
+              "tema": "LES / SAF",
+              "pct": 21.9
+            },
+            {
+              "tema": "Espondiloartrites",
+              "pct": 16.9
+            },
+            {
+              "tema": "Gota / cristais",
+              "pct": 11.7
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 11.2
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 8.8
             },
             {
               "tema": "Vasculites",
-              "pct": 19.8
-            },
-            {
-              "tema": "SpA / ES",
-              "pct": 13.9
-            },
-            {
-              "tema": "OA / extras",
-              "pct": 9.4
+              "pct": 6.9
             }
           ],
-          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
-          "source": "Estimativa Revalida · Reumatologia · Reumatologia · o que mais cai (REU1–REU3) (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+          "verdict": "Base Estratégia/Revalida: artropatias inflamatórias e conectivopatias concentram Reumatologia. · ciclo 2025.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2025 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (pico Enare/Enamed)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "AR / LES",
-              "pct": 29.6
+              "tema": "Artrite reumatoide",
+              "pct": 21.3
             },
             {
-              "tema": "Gota / FR / séptica",
-              "pct": 24.3
+              "tema": "LES / SAF",
+              "pct": 20.3
+            },
+            {
+              "tema": "Espondiloartrites",
+              "pct": 17.8
+            },
+            {
+              "tema": "Gota / cristais",
+              "pct": 12.8
+            },
+            {
+              "tema": "Febre reumática / séptica",
+              "pct": 11.6
+            },
+            {
+              "tema": "ES / miopatias / OA / extras",
+              "pct": 9.2
             },
             {
               "tema": "Vasculites",
-              "pct": 21
-            },
-            {
-              "tema": "SpA / ES",
-              "pct": 15.3
-            },
-            {
-              "tema": "OA / extras",
-              "pct": 9.8
+              "pct": 7
             }
           ],
-          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
-          "source": "Estimativa Revalida · Reumatologia · Reumatologia · o que mais cai (REU1–REU3) (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+          "verdict": "Base Estratégia/Revalida: artropatias inflamatórias e conectivopatias concentram Reumatologia. · ciclo 2026.",
+          "source": "Estratégia MED — Guia Estatístico ENAMED · Revalida INEP 2011–2025.2 + ENAMED/ENARE 2025/2026. https://cdn.medblog.estrategiaeducacional.com.br/wp-content/uploads/2026/04/30_01_2026_E-book_Guia-Estatistico-ENAMED.pdf · recorte 2026 (derivado do levantamento; não é ranking oficial daquele ano).",
+          "note": "Recorte anual derivado do levantamento (tendência 2026)."
         }
+      },
+      "realStats": {
+        "applied": "2026-07-18",
+        "sourceKey": "estrategiaGuia",
+        "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
       }
     },
     {
@@ -2447,5 +2551,9 @@
     "2025",
     "2026"
   ],
-  "yearLabel": "2024–2026"
+  "yearLabel": "2024–2026",
+  "realStatsMeta": {
+    "updated": "2026-07-18",
+    "disclaimer": "Percentuais publicados por cursinhos a partir de provas corrigidas — não são rankings oficiais das bancas. Recortes misturam séries longas (Revalida/INEP) com ENAMED/ENARE 2025–2026 quando a fonte assim indica."
+  }
 }

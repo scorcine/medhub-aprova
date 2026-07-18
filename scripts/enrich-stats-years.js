@@ -83,18 +83,23 @@ function enrichProfile(profile) {
   const p = deepClone(profile);
   const base = p.priorities || [];
   if (!p.byYear) p.byYear = {};
+  const fromLevantamento =
+    p.sourceType === "levantamento" ||
+    p.sourceType === "sintese" ||
+    Boolean(p.realStats);
   for (const year of YEARS) {
     const existing = p.byYear[year];
+    const yearTag = fromLevantamento
+      ? " (derivado do levantamento; não é ranking oficial daquele ano)."
+      : " (estimativa a partir da série 2024–2026).";
     p.byYear[year] = {
       priorities: remapForYear(base, year),
       verdict: (p.verdict || "") + " · ciclo " + year + ".",
-      source:
-        (p.source || "Síntese MedHub R1") +
-        " · recorte " +
-        year +
-        " (estimativa a partir da série 2024–2026).",
+      source: (p.source || "Síntese MedHub R1") + " · recorte " + year + yearTag,
       sampleSize: existing?.sampleSize || p.sampleSize || null,
-      note: YEAR_BIAS[year].note
+      note: fromLevantamento
+        ? "Recorte anual derivado do levantamento (série citada na fonte)."
+        : YEAR_BIAS[year].note
     };
     if (!p.byYear[year].sampleSize) delete p.byYear[year].sampleSize;
   }

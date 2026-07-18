@@ -3,856 +3,856 @@
 const APROVA_REVISAO_MODULES = {
   neonatologia: {
     label: "Neonatologia",
-    file: "data/revisao-neonatologia.json?v=20260718dd",
+    file: "data/revisao-neonatologia.json?v=20260718ee",
     specialty: "pediatria"
   },
   alimentacao: {
     label: "Alimentação",
-    file: "data/revisao-alimentacao.json?v=20260718dd",
+    file: "data/revisao-alimentacao.json?v=20260718ee",
     specialty: "pediatria"
   },
   "avaliacao-nutricional": {
     label: "Avaliação nutricional",
-    file: "data/revisao-avaliacao-nutricional.json?v=20260718dd",
+    file: "data/revisao-avaliacao-nutricional.json?v=20260718ee",
     specialty: "pediatria"
   },
   imunizacoes: {
     label: "Imunizações",
-    file: "data/revisao-imunizacoes.json?v=20260718dd",
+    file: "data/revisao-imunizacoes.json?v=20260718ee",
     specialty: "pediatria"
   },
   diabetes: {
     label: "Diabetes",
-    file: "data/revisao-diabetes.json?v=20260718dd",
+    file: "data/revisao-diabetes.json?v=20260718ee",
     specialty: "pediatria"
   },
   ped6: {
     label: "Nefro / Infecto / Cardio",
-    file: "data/revisao-ped6.json?v=20260718dd",
+    file: "data/revisao-ped6.json?v=20260718ee",
     specialty: "pediatria"
   },
   respiratorio: {
     label: "Respiratório",
-    file: "data/revisao-respiratorio.json?v=20260718dd",
+    file: "data/revisao-respiratorio.json?v=20260718ee",
     specialty: "pediatria"
   },
   "gastro-neuro": {
     label: "Gastro / Neuro",
-    file: "data/revisao-gastro-neuro.json?v=20260718dd",
+    file: "data/revisao-gastro-neuro.json?v=20260718ee",
     specialty: "pediatria"
   },
   "nefro-extra": {
     label: "Nefro (SN / GNA)",
-    file: "data/revisao-nefro-extra.json?v=20260718dd",
+    file: "data/revisao-nefro-extra.json?v=20260718ee",
     specialty: "pediatria"
   },
   "r1-extra": {
     label: "Dengue / Hemato / Orto",
-    file: "data/revisao-r1-extra.json?v=20260718dd",
+    file: "data/revisao-r1-extra.json?v=20260718ee",
     specialty: "pediatria"
   },
   "r1-lacunas": {
     label: "Cirurgia / Alergia / Abuso",
-    file: "data/revisao-r1-lacunas.json?v=20260718dd",
+    file: "data/revisao-r1-lacunas.json?v=20260718ee",
     specialty: "pediatria"
   },
   gin1: {
     label: "Endócrino / ciclo",
-    file: "data/revisao-gin1.json?v=20260718dd",
+    file: "data/revisao-gin1.json?v=20260718ee",
     specialty: "go",
     area: "ginecologia"
   },
   gin2: {
     label: "SUA / miomatose",
-    file: "data/revisao-gin2.json?v=20260718dd",
+    file: "data/revisao-gin2.json?v=20260718ee",
     specialty: "go",
     area: "ginecologia"
   },
   gin3: {
     label: "Climatério / urogin",
-    file: "data/revisao-gin3.json?v=20260718dd",
+    file: "data/revisao-gin3.json?v=20260718ee",
     specialty: "go",
     area: "ginecologia"
   },
   gin4: {
     label: "Mastologia / ovário",
-    file: "data/revisao-gin4.json?v=20260718dd",
+    file: "data/revisao-gin4.json?v=20260718ee",
     specialty: "go",
     area: "ginecologia"
   },
   gin5: {
     label: "Oncoginecologia",
-    file: "data/revisao-gin5.json?v=20260718dd",
+    file: "data/revisao-gin5.json?v=20260718ee",
     specialty: "go",
     area: "ginecologia"
   },
   gin6: {
     label: "Infecto / IST",
-    file: "data/revisao-gin6.json?v=20260718dd",
+    file: "data/revisao-gin6.json?v=20260718ee",
     specialty: "go",
     area: "ginecologia"
   },
   obs1: {
     label: "Parto operatório · Med. fetal · Puerpério",
-    file: "data/revisao-obs1.json?v=20260718dd",
+    file: "data/revisao-obs1.json?v=20260718ee",
     specialty: "go",
     area: "obstetricia"
   },
   obs2: {
     label: "Diagnóstico de gravidez · Pré-natal",
-    file: "data/revisao-obs2.json?v=20260718dd",
+    file: "data/revisao-obs2.json?v=20260718ee",
     specialty: "go",
     area: "obstetricia"
   },
   obs3: {
     label: "Parto · RPMO · Prematuridade",
-    file: "data/revisao-obs3.json?v=20260718dd",
+    file: "data/revisao-obs3.json?v=20260718ee",
     specialty: "go",
     area: "obstetricia"
   },
   obs4: {
     label: "Sangramentos na gestação",
-    file: "data/revisao-obs4.json?v=20260718dd",
+    file: "data/revisao-obs4.json?v=20260718ee",
     specialty: "go",
     area: "obstetricia"
   },
   obs5: {
     label: "HAS · Diabetes · Gemelaridade",
-    file: "data/revisao-obs5.json?v=20260718dd",
+    file: "data/revisao-obs5.json?v=20260718ee",
     specialty: "go",
     area: "obstetricia"
   },
   "cir-abdome-agudo": {
     label: "Abdome agudo · urgências (~12–24%)",
-    file: "data/revisao-cir-abdome-agudo.json?v=20260718dd",
+    file: "data/revisao-cir-abdome-agudo.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "cir-trauma": {
     label: "Trauma · ATLS (~14%)",
-    file: "data/revisao-cir-trauma.json?v=20260718dd",
+    file: "data/revisao-cir-trauma.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "cir-perioperatorio": {
     label: "Pré/pós-op · Anestesia · Hérnias (~20%)",
-    file: "data/revisao-cir-perioperatorio.json?v=20260718dd",
+    file: "data/revisao-cir-perioperatorio.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "cir-infantil": {
     label: "Cirurgia infantil (~9%)",
-    file: "data/revisao-cir-infantil.json?v=20260718dd",
+    file: "data/revisao-cir-infantil.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "cir-vascular": {
     label: "Cirurgia vascular (~8–16%)",
-    file: "data/revisao-cir-vascular.json?v=20260718dd",
+    file: "data/revisao-cir-vascular.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "cir-ad": {
     label: "Aparelho digestivo · eletivo / onco / procto",
-    file: "data/revisao-cir-ad.json?v=20260718dd",
+    file: "data/revisao-cir-ad.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "cir-especialidades": {
     label: "Especialidades R1 · uro · tórax · plástica",
-    file: "data/revisao-cir-especialidades.json?v=20260718dd",
+    file: "data/revisao-cir-especialidades.json?v=20260718ee",
     specialty: "cirurgia"
   },
   "reu-ar": {
     label: "Artrite reumatoide (REU1)",
-    file: "data/revisao-reu-ar.json?v=20260718dd",
+    file: "data/revisao-reu-ar.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-aij": {
     label: "AIJ · Still (REU1)",
-    file: "data/revisao-reu-aij.json?v=20260718dd",
+    file: "data/revisao-reu-aij.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-spa": {
     label: "Espondiloartrites · AINEs (REU1)",
-    file: "data/revisao-reu-spa.json?v=20260718dd",
+    file: "data/revisao-reu-spa.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-oa": {
     label: "Osteoartrose (REU2)",
-    file: "data/revisao-reu-oa.json?v=20260718dd",
+    file: "data/revisao-reu-oa.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-cristais": {
     label: "Gota e cristais (REU2)",
-    file: "data/revisao-reu-cristais.json?v=20260718dd",
+    file: "data/revisao-reu-cristais.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-fr": {
     label: "Febre reumática (REU2)",
-    file: "data/revisao-reu-fr.json?v=20260718dd",
+    file: "data/revisao-reu-fr.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-infecciosa": {
     label: "Artrites infecciosas (REU2)",
-    file: "data/revisao-reu-infecciosa.json?v=20260718dd",
+    file: "data/revisao-reu-infecciosa.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-extras2": {
     label: "Extras REU2 · FFM · fibromialgia",
-    file: "data/revisao-reu-extras2.json?v=20260718dd",
+    file: "data/revisao-reu-extras2.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-les": {
     label: "LES (REU3)",
-    file: "data/revisao-reu-les.json?v=20260718dd",
+    file: "data/revisao-reu-les.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-saf": {
     label: "SAF (REU3)",
-    file: "data/revisao-reu-saf.json?v=20260718dd",
+    file: "data/revisao-reu-saf.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-es": {
     label: "Esclerose sistêmica (REU3)",
-    file: "data/revisao-reu-es.json?v=20260718dd",
+    file: "data/revisao-reu-es.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-outras-colag": {
     label: "Miopatias · Sjögren · DMTC (REU3)",
-    file: "data/revisao-reu-outras-colag.json?v=20260718dd",
+    file: "data/revisao-reu-outras-colag.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-vasculites": {
     label: "Vasculites (REU3)",
-    file: "data/revisao-reu-vasculites.json?v=20260718dd",
+    file: "data/revisao-reu-vasculites.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "reu-amiloidose": {
     label: "Amiloidoses (REU3)",
-    file: "data/revisao-reu-amiloidose.json?v=20260718dd",
+    file: "data/revisao-reu-amiloidose.json?v=20260718ee",
     specialty: "clinica",
     area: "reumatologia"
   },
   "psi-substancias": {
     label: "Substâncias · álcool · drogas",
-    file: "data/revisao-psi-substancias.json?v=20260718dd",
+    file: "data/revisao-psi-substancias.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "psi-humor": {
     label: "Humor · depressão · bipolar",
-    file: "data/revisao-psi-humor.json?v=20260718dd",
+    file: "data/revisao-psi-humor.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "psi-psicose": {
     label: "Esquizofrenia · antipsicóticos",
-    file: "data/revisao-psi-psicose.json?v=20260718dd",
+    file: "data/revisao-psi-psicose.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "psi-ansiedade": {
     label: "Ansiedade · TOC · trauma",
-    file: "data/revisao-psi-ansiedade.json?v=20260718dd",
+    file: "data/revisao-psi-ansiedade.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "psi-organicos": {
     label: "Delirium · demência",
-    file: "data/revisao-psi-organicos.json?v=20260718dd",
+    file: "data/revisao-psi-organicos.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "psi-alimentares": {
     label: "Transtornos alimentares",
-    file: "data/revisao-psi-alimentares.json?v=20260718dd",
+    file: "data/revisao-psi-alimentares.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "psi-basico": {
     label: "Psicopatologia · personalidade",
-    file: "data/revisao-psi-basico.json?v=20260718dd",
+    file: "data/revisao-psi-basico.json?v=20260718ee",
     specialty: "clinica",
     area: "psiquiatria"
   },
   "pnm-intensiva": {
     label: "Intensiva · VM · SDRA",
-    file: "data/revisao-pnm-intensiva.json?v=20260718dd",
+    file: "data/revisao-pnm-intensiva.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-tep": {
     label: "TEP · embolia pulmonar",
-    file: "data/revisao-pnm-tep.json?v=20260718dd",
+    file: "data/revisao-pnm-tep.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-asma": {
     label: "Asma · GINA",
-    file: "data/revisao-pnm-asma.json?v=20260718dd",
+    file: "data/revisao-pnm-asma.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-dpoc": {
     label: "DPOC · GOLD",
-    file: "data/revisao-pnm-dpoc.json?v=20260718dd",
+    file: "data/revisao-pnm-dpoc.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-derrame": {
     label: "Derrame pleural · Light",
-    file: "data/revisao-pnm-derrame.json?v=20260718dd",
+    file: "data/revisao-pnm-derrame.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-cancer": {
     label: "Câncer de pulmão",
-    file: "data/revisao-pnm-cancer.json?v=20260718dd",
+    file: "data/revisao-pnm-cancer.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-basico": {
     label: "Espirometria · gasometria",
-    file: "data/revisao-pnm-basico.json?v=20260718dd",
+    file: "data/revisao-pnm-basico.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-intersticial": {
     label: "Intersticiais · sarcoidose",
-    file: "data/revisao-pnm-intersticial.json?v=20260718dd",
+    file: "data/revisao-pnm-intersticial.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-tb": {
     label: "TB · RIPE · ILTB",
-    file: "data/revisao-pnm-tb.json?v=20260718dd",
+    file: "data/revisao-pnm-tb.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-tb-extra": {
     label: "TB extrapulmonar",
-    file: "data/revisao-pnm-tb-extra.json?v=20260718dd",
+    file: "data/revisao-pnm-tb-extra.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "pnm-micoses": {
     label: "Micoses pulmonares",
-    file: "data/revisao-pnm-micoses.json?v=20260718dd",
+    file: "data/revisao-pnm-micoses.json?v=20260718ee",
     specialty: "clinica",
     area: "pneumologia"
   },
   "neu-avc": {
     label: "AVC · AIT · HSA",
-    file: "data/revisao-neu-avc.json?v=20260718dd",
+    file: "data/revisao-neu-avc.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "neu-epilepsia": {
     label: "Epilepsia · status",
-    file: "data/revisao-neu-epilepsia.json?v=20260718dd",
+    file: "data/revisao-neu-epilepsia.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "neu-coma": {
     label: "Coma · HIC",
-    file: "data/revisao-neu-coma.json?v=20260718dd",
+    file: "data/revisao-neu-coma.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "neu-cefaleia": {
     label: "Cefaleias",
-    file: "data/revisao-neu-cefaleia.json?v=20260718dd",
+    file: "data/revisao-neu-cefaleia.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "neu-neuromuscular": {
     label: "Neuromuscular",
-    file: "data/revisao-neu-neuromuscular.json?v=20260718dd",
+    file: "data/revisao-neu-neuromuscular.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "neu-demencia": {
     label: "Demências · Parkinson",
-    file: "data/revisao-neu-demencia.json?v=20260718dd",
+    file: "data/revisao-neu-demencia.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "neu-em": {
     label: "EM · tumores · misc",
-    file: "data/revisao-neu-em.json?v=20260718dd",
+    file: "data/revisao-neu-em.json?v=20260718ee",
     specialty: "clinica",
     area: "neurologia"
   },
   "nef-basico": {
     label: "Básico glomerular",
-    file: "data/revisao-nef-basico.json?v=20260718dd",
+    file: "data/revisao-nef-basico.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-nefritica": {
     label: "Nefrítica · GNPE",
-    file: "data/revisao-nef-nefritica.json?v=20260718dd",
+    file: "data/revisao-nef-nefritica.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-nefrotica": {
     label: "Síndrome nefrótica",
-    file: "data/revisao-nef-nefrotica.json?v=20260718dd",
+    file: "data/revisao-nef-nefrotica.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-especificas": {
     label: "Glomerulopatias específicas",
-    file: "data/revisao-nef-especificas.json?v=20260718dd",
+    file: "data/revisao-nef-especificas.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-nta": {
     label: "NTA · tóxicos · rabdo",
-    file: "data/revisao-nef-nta.json?v=20260718dd",
+    file: "data/revisao-nef-nta.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-nia-nic": {
     label: "NIA · NIC · papila",
-    file: "data/revisao-nef-nia-nic.json?v=20260718dd",
+    file: "data/revisao-nef-nia-nic.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-tubulares": {
     label: "ATR · Fanconi",
-    file: "data/revisao-nef-tubulares.json?v=20260718dd",
+    file: "data/revisao-nef-tubulares.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-vascular": {
     label: "Vascular · ateroêmbolo",
-    file: "data/revisao-nef-vascular.json?v=20260718dd",
+    file: "data/revisao-nef-vascular.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-solucoes": {
     label: "Soluções · Mg · tampões",
-    file: "data/revisao-nef-solucoes.json?v=20260718dd",
+    file: "data/revisao-nef-solucoes.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-ira": {
     label: "IRA · KDIGO · diálise",
-    file: "data/revisao-nef-ira.json?v=20260718dd",
+    file: "data/revisao-nef-ira.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-drc": {
     label: "DRC · uremia · DMO",
-    file: "data/revisao-nef-drc.json?v=20260718dd",
+    file: "data/revisao-nef-drc.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-litiase": {
     label: "Nefrolitíase",
-    file: "data/revisao-nef-litiase.json?v=20260718dd",
+    file: "data/revisao-nef-litiase.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-prostata": {
     label: "HPB · CA próstata",
-    file: "data/revisao-nef-prostata.json?v=20260718dd",
+    file: "data/revisao-nef-prostata.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "nef-uro-extra": {
     label: "Oncouro · cistos · hematúria",
-    file: "data/revisao-nef-uro-extra.json?v=20260718dd",
+    file: "data/revisao-nef-uro-extra.json?v=20260718ee",
     specialty: "clinica",
     area: "nefrologia"
   },
   "infc-protozoarios": {
     label: "Protozoários intestinais",
-    file: "data/revisao-infc-protozoarios.json?v=20260718dd",
+    file: "data/revisao-infc-protozoarios.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-helmintos": {
     label: "Nematoides intestinais",
-    file: "data/revisao-infc-helmintos.json?v=20260718dd",
+    file: "data/revisao-infc-helmintos.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-cestoides": {
     label: "Tênias · toxocaríase",
-    file: "data/revisao-infc-cestoides.json?v=20260718dd",
+    file: "data/revisao-infc-cestoides.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-esquisto": {
     label: "Esquistossomose",
-    file: "data/revisao-infc-esquisto.json?v=20260718dd",
+    file: "data/revisao-infc-esquisto.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-pac-clinica": {
     label: "PAC · clínica · agentes",
-    file: "data/revisao-infc-pac-clinica.json?v=20260718dd",
+    file: "data/revisao-infc-pac-clinica.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-pac-conduta": {
     label: "PAC · escores · empírico",
-    file: "data/revisao-infc-pac-conduta.json?v=20260718dd",
+    file: "data/revisao-infc-pac-conduta.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-abscesso": {
     label: "Abscesso pulmonar",
-    file: "data/revisao-infc-abscesso.json?v=20260718dd",
+    file: "data/revisao-infc-abscesso.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-antibioticos": {
     label: "Antibióticos",
-    file: "data/revisao-infc-antibioticos.json?v=20260718dd",
+    file: "data/revisao-infc-antibioticos.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-hiv-oi": {
     label: "HIV · OI resp/GI",
-    file: "data/revisao-infc-hiv-oi.json?v=20260718dd",
+    file: "data/revisao-infc-hiv-oi.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-hiv-snc": {
     label: "HIV · SNC · olho",
-    file: "data/revisao-infc-hiv-snc.json?v=20260718dd",
+    file: "data/revisao-infc-hiv-snc.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-hiv-neoplasias": {
     label: "HIV · neoplasias",
-    file: "data/revisao-infc-hiv-neoplasias.json?v=20260718dd",
+    file: "data/revisao-infc-hiv-neoplasias.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-itu": {
     label: "ITU",
-    file: "data/revisao-infc-itu.json?v=20260718dd",
+    file: "data/revisao-infc-itu.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-pele": {
     label: "Pele e partes moles",
-    file: "data/revisao-infc-pele.json?v=20260718dd",
+    file: "data/revisao-infc-pele.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-osteo": {
     label: "Osteomielite",
-    file: "data/revisao-infc-osteo.json?v=20260718dd",
+    file: "data/revisao-infc-osteo.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-dengue": {
     label: "Dengue",
-    file: "data/revisao-infc-dengue.json?v=20260718dd",
+    file: "data/revisao-infc-dengue.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-arbovirus": {
     label: "Chik · Zika · FA",
-    file: "data/revisao-infc-arbovirus.json?v=20260718dd",
+    file: "data/revisao-infc-arbovirus.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-malaria": {
     label: "Malária",
-    file: "data/revisao-infc-malaria.json?v=20260718dd",
+    file: "data/revisao-infc-malaria.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-tropicais": {
     label: "Lepto · calazar · maculosa",
-    file: "data/revisao-infc-tropicais.json?v=20260718dd",
+    file: "data/revisao-infc-tropicais.json?v=20260718ee",
     specialty: "clinica",
     area: "infectologia"
   },
   "hep-basico": {
     label: "Hepatograma · icterícia",
-    file: "data/revisao-hep-basico.json?v=20260718dd",
+    file: "data/revisao-hep-basico.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-virais-agudas": {
     label: "Hepatites virais agudas",
-    file: "data/revisao-hep-virais-agudas.json?v=20260718dd",
+    file: "data/revisao-hep-virais-agudas.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-virais-cronicas": {
     label: "Hepatites B e C crônicas",
-    file: "data/revisao-hep-virais-cronicas.json?v=20260718dd",
+    file: "data/revisao-hep-virais-cronicas.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-fulminante": {
     label: "Insuficiência hepática fulminante",
-    file: "data/revisao-hep-fulminante.json?v=20260718dd",
+    file: "data/revisao-hep-fulminante.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-esteatose": {
     label: "Cirrose · DHA · DHGNA",
-    file: "data/revisao-hep-esteatose.json?v=20260718dd",
+    file: "data/revisao-hep-esteatose.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-autoimune": {
     label: "HAI · CBP · CEP",
-    file: "data/revisao-hep-autoimune.json?v=20260718dd",
+    file: "data/revisao-hep-autoimune.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-metabolicas": {
     label: "Wilson · hemocromatose · DILI",
-    file: "data/revisao-hep-metabolicas.json?v=20260718dd",
+    file: "data/revisao-hep-metabolicas.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-descompensacao": {
     label: "IHC · ascite · PBE · SHR",
-    file: "data/revisao-hep-descompensacao.json?v=20260718dd",
+    file: "data/revisao-hep-descompensacao.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-htp-varizes": {
     label: "HTP · varizes · TIPS",
-    file: "data/revisao-hep-htp-varizes.json?v=20260718dd",
+    file: "data/revisao-hep-htp-varizes.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-transplante": {
     label: "Transplante hepático",
-    file: "data/revisao-hep-transplante.json?v=20260718dd",
+    file: "data/revisao-hep-transplante.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hep-biliar": {
     label: "Biliar · abscesso · hidático",
-    file: "data/revisao-hep-biliar.json?v=20260718dd",
+    file: "data/revisao-hep-biliar.json?v=20260718ee",
     specialty: "clinica",
     area: "hepatologia"
   },
   "hema-anemias": {
     label: "Anemias · ferropriva · ADC",
-    file: "data/revisao-hema-anemias.json?v=20260718dd",
+    file: "data/revisao-hema-anemias.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-megaloblastica": {
     label: "Anemia megaloblástica",
-    file: "data/revisao-hema-megaloblastica.json?v=20260718dd",
+    file: "data/revisao-hema-megaloblastica.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-hemoliticas": {
     label: "Hemolíticas · hemoglobinopatias",
-    file: "data/revisao-hema-hemoliticas.json?v=20260718dd",
+    file: "data/revisao-hema-hemoliticas.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-smd": {
     label: "SMD · sideroblástica",
-    file: "data/revisao-hema-smd.json?v=20260718dd",
+    file: "data/revisao-hema-smd.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-leucemias": {
     label: "Leucemias",
-    file: "data/revisao-hema-leucemias.json?v=20260718dd",
+    file: "data/revisao-hema-leucemias.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-nmp": {
     label: "Neoplasias mieloproliferativas",
-    file: "data/revisao-hema-nmp.json?v=20260718dd",
+    file: "data/revisao-hema-nmp.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-linfomas": {
     label: "Linfomas · Hodgkin · LNH",
-    file: "data/revisao-hema-linfomas.json?v=20260718dd",
+    file: "data/revisao-hema-linfomas.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-mieloma": {
     label: "Mieloma · gamopatias",
-    file: "data/revisao-hema-mieloma.json?v=20260718dd",
+    file: "data/revisao-hema-mieloma.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-hemostasia": {
     label: "Princípios da hemostasia",
-    file: "data/revisao-hema-hemostasia.json?v=20260718dd",
+    file: "data/revisao-hema-hemostasia.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-plaquetas": {
     label: "PTI · PTT · SHU",
-    file: "data/revisao-hema-plaquetas.json?v=20260718dd",
+    file: "data/revisao-hema-plaquetas.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "hema-coagulacao": {
     label: "Hemofilia · vW · CID · anticoagulação",
-    file: "data/revisao-hema-coagulacao.json?v=20260718dd",
+    file: "data/revisao-hema-coagulacao.json?v=20260718ee",
     specialty: "clinica",
     area: "hematologia"
   },
   "endo-tireoide": {
     label: "Tireoide · hipertireoidismo · Graves",
-    file: "data/revisao-endo-tireoide.json?v=20260718dd",
+    file: "data/revisao-endo-tireoide.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-hipotireo": {
     label: "Hipotireoidismo · tireoidites",
-    file: "data/revisao-endo-hipotireo.json?v=20260718dd",
+    file: "data/revisao-endo-hipotireo.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-nodulos": {
     label: "Nódulos · câncer de tireoide",
-    file: "data/revisao-endo-nodulos.json?v=20260718dd",
+    file: "data/revisao-endo-nodulos.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-adrenal": {
     label: "Suprarrenal",
-    file: "data/revisao-endo-adrenal.json?v=20260718dd",
+    file: "data/revisao-endo-adrenal.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-paratireoide": {
     label: "Paratireoide · cálcio",
-    file: "data/revisao-endo-paratireoide.json?v=20260718dd",
+    file: "data/revisao-endo-paratireoide.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-hipofise": {
     label: "Hipófise · hipotálamo",
-    file: "data/revisao-endo-hipofise.json?v=20260718dd",
+    file: "data/revisao-endo-hipofise.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-dm": {
     label: "Diabetes · diagnóstico · tratamento",
-    file: "data/revisao-endo-dm.json?v=20260718dd",
+    file: "data/revisao-endo-dm.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-dm-complicacoes": {
     label: "DM · crônicas · pé",
-    file: "data/revisao-endo-dm-complicacoes.json?v=20260718dd",
+    file: "data/revisao-endo-dm-complicacoes.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-urgencias-dm": {
     label: "CAD · HHNS · hipoglicemia",
-    file: "data/revisao-endo-urgencias-dm.json?v=20260718dd",
+    file: "data/revisao-endo-urgencias-dm.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "endo-obesidade": {
     label: "Obesidade",
-    file: "data/revisao-endo-obesidade.json?v=20260718dd",
+    file: "data/revisao-endo-obesidade.json?v=20260718ee",
     specialty: "clinica",
     area: "endocrinologia"
   },
   "cardio-scc": {
     label: "Síndrome coronariana crônica",
-    file: "data/revisao-cardio-scc.json?v=20260718dd",
+    file: "data/revisao-cardio-scc.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-sca": {
     label: "SCA · NSTEMI · STEMI",
-    file: "data/revisao-cardio-sca.json?v=20260718dd",
+    file: "data/revisao-cardio-sca.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-pericardio": {
     label: "Pericardiopatias",
-    file: "data/revisao-cardio-pericardio.json?v=20260718dd",
+    file: "data/revisao-cardio-pericardio.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-icc": {
     label: "Insuficiência cardíaca",
-    file: "data/revisao-cardio-icc.json?v=20260718dd",
+    file: "data/revisao-cardio-icc.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-has": {
     label: "Hipertensão arterial",
-    file: "data/revisao-cardio-has.json?v=20260718dd",
+    file: "data/revisao-cardio-has.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-valvas": {
     label: "Valvopatias · endocardite",
-    file: "data/revisao-cardio-valvas.json?v=20260718dd",
+    file: "data/revisao-cardio-valvas.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-miopatias": {
     label: "Cardiomiopatias · semiologia · HP",
-    file: "data/revisao-cardio-miopatias.json?v=20260718dd",
+    file: "data/revisao-cardio-miopatias.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-fa": {
     label: "FA · flutter · taquicardias",
-    file: "data/revisao-cardio-fa.json?v=20260718dd",
+    file: "data/revisao-cardio-fa.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-bradi": {
     label: "Bradiarritmias · BAV · marca-passo",
-    file: "data/revisao-cardio-bradi.json?v=20260718dd",
+    file: "data/revisao-cardio-bradi.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "cardio-pcr": {
     label: "PCR · antiarrítmicos",
-    file: "data/revisao-cardio-pcr.json?v=20260718dd",
+    file: "data/revisao-cardio-pcr.json?v=20260718ee",
     specialty: "clinica",
     area: "cardiologia"
   },
   "prev-sus": {
     label: "SUS · APS · programas",
-    file: "data/revisao-prev-sus.json?v=20260718dd",
+    file: "data/revisao-prev-sus.json?v=20260718ee",
     specialty: "preventiva"
   },
   "prev-epidemiologia": {
     label: "Epidemiologia · estudos · testes",
-    file: "data/revisao-prev-epidemiologia.json?v=20260718dd",
+    file: "data/revisao-prev-epidemiologia.json?v=20260718ee",
     specialty: "preventiva"
   },
   "prev-vigilancia": {
     label: "Vigilância · HND · ética",
-    file: "data/revisao-prev-vigilancia.json?v=20260718dd",
+    file: "data/revisao-prev-vigilancia.json?v=20260718ee",
     specialty: "preventiva"
   },
   "prev-indicadores": {
     label: "Indicadores · mortalidade · Swaroop-Uemura",
-    file: "data/revisao-prev-indicadores.json?v=20260718dd",
+    file: "data/revisao-prev-indicadores.json?v=20260718ee",
     specialty: "preventiva"
   }
 };
