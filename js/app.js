@@ -154,23 +154,28 @@ let aprovaOverviewExamChooserOpen = false;
 let aprovaModuleExamChooserOpen = false;
 const aprovaOverviewStatsCache = Object.create(null);
 
-/** Ordem por volume de inscritos no ciclo 2024–2026 (mais importantes primeiro). */
+/** Ordem por volume + concorrência no ciclo 2024–2026 (mais importantes primeiro). */
 const APROVA_EXAM_RANK = {
   geral: 0,
   enare: 1,
   enamed: 2,
-  revalida: 3,
-  usp: 4,
-  unifesp: 5,
+  usp: 3,
+  unifesp: 4,
+  revalida: 5,
   amp: 6,
-  "sus-sp": 7,
-  unicamp: 8,
-  ufrgs: 9,
-  ufmg: 10,
-  "sus-ba": 11,
-  "ses-pe": 12,
-  ufrj: 13,
-  einstein: 14
+  "santa-casa": 7,
+  sirio: 8,
+  iamspe: 9,
+  "sus-sp": 10,
+  unicamp: 11,
+  "puc-sp": 12,
+  ufmg: 13,
+  ufrgs: 14,
+  consesp: 15,
+  "sus-ba": 16,
+  "ses-pe": 17,
+  ufrj: 18,
+  einstein: 19
 };
 
 function aprovaExamRank (id) {
@@ -293,7 +298,8 @@ function aprovaRenderExamYearFilters (container, opts) {
   chooser.hidden = !chooserOpen;
   const hint = document.createElement("p");
   hint.className = "muted esp-exam-chooser-hint";
-  hint.textContent = "Provas por volume de inscritos (2024–2026). Toque para ver o recorte.";
+  hint.textContent =
+    "Ordenadas por inscritos e concorrência (2024–2026). CONSESP = padrão da banca (várias instituições). Toque para estudar o recorte certo.";
   chooser.appendChild(hint);
 
   const list = document.createElement("div");
@@ -335,8 +341,8 @@ function aprovaRichSpecialtyMeta (specialty) {
       shortLabel: obs ? "Obstetrícia" : "Ginecologia",
       overviewCacheKey: obs ? "obstetricia" : "ginecologia",
       overviewUrl: obs
-        ? "data/stats-obstetricia-geral.json?v=20260718dc"
-        : "data/stats-ginecologia-geral.json?v=20260718dc",
+        ? "data/stats-obstetricia-geral.json?v=20260718dd"
+        : "data/stats-ginecologia-geral.json?v=20260718dd",
       countNoun: obs ? "Obstetrícia" : "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
@@ -348,7 +354,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Cirurgia",
       shortLabel: "Cirurgia",
       overviewCacheKey: "cirurgia",
-      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718dc",
+      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718dd",
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)
@@ -360,7 +366,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Preventiva",
       shortLabel: "Preventiva",
       overviewCacheKey: "preventiva",
-      overviewUrl: "data/stats-preventiva-geral.json?v=20260718dc",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718dd",
       countNoun: "Preventiva",
       openRoot: () => aprovaOpenPreventiva(),
       openModule: id => aprovaOpenPreventivaModule(id)
@@ -373,7 +379,7 @@ function aprovaRichSpecialtyMeta (specialty) {
         label: "Clínica médica",
         shortLabel: "Clínica médica",
         overviewCacheKey: "clinica",
-        overviewUrl: "data/stats-clinica-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-clinica-geral.json?v=20260718dd",
         countNoun: "Clínica médica",
         openRoot: () => aprovaOpenClinica(),
         openModule: id => aprovaOpenClinicaModule(id)
@@ -383,61 +389,61 @@ function aprovaRichSpecialtyMeta (specialty) {
       reumatologia: {
         shortLabel: "Reumatologia",
         overviewCacheKey: "reumatologia",
-        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718dd",
         countNoun: "Reumatologia"
       },
       psiquiatria: {
         shortLabel: "Psiquiatria",
         overviewCacheKey: "psiquiatria",
-        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718dd",
         countNoun: "Psiquiatria"
       },
       pneumologia: {
         shortLabel: "Pneumologia",
         overviewCacheKey: "pneumologia",
-        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718dd",
         countNoun: "Pneumologia"
       },
       neurologia: {
         shortLabel: "Neurologia",
         overviewCacheKey: "neurologia",
-        overviewUrl: "data/stats-neurologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-neurologia-geral.json?v=20260718dd",
         countNoun: "Neurologia"
       },
       nefrologia: {
         shortLabel: "Nefrologia",
         overviewCacheKey: "nefrologia",
-        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718dd",
         countNoun: "Nefrologia"
       },
       infectologia: {
         shortLabel: "Infectologia",
         overviewCacheKey: "infectologia",
-        overviewUrl: "data/stats-infectologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-infectologia-geral.json?v=20260718dd",
         countNoun: "Infectologia"
       },
       hepatologia: {
         shortLabel: "Hepatologia",
         overviewCacheKey: "hepatologia",
-        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718dd",
         countNoun: "Hepatologia"
       },
       hematologia: {
         shortLabel: "Hematologia",
         overviewCacheKey: "hematologia",
-        overviewUrl: "data/stats-hematologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-hematologia-geral.json?v=20260718dd",
         countNoun: "Hematologia"
       },
       endocrinologia: {
         shortLabel: "Endocrinologia",
         overviewCacheKey: "endocrinologia",
-        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718dd",
         countNoun: "Endocrinologia"
       },
       cardiologia: {
         shortLabel: "Cardiologia",
         overviewCacheKey: "cardiologia",
-        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718dc",
+        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718dd",
         countNoun: "Cardiologia"
       }
     };
@@ -458,7 +464,7 @@ function aprovaRichSpecialtyMeta (specialty) {
     label: "Pediatria",
     shortLabel: "Pediatria",
     overviewCacheKey: "pediatria",
-    overviewUrl: "data/stats-pediatria-geral.json?v=20260718dc",
+    overviewUrl: "data/stats-pediatria-geral.json?v=20260718dd",
     countNoun: "Pediatria",
     openRoot: () => aprovaOpenPediatria(),
     openModule: id => aprovaOpenPediatriaModule(id)

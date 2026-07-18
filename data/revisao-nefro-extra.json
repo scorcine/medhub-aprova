@@ -5,11 +5,11 @@
     {
       "id": "geral",
       "label": "Brasil",
-      "kicker": "Estatística geral",
+      "kicker": "Síntese 2024–2026",
       "blurb": "Média R1.",
-      "verdict": "Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3).",
+      "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3).",
       "foco": "Síndrome nefrótica · GNA · Diferencial nefrítico/nefrótico",
-      "estilo": "Visão geral",
+      "estilo": "Síntese 2024–2026",
       "priorities": [
         {
           "tema": "Síndrome nefrótica",
@@ -51,7 +51,130 @@
       ],
       "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
       "sourceType": "sintese",
-      "source": "Síntese de padrões das principais provas R1 para este tema.",
+      "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência).",
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 30.9
+            },
+            {
+              "tema": "GNA pós-estreptocócica",
+              "pct": 27.9
+            },
+            {
+              "tema": "Complicações da SN",
+              "pct": 22.5
+            },
+            {
+              "tema": "Quando biopsiar",
+              "pct": 18.7
+            }
+          ],
+          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3). · ciclo 2024.",
+          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "GNA pós-estreptocócica",
+              "pct": 28.6
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 28
+            },
+            {
+              "tema": "Complicações da SN",
+              "pct": 24
+            },
+            {
+              "tema": "Quando biopsiar",
+              "pct": 19.4
+            }
+          ],
+          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3). · ciclo 2025.",
+          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "GNA pós-estreptocócica",
+              "pct": 26.7
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 26.5
+            },
+            {
+              "tema": "Complicações da SN",
+              "pct": 25.5
+            },
+            {
+              "tema": "Quando biopsiar",
+              "pct": 21.3
+            }
+          ],
+          "verdict": "Use Geral Brasil se ainda não definiu a prova: é a média ponderada do ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas). Depois refine pela banca escolhida. Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3). · ciclo 2026.",
+          "source": "Síntese ponderada ciclo 2024–2026 (Enare/Enamed + USP/UNIFESP + AMP e correlatas de alto volume/concorrência). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "~87 mil inscritos · 2025",
+      "blurb": "Média R1.",
+      "verdict": "Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3).",
+      "foco": "Síndrome nefrótica · GNA · Diferencial nefrítico/nefrótico",
+      "estilo": "Levantamento Enare",
+      "priorities": [
+        {
+          "tema": "Síndrome nefrótica",
+          "pct": 28.4
+        },
+        {
+          "tema": "GNA pós-estreptocócica",
+          "pct": 27.2
+        },
+        {
+          "tema": "Complicações da SN",
+          "pct": 23.7
+        },
+        {
+          "tema": "Quando biopsiar",
+          "pct": 20.7
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Definição + prednisona."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 e latência."
+        },
+        {
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Peritonite e trombose."
+        }
+      ],
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
+      "sourceType": "levantamento",
+      "source": "Estimativa Enare · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de geral).",
+      "featured": false,
       "byYear": {
         "2024": {
           "priorities": [
@@ -73,7 +196,7 @@
             }
           ],
           "verdict": "Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3). · ciclo 2024.",
-          "source": "Síntese de padrões das principais provas R1 para este tema. · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "source": "Estimativa Enare · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de geral). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
         "2025": {
@@ -96,7 +219,7 @@
             }
           ],
           "verdict": "Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3). · ciclo 2025.",
-          "source": "Síntese de padrões das principais provas R1 para este tema. · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "source": "Estimativa Enare · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de geral). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
         "2026": {
@@ -119,7 +242,7 @@
             }
           ],
           "verdict": "Além de ITU, as bancas cobram muito SN (lesões mínimas/corticoide) e GNA pós-estreptocócica (C3). · ciclo 2026.",
-          "source": "Síntese de padrões das principais provas R1 para este tema. · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "source": "Estimativa Enare · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de geral). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
       }
@@ -127,10 +250,10 @@
     {
       "id": "enamed",
       "label": "Enamed",
-      "kicker": "Nacional · acesso Enare",
+      "kicker": "Nacional · acesso Enare · 2024–2026",
       "featured": true,
       "blurb": "Padrão nacional INEP/Ebserh.",
-      "verdict": "SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial.",
+      "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial.",
       "foco": "Síndrome nefrótica · GNA",
       "estilo": "Levantamento / padrão Enamed-Enare",
       "sourceType": "levantamento",
@@ -179,7 +302,7 @@
               "pct": 43.5
             }
           ],
-          "verdict": "SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial. · ciclo 2024.",
+          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial. · ciclo 2024.",
           "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo. · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
@@ -194,7 +317,7 @@
               "pct": 46.6
             }
           ],
-          "verdict": "SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial. · ciclo 2025.",
+          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial. · ciclo 2025.",
           "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo. · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
@@ -209,7 +332,7 @@
               "pct": 46.2
             }
           ],
-          "verdict": "SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial. · ciclo 2026.",
+          "verdict": "Estude como Enamed: perfil generalista nacional — o que o formando encontra no dia a dia e no acesso direto Enare. SN e GNA caem como clássicos de clínica pediátrica; Enamed prefere reconhecimento e conduta inicial. · ciclo 2026.",
           "source": "Padrão Enamed/Enare (família INEP) aplicado aos subtemas deste grupo. · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
@@ -218,9 +341,9 @@
     {
       "id": "usp",
       "label": "USP",
-      "kicker": "Prova específica",
+      "kicker": "Alta concorrência · 2024–2026",
       "blurb": "Casos.",
-      "verdict": "USP: SN com indicação de biópsia e GNA com complementos.",
+      "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. USP: SN com indicação de biópsia e GNA com complementos.",
       "foco": "SN · Biópsia · GNA",
       "estilo": "Caso",
       "priorities": [
@@ -277,7 +400,7 @@
               "pct": 26.5
             }
           ],
-          "verdict": "USP: SN com indicação de biópsia e GNA com complementos. · ciclo 2024.",
+          "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. USP: SN com indicação de biópsia e GNA com complementos. · ciclo 2024.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
@@ -296,7 +419,7 @@
               "pct": 28.6
             }
           ],
-          "verdict": "USP: SN com indicação de biópsia e GNA com complementos. · ciclo 2025.",
+          "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. USP: SN com indicação de biópsia e GNA com complementos. · ciclo 2025.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
@@ -315,7 +438,7 @@
               "pct": 31.1
             }
           ],
-          "verdict": "USP: SN com indicação de biópsia e GNA com complementos. · ciclo 2026.",
+          "verdict": "Estude como USP: fisiopatologia, critérios e diferenciais — prova densa; foque mecanismo + indicação. USP: SN com indicação de biópsia e GNA com complementos. · ciclo 2026.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
@@ -324,9 +447,9 @@
     {
       "id": "unifesp",
       "label": "UNIFESP",
-      "kicker": "Prova específica",
+      "kicker": "Alta concorrência · 2024–2026",
       "blurb": "Protocolo.",
-      "verdict": "Critérios diagnósticos e conduta inicial.",
+      "verdict": "Estude como UNIFESP: conduta e guidelines com números; bom equilíbrio entre clínica e protocolo. Critérios diagnósticos e conduta inicial.",
       "foco": "Definições · Corticoide · C3",
       "estilo": "Protocolo",
       "priorities": [
@@ -383,7 +506,7 @@
               "pct": 27.1
             }
           ],
-          "verdict": "Critérios diagnósticos e conduta inicial. · ciclo 2024.",
+          "verdict": "Estude como UNIFESP: conduta e guidelines com números; bom equilíbrio entre clínica e protocolo. Critérios diagnósticos e conduta inicial. · ciclo 2024.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
@@ -402,7 +525,7 @@
               "pct": 31.4
             }
           ],
-          "verdict": "Critérios diagnósticos e conduta inicial. · ciclo 2025.",
+          "verdict": "Estude como UNIFESP: conduta e guidelines com números; bom equilíbrio entre clínica e protocolo. Critérios diagnósticos e conduta inicial. · ciclo 2025.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
@@ -421,8 +544,495 @@
               "pct": 32.9
             }
           ],
-          "verdict": "Critérios diagnósticos e conduta inicial. · ciclo 2026.",
+          "verdict": "Estude como UNIFESP: conduta e guidelines com números; bom equilíbrio entre clínica e protocolo. Critérios diagnósticos e conduta inicial. · ciclo 2026.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "revalida",
+      "label": "Revalida",
+      "kicker": "INEP · alto volume",
+      "featured": false,
+      "blurb": "Estudo dirigido · Revalida · APS · urgências · conduta prática",
+      "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "APS · urgências · conduta prática",
+      "estilo": "Estimativa INEP/Revalida",
+      "sourceType": "estimativa",
+      "source": "Estimativa Revalida · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "Síndrome nefrótica",
+          "pct": 57.2
+        },
+        {
+          "tema": "GNA / nefrítica",
+          "pct": 42.8
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Definição + prednisona."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 e latência."
+        },
+        {
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Peritonite e trombose."
+        }
+      ],
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 58.7
+            },
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 41.3
+            }
+          ],
+          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Revalida · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 55.6
+            },
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 44.4
+            }
+          ],
+          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Revalida · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 56
+            },
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 44
+            }
+          ],
+          "verdict": "Estude como Revalida: APS, crônicas e urgências básicas com conduta prática — menos terciário e menos “pegadinha” laboratorial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Revalida · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "amp",
+      "label": "AMP",
+      "kicker": "Paraná · alto volume",
+      "featured": false,
+      "blurb": "Estudo dirigido · AMP · Clássicos R1 · critérios · conduta",
+      "verdict": "Estude como AMP: clássicos de R1 que se repetem — critérios diagnósticos, condutas e temas “prova tradicional”. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Clássicos R1 · critérios · conduta",
+      "estilo": "Estimativa clássica R1",
+      "sourceType": "estimativa",
+      "source": "Estimativa AMP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "GNA / nefrítica",
+          "pct": 53.2
+        },
+        {
+          "tema": "Síndrome nefrótica",
+          "pct": 46.8
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Definição + prednisona."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 e latência."
+        },
+        {
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Peritonite e trombose."
+        }
+      ],
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 54.8
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 45.2
+            }
+          ],
+          "verdict": "Estude como AMP: clássicos de R1 que se repetem — critérios diagnósticos, condutas e temas “prova tradicional”. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa AMP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 51.6
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 48.4
+            }
+          ],
+          "verdict": "Estude como AMP: clássicos de R1 que se repetem — critérios diagnósticos, condutas e temas “prova tradicional”. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa AMP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 52
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 48
+            }
+          ],
+          "verdict": "Estude como AMP: clássicos de R1 que se repetem — critérios diagnósticos, condutas e temas “prova tradicional”. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa AMP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "santa-casa",
+      "label": "Santa Casa SP",
+      "kicker": "Altíssima concorrência",
+      "blurb": "Estudo dirigido · Santa Casa SP · Fisiopat · critérios · diferenciais",
+      "verdict": "Estude como Santa Casa SP: prova densa e concorrida — fisiopatologia, critérios e diferenciais; cobre bem o núcleo clínico-cirúrgico clássico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · diferenciais",
+      "estilo": "Estimativa institucional SP",
+      "priorities": [
+        {
+          "tema": "SN / biópsia",
+          "pct": 39.6
+        },
+        {
+          "tema": "GNA",
+          "pct": 34.3
+        },
+        {
+          "tema": "Complicações",
+          "pct": 26.1
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Quando NÃO empirizar só corticoide."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 baixa transitória."
+        },
+        {
+          "titulo": "Sessão 3 · Infecção",
+          "texto": "Pneumococo na SN."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa Santa Casa SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp).",
+      "featured": false,
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 41.9
+            },
+            {
+              "tema": "GNA",
+              "pct": 34.1
+            },
+            {
+              "tema": "Complicações",
+              "pct": 24
+            }
+          ],
+          "verdict": "Estude como Santa Casa SP: prova densa e concorrida — fisiopatologia, critérios e diferenciais; cobre bem o núcleo clínico-cirúrgico clássico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Santa Casa SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 38.4
+            },
+            {
+              "tema": "GNA",
+              "pct": 35.5
+            },
+            {
+              "tema": "Complicações",
+              "pct": 26.1
+            }
+          ],
+          "verdict": "Estude como Santa Casa SP: prova densa e concorrida — fisiopatologia, critérios e diferenciais; cobre bem o núcleo clínico-cirúrgico clássico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Santa Casa SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 37.5
+            },
+            {
+              "tema": "GNA",
+              "pct": 34.1
+            },
+            {
+              "tema": "Complicações",
+              "pct": 28.4
+            }
+          ],
+          "verdict": "Estude como Santa Casa SP: prova densa e concorrida — fisiopatologia, critérios e diferenciais; cobre bem o núcleo clínico-cirúrgico clássico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Santa Casa SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "sirio",
+      "label": "Sírio-Libanês",
+      "kicker": "Alta concorrência · privada",
+      "blurb": "Estudo dirigido · Sírio-Libanês · Guideline · metas · conduta hospitalar",
+      "verdict": "Estude como Sírio-Libanês: guideline atualizado, números de meta/dose e conduta hospitalar — perfil próximo a instituições privadas de alta complexidade. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Guideline · metas · conduta hospitalar",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Tratamento inicial",
+          "pct": 48.1
+        },
+        {
+          "tema": "C3",
+          "pct": 26.2
+        },
+        {
+          "tema": "Definição SN/GNA",
+          "pct": 25.7
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Números",
+          "texto": "Proteinúria e albumina."
+        },
+        {
+          "titulo": "Sessão 2 · Conduta",
+          "texto": "Prednisona vs suporte na GNA."
+        },
+        {
+          "titulo": "Sessão 3 · Seguimento",
+          "texto": "C3 em 6–8 semanas."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa Sírio-Libanês · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de unifesp).",
+      "featured": false,
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Tratamento inicial",
+              "pct": 48.4
+            },
+            {
+              "tema": "Definição SN/GNA",
+              "pct": 26.9
+            },
+            {
+              "tema": "C3",
+              "pct": 24.7
+            }
+          ],
+          "verdict": "Estude como Sírio-Libanês: guideline atualizado, números de meta/dose e conduta hospitalar — perfil próximo a instituições privadas de alta complexidade. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Sírio-Libanês · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de unifesp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Tratamento inicial",
+              "pct": 46.9
+            },
+            {
+              "tema": "C3",
+              "pct": 27.3
+            },
+            {
+              "tema": "Definição SN/GNA",
+              "pct": 25.8
+            }
+          ],
+          "verdict": "Estude como Sírio-Libanês: guideline atualizado, números de meta/dose e conduta hospitalar — perfil próximo a instituições privadas de alta complexidade. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Sírio-Libanês · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de unifesp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Tratamento inicial",
+              "pct": 45.7
+            },
+            {
+              "tema": "Definição SN/GNA",
+              "pct": 28.1
+            },
+            {
+              "tema": "C3",
+              "pct": 26.2
+            }
+          ],
+          "verdict": "Estude como Sírio-Libanês: guideline atualizado, números de meta/dose e conduta hospitalar — perfil próximo a instituições privadas de alta complexidade. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Sírio-Libanês · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de unifesp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "iamspe",
+      "label": "IAMSPE",
+      "kicker": "HSPE · alta demanda SP",
+      "featured": false,
+      "blurb": "Estudo dirigido · IAMSPE · APS · urgências · crônicas SP",
+      "verdict": "Estude como IAMSPE/HSPE: serviço público de SP — APS + urgências + crônicas; forte em protocolo assistencial e clínica do dia a dia. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "APS · urgências · crônicas SP",
+      "estilo": "Estimativa APS/institucional",
+      "sourceType": "estimativa",
+      "source": "Estimativa IAMSPE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "GNA / nefrítica",
+          "pct": 51.8
+        },
+        {
+          "tema": "Síndrome nefrótica",
+          "pct": 48.2
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Definição + prednisona."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 e latência."
+        },
+        {
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Peritonite e trombose."
+        }
+      ],
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 53.4
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 46.6
+            }
+          ],
+          "verdict": "Estude como IAMSPE/HSPE: serviço público de SP — APS + urgências + crônicas; forte em protocolo assistencial e clínica do dia a dia. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa IAMSPE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 50.2
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 49.8
+            }
+          ],
+          "verdict": "Estude como IAMSPE/HSPE: serviço público de SP — APS + urgências + crônicas; forte em protocolo assistencial e clínica do dia a dia. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa IAMSPE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 50.6
+            },
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 49.4
+            }
+          ],
+          "verdict": "Estude como IAMSPE/HSPE: serviço público de SP — APS + urgências + crônicas; forte em protocolo assistencial e clínica do dia a dia. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa IAMSPE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
       }
@@ -430,11 +1040,11 @@
     {
       "id": "sus-sp",
       "label": "SUS-SP",
-      "kicker": "Prova específica",
-      "blurb": "APS.",
-      "verdict": "Reconhecer edema nefrótico vs nefrítico e encaminhar.",
-      "foco": "Reconhecer SN/GNA · Encaminhar",
-      "estilo": "APS",
+      "kicker": "APS São Paulo",
+      "blurb": "Estudo dirigido · SUS-SP · APS · crônicas · protocolos MS",
+      "verdict": "Estude como SUS-SP: atenção primária e protocolos MS — crônicas, rastreamento e manejo no posto, com menos peso terciário. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "APS · crônicas · protocolos MS",
+      "estilo": "Estimativa APS",
       "priorities": [
         {
           "tema": "Reconhecer síndromes",
@@ -489,7 +1099,7 @@
               "pct": 25.9
             }
           ],
-          "verdict": "Reconhecer edema nefrótico vs nefrítico e encaminhar. · ciclo 2024.",
+          "verdict": "Estude como SUS-SP: atenção primária e protocolos MS — crônicas, rastreamento e manejo no posto, com menos peso terciário. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
@@ -508,7 +1118,7 @@
               "pct": 28
             }
           ],
-          "verdict": "Reconhecer edema nefrótico vs nefrítico e encaminhar. · ciclo 2025.",
+          "verdict": "Estude como SUS-SP: atenção primária e protocolos MS — crônicas, rastreamento e manejo no posto, com menos peso terciário. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
@@ -527,8 +1137,527 @@
               "pct": 30.5
             }
           ],
-          "verdict": "Reconhecer edema nefrótico vs nefrítico e encaminhar. · ciclo 2026.",
+          "verdict": "Estude como SUS-SP: atenção primária e protocolos MS — crônicas, rastreamento e manejo no posto, com menos peso terciário. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Alta concorrência · SP",
+      "blurb": "Estudo dirigido · Unicamp · Diferencial · protocolo · nuance",
+      "verdict": "Estude como Unicamp: alta concorrência — diferencial diagnóstico, protocolo e nuance numérica. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Diferencial · protocolo · nuance",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "SN / biópsia",
+          "pct": 37.4
+        },
+        {
+          "tema": "GNA",
+          "pct": 32.1
+        },
+        {
+          "tema": "Complicações",
+          "pct": 30.5
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Quando NÃO empirizar só corticoide."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 baixa transitória."
+        },
+        {
+          "titulo": "Sessão 3 · Infecção",
+          "texto": "Pneumococo na SN."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa Unicamp · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp).",
+      "featured": false,
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 39.8
+            },
+            {
+              "tema": "GNA",
+              "pct": 32
+            },
+            {
+              "tema": "Complicações",
+              "pct": 28.2
+            }
+          ],
+          "verdict": "Estude como Unicamp: alta concorrência — diferencial diagnóstico, protocolo e nuance numérica. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa Unicamp · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 36.3
+            },
+            {
+              "tema": "GNA",
+              "pct": 33.2
+            },
+            {
+              "tema": "Complicações",
+              "pct": 30.5
+            }
+          ],
+          "verdict": "Estude como Unicamp: alta concorrência — diferencial diagnóstico, protocolo e nuance numérica. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa Unicamp · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 35.3
+            },
+            {
+              "tema": "Complicações",
+              "pct": 33
+            },
+            {
+              "tema": "GNA",
+              "pct": 31.7
+            }
+          ],
+          "verdict": "Estude como Unicamp: alta concorrência — diferencial diagnóstico, protocolo e nuance numérica. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa Unicamp · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "puc-sp",
+      "label": "PUC-SP",
+      "kicker": "Alta concorrência · SP",
+      "blurb": "Estudo dirigido · PUC-SP · Clássicos · conduta · critérios",
+      "verdict": "Estude como PUC-SP: prova institucional concorrida — clássicos clínicos + conduta; bom equilíbrio entre critério e prática. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Clássicos · conduta · critérios",
+      "estilo": "Estimativa institucional",
+      "priorities": [
+        {
+          "tema": "SN / biópsia",
+          "pct": 38.3
+        },
+        {
+          "tema": "GNA",
+          "pct": 33
+        },
+        {
+          "tema": "Complicações",
+          "pct": 28.7
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Quando NÃO empirizar só corticoide."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 baixa transitória."
+        },
+        {
+          "titulo": "Sessão 3 · Infecção",
+          "texto": "Pneumococo na SN."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa PUC-SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp).",
+      "featured": false,
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 40.6
+            },
+            {
+              "tema": "GNA",
+              "pct": 32.9
+            },
+            {
+              "tema": "Complicações",
+              "pct": 26.5
+            }
+          ],
+          "verdict": "Estude como PUC-SP: prova institucional concorrida — clássicos clínicos + conduta; bom equilíbrio entre critério e prática. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa PUC-SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 37.1
+            },
+            {
+              "tema": "GNA",
+              "pct": 34.2
+            },
+            {
+              "tema": "Complicações",
+              "pct": 28.7
+            }
+          ],
+          "verdict": "Estude como PUC-SP: prova institucional concorrida — clássicos clínicos + conduta; bom equilíbrio entre critério e prática. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa PUC-SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 36.1
+            },
+            {
+              "tema": "GNA",
+              "pct": 32.7
+            },
+            {
+              "tema": "Complicações",
+              "pct": 31.2
+            }
+          ],
+          "verdict": "Estude como PUC-SP: prova institucional concorrida — clássicos clínicos + conduta; bom equilíbrio entre critério e prática. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa PUC-SP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Institucional MG",
+      "blurb": "Estudo dirigido · UFMG · Fisiopat · critérios · lab",
+      "verdict": "Estude como UFMG: prova analítica — fisiopatologia, critérios e lab; menos “decorar guideline” e mais mecanismo. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Fisiopat · critérios · lab",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "SN / biópsia",
+          "pct": 39.7
+        },
+        {
+          "tema": "GNA",
+          "pct": 34.3
+        },
+        {
+          "tema": "Complicações",
+          "pct": 26
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Quando NÃO empirizar só corticoide."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 baixa transitória."
+        },
+        {
+          "titulo": "Sessão 3 · Infecção",
+          "texto": "Pneumococo na SN."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFMG · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp).",
+      "featured": false,
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 42
+            },
+            {
+              "tema": "GNA",
+              "pct": 34.1
+            },
+            {
+              "tema": "Complicações",
+              "pct": 23.9
+            }
+          ],
+          "verdict": "Estude como UFMG: prova analítica — fisiopatologia, critérios e lab; menos “decorar guideline” e mais mecanismo. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFMG · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 38.5
+            },
+            {
+              "tema": "GNA",
+              "pct": 35.5
+            },
+            {
+              "tema": "Complicações",
+              "pct": 26
+            }
+          ],
+          "verdict": "Estude como UFMG: prova analítica — fisiopatologia, critérios e lab; menos “decorar guideline” e mais mecanismo. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFMG · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 37.6
+            },
+            {
+              "tema": "GNA",
+              "pct": 34.1
+            },
+            {
+              "tema": "Complicações",
+              "pct": 28.3
+            }
+          ],
+          "verdict": "Estude como UFMG: prova analítica — fisiopatologia, critérios e lab; menos “decorar guideline” e mais mecanismo. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFMG · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "HCPA / Sul",
+      "blurb": "Estudo dirigido · UFRGS · Critérios · protocolo · conduta",
+      "verdict": "Estude como UFRGS/HCPA: equilíbrio entre critérios e conduta, com boa cobrança de protocolo assistencial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Critérios · protocolo · conduta",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "GNA",
+          "pct": 37
+        },
+        {
+          "tema": "SN / biópsia",
+          "pct": 36.1
+        },
+        {
+          "tema": "Complicações",
+          "pct": 26.9
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Quando NÃO empirizar só corticoide."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 baixa transitória."
+        },
+        {
+          "titulo": "Sessão 3 · Infecção",
+          "texto": "Pneumococo na SN."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa UFRGS · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp).",
+      "featured": false,
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "GNA",
+              "pct": 39.2
+            },
+            {
+              "tema": "SN / biópsia",
+              "pct": 36
+            },
+            {
+              "tema": "Complicações",
+              "pct": 24.8
+            }
+          ],
+          "verdict": "Estude como UFRGS/HCPA: equilíbrio entre critérios e conduta, com boa cobrança de protocolo assistencial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa UFRGS · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 37.3
+            },
+            {
+              "tema": "GNA",
+              "pct": 35.9
+            },
+            {
+              "tema": "Complicações",
+              "pct": 26.8
+            }
+          ],
+          "verdict": "Estude como UFRGS/HCPA: equilíbrio entre critérios e conduta, com boa cobrança de protocolo assistencial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa UFRGS · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "SN / biópsia",
+              "pct": 35.8
+            },
+            {
+              "tema": "GNA",
+              "pct": 35
+            },
+            {
+              "tema": "Complicações",
+              "pct": 29.2
+            }
+          ],
+          "verdict": "Estude como UFRGS/HCPA: equilíbrio entre critérios e conduta, com boa cobrança de protocolo assistencial. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa UFRGS · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de usp). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "consesp",
+      "label": "CONSESP",
+      "kicker": "Padrão da banca · várias instituições",
+      "featured": false,
+      "blurb": "Estudo dirigido · CONSESP · Objetiva · clínica prática · urgências",
+      "verdict": "Estude o padrão CONSESP (vale para as várias instituições que usam a banca): prova objetiva direta, clínica prática e urgências; foque no que se repete no estilo CONSESP, sem decorar edital de hospital específico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Objetiva · clínica prática · urgências",
+      "estilo": "Estimativa padrão CONSESP",
+      "sourceType": "estimativa",
+      "source": "Estimativa CONSESP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed).",
+      "priorities": [
+        {
+          "tema": "Síndrome nefrótica",
+          "pct": 57.1
+        },
+        {
+          "tema": "GNA / nefrítica",
+          "pct": 42.9
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · SN",
+          "texto": "Definição + prednisona."
+        },
+        {
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 e latência."
+        },
+        {
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Peritonite e trombose."
+        }
+      ],
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 58.6
+            },
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 41.4
+            }
+          ],
+          "verdict": "Estude o padrão CONSESP (vale para as várias instituições que usam a banca): prova objetiva direta, clínica prática e urgências; foque no que se repete no estilo CONSESP, sem decorar edital de hospital específico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa CONSESP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 55.5
+            },
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 44.5
+            }
+          ],
+          "verdict": "Estude o padrão CONSESP (vale para as várias instituições que usam a banca): prova objetiva direta, clínica prática e urgências; foque no que se repete no estilo CONSESP, sem decorar edital de hospital específico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa CONSESP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Síndrome nefrótica",
+              "pct": 55.9
+            },
+            {
+              "tema": "GNA / nefrítica",
+              "pct": 44.1
+            }
+          ],
+          "verdict": "Estude o padrão CONSESP (vale para as várias instituições que usam a banca): prova objetiva direta, clínica prática e urgências; foque no que se repete no estilo CONSESP, sem decorar edital de hospital específico. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa CONSESP · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
       }
@@ -536,11 +1665,11 @@
     {
       "id": "sus-ba",
       "label": "SUS-BA",
-      "kicker": "Prova específica",
-      "blurb": "Conceito.",
-      "verdict": "Conceito clássico SN e GNA.",
-      "foco": "SN · GNA",
-      "estilo": "Conceito",
+      "kicker": "APS + endemias",
+      "blurb": "Estudo dirigido · SUS-BA · Infecto · endemias · desidratação",
+      "verdict": "Estude como SUS-BA: APS com infectologia/endemias (dengue, parasitoses) e desidratação — perfil diferente do SUS-SP. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Infecto · endemias · desidratação",
+      "estilo": "Estimativa regional",
       "priorities": [
         {
           "tema": "SN",
@@ -595,7 +1724,7 @@
               "pct": 28.1
             }
           ],
-          "verdict": "Conceito clássico SN e GNA. · ciclo 2024.",
+          "verdict": "Estude como SUS-BA: APS com infectologia/endemias (dengue, parasitoses) e desidratação — perfil diferente do SUS-SP. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
@@ -614,7 +1743,7 @@
               "pct": 30.3
             }
           ],
-          "verdict": "Conceito clássico SN e GNA. · ciclo 2025.",
+          "verdict": "Estude como SUS-BA: APS com infectologia/endemias (dengue, parasitoses) e desidratação — perfil diferente do SUS-SP. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
@@ -633,32 +1762,31 @@
               "pct": 32.9
             }
           ],
-          "verdict": "Conceito clássico SN e GNA. · ciclo 2026.",
+          "verdict": "Estude como SUS-BA: APS com infectologia/endemias (dengue, parasitoses) e desidratação — perfil diferente do SUS-SP. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
       }
     },
     {
-      "id": "einstein",
-      "label": "Einstein",
-      "kicker": "Prova específica",
-      "blurb": "Casos.",
-      "verdict": "Complicações da SN e GNA atípica.",
-      "foco": "Complicações · Biópsia · C3 persistente",
-      "estilo": "Caso",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "kicker": "Regional NE",
+      "featured": false,
+      "blurb": "Estudo dirigido · SES-PE · Infecto regional · APS · desidratação",
+      "verdict": "Estude como SES-PE: regional Nordeste — infecto, desidratação e APS; próximo ao SUS-BA. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Infecto regional · APS · desidratação",
+      "estilo": "Estimativa regional",
+      "sourceType": "estimativa",
+      "source": "Estimativa SES-PE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed).",
       "priorities": [
         {
-          "tema": "Complicações SN",
-          "pct": 35.8
+          "tema": "Síndrome nefrótica",
+          "pct": 65.1
         },
         {
-          "tema": "Biópsia",
-          "pct": 33.2
-        },
-        {
-          "tema": "GNA",
-          "pct": 31
+          "tema": "GNA / nefrítica",
+          "pct": 34.9
         }
       ],
       "deckOrder": [
@@ -670,183 +1798,63 @@
       ],
       "sessoes": [
         {
-          "titulo": "Sessão 1 · Peritonite",
-          "texto": "Pneumococo."
+          "titulo": "Sessão 1 · SN",
+          "texto": "Definição + prednisona."
         },
         {
-          "titulo": "Sessão 2 · Trombose",
-          "texto": "Risco."
+          "titulo": "Sessão 2 · GNA",
+          "texto": "C3 e latência."
         },
         {
-          "titulo": "Sessão 3 · C3",
-          "texto": "Se não normalizar."
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Peritonite e trombose."
         }
       ],
-      "lacuna": "—",
-      "sourceType": "estimativa",
-      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital).",
+      "lacuna": "ITU/RVU está no módulo Nefro/Infecto/Cardio (Ped6).",
       "byYear": {
         "2024": {
           "priorities": [
             {
-              "tema": "Complicações SN",
-              "pct": 38.1
+              "tema": "Síndrome nefrótica",
+              "pct": 66.5
             },
             {
-              "tema": "Biópsia",
-              "pct": 33.2
-            },
-            {
-              "tema": "GNA",
-              "pct": 28.7
+              "tema": "GNA / nefrítica",
+              "pct": 33.5
             }
           ],
-          "verdict": "Complicações da SN e GNA atípica. · ciclo 2024.",
-          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "verdict": "Estude como SES-PE: regional Nordeste — infecto, desidratação e APS; próximo ao SUS-BA. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa SES-PE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
         "2025": {
           "priorities": [
             {
-              "tema": "Complicações SN",
-              "pct": 34.8
+              "tema": "Síndrome nefrótica",
+              "pct": 63.6
             },
             {
-              "tema": "Biópsia",
-              "pct": 34.3
-            },
-            {
-              "tema": "GNA",
-              "pct": 30.9
+              "tema": "GNA / nefrítica",
+              "pct": 36.4
             }
           ],
-          "verdict": "Complicações da SN e GNA atípica. · ciclo 2025.",
-          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "verdict": "Estude como SES-PE: regional Nordeste — infecto, desidratação e APS; próximo ao SUS-BA. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa SES-PE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
         "2026": {
           "priorities": [
             {
-              "tema": "Complicações SN",
-              "pct": 33.7
+              "tema": "Síndrome nefrótica",
+              "pct": 64
             },
             {
-              "tema": "GNA",
-              "pct": 33.5
-            },
-            {
-              "tema": "Biópsia",
-              "pct": 32.8
+              "tema": "GNA / nefrítica",
+              "pct": 36
             }
           ],
-          "verdict": "Complicações da SN e GNA atípica. · ciclo 2026.",
-          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
-        }
-      }
-    },
-    {
-      "id": "puc",
-      "label": "PUC/Unicamp",
-      "kicker": "Prova específica",
-      "blurb": "Conceito.",
-      "verdict": "Fisiopatologia e critérios.",
-      "foco": "SN · GNA · Complemento",
-      "estilo": "Conceito",
-      "priorities": [
-        {
-          "tema": "SN",
-          "pct": 34.7
-        },
-        {
-          "tema": "GNA / C3",
-          "pct": 33.9
-        },
-        {
-          "tema": "Diferencial",
-          "pct": 31.4
-        }
-      ],
-      "deckOrder": [
-        "nef-sindromes"
-      ],
-      "checklist": [
-        "sn",
-        "gna"
-      ],
-      "sessoes": [
-        {
-          "titulo": "Sessão 1 · Definições",
-          "texto": "Lab."
-        },
-        {
-          "titulo": "Sessão 2 · Histologia",
-          "texto": "Lesões mínimas."
-        },
-        {
-          "titulo": "Sessão 3 · C3",
-          "texto": "Tempo."
-        }
-      ],
-      "lacuna": "—",
-      "sourceType": "estimativa",
-      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital).",
-      "byYear": {
-        "2024": {
-          "priorities": [
-            {
-              "tema": "SN",
-              "pct": 37
-            },
-            {
-              "tema": "GNA / C3",
-              "pct": 33.9
-            },
-            {
-              "tema": "Diferencial",
-              "pct": 29.1
-            }
-          ],
-          "verdict": "Fisiopatologia e critérios. · ciclo 2024.",
-          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
-        },
-        "2025": {
-          "priorities": [
-            {
-              "tema": "GNA / C3",
-              "pct": 35.1
-            },
-            {
-              "tema": "SN",
-              "pct": 33.6
-            },
-            {
-              "tema": "Diferencial",
-              "pct": 31.3
-            }
-          ],
-          "verdict": "Fisiopatologia e critérios. · ciclo 2025.",
-          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
-          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
-        },
-        "2026": {
-          "priorities": [
-            {
-              "tema": "Diferencial",
-              "pct": 33.9
-            },
-            {
-              "tema": "GNA / C3",
-              "pct": 33.5
-            },
-            {
-              "tema": "SN",
-              "pct": 32.6
-            }
-          ],
-          "verdict": "Fisiopatologia e critérios. · ciclo 2026.",
-          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "verdict": "Estude como SES-PE: regional Nordeste — infecto, desidratação e APS; próximo ao SUS-BA. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa SES-PE · Nefrologia · Nefro (síndromes) · revisão R1 · ciclo 2024–2026 (recorte distinto de enamed). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
       }
@@ -854,11 +1862,11 @@
     {
       "id": "ufrj",
       "label": "UFRJ",
-      "kicker": "Prova específica",
-      "blurb": "Conceito.",
-      "verdict": "Clássicos de prova: SN e GNA.",
-      "foco": "SN · GNA",
-      "estilo": "Conceito",
+      "kicker": "Institucional RJ",
+      "blurb": "Estudo dirigido · UFRJ · Fundamentos · diagnóstico · clássicos",
+      "verdict": "Estude como UFRJ: fundamentos e casos clássicos — diagnóstico de base e urgências comuns. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Fundamentos · diagnóstico · clássicos",
+      "estilo": "Estimativa por padrão recorrente",
       "priorities": [
         {
           "tema": "SN",
@@ -913,7 +1921,7 @@
               "pct": 25.1
             }
           ],
-          "verdict": "Clássicos de prova: SN e GNA. · ciclo 2024.",
+          "verdict": "Estude como UFRJ: fundamentos e casos clássicos — diagnóstico de base e urgências comuns. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
         },
@@ -932,7 +1940,7 @@
               "pct": 27.1
             }
           ],
-          "verdict": "Clássicos de prova: SN e GNA. · ciclo 2025.",
+          "verdict": "Estude como UFRJ: fundamentos e casos clássicos — diagnóstico de base e urgências comuns. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
         },
@@ -951,7 +1959,113 @@
               "pct": 29.5
             }
           ],
-          "verdict": "Clássicos de prova: SN e GNA. · ciclo 2026.",
+          "verdict": "Estude como UFRJ: fundamentos e casos clássicos — diagnóstico de base e urgências comuns. Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
+          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
+        }
+      }
+    },
+    {
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Guideline / privada",
+      "blurb": "Estudo dirigido · Einstein · Guideline · conduta · números",
+      "verdict": "Estude como Einstein: guidelines atualizados e conduta com números exatos (metas, doses, indicações). Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo).",
+      "foco": "Guideline · conduta · números",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Complicações SN",
+          "pct": 35.8
+        },
+        {
+          "tema": "Biópsia",
+          "pct": 33.2
+        },
+        {
+          "tema": "GNA",
+          "pct": 31
+        }
+      ],
+      "deckOrder": [
+        "nef-sindromes"
+      ],
+      "checklist": [
+        "sn",
+        "gna"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Peritonite",
+          "texto": "Pneumococo."
+        },
+        {
+          "titulo": "Sessão 2 · Trombose",
+          "texto": "Risco."
+        },
+        {
+          "titulo": "Sessão 3 · C3",
+          "texto": "Se não normalizar."
+        }
+      ],
+      "lacuna": "—",
+      "sourceType": "estimativa",
+      "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital).",
+      "byYear": {
+        "2024": {
+          "priorities": [
+            {
+              "tema": "Complicações SN",
+              "pct": 38.1
+            },
+            {
+              "tema": "Biópsia",
+              "pct": 33.2
+            },
+            {
+              "tema": "GNA",
+              "pct": 28.7
+            }
+          ],
+          "verdict": "Estude como Einstein: guidelines atualizados e conduta com números exatos (metas, doses, indicações). Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2024.",
+          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2024 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2024 (provas R1 / Enare-Enamed e correlatas)."
+        },
+        "2025": {
+          "priorities": [
+            {
+              "tema": "Complicações SN",
+              "pct": 34.8
+            },
+            {
+              "tema": "Biópsia",
+              "pct": 34.3
+            },
+            {
+              "tema": "GNA",
+              "pct": 30.9
+            }
+          ],
+          "verdict": "Estude como Einstein: guidelines atualizados e conduta com números exatos (metas, doses, indicações). Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2025.",
+          "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2025 (estimativa a partir da série 2024–2026).",
+          "note": "Recorte estimado do ciclo 2025 (pico Enare/Enamed e grandes bancas)."
+        },
+        "2026": {
+          "priorities": [
+            {
+              "tema": "Complicações SN",
+              "pct": 33.7
+            },
+            {
+              "tema": "GNA",
+              "pct": 33.5
+            },
+            {
+              "tema": "Biópsia",
+              "pct": 32.8
+            }
+          ],
+          "verdict": "Estude como Einstein: guidelines atualizados e conduta com números exatos (metas, doses, indicações). Estimativa por padrão da prova/banca no ciclo 2024–2026 (não é ranking oficial deste módulo). · ciclo 2026.",
           "source": "Estimativa por padrão recorrente da banca neste tema (não é ranking oficial do edital). · recorte 2026 (estimativa a partir da série 2024–2026).",
           "note": "Recorte estimado do ciclo 2026 (tendência Enare/Enamed + provas institucionais)."
         }
@@ -985,7 +2099,7 @@
     "Protocolos de imunossupressor de 3ª linha"
   ],
   "unitLabel": "% das questões deste tema",
-  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira). Recorte principal: provas 2024–2026.",
+  "note": "Percentuais = participação de cada subtema dentro deste grupo (não da prova inteira). Recorte principal: provas 2024–2026. Escolha a prova no seletor para alinhar o estudo ao padrão dela.",
   "years": [
     "2024",
     "2025",
