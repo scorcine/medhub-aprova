@@ -2,6 +2,7 @@
  * Fecha lacunas de cobertura Inf1–5 vs capítulos das apostilas.
  * - Inf1: himenolepíase + formas extras da esquistossomose
  * - Inf2: PN/PAVM (bloco grande omitido)
+ * - Inf3: PML · PIL/PINE · HIV-PAH
  * - Inf4: bacteriúria assintomática (gestante)
  */
 const fs = require("fs");
@@ -23,6 +24,19 @@ function addCards(id, cards) {
     n++;
   }
   console.log("+", n, "cards →", id, "(total", d.cards.length + ")");
+}
+
+function upsertCard(id, front, back) {
+  const d = byId.get(id);
+  if (!d) throw new Error("deck missing " + id);
+  const existing = d.cards.find((c) => c.front === front);
+  if (existing) {
+    existing.back = back;
+    console.log("~ updated →", id, "·", front);
+  } else {
+    d.cards.push({ front, back });
+    console.log("+ 1 card →", id, "·", front);
+  }
 }
 
 addCards("infc-tenias", [
@@ -69,6 +83,41 @@ addCards("infc-itu-especiais", [
     back: "Tratar · Cultura de controle 2–4 sem · Se negativa, repetir mensalmente até o parto (alta recorrência)"
   }
 ]);
+
+addCards("infc-hiv-neuro", [
+  {
+    front: "Tríade de déficit neurológico focal na PVHIV?",
+    back: "Neurotoxoplasmose · Leucoencefalopatia multifocal progressiva (PML) · Linfoma primário do SNC"
+  },
+  {
+    front: "PML na aids — ideia?",
+    back: "Leucoencefalopatia multifocal progressiva · Uma das 3 causas principais de déficit focal · DD com toxo (massa/anel) e linfoma"
+  }
+]);
+
+addCards("infc-hiv-fungos", [
+  {
+    front: "Pneumonite intersticial na PVHIV — padrões?",
+    back: "PIL (linfocítica) e PINE (não específica) · PIL típica de crianças; <1% dos adultos com HIV"
+  },
+  {
+    front: "PIL — clínica e conduta?",
+    back: "Infiltração linfocítica difusa · Em geral oligo/assintomática · Imagem: infiltrado intersticial · TARV reverte · Se muito sintomática: curso breve de glicocorticoide"
+  }
+]);
+
+addCards("infc-hiv-sistema", [
+  {
+    front: "HIV-PAH — o que é e prognóstico?",
+    back: "~0,5% das PVHIV · Clínica de HAP (dispneia, fadiga, síncope, cor pulmonale) · TARV sem benefício claro · Sobrevida média ~2 anos após o diagnóstico (apostila)"
+  }
+]);
+
+upsertCard(
+  "infc-hiv-mapa",
+  "Massa cerebral — mapa?",
+  "Múltiplas + gânglios → toxo · Única periventricular anelar → linfoma · Déficit focal sem massa típica: incluir PML no DD · Sempre TARV + conduta específica"
+);
 
 const pavm = {
   id: "infc-pavm",

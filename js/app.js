@@ -228,7 +228,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       infectologia: {
         shortLabel: "Infectologia",
         overviewCacheKey: "infectologia",
-        overviewUrl: "data/stats-infectologia-geral.json?v=20260718bu",
+        overviewUrl: "data/stats-infectologia-geral.json?v=20260718bv",
         countNoun: "Infectologia"
       }
     };

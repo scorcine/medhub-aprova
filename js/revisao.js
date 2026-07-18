@@ -477,109 +477,109 @@ const APROVA_REVISAO_MODULES = {
   },
   "infc-protozoarios": {
     label: "Protozoários intestinais",
-    file: "data/revisao-infc-protozoarios.json?v=20260718bu",
+    file: "data/revisao-infc-protozoarios.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-helmintos": {
     label: "Nematoides intestinais",
-    file: "data/revisao-infc-helmintos.json?v=20260718bu",
+    file: "data/revisao-infc-helmintos.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-cestoides": {
     label: "Tênias · toxocaríase",
-    file: "data/revisao-infc-cestoides.json?v=20260718bu",
+    file: "data/revisao-infc-cestoides.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-esquisto": {
     label: "Esquistossomose",
-    file: "data/revisao-infc-esquisto.json?v=20260718bu",
+    file: "data/revisao-infc-esquisto.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-pac-clinica": {
     label: "PAC · clínica · agentes",
-    file: "data/revisao-infc-pac-clinica.json?v=20260718bu",
+    file: "data/revisao-infc-pac-clinica.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-pac-conduta": {
     label: "PAC · escores · empírico",
-    file: "data/revisao-infc-pac-conduta.json?v=20260718bu",
+    file: "data/revisao-infc-pac-conduta.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-abscesso": {
     label: "Abscesso pulmonar",
-    file: "data/revisao-infc-abscesso.json?v=20260718bu",
+    file: "data/revisao-infc-abscesso.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-antibioticos": {
     label: "Antibióticos",
-    file: "data/revisao-infc-antibioticos.json?v=20260718bu",
+    file: "data/revisao-infc-antibioticos.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-hiv-oi": {
     label: "HIV · OI resp/GI",
-    file: "data/revisao-infc-hiv-oi.json?v=20260718bu",
+    file: "data/revisao-infc-hiv-oi.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-hiv-snc": {
     label: "HIV · SNC · olho",
-    file: "data/revisao-infc-hiv-snc.json?v=20260718bu",
+    file: "data/revisao-infc-hiv-snc.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-hiv-neoplasias": {
     label: "HIV · neoplasias",
-    file: "data/revisao-infc-hiv-neoplasias.json?v=20260718bu",
+    file: "data/revisao-infc-hiv-neoplasias.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-itu": {
     label: "ITU",
-    file: "data/revisao-infc-itu.json?v=20260718bu",
+    file: "data/revisao-infc-itu.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-pele": {
     label: "Pele e partes moles",
-    file: "data/revisao-infc-pele.json?v=20260718bu",
+    file: "data/revisao-infc-pele.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-osteo": {
     label: "Osteomielite",
-    file: "data/revisao-infc-osteo.json?v=20260718bu",
+    file: "data/revisao-infc-osteo.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-dengue": {
     label: "Dengue",
-    file: "data/revisao-infc-dengue.json?v=20260718bu",
+    file: "data/revisao-infc-dengue.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-arbovirus": {
     label: "Chik · Zika · FA",
-    file: "data/revisao-infc-arbovirus.json?v=20260718bu",
+    file: "data/revisao-infc-arbovirus.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-malaria": {
     label: "Malária",
-    file: "data/revisao-infc-malaria.json?v=20260718bu",
+    file: "data/revisao-infc-malaria.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   },
   "infc-tropicais": {
     label: "Lepto · calazar · maculosa",
-    file: "data/revisao-infc-tropicais.json?v=20260718bu",
+    file: "data/revisao-infc-tropicais.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
   }

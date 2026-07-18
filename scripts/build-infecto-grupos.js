@@ -538,7 +538,7 @@ const checklistHiv = {
   snc: {
     tema: "SNC / olho",
     yield: "Alto",
-    pegar: "Toxo múltipla × linfoma única; HAND; CMV ketchup; valganciclovir até CD4>100."
+    pegar: "Toxo×linfoma×PML no déficit focal; HAND; CMV ketchup; valganciclovir até CD4>100."
   },
   neoplasia: {
     tema: "Neoplasias definidoras",
@@ -579,6 +579,7 @@ write(
     oneLiners: [
       "Múltiplas = toxo",
       "Única anelar = linfoma",
+      "Déficit focal: toxo × PML × linfoma",
       "Queijo com ketchup = CMV",
       "Chagas: tripomastigota"
     ]
