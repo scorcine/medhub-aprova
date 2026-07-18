@@ -1,0 +1,316 @@
+const fs = require("fs");
+const path = require("path");
+
+const ids = require("../data/flashcards-cir2.json").map((d) => d.id);
+
+const orderGeral = [
+  "cir2-atls",
+  "cir2-pneumotorax",
+  "cir2-hemotorax",
+  "cir2-coracao-aorta",
+  "cir2-abdome-inicial",
+  "cir2-figado-baco",
+  "cir2-tce",
+  "cir2-gu-pelve",
+  "cir2-damage-control",
+  "cir2-pescoco",
+  "cir2-torax-parede",
+  "cir2-visceras"
+];
+
+const data = {
+  title: "Cir2 · Trauma · ATLS",
+  module: "cir2",
+  profiles: [
+    {
+      id: "geral",
+      label: "Brasil",
+      kicker: "Apostila Cir2",
+      blurb: "Trauma e ATLS — o que mais cai deste volume.",
+      verdict:
+        "No Cir2, o ROI está em ABCDE/choque, pneumotórax hipertensivo, hemotórax maciço, FAST no instável e TCE (Glasgow + epidural). Tamponamento (Beck), pelve/uretra e damage control fecham o bloco de alta rentabilidade.",
+      foco: "ATLS · PNTX/hemotórax · FAST · TCE · Tamponamento",
+      estilo: "Síntese Cir2 × estatística Brasil",
+      priorities: [
+        { tema: "ATLS / choque", pct: 18, n: 18 },
+        { tema: "Trauma de tórax", pct: 18, n: 18 },
+        { tema: "Trauma abdominal / FAST", pct: 16, n: 16 },
+        { tema: "TCE", pct: 14, n: 14 },
+        { tema: "Pelve / GU", pct: 12, n: 12 },
+        { tema: "Controle de danos / SCA", pct: 12, n: 12 },
+        { tema: "Pescoço / vísceras", pct: 10, n: 10 }
+      ],
+      deckOrder: orderGeral,
+      checklist: ["abcde", "pntx", "hemotorax", "fast", "glasgow"],
+      sessoes: [
+        {
+          titulo: "Sessão 1 · Primário + tórax",
+          texto: "ABCDE, classes de choque, PNTX hipertensivo e hemotórax maciço."
+        },
+        {
+          titulo: "Sessão 2 · Abdome + TCE",
+          texto: "FAST no instável, baço/fígado NOM e epidural vs subdural."
+        },
+        {
+          titulo: "Sessão 3 · Pelve + CCD",
+          texto: "Binder, uretra e tríade letal / SCA."
+        }
+      ],
+      lacuna: "Protocolos locais de NOM: saiba estabilidade + blush + falha → operar.",
+      sourceType: "sintese",
+      source: "Apostila Cir2 (Medcurso / ATLS) cruzada com stats-cirurgia-geral."
+    },
+    {
+      id: "enamed",
+      label: "Enamed",
+      kicker: "Nacional · acesso Enare",
+      featured: true,
+      blurb: "Enare ama conduta do exame primário.",
+      verdict:
+        "Priorize descompressão do PNTX hipertensivo, dreno no hemotórax, FAST→centro no instável e intubação se Glasgow ≤8. Beck e binder caem como clássicos.",
+      foco: "PNTX · Hemotórax · FAST · Glasgow ≤8 · Beck",
+      estilo: "Padrão Enamed-Enare",
+      sourceType: "levantamento",
+      source: "Padrão Enare Cirurgia aplicado ao Cir2.",
+      priorities: [
+        { tema: "Trauma de tórax", pct: 26 },
+        { tema: "ATLS / via aérea", pct: 22 },
+        { tema: "Abdome / FAST", pct: 20 },
+        { tema: "TCE", pct: 16 },
+        { tema: "Pelve / CCD", pct: 16 }
+      ],
+      deckOrder: [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-abdome-inicial",
+        "cir2-coracao-aorta",
+        "cir2-tce",
+        "cir2-gu-pelve",
+        "cir2-figado-baco",
+        "cir2-damage-control",
+        "cir2-torax-parede",
+        "cir2-pescoco",
+        "cir2-visceras"
+      ],
+      checklist: ["pntx", "hemotorax", "fast", "glasgow", "beck"],
+      sessoes: [
+        {
+          titulo: "Sessão 1 · Tórax que mata",
+          texto: "Hipertensivo e hemotórax maciço."
+        },
+        {
+          titulo: "Sessão 2 · C e D",
+          texto: "FAST e Glasgow ≤8."
+        },
+        {
+          titulo: "Sessão 3 · Beck + pelve",
+          texto: "Tamponamento e binder/uretra."
+        }
+      ],
+      lacuna: "Números exatos de classe III/IV: saiba II (750–1500) e IV ameaça vida."
+    },
+    {
+      id: "usp",
+      label: "USP-SP",
+      kicker: "Prova USP",
+      blurb: "USP detalha algoritmo e imagem.",
+      verdict:
+        "USP cobra NEXUS/Canadian, critérios de toracotomia (≥1500 / 200 ml/h), NOM de baço e zonas do pescoço. Aorta (mediastino) e SCA aparecem.",
+      foco: "NEXUS · Toracotomia · NOM baço · Pescoço · Aorta",
+      estilo: "Padrão USP-SP",
+      sourceType: "levantamento",
+      source: "Padrão USP-SP Cirurgia aplicado ao Cir2.",
+      priorities: [
+        { tema: "ATLS / coluna", pct: 20 },
+        { tema: "Tórax", pct: 22 },
+        { tema: "Abdome / NOM", pct: 20 },
+        { tema: "TCE / pescoço", pct: 20 },
+        { tema: "Pelve / CCD", pct: 18 }
+      ],
+      deckOrder: [
+        "cir2-atls",
+        "cir2-hemotorax",
+        "cir2-pneumotorax",
+        "cir2-figado-baco",
+        "cir2-abdome-inicial",
+        "cir2-pescoco",
+        "cir2-coracao-aorta",
+        "cir2-tce",
+        "cir2-damage-control",
+        "cir2-gu-pelve",
+        "cir2-torax-parede",
+        "cir2-visceras"
+      ],
+      checklist: ["nexus", "toracotomia", "nom", "zonas", "aorta"],
+      sessoes: [
+        {
+          titulo: "Sessão 1 · Liberar coluna + tórax",
+          texto: "NEXUS e indicação de toracotomia."
+        },
+        {
+          titulo: "Sessão 2 · NOM e pescoço",
+          texto: "Baço estável e sinais duros cervicais."
+        },
+        {
+          titulo: "Sessão 3 · Aorta + SCA",
+          texto: "Mediastino alargado e PIA."
+        }
+      ],
+      lacuna: "Young-Burgess completo: saiba open book = AP e sínfise >2,5 cm = instável."
+    },
+    {
+      id: "unifesp",
+      label: "UNIFESP",
+      kicker: "Prova UNIFESP",
+      blurb: "UNIFESP gosta de fisiopatologia + conduta.",
+      verdict:
+        "Foque tamponamento vs PNTX hipertensivo (diferencial de estase jugular), ruptura aórtica, epidural (meníngea média) e damage control (tríade).",
+      foco: "Beck × PNTX · Aorta · Epidural · CCD · FAST",
+      estilo: "Padrão UNIFESP",
+      sourceType: "levantamento",
+      source: "Padrão UNIFESP Cirurgia aplicado ao Cir2.",
+      priorities: [
+        { tema: "Tórax / coração / aorta", pct: 28 },
+        { tema: "TCE", pct: 18 },
+        { tema: "Abdome / CCD", pct: 22 },
+        { tema: "ATLS", pct: 16 },
+        { tema: "Pelve / pescoço", pct: 16 }
+      ],
+      deckOrder: [
+        "cir2-coracao-aorta",
+        "cir2-pneumotorax",
+        "cir2-tce",
+        "cir2-damage-control",
+        "cir2-abdome-inicial",
+        "cir2-hemotorax",
+        "cir2-atls",
+        "cir2-figado-baco",
+        "cir2-gu-pelve",
+        "cir2-pescoco",
+        "cir2-torax-parede",
+        "cir2-visceras"
+      ],
+      checklist: ["beck", "pntx", "epidural", "triade", "fast"],
+      sessoes: [
+        {
+          titulo: "Sessão 1 · Choque obstrutivo",
+          texto: "Beck vs hipertensivo (MV e traqueia)."
+        },
+        {
+          titulo: "Sessão 2 · Neurotrauma",
+          texto: "Epidural lúcido × subdural."
+        },
+        {
+          titulo: "Sessão 3 · CCD",
+          texto: "Packing, fechar temporário, SCA."
+        }
+      ],
+      lacuna: "Shunts heroicos hepáticos: saiba packing primeiro e mortalidade grau V."
+    },
+    {
+      id: "enare",
+      label: "Enare",
+      kicker: "Acesso direto",
+      blurb: "Mesmo padrão nacional do Enamed.",
+      verdict:
+        "Conduta objetiva: descomprimir, drenar, operar o instável com FAST+, intubar GCS≤8, não sondar uretra sangrando.",
+      foco: "Descompressão · Dreno · FAST+ · GCS≤8 · Uretra",
+      estilo: "Padrão Enare",
+      sourceType: "levantamento",
+      source: "Padrão Enare Cirurgia aplicado ao Cir2.",
+      priorities: [
+        { tema: "Tórax", pct: 26 },
+        { tema: "ATLS", pct: 22 },
+        { tema: "Abdome", pct: 20 },
+        { tema: "TCE / GU", pct: 18 },
+        { tema: "Demais Cir2", pct: 14 }
+      ],
+      deckOrder: [
+        "cir2-atls",
+        "cir2-pneumotorax",
+        "cir2-hemotorax",
+        "cir2-abdome-inicial",
+        "cir2-tce",
+        "cir2-gu-pelve",
+        "cir2-coracao-aorta",
+        "cir2-figado-baco",
+        "cir2-damage-control",
+        "cir2-torax-parede",
+        "cir2-pescoco",
+        "cir2-visceras"
+      ],
+      checklist: ["pntx", "hemotorax", "fast", "glasgow", "uretra"],
+      sessoes: [
+        {
+          titulo: "Sessão 1 · Primário",
+          texto: "A-B-C que salvam nos primeiros minutos."
+        },
+        {
+          titulo: "Sessão 2 · Cavidades",
+          texto: "Tórax e abdome instáveis."
+        },
+        {
+          titulo: "Sessão 3 · Neuro + GU",
+          texto: "GCS e uretrorragia."
+        }
+      ],
+      lacuna: "eFAST completo: saiba pericárdio + janelas abdominais."
+    }
+  ],
+  checklistLabels: {
+    abcde: "ABCDE + proteção cervical",
+    pntx: "PNTX hipertensivo: descomprimir já",
+    hemotorax: "≥1500 ml ou 200 ml/h → toracotomia",
+    fast: "Instável + FAST+ → centro",
+    glasgow: "GCS ≤8 → via aérea",
+    beck: "Tríade de Beck / tamponamento",
+    nexus: "NEXUS / Canadian para liberar coluna",
+    toracotomia: "Indicações pelo dreno",
+    nom: "NOM baço/fígado só se estável",
+    zonas: "Sinais duros do pescoço",
+    aorta: "Desaceleração + mediastino",
+    epidural: "Intervalo lúcido + meníngea média",
+    triade: "Hipotermia + acidose + coagulopatia",
+    uretra: "Uretrorragia → não sondar às cegas"
+  },
+  deckTips: {
+    "cir2-atls": {
+      pegar: "GCS≤8 intuba · Fontes: abdome>pelve>tórax>fêmur · Prancha só no transporte",
+      evitar: "Esquecer hipotermia no E"
+    },
+    "cir2-pneumotorax": {
+      pegar: "Descomprimir sem Rx · Dreno definitivo · Aberto = 3 lados",
+      evitar: "Esperar imagem no hipertensivo"
+    },
+    "cir2-hemotorax": {
+      pegar: "Todo derrame = hemotórax · ≥1500 ou 200 ml/h",
+      evitar: "Observar derrame pequeno no trauma sem drenar"
+    },
+    "cir2-abdome-inicial": {
+      pegar: "Instável + FAST+ = laparotomia · Estável = TC",
+      evitar: "Levar instável à TC"
+    },
+    "cir2-tce": {
+      pegar: "Epidural lúcido · Subdural crescent · Choque ≠ crânio",
+      evitar: "Atribuir choque ao sangramento intracraniano"
+    }
+  },
+  oneLiners: [
+    "GCS ≤8: via aérea definitiva",
+    "PNTX hipertensivo: agulha/dreno agora",
+    "Hemotórax: drenar; ≥1500 opera",
+    "Instável + FAST+: laparotomia",
+    "Beck: hipotensão + jugular + bulhas",
+    "Uretrorragia: não sondar às cegas"
+  ]
+};
+
+data.profiles.forEach((p) => {
+  const miss = p.deckOrder.filter((id) => !ids.includes(id));
+  if (miss.length) throw new Error(p.id + " missing " + miss.join(","));
+});
+
+const out = path.join(__dirname, "..", "data", "revisao-cir2.json");
+fs.writeFileSync(out, JSON.stringify(data, null, 2) + "\n", "utf8");
+console.log("wrote", out);
