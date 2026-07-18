@@ -774,6 +774,86 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-endo-obesidade.json?v=20260718cn",
     specialty: "clinica",
     area: "endocrinologia"
+  },
+  "cardio-scc": {
+    label: "Síndrome coronariana crônica",
+    file: "data/revisao-cardio-scc.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-sca": {
+    label: "SCA · NSTEMI · STEMI",
+    file: "data/revisao-cardio-sca.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-pericardio": {
+    label: "Pericardiopatias",
+    file: "data/revisao-cardio-pericardio.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-icc": {
+    label: "Insuficiência cardíaca",
+    file: "data/revisao-cardio-icc.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-has": {
+    label: "Hipertensão arterial",
+    file: "data/revisao-cardio-has.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-valvas": {
+    label: "Valvopatias · endocardite",
+    file: "data/revisao-cardio-valvas.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-miopatias": {
+    label: "Cardiomiopatias · semiologia · HP",
+    file: "data/revisao-cardio-miopatias.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-fa": {
+    label: "FA · flutter · taquicardias",
+    file: "data/revisao-cardio-fa.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-bradi": {
+    label: "Bradiarritmias · BAV · marca-passo",
+    file: "data/revisao-cardio-bradi.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "cardio-pcr": {
+    label: "PCR · antiarrítmicos",
+    file: "data/revisao-cardio-pcr.json?v=20260718co",
+    specialty: "clinica",
+    area: "cardiologia"
+  },
+  "prev-sus": {
+    label: "SUS · APS · programas",
+    file: "data/revisao-prev-sus.json?v=20260718cx",
+    specialty: "preventiva"
+  },
+  "prev-epidemiologia": {
+    label: "Epidemiologia · estudos · testes",
+    file: "data/revisao-prev-epidemiologia.json?v=20260718cx",
+    specialty: "preventiva"
+  },
+  "prev-vigilancia": {
+    label: "Vigilância · HND · ética",
+    file: "data/revisao-prev-vigilancia.json?v=20260718cx",
+    specialty: "preventiva"
+  },
+  "prev-indicadores": {
+    label: "Indicadores · mortalidade · ISU",
+    file: "data/revisao-prev-indicadores.json?v=20260718cx",
+    specialty: "preventiva"
   }
 };
 
@@ -791,6 +871,11 @@ const APROVA_GO_AREAS = {
 };
 
 const APROVA_CLI_AREAS = {
+  cardiologia: {
+    id: "cardiologia",
+    label: "Cardiologia",
+    blurb: "Série Car1–3 · SCA, ICC, arritmias, HAS e valvas (alto peso CM)"
+  },
   reumatologia: {
     id: "reumatologia",
     label: "Reumatologia",

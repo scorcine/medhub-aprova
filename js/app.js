@@ -161,9 +161,16 @@ let aprovaInfcOverviewStatsCache = null;
 let aprovaHepOverviewStatsCache = null;
 let aprovaHemaOverviewStatsCache = null;
 let aprovaEndoOverviewStatsCache = null;
+let aprovaCardioOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
-  return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
+  return (
+    specialty === "pediatria" ||
+    specialty === "go" ||
+    specialty === "cirurgia" ||
+    specialty === "clinica" ||
+    specialty === "preventiva"
+  );
 }
 
 function aprovaRichSpecialtyMeta (specialty) {
@@ -193,6 +200,18 @@ function aprovaRichSpecialtyMeta (specialty) {
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)
+    };
+  }
+  if (spec === "preventiva") {
+    return {
+      id: "preventiva",
+      label: "Preventiva",
+      shortLabel: "Preventiva",
+      overviewCacheKey: "preventiva",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718cx",
+      countNoun: "Preventiva",
+      openRoot: () => aprovaOpenPreventiva(),
+      openModule: id => aprovaOpenPreventivaModule(id)
     };
   }
   if (spec === "clinica") {
@@ -251,6 +270,12 @@ function aprovaRichSpecialtyMeta (specialty) {
         overviewCacheKey: "endocrinologia",
         overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718cn",
         countNoun: "Endocrinologia"
+      },
+      cardiologia: {
+        shortLabel: "Cardiologia",
+        overviewCacheKey: "cardiologia",
+        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718co",
+        countNoun: "Cardiologia"
       }
     };
     const a = cliMeta[area] || cliMeta.reumatologia;
@@ -306,8 +331,10 @@ function aprovaRenderEspecialidades () {
   aprovaShowSpecialtyList();
   const ped = document.getElementById("esp-count-pediatria");
   const go = document.getElementById("esp-count-go");
+  const prev = document.getElementById("esp-count-preventiva");
   const pedN = AprovaFlashcards.countBySpecialty("pediatria");
   const goN = AprovaFlashcards.countBySpecialty("go");
+  const prevN = AprovaFlashcards.countBySpecialty("preventiva");
   if (ped) {
     ped.textContent = pedN
       ? pedN + " flashcards · Pediatria R1 completa"
@@ -318,11 +345,17 @@ function aprovaRenderEspecialidades () {
       ? goN + " flashcards · Ginecologia (+ Obstetrícia em breve)"
       : "Ginecologia e Obstetrícia.";
   }
+  if (prev) {
+    prev.textContent = prevN
+      ? prevN + " flashcards · Prev1–4 · 4 grupos"
+      : "Epidemiologia, vacinas e SUS.";
+  }
   aprovaRenderCliAreaCounts().catch(() => {});
 }
 
 async function aprovaRenderCliAreaCounts () {
   const map = [
+    ["esp-count-cardio", "cardiologia", "Car1–3 · SCA, ICC, FA e HAS."],
     ["esp-count-reu", "reumatologia", "AR, LES, gota, SpA e vasculites."],
     ["esp-count-psi", "psiquiatria", "Substâncias, humor, psicose e ansiedade."],
     ["esp-count-pnm", "pneumologia", "Asma, DPOC, TEP, intensiva e TB."],
@@ -510,6 +543,37 @@ function aprovaDeckKicker (deck) {
   }
   if (id === "endo-obesidade") return "Endo · obesidade";
   if (id.indexOf("endo-") === 0) return "Endocrinologia";
+  if (id === "cardio-scc") return "Cardio · SCC";
+  if (
+    id === "cardio-sca-sem-sst" ||
+    id === "cardio-sca-com-sst" ||
+    id === "cardio-iam-complicacoes" ||
+    id === "cardio-revasc"
+  ) {
+    return "Cardio · SCA";
+  }
+  if (id === "cardio-pericardiopatias") return "Cardio · pericárdio";
+  if (id === "cardio-icc-basico" || id === "cardio-icc-tratamento") return "Cardio · ICC";
+  if (id === "cardio-has") return "Cardio · HAS";
+  if (id === "cardio-valvas-estenose" || id === "cardio-valvas-insuficiencia") {
+    return "Cardio · valvas";
+  }
+  if (
+    id === "cardio-cardiomiopatias" ||
+    id === "cardio-semiologia-hp" ||
+    id === "cardio-transplante"
+  ) {
+    return "Cardio · miopatias";
+  }
+  if (id === "cardio-fa-flutter" || id === "cardio-tvs-svt") return "Cardio · FA/TV";
+  if (id === "cardio-bradi-bav" || id === "cardio-bloqueios-ecg") return "Cardio · bradi";
+  if (id === "cardio-pcr" || id === "cardio-antiarrhythmicos") return "Cardio · PCR";
+  if (id.indexOf("cardio-") === 0 || id.indexOf("cardio") === 0) return "Cardiologia";
+  if (id.indexOf("psus-") === 0) return "Prev · SUS";
+  if (id.indexOf("pepi-") === 0) return "Prev · epidemiologia";
+  if (id.indexOf("pvig-") === 0) return "Prev · vigilância";
+  if (id.indexOf("pind-") === 0) return "Prev · indicadores";
+  if (id.indexOf("prev-") === 0) return "Preventiva";
   if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
   if (id.indexOf("inf-") === 0) return "Infecto · Dengue/Sepse";
   if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
@@ -638,6 +702,11 @@ function aprovaDeckKicker (deck) {
   if (id.indexOf("cir1-") === 0) return "Cirurgia";
   if (id.indexOf("crr-") === 0) return "Especialidades R1";
   if (id.indexOf("cardio") === 0) return "Cardiologia";
+  if (id.indexOf("psus-") === 0) return "Prev · SUS";
+  if (id.indexOf("pepi-") === 0) return "Prev · epidemiologia";
+  if (id.indexOf("pvig-") === 0) return "Prev · vigilância";
+  if (id.indexOf("pind-") === 0) return "Prev · indicadores";
+  if (id.indexOf("prev-") === 0) return "Preventiva";
   return "Subtema";
 }
 
@@ -824,6 +893,17 @@ async function aprovaLoadOverviewStats (specialty) {
         aprovaEndoOverviewStatsCache = null;
       }
       return aprovaEndoOverviewStatsCache;
+    }
+    if (area === "cardiologia") {
+      if (aprovaCardioOverviewStatsCache) return aprovaCardioOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaCardioOverviewStatsCache = await res.json();
+      } catch {
+        aprovaCardioOverviewStatsCache = null;
+      }
+      return aprovaCardioOverviewStatsCache;
     }
     if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
     try {
@@ -1031,6 +1111,7 @@ async function aprovaRenderCliAreaCards () {
   const areas = typeof AprovaRevisao !== "undefined" && typeof AprovaRevisao.listCliAreas === "function"
     ? AprovaRevisao.listCliAreas()
     : [
+      { id: "cardiologia", label: "Cardiologia", blurb: "" },
       { id: "reumatologia", label: "Reumatologia", blurb: "" },
       { id: "psiquiatria", label: "Psiquiatria", blurb: "" },
       { id: "pneumologia", label: "Pneumologia", blurb: "" },
@@ -1311,7 +1392,30 @@ const APROVA_PED_MODULE_PREFIXES = {
   "endo-dm": ["endo-dm-basico", "endo-dm-tratamento"],
   "endo-dm-complicacoes": ["endo-dm-cronicas", "endo-pe-diabetico"],
   "endo-urgencias-dm": ["endo-dm-agudas", "endo-hipoglicemia"],
-  "endo-obesidade": ["endo-obesidade"]
+  "endo-obesidade": ["endo-obesidade"],
+  "cardio-scc": ["cardio-scc"],
+  "cardio-sca": [
+    "cardio-sca-sem-sst",
+    "cardio-sca-com-sst",
+    "cardio-iam-complicacoes",
+    "cardio-revasc"
+  ],
+  "cardio-pericardio": ["cardio-pericardiopatias"],
+  "cardio-icc": ["cardio-icc-basico", "cardio-icc-tratamento"],
+  "cardio-has": ["cardio-has"],
+  "cardio-valvas": ["cardio-valvas-estenose", "cardio-valvas-insuficiencia"],
+  "cardio-miopatias": [
+    "cardio-cardiomiopatias",
+    "cardio-semiologia-hp",
+    "cardio-transplante"
+  ],
+  "cardio-fa": ["cardio-fa-flutter", "cardio-tvs-svt"],
+  "cardio-bradi": ["cardio-bradi-bav", "cardio-bloqueios-ecg"],
+  "cardio-pcr": ["cardio-pcr", "cardio-antiarrhythmicos"],
+  "prev-sus": ["psus-"],
+  "prev-epidemiologia": ["pepi-"],
+  "prev-vigilancia": ["pvig-"],
+  "prev-indicadores": ["pind-"]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
@@ -1872,6 +1976,14 @@ async function aprovaOpenClinica () {
   await aprovaOpenRichSpecialtyRoot("clinica");
 }
 
+async function aprovaOpenPreventiva () {
+  await aprovaOpenRichSpecialtyRoot("preventiva");
+}
+
+async function aprovaOpenPreventivaModule (moduleId) {
+  await aprovaOpenRichSpecialtyModule("preventiva", moduleId);
+}
+
 async function aprovaOpenClinicaModule (moduleId) {
   await aprovaOpenRichSpecialtyModule("clinica", moduleId);
 }
@@ -1909,6 +2021,10 @@ function aprovaOpenSpecialty (specialty) {
   }
   if (specialty === "clinica") {
     aprovaOpenClinica();
+    return;
+  }
+  if (specialty === "preventiva") {
+    aprovaOpenPreventiva();
     return;
   }
 

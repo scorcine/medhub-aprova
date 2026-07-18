@@ -1,0 +1,252 @@
+{
+  "title": "PCR · antiarrítmicos",
+  "module": "cardio-pcr",
+  "profiles": [
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Urgência",
+          "texto": "SCA, PCR, tamponamento, crise HAS."
+        },
+        {
+          "titulo": "Sessão 2 · Conduta",
+          "texto": "Reperfusão, DAPT, IECA/BB, anticoagulação."
+        },
+        {
+          "titulo": "Sessão 3 · Diagnóstico",
+          "texto": "ECG, troponina, eco, critérios clínicos."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostilas Car1–3 · MedHub R1 · Cardiologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Cardio",
+      "blurb": "PCR · ACLS · drogas",
+      "verdict": "Ritmos chocáveis e amiodarona/adrenalina.",
+      "foco": "PCR · ACLS · drogas",
+      "estilo": "Síntese nacional · Cardiologia",
+      "priorities": [
+        {
+          "tema": "SCA / IAM",
+          "pct": 28
+        },
+        {
+          "tema": "ICC / HAS",
+          "pct": 24
+        },
+        {
+          "tema": "Arritmias / PCR",
+          "pct": 24
+        },
+        {
+          "tema": "Valvas / outros",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cardio-pcr",
+        "cardio-antiarrhythmicos"
+      ]
+    },
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Cardiologia (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "SCA, ICC e FA dominam provas gerais.",
+      "verdict": "Priorize STEMI/NSTEMI, ICC com FE reduzida e FA (CHA2DS2-VASc).",
+      "foco": "PCR · ACLS · drogas",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "SCA / IAM",
+          "pct": 32
+        },
+        {
+          "tema": "ICC",
+          "pct": 22
+        },
+        {
+          "tema": "FA / arritmias",
+          "pct": 22
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 24
+        }
+      ],
+      "deckOrder": [
+        "cardio-pcr",
+        "cardio-antiarrhythmicos"
+      ]
+    },
+    {
+      "checklist": [
+        "dx",
+        "urgencia",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Cardiologia (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "ECG, fisiopat e critérios.",
+      "verdict": "STEMI critérios, Killip, BAV e sopros com localização.",
+      "foco": "PCR · ACLS · drogas",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "ECG / arritmias",
+          "pct": 30
+        },
+        {
+          "tema": "SCA",
+          "pct": 28
+        },
+        {
+          "tema": "ICC / valvas",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-pcr",
+        "cardio-antiarrhythmicos"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "urgencia",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Cardiologia (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Conduta de SCA e ICC.",
+      "verdict": "Reperfusão, DAPT, IECA/BB/ARM e anticoagulação na FA.",
+      "foco": "PCR · ACLS · drogas",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Conduta SCA/ICC",
+          "pct": 34
+        },
+        {
+          "tema": "FA / PCR",
+          "pct": 24
+        },
+        {
+          "tema": "HAS / valvas",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "cardio-pcr",
+        "cardio-antiarrhythmicos"
+      ]
+    },
+    {
+      "checklist": [
+        "urgencia",
+        "conduta",
+        "dx",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Cardiologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "IAM com SST, ICC descompensada e PCR primeiro.",
+      "foco": "PCR · ACLS · drogas",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Urgências cardio",
+          "pct": 34
+        },
+        {
+          "tema": "SCA",
+          "pct": 26
+        },
+        {
+          "tema": "ICC / FA",
+          "pct": 22
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "cardio-pcr",
+        "cardio-antiarrhythmicos"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "urgencia": {
+      "tema": "Urgências",
+      "yield": "Máximo",
+      "pegar": "STEMI reperfusão; PCR ACLS; tamponamento; crise hipertensiva/dissecção; TV/FV."
+    },
+    "conduta": {
+      "tema": "Conduta / droga",
+      "yield": "Máximo",
+      "pegar": "DAPT; heparina; IECA/BB/ARM; anticoagulação FA; trombólise×ICP."
+    },
+    "dx": {
+      "tema": "Diagnóstico / ECG",
+      "yield": "Alto",
+      "pegar": "Critérios SST; troponina; Killip; CHA2DS2-VASc; Duke; Beck."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial",
+      "yield": "Alto",
+      "pegar": "AI×NSTEMI×STEMI; pericardite×IAM; FEPEF×FEREF; sopros."
+    }
+  },
+  "oneLiners": [
+    "FV/TVSP = choque",
+    "RCP contínua",
+    "Amiodarona no refratário"
+  ]
+}
