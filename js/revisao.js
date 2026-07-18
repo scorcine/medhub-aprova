@@ -582,6 +582,72 @@ const APROVA_REVISAO_MODULES = {
     file: "data/revisao-infc-tropicais.json?v=20260718bv",
     specialty: "clinica",
     area: "infectologia"
+  },
+  "hep-basico": {
+    label: "Hepatograma · icterícia",
+    file: "data/revisao-hep-basico.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-virais-agudas": {
+    label: "Hepatites virais agudas",
+    file: "data/revisao-hep-virais-agudas.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-virais-cronicas": {
+    label: "Hepatites B e C crônicas",
+    file: "data/revisao-hep-virais-cronicas.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-fulminante": {
+    label: "Insuficiência hepática fulminante",
+    file: "data/revisao-hep-fulminante.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-esteatose": {
+    label: "Cirrose · DHA · DHGNA",
+    file: "data/revisao-hep-esteatose.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-autoimune": {
+    label: "HAI · CBP · CEP",
+    file: "data/revisao-hep-autoimune.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-metabolicas": {
+    label: "Wilson · hemocromatose · DILI",
+    file: "data/revisao-hep-metabolicas.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-descompensacao": {
+    label: "IHC · ascite · PBE · SHR",
+    file: "data/revisao-hep-descompensacao.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-htp-varizes": {
+    label: "HTP · varizes · TIPS",
+    file: "data/revisao-hep-htp-varizes.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-transplante": {
+    label: "Transplante hepático",
+    file: "data/revisao-hep-transplante.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
+  },
+  "hep-biliar": {
+    label: "Biliar · abscesso · hidático",
+    file: "data/revisao-hep-biliar.json?v=20260718cb",
+    specialty: "clinica",
+    area: "hepatologia"
   }
 };
 
@@ -628,6 +694,11 @@ const APROVA_CLI_AREAS = {
     id: "infectologia",
     label: "Infectologia",
     blurb: "Série completa Inf1–5 · parasitoses à tropicais"
+  },
+  hepatologia: {
+    id: "hepatologia",
+    label: "Hepatologia",
+    blurb: "Série completa Hep1–4 · virais à biliar/descompensação"
   }
 };
 

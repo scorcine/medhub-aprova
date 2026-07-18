@@ -1,0 +1,687 @@
+{
+  "title": "Wilson · hemocromatose · DILI",
+  "module": "hep-metabolicas",
+  "profiles": [
+    {
+      "checklist": [
+        "dx",
+        "conduta",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [
+        {
+          "titulo": "Sessão 1 · Diagnóstico",
+          "texto": "Marcadores, critérios e imagem."
+        },
+        {
+          "titulo": "Sessão 2 · Conduta",
+          "texto": "Drogas e algoritmos R1."
+        },
+        {
+          "titulo": "Sessão 3 · Complicações",
+          "texto": "Descompensação e DD."
+        }
+      ],
+      "lacuna": "",
+      "sourceType": "sintese",
+      "source": "Apostilas Hep1–4 · MedHub R1 · Hepatologia.",
+      "id": "geral",
+      "label": "Brasil",
+      "kicker": "Síntese Hepato",
+      "blurb": "Wilson · ferro · medicamento",
+      "verdict": "Ceruloplasmina/KF, flebotomia e DILI por droga.",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Síntese nacional · Hepatologia",
+      "priorities": [
+        {
+          "tema": "Diagnóstico / marcadores",
+          "pct": 28
+        },
+        {
+          "tema": "Conduta / drogas",
+          "pct": 34
+        },
+        {
+          "tema": "Complicações",
+          "pct": 22
+        },
+        {
+          "tema": "DD / mapa",
+          "pct": 16
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare/Enamed · Hepatologia (síntese R1).",
+      "id": "enamed",
+      "label": "Enamed",
+      "featured": true,
+      "kicker": "Nacional · Enare",
+      "blurb": "Hepatites, ascite/PBE e varizes caem bem nas provas gerais.",
+      "verdict": "Priorize HBV/HCV, Child/MELD, ascite/PBE e sangramento variceal.",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Padrão Enamed-Enare",
+      "priorities": [
+        {
+          "tema": "Virais / crônicas",
+          "pct": 30
+        },
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 32
+        },
+        {
+          "tema": "Etiologias cirrose",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento Enare · Hepatologia.",
+      "id": "enare",
+      "label": "Enare",
+      "kicker": "Acesso direto",
+      "blurb": "Mesmo eixo Enamed.",
+      "verdict": "PBE, ligadura de varizes, lactulose e HBV/HCV primeiro.",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Padrão Enare",
+      "priorities": [
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 34
+        },
+        {
+          "tema": "Virais",
+          "pct": 28
+        },
+        {
+          "tema": "Encefalopatia",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Revalida · Hepatologia · Wilson · hemocromatose · DILI (a partir de enamed).",
+      "id": "revalida",
+      "label": "Revalida",
+      "featured": false,
+      "kicker": "INEP",
+      "blurb": "Hepatites, ascite/PBE e varizes caem bem nas provas gerais.",
+      "verdict": "Priorize HBV/HCV, Child/MELD, ascite/PBE e sangramento variceal. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa INEP/Revalida",
+      "priorities": [
+        {
+          "tema": "Virais / crônicas",
+          "pct": 30
+        },
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 32
+        },
+        {
+          "tema": "Etiologias cirrose",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "dx",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento USP · Hepatologia (síntese R1).",
+      "id": "usp",
+      "label": "USP",
+      "kicker": "Prova USP",
+      "blurb": "Gosta de sorologia, fisiopat e critérios.",
+      "verdict": "Sorologia HBV, SAAG/PBE, Child-Pugh e Wilson/CBP.",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Padrão USP-SP",
+      "priorities": [
+        {
+          "tema": "Sorologia / fisiopat",
+          "pct": 32
+        },
+        {
+          "tema": "Complicações HTP",
+          "pct": 28
+        },
+        {
+          "tema": "Etiologias",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "levantamento",
+      "source": "Levantamento UNIFESP · Hepatologia (síntese R1).",
+      "id": "unifesp",
+      "label": "UNIFESP",
+      "kicker": "Prova UNIFESP",
+      "blurb": "Conduta em descompensação e biliar.",
+      "verdict": "Varizes, SHR, CEP/CBP e abscesso hepático.",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Padrão UNIFESP",
+      "priorities": [
+        {
+          "tema": "Descompensação",
+          "pct": 30
+        },
+        {
+          "tema": "Biliar / abscesso",
+          "pct": 26
+        },
+        {
+          "tema": "Virais",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-SP · Hepatologia · Wilson · hemocromatose · DILI (a partir de enamed).",
+      "id": "sus-sp",
+      "label": "SUS-SP",
+      "featured": false,
+      "kicker": "Padrão APS",
+      "blurb": "Hepatites, ascite/PBE e varizes caem bem nas provas gerais.",
+      "verdict": "Priorize HBV/HCV, Child/MELD, ascite/PBE e sangramento variceal. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa APS",
+      "priorities": [
+        {
+          "tema": "Virais / crônicas",
+          "pct": 30
+        },
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 32
+        },
+        {
+          "tema": "Etiologias cirrose",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SUS-BA · Hepatologia · Wilson · hemocromatose · DILI (a partir de enamed).",
+      "id": "sus-ba",
+      "label": "SUS-BA",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Hepatites, ascite/PBE e varizes caem bem nas provas gerais.",
+      "verdict": "Priorize HBV/HCV, Child/MELD, ascite/PBE e sangramento variceal. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Virais / crônicas",
+          "pct": 30
+        },
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 32
+        },
+        {
+          "tema": "Etiologias cirrose",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "dx",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFMG · Hepatologia · Wilson · hemocromatose · DILI (a partir de usp).",
+      "id": "ufmg",
+      "label": "UFMG",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de sorologia, fisiopat e critérios.",
+      "verdict": "Sorologia HBV, SAAG/PBE, Child-Pugh e Wilson/CBP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Sorologia / fisiopat",
+          "pct": 32
+        },
+        {
+          "tema": "Complicações HTP",
+          "pct": 28
+        },
+        {
+          "tema": "Etiologias",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRGS · Hepatologia · Wilson · hemocromatose · DILI (a partir de usp).",
+      "id": "ufrgs",
+      "label": "UFRGS",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de sorologia, fisiopat e critérios.",
+      "verdict": "Sorologia HBV, SAAG/PBE, Child-Pugh e Wilson/CBP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Sorologia / fisiopat",
+          "pct": 32
+        },
+        {
+          "tema": "Complicações HTP",
+          "pct": 28
+        },
+        {
+          "tema": "Etiologias",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão UFRJ · Hepatologia · Wilson · hemocromatose · DILI (a partir de usp).",
+      "id": "ufrj",
+      "label": "UFRJ",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de sorologia, fisiopat e critérios.",
+      "verdict": "Sorologia HBV, SAAG/PBE, Child-Pugh e Wilson/CBP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Sorologia / fisiopat",
+          "pct": 32
+        },
+        {
+          "tema": "Complicações HTP",
+          "pct": 28
+        },
+        {
+          "tema": "Etiologias",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "dx",
+        "complicacao",
+        "conduta",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Unicamp · Hepatologia · Wilson · hemocromatose · DILI (a partir de usp).",
+      "id": "unicamp",
+      "label": "Unicamp",
+      "kicker": "Padrão recorrente",
+      "blurb": "Gosta de sorologia, fisiopat e critérios.",
+      "verdict": "Sorologia HBV, SAAG/PBE, Child-Pugh e Wilson/CBP. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa por padrão recorrente",
+      "priorities": [
+        {
+          "tema": "Sorologia / fisiopat",
+          "pct": 32
+        },
+        {
+          "tema": "Complicações HTP",
+          "pct": 28
+        },
+        {
+          "tema": "Etiologias",
+          "pct": 22
+        },
+        {
+          "tema": "DD",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão Einstein · Hepatologia · Wilson · hemocromatose · DILI (a partir de unifesp).",
+      "id": "einstein",
+      "label": "Einstein",
+      "kicker": "Padrão recorrente",
+      "blurb": "Conduta em descompensação e biliar.",
+      "verdict": "Varizes, SHR, CEP/CBP e abscesso hepático. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa guideline",
+      "priorities": [
+        {
+          "tema": "Descompensação",
+          "pct": 30
+        },
+        {
+          "tema": "Biliar / abscesso",
+          "pct": 26
+        },
+        {
+          "tema": "Virais",
+          "pct": 24
+        },
+        {
+          "tema": "Outros",
+          "pct": 20
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ],
+      "featured": false
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão AMP · Hepatologia · Wilson · hemocromatose · DILI (a partir de enamed).",
+      "id": "amp",
+      "label": "AMP",
+      "featured": false,
+      "kicker": "Padrão clássico R1",
+      "blurb": "Hepatites, ascite/PBE e varizes caem bem nas provas gerais.",
+      "verdict": "Priorize HBV/HCV, Child/MELD, ascite/PBE e sangramento variceal. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa clássica R1",
+      "priorities": [
+        {
+          "tema": "Virais / crônicas",
+          "pct": 30
+        },
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 32
+        },
+        {
+          "tema": "Etiologias cirrose",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    },
+    {
+      "checklist": [
+        "conduta",
+        "dx",
+        "complicacao",
+        "dd"
+      ],
+      "sessoes": [],
+      "lacuna": "",
+      "sourceType": "estimativa",
+      "source": "Padrão SES-PE · Hepatologia · Wilson · hemocromatose · DILI (a partir de enamed).",
+      "id": "ses-pe",
+      "label": "SES-PE",
+      "featured": false,
+      "kicker": "Padrão regional",
+      "blurb": "Hepatites, ascite/PBE e varizes caem bem nas provas gerais.",
+      "verdict": "Priorize HBV/HCV, Child/MELD, ascite/PBE e sangramento variceal. Estimativa por padrão da banca (não é ranking oficial deste módulo).",
+      "foco": "Wilson · ferro · medicamento",
+      "estilo": "Estimativa regional",
+      "priorities": [
+        {
+          "tema": "Virais / crônicas",
+          "pct": 30
+        },
+        {
+          "tema": "Ascite / PBE / varizes",
+          "pct": 32
+        },
+        {
+          "tema": "Etiologias cirrose",
+          "pct": 20
+        },
+        {
+          "tema": "Outros",
+          "pct": 18
+        }
+      ],
+      "deckOrder": [
+        "hep-wilson",
+        "hep-hemocromatose",
+        "hep-dili"
+      ]
+    }
+  ],
+  "checklistItems": {
+    "dx": {
+      "tema": "Diagnóstico / marcadores",
+      "yield": "Alto",
+      "pegar": "Sorologia HBV; SAAG; Child/MELD; AMA/CBP; ceruloplasmina/Wilson."
+    },
+    "conduta": {
+      "tema": "Conduta / drogas",
+      "yield": "Máximo",
+      "pegar": "DAA HCV; tenofovir/entecavir; lactulose/rifaximina; ligadura; albumina na PBE."
+    },
+    "complicacao": {
+      "tema": "Complicações",
+      "yield": "Alto",
+      "pegar": "PBE; SHR; EH; sangramento variceal; fulminante."
+    },
+    "dd": {
+      "tema": "Diagnóstico diferencial / mapa",
+      "yield": "Alto",
+      "pegar": "CBP×CEP; DHA×DHGNA; piogênico×amebiano; HAI×virais."
+    }
+  },
+  "oneLiners": [
+    "Wilson = cobre ↓ ceruloplasmina",
+    "Hemocromatose = flebotomia",
+    "DILI = suspender droga"
+  ]
+}

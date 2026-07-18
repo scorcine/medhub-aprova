@@ -158,6 +158,7 @@ let aprovaPnmOverviewStatsCache = null;
 let aprovaNeuOverviewStatsCache = null;
 let aprovaNefOverviewStatsCache = null;
 let aprovaInfcOverviewStatsCache = null;
+let aprovaHepOverviewStatsCache = null;
 
 function aprovaIsRichSpecialty (specialty) {
   return specialty === "pediatria" || specialty === "go" || specialty === "cirurgia" || specialty === "clinica";
@@ -230,6 +231,12 @@ function aprovaRichSpecialtyMeta (specialty) {
         overviewCacheKey: "infectologia",
         overviewUrl: "data/stats-infectologia-geral.json?v=20260718bv",
         countNoun: "Infectologia"
+      },
+      hepatologia: {
+        shortLabel: "Hepatologia",
+        overviewCacheKey: "hepatologia",
+        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718cb",
+        countNoun: "Hepatologia"
       }
     };
     const a = cliMeta[area] || cliMeta.reumatologia;
@@ -307,7 +314,8 @@ async function aprovaRenderCliAreaCounts () {
     ["esp-count-pnm", "pneumologia", "Asma, DPOC, TEP, intensiva e TB."],
     ["esp-count-neu", "neurologia", "AVC, epilepsia, coma e cefaleia."],
     ["esp-count-nef", "nefrologia", "Nefro 1–5 completa · glomérulos à uro."],
-    ["esp-count-infc", "infectologia", "Inf1–5 completa · parasitoses à tropicais."]
+    ["esp-count-infc", "infectologia", "Inf1–5 completa · parasitoses à tropicais."],
+    ["esp-count-hep", "hepatologia", "Hep1–4 completa · virais à descompensação."]
   ];
   for (const [elId, areaId, fallback] of map) {
     const el = document.getElementById(elId);
@@ -382,6 +390,40 @@ function aprovaDeckKicker (deck) {
     id === "infc-tropicais-mapa"
   ) return "Infecto · tropicais";
   if (id.indexOf("infc-") === 0) return "Infectologia";
+  if (id === "hep-histologia-circulacao" || id === "hep-hepatograma-ictericia") return "Hepato · básico";
+  if (id === "hep-hav" || id === "hep-hbv-aguda" || id === "hep-hdv-hev") {
+    return "Hepato · virais agudas";
+  }
+  if (id === "hep-hcv-aguda-cronica") return "Hepato · HCV aguda/crônica";
+  if (id === "hep-hbv-cronica") return "Hepato · HBV crônica";
+  if (id === "hep-fulminante") return "Hepato · fulminante";
+  if (id === "hep-cirrose" || id === "hep-dha" || id === "hep-dhgna-nash") return "Hepato · esteatose";
+  if (id === "hep-hai" || id === "hep-cbp" || id === "hep-cep") return "Hepato · autoimune";
+  if (id === "hep-wilson" || id === "hep-hemocromatose" || id === "hep-dili") return "Hepato · metabólicas";
+  if (
+    id === "hep-ihc-child" ||
+    id === "hep-encefalopatia" ||
+    id === "hep-ascite" ||
+    id === "hep-pbe-shr"
+  ) return "Hepato · descompensação";
+  if (
+    id === "hep-hipertensao-portal" ||
+    id === "hep-varizes" ||
+    id === "hep-tips-cirurgia-htp"
+  ) {
+    return "Hepato · HTP/varizes";
+  }
+  if (id === "hep-transplante") return "Hepato · transplante";
+  if (
+    id === "hep-cistos-vias-biliares" ||
+    id === "hep-lesao-iatrogenica-biliar" ||
+    id === "hep-abscesso-piogenico" ||
+    id === "hep-abscesso-amebiano" ||
+    id === "hep-cisto-hidatico"
+  ) {
+    return "Hepato · biliar";
+  }
+  if (id.indexOf("hep-") === 0) return "Hepatologia";
   if (id.indexOf("exa-") === 0) return "Infecto · Exantemas";
   if (id.indexOf("inf-") === 0) return "Infecto · Dengue/Sepse";
   if (id.indexOf("crd-") === 0) return "Cardio pediátrica";
@@ -664,6 +706,17 @@ async function aprovaLoadOverviewStats (specialty) {
       }
       return aprovaInfcOverviewStatsCache;
     }
+    if (area === "hepatologia") {
+      if (aprovaHepOverviewStatsCache) return aprovaHepOverviewStatsCache;
+      try {
+        const res = await fetch(meta.overviewUrl);
+        if (!res.ok) throw new Error("fail");
+        aprovaHepOverviewStatsCache = await res.json();
+      } catch {
+        aprovaHepOverviewStatsCache = null;
+      }
+      return aprovaHepOverviewStatsCache;
+    }
     if (aprovaReuOverviewStatsCache) return aprovaReuOverviewStatsCache;
     try {
       const res = await fetch(meta.overviewUrl);
@@ -875,7 +928,8 @@ async function aprovaRenderCliAreaCards () {
       { id: "pneumologia", label: "Pneumologia", blurb: "" },
       { id: "neurologia", label: "Neurologia", blurb: "" },
       { id: "nefrologia", label: "Nefrologia", blurb: "" },
-      { id: "infectologia", label: "Infectologia", blurb: "" }
+      { id: "infectologia", label: "Infectologia", blurb: "" },
+      { id: "hepatologia", label: "Hepatologia", blurb: "" }
     ];
 
   grid.innerHTML = "";
@@ -1098,7 +1152,24 @@ const APROVA_PED_MODULE_PREFIXES = {
   "infc-dengue": ["infc-dengue-"],
   "infc-arbovirus": ["infc-chik-zika", "infc-febre-amarela"],
   "infc-malaria": ["infc-malaria"],
-  "infc-tropicais": ["infc-lepto", "infc-leishmania", "infc-maculosa-", "infc-emergentes", "infc-tropicais-"]
+  "infc-tropicais": ["infc-lepto", "infc-leishmania", "infc-maculosa-", "infc-emergentes", "infc-tropicais-"],
+  "hep-basico": ["hep-histologia-circulacao", "hep-hepatograma-ictericia"],
+  "hep-virais-agudas": ["hep-hav", "hep-hbv-aguda", "hep-hcv-aguda-cronica", "hep-hdv-hev"],
+  "hep-virais-cronicas": ["hep-hbv-cronica", "hep-hcv-aguda-cronica"],
+  "hep-fulminante": ["hep-fulminante"],
+  "hep-esteatose": ["hep-cirrose", "hep-dha", "hep-dhgna-nash"],
+  "hep-autoimune": ["hep-hai", "hep-cbp", "hep-cep"],
+  "hep-metabolicas": ["hep-wilson", "hep-hemocromatose", "hep-dili"],
+  "hep-descompensacao": ["hep-ihc-child", "hep-encefalopatia", "hep-ascite", "hep-pbe-shr"],
+  "hep-htp-varizes": ["hep-hipertensao-portal", "hep-varizes", "hep-tips-cirurgia-htp"],
+  "hep-transplante": ["hep-transplante"],
+  "hep-biliar": [
+    "hep-cistos-vias-biliares",
+    "hep-lesao-iatrogenica-biliar",
+    "hep-abscesso-piogenico",
+    "hep-abscesso-amebiano",
+    "hep-cisto-hidatico"
+  ]
 };
 
 function aprovaPedDecksForModule (moduleId, deckOrder) {
