@@ -412,7 +412,11 @@ async function aprovaRenderPedGroupCards (activeModuleId) {
       "<strong>" + m.label + "</strong>" +
       "<span>" + stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
         " · " + stats.decks + " subtema" + (stats.decks === 1 ? "" : "s") + "</span>";
-    btn.addEventListener("click", () => aprovaOpenPedDeckPicker(m.id));
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      aprovaOpenPedDeckPicker(m.id);
+    });
     grid.appendChild(btn);
   }
 }
@@ -453,6 +457,57 @@ function aprovaUpdatePedModalCount () {
   }
 }
 
+const APROVA_PED_MODULE_PREFIXES = {
+  neonatologia: ["neo-"],
+  alimentacao: ["ali-"],
+  "avaliacao-nutricional": ["nut-"],
+  imunizacoes: ["imu-"],
+  diabetes: ["dm-"],
+  ped6: ["itu-", "exa-", "crd-", "urg-"],
+  respiratorio: ["resp-"],
+  "gastro-neuro": ["gast-", "neu-"],
+  "nefro-extra": ["nef-"],
+  "r1-extra": ["inf-", "hem-", "ort-", "end-", "urg-"],
+  "r1-lacunas": ["cir-", "par-", "alg-", "soc-", "ort-"]
+};
+
+function aprovaPedDecksForModule (moduleId, deckOrder) {
+  const byId = id => AprovaFlashcards.decks.find(d => d.id === id);
+  let decks = (deckOrder || []).map(byId).filter(Boolean);
+  if (decks.length) return decks;
+
+  const prefixes = APROVA_PED_MODULE_PREFIXES[moduleId] || [];
+  if (!prefixes.length) return [];
+  return AprovaFlashcards.decks
+    .filter(d => prefixes.some(p => String(d.id || "").indexOf(p) === 0))
+    .slice()
+    .sort((a, b) => String(a.name || "").localeCompare(String(b.name || ""), "pt-BR"));
+}
+
+function aprovaAppendDeckCheckbox (list, deck) {
+  const n = (deck.cards || []).length;
+  const label = document.createElement("label");
+  label.className = "aprova-check";
+
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  input.value = deck.id;
+  input.checked = true;
+  input.addEventListener("change", aprovaUpdatePedModalCount);
+
+  const text = document.createElement("span");
+  const strong = document.createElement("strong");
+  strong.textContent = deck.name || deck.id;
+  const small = document.createElement("small");
+  small.textContent = n + " card" + (n === 1 ? "" : "s");
+  text.appendChild(strong);
+  text.appendChild(small);
+
+  label.appendChild(input);
+  label.appendChild(text);
+  list.appendChild(label);
+}
+
 async function aprovaOpenPedDeckPicker (moduleId) {
   const modal = document.getElementById("esp-deck-modal");
   const title = document.getElementById("esp-deck-modal-title");
@@ -469,9 +524,7 @@ async function aprovaOpenPedDeckPicker (moduleId) {
   const modules = typeof AprovaRevisao !== "undefined" ? AprovaRevisao.listModules() : [];
   const moduleLabel = (modules.find(m => m.id === moduleId) || {}).label || "Pediatria";
   const stats = await aprovaPedModuleStats(moduleId);
-  const decks = (stats.deckOrder || [])
-    .map(id => AprovaFlashcards.decks.find(d => d.id === id))
-    .filter(Boolean);
+  const decks = aprovaPedDecksForModule(moduleId, stats.deckOrder || []);
 
   if (title) title.textContent = moduleLabel;
   if (sub) {
@@ -480,17 +533,13 @@ async function aprovaOpenPedDeckPicker (moduleId) {
       : "Nenhum subtema disponível neste grupo.";
   }
 
-  list.innerHTML = "";
+  list.replaceChildren();
   decks.forEach(deck => {
-    const n = (deck.cards || []).length;
-    const label = document.createElement("label");
-    label.className = "aprova-check";
-    label.innerHTML =
-      "<input type=\"checkbox\" value=\"" + deck.id + "\" checked>" +
-      "<span><strong>" + deck.name + "</strong>" +
-      "<small>" + n + " card" + (n === 1 ? "" : "s") + "</small></span>";
-    label.querySelector("input").addEventListener("change", aprovaUpdatePedModalCount);
-    list.appendChild(label);
+    try {
+      aprovaAppendDeckCheckbox(list, deck);
+    } catch (err) {
+      console.error("Falha ao montar subtema", deck && deck.id, err);
+    }
   });
 
   if (allBox) {
@@ -499,8 +548,12 @@ async function aprovaOpenPedDeckPicker (moduleId) {
   }
 
   aprovaUpdatePedModalCount();
-  modal.hidden = false;
-  document.body.classList.add("modal-open");
+
+  // Evita que o mesmo clique que abriu o modal feche no backdrop
+  window.setTimeout(() => {
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }, 0);
 }
 
 async function aprovaRenderPediatriaStats (focusId, moduleId) {
