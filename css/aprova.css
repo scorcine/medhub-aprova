@@ -364,10 +364,38 @@ html[data-theme="dark"] .theme-icon-sun {
 /* ——— Landing hero ——— */
 .hero {
   position: relative;
-  display: grid;
-  align-items: center;
   overflow: hidden;
-  padding: 2rem 0 1.75rem;
+  padding: 1.5rem 0 1.75rem;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(160px, 280px) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 2.75rem);
+  align-items: center;
+}
+
+.hero-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-logo {
+  width: min(100%, 280px);
+  height: auto;
+  aspect-ratio: 1;
+  display: block;
+  border-radius: 1.1rem;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+  box-shadow:
+    0 0 0 1px rgba(15, 159, 154, 0.18),
+    0 18px 40px rgba(11, 18, 32, 0.22);
+  background: #0b1220;
 }
 
 .hero-visual {
@@ -428,8 +456,8 @@ html[data-theme="dark"] .theme-icon-sun {
 .hero-copy {
   position: relative;
   z-index: 1;
-  max-width: 38rem;
-  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  max-width: 36rem;
+  animation: rise 0.75s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero h1 {
@@ -778,13 +806,23 @@ body.app-body {
   }
 
   .hero {
-    min-height: auto;
-    padding: 1.5rem 0 2rem;
+    padding: 1.25rem 0 1.75rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1.1rem;
+  }
+
+  .hero-logo {
+    width: min(42vw, 160px);
+    border-radius: 0.85rem;
   }
 
   .hero-scan,
   .hero-orbit {
-    opacity: 0.55;
+    opacity: 0.45;
     right: -20%;
   }
 
