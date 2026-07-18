@@ -15,10 +15,9 @@ function aprovaApplyTheme (theme) {
 
   const btn = document.getElementById("theme-toggle");
   if (btn) {
-    const label = btn.querySelector("[data-theme-label]");
-    const other = next === "dark" ? "Claro" : "Escuro";
-    if (label) label.textContent = other;
-    btn.setAttribute("aria-label", "Ativar modo " + other.toLowerCase());
+    const toLight = next === "dark";
+    btn.setAttribute("aria-label", toLight ? "Ativar modo claro" : "Ativar modo escuro");
+    btn.setAttribute("title", toLight ? "Modo claro" : "Modo escuro");
     btn.setAttribute("aria-pressed", String(next === "dark"));
   }
 }
