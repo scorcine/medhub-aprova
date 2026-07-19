@@ -243,8 +243,10 @@ function aprovaPlanWeeksLeft (daysLeft) {
  * Monta o plano a partir do perfil + (opcional) pacote de foco já calculado.
  * @param {object} profile
  * @param {object|null} focusPack resultado de aprovaBuildPersonalizedFocus
+ * @param {number} [now]
+ * @param {string|null} [areaId] área ativa do Seu foco (ex.: cirurgia)
  */
-function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
+function aprovaBuildStudyPlan (profile, focusPack, now = Date.now(), areaId = null) {
   const anchor = aprovaPlanAnchor(profile, now);
   if (!anchor) {
     return {
@@ -259,9 +261,16 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
   const weeks = aprovaPlanWeeksLeft(anchor.days);
 
   let themes = [];
+  let areaLabel = "";
+  let resolvedAreaId = areaId || null;
   if (focusPack && focusPack.ok && Array.isArray(focusPack.areas) && focusPack.areas.length) {
-    const area = focusPack.areas.find(a => a.id === "clinica") || focusPack.areas[0];
-    themes = (area.themes || area.focus || []).slice(0, horizon.themeCount);
+    const area = (resolvedAreaId && focusPack.areas.find(a => a.id === resolvedAreaId))
+      || focusPack.areas[0];
+    if (area) {
+      resolvedAreaId = area.id;
+      areaLabel = area.label || area.id;
+      themes = (area.themes || area.focus || []).slice(0, horizon.themeCount);
+    }
   }
 
   const filled = typeof aprovaProfileFilled === "function" ? aprovaProfileFilled(profile) : [];
@@ -304,6 +313,8 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
     currentPhase,
     weeks,
     themes,
+    areaId: resolvedAreaId,
+    areaLabel,
     dated,
     assumed: !!anchor.assumed,
     headline: anchor.label + " · " + dateBit,

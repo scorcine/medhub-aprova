@@ -2455,6 +2455,20 @@ function aprovaRenderExamStats () {
   )).join("");
 }
 
+function aprovaRefreshSeuPlanoForArea (pack, areaId) {
+  if (typeof aprovaBuildStudyPlan !== "function") return;
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
+  if (!complete) {
+    aprovaRenderSeuPlano(null, false);
+    return;
+  }
+  aprovaRenderSeuPlano(
+    aprovaBuildStudyPlan(profile, pack && pack.ok ? pack : null, Date.now(), areaId || aprovaSeuFocoAreaId),
+    true
+  );
+}
+
 function aprovaRenderSeuFocoArea (pack, areaId) {
   const moreEl = document.getElementById("dash-seu-foco-more");
   const lessEl = document.getElementById("dash-seu-foco-less");
@@ -2493,6 +2507,9 @@ function aprovaRenderSeuFocoArea (pack, areaId) {
       return "<li><span>" + t.tema + "</span><em>" + label + "</em></li>";
     }).join("");
   }
+
+  // Temas do plano acompanham a área selecionada no Seu foco
+  aprovaRefreshSeuPlanoForArea(pack, area.id);
 }
 
 function aprovaRenderSeuPlano (plan, profileComplete) {
@@ -2556,6 +2573,12 @@ function aprovaRenderSeuPlano (plan, profileComplete) {
         (p.tip ? ("<span style=\"display:block;margin-top:0.2rem\">" + p.tip + "</span>") : "") +
       "</li>"
     )).join("");
+  }
+  const themesLabel = document.getElementById("dash-seu-plano-themes-label");
+  if (themesLabel) {
+    themesLabel.textContent = plan.areaLabel
+      ? ("Temas desta etapa · " + plan.areaLabel)
+      : "Temas desta etapa";
   }
   if (themesEl) {
     if (plan.themes && plan.themes.length) {
@@ -2646,15 +2669,11 @@ function aprovaRenderSeuFoco () {
         const startId = pack.areas.some(a => a.id === aprovaSeuFocoAreaId)
           ? aprovaSeuFocoAreaId
           : pack.areas[0].id;
+        // Também atualiza os temas do plano para a área ativa
         aprovaRenderSeuFocoArea(pack, startId);
 
         if (pack.primaryExamId) {
           aprovaFcHomeStatsFocus = pack.primaryExamId;
-        }
-
-        // Atualiza temas do plano com o foco já carregado
-        if (typeof aprovaBuildStudyPlan === "function") {
-          aprovaRenderSeuPlano(aprovaBuildStudyPlan(profile, pack), true);
         }
       }
     }
