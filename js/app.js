@@ -3381,26 +3381,30 @@ async function aprovaBoot () {
     const draft = aprovaPerfilDraft.slice();
     const hasExam = draft.some(s => s && (s.kind === "exam" || (s.kind === "other" && String(s.label || "").trim())));
     const savedComplete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete();
+    const msg = document.getElementById("perfil-save-msg");
+    const showErr = text => {
+      if (!msg) return;
+      msg.hidden = false;
+      msg.textContent = text;
+      msg.classList.remove("profile-msg--ok");
+      msg.classList.add("profile-msg--err");
+    };
+
+    // Limpar o select sem salvar ainda: não ir para metas com o perfil antigo
+    if (!draft[0] && savedComplete) {
+      showErr("Salve o perfil em branco para limpar a personalização, ou escolha a 1ª prioridade.");
+      aprovaPerfilActiveTab = 0;
+      aprovaRenderPerfilSlot();
+      return;
+    }
     if (!hasExam && !savedComplete) {
-      const msg = document.getElementById("perfil-save-msg");
-      if (msg) {
-        msg.hidden = false;
-        msg.textContent = "Escolha e salve a 1ª prioridade antes de ver as metas.";
-        msg.classList.remove("profile-msg--ok");
-        msg.classList.add("profile-msg--err");
-      }
+      showErr("Escolha e salve a 1ª prioridade antes de ver as metas.");
       aprovaPerfilActiveTab = 0;
       aprovaRenderPerfilSlot();
       return;
     }
     if (hasExam && !savedComplete) {
-      const msg = document.getElementById("perfil-save-msg");
-      if (msg) {
-        msg.hidden = false;
-        msg.textContent = "Salve o perfil primeiro para atualizar as metas.";
-        msg.classList.remove("profile-msg--ok");
-        msg.classList.add("profile-msg--err");
-      }
+      showErr("Salve o perfil primeiro para atualizar as metas.");
       return;
     }
     aprovaGoTo("metas");
