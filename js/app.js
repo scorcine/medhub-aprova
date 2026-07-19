@@ -3,9 +3,9 @@
 const APROVA_PANEL_META = {
   inicio: { title: "Início", sub: "Escolha o que estudar agora" },
   hoje: { title: "Revisão de hoje", sub: "Fila SRS · novos e vencidos" },
-  flashcards: { title: "Flashcards", sub: "Memória ativa para o R1" },
+  flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
-  especialidades: { title: "Especialidades", sub: "Foque por área clínica" },
+  especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "Acertos, erros e temas" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
@@ -43,8 +43,26 @@ const APROVA_SPECIALTY_LABELS = {
   urgencia: "Urgência e emergência"
 };
 
+function aprovaMarkNav (panelId) {
+  document.querySelectorAll(".side-link[data-panel]").forEach(link => {
+    link.classList.toggle("active", link.dataset.panel === panelId);
+  });
+}
+
 function aprovaGoTo (id, options) {
   const opts = options || {};
+
+  // Especialidades virou só o fluxo interno dos Flashcards (sem item no menu).
+  if (id === "especialidades") {
+    aprovaRenderEspecialidades();
+    aprovaShowPanel("especialidades");
+    aprovaMarkNav("flashcards");
+    const title = document.getElementById("workspace-title");
+    const sub = document.getElementById("workspace-sub");
+    if (title) title.textContent = "Flashcards";
+    if (sub) sub.textContent = "Escolha a área e o tema para estudar";
+    return;
+  }
 
   if (id === "flashcards") {
     if (opts.study) {
@@ -62,7 +80,6 @@ function aprovaGoTo (id, options) {
   if (id === "estatisticas") aprovaRenderExamStats();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
-  if (id === "especialidades") aprovaRenderEspecialidades();
   aprovaShowPanel(id);
 }
 
@@ -1794,7 +1811,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
         ? "Veja as estatísticas da Clínica e escolha uma área (ex.: Cardiologia) para aprofundar."
         : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
   }
-  if (back) back.textContent = "← Voltar às especialidades";
+  if (back) back.textContent = "← Voltar aos flashcards";
 
   const groupsLabel = document.getElementById("esp-groups-label");
   if (groupsLabel) groupsLabel.textContent = hasAreas ? "Áreas" : "Grupos";
@@ -2096,7 +2113,7 @@ function aprovaOpenSpecialty (specialty) {
   if (subtemas) subtemas.hidden = false;
   if (stats) stats.hidden = true;
   if (sub) sub.hidden = true;
-  if (back) back.textContent = "← Voltar às especialidades";
+  if (back) back.textContent = "← Voltar aos flashcards";
 
   const label = APROVA_SPECIALTY_LABELS[specialty] || specialty;
   if (title) title.textContent = label + " · subtemas";
@@ -2376,7 +2393,7 @@ async function aprovaBoot () {
       aprovaRichSpecialtyMeta(aprovaActiveSpecialty).openRoot();
       return;
     }
-    aprovaShowSpecialtyList();
+    aprovaGoTo("flashcards");
   });
 
   document.getElementById("esp-rev-back")?.addEventListener("click", () => {
@@ -2401,7 +2418,7 @@ async function aprovaBoot () {
         aprovaOpenClinica();
         return;
       }
-      aprovaShowSpecialtyList();
+      aprovaGoTo("flashcards");
       return;
     }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty)) {

@@ -80,7 +80,6 @@
         <button type="button" class="side-link" data-panel="questoes">Banco de questões</button>
 
         <p class="sidebar-label">Estudo</p>
-        <button type="button" class="side-link" data-panel="especialidades">Especialidades</button>
         <button type="button" class="side-link" data-panel="simulados">Simulados</button>
         <button type="button" class="side-link" data-panel="estatisticas">Estatísticas de provas</button>
         <button type="button" class="side-link" data-panel="progresso">Meu progresso</button>
@@ -127,17 +126,12 @@
             <button type="button" class="dash-card" data-goto="flashcards">
               <span class="dash-card-kicker">Memória</span>
               <strong>Flashcards</strong>
-              <span>Escolha um tema e revise com acertei / errei.</span>
+              <span>Escolha a área, o tema e revise com acertei / errei.</span>
             </button>
             <button type="button" class="dash-card" data-goto="questoes">
               <span class="dash-card-kicker">Prova</span>
               <strong>Banco de questões</strong>
               <span>Treine no formato da prova com feedback imediato.</span>
-            </button>
-            <button type="button" class="dash-card" data-goto="especialidades">
-              <span class="dash-card-kicker">Conteúdo</span>
-              <strong>Especialidades</strong>
-              <span>Clínica, cirurgia, preventiva, pediatria e GO.</span>
             </button>
             <button type="button" class="dash-card" data-goto="simulados">
               <span class="dash-card-kicker">Performance</span>
@@ -189,7 +183,7 @@
               <button type="button" class="btn btn-ghost" id="fc-hard" hidden>Errei</button>
               <button type="button" class="btn btn-ghost" id="fc-back-hoje" hidden data-goto="hoje">Voltar a Hoje</button>
               <button type="button" class="btn btn-ghost" id="fc-back-browse" hidden>Voltar aos temas</button>
-              <button type="button" class="btn btn-ghost" id="fc-back-esp" hidden data-goto="especialidades">Voltar às especialidades</button>
+              <button type="button" class="btn btn-ghost" id="fc-back-esp" hidden data-goto="flashcards">Voltar aos flashcards</button>
             </div>
           </div>
         </section>
@@ -210,8 +204,8 @@
         </section>
 
         <section id="panel-especialidades" class="panel" aria-labelledby="esp-title" hidden>
-          <h2 id="esp-title">Especialidades</h2>
-          <p class="muted" id="esp-hint">Escolha uma área e depois um subtema para estudar os flashcards.</p>
+          <h2 id="esp-title">Flashcards</h2>
+          <p class="muted" id="esp-hint">Escolha uma área e depois um subtema para estudar.</p>
 
           <div id="esp-list">
             <div class="dash-grid dash-grid--sm">
@@ -245,7 +239,7 @@
 
           <div id="esp-decks" hidden>
             <div class="actions-row" style="margin-bottom:0.85rem">
-              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar às especialidades</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="esp-back">← Voltar aos flashcards</button>
             </div>
             <h3 id="esp-decks-title" class="esp-decks-title">Pediatria</h3>
             <p class="muted" id="esp-decks-sub" hidden></p>
@@ -432,6 +426,6 @@
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718dd"></script>
-  <script src="js/app.js?v=20260718ii"></script>
+  <script src="js/app.js?v=20260718jj"></script>
 </body>
 </html>
