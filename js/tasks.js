@@ -1,4 +1,4 @@
-/* Metas de estudo do plano — diária / semanal / quinzenal / mensal */
+/* Metas de estudo — diária / semanal / quinzenal / mensal + temas */
 
 const APROVA_CARDS_PER_MIN = 1.4;
 
@@ -40,7 +40,6 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
   const newCards = (srs && srs.newCards) || 0;
 
   let dailyReview = aprovaClampInt(daily * (reviewPct / 100), 5, daily);
-  // Prioriza o que já está vencido na fila
   if (due > dailyReview) {
     dailyReview = Math.min(due, daily);
   }
@@ -68,13 +67,84 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
     reviewPct,
     minutesMin: horizon.dailyMin,
     minutesMax: horizon.dailyMax,
-    splitLine: dailyNew + " novos · " + dailyReview + " revisões (meta do dia)",
+    splitLine: dailyNew + " novos · " + dailyReview + " revisões",
     weekLine: weekly + " cards/semana (~" + daily + "/dia)",
-    how: "Faça primeiro as revisões vencidas do SRS; o restante da meta do dia abre cards novos dos temas prioritários."
+    how: "Faça primeiro as revisões vencidas do SRS; o restante abre cards novos dos temas abaixo."
   };
 }
 
-/** Revisões espaçadas sugeridas por tema até a prova (pelo peso relativo). */
+/** Temas prioritários de todas as áreas (não exige clicar em cada uma). */
+function aprovaCollectCrossAreaThemes (focusPack, maxTotal) {
+  const limit = maxTotal || 10;
+  if (!focusPack || !focusPack.ok || !Array.isArray(focusPack.areas)) return [];
+
+  const bag = [];
+  focusPack.areas.forEach(area => {
+    const list = area.focus || area.themes || [];
+    list.slice(0, 3).forEach((t, i) => {
+      const tema = String(t.tema || "").trim();
+      if (!tema) return;
+      bag.push({
+        tema,
+        pct: Number(t.pct) || 0,
+        areaId: area.id,
+        areaLabel: area.label || area.id,
+        rankInArea: i
+      });
+    });
+  });
+
+  bag.sort((a, b) => b.pct - a.pct || a.rankInArea - b.rankInArea);
+  return bag.slice(0, limit);
+}
+
+/** Distribui N cards entre temas pelo peso relativo (soma = total). */
+function aprovaDistributeThemeCards (themes, totalCards) {
+  const list = Array.isArray(themes) ? themes : [];
+  const total = Math.max(0, totalCards | 0);
+  if (!list.length || !total) return [];
+
+  const weights = list.map(t => Math.max(0.5, Number(t.pct) || 1));
+  const sumW = weights.reduce((a, b) => a + b, 0) || 1;
+
+  const raw = weights.map(w => (w / sumW) * total);
+  const floors = raw.map(x => Math.floor(x));
+  let assigned = floors.reduce((a, b) => a + b, 0);
+  const order = raw
+    .map((x, i) => ({ i, frac: x - floors[i] }))
+    .sort((a, b) => b.frac - a.frac);
+
+  let left = total - assigned;
+  const cards = floors.slice();
+  let k = 0;
+  while (left > 0 && order.length) {
+    cards[order[k % order.length].i] += 1;
+    left -= 1;
+    k += 1;
+  }
+
+  // Garante pelo menos 1 nos primeiros temas se a meta for grande o bastante
+  if (total >= list.length) {
+    for (let i = 0; i < list.length; i++) {
+      if (cards[i] < 1) {
+        const donor = cards.indexOf(Math.max.apply(null, cards));
+        if (donor >= 0 && cards[donor] > 1) {
+          cards[donor] -= 1;
+          cards[i] = 1;
+        }
+      }
+    }
+  }
+
+  return list.map((t, i) => ({
+    tema: t.tema,
+    areaLabel: t.areaLabel || "",
+    areaId: t.areaId || "",
+    pct: t.pct,
+    cards: cards[i] || 0
+  })).filter(t => t.cards > 0);
+}
+
 function aprovaThemeReviewProgram (themes, daysLeft, weeks) {
   const list = Array.isArray(themes) ? themes : [];
   const w = Math.max(1, weeks || 1);
@@ -91,6 +161,7 @@ function aprovaThemeReviewProgram (themes, daysLeft, weeks) {
 
     return {
       tema: t.tema,
+      areaLabel: t.areaLabel || "",
       pct: t.pct,
       reviewsNeeded,
       perWeek,
@@ -124,7 +195,7 @@ function aprovaTaskStatus (done, goal) {
   };
 }
 
-function aprovaBuildPeriodTasks (quota, now = Date.now()) {
+function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
   const todayIso = typeof aprovaActivityDayKey === "function"
     ? aprovaActivityDayKey(now)
     : aprovaIsoOffset(0, now);
@@ -144,35 +215,47 @@ function aprovaBuildPeriodTasks (quota, now = Date.now()) {
   const periods = [
     {
       id: "daily",
-      label: "Tarefa diária",
+      label: "Meta diária",
       window: "Hoje",
       goal: quota.daily,
       done: dayDone,
-      detail: quota.splitLine
+      detail: quota.splitLine,
+      themeCards: aprovaDistributeThemeCards(themes, quota.daily),
+      newCards: quota.dailyNew,
+      reviewCards: quota.dailyReview
     },
     {
       id: "weekly",
-      label: "Tarefa semanal",
+      label: "Meta semanal",
       window: "Últimos 7 dias",
       goal: quota.weekly,
       done: sum(weekFrom, todayIso),
-      detail: quota.weekLine
+      detail: quota.weekLine,
+      themeCards: aprovaDistributeThemeCards(themes, quota.weekly),
+      newCards: quota.dailyNew * 7,
+      reviewCards: quota.dailyReview * 7
     },
     {
       id: "biweekly",
-      label: "Tarefa quinzenal",
+      label: "Meta quinzenal",
       window: "Últimos 14 dias",
       goal: quota.biweekly,
       done: sum(biFrom, todayIso),
-      detail: "~" + quota.daily + " cards/dia em média na quinzena"
+      detail: "~" + quota.daily + " cards/dia em média na quinzena",
+      themeCards: aprovaDistributeThemeCards(themes, quota.biweekly),
+      newCards: quota.dailyNew * 14,
+      reviewCards: quota.dailyReview * 14
     },
     {
       id: "monthly",
-      label: "Tarefa mensal",
+      label: "Meta mensal",
       window: "Últimos 30 dias",
       goal: quota.monthly,
       done: sum(monthFrom, todayIso),
-      detail: "Volume acumulado para sustentar o plano até a prova"
+      detail: "Volume acumulado para sustentar o ritmo até a prova",
+      themeCards: aprovaDistributeThemeCards(themes, quota.monthly),
+      newCards: quota.dailyNew * 30,
+      reviewCards: quota.dailyReview * 30
     }
   ];
 
@@ -191,8 +274,9 @@ function aprovaBuildPeriodTasks (quota, now = Date.now()) {
  * Programação completa ligada ao plano personalizado.
  * @param {object} plan resultado de aprovaBuildStudyPlan
  * @param {string[]} cardIds ids de flashcards
+ * @param {object|null} focusPack pacote do Seu foco (todas as áreas)
  */
-function aprovaBuildStudyProgram (plan, cardIds, now = Date.now()) {
+function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = null) {
   if (!plan || !plan.ok) return null;
 
   const ids = cardIds || (typeof AprovaFlashcards !== "undefined" && AprovaFlashcards.allIds
@@ -209,12 +293,23 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now()) {
     srs,
     plan.currentPhase
   );
+
+  const crossThemes = aprovaCollectCrossAreaThemes(focusPack, 10);
+  const themesForGoals = crossThemes.length
+    ? crossThemes
+    : (plan.themes || []).map(t => ({
+      tema: t.tema,
+      pct: t.pct,
+      areaLabel: plan.areaLabel || "",
+      areaId: plan.areaId || ""
+    }));
+
   const themeProgram = aprovaThemeReviewProgram(
-    plan.themes,
+    themesForGoals,
     daysLeft,
     plan.weeks
   );
-  const tasks = aprovaBuildPeriodTasks(quota, now);
+  const tasks = aprovaBuildPeriodTasks(quota, themesForGoals, now);
 
   const dailyTask = tasks.find(t => t.id === "daily");
   const untilExam = (daysLeft != null && daysLeft > 0)
@@ -225,6 +320,7 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now()) {
     quota,
     tasks,
     themeProgram,
+    themesForGoals,
     srs: {
       due: srs.due,
       newCards: srs.newCards,
@@ -234,9 +330,9 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now()) {
     },
     untilExamCards: untilExam,
     summaryLine: dailyTask && dailyTask.status === "done"
-      ? "Meta de hoje cumprida (" + dailyTask.done + "/" + dailyTask.goal + " cards)."
+      ? "Meta de hoje cumprida (" + dailyTask.done + "/" + dailyTask.goal + " flashcards)."
       : ("Hoje: " + (dailyTask ? dailyTask.done : 0) + "/" + quota.daily +
-        " cards · " + quota.splitLine),
+        " flashcards · " + quota.splitLine),
     divisionLine: "Nesta fase: " + quota.studyPct + "% conteúdo novo · " +
       quota.reviewPct + "% revisão · " + quota.how
   };
