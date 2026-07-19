@@ -2676,9 +2676,26 @@ function aprovaRenderDashboard () {
     ? aprovaProfileSummary(profile)
     : { complete: false, line: "Escolha as provas que você pretende prestar.", detail: "", hasDates: false };
 
-  // Início: só o convite de personalização (detalhes ficam em Meu perfil)
+  // Início: aviso de personalização sempre visível (plano/foco ficam em Meu perfil)
   const banner = document.getElementById("dash-profile-banner");
-  if (banner) banner.hidden = summary.complete;
+  const bannerTitle = document.getElementById("dash-profile-banner-title");
+  const bannerText = document.getElementById("dash-profile-banner-text");
+  const bannerBtn = document.getElementById("dash-profile-banner-btn");
+  if (banner) banner.hidden = false;
+  if (summary.complete) {
+    if (bannerTitle) bannerTitle.textContent = "Experiência personalizada";
+    if (bannerText) {
+      bannerText.textContent = "Seu perfil está configurado (" + summary.line +
+        "). Ajuste provas e datas em Meu perfil — plano e foco ficam lá.";
+    }
+    if (bannerBtn) bannerBtn.textContent = "Abrir meu perfil";
+  } else {
+    if (bannerTitle) bannerTitle.textContent = "Personalize seu estudo";
+    if (bannerText) {
+      bannerText.textContent = "Para uma experiência personalizada, configure seu perfil com as provas que você pretende prestar (até 3, por prioridade) e a data — ou “Não sei”. Plano e foco ficam em Meu perfil.";
+    }
+    if (bannerBtn) bannerBtn.textContent = "Configurar meu perfil";
+  }
 
   const sideUser = document.getElementById("sidebar-user-label");
   if (sideUser && session) {
