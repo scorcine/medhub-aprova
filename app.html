@@ -121,7 +121,7 @@
             <button type="button" class="dash-card" data-goto="hoje">
               <span class="dash-card-kicker">Agenda</span>
               <strong>Revisão de hoje</strong>
-              <span>Veja o que a fila SRS recomenda estudar agora.</span>
+              <span id="dash-hoje-preview">Fila SRS · cards novos e revisões vencidas.</span>
             </button>
             <button type="button" class="dash-card" data-goto="flashcards">
               <span class="dash-card-kicker">Memória</span>
@@ -139,27 +139,47 @@
               <span>Blocos cronometrados no estilo das provas de R1.</span>
             </button>
             <button type="button" class="dash-card" data-goto="estatisticas">
-              <span class="dash-card-kicker">Números</span>
+              <span class="dash-card-kicker">Provas</span>
               <strong>Estatísticas de provas</strong>
-              <span id="dash-exam-stats-preview">Acertos, erros e desempenho por tema.</span>
+              <span id="dash-exam-stats-preview">O que mais cai nas principais provas de R1.</span>
             </button>
             <button type="button" class="dash-card" data-goto="progresso">
               <span class="dash-card-kicker">Acompanhar</span>
               <strong>Meu progresso</strong>
-              <span>Resumo do que você já revisou e o que ainda falta.</span>
+              <span id="dash-progress-preview">Resumo do que você já revisou e o desempenho nas questões.</span>
             </button>
           </div>
         </section>
 
         <section id="panel-hoje" class="panel" aria-labelledby="hoje-title" hidden>
           <h2 id="hoje-title">Revisão de hoje</h2>
-          <p class="muted">Só entram cards novos ou com revisão vencida.</p>
+          <p class="muted">Fila SRS: revisões vencidas primeiro, depois cards novos. Toque em começar para estudar.</p>
+
+          <div class="stat-grid" id="hoje-stat-grid" style="margin-bottom:1rem">
+            <article class="stat-card">
+              <span class="stat-card-label">Na fila</span>
+              <strong id="hoje-stat-pending">—</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Revisões</span>
+              <strong id="hoje-stat-due">—</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Novos</span>
+              <strong id="hoje-stat-new">—</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Estudados hoje</span>
+              <strong id="hoje-stat-done">—</strong>
+            </article>
+          </div>
+
           <div class="study-card" id="today-summary">
             <div class="label">Agenda</div>
             <p class="prompt" id="today-prompt">Carregando…</p>
             <div class="actions-row">
               <button type="button" class="btn btn-primary" id="today-start">Começar revisão</button>
-              <button type="button" class="btn btn-ghost" data-goto="questoes">Abrir questões</button>
+              <button type="button" class="btn btn-ghost" data-goto="flashcards">Escolher tema</button>
             </div>
             <div class="stats" id="today-stats"></div>
           </div>
@@ -205,7 +225,7 @@
 
         <section id="panel-especialidades" class="panel" aria-labelledby="esp-title" hidden>
           <h2 id="esp-title">Flashcards</h2>
-          <p class="muted" id="esp-hint">Escolha uma área e depois um subtema para estudar.</p>
+          <p class="muted" id="esp-hint">Escolha uma área para continuar.</p>
 
           <div id="esp-list">
             <div class="dash-grid dash-grid--sm">
@@ -329,9 +349,53 @@
         </section>
 
         <section id="panel-estatisticas" class="panel" aria-labelledby="stats-title" hidden>
+          <!-- Conteúdo real abre em panel-especialidades no modo estatísticas -->
           <h2 id="stats-title">Estatísticas de provas</h2>
-          <p class="muted">Desempenho nas questões respondidas — atualiza a cada resposta.</p>
-          <div class="stat-grid" id="exam-stat-grid">
+          <p class="muted">Abrindo o que mais cai nas provas…</p>
+        </section>
+
+        <section id="panel-progresso" class="panel" aria-labelledby="prog-title" hidden>
+          <h2 id="prog-title">Meu progresso</h2>
+          <p class="muted">Flashcards e questões que você já treinou — salvo neste aparelho.</p>
+
+          <div class="study-card">
+            <div class="label">Flashcards · hoje</div>
+            <p class="prompt" id="progress-prompt">Carregando…</p>
+            <div class="stats" id="progress-stats"></div>
+          </div>
+
+          <div class="stat-grid" id="fc-stat-grid" style="margin-top:1rem">
+            <article class="stat-card">
+              <span class="stat-card-label">Estudados hoje</span>
+              <strong id="fc-stat-today">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Acertei</span>
+              <strong id="fc-stat-easy">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Errei</span>
+              <strong id="fc-stat-hard">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Na agenda</span>
+              <strong id="fc-stat-scheduled">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Fila de hoje</span>
+              <strong id="fc-stat-pending">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card-label">Já revisados</span>
+              <strong id="fc-stat-reviewed">0</strong>
+            </article>
+          </div>
+
+          <div class="study-card" style="margin-top:1.25rem">
+            <div class="label">Questões</div>
+            <p class="muted" style="margin:0">Desempenho no banco — atualiza a cada resposta.</p>
+          </div>
+          <div class="stat-grid" id="exam-stat-grid" style="margin-top:0.75rem">
             <article class="stat-card">
               <span class="stat-card-label">Respondidas</span>
               <strong id="stat-attempted">0</strong>
@@ -364,17 +428,8 @@
             </div>
             <div class="actions-row" style="margin-top:1rem">
               <button type="button" class="btn btn-primary" data-goto="questoes">Treinar questões</button>
+              <button type="button" class="btn btn-ghost" data-goto="flashcards">Abrir flashcards</button>
             </div>
-          </div>
-        </section>
-
-        <section id="panel-progresso" class="panel" aria-labelledby="prog-title" hidden>
-          <h2 id="prog-title">Meu progresso</h2>
-          <p class="muted">Resumo da sua agenda e treino nesta sessão.</p>
-          <div class="study-card">
-            <div class="label">Visão geral</div>
-            <p class="prompt" id="progress-prompt">Carregando…</p>
-            <div class="stats" id="progress-stats"></div>
           </div>
         </section>
 
@@ -421,11 +476,11 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/schedule.js?v=20260718dd"></script>
+  <script src="js/schedule.js?v=20260718mm"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718dd"></script>
-  <script src="js/app.js?v=20260718jj"></script>
+  <script src="js/app.js?v=20260718mm"></script>
 </body>
 </html>

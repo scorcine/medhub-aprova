@@ -7,10 +7,26 @@ const APROVA_PANEL_META = {
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
-  estatisticas: { title: "Estatísticas de provas", sub: "Acertos, erros e temas" },
+  estatisticas: { title: "Estatísticas de provas", sub: "O que mais cai nas provas R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
   config: { title: "Configurações", sub: "Conta e preferências" }
 };
+
+/** "study" = Flashcards · "stats" = o que mais cai nas provas */
+let aprovaEspMode = "study";
+
+function aprovaIsStatsMode () {
+  return aprovaEspMode === "stats";
+}
+
+function aprovaSetWorkspaceMeta (panelId) {
+  const meta = APROVA_PANEL_META[panelId];
+  if (!meta) return;
+  const title = document.getElementById("workspace-title");
+  const sub = document.getElementById("workspace-sub");
+  if (title) title.textContent = meta.title;
+  if (sub) sub.textContent = meta.sub;
+}
 
 function aprovaShowPanel (id) {
   const key = APROVA_PANEL_META[id] ? id : "inicio";
@@ -52,19 +68,28 @@ function aprovaMarkNav (panelId) {
 function aprovaGoTo (id, options) {
   const opts = options || {};
 
+  // Estatísticas de provas: explorer de “o que mais cai” (reusa o painel de áreas).
+  if (id === "estatisticas") {
+    aprovaEspMode = "stats";
+    aprovaRenderEspecialidades();
+    aprovaShowPanel("especialidades");
+    aprovaMarkNav("estatisticas");
+    aprovaSetWorkspaceMeta("estatisticas");
+    return;
+  }
+
   // Especialidades virou só o fluxo interno dos Flashcards (sem item no menu).
   if (id === "especialidades") {
+    aprovaEspMode = "study";
     aprovaRenderEspecialidades();
     aprovaShowPanel("especialidades");
     aprovaMarkNav("flashcards");
-    const title = document.getElementById("workspace-title");
-    const sub = document.getElementById("workspace-sub");
-    if (title) title.textContent = "Flashcards";
-    if (sub) sub.textContent = "Escolha a área e o tema para estudar";
+    aprovaSetWorkspaceMeta("flashcards");
     return;
   }
 
   if (id === "flashcards") {
+    aprovaEspMode = "study";
     if (opts.study) {
       if (opts.mode === "today" || AprovaFlashcards.mode !== "deck") {
         AprovaFlashcards.rebuildTodayQueue();
@@ -77,10 +102,20 @@ function aprovaGoTo (id, options) {
   }
   if (id === "hoje") aprovaRenderToday();
   if (id === "progresso") aprovaRenderProgress();
-  if (id === "estatisticas") aprovaRenderExamStats();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
   aprovaShowPanel(id);
+}
+
+function aprovaBackToEspHub () {
+  if (aprovaIsStatsMode()) {
+    aprovaRenderEspecialidades();
+    aprovaShowPanel("especialidades");
+    aprovaMarkNav("estatisticas");
+    aprovaSetWorkspaceMeta("estatisticas");
+    return;
+  }
+  aprovaGoTo("flashcards");
 }
 
 function aprovaShowFlashcardBrowse () {
@@ -505,8 +540,16 @@ function aprovaShowSpecialtyList () {
   aprovaHideEspViews();
   const list = document.getElementById("esp-list");
   const hint = document.getElementById("esp-hint");
+  const title = document.getElementById("esp-title");
   if (list) list.hidden = false;
-  if (hint) hint.textContent = "Escolha uma área para focar o estudo.";
+  if (title) {
+    title.textContent = aprovaIsStatsMode() ? "Estatísticas de provas" : "Flashcards";
+  }
+  if (hint) {
+    hint.textContent = aprovaIsStatsMode()
+      ? "Escolha a área e veja, prova a prova, o que mais cai."
+      : "Escolha uma área e depois um subtema para estudar.";
+  }
   aprovaActiveSpecialty = null;
   aprovaActiveGoArea = null;
   aprovaActiveCliArea = null;
@@ -520,35 +563,46 @@ function aprovaRenderEspecialidades () {
   const ped = document.getElementById("esp-count-pediatria");
   const go = document.getElementById("esp-count-go");
   const prev = document.getElementById("esp-count-preventiva");
+  const statsMode = aprovaIsStatsMode();
   const cliN = AprovaFlashcards.countBySpecialty("clinica");
   const cirN = AprovaFlashcards.countBySpecialty("cirurgia");
   const pedN = AprovaFlashcards.countBySpecialty("pediatria");
   const goN = AprovaFlashcards.countBySpecialty("go");
   const prevN = AprovaFlashcards.countBySpecialty("preventiva");
   if (cli) {
-    cli.textContent = cliN
-      ? cliN + " flashcards · Cardio, infecto, endo e demais áreas"
-      : "Cardio, infecto, endo e demais áreas.";
+    cli.textContent = statsMode
+      ? "Cardio, infecto, endo e demais áreas · o que mais cai"
+      : (cliN
+        ? cliN + " flashcards · Cardio, infecto, endo e demais áreas"
+        : "Cardio, infecto, endo e demais áreas.");
   }
   if (cir) {
-    cir.textContent = cirN
-      ? cirN + " flashcards · trauma, abdome e pós-op"
-      : "Trauma, abdome agudo e pós-operatório.";
+    cir.textContent = statsMode
+      ? "Trauma, abdome, pós-op e especialidades · o que mais cai"
+      : (cirN
+        ? cirN + " flashcards · trauma, abdome e pós-op"
+        : "Trauma, abdome agudo e pós-operatório.");
   }
   if (ped) {
-    ped.textContent = pedN
-      ? pedN + " flashcards · Pediatria R1 completa"
-      : "Ped1–Ped6 + blocos clássicos do R1.";
+    ped.textContent = statsMode
+      ? "Neo, infecções, urgências e blocos clássicos · o que mais cai"
+      : (pedN
+        ? pedN + " flashcards · Pediatria R1 completa"
+        : "Ped1–Ped6 + blocos clássicos do R1.");
   }
   if (go) {
-    go.textContent = goN
-      ? goN + " flashcards · Ginecologia (+ Obstetrícia em breve)"
-      : "Ginecologia e Obstetrícia.";
+    go.textContent = statsMode
+      ? "Ginecologia e Obstetrícia · o que mais cai"
+      : (goN
+        ? goN + " flashcards · Ginecologia (+ Obstetrícia em breve)"
+        : "Ginecologia e Obstetrícia.");
   }
   if (prev) {
-    prev.textContent = prevN
-      ? prevN + " flashcards · Prev1–4 · 4 grupos"
-      : "Epidemiologia, vacinas e SUS.";
+    prev.textContent = statsMode
+      ? "SUS, epidemiologia, vigilância e indicadores · o que mais cai"
+      : (prevN
+        ? prevN + " flashcards · Prev1–4 · 4 grupos"
+        : "Epidemiologia, vacinas e SUS.");
   }
 }
 
@@ -1139,10 +1193,12 @@ async function aprovaRenderGoAreaCards () {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "dash-card";
-    const detail = stats.groups
-      ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
-        " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
-      : "Em breve";
+    const detail = aprovaIsStatsMode()
+      ? "Ver o que mais cai nesta área"
+      : (stats.groups
+        ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
+          " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
+        : "Em breve");
     btn.innerHTML =
       "<span class=\"dash-card-kicker\">Área</span>" +
       "<strong>" + area.label + "</strong>" +
@@ -1185,10 +1241,12 @@ async function aprovaRenderCliAreaCards () {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "dash-card";
-    const detail = stats.groups
-      ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
-        " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
-      : "Em breve";
+    const detail = aprovaIsStatsMode()
+      ? "Ver o que mais cai nesta área"
+      : (stats.groups
+        ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
+          " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
+        : "Em breve");
     btn.innerHTML =
       "<span class=\"dash-card-kicker\">Área</span>" +
       "<strong>" + area.label + "</strong>" +
@@ -1228,19 +1286,29 @@ async function aprovaRenderPedGroupCards (activeModuleId, options) {
     return;
   }
 
+  const statsMode = aprovaIsStatsMode();
   for (const m of modules) {
     const stats = await aprovaPedModuleStats(m.id);
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "dash-card" + (m.id === activeModuleId ? " dash-card--active" : "");
     btn.innerHTML =
-      "<span class=\"dash-card-kicker\">Grupo</span>" +
+      "<span class=\"dash-card-kicker\">" + (statsMode ? "Tema" : "Grupo") + "</span>" +
       "<strong>" + m.label + "</strong>" +
-      "<span>" + stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
-        " · " + stats.decks + " subtema" + (stats.decks === 1 ? "" : "s") + "</span>";
+      "<span>" + (statsMode
+        ? "Ver o que mais cai neste tema"
+        : (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
+          " · " + stats.decks + " subtema" + (stats.decks === 1 ? "" : "s"))) + "</span>";
     btn.addEventListener("click", e => {
       e.preventDefault();
       e.stopPropagation();
+      if (statsMode) {
+        const meta = aprovaRichSpecialtyMeta(aprovaActiveSpecialty || "pediatria");
+        Promise.resolve(meta.openModule(m.id)).catch(err => {
+          console.error("Falha ao abrir estatísticas", m.id, err);
+        });
+        return;
+      }
       aprovaOpenPedDeckPicker(m.id).catch(err => {
         console.error("Falha ao abrir subtemas", m.id, err);
       });
@@ -1636,8 +1704,11 @@ async function aprovaRenderPediatriaStats (focusId, moduleId, yearId) {
   const grid = document.getElementById("esp-deck-grid");
   if (!stats || !bars || !options || !moduleId) return;
 
+  const statsMode = aprovaIsStatsMode();
   stats.hidden = false;
-  if (subtemas) subtemas.hidden = false;
+  if (subtemas) subtemas.hidden = statsMode;
+  const revBtn = document.getElementById("esp-open-revisao");
+  if (revBtn) revBtn.hidden = statsMode;
   aprovaActivePedModule = moduleId;
   if (focusId != null) aprovaActiveFocusId = focusId || "geral";
   if (yearId != null) aprovaActiveModuleYear = yearId;
@@ -1775,6 +1846,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
   if (stats) stats.hidden = true;
   if (subtemas) subtemas.hidden = true;
 
+  const statsMode = aprovaIsStatsMode();
   const total = AprovaFlashcards.countBySpecialty(meta.id);
   const isGo = meta.id === "go";
   const isCli = meta.id === "clinica";
@@ -1788,12 +1860,14 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
       ? AprovaRevisao.listCliAreas()
       : [];
 
-  if (overview) overview.hidden = false;
-
   if (title) title.textContent = meta.label;
   if (sub) {
     sub.hidden = false;
-    if (hasAreas) {
+    if (statsMode) {
+      sub.textContent = hasAreas
+        ? ("O que mais cai em " + meta.shortLabel + " · toque em uma área para detalhar")
+        : ("O que mais cai em " + meta.shortLabel + " · escolha a prova e, se quiser, um tema");
+    } else if (hasAreas) {
       sub.textContent = total
         ? (total + " flashcards · " + areas.length + " áreas · toque em uma área para ver os grupos")
         : "Escolha uma área para estudar.";
@@ -1805,25 +1879,48 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     }
   }
   if (hint) {
-    hint.textContent = isGo
-      ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
-      : isCli
-        ? "Veja as estatísticas da Clínica e escolha uma área (ex.: Cardiologia) para aprofundar."
-        : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
+    if (statsMode) {
+      hint.textContent = hasAreas
+        ? "Veja o panorama da área e abra cada especialidade para o detalhe por prova."
+        : "Filtre por banca e ano · toque em um tema para ver o recorte mais fino.";
+    } else {
+      hint.textContent = isGo
+        ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
+        : isCli
+          ? "Escolha uma área (ex.: Cardiologia) e depois um grupo para estudar."
+          : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
+    }
   }
-  if (back) back.textContent = "← Voltar aos flashcards";
+  if (back) {
+    back.textContent = statsMode ? "← Voltar às estatísticas" : "← Voltar aos flashcards";
+  }
 
   const groupsLabel = document.getElementById("esp-groups-label");
-  if (groupsLabel) groupsLabel.textContent = hasAreas ? "Áreas" : "Grupos";
+  if (groupsLabel) {
+    groupsLabel.textContent = hasAreas ? "Áreas" : (statsMode ? "Temas" : "Grupos");
+  }
   if (selectAll) {
-    selectAll.hidden = hasAreas;
+    selectAll.hidden = statsMode || hasAreas;
     selectAll.textContent = "Selecionar todos";
+  }
+
+  const groupsEl = document.getElementById("esp-groups");
+  if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
+    if (statsMode) {
+      overview.parentNode.insertBefore(overview, groupsEl);
+    } else {
+      groupsEl.parentNode.insertBefore(groupsEl, overview);
+    }
   }
 
   aprovaActivePedOverviewFocus = "geral";
   aprovaActiveOverviewYear = "geral";
   aprovaOverviewExamChooserOpen = false;
-  await aprovaRenderPedOverviewStats("geral", "geral");
+  if (statsMode) {
+    await aprovaRenderPedOverviewStats("geral", "geral");
+  } else if (overview) {
+    overview.hidden = true;
+  }
   if (isGo) {
     await aprovaRenderGoAreaCards();
   } else if (isCli) {
@@ -1861,26 +1958,39 @@ async function aprovaOpenGoArea (areaId) {
   decksWrap.hidden = false;
   if (stats) stats.hidden = true;
   if (subtemas) subtemas.hidden = true;
-  const showOverview = aprovaActiveGoArea === "ginecologia" || aprovaActiveGoArea === "obstetricia";
-  if (overview) overview.hidden = !showOverview;
+  const statsMode = aprovaIsStatsMode();
+  const showOverview = statsMode &&
+    (aprovaActiveGoArea === "ginecologia" || aprovaActiveGoArea === "obstetricia");
 
   const areaStats = await aprovaGoAreaStats(aprovaActiveGoArea);
   if (title) title.textContent = areaMeta.label;
   if (sub) {
     sub.hidden = false;
-    sub.textContent = areaStats.groups
-      ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
-        (areaStats.groups === 1 ? "" : "s") + " · toque em um grupo para escolher os subtemas")
-      : "Grupos desta área entram em breve.";
+    if (statsMode) {
+      sub.textContent = "O que mais cai nesta área · toque em um tema para detalhar.";
+    } else {
+      sub.textContent = areaStats.groups
+        ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
+          (areaStats.groups === 1 ? "" : "s") + " · toque em um grupo para escolher os subtemas")
+        : "Grupos desta área entram em breve.";
+    }
   }
   if (hint) {
-    hint.textContent = "Toque em um grupo para abrir os subtemas neste quadro separado.";
+    hint.textContent = statsMode
+      ? "Escolha a banca e o ano · depois um tema para o recorte fino."
+      : "Toque em um grupo para abrir os subtemas neste quadro separado.";
   }
   if (back) back.textContent = "← Voltar a Ginecologia e obstetrícia";
-  if (groupsLabel) groupsLabel.textContent = "Grupos";
+  if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
   if (selectAll) {
-    selectAll.hidden = !areaStats.groups;
+    selectAll.hidden = statsMode || !areaStats.groups;
     selectAll.textContent = "Selecionar todos";
+  }
+
+  const groupsEl = document.getElementById("esp-groups");
+  if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
+    if (statsMode) overview.parentNode.insertBefore(overview, groupsEl);
+    else groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
   if (showOverview) {
@@ -1888,6 +1998,8 @@ async function aprovaOpenGoArea (areaId) {
     aprovaActiveOverviewYear = "geral";
     aprovaOverviewExamChooserOpen = false;
     await aprovaRenderPedOverviewStats("geral", "geral");
+  } else if (overview) {
+    overview.hidden = true;
   }
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveGoArea });
 }
@@ -1920,31 +2032,47 @@ async function aprovaOpenCliArea (areaId) {
   decksWrap.hidden = false;
   if (stats) stats.hidden = true;
   if (subtemas) subtemas.hidden = true;
-  if (overview) overview.hidden = false;
 
+  const statsMode = aprovaIsStatsMode();
   const areaStats = await aprovaCliAreaStats(aprovaActiveCliArea);
   if (title) title.textContent = areaMeta.label;
   if (sub) {
     sub.hidden = false;
-    sub.textContent = areaStats.groups
-      ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
-        (areaStats.groups === 1 ? "" : "s") + " · toque em um grupo para escolher os subtemas")
-      : "Grupos desta área entram em breve.";
+    if (statsMode) {
+      sub.textContent = "O que mais cai nesta área · toque em um tema para detalhar.";
+    } else {
+      sub.textContent = areaStats.groups
+        ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
+          (areaStats.groups === 1 ? "" : "s") + " · toque em um grupo para escolher os subtemas")
+        : "Grupos desta área entram em breve.";
+    }
   }
   if (hint) {
-    hint.textContent = "Toque em um grupo para abrir os subtemas neste quadro separado.";
+    hint.textContent = statsMode
+      ? "Escolha a banca e o ano · depois um tema para o recorte fino."
+      : "Toque em um grupo para abrir os subtemas neste quadro separado.";
   }
   if (back) back.textContent = "← Voltar à Clínica médica";
-  if (groupsLabel) groupsLabel.textContent = "Grupos";
+  if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
   if (selectAll) {
-    selectAll.hidden = !areaStats.groups;
+    selectAll.hidden = statsMode || !areaStats.groups;
     selectAll.textContent = "Selecionar todos";
   }
 
-  aprovaActivePedOverviewFocus = "geral";
-  aprovaActiveOverviewYear = "geral";
-  aprovaOverviewExamChooserOpen = false;
-  await aprovaRenderPedOverviewStats("geral", "geral");
+  const groupsEl = document.getElementById("esp-groups");
+  if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
+    if (statsMode) overview.parentNode.insertBefore(overview, groupsEl);
+    else groupsEl.parentNode.insertBefore(groupsEl, overview);
+  }
+
+  if (statsMode) {
+    aprovaActivePedOverviewFocus = "geral";
+    aprovaActiveOverviewYear = "geral";
+    aprovaOverviewExamChooserOpen = false;
+    await aprovaRenderPedOverviewStats("geral", "geral");
+  } else if (overview) {
+    overview.hidden = true;
+  }
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveCliArea });
 }
 
@@ -1982,11 +2110,18 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
   aprovaHideEspViews();
   decksWrap.hidden = false;
   if (overview) overview.hidden = true;
+  const statsMode = aprovaIsStatsMode();
   if (sub) {
     sub.hidden = false;
-    sub.textContent = "Grupos no topo · subtemas e o que mais cai abaixo.";
+    sub.textContent = statsMode
+      ? "Temas no topo · gráfico do que mais cai abaixo."
+      : "Grupos no topo · escolha os subtemas para estudar.";
   }
-  if (hint) hint.textContent = "Escolha um subtema ou mude de grupo. O gráfico mostra o que mais cai na prova.";
+  if (hint) {
+    hint.textContent = statsMode
+      ? "Filtre por banca e ano para ver o recorte deste tema."
+      : "Escolha um subtema ou mude de grupo para estudar.";
+  }
   if (back) {
     if (meta.id === "go" && aprovaActiveGoArea) {
       back.textContent = "← Voltar a " + ((typeof APROVA_GO_AREAS !== "undefined" && APROVA_GO_AREAS[aprovaActiveGoArea]
@@ -2002,9 +2137,9 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
   }
 
   const groupsLabel = document.getElementById("esp-groups-label");
-  if (groupsLabel) groupsLabel.textContent = "Grupos";
+  if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
   if (selectAll) {
-    selectAll.hidden = false;
+    selectAll.hidden = statsMode;
     selectAll.textContent = "Selecionar todos";
   }
 
@@ -2145,9 +2280,13 @@ function aprovaRenderExamStats () {
 
   const preview = document.getElementById("dash-exam-stats-preview");
   if (preview) {
-    preview.textContent = s.attempted
+    preview.textContent = "O que mais cai nas principais provas de R1.";
+  }
+  const progPreview = document.getElementById("dash-progress-preview");
+  if (progPreview) {
+    progPreview.textContent = s.attempted
       ? s.correct + "/" + s.attempted + " acertos · " + s.pct + "% de aproveitamento"
-      : "Acertos, erros e desempenho por tema.";
+      : "Resumo do que você já revisou e o desempenho nas questões.";
   }
 
   const themes = document.getElementById("stat-themes");
@@ -2170,6 +2309,7 @@ function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
   if (hello) hello.textContent = (session && (session.name || session.login)) || "estudante";
+  aprovaRenderToday();
   aprovaRenderExamStats();
 }
 
@@ -2177,19 +2317,50 @@ function aprovaRenderToday () {
   const prompt = document.getElementById("today-prompt");
   const stats = document.getElementById("today-stats");
   const startBtn = document.getElementById("today-start");
-  if (!prompt || !stats) return;
+  const cardIds = AprovaFlashcards.allIds();
+  const summary = aprovaTodaySummary(cardIds, AprovaQuestions.items.length);
+  const srs = typeof aprovaSrsProgressSummary === "function"
+    ? aprovaSrsProgressSummary(cardIds)
+    : {
+      pending: summary.pending,
+      due: 0,
+      newCards: summary.pending,
+      studiedToday: summary.studiedToday || 0
+    };
 
-  const summary = aprovaTodaySummary(
-    AprovaFlashcards.allIds(),
-    AprovaQuestions.items.length
-  );
-  prompt.textContent = summary.prompt;
-  stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+  if (prompt) prompt.textContent = summary.prompt;
+  if (stats) {
+    stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+  }
+
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+  set("hoje-stat-pending", String(srs.pending));
+  set("hoje-stat-due", String(srs.due));
+  set("hoje-stat-new", String(srs.newCards));
+  set("hoje-stat-done", String(srs.studiedToday));
+
+  const dashPreview = document.getElementById("dash-hoje-preview");
+  if (dashPreview) {
+    if (!cardIds.length) {
+      dashPreview.textContent = "Carregando flashcards…";
+    } else if (srs.pending) {
+      dashPreview.textContent = srs.pending + " na fila · " + srs.due + " revisão · " +
+        srs.newCards + " novo" + (srs.newCards === 1 ? "" : "s") +
+        (srs.studiedToday ? (" · " + srs.studiedToday + " feitos hoje") : "");
+    } else {
+      dashPreview.textContent = srs.studiedToday
+        ? ("Fila em dia · " + srs.studiedToday + " estudados hoje")
+        : "Fila em dia — nada pendente agora.";
+    }
+  }
 
   if (startBtn) {
-    startBtn.disabled = summary.pending === 0;
-    startBtn.textContent = summary.pending
-      ? "Começar revisão (" + summary.pending + ")"
+    startBtn.disabled = srs.pending === 0;
+    startBtn.textContent = srs.pending
+      ? "Começar revisão (" + srs.pending + ")"
       : "Fila vazia";
   }
 }
@@ -2197,13 +2368,41 @@ function aprovaRenderToday () {
 function aprovaRenderProgress () {
   const prompt = document.getElementById("progress-prompt");
   const stats = document.getElementById("progress-stats");
-  if (!prompt || !stats) return;
-  const summary = aprovaTodaySummary(
-    AprovaFlashcards.allIds(),
-    AprovaQuestions.items.length
-  );
-  prompt.textContent = summary.prompt;
-  stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+  const cardIds = AprovaFlashcards.allIds();
+  const summary = aprovaTodaySummary(cardIds, AprovaQuestions.items.length);
+  const srs = typeof aprovaSrsProgressSummary === "function"
+    ? aprovaSrsProgressSummary(cardIds)
+    : null;
+
+  if (prompt) prompt.textContent = summary.prompt;
+  if (stats) stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
+
+  const setFc = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+  if (srs) {
+    setFc("fc-stat-today", String(srs.studiedToday));
+    setFc("fc-stat-easy", String(srs.easyToday));
+    setFc("fc-stat-hard", String(srs.hardToday));
+    setFc("fc-stat-scheduled", String(srs.scheduled));
+    setFc("fc-stat-pending", String(srs.pending));
+    setFc("fc-stat-reviewed", String(srs.reviewedTotal));
+  }
+
+  const progPreview = document.getElementById("dash-progress-preview");
+  if (progPreview && srs) {
+    if (srs.studiedToday) {
+      progPreview.textContent = srs.studiedToday + " flashcard" +
+        (srs.studiedToday === 1 ? "" : "s") + " hoje · " +
+        srs.scheduled + " na agenda · " + srs.pending + " na fila";
+    } else if (srs.reviewedTotal) {
+      progPreview.textContent = srs.reviewedTotal + " já revisados · " +
+        srs.pending + " ainda na fila de hoje";
+    }
+  }
+
+  aprovaRenderExamStats();
 }
 
 function aprovaRenderConfig () {
@@ -2393,7 +2592,7 @@ async function aprovaBoot () {
       aprovaRichSpecialtyMeta(aprovaActiveSpecialty).openRoot();
       return;
     }
-    aprovaGoTo("flashcards");
+    aprovaBackToEspHub();
   });
 
   document.getElementById("esp-rev-back")?.addEventListener("click", () => {
@@ -2418,7 +2617,7 @@ async function aprovaBoot () {
         aprovaOpenClinica();
         return;
       }
-      aprovaGoTo("flashcards");
+      aprovaBackToEspHub();
       return;
     }
     if (aprovaIsRichSpecialty(aprovaActiveSpecialty)) {
@@ -2507,12 +2706,14 @@ async function aprovaBoot () {
     AprovaFlashcards.rate(true);
     aprovaRenderFlashcard();
     aprovaRenderToday();
+    aprovaRenderProgress();
   });
 
   document.getElementById("fc-hard")?.addEventListener("click", () => {
     AprovaFlashcards.rate(false);
     aprovaRenderFlashcard();
     aprovaRenderToday();
+    aprovaRenderProgress();
   });
 
   document.getElementById("q-next")?.addEventListener("click", () => {
