@@ -9,7 +9,7 @@ const APROVA_PANEL_META = {
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "O que mais cai nas provas R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
-  perfil: { title: "Meu perfil", sub: "Provas que você pretende prestar" },
+  perfil: { title: "Meu perfil", sub: "Provas, datas e plano personalizado" },
   config: { title: "Configurações", sub: "Conta e preferências" }
 };
 
@@ -128,7 +128,7 @@ function aprovaShowFlashcardBrowse () {
   if (card) card.hidden = true;
   if (hint) hint.textContent = "Escolha a área para estudar · abaixo, o que mais cai nas provas.";
   aprovaRenderFlashcardBrowse();
-  aprovaRenderFlashcardHomeStats();
+  aprovaRenderFlashcardHomeStats(null, aprovaPreferredExamFocus());
 }
 
 function aprovaShowFlashcardStudy () {
@@ -214,7 +214,18 @@ let aprovaFcHomeStatsSpec = "clinica";
 let aprovaFcHomeStatsFocus = "geral";
 let aprovaFcHomeStatsYear = "geral";
 let aprovaFcHomeExamChooserOpen = false;
+let aprovaSeuFocoAreaId = "clinica";
+let aprovaSeuFocoCache = null;
 const aprovaOverviewStatsCache = Object.create(null);
+
+/** Banca preferida do perfil (1ª prioridade), ou "geral". */
+function aprovaPreferredExamFocus () {
+  if (typeof aprovaProfilePrimaryExamId === "function") {
+    const id = aprovaProfilePrimaryExamId();
+    if (id) return id;
+  }
+  return "geral";
+}
 
 /** Ordem por volume + concorrência no ciclo 2024–2026 (mais importantes primeiro). */
 const APROVA_EXAM_RANK = {
@@ -1183,9 +1194,10 @@ function aprovaRenderFlashcardHomeStats (specId, focusId, yearId) {
     btn.textContent = area.label;
     btn.addEventListener("click", () => {
       aprovaFcHomeExamChooserOpen = false;
-      aprovaFcHomeStatsFocus = "geral";
+      const preferred = aprovaPreferredExamFocus();
+      aprovaFcHomeStatsFocus = preferred;
       aprovaFcHomeStatsYear = "geral";
-      aprovaRenderFlashcardHomeStats(area.id, "geral", "geral");
+      aprovaRenderFlashcardHomeStats(area.id, preferred, "geral");
     });
     areasEl.appendChild(btn);
   });
@@ -2058,10 +2070,11 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
-  aprovaActivePedOverviewFocus = "geral";
+  const preferred = aprovaPreferredExamFocus();
+  aprovaActivePedOverviewFocus = preferred;
   aprovaActiveOverviewYear = "geral";
   aprovaOverviewExamChooserOpen = false;
-  await aprovaRenderPedOverviewStats("geral", "geral");
+  await aprovaRenderPedOverviewStats(preferred, "geral");
   if (isGo) {
     await aprovaRenderGoAreaCards();
   } else if (isCli) {
@@ -2134,10 +2147,11 @@ async function aprovaOpenGoArea (areaId) {
   }
 
   if (showOverview) {
-    aprovaActivePedOverviewFocus = "geral";
+    const preferred = aprovaPreferredExamFocus();
+    aprovaActivePedOverviewFocus = preferred;
     aprovaActiveOverviewYear = "geral";
     aprovaOverviewExamChooserOpen = false;
-    await aprovaRenderPedOverviewStats("geral", "geral");
+    await aprovaRenderPedOverviewStats(preferred, "geral");
   } else if (overview) {
     overview.hidden = true;
   }
@@ -2204,10 +2218,11 @@ async function aprovaOpenCliArea (areaId) {
     groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
-  aprovaActivePedOverviewFocus = "geral";
+  const preferred = aprovaPreferredExamFocus();
+  aprovaActivePedOverviewFocus = preferred;
   aprovaActiveOverviewYear = "geral";
   aprovaOverviewExamChooserOpen = false;
-  await aprovaRenderPedOverviewStats("geral", "geral");
+  await aprovaRenderPedOverviewStats(preferred, "geral");
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveCliArea });
 }
 
@@ -2440,6 +2455,214 @@ function aprovaRenderExamStats () {
   )).join("");
 }
 
+function aprovaRenderSeuFocoArea (pack, areaId) {
+  const moreEl = document.getElementById("dash-seu-foco-more");
+  const lessEl = document.getElementById("dash-seu-foco-less");
+  const areasEl = document.getElementById("dash-seu-foco-areas");
+  if (!pack || !pack.ok || !moreEl || !lessEl) return;
+
+  const area = pack.areas.find(a => a.id === areaId) || pack.areas[0];
+  if (!area) return;
+  aprovaSeuFocoAreaId = area.id;
+
+  if (areasEl) {
+    areasEl.querySelectorAll(".esp-exam-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.area === area.id);
+    });
+  }
+
+  const maxPct = Math.max.apply(null, area.focus.map(t => Number(t.pct) || 0).concat([1]));
+  moreEl.innerHTML = area.focus.map(t => {
+    const pct = Number(t.pct);
+    const width = Number.isFinite(pct) ? Math.max(8, Math.round((pct / maxPct) * 100)) : 0;
+    return (
+      "<div class=\"rev-bar-row\">" +
+        "<span>" + t.tema + "</span>" +
+        "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + width + "%\"></i></div>" +
+        "<em>" + (typeof aprovaFormatPct === "function" ? aprovaFormatPct(pct) : (pct + "%")) + "</em>" +
+      "</div>"
+    );
+  }).join("");
+
+  if (!area.less.length) {
+    lessEl.innerHTML = "<li><span>Sem contraste claro nesta área</span></li>";
+  } else {
+    lessEl.innerHTML = area.less.map(t => {
+      const pct = Number(t.pct);
+      const label = typeof aprovaFormatPct === "function" ? aprovaFormatPct(pct) : (pct + "%");
+      return "<li><span>" + t.tema + "</span><em>" + label + "</em></li>";
+    }).join("");
+  }
+}
+
+function aprovaRenderSeuPlano (plan, profileComplete) {
+  const root = document.getElementById("dash-seu-plano");
+  if (!root) return;
+
+  const body = document.getElementById("dash-seu-plano-body");
+  const empty = document.getElementById("dash-seu-plano-empty");
+  const headline = document.getElementById("dash-seu-plano-headline");
+  const daysEl = document.getElementById("dash-seu-plano-days");
+  const toneEl = document.getElementById("dash-seu-plano-tone");
+  const metaEl = document.getElementById("dash-seu-plano-meta");
+  const phasesEl = document.getElementById("dash-seu-plano-phases");
+  const themesEl = document.getElementById("dash-seu-plano-themes");
+
+  if (!profileComplete) {
+    root.hidden = true;
+    return;
+  }
+
+  // Sempre visível quando há provas — com plano ou com CTA para informar datas
+  root.hidden = false;
+
+  if (!plan || !plan.ok) {
+    if (body) body.hidden = true;
+    if (empty) empty.hidden = false;
+    if (headline) headline.textContent = "Falta a data provável da prova";
+    if (daysEl) daysEl.textContent = "Informe a data no perfil para montar as fases";
+    if (toneEl) {
+      toneEl.textContent = (plan && plan.reason) ||
+        "Mesmo que a prova seja só no ano que vem, uma data estimada já basta.";
+    }
+    if (metaEl) metaEl.innerHTML = "";
+    if (phasesEl) phasesEl.innerHTML = "";
+    if (themesEl) themesEl.innerHTML = "";
+    return;
+  }
+
+  if (body) body.hidden = false;
+  if (empty) empty.hidden = true;
+
+  if (headline) headline.textContent = plan.headline;
+  if (daysEl) {
+    daysEl.textContent = plan.horizon.label + " · " + plan.daysLine;
+  }
+  if (toneEl) toneEl.textContent = plan.horizon.tone;
+  if (metaEl) {
+    metaEl.innerHTML =
+      "<span class=\"dash-seu-plano-chip\">" + plan.mixLine + "</span>" +
+      "<span class=\"dash-seu-plano-chip\">" + plan.dailyLine + "</span>";
+  }
+  if (phasesEl) {
+    phasesEl.innerHTML = (plan.phases || []).map(p => (
+      "<li class=\"" + (p.current ? "is-current" : "") + "\">" +
+        "<strong>" + (p.current ? "Agora · " : "") + p.label + "</strong>" +
+        "<span>" + p.startLabel + " → " + p.endLabel +
+        " · " + p.studyPct + "% estudo / " + p.reviewPct + "% revisão</span>" +
+        (p.tip ? ("<span style=\"display:block;margin-top:0.2rem\">" + p.tip + "</span>") : "") +
+      "</li>"
+    )).join("");
+  }
+  if (themesEl) {
+    if (plan.themes && plan.themes.length) {
+      themesEl.innerHTML = plan.themes.map(t => (
+        "<li><strong>" + t.tema + "</strong>" +
+          (t.pct != null ? ("<span> · peso relativo " +
+            (typeof aprovaFormatPct === "function" ? aprovaFormatPct(t.pct) : (t.pct + "%")) +
+            "</span>") : "") +
+        "</li>"
+      )).join("");
+    } else {
+      themesEl.innerHTML = "<li><span>Salve uma banca da lista no perfil para priorizar temas nesta etapa.</span></li>";
+    }
+  }
+}
+
+function aprovaRenderSeuFoco () {
+  const root = document.getElementById("dash-seu-foco");
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
+
+  // Plano não depende do fetch de estatísticas
+  if (typeof aprovaBuildStudyPlan === "function") {
+    aprovaRenderSeuPlano(
+      complete ? aprovaBuildStudyPlan(profile, null) : null,
+      complete
+    );
+  }
+
+  if (!complete) {
+    if (root) root.hidden = true;
+    aprovaSeuFocoCache = null;
+    return Promise.resolve();
+  }
+
+  const focusPromise = (root && typeof aprovaBuildPersonalizedFocus === "function")
+    ? aprovaBuildPersonalizedFocus(profile)
+    : Promise.resolve(null);
+
+  if (root) {
+    root.hidden = false;
+    const moreEl = document.getElementById("dash-seu-foco-more");
+    if (moreEl) moreEl.innerHTML = "<p class=\"muted\">Montando seu foco…</p>";
+  }
+
+  return focusPromise.then(pack => {
+    aprovaSeuFocoCache = pack;
+
+    if (root && typeof aprovaBuildPersonalizedFocus === "function") {
+      const weightsEl = document.getElementById("dash-seu-foco-weights");
+      const moreEl = document.getElementById("dash-seu-foco-more");
+      const noteEl = document.getElementById("dash-seu-foco-note");
+
+      if (!pack || !pack.ok) {
+        if (weightsEl) {
+          weightsEl.textContent = (pack && pack.reason) || "Defina ao menos uma banca da lista no perfil.";
+        }
+        if (moreEl) moreEl.innerHTML = "";
+        const lessEl = document.getElementById("dash-seu-foco-less");
+        if (lessEl) lessEl.innerHTML = "";
+        const areasEl = document.getElementById("dash-seu-foco-areas");
+        if (areasEl) areasEl.innerHTML = "";
+      } else {
+        if (weightsEl) {
+          weightsEl.textContent = "Pesos: " + pack.weightLine +
+            (pack.others && pack.others.length
+              ? " · “Outra” sem estatística no app"
+              : "");
+        }
+        if (noteEl) {
+          noteEl.textContent = "Sugestão com pesos 50% / 30% / 20% nas suas prioridades — não é ranking oficial.";
+        }
+
+        const areasEl = document.getElementById("dash-seu-foco-areas");
+        if (areasEl) {
+          areasEl.innerHTML = "";
+          pack.areas.forEach(area => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "esp-exam-btn" + (area.id === aprovaSeuFocoAreaId ? " active" : "");
+            btn.dataset.area = area.id;
+            btn.textContent = area.label;
+            btn.addEventListener("click", () => aprovaRenderSeuFocoArea(pack, area.id));
+            areasEl.appendChild(btn);
+          });
+        }
+
+        const startId = pack.areas.some(a => a.id === aprovaSeuFocoAreaId)
+          ? aprovaSeuFocoAreaId
+          : pack.areas[0].id;
+        aprovaRenderSeuFocoArea(pack, startId);
+
+        if (pack.primaryExamId) {
+          aprovaFcHomeStatsFocus = pack.primaryExamId;
+        }
+
+        // Atualiza temas do plano com o foco já carregado
+        if (typeof aprovaBuildStudyPlan === "function") {
+          aprovaRenderSeuPlano(aprovaBuildStudyPlan(profile, pack), true);
+        }
+      }
+    }
+  }).catch(() => {
+    if (root) {
+      const moreEl = document.getElementById("dash-seu-foco-more");
+      if (moreEl) moreEl.innerHTML = "<p class=\"muted\">Não foi possível carregar o foco agora.</p>";
+    }
+  });
+}
+
 function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
@@ -2448,13 +2671,24 @@ function aprovaRenderDashboard () {
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const summary = typeof aprovaProfileSummary === "function"
     ? aprovaProfileSummary(profile)
-    : { complete: false, line: "Escolha as provas que você pretende prestar.", detail: "" };
+    : { complete: false, line: "Escolha as provas que você pretende prestar.", detail: "", hasDates: false };
+  const hasDates = summary.hasDates || (typeof aprovaProfileHasExamDates === "function" && aprovaProfileHasExamDates(profile));
+  const helloSub = document.getElementById("dash-hello-sub");
+  if (helloSub) {
+    helloSub.textContent = summary.complete
+      ? (hasDates
+        ? "seu plano e foco abaixo já usam as provas e datas que você definiu"
+        : "seu foco abaixo já considera as provas — falta a data para o plano")
+      : "escolha um card para começar";
+  }
   const banner = document.getElementById("dash-profile-banner");
+  const datesBanner = document.getElementById("dash-dates-banner");
   const preview = document.getElementById("dash-profile-preview");
   if (banner) banner.hidden = summary.complete;
+  if (datesBanner) datesBanner.hidden = !summary.complete || !!hasDates;
   if (preview) {
     preview.textContent = summary.complete
-      ? summary.line + " · toque para editar"
+      ? (summary.detail || summary.line) + " · toque para editar"
       : summary.detail || "Escolha as provas que você pretende prestar.";
   }
 
@@ -2464,6 +2698,7 @@ function aprovaRenderDashboard () {
     sideUser.textContent = summary.complete ? (base + " · " + summary.line) : base;
   }
 
+  aprovaRenderSeuFoco();
   aprovaRenderToday();
   aprovaRenderExamStats();
 }
@@ -2474,21 +2709,33 @@ let aprovaPerfilDraft = [null, null, null];
 function aprovaPerfilSlotFromControls () {
   const select = document.getElementById("perfil-slot-select");
   const other = document.getElementById("perfil-slot-other");
+  const dateEl = document.getElementById("perfil-slot-date");
   if (!select) return null;
   const value = select.value;
+  const date = dateEl && dateEl.value
+    ? (typeof aprovaNormalizeExamDate === "function"
+      ? aprovaNormalizeExamDate(dateEl.value)
+      : dateEl.value)
+    : null;
   if (!value || value === "") return null;
   if (value === "__other__") {
     const label = other ? String(other.value || "").trim() : "";
-    if (!label) return { kind: "other", label: "", incomplete: true };
-    return { kind: "other", label };
+    if (!label) return { kind: "other", label: "", incomplete: true, date: date || undefined };
+    const slot = { kind: "other", label };
+    if (date) slot.date = date;
+    return slot;
   }
-  return { kind: "exam", id: value };
+  const slot = { kind: "exam", id: value };
+  if (date) slot.date = date;
+  return slot;
 }
 
 function aprovaPerfilCommitActiveSlot () {
   const slot = aprovaPerfilSlotFromControls();
   if (slot && slot.incomplete) {
-    aprovaPerfilDraft[aprovaPerfilActiveTab] = { kind: "other", label: "" };
+    const keep = { kind: "other", label: "" };
+    if (slot.date) keep.date = slot.date;
+    aprovaPerfilDraft[aprovaPerfilActiveTab] = keep;
     return;
   }
   aprovaPerfilDraft[aprovaPerfilActiveTab] = slot;
@@ -2502,9 +2749,23 @@ function aprovaPerfilUpdateSummary () {
     const name = slot && typeof aprovaPriorityLabel === "function"
       ? aprovaPriorityLabel(slot)
       : "";
+    const dateTxt = slot && slot.date && typeof aprovaFormatDateBr === "function"
+      ? (" · " + aprovaFormatDateBr(slot.date))
+      : (slot && slot.date ? (" · " + slot.date) : "");
     return "<li><strong>" + labels[i] + "</strong> — " +
-      (name || "não definida") + "</li>";
+      (name || "não definida") + dateTxt + "</li>";
   }).join("");
+
+  const preview = document.getElementById("perfil-plan-preview");
+  if (preview && typeof aprovaBuildStudyPlan === "function") {
+    const plan = aprovaBuildStudyPlan({ priorities: aprovaPerfilDraft }, null);
+    if (plan && plan.ok) {
+      preview.textContent = "Plano: " + plan.horizon.label + " · " + plan.daysLine +
+        " · " + plan.mixLine + ".";
+    } else {
+      preview.textContent = "Com a data da 1ª prioridade, o Início monta as fases de estudo e revisão até a prova.";
+    }
+  }
 }
 
 function aprovaRenderPerfilSlot () {
@@ -2553,6 +2814,8 @@ function aprovaRenderPerfilSlot () {
   otherOpt.textContent = "Outra (escrever nome)";
   select.appendChild(otherOpt);
 
+  const dateEl = document.getElementById("perfil-slot-date");
+
   if (current && current.kind === "exam") {
     select.value = current.id;
     if (other) {
@@ -2571,6 +2834,11 @@ function aprovaRenderPerfilSlot () {
       other.hidden = true;
       other.value = "";
     }
+  }
+
+  if (dateEl) {
+    dateEl.value = current && current.date ? current.date : "";
+    dateEl.disabled = false;
   }
 
   document.querySelectorAll("[data-perfil-tab]").forEach(btn => {
@@ -2655,9 +2923,14 @@ function aprovaSavePerfilFromForm () {
 
   const saved = aprovaSaveProfile({ priorities: draft });
   aprovaPerfilDraft = saved.priorities.slice();
+  const hasDates = typeof aprovaProfileHasExamDates === "function"
+    ? aprovaProfileHasExamDates(saved)
+    : saved.priorities.some(s => s && s.date);
   if (msg) {
     msg.hidden = false;
-    msg.textContent = "Prioridades salvas. O app usará no máximo estas 3 provas para personalizar o estudo.";
+    msg.textContent = hasDates
+      ? "Perfil salvo. O Início monta o Seu foco e o plano até a data da prova."
+      : "Provas salvas. Informe as datas prováveis para o app traçar o plano de estudo e revisão.";
     msg.classList.remove("profile-msg--err");
     msg.classList.add("profile-msg--ok");
   }
@@ -2765,6 +3038,23 @@ function aprovaRenderConfig () {
     el.textContent = session
       ? ((session.name || session.login) + " · " + session.login)
       : "Nenhuma sessão ativa";
+  }
+
+  const hint = document.getElementById("config-plan-hint");
+  if (hint && typeof aprovaLoadProfile === "function") {
+    const profile = aprovaLoadProfile();
+    const hasDates = typeof aprovaProfileHasExamDates === "function" && aprovaProfileHasExamDates(profile);
+    const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
+    if (hasDates && typeof aprovaBuildStudyPlan === "function") {
+      const plan = aprovaBuildStudyPlan(profile, null);
+      hint.textContent = plan && plan.ok
+        ? ("Plano ativo: " + plan.headline + " · " + plan.horizon.label + " (" + plan.daysLine + "). Ajuste datas em Meu perfil.")
+        : "Datas salvas no perfil. Abra o Início para ver o plano completo.";
+    } else if (complete) {
+      hint.textContent = "Você já escolheu as provas. Informe as datas prováveis em Meu perfil para o app distribuir estudo e revisão até o dia D — mesmo que seja só no ano que vem.";
+    } else {
+      hint.textContent = "Em Meu perfil você define as provas e as datas prováveis. Com isso o Início monta um plano de estudo e revisão até o dia D.";
+    }
   }
 }
 
@@ -2934,6 +3224,11 @@ async function aprovaBoot () {
   });
 
   document.getElementById("perfil-slot-other")?.addEventListener("input", () => {
+    aprovaPerfilCommitActiveSlot();
+    aprovaPerfilUpdateSummary();
+  });
+
+  document.getElementById("perfil-slot-date")?.addEventListener("change", () => {
     aprovaPerfilCommitActiveSlot();
     aprovaPerfilUpdateSummary();
   });

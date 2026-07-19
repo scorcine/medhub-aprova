@@ -33,15 +33,29 @@ function aprovaDefaultProfile () {
   };
 }
 
+function aprovaNormalizeExamDate (value) {
+  const s = String(value || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
+  const [y, m, d] = s.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  if (dt.getFullYear() !== y || dt.getMonth() !== m - 1 || dt.getDate() !== d) return null;
+  return s;
+}
+
 function aprovaNormalizePriority (slot) {
   if (!slot || typeof slot !== "object") return null;
+  const date = aprovaNormalizeExamDate(slot.date);
   if (slot.kind === "exam" && slot.id && APROVA_TARGET_EXAMS.some(e => e.id === slot.id)) {
-    return { kind: "exam", id: slot.id };
+    const next = { kind: "exam", id: slot.id };
+    if (date) next.date = date;
+    return next;
   }
   if (slot.kind === "other") {
     const label = String(slot.label || "").trim();
     if (!label) return null;
-    return { kind: "other", label };
+    const next = { kind: "other", label };
+    if (date) next.date = date;
+    return next;
   }
   return null;
 }
@@ -108,6 +122,13 @@ function aprovaProfileIsComplete (profile) {
   return aprovaProfileFilled(profile).length > 0;
 }
 
+/** Id da 1ª prioridade que seja banca do catálogo (para default de estatísticas). */
+function aprovaProfilePrimaryExamId (profile) {
+  const filled = aprovaProfileFilled(profile);
+  const first = filled.find(s => s && s.kind === "exam" && s.id);
+  return first ? first.id : null;
+}
+
 function aprovaExamOptionLabel (id) {
   const hit = APROVA_TARGET_EXAMS.find(e => e.id === id);
   return hit ? hit.label : id;
@@ -128,15 +149,27 @@ function aprovaProfileSummary (profile) {
     return {
       complete: false,
       line: "Ainda sem provas escolhidas",
-      detail: "Escolha até 3 provas por ordem de prioridade."
+      detail: "Escolha até 3 provas por ordem de prioridade.",
+      hasDates: false
     };
   }
   const ordered = names.map((n, i) => (i + 1) + "º " + n);
+  const hasDates = filled.some(s => s && s.date);
+  const dateBits = filled.map((s, i) => {
+    if (!s || !s.date) return null;
+    const label = typeof aprovaFormatDateBr === "function"
+      ? aprovaFormatDateBr(s.date)
+      : s.date;
+    return (i + 1) + "ª · " + label;
+  }).filter(Boolean);
   return {
     complete: true,
     line: ordered.join(" · "),
-    detail: names.length === 1
-      ? "1 prova-alvo (prioridade 1) salva neste aparelho."
-      : names.length + " provas-alvo por prioridade salvas neste aparelho."
+    detail: hasDates
+      ? ("Datas: " + dateBits.join(" · "))
+      : (names.length === 1
+        ? "1 prova-alvo salva — informe a data provável para montar o plano."
+        : names.length + " provas-alvo — informe as datas prováveis para montar o plano."),
+    hasDates
   };
 }
