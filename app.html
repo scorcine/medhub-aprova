@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718ccc">
+  <link rel="stylesheet" href="css/aprova.css?v=20260719a">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -80,6 +80,7 @@
         <button type="button" class="side-link" data-panel="questoes">Banco de questões</button>
 
         <p class="sidebar-label">Estudo</p>
+        <button type="button" class="side-link" data-panel="plano">Meu plano</button>
         <button type="button" class="side-link" data-panel="simulados">Simulados</button>
         <button type="button" class="side-link" data-panel="estatisticas">Estatísticas de provas</button>
         <button type="button" class="side-link" data-panel="progresso">Meu progresso</button>
@@ -121,13 +122,18 @@
 
           <div id="dash-profile-banner" class="aprova-banner">
             <strong id="dash-profile-banner-title">Personalize seu estudo</strong>
-            <p id="dash-profile-banner-text">Para uma experiência personalizada, configure seu perfil com as provas que você pretende prestar (até 3, por prioridade) e a data — ou “Não sei”. Plano e foco ficam em Meu perfil.</p>
+            <p id="dash-profile-banner-text">Para uma experiência personalizada, configure seu perfil com as provas que você pretende prestar (até 3, por prioridade) e a data — ou “Não sei”. O direcionamento aparece em Meu plano.</p>
             <div class="actions-row">
               <button type="button" class="btn btn-primary" data-goto="perfil" id="dash-profile-banner-btn">Configurar meu perfil</button>
             </div>
           </div>
 
           <div class="dash-grid">
+            <button type="button" class="dash-card" data-goto="plano">
+              <span class="dash-card-kicker">Direção</span>
+              <strong>Meu plano</strong>
+              <span id="dash-plano-preview">Foco, metas e fases até a prova — com base no seu perfil.</span>
+            </button>
             <button type="button" class="dash-card" data-goto="hoje">
               <span class="dash-card-kicker">Agenda</span>
               <strong>Revisão de hoje</strong>
@@ -504,7 +510,7 @@
             <p class="muted" id="perfil-save-msg" hidden style="margin:0.85rem 0 0"></p>
             <div class="actions-row" style="margin-top:1rem">
               <button type="button" class="btn btn-primary" id="perfil-save">Salvar perfil</button>
-              <button type="button" class="btn btn-ghost" data-goto="inicio">Voltar ao início</button>
+              <button type="button" class="btn btn-ghost" data-goto="plano">Ver meu plano</button>
             </div>
           </div>
 
@@ -517,8 +523,21 @@
             </ol>
             <p class="muted" id="perfil-plan-preview" style="margin:0.85rem 0 0"></p>
           </div>
+        </section>
 
-          <div id="dash-seu-foco" class="dash-seu-foco" style="margin-top:1rem" hidden>
+        <section id="panel-plano" class="panel" aria-labelledby="plano-title" hidden>
+          <h2 id="plano-title">Meu plano</h2>
+          <p class="muted">Direcionamento com base nas provas e datas do seu perfil — só consulta (edite em Meu perfil).</p>
+
+          <div id="plano-empty" class="aprova-banner aprova-banner--soft" hidden>
+            <strong>Configure seu perfil para liberar o plano</strong>
+            <p>Escolha as provas que pretende prestar e a data (ou “Não sei”). Depois o foco, as metas e as fases aparecem aqui.</p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" data-goto="perfil">Abrir meu perfil</button>
+            </div>
+          </div>
+
+          <div id="dash-seu-foco" class="dash-seu-foco" hidden>
             <div class="dash-seu-foco-head">
               <strong>Seu foco</strong>
               <p class="muted" id="dash-seu-foco-weights"></p>
@@ -545,7 +564,7 @@
 
           <div id="dash-seu-plano" class="dash-seu-plano" style="margin-top:1rem" hidden>
             <div class="dash-seu-plano-head">
-              <strong>Seu plano</strong>
+              <strong>Programação até a prova</strong>
               <p class="muted" id="dash-seu-plano-headline"></p>
             </div>
             <p class="dash-seu-plano-days" id="dash-seu-plano-days"></p>
@@ -553,7 +572,7 @@
             <div class="dash-seu-plano-meta" id="dash-seu-plano-meta"></div>
 
             <div id="dash-seu-plano-empty" hidden>
-              <p class="muted" style="margin:0.85rem 0 0">Salve ao menos a 1ª prioridade para montar o plano.</p>
+              <p class="muted" style="margin:0.85rem 0 0">Salve ao menos a 1ª prioridade no perfil para montar o plano.</p>
             </div>
 
             <div id="dash-seu-plano-body" hidden>
@@ -573,6 +592,7 @@
               <div class="actions-row">
                 <button type="button" class="btn btn-primary" data-goto="hoje">Cumprir meta de hoje</button>
                 <button type="button" class="btn btn-ghost" data-goto="flashcards">Estudar flashcards</button>
+                <button type="button" class="btn btn-ghost" data-goto="perfil">Editar perfil</button>
               </div>
             </div>
           </div>
@@ -592,10 +612,11 @@
           <div class="study-card" style="margin-top:1rem">
             <div class="label">Estudo personalizado</div>
             <p class="muted" id="config-plan-hint">
-              Provas, datas, plano e foco ficam em Meu perfil.
+              Cadastre provas e datas em Meu perfil. O direcionamento (foco, metas e fases) fica em Meu plano.
             </p>
             <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="perfil">Abrir meu perfil</button>
+              <button type="button" class="btn btn-primary" data-goto="perfil">Meu perfil</button>
+              <button type="button" class="btn btn-ghost" data-goto="plano">Meu plano</button>
             </div>
           </div>
         </section>
@@ -630,15 +651,15 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260718ccc"></script>
-  <script src="js/focus.js?v=20260718ccc"></script>
-  <script src="js/plan.js?v=20260718ccc"></script>
-  <script src="js/tasks.js?v=20260718ccc"></script>
-  <script src="js/schedule.js?v=20260718ccc"></script>
+  <script src="js/profile.js?v=20260719a"></script>
+  <script src="js/focus.js?v=20260719a"></script>
+  <script src="js/plan.js?v=20260719a"></script>
+  <script src="js/tasks.js?v=20260719a"></script>
+  <script src="js/schedule.js?v=20260719a"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718ccc"></script>
+  <script src="js/app.js?v=20260719a"></script>
 </body>
 </html>

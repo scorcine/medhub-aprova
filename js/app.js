@@ -9,7 +9,8 @@ const APROVA_PANEL_META = {
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "O que mais cai nas provas R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
-  perfil: { title: "Meu perfil", sub: "Provas, datas e plano personalizado" },
+  plano: { title: "Meu plano", sub: "Foco, metas e fases até a prova" },
+  perfil: { title: "Meu perfil", sub: "Provas e datas que você pretende prestar" },
   config: { title: "Configurações", sub: "Conta e preferências" }
 };
 
@@ -103,6 +104,7 @@ function aprovaGoTo (id, options) {
   }
   if (id === "hoje") aprovaRenderToday();
   if (id === "progresso") aprovaRenderProgress();
+  if (id === "plano") aprovaRenderPlano();
   if (id === "perfil") aprovaRenderPerfil();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
@@ -2651,6 +2653,25 @@ function aprovaRenderSeuPlano (plan, profileComplete) {
   }
 }
 
+function aprovaRenderPlano () {
+  const empty = document.getElementById("plano-empty");
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
+  if (empty) empty.hidden = complete;
+
+  const preview = document.getElementById("dash-plano-preview");
+  if (preview) {
+    if (!complete) {
+      preview.textContent = "Configure o perfil para liberar foco, metas e fases.";
+    } else if (typeof aprovaProfileSummary === "function") {
+      const summary = aprovaProfileSummary(profile);
+      preview.textContent = summary.line + " · toque para ver o direcionamento";
+    }
+  }
+
+  return aprovaRenderSeuFoco();
+}
+
 function aprovaRenderSeuFoco () {
   const root = document.getElementById("dash-seu-foco");
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
@@ -2751,7 +2772,7 @@ function aprovaRenderDashboard () {
     ? aprovaProfileSummary(profile)
     : { complete: false, line: "Escolha as provas que você pretende prestar.", detail: "", hasDates: false };
 
-  // Início: aviso de personalização sempre visível (plano/foco ficam em Meu perfil)
+  // Início: aviso de personalização; detalhes em Meu plano / cadastro em Meu perfil
   const banner = document.getElementById("dash-profile-banner");
   const bannerTitle = document.getElementById("dash-profile-banner-title");
   const bannerText = document.getElementById("dash-profile-banner-text");
@@ -2760,16 +2781,29 @@ function aprovaRenderDashboard () {
   if (summary.complete) {
     if (bannerTitle) bannerTitle.textContent = "Experiência personalizada";
     if (bannerText) {
-      bannerText.textContent = "Seu perfil está configurado (" + summary.line +
-        "). Ajuste provas e datas em Meu perfil — plano e foco ficam lá.";
+      bannerText.textContent = "Perfil configurado (" + summary.line +
+        "). Veja o direcionamento em Meu plano ou ajuste provas e datas em Meu perfil.";
     }
-    if (bannerBtn) bannerBtn.textContent = "Abrir meu perfil";
+    if (bannerBtn) {
+      bannerBtn.textContent = "Abrir meu plano";
+      bannerBtn.setAttribute("data-goto", "plano");
+    }
   } else {
     if (bannerTitle) bannerTitle.textContent = "Personalize seu estudo";
     if (bannerText) {
-      bannerText.textContent = "Para uma experiência personalizada, configure seu perfil com as provas que você pretende prestar (até 3, por prioridade) e a data — ou “Não sei”. Plano e foco ficam em Meu perfil.";
+      bannerText.textContent = "Para uma experiência personalizada, configure seu perfil com as provas que você pretende prestar (até 3, por prioridade) e a data — ou “Não sei”. O direcionamento aparece em Meu plano.";
     }
-    if (bannerBtn) bannerBtn.textContent = "Configurar meu perfil";
+    if (bannerBtn) {
+      bannerBtn.textContent = "Configurar meu perfil";
+      bannerBtn.setAttribute("data-goto", "perfil");
+    }
+  }
+
+  const planoPreview = document.getElementById("dash-plano-preview");
+  if (planoPreview) {
+    planoPreview.textContent = summary.complete
+      ? (summary.line + " · toque para ver o direcionamento")
+      : "Configure o perfil para liberar foco, metas e fases.";
   }
 
   const sideUser = document.getElementById("sidebar-user-label");
@@ -2842,11 +2876,10 @@ function aprovaPerfilUpdateSummary () {
   if (preview && typeof aprovaBuildStudyPlan === "function") {
     const plan = aprovaBuildStudyPlan({ priorities: aprovaPerfilDraft }, null);
     if (plan && plan.ok) {
-      preview.textContent = "Plano: " + plan.horizon.label + " · " + plan.daysLine +
-        " · " + plan.mixLine +
-        (plan.assumed ? " · data estimada no fim do ano." : ".");
+      preview.textContent = "Após salvar, veja em Meu plano: " + plan.horizon.label +
+        " · " + plan.daysLine + (plan.assumed ? " · data fim do ano." : ".");
     } else {
-      preview.textContent = "Escolha a 1ª prova — sem data, usamos o fim do ano para o plano.";
+      preview.textContent = "Escolha a 1ª prova — o direcionamento aparece na aba Meu plano.";
     }
   }
 }
@@ -2949,7 +2982,6 @@ function aprovaRenderPerfil () {
     msg.textContent = "";
   }
   aprovaRenderPerfilSlot();
-  aprovaRenderSeuFoco();
 }
 
 function aprovaSavePerfilFromForm () {
@@ -3013,13 +3045,13 @@ function aprovaSavePerfilFromForm () {
   if (msg) {
     msg.hidden = false;
     msg.textContent = hasDates
-      ? "Perfil salvo. Veja o plano e o foco abaixo."
-      : "Perfil salvo. Sem data, o plano abaixo usa o fim deste ano.";
+      ? "Perfil salvo. Abra Meu plano para ver o direcionamento."
+      : "Perfil salvo. Sem data, Meu plano usa o fim deste ano — abra a aba Meu plano.";
     msg.classList.remove("profile-msg--err");
     msg.classList.add("profile-msg--ok");
   }
   aprovaPerfilUpdateSummary();
-  aprovaRenderSeuFoco();
+  aprovaSeuFocoCache = null;
   aprovaRenderDashboard();
   return saved;
 }
@@ -3147,12 +3179,12 @@ function aprovaRenderConfig () {
     if (hasDates && typeof aprovaBuildStudyPlan === "function") {
       const plan = aprovaBuildStudyPlan(profile, null);
       hint.textContent = plan && plan.ok
-        ? ("Plano ativo: " + plan.headline + " · " + plan.horizon.label + " (" + plan.daysLine + "). Ajuste datas em Meu perfil.")
-        : "Datas salvas no perfil. Abra o Início para ver o plano completo.";
+        ? ("Plano ativo: " + plan.headline + " · " + plan.horizon.label + " (" + plan.daysLine + "). Detalhes em Meu plano; datas em Meu perfil.")
+        : "Datas salvas no perfil. Abra Meu plano para ver o direcionamento.";
     } else if (complete) {
-      hint.textContent = "Provas salvas. Sem data, o plano usa o fim do ano. Em Meu perfil você pode informar a data real ou tocar em “Não sei a data”.";
+      hint.textContent = "Provas salvas. Sem data, Meu plano usa o fim do ano. Ajuste a data em Meu perfil se quiser.";
     } else {
-      hint.textContent = "Em Meu perfil você define as provas. Sem data (ou “Não sei”), o plano usa o fim do ano automaticamente.";
+      hint.textContent = "Cadastre as provas em Meu perfil. O direcionamento (foco, metas e fases) fica em Meu plano.";
     }
   }
 }
