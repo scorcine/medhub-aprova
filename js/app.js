@@ -393,8 +393,8 @@ function aprovaRichSpecialtyMeta (specialty) {
       shortLabel: obs ? "Obstetrícia" : "Ginecologia",
       overviewCacheKey: obs ? "obstetricia" : "ginecologia",
       overviewUrl: obs
-        ? "data/stats-obstetricia-geral.json?v=20260718ii"
-        : "data/stats-ginecologia-geral.json?v=20260718ii",
+        ? "data/stats-obstetricia-geral.json?v=20260718nn"
+        : "data/stats-ginecologia-geral.json?v=20260718nn",
       countNoun: obs ? "Obstetrícia" : "Ginecologia",
       openRoot: () => aprovaOpenGinecologia(),
       openModule: id => aprovaOpenGinecologiaModule(id)
@@ -406,7 +406,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Cirurgia",
       shortLabel: "Cirurgia",
       overviewCacheKey: "cirurgia",
-      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718ii",
+      overviewUrl: "data/stats-cirurgia-geral.json?v=20260718nn",
       countNoun: "Cirurgia",
       openRoot: () => aprovaOpenCirurgia(),
       openModule: id => aprovaOpenCirurgiaModule(id)
@@ -418,7 +418,7 @@ function aprovaRichSpecialtyMeta (specialty) {
       label: "Preventiva",
       shortLabel: "Preventiva",
       overviewCacheKey: "preventiva",
-      overviewUrl: "data/stats-preventiva-geral.json?v=20260718ii",
+      overviewUrl: "data/stats-preventiva-geral.json?v=20260718nn",
       countNoun: "Preventiva",
       openRoot: () => aprovaOpenPreventiva(),
       openModule: id => aprovaOpenPreventivaModule(id)
@@ -431,7 +431,7 @@ function aprovaRichSpecialtyMeta (specialty) {
         label: "Clínica médica",
         shortLabel: "Clínica médica",
         overviewCacheKey: "clinica",
-        overviewUrl: "data/stats-clinica-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-clinica-geral.json?v=20260718nn",
         countNoun: "Clínica médica",
         openRoot: () => aprovaOpenClinica(),
         openModule: id => aprovaOpenClinicaModule(id)
@@ -441,61 +441,61 @@ function aprovaRichSpecialtyMeta (specialty) {
       reumatologia: {
         shortLabel: "Reumatologia",
         overviewCacheKey: "reumatologia",
-        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-reumatologia-geral.json?v=20260718nn",
         countNoun: "Reumatologia"
       },
       psiquiatria: {
         shortLabel: "Psiquiatria",
         overviewCacheKey: "psiquiatria",
-        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-psiquiatria-geral.json?v=20260718nn",
         countNoun: "Psiquiatria"
       },
       pneumologia: {
         shortLabel: "Pneumologia",
         overviewCacheKey: "pneumologia",
-        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-pneumologia-geral.json?v=20260718nn",
         countNoun: "Pneumologia"
       },
       neurologia: {
         shortLabel: "Neurologia",
         overviewCacheKey: "neurologia",
-        overviewUrl: "data/stats-neurologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-neurologia-geral.json?v=20260718nn",
         countNoun: "Neurologia"
       },
       nefrologia: {
         shortLabel: "Nefrologia",
         overviewCacheKey: "nefrologia",
-        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-nefrologia-geral.json?v=20260718nn",
         countNoun: "Nefrologia"
       },
       infectologia: {
         shortLabel: "Infectologia",
         overviewCacheKey: "infectologia",
-        overviewUrl: "data/stats-infectologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-infectologia-geral.json?v=20260718nn",
         countNoun: "Infectologia"
       },
       hepatologia: {
         shortLabel: "Hepatologia",
         overviewCacheKey: "hepatologia",
-        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-hepatologia-geral.json?v=20260718nn",
         countNoun: "Hepatologia"
       },
       hematologia: {
         shortLabel: "Hematologia",
         overviewCacheKey: "hematologia",
-        overviewUrl: "data/stats-hematologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-hematologia-geral.json?v=20260718nn",
         countNoun: "Hematologia"
       },
       endocrinologia: {
         shortLabel: "Endocrinologia",
         overviewCacheKey: "endocrinologia",
-        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-endocrinologia-geral.json?v=20260718nn",
         countNoun: "Endocrinologia"
       },
       cardiologia: {
         shortLabel: "Cardiologia",
         overviewCacheKey: "cardiologia",
-        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718ii",
+        overviewUrl: "data/stats-cardiologia-geral.json?v=20260718nn",
         countNoun: "Cardiologia"
       }
     };
@@ -516,7 +516,7 @@ function aprovaRichSpecialtyMeta (specialty) {
     label: "Pediatria",
     shortLabel: "Pediatria",
     overviewCacheKey: "pediatria",
-    overviewUrl: "data/stats-pediatria-geral.json?v=20260718ii",
+    overviewUrl: "data/stats-pediatria-geral.json?v=20260718nn",
     countNoun: "Pediatria",
     openRoot: () => aprovaOpenPediatria(),
     openModule: id => aprovaOpenPediatriaModule(id)
