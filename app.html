@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718xx">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718yy">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -117,83 +117,17 @@
       <main class="app-main app-main--shell">
         <section id="panel-inicio" class="panel active" aria-labelledby="inicio-title">
           <h2 id="inicio-title" class="sr-only">Início</h2>
-          <p class="muted">Olá, <span id="dash-hello">estudante</span> — <span id="dash-hello-sub">escolha um card para começar</span>.</p>
+          <p class="muted">Olá, <span id="dash-hello">estudante</span> — escolha um card para começar.</p>
 
           <div id="dash-profile-banner" class="aprova-banner" hidden>
             <strong>Personalize seu estudo</strong>
-            <p>Para uma experiência personalizada, escolha até 3 provas por ordem de prioridade. Leva menos de um minuto.</p>
+            <p>Para uma experiência personalizada, escolha até 3 provas por ordem de prioridade e a data (ou “Não sei”). Plano e foco ficam em Meu perfil.</p>
             <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="perfil">Preencher meu perfil</button>
-            </div>
-          </div>
-
-          <div id="dash-dates-banner" class="aprova-banner aprova-banner--soft" hidden>
-            <strong>Quer um plano até a prova?</strong>
-            <p>Sem data no perfil, usamos o fim do ano. Se souber a data (ou uma estimativa), ajuste em Meu perfil para refinar o ritmo.</p>
-            <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="perfil">Ajustar datas</button>
-            </div>
-          </div>
-
-          <div id="dash-seu-plano" class="dash-seu-plano" hidden>
-            <div class="dash-seu-plano-head">
-              <strong>Seu plano</strong>
-              <p class="muted" id="dash-seu-plano-headline"></p>
-            </div>
-            <p class="dash-seu-plano-days" id="dash-seu-plano-days"></p>
-            <p class="muted" id="dash-seu-plano-tone"></p>
-            <div class="dash-seu-plano-meta" id="dash-seu-plano-meta"></div>
-
-            <div id="dash-seu-plano-empty" hidden>
-              <div class="actions-row" style="margin-top:0.85rem">
-                <button type="button" class="btn btn-primary" data-goto="perfil">Informar data da prova</button>
-              </div>
-            </div>
-
-            <div id="dash-seu-plano-body" hidden>
-              <div class="label" style="margin-top:0.85rem">Fases até a prova</div>
-              <ol class="dash-seu-plano-phases" id="dash-seu-plano-phases"></ol>
-              <div class="label" style="margin-top:0.85rem">Temas desta etapa</div>
-              <ul class="dash-seu-plano-themes" id="dash-seu-plano-themes"></ul>
-              <p class="muted dash-seu-plano-note">Plano orientativo com base nas suas datas e no que mais cai — ajuste as datas no perfil quando souber a convocação oficial.</p>
-              <div class="actions-row">
-                <button type="button" class="btn btn-primary" data-goto="hoje">Revisão de hoje</button>
-                <button type="button" class="btn btn-ghost" data-goto="perfil">Ajustar datas</button>
-              </div>
-            </div>
-          </div>
-
-          <div id="dash-seu-foco" class="dash-seu-foco" hidden>
-            <div class="dash-seu-foco-head">
-              <strong>Seu foco</strong>
-              <p class="muted" id="dash-seu-foco-weights"></p>
-            </div>
-            <div id="dash-seu-foco-areas" class="esp-stat-filters" role="tablist" aria-label="Área do foco"></div>
-            <div class="dash-seu-foco-body">
-              <div>
-                <div class="label">Foque mais</div>
-                <div class="rev-bars" id="dash-seu-foco-more"></div>
-              </div>
-              <div>
-                <div class="label">Menos tempo relativo</div>
-                <ul class="dash-seu-foco-less" id="dash-seu-foco-less"></ul>
-              </div>
-            </div>
-            <p class="muted dash-seu-foco-note" id="dash-seu-foco-note">
-              Sugestão com base nas estatísticas das suas provas — não é ranking oficial.
-            </p>
-            <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="flashcards">Estudar flashcards</button>
-              <button type="button" class="btn btn-ghost" data-goto="estatisticas">Ver estatísticas</button>
+              <button type="button" class="btn btn-primary" data-goto="perfil">Personalizar</button>
             </div>
           </div>
 
           <div class="dash-grid">
-            <button type="button" class="dash-card dash-card--featured" data-goto="perfil" id="dash-profile-card">
-              <span class="dash-card-kicker">Perfil</span>
-              <strong>Minhas provas</strong>
-              <span id="dash-profile-preview">Escolha as provas que você pretende prestar.</span>
-            </button>
             <button type="button" class="dash-card" data-goto="hoje">
               <span class="dash-card-kicker">Agenda</span>
               <strong>Revisão de hoje</strong>
@@ -570,7 +504,7 @@
             <p class="muted" id="perfil-save-msg" hidden style="margin:0.85rem 0 0"></p>
             <div class="actions-row" style="margin-top:1rem">
               <button type="button" class="btn btn-primary" id="perfil-save">Salvar perfil</button>
-              <button type="button" class="btn btn-ghost" data-goto="inicio">Ver plano no início</button>
+              <button type="button" class="btn btn-ghost" data-goto="inicio">Voltar ao início</button>
             </div>
           </div>
 
@@ -582,6 +516,57 @@
               <li>3ª — não definida</li>
             </ol>
             <p class="muted" id="perfil-plan-preview" style="margin:0.85rem 0 0"></p>
+          </div>
+
+          <div id="dash-seu-plano" class="dash-seu-plano" style="margin-top:1rem" hidden>
+            <div class="dash-seu-plano-head">
+              <strong>Seu plano</strong>
+              <p class="muted" id="dash-seu-plano-headline"></p>
+            </div>
+            <p class="dash-seu-plano-days" id="dash-seu-plano-days"></p>
+            <p class="muted" id="dash-seu-plano-tone"></p>
+            <div class="dash-seu-plano-meta" id="dash-seu-plano-meta"></div>
+
+            <div id="dash-seu-plano-empty" hidden>
+              <p class="muted" style="margin:0.85rem 0 0">Salve ao menos a 1ª prioridade para montar o plano.</p>
+            </div>
+
+            <div id="dash-seu-plano-body" hidden>
+              <div class="label" style="margin-top:0.85rem">Fases até a prova</div>
+              <ol class="dash-seu-plano-phases" id="dash-seu-plano-phases"></ol>
+              <div class="label" style="margin-top:0.85rem">Temas desta etapa</div>
+              <ul class="dash-seu-plano-themes" id="dash-seu-plano-themes"></ul>
+              <p class="muted dash-seu-plano-note">Plano orientativo com base nas suas datas e no que mais cai — não é cronograma oficial.</p>
+              <div class="actions-row">
+                <button type="button" class="btn btn-primary" data-goto="hoje">Revisão de hoje</button>
+                <button type="button" class="btn btn-ghost" data-goto="flashcards">Estudar flashcards</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="dash-seu-foco" class="dash-seu-foco" style="margin-top:1rem" hidden>
+            <div class="dash-seu-foco-head">
+              <strong>Seu foco</strong>
+              <p class="muted" id="dash-seu-foco-weights"></p>
+            </div>
+            <div id="dash-seu-foco-areas" class="esp-stat-filters" role="tablist" aria-label="Área do foco"></div>
+            <div class="dash-seu-foco-body">
+              <div>
+                <div class="label">Foque mais</div>
+                <div class="rev-bars" id="dash-seu-foco-more"></div>
+              </div>
+              <div>
+                <div class="label">Menos tempo relativo</div>
+                <ul class="dash-seu-foco-less" id="dash-seu-foco-less"></ul>
+              </div>
+            </div>
+            <p class="muted dash-seu-foco-note" id="dash-seu-foco-note">
+              Sugestão com pesos 50% / 30% / 20% nas suas prioridades — não é ranking oficial.
+            </p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" data-goto="flashcards">Estudar flashcards</button>
+              <button type="button" class="btn btn-ghost" data-goto="estatisticas">Ver estatísticas</button>
+            </div>
           </div>
         </section>
 
@@ -597,9 +582,9 @@
             </div>
           </div>
           <div class="study-card" style="margin-top:1rem">
-            <div class="label">Plano de estudo</div>
+            <div class="label">Estudo personalizado</div>
             <p class="muted" id="config-plan-hint">
-              Em Meu perfil você define as provas e as datas prováveis. Com isso o Início monta um plano de estudo e revisão até o dia D.
+              Provas, datas, plano e foco ficam em Meu perfil.
             </p>
             <div class="actions-row">
               <button type="button" class="btn btn-primary" data-goto="perfil">Abrir meu perfil</button>
@@ -637,14 +622,14 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260718xx"></script>
-  <script src="js/focus.js?v=20260718xx"></script>
-  <script src="js/plan.js?v=20260718xx"></script>
+  <script src="js/profile.js?v=20260718yy"></script>
+  <script src="js/focus.js?v=20260718yy"></script>
+  <script src="js/plan.js?v=20260718yy"></script>
   <script src="js/schedule.js?v=20260718mm"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718xx"></script>
+  <script src="js/app.js?v=20260718yy"></script>
 </body>
 </html>

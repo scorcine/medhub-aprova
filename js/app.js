@@ -2675,26 +2675,10 @@ function aprovaRenderDashboard () {
   const summary = typeof aprovaProfileSummary === "function"
     ? aprovaProfileSummary(profile)
     : { complete: false, line: "Escolha as provas que você pretende prestar.", detail: "", hasDates: false };
-  const hasDates = summary.hasDates || (typeof aprovaProfileHasExamDates === "function" && aprovaProfileHasExamDates(profile));
-  const helloSub = document.getElementById("dash-hello-sub");
-  if (helloSub) {
-    helloSub.textContent = summary.complete
-      ? (hasDates
-        ? "seu plano e foco abaixo já usam as provas e datas que você definiu"
-        : "seu plano usa o fim do ano como data estimada — ajuste no perfil se quiser")
-      : "escolha um card para começar";
-  }
+
+  // Início: só o convite de personalização (detalhes ficam em Meu perfil)
   const banner = document.getElementById("dash-profile-banner");
-  const datesBanner = document.getElementById("dash-dates-banner");
-  const preview = document.getElementById("dash-profile-preview");
   if (banner) banner.hidden = summary.complete;
-  // Com provas salvas o plano já existe (fim do ano se a data estiver em branco)
-  if (datesBanner) datesBanner.hidden = true;
-  if (preview) {
-    preview.textContent = summary.complete
-      ? (summary.detail || summary.line) + " · toque para editar"
-      : summary.detail || "Escolha as provas que você pretende prestar.";
-  }
 
   const sideUser = document.getElementById("sidebar-user-label");
   if (sideUser && session) {
@@ -2702,7 +2686,6 @@ function aprovaRenderDashboard () {
     sideUser.textContent = summary.complete ? (base + " · " + summary.line) : base;
   }
 
-  aprovaRenderSeuFoco();
   aprovaRenderToday();
   aprovaRenderExamStats();
 }
@@ -2874,6 +2857,7 @@ function aprovaRenderPerfil () {
     msg.textContent = "";
   }
   aprovaRenderPerfilSlot();
+  aprovaRenderSeuFoco();
 }
 
 function aprovaSavePerfilFromForm () {
@@ -2937,12 +2921,13 @@ function aprovaSavePerfilFromForm () {
   if (msg) {
     msg.hidden = false;
     msg.textContent = hasDates
-      ? "Perfil salvo. O Início monta o Seu foco e o plano até a data da prova."
-      : "Perfil salvo. Sem data, o plano usa o fim deste ano — você pode ajustar depois.";
+      ? "Perfil salvo. Veja o plano e o foco abaixo."
+      : "Perfil salvo. Sem data, o plano abaixo usa o fim deste ano.";
     msg.classList.remove("profile-msg--err");
     msg.classList.add("profile-msg--ok");
   }
   aprovaPerfilUpdateSummary();
+  aprovaRenderSeuFoco();
   aprovaRenderDashboard();
   return saved;
 }
