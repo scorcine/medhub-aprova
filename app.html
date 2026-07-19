@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718dd">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718ss">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -85,6 +85,7 @@
         <button type="button" class="side-link" data-panel="progresso">Meu progresso</button>
 
         <p class="sidebar-label">Conta</p>
+        <button type="button" class="side-link" data-panel="perfil">Meu perfil</button>
         <button type="button" class="side-link" data-panel="config">Configurações</button>
         <a class="side-link side-link-a" href="index.html">Página inicial</a>
       </nav>
@@ -117,7 +118,21 @@
         <section id="panel-inicio" class="panel active" aria-labelledby="inicio-title">
           <h2 id="inicio-title" class="sr-only">Início</h2>
           <p class="muted">Olá, <span id="dash-hello">estudante</span> — escolha um card para começar.</p>
+
+          <div id="dash-profile-banner" class="aprova-banner" hidden>
+            <strong>Personalize seu estudo</strong>
+            <p>Para uma experiência personalizada, informe quais provas você pretende prestar. Leva menos de um minuto.</p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" data-goto="perfil">Preencher meu perfil</button>
+            </div>
+          </div>
+
           <div class="dash-grid">
+            <button type="button" class="dash-card dash-card--featured" data-goto="perfil" id="dash-profile-card">
+              <span class="dash-card-kicker">Perfil</span>
+              <strong>Minhas provas</strong>
+              <span id="dash-profile-preview">Escolha as provas que você pretende prestar.</span>
+            </button>
             <button type="button" class="dash-card" data-goto="hoje">
               <span class="dash-card-kicker">Agenda</span>
               <strong>Revisão de hoje</strong>
@@ -449,6 +464,39 @@
           </div>
         </section>
 
+        <section id="panel-perfil" class="panel" aria-labelledby="perfil-title" hidden>
+          <h2 id="perfil-title">Meu perfil</h2>
+          <p class="muted">Personalize o MedHub R1 com as provas que você pretende prestar.</p>
+
+          <div class="study-card">
+            <div class="label">Quais provas você pretende prestar?</div>
+            <p class="muted" style="margin:0 0 0.85rem">Marque uma ou mais. Se a sua prova ainda não estiver na lista, use <strong>Outra</strong>.</p>
+            <div id="perfil-exam-grid" class="profile-exam-grid"></div>
+
+            <label class="aprova-check profile-other-check" style="margin-top:0.85rem">
+              <input type="checkbox" id="perfil-other-toggle">
+              <span>
+                <strong>Outra</strong>
+                <small>Prova que ainda não está no app</small>
+              </span>
+            </label>
+            <input
+              type="text"
+              id="perfil-other-input"
+              class="profile-other-input"
+              placeholder="Ex.: Hospital X, SES-YY, prova institucional…"
+              autocomplete="off"
+              hidden
+            >
+
+            <p class="muted" id="perfil-save-msg" hidden style="margin:0.85rem 0 0"></p>
+            <div class="actions-row" style="margin-top:1rem">
+              <button type="button" class="btn btn-primary" id="perfil-save">Salvar perfil</button>
+              <button type="button" class="btn btn-ghost" data-goto="inicio">Voltar ao início</button>
+            </div>
+          </div>
+        </section>
+
         <section id="panel-config" class="panel" aria-labelledby="cfg-title" hidden>
           <h2 id="cfg-title">Configurações</h2>
           <p class="muted">Preferências da conta e do app.</p>
@@ -492,11 +540,12 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
+  <script src="js/profile.js?v=20260718ss"></script>
   <script src="js/schedule.js?v=20260718mm"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718rr"></script>
+  <script src="js/app.js?v=20260718ss"></script>
 </body>
 </html>

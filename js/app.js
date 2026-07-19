@@ -9,6 +9,7 @@ const APROVA_PANEL_META = {
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "O que mais cai nas provas R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
+  perfil: { title: "Meu perfil", sub: "Provas que você pretende prestar" },
   config: { title: "Configurações", sub: "Conta e preferências" }
 };
 
@@ -102,6 +103,7 @@ function aprovaGoTo (id, options) {
   }
   if (id === "hoje") aprovaRenderToday();
   if (id === "progresso") aprovaRenderProgress();
+  if (id === "perfil") aprovaRenderPerfil();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
   aprovaShowPanel(id);
@@ -2442,8 +2444,106 @@ function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
   if (hello) hello.textContent = (session && (session.name || session.login)) || "estudante";
+
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const summary = typeof aprovaProfileSummary === "function"
+    ? aprovaProfileSummary(profile)
+    : { complete: false, line: "Escolha as provas que você pretende prestar.", detail: "" };
+  const banner = document.getElementById("dash-profile-banner");
+  const preview = document.getElementById("dash-profile-preview");
+  if (banner) banner.hidden = summary.complete;
+  if (preview) {
+    preview.textContent = summary.complete
+      ? summary.line + " · toque para editar"
+      : summary.detail || "Escolha as provas que você pretende prestar.";
+  }
+
+  const sideUser = document.getElementById("sidebar-user-label");
+  if (sideUser && session) {
+    const base = session.name || session.login || "Estudante";
+    sideUser.textContent = summary.complete ? (base + " · " + summary.line) : base;
+  }
+
   aprovaRenderToday();
   aprovaRenderExamStats();
+}
+
+function aprovaRenderPerfil () {
+  const grid = document.getElementById("perfil-exam-grid");
+  const otherToggle = document.getElementById("perfil-other-toggle");
+  const otherInput = document.getElementById("perfil-other-input");
+  const msg = document.getElementById("perfil-save-msg");
+  if (!grid || typeof aprovaLoadProfile !== "function") return;
+
+  const profile = aprovaLoadProfile();
+  const exams = typeof APROVA_TARGET_EXAMS !== "undefined" ? APROVA_TARGET_EXAMS : [];
+  grid.innerHTML = "";
+  exams.forEach(exam => {
+    const label = document.createElement("label");
+    label.className = "aprova-check profile-exam-item";
+    label.innerHTML =
+      "<input type=\"checkbox\" value=\"" + exam.id + "\"" +
+      (profile.exams.indexOf(exam.id) >= 0 ? " checked" : "") + ">" +
+      "<span><strong>" + exam.label + "</strong></span>";
+    grid.appendChild(label);
+  });
+
+  if (otherToggle) otherToggle.checked = !!profile.otherEnabled;
+  if (otherInput) {
+    otherInput.value = profile.otherExam || "";
+    otherInput.hidden = !profile.otherEnabled;
+  }
+  if (msg) {
+    msg.hidden = true;
+    msg.textContent = "";
+  }
+}
+
+function aprovaSavePerfilFromForm () {
+  const grid = document.getElementById("perfil-exam-grid");
+  const otherToggle = document.getElementById("perfil-other-toggle");
+  const otherInput = document.getElementById("perfil-other-input");
+  const msg = document.getElementById("perfil-save-msg");
+  if (!grid || typeof aprovaSaveProfile !== "function") return null;
+
+  const exams = Array.from(grid.querySelectorAll("input[type=checkbox]:checked"))
+    .map(el => el.value)
+    .filter(Boolean);
+  const otherEnabled = !!(otherToggle && otherToggle.checked);
+  const otherExam = otherInput ? String(otherInput.value || "").trim() : "";
+
+  if (!exams.length && !(otherEnabled && otherExam)) {
+    if (msg) {
+      msg.hidden = false;
+      msg.textContent = "Escolha ao menos uma prova da lista ou preencha Outra.";
+      msg.classList.remove("profile-msg--ok");
+      msg.classList.add("profile-msg--err");
+    }
+    return null;
+  }
+  if (otherEnabled && !otherExam) {
+    if (msg) {
+      msg.hidden = false;
+      msg.textContent = "Escreva o nome da prova em Outra, ou desmarque essa opção.";
+      msg.classList.remove("profile-msg--ok");
+      msg.classList.add("profile-msg--err");
+    }
+    return null;
+  }
+
+  const saved = aprovaSaveProfile({
+    exams,
+    otherEnabled,
+    otherExam: otherEnabled ? otherExam : ""
+  });
+  if (msg) {
+    msg.hidden = false;
+    msg.textContent = "Perfil salvo. O estudo poderá usar essas provas para personalizar a experiência.";
+    msg.classList.remove("profile-msg--err");
+    msg.classList.add("profile-msg--ok");
+  }
+  aprovaRenderDashboard();
+  return saved;
 }
 
 function aprovaRenderToday () {
@@ -2682,6 +2782,7 @@ async function aprovaBoot () {
     aprovaRenderProgress();
     aprovaRenderExamStats();
     aprovaRenderEspecialidades();
+    aprovaRenderPerfil();
     aprovaRenderConfig();
   }
 
@@ -2691,6 +2792,17 @@ async function aprovaBoot () {
 
   document.querySelectorAll("[data-goto]").forEach(btn => {
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
+  });
+
+  document.getElementById("perfil-other-toggle")?.addEventListener("change", e => {
+    const input = document.getElementById("perfil-other-input");
+    if (!input) return;
+    input.hidden = !e.target.checked;
+    if (e.target.checked) input.focus();
+  });
+
+  document.getElementById("perfil-save")?.addEventListener("click", () => {
+    aprovaSavePerfilFromForm();
   });
 
   document.querySelectorAll("[data-specialty]").forEach(btn => {
@@ -2872,5 +2984,6 @@ window.aprovaBootStudyModules = async function () {
   aprovaRenderProgress();
   aprovaRenderExamStats();
   aprovaRenderEspecialidades();
+  aprovaRenderPerfil();
   aprovaRenderConfig();
 };
