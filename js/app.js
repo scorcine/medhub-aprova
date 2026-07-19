@@ -2038,10 +2038,10 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     selectAll.textContent = "Selecionar todos";
   }
 
-  // Estatísticas ficam no topo (visíveis sem rolar a lista de grupos).
+  // Flashcards (áreas/grupos) no topo · estatísticas abaixo.
   const groupsEl = document.getElementById("esp-groups");
   if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
-    overview.parentNode.insertBefore(overview, groupsEl);
+    groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
   aprovaActivePedOverviewFocus = "geral";
@@ -2116,7 +2116,7 @@ async function aprovaOpenGoArea (areaId) {
 
   const groupsEl = document.getElementById("esp-groups");
   if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
-    overview.parentNode.insertBefore(overview, groupsEl);
+    groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
   if (showOverview) {
@@ -2187,7 +2187,7 @@ async function aprovaOpenCliArea (areaId) {
 
   const groupsEl = document.getElementById("esp-groups");
   if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
-    overview.parentNode.insertBefore(overview, groupsEl);
+    groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
   aprovaActivePedOverviewFocus = "geral";
