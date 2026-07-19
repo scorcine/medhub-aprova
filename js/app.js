@@ -2468,80 +2468,200 @@ function aprovaRenderDashboard () {
   aprovaRenderExamStats();
 }
 
-function aprovaRenderPerfil () {
-  const grid = document.getElementById("perfil-exam-grid");
-  const otherToggle = document.getElementById("perfil-other-toggle");
-  const otherInput = document.getElementById("perfil-other-input");
-  const msg = document.getElementById("perfil-save-msg");
-  if (!grid || typeof aprovaLoadProfile !== "function") return;
+let aprovaPerfilActiveTab = 0;
+let aprovaPerfilDraft = [null, null, null];
 
-  const profile = aprovaLoadProfile();
+function aprovaPerfilSlotFromControls () {
+  const select = document.getElementById("perfil-slot-select");
+  const other = document.getElementById("perfil-slot-other");
+  if (!select) return null;
+  const value = select.value;
+  if (!value || value === "") return null;
+  if (value === "__other__") {
+    const label = other ? String(other.value || "").trim() : "";
+    if (!label) return { kind: "other", label: "", incomplete: true };
+    return { kind: "other", label };
+  }
+  return { kind: "exam", id: value };
+}
+
+function aprovaPerfilCommitActiveSlot () {
+  const slot = aprovaPerfilSlotFromControls();
+  if (slot && slot.incomplete) {
+    aprovaPerfilDraft[aprovaPerfilActiveTab] = { kind: "other", label: "" };
+    return;
+  }
+  aprovaPerfilDraft[aprovaPerfilActiveTab] = slot;
+}
+
+function aprovaPerfilUpdateSummary () {
+  const list = document.getElementById("perfil-priority-summary");
+  if (!list) return;
+  const labels = ["1ª", "2ª", "3ª"];
+  list.innerHTML = aprovaPerfilDraft.map((slot, i) => {
+    const name = slot && typeof aprovaPriorityLabel === "function"
+      ? aprovaPriorityLabel(slot)
+      : "";
+    return "<li><strong>" + labels[i] + "</strong> — " +
+      (name || "não definida") + "</li>";
+  }).join("");
+}
+
+function aprovaRenderPerfilSlot () {
+  const select = document.getElementById("perfil-slot-select");
+  const other = document.getElementById("perfil-slot-other");
+  const labelEl = document.getElementById("perfil-slot-label");
+  const hintEl = document.getElementById("perfil-slot-hint");
   const exams = typeof APROVA_TARGET_EXAMS !== "undefined" ? APROVA_TARGET_EXAMS : [];
-  grid.innerHTML = "";
-  exams.forEach(exam => {
-    const label = document.createElement("label");
-    label.className = "aprova-check profile-exam-item";
-    label.innerHTML =
-      "<input type=\"checkbox\" value=\"" + exam.id + "\"" +
-      (profile.exams.indexOf(exam.id) >= 0 ? " checked" : "") + ">" +
-      "<span><strong>" + exam.label + "</strong></span>";
-    grid.appendChild(label);
+  if (!select) return;
+
+  const idx = aprovaPerfilActiveTab;
+  const titles = ["Prioridade 1", "Prioridade 2", "Prioridade 3"];
+  const hints = [
+    "Prova principal que você pretende prestar (obrigatória para personalizar).",
+    "Segunda opção — opcional.",
+    "Terceira opção — opcional."
+  ];
+  if (labelEl) labelEl.textContent = titles[idx];
+  if (hintEl) hintEl.textContent = hints[idx];
+
+  const used = new Set();
+  aprovaPerfilDraft.forEach((slot, i) => {
+    if (i === idx) return;
+    if (slot && slot.kind === "exam" && slot.id) used.add(slot.id);
   });
 
-  if (otherToggle) otherToggle.checked = !!profile.otherEnabled;
-  if (otherInput) {
-    otherInput.value = profile.otherExam || "";
-    otherInput.hidden = !profile.otherEnabled;
+  const current = aprovaPerfilDraft[idx];
+  select.innerHTML = "";
+  const empty = document.createElement("option");
+  empty.value = "";
+  empty.textContent = idx === 0 ? "Selecione a prova principal…" : "Nenhuma (opcional)";
+  select.appendChild(empty);
+
+  exams.forEach(exam => {
+    if (used.has(exam.id) && !(current && current.kind === "exam" && current.id === exam.id)) {
+      return;
+    }
+    const opt = document.createElement("option");
+    opt.value = exam.id;
+    opt.textContent = exam.label;
+    select.appendChild(opt);
+  });
+
+  const otherOpt = document.createElement("option");
+  otherOpt.value = "__other__";
+  otherOpt.textContent = "Outra (escrever nome)";
+  select.appendChild(otherOpt);
+
+  if (current && current.kind === "exam") {
+    select.value = current.id;
+    if (other) {
+      other.hidden = true;
+      other.value = "";
+    }
+  } else if (current && current.kind === "other") {
+    select.value = "__other__";
+    if (other) {
+      other.hidden = false;
+      other.value = current.label || "";
+    }
+  } else {
+    select.value = "";
+    if (other) {
+      other.hidden = true;
+      other.value = "";
+    }
   }
+
+  document.querySelectorAll("[data-perfil-tab]").forEach(btn => {
+    const active = Number(btn.dataset.perfilTab) === idx;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", active ? "true" : "false");
+  });
+
+  aprovaPerfilUpdateSummary();
+}
+
+function aprovaRenderPerfil () {
+  const msg = document.getElementById("perfil-save-msg");
+  const profile = typeof aprovaLoadProfile === "function"
+    ? aprovaLoadProfile()
+    : { priorities: [null, null, null] };
+  aprovaPerfilDraft = [
+    profile.priorities[0] || null,
+    profile.priorities[1] || null,
+    profile.priorities[2] || null
+  ];
+  aprovaPerfilActiveTab = 0;
   if (msg) {
     msg.hidden = true;
     msg.textContent = "";
   }
+  aprovaRenderPerfilSlot();
 }
 
 function aprovaSavePerfilFromForm () {
-  const grid = document.getElementById("perfil-exam-grid");
-  const otherToggle = document.getElementById("perfil-other-toggle");
-  const otherInput = document.getElementById("perfil-other-input");
   const msg = document.getElementById("perfil-save-msg");
-  if (!grid || typeof aprovaSaveProfile !== "function") return null;
+  if (typeof aprovaSaveProfile !== "function") return null;
 
-  const exams = Array.from(grid.querySelectorAll("input[type=checkbox]:checked"))
-    .map(el => el.value)
-    .filter(Boolean);
-  const otherEnabled = !!(otherToggle && otherToggle.checked);
-  const otherExam = otherInput ? String(otherInput.value || "").trim() : "";
+  aprovaPerfilCommitActiveSlot();
+  const draft = aprovaPerfilDraft.slice();
 
-  if (!exams.length && !(otherEnabled && otherExam)) {
+  for (let i = 0; i < 3; i++) {
+    const slot = draft[i];
+    if (slot && slot.kind === "other" && !String(slot.label || "").trim()) {
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = "Na " + (i + 1) + "ª prioridade, escreva o nome da prova em Outra.";
+        msg.classList.remove("profile-msg--ok");
+        msg.classList.add("profile-msg--err");
+      }
+      aprovaPerfilActiveTab = i;
+      aprovaRenderPerfilSlot();
+      return null;
+    }
+  }
+
+  if (!draft[0]) {
     if (msg) {
       msg.hidden = false;
-      msg.textContent = "Escolha ao menos uma prova da lista ou preencha Outra.";
+      msg.textContent = "Defina ao menos a 1ª prioridade.";
+      msg.classList.remove("profile-msg--ok");
+      msg.classList.add("profile-msg--err");
+    }
+    aprovaPerfilActiveTab = 0;
+    aprovaRenderPerfilSlot();
+    return null;
+  }
+
+  // Não permitir 2ª/3ª preenchida se a anterior estiver vazia
+  if (!draft[1] && draft[2]) {
+    draft[1] = draft[2];
+    draft[2] = null;
+  }
+
+  const ids = draft
+    .filter(s => s && s.kind === "exam")
+    .map(s => s.id);
+  if (new Set(ids).size !== ids.length) {
+    if (msg) {
+      msg.hidden = false;
+      msg.textContent = "Não repita a mesma prova em mais de uma prioridade.";
       msg.classList.remove("profile-msg--ok");
       msg.classList.add("profile-msg--err");
     }
     return null;
   }
-  if (otherEnabled && !otherExam) {
-    if (msg) {
-      msg.hidden = false;
-      msg.textContent = "Escreva o nome da prova em Outra, ou desmarque essa opção.";
-      msg.classList.remove("profile-msg--ok");
-      msg.classList.add("profile-msg--err");
-    }
-    return null;
-  }
 
-  const saved = aprovaSaveProfile({
-    exams,
-    otherEnabled,
-    otherExam: otherEnabled ? otherExam : ""
-  });
+  const saved = aprovaSaveProfile({ priorities: draft });
+  aprovaPerfilDraft = saved.priorities.slice();
   if (msg) {
     msg.hidden = false;
-    msg.textContent = "Perfil salvo. O estudo poderá usar essas provas para personalizar a experiência.";
+    msg.textContent = "Prioridades salvas. O app usará no máximo estas 3 provas para personalizar o estudo.";
     msg.classList.remove("profile-msg--err");
     msg.classList.add("profile-msg--ok");
   }
+  aprovaPerfilUpdateSummary();
   aprovaRenderDashboard();
   return saved;
 }
@@ -2794,11 +2914,28 @@ async function aprovaBoot () {
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
   });
 
-  document.getElementById("perfil-other-toggle")?.addEventListener("change", e => {
-    const input = document.getElementById("perfil-other-input");
-    if (!input) return;
-    input.hidden = !e.target.checked;
-    if (e.target.checked) input.focus();
+  document.querySelectorAll("[data-perfil-tab]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      aprovaPerfilCommitActiveSlot();
+      aprovaPerfilActiveTab = Number(btn.dataset.perfilTab) || 0;
+      aprovaRenderPerfilSlot();
+    });
+  });
+
+  document.getElementById("perfil-slot-select")?.addEventListener("change", () => {
+    const other = document.getElementById("perfil-slot-other");
+    const select = document.getElementById("perfil-slot-select");
+    if (other && select) {
+      other.hidden = select.value !== "__other__";
+      if (select.value === "__other__") other.focus();
+    }
+    aprovaPerfilCommitActiveSlot();
+    aprovaPerfilUpdateSummary();
+  });
+
+  document.getElementById("perfil-slot-other")?.addEventListener("input", () => {
+    aprovaPerfilCommitActiveSlot();
+    aprovaPerfilUpdateSummary();
   });
 
   document.getElementById("perfil-save")?.addEventListener("click", () => {

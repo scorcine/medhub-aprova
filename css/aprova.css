@@ -2126,23 +2126,57 @@ html[data-theme="dark"] .aprova-modal-panel {
   font-weight: 500;
 }
 
-.profile-exam-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
-  gap: 0.55rem;
+.profile-priority-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
 }
 
-.profile-exam-item {
-  margin: 0;
-  padding: 0.7rem 0.8rem;
+.profile-priority-tab {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.profile-priority-tab:hover {
+  border-color: rgba(15, 159, 154, 0.4);
+}
+
+.profile-priority-tab.active {
+  border-color: rgba(15, 159, 154, 0.5);
+  background: rgba(15, 159, 154, 0.12);
+  color: var(--accent-deep);
+}
+
+.profile-select-label {
+  display: block;
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.profile-select {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
   background: var(--panel);
-}
-
-.profile-exam-item:has(input:checked) {
-  border-color: rgba(15, 159, 154, 0.45);
-  background: rgba(15, 159, 154, 0.08);
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .profile-other-input {
@@ -2157,9 +2191,22 @@ html[data-theme="dark"] .aprova-modal-panel {
   font: inherit;
 }
 
-.profile-other-input:focus {
+.profile-other-input:focus,
+.profile-select:focus {
   outline: 2px solid rgba(15, 159, 154, 0.35);
   outline-offset: 1px;
+}
+
+.profile-priority-summary {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.profile-priority-summary strong {
+  color: inherit;
 }
 
 .profile-msg--ok {

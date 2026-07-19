@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718ss">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718tt">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -121,7 +121,7 @@
 
           <div id="dash-profile-banner" class="aprova-banner" hidden>
             <strong>Personalize seu estudo</strong>
-            <p>Para uma experiência personalizada, informe quais provas você pretende prestar. Leva menos de um minuto.</p>
+            <p>Para uma experiência personalizada, escolha até 3 provas por ordem de prioridade. Leva menos de um minuto.</p>
             <div class="actions-row">
               <button type="button" class="btn btn-primary" data-goto="perfil">Preencher meu perfil</button>
             </div>
@@ -466,34 +466,44 @@
 
         <section id="panel-perfil" class="panel" aria-labelledby="perfil-title" hidden>
           <h2 id="perfil-title">Meu perfil</h2>
-          <p class="muted">Personalize o MedHub R1 com as provas que você pretende prestar.</p>
+          <p class="muted">Escolha até 3 provas por ordem de prioridade — a 1ª é a mais importante.</p>
 
-          <div class="study-card">
-            <div class="label">Quais provas você pretende prestar?</div>
-            <p class="muted" style="margin:0 0 0.85rem">Marque uma ou mais. Se a sua prova ainda não estiver na lista, use <strong>Outra</strong>.</p>
-            <div id="perfil-exam-grid" class="profile-exam-grid"></div>
+          <div class="profile-priority-tabs" role="tablist" aria-label="Prioridade das provas">
+            <button type="button" class="profile-priority-tab active" role="tab" aria-selected="true" data-perfil-tab="0">1ª prioridade</button>
+            <button type="button" class="profile-priority-tab" role="tab" aria-selected="false" data-perfil-tab="1">2ª prioridade</button>
+            <button type="button" class="profile-priority-tab" role="tab" aria-selected="false" data-perfil-tab="2">3ª prioridade</button>
+          </div>
 
-            <label class="aprova-check profile-other-check" style="margin-top:0.85rem">
-              <input type="checkbox" id="perfil-other-toggle">
-              <span>
-                <strong>Outra</strong>
-                <small>Prova que ainda não está no app</small>
-              </span>
-            </label>
+          <div class="study-card" id="perfil-priority-panel">
+            <div class="label" id="perfil-slot-label">Prioridade 1</div>
+            <p class="muted" id="perfil-slot-hint" style="margin:0 0 0.85rem">Prova principal que você pretende prestar.</p>
+
+            <label class="profile-select-label" for="perfil-slot-select">Prova</label>
+            <select id="perfil-slot-select" class="profile-select"></select>
+
             <input
               type="text"
-              id="perfil-other-input"
+              id="perfil-slot-other"
               class="profile-other-input"
-              placeholder="Ex.: Hospital X, SES-YY, prova institucional…"
+              placeholder="Nome da prova (ainda não listada no app)"
               autocomplete="off"
               hidden
             >
 
             <p class="muted" id="perfil-save-msg" hidden style="margin:0.85rem 0 0"></p>
             <div class="actions-row" style="margin-top:1rem">
-              <button type="button" class="btn btn-primary" id="perfil-save">Salvar perfil</button>
+              <button type="button" class="btn btn-primary" id="perfil-save">Salvar prioridades</button>
               <button type="button" class="btn btn-ghost" data-goto="inicio">Voltar ao início</button>
             </div>
+          </div>
+
+          <div class="study-card" style="margin-top:1rem">
+            <div class="label">Resumo</div>
+            <ol id="perfil-priority-summary" class="profile-priority-summary">
+              <li>1ª — não definida</li>
+              <li>2ª — não definida</li>
+              <li>3ª — não definida</li>
+            </ol>
           </div>
         </section>
 
@@ -540,12 +550,12 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260718ss"></script>
+  <script src="js/profile.js?v=20260718tt"></script>
   <script src="js/schedule.js?v=20260718mm"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718ss"></script>
+  <script src="js/app.js?v=20260718tt"></script>
 </body>
 </html>
