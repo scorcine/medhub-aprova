@@ -40,10 +40,33 @@ function aprovaActivityToday (now = Date.now()) {
   return Number(map[aprovaActivityDayKey(now)]) || 0;
 }
 
+function aprovaActivityOnDay (iso) {
+  if (!iso) return 0;
+  const map = aprovaLoadActivity();
+  return Number(map[String(iso)]) || 0;
+}
+
+/** Dia ISO (YYYY-MM-DD) para creditar estudo adiantado; null = hoje. */
+let aprovaActivityCreditDay = null;
+
+function aprovaSetActivityCreditDay (iso) {
+  const s = String(iso || "").trim();
+  aprovaActivityCreditDay = /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null;
+  return aprovaActivityCreditDay;
+}
+
+function aprovaClearActivityCreditDay () {
+  aprovaActivityCreditDay = null;
+}
+
+function aprovaGetActivityCreditDay () {
+  return aprovaActivityCreditDay;
+}
+
 function aprovaLogStudyActivity (count = 1, now = Date.now()) {
   const n = Math.max(1, count | 0);
   const map = aprovaLoadActivity();
-  const key = aprovaActivityDayKey(now);
+  const key = aprovaActivityCreditDay || aprovaActivityDayKey(now);
   map[key] = (Number(map[key]) || 0) + n;
 
   // Mantém ~14 meses

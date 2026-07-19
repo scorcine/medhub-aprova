@@ -140,12 +140,17 @@ function aprovaShowFlashcardStudy () {
   if (browse) browse.hidden = true;
   if (card) card.hidden = false;
   if (hint) {
+    const advance = typeof aprovaGetActivityCreditDay === "function" && aprovaGetActivityCreditDay();
     const multi = AprovaFlashcards.activeDeckIds && AprovaFlashcards.activeDeckIds.length > 1;
-    hint.textContent = AprovaFlashcards.mode === "deck"
-      ? (multi
-        ? "Estudo de vários subtemas · revelar · acertei / errei."
-        : "Estudo por tema · revelar · acertei / errei.")
-      : "Fila de hoje · revelar · acertei / errei.";
+    if (advance) {
+      hint.textContent = "Adiantando meta de amanhã · estes cards contam para amanhã.";
+    } else {
+      hint.textContent = AprovaFlashcards.mode === "deck"
+        ? (multi
+          ? "Estudo de vários subtemas · revelar · acertei / errei."
+          : "Estudo por tema · revelar · acertei / errei.")
+        : "Fila de hoje · revelar · acertei / errei.";
+    }
   }
 }
 
@@ -2515,7 +2520,31 @@ function aprovaRenderSeuFocoArea (pack, areaId) {
 }
 
 function aprovaFulfillDailyMeta () {
+  if (typeof aprovaClearActivityCreditDay === "function") {
+    aprovaClearActivityCreditDay();
+  }
   aprovaGoTo("flashcards", { study: true, mode: "today" });
+}
+
+function aprovaFulfillTomorrowMeta () {
+  const tomorrowIso = typeof aprovaIsoOffset === "function" ? aprovaIsoOffset(1) : null;
+  if (typeof aprovaSetActivityCreditDay === "function" && tomorrowIso) {
+    aprovaSetActivityCreditDay(tomorrowIso);
+  }
+  aprovaGoTo("flashcards", { study: true, mode: "today" });
+}
+
+function aprovaApplyMetaCredit (credit) {
+  if (credit === "tomorrow") {
+    const tomorrowIso = typeof aprovaIsoOffset === "function" ? aprovaIsoOffset(1) : null;
+    if (typeof aprovaSetActivityCreditDay === "function" && tomorrowIso) {
+      aprovaSetActivityCreditDay(tomorrowIso);
+    }
+    return;
+  }
+  if (typeof aprovaClearActivityCreditDay === "function") {
+    aprovaClearActivityCreditDay();
+  }
 }
 
 function aprovaFindDecksForMetaTheme (areaId, tema) {
@@ -2671,6 +2700,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           .replace(/</g, "&lt;");
         let themesBlock = "";
         if (t.showThemes && t.themeCards && t.themeCards.length) {
+          const fulfillId = t.id === "daily" || t.id === "tomorrow" ? t.id : "";
           themesBlock =
             "<div class=\"dash-task-themes-head\">" +
               "<div>" +
@@ -2679,9 +2709,11 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                   ? ("<p class=\"muted dash-task-themes-hint\">" + esc(t.themesHint) + "</p>")
                   : "") +
               "</div>" +
-              (t.id === "daily"
-                ? ("<button type=\"button\" class=\"btn btn-primary btn-compact\" data-meta-fulfill=\"daily\">" +
-                  esc(t.cta || "Cumprir agora") + "</button>")
+              (fulfillId
+                ? ("<button type=\"button\" class=\"btn " +
+                  (t.id === "tomorrow" ? "btn-ghost" : "btn-primary") +
+                  " btn-compact\" data-meta-fulfill=\"" + fulfillId + "\">" +
+                  esc(t.cta || "Estudar") + "</button>")
                 : "") +
             "</div>" +
             "<ul class=\"dash-task-themes\">" + t.themeCards.map(th => (
@@ -2689,7 +2721,8 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                 "<button type=\"button\" class=\"dash-task-theme-btn\"" +
                   " data-meta-area=\"" + esc(th.areaId) + "\"" +
                   " data-meta-tema=\"" + esc(th.tema) + "\"" +
-                  " data-meta-cards=\"" + (th.cards | 0) + "\">" +
+                  " data-meta-cards=\"" + (th.cards | 0) + "\"" +
+                  " data-meta-credit=\"" + esc(t.credit || "today") + "\">" +
                   "<strong>" + th.cards + "</strong>" +
                   "<span class=\"dash-task-theme-copy\">" + esc(th.tema) +
                     (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
@@ -2703,7 +2736,8 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
         }
 
         return (
-          "<li class=\"dash-task dash-task--" + t.status + "\">" +
+          "<li class=\"dash-task dash-task--" + t.status +
+            (t.id === "tomorrow" ? " dash-task--advance" : "") + "\">" +
             "<div class=\"dash-task-top\">" +
               "<strong>" + t.label + "</strong>" +
               "<em>" + t.done + "/" + t.goal + " cards</em>" +
@@ -2722,12 +2756,15 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           const fulfill = evt.target.closest("[data-meta-fulfill]");
           if (fulfill) {
             evt.preventDefault();
-            aprovaFulfillDailyMeta();
+            const kind = fulfill.getAttribute("data-meta-fulfill");
+            if (kind === "tomorrow") aprovaFulfillTomorrowMeta();
+            else aprovaFulfillDailyMeta();
             return;
           }
           const themeBtn = evt.target.closest("[data-meta-area]");
           if (themeBtn) {
             evt.preventDefault();
+            aprovaApplyMetaCredit(themeBtn.getAttribute("data-meta-credit"));
             aprovaFulfillMetaTheme(
               themeBtn.getAttribute("data-meta-area"),
               themeBtn.getAttribute("data-meta-tema"),
@@ -2829,6 +2866,7 @@ function aprovaRenderCurriculumMap (curriculum) {
       const themeBtn = evt.target.closest("[data-meta-area]");
       if (!themeBtn) return;
       evt.preventDefault();
+      aprovaApplyMetaCredit("today");
       aprovaFulfillMetaTheme(
         themeBtn.getAttribute("data-meta-area"),
         themeBtn.getAttribute("data-meta-tema"),
@@ -3755,10 +3793,16 @@ async function aprovaBoot () {
   });
 
   document.getElementById("today-start")?.addEventListener("click", () => {
+    if (typeof aprovaClearActivityCreditDay === "function") {
+      aprovaClearActivityCreditDay();
+    }
     aprovaGoTo("flashcards", { study: true, mode: "today" });
   });
 
   document.getElementById("fc-back-browse")?.addEventListener("click", () => {
+    if (typeof aprovaClearActivityCreditDay === "function") {
+      aprovaClearActivityCreditDay();
+    }
     aprovaShowFlashcardBrowse();
   });
 

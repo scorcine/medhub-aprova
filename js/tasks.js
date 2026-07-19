@@ -354,7 +354,8 @@ function aprovaBuildPeriodTasks (quota, themeSets, now = Date.now()) {
       newCards: quota.dailyNew,
       reviewCards: quota.dailyReview,
       cta: "Cumprir agora",
-      showThemes: true
+      showThemes: true,
+      credit: "today"
     },
     {
       id: "weekly",
@@ -369,7 +370,8 @@ function aprovaBuildPeriodTasks (quota, themeSets, now = Date.now()) {
       newCards: quota.dailyNew * 7,
       reviewCards: quota.dailyReview * 7,
       cta: "Estudar temas",
-      showThemes: true
+      showThemes: true,
+      credit: "today"
     },
     {
       id: "biweekly",
@@ -384,7 +386,8 @@ function aprovaBuildPeriodTasks (quota, themeSets, now = Date.now()) {
       newCards: quota.dailyNew * 14,
       reviewCards: quota.dailyReview * 14,
       cta: "Estudar temas",
-      showThemes: false
+      showThemes: false,
+      credit: "today"
     },
     {
       id: "monthly",
@@ -399,11 +402,49 @@ function aprovaBuildPeriodTasks (quota, themeSets, now = Date.now()) {
       newCards: quota.dailyNew * 30,
       reviewCards: quota.dailyReview * 30,
       cta: "Estudar temas",
-      showThemes: true
+      showThemes: true,
+      credit: "today"
     }
   ];
 
+  const tomorrowIso = aprovaIsoOffset(1, now);
+  const tomorrowDone = typeof aprovaActivityOnDay === "function"
+    ? aprovaActivityOnDay(tomorrowIso)
+    : 0;
+  const todayComplete = dayDone >= quota.daily;
+
+  // Só aparece depois de cumprir hoje (ou se já houver adiantamento)
+  if (todayComplete || tomorrowDone > 0) {
+    const stT = aprovaTaskStatus(tomorrowDone, quota.daily);
+    periods.splice(1, 0, {
+      id: "tomorrow",
+      label: "Meta de amanhã",
+      window: "Adiantamento",
+      goal: quota.daily,
+      done: tomorrowDone,
+      detail: todayComplete
+        ? ("Adiante até " + quota.daily + " cards — contam para amanhã")
+        : "Continue o adiantamento de amanhã",
+      themesLabel: "Foco de amanhã (mesmo ritmo)",
+      themesHint: "Cada card estudado aqui entra na meta de amanhã, não na de hoje.",
+      themeCards: aprovaDistributeThemeCards(dailyThemes, quota.daily),
+      newCards: quota.dailyNew,
+      reviewCards: quota.dailyReview,
+      cta: stT.status === "done" ? "Estudar mais" : "Adiantar agora",
+      showThemes: true,
+      credit: "tomorrow",
+      status: stT.status,
+      pct: stT.pct,
+      feedback: stT.status === "done"
+        ? "Meta de amanhã já adiantada. Bom ritmo."
+        : (tomorrowDone > 0
+          ? ("Adiantados " + tomorrowDone + "/" + quota.daily + " para amanhã.")
+          : "Meta de hoje ok — você pode adiantar a de amanhã.")
+    });
+  }
+
   return periods.map(p => {
+    if (p.status && p.pct != null && p.feedback) return p;
     const st = aprovaTaskStatus(p.done, p.goal);
     return {
       ...p,
