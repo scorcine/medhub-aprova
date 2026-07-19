@@ -2356,6 +2356,59 @@ html[data-theme="dark"] .aprova-modal-panel {
   background: rgba(61, 139, 253, 0.08);
 }
 
+.q-filters .q-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.65rem 0.75rem;
+  margin-top: 0.55rem;
+}
+
+.q-filter-field {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.q-filter-field .profile-select {
+  width: 100%;
+}
+
+.q-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.q-result-themes {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.q-result-themes li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 159, 154, 0.08);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.q-result-themes li em {
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-deep);
+}
+
 .dash-task-top {
   display: flex;
   justify-content: space-between;

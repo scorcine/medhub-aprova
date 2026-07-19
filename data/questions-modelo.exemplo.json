@@ -1,0 +1,34 @@
+{
+  "descricao": "MODELO — não é carregado pelo app. Copie o objeto de 'questions' para questions-clinica.json (ou outra área).",
+  "campos": {
+    "id": "string única, ex.: cli-cardio-010",
+    "specialty": "clinica | cirurgia | pediatria | go | preventiva",
+    "theme": "nome do tema (ex.: Cardiologia)",
+    "exam": "id da banca: enamed, enare, usp, unifesp... (opcional)",
+    "year": "número do ano (opcional)",
+    "difficulty": "facil | media | dificil (opcional)",
+    "stem": "enunciado estilo prova",
+    "choices": "array com 4 alternativas",
+    "answer": "índice 0-based da correta (0=A, 1=B, 2=C, 3=D)",
+    "explain": "comentário curto após responder"
+  },
+  "questions": [
+    {
+      "id": "area-tema-000",
+      "specialty": "clinica",
+      "theme": "Cardiologia",
+      "exam": "enamed",
+      "year": 2025,
+      "difficulty": "media",
+      "stem": "Caso clínico curto. Qual a melhor conduta?",
+      "choices": [
+        "Alternativa A",
+        "Alternativa B (correta)",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "answer": 1,
+      "explain": "Explique o raciocínio em 1–3 linhas."
+    }
+  ]
+}

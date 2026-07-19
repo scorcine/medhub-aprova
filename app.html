@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260719i">
+  <link rel="stylesheet" href="css/aprova.css?v=20260719j">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -244,16 +244,69 @@
 
         <section id="panel-questoes" class="panel" aria-labelledby="q-title" hidden>
           <h2 id="q-title">Banco de questões</h2>
-          <p class="muted">Escolha a alternativa · feedback na hora.</p>
-          <div class="study-card" id="q-card">
-            <div class="label" id="q-theme">Tema</div>
+          <p class="muted">Treino com feedback ou simulado no formato da residência. Inclua novas questões nos JSON em <code>data/questions-*.json</code>.</p>
+
+          <div class="study-card q-filters" id="q-filters">
+            <div class="label">Filtros</div>
+            <div class="q-filter-grid">
+              <label class="q-filter-field">
+                <span>Área</span>
+                <select id="q-filter-specialty" class="profile-select"></select>
+              </label>
+              <label class="q-filter-field">
+                <span>Tema</span>
+                <select id="q-filter-theme" class="profile-select"></select>
+              </label>
+              <label class="q-filter-field">
+                <span>Banca</span>
+                <select id="q-filter-exam" class="profile-select"></select>
+              </label>
+              <label class="q-filter-field">
+                <span>Ano</span>
+                <select id="q-filter-year" class="profile-select"></select>
+              </label>
+              <label class="q-filter-field">
+                <span>Simulado (nº)</span>
+                <select id="q-filter-size" class="profile-select">
+                  <option value="5">5 questões</option>
+                  <option value="10" selected>10 questões</option>
+                  <option value="20">20 questões</option>
+                  <option value="40">40 questões</option>
+                </select>
+              </label>
+            </div>
+            <p class="muted" id="q-filter-count" style="margin:0.65rem 0 0"></p>
+            <div class="actions-row" style="margin-top:0.85rem">
+              <button type="button" class="btn btn-primary" id="q-start-treino">Treinar (filtro)</button>
+              <button type="button" class="btn btn-ghost" id="q-start-simulado">Iniciar simulado</button>
+            </div>
+          </div>
+
+          <div class="study-card" id="q-card" hidden>
+            <div class="q-card-meta">
+              <div class="label" id="q-theme">Tema</div>
+              <span class="muted" id="q-progress"></span>
+            </div>
             <p class="prompt" id="q-stem">—</p>
             <div id="q-choices"></div>
             <p class="answer" id="q-explain" hidden></p>
             <div class="actions-row">
               <button type="button" class="btn btn-primary" id="q-next" hidden>Próxima</button>
+              <button type="button" class="btn btn-ghost" id="q-abort" hidden>Encerrar</button>
             </div>
             <div class="stats" id="q-stats"></div>
+          </div>
+
+          <div class="study-card" id="q-result" hidden>
+            <div class="label">Resultado do simulado</div>
+            <p class="dash-seu-plano-days" id="q-result-score"></p>
+            <p class="muted" id="q-result-time"></p>
+            <div class="label" style="margin-top:0.85rem">Por tema</div>
+            <ul class="q-result-themes" id="q-result-themes"></ul>
+            <div class="actions-row" style="margin-top:1rem">
+              <button type="button" class="btn btn-primary" id="q-result-again">Novo simulado</button>
+              <button type="button" class="btn btn-ghost" id="q-result-treino">Voltar ao treino</button>
+            </div>
           </div>
         </section>
 
@@ -670,7 +723,7 @@
   <script src="js/schedule.js?v=20260719i"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260719f"></script>
-  <script src="js/questions.js?v=20260718dd"></script>
+  <script src="js/questions.js?v=20260719j"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/app.js?v=20260719i"></script>
 </body>

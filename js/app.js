@@ -108,6 +108,7 @@ function aprovaGoTo (id, options) {
   if (id === "perfil") aprovaRenderPerfil();
   if (id === "config") aprovaRenderConfig();
   if (id === "inicio") aprovaRenderDashboard();
+  if (id === "questoes") aprovaRenderQuestoesPanel();
   aprovaShowPanel(id);
 }
 
@@ -3495,6 +3496,125 @@ function aprovaRenderFlashcard () {
   }
 }
 
+function aprovaReadQuestionFilters () {
+  return {
+    specialty: document.getElementById("q-filter-specialty")?.value || "",
+    theme: document.getElementById("q-filter-theme")?.value || "",
+    exam: document.getElementById("q-filter-exam")?.value || "",
+    year: document.getElementById("q-filter-year")?.value || ""
+  };
+}
+
+function aprovaFillQuestionFilterSelect (el, options, allLabel, selected) {
+  if (!el) return;
+  const prev = selected != null ? selected : el.value;
+  el.innerHTML = "";
+  const all = document.createElement("option");
+  all.value = "";
+  all.textContent = allLabel;
+  el.appendChild(all);
+  options.forEach(opt => {
+    const o = document.createElement("option");
+    if (typeof opt === "string" || typeof opt === "number") {
+      o.value = String(opt);
+      o.textContent = String(opt);
+    } else {
+      o.value = opt.id;
+      o.textContent = opt.label;
+    }
+    el.appendChild(o);
+  });
+  if (prev && Array.from(el.options).some(o => o.value === prev)) {
+    el.value = prev;
+  } else {
+    el.value = "";
+  }
+}
+
+function aprovaPopulateQuestionFilters () {
+  const specEl = document.getElementById("q-filter-specialty");
+  const themeEl = document.getElementById("q-filter-theme");
+  const examEl = document.getElementById("q-filter-exam");
+  const yearEl = document.getElementById("q-filter-year");
+  const countEl = document.getElementById("q-filter-count");
+  if (!specEl) return;
+
+  const filters = aprovaReadQuestionFilters();
+  aprovaFillQuestionFilterSelect(
+    specEl,
+    AprovaQuestions.specialtyOptions(),
+    "Todas as áreas",
+    filters.specialty
+  );
+  const specialty = specEl.value;
+  aprovaFillQuestionFilterSelect(
+    themeEl,
+    AprovaQuestions.themeOptions(specialty),
+    "Todos os temas",
+    filters.theme
+  );
+  aprovaFillQuestionFilterSelect(
+    examEl,
+    AprovaQuestions.examOptions(),
+    "Todas as bancas",
+    filters.exam
+  );
+  aprovaFillQuestionFilterSelect(
+    yearEl,
+    AprovaQuestions.yearOptions(),
+    "Todos os anos",
+    filters.year
+  );
+
+  const matched = AprovaQuestions.filteredCatalog(aprovaReadQuestionFilters()).length;
+  if (countEl) {
+    countEl.textContent = matched + " questão" + (matched === 1 ? "" : "ões") +
+      " no banco com estes filtros · total " + AprovaQuestions.catalog.length + ".";
+  }
+  return matched;
+}
+
+function aprovaShowQuestionViews (view) {
+  const filters = document.getElementById("q-filters");
+  const card = document.getElementById("q-card");
+  const result = document.getElementById("q-result");
+  if (filters) filters.hidden = view !== "filters";
+  if (card) card.hidden = view !== "card";
+  if (result) result.hidden = view !== "result";
+}
+
+function aprovaRenderQuestoesPanel () {
+  aprovaPopulateQuestionFilters();
+  if (AprovaQuestions.isSimuladoFinished()) {
+    aprovaRenderSimuladoResult();
+    return;
+  }
+  if (AprovaQuestions.current()) {
+    aprovaShowQuestionViews("card");
+    aprovaRenderQuestion();
+    return;
+  }
+  aprovaShowQuestionViews("filters");
+}
+
+function aprovaRenderSimuladoResult () {
+  const score = document.getElementById("q-result-score");
+  const timeEl = document.getElementById("q-result-time");
+  const themesEl = document.getElementById("q-result-themes");
+  const r = AprovaQuestions.simuladoResult();
+  aprovaShowQuestionViews("result");
+  if (!r) return;
+  if (score) score.textContent = r.hits + "/" + r.total + " acertos (" + r.pct + "%)";
+  if (timeEl) timeEl.textContent = "Tempo aproximado: " + r.minutes + " min";
+  if (themesEl) {
+    themesEl.innerHTML = r.themes.length
+      ? r.themes.map(t => (
+        "<li><span>" + t.theme + "</span><em>" + t.ok + "/" + t.n + " · " + t.pct + "%</em></li>"
+      )).join("")
+      : "<li><span>Sem detalhe por tema</span></li>";
+  }
+}
+
 function aprovaRenderQuestion () {
   const q = AprovaQuestions.current();
   const theme = document.getElementById("q-theme");
@@ -3502,21 +3622,49 @@ function aprovaRenderQuestion () {
   const choices = document.getElementById("q-choices");
   const explain = document.getElementById("q-explain");
   const nextBtn = document.getElementById("q-next");
+  const abortBtn = document.getElementById("q-abort");
   const stats = document.getElementById("q-stats");
-  if (!q || !stem) return;
+  const progress = document.getElementById("q-progress");
 
-  theme.textContent = q.theme;
+  if (!stem || !choices) return;
+
+  if (AprovaQuestions.isSimuladoFinished()) {
+    aprovaRenderSimuladoResult();
+    return;
+  }
+
+  if (!q) {
+    aprovaShowQuestionViews("filters");
+    aprovaPopulateQuestionFilters();
+    return;
+  }
+
+  aprovaShowQuestionViews("card");
+
+  const letters = ["A", "B", "C", "D", "E"];
+  const meta = [q.theme];
+  if (q.exam) {
+    const examHit = typeof APROVA_TARGET_EXAMS !== "undefined"
+      ? APROVA_TARGET_EXAMS.find(e => e.id === q.exam)
+      : null;
+    meta.push(examHit ? examHit.label : q.exam);
+  }
+  if (q.year) meta.push(String(q.year));
+
+  if (theme) theme.textContent = meta.join(" · ");
+  if (progress) progress.textContent = AprovaQuestions.progressText();
   stem.textContent = q.stem;
   explain.hidden = true;
   explain.textContent = "";
   nextBtn.hidden = true;
+  if (abortBtn) abortBtn.hidden = false;
   choices.innerHTML = "";
 
   q.choices.forEach((text, i) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "choice";
-    btn.textContent = text;
+    btn.textContent = (letters[i] || String(i + 1)) + ") " + text;
     btn.addEventListener("click", () => {
       const result = AprovaQuestions.choose(i);
       if (!result) return;
@@ -3525,16 +3673,21 @@ function aprovaRenderQuestion () {
         if (idx === result.answer) el.classList.add("correct");
         if (idx === i && !result.ok) el.classList.add("wrong");
       });
-      explain.textContent = result.explain;
+      explain.textContent = result.explain || (result.ok ? "Correto." : "Revise o comentário desta questão.");
       explain.hidden = false;
       nextBtn.hidden = false;
-      stats.textContent = AprovaQuestions.statsText();
+      nextBtn.textContent = AprovaQuestions.mode === "simulado" &&
+        AprovaQuestions.index + 1 >= AprovaQuestions.queue.length
+        ? "Ver resultado"
+        : "Próxima";
+      if (stats) stats.textContent = AprovaQuestions.statsText();
+      if (progress) progress.textContent = AprovaQuestions.progressText();
       aprovaRenderExamStats();
     });
     choices.appendChild(btn);
   });
 
-  stats.textContent = AprovaQuestions.statsText();
+  if (stats) stats.textContent = AprovaQuestions.statsText();
 }
 
 function aprovaSyncAppAuthUI () {
@@ -3566,7 +3719,7 @@ async function aprovaBoot () {
     aprovaRenderDashboard();
     aprovaRenderToday();
     aprovaShowFlashcardBrowse();
-    aprovaRenderQuestion();
+    aprovaRenderQuestoesPanel();
     aprovaRenderProgress();
     aprovaRenderExamStats();
     aprovaRenderEspecialidades();
@@ -3832,8 +3985,61 @@ async function aprovaBoot () {
   });
 
   document.getElementById("q-next")?.addEventListener("click", () => {
-    AprovaQuestions.next();
+    const next = AprovaQuestions.next();
+    if (!next && AprovaQuestions.isSimuladoFinished()) {
+      aprovaRenderSimuladoResult();
+      return;
+    }
     aprovaRenderQuestion();
+  });
+
+  document.getElementById("q-abort")?.addEventListener("click", () => {
+    AprovaQuestions.resetSession("treino");
+    AprovaQuestions.applyFilters(aprovaReadQuestionFilters(), { rebuild: true });
+    aprovaShowQuestionViews("filters");
+    aprovaPopulateQuestionFilters();
+  });
+
+  document.getElementById("q-filter-specialty")?.addEventListener("change", () => {
+    const themeEl = document.getElementById("q-filter-theme");
+    if (themeEl) themeEl.value = "";
+    aprovaPopulateQuestionFilters();
+  });
+  ["q-filter-theme", "q-filter-exam", "q-filter-year"].forEach(id => {
+    document.getElementById(id)?.addEventListener("change", () => aprovaPopulateQuestionFilters());
+  });
+
+  document.getElementById("q-start-treino")?.addEventListener("click", () => {
+    AprovaQuestions.applyFilters(aprovaReadQuestionFilters(), { rebuild: true });
+    const n = AprovaQuestions.startTreino();
+    if (!n) {
+      const countEl = document.getElementById("q-filter-count");
+      if (countEl) countEl.textContent = "Nenhuma questão com estes filtros. Amplie a seleção.";
+      return;
+    }
+    aprovaRenderQuestion();
+  });
+
+  document.getElementById("q-start-simulado")?.addEventListener("click", () => {
+    AprovaQuestions.applyFilters(aprovaReadQuestionFilters(), { rebuild: true });
+    const size = Number(document.getElementById("q-filter-size")?.value) || 10;
+    const n = AprovaQuestions.startSimulado(size);
+    if (!n) {
+      const countEl = document.getElementById("q-filter-count");
+      if (countEl) countEl.textContent = "Nenhuma questão com estes filtros para montar o simulado.";
+      return;
+    }
+    aprovaRenderQuestion();
+  });
+
+  document.getElementById("q-result-again")?.addEventListener("click", () => {
+    document.getElementById("q-start-simulado")?.click();
+  });
+
+  document.getElementById("q-result-treino")?.addEventListener("click", () => {
+    AprovaQuestions.resetSession("treino");
+    aprovaShowQuestionViews("filters");
+    aprovaPopulateQuestionFilters();
   });
 
   document.getElementById("config-logout")?.addEventListener("click", () => {
@@ -3850,7 +4056,7 @@ window.aprovaBootStudyModules = async function () {
   aprovaRenderDashboard();
   aprovaRenderToday();
   aprovaShowFlashcardBrowse();
-  aprovaRenderQuestion();
+  aprovaRenderQuestoesPanel();
   aprovaRenderProgress();
   aprovaRenderExamStats();
   aprovaRenderEspecialidades();
