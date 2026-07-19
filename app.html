@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718zz">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718aaa">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -518,6 +518,31 @@
             <p class="muted" id="perfil-plan-preview" style="margin:0.85rem 0 0"></p>
           </div>
 
+          <div id="dash-seu-foco" class="dash-seu-foco" style="margin-top:1rem" hidden>
+            <div class="dash-seu-foco-head">
+              <strong>Seu foco</strong>
+              <p class="muted" id="dash-seu-foco-weights"></p>
+            </div>
+            <div id="dash-seu-foco-areas" class="esp-stat-filters" role="tablist" aria-label="Área do foco"></div>
+            <div class="dash-seu-foco-body">
+              <div>
+                <div class="label">Foque mais</div>
+                <div class="rev-bars" id="dash-seu-foco-more"></div>
+              </div>
+              <div>
+                <div class="label">Menos tempo relativo</div>
+                <ul class="dash-seu-foco-less" id="dash-seu-foco-less"></ul>
+              </div>
+            </div>
+            <p class="muted dash-seu-foco-note" id="dash-seu-foco-note">
+              Sugestão com pesos 50% / 30% / 20% nas suas prioridades — não é ranking oficial.
+            </p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" data-goto="flashcards">Estudar flashcards</button>
+              <button type="button" class="btn btn-ghost" data-goto="estatisticas">Ver estatísticas</button>
+            </div>
+          </div>
+
           <div id="dash-seu-plano" class="dash-seu-plano" style="margin-top:1rem" hidden>
             <div class="dash-seu-plano-head">
               <strong>Seu plano</strong>
@@ -541,31 +566,6 @@
                 <button type="button" class="btn btn-primary" data-goto="hoje">Revisão de hoje</button>
                 <button type="button" class="btn btn-ghost" data-goto="flashcards">Estudar flashcards</button>
               </div>
-            </div>
-          </div>
-
-          <div id="dash-seu-foco" class="dash-seu-foco" style="margin-top:1rem" hidden>
-            <div class="dash-seu-foco-head">
-              <strong>Seu foco</strong>
-              <p class="muted" id="dash-seu-foco-weights"></p>
-            </div>
-            <div id="dash-seu-foco-areas" class="esp-stat-filters" role="tablist" aria-label="Área do foco"></div>
-            <div class="dash-seu-foco-body">
-              <div>
-                <div class="label">Foque mais</div>
-                <div class="rev-bars" id="dash-seu-foco-more"></div>
-              </div>
-              <div>
-                <div class="label">Menos tempo relativo</div>
-                <ul class="dash-seu-foco-less" id="dash-seu-foco-less"></ul>
-              </div>
-            </div>
-            <p class="muted dash-seu-foco-note" id="dash-seu-foco-note">
-              Sugestão com pesos 50% / 30% / 20% nas suas prioridades — não é ranking oficial.
-            </p>
-            <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="flashcards">Estudar flashcards</button>
-              <button type="button" class="btn btn-ghost" data-goto="estatisticas">Ver estatísticas</button>
             </div>
           </div>
         </section>
@@ -630,6 +630,6 @@
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718zz"></script>
+  <script src="js/app.js?v=20260718aaa"></script>
 </body>
 </html>
