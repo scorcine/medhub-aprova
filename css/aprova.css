@@ -2301,6 +2301,91 @@ html[data-theme="dark"] .aprova-modal-panel {
   font-size: 0.82rem;
 }
 
+.dash-seu-plano-program-summary {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.dash-seu-plano-quota {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 0.75rem;
+}
+
+.dash-seu-plano-chip--soft {
+  background: rgba(15, 27, 45, 0.06);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.dash-seu-plano-tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.dash-task {
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 27, 45, 0.04);
+  border: 1px solid transparent;
+}
+
+.dash-task--done {
+  border-color: rgba(15, 159, 154, 0.45);
+  background: rgba(15, 159, 154, 0.1);
+}
+
+.dash-task--partial {
+  border-color: rgba(15, 159, 154, 0.22);
+}
+
+.dash-task-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.dash-task-top em {
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.dash-task-bar {
+  height: 0.35rem;
+  border-radius: 999px;
+  background: rgba(15, 27, 45, 0.08);
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.dash-task-bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #3d8bfd);
+}
+
+.dash-task span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.dash-task-feedback {
+  margin-top: 0.25rem !important;
+  font-weight: 600 !important;
+  color: inherit !important;
+}
+
 .aprova-banner strong {
   display: block;
   font-family: var(--font-display);

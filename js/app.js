@@ -2564,6 +2564,52 @@ function aprovaRenderSeuPlano (plan, profileComplete) {
       "<span class=\"dash-seu-plano-chip\">" + plan.mixLine + "</span>" +
       "<span class=\"dash-seu-plano-chip\">" + plan.dailyLine + "</span>";
   }
+
+  const program = typeof aprovaBuildStudyProgram === "function"
+    ? aprovaBuildStudyProgram(plan)
+    : null;
+  const progSum = document.getElementById("dash-seu-plano-program-summary");
+  const divisionEl = document.getElementById("dash-seu-plano-division");
+  const quotaEl = document.getElementById("dash-seu-plano-quota");
+  const tasksEl = document.getElementById("dash-seu-plano-tasks");
+
+  if (program) {
+    if (progSum) progSum.textContent = program.summaryLine;
+    if (divisionEl) divisionEl.textContent = program.divisionLine;
+    if (quotaEl) {
+      const q = program.quota;
+      const until = program.untilExamCards != null
+        ? (" · ~" + program.untilExamCards + " cards até a prova neste ritmo")
+        : "";
+      quotaEl.innerHTML =
+        "<span class=\"dash-seu-plano-chip\">" + q.daily + " cards/dia</span>" +
+        "<span class=\"dash-seu-plano-chip\">" + q.dailyNew + " novos</span>" +
+        "<span class=\"dash-seu-plano-chip\">" + q.dailyReview + " revisões</span>" +
+        "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>" +
+        (until
+          ? "<span class=\"dash-seu-plano-chip dash-seu-plano-chip--soft\">" + until.replace(/^ · /, "") + "</span>"
+          : "");
+    }
+    if (tasksEl) {
+      tasksEl.innerHTML = program.tasks.map(t => (
+        "<li class=\"dash-task dash-task--" + t.status + "\">" +
+          "<div class=\"dash-task-top\">" +
+            "<strong>" + t.label + "</strong>" +
+            "<em>" + t.done + "/" + t.goal + "</em>" +
+          "</div>" +
+          "<div class=\"dash-task-bar\" aria-hidden=\"true\"><i style=\"width:" + t.pct + "%\"></i></div>" +
+          "<span>" + t.window + " · " + t.detail + "</span>" +
+          "<span class=\"dash-task-feedback\">" + t.feedback + "</span>" +
+        "</li>"
+      )).join("");
+    }
+  } else {
+    if (progSum) progSum.textContent = "";
+    if (divisionEl) divisionEl.textContent = "";
+    if (quotaEl) quotaEl.innerHTML = "";
+    if (tasksEl) tasksEl.innerHTML = "";
+  }
+
   if (phasesEl) {
     phasesEl.innerHTML = (plan.phases || []).map(p => (
       "<li class=\"" + (p.current ? "is-current" : "") + "\">" +
@@ -2577,11 +2623,21 @@ function aprovaRenderSeuPlano (plan, profileComplete) {
   const themesLabel = document.getElementById("dash-seu-plano-themes-label");
   if (themesLabel) {
     themesLabel.textContent = plan.areaLabel
-      ? ("Temas desta etapa · " + plan.areaLabel)
-      : "Temas desta etapa";
+      ? ("Temas e revisões · " + plan.areaLabel)
+      : "Temas e revisões desta etapa";
   }
   if (themesEl) {
-    if (plan.themes && plan.themes.length) {
+    const themeProg = program && program.themeProgram;
+    if (themeProg && themeProg.length) {
+      themesEl.innerHTML = themeProg.map(t => (
+        "<li><strong>" + t.tema + "</strong>" +
+          "<span> · " + t.hint +
+          (t.pct != null
+            ? (" · peso " + (typeof aprovaFormatPct === "function" ? aprovaFormatPct(t.pct) : (t.pct + "%")))
+            : "") +
+          "</span></li>"
+      )).join("");
+    } else if (plan.themes && plan.themes.length) {
       themesEl.innerHTML = plan.themes.map(t => (
         "<li><strong>" + t.tema + "</strong>" +
           (t.pct != null ? ("<span> · peso relativo " +
@@ -2999,16 +3055,30 @@ function aprovaRenderToday () {
 
   const dashPreview = document.getElementById("dash-hoje-preview");
   if (dashPreview) {
+    let goalBit = "";
+    if (typeof aprovaBuildStudyPlan === "function" && typeof aprovaBuildStudyProgram === "function" &&
+        typeof aprovaLoadProfile === "function" && typeof aprovaProfileIsComplete === "function") {
+      const profile = aprovaLoadProfile();
+      if (aprovaProfileIsComplete(profile)) {
+        const plan = aprovaBuildStudyPlan(profile, aprovaSeuFocoCache, Date.now(), aprovaSeuFocoAreaId);
+        const prog = plan && plan.ok ? aprovaBuildStudyProgram(plan, cardIds) : null;
+        if (prog && prog.quota) {
+          const done = typeof aprovaActivityToday === "function" ? aprovaActivityToday() : (srs.studiedToday || 0);
+          goalBit = " · meta " + done + "/" + prog.quota.daily + " hoje";
+        }
+      }
+    }
     if (!cardIds.length) {
       dashPreview.textContent = "Carregando flashcards…";
     } else if (srs.pending) {
       dashPreview.textContent = srs.pending + " na fila · " + srs.due + " revisão · " +
         srs.newCards + " novo" + (srs.newCards === 1 ? "" : "s") +
-        (srs.studiedToday ? (" · " + srs.studiedToday + " feitos hoje") : "");
+        (srs.studiedToday ? (" · " + srs.studiedToday + " feitos hoje") : "") +
+        goalBit;
     } else {
-      dashPreview.textContent = srs.studiedToday
+      dashPreview.textContent = (srs.studiedToday
         ? ("Fila em dia · " + srs.studiedToday + " estudados hoje")
-        : "Fila em dia — nada pendente agora.";
+        : "Fila em dia — nada pendente agora.") + goalBit;
     }
   }
 
@@ -3429,6 +3499,7 @@ async function aprovaBoot () {
     aprovaRenderFlashcard();
     aprovaRenderToday();
     aprovaRenderProgress();
+    if (aprovaSeuFocoCache) aprovaRefreshSeuPlanoForArea(aprovaSeuFocoCache, aprovaSeuFocoAreaId);
   });
 
   document.getElementById("fc-hard")?.addEventListener("click", () => {
@@ -3436,6 +3507,7 @@ async function aprovaBoot () {
     aprovaRenderFlashcard();
     aprovaRenderToday();
     aprovaRenderProgress();
+    if (aprovaSeuFocoCache) aprovaRefreshSeuPlanoForArea(aprovaSeuFocoCache, aprovaSeuFocoAreaId);
   });
 
   document.getElementById("q-next")?.addEventListener("click", () => {

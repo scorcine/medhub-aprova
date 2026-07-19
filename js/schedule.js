@@ -1,7 +1,59 @@
 /* Revisão programada (SRS simples) — progresso no localStorage */
 
 const APROVA_SRS_KEY = "medhub-aprova-srs-v1";
+const APROVA_ACTIVITY_KEY = "medhub-aprova-activity-v1";
 const APROVA_DAY_MS = 24 * 60 * 60 * 1000;
+
+function aprovaActivityDayKey (now = Date.now()) {
+  const d = new Date(now);
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + "-" + m + "-" + day;
+}
+
+function aprovaLoadActivity () {
+  try {
+    return JSON.parse(localStorage.getItem(APROVA_ACTIVITY_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function aprovaSaveActivity (map) {
+  localStorage.setItem(APROVA_ACTIVITY_KEY, JSON.stringify(map || {}));
+}
+
+/** Soma revisões/estudos registrados entre duas datas (inclusive, YYYY-MM-DD). */
+function aprovaActivitySumRange (fromIso, toIso) {
+  const map = aprovaLoadActivity();
+  const from = String(fromIso || "");
+  const to = String(toIso || "");
+  let total = 0;
+  Object.keys(map).forEach(key => {
+    if (key >= from && key <= to) total += Number(map[key]) || 0;
+  });
+  return total;
+}
+
+function aprovaActivityToday (now = Date.now()) {
+  const map = aprovaLoadActivity();
+  return Number(map[aprovaActivityDayKey(now)]) || 0;
+}
+
+function aprovaLogStudyActivity (count = 1, now = Date.now()) {
+  const n = Math.max(1, count | 0);
+  const map = aprovaLoadActivity();
+  const key = aprovaActivityDayKey(now);
+  map[key] = (Number(map[key]) || 0) + n;
+
+  // Mantém ~14 meses
+  const keys = Object.keys(map).sort();
+  while (keys.length > 420) {
+    delete map[keys.shift()];
+  }
+  aprovaSaveActivity(map);
+  return map[key];
+}
 
 function aprovaLoadSrs () {
   try {
@@ -51,6 +103,7 @@ function aprovaScheduleCard (cardId, knewIt) {
     intervalDays
   };
   aprovaSaveSrs(map);
+  aprovaLogStudyActivity(1, now);
   return map[cardId];
 }
 

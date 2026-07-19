@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718aaa">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718ccc">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -557,13 +557,21 @@
             </div>
 
             <div id="dash-seu-plano-body" hidden>
-              <div class="label" style="margin-top:0.85rem">Fases até a prova</div>
+              <div class="label" style="margin-top:0.85rem">Programação de estudo</div>
+              <p class="dash-seu-plano-program-summary" id="dash-seu-plano-program-summary"></p>
+              <p class="muted" id="dash-seu-plano-division" style="margin:0.35rem 0 0.65rem"></p>
+              <div class="dash-seu-plano-quota" id="dash-seu-plano-quota"></div>
+              <ul class="dash-seu-plano-tasks" id="dash-seu-plano-tasks"></ul>
+
+              <div class="label" style="margin-top:1rem">Fases até a prova</div>
               <ol class="dash-seu-plano-phases" id="dash-seu-plano-phases"></ol>
+
               <div class="label" style="margin-top:0.85rem" id="dash-seu-plano-themes-label">Temas desta etapa</div>
               <ul class="dash-seu-plano-themes" id="dash-seu-plano-themes"></ul>
-              <p class="muted dash-seu-plano-note">Plano orientativo com base nas suas datas e no que mais cai — não é cronograma oficial.</p>
+
+              <p class="muted dash-seu-plano-note">Metas orientativas com base na data da prova, no que mais cai e no seu SRS — ajuste o ritmo se precisar.</p>
               <div class="actions-row">
-                <button type="button" class="btn btn-primary" data-goto="hoje">Revisão de hoje</button>
+                <button type="button" class="btn btn-primary" data-goto="hoje">Cumprir meta de hoje</button>
                 <button type="button" class="btn btn-ghost" data-goto="flashcards">Estudar flashcards</button>
               </div>
             </div>
@@ -622,14 +630,15 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260718zz"></script>
-  <script src="js/focus.js?v=20260718zz"></script>
-  <script src="js/plan.js?v=20260718bbb"></script>
-  <script src="js/schedule.js?v=20260718mm"></script>
+  <script src="js/profile.js?v=20260718ccc"></script>
+  <script src="js/focus.js?v=20260718ccc"></script>
+  <script src="js/plan.js?v=20260718ccc"></script>
+  <script src="js/tasks.js?v=20260718ccc"></script>
+  <script src="js/schedule.js?v=20260718ccc"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718bbb"></script>
+  <script src="js/app.js?v=20260718ccc"></script>
 </body>
 </html>
