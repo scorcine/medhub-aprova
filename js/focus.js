@@ -74,6 +74,18 @@ function aprovaFocusNormalizedWeights (count) {
   return raw.map(w => w / sum);
 }
 
+/** Pesos pela prioridade original (rank 0/1/2), renormalizados entre as provas usáveis. */
+function aprovaFocusWeightsForRanks (slots) {
+  const list = Array.isArray(slots) ? slots : [];
+  if (!list.length) return [];
+  const raw = list.map(s => {
+    const rank = s && typeof s.rank === "number" ? s.rank : 0;
+    return APROVA_FOCUS_WEIGHTS[rank] != null ? APROVA_FOCUS_WEIGHTS[rank] : 0;
+  });
+  const sum = raw.reduce((a, b) => a + b, 0) || 1;
+  return raw.map(w => w / sum);
+}
+
 async function aprovaFocusLoadArea (area) {
   const key = area.id;
   if (Object.prototype.hasOwnProperty.call(APROVA_FOCUS_CACHE, key)) {
@@ -101,17 +113,20 @@ function aprovaFocusBlendArea (data, examSlots) {
   });
   if (!usable.length) return null;
 
-  const weights = aprovaFocusNormalizedWeights(usable.length);
+  const weights = aprovaFocusWeightsForRanks(usable.map(u => u.slot));
   const bag = Object.create(null);
   const display = Object.create(null);
   const usedExams = [];
 
   usable.forEach((item, i) => {
     const w = weights[i];
+    const canon = APROVA_FOCUS_WEIGHTS[item.slot.rank];
     usedExams.push({
       id: item.slot.id,
       label: item.slot.label,
-      weight: Math.round(w * 100)
+      rank: item.slot.rank,
+      weight: Math.round(w * 100),
+      weightLabel: canon != null ? Math.round(canon * 100) : Math.round(w * 100)
     });
     (item.profile.priorities || []).forEach(p => {
       const tema = String(p.tema || "").trim();
@@ -185,15 +200,21 @@ async function aprovaBuildPersonalizedFocus (profile) {
     };
   }
 
-  const weights = aprovaFocusNormalizedWeights(exams.length);
-  const weightLine = exams.map((e, i) => {
-    const pct = Math.round((weights[i] || 0) * 100);
-    return e.label + " " + pct + "%";
+  // Exibe 50% / 30% / 20% das prioridades preenchidas (como o produto promete)
+  const weightLine = exams.map(e => {
+    const canon = APROVA_FOCUS_WEIGHTS[e.rank];
+    const pct = canon != null ? Math.round(canon * 100) : 0;
+    return (e.rank + 1) + "ª " + e.label + " " + pct + "%";
   }).join(" · ");
+
+  const mixLine = exams.length > 1
+    ? ("Mistura das suas " + exams.length + " provas: " + weightLine)
+    : ("Foco em " + exams[0].label);
 
   return {
     ok: true,
     weightLine,
+    mixLine,
     others,
     exams,
     areas,

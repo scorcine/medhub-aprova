@@ -2622,9 +2622,15 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   }
   if (toneEl) toneEl.textContent = plan.tone || plan.horizon.tone;
   if (metaEl) {
+    const weights = (focusPack && focusPack.ok && focusPack.weightLine)
+      || plan.weightLine
+      || "";
     metaEl.innerHTML =
       (plan.assumed
         ? "<span class=\"dash-seu-plano-chip\">Data: fim do ano (padrão)</span>"
+        : "") +
+      (weights
+        ? "<span class=\"dash-seu-plano-chip dash-seu-plano-chip--accent\">Pesos: " + weights + "</span>"
         : "") +
       "<span class=\"dash-seu-plano-chip\">" + plan.mixLine + "</span>" +
       "<span class=\"dash-seu-plano-chip\">" + plan.dailyLine + "</span>";
@@ -3185,6 +3191,10 @@ function aprovaSavePerfilFromForm () {
   aprovaPerfilUpdateSummary();
   aprovaSeuFocoCache = null;
   aprovaRenderDashboard();
+  // Recalcula metas/temas com a mistura 50/30/20 das prioridades salvas
+  if (typeof aprovaRenderMetas === "function") {
+    aprovaRenderMetas();
+  }
   return saved;
 }
 

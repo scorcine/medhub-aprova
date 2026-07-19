@@ -305,6 +305,14 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now(), areaId = nu
       ") para distribuir estudo e revisão. Você pode ajustar quando souber a data.";
   }
 
+  const examHeadline = dated.length > 1
+    ? dated.map(d => d.rank + "ª " + d.label).join(" · ")
+    : (dated[0] ? dated[0].label : anchor.label);
+
+  const focusWeights = focusPack && focusPack.ok && focusPack.weightLine
+    ? focusPack.weightLine
+    : "";
+
   return {
     ok: true,
     anchor,
@@ -317,10 +325,11 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now(), areaId = nu
     areaLabel,
     dated,
     assumed: !!anchor.assumed,
-    headline: anchor.label + " · " + dateBit,
+    headline: examHeadline + " · " + dateBit,
     daysLine: daysLabel,
     mixLine: horizon.studyPct + "% conteúdo novo · " + horizon.reviewPct + "% revisão",
     dailyLine: horizon.dailyMin + "–" + horizon.dailyMax + " min/dia (ritmo " + horizon.pace + ")",
+    weightLine: focusWeights,
     tone
   };
 }

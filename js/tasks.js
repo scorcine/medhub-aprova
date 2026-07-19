@@ -83,29 +83,65 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
   };
 }
 
-/** Temas prioritários de todas as áreas (não exige clicar em cada uma). */
+/** Temas prioritários de todas as áreas (garante 1–2 por área para a 2ª/3ª prova aparecer). */
 function aprovaCollectCrossAreaThemes (focusPack, maxTotal) {
   const limit = maxTotal || 10;
   if (!focusPack || !focusPack.ok || !Array.isArray(focusPack.areas)) return [];
 
-  const bag = [];
-  focusPack.areas.forEach(area => {
-    const list = area.focus || area.themes || [];
-    list.slice(0, 3).forEach((t, i) => {
-      const tema = String(t.tema || "").trim();
-      if (!tema) return;
-      bag.push({
-        tema,
-        pct: Number(t.pct) || 0,
-        areaId: area.id,
-        areaLabel: area.label || area.id,
-        rankInArea: i
-      });
+  const norm = typeof aprovaFocusNormKey === "function"
+    ? aprovaFocusNormKey
+    : s => String(s || "").toLowerCase();
+  const picked = [];
+  const seen = Object.create(null);
+
+  const pushTheme = (area, t, rankInArea) => {
+    const tema = String(t && t.tema || "").trim();
+    if (!tema) return false;
+    const key = (area.id || "") + "::" + norm(tema);
+    if (seen[key]) return false;
+    seen[key] = true;
+    picked.push({
+      tema,
+      pct: Number(t.pct) || 0,
+      areaId: area.id,
+      areaLabel: area.label || area.id,
+      rankInArea: rankInArea
     });
+    return true;
+  };
+
+  // 1º lugar de cada área (Clínica, Cirurgia, Ped, GO, Preventiva)
+  focusPack.areas.forEach(area => {
+    const list = area.themes || area.focus || [];
+    if (list[0]) pushTheme(area, list[0], 0);
   });
 
-  bag.sort((a, b) => b.pct - a.pct || a.rankInArea - b.rankInArea);
-  return bag.slice(0, limit);
+  // 2º lugar de cada área — traz diferenças da 2ª prova (ex.: USP vs Enamed)
+  focusPack.areas.forEach(area => {
+    if (picked.length >= limit) return;
+    const list = area.themes || area.focus || [];
+    if (list[1]) pushTheme(area, list[1], 1);
+  });
+
+  // Completa com os demais temas mais fortes da mistura
+  const pool = [];
+  focusPack.areas.forEach(area => {
+    const list = area.themes || area.focus || [];
+    list.forEach((t, i) => {
+      const tema = String(t && t.tema || "").trim();
+      if (!tema) return;
+      const key = (area.id || "") + "::" + norm(tema);
+      if (seen[key]) return;
+      pool.push({ area, t, i, pct: Number(t.pct) || 0 });
+    });
+  });
+  pool.sort((a, b) => b.pct - a.pct || a.i - b.i);
+  for (let i = 0; i < pool.length && picked.length < limit; i++) {
+    pushTheme(pool[i].area, pool[i].t, pool[i].i);
+  }
+
+  picked.sort((a, b) => b.pct - a.pct || a.rankInArea - b.rankInArea);
+  return picked.slice(0, limit);
 }
 
 /** Distribui N cards entre temas pelo peso relativo (soma = total). */
