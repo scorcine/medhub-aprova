@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260719q1";
+const APROVA_QUESTION_CACHE_VER = "20260719q2";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -51,6 +51,7 @@ function aprovaNormalizeQuestion (raw, fileHint) {
     ((fileHint || "q") + "-" + Math.abs(aprovaHashString(stem)).toString(36));
 
   const specialty = String(raw.specialty || raw.area || "").trim().toLowerCase() || "clinica";
+  const group = String(raw.group || raw.grupo || "").trim();
   const theme = String(raw.theme || raw.tema || "Geral").trim();
   const exam = String(raw.exam || raw.banca || "").trim().toLowerCase();
   const year = raw.year != null && raw.year !== ""
@@ -62,6 +63,7 @@ function aprovaNormalizeQuestion (raw, fileHint) {
   return {
     id,
     specialty,
+    group: group || theme,
     theme,
     exam: exam || "",
     year: Number.isFinite(year) ? year : null,
@@ -93,6 +95,7 @@ const AprovaQuestions = {
   mode: "treino", // treino | simulado
   filters: {
     specialty: "",
+    group: "",
     theme: "",
     exam: "",
     year: ""
@@ -133,10 +136,20 @@ const AprovaQuestions = {
     return APROVA_QUESTION_SPECIALTIES.filter(s => present.has(s.id));
   },
 
-  themeOptions (specialty) {
+  groupOptions (specialty) {
     const set = new Set();
     this.catalog.forEach(q => {
       if (specialty && q.specialty !== specialty) return;
+      if (q.group) set.add(q.group);
+    });
+    return Array.from(set).sort((a, b) => a.localeCompare(b, "pt-BR"));
+  },
+
+  themeOptions (specialty, group) {
+    const set = new Set();
+    this.catalog.forEach(q => {
+      if (specialty && q.specialty !== specialty) return;
+      if (group && q.group !== group) return;
       if (q.theme) set.add(q.theme);
     });
     return Array.from(set).sort((a, b) => a.localeCompare(b, "pt-BR"));
@@ -166,6 +179,7 @@ const AprovaQuestions = {
     const f = filters || this.filters;
     return this.catalog.filter(q => {
       if (f.specialty && q.specialty !== f.specialty) return false;
+      if (f.group && q.group !== f.group) return false;
       if (f.theme && q.theme !== f.theme) return false;
       if (f.exam && q.exam !== f.exam) return false;
       if (f.year !== "" && f.year != null) {
@@ -179,6 +193,7 @@ const AprovaQuestions = {
   applyFilters (filters, opts) {
     this.filters = {
       specialty: (filters && filters.specialty) || "",
+      group: (filters && filters.group) || "",
       theme: (filters && filters.theme) || "",
       exam: (filters && filters.exam) || "",
       year: filters && filters.year !== undefined && filters.year !== null

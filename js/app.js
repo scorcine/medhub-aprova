@@ -3499,6 +3499,7 @@ function aprovaRenderFlashcard () {
 function aprovaReadQuestionFilters () {
   return {
     specialty: document.getElementById("q-filter-specialty")?.value || "",
+    group: document.getElementById("q-filter-group")?.value || "",
     theme: document.getElementById("q-filter-theme")?.value || "",
     exam: document.getElementById("q-filter-exam")?.value || "",
     year: document.getElementById("q-filter-year")?.value || ""
@@ -3533,6 +3534,7 @@ function aprovaFillQuestionFilterSelect (el, options, allLabel, selected) {
 
 function aprovaPopulateQuestionFilters () {
   const specEl = document.getElementById("q-filter-specialty");
+  const groupEl = document.getElementById("q-filter-group");
   const themeEl = document.getElementById("q-filter-theme");
   const examEl = document.getElementById("q-filter-exam");
   const yearEl = document.getElementById("q-filter-year");
@@ -3548,9 +3550,16 @@ function aprovaPopulateQuestionFilters () {
   );
   const specialty = specEl.value;
   aprovaFillQuestionFilterSelect(
+    groupEl,
+    AprovaQuestions.groupOptions(specialty),
+    "Todos os grupos",
+    filters.group
+  );
+  const group = groupEl ? groupEl.value : "";
+  aprovaFillQuestionFilterSelect(
     themeEl,
-    AprovaQuestions.themeOptions(specialty),
-    "Todos os temas",
+    AprovaQuestions.themeOptions(specialty, group),
+    "Todos os subtemas",
     filters.theme
   );
   aprovaFillQuestionFilterSelect(
@@ -3642,7 +3651,9 @@ function aprovaRenderQuestion () {
   aprovaShowQuestionViews("card");
 
   const letters = ["A", "B", "C", "D", "E"];
-  const meta = [q.theme];
+  const meta = [];
+  if (q.group && q.group !== q.theme) meta.push(q.group);
+  meta.push(q.theme);
   if (q.exam) {
     const examHit = typeof APROVA_TARGET_EXAMS !== "undefined"
       ? APROVA_TARGET_EXAMS.find(e => e.id === q.exam)
@@ -4001,6 +4012,13 @@ async function aprovaBoot () {
   });
 
   document.getElementById("q-filter-specialty")?.addEventListener("change", () => {
+    const groupEl = document.getElementById("q-filter-group");
+    const themeEl = document.getElementById("q-filter-theme");
+    if (groupEl) groupEl.value = "";
+    if (themeEl) themeEl.value = "";
+    aprovaPopulateQuestionFilters();
+  });
+  document.getElementById("q-filter-group")?.addEventListener("change", () => {
     const themeEl = document.getElementById("q-filter-theme");
     if (themeEl) themeEl.value = "";
     aprovaPopulateQuestionFilters();
