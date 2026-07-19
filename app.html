@@ -187,10 +187,26 @@
 
         <section id="panel-flashcards" class="panel" aria-labelledby="fc-title" hidden>
           <h2 id="fc-title">Flashcards</h2>
-          <p class="muted" id="fc-hint">Escolha um tema para estudar.</p>
+          <p class="muted" id="fc-hint">Escolha a área para estudar · abaixo, o que mais cai nas provas.</p>
 
           <div id="fc-browse">
             <div class="dash-grid dash-grid--sm" id="fc-browse-grid"></div>
+
+            <div id="fc-home-stats" class="esp-ped-overview" style="margin-top:1.35rem">
+              <div class="esp-exam-pick esp-ped-overview-exams">
+                <p class="esp-exam-label">O que mais cai · ciclo 2024–2026</p>
+                <div id="fc-home-stats-areas" class="esp-stat-filters"></div>
+                <div id="fc-home-stats-options" class="esp-stat-filters"></div>
+              </div>
+              <div class="study-card rev-block">
+                <div class="label" id="fc-home-stats-title">O que mais cai nas provas</div>
+                <p class="muted" id="fc-home-stats-sub">Participação de cada tema nas questões da área.</p>
+                <p class="esp-ped-verdict" id="fc-home-stats-verdict"></p>
+                <p class="esp-ped-unit" id="fc-home-stats-unit" hidden></p>
+                <div class="rev-bars" id="fc-home-stats-bars"></div>
+                <p class="muted esp-ped-source" id="fc-home-stats-source"></p>
+              </div>
+            </div>
           </div>
 
           <div class="study-card" id="fc-card" hidden>
@@ -481,6 +497,6 @@
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718nn"></script>
-  <script src="js/app.js?v=20260718oo"></script>
+  <script src="js/app.js?v=20260718pp"></script>
 </body>
 </html>

@@ -124,8 +124,9 @@ function aprovaShowFlashcardBrowse () {
   const hint = document.getElementById("fc-hint");
   if (browse) browse.hidden = false;
   if (card) card.hidden = true;
-  if (hint) hint.textContent = "Escolha um tema para estudar.";
+  if (hint) hint.textContent = "Escolha a área para estudar · abaixo, o que mais cai nas provas.";
   aprovaRenderFlashcardBrowse();
+  aprovaRenderFlashcardHomeStats();
 }
 
 function aprovaShowFlashcardStudy () {
@@ -175,6 +176,9 @@ function aprovaRenderFlashcardBrowse () {
           " · " + total + " card" + (total === 1 ? "" : "s"))
         : "Conteúdo em breve") + "</span>";
     btn.addEventListener("click", () => {
+      if (APROVA_FC_HOME_STATS_AREAS.some(a => a.id === spec)) {
+        aprovaFcHomeStatsSpec = spec;
+      }
       if (spec === "pediatria" && typeof aprovaOpenPediatria === "function") {
         aprovaGoTo("especialidades");
         aprovaOpenPediatria();
@@ -204,6 +208,10 @@ let aprovaActiveOverviewYear = "geral";
 let aprovaActiveModuleYear = "geral";
 let aprovaOverviewExamChooserOpen = false;
 let aprovaModuleExamChooserOpen = false;
+let aprovaFcHomeStatsSpec = "clinica";
+let aprovaFcHomeStatsFocus = "geral";
+let aprovaFcHomeStatsYear = "geral";
+let aprovaFcHomeExamChooserOpen = false;
 const aprovaOverviewStatsCache = Object.create(null);
 
 /** Ordem por volume + concorrência no ciclo 2024–2026 (mais importantes primeiro). */
@@ -1138,6 +1146,132 @@ function aprovaRenderPedOverviewStats (focusId, yearId) {
   });
 }
 
+const APROVA_FC_HOME_STATS_AREAS = [
+  { id: "clinica", label: "Clínica" },
+  { id: "cirurgia", label: "Cirurgia" },
+  { id: "pediatria", label: "Pediatria" },
+  { id: "go", label: "GO" },
+  { id: "preventiva", label: "Preventiva" }
+];
+
+function aprovaRenderFlashcardHomeStats (specId, focusId, yearId) {
+  const root = document.getElementById("fc-home-stats");
+  const areasEl = document.getElementById("fc-home-stats-areas");
+  const options = document.getElementById("fc-home-stats-options");
+  const bars = document.getElementById("fc-home-stats-bars");
+  const title = document.getElementById("fc-home-stats-title");
+  const sub = document.getElementById("fc-home-stats-sub");
+  const verdict = document.getElementById("fc-home-stats-verdict");
+  const unitEl = document.getElementById("fc-home-stats-unit");
+  const sourceEl = document.getElementById("fc-home-stats-source");
+  if (!root || !areasEl || !options || !bars) return Promise.resolve();
+
+  if (specId) aprovaFcHomeStatsSpec = specId;
+  if (focusId != null) aprovaFcHomeStatsFocus = focusId;
+  if (yearId != null) aprovaFcHomeStatsYear = yearId;
+  if (!aprovaFcHomeStatsSpec) aprovaFcHomeStatsSpec = "clinica";
+  if (!aprovaFcHomeStatsFocus) aprovaFcHomeStatsFocus = "geral";
+  if (!aprovaFcHomeStatsYear) aprovaFcHomeStatsYear = "geral";
+
+  areasEl.innerHTML = "";
+  APROVA_FC_HOME_STATS_AREAS.forEach(area => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "esp-exam-btn" + (area.id === aprovaFcHomeStatsSpec ? " active" : "");
+    btn.textContent = area.label;
+    btn.addEventListener("click", () => {
+      aprovaFcHomeExamChooserOpen = false;
+      aprovaFcHomeStatsFocus = "geral";
+      aprovaFcHomeStatsYear = "geral";
+      aprovaRenderFlashcardHomeStats(area.id, "geral", "geral");
+    });
+    areasEl.appendChild(btn);
+  });
+
+  const prevSpec = aprovaActiveSpecialty;
+  const prevCli = aprovaActiveCliArea;
+  const prevGo = aprovaActiveGoArea;
+  aprovaActiveSpecialty = aprovaFcHomeStatsSpec;
+  aprovaActiveCliArea = null;
+  aprovaActiveGoArea = aprovaFcHomeStatsSpec === "go" ? "ginecologia" : null;
+
+  return aprovaLoadOverviewStats(aprovaFcHomeStatsSpec).then(data => {
+    const shortLabel = APROVA_SPECIALTY_LABELS[aprovaFcHomeStatsSpec]
+      || (aprovaFcHomeStatsSpec === "go" ? "Ginecologia" : "área");
+    aprovaActiveSpecialty = prevSpec;
+    aprovaActiveCliArea = prevCli;
+    aprovaActiveGoArea = prevGo;
+
+    if (!data || !Array.isArray(data.profiles) || !data.profiles.length) {
+      bars.innerHTML = "<p class=\"muted\">Estatísticas desta área em breve.</p>";
+      return;
+    }
+
+    const profile = data.profiles.find(p => p.id === aprovaFcHomeStatsFocus)
+      || data.profiles.find(p => p.id === "geral")
+      || data.profiles[0];
+    aprovaFcHomeStatsFocus = profile.id;
+
+    aprovaRenderExamYearFilters(options, {
+      profiles: data.profiles,
+      activeId: profile.id,
+      activeYear: aprovaFcHomeStatsYear,
+      chooserOpen: aprovaFcHomeExamChooserOpen,
+      onExam: id => {
+        aprovaFcHomeExamChooserOpen = false;
+        aprovaRenderFlashcardHomeStats(aprovaFcHomeStatsSpec, id, aprovaFcHomeStatsYear);
+      },
+      onYear: y => {
+        aprovaRenderFlashcardHomeStats(aprovaFcHomeStatsSpec, aprovaFcHomeStatsFocus, y);
+      },
+      onToggleChooser: () => {
+        aprovaFcHomeExamChooserOpen = !aprovaFcHomeExamChooserOpen;
+        aprovaRenderFlashcardHomeStats(aprovaFcHomeStatsSpec, aprovaFcHomeStatsFocus, aprovaFcHomeStatsYear);
+      }
+    });
+
+    const slice = aprovaResolveYearSlice(profile, aprovaFcHomeStatsYear);
+    const sourceType = profile.sourceType || "estimativa";
+    const typeLabel = sourceType === "levantamento"
+      ? "Levantamento público (cursinho)"
+      : (sourceType === "sintese" ? "Síntese de levantamentos públicos" : "Estimativa por padrão de banca");
+    const yearTxt = aprovaYearLabel(aprovaFcHomeStatsYear);
+
+    if (title) {
+      title.textContent = profile.id === "geral"
+        ? ("O que mais cai em " + shortLabel + " · Geral Brasil · " + yearTxt)
+        : ("O que mais cai em " + shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
+    }
+    if (sub) {
+      sub.textContent = typeLabel + " · ciclo " + yearTxt +
+        (slice.sampleSize ? (" · " + slice.sampleSize + " questões analisadas") : "");
+    }
+    if (verdict) verdict.textContent = slice.verdict || "";
+    if (unitEl) {
+      unitEl.hidden = false;
+      unitEl.textContent = "Cada barra = % do tema · ao lado, quantas questões caíram (ou a estimativa proporcional).";
+    }
+    bars.innerHTML = (slice.priorities || []).map(p => {
+      const pct = Number(p.pct);
+      const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
+      const detail = p.n != null ? (" · " + p.n + " quest.") : "";
+      return (
+        "<div class=\"rev-bar-row\">" +
+          "<span>" + p.tema + detail + "</span>" +
+          "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + width + "%\"></i></div>" +
+          "<em>" + aprovaFormatPct(pct) + "</em>" +
+        "</div>"
+      );
+    }).join("");
+    if (sourceEl) sourceEl.textContent = slice.source ? ("Fonte: " + slice.source) : "";
+  }).catch(() => {
+    aprovaActiveSpecialty = prevSpec;
+    aprovaActiveCliArea = prevCli;
+    aprovaActiveGoArea = prevGo;
+    bars.innerHTML = "<p class=\"muted\">Não foi possível carregar as estatísticas.</p>";
+  });
+}
+
 async function aprovaPedModuleStats (moduleId) {
   if (typeof AprovaRevisao === "undefined") {
     return { decks: 0, cards: 0, deckOrder: [] };
@@ -1904,13 +2038,10 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     selectAll.textContent = "Selecionar todos";
   }
 
+  // Estatísticas ficam no topo (visíveis sem rolar a lista de grupos).
   const groupsEl = document.getElementById("esp-groups");
   if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
-    if (statsMode) {
-      overview.parentNode.insertBefore(overview, groupsEl);
-    } else {
-      groupsEl.parentNode.insertBefore(groupsEl, overview);
-    }
+    overview.parentNode.insertBefore(overview, groupsEl);
   }
 
   aprovaActivePedOverviewFocus = "geral";
@@ -1985,8 +2116,7 @@ async function aprovaOpenGoArea (areaId) {
 
   const groupsEl = document.getElementById("esp-groups");
   if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
-    if (statsMode) overview.parentNode.insertBefore(overview, groupsEl);
-    else groupsEl.parentNode.insertBefore(groupsEl, overview);
+    overview.parentNode.insertBefore(overview, groupsEl);
   }
 
   if (showOverview) {
@@ -2057,8 +2187,7 @@ async function aprovaOpenCliArea (areaId) {
 
   const groupsEl = document.getElementById("esp-groups");
   if (overview && groupsEl && overview.parentNode === groupsEl.parentNode) {
-    if (statsMode) overview.parentNode.insertBefore(overview, groupsEl);
-    else groupsEl.parentNode.insertBefore(groupsEl, overview);
+    overview.parentNode.insertBefore(overview, groupsEl);
   }
 
   aprovaActivePedOverviewFocus = "geral";
