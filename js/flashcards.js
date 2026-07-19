@@ -175,22 +175,25 @@ const AprovaFlashcards = {
     return this.decksBySpecialty(specialty).reduce((n, d) => n + (d.cards || []).length, 0);
   },
 
-  /** Monta a fila só com cards novos ou com due <= agora. Revisões primeiro. */
+  /** Monta a fila só com cards novos ou com due <= agora. Revisões primeiro; ambos embaralhados. */
   rebuildTodayQueue () {
     this.mode = "today";
     this.activeDeckId = null;
+    this.activeDeckIds = [];
     this.activeSpecialty = null;
     const now = Date.now();
     const due = [];
     const neu = [];
 
     this.catalog.forEach(card => {
-      const status = aprovaCardStatus(card.id, now);
+      const status = typeof aprovaCardStatus === "function"
+        ? aprovaCardStatus(card.id, now)
+        : "new";
       if (status === "due") due.push(card);
       else if (status === "new") neu.push(card);
     });
 
-    this.queue = due.concat(neu);
+    this.queue = this.shuffleQueue(due).concat(this.shuffleQueue(neu));
     this.index = 0;
     this.revealed = false;
     return this.queue.length;
@@ -208,23 +211,69 @@ const AprovaFlashcards = {
     return arr;
   },
 
-  /** Estuda todos os cards de um deck (ordem aleatória). */
-  startDeck (deckId) {
-    return this.startDecks([deckId]);
+  /**
+   * Coleta cards de decks com filtro SRS.
+   * Por padrão: só novos + vencidos (não repete o que já foi estudado e ainda não venceu).
+   * @param {string[]} deckIds
+   * @param {{ includeLater?: boolean }} [opts]
+   */
+  collectDeckCards (deckIds, opts) {
+    const ids = (deckIds || []).filter(Boolean);
+    const includeLater = !!(opts && opts.includeLater);
+    const now = Date.now();
+    const due = [];
+    const neu = [];
+    const later = [];
+
+    ids.forEach(id => {
+      this.catalog.filter(c => c.deckId === id).forEach(card => {
+        const status = typeof aprovaCardStatus === "function"
+          ? aprovaCardStatus(card.id, now)
+          : "new";
+        if (status === "due") due.push(card);
+        else if (status === "new") neu.push(card);
+        else if (includeLater) later.push(card);
+      });
+    });
+
+    return { due, neu, later, ids };
   },
 
-  /** Estuda um ou mais decks com cards embaralhados. */
-  startDecks (deckIds) {
-    const ids = (deckIds || []).filter(Boolean);
-    const cards = [];
-    ids.forEach(id => {
-      this.catalog.filter(c => c.deckId === id).forEach(c => cards.push(c));
-    });
+  /** Estuda um deck (novos + vencidos, ordem aleatória). */
+  startDeck (deckId, opts) {
+    return this.startDecks([deckId], opts);
+  },
+
+  /**
+   * Estuda um ou mais decks.
+   * - Embaralha revisões vencidas e cards novos
+   * - Não inclui cards já estudados com data futura (SRS), salvo includeLater
+   * - opts.limit: corta a fila (prioriza vencidos, depois novos aleatórios)
+   */
+  startDecks (deckIds, opts) {
+    const limit = opts && opts.limit > 0 ? (opts.limit | 0) : 0;
+    const { due, neu, later, ids } = this.collectDeckCards(deckIds, opts);
+
+    let duePart = this.shuffleQueue(due);
+    let newPart = this.shuffleQueue(neu);
+    let laterPart = this.shuffleQueue(later);
+
+    if (limit > 0) {
+      duePart = duePart.slice(0, limit);
+      const remain = Math.max(0, limit - duePart.length);
+      newPart = newPart.slice(0, remain);
+      const remain2 = Math.max(0, limit - duePart.length - newPart.length);
+      laterPart = laterPart.slice(0, remain2);
+    }
+
+    const queue = duePart.concat(newPart, laterPart);
+    const sample = queue[0] || due[0] || neu[0] || later[0] || null;
+
     this.mode = "deck";
     this.activeDeckId = ids.length === 1 ? ids[0] : null;
     this.activeDeckIds = ids.slice();
-    this.activeSpecialty = cards[0] ? cards[0].specialty : null;
-    this.queue = this.shuffleQueue(cards);
+    this.activeSpecialty = sample ? sample.specialty : null;
+    this.queue = queue;
     this.index = 0;
     this.revealed = false;
     return this.queue.length;

@@ -2550,14 +2550,15 @@ function aprovaFindDecksForMetaTheme (areaId, tema) {
   return scored.map(s => s.id);
 }
 
-function aprovaFulfillMetaTheme (areaId, tema) {
+function aprovaFulfillMetaTheme (areaId, tema, cardsGoal) {
   const deckIds = aprovaFindDecksForMetaTheme(areaId, tema);
   if (deckIds.length && typeof AprovaFlashcards !== "undefined" && AprovaFlashcards.startDecks) {
-    const n = AprovaFlashcards.startDecks(deckIds.slice(0, 6));
-    if (n > 0) {
-      aprovaGoTo("flashcards", { study: true });
-      return;
-    }
+    // Só novos + vencidos, embaralhados; não repete o que já foi feito e ainda não venceu
+    AprovaFlashcards.startDecks(deckIds.slice(0, 6), {
+      limit: cardsGoal > 0 ? cardsGoal : 0
+    });
+    aprovaGoTo("flashcards", { study: true });
+    return;
   }
 
   aprovaEspMode = "study";
@@ -3341,9 +3342,9 @@ function aprovaRenderFlashcard () {
   const fromToday = AprovaFlashcards.mode === "today";
 
   if (!card) {
-    label.textContent = fromDeck ? "Deck concluído" : "Fila de hoje";
+    label.textContent = fromDeck ? "Tema em dia" : "Fila de hoje";
     front.textContent = fromDeck
-      ? "Você terminou este subtema."
+      ? "Sem cards novos ou vencidos neste tema agora. Os que você já fez voltam só na data de revisão."
       : "Nada pendente — agenda em dia.";
     back.hidden = true;
     back.textContent = "";
@@ -3355,7 +3356,7 @@ function aprovaRenderFlashcard () {
     if (backEsp) backEsp.hidden = !fromDeck;
     if (hint) {
       hint.textContent = fromDeck
-        ? "Escolha outro tema para continuar."
+        ? "Escolha outro tema ou volte amanhã para novos/revisões."
         : "Volte amanhã ou escolha um tema.";
     }
     return;
