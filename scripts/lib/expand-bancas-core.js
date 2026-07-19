@@ -371,6 +371,7 @@ function expandProfiles(profiles, moduleTitle, specialtyLabel) {
         }
       }
       delete existing.byYear;
+      // Evita manter bloco opaco "Demais" — o split fino roda em scripts/split-demais-stats.js
       return existing;
     }
 
