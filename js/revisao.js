@@ -123,38 +123,98 @@ const APROVA_REVISAO_MODULES = {
     area: "obstetricia"
   },
   "cir-abdome-agudo": {
-    label: "Abdome agudo · urgências (~12–24%)",
-    file: "data/revisao-cir-abdome-agudo.json?v=20260718nn",
+    label: "Abdome agudo",
+    file: "data/revisao-cir-abdome-agudo.json?v=20260718rr",
     specialty: "cirurgia"
   },
-  "cir-trauma": {
-    label: "Trauma · ATLS (~14%)",
-    file: "data/revisao-cir-trauma.json?v=20260718nn",
+  "cir-trauma-atls": {
+    label: "Trauma · ATLS e choque",
+    file: "data/revisao-cir-trauma-atls.json?v=20260718rr",
     specialty: "cirurgia"
   },
-  "cir-perioperatorio": {
-    label: "Pré/pós-op · Anestesia · Hérnias (~20%)",
-    file: "data/revisao-cir-perioperatorio.json?v=20260718nn",
+  "cir-trauma-torax": {
+    label: "Trauma torácico",
+    file: "data/revisao-cir-trauma-torax.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-trauma-abdome": {
+    label: "Trauma abdominal e pelve",
+    file: "data/revisao-cir-trauma-abdome.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-trauma-neuro": {
+    label: "TCE · pescoço · face",
+    file: "data/revisao-cir-trauma-neuro.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-preop": {
+    label: "Pré-operatório",
+    file: "data/revisao-cir-preop.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-posop": {
+    label: "Pós-operatório e infecção",
+    file: "data/revisao-cir-posop.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-hernias": {
+    label: "Hérnias da parede",
+    file: "data/revisao-cir-hernias.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-anestesia": {
+    label: "Anestesia e técnica",
+    file: "data/revisao-cir-anestesia.json?v=20260718rr",
     specialty: "cirurgia"
   },
   "cir-infantil": {
-    label: "Cirurgia infantil (~9%)",
-    file: "data/revisao-cir-infantil.json?v=20260718nn",
+    label: "Cirurgia infantil",
+    file: "data/revisao-cir-infantil.json?v=20260718rr",
     specialty: "cirurgia"
   },
   "cir-vascular": {
-    label: "Cirurgia vascular (~8–16%)",
-    file: "data/revisao-cir-vascular.json?v=20260718nn",
+    label: "Cirurgia vascular",
+    file: "data/revisao-cir-vascular.json?v=20260718rr",
     specialty: "cirurgia"
   },
-  "cir-ad": {
-    label: "Aparelho digestivo · eletivo / onco / procto",
-    file: "data/revisao-cir-ad.json?v=20260718nn",
+  "cir-digestivo-alto": {
+    label: "Digestivo alto e bariátrica",
+    file: "data/revisao-cir-digestivo-alto.json?v=20260718rr",
     specialty: "cirurgia"
   },
-  "cir-especialidades": {
-    label: "Especialidades R1 · uro · tórax · plástica",
-    file: "data/revisao-cir-especialidades.json?v=20260718nn",
+  "cir-colorretal": {
+    label: "Colorretal e proctologia",
+    file: "data/revisao-cir-colorretal.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-hepato-pancreas": {
+    label: "Fígado e pâncreas",
+    file: "data/revisao-cir-hepato-pancreas.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-urologia": {
+    label: "Urologia",
+    file: "data/revisao-cir-urologia.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-torax-eletivo": {
+    label: "Tórax eletivo",
+    file: "data/revisao-cir-torax-eletivo.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-queimaduras-plastica": {
+    label: "Queimaduras e plástica",
+    file: "data/revisao-cir-queimaduras-plastica.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-cabeca-mama": {
+    label: "Cabeça/pescoço · mama · tireoide",
+    file: "data/revisao-cir-cabeca-mama.json?v=20260718rr",
+    specialty: "cirurgia"
+  },
+  "cir-suporte": {
+    label: "Sepse · nutrição · miscelânea",
+    file: "data/revisao-cir-suporte.json?v=20260718rr",
     specialty: "cirurgia"
   },
   "reu-ar": {
