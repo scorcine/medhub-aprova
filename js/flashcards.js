@@ -125,9 +125,10 @@ const AprovaFlashcards = {
       "data/flashcards-prev4.json"
     ];
     const decks = [];
+    const cacheVer = "20260718gg";
     for (const file of files) {
       try {
-        const res = await fetch(file);
+        const res = await fetch(file + (file.includes("?") ? "&" : "?") + "v=" + cacheVer);
         if (!res.ok) continue;
         const data = await res.json();
         if (Array.isArray(data)) {
