@@ -1885,10 +1885,10 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
         : "Filtre por banca e ano · toque em um tema para ver o recorte mais fino.";
     } else {
       hint.textContent = isGo
-        ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas."
+        ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas. Abaixo: o que mais cai na prova."
         : isCli
-          ? "Escolha uma área (ex.: Cardiologia) e depois um grupo para estudar."
-          : "Toque em um grupo para escolher os subtemas e estudar — sem precisar rolar a página.";
+          ? "Veja as estatísticas da Clínica e escolha uma área (ex.: Cardiologia) para aprofundar."
+          : "Toque em um grupo para estudar · abaixo, o que mais cai na prova (banca e ano).";
     }
   }
   if (back) {
@@ -1916,11 +1916,7 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
   aprovaActivePedOverviewFocus = "geral";
   aprovaActiveOverviewYear = "geral";
   aprovaOverviewExamChooserOpen = false;
-  if (statsMode) {
-    await aprovaRenderPedOverviewStats("geral", "geral");
-  } else if (overview) {
-    overview.hidden = true;
-  }
+  await aprovaRenderPedOverviewStats("geral", "geral");
   if (isGo) {
     await aprovaRenderGoAreaCards();
   } else if (isCli) {
@@ -1959,8 +1955,8 @@ async function aprovaOpenGoArea (areaId) {
   if (stats) stats.hidden = true;
   if (subtemas) subtemas.hidden = true;
   const statsMode = aprovaIsStatsMode();
-  const showOverview = statsMode &&
-    (aprovaActiveGoArea === "ginecologia" || aprovaActiveGoArea === "obstetricia");
+  const showOverview =
+    aprovaActiveGoArea === "ginecologia" || aprovaActiveGoArea === "obstetricia";
 
   const areaStats = await aprovaGoAreaStats(aprovaActiveGoArea);
   if (title) title.textContent = areaMeta.label;
@@ -1978,7 +1974,7 @@ async function aprovaOpenGoArea (areaId) {
   if (hint) {
     hint.textContent = statsMode
       ? "Escolha a banca e o ano · depois um tema para o recorte fino."
-      : "Toque em um grupo para abrir os subtemas neste quadro separado.";
+      : "Toque em um grupo para estudar · abaixo, o que mais cai nesta área.";
   }
   if (back) back.textContent = "← Voltar a Ginecologia e obstetrícia";
   if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
@@ -2050,7 +2046,7 @@ async function aprovaOpenCliArea (areaId) {
   if (hint) {
     hint.textContent = statsMode
       ? "Escolha a banca e o ano · depois um tema para o recorte fino."
-      : "Toque em um grupo para abrir os subtemas neste quadro separado.";
+      : "Toque em um grupo para estudar · abaixo, o que mais cai nesta área.";
   }
   if (back) back.textContent = "← Voltar à Clínica médica";
   if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
@@ -2065,14 +2061,10 @@ async function aprovaOpenCliArea (areaId) {
     else groupsEl.parentNode.insertBefore(groupsEl, overview);
   }
 
-  if (statsMode) {
-    aprovaActivePedOverviewFocus = "geral";
-    aprovaActiveOverviewYear = "geral";
-    aprovaOverviewExamChooserOpen = false;
-    await aprovaRenderPedOverviewStats("geral", "geral");
-  } else if (overview) {
-    overview.hidden = true;
-  }
+  aprovaActivePedOverviewFocus = "geral";
+  aprovaActiveOverviewYear = "geral";
+  aprovaOverviewExamChooserOpen = false;
+  await aprovaRenderPedOverviewStats("geral", "geral");
   await aprovaRenderPedGroupCards(null, { area: aprovaActiveCliArea });
 }
 
@@ -2115,12 +2107,12 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
     sub.hidden = false;
     sub.textContent = statsMode
       ? "Temas no topo · gráfico do que mais cai abaixo."
-      : "Grupos no topo · escolha os subtemas para estudar.";
+      : "Grupos no topo · subtemas e o que mais cai abaixo.";
   }
   if (hint) {
     hint.textContent = statsMode
       ? "Filtre por banca e ano para ver o recorte deste tema."
-      : "Escolha um subtema ou mude de grupo para estudar.";
+      : "Escolha um subtema ou mude de grupo. O gráfico mostra o que mais cai na prova.";
   }
   if (back) {
     if (meta.id === "go" && aprovaActiveGoArea) {
