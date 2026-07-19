@@ -26,6 +26,30 @@ function aprovaDaysUntil (iso, now = Date.now()) {
   return Math.ceil((dt.getTime() - start.getTime()) / APROVA_DAY_MS_PLAN);
 }
 
+/** 31/12 do ano corrente; se já passou, usa 31/12 do ano seguinte. */
+function aprovaYearEndExamIso (now = Date.now()) {
+  const start = new Date(now);
+  start.setHours(0, 0, 0, 0);
+  let year = start.getFullYear();
+  let end = new Date(year, 11, 31);
+  end.setHours(0, 0, 0, 0);
+  if (end.getTime() < start.getTime()) {
+    year += 1;
+    end = new Date(year, 11, 31);
+    end.setHours(0, 0, 0, 0);
+  }
+  const m = String(end.getMonth() + 1).padStart(2, "0");
+  const d = String(end.getDate()).padStart(2, "0");
+  return year + "-" + m + "-" + d;
+}
+
+function aprovaSlotEffectiveDate (slot, now = Date.now()) {
+  if (slot && slot.date && aprovaParseIsoDate(slot.date)) {
+    return { date: slot.date, assumed: false };
+  }
+  return { date: aprovaYearEndExamIso(now), assumed: true };
+}
+
 function aprovaProfileHasExamDates (profile) {
   const filled = typeof aprovaProfileFilled === "function"
     ? aprovaProfileFilled(profile)
@@ -33,28 +57,33 @@ function aprovaProfileHasExamDates (profile) {
   return filled.some(s => s && s.date && aprovaParseIsoDate(s.date));
 }
 
-/** Âncora do plano: 1ª prioridade com data, senão a data mais próxima. */
+/** Âncora do plano: 1ª prioridade (data real ou fim do ano), senão a mais próxima. */
 function aprovaPlanAnchor (profile, now = Date.now()) {
   const filled = typeof aprovaProfileFilled === "function"
     ? aprovaProfileFilled(profile)
     : [];
+  if (!filled.length) return null;
+
   const withDates = [];
   filled.forEach((slot, index) => {
-    if (!slot || !slot.date) return;
-    const days = aprovaDaysUntil(slot.date, now);
+    if (!slot) return;
+    const eff = aprovaSlotEffectiveDate(slot, now);
+    const days = aprovaDaysUntil(eff.date, now);
     if (days == null) return;
     withDates.push({
       rank: index,
       label: typeof aprovaPriorityLabel === "function" ? aprovaPriorityLabel(slot) : ("Prova " + (index + 1)),
-      date: slot.date,
+      date: eff.date,
       days,
+      assumed: eff.assumed,
       kind: slot.kind,
       id: slot.id || null
     });
   });
   if (!withDates.length) return null;
 
-  const primary = withDates.find(x => x.rank === 0 && x.days >= 0);
+  // Prefere 1ª prioridade (mesmo com data estimada no fim do ano)
+  const primary = withDates.find(x => x.rank === 0);
   if (primary) return primary;
 
   const upcoming = withDates.filter(x => x.days >= 0).sort((a, b) => a.days - b.days || a.rank - b.rank);
@@ -220,7 +249,7 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
   if (!anchor) {
     return {
       ok: false,
-      reason: "Informe a data provável da sua prova principal para montarmos o plano até o dia D."
+      reason: "Escolha ao menos a 1ª prova no perfil para montarmos o plano."
     };
   }
 
@@ -238,14 +267,16 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
   const filled = typeof aprovaProfileFilled === "function" ? aprovaProfileFilled(profile) : [];
   const dated = filled
     .map((slot, i) => {
-      if (!slot || !slot.date) return null;
-      const days = aprovaDaysUntil(slot.date, now);
+      if (!slot) return null;
+      const eff = aprovaSlotEffectiveDate(slot, now);
+      const days = aprovaDaysUntil(eff.date, now);
       return {
         rank: i + 1,
         label: typeof aprovaPriorityLabel === "function" ? aprovaPriorityLabel(slot) : ("Prova " + (i + 1)),
-        date: slot.date,
-        dateLabel: aprovaFormatDateBr(slot.date),
-        days
+        date: eff.date,
+        dateLabel: aprovaFormatDateBr(eff.date),
+        days,
+        assumed: eff.assumed
       };
     })
     .filter(Boolean);
@@ -256,6 +287,15 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
       ? "é hoje"
       : (anchor.days + " dia" + (anchor.days === 1 ? "" : "s") + " · ~" + weeks + " semana" + (weeks === 1 ? "" : "s")));
 
+  const dateBit = aprovaFormatDateBr(anchor.date) +
+    (anchor.assumed ? " (fim do ano · estimativa)" : "");
+
+  let tone = horizon.tone;
+  if (anchor.assumed) {
+    tone = "Sem data definida, usamos o fim deste ano (" + aprovaFormatDateBr(anchor.date) +
+      ") para distribuir estudo e revisão. Você pode ajustar quando souber a data.";
+  }
+
   return {
     ok: true,
     anchor,
@@ -265,9 +305,11 @@ function aprovaBuildStudyPlan (profile, focusPack, now = Date.now()) {
     weeks,
     themes,
     dated,
-    headline: anchor.label + " · " + aprovaFormatDateBr(anchor.date),
+    assumed: !!anchor.assumed,
+    headline: anchor.label + " · " + dateBit,
     daysLine: daysLabel,
     mixLine: horizon.studyPct + "% conteúdo novo · " + horizon.reviewPct + "% revisão",
-    dailyLine: horizon.dailyMin + "–" + horizon.dailyMax + " min/dia (ritmo " + horizon.pace + ")"
+    dailyLine: horizon.dailyMin + "–" + horizon.dailyMax + " min/dia (ritmo " + horizon.pace + ")",
+    tone
   };
 }

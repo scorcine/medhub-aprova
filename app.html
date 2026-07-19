@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260718ww">
+  <link rel="stylesheet" href="css/aprova.css?v=20260718xx">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -129,9 +129,9 @@
 
           <div id="dash-dates-banner" class="aprova-banner aprova-banner--soft" hidden>
             <strong>Quer um plano até a prova?</strong>
-            <p>Informe a data provável de cada prova no perfil — mesmo que seja só no ano que vem. O app distribui estudo e revisão pelo tempo que você tem.</p>
+            <p>Sem data no perfil, usamos o fim do ano. Se souber a data (ou uma estimativa), ajuste em Meu perfil para refinar o ritmo.</p>
             <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="perfil">Informar datas</button>
+              <button type="button" class="btn btn-primary" data-goto="perfil">Ajustar datas</button>
             </div>
           </div>
 
@@ -559,8 +559,11 @@
             <div class="profile-date-block">
               <label class="profile-select-label" for="perfil-slot-date">Data provável da prova</label>
               <input type="date" id="perfil-slot-date" class="profile-date-input" />
+              <div class="actions-row" style="margin-top:0.55rem">
+                <button type="button" class="btn btn-ghost btn-compact" id="perfil-date-unknown">Não sei a data</button>
+              </div>
               <p class="muted profile-date-hint">
-                Recomendado. Pode ser estimativa (até o ano que vem). Depois de salvar, o plano aparece no Início.
+                Em branco ou “Não sei”: o plano usa o <strong>fim deste ano</strong> (31/12). Você altera quando souber a data oficial.
               </p>
             </div>
 
@@ -634,14 +637,14 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260718ww"></script>
-  <script src="js/focus.js?v=20260718ww"></script>
-  <script src="js/plan.js?v=20260718ww"></script>
+  <script src="js/profile.js?v=20260718xx"></script>
+  <script src="js/focus.js?v=20260718xx"></script>
+  <script src="js/plan.js?v=20260718xx"></script>
   <script src="js/schedule.js?v=20260718mm"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260718gg"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260718ww"></script>
+  <script src="js/app.js?v=20260718xx"></script>
 </body>
 </html>

@@ -156,20 +156,21 @@ function aprovaProfileSummary (profile) {
   const ordered = names.map((n, i) => (i + 1) + "º " + n);
   const hasDates = filled.some(s => s && s.date);
   const dateBits = filled.map((s, i) => {
-    if (!s || !s.date) return null;
-    const label = typeof aprovaFormatDateBr === "function"
-      ? aprovaFormatDateBr(s.date)
-      : s.date;
-    return (i + 1) + "ª · " + label;
+    if (!s) return null;
+    if (s.date) {
+      const label = typeof aprovaFormatDateBr === "function"
+        ? aprovaFormatDateBr(s.date)
+        : s.date;
+      return (i + 1) + "ª · " + label;
+    }
+    return (i + 1) + "ª · fim do ano";
   }).filter(Boolean);
   return {
     complete: true,
     line: ordered.join(" · "),
     detail: hasDates
       ? ("Datas: " + dateBits.join(" · "))
-      : (names.length === 1
-        ? "1 prova-alvo salva — informe a data provável para montar o plano."
-        : names.length + " provas-alvo — informe as datas prováveis para montar o plano."),
+      : ("Plano com fim do ano como data estimada · " + dateBits.join(" · ")),
     hasDates
   };
 }

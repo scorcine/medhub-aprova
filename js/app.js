@@ -2538,9 +2538,12 @@ function aprovaRenderSeuPlano (plan, profileComplete) {
   if (daysEl) {
     daysEl.textContent = plan.horizon.label + " · " + plan.daysLine;
   }
-  if (toneEl) toneEl.textContent = plan.horizon.tone;
+  if (toneEl) toneEl.textContent = plan.tone || plan.horizon.tone;
   if (metaEl) {
     metaEl.innerHTML =
+      (plan.assumed
+        ? "<span class=\"dash-seu-plano-chip\">Data: fim do ano (padrão)</span>"
+        : "") +
       "<span class=\"dash-seu-plano-chip\">" + plan.mixLine + "</span>" +
       "<span class=\"dash-seu-plano-chip\">" + plan.dailyLine + "</span>";
   }
@@ -2678,14 +2681,15 @@ function aprovaRenderDashboard () {
     helloSub.textContent = summary.complete
       ? (hasDates
         ? "seu plano e foco abaixo já usam as provas e datas que você definiu"
-        : "seu foco abaixo já considera as provas — falta a data para o plano")
+        : "seu plano usa o fim do ano como data estimada — ajuste no perfil se quiser")
       : "escolha um card para começar";
   }
   const banner = document.getElementById("dash-profile-banner");
   const datesBanner = document.getElementById("dash-dates-banner");
   const preview = document.getElementById("dash-profile-preview");
   if (banner) banner.hidden = summary.complete;
-  if (datesBanner) datesBanner.hidden = !summary.complete || !!hasDates;
+  // Com provas salvas o plano já existe (fim do ano se a data estiver em branco)
+  if (datesBanner) datesBanner.hidden = true;
   if (preview) {
     preview.textContent = summary.complete
       ? (summary.detail || summary.line) + " · toque para editar"
@@ -2749,9 +2753,12 @@ function aprovaPerfilUpdateSummary () {
     const name = slot && typeof aprovaPriorityLabel === "function"
       ? aprovaPriorityLabel(slot)
       : "";
-    const dateTxt = slot && slot.date && typeof aprovaFormatDateBr === "function"
-      ? (" · " + aprovaFormatDateBr(slot.date))
-      : (slot && slot.date ? (" · " + slot.date) : "");
+    let dateTxt = "";
+    if (slot && slot.date && typeof aprovaFormatDateBr === "function") {
+      dateTxt = " · " + aprovaFormatDateBr(slot.date);
+    } else if (slot && name && typeof aprovaYearEndExamIso === "function") {
+      dateTxt = " · fim do ano (padrão)";
+    }
     return "<li><strong>" + labels[i] + "</strong> — " +
       (name || "não definida") + dateTxt + "</li>";
   }).join("");
@@ -2761,9 +2768,10 @@ function aprovaPerfilUpdateSummary () {
     const plan = aprovaBuildStudyPlan({ priorities: aprovaPerfilDraft }, null);
     if (plan && plan.ok) {
       preview.textContent = "Plano: " + plan.horizon.label + " · " + plan.daysLine +
-        " · " + plan.mixLine + ".";
+        " · " + plan.mixLine +
+        (plan.assumed ? " · data estimada no fim do ano." : ".");
     } else {
-      preview.textContent = "Com a data da 1ª prioridade, o Início monta as fases de estudo e revisão até a prova.";
+      preview.textContent = "Escolha a 1ª prova — sem data, usamos o fim do ano para o plano.";
     }
   }
 }
@@ -2930,7 +2938,7 @@ function aprovaSavePerfilFromForm () {
     msg.hidden = false;
     msg.textContent = hasDates
       ? "Perfil salvo. O Início monta o Seu foco e o plano até a data da prova."
-      : "Provas salvas. Informe as datas prováveis para o app traçar o plano de estudo e revisão.";
+      : "Perfil salvo. Sem data, o plano usa o fim deste ano — você pode ajustar depois.";
     msg.classList.remove("profile-msg--err");
     msg.classList.add("profile-msg--ok");
   }
@@ -3051,9 +3059,9 @@ function aprovaRenderConfig () {
         ? ("Plano ativo: " + plan.headline + " · " + plan.horizon.label + " (" + plan.daysLine + "). Ajuste datas em Meu perfil.")
         : "Datas salvas no perfil. Abra o Início para ver o plano completo.";
     } else if (complete) {
-      hint.textContent = "Você já escolheu as provas. Informe as datas prováveis em Meu perfil para o app distribuir estudo e revisão até o dia D — mesmo que seja só no ano que vem.";
+      hint.textContent = "Provas salvas. Sem data, o plano usa o fim do ano. Em Meu perfil você pode informar a data real ou tocar em “Não sei a data”.";
     } else {
-      hint.textContent = "Em Meu perfil você define as provas e as datas prováveis. Com isso o Início monta um plano de estudo e revisão até o dia D.";
+      hint.textContent = "Em Meu perfil você define as provas. Sem data (ou “Não sei”), o plano usa o fim do ano automaticamente.";
     }
   }
 }
@@ -3231,6 +3239,22 @@ async function aprovaBoot () {
   document.getElementById("perfil-slot-date")?.addEventListener("change", () => {
     aprovaPerfilCommitActiveSlot();
     aprovaPerfilUpdateSummary();
+  });
+
+  document.getElementById("perfil-date-unknown")?.addEventListener("click", () => {
+    const dateEl = document.getElementById("perfil-slot-date");
+    if (dateEl) dateEl.value = "";
+    aprovaPerfilCommitActiveSlot();
+    aprovaPerfilUpdateSummary();
+    const msg = document.getElementById("perfil-save-msg");
+    if (msg) {
+      const end = typeof aprovaYearEndExamIso === "function" ? aprovaYearEndExamIso() : "";
+      const label = end && typeof aprovaFormatDateBr === "function" ? aprovaFormatDateBr(end) : "31/12";
+      msg.hidden = false;
+      msg.textContent = "Ok — sem data. Ao salvar, o plano usa " + label + " (fim do ano).";
+      msg.classList.remove("profile-msg--err");
+      msg.classList.add("profile-msg--ok");
+    }
   });
 
   document.getElementById("perfil-save")?.addEventListener("click", () => {
