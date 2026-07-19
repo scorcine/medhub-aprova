@@ -83,9 +83,15 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
   };
 }
 
-/** Temas prioritários de todas as áreas (garante 1–2 por área para a 2ª/3ª prova aparecer). */
-function aprovaCollectCrossAreaThemes (focusPack, maxTotal) {
+/**
+ * Temas priorizados entre áreas.
+ * @param {object} focusPack
+ * @param {number} maxTotal
+ * @param {{ perArea?: number }} [opts] quantos temas garantir por área antes de completar
+ */
+function aprovaCollectCrossAreaThemes (focusPack, maxTotal, opts) {
   const limit = maxTotal || 10;
+  const perArea = Math.max(1, (opts && opts.perArea) || 2);
   if (!focusPack || !focusPack.ok || !Array.isArray(focusPack.areas)) return [];
 
   const norm = typeof aprovaFocusNormKey === "function"
@@ -110,20 +116,14 @@ function aprovaCollectCrossAreaThemes (focusPack, maxTotal) {
     return true;
   };
 
-  // 1º lugar de cada área (Clínica, Cirurgia, Ped, GO, Preventiva)
-  focusPack.areas.forEach(area => {
-    const list = area.themes || area.focus || [];
-    if (list[0]) pushTheme(area, list[0], 0);
-  });
+  for (let depth = 0; depth < perArea; depth++) {
+    focusPack.areas.forEach(area => {
+      if (picked.length >= limit) return;
+      const list = area.themes || area.focus || [];
+      if (list[depth]) pushTheme(area, list[depth], depth);
+    });
+  }
 
-  // 2º lugar de cada área — traz diferenças da 2ª prova (ex.: USP vs Enamed)
-  focusPack.areas.forEach(area => {
-    if (picked.length >= limit) return;
-    const list = area.themes || area.focus || [];
-    if (list[1]) pushTheme(area, list[1], 1);
-  });
-
-  // Completa com os demais temas mais fortes da mistura
   const pool = [];
   focusPack.areas.forEach(area => {
     const list = area.themes || area.focus || [];
@@ -142,6 +142,80 @@ function aprovaCollectCrossAreaThemes (focusPack, maxTotal) {
 
   picked.sort((a, b) => b.pct - a.pct || a.rankInArea - b.rankInArea);
   return picked.slice(0, limit);
+}
+
+/**
+ * Mapa completo até a prova: todos os temas das estatísticas, por área.
+ * A prova pode cobrar qualquer coisa — isto é a cobertura sugerida (alto → base).
+ */
+function aprovaBuildCurriculumMap (focusPack, untilExamCards) {
+  if (!focusPack || !focusPack.ok || !Array.isArray(focusPack.areas)) {
+    return { ok: false, areas: [], flat: [], totalThemes: 0 };
+  }
+
+  const totalBudget = untilExamCards != null && untilExamCards > 0
+    ? untilExamCards
+    : 0;
+  const flat = [];
+
+  const areas = focusPack.areas.map(area => {
+    const list = area.themes || area.focus || [];
+    const themes = list.map((t, i) => {
+      const tema = String(t.tema || "").trim();
+      const pct = Number(t.pct) || 0;
+      let tier = "base";
+      let tierLabel = "Cobertura";
+      if (i < 3) {
+        tier = "alta";
+        tierLabel = "Prioridade alta";
+      } else if (i < 7) {
+        tier = "media";
+        tierLabel = "Importante";
+      }
+      const row = {
+        tema,
+        pct,
+        areaId: area.id,
+        areaLabel: area.label || area.id,
+        rankInArea: i,
+        tier,
+        tierLabel,
+        cardsUntil: 0
+      };
+      flat.push(row);
+      return row;
+    }).filter(t => t.tema);
+    return {
+      id: area.id,
+      label: area.label || area.id,
+      themes
+    };
+  });
+
+  if (totalBudget > 0 && flat.length) {
+    const distributed = aprovaDistributeThemeCards(flat, totalBudget);
+    const byKey = Object.create(null);
+    distributed.forEach(d => {
+      byKey[(d.areaId || "") + "::" + d.tema] = d.cards;
+    });
+    flat.forEach(t => {
+      t.cardsUntil = byKey[(t.areaId || "") + "::" + t.tema] || 0;
+    });
+    areas.forEach(area => {
+      area.themes.forEach(t => {
+        t.cardsUntil = byKey[(t.areaId || "") + "::" + t.tema] || 0;
+      });
+    });
+  }
+
+  return {
+    ok: true,
+    areas,
+    flat,
+    totalThemes: flat.length,
+    untilExamCards: totalBudget || null,
+    note: "A residência pode cobrar qualquer tema. Este mapa cobre o que mais cai nas suas provas — do essencial ao restante da estatística. Outros subtemas ficam em Flashcards."
+  };
 }
 
 /** Distribui N cards entre temas pelo peso relativo (soma = total). */
@@ -241,7 +315,11 @@ function aprovaTaskStatus (done, goal) {
   };
 }
 
-function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
+/**
+ * @param {object} quota
+ * @param {{ daily: object[], weekly: object[], monthly: object[] }} themeSets
+ */
+function aprovaBuildPeriodTasks (quota, themeSets, now = Date.now()) {
   const todayIso = typeof aprovaActivityDayKey === "function"
     ? aprovaActivityDayKey(now)
     : aprovaIsoOffset(0, now);
@@ -258,6 +336,10 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
     ? aprovaActivitySumRange
     : () => 0;
 
+  const dailyThemes = (themeSets && themeSets.daily) || [];
+  const weeklyThemes = (themeSets && themeSets.weekly) || dailyThemes;
+  const monthlyThemes = (themeSets && themeSets.monthly) || weeklyThemes;
+
   const periods = [
     {
       id: "daily",
@@ -266,10 +348,13 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       goal: quota.daily,
       done: dayDone,
       detail: quota.splitLine,
-      themeCards: aprovaDistributeThemeCards(themes, quota.daily),
+      themesLabel: "Foco de hoje (alto rendimento)",
+      themesHint: "Não é tudo que cai — é o que mais rende neste dia.",
+      themeCards: aprovaDistributeThemeCards(dailyThemes, quota.daily),
       newCards: quota.dailyNew,
       reviewCards: quota.dailyReview,
-      cta: "Cumprir agora"
+      cta: "Cumprir agora",
+      showThemes: true
     },
     {
       id: "weekly",
@@ -278,10 +363,13 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       goal: quota.weekly,
       done: sum(weekFrom, todayIso),
       detail: quota.weekLine,
-      themeCards: aprovaDistributeThemeCards(themes, quota.weekly),
+      themesLabel: "Ampliação da semana",
+      themesHint: "Inclui mais temas que o dia — ainda priorizando o que mais cai.",
+      themeCards: aprovaDistributeThemeCards(weeklyThemes, quota.weekly),
       newCards: quota.dailyNew * 7,
       reviewCards: quota.dailyReview * 7,
-      cta: "Estudar temas"
+      cta: "Estudar temas",
+      showThemes: true
     },
     {
       id: "biweekly",
@@ -290,10 +378,13 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       goal: quota.biweekly,
       done: sum(biFrom, todayIso),
       detail: "~" + quota.daily + " cards/dia em média na quinzena",
-      themeCards: aprovaDistributeThemeCards(themes, quota.biweekly),
+      themesLabel: "",
+      themesHint: "Meta de volume. A cobertura completa dos temas está no mapa até a prova.",
+      themeCards: [],
       newCards: quota.dailyNew * 14,
       reviewCards: quota.dailyReview * 14,
-      cta: "Estudar temas"
+      cta: "Estudar temas",
+      showThemes: false
     },
     {
       id: "monthly",
@@ -301,11 +392,14 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       window: "Últimos 30 dias",
       goal: quota.monthly,
       done: sum(monthFrom, todayIso),
-      detail: "Volume acumulado para sustentar o ritmo até a prova",
-      themeCards: aprovaDistributeThemeCards(themes, quota.monthly),
+      detail: "Volume do mês + cobertura ampliada (não é só o foco diário × 30)",
+      themesLabel: "Cobertura do mês",
+      themesHint: "Temas além do diário. O restante da Pediatria, Cirurgia etc. está no mapa até a prova.",
+      themeCards: aprovaDistributeThemeCards(monthlyThemes, quota.monthly),
       newCards: quota.dailyNew * 30,
       reviewCards: quota.dailyReview * 30,
-      cta: "Estudar temas"
+      cta: "Estudar temas",
+      showThemes: true
     }
   ];
 
@@ -344,33 +438,45 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     plan.currentPhase
   );
 
-  const crossThemes = aprovaCollectCrossAreaThemes(focusPack, 10);
-  const themesForGoals = crossThemes.length
-    ? crossThemes
-    : (plan.themes || []).map(t => ({
-      tema: t.tema,
-      pct: t.pct,
-      areaLabel: plan.areaLabel || "",
-      areaId: plan.areaId || ""
-    }));
+  const fallbackThemes = (plan.themes || []).map(t => ({
+    tema: t.tema,
+    pct: t.pct,
+    areaLabel: plan.areaLabel || "",
+    areaId: plan.areaId || ""
+  }));
 
-  const themeProgram = aprovaThemeReviewProgram(
-    themesForGoals,
-    daysLeft,
-    plan.weeks
-  );
-  const tasks = aprovaBuildPeriodTasks(quota, themesForGoals, now);
+  const dailyThemes = aprovaCollectCrossAreaThemes(focusPack, 8, { perArea: 1 });
+  const weeklyThemes = aprovaCollectCrossAreaThemes(focusPack, 14, { perArea: 2 });
+  const monthlyThemes = aprovaCollectCrossAreaThemes(focusPack, 22, { perArea: 3 });
 
-  const dailyTask = tasks.find(t => t.id === "daily");
+  const themeSets = {
+    daily: dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, 8),
+    weekly: weeklyThemes.length ? weeklyThemes : fallbackThemes.slice(0, 14),
+    monthly: monthlyThemes.length ? monthlyThemes : fallbackThemes
+  };
+
   const untilExam = (daysLeft != null && daysLeft > 0)
     ? quota.daily * daysLeft
     : null;
+
+  const curriculum = aprovaBuildCurriculumMap(focusPack, untilExam);
+
+  const themeProgram = aprovaThemeReviewProgram(
+    themeSets.weekly,
+    daysLeft,
+    plan.weeks
+  );
+  const tasks = aprovaBuildPeriodTasks(quota, themeSets, now);
+
+  const dailyTask = tasks.find(t => t.id === "daily");
 
   return {
     quota,
     tasks,
     themeProgram,
-    themesForGoals,
+    themesForGoals: themeSets.daily,
+    themeSets,
+    curriculum,
     srs: {
       due: srs.due,
       newCards: srs.newCards,
@@ -384,6 +490,6 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
       : ("Hoje: " + (dailyTask ? dailyTask.done : 0) + "/" + quota.daily +
         " flashcards · " + quota.splitLine),
     divisionLine: "Nesta fase: " + quota.studyPct + "% conteúdo novo · " +
-      quota.reviewPct + "% revisão · " + quota.how
+      quota.reviewPct + "% revisão. As metas priorizam o que mais cai; o mapa abaixo cobre o restante até a prova."
   };
 }

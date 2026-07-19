@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260719g">
+  <link rel="stylesheet" href="css/aprova.css?v=20260719h">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -557,7 +557,8 @@
               <p class="muted" id="dash-seu-plano-division" style="margin:0.35rem 0 0.85rem"></p>
               <div class="dash-seu-plano-quota" id="dash-seu-plano-quota"></div>
 
-              <div class="label" style="margin-top:0.35rem">Suas metas</div>
+              <div class="label" style="margin-top:0.35rem">Suas metas de volume</div>
+              <p class="muted" style="margin:0.25rem 0 0.65rem">Diário = foco. Semana/mês = ampliam a cobertura. O mapa abaixo mostra tudo até a prova.</p>
               <ul class="dash-seu-plano-tasks" id="dash-seu-plano-tasks"></ul>
 
               <div class="actions-row" style="margin-top:1rem">
@@ -566,15 +567,21 @@
                 <button type="button" class="btn btn-ghost" data-goto="perfil">Editar perfil</button>
               </div>
 
+              <div class="dash-curriculum" id="dash-curriculum" hidden style="margin-top:1.25rem">
+                <div class="dash-curriculum-head">
+                  <strong>Mapa até a prova</strong>
+                  <p class="muted" id="dash-curriculum-note"></p>
+                </div>
+                <div id="dash-curriculum-body"></div>
+              </div>
+
               <details class="metas-details" style="margin-top:1.25rem">
-                <summary>Fases até a prova e revisões por tema</summary>
+                <summary>Fases do calendário</summary>
                 <div class="label" style="margin-top:0.85rem">Fases</div>
                 <ol class="dash-seu-plano-phases" id="dash-seu-plano-phases"></ol>
-                <div class="label" style="margin-top:0.85rem" id="dash-seu-plano-themes-label">Revisões sugeridas por tema</div>
-                <ul class="dash-seu-plano-themes" id="dash-seu-plano-themes"></ul>
               </details>
 
-              <p class="muted dash-seu-plano-note">Metas orientativas com base na data da prova, no que mais cai e no seu SRS.</p>
+              <p class="muted dash-seu-plano-note">Metas orientativas: priorizam o que mais cai nas suas provas. A residência pode cobrar qualquer tema — use o mapa e os Flashcards para cobrir o restante.</p>
             </div>
           </div>
 
@@ -657,14 +664,14 @@
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
   <script src="js/profile.js?v=20260719b"></script>
-  <script src="js/focus.js?v=20260719g"></script>
-  <script src="js/plan.js?v=20260719g"></script>
-  <script src="js/tasks.js?v=20260719g"></script>
+  <script src="js/focus.js?v=20260719h"></script>
+  <script src="js/plan.js?v=20260719h"></script>
+  <script src="js/tasks.js?v=20260719h"></script>
   <script src="js/schedule.js?v=20260719b"></script>
   <script src="js/exam-stats.js?v=20260718dd"></script>
   <script src="js/flashcards.js?v=20260719f"></script>
   <script src="js/questions.js?v=20260718dd"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260719g"></script>
+  <script src="js/app.js?v=20260719h"></script>
 </body>
 </html>

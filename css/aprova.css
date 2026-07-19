@@ -2401,6 +2401,140 @@ html[data-theme="dark"] .aprova-modal-panel {
   margin: 0.55rem 0 0.3rem;
 }
 
+.dash-task-themes-hint {
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.dash-curriculum {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.dash-curriculum-head {
+  margin-bottom: 0.75rem;
+}
+
+.dash-curriculum-head strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.dash-curriculum-area {
+  margin: 0.45rem 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(15, 27, 45, 0.03);
+  padding: 0.35rem 0.55rem;
+}
+
+.dash-curriculum-area > summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.35rem 0.15rem;
+}
+
+.dash-curriculum-area > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dash-curriculum-area > summary span {
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.dash-curriculum-list {
+  list-style: none;
+  margin: 0.35rem 0 0.45rem;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.dash-curriculum-theme {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 0.4rem 0.55rem;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: rgba(15, 159, 154, 0.06);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dash-curriculum-theme:hover,
+.dash-curriculum-theme:focus-visible {
+  border-color: rgba(15, 159, 154, 0.4);
+  background: rgba(15, 159, 154, 0.12);
+  outline: none;
+}
+
+.dash-curriculum-theme strong {
+  font-size: 0.88rem;
+}
+
+.dash-curriculum-theme em {
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-curriculum-tier {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+
+.dash-curriculum-tier--alta {
+  background: rgba(15, 159, 154, 0.2);
+  color: var(--accent-deep);
+}
+
+.dash-curriculum-tier--media {
+  background: rgba(61, 139, 253, 0.15);
+  color: #2a6fd4;
+}
+
+.dash-curriculum-tier--base {
+  background: rgba(15, 27, 45, 0.08);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .dash-curriculum-theme {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "tier go"
+      "name name"
+      "meta meta";
+  }
+
+  .dash-curriculum-tier { grid-area: tier; }
+  .dash-curriculum-theme strong { grid-area: name; }
+  .dash-curriculum-theme em { grid-area: meta; }
+  .dash-curriculum-theme .dash-task-theme-go { grid-area: go; }
+}
+
 .dash-task-themes {
   list-style: none;
   margin: 0;

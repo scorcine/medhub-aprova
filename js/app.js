@@ -2589,7 +2589,6 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const toneEl = document.getElementById("dash-seu-plano-tone");
   const metaEl = document.getElementById("dash-seu-plano-meta");
   const phasesEl = document.getElementById("dash-seu-plano-phases");
-  const themesEl = document.getElementById("dash-seu-plano-themes");
 
   if (!profileComplete) {
     root.hidden = true;
@@ -2609,7 +2608,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
     }
     if (metaEl) metaEl.innerHTML = "";
     if (phasesEl) phasesEl.innerHTML = "";
-    if (themesEl) themesEl.innerHTML = "";
+    aprovaRenderCurriculumMap(null);
     return;
   }
 
@@ -2666,35 +2665,42 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
     }
     if (tasksEl) {
       tasksEl.innerHTML = program.tasks.map(t => {
-        const themesHtml = (t.themeCards && t.themeCards.length)
-          ? ("<ul class=\"dash-task-themes\">" + t.themeCards.map(th => {
-            const area = String(th.areaId || "").replace(/"/g, "");
-            const temaAttr = String(th.tema || "")
-              .replace(/&/g, "&amp;")
-              .replace(/"/g, "&quot;")
-              .replace(/</g, "&lt;");
-            const temaLabel = String(th.tema || "")
-              .replace(/&/g, "&amp;")
-              .replace(/</g, "&lt;");
-            const areaLabel = String(th.areaLabel || "")
-              .replace(/&/g, "&amp;")
-              .replace(/</g, "&lt;");
-            return (
+        const esc = s => String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;");
+        let themesBlock = "";
+        if (t.showThemes && t.themeCards && t.themeCards.length) {
+          themesBlock =
+            "<div class=\"dash-task-themes-head\">" +
+              "<div>" +
+                "<div class=\"label\" style=\"margin:0\">" + esc(t.themesLabel || "Temas") + "</div>" +
+                (t.themesHint
+                  ? ("<p class=\"muted dash-task-themes-hint\">" + esc(t.themesHint) + "</p>")
+                  : "") +
+              "</div>" +
+              (t.id === "daily"
+                ? ("<button type=\"button\" class=\"btn btn-primary btn-compact\" data-meta-fulfill=\"daily\">" +
+                  esc(t.cta || "Cumprir agora") + "</button>")
+                : "") +
+            "</div>" +
+            "<ul class=\"dash-task-themes\">" + t.themeCards.map(th => (
               "<li>" +
                 "<button type=\"button\" class=\"dash-task-theme-btn\"" +
-                  " data-meta-area=\"" + area + "\"" +
-                  " data-meta-tema=\"" + temaAttr + "\"" +
+                  " data-meta-area=\"" + esc(th.areaId) + "\"" +
+                  " data-meta-tema=\"" + esc(th.tema) + "\"" +
                   " data-meta-cards=\"" + (th.cards | 0) + "\">" +
                   "<strong>" + th.cards + "</strong>" +
-                  "<span class=\"dash-task-theme-copy\">" + temaLabel +
-                    (areaLabel ? (" <span>· " + areaLabel + "</span>") : "") +
+                  "<span class=\"dash-task-theme-copy\">" + esc(th.tema) +
+                    (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
                   "</span>" +
                   "<span class=\"dash-task-theme-go\">Estudar</span>" +
                 "</button>" +
               "</li>"
-            );
-          }).join("") + "</ul>")
-          : "<p class=\"muted\" style=\"margin:0.35rem 0 0\">Temas aparecem quando houver estatística das suas provas.</p>";
+            )).join("") + "</ul>";
+        } else if (t.themesHint) {
+          themesBlock = "<p class=\"muted\" style=\"margin:0.45rem 0 0\">" + esc(t.themesHint) + "</p>";
+        }
 
         return (
           "<li class=\"dash-task dash-task--" + t.status + "\">" +
@@ -2704,14 +2710,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
             "</div>" +
             "<div class=\"dash-task-bar\" aria-hidden=\"true\"><i style=\"width:" + t.pct + "%\"></i></div>" +
             "<span>" + t.window + " · " + t.detail + "</span>" +
-            "<div class=\"dash-task-themes-head\">" +
-              "<div class=\"label\" style=\"margin:0\">Temas e quantidades</div>" +
-              (t.id === "daily"
-                ? ("<button type=\"button\" class=\"btn btn-primary btn-compact\" data-meta-fulfill=\"daily\">" +
-                  (t.cta || "Cumprir agora") + "</button>")
-                : "") +
-            "</div>" +
-            themesHtml +
+            themesBlock +
             "<span class=\"dash-task-feedback\">" + t.feedback + "</span>" +
           "</li>"
         );
@@ -2738,11 +2737,14 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
         });
       }
     }
+
+    aprovaRenderCurriculumMap(program.curriculum);
   } else {
     if (progSum) progSum.textContent = "";
     if (divisionEl) divisionEl.textContent = "";
     if (quotaEl) quotaEl.innerHTML = "";
     if (tasksEl) tasksEl.innerHTML = "";
+    aprovaRenderCurriculumMap(null);
   }
 
   if (phasesEl) {
@@ -2755,19 +2757,84 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
       "</li>"
     )).join("");
   }
-  const themesLabel = document.getElementById("dash-seu-plano-themes-label");
-  if (themesLabel) themesLabel.textContent = "Revisões sugeridas por tema";
-  if (themesEl) {
-    const themeProg = program && program.themeProgram;
-    if (themeProg && themeProg.length) {
-      themesEl.innerHTML = themeProg.map(t => (
-        "<li><strong>" + t.tema + "</strong>" +
-          "<span>" + (t.areaLabel ? (" · " + t.areaLabel) : "") +
-          " · " + t.hint + "</span></li>"
-      )).join("");
-    } else {
-      themesEl.innerHTML = "<li><span>Salve uma banca da lista no perfil para priorizar temas.</span></li>";
-    }
+}
+
+function aprovaRenderCurriculumMap (curriculum) {
+  const root = document.getElementById("dash-curriculum");
+  const noteEl = document.getElementById("dash-curriculum-note");
+  const body = document.getElementById("dash-curriculum-body");
+  if (!root || !body) return;
+
+  if (!curriculum || !curriculum.ok || !curriculum.areas || !curriculum.areas.length) {
+    root.hidden = true;
+    body.innerHTML = "";
+    if (noteEl) noteEl.textContent = "";
+    return;
+  }
+
+  root.hidden = false;
+  if (noteEl) {
+    noteEl.textContent = curriculum.note +
+      (curriculum.untilExamCards
+        ? (" Estimativa neste ritmo: ~" + curriculum.untilExamCards + " flashcards até a prova, repartidos pelos temas.")
+        : "");
+  }
+
+  const esc = s => String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+
+  body.innerHTML = curriculum.areas.map(area => {
+    if (!area.themes || !area.themes.length) return "";
+    const rows = area.themes.map(t => {
+      const pctLabel = typeof aprovaFormatPct === "function"
+        ? aprovaFormatPct(t.pct)
+        : (t.pct + "%");
+      const cardsBit = t.cardsUntil
+        ? ("~" + t.cardsUntil + " cards")
+        : pctLabel;
+      return (
+        "<li>" +
+          "<button type=\"button\" class=\"dash-curriculum-theme\"" +
+            " data-meta-area=\"" + esc(area.id) + "\"" +
+            " data-meta-tema=\"" + esc(t.tema) + "\"" +
+            " data-meta-cards=\"" + (t.cardsUntil || 0) + "\">" +
+            "<span class=\"dash-curriculum-tier dash-curriculum-tier--" + t.tier + "\">" +
+              esc(t.tierLabel) +
+            "</span>" +
+            "<strong>" + esc(t.tema) + "</strong>" +
+            "<em>" + cardsBit + " · " + pctLabel + "</em>" +
+            "<span class=\"dash-task-theme-go\">Estudar</span>" +
+          "</button>" +
+        "</li>"
+      );
+    }).join("");
+
+    return (
+      "<details class=\"dash-curriculum-area\"" +
+        (area.id === "clinica" || area.id === "cirurgia" || area.id === "pediatria" ? " open" : "") +
+      ">" +
+        "<summary>" + esc(area.label) +
+          " <span>" + area.themes.length + " tema" +
+          (area.themes.length === 1 ? "" : "s") + "</span></summary>" +
+        "<ul class=\"dash-curriculum-list\">" + rows + "</ul>" +
+      "</details>"
+    );
+  }).join("");
+
+  if (!body.dataset.metaBound) {
+    body.dataset.metaBound = "1";
+    body.addEventListener("click", evt => {
+      const themeBtn = evt.target.closest("[data-meta-area]");
+      if (!themeBtn) return;
+      evt.preventDefault();
+      aprovaFulfillMetaTheme(
+        themeBtn.getAttribute("data-meta-area"),
+        themeBtn.getAttribute("data-meta-tema"),
+        Number(themeBtn.getAttribute("data-meta-cards")) || 0
+      );
+    });
   }
 }
 
