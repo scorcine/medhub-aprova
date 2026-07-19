@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260719k">
+  <link rel="stylesheet" href="css/aprova.css?v=20260719m">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -244,45 +244,40 @@
 
         <section id="panel-questoes" class="panel" aria-labelledby="q-title" hidden>
           <h2 id="q-title">Banco de questões</h2>
-          <p class="muted">Treino com feedback ou simulado no formato da residência. Inclua novas questões nos JSON em <code>data/questions-*.json</code>.</p>
+          <p class="muted" id="q-browse-hint">Escolha a área, depois o grupo e o subtema — como nos flashcards.</p>
 
-          <div class="study-card q-filters" id="q-filters">
-            <div class="label">Filtros</div>
-            <div class="q-filter-grid">
-              <label class="q-filter-field">
-                <span>Área</span>
-                <select id="q-filter-specialty" class="profile-select"></select>
-              </label>
-              <label class="q-filter-field">
-                <span>Grupo</span>
-                <select id="q-filter-group" class="profile-select"></select>
-              </label>
-              <label class="q-filter-field">
-                <span>Subtema</span>
-                <select id="q-filter-theme" class="profile-select"></select>
-              </label>
-              <label class="q-filter-field">
-                <span>Banca</span>
-                <select id="q-filter-exam" class="profile-select"></select>
-              </label>
-              <label class="q-filter-field">
-                <span>Ano</span>
-                <select id="q-filter-year" class="profile-select"></select>
-              </label>
-              <label class="q-filter-field">
-                <span>Simulado (nº)</span>
-                <select id="q-filter-size" class="profile-select">
-                  <option value="5">5 questões</option>
-                  <option value="10" selected>10 questões</option>
-                  <option value="20">20 questões</option>
-                  <option value="40">40 questões</option>
-                </select>
-              </label>
+          <div id="q-browse">
+            <div class="actions-row" style="margin-bottom:0.75rem">
+              <button type="button" class="btn btn-ghost btn-compact" id="q-browse-back" hidden>← Voltar</button>
             </div>
-            <p class="muted" id="q-filter-count" style="margin:0.65rem 0 0"></p>
-            <div class="actions-row" style="margin-top:0.85rem">
-              <button type="button" class="btn btn-primary" id="q-start-treino">Treinar (filtro)</button>
-              <button type="button" class="btn btn-ghost" id="q-start-simulado">Iniciar simulado</button>
+            <div class="dash-grid dash-grid--sm" id="q-browse-grid"></div>
+
+            <div class="study-card q-launch" id="q-launch" hidden style="margin-top:1rem">
+              <div class="label" id="q-launch-title">Iniciar estudo</div>
+              <p class="muted" id="q-launch-count" style="margin:0.35rem 0 0.75rem"></p>
+              <div class="q-filter-grid">
+                <label class="q-filter-field">
+                  <span>Banca (opcional)</span>
+                  <select id="q-filter-exam" class="profile-select"></select>
+                </label>
+                <label class="q-filter-field">
+                  <span>Ano (opcional)</span>
+                  <select id="q-filter-year" class="profile-select"></select>
+                </label>
+                <label class="q-filter-field">
+                  <span>Simulado (nº)</span>
+                  <select id="q-filter-size" class="profile-select">
+                    <option value="5">5 questões</option>
+                    <option value="10" selected>10 questões</option>
+                    <option value="20">20 questões</option>
+                    <option value="40">40 questões</option>
+                  </select>
+                </label>
+              </div>
+              <div class="actions-row" style="margin-top:0.85rem">
+                <button type="button" class="btn btn-primary" id="q-start-treino">Treinar</button>
+                <button type="button" class="btn btn-ghost" id="q-start-simulado">Iniciar simulado</button>
+              </div>
             </div>
           </div>
 
@@ -309,7 +304,7 @@
             <ul class="q-result-themes" id="q-result-themes"></ul>
             <div class="actions-row" style="margin-top:1rem">
               <button type="button" class="btn btn-primary" id="q-result-again">Novo simulado</button>
-              <button type="button" class="btn btn-ghost" id="q-result-treino">Voltar ao treino</button>
+              <button type="button" class="btn btn-ghost" id="q-result-treino">Voltar às áreas</button>
             </div>
           </div>
         </section>
@@ -729,6 +724,6 @@
   <script src="js/flashcards.js?v=20260719f"></script>
   <script src="js/questions.js?v=20260719k"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260719k"></script>
+  <script src="js/app.js?v=20260719m"></script>
 </body>
 </html>

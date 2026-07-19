@@ -2356,11 +2356,16 @@ html[data-theme="dark"] .aprova-modal-panel {
   background: rgba(61, 139, 253, 0.08);
 }
 
+.q-launch .q-filter-grid,
 .q-filters .q-filter-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 0.65rem 0.75rem;
   margin-top: 0.55rem;
+}
+
+#q-browse-grid {
+  margin-top: 0.25rem;
 }
 
 .q-filter-field {
