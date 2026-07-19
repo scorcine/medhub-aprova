@@ -2909,7 +2909,7 @@ function aprovaRenderPerfilSlot () {
   const idx = aprovaPerfilActiveTab;
   const titles = ["Prioridade 1", "Prioridade 2", "Prioridade 3"];
   const hints = [
-    "Prova principal que você pretende prestar (obrigatória para personalizar).",
+    "Prova principal que você pretende prestar. Deixe em branco e salve para limpar o perfil.",
     "Segunda opção — opcional.",
     "Terceira opção — opcional."
   ];
@@ -3020,16 +3020,22 @@ function aprovaSavePerfilFromForm () {
     }
   }
 
+  // Em branco na 1ª = limpar personalização (volta ao estado inicial)
   if (!draft[0]) {
+    const cleared = aprovaSaveProfile({ priorities: [null, null, null] });
+    aprovaPerfilDraft = [null, null, null];
+    aprovaPerfilActiveTab = 0;
     if (msg) {
       msg.hidden = false;
-      msg.textContent = "Defina ao menos a 1ª prioridade.";
-      msg.classList.remove("profile-msg--ok");
-      msg.classList.add("profile-msg--err");
+      msg.textContent = "Perfil limpo. Escolha de novo a 1ª prioridade quando quiser personalizar.";
+      msg.classList.remove("profile-msg--err");
+      msg.classList.add("profile-msg--ok");
     }
-    aprovaPerfilActiveTab = 0;
+    aprovaSeuFocoCache = null;
     aprovaRenderPerfilSlot();
-    return null;
+    aprovaPerfilUpdateSummary();
+    aprovaRenderDashboard();
+    return cleared;
   }
 
   // Não permitir 2ª/3ª preenchida se a anterior estiver vazia
@@ -3361,11 +3367,43 @@ async function aprovaBoot () {
     const other = document.getElementById("perfil-slot-other");
     const select = document.getElementById("perfil-slot-select");
     if (other && select) {
-      other.hidden = select.value !== "__other__";
-      if (select.value === "__other__") other.focus();
+      const isOther = select.value === "__other__";
+      other.hidden = !isOther;
+      if (!isOther) other.value = "";
+      if (isOther) other.focus();
     }
     aprovaPerfilCommitActiveSlot();
     aprovaPerfilUpdateSummary();
+  });
+
+  document.getElementById("perfil-goto-metas")?.addEventListener("click", () => {
+    aprovaPerfilCommitActiveSlot();
+    const draft = aprovaPerfilDraft.slice();
+    const hasExam = draft.some(s => s && (s.kind === "exam" || (s.kind === "other" && String(s.label || "").trim())));
+    const savedComplete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete();
+    if (!hasExam && !savedComplete) {
+      const msg = document.getElementById("perfil-save-msg");
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = "Escolha e salve a 1ª prioridade antes de ver as metas.";
+        msg.classList.remove("profile-msg--ok");
+        msg.classList.add("profile-msg--err");
+      }
+      aprovaPerfilActiveTab = 0;
+      aprovaRenderPerfilSlot();
+      return;
+    }
+    if (hasExam && !savedComplete) {
+      const msg = document.getElementById("perfil-save-msg");
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = "Salve o perfil primeiro para atualizar as metas.";
+        msg.classList.remove("profile-msg--ok");
+        msg.classList.add("profile-msg--err");
+      }
+      return;
+    }
+    aprovaGoTo("metas");
   });
 
   document.getElementById("perfil-slot-other")?.addEventListener("input", () => {
