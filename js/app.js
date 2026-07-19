@@ -2514,6 +2514,69 @@ function aprovaRenderSeuFocoArea (pack, areaId) {
   // Metas no topo já usam todas as áreas — o clique só muda o detalhe acima
 }
 
+function aprovaFulfillDailyMeta () {
+  aprovaGoTo("flashcards", { study: true, mode: "today" });
+}
+
+function aprovaFindDecksForMetaTheme (areaId, tema) {
+  if (typeof AprovaFlashcards === "undefined") return [];
+  const norm = typeof aprovaFocusNormKey === "function"
+    ? aprovaFocusNormKey
+    : s => String(s || "").toLowerCase();
+  const key = norm(tema);
+  if (!key) return [];
+
+  const decks = areaId && AprovaFlashcards.decksBySpecialty
+    ? AprovaFlashcards.decksBySpecialty(areaId)
+    : (AprovaFlashcards.decks || []);
+
+  const scored = [];
+  decks.forEach(deck => {
+    const nameKey = norm(deck.name || "");
+    const idKey = norm(deck.id || "");
+    if (!nameKey && !idKey) return;
+    let score = 0;
+    if (nameKey === key) score = 5;
+    else if (nameKey.indexOf(key) !== -1 || key.indexOf(nameKey) !== -1) score = 3;
+    else {
+      const tokens = key.split(" ").filter(t => t.length > 2);
+      const hits = tokens.filter(t => nameKey.indexOf(t) !== -1 || idKey.indexOf(t) !== -1).length;
+      if (hits && hits >= Math.min(2, tokens.length)) score = hits;
+      else if (tokens.length === 1 && hits === 1) score = 1;
+    }
+    if (score) scored.push({ id: deck.id, score });
+  });
+  scored.sort((a, b) => b.score - a.score);
+  return scored.map(s => s.id);
+}
+
+function aprovaFulfillMetaTheme (areaId, tema) {
+  const deckIds = aprovaFindDecksForMetaTheme(areaId, tema);
+  if (deckIds.length && typeof AprovaFlashcards !== "undefined" && AprovaFlashcards.startDecks) {
+    const n = AprovaFlashcards.startDecks(deckIds.slice(0, 6));
+    if (n > 0) {
+      aprovaGoTo("flashcards", { study: true });
+      return;
+    }
+  }
+
+  aprovaEspMode = "study";
+  aprovaGoTo("especialidades");
+  const openers = {
+    pediatria: () => typeof aprovaOpenPediatria === "function" && aprovaOpenPediatria(),
+    go: () => typeof aprovaOpenGinecologia === "function" && aprovaOpenGinecologia(),
+    cirurgia: () => typeof aprovaOpenCirurgia === "function" && aprovaOpenCirurgia(),
+    preventiva: () => typeof aprovaOpenPreventiva === "function" && aprovaOpenPreventiva(),
+    clinica: () => typeof aprovaOpenClinica === "function" && aprovaOpenClinica()
+  };
+  const open = openers[areaId];
+  if (open) {
+    Promise.resolve(open()).catch(err => console.error("Falha ao abrir área da meta", areaId, err));
+  } else if (typeof aprovaOpenSpecialty === "function") {
+    aprovaOpenSpecialty(areaId || "clinica");
+  }
+}
+
 function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const root = document.getElementById("dash-seu-plano");
   if (!root) return;
@@ -2582,10 +2645,13 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
       const until = program.untilExamCards != null
         ? ("~" + program.untilExamCards + " flashcards até a prova neste ritmo")
         : "";
+      const reviewChip = q.dailyReview > 0
+        ? ("<span class=\"dash-seu-plano-chip\">" + q.dailyReview + " revisões na fila</span>")
+        : "<span class=\"dash-seu-plano-chip\">sem revisões vencidas</span>";
       quotaEl.innerHTML =
         "<span class=\"dash-seu-plano-chip\">" + q.daily + " flashcards/dia</span>" +
         "<span class=\"dash-seu-plano-chip\">" + q.dailyNew + " novos</span>" +
-        "<span class=\"dash-seu-plano-chip\">" + q.dailyReview + " revisões</span>" +
+        reviewChip +
         "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>" +
         (until
           ? "<span class=\"dash-seu-plano-chip dash-seu-plano-chip--soft\">" + until + "</span>"
@@ -2594,11 +2660,33 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
     if (tasksEl) {
       tasksEl.innerHTML = program.tasks.map(t => {
         const themesHtml = (t.themeCards && t.themeCards.length)
-          ? ("<ul class=\"dash-task-themes\">" + t.themeCards.map(th => (
-            "<li><strong>" + th.cards + "</strong> " + th.tema +
-              (th.areaLabel ? (" <span>· " + th.areaLabel + "</span>") : "") +
-            "</li>"
-          )).join("") + "</ul>")
+          ? ("<ul class=\"dash-task-themes\">" + t.themeCards.map(th => {
+            const area = String(th.areaId || "").replace(/"/g, "");
+            const temaAttr = String(th.tema || "")
+              .replace(/&/g, "&amp;")
+              .replace(/"/g, "&quot;")
+              .replace(/</g, "&lt;");
+            const temaLabel = String(th.tema || "")
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;");
+            const areaLabel = String(th.areaLabel || "")
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;");
+            return (
+              "<li>" +
+                "<button type=\"button\" class=\"dash-task-theme-btn\"" +
+                  " data-meta-area=\"" + area + "\"" +
+                  " data-meta-tema=\"" + temaAttr + "\"" +
+                  " data-meta-cards=\"" + (th.cards | 0) + "\">" +
+                  "<strong>" + th.cards + "</strong>" +
+                  "<span class=\"dash-task-theme-copy\">" + temaLabel +
+                    (areaLabel ? (" <span>· " + areaLabel + "</span>") : "") +
+                  "</span>" +
+                  "<span class=\"dash-task-theme-go\">Estudar</span>" +
+                "</button>" +
+              "</li>"
+            );
+          }).join("") + "</ul>")
           : "<p class=\"muted\" style=\"margin:0.35rem 0 0\">Temas aparecem quando houver estatística das suas provas.</p>";
 
         return (
@@ -2608,17 +2696,40 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
               "<em>" + t.done + "/" + t.goal + " cards</em>" +
             "</div>" +
             "<div class=\"dash-task-bar\" aria-hidden=\"true\"><i style=\"width:" + t.pct + "%\"></i></div>" +
-            "<span>" + t.window + " · " + t.detail +
-              (t.newCards != null
-                ? (" · " + t.newCards + " novos · " + t.reviewCards + " revisões")
+            "<span>" + t.window + " · " + t.detail + "</span>" +
+            "<div class=\"dash-task-themes-head\">" +
+              "<div class=\"label\" style=\"margin:0\">Temas e quantidades</div>" +
+              (t.id === "daily"
+                ? ("<button type=\"button\" class=\"btn btn-primary btn-compact\" data-meta-fulfill=\"daily\">" +
+                  (t.cta || "Cumprir agora") + "</button>")
                 : "") +
-            "</span>" +
-            "<div class=\"label\" style=\"margin:0.55rem 0 0.3rem\">Temas e quantidades</div>" +
+            "</div>" +
             themesHtml +
             "<span class=\"dash-task-feedback\">" + t.feedback + "</span>" +
           "</li>"
         );
       }).join("");
+
+      if (!tasksEl.dataset.metaBound) {
+        tasksEl.dataset.metaBound = "1";
+        tasksEl.addEventListener("click", evt => {
+          const fulfill = evt.target.closest("[data-meta-fulfill]");
+          if (fulfill) {
+            evt.preventDefault();
+            aprovaFulfillDailyMeta();
+            return;
+          }
+          const themeBtn = evt.target.closest("[data-meta-area]");
+          if (themeBtn) {
+            evt.preventDefault();
+            aprovaFulfillMetaTheme(
+              themeBtn.getAttribute("data-meta-area"),
+              themeBtn.getAttribute("data-meta-tema"),
+              Number(themeBtn.getAttribute("data-meta-cards")) || 0
+            );
+          }
+        });
+      }
     }
   } else {
     if (progSum) progSum.textContent = "";

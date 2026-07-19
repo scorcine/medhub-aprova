@@ -2386,6 +2386,15 @@ html[data-theme="dark"] .aprova-modal-panel {
   color: inherit !important;
 }
 
+.dash-task-themes-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0.55rem 0 0.3rem;
+}
+
 .dash-task-themes {
   list-style: none;
   margin: 0;
@@ -2395,27 +2404,65 @@ html[data-theme="dark"] .aprova-modal-panel {
 }
 
 .dash-task-themes li {
+  margin: 0;
+  padding: 0;
+}
+
+.dash-task-theme-btn {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.5rem;
   align-items: baseline;
-  padding: 0.35rem 0.45rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.45rem 0.55rem;
   border-radius: var(--radius-sm);
   background: rgba(15, 159, 154, 0.08);
+  border: 1px solid transparent;
+  font: inherit;
   font-size: 0.88rem;
   font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.dash-task-themes li strong {
+.dash-task-theme-btn:hover,
+.dash-task-theme-btn:focus-visible {
+  border-color: rgba(15, 159, 154, 0.45);
+  background: rgba(15, 159, 154, 0.14);
+  outline: none;
+}
+
+.dash-task-theme-btn:active {
+  transform: translateY(1px);
+}
+
+.dash-task-theme-btn strong {
   font-variant-numeric: tabular-nums;
   color: var(--accent-deep);
   min-width: 1.5rem;
 }
 
-.dash-task-themes li span {
+.dash-task-theme-copy {
+  flex: 1;
+  min-width: 8rem;
+}
+
+.dash-task-theme-btn span span,
+.dash-task-theme-copy span {
   font-weight: 500;
   color: var(--ink-soft);
   font-size: 0.8rem;
+}
+
+.dash-task-theme-go {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
 }
 
 .metas-details {

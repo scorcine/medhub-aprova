@@ -39,22 +39,30 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
   const due = (srs && srs.due) || 0;
   const newCards = (srs && srs.newCards) || 0;
 
-  let dailyReview = aprovaClampInt(daily * (reviewPct / 100), 5, daily);
-  if (due > dailyReview) {
-    dailyReview = Math.min(due, daily);
-  }
-  let dailyNew = Math.max(0, daily - dailyReview);
-  if (newCards === 0) {
-    dailyReview = daily;
-    dailyNew = 0;
-  } else if (due === 0 && studyPct >= 50) {
-    dailyNew = aprovaClampInt(daily * (studyPct / 100), 5, daily);
-    dailyReview = Math.max(0, daily - dailyNew);
+  let dailyReview = 0;
+  let dailyNew = daily;
+
+  if (due > 0) {
+    // Só conta "revisões" quando há cards vencidos na fila SRS
+    dailyReview = aprovaClampInt(daily * (reviewPct / 100), 1, daily);
+    if (due > dailyReview) dailyReview = Math.min(due, daily);
+    dailyNew = Math.max(0, daily - dailyReview);
+    if (newCards === 0) {
+      dailyReview = daily;
+      dailyNew = 0;
+    }
+  } else if (newCards === 0) {
+    dailyReview = 0;
+    dailyNew = daily;
   }
 
   const weekly = daily * 7;
   const biweekly = daily * 14;
   const monthly = daily * 30;
+
+  const splitLine = dailyReview > 0
+    ? ("meta " + dailyNew + " novos · " + dailyReview + " revisões na fila")
+    : ("meta " + dailyNew + " cards novos · sem revisões vencidas hoje");
 
   return {
     daily,
@@ -67,9 +75,11 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
     reviewPct,
     minutesMin: horizon.dailyMin,
     minutesMax: horizon.dailyMax,
-    splitLine: dailyNew + " novos · " + dailyReview + " revisões",
+    splitLine,
     weekLine: weekly + " cards/semana (~" + daily + "/dia)",
-    how: "Faça primeiro as revisões vencidas do SRS; o restante abre cards novos dos temas abaixo."
+    how: due > 0
+      ? "Faça primeiro as revisões vencidas do SRS; o restante abre cards novos nos temas abaixo."
+      : "Toque em um tema abaixo para estudar. Revisões aparecem quando houver cards vencidos no SRS."
   };
 }
 
@@ -222,7 +232,8 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       detail: quota.splitLine,
       themeCards: aprovaDistributeThemeCards(themes, quota.daily),
       newCards: quota.dailyNew,
-      reviewCards: quota.dailyReview
+      reviewCards: quota.dailyReview,
+      cta: "Cumprir agora"
     },
     {
       id: "weekly",
@@ -233,7 +244,8 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       detail: quota.weekLine,
       themeCards: aprovaDistributeThemeCards(themes, quota.weekly),
       newCards: quota.dailyNew * 7,
-      reviewCards: quota.dailyReview * 7
+      reviewCards: quota.dailyReview * 7,
+      cta: "Estudar temas"
     },
     {
       id: "biweekly",
@@ -244,7 +256,8 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       detail: "~" + quota.daily + " cards/dia em média na quinzena",
       themeCards: aprovaDistributeThemeCards(themes, quota.biweekly),
       newCards: quota.dailyNew * 14,
-      reviewCards: quota.dailyReview * 14
+      reviewCards: quota.dailyReview * 14,
+      cta: "Estudar temas"
     },
     {
       id: "monthly",
@@ -255,7 +268,8 @@ function aprovaBuildPeriodTasks (quota, themes, now = Date.now()) {
       detail: "Volume acumulado para sustentar o ritmo até a prova",
       themeCards: aprovaDistributeThemeCards(themes, quota.monthly),
       newCards: quota.dailyNew * 30,
-      reviewCards: quota.dailyReview * 30
+      reviewCards: quota.dailyReview * 30,
+      cta: "Estudar temas"
     }
   ];
 
