@@ -1,0 +1,658 @@
+[
+  {
+    "idPrefix": "ped-emer",
+    "n": 1,
+    "group": "Emergências pediátricas",
+    "theme": "Picada de escorpião",
+    "stem": "Menino de 4 anos picado por escorpião há 40 minutos. Choro intenso, sudorese, vômitos repetidos e dor local. Pressão arterial 130/90 mmHg, frequência cardíaca 150 bpm, frequência respiratória 32 irpm, saturação 97%, glicemia 160 mg/dL. A melhor conduta é Trata-se de atendimento de urgência: a estabilização e a primeira intervenção correta nos minutos iniciais alteram o prognóstico, e atrasar por exames não prioritários pode ser prejudicial.",
+    "correct": "classificar como acidente moderado/grave, suporte em ambiente monitorado e soro antiescorpiônico precoce conforme protocolo",
+    "wrongs": [
+      "apenas compressa locais e alta, porque a saturação está normal",
+      "aplicar torniquete proximal apertado e aquecer o membro para 'inativar a peçonha'",
+      "corticoide isolado como antídoto específico, sem soro",
+      "aguardar 6 horas de observação ambulatorial sem antiveneno apesar de vômitos e hipertensão"
+    ],
+    "explain": "Criança com manifestações sistêmicas (vômitos, sudorese, hipertensão/taquicardia) após escorpionismo tem indicação de antiveneno e monitorização — risco de miocardite/edema pulmonar. Torniquete e demora são prejudiciais.",
+    "trap": "Subestimar escorpionismo pediátrico por saturação ainda preservada na primeira hora."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 2,
+    "group": "Emergências pediátricas",
+    "theme": "Anafilaxia",
+    "stem": "Escolar de 7 anos, após amendoim: urticária generalizada, estridor e vômitos. Pressão 78/45 mmHg, frequência cardíaca 140 bpm, frequência respiratória 36 irpm, saturação 91%. A conduta prioritária é Trata-se de atendimento de urgência: a estabilização e a primeira intervenção correta nos minutos iniciais alteram o prognóstico, e atrasar por exames não prioritários pode ser prejudicial.",
+    "correct": "adrenalina intramuscular na face anterolateral da coxa imediatamente, oxigênio e suporte de via aérea/volume conforme necessidade",
+    "wrongs": [
+      "apenas anti-histamínico oral e observação por 30 minutos sem adrenalina",
+      "corticoide intravenoso isolado como primeira droga da anafilaxia",
+      "adrenalina subcutânea no deltoide em dose homeopática e alta precoce",
+      "adiar adrenalina até acesso venoso definitivo e dosagem de triptase"
+    ],
+    "explain": "Anafilaxia com comprometimento respiratório e hipotensão: adrenalina IM imediata. Anti-histamínico e corticoide são adjuvantes, não substituem a adrenalina.",
+    "trap": "Esperar acesso venoso ou 'provar anti-histamínico' antes da adrenalina IM."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 3,
+    "group": "Emergências pediátricas",
+    "theme": "Parada cardiorrespiratória",
+    "stem": "Criança de 2 anos em parada, ritmo em assistolia. Via aérea posicionada, ventilação em curso. Qual a sequência correta de compressões e drogas? Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "compressões de alta qualidade, ventilações coordenadas, adrenalina IV/IO a cada 3–5 minutos e buscar/reverter causas; desfibrilação não é a prioridade na assistolia",
+    "wrongs": [
+      "choque sincronizado imediato a 4 J/kg como primeira medida na assistolia",
+      "amiodarona em bolus repetidos antes de qualquer compressão",
+      "suspender compressões por 2 minutos a cada ciclo para 'checar pulso longamente'",
+      "bicarbonato de rotina em toda parada antes da adrenalina"
+    ],
+    "explain": "Assistolia: RCP + adrenalina; não é ritmo chocável. Pausas longas e bicarbonato rotineiro pioram desfecho. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar assistolia como FV e 'desfibrilar primeiro'."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 4,
+    "group": "Emergências pediátricas",
+    "theme": "Choque séptico",
+    "stem": "Lactente de 11 meses com febre, letargia, enchimento capilar 5 segundos e petéquias. Pressão 70/40 mmHg, frequência cardíaca 180 bpm, frequência respiratória 50 irpm, saturação 94%. Na primeira hora, a conduta é Trata-se de atendimento de urgência: a estabilização e a primeira intervenção correta nos minutos iniciais alteram o prognóstico, e atrasar por exames não prioritários pode ser prejudicial.",
+    "correct": "acesso vascular, volume cristalóide em bolos titulados, antibiótico precoce, coleta de culturas e suporte avançado/vasoativo se refratário",
+    "wrongs": [
+      "aguardar hemograma e proteína C-reativa para só então iniciar antibiótico",
+      "diurético de alça como primeira medida no choque distributivo",
+      "alta com cefalexina oral e retorno em 24 horas",
+      "corticoide isolado sem volume nem antibiótico"
+    ],
+    "explain": "Choque séptico pediátrico: volume, antibiótico precoce e escalada para vasoativo. Atrasar antibiótico por exames é erro grave.",
+    "trap": "Esperar 'prova laboratorial' de infecção para tratar choque séptico óbvio."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 5,
+    "group": "Emergências pediátricas",
+    "theme": "Cetoacidose diabética",
+    "stem": "Adolescente de 13 anos com polidipsia, vômitos e respiração de Kussmaul. Glicemia 480 mg/dL, pH 7,12, bicarbonato 8 mEq/L, potássio 5,2 mEq/L, saturação 98%. A conduta inicial é Trata-se de atendimento de urgência: a estabilização e a primeira intervenção correta nos minutos iniciais alteram o prognóstico, e atrasar por exames não prioritários pode ser prejudicial.",
+    "correct": "volume inicial com soro fisiológico, iniciar insulina IV conforme protocolo após reposição inicial, repor potássio quando indicado e monitorar edema cerebral",
+    "wrongs": [
+      "insulina subcutânea em dose alta domiciliar e alta da emergência",
+      "bicarbonato de rotina em todo pH <7,20, independentemente do protocolo",
+      "restrição hídrica absoluta nas primeiras 12 horas sem volume inicial",
+      "glicose oral concentrada como primeiro passo por 'evitar hipoglicemia'"
+    ],
+    "explain": "CAD: volume, insulina IV protocolar e manejo cuidadoso de K e osmolaridade. Bicarbonato não é rotina; alta com insulina SC é insegura.",
+    "trap": "Corrigir glicemia agressivamente sem volume/protocolo e precipitar edema cerebral."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 6,
+    "group": "Emergências pediátricas",
+    "theme": "Intoxicação por paracetamol",
+    "stem": "Menina de 3 anos ingeriu cerca de 250 mg/kg de paracetamol há 3 horas. Ainda assintomática. N-acetilcisteína disponível. Qual a conduta mais adequada? Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "dosar nível sérico no tempo adequado (ou iniciar N-acetilcisteína empiricamente se risco alto/tempo incerto) e acionar centro de toxicologia",
+    "wrongs": [
+      "alta imediata porque está assintomática na 3ª hora",
+      "induzir vômito com sal de cozinha em casa",
+      "hemodiálise de rotina em toda ingestão acima de 100 mg/kg",
+      "carvão ativado tardiamente após 24 horas como única medida, sem antídoto"
+    ],
+    "explain": "Paracetamol em dose tóxica pode ter fase assintomática; decisão guiada por nomograma/NAC. Sintomas iniciais ausentes não afastam risco hepático.",
+    "trap": "Liberar criança assintomática após overdose significativa de paracetamol."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 7,
+    "group": "Emergências pediátricas",
+    "theme": "Afogamento",
+    "stem": "Menino de 5 anos retirado de piscina após submersão de tempo incerto. Chega tossindo, saturação 90% em ar, frequência respiratória 40 irpm, consciente. A conduta é Trata-se de atendimento de urgência: a estabilização e a primeira intervenção correta nos minutos iniciais alteram o prognóstico, e atrasar por exames não prioritários pode ser prejudicial.",
+    "correct": "oxigênio, observação hospitalar prolongada suficiente para detectar deterioração pulmonar e suporte conforme gravidade",
+    "wrongs": [
+      "alta em 30 minutos se tossir 'melhorar um pouco', sem observação",
+      "antibiótico profilático universal em todo afogamento leve",
+      "corticoide sistêmico obrigatório para prevenir pneumonite",
+      "intubação eletiva imediata em todo paciente que ainda fala e mantém esforço moderado"
+    ],
+    "explain": "Após submersão com hipoxemia, observa-se por risco de piora respiratória tardia. Alta ultrarrápida é insegura; antibiótico/corticoide não são rotina universal.",
+    "trap": "Liberar cedo demais após afogamento porque a criança 'já está acordada'."
+  },
+  {
+    "idPrefix": "ped-emer",
+    "n": 8,
+    "group": "Emergências pediátricas",
+    "theme": "Traumatismo craniano",
+    "stem": "Pré-escolar de 3 anos caiu da altura de um sofá. Houve perda de consciência de 1 minuto, vômito duas vezes e sonolência persistente. Escala de coma 13, pupilas isocóricas. Qual a conduta mais adequada? Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "avaliação neurológica seriada e tomografia conforme critério de risco, com observação hospitalar; orientar sinais de alarme se estratégia observacional",
+    "wrongs": [
+      "alta imediata sem observação porque a queda foi 'só do sofá'",
+      "punção lombar como primeiro exame em trauma craniano",
+      "anticonvulsivante contínuo vitalício após único traumatismo",
+      "radiografia de crânio isolada como substituto completo da avaliação clínica/TC quando indicada"
+    ],
+    "explain": "Mecanismo + perda de consciência + vômitos/sonolência elevam risco: observação e imagem se critérios. Rx simples não exclui lesão intracraniana relevante.",
+    "trap": "Minimizar TCE pediátrico pelo móvel de origem ('foi só o sofá')."
+  },
+  {
+    "idPrefix": "ped-neuro",
+    "n": 1,
+    "group": "Neurologia pediátrica",
+    "theme": "Estado de mal convulsivo",
+    "stem": "Menina de 5 anos em crise tônico-clônica há 12 minutos na emergência. Acesso obtido, glicemia 95 mg/dL. Já recebeu midazolam intravenoso há 3 minutos sem cessação. A próxima medida farmacológica típica é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "repetir benzodiazepínico conforme dose máxima e, se persistir, anticonvulsivante de segunda linha (por exemplo fenitoína/fenobarbital/levetiracetam) segundo protocolo",
+    "wrongs": [
+      "aguardar 40 minutos sem nova droga porque 'crises passam sozinhas'",
+      "iniciar propofol em enfermaria sem suporte de via aérea como primeira escolha ambulatorial",
+      "contraindicar qualquer segunda linha até ressonância de crânio",
+      "dar apenas paracetamol para a febre e considerar o tratamento da crise concluído"
+    ],
+    "explain": "Estado de mal: benzodiazepínico e escalada rápida para segunda linha, com proteção de via aérea. Atraso aumenta morbidade.",
+    "trap": "Ficar só no primeiro benzodiazepínico e 'esperar' enquanto a crise continua."
+  },
+  {
+    "idPrefix": "ped-neuro",
+    "n": 2,
+    "group": "Neurologia pediátrica",
+    "theme": "Cefaleia — sinais de alarme",
+    "stem": "Menino de 9 anos com cefaleia progressiva há 3 semanas, pior pela manhã, vômitos em jato e diplopia recente. Exame: papiledema bilateral, marcha instável. Afebril. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "neuroimagem urgente e avaliação neurocirúrgica/neurológica; evitar punção lombar antes de afastar massa com risco de herniação",
+    "wrongs": [
+      "prescrever apenas dipirona e alta com diagnóstico de enxaqueca típica",
+      "punção lombar imediata na UBS antes de qualquer imagem",
+      "antibiótico empírico prolongado sem investigação de causa estrutural",
+      "óculos novos como única medida diante de papiledema"
+    ],
+    "explain": "Cefaleia matinal + vômitos + papiledema = hipertensão intracraniana até prova em contrário. Imagem antes de PL. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Rotular como enxaqueca e liberar com papiledema."
+  },
+  {
+    "idPrefix": "ped-neuro",
+    "n": 3,
+    "group": "Neurologia pediátrica",
+    "theme": "Síndrome de Guillain-Barré",
+    "stem": "Menina de 8 anos, 10 dias após gastroenterite, apresenta fraqueza ascendente, arreflexia e dificuldade para subir escadas. Capacidade vital reduzida ao teste à beira do leito, saturação 96%. A conduta é O exame neurológico seriado e o risco de deterioração (via aérea, hipertensão intracraniana ou recorrência de crise) precisam ser considerados na escolha da conduta neste atendimento.",
+    "correct": "internar com monitorização respiratória e discutir imunoglobulina intravenosa (ou plasmaférese) em centro experiente",
+    "wrongs": [
+      "alta com vitamina B12 e fisioterapia exclusiva, sem vigilância ventilatória",
+      "antibiótico de amplo espectro como cura da desmielinização",
+      "punção lombar contraindicada em qualquer hipótese e diagnóstico só por 'achismo clínico' sem liquor quando indicado",
+      "corticoide isolado como terapia padrão superior à imunoglobulina em todos os casos"
+    ],
+    "explain": "GBS com progressão e risco respiratório: internação, monitorização e imunoterapia. Corticoide isolado não é padrão. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Subestimar risco de falência respiratória porque a saturação ainda está 'quase normal'."
+  },
+  {
+    "idPrefix": "ped-neuro",
+    "n": 4,
+    "group": "Neurologia pediátrica",
+    "theme": "Convulsão febril — seguimento",
+    "stem": "Menino de 8 anos teve crise tônico-clônica de 2 minutos durante febre por amigdalite, em pronto atendimento. Recebeu oxigênio e midazolam intranasal; a crise cessou. Tem antecedentes de crises febris aos 2, 4 e 7 anos. Exame atual normal, afebril após antitérmico. O diagnóstico e o seguimento mais adequados são Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "provável convulsão febril / predisposição; tratar o foco infeccioso e orientar; anticonvulsivante contínuo não é automático só pelo número de episódios febris típicos",
+    "wrongs": [
+      "epilepsia mioclônica grave; iniciar três drogas de manutenção na mesma consulta",
+      "internação em UTI e intubação por já ter usado midazolam intranasal, mesmo estável",
+      "proibir vacinas futuras porque houve convulsão com febre",
+      "tomografia obrigatória em toda convulsão febril típica já resolvida com exame normal"
+    ],
+    "explain": "Crises febris recorrentes típicas não implicam automaticamente politerapia antiepiléptica. Avalia-se tipicidade/sinais de alarme. Vacinas não são contraindicadas por esse único motivo.",
+    "trap": "Transformar toda convulsão febril recorrente em 'epilepsia' com múltiplas drogas."
+  },
+  {
+    "idPrefix": "ped-neuro",
+    "n": 5,
+    "group": "Neurologia pediátrica",
+    "theme": "Hidrocefalia — válvula",
+    "stem": "Criança de 2 anos com derivação ventrículo-peritoneal apresenta vômitos, irritabilidade e fontanela tensa (ainda aberta parcialmente), sonolência. Temperatura 37,2 °C. A conduta é O exame neurológico seriado e o risco de deterioração (via aérea, hipertensão intracraniana ou recorrência de crise) precisam ser considerados na escolha da conduta neste atendimento.",
+    "correct": "suspeitar de disfunção valvular, imagem/avaliação neurocirúrgica urgente e não atribuir automaticamente a 'virose gástrica'",
+    "wrongs": [
+      "antiemético e alta com diagnóstico de gastroenterite, sem investigar a válvula",
+      "punção da válvula pela família em domicílio",
+      "antibiótico oral empírico por 10 dias sem avaliação",
+      "aumentar oferta hídrica e observar 1 semana em casa"
+    ],
+    "explain": "Sinais de hipertensão intracraniana em criança valvada = emergência neurocirúrgica até prova em contrário. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar vômitos de criança com DVP como gastroenterite comum."
+  },
+  {
+    "idPrefix": "ped-cardio",
+    "n": 1,
+    "group": "Cardiologia pediátrica",
+    "theme": "Estenose aórtica e síncope",
+    "stem": "Menino de 8 anos apresentou síncope durante brincadeira de corrida. Ao exame: sopro sistólico rude com irradiação para fúrcula e faces laterais do pescoço, segunda bulha hipofonética. Pressão 95/70 mmHg, frequência cardíaca 88 bpm, saturação 98%. Enquanto aguarda especialista, a conduta mais adequada é Há risco de descompensação hemodinâmica ou evento em esforço se a hipótese cardíaca for subestimada; a conduta inclui restrições e encaminhamento no tempo certo, não apenas observação passiva.",
+    "correct": "restringir esforço competitivo, evitar vasodilatadores/desidratação e encaminhar com urgência à cardiologia pediátrica/ecocardiograma; não liberar esporte livre",
+    "wrongs": [
+      "liberar educação física intensa porque a saturação está normal",
+      "iniciar digoxina e diurético de rotina sem diagnóstico ecocardiográfico",
+      "indicar marcapasso definitivo na UBS antes de qualquer eco",
+      "prescrever nifedipino para 'reduzir a pós-carga' empiricamente"
+    ],
+    "explain": "Síncope de esforço + sopro de ejeção irradiado ao pescoço sugere estenose aórtica: risco de morte súbita, restrição de esforço e eco urgente. Vasodilatação empírica pode ser perigosa.",
+    "trap": "Achar que síncope 'de esforço' em criança com sopro típico é desmaio vasovagal banal."
+  },
+  {
+    "idPrefix": "ped-cardio",
+    "n": 2,
+    "group": "Cardiologia pediátrica",
+    "theme": "Tetralogia de Fallot — crise",
+    "stem": "Lactente de 6 meses com tetralogia de Fallot conhecida apresenta choro intenso, cianose intensa e hiperpneia. Saturação cai para 55%, posição ajoelhada espontânea. A conduta imediata é Há risco de descompensação hemodinâmica ou evento em esforço se a hipótese cardíaca for subestimada; a conduta inclui restrições e encaminhamento no tempo certo, não apenas observação passiva.",
+    "correct": "posição joelho-peito, oxigênio, acalmar, volume se hipovolemia e fármacos (por exemplo beta-bloqueador/agonista conforme protocolo) enquanto se prepara suporte avançado",
+    "wrongs": [
+      "diurético de alça agressivo como primeira medida na crise de hipóxia",
+      "exercício físico para 'abrir a circulação pulmonar'",
+      "suspender oxigênio para estimular a respiração",
+      "antibiótico isolado como tratamento da crise hipoxêmica"
+    ],
+    "explain": "Crise hipoxêmica da Fallot: manobras e fármacos que reduzam obstrução da via de saída direita e melhorem fluxo pulmonar. Diurético agressivo e exercício pioram.",
+    "trap": "Tratar crise de Fallot como asma ou pneumonia isolada."
+  },
+  {
+    "idPrefix": "ped-cardio",
+    "n": 3,
+    "group": "Cardiologia pediátrica",
+    "theme": "Insuficiência cardíaca — CIV",
+    "stem": "Lactente de 2 meses com sudorese às mamadas, taquipneia, hepatomegalia e sopro holossistólico. Peso no percentil 3. Radiografia com cardiomegalia e hiperfluxo. A conduta inclui Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "suporte nutricional, diurético/anticongestivo conforme protocolo e encaminhamento cardiológico precoce para definir correção da comunicação interventricular",
+    "wrongs": [
+      "alta com ferro oral apenas, interpretando sudorese como 'normal do calor'",
+      "contraindicar qualquer avaliação cardiológica até os 2 anos",
+      "indicar anticoagulação plena empírica sem diagnóstico",
+      "fisioterapia respiratória exclusiva como tratamento definitivo da CIV grande"
+    ],
+    "explain": "IC por shunt: manejo clínico e referência para correção. Atraso nutricional e pulmonar são comuns se só 'observar'. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Atribuir falha de ganho só a 'leite fraco' e não ouvir o coração."
+  },
+  {
+    "idPrefix": "ped-cardio",
+    "n": 4,
+    "group": "Cardiologia pediátrica",
+    "theme": "Febre reumática",
+    "stem": "Menina de 11 anos com artrite migratória, cardite (sopro de regurgitação mitral novo) e febre, 3 semanas após faringoamigdalite não tratada. Antiestreptolisina O elevada. A conduta inclui Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "erradicação estreptocócica com penicilina, anti-inflamatório conforme acometimento e profilaxia secundária prolongada",
+    "wrongs": [
+      "apenas repouso sem antibiótico nem profilaxia",
+      "antigoagulante oral como substituto da penicilina",
+      "alta sem profilaxia secundária após melhora da artrite",
+      "imunossupressor biológico de primeira linha em todo caso antes de penicilina"
+    ],
+    "explain": "Febre reumática: tratar o estreptococo, manejar cardite/artrite e instituir profilaxia secundária para evitar recorrência.",
+    "trap": "Tratar só a artrite e esquecer a profilaxia secundária."
+  },
+  {
+    "idPrefix": "ped-cardio",
+    "n": 5,
+    "group": "Cardiologia pediátrica",
+    "theme": "Endocardite",
+    "stem": "Adolescente de 14 anos com CIV não corrigida apresenta febre há 10 dias, sopro novo/intensificado, petéquias e hemoculturas pendentes. Pressão 100/60 mmHg, saturação 97%. A conduta é Há risco de descompensação hemodinâmica ou evento em esforço se a hipótese cardíaca for subestimada; a conduta inclui restrições e encaminhamento no tempo certo, não apenas observação passiva.",
+    "correct": "internar, coletar hemoculturas adequadas e iniciar antibiótico empírico conforme protocolo de endocardite, com avaliação cardiológica",
+    "wrongs": [
+      "amoxicilina ambulatorial por 3 dias e retorno se 'não melhorar'",
+      "anticoagulação plena empírica antes de culturas",
+      "adiar antibiótico até ecocardiograma transesofágico marcado para daqui a 10 dias",
+      "alta com diagnóstico de 'virose prolongada' por saturação normal"
+    ],
+    "explain": "Cardiopatia + febre prolongada = endocardite até prova em contrário: culturas e antibiótico hospitalar. Atraso é grave. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar febre longa em cardiopata como virose comum."
+  },
+  {
+    "idPrefix": "ped-nefro",
+    "n": 1,
+    "group": "Nefrologia pediátrica",
+    "theme": "Infecção do trato urinário",
+    "stem": "Menina de 4 anos com dor abdominal, polaciúria e um pico febril. Costuma reter urina e fezes; usa fralda à noite. Urinálise: pH 6, densidade 1015, nitrito negativo, esterase leucocitária positiva, 15.000 leucócitos/mL e 4.000 hemácias/mL. Aguardando urocultura, a conduta imediata mais adequada é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "iniciar antibiótico empírico adequado para ITU febril/sintomática e orientar hábitos miccionais/intestinais; nitrito negativo não afasta ITU",
+    "wrongs": [
+      "aguardar a urocultura por 72 horas sem antibiótico, apesar de febre e piúria",
+      "tratar apenas constipação e ignorar a infecção urinária possível",
+      "indicar nefrectomia empírica",
+      "contraindicar antibiótico porque o nitrito foi negativo"
+    ],
+    "explain": "Em crianças, nitrito pode ser falso-negativo (bexiga com pouco tempo de incubação). Piúria + sintomas/febre justificam tratamento empírico e correção de retenção/constipação.",
+    "trap": "Afastar ITU só porque o nitrito veio negativo."
+  },
+  {
+    "idPrefix": "ped-nefro",
+    "n": 2,
+    "group": "Nefrologia pediátrica",
+    "theme": "Síndrome nefrótica",
+    "stem": "Menino de 3 anos com edema palpebral matinal, oligúria relativa e ascite discreta. Pressão 95/60 mmHg. Proteínas urinárias 4+, albumina sérica 2,1 g/dL, colesterol 280 mg/dL, creatinina normal. A conduta inicial típica é Função renal, volume urinário, pressão arterial e risco de complicação eletrolítica/infecciosa foram considerados; a decisão terapêutica deve ser tomada com base no conjunto clínico-laboratorial atual.",
+    "correct": "diagnosticar síndrome nefrótica, investigar infecção/trombose se houver, iniciar corticoide conforme protocolo e orientar restrição relativa de sódio/vigilância",
+    "wrongs": [
+      "diurético de alça agressivo domiciliar sem avaliação, como única medida",
+      "antibiótico contínuo vitalício sem indicação",
+      "biópsia renal imediata obrigatória em todo menino de 3 anos antes de qualquer corticoide, sem exceções protocolares",
+      "alta com antialérgico para 'alergia de olho'"
+    ],
+    "explain": "Nefrótica idiopática típica da idade: corticoide protocolar e cuidados. Biópsia não é automática em todo caso típico antes da resposta.",
+    "trap": "Tratar edema palpebral isoladamente como alergia."
+  },
+  {
+    "idPrefix": "ped-nefro",
+    "n": 3,
+    "group": "Nefrologia pediátrica",
+    "theme": "Glomerulonefrite aguda",
+    "stem": "Menino de 7 anos, 2 semanas após impetigo, apresenta hematúria 'cor de Coca-Cola', edema e pressão 130/90 mmHg. Complemento C3 baixo, creatinina 1,1 mg/dL, diurese presente. A conduta é Função renal, volume urinário, pressão arterial e risco de complicação eletrolítica/infecciosa foram considerados; a decisão terapêutica deve ser tomada com base no conjunto clínico-laboratorial atual.",
+    "correct": "suporte, restrição de sódio/água conforme necessidade, anti-hipertensivo se preciso e vigilância de função renal/potássio; antibiótico se ainda houver foco cutâneo ativo",
+    "wrongs": [
+      "imunossupressão pesada imediata em todo caso típico pós-estreptocócico",
+      "alta livre com dieta hiperproteica e sal à vontade",
+      "diálise imediata obrigatória só pela cor da urina, com creatinina estável e diurese",
+      "contraindicar medida de pressão arterial seriada"
+    ],
+    "explain": "GNPE: manejo de volume e pressão; a maioria é autolimitada com suporte. Imunossupressão não é rotina no típico pós-estreptocócico.",
+    "trap": "Ignorar hipertensão e liberar com sal livre."
+  },
+  {
+    "idPrefix": "ped-nefro",
+    "n": 4,
+    "group": "Nefrologia pediátrica",
+    "theme": "Síndrome hemolítico-urêmica",
+    "stem": "Pré-escolar de 3 anos, 5 dias após diarreia sanguinolenta, apresenta palidez, oligúria e petéquias. Hemoglobina 7,8 g/dL, plaquetas 55.000/mm³, esquizócitos no sangue periférico, creatinina 2,4 mg/dL. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "suporte intensivo (volume/eletrólitos/diálise se indicado), evitar antibiótico empírico desnecessário na fase diarréica típica e manejo em centro experiente",
+    "wrongs": [
+      "transfusão plaquetária de rotina em toda trombocitopenia, sem sangramento grave",
+      "antibiótico de amplo espectro obrigatório para 'eliminar a toxina'",
+      "alta com ferro oral apenas",
+      "corticoide em dose imunossupressora como tratamento etiológico padrão da SHU típica"
+    ],
+    "explain": "SHU típica (D+): suporte renal/hematológico. Antibiótico na fase diarréica pode piorar liberação de toxina em alguns contextos; plaquetas só com indicação.",
+    "trap": "Tratar SHU como púrpura simples e liberar com ferro."
+  },
+  {
+    "idPrefix": "ped-nefro",
+    "n": 5,
+    "group": "Nefrologia pediátrica",
+    "theme": "Refluxo vesicoureteral",
+    "stem": "Lactente de 7 meses, segunda ITU febril documentada, ultrassonografia com dilatação pielocalicinal. Após tratamento agudo, o próximo passo típico inclui Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "investigar anomalia/refluxo conforme protocolo (por exemplo uretrocistografia quando indicada) e considerar profilaxia/seguimento especializado",
+    "wrongs": [
+      "alta definitiva sem imagem porque 'toda ITU é igual'",
+      "nefrectomia bilateral empírica",
+      "proibir fraldas e forçar treinamento esfincteriano aos 7 meses",
+      "suspender antibiótico da fase aguda no primeiro dia de afebril, sem completar esquema"
+    ],
+    "explain": "ITU febril recorrente no lactente merece investigação de anatomia/refluxo e plano preventivo. Não se ignora recorrência.",
+    "trap": "Tratar toda ITU do lactente como episódio isolado sem investigar o trato urinário."
+  },
+  {
+    "idPrefix": "ped-hemo",
+    "n": 1,
+    "group": "Hematologia e imunologia",
+    "theme": "Púrpura trombocitopênica imune",
+    "stem": "Menino de 5 anos, 1 semana após virose, com petéquias e equimoses. Plaquetas 12.000/mm³, hemoglobina 12,5 g/dL, leucócitos normais, afebril, sem hepatoesplenomegalia, sem sangramento mucoso grave. A conduta inicial mais adequada é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "avaliar risco de sangramento; muitos casos leves podem ser observados com orientação de alarme, reservando imunoglobulina/corticoide para sangramento ou risco alto",
+    "wrongs": [
+      "esplenectomia imediata em todo caso com plaquetas <20.000/mm³",
+      "transfusão de plaquetas de rotina em PTI típica sem hemorragia grave",
+      "quimioterapia de indução para leucemia sem alterações de outras linhagens nem clínica compatível",
+      "aspirina para 'afinar o sangue' e evitar trombose"
+    ],
+    "explain": "PTI típica: decisão baseada em sangramento, não só no número. Esplenectomia e transfusão rotineira não são primeira linha no caso leve.",
+    "trap": "Transfundir plaquetas automaticamente em toda PTI com número baixo."
+  },
+  {
+    "idPrefix": "ped-hemo",
+    "n": 2,
+    "group": "Hematologia e imunologia",
+    "theme": "Anemia falciforme — vaso-oclusão",
+    "stem": "Adolescente de 15 anos com anemia falciforme apresenta dor intensa em membros e dorso, afebril, saturação 97%, frequência respiratória 20 irpm. Hemoglobina 8,2 g/dL (basal 8,5). A conduta é O risco de sangramento, infecção e falência de medula ou hemólise precisa ser sopesado frente a medidas invasivas desnecessárias; a conduta correta equilibra suporte e referência especializada.",
+    "correct": "analgesia adequada (incluindo opioide se necessário), hidratação e investigar sinais de síndrome torácica/infecção; oxigênio se hipoxemia",
+    "wrongs": [
+      "transfusão automática para hemoglobina 14 g/dL em toda crise álgica",
+      "aspirina em dose antiagregada alta como analgesia principal",
+      "alta sem analgesia porque a saturação está normal",
+      "antibiótico de UTI obrigatório em toda dor vaso-oclusiva sem foco"
+    ],
+    "explain": "Crise álgica: analgesia e hidratação; transfusão não é rotina só pela dor. Vigiar complicações (torácica). Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Subanalgesiar crise falciforme por medo de opioide."
+  },
+  {
+    "idPrefix": "ped-hemo",
+    "n": 3,
+    "group": "Hematologia e imunologia",
+    "theme": "Leucemia",
+    "stem": "Criança de 4 anos com palidez, febre intermitente, dores ósseas e petéquias. Hemoglobina 7,1 g/dL, plaquetas 35.000/mm³, leucócitos 45.000/mm³ com blastos no esfregaço. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "encaminhar urgentemente à onco-hematologia, suporte transfusional/infeccioso conforme necessidade e não atrasar por 'tratar só anemia ferropriva'",
+    "wrongs": [
+      "ferro oral por 3 meses e retorno, ignorando blastos",
+      "amoxicilina ambulatorial isolada como tratamento da leucemia",
+      "esplenectomia imediata na UBS",
+      "vacina atenuada imediata antes da referência oncológica, sem avaliar imunossupressão"
+    ],
+    "explain": "Citopenias + blastos = emergência onco-hematológica. Ferro não trata blastos. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Diagnosticar 'anemia ferropriva' e atrasar a referência."
+  },
+  {
+    "idPrefix": "ped-hemo",
+    "n": 4,
+    "group": "Hematologia e imunologia",
+    "theme": "Hemofilia",
+    "stem": "Menino de 2 anos, tio materno com hemofilia A, apresenta hematoma muscular espontâneo e sangramento prolongado após trauma leve. A conduta inicial, após estabilização, é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "repor fator VIII conforme disponibilidade/protocolo e evitar procedimentos intramusculares desnecessários; investigação coagulométrica dirigida",
+    "wrongs": [
+      "injeção intramuscular profunda de vitamina K como tratamento específico da hemofilia A",
+      "aspirina para dor do hematoma",
+      "punção arterial de rotina para 'checar gases' sem necessidade",
+      "alta sem reposição após hematoma expansivo"
+    ],
+    "explain": "Hemofilia A: reposição de fator VIII. Vitamina K não corrige deficiência de fator VIII; AAS piora sangramento. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar hemofilia como 'déficit de vitamina K'."
+  },
+  {
+    "idPrefix": "ped-endo",
+    "n": 1,
+    "group": "Endocrinologia pediátrica",
+    "theme": "Diabetes tipo 1 — início",
+    "stem": "Menina de 9 anos com poliúria, polidipsia e emagrecimento há 3 semanas. Glicemia 320 mg/dL, cetonúria +++, pH 7,30. Está lúcida, hidratada após SRO, sem Kussmaul franco. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "internar para início de insulina e educação em diabetes, corrigir cetose/acidose conforme gravidade e investigar precipitantes",
+    "wrongs": [
+      "metformina isolada como tratamento do diabetes tipo 1 pediátrico",
+      "dieta apenas, sem insulina, por 30 dias de 'teste'",
+      "alta com dieta e retorno em 1 mês apesar de cetonúria",
+      "antibioticoterapia como cura da hiperglicemia"
+    ],
+    "explain": "DM1 com cetose exige insulina e educação — não metformina isolada. Atraso precipita CAD plena. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar início de DM1 como diabetes tipo 2 do adulto."
+  },
+  {
+    "idPrefix": "ped-endo",
+    "n": 2,
+    "group": "Endocrinologia pediátrica",
+    "theme": "Hiperplasia adrenal congênita",
+    "stem": "RN de 10 dias, sexo atribuído feminino ao nascer, com virilização e vômitos. Sódio 124 mEq/L, potássio 6,8 mEq/L, glicemia 48 mg/dL, desidratação. A conduta imediata é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "volume com soro fisiológico, corrigir hipoglicemia, glicocorticoide/mineralocorticoide de estresse conforme protocolo e investigação hormonal urgente",
+    "wrongs": [
+      "restrição hídrica por hiponatremia sem volume, em choque/desidratação",
+      "espironolactona como único tratamento definitivo no crisis salt-wasting",
+      "alta com fórmula e retorno em 1 semana",
+      "cirurgia genital imediata na crise eletrolítica, antes da estabilização"
+    ],
+    "explain": "Crise perdedora de sal da HAC: volume, glicose e hormônios de estresse. Cirurgia eletiva não compete com a estabilização.",
+    "trap": "Tratar hiponatremia com restrição hídrica como SIADH, piorando o choque."
+  },
+  {
+    "idPrefix": "ped-endo",
+    "n": 3,
+    "group": "Endocrinologia pediátrica",
+    "theme": "Hipoglicemia — insuficiência adrenal",
+    "stem": "Menino de 4 anos com história de uso crônico de corticoide para doença inflamatória, chega com vômitos e letargia. Glicemia 38 mg/dL, pressão 75/45 mmHg, sódio 130 mEq/L. A conduta inclui Distúrbios hidroeletrolíticos e glicêmicos podem descompensar rapidamente nesta faixa etária; a intervenção inicial correta e o encaminhamento evitam crise adrenal, cetoacidose ou atraso diagnóstico.",
+    "correct": "corrigir glicemia, volume e administrar glicocorticoide de estresse; investigar crise adrenal secundária à suspensão/estresse",
+    "wrongs": [
+      "apenas suco oral e alta, sem corticoide de estresse",
+      "insulina para 'estabilizar' a glicemia",
+      "fludrocortisona isolada sem glicocorticoide em crise com hipoglicemia e choque",
+      "contraindicar glicose venosa por medo de hiperglicemia"
+    ],
+    "explain": "Criança corticóide-dependente com hipoglicemia e hipotensão: tratar como crise adrenal até prova em contrário. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Corrigir só a glicose e esquecer o estresse dose de corticoide."
+  },
+  {
+    "idPrefix": "ped-endo",
+    "n": 4,
+    "group": "Endocrinologia pediátrica",
+    "theme": "Baixa estatura",
+    "stem": "Menino de 8 anos com altura no percentil 3, velocidade de crescimento 3 cm/ano, idade óssea atrasada 2 anos, sem sinais dismórficos, IGF-1 baixo. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "investigar causas de baixa estatura/patológica (incluindo déficit de GH e doenças crônicas) e referir à endocrinologia; não apenas 'pai baixo, alta'",
+    "wrongs": [
+      "liberar sem investigação porque o pai também é baixo, apesar da velocidade baixa",
+      "iniciar GH em farmácia sem diagnóstico",
+      "andarilha/calçado ortopédico como tratamento hormonal",
+      "corticoide anabolizante empírico na UBS"
+    ],
+    "explain": "Velocidade baixa e IGF-1 baixo pedem investigação, mesmo com pai baixo. GH só após diagnóstico. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Normalizar baixa estatura patológica como familiar sem olhar velocidade de crescimento."
+  },
+  {
+    "idPrefix": "ped-endo",
+    "n": 5,
+    "group": "Endocrinologia pediátrica",
+    "theme": "Tireotoxicose",
+    "stem": "Adolescente de 14 anos com nervosismo, perda ponderal, taquicardia e bócio difuso. TSH indetectável, T4 livre elevado. Pressão 130/70 mmHg, frequência cardíaca 120 bpm. A conduta inicial típica inclui Distúrbios hidroeletrolíticos e glicêmicos podem descompensar rapidamente nesta faixa etária; a intervenção inicial correta e o encaminhamento evitam crise adrenal, cetoacidose ou atraso diagnóstico.",
+    "correct": "beta-bloqueador para sintomas, antitiroidiano conforme protocolo e referência endocrinológica; evitar iodo de contraste desnecessário",
+    "wrongs": [
+      "levotiroxina em dose plena para 'equilibrar'",
+      "cirurgia tireoidiana na mesma semana na UBS sem preparo",
+      "amiodarona empírica para a taquicardia",
+      "alta sem controle cardíaco porque 'é só ansiedade'"
+    ],
+    "explain": "Hipertireoidismo: sintomáticos (beta-bloqueador) + antitiroidiano e especialista. Levotiroxina piora. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar taquicardia tireotóxica só como ansiedade."
+  },
+  {
+    "idPrefix": "ped-reuma",
+    "n": 1,
+    "group": "Reumatologia pediátrica",
+    "theme": "Artrite idiopática juvenil",
+    "stem": "Menina de 6 anos com artrite de joelho há 8 semanas, rigidez matinal e uveíte anterior silenciosa detectada no oftalmo de rotina. Afebril. FAN positivo. A conduta inclui Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "encaminhar à reumatologia pediátrica, tratar artrite conforme protocolo e manter rastreio oftalmológico regular da uveíte",
+    "wrongs": [
+      "imobilizar o joelho por 3 meses sem fisioterapia nem imunomodulação quando indicada",
+      "antibiótico contínuo por 'artrite séptica crônica' sem critérios",
+      "alta sem oftalmo porque não há dor ocular",
+      "cirurgia de prótese imediata aos 6 anos"
+    ],
+    "explain": "AIJ com risco de uveíte (especialmente FAN+): oftalmo seriado é parte do tratamento, não opcional. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Achar que uveíte sempre dói e dispensar o rastreio."
+  },
+  {
+    "idPrefix": "ped-reuma",
+    "n": 2,
+    "group": "Reumatologia pediátrica",
+    "theme": "Artrite séptica",
+    "stem": "Menino de 2 anos recusa apoiar a perna direita, febre 39 °C, joelho quente e edemaciado. Proteína C-reativa 90 mg/L, leucócitos 18.000/mm³. A conduta é O tempo de evolução, o acometimento articular/ocular e o risco de sequela funcional entram na decisão; atrasar referência ou tratar infecção de forma incompleta piora o desfecho.",
+    "correct": "avaliação ortopédica urgente, punção articular, culturas e antibiótico intravenoso precoce — emergência ortopédica",
+    "wrongs": [
+      "anti-inflamatório oral e retorno em 1 semana",
+      "fisioterapia intensiva antes da punção",
+      "corticoide intra-articular empírico sem afastar infecção",
+      "imobilização gessada fechada sem drenagem/avaliação"
+    ],
+    "explain": "Artrite séptica não espera: drenagem/culturas e antibiótico. Corticoide empírico é perigoso. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar joelho febril agudo como 'sinovite transitória' sem critérios."
+  },
+  {
+    "idPrefix": "ped-reuma",
+    "n": 3,
+    "group": "Reumatologia pediátrica",
+    "theme": "Osgood-Schlatter",
+    "stem": "Menino de 12 anos, atleta de futebol, dor na tuberosidade anterior da tíbia que piora com corrida e agachamento. Sem febre, exame local doloroso na tuberosidade, joelho estável. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "repouso relativo do gesto desencadeante, analgesia/gelo e retorno gradual; tranquilizar quanto ao caráter autolimitado na maioria",
+    "wrongs": [
+      "antibiótico intravenoso por osteomielite presumida sem febre nem toxemia",
+      "cirurgia imediata em todo caso na primeira consulta",
+      "imobilização gessada pelvipodálica por 3 meses de rotina",
+      "biópsia óssea antes de qualquer medida conservadora"
+    ],
+    "explain": "Osgood-Schlatter é apofisite por tração: conservador. Não é osteomielite sem sinais sistêmicos. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Supertratar apofisite como infecção óssea."
+  },
+  {
+    "idPrefix": "ped-maus",
+    "n": 1,
+    "group": "Maus-tratos / proteção",
+    "theme": "Fratura suspeita",
+    "stem": "Lactente de 4 meses, não deambulador, chega com choro à mobilização do braço. Cuidador refere 'queda do sofá'. Radiografia: fratura espiralada de úmero. Há equimoses em estágios diferentes no tronco. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "tratar a fratura, garantir segurança da criança, notificar o Conselho Tutelar/fluxo de proteção e investigar outras lesões",
+    "wrongs": [
+      "aceitar exclusivamente a queda do sofá e alta sem notificar",
+      "confrontar o cuidador de forma agressiva no corredor sem plano de segurança",
+      "adiar radiografias adicionais e alta com analgésico por 30 dias",
+      "exigir confissão do agressor antes de qualquer notificação"
+    ],
+    "explain": "Fratura espiralada em não deambulador + equimoses em estágios = alta suspeita de maus-tratos: proteção e notificação independem de confissão.",
+    "trap": "Aceitar mecanismo improvável e não notificar."
+  },
+  {
+    "idPrefix": "ped-maus",
+    "n": 2,
+    "group": "Maus-tratos / proteção",
+    "theme": "Abuso sexual",
+    "stem": "Menina de 7 anos com relato espontâneo de toque genital por convivente, ansiedade e dor ao urinar. Exame genital sem laceração aguda. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "acolher, notificar, seguir fluxo de avaliação especializada/perícia e profilaxias se indicadas; exame normal não exclui abuso",
+    "wrongs": [
+      "afastar abuso porque o exame está normal",
+      "exigir prova fotográfica da família antes de notificar",
+      "alta sem notificação por falta de laceração",
+      "entrevistar repetidamente por vários profissionais sem protocolo, no corredor"
+    ],
+    "explain": "O relato da criança tem valor; exame normal é frequente. Notifica-se e segue-se fluxo protetivo/pericial. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Achar que exame genital normal exclui abuso sexual."
+  },
+  {
+    "idPrefix": "ped-maus",
+    "n": 3,
+    "group": "Maus-tratos / proteção",
+    "theme": "Negligência",
+    "stem": "Lactente de 9 meses com desnutrição grave, dermatite de fraldas extensa, vacinas atrasadas; mãe com sinais de sobrecarga e sem rede de apoio. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "tratar condições clínicas, acionar rede de proteção/notificar e planejar seguimento interdisciplinar",
+    "wrongs": [
+      "apenas entregar fórmula e alta sem acionar proteção",
+      "expor publicamente a mãe na sala de espera como 'punição'",
+      "ignorar determinantes sociais e tratar só a dermatite tópica",
+      "retirar a criança imediatamente sem acionar os canais legais/rede, de forma improvisada"
+    ],
+    "explain": "Negligência com desnutrição exige cuidado clínico + proteção social via canais oficiais. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar só o biológico e devolver ao mesmo risco sem notificação."
+  },
+  {
+    "idPrefix": "ped-maus",
+    "n": 4,
+    "group": "Maus-tratos / proteção",
+    "theme": "Síndrome do bebê sacudido",
+    "stem": "Lactente de 3 meses com convulsão, fontanela tensa e hemorragias retinianas bilaterais, sem história traumática clara. Tomografia: hematoma subdural. A conduta é Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "estabilizar via aérea/neurocirurgia se preciso, investigar maus-tratos, notificar e avaliar outras lesões",
+    "wrongs": [
+      "diagnosticar apenas epilepsia genética e alta",
+      "atribuir sempre a queda não testemunhada sem investigar",
+      "evitar exame de fundo de olho",
+      "não notificar até haver confissão do agressor"
+    ],
+    "explain": "Tríade sugestiva de trauma craniano abusivo: estabilização, investigação completa e notificação — independe de confissão.",
+    "trap": "Esperar confissão para notificar trauma abusivo evidente."
+  },
+  {
+    "idPrefix": "ped-cardio",
+    "n": 6,
+    "group": "Cardiologia pediátrica",
+    "theme": "Pericardite",
+    "stem": "Adolescente de 16 anos com dor precordial que piora em decúbito e melhora sentado, febre baixa e atrito pericárdico. ECG com supradesnível difuso de ST. Troponina levemente elevada, saturação 98%, pressão 110/70 mmHg. A conduta inicial típica é Há risco de descompensação hemodinâmica ou evento em esforço se a hipótese cardíaca for subestimada; a conduta inclui restrições e encaminhamento no tempo certo, não apenas observação passiva.",
+    "correct": "anti-inflamatório conforme protocolo, investigação de causa, ecocardiograma e observação de derrame/tamponamento",
+    "wrongs": [
+      "trombólise imediata como IAM com supradesnível típico de adulto, sem diferenciar pericardite",
+      "alta sem eco porque a pressão está normal",
+      "antibiótico de amplo espectro obrigatório em toda pericardite viral presumida",
+      "pericardiocentese em todo caso sem derrame significativo"
+    ],
+    "explain": "Pericardite aguda: AINE/protocolo, eco e vigilância. Trombólise inadequada se o quadro for pericardite. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Tratar supradesnível difuso de pericardite como IAM e trombolisar."
+  },
+  {
+    "idPrefix": "ped-nefro",
+    "n": 6,
+    "group": "Nefrologia pediátrica",
+    "theme": "Hipertensão pediátrica",
+    "stem": "Menina de 12 anos com pressão arterial repetidamente acima do percentil 95 para idade/altura, cefaleia e história familiar de doença renal. Creatinina 0,9 mg/dL, urinálise com proteinúria 2+. A conduta inclui Na avaliação atual registram-se sinais vitais (pressão arterial, frequência cardíaca, frequência respiratória, saturação e temperatura) compatíveis com a gravidade descrita e suficientes para decidir a conduta.",
+    "correct": "confirmar medidas adequadas, investigar causa secundária (renal), iniciar mudança de estilo de vida e anti-hipertensivo quando indicado, com referência",
+    "wrongs": [
+      "ignorar porque 'criança não tem hipertensão'",
+      "iniciar três anti-hipertensivos na primeira medida isolada na escola, sem confirmação",
+      "contraindicar investigação renal na presença de proteinúria",
+      "usar AAS infantil como anti-hipertensivo principal"
+    ],
+    "explain": "HAS pediátrica com proteinúria merece investigação e tratamento — não é 'só ansiedade'. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico.",
+    "trap": "Descartar hipertensão na criança por preconceito etário."
+  }
+]
