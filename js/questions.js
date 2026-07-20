@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260719q5";
+const APROVA_QUESTION_CACHE_VER = "20260719q6";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -28,6 +28,28 @@ function aprovaShuffleArray (arr) {
     out[j] = tmp;
   }
   return out;
+}
+
+/** Embaralha alternativas e recalcula o índice do gabarito (cópia rasa da questão). */
+function aprovaShuffleQuestionChoices (q) {
+  if (!q || !Array.isArray(q.choices) || q.choices.length < 2) return q;
+  const order = q.choices.map((_, i) => i);
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = order[i];
+    order[i] = order[j];
+    order[j] = tmp;
+  }
+  const choices = order.map((i) => q.choices[i]);
+  const answer = order.indexOf(q.answer);
+  return Object.assign({}, q, {
+    choices,
+    answer: answer >= 0 ? answer : 0
+  });
+}
+
+function aprovaWithShuffledChoices (list) {
+  return (list || []).map(aprovaShuffleQuestionChoices);
 }
 
 function aprovaNormalizeQuestion (raw, fileHint) {
@@ -208,7 +230,7 @@ const AprovaQuestions = {
     if (this.mode === "simulado" && this.simulado && !this.simulado.finished) {
       return this.queue.length;
     }
-    this.queue = list.slice();
+    this.queue = aprovaWithShuffledChoices(list);
     this.index = 0;
     this.answered = false;
     return this.queue.length;
@@ -223,13 +245,13 @@ const AprovaQuestions = {
     this.simulado = null;
   },
 
-  /** Inicia simulado com N questões (embaralhadas) do filtro atual. */
+  /** Inicia simulado com N questões (ordem e alternativas embaralhadas) do filtro atual. */
   startSimulado (size) {
     const pool = this.filteredCatalog(this.filters);
     if (!pool.length) return 0;
     const n = Math.max(1, Math.min(pool.length, size | 0 || 10));
     this.resetSession("simulado");
-    this.queue = aprovaShuffleArray(pool).slice(0, n);
+    this.queue = aprovaWithShuffledChoices(aprovaShuffleArray(pool).slice(0, n));
     this.simulado = {
       size: this.queue.length,
       startedAt: Date.now(),
@@ -243,7 +265,9 @@ const AprovaQuestions = {
 
   startTreino () {
     this.resetSession("treino");
-    this.queue = aprovaShuffleArray(this.filteredCatalog(this.filters));
+    this.queue = aprovaWithShuffledChoices(
+      aprovaShuffleArray(this.filteredCatalog(this.filters))
+    );
     return this.queue.length;
   },
 

@@ -39,12 +39,25 @@ function createRng (seed) {
   };
 }
 
+/** Contador para gabarito ~uniforme A–E no JSON (o app ainda embaralha na sessão). */
+let _placeSlot = 0;
+
 function placeCorrect (correct, distractors, rng) {
   if (!Array.isArray(distractors) || distractors.length !== 4) {
     throw new Error("placeCorrect exige 4 distratores");
   }
-  const answer = Math.floor(rng() * 5);
+  // Round-robin A→E no JSON (o app embaralha de novo a cada sessão).
+  const answer = _placeSlot % 5;
+  _placeSlot += 1;
+  void rng; // mantém assinatura / seed usada em meta()
   const pool = distractors.slice();
+  // Embaralha só os distratores para não fixar ordem B/C/D/E.
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    const tmp = pool[i];
+    pool[i] = pool[j];
+    pool[j] = tmp;
+  }
   const choices = [];
   for (let i = 0; i < 5; i++) {
     if (i === answer) choices.push(correct);
