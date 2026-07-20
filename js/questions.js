@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260720q2";
+const APROVA_QUESTION_CACHE_VER = "20260720q3";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -355,6 +355,19 @@ const AprovaQuestions = {
 
   canGoPrev () {
     return this.queue.length > 0 && this.index > 0;
+  },
+
+  canGoNext () {
+    if (!this.queue.length) return false;
+    if (this.mode === "simulado") return true;
+    return this.queue.length > 1;
+  },
+
+  nextLabel () {
+    if (this.mode === "simulado" && this.index + 1 >= this.queue.length) {
+      return "Ver resultado";
+    }
+    return "Próxima";
   },
 
   /** No simulado, indica se a questão atual já foi respondida nesta sessão. */

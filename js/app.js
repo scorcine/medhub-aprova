@@ -3797,6 +3797,24 @@ function aprovaRenderSimuladoResult () {
   }
 }
 
+function aprovaSyncQuestionNav () {
+  const nextBtn = document.getElementById("q-next");
+  const prevBtn = document.getElementById("q-prev");
+  if (prevBtn) {
+    const showPrev = AprovaQuestions.canGoPrev();
+    prevBtn.hidden = !showPrev;
+    prevBtn.disabled = !showPrev;
+    prevBtn.setAttribute("aria-hidden", showPrev ? "false" : "true");
+  }
+  if (nextBtn) {
+    const showNext = AprovaQuestions.canGoNext();
+    nextBtn.hidden = !showNext;
+    nextBtn.disabled = !showNext;
+    nextBtn.textContent = AprovaQuestions.nextLabel();
+    nextBtn.setAttribute("aria-hidden", showNext ? "false" : "true");
+  }
+}
+
 function aprovaRenderQuestion () {
   const q = AprovaQuestions.current();
   const theme = document.getElementById("q-theme");
@@ -3807,8 +3825,6 @@ function aprovaRenderQuestion () {
   const explain = document.getElementById("q-explain");
   const trapWrap = document.getElementById("q-trap-wrap");
   const trapEl = document.getElementById("q-trap");
-  const nextBtn = document.getElementById("q-next");
-  const prevBtn = document.getElementById("q-prev");
   const abortBtn = document.getElementById("q-abort");
   const stats = document.getElementById("q-stats");
   const progress = document.getElementById("q-progress");
@@ -3850,14 +3866,8 @@ function aprovaRenderQuestion () {
   if (explain) explain.textContent = "";
   if (trapWrap) trapWrap.hidden = true;
   if (trapEl) trapEl.textContent = "";
-  if (nextBtn) nextBtn.hidden = true;
-  if (prevBtn) {
-    const showPrev = AprovaQuestions.canGoPrev();
-    prevBtn.hidden = !showPrev;
-    prevBtn.disabled = !showPrev;
-    prevBtn.setAttribute("aria-hidden", showPrev ? "false" : "true");
-  }
   if (abortBtn) abortBtn.hidden = false;
+  aprovaSyncQuestionNav();
   choices.innerHTML = "";
 
   function aprovaShowQuestionFeedback (result, chosenIndex) {
@@ -3887,13 +3897,7 @@ function aprovaRenderQuestion () {
         trapWrap.hidden = true;
       }
     }
-    if (nextBtn) {
-      nextBtn.hidden = false;
-      nextBtn.textContent = AprovaQuestions.mode === "simulado" &&
-        AprovaQuestions.index + 1 >= AprovaQuestions.queue.length
-        ? "Ver resultado"
-        : "Próxima";
-    }
+    aprovaSyncQuestionNav();
     if (stats) stats.textContent = AprovaQuestions.statsText();
     if (progress) progress.textContent = AprovaQuestions.progressText();
     aprovaRenderExamStats();
