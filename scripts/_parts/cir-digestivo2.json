@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 1,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Bariátrica — IMC 30–34,9 e DM2",
+    "stem": "Mulher 42 a, IMC 33, DM2 refratário atestado por dois endocrinologistas, falha de terapia clínica. Indicação CFM/Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "IMC 30–34,9 com DM2 refratário ao tratamento clínico (dois especialistas) pode ter indicação de cirurgia metabólica/bariátrica conforme CFM",
+    "wrongs": [
+      "Contraindicar qualquer cirurgia se IMC <40, mesmo com DM2 refratário documentado neste cenário sem benefício claro fora da",
+      "Indicar banda gástrica apenas cosmético sem critérios metabólicos neste cenário sem benefício claro fora da indicação como única medida",
+      "Exigir IMC >60 como único limiar absoluto para qualquer indicação neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Negar avaliação multidisciplinar porque o IMC está 'só' em obesidade grau I neste cenário sem benefício claro fora da indicação neste cenário sem"
+    ],
+    "explain": "Cir1/CFM: IMC>40; >35+comorbidade; 30–34,9 com DM2 refratário (2 endocrinos). Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Negar indicação metabólica no IMC 30–34,9 com DM2 refratário."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 2,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Bariátrica — ASA IV e hipertensão porta",
+    "stem": "Homem 55 a, IMC 42, cirrose com hipertensão porta e varizes esofágicas; ASA IV pulmonar terminal. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Contraindicações absolutas incluem doença cardíaca/pulmonar terminal (ASA IV) e hipertensão porta com varizes esofagogástricas neste cenário",
+    "wrongs": [
+      "Indicar duodenal switch imediato apesar de varizes e ASA IV neste cenário sem benefício claro fora da indicação como única",
+      "Hipertensão porta com varizes é indicação preferencial de RYGB neste cenário sem benefício claro fora da indicação como única medida",
+      "ASA IV pulmonar favorece cirurgia aberta prolongada eletiva neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Varizes contraindicam só a banda, nunca o bypass neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário ·"
+    ],
+    "explain": "Cir1: absolutas — doença cardiopulmonar terminal (ASA IV) e hipertensão porta com varizes. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar bariátrica eletiva com varizes/porta e falência orgânica terminal."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 3,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Grelina — fundo gástrico",
+    "stem": "Discussão sobre saciedade após sleeve. Onde é secretada a grelina e o efeito da ressecção do fundo? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Grelina (células P/D1 do fundo) é orexígena; sleeve resseca grande curvatura/fundo e reduz grelina, contribuindo para perda de apetite neste",
+    "wrongs": [
+      "Grelina é produzida só no íleo terminal e aumenta após sleeve neste cenário sem benefício claro fora da indicação como única",
+      "Sleeve eleva grelina porque preserva integralmente o fundo neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Grelina é anorexígena idêntica à leptina sem papel orexígeno neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Ressecção do fundo não altera eixos enteroencefálicos neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: grelina no fundo (P/D1), sobe no jejum; sleeve remove fundo → ↓grelina; banda pode ↑grelina. Conduta guiada por gravidade e imagem.",
+    "trap": "Achar que banda reduz grelina como o sleeve."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 4,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Banda ajustável — eleva grelina",
+    "stem": "Paciente com banda gástrica ajustável e falha ponderal. Mecanismo hormonal citado em Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Banda ajustável eleva significativamente a grelina, o que aumenta chance de falência terapêutica apesar da restrição mecânica neste cenário",
+    "wrongs": [
+      "Banda abole completamente a grelina como o sleeve neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Banda é o procedimento de maior perda ponderal média (90% do excesso) neste cenário sem benefício claro fora da indicação neste cenário",
+      "Elevação de grelina pela banda melhora invariavelmente a aderência neste cenário sem benefício claro fora da indicação como única medida neste mesmo",
+      "Banda não depende de aderência do paciente nem da equipe neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: BGA eleva grelina e depende de aderência; perda ~20–30% do excesso; deslocamento/erosão são complicações. Conduta guiada por gravidade e imagem.",
+    "trap": "Escolher banda esperando o mesmo efeito hormonal do sleeve."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 5,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Sleeve — técnica e papel no staging",
+    "stem": "Superobeso IMC 62, hipoventilação, alto risco. Por que sleeve como 1ª etapa? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Sleeve (GML) é tecnicamente mais simples, mais rápido e serve como 1ª etapa em super/super-superobesos antes de switch/disabsortivo; também",
+    "wrongs": [
+      "Sleeve é predominantemente disabsortivo e obriga colecistectomia sempre neste cenário sem benefício claro fora da indicação",
+      "Sleeve é contraindicado absoluto como bridge no superobeso neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Única opção no IMC ≥60 é Scopinaro aberto de imediato neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Sleeve não resseca o fundo e preserva toda a grande curvatura neste cenário sem benefício claro fora da indicação como única medida neste cenário sem em"
+    ],
+    "explain": "Cir1: sleeve — tubo vertical do antro distal (~7 cm do piloro) ao Hiss; bridge no superobeso; depois DS possível. Conduta guiada por gravidade e imagem.",
+    "trap": "Insistir em DS longo no super-superobeso cianótico sem staging."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 6,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "RYGB — escolha no DM2 e DRGE",
+    "stem": "IMC 38, DM2 e DRGE grave. Melhor escolha entre sleeve e RYGB segundo Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "RYGB é preferido no DM2/síndrome metabólica e na DRGE (sleeve aumenta pressão intragástrica e refluxo) neste cenário sem benefício claro neste",
+    "wrongs": [
+      "Sleeve é superior ao RYGB para DRGE grave documentada neste cenário sem benefício claro fora da indicação como única medida",
+      "RYGB é contraindicado no diabético tipo 2 neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Banda ajustável é a cirurgia de 'cura do diabetes' no Brasil neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Duodenal switch é 1ª linha em todo IMC 35 com refluxo leve neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: RYGB escolha no DM2 e DRGE; sleeve favorece DII, anemia, osteoporose, deficiência B12, alto risco, staging. Conduta guiada por gravidade e imagem.",
+    "trap": "Indicar sleeve em DRGE grave esperando melhora do refluxo."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 7,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Sleeve vs RYGB — indicações relativas",
+    "stem": "Mulher com DII, anemia crônica e osteoporose, IMC 41, sem DRGE. Qual técnica Cir1 favorece? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Gastrectomia em manga (sleeve) é favorecida em DII, anemia crônica, osteoporose, história de deficiência de B12 e alto risco cirúrgico neste",
+    "wrongs": [
+      "Duodenal switch como 1ª escolha em anemia e osteoporose neste cenário sem benefício claro fora da indicação como única medida",
+      "RYGB obrigatório em toda DII por ser menos disabsortivo que o sleeve neste cenário sem benefício claro fora da indicação neste cenário",
+      "Scopinaro para minimizar deficiências nutricionais neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Banda como único método seguro na osteoporose grave neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1 Tab.6: sleeve se DII/anemia/osteoporose/def. B12/alto risco/imunossupressão; RYGB se DM2/metabólica/DRGE. Conduta guiada por gravidade e imagem.",
+    "trap": "Indicar DS longo em paciente já deficitário de micronutrientes."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 8,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Duodenal switch — colecistectomia",
+    "stem": "Planejamento de switch duodenal. Por que colecistectomia de rotina? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Perda ponderal rápida aumenta colelitíase; anatomia alterada impede CPRE eficaz se houver coledocolitíase — colecistectomia (e apendicectomia)",
+    "wrongs": [
+      "Colecistectomia é proibida no DS porque aumenta fístula neste cenário sem benefício claro fora da indicação como única medida",
+      "CPRE fica mais fácil após DS do que após colecistectomia neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Litíase biliar diminui com perda rápida e não requer atenção neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Apendicectomia é contraindicada absoluta no switch neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: DS/Scopinaro — colecistectomia de rotina pela litíase pós-perda e impossibilidade de CPRE; apendicectomia também. Conduta guiada por gravidade e imagem.",
+    "trap": "Deixar vesícula e depois não conseguir CPRE na anatomia alterada."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 9,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Scopinaro vs switch — disabsorção",
+    "stem": "Comparando derivações biliopancreáticas, qual diferença-chave do switch (Hess-Marceau)? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Switch preserva parte do duodeno/piloro (após sleeve) com canal comum curto; Scopinaro faz hemigastrectomia distal e gastroileostomia — ambos",
+    "wrongs": [
+      "Scopinaro não tem componente disabsortivo relevante neste cenário sem benefício claro fora da indicação como única medida",
+      "Switch elimina completamente o risco de deficiência de vitaminas lipossolúveis neste cenário sem benefício claro fora da indicação",
+      "Canal comum longo de 3 m é a regra no Scopinaro clássico neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Ambos são puramente restritivos sem exclusão intestinal neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: Scopinaro — hemigastrectomia + gastroileostomia, canal comum ~50 cm; DS — sleeve + duodenoileostomia, comum 80–100 cm.",
+    "trap": "Tratar DS como cirurgia 'sem má absorção'."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 10,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "RYGB — comprimentos de alça",
+    "stem": "IMC ~40 vs IMC 50 no RYGB. Comprimentos típicos Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Alça biliopancreática ~50 cm do Treitz; alimentar 120–150 cm (≈80–120 cm se IMC~40 e ~150 cm se IMC~50, conforme texto) neste cenário neste",
+    "wrongs": [
+      "Alça alimentar de 10 cm independente do IMC neste cenário sem benefício claro fora da indicação como única medida neste neste",
+      "Biliopancreática de 3 m em todo RYGB padrão neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Não há componente disabsortivo moderado no RYGB neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Anel Silastic é obrigatório em toda técnica Wittgrove neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: BP ~50 cm; alimentar 120–150 cm (varia com IMC); Fobi-Capella usa anel Silastic; Wittgrove sutura a anastomose. Conduta guiada por gravidade e imagem.",
+    "trap": "Padronizar alças sem considerar o grau de obesidade."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 11,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Leak bariátrico — taquicardia",
+    "stem": "D3–D5 pós-RYGB: taquicardia e taquipneia sem peritonite óbvia sob analgesia. Conduta diagnóstica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Taquicardia/taquipneia podem ser as únicas pistas de deiscência; investigar com TC (contraste oral no sleeve) e não aguardar febre clássica",
+    "wrongs": [
+      "Negar investigação se não houver febre e defesa em tábua neste cenário sem benefício claro fora da indicação como única medida",
+      "Atribuir sempre a ansiedade e liberar dieta livre neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Trombólise empírica sem imagem em toda taquicardia pós-bariátrica neste cenário sem benefício claro fora da indicação como única medida neste mesmo",
+      "Aguardar evisceração para confirmar leak de anastomose neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: leak temido; sob analgesia, taquicardia/taquipneia podem ser únicas; TC; drenagem/NPT/ATB/stent no sleeve. Conduta guiada por gravidade e imagem.",
+    "trap": "Exigir peritonite clássica para suspeitar de leak."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 12,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Leak sleeve — ângulo de Hiss",
+    "stem": "D4 pós-sleeve: febre, taquicardia, leucocitose. Local mais típico e conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Fístula/deiscência no terço proximal (ângulo de Hiss): TC com contraste oral; drenagem (percutânea/cirúrgica), dieta zero, NPT, ATB e",
+    "wrongs": [
+      "Leak de sleeve é mais fácil de tratar que o de RYGB e não precisa drenar neste cenário sem benefício claro fora da indicação",
+      "Conduta exclusiva é dieta oral hipercalórica para 'selar' o grampeamento neste cenário sem benefício claro fora da indicação neste",
+      "TC sem contraste oral é sempre desnecessária neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Stent é contraindicado absoluto em qualquer fístula de Hiss neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: calcanhar de Aquiles do sleeve = fístula proximal (Hiss); drenar + NPT + ATB ± stent. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar leak de sleeve só com antiemético."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 13,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Leak gastrojejunal vs jejunojejunal",
+    "stem": "Pós-RYGB: secreção biliosa pela ferida. Qual anastomose mais compatível? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Deiscência da jejunojejunostomia pode drenar bile pela ferida; na gastrojejunal a bile não costuma sair pela ferida (entra distalmente no",
+    "wrongs": [
+      "Bile na ferida prova leak exclusivamente da gastrojejunostomia neste cenário sem benefício claro fora da indicação como única",
+      "Jejunojejunal nunca fístuliza para a parede neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Qualquer bile na ferida é pancreatectomia incompleta neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Ausência de bile exclui qualquer leak de RYGB neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · · ·"
+    ],
+    "explain": "Cir1: GJ mais frequente; JJ pode apresentar bile na ferida; GJ tipicamente sem bile na ferida. Conduta guiada por gravidade e imagem.",
+    "trap": "Interpretar mal a origem do leak pela presença/ausência de bile."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 14,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Hérnia de Petersen — urgência",
+    "stem": "6 meses pós-RYGB: dor intensa, vômitos, TC sugestiva de herniação interna. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Hérnia de Petersen (espaços do Y de Roux/mesentério): diagnóstico difícil, evolução rápida — TC precoce e cirurgia de urgência se",
+    "wrongs": [
+      "Tratamento clínico exclusivo com pró-cinéticos por 2 semanas neste cenário sem benefício claro fora da indicação como única",
+      "Hérnia de Petersen é achado benigno que nunca estrangula neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Colonoscopia é o exame de escolha para herniação interna neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Revisão cirúrgica só após 6 meses de obstrução completa documentada neste cenário sem benefício claro fora da indicação como única medida neste cenário ·"
+    ],
+    "explain": "Cir1: Petersen — alça nos defeitos do RYGB; TC e operar urgente. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar dor pós-RYGB como gastrite sem pensar em hérnia interna."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 15,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Úlcera marginal — anastomose",
+    "stem": "Dor epigástrica e sangramento 8 meses pós-RYGB/DBP. Hipótese e manejo inicial citado? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Úlcera marginal (boca anastomótica): controle ácido (IBP/anti-H2); investigar tabagismo/AINEs/H. pylori conforme prática; cirurgia se",
+    "wrongs": [
+      "Úlcera marginal é tratada só com cirurgia imediata sem IBP neste cenário sem benefício claro fora da indicação como única",
+      "Não ocorre úlcera após derivações com exclusão duodenal neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Antiácidos são proibidos após RYGB neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário sem",
+      "Toda úlcera marginal exige pancreatectomia caudal neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário ·"
+    ],
+    "explain": "Cir1: úlceras de boca anastomótica (marginais) — anti-H2/IBP; técnica revisada reduziu incidência. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar de imediato sem otimizar ácido e fatores de risco."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 16,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Dumping precoce vs tardio",
+    "stem": "Pós-RYGB: sudorese e taquicardia 15 min após doces vs hipoglicemia 2 h depois. Distinção? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Precoce (~20 min): deslocamento osmótico/vasoativo no jejuno; tardio (~2 h): hiperinsulinemia com hipoglicemia — ambos: dieta; octreotide se",
+    "wrongs": [
+      "Dumping tardio ocorre nos primeiros 5 minutos e nunca causa hipoglicemia neste cenário sem benefício claro fora da indicação",
+      "Dumping precoce é idêntico à hipoglicemia insulinoma e exige pancreatectomia neste cenário sem benefício claro fora da indicação neste",
+      "Octreotide é primeira linha antes de qualquer ajuste dietético neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Dumping só ocorre após sleeve e nunca após RYGB neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · ·"
+    ],
+    "explain": "Cir1/Manual: dumping precoce ~20 min; tardio ~2 h com hipoglicemia; dieta; octreotide SC se falha. Conduta guiada por gravidade e imagem.",
+    "trap": "Confundir dumping tardio com simples 'ansiedade' sem glicemia."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 17,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Deficiências — ferro e B12 no RYGB",
+    "stem": "2 anos pós-RYGB: anemia. Por que ferro e B12 caem? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Ferro absorvido em duodeno/jejuno proximal excluídos; B12 (15–20%) por alteração da ligação com fator intrínseco — suplementar de rotina neste",
+    "wrongs": [
+      "Ferro eleva-se sempre porque o pouch produz mais ácido neste cenário sem benefício claro fora da indicação como única medida",
+      "B12 nunca se altera se o íleo terminal estiver íntegro neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Suplementação multivitamínica é desnecessária após RYGB neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Anemia pós-RYGB é sempre só por perda menstrual sem relação com bypass neste cenário sem benefício claro fora da indicação neste cenário sem benefício"
+    ],
+    "explain": "Cir1: ferro e B12 comuns no RYGB; Wernicke (tiamina) se vômitos; hiperoxalúria → cálculos renais. Conduta guiada por gravidade e imagem.",
+    "trap": "Esquecer reposição de B12/ferro no seguimento do bypass."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 18,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Vitaminas lipossolúveis — DS",
+    "stem": "2 anos pós-switch duodenal: xeroftalmia e osteomalácia. Quais vitaminas? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Procedimentos muito disabsortivos: deficiências de A, D, E, K (lipossolúveis); A ~69% e D ~63% em 2 anos no texto — suplementar rotina neste",
+    "wrongs": [
+      "DS não causa deficiência de vitaminas lipossolúveis neste cenário sem benefício claro fora da indicação como única medida",
+      "Apenas vitamina C hidrossolúvel falta após DS neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Hipervitaminose A é a regra sem suplementação neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Vitamina K elevada causa trombose obrigatória pós-DS neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: DS/Scopinaro — A/D/E/K, proteína, Ca (PTH secundário), ferro; multivitamínico de rotina. Conduta guiada por gravidade e imagem.",
+    "trap": "Seguir DS sem monitorar A/D e proteína. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 19,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Desnutrição proteica — disabsortiva",
+    "stem": "3 meses pós-Scopinaro: edema, hipoalbuminemia grave. Conduta Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Desnutrição proteica: hospitalizar e NPT por 2–3 semanas; é complicação principal de longo prazo das muito disabsortivas neste cenário sem",
+    "wrongs": [
+      "Dieta livre hipocalórica ambulatorial como único tratamento neste cenário sem benefício claro fora da indicação como única",
+      "Desnutrição proteica não ocorre em derivações biliopancreáticas neste cenário sem benefício claro fora da indicação como única medida",
+      "Cirurgia de alongamento de canal comum nunca é discutida em refratários neste cenário sem benefício claro fora da indicação neste cenário sem mesmo",
+      "Albumina baixa deve ser ignorada se o peso caiu conforme esperado neste cenário sem benefício claro fora da indicação como única medida neste cenário · ·"
+    ],
+    "explain": "Cir1: desnutrição proteica nos primeiros meses — internação + NPT 2–3 semanas. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Celebrar perda de peso rápida ignorando anasarca e albumina."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 20,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Hiperoxalúria e cálculos renais",
+    "stem": "Pós-RYGB: cólica nefrética de repetição. Mecanismo Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Gorduras não absorvidas ligam cálcio; oxalato livre é absorvido e excretado na urina → hiperoxalúria e cálculos de oxalato de cálcio neste",
+    "wrongs": [
+      "RYGB reduz oxalúria e protege contra nefrolitíase neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Cálculos são sempre de ácido úrico por hiperabsorção de purinas no pouch neste cenário sem benefício claro fora da indicação neste",
+      "Hiperoxalúria exige suspensão de líquidos neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário",
+      "Mecanismo é hipercalciúria por excesso de absorção duodenal de cálcio neste cenário sem benefício claro fora da indicação neste cenário sem benefício"
+    ],
+    "explain": "Cir1: hiperoxalúria pós-bypass — gordura liga Ca, oxalato absorvido → cálculos renais. Conduta guiada por gravidade e imagem.",
+    "trap": "Não orientar hidratação/oxalato na litíase pós-bariátrica."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 21,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Colelitíase pós-perda ponderal",
+    "stem": "6 meses pós-sleeve com perda rápida: cólica biliar. Relação? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Perda ponderal acelerada aumenta incidência de colelitíase; no DS a colecistectomia já é profilática pela dificuldade de CPRE futura neste",
+    "wrongs": [
+      "Perda rápida protege contra formação de cálculos biliares neste cenário sem benefício claro fora da indicação como única",
+      "Colelitíase pós-bariátrica só ocorre se houver ileostomia neste cenário sem benefício claro fora da indicação como única medida neste",
+      "USG de abdome é proibido no seguimento bariátrico neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Todo cálculo pós-sleeve exige CPRE antes de qualquer ultrassom neste cenário sem benefício claro fora da indicação como única medida neste cenário · · ·"
+    ],
+    "explain": "Cir1: perda rápida → litíase; DS faz colecistectomia de rotina. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar sintomas biliares na perda acelerada."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 22,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Rabdomiólise — bariátrica aberta",
+    "stem": "Pós-bariátrica aberta >4 h, IMC 55, CK muito alta e mioglobinúria. Fatores Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Rabdomiólise descrita sobretudo em laparotomias prolongadas (>4 h) com IMC elevado; VLP reduziu essa complicação neste cenário neste cenário",
+    "wrongs": [
+      "Rabdomiólise é exclusiva da banda ajustável de 40 minutos neste cenário sem benefício claro fora da indicação como única",
+      "VLP aumenta mais a rabdomiólise que a via aberta longa neste cenário sem benefício claro fora da indicação como única medida neste",
+      "CK elevada no PO bariátrico deve ser ignorada sempre neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Hidratação é contraindicada na rabdomiólise pós-operatória neste cenário sem benefício claro fora da indicação como única medida neste cenário sem em"
+    ],
+    "explain": "Cir1: rabdomiólise — tempo >4 h e IMC alto na era aberta; VLP diminuiu ocorrência. Conduta guiada por gravidade e imagem.",
+    "trap": "Negligenciar CK/diurese após cirurgia bariátrica longa."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 23,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "TVP — aberto vs VLP bariátrica",
+    "stem": "Profilaxia em bariátrica. Comparação de risco Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "TVP/TEP mais elevados na via aberta; VLP permite deambulação <6 h e reduz TEV — ainda assim HBPM + compressão são essenciais neste cenário sem",
+    "wrongs": [
+      "VLP elimina completamente a necessidade de tromboprofilaxia neste cenário sem benefício claro fora da indicação como única",
+      "Via aberta tem menor risco de TEP que a laparoscópica neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Deambulação precoce é proibida após sleeve neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário",
+      "Filtro de cava profilático em todo IMC >35 sem outros fatores neste cenário sem benefício claro fora da indicação como única medida neste cenário sem em"
+    ],
+    "explain": "Cir1: VLP ↓ TVP/TEP vs aberta; deambulação <6 h; profilaxia com HBPM + CPI permanece fundamental. Conduta guiada por gravidade e imagem.",
+    "trap": "Omitir profilaxia porque 'é só laparoscopia'."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 24,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Cefazolina 2 g — ACERTO/ERAS",
+    "stem": "Checklist pré-bariátrica (projeto ACERTO/ERAS citado). Antibioticoprofilaxia padrão? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Cefazolina 2 g cerca de 1 hora antes do início da cirurgia, além de jejum com líquidos claros 2–6 h e evitar opioides rotineiros neste cenário",
+    "wrongs": [
+      "Vancomicina 7 dias a partir da internação em todo sleeve neste cenário sem benefício claro fora da indicação como única medida",
+      "Sem profilaxia em qualquer RYGB porque é cirurgia limpa absoluta neste cenário sem benefício claro fora da indicação como única medida mesmo",
+      "Metronidazol isolado como único agente em gastroplastia neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "ATB só no 3º PO se houver febre neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário neste cenário · · ·"
+    ],
+    "explain": "Cir1 Saiba Mais ACERTO/ERAS: cefazolina 2 g 1 h antes; líquidos claros 2–6 h; evitar opioides; antieméticos 24 h. Conduta guiada por gravidade e imagem.",
+    "trap": "Esquecer dose peri-incisional na bariátrica."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 25,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Banda — deslocamento e erosão",
+    "stem": "Intolerância alimentar e refluxo após BGA; dor e infecção do porto. Diagnósticos? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Deslocamento: Rx contrastado de abdome; erosão gástrica pela banda: dor ou infecção do porto implantável — investigar e revisar banda neste",
+    "wrongs": [
+      "Deslocamento nunca causa refluxo nem intolerância neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Infecção do porto exclui erosão e deve ser só tópico cutâneo neste cenário sem benefício claro fora da indicação como única medida",
+      "Rx contrastado é inútil na suspeita de slip da banda neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Erosão trata-se com aumento do volume do balão da banda neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: BGA — deslocamento (contrastado); erosão (dor/infecção do porto); mortalidade baixa vs RYGB/DS. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar infecção do porto como possível erosão."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 26,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Leptina — marcador",
+    "stem": "Obeso mórbido com leptina elevada. Interpretação Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Leptina (adipócitos) é anorexígena e marca obesidade — níveis altos com maior peso; não há deficiência típica na maioria dos obesos primários",
+    "wrongs": [
+      "Obesos primários têm leptina indetectável na maioria dos casos neste cenário sem benefício claro fora da indicação como única",
+      "Leptina elevada prova indicação absoluta de DS imediato neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Leptina substitui o IMC nos critérios do CFM neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Grelina e leptina são o mesmo hormônio com nomes diferentes neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: leptina alta correlaciona com peso; grelina orexígena do fundo; eixo enteroencefálico. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar obesidade como 'deficiência de leptina' na maioria."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 27,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Precauções CFM vs absolutas",
+    "stem": "Paciente com transtorno psicótico ativo e uso de cocaína, IMC 44. Como Cir1/CFM classifica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Uso de drogas/alcoolismo, psicose/humor grave ativos ou demência e falta de compreensão são precauções/contraindicações relativas importantes",
+    "wrongs": [
+      "Psicose ativa é indicação preferencial para acelerar a cirurgia neste cenário sem benefício claro fora da indicação como única",
+      "Drogas ilícitas não influenciam a seleção bariátrica neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Compreensão do paciente é irrelevante se a família consentir neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "ASA IV pulmonar não é citada como contraindicação absoluta neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: absolutas ASA IV e hipertensão porta/varizes; CFM — precauções psicoativas/drogas/compreensão. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar sem estabilidade psíquica nem cessação de drogas."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 28,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Superobeso — classificação IMC",
+    "stem": "Homem 180 cm, 195 kg. Classificação Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "IMC ≈60 → super-superobeso (≥60); superobeso ≥50; obesidade grau III ≥40 — staging com sleeve frequentemente indicado neste cenário neste",
+    "wrongs": [
+      "IMC 60 é apenas sobrepeso e não tem indicação cirúrgica neste cenário sem benefício claro fora da indicação como única medida",
+      "Superobeso começa em IMC 30 sem comorbidades neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Grau III exige IMC entre 25 e 29,9 neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário sem",
+      "Classificação por IMC foi abandonada pelo CFM neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · · ·"
+    ],
+    "explain": "Cir1: grau III ≥40; superobeso ≥50; super-superobeso ≥60; staging sleeve no extremo. Conduta guiada por gravidade e imagem.",
+    "trap": "Subestimar risco perioperatório do IMC extremo."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 29,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "UTI vs enfermaria pós-bariátrica",
+    "stem": "Alocação no PO imediato: RYGB/disabsortiva vs sleeve. Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "RYGB e muito disabsortivas: UTI/cuidados intensivos no imediato; GML (sleeve) pode ir para enfermaria/quarto se estável neste cenário neste",
+    "wrongs": [
+      "Todo sleeve exige UTI prolongada obrigatória por 14 dias neste cenário sem benefício claro fora da indicação como única medida",
+      "RYGB nunca necessita monitorização intensiva no D0 neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Disabsortivas têm menor risco e vão direto para casa no D0 neste cenário sem benefício claro fora da indicação como única medida neste cenário mesmo",
+      "Alocação independe do tipo de procedimento e comorbidades neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: RYGB/disabsortivas → UTI imediata; sleeve → enfermaria possível. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Submonitorizar RYGB no D0. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 30,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Supercrescimento bacteriano — alça BP",
+    "stem": "Pós-Scopinaro: distensão, flatulência fétida, má absorção. Complicação citada? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Supercrescimento bacteriano na alça biliopancreática longa é complicação grave das muito disabsortivas — contribui para abandono relativo do",
+    "wrongs": [
+      "Supercrescimento só ocorre após banda ajustável neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Alça BP longa protege contra qualquer colonização neste cenário sem benefício claro fora da indicação como única medida neste mesmo",
+      "Odor fecal nunca se associa a procedimentos disabsortivos neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Antibiótico enteral é proibido em supercrescimento documentado neste cenário sem benefício claro fora da indicação como única medida neste cenário · · ·"
+    ],
+    "explain": "Cir1: supercrescimento na alça BP longa — motivo para pouco uso atual do Scopinaro. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar SIBO em disabsortiva com distensão e má absorção."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 31,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Cálcio e PTH secundário",
+    "stem": "Pós-DS: Ca baixo e PTH elevado. Interpretação? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Má absorção de cálcio (≈8%) leva a hiperparatireoidismo secundário — monitorar e suplementar Ca/vitamina D neste cenário neste cenário sem",
+    "wrongs": [
+      "PTH alto pós-DS é adenoma de paratireoide até prova em contrário em todo caso neste cenário sem benefício claro fora da neste",
+      "Cálcio sérico nunca se altera em cirurgias disabsortivas neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Suplementar só ferro e ignorar Ca/D neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário sem mesmo",
+      "Hipercalcemia é a regra sem suplementação neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário sem em"
+    ],
+    "explain": "Cir1: Ca↓ e PTH↑ secundário nas muito disabsortivas; ferro também cai (~9%). Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Não repor Ca/D no seguimento do DS. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 32,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Perda ponderal esperada por técnica",
+    "stem": "Comparar perda do excesso: banda vs RYGB vs DS. Ordens Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Banda ~20–30% do excesso; RYGB ~70–80% (texto também cita ~41–43% em algumas séries); DS/muito disabsortivas até ~90%, com mais deficiências",
+    "wrongs": [
+      "Banda perde mais que o duodenal switch em média neste cenário sem benefício claro fora da indicação como única medida neste",
+      "RYGB nunca ultrapassa 10% do excesso de peso neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "DS perde menos que a banda ajustável neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário sem",
+      "Todas as técnicas têm perda idêntica de 50% sem exceções neste cenário sem benefício claro fora da indicação como única medida neste cenário sem em"
+    ],
+    "explain": "Cir1: BGA 20–30%; RYGB alta perda (70–80% excesso em trechos); DS até 90% com custo nutricional. Conduta guiada por gravidade e imagem.",
+    "trap": "Prometer 90% de perda com banda sem riscos."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 33,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "MGB — refluxo biliar",
+    "stem": "Paciente consulta sobre mini-gastric bypass (MGB). Limitação citada em Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "MGB não é aceito universalmente como procedimento metabólico/bariátrico padrão devido a elevadas taxas de refluxo biliar alcalino neste",
+    "wrongs": [
+      "MGB é consensualmente superior ao RYGB sem refluxo neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Refluxo biliar nunca ocorre em anastomoses gastrojejunais únicas neste cenário sem benefício claro fora da indicação como única medida",
+      "MGB elimina necessidade de suplementação vitamínica neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "MGB é a única técnica aprovada pelo CFM para IMC 30 neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: MGB — restrição+disabsorção semelhante, mas refluxo biliar alcalino limita aceitação universal. Conduta guiada por gravidade e imagem.",
+    "trap": "Indicar MGB sem discutir refluxo biliar."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 34,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Úlcera perfurada — patch omental técnico",
+    "stem": "Homem 40 a, AINEs, abdome em tábua, pneumoperitônio. Conduta cirúrgica clássica da úlcera duodenal perfurada? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Ulcerorrafia com epiploplastia (tampão de Graham), lavagem, ATB; tratar H. pylori/AINEs no seguimento neste cenário sem benefício claro neste",
+    "wrongs": [
+      "Gastrectomia total de urgência como 1ª escolha em toda perfuração duodenal <1 cm neste cenário sem benefício claro fora da",
+      "Tratamento exclusivo com IBP oral sem laparotomia/ laparoscopia se houver peritonite difusa neste cenário sem benefício claro neste mesmo",
+      "Nissen 360° como correção da perfuração duodenal neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Banda gástrica de urgência para 'desviar' o ácido neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário ·"
+    ],
+    "explain": "Digestiva/Cir: perfuração — Graham (rafia + omento); depois erradicar H. pylori e suspender AINEs. Conduta guiada por gravidade e imagem.",
+    "trap": "Gastrectomia de rotina em perfuração pequena sem falha do Graham."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 35,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "HDA ulcerosa — cirurgia",
+    "stem": "Úlcera duodenal Forrest 1A: falha de 2 endoscopias, instabilidade. Indicação cirúrgica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Cirurgia se falha endoscópica, ressangramento com instabilidade ou impossibilidade de endoscopia — ulcerorrafia ± vagotomia/piloroplastia",
+    "wrongs": [
+      "Repetir só dieta zero sem nova hemostasia nem cirurgia no choque neste cenário sem benefício claro fora da indicação como",
+      "Billroth II obrigatório em todo Forrest 3 cicatrizado neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Cirurgia nunca está indicada se houve uma endoscopia prévia neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Octreotide substitui source control em úlcera arterial ativa neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Digestiva: cirurgia na falha endoscópica/ressangramento instável — sutura do vaso ± vagotomia/piloroplastia. Conduta guiada por gravidade e imagem.",
+    "trap": "Persistir em endoscopia indefinida no choque hemorrágico."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 36,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Billroth I vs II — reconstrução",
+    "stem": "Após antrectomia por úlcera. Diferença conceitual Billroth I e II? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Billroth I: gastroduodenoanastomose; Billroth II: gastrojejunostomia; Y de Roux reduz refluxo biliar alcalino em relação ao BII neste cenário",
+    "wrongs": [
+      "Billroth I é gastrojejunostomia látero-lateral clássica neste cenário sem benefício claro fora da indicação como única medida",
+      "Billroth II une estômago ao duodeno distal preservando o piloro neste cenário sem benefício claro fora da indicação como única medida mesmo",
+      "Y de Roux aumenta refluxo biliar comparado ao BII neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Billroth I e II são idênticos anatomicamente neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · · ·"
+    ],
+    "explain": "Digestiva: BI gastroduodenal; BII gastrojejunal; Roux se refluxo/alça aferente problemáticos. Conduta guiada por gravidade e imagem.",
+    "trap": "Confundir BI com BII na prova e na sala."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 37,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Síndrome da alça aferente — BII",
+    "stem": "Pós-Billroth II: dor pós-prandial aliviada por vômito bilioso. Hipótese? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Síndrome da alça aferente (BII): estase/obstrução da aferente — dor aliviada pelo vômito; pode exigir revisão (ex.: conversão para Roux) neste",
+    "wrongs": [
+      "Dumping precoce exclusivo sem relação com BII neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Hérnia de Petersen típica do Nissen neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Úlcera marginal que nunca ocorre após gastrectomia neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Tratamento definitivo é aumentar volume da dieta líquida açucarada neste cenário sem benefício claro fora da indicação como única medida neste cenário ·"
+    ],
+    "explain": "Digestiva: alça aferente no BII — dor + vômito bilioso; Roux corrige refluxo/alça problemática. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar alça aferente só com antiemético sem revisão quando indicada."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 38,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Johnson — tipagem e cirurgia",
+    "stem": "Úlcera gástrica tipo II (corpo+duodenal) com hipercloridria. Princípio operatório eletivo clássico? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Tipos II e III (hipercloridria): antrectomia + vagotomia (ou vagotomia+piloroplastia se só duodenal); tipo I: gastrectomia parcial; IV:",
+    "wrongs": [
+      "Tipo I sempre exige vagotomia troncular obrigatória sem ressecção neste cenário sem benefício claro fora da indicação como",
+      "Tipo V (AINEs) indica gastrectomia total de rotina neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Tipo IV pré-pilórica trata-se só com banda gástrica neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Johnson não influencia a escolha da operação neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · · ·"
+    ],
+    "explain": "Digestiva: Johnson I pequena curvatura; II/III hiperácido → antrectomia+vagotomia; IV cárdia; V AINEs. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar tipo V com gastrectomia sem suspender AINEs."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 39,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "DRGE obeso — bypass não Nissen",
+    "stem": "IMC 42, DRGE grave com esofagite. Antirfluxo isolado vs bariátrica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "No obeso com indicação bariátrica e DRGE, RYGB é preferível ao Nissen isolado/sleeve — trata peso e refluxo neste cenário neste cenário sem",
+    "wrongs": [
+      "Nissen 360° é superior ao RYGB em todo obeso mórbido com DRGE neste cenário sem benefício claro fora da indicação como única",
+      "Sleeve é a melhor opção antirfluxo no IMC 42 neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "DRGE contraindica qualquer cirurgia bariátrica neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Toupet é obrigatória antes de qualquer bypass no obeso neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1/digestivo1: DRGE no obeso → RYGB; sleeve piora refluxo por pressão no tubo. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Fazer Nissen isolado no obeso mórbido com indicação bariátrica."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 40,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Wernicke — tiamina pós-bariátrica",
+    "stem": "Pós-RYGB com vômitos: confusão, ataxia, nistagmo. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Encefalopatia de Wernicke por deficiência de tiamina — repor tiamina parenteral imediatamente, antes ou junto à glicose neste cenário neste",
+    "wrongs": [
+      "Aguardar dosagem de B12 por 1 semana antes de qualquer vitamina neste cenário sem benefício claro fora da indicação como única",
+      "Wernicke não ocorre após cirurgia bariátrica neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Tratar só com haloperidol sem repor tiamina neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Dieta rica em açúcar simples resolve a ataxia neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · · ·"
+    ],
+    "explain": "Cir1: Wernicke (tiamina) pós-vômitos/má absorção — reposição parenteral urgente. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Dar glicose sem tiamina no suspeito de Wernicke pós-bariátrica."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 41,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Fobi-Capella vs Wittgrove",
+    "stem": "Diferença técnica citada entre Fobi-Capella e Wittgrove no RYGB? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Ambos criam pouch pequeno; Fobi-Capella usa anel de silicone Silastic na saída; Wittgrove calibra com sutura na gastrojejunostomia sem anel",
+    "wrongs": [
+      "Wittgrove obriga anel Silastic e Fobi nunca usa restrição na saída neste cenário sem benefício claro fora da indicação como",
+      "Fobi-Capella é puramente disabsortivo sem pouch gástrico neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Wittgrove resseca todo o estômago como no sleeve neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Ambas técnicas são idênticas ao Scopinaro clássico neste cenário sem benefício claro fora da indicação como única medida neste cenário sem benefício"
+    ],
+    "explain": "Cir1: Fobi-Capella — anel Silastic; Wittgrove — sutura na anastomose; alças BP/alimentar conforme IMC. Conduta guiada por gravidade e imagem.",
+    "trap": "Confundir anel do Fobi com banda ajustável peri-esofágica."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 42,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Octreotide — dumping refratário",
+    "stem": "Dumping pós-RYGB refratário às medidas dietéticas. Opção Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Octreotide (análogo da somatostatina) subcutâneo pode ser empregado se dumping não responder à dieta neste cenário sem benefício claro neste",
+    "wrongs": [
+      "Gastrectomia total imediata como 1ª linha do dumping precoce neste cenário sem benefício claro fora da indicação como única",
+      "Insulina regular para 'tratar' o dumping precoce osmótico neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Proibir qualquer análogo de somatostatina após bypass neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Aumentar carboidratos líquidos simples como tratamento definitivo neste cenário sem benefício claro fora da indicação como única medida neste cenário · ·"
+    ],
+    "explain": "Cir1: dumping — dieta primeiro; octreotide SC se refratário. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Saltar direto para reoperação sem otimizar dieta/octreotide."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 43,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "HDA — estabilização inicial",
+    "stem": "Úlcera sangrante no PS: PA 80×50, Hb 6,8. Primeiro passo antes da EDA? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Estabilizar (ABC, 2 acessos, volume/hemoderivados, IBP EV) e só então hemostasia endoscópica; cirurgia se falha/instabilidade persistente",
+    "wrongs": [
+      "Levar direto ao centro para gastrectomia total sem ressuscitação neste cenário sem benefício claro fora da indicação como",
+      "EDA ambulatorial em 7 dias sem estabilizar o choque neste cenário sem benefício claro fora da indicação como única medida neste cenário",
+      "Negar IBP porque 'mascara' o sangramento neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário",
+      "Transfundir só albumina 20% sem hemácias no choque hemorrágico neste cenário sem benefício claro fora da indicação como única medida neste cenário · · ·"
+    ],
+    "explain": "Digestiva: HDA — MOIV/estabilização + IBP; EDA; cirurgia nas falhas. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Endoscopia ou cirurgia no paciente não reanimado."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 44,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Perfuração — pneumoperitônio",
+    "stem": "Rx em pé com ar sob diafragma + peritonite após uso de AINEs. Conduta imediata? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Abdome agudo perfurativo: jejum, SNG, volume, ATB e cirurgia (Graham) sem demora diagnóstica excessiva neste cenário sem benefício claro neste",
+    "wrongs": [
+      "Observação ambulatorial com IBP oral por 10 dias neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Colonoscopia de urgência como 1º procedimento neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Negar imagem e alta com analgésico potente neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário",
+      "Banda gástrica de urgência para reduzir ácido neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · · ·"
+    ],
+    "explain": "Digestiva/Cir: perfuração — ressuscitação e correção cirúrgica (Graham); depois H. pylori/AINEs. Conduta guiada por gravidade e imagem.",
+    "trap": "Atrasar source control por exames desnecessários no perfurado."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 45,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Refluxo biliar — BII",
+    "stem": "Epigastralgia refratária a IBP anos após Billroth II, EDA com bile no coto. Opção? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Gastrite alcalina/refluxo biliar pós-BII: se refratário, conversão para Y de Roux é a revisão clássica neste cenário sem benefício claro neste",
+    "wrongs": [
+      "Aumentar AINEs para 'proteger' a mucosa do coto neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Sleeve distal sobre o BII como tratamento padrão neste cenário sem benefício claro fora da indicação como única medida neste mesmo",
+      "Nissen 360° no coto gástrico sem revisar a reconstrução neste cenário sem benefício claro fora da indicação como única medida neste cenário sem",
+      "Negar qualquer revisão porque refluxo biliar é desejável neste cenário sem benefício claro fora da indicação como única medida neste cenário sem em"
+    ],
+    "explain": "Digestiva: refluxo biliar/BII — Roux corrige melhor que IBP isolado quando sintomático refratário. Conduta guiada por gravidade e imagem.",
+    "trap": "Insistir só em IBP sem considerar revisão para Roux."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 46,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Vagotomia — tipos e piloroplastia",
+    "stem": "Vagotomia troncular eletiva por úlcera. Por que associar drenagem gástrica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Vagotomia troncular reduz ácidez mas causa espasticidade pilórica/↓peristalse — associar piloroplastia (ou antrectomia) para esvaziamento",
+    "wrongs": [
+      "Vagotomia troncular acelera o esvaziamento e proíbe piloroplastia neste cenário sem benefício claro fora da indicação como",
+      "Piloroplastia só se indica após sleeve bariátrico neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Superseletiva sempre exige gastrectomia total neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Vagotomia não altera motilidade antro-pilórica neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste cenário · ·"
+    ],
+    "explain": "Digestiva: troncular/seletiva → drenagem (piloroplastia); superseletiva preserva nervos do antro. Conduta guiada por gravidade e imagem.",
+    "trap": "Fazer vagotomia troncular sem pensar no esvaziamento gástrico."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 47,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Sleeve — DRGE como complicação",
+    "stem": "1 ano pós-sleeve: pirose incapacitante nova. Mecanismo e opção? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Sleeve eleva pressão no tubo gástrico e pode causar/piorar DRGE; em refratários, conversão para RYGB é estratégia frequente neste cenário sem",
+    "wrongs": [
+      "Sleeve cura DRGE na maioria por reduzir pressão intragástrica neste cenário sem benefício claro fora da indicação como única",
+      "Única opção é Toupet sobre o sleeve sem avaliar conversão neste cenário sem benefício claro fora da indicação como única medida neste",
+      "DRGE pós-sleeve contraindica IBP e exige só dieta neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Banda distal resolve refluxo pós-sleeve na maioria dos guidelines neste cenário sem benefício claro fora da indicação como única medida neste cenário · ·"
+    ],
+    "explain": "Cir1: refluxo é complicação do sleeve (↑pressão); RYGB favorece DRGE na escolha inicial e na revisão. Conduta guiada por gravidade e imagem.",
+    "trap": "Insistir em novo sleeve ou Nissen isolado sem avaliar RYGB."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 48,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Mortalidade comparativa bariátrica",
+    "stem": "Orientação de risco: banda vs RYGB vs disabsortivas. Ordens Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Mortalidade aproximada: BGA 0,02–0,1%; RYGB 0,3–0,5%; muito disabsortivas 0,9–1,1% — trade-off com perda ponderal e deficiências neste cenário",
+    "wrongs": [
+      "DS tem mortalidade menor que a banda ajustável neste cenário sem benefício claro fora da indicação como única medida neste",
+      "RYGB é mais seguro que a banda em mortalidade operatória média neste cenário sem benefício claro fora da indicação como única medida",
+      "Todas têm mortalidade idêntica de 5% independentemente da técnica neste cenário sem benefício claro fora da indicação como única medida neste mesmo",
+      "Banda tem mortalidade maior que as disabsortivas clássicas neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: BGA menor mortalidade; RYGB intermediário; disabsortivas maior — e mais deficiências. Conduta guiada por gravidade e imagem.",
+    "trap": "Prometer risco da banda com resultado do DS."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 49,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Obstrução pós-RYGB — íleo vs mecânica",
+    "stem": "D5 pós-RYGB: vômitos, distensão; dúvida íleo vs herniação/brida. Conduta diagnóstica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Diferenciar íleo adinâmico de obstrução mecânica (incl. Petersen) com clínica + Rx/TC; mecânica confirmada → cirurgia quando apto neste",
+    "wrongs": [
+      "Todo vômito no D5 é dumping e libera dieta livre neste cenário sem benefício claro fora da indicação como única medida neste",
+      "TC é inútil para transição ou herniação interna neste cenário sem benefício claro fora da indicação como única medida neste atendimento",
+      "Operar todo íleo fisiológico do D2 sem imagem neste cenário sem benefício claro fora da indicação como única medida neste atendimento neste",
+      "Negar SNG mesmo com vômitos incoercíveis e risco de aspiração neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: obstrução pós-RYGB temida (Petersen/bridas); TC; operar mecânica; diferenciar de íleo. Conduta guiada por gravidade e imagem.",
+    "trap": "Liberar dieta em obstrução mecânica não esclarecida."
+  },
+  {
+    "idPrefix": "cir-digestivo2",
+    "n": 50,
+    "group": "Digestivo alto e bariátrica",
+    "theme": "Apendicectomia no duodenal switch",
+    "stem": "Durante switch duodenal, além da colecistectomia, qual gesto associado citado? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Apendicectomia faz parte do procedimento de switch duodenal, juntamente com a colecistectomia de rotina neste cenário sem benefício claro",
+    "wrongs": [
+      "Apendicectomia é contraindicada absoluta no DS neste cenário sem benefício claro fora da indicação como única medida neste",
+      "Só se remove o apêndice se houver apendicite aguda no momento neste cenário sem benefício claro fora da indicação como única medida",
+      "Colecistectomia é opcional e apendicectomia obrigatória isolada neste cenário sem benefício claro fora da indicação como única medida neste mesmo",
+      "Nem colecistectomia nem apendicectomia são mencionadas no DS neste cenário sem benefício claro fora da indicação como única medida neste cenário sem"
+    ],
+    "explain": "Cir1: no DS — colecistectomia de rotina + apendicectomia no mesmo tempo. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Omitir apendicectomia/colecistectomia planejadas no DS sem motivo."
+  }
+]
