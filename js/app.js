@@ -3782,11 +3782,6 @@ function aprovaSyncQuestionModalUI () {
 }
 
 function aprovaPopulateLaunchFilters () {
-  const examEl = document.getElementById("q-filter-exam");
-  const yearEl = document.getElementById("q-filter-year");
-  const filters = aprovaReadQuestionFilters();
-  aprovaFillQuestionFilterSelect(examEl, AprovaQuestions.examOptions(), "Todas as bancas", filters.exam);
-  aprovaFillQuestionFilterSelect(yearEl, AprovaQuestions.yearOptions(), "Todos os anos", filters.year);
   return aprovaSyncQuestionModalUI();
 }
 
@@ -4479,7 +4474,7 @@ async function aprovaBoot () {
     aprovaRenderQuestionBrowse();
   });
 
-  ["q-filter-exam", "q-filter-year", "q-filter-size"].forEach(id => {
+  ["q-filter-size"].forEach(id => {
     document.getElementById(id)?.addEventListener("change", () => aprovaSyncQuestionModalUI());
   });
 
