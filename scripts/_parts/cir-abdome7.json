@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 1,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — ponto-of-care US na porta",
+    "stem": "No pronto-socorro, médico treinado faz US beira-leito com apêndice não compressível de 9 mm e dor localizada. TC indisponível por 8 h. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Com US positivo e clínica compatível, indicar apendicectomia sem atrasar por TC se já houver indicação cirúrgica clara com reassesso clínico seriado",
+    "wrongs": [
+      "Negar cirurgia até TC mesmo com US clássico e peritonite local, o que atrasa o manejo correto, o que atrasa o manejo correto",
+      "Alta sem reassesso, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, com potencial",
+      "Colonoscopia urgente, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Antibiótico VO domiciliar único em peritonite local, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Cir1: US positivo operador-dependente + clínica → opera; TC reserva-se a dúbia/equívoca. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Atrasar operação só para 'confirmar' o óbvio na TC."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 2,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — gravidez e RM inconclusiva",
+    "stem": "Gestante 2º trimestre, US e RM inconclusivos, dor progressiva em FID e leucocitose. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Exploração laparoscópica/cirúrgica com proteção fetal se alta suspeita — não eternizar imagem com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Aguardar parto a termo, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Metotrexato empírico, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia com sedação profunda, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Corticoterapia fetal como tratamento da apendicite, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, o que atrasa"
+    ],
+    "explain": "Cir1: na gestante, atraso aumenta perfuração; operar se suspeita persistente após imagem limitada. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Protelar até o puerpério. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 3,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — janela 72 h precoce",
+    "stem": "Colecistite grau I há 40 h do início da dor, apto cirúrgico. Timing ideal? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Colecistectomia laparoscópica precoce (preferencialmente <72 h) reduz complicações vs atraso eletivo longo com reassesso clínico seriado",
+    "wrongs": [
+      "Operar só após 6–8 semanas obrigatoriamente, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Drenar percutâneo em todo grau I jovem, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "CPRE pré-op de rotina sem coledocolitíase, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Dieta gordurosa até a eletiva, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "TG18/Cir1: precoce é preferível na colecistite não complicada operável. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Adiar sistematicamente para 'esfriar' sem critério."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 4,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — síndrome do coto cístico",
+    "stem": "Meses após cole, dor biliar e imagem com coto cístico longo e cálculo residual. Diferencial com via biliar principal? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Investigar coto residual/cálculo com MRCP/EUS e reoperar/remover cálculo se sintomático com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Ignorar e tratar só com IBP, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Transplante hepático, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Antibioticoterapia indefinida sem imagem, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Pancreatectomia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, elevando"
+    ],
+    "explain": "CirEsp: coto cístico longo com cálculo mimetiza cólica — imagem e reintervenção seletiva. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Rotular como 'síndrome pós-cole' sem investigar."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 5,
+    "group": "Abdome agudo",
+    "theme": "Colangite — falência orgânica TG18",
+    "stem": "Colangite com hipotensão responsiva a volume, creatinina elevada e plaquetopenia. Classificação e prioridade? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Grau III: ressuscitação + ATB + drenagem biliar urgente (CPRE/PTBD) sem demora diagnóstica cosmética com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Observação ambulatorial, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colecistectomia isolada sem drenar VBP, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só antiespasmódico, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Alta após hemograma, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que agor"
+    ],
+    "explain": "Tokyo: grau III = disfunção orgânica → drenagem imediata + suporte. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Tratar grau III como cólica simples. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 6,
+    "group": "Abdome agudo",
+    "theme": "Coledocolitíase — exploração laparoscópica",
+    "stem": "Durante cole laparoscópica, colangiografia mostra cálculo único distal da VBP em centro experiente. Opção? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Clearance laparoscópico da VBP ou CPRE perioperatória coordenada — evitar deixar cálculo sintomático com reassesso clínico seriado",
+    "wrongs": [
+      "Ignorar o cálculo e alta sem plano, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Hepatectomia direita, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "LECO intraoperatória da VBP como padrão universal, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Antibiótico dissolve cálculo de colesterol sempre, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: cálculo achado intraop — clearance cirúrgico ou CPRE planejada. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Deixar coledocolitíase sem clearance. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 7,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — fístula colovaginal",
+    "stem": "Idosa com diverticulite prévia, eliminação de gases pela vagina e TC com trajeto. Conduta definitiva? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Ressecção do segmento doente e fechamento do trajeto após controle de infecção aguda com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "Apenas creme vaginal indefinido, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Histerectomia isolada sem tocar o cólon, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Stent vaginal, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Radioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais"
+    ],
+    "explain": "CirEsp: fístula colovaginal diverticular → ressecção eletiva do cólon fonte após ATB se infecção ativa. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Tratar só o lado ginecológico. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 8,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — classificação WSES",
+    "stem": "Equipe discute staging além de Hinchey: paciente estável com abscesso <4 cm. Como WSES orienta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Abscesso pequeno: ATB ± drenagem se não responder; grandes drenáveis → percutânea; peritonite → cirurgia com reassesso clínico seriado com",
+    "wrongs": [
+      "Todo abscesso <4 cm exige Hartmann imediato, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Nunca drenar abscessos, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia na fase hiperaguda dolorosa obrigatória, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Quimioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o"
+    ],
+    "explain": "WSES/CirEsp: tamanho/acessibilidade do abscesso guiam ATB vs drenagem vs cirurgia. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Aplicar Hartmann a todo Ia. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 9,
+    "group": "Abdome agudo",
+    "theme": "ASBO — escore radiológico de transição",
+    "stem": "TC de ASBO mostra zona de transição única, fezes no intestino delgado (small bowel feces sign) e sem sofrimento. Interpretação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Compatível com obstrução adesional grau mecânico; tentar NOM se estável sem isquemia com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "Diagnóstico definitivo de isquemia necessariamente, o que atrasa o manejo correto, o que atrasa o manejo correto, com no",
+      "Indicação absoluta de stent ileal, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Exclui ASBO e libera dieta livre, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Mandatório operar em <1 h sempre, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Cir3: transição + feces sign apoiam ASBO; conduta ainda depende de isquemia/clínica. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar só pelo feces sign sem clínica. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 10,
+    "group": "Abdome agudo",
+    "theme": "Obstrução — bezoar pós-cirurgia gástrica",
+    "stem": "Pós-gastrectomia parcial com obstrução de delgado; TC sugere bezoar. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Tentativa de Coca-Cola/endoscopia em selecionados; cirurgia se falha, isquemia ou obstrução completa refratária com reassesso clínico seriado",
+    "wrongs": [
+      "Só fibra insolúvel em grande quantidade, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Quimioterapia, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "CPRE, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Alta sem desobstrução, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: bezoar — dissolução/endoscopia; operar complicações. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Forçar dieta rica em fibra no bezoar obstrutivo."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 11,
+    "group": "Abdome agudo",
+    "theme": "Volvo cecal — hemicolectomia",
+    "stem": "Volvo de ceco com sofrimento de parede na exploração. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Hemicolectomia direita (ou ressecção ileocecal) sem detorção isolada se isquemia com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Apenas detorção e cecoplicatura sob necrose, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Stent ileal metálico, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Antibiótico isolado, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia terapêutica no ceco necrosado, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Cir1: volvo cecal isquêmico → ressecção; fixação só em viável selecionado. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Detorcer e deixar necrose. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 12,
+    "group": "Abdome agudo",
+    "theme": "Pancreatite — SIRS nas primeiras 48 h",
+    "stem": "Pancreatite com SIRS persistente >48 h. Significado prognóstico? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Maior risco de gravidade/falência orgânica — UTI, fluidos criteriosos e vigilância de necrose infectada com reassesso clínico seriado com",
+    "wrongs": [
+      "Indicação automática de necrosectomia no D3, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, com potencial dano",
+      "ATB profilático obrigatório só pelo SIRS, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "CPRE imediata sem colangite/obstrução, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Alta domiciliar, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa"
+    ],
+    "explain": "Atlanta: SIRS persistente marca pancreatite potencialmente grave. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar cedo só porque há SIRS. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 13,
+    "group": "Abdome agudo",
+    "theme": "Pancreatite biliar — CPRE se colangite",
+    "stem": "Pancreatite biliar + febre, icterícia e dilatação de VBP. Timing da CPRE? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "CPRE precoce para drenagem se colangite/obstrução persistente; não rotina em pancreatite leve sem colangite com reassesso clínico seriado",
+    "wrongs": [
+      "CPRE em toda pancreatite com lipase alta, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colecistectomia antes de drenar colangite grave, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "PTBD preferível a CPRE em todos os estáveis sem falha, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Observar colangite 1 semana sem drenar, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, elevando risco sem"
+    ],
+    "explain": "Guidelines: CPRE se colangite ou obstrução; não profilática na leve. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "CPRE cosmética em toda biliar. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 14,
+    "group": "Abdome agudo",
+    "theme": "Necrose — aberta vs step-up falha",
+    "stem": "WON infectada, falha de drenagem percutânea/endoscópica step-up, sepse persistente. Próximo passo? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Necrosectomia minimamente invasiva/aberta de resgate após falha do step-up com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Manter só ATB sem novo source control, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Alta com dreno seco, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Transplante pancreático urgente, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Radioterapia da necrose, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: step-up; cirurgia se falha das drenagens menos invasivas. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Insistir eternamente em dreno inadequado."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 15,
+    "group": "Abdome agudo",
+    "theme": "Úlcera — H. pylori após perfuração",
+    "stem": "Após Graham patch bem-sucedido, biópsia/urease positiva. Conduta adjuvante? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Erradicação de H. pylori + IBP e investigação de NSAID; endoscopia de controle selecionada com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Gastrectomia total adjuvante de rotina, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Nenhum IBP no pós-op, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, com",
+      "Quimioterapia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Antibiótico para H. pylori só se sangrar de novo, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Cir1: fechar perfuração + erradicar H. pylori reduz recorrência. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Esquecer erradicação após o patch. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 16,
+    "group": "Abdome agudo",
+    "theme": "Boerhaave — indicação operatória precoce",
+    "stem": "Vômitos → dor torácica, enfisema cervical, TC com extravasamento esofágico distal. Estável há 8 h. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Controle de foco urgente (reparo primário/stent/exclusão conforme tempo e contaminação) + drenagem mediastinal com reassesso clínico seriado",
+    "wrongs": [
+      "Observação ambulatorial com antiemético, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só IBP EV sem drenar mediastino, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Quimioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais"
+    ],
+    "explain": "CirEsp: Boerhaave é emergência — intervenção precoce melhora sobrevida. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Tratar como Mallory-Weiss simples. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 17,
+    "group": "Abdome agudo",
+    "theme": "Megacólon tóxico — limites do clínico",
+    "stem": "RCU com cólon >6 cm, taquicardia e febre; 48 h de corticoide EV sem melhora. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Colectomia de urgência (total + ileostomia) se sem resposta clara ou deterioração com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "Esperar 14 dias de corticoide sob toxicidade, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia longa diária, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Proctocolectomia com pouch imediato na sepse, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Transplante fecal sob megacólon, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: falha precoce no megacólon tóxico → cirurgia. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Protelar colectomia na toxicidade. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 18,
+    "group": "Abdome agudo",
+    "theme": "Ogilvie — neostigmina critérios",
+    "stem": "Pseudo-obstrução aguda, ceco 11 cm, sem isquemia, falha de medidas conservadoras. Próximo passo farmacológico? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Neostigmina IV sob monitorização se sem contraindicação; colonoscopia descompressiva/cirurgia se falha ou isquemia com reassesso clínico seriado",
+    "wrongs": [
+      "Neostigmina sob bradicardia grave não monitorizada, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, o que atrasa o",
+      "Hartmann imediato em todo Ogilvie sem tentar clínico, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Baritado oral espesso, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Opioide adicional para 'descansar o cólon', elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: Ogilvie — suporte → neostigmina → endoscopia; operar isquemia/perfuração. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar antes de tentar neostigmina no estável."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 19,
+    "group": "Abdome agudo",
+    "theme": "Isquemia mesentérica — D-dímero limitado",
+    "stem": "Dor desproporcional, FA, D-dímero normal. Exclui isquemia? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Não: D-dímero negativo não exclui; se alta suspeita, angioTC mesmo com D-dímero normal com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "D-dímero normal afasta 100% isquemia, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só dose de lactato decide operar, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Anticoagular e alta sem imagem, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia substitui angioTC, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: biomarcadores auxiliares; clínica manda na angioTC. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Usar D-dímero como regra de exclusão. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 20,
+    "group": "Abdome agudo",
+    "theme": "AAA roto — hipotensão permissiva",
+    "stem": "Suspeita de rAAA, PA 85×50, consciente, transferência para EVAR/open. Estratégia volêmica pré-op? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Hipotensão permissiva cautelosa: evitar hipertensão iatrogênica e overload antes do controle vascular com reassesso clínico seriado",
+    "wrongs": [
+      "Elevar PAS >160 com volume e vasopressor agressivo, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Trombólise pré-hospitalar, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia prévia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Anticoagulação plena pré-clampe, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp/vascular: permissive hypotension até controle do sangramento. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Normalizar PA agressivamente e precipitar ressangramento."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 21,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — tela em campo limpo-contaminado",
+    "stem": "Hérnia estrangulada com ressecção ileal e contaminação mínima controlada. Uso de mesh? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Individualizar: preferir reparo anatômico/biológico em contaminação; tela sintética com cautela se limpo-contaminado selecionado",
+    "wrongs": [
+      "Sempre colocar tela intraperitoneal em peritonite fecal, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Nunca reparar o defeito na urgência, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só ATB sem fechar hérnia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Radioterapia da parede, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Cir3: contaminação influencia escolha do material; segurança > 'tela a qualquer custo'. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Implantar tela em campo sujo sem critério."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 22,
+    "group": "Abdome agudo",
+    "theme": "Peritonite — culturas e desescalonamento",
+    "stem": "Peritonite secundária operada, culturas colhidas no foco. Papel das culturas? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Guiar desescalonamento/ajuste se flora resistente ou falha clínica; ATB empírico inicial pelo risco local com reassesso clínico seriado",
+    "wrongs": [
+      "Culturas tornam ATB desnecessário, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Manter carbapenêmico 6 semanas sempre, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Ignorar culturas se o paciente melhorar, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Antifúngico universal em toda peritonite comunitária jovem, elevando risco sem benefício claro, o que atrasa o manejo correto"
+    ],
+    "explain": "CirEsp: source control + ATB; culturas otimizam terapia. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Cultura como substituto do controle de foco."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 23,
+    "group": "Abdome agudo",
+    "theme": "Abscesso intra-abdominal — source control",
+    "stem": "Pós-op com abscesso de 7 cm e sepse. Falhou ATB isolado. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Drenagem percutânea (ou cirúrgica se inacessível) + ATB — source control é prioridade com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Só trocar ATB sem drenar, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Observação por 21 dias, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Quimioterapia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia drenante, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "SSC/CirEsp: abscesso drenável com sepse → drenar. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "ATB eterno sem drenagem. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 24,
+    "group": "Abdome agudo",
+    "theme": "Cisto ovariano hemorrágico — NOM",
+    "stem": "Mulher estável, β-hCG negativo, TC/US com cisto hemorrágico e líquido livre moderado. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Observação, analgesia e Ht seriado; laparoscopia se instabilidade ou dúvida com ectópica com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "Metotrexato, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Laparotomia obstétrica de rotina, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Anticoagulação, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Ooforectomia bilateral profilática, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Gineco: cisto hemorrágico estável → NOM. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar todo líquido livre fisiológico. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 25,
+    "group": "Abdome agudo",
+    "theme": "Linfadenite mesentérica — Yersinia",
+    "stem": "Adolescente com dor em FID, apêndice normal na laparoscopia, linfonodos mesentéricos volumosos. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Não ressecar intestino; suporte ± ATB se Yersinia/infecção suspeita; apendicectomia se já aberta conforme prática local com reassesso",
+    "wrongs": [
+      "Hemicolectomia direita de rotina, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Quimioterapia por linfoma sem histologia, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Corticoterapia alta sem infecção excluída, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Alta sem orientação de seguimento, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: linfadenite mesentérica mimetiza apendicite — evitar ressecção ampla. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Colectomizar por linfonodos reativos. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 26,
+    "group": "Abdome agudo",
+    "theme": "Enterite por Campylobacter — cirurgia rara",
+    "stem": "Diarreia, dor difusa e leucocitose; TC com ileíte. Quando operar? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Quase sempre clínico; cirurgia só se perfuração, megacólon tóxico ou dúvida com apendicite complicada com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Hemicolectomia imediata em toda ileíte, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Stent ileal, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Ivermectina empírica, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Radioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o"
+    ],
+    "explain": "Infecto/Cir: Campylobacter é clínico; operar complicações. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Cirurgia 'para encurtar curso' da enterite."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 27,
+    "group": "Abdome agudo",
+    "theme": "Perfuração tifoide — timing",
+    "stem": "Febre prolongada, sinais de peritonite e pneumoperitônio em área endêmica. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Laparotomia: reparo/ressecção ileal da perfuração + lavagem + ATB (ceftriaxona/esquema local) com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Só ciprofloxacino ambulatorial sob peritonite, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia com clip, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Observação 72 h sem cirurgia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Transplante ileal, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que"
+    ],
+    "explain": "CirEsp: perfuração tifoide = cirurgia + ATB. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "NOM sob pneumoperitônio e defesa. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 28,
+    "group": "Abdome agudo",
+    "theme": "Ascaridíase — obstrução intestinal",
+    "stem": "Criança/adulto jovem com massa de áscaris e obstrução parcial sem peritonite. Conduta inicial? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Suporte, SNG e anti-helmíntico após estabilização; cirurgia se completa/isquemia/perfuração com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Albendazol IM na alça necrosada sem operar, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Ressecção em massa de rotina na parcial que responde, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia total infantil obrigatória, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Quimioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o"
+    ],
+    "explain": "CirEsp: áscaris obstrutivo — clínico primeiro; operar complicação. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar toda carga parasitária parcial. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 29,
+    "group": "Abdome agudo",
+    "theme": "Strongyloides — hiperinfecção abdominal",
+    "stem": "Imunossuprimido com dor, íleo e gram-negativemia; eosinofilia e larva em aspirado. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Ivermectina urgente + suporte e reduzir imunossupressão; cirurgia só se necrose/perfuração com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Só laparotomia sem antiparasitário, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Corticoide adicional empírico, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Ignorar e tratar como íleo opioide, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Radioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o"
+    ],
+    "explain": "Infecto: hiperinfecção por Strongyloides — ivermectina precoce. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Aumentar esteroide sem tratar o parasita."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 30,
+    "group": "Abdome agudo",
+    "theme": "Abscesso esplênico — drenagem",
+    "stem": "Febre, QHE doloroso, TC com abscesso esplênico uniloculado. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "ATB + drenagem percutânea se acessível; esplenectomia se falha, multilocular complexo ou ruptura com reassesso clínico seriado",
+    "wrongs": [
+      "Esplenectomia imediata em todo abscesso pequeno responsivo, o que atrasa o manejo correto, o que atrasa o manejo correto",
+      "Só antipirético, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Anticoagulação, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Radioterapia esplênica, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: abscesso esplênico — ATB±drenagem; esplenectomia se necessário. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Esplenectomizar sem tentar drenagem quando factível."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 31,
+    "group": "Abdome agudo",
+    "theme": "Infarto esplênico — manejo clínico",
+    "stem": "Dor em QHE, TC com infarto esplênico segmentar, estável, sem abscesso. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Analgesia, hidratação, investigar causa embólica/hematológica e NOM; operar complicações com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "Esplenectomia imediata de rotina, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Trombólise esplênica empírica, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Antibiótico antiviral obrigatório, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Alta sem investigação etiológica, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: infarto esplênico não complicado é clínico. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar todo defeito de perfusão. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 32,
+    "group": "Abdome agudo",
+    "theme": "Mirizzi — tipos avançados",
+    "stem": "Icterícia, cálculo impactado no cístico com compressão e fístula para VBP (Mirizzi avançado). Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Cirurgia cuidadosa (cole parcial, reparo biliar/anastomose) em centro experiente ± CPRE prévia com reassesso clínico seriado",
+    "wrongs": [
+      "Colecistectomia laparoscópica 'padrão' sem reconhecimento do Mirizzi, o que atrasa o manejo correto, o que atrasa o manejo correto",
+      "Só ATB sem aliviar obstrução, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Transplante hepático de primeira linha, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "LECO da fístula, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais"
+    ],
+    "explain": "CirEsp: Mirizzi II–IV exige técnica biliar avançada. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Dissecar Calot inflamado como rotina simples."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 33,
+    "group": "Abdome agudo",
+    "theme": "Fístula bilioentérica sem íleo biliar",
+    "stem": "Pneumobilia e cálculo grande, sem obstrução intestinal. Interpretação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Fístula bilioentérica possível; tratar colecistite/colangite associada e planejar cirurgia eletiva se indicada com reassesso clínico seriado",
+    "wrongs": [
+      "Diagnóstico obrigatório de íleo biliar mesmo sem dilatação de delgado, o que atrasa o manejo correto, o que atrasa o manejo correto",
+      "Urgência oncológica hepática, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Ignorar pneumobilia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "CPRE diária profilática vitalícia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: fístula pode existir sem Rigler completo; correlacionar clínica. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Operar como íleo biliar sem obstrução. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 34,
+    "group": "Abdome agudo",
+    "theme": "Hemobilia — pós-biópsia hepática",
+    "stem": "Pós-biópsia: dor, hemorragia digestiva alta e icterícia intermitente (tríade de Quincke). Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Angiografia com embolização preferencial; cirurgia se falha com reassesso clínico seriado alinhada às diretrizes vigentes com reassesso clínico seriado",
+    "wrongs": [
+      "Colonoscopia como primeiro exame, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Aumentar anticoagulação, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Observação ambulatorial com melena ativa e choque, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colecistectomia isolada sem controle vascular, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: hemobilia — embolização primeiro. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Laparotomia às cegas sem angio. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 35,
+    "group": "Abdome agudo",
+    "theme": "Hemosuccus pancreaticus",
+    "stem": "Pancreatite crônica, HDA intermitente, TC com pseudoaneurisma de artéria esplênica comunicando com ducto. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Embolização angiográfica (ou cirurgia vascular) do pseudoaneurisma com reassesso clínico seriado alinhada às diretrizes vigentes com reassesso clínico seriado",
+    "wrongs": [
+      "Só IBP e alta, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "CPRE com esclerose varizal gástrica como única medida, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Pancreatectomia total imediata sem angio, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Antibiótico dissolve o aneurisma, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, o que atrasa o manejo correto"
+    ],
+    "explain": "CirEsp: hemosuccus — controle endovascular do pseudoaneurisma. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Tratar como úlcera simples. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 36,
+    "group": "Abdome agudo",
+    "theme": "Pseudoaneurisma pancreático — ruptura iminente",
+    "stem": "WON com contraste extravasando em artéria gástrica esquerda na TC. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Embolização urgente; cirurgia se instável/falha endovascular com reassesso clínico seriado alinhada às diretrizes vigentes com reassesso clínico seriado",
+    "wrongs": [
+      "Observar 2 semanas, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Necrosectomia sem controle vascular prévio no sangrante, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Anticoagulação, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Punção aspirativa do aneurisma, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, o que atrasa o manejo correto"
+    ],
+    "explain": "CirEsp: pseudoaneurisma sangrante = emergência endovascular/cirúrgica. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Aguardar 'organização' sob extravasamento."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 37,
+    "group": "Abdome agudo",
+    "theme": "Trombose porta — sequela de pancreatite",
+    "stem": "Após pancreatite, dor e TC com trombose de veia porta e varizes gástricas. Conduta aguda? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Anticoagulação se sem sangramento maior, tratar varizes se HDA e avaliar extensão; cirurgia rara no agudo com reassesso clínico seriado",
+    "wrongs": [
+      "Porto-sistêmico cirúrgico imediato em todo trombo, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Esplenectomia automática, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Trombólise sistêmica indiscriminada, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Suspender toda profilaxia e observar só, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: TPV pós-pancreatite — anticoagular selecionados; tratar hipertensão portal local. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Shunt de rotina no trombo agudo. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 38,
+    "group": "Abdome agudo",
+    "theme": "Peritonite em CAPD — quando retirar cateter",
+    "stem": "Paciente em diálise peritoneal com peritonite recorrente por fungos. Conduta quanto ao cateter? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Retirar cateter de CAPD, ATB/antifúngico e passar para hemodiálise temporária com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Manter cateter indefinidamente na peritonite fúngica, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Laparotomia total sem antifúngico, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Corticoterapia intraperitoneal, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Nefro/Cir: peritonite fúngica/recorrente grave → remover cateter. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Preservar cateter a qualquer custo na fúngica."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 39,
+    "group": "Abdome agudo",
+    "theme": "Leak bariátrico — peritonite química",
+    "stem": "D3 pós-sleeve, taquicardia, febre e extravasamento no estudo hidrossolúvel. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Reoperação ou endoscopia/drenagem conforme estabilidade: controle de foco, dreno e ATB — não alta precoce com reassesso clínico seriado com",
+    "wrongs": [
+      "Alta com dieta líquida apesar do extravasamento, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano",
+      "Só IBP sem drenar, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Stent colônico, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Quimioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o"
+    ],
+    "explain": "CirEsp: fístula/leak bariátrico precoce com sepse → source control urgente. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Atribuir taquicardia só a ansiedade. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 40,
+    "group": "Abdome agudo",
+    "theme": "Leak anastomótico — bariátrica precoce",
+    "stem": "Pós-RYGB D2 com instabilidade e líquido livre. Prioridade? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Exploração urgente, lavagem, reparo/drenagem e suporte; CPRE/stent em selecionados estáveis depois com reassesso clínico seriado",
+    "wrongs": [
+      "Observação 5 dias sem imagem, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Anticoagulação plena isolada, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Nutrição VO forçada, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais"
+    ],
+    "explain": "Digestiva: leak precoce instável = volta ao centro cirúrgico. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Esperar 'cicatrizar só' sob choque. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 41,
+    "group": "Abdome agudo",
+    "theme": "Síndrome compartimental pós-packing",
+    "stem": "Damage control com packing hepático, PIA elevada e falência renal. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Reoperar: remover/ajustar packing e manter abdome aberto se necessário para descomprimir com reassesso clínico seriado alinhada às",
+    "wrongs": [
+      "Fechar pele sob tensão para conter o packing, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Diurético isolado sem descomprimir, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Aumentar volume livremente, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Colonoscopia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais"
+    ],
+    "explain": "Cir2: packing pode causar ACS — descomprimir e planejar second-look. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Ignorar PIA no packing. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 42,
+    "group": "Abdome agudo",
+    "theme": "Relaparotomia — on-demand vs programada",
+    "stem": "Peritonite grave: estratégia de reoperação. Qual tendência atual? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Preferir relaparotomia on-demand guiada por clínica/imagem vs programada rígida em muitos cenários com reassesso clínico seriado",
+    "wrongs": [
+      "Reoperar todos os dias independentemente da evolução, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Nunca reoperar após a primeira lavagem, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Programar 7 relaparotomias fixas, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só ATB sem source control, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Evidências: on-demand reduz laparotomias desnecessárias se vigilância adequada. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Agenda cega de reoperações. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 43,
+    "group": "Abdome agudo",
+    "theme": "Pneumoperitônio benigno pós-operatório",
+    "stem": "D2 de laparoscopia, pequeno pneumoperitônio residual, abdome flácido, afebril. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Esperado: observar clinicamente; investigar se dor progressiva, febre ou líquido livre suspeito com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Relaparotomia imediata por qualquer bolha de ar, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "ATB 21 dias de rotina, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Sonda nasogástrica vitalícia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Tomografia diária obrigatória mesmo assintomático, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, o que atrasa o"
+    ],
+    "explain": "CirEsp: ar residual pós-laparoscopia é comum; clínica manda. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Reoperar todo pneumoperitônio residual. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 44,
+    "group": "Abdome agudo",
+    "theme": "Corpo estranho ingerido — perfuração",
+    "stem": "Idoso com quadro de abdome agudo; TC mostra objeto pontiagudo extraluminal e líquido livre. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Cirurgia para remover CE, reparar perfuração e lavar a cavidade com reassesso clínico seriado alinhada às diretrizes vigentes com reassesso clínico seriado",
+    "wrongs": [
+      "Esperar eliminação espontânea sob peritonite, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só ATB ambulatorial, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia sob pneumoperitônio tenso e choque, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Radioterapia, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o"
+    ],
+    "explain": "CirEsp: CE perfurante com peritonite → cirurgia. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Observar CE pontiagudo extraluminal. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 45,
+    "group": "Abdome agudo",
+    "theme": "Impactação fecal — perfuração estercoral",
+    "stem": "Institucionalizado com obstipação crônica, sepse e perfuração de cólon esquerdo sobre fecaloma. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Ressecção do segmento perfurado (Hartmann frequente) + lavagem e suporte com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Apenas enema sob peritonite fecal, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Stent sobre perfuração, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Alta com laxante, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Colonoscopia terapêutica na sepse, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: perfuração estercoral = cirurgia de urgência. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Tratar só com laxante na perfuração. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 46,
+    "group": "Abdome agudo",
+    "theme": "Colite por CMV — limiar cirúrgico",
+    "stem": "HIV/imunossuprimido com colite por CMV, sangramento e dilatação tóxica refratária. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Antiviral + suporte; colectomia se toxicidade/perfuração/sangramento refratário com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Colectomia imediata antes de iniciar ganciclovir em todo caso leve, o que atrasa o manejo correto, o que atrasa o manejo correto",
+      "Só loperamida, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Radioterapia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Ignorar CMV e dar só corticoide alto, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "Infecto/Cir: CMV colite — antiviral; cirurgia nas complicações. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Corticoide isolado sem antiviral. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 47,
+    "group": "Abdome agudo",
+    "theme": "Kaposi intestinal — perfuração HIV",
+    "stem": "AIDS com lesões violáceas, dor súbita e pneumoperitônio. Achado intraop de perfuração em placa de Kaposi. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Ressecção limitada do segmento perfurado + terapia antirretroviral/oncológica coordenada com reassesso clínico seriado alinhada às diretrizes vigentes",
+    "wrongs": [
+      "Quimioterapia intraop sem fechar perfuração, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Só ATB sem operar peritonite, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Transplante de cólon, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Radioterapia abdominal urgente sob sepse, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: perfuração por Kaposi → controle cirúrgico do foco + tratamento sistêmico. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "NOM sob perfuração livre. Erro clássico de prova R1."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 48,
+    "group": "Abdome agudo",
+    "theme": "Paniculite mesentérica — quando operar",
+    "stem": "Dor crônica-agudizada, TC com misty mesentery típico, sem obstrução. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Clínico (anti-inflamatório/suporte); cirurgia se massa oclusiva, dúvida neoplásica ou complicação com reassesso clínico seriado com reassesso clínico seriado",
+    "wrongs": [
+      "Ressecção mesentérica radical de rotina, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Quimioterapia empírica, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Anticoagulação plena obrigatória, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Stent mesentérico, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que agor"
+    ],
+    "explain": "CirEsp: paniculite é diagnóstico de exclusão — operar se complicação/dúvida. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Ressecar mesentério 'doente' sem indicação."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 49,
+    "group": "Abdome agudo",
+    "theme": "Esplenose — massa vs tumor",
+    "stem": "Pós-esplenectomia traumática antiga, nódulos peritoneais em TC de abdome agudo inespecífico. Interpretação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Esplenose pode mimetizar implantes; correlacionar história e evitar ressecção desnecessária se estável com reassesso clínico seriado",
+    "wrongs": [
+      "Citorredução oncológica imediata, o que atrasa o manejo correto, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Quimioterapia empírica, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais",
+      "Biópsia percutânea sob peritonite difusa, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Radioterapia dos nódulos, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico"
+    ],
+    "explain": "CirEsp: esplenose é tecido esplênico autotransplantado — não é carcinomatose. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Tratar nódulos como metástases sem história."
+  },
+  {
+    "idPrefix": "cir-abdome7",
+    "n": 50,
+    "group": "Abdome agudo",
+    "theme": "Ascaridíase biliar — colangite",
+    "stem": "Dor em QHD, icterícia e US com imagem linear móvel na VBP. Conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "CPRE para remoção do verme + ATB se colangite + anti-helmíntico; cirurgia se falha com reassesso clínico seriado alinhada às com reassesso clínico seriado",
+    "wrongs": [
+      "Só albendazol sem drenar colangite obstrutiva, o que atrasa o manejo correto, o que atrasa o manejo correto, com agor, o que atrasa o manejo correto",
+      "Hepatectomia direita de rotina, com potencial dano iatrogênico, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "Observação ambulatorial com febre e icterícia, sem suporte nas diretrizes atuais, o que atrasa o manejo correto, com potencial dano iatrogênico",
+      "LECO, elevando risco sem benefício claro, o que atrasa o manejo correto, com potencial dano iatrogênico, sem suporte nas diretrizes atuais, o que atrasa o manejo"
+    ],
+    "explain": "CirEsp: áscaris biliar — CPRE + antiparasitário. Na prática, essa escolha altera a prioridade terapêutica e o prognóstico imediato do paciente.",
+    "trap": "Deixar colangite obstrutiva sem drenagem."
+  }
+]
