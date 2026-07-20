@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-cardio",
+    "n": 1,
+    "group": "Cardiologia",
+    "theme": "STEMI — reperfusão",
+    "stem": "Homem de 58 anos, hipertenso e tabagista, chega à emergência com dor torácica opressiva há 90 minutos, sudorese e náuseas. ECG: supradesnivelamento de ST ≥2 mm em V2–V4, com espelhamento inferior. PA 138×82 mmHg, FC 92 bpm, SpO2 96% em ar. Troponina ainda pendente. Hospital com hemodinâmica 24 h; tempo porta-balão estimado de 70 minutos. Qual a conduta prioritária?",
+    "correct": "Ativar o serviço de hemodinâmica para angioplastia primária imediata, antiagregação dual e anticoagulação conforme protocolo de SCA com supra de ST",
+    "wrongs": [
+      "Aguardar resultado da troponina para confirmar infarto antes de qualquer tentativa de reperfusão coronariana urgente no momento",
+      "Indicar trombólise imediata sem avaliar tempo até a angioplastia, mesmo com hemodinâmica disponível em menos de 120 minutos no momento",
+      "Internar em enfermaria comum com nitrato oral e AAS isolado, adiando contato com hemodinâmica por estabilidade hemodinâmica sem adiamento injustificado",
+      "Realizar teste ergométrico na admissão para estratificar isquemia antes de decidir sobre cateterismo de urgência conforme o protocolo com registro no prontuário"
+    ],
+    "explain": "No STEMI, o diagnóstico é clínico-eletrocardiográfico; não se atrasa reperfusão pela troponina. Com porta-balão ≤120 min e hemodinâmica disponível, a angioplastia primária é preferível à trombólise, associada a DAPT e anticoagulação.",
+    "trap": "Esperar troponina ou preferir trombólise quando a ICP primária está disponível no tempo-alvo."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 2,
+    "group": "Cardiologia",
+    "theme": "NSTEMI — estratificação",
+    "stem": "Mulher de 67 anos com diabetes e DRC estágio 3 apresenta dor torácica em aperto há 4 horas, agora aliviada. ECG: infradesnivelamento de ST de 1,5 mm em V5–V6 e D1–aVL, sem supra. Troponina ultrasensível elevada (3× o URL). PA 150×88, FC 88, Killip I. Sem sangramento ativo. Qual a melhor estratégia imediata? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Iniciar terapia anti-isquêmica e antiagregante, anticoagular e programar estratégia invasiva precoce conforme risco alto de NSTEMI neste serviço",
+    "wrongs": [
+      "Liberar para ambulatorial com AAS e estatina, pois a dor cessou e não há supradesnivelamento de ST no eletrocardiograma no momento",
+      "Indicar trombólise fibrinólica imediata como no STEMI, independentemente da ausência de supra de ST persistente e reavaliar a resposta",
+      "Suspender qualquer anticoagulação pela DRC e aguardar cateterismo eletivo em 7–10 dias sem terapia adjuvante nesta etapa na rede assistencial disponível",
+      "Realizar apenas ecocardiograma e alta se FE normal, sem antiagregação dual nem estratificação de risco hospitalar conforme gravidade e recursos locais nesta etapa"
+    ],
+    "explain": "NSTEMI com troponina elevada e infra de ST configura alto risco: manejo médico de SCA e estratégia invasiva precoce. Trombólise não é indicada sem supra. Alta precoce é insegura; DRC ajusta doses, não cancela anticoagulação quando indicada.",
+    "trap": "Tratar NSTEMI como angina estável porque a dor melhorou ou aplicar trombólise de STEMI sem supra."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 3,
+    "group": "Cardiologia",
+    "theme": "Angina crônica estável",
+    "stem": "Homem de 62 anos com hipertensão e dislipidemia refere dor precordial aos esforços moderados há 5 meses, sempre aliviada em <5 minutos com repouso. Sem dor em repouso. ECG de repouso sem isquemia aguda. Ecocardiograma: FE 58%, sem valvopatia. Em uso de AAS, estatina e anlodipino. Qual a conduta mais adequada neste momento? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Otimizar antianginoso com betabloqueador, reforçar controle de fatores de risco e estratificar isquemia com teste funcional não invasivo",
+    "wrongs": [
+      "Indicar angioplastia de urgência na mesma noite, mesmo sem critérios de síndrome coronariana aguda em evolução nesta etapa",
+      "Suspender AAS e estatina para “testar” se os sintomas são gastroesofágicos antes de qualquer avaliação cardiológica neste serviço",
+      "Iniciar amiodarona profilática diária para prevenir arritmia ventricular sem evidência de taquicardia documentada e monitoramento contínuo do paciente",
+      "Solicitar apenas Holter de 24 horas e manter apenas anlodipino, sem betabloqueador nem estratificação de isquemia nesta etapa na rede assistencial disponível"
+    ],
+    "explain": "Angina estável exige otimização medicamentosa (betabloqueador como anti-isquêmico de base), controle intensivo de risco e estratificação funcional. ICP de urgência cabe em SCA; não se suspende prevenção secundária empiricamente.",
+    "trap": "Levar angina estável direto à hemodinâmica de urgência ou retirar AAS/estatina sem indicação."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 4,
+    "group": "Cardiologia",
+    "theme": "ICC FE reduzida — terapia",
+    "stem": "Homem de 55 anos com IC pós-IAM há 8 meses, FE 32%, NYHA II, eucárdico na consulta. Creatinina 1,1 mg/dL, K 4,2. Em uso de enalapril 10 mg 12/12 h, carvedilol 6,25 mg 12/12 h e furosemida 40 mg/dia. Sem contraindicação a novos fármacos. Qual ajuste terapêutico tem maior impacto prognóstico agora? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Adicionar antagonista mineralocorticoide e otimizar doses de IECA e betabloqueador, avaliando ARNIs/SGLT2 conforme disponibilidade e indicação no momento",
+    "wrongs": [
+      "Suspender o betabloqueador porque a FE está reduzida e priorizar apenas diurético de alça em dose máxima contínua com segurança",
+      "Trocar enalapril por nifedipino de curta ação para “proteger” o miocárdio sem reavaliar a terapia da IC com FE reduzida de forma imediata",
+      "Indicar digoxina em dose alta como único fármaco modificador de sobrevida, suspendendo IECA e betabloqueador neste serviço preservando efetividade clínica",
+      "Manter apenas furosemida e orientar restrição hídrica extrema, sem otimizar a terapia modificadora de doença de forma imediata com reassessoramento clínico seriado"
+    ],
+    "explain": "Na ICFEr, o eixo prognóstico inclui IECA/ARNI, betabloqueador evidência, ARM e, quando disponíveis, SGLT2. Diurético trata congestão, não substitui terapia modificadora. Bloqueadores de cálcio di-hidropiridínicos de curta ação não são base.",
+    "trap": "Achar que diurético isolado basta ou suspender betabloqueador/IECA na FE reduzida estável."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 5,
+    "group": "Cardiologia",
+    "theme": "ICC FE preservada",
+    "stem": "Mulher de 74 anos, obesa, hipertensa e com FA controlada, chega com dispneia progressiva e edema de membros. BNP elevado. Ecocardiograma: FE 55%, hipertrofia ventricular esquerda, E/e’ elevado, sem valvopatia grave. Sem congestão pulmonar franca após diurético inicial. Qual a estratégia mais apropriada a médio prazo? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Controlar rigorosamente a pressão arterial e a congestão, tratar comorbidades e considerar SGLT2; evitar fluidos excessivos e taquicardia sustentada",
+    "wrongs": [
+      "Indicar digoxina em alta dose e suspender todo anti-hipertensivo para “aumentar a pré-carga” na FE preservada nesta etapa",
+      "Priorizar apenas revascularização cirúrgica empírica sem isquemia documentada como tratamento da ICFEp nesta etapa neste serviço",
+      "Usar nifedipino sublingual de rotina em todo pico pressórico ambulatorial, sem plano contínuo de controle da HAS na rede assistencial disponível",
+      "Contraindicar qualquer diurético mesmo com congestão clínica, por medo de reduzir a pré-carga na FE preservada de forma imediata após estabilização inicial"
+    ],
+    "explain": "Na ICFEp o manejo centra-se em controle pressórico, volume, FA/frequência e comorbidades; SGLT2 tem benefício. Diurético trata congestão. Não há indicação de revascularização empírica nem de nifedipino sublingual de rotina.",
+    "trap": "Tratar ICFEp como se fosse apenas “FE alta = sem IC” ou usar manobras empíricas prejudiciais à pré-carga/HAS."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 6,
+    "group": "Cardiologia",
+    "theme": "HAS — crise hipertensiva",
+    "stem": "Homem de 49 anos chega com PA 220×130 mmHg, cefaleia intensa, visão turva e confusão leve. Fundo de olho: papiledema. Creatinina 2,8 (basal 1,0). Sem dor torácica; ECG sem supra. Qual a conduta inicial mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Diagnosticar emergência hipertensiva com lesão de órgão-alvo, internar em ambiente monitorizado e reduzir a PA de forma controlada",
+    "wrongs": [
+      "Administrar nifedipino sublingual de curta ação e liberar após queda rápida da PA sistólica abaixo de 140 mmHg no momento",
+      "Ignorar o papiledema e tratar apenas como urgência hipertensiva ambulatorial com ajuste oral em 72 horas na rede assistencial disponível",
+      "Indicar trombólise cerebral imediata pela cefaleia, sem neuroimagem e sem caracterizar a emergência hipertensiva na rede assistencial disponível no momento",
+      "Suspender todos os anti-hipertensivos prévios e observar 24 horas sem qualquer redução pressórica monitorizada e monitoramento contínuo do paciente"
+    ],
+    "explain": "Papiledema e lesão renal aguda com PA muito elevada definem emergência hipertensiva: ambiente monitorizado e redução controlada EV. Queda abrupta com nifedipino SL aumenta risco de isquemia. Não é AVE isquêmico a trombolisar empiricamente.",
+    "trap": "Usar nifedipino sublingual ou tratar emergência como urgência ambulatorial."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 7,
+    "group": "Cardiologia",
+    "theme": "HAS — tratamento ambulatorial",
+    "stem": "Mulher de 52 anos, diabética tipo 2, PA média de consultório 158×96 mmHg em duas visitas, MRPA confirmando elevação. Albuminúria 120 mg/g. Sem asma. Creatinina 0,9. Qual esquema inicial mais adequado? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Iniciar IECA ou BRA como base, associar outro anti-hipertensivo se necessário, e reforçar mudanças de estilo de vida com meta individualizada",
+    "wrongs": [
+      "Iniciar apenas atenolol isolado como primeira linha em diabética com albuminúria, sem IECA ou BRA sem adiamento injustificado",
+      "Prescrever apenas restrição de sal sem fármaco, pois a PA ainda não ultrapassou 180×110 mmHg na consulta nesta etapa de forma imediata",
+      "Usar minoxidil como monoterapia inicial de primeira linha em hipertensão estágio 2 com lesão renal inicial no atendimento atual diante do quadro clínico",
+      "Indicar clonidina de curta ação sob demanda apenas quando medir PA elevada em farmácia, sem tratamento contínuo nesta etapa com comunicação à equipe assistencial"
+    ],
+    "explain": "Em diabete com albuminúria, IECA/BRA são preferenciais. Estágio 2 com confirmação por MRPA indica farmacoterapia além de estilo de vida. Betabloqueador isolado não é primeira linha típica; clonidina sob demanda não controla HAS crônica.",
+    "trap": "Adiar fármaco na HAS confirmada com lesão de órgão-alvo ou omitir IECA/BRA na neoalbuminúria diabética."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 8,
+    "group": "Cardiologia",
+    "theme": "Fibrilação atrial — anticoagulação",
+    "stem": "Homem de 78 anos com FA permanente, FE 50%, HAS e AVC prévio há 2 anos. CHA2DS2-VASc alto. Creatinina 1,2, TFG 58. Sem sangramento maior recente. INR lábil sob varfarina. Qual a melhor decisão sobre anticoagulação? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Manter anticoagulação oral prolongada, preferindo DOAC ajustado à função renal quando elegível, pelo alto risco tromboembólico nesta etapa",
+    "wrongs": [
+      "Suspender anticoagulação definitivamente porque a idade avançada eleva o risco de queda e sangramento no atendimento atual",
+      "Trocar anticoagulante por AAS 100 mg isolado como proteção equivalente na FA com AVC prévio com comunicação à equipe assistencial",
+      "Indicar apenas clopidogrel sem anticoagulante, suficiente para prevenção de cardioembolia na FA valvular e não valvular de forma imediata no momento",
+      "Realizar cardioversão elétrica seriada sem anticoagulação, pois a FE está preservada e o paciente está assintomático conforme o protocolo no atendimento atual"
+    ],
+    "explain": "AVC prévio + idade + HAS = indicação clara de anticoagulação na FA. AAS não substitui anticoagulante. DOACs são preferíveis a varfarina lábil quando elegíveis. Cardioversão sem anticoagulação adequada eleva risco embólico.",
+    "trap": "Substituir anticoagulante por AAS ou suspender por “medo de queda” em alto CHA2DS2-VASc."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 9,
+    "group": "Cardiologia",
+    "theme": "FA — controle de frequência",
+    "stem": "Mulher de 66 anos com FA de início há 48 horas, FC 138 bpm, PA 128×78, eucárdica, sem angina. Ecocardiograma prévio: FE 55%, sem estenose mitral. TSH normal. Planeja-se estratégia de controle de frequência. Qual fármaco é mais apropriado inicialmente? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Iniciar betabloqueador ou bloqueador de cálcio não di-hidropiridínico para controle de frequência, com anticoagulação conforme risco no momento",
+    "wrongs": [
+      "Administrar digoxina isolada em dose de ataque alta como primeira escolha em paciente jovem hiperadrenergico na emergência",
+      "Usar verapamil intravenoso associado a betabloqueador EV simultâneo sem monitorização, rotineiramente na rede assistencial disponível",
+      "Indicar amiodarona apenas para reduzir FC, sem considerar betabloqueador, em paciente estável com FE preservada nesta etapa sem adiamento injustificado",
+      "Aplicar adenosina em bolus repetidos visando “converter” FA permanente, como na taquicardia por reentrada nodal no momento com comunicação à equipe assistencial"
+    ],
+    "explain": "No controle de frequência da FA estável, betabloqueador ou BCC não-DHP são opções usuais; digoxina é menos eficaz em tônus adrenérgico alto. Adenosina não trata FA. Combinação EV de verapamil+BB exige cautela extrema.",
+    "trap": "Usar adenosina como se fosse TSVP ou digoxina isolada como primeira linha em FA hiperdinâmica."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 10,
+    "group": "Cardiologia",
+    "theme": "Bradiarritmia — BAV",
+    "stem": "Homem de 71 anos com síncope recorrente. ECG: BAV de 2º grau Mobitz II, FC 38 bpm, QRS largo. PA 100×60, acordado, sem IAM agudo no momento. Qual a conduta mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Internar com monitorização, preparar marca-passo temporário se necessário e indicar avaliação para marca-passo definitivo por BAV de alto grau",
+    "wrongs": [
+      "Liberar com atenolol oral para “estabilizar” a condução atrioventricular e retorno ambulatorial em 30 dias conforme o protocolo",
+      "Tratar apenas com digoxina, pois bradicardia com QRS largo sugere apenas tônus vagal excessivo benigno na rede assistencial disponível",
+      "Indicar cardioversão elétrica sincronizada imediata como se fosse taquiarritmia com pulso instável e monitoramento contínuo do paciente de forma imediata",
+      "Administrar amiodarona EV para acelerar a condução pelo feixe de His e evitar marca-passo com comunicação à equipe assistencial com registro no prontuário"
+    ],
+    "explain": "Mobitz II com QRS largo e síncope é bradiarritmia de alto risco: monitorização e marca-passo (temporário se preciso; definitivo). Betabloqueador/digoxina/amiodarona pioram; cardioversão não se aplica a BAV.",
+    "trap": "Tratar BAV de alto grau com fármacos cronotrópicos negativos ou liberar ambulatorialmente."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 11,
+    "group": "Cardiologia",
+    "theme": "PCR — ACLS",
+    "stem": "Em enfermaria, homem de 64 anos colapsa. Sem respiração e sem pulso. Monitor: FV. Equipe inicia RCP. Desfibrilador chega em 1 minuto. Qual a sequência prioritária correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Manter RCP de alta qualidade, desfibrilar prontamente, retomar compressões imediatamente após o choque e seguir algoritmo de FV/TVSP neste caso",
+    "wrongs": [
+      "Interromper compressões por dois minutos para obter acesso avançado antes de qualquer tentativa de desfibrilação neste caso",
+      "Administrar três choques empilhados sem RCP entre eles e sem checar ritmo, como rotina em toda FV hospitalar e reavaliar a resposta",
+      "Iniciar apenas ventilação boca-a-boca sem compressões, aguardando o desfibrilador por mais de cinco minutos neste serviço sem adiamento injustificado",
+      "Administrar bicarbonato de sódio de rotina no primeiro minuto de PCR, antes de desfibrilação e adrenalina neste caso nesta etapa neste serviço com segurança"
+    ],
+    "explain": "FV é ritmo chocável: RCP contínua e desfibrilação precoce, com compressões imediatas pós-choque. Acesso avançado não atrasa o choque. Bicarbonato não é rotina inicial. Ventilação isolada não substitui compressões.",
+    "trap": "Atrasar desfibrilação por procedimentos ou pausar RCP longamente entre choques."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 12,
+    "group": "Cardiologia",
+    "theme": "Valvopatia — estenose aórtica",
+    "stem": "Homem de 79 anos com sopro sistólico rude em foco aórtico, dispneia aos mínimos esforços e síncope aos esforços. Ecocardiograma: área valvar 0,7 cm², gradiente médio 48 mmHg, FE 55%. Coronárias sem lesão crítica. Qual a conduta definitiva mais apropriada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Indicar intervenção da valva aórtica (cirurgia ou TAVI conforme risco cirúrgico e Heart Team), pois há estenose aórtica grave sintomática no momento",
+    "wrongs": [
+      "Manter apenas observação anual, pois a FE preservada afasta indicação de troca valvar mesmo com sintomas e reavaliar a resposta",
+      "Iniciar nifedipino e vasodilatadores arteriais potentes como tratamento definitivo da estenose aórtica grave sem adiamento injustificado",
+      "Indicar digoxina isolada e restrição absoluta a qualquer esforço, sem planejar intervenção valvar com comunicação à equipe assistencial de forma imediata",
+      "Priorizar apenas marca-passo definitivo pela síncope, sem avaliar a necessidade de tratamento da estenose aórtica e reavaliar a resposta com registro no prontuário"
+    ],
+    "explain": "Estenose aórtica grave sintomática (dispneia/síncope/angina) tem indicação de intervenção valvar. FE preservada não contraindicia. Vasodilatação agressiva é perigosa; marca-passo não trata a obstrução fixa.",
+    "trap": "Observar EA grave sintomática só porque a FE está “normal”."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 13,
+    "group": "Cardiologia",
+    "theme": "Valvopatia — insuficiência mitral",
+    "stem": "Mulher de 46 anos com febre reumática na infância apresenta ortopneia e FA de início recente. Ecocardiograma: insuficiência mitral grave reumática, FE 58%, PSAP 55 mmHg. Em classe funcional III apesar de diurético e vasodilatador. Qual a melhor conduta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Encaminhar para avaliação cirúrgica/valvoplastia conforme anatomia, otimizar IC/FA e discutir timing da correção da insuficiência neste serviço",
+    "wrongs": [
+      "Aguardar FE cair abaixo de 30% para só então indicar cirurgia, independentemente dos sintomas atuais conforme o protocolo",
+      "Tratar definitivamente apenas com antibiótico profilático contínuo sem correção valvar, mesmo em classe III no atendimento atual",
+      "Indicar trombólise pulmonar empírica pela hipertensão pulmonar estimada, sem evidência de TEP agudo nesta etapa na rede assistencial disponível",
+      "Contraindicar qualquer intervenção porque a FE ainda está preservada e a paciente tem menos de 50 anos neste serviço com segurança de forma imediata"
+    ],
+    "explain": "IM grave sintomática refratária à terapia médica indica correção (reparo/troca conforme anatomia). Não se espera deterioração grave da FE. Profilaxia de FR não substitui cirurgia quando há indicação hemodinâmica/sintomática.",
+    "trap": "Adiar cirurgia até FE muito baixa ou achar que FE preservada exclui indicação."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 14,
+    "group": "Cardiologia",
+    "theme": "Endocardite infecciosa",
+    "stem": "Homem de 34 anos usuário de drogas injetáveis há febre há 10 dias, calafrios e dispneia. Exame: sopro holossistólico em foco tricúspide, petéquias. Hemoculturas em coleta. Ecocardiograma: vegetação na valva tricúspide. Qual a conduta inicial correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Coletar hemoculturas adequadas, iniciar antibiótico empírico direcionado a estafilococos após as culturas e avaliar complicações, com ecocardiografia e suporte",
+    "wrongs": [
+      "Aguardar antibiograma definitivo por duas semanas sem iniciar antibiótico, mesmo com vegetação e sepse clínica conforme o protocolo",
+      "Indicar troca valvar imediata em todos os casos antes de qualquer antibiótico ou estabilização infecciosa conforme o protocolo nesta etapa",
+      "Tratar apenas com AAS e estatina, interpretando a vegetação como trombo coronariano sem infecção e monitoramento contínuo do paciente e reavaliar a resposta",
+      "Administrar corticoide em alta dose isolado para “reduzir a vegetação” sem antibioticoterapia com comunicação à equipe assistencial na rede assistencial disponível"
+    ],
+    "explain": "Endocardite: hemoculturas + antibiótico precoce (após coletas) guiado pelo cenário (UDI → estafilococo). Cirurgia tem indicações específicas (falência, embolia recorrente, infecção não controlada), não é automática antes da terapia.",
+    "trap": "Atrasar antibiótico aguardando antibiograma ou operar todos indiscriminadamente."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 15,
+    "group": "Cardiologia",
+    "theme": "Pericardite aguda",
+    "stem": "Homem de 28 anos com dor precordial pleurítica há 2 dias, piora ao deitar e melhora ao sentar. Febre baixa. ECG: supradesnivelamento difuso de ST côncavo e infradesnivelamento de PR. Troponina levemente elevada. Ecocardiograma sem derrame importante. Qual o tratamento inicial? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Iniciar AINE em dose anti-inflamatória plena e considerar colchicina adjuvante, com reavaliação de derrame e contraindicações de forma imediata",
+    "wrongs": [
+      "Indicar trombólise imediata como STEMI, apesar do padrão difuso e da dor tipicamente pericárdica no momento de forma imediata",
+      "Prescrever antibiótico de amplo espectro de rotina em toda pericardite, sem evidência de infecção bacteriana piogênica neste serviço",
+      "Realizar pericardiocentese imediata na ausência de tamponamento ou derrame hemodinamicamente significativo e monitoramento contínuo do paciente no momento",
+      "Suspender qualquer anti-inflamatório e tratar só com betabloqueador para “proteger o miocárdio” com comunicação à equipe assistencial de forma imediata"
+    ],
+    "explain": "Pericardite aguda típica: AINE ± colchicina. Trombólise é erro perigoso frente a supra difuso. Drenagem só se tamponamento/derrame significativo. Antibiótico não é rotina na pericardite viral/idiopática.",
+    "trap": "Confundir supra difuso de pericardite com STEMI e trombolisar."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 16,
+    "group": "Cardiologia",
+    "theme": "Tamponamento cardíaco",
+    "stem": "Mulher de 61 anos com neoplasia conhecida apresenta dispneia, hipotensão 82×50, turgência jugular e abafamento de bulhas. Pulsus paradoxus presente. Ecocardiograma à beira-leito: grande derrame pericárdico com colapso diastólico de câmaras direitas. Qual a conduta prioritária? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Realizar drenagem pericárdica urgente (pericardiocentese guiada) após estabilização mínima, tratando o tamponamento como emergência no momento",
+    "wrongs": [
+      "Administrar carga maciça de fluidos isolada como tratamento definitivo, sem planejar drenagem do derrame de forma imediata",
+      "Iniciar norepinefrina em dose alta e adiar qualquer drenagem por 48 horas se houver resposta pressórica parcial de forma imediata",
+      "Indicar trombólise sistêmica pela hipotensão, interpretando o quadro como IAM extenso sem imagem com registro no prontuário diante do quadro clínico",
+      "Prescrever apenas diurético de alça em alta dose para reduzir a turgência jugular do tamponamento e reavaliar a resposta com comunicação à equipe assistencial"
+    ],
+    "explain": "Tamponamento com colapso de câmaras exige drenagem urgente. Volume pode ser ponte temporária; vasopressor não substitui a remoção do líquido. Diurético piora o enchimento; trombólise não tem papel.",
+    "trap": "Tratar tamponamento só com vasoativo/diurético e adiar a pericardiocentese."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 17,
+    "group": "Cardiologia",
+    "theme": "Miocardiopatia dilatada",
+    "stem": "Homem de 42 anos etilista crônico com IC progressiva. Ecocardiograma: FE 28%, ventrículo esquerdo dilatado, sem valvopatia primária grave. Coronariografia sem obstruções significativas. Em uso irregular de medicações. Qual a abordagem mais correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Otimizar terapia da ICFEr, suspender álcool, investigar causas reversíveis e acompanhar remodelamento; considerar dispositivos conforme critérios",
+    "wrongs": [
+      "Indicar troca valvar mitral profilática em todos os dilatados, mesmo sem insuficiência mitral significativa de forma imediata",
+      "Contraindicar betabloqueador e IECA definitivamente porque a dilatação ventricular “exige” só diurético na rede assistencial disponível",
+      "Prescrever quimioterapia empírica para miocardite sem biópsia nem evidência de doença infiltrativa específica na rede assistencial disponível no momento",
+      "Liberar prática de maratona competitiva imediata para “reabilitar” o miocárdio dilatado com FE 28% com comunicação à equipe assistencial e reavaliar a resposta"
+    ],
+    "explain": "MCD: terapia padrão de ICFEr, remoção de tóxicos (álcool), investigação etiológica e indicação criteriosa de CDI/TRC. Cirurgia valvar não é profilática sem lesão. Exercício competitivo vigoroso é contraindicado na FE muito baixa não otimizada.",
+    "trap": "Negar terapia modificadora na miocardiopatia dilatada ou liberar esporte competitivo precoce."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 18,
+    "group": "Cardiologia",
+    "theme": "Miocardiopatia hipertrófica",
+    "stem": "Homem de 29 anos com síncope aos esforços e sopro que aumenta com Valsalva. Ecocardiograma: hipertrofia septal assimétrica, gradiente obstrutivo no trato de saída, FE 70%. Pai morreu súbito aos 35 anos. Qual a conduta inicial mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Evitar vasodilatadores e digoxina, iniciar betabloqueador, orientar restrição a esforços intensos e avaliar risco de morte súbita/CDI nesta etapa",
+    "wrongs": [
+      "Prescrever nifedipino e nitrato de rotina para reduzir a pós-carga na obstrução dinâmica do trato de saída conforme o protocolo",
+      "Indicar digoxina para aumentar a contratilidade e “vencer” o gradiente obstrutivo na MCH com registro no prontuário conforme o protocolo",
+      "Liberar treinamento de força máximo com manobra de Valsalva repetida como reabilitação segura com registro no prontuário na rede assistencial disponível",
+      "Tratar apenas com AAS 100 mg, pois a MCH obstrutiva se comporta como SCA até prova em contrário sem adiamento injustificado com comunicação à equipe assistencial"
+    ],
+    "explain": "Na MCH obstrutiva: betabloqueador (ou verapamil selecionado), evitar inotrópicos positivos e vasodilatação que aumentam o gradiente; avaliar risco de MS. História familiar de MS é red flag.",
+    "trap": "Usar vasodilatadores/digoxina que aumentam a obstrução dinâmica na MCH."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 19,
+    "group": "Cardiologia",
+    "theme": "TEP com repercussão cardíaca",
+    "stem": "Mulher de 45 anos no 5º dia pós-cirurgia ortopédica apresenta dispneia súbita, PA 88×56, FC 124, SpO2 86% em O2. ECG: S1Q3T3 e taquicardia sinusal. AngioTC: TEP bilateral central. Lactato 4,2. Qual a melhor conduta imediata? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Estabilizar via aérea/oxigênio, suporte hemodinâmico e indicar reperfusão (trombólise sistêmica ou alternativa) no TEP maciço com choque",
+    "wrongs": [
+      "Apenas AAS e alta domiciliar com retorno em uma semana, por tratar-se de evento trombótico “menor” diante do quadro clínico",
+      "Indicar pericardiocentese às cegas, interpretando a hipotensão como tamponamento sem ecocardiograma preservando efetividade clínica",
+      "Administrar betabloqueador EV para reduzir a FC antes de qualquer anticoagulação ou reperfusão de forma imediata com reassessoramento clínico seriado",
+      "Contraindicar oxigênio suplementar para “não mascarar” a hipoxemia enquanto se decide a terapia com comunicação à equipe assistencial e reavaliar a resposta"
+    ],
+    "explain": "TEP com hipotensão = maciço/alto risco: suporte e reperfusão (trombólise se sem contraindicação absoluta) além de anticoagulação. Betabloqueador em choque é prejudicial. AAS isolado é insuficiente.",
+    "trap": "Tratar TEP com choque como evento ambulatorial ou atrasar reperfusão."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 20,
+    "group": "Cardiologia",
+    "theme": "Perfil lipídico — prevenção",
+    "stem": "Homem de 51 anos diabético tipo 2 há 8 anos, HAS, LDL 142 mg/dL, HDL 38, triglicérides 180, não tabagista. Sem evento cardiovascular prévio. Já em dieta. Qual a conduta lipídica mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Iniciar estatina de alta intensidade para prevenção primária de alto risco, com meta de redução percentual do LDL e reavaliação laboratorial no momento",
+    "wrongs": [
+      "Aguardar LDL >190 mg/dL para só então considerar estatina, ignorando o diabetes de longa data e a HAS com registro no prontuário",
+      "Prescrever apenas ômega-3 em dose nutricional como substituto completo da estatina neste perfil de risco na rede assistencial disponível",
+      "Indicar fibrato isolado como primeira linha para reduzir LDL e prevenir eventos coronarianos maiores com registro no prontuário após estabilização inicial",
+      "Suspender qualquer hipolipemiante porque triglicérides <500 excluem risco cardiovascular residual sem adiamento injustificado com comunicação à equipe assistencial"
+    ],
+    "explain": "Diabete + HAS = alto risco: estatina (geralmente alta intensidade) é a base. Fibrato não é primeira linha para LDL/eventos; ômega-3 nutricional não substitui estatina.",
+    "trap": "Adiar estatina em diabético de alto risco porque o LDL “não está altíssimo”."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 21,
+    "group": "Cardiologia",
+    "theme": "Antiagregação — SCA",
+    "stem": "Homem de 60 anos com NSTEMI será submetido a angioplastia com stent farmacológico. Sem alto risco hemorrágico absoluto. Já recebeu AAS. Qual a estratégia antiagregante mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Manter AAS e associar inibidor de P2Y12 (como ticagrelor ou prasugrel se elegível, ou clopidogrel) em dupla antiagregação pelo tempo indicado",
+    "wrongs": [
+      "Suspender AAS definitivamente após o stent e manter apenas anticoagulante oral sem P2Y12 na rede assistencial disponível",
+      "Usar apenas dipiridamol como monoterapia antiagregante após ICP com stent farmacológico sem adiamento injustificado no momento",
+      "Indicar abciximabe oral contínuo por um ano como substituto da dupla antiagregação padrão e monitoramento contínuo do paciente de forma imediata",
+      "Manter apenas AAS 100 mg sem P2Y12, pois o stent farmacológico dispensa o segundo antiagregante na rede assistencial disponível sem adiamento injustificado"
+    ],
+    "explain": "Pós-ICP com stent: DAPT (AAS + P2Y12) por período definido reduz trombose de stent e eventos. Dipiridamol/abciximabe oral contínuo não substituem esse padrão.",
+    "trap": "Omitir P2Y12 após stent ou substituir DAPT por esquemas inadequados."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 22,
+    "group": "Cardiologia",
+    "theme": "Betabloqueador e IECA no pós-IAM",
+    "stem": "Mulher de 59 anos no 3º dia pós-IAM com supra anterior tratado com ICP. FE 38%, PA 118×70, FC 78, eucárdica, sem broncoespasmo. Qual combinação medicamentosa é a mais apropriada na alta, além de DAPT e estatina? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Manter betabloqueador e IECA (ou BRA se intolerância), titulando conforme PA/FC e função renal, pela FE reduzida pós-IAM sem adiamento injustificado",
+    "wrongs": [
+      "Suspender IECA porque a PA sistólica está abaixo de 130 mmHg, mesmo com FE 38% e IAM recente com comunicação à equipe assistencial",
+      "Trocar betabloqueador por nifedipino de curta ação para prevenir remodelamento ventricular adverso nesta etapa sem adiamento injustificado",
+      "Indicar apenas nitrato oral contínuo como substituto de IECA e betabloqueador no pós-IAM com FE baixa de forma imediata e monitoramento contínuo do paciente",
+      "Contraindicar betabloqueador definitivamente pela FE reduzida, temendo piora da IC em paciente eucárdica e reavaliar a resposta conforme gravidade e recursos locais"
+    ],
+    "explain": "Pós-IAM com disfunção VE: IECA/BRA e betabloqueador melhoram prognóstico. Nifedipino de curta ação não substitui. FE baixa eucárdica não é contraindicação absoluta a BB; titulam-se doses.",
+    "trap": "Retirar IECA/BB no pós-IAM com FE reduzida por PA “não alta” ou medo injustificado."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 23,
+    "group": "Cardiologia",
+    "theme": "Choque cardiogênico",
+    "stem": "Homem de 68 anos com IAM inferior complicado: PA 78×48, extremidades frias, oligúria, confusão. Ecocardiograma: FE 25%, sem tamponamento. Em O2, lactato 5,0. Já revascularizado. Qual a prioridade no manejo do choque? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Otimizar oxigenação, suporte hemodinâmico com vasopressor/inotropo conforme perfil e avaliar suporte mecânico circulatório se refratário no momento",
+    "wrongs": [
+      "Administrar betabloqueador EV para reduzir consumo de oxigênio miocárdico no choque cardiogênico estabelecido neste serviço",
+      "Indicar diurético de alça em bolus alto como primeira medida em paciente hipotenso e oligúrico sem congestão franca prioritária no momento",
+      "Suspender toda monitorização invasiva e tratar apenas com soro fisiológico contínuo sem reassessor hemodinâmica de forma imediata e reavaliar a resposta",
+      "Priorizar sedação profunda isolada sem suporte circulatório, na expectativa de recuperação espontânea da PA com registro no prontuário após estabilização inicial"
+    ],
+    "explain": "Choque cardiogênico: suporte de perfusão (vasoativo/inotropo), oxigenação e consideração de dispositivo se refratário, após revascularização. BB EV é contraindicado no choque; fluidos/diuréticos exigem julgamento do volume.",
+    "trap": "Dar betabloqueador no choque cardiogênico ou negligenciar suporte circulatório."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 24,
+    "group": "Cardiologia",
+    "theme": "Síncope — estratificação",
+    "stem": "Homem de 72 anos com síncope súbita sem pródromos, durante caminhada. ECG: BRE completo novo e pausas de 2,8 s em monitorização. Ecocardiograma: FE 42%. Sem déficit neurológico. Qual a conduta mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Internar para investigação cardiogênica, monitorização contínua e avaliar indicação de marca-passo/CDI conforme bradiarritmia e FE no momento",
+    "wrongs": [
+      "Diagnosticar síncope vasovagal típica e liberar sem ECG nem monitorização, apenas com orientação de hidratação nesta etapa",
+      "Indicar antiepiléptico empírico sem avaliação cardíaca, interpretando toda síncope do idoso como crise convulsiva de forma imediata",
+      "Solicitar apenas eletroencefalograma ambulatorial em 90 dias, sem investigar causa arrítmica na internação no momento preservando efetividade clínica",
+      "Prescrever nitrato sublingual de uso livre para “melhorar o fluxo cerebral” após síncope de esforço conforme o protocolo com reassessoramento clínico seriado"
+    ],
+    "explain": "Síncope sem pródromos + distúrbio de condução/pausas + FE reduzida sugere causa cardíaca de alto risco: internação e avaliação de dispositivo. Não é vasovagal típico; EEG isolado atrasa diagnóstico.",
+    "trap": "Rotular síncope de alto risco como vasovagal e liberar sem monitorização."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 25,
+    "group": "Cardiologia",
+    "theme": "ECG — isquemia / localização",
+    "stem": "Homem de 54 anos com dor torácica. ECG: supra de ST em D2, D3 e aVF, com infra em V1–V2. PA 110×70, FC 58. Qual a interpretação e preocupação imediata mais corretas? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Sugere IAM inferior, avaliar parede posterior/VD associada, evitar nitrato se houver suspeita de acometimento de ventrículo direito e priorizar reperfusão",
+    "wrongs": [
+      "Diagnosticar pericardite difusa e liberar com AINE, ignorando o padrão segmentar inferior com sintomas de SCA neste serviço",
+      "Interpretar como bloqueio de ramo esquerdo típico benigno, sem critérios de isquemia aguda nem dor conforme o protocolo neste serviço",
+      "Indicar apenas observação, pois infra em precordiais direitas exclui qualquer infarto inferior agudo sem adiamento injustificado e reavaliar a resposta",
+      "Administrar verapamil EV para “reverter o supra”, tratando o traçado como taquicardia por reentrada nodal sem adiamento injustificado após estabilização inicial"
+    ],
+    "explain": "Supra inferior = IAM de parede inferior; investigar VD/posterior. Nitrato pode causar hipotensão grave no IAM de VD. Não é pericardite (padrão segmentar + clínica de SCA).",
+    "trap": "Dar nitrato liberalmente em IAM inferior sem excluir acometimento de VD."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 26,
+    "group": "Cardiologia",
+    "theme": "STEMI — trombólise",
+    "stem": "Hospital sem hemodinâmica. Homem de 50 anos com dor há 2 horas e supra anterior claro. Tempo até ICP em outro centro >120 minutos. Sem contraindicação absoluta a fibrinólise. Qual a melhor conduta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Administrar trombólise o mais precoce possível (meta porta-agulha), transferir para centro com ICP e manter terapia adjuvante de SCA nesta etapa",
+    "wrongs": [
+      "Aguardar transferência para ICP mesmo com atraso previsto >120 minutos, sem considerar fibrinólise sem adiamento injustificado",
+      "Indicar apenas heparina sem AAS nem fibrinolítico, por medo de sangramento em todo paciente com supra na rede assistencial disponível",
+      "Realizar teste ergométrico antes de decidir reperfusão química no STEMI hiperagudo na rede assistencial disponível evitando atraso terapêutico relevante",
+      "Administrar fibrinolítico e contraindicar qualquer cateterismo posterior, mesmo com falha de reperfusão com comunicação à equipe assistencial conforme o protocolo"
+    ],
+    "explain": "Se ICP oportuna inviável, trombólise precoce é indicada, seguida de transferência (farmacoinvasiva). Falha de reperfusão exige ICP de resgate. Não se atrasa reperfusão por teste de esforço.",
+    "trap": "Atrasar reperfusão esperando ICP distante quando a trombólise está indicada."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 27,
+    "group": "Cardiologia",
+    "theme": "Angina — estratificação funcional",
+    "stem": "Mulher de 58 anos com angina típica de esforço, ECG de repouso normal, FE 60%. Baixa probabilidade de doença de alto risco clínico imediato. Sem SCA. Qual o próximo passo diagnóstico preferencial? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Solicitar teste funcional não invasivo (ergométrico ou imagem de estresse conforme elegibilidade) para estratificar isquemia antes de ICP eletiva",
+    "wrongs": [
+      "Indicar cateterismo de urgência na madrugada, sem critérios de instabilidade ou SCA em evolução sem adiamento injustificado",
+      "Dispensar qualquer investigação porque o ECG de repouso normal exclui doença coronariana obstrutiva na rede assistencial disponível",
+      "Iniciar amiodarona profilática e só investigar isquemia se houver TV sustentada documentada e monitoramento contínuo do paciente no atendimento atual",
+      "Realizar pericardiocentese diagnóstica para excluir tamponamento como causa de dor aos esforços diante do quadro clínico e monitoramento contínuo do paciente"
+    ],
+    "explain": "Na angina estável de risco intermediário, estratificação funcional guia a necessidade/intensidade de invasão. ECG normal não exclui DAC. ICP de urgência não se aplica sem SCA.",
+    "trap": "Levar todo quadro anginoso estável direto à hemodinâmica de urgência."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 28,
+    "group": "Cardiologia",
+    "theme": "ICC — descompensação aguda",
+    "stem": "Homem de 70 anos com ICFEr conhecida chega com ortopneia, estertores difusos, SpO2 88%, PA 150×95, FC 98, sem febre. ECG sem SCA aguda. BNP elevado. Qual a terapia inicial prioritária? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Oxigenoterapia/VNI se indicado, diurético de alça intravenoso e vasodilatador se PA permitir, tratando edema agudo pulmonar cardiogênico nesta etapa",
+    "wrongs": [
+      "Administrar 2 litros de soro fisiológico rápido para “melhorar a perfusão”, ignorando a congestão pulmonar franca neste serviço",
+      "Indicar betabloqueador EV em bolus alto na emergência do edema agudo antes de diurese e suporte ventilatório sem adiamento injustificado",
+      "Tratar empiricamente com trombólise por dispneia, sem evidência de SCA com supra ou TEP maciço e reavaliar a resposta com reassessoramento clínico seriado",
+      "Suspender oxigênio para estimular a respiração e observar por seis horas sem diurético com comunicação à equipe assistencial e reavaliar a resposta"
+    ],
+    "explain": "EAP cardiogênico: O2/VNI, diurético EV e vasodilatação se hipertenso. Fluidos agravam. BB EV não é o primeiro passo na descompensação hipoxêmica aguda.",
+    "trap": "Dar volume em congestão franca ou atrasar diurético/VNI."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 29,
+    "group": "Cardiologia",
+    "theme": "HAS — secundária suspeita",
+    "stem": "Mulher de 28 anos com PA 170×110 resistente a três fármacos, hipocalemia 2,8 mEq/L e alcalose metabólica, sem diurético recente. Sem obesidade mórbida. Qual a hipótese e investigação mais pertinentes? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Suspeitar hiperaldosteronismo primário e investigar com relação aldosterona/renina e avaliação especializada, além de otimizar a PA",
+    "wrongs": [
+      "Atribuir tudo a “efeito do jaleco branco” e suspender anti-hipertensivos sem MRPA/MAPA nem investigação de forma imediata",
+      "Indicar apenas restrição de potássio alimentar como tratamento definitivo da hipertensão resistente no momento de forma imediata",
+      "Diagnosticar feocromocitoma apenas pela idade, sem cefaleia/palpitação/sudorese nem metanefrinas conforme o protocolo com registro no prontuário",
+      "Tratar com minoxidil isolado e encerrar a investigação etiológica em hipertensa jovem com hipocalemia de forma imediata e monitoramento contínuo do paciente"
+    ],
+    "explain": "HAS resistente + hipocalemia espontânea em jovem sugere hiperaldosteronismo primário (relação A/R). Não se fecha o caso como bata-branco sem confirmação. Investigação etiológica é mandatória.",
+    "trap": "Ignorar causas secundárias em HAS resistente com hipocalemia em adulto jovem."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 30,
+    "group": "Cardiologia",
+    "theme": "FA — cardioversão",
+    "stem": "Homem de 63 anos com FA de início há 6 horas, instável: PA 78×50, sudorese e rebaixamento. Ecocardiograma à beira-leito sem trombo visível óbvio, mas a prioridade é a instabilidade. Qual a conduta imediata? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Realizar cardioversão elétrica sincronizada imediata pela instabilidade hemodinâmica, com suporte avançado e anticoagulação conforme protocolo no momento",
+    "wrongs": [
+      "Aguardar 48 horas de anticoagulação plena antes de qualquer cardioversão, mesmo em choque neste serviço após estabilização inicial",
+      "Administrar apenas digoxina oral e observar por 24 horas sem suporte à circulação de forma imediata com comunicação à equipe assistencial",
+      "Indicar adenosina em doses crescentes como terapia definitiva da FA com choque com comunicação à equipe assistencial de forma imediata",
+      "Priorizar teste ergométrico para documentar isquemia antes de reverter o ritmo na instabilidade com comunicação à equipe assistencial com registro no prontuário"
+    ],
+    "explain": "FA com instabilidade = cardioversão elétrica sincronizada imediata. A regra das 48 h de anticoagulação antes de CVE eletiva não atrasa a emergência. Adenosina não trata FA.",
+    "trap": "Atrasar CVE na FA instável por protocolo de anticoagulação de cardioversão eletiva."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 31,
+    "group": "Cardiologia",
+    "theme": "Bradicardia — marca-passo",
+    "stem": "Mulher de 80 anos em uso de betabloqueador apresenta tontura. ECG: ritmo sinusal 42 bpm com pausas de 3,5 s e BAV 2:1 intermitente. PA 88×56, sonolenta. Qual a sequência correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Suporte ABC, atropina se indicado, considerar marca-passo transcutâneo/transvenoso temporário e suspender fármacos cronotrópicos negativos",
+    "wrongs": [
+      "Aumentar a dose do betabloqueador para “estabilizar” a frequência e a pressão arterial de forma imediata conforme o protocolo",
+      "Administrar amiodarona EV para acelerar o nó sinusal e a condução atrioventricular com registro no prontuário diante do quadro clínico",
+      "Indicar alta com Holter ambulatorial em 30 dias, apesar da hipotensão e sonolência atuais diante do quadro clínico com comunicação à equipe assistencial",
+      "Realizar cardioversão elétrica sincronizada como tratamento da bradicardia sintomática e monitoramento contínuo do paciente evitando atraso terapêutico relevante"
+    ],
+    "explain": "Bradicardia sintomática/instável: atropina, suporte e MP temporário; remover agentes que deprimem condução. Amiodarona e mais BB pioram. CVE não trata bradiarritmia.",
+    "trap": "Manter ou aumentar betabloqueador na bradicardia instável."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 32,
+    "group": "Cardiologia",
+    "theme": "PCR — ritmos não chocáveis",
+    "stem": "Paciente em PCR hospitalar: monitor mostra assistolia. RCP em curso, via aérea avançada, acesso venoso. Qual a conduta farmacológica/algorítmica correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Manter RCP de alta qualidade, administrar adrenalina a cada 3–5 minutos e tratar causas reversíveis (5H/5T), sem desfibrilação na assistolia",
+    "wrongs": [
+      "Aplicar desfibrilação de 200 J bifásico de rotina a cada dois minutos na assistolia confirmada sem adiamento injustificado",
+      "Administrar apenas amiodarona sem adrenalina, pois a assistolia “responde melhor” a antiarrítmico conforme o protocolo nesta etapa",
+      "Interromper RCP por cinco minutos para confirmar óbito antes de qualquer adrenalina com comunicação à equipe assistencial e reavaliar a resposta",
+      "Infundir potássio concentrado empírico em todo PCR, independentemente da causa e do laboratório com comunicação à equipe assistencial diante do quadro clínico"
+    ],
+    "explain": "Assistolia/AESP: RCP + adrenalina + causas reversíveis. Não há indicação de choque. Antiarrítmico não é o foco na assistolia.",
+    "trap": "Desfibrilar assistolia ou omitir adrenalina/RCP contínua."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 33,
+    "group": "Cardiologia",
+    "theme": "Estenose mitral",
+    "stem": "Mulher de 38 anos com histórico de febre reumática apresenta dispneia, hemoptise leve e FA. Ecocardiograma: área mitral 0,9 cm², gradiente elevado, morfologia favorável a valvoplastia. Sem trombo em AE no TEE. Qual a melhor opção terapêutica? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Indicar valvoplastia mitral percutânea por balão quando anatomia favorável, associada a manejo da FA e anticoagulação se indicada nesta etapa",
+    "wrongs": [
+      "Contraindicar qualquer intervenção porque a paciente tem menos de 40 anos e FE aparentemente preservada conforme o protocolo",
+      "Tratar apenas com diurético indefinidamente, mesmo com estenose mitral grave sintomática e anatomia favorável diante do quadro clínico",
+      "Indicar trombólise coronariana empírica pela hemoptise, interpretando como IAM sem supra diante do quadro clínico com comunicação à equipe assistencial",
+      "Suspender anticoagulação na FA com estenose mitral significativa por “baixo risco embólico” na rede assistencial disponível com reassessoramento clínico seriado"
+    ],
+    "explain": "EM grave sintomática com escore anatômico favorável: valvuloplastia por balão é padrão. FA com EM tem alto risco embólico — anticoagular. Diurético isolado não corrige a obstrução.",
+    "trap": "Evitar intervenção na EM grave sintomática ou negligenciar anticoagulação na FA valvular."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 34,
+    "group": "Cardiologia",
+    "theme": "Endocardite — profilaxia",
+    "stem": "Homem de 45 anos com prótese valvar aórtica será submetido a extração dentária com manipulação gingival. Sem alergia a penicilina. Qual a orientação correta sobre profilaxia de endocardite? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Indicar profilaxia antibiótica pré-procedimento (ex.: amoxicilina) por alto risco (prótese valvar) em procedimento odontológico com manipulação gingival",
+    "wrongs": [
+      "Dispensar profilaxia em qualquer procedimento odontológico, pois profilaxia foi abolida para todos os pacientes cardíacos",
+      "Prescrever antibiótico por 14 dias após o procedimento em vez de dose única prévia no paciente de alto risco com registro no prontuário",
+      "Indicar profilaxia apenas com AAS 300 mg uma hora antes, sem antibiótico, para prótese valvar na rede assistencial disponível com registro no prontuário",
+      "Suspender anticoagulação da prótese mecânica 10 dias antes sem ponte, apenas para a profilaxia antibiótica com registro no prontuário sem adiamento injustificado"
+    ],
+    "explain": "Pacientes de alto risco (prótese valvar, EI prévia, certos congênitos) mantêm profilaxia em procedimentos odontológicos com manipulação gingival/periapical. Dose única prévia, não curso prolongado empírico.",
+    "trap": "Achar que profilaxia foi abolida inclusive para prótese valvar em procedimento de risco."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 35,
+    "group": "Cardiologia",
+    "theme": "Pericardite constritiva vs restritiva",
+    "stem": "Homem de 55 anos com ascite, edema e turgência jugular. Ecocardiograma/ressonância sugerem pericárdio espessado com sinais de constrição; FE 55%, sem hipertrofia importante. Cateterismo: equalização das pressões diastólicas. Qual o tratamento definitivo típico? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Encaminhar para pericardiectomia em centro experiente quando a constrição estiver confirmada e houver limitação clínica refratária no momento",
+    "wrongs": [
+      "Tratar apenas com altas doses de digoxina como terapia definitiva da constrição pericárdica crônica e reavaliar a resposta",
+      "Indicar trombólise sistêmica para “abrir” o pericárdio espessado, sem indicação cirúrgica neste serviço sem adiamento injustificado",
+      "Priorizar troca valvar aórtica empírica, mesmo sem valvopatia aórtica significativa no eco conforme o protocolo com comunicação à equipe assistencial",
+      "Contraindicar diurético mesmo com ascite tensa, por medo de qualquer redução de pré-carga com comunicação à equipe assistencial de forma imediata"
+    ],
+    "explain": "Pericardite constritiva sintomática refratária: pericardiectomia. Diurético alivia congestão como ponte. Digoxina/trombólise não corrigem a constrição mecânica.",
+    "trap": "Tratar constrição clinicamente grave só com medidas clínicas indefinidas sem avaliar cirurgia."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 36,
+    "group": "Cardiologia",
+    "theme": "Miocardite aguda",
+    "stem": "Homem de 24 anos após infecção viral recente apresenta dor torácica, troponina elevada, FE 40% e artérias coronárias normais na coronariografia. ECG sem supra persistente típico de STEMI. Qual a conduta inicial mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Internar com monitorização, suporte da IC/arritmias, restrição de esforço e seguimento da função ventricular, evitando esportes competitivos na fase aguda",
+    "wrongs": [
+      "Liberar para treinamento de alta intensidade imediato para “acelerar a recuperação miocárdica” e reavaliar a resposta no momento",
+      "Indicar trombólise mesmo com coronárias normais e padrão não compatível com STEMI em evolução diante do quadro clínico de forma imediata",
+      "Prescrever quimioterapia empírica antitumoral sem evidência de doença neoplásica infiltrativa com comunicação à equipe assistencial e reavaliar a resposta",
+      "Suspender toda terapia da IC com FE reduzida, pois miocardite “sempre se resolve sem fármacos” na rede assistencial disponível e monitoramento contínuo do paciente"
+    ],
+    "explain": "Miocardite: suporte, monitorização de arritmias, terapia de IC se FE reduzida e abstensão de esporte competitivo até recuperação. Trombólise não cabe com coronárias livres e clínica de miocardite.",
+    "trap": "Liberar exercício intenso na miocardite aguda ou trombolisar indevidamente."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 37,
+    "group": "Cardiologia",
+    "theme": "TEP — anticoagulação",
+    "stem": "Homem de 57 anos com TEP segmentar, PA 128×80, FC 92, SpO2 94% em ar, troponina normal, eco sem disfunção de VD. Sem câncer ativo. Qual a terapia antithrombotica inicial mais apropriada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Iniciar anticoagulação terapêutica (DOAC ou heparina/varfarina conforme cenário) por tempo definido, com suporte clínico e investigação de fatores de risco",
+    "wrongs": [
+      "Indicar trombólise sistêmica de rotina em todo TEP, inclusive nos de risco baixo sem choque na rede assistencial disponível",
+      "Tratar apenas com AAS 100 mg, equivalente à anticoagulação plena no TEP agudo neste serviço e monitoramento contínuo do paciente",
+      "Contraindicar anticoagulação porque a SpO2 está acima de 90%, independentemente do diagnóstico de TEP na rede assistencial disponível no momento",
+      "Realizar embolectomia cirúrgica imediata em todo TEP segmentar hemodinamicamente estável e reavaliar a resposta no atendimento atual com registro no prontuário"
+    ],
+    "explain": "TEP de risco baixo/intermediário-baixo estável: anticoagulação é a base. Trombólise reserva-se a alto risco/choque (ou casos selecionados). AAS não substitui anticoagulante.",
+    "trap": "Trombolisar TEP estável de baixo risco ou usar só AAS."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 38,
+    "group": "Cardiologia",
+    "theme": "Dislipidemia — prevenção secundária",
+    "stem": "Mulher de 66 anos 30 dias após IAM com supra, LDL atual 118 mg/dL sob estatina de alta intensidade bem tolerada. Sem efeitos adversos. Qual o ajuste mais adequado? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Manter estatina de alta intensidade e associar ezetimiba (e/ou outras terapias) se necessário para atingir meta mais baixa de LDL na prevenção secundária",
+    "wrongs": [
+      "Suspender a estatina porque o LDL já está “abaixo de 130”, meta suficiente após IAM recente com registro no prontuário nesta etapa",
+      "Trocar a estatina por fibrato isolado para prevenção secundária coronariana como primeira escolha de forma imediata e reavaliar a resposta",
+      "Reduzir para estatina de baixa intensidade automaticamente em toda mulher acima de 65 anos com comunicação à equipe assistencial sem adiamento injustificado",
+      "Indicar apenas dieta sem fármaco, pois o evento já foi tratado com angioplastia definitiva e monitoramento contínuo do paciente conforme gravidade e recursos locais"
+    ],
+    "explain": "Pós-IAM: prevenção secundária exige LDL muito mais baixo; manter alta intensidade e intensificar (ezetimiba/PCSK9 conforme acesso) se fora da meta. Fibrato não substitui estatina.",
+    "trap": "Afrouxar meta lipídica após SCA porque o LDL “não está altíssimo”."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 39,
+    "group": "Cardiologia",
+    "theme": "Antiagregação — prevenção primária",
+    "stem": "Homem de 52 anos sem evento CV prévio, hipertenso controlado, não diabético, baixo-moderado risco pelo escore, sem evidência de DAC. Questiona uso de AAS 100 mg diário. Qual a orientação mais correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Não indicar AAS de rotina em prevenção primária de baixo risco, priorizando controle de fatores de risco e estatina se indicada pelo risco global",
+    "wrongs": [
+      "Prescrever AAS 325 mg contínuo a todos os adultos acima de 50 anos, independentemente do risco hemorrágico de forma imediata",
+      "Indicar AAS + clopidogrel indefinidamente em prevenção primária sem stent nem SCA conforme o protocolo preservando efetividade clínica",
+      "Substituir controle da HAS por AAS isolado como estratégia preventiva cardiovascular completa conforme o protocolo com reassessoramento clínico seriado",
+      "Orientar AAS apenas nos dias de exercício intenso, sem avaliação de risco-benefício contínuo com comunicação à equipe assistencial com registro no prontuário"
+    ],
+    "explain": "AAS em prevenção primária tem benefício líquido questionável em baixo risco e aumenta sangramento. Foco: HAS, lipídios, tabagismo, estilo de vida. DAPT não cabe em prevenção primária.",
+    "trap": "Medicalizar prevenção primária de baixo risco com AAS rotineiro."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 40,
+    "group": "Cardiologia",
+    "theme": "Choque — diferencial cardiogênico vs distributivo",
+    "stem": "Homem de 63 anos pós-IAM apresenta hipotensão. Extremidades frias, PVC elevada, congestão pulmonar, lactato alto. Sem febre nem sinais claros de infecção. Qual a interpretação e conduta inicial? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Tratar como choque cardiogênico: evitar fluidos excessivos, suporte inotrópico/vasopressor e otimizar a causa cardíaca/revascularização já realizada",
+    "wrongs": [
+      "Administrar 3 litros de cristalóide rápido como no choque séptico hipovolêmico, apesar da congestão e reavaliar a resposta",
+      "Iniciar antibiótico de amplo espectro isolado como única medida, sem suporte hemodinâmico cardíaco na rede assistencial disponível",
+      "Indicar diurético osmótico cerebral empírico, interpretando a hipotensão como hipertensão intracraniana de forma imediata após estabilização inicial",
+      "Suspender oxigênio e monitorização para “não interferir” na avaliação clínica à beira-leito sem adiamento injustificado com comunicação à equipe assistencial"
+    ],
+    "explain": "Perfil frio + congestão + PVC alta pós-IAM = cardiogênico. Fluidos agressivos pioram edema pulmonar. Antibiótico não trata a falência de bomba isoladamente.",
+    "trap": "Tratar choque cardiogênico congestivo com volume como se fosse sepse hipovolêmica."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 41,
+    "group": "Cardiologia",
+    "theme": "Síncope — vasovagal vs cardíaca",
+    "stem": "Mulher de 22 anos com síncope em pé após dor intensa e náusea, com pródromos claros, recuperação rápida sem confusão prolongada. ECG normal, exame cardíaco normal, sem história familiar de morte súbita. Qual a conduta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Orientar medidas antivertigem/prevenção de gatilhos, tranquilizar e evitar investigação invasiva desnecessária na síncope reflexa típica de baixo risco",
+    "wrongs": [
+      "Indicar CDI profilático imediato em toda síncope de jovem, mesmo com ECG e eco normais com comunicação à equipe assistencial",
+      "Internar em UTI coronariana e cateterizar de urgência sem critérios de alto risco arrítmico na rede assistencial disponível no momento",
+      "Iniciar anticoagulação plena empírica por possível FA oculta, sem documentação de arritmia com comunicação à equipe assistencial conforme o protocolo",
+      "Prescrever antiepiléptico crônico sem avaliação, assumindo epilepsia em toda perda breve de consciência na rede assistencial disponível diante do quadro clínico"
+    ],
+    "explain": "Síncope reflexa típica com pródromos e exame/ECG normais é baixo risco: educação e prevenção. CDI/cateterismo/anticoagulação empíricos são inadequados.",
+    "trap": "Investigar de forma agressiva síncope vasovagal típica como se fosse cardiogênica de alto risco."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 42,
+    "group": "Cardiologia",
+    "theme": "ECG — BRE e isquemia",
+    "stem": "Homem de 69 anos com dor torácica típica. ECG: BRE completo. Comparando com ECG prévio de 6 meses, o BRE é novo. Troponina pendente. PA estável. Qual a conduta mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Tratar como equivalente de SCA de alto risco: anti-isquêmicos, antiagregação e estratégia de reperfusão/invasiva conforme protocolos locais",
+    "wrongs": [
+      "Ignorar o BRE novo com dor típica e aguardar apenas retorno ambulatorial em 15 dias diante do quadro clínico de forma imediata",
+      "Diagnosticar bloqueio “benigno senil” e liberar sem marcadores nem observação monitorizada de forma imediata com registro no prontuário",
+      "Indicar digoxina para “estreitar” o QRS e resolver o quadro isquêmico presumido e monitoramento contínuo do paciente conforme gravidade e recursos locais",
+      "Realizar teste ergométrico máximo na emergência com BRE novo e dor em curso após estabilização inicial na rede assistencial disponível"
+    ],
+    "explain": "BRE novo + angina típica é cenário de alto risco (equivalente), exigindo manejo de SCA e avaliação de reperfusão/ICP. Teste ergométrico na dor aguda é contraindicado.",
+    "trap": "Minimizar BRE novo sintomático como achado etário benigno."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 43,
+    "group": "Cardiologia",
+    "theme": "IAM de ventrículo direito",
+    "stem": "Homem de 60 anos com IAM inferior. Após nitrato sublingual, PA cai para 70×40. Elevação de ST em V3R–V4R. Congestão pulmonar ausente; turgência jugular presente. Qual a conduta imediata? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Suspender nitratos/vasodilatadores, oferecer volume criterioso para otimizar pré-carga do VD e manter reperfusão urgente do IAM nesta etapa",
+    "wrongs": [
+      "Repetir nitrato em dose dobrada para aliviar a pré-carga do ventrículo direito no IAM de VD na rede assistencial disponível",
+      "Indicar diurético de alça imediato pela turgência jugular, como no EAP esquerdo típico na rede assistencial disponível nesta etapa",
+      "Administrar verapamil EV para elevar a pressão arterial no choque do IAM inferior com comunicação à equipe assistencial e reavaliar a resposta",
+      "Adiar reperfusão até normalizar a PA apenas com observação, sem suporte de volume com comunicação à equipe assistencial na rede assistencial disponível"
+    ],
+    "explain": "IAM de VD: dependente de pré-carga — evitar nitratos/diuréticos; volume se hipotenso sem congestão esquerda; reperfusão continua prioritária.",
+    "trap": "Dar nitrato/diurético no IAM de VD hipotenso."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 44,
+    "group": "Cardiologia",
+    "theme": "IC — SGLT2 e otimização",
+    "stem": "Homem de 64 anos com ICFEr (FE 30%), NYHA II, eucárdico, TFG 62, K 4,4. Já em ARNI, carvedilol e espironolactona em doses toleradas. Não diabético. Qual adição tem evidência sólida de benefício? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Adicionar inibidor de SGLT2 aprovado para IC, com monitorização de volume/função renal, independentemente do status de diabetes conforme o protocolo",
+    "wrongs": [
+      "Adicionar nifedipino de curta ação para “potencializar” o ARNI na FE reduzida sem adiamento injustificado e reavaliar a resposta",
+      "Suspender espironolactona automaticamente ao iniciar qualquer novo fármaco, sem hiperkalemia nesta etapa na rede assistencial disponível",
+      "Indicar amiodarona contínua em todo paciente com FE 30%, mesmo sem arritmia ventricular documentada de forma imediata e monitoramento contínuo do paciente",
+      "Trocar ARNI por atenolol isolado como monoterapia modificadora de sobrevida na ICFEr com comunicação à equipe assistencial com reassessoramento clínico seriado"
+    ],
+    "explain": "SGLT2 reduziram eventos em ICFEr (e também ICFEp em evidências) com ou sem diabetes. Não se troca a base (ARNI/BB/ARM) por esquemas inadequados.",
+    "trap": "Reservar SGLT2 só ao diabético e negligenciar sua indicação na IC."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 45,
+    "group": "Cardiologia",
+    "theme": "HAS — urgência vs emergência",
+    "stem": "Homem de 55 anos com PA 200×120 mmHg em consulta, assintomático, exame neurológico normal, sem dor torácica, creatinina estável, ECG sem isquemia aguda. Qual a conduta correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Caracterizar como urgência hipertensiva se confirmada, ajustar anti-hipertensivo oral e reduzir a PA gradualmente com comunicação à equipe assistencial",
+    "wrongs": [
+      "Administrar nifedipino sublingual e buscar PA 120×80 em 15 minutos ainda no consultório e reavaliar a resposta no momento",
+      "Indicar trombólise e UTI neurológica de imediato apenas pelo valor pressórico isolado diante do quadro clínico de forma imediata",
+      "Internar em UTI e iniciar nitroprussiato EV em todo paciente assintomático com PA elevada sem adiamento injustificado com registro no prontuário",
+      "Suspender todos os fármacos e remarcar retorno em seis meses sem qualquer ajuste com comunicação à equipe assistencial e monitoramento contínuo do paciente"
+    ],
+    "explain": "Sem lesão aguda de órgão-alvo: urgência — ajuste oral e redução gradual. Emergência (EV) exige LOA. Nifedipino SL é inadequado.",
+    "trap": "Tratar PA muito alta assintomática com queda abrupta ou terapia EV desnecessária."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 46,
+    "group": "Cardiologia",
+    "theme": "FA — CHA2DS2-VASc e HAS-BLED",
+    "stem": "Mulher de 79 anos com FA não valvular, HAS, DM e TFG 50. Sem sangramento maior prévio. Médico hesita em anticoagular pelo risco de queda. Qual a melhor decisão? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Anticoagular com DOAC ajustado à função renal, pois o risco embólico supera o de sangramento na maioria dos idosos com escore elevado de forma imediata",
+    "wrongs": [
+      "Evitar qualquer anticoagulação e usar apenas AAS+clopidogrel como equivalente na FA não valvular no momento e reavaliar a resposta",
+      "Indicar anticoagulação apenas se houver trombo documentado no ecocardiograma transtorácico no momento e monitoramento contínuo do paciente",
+      "Suspender estatina e anti-hipertensivo para “reduzir polifarmácia”, mantendo a FA sem proteção embólica neste serviço evitando atraso terapêutico relevante",
+      "Escolher DOAC em dose supra-terapêutica fixa, ignorando ajuste por TFG e peso com comunicação à equipe assistencial conforme o protocolo"
+    ],
+    "explain": "Idoso com múltiplos fatores tem alto risco embólico; medo de queda isolado não justifica negar anticoagulação. Antiagregação dual não equivale a anticoagulante na FA. Ajustar DOAC à TFG.",
+    "trap": "Negar anticoagulação na FA de alto risco só pelo receio genérico de queda."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 47,
+    "group": "Cardiologia",
+    "theme": "Valvopatia — prótese e anticoagulação",
+    "stem": "Homem de 50 anos com prótese mecânica mitral em uso de varfarina, INR alvo 2,5–3,5. Chega com INR 1,4 sem sangramento, assintomático. Qual a conduta mais adequada? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Ajustar a dose de varfarina, considerar heparina ponte conforme risco trombótico da prótese mitral mecânica até INR terapêutico, e investigar",
+    "wrongs": [
+      "Suspender definitivamente a varfarina e trocar por AAS 100 mg isolado na prótese mecânica mitral de forma imediata no momento",
+      "Ignorar o INR baixo porque o paciente está assintomático e reavaliar apenas em 60 dias com registro no prontuário conforme o protocolo",
+      "Indicar trombólise empírica preventiva toda vez que o INR estiver abaixo do alvo com comunicação à equipe assistencial sem adiamento injustificado",
+      "Trocar a prótese mecânica na mesma semana apenas pelo INR subterapêutico isolado conforme gravidade e recursos locais evitando atraso terapêutico relevante"
+    ],
+    "explain": "Prótese mecânica mitral exige anticoagulação com varfarina em alvo; INR baixo demanda correção e frequentemente ponte com heparina. AAS isolado é insuficiente. Trombólise não é rotina só por INR baixo.",
+    "trap": "Aceitar INR subterapêutico em prótese mecânica ou substituir varfarina por AAS."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 48,
+    "group": "Cardiologia",
+    "theme": "Pericárdio — derrame sem tamponamento",
+    "stem": "Mulher de 40 anos com hipotireoidismo mal controlado apresenta derrame pericárdico moderado no eco, sem colapso de câmaras, PA 120×80, sem pulsus paradoxus. Qual a conduta inicial? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Tratar a causa (repor hormônio tireoidiano), monitorar clinicamente/eco e reservar drenagem se houver progressão para comprometimento hemodinâmico",
+    "wrongs": [
+      "Indicar pericardiocentese imediata em todo derrame moderado, mesmo sem sinais de tamponamento sem adiamento injustificado",
+      "Administrar trombólise para “dissolver” o líquido pericárdico do hipotireoidismo nesta etapa com comunicação à equipe assistencial",
+      "Iniciar quimioterapia empírica sem investigação, assumindo neoplasia em toda mulher com derrame evitando atraso terapêutico relevante neste serviço",
+      "Prescrever diurético de alça em dose máxima como único tratamento etiológico do hipotireoidismo com comunicação à equipe assistencial e reavaliar a resposta"
+    ],
+    "explain": "Derrame sem tamponamento: tratar etiologia e observar. Drenagem se instabilidade/critérios. Trombólise/quimioterapia empíricas são inadequadas.",
+    "trap": "Drenar automaticamente todo derrame pericárdico sem repercussão hemodinâmica."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 49,
+    "group": "Cardiologia",
+    "theme": "Morte súbita — prevenção primária",
+    "stem": "Homem de 58 anos com IC isquêmica, FE 28% há 5 meses, NYHA II, em terapia medicamentosa otimizada, sem TV sustentada prévia. Expectativa de vida >1 ano. Qual a indicação mais correta? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
+    "correct": "Avaliar CDI para prevenção primária de morte súbita por FE persistentemente ≤35% apesar de terapia otimizada, conforme diretrizes e sobrevida esperada",
+    "wrongs": [
+      "Contraindicar CDI porque nunca teve PCR documentada, mesmo com FE muito reduzida crônica diante do quadro clínico no momento",
+      "Indicar CDI apenas se a FE estiver acima de 50%, quando o risco arrítmico seria maior conforme o protocolo com registro no prontuário",
+      "Substituir a indicação de CDI por AAS 100 mg isolado como prevenção de morte súbita arrítmica com registro no prontuário na rede assistencial disponível",
+      "Implantar marca-passo definitivo de câmara única em todo paciente com FE baixa, sem distúrbio de condução de forma imediata e monitoramento contínuo do paciente"
+    ],
+    "explain": "Prevenção primária com CDI cabe em FE ≤35% crônica otimizada (janela típica ≥40–90 dias pós-evento, conforme cenário) e sobrevida esperada adequada. AAS não previne MS arrítmica; MP sem bradiarrítmia não substitui CDI.",
+    "trap": "Achar que CDI só se indica após PCR (prevenção secundária)."
+  },
+  {
+    "idPrefix": "cli-cardio",
+    "n": 50,
+    "group": "Cardiologia",
+    "theme": "SCA — terapia adjuvante inicial",
+    "stem": "Homem de 61 anos com dor torácica típica e infra de ST, ainda na porta da emergência. Diagnóstico: SCA sem supra. Sem sangramento. Qual o pacote terapêutico inicial mais correto enquanto se define a estratégia invasiva? Sinais vitais na chegada: PA, FC, FR e SpO2 compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Oferecer AAS, P2Y12 conforme protocolo, anticoagulação, controle de dor/isquemia e estatina, com monitorização e estratificação de risco contínua",
+    "wrongs": [
+      "Aguardar 24 horas sem AAS para “não mascarar” enzimas, mesmo com ECG isquêmico e dor típica no momento diante do quadro clínico",
+      "Indicar apenas oxigênio a 100% fixo em todo paciente, inclusive com SpO2 98% em ar ambiente na rede assistencial disponível no momento",
+      "Administrar fibrinolítico de rotina no NSTEMI como substituto da anticoagulação e da DAPT com comunicação à equipe assistencial de forma imediata",
+      "Prescrever AINE potentíssimo isolado no lugar de AAS para analgesia e antiagregação na SCA com comunicação à equipe assistencial com registro no prontuário"
+    ],
+    "explain": "No NSTEMI/SCA-SS: AAS precoce, P2Y12, anticoagulação, anti-isquêmicos e estatina. Fibrinólise não é rotina sem supra. AINE não substitui AAS; O2 só se hipoxemia.",
+    "trap": "Atrasar AAS ou trombolisar NSTEMI rotineiramente."
+  }
+]

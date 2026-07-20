@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-psi",
+    "n": 1,
+    "group": "Psiquiatria",
+    "theme": "Depressão maior",
+    "stem": "Homem de 34 anos, há 8 semanas com humor deprimido quase todos os dias, anedonia, insônia terminal, hiporexia com perda de 4 kg, lentificação psicomotora e ideias de culpa excessiva. Nega mania prévia, uso de substâncias ou luto recente. Exame físico sem focalidade; TSH e hemograma normais. Trabalha, mas com prejuízo marcado de rendimento. Nega plano suicida atual. A conduta farmacológica inicial mais adequada é",
+    "correct": "iniciar antidepressivo de primeira linha, como ISRS, em dose terapêutica, com reavaliação precoce de resposta e de segurança",
+    "wrongs": [
+      "iniciar lítio em monoterapia como primeira escolha, mesmo sem história de mania, hipomania ou ciclagem rápida documentada",
+      "prescrever antipsicótico típico em dose alta isoladamente, sem antidepressivo, pelo prejuízo laboral e a lentificação psicomotora",
+      "indicar apenas benzodiazepínico contínuo por meses, sem antidepressivo, para tratar o humor deprimido e a anedonia persistentes na decisão terapêutica compartilhada",
+      "aguardar remissão espontânea por seis meses sem medicação, pois há prejuízo funcional mas ainda não há tentativa de suicídio com suporte multiprofissional adequado"
+    ],
+    "explain": "Quadro compatível com episódio depressivo maior: humor deprimido, anedonia e sintomas vegetativos por ≥2 semanas com prejuízo. ISRS (ou outro AD de 1ª linha) é a escolha inicial usual, com monitoramento de resposta e risco. Lítio não é 1ª linha da depressão unipolar; antipsicótico isolado e benzo contínuo não tratam o núcleo depressivo; esperar meses com prejuízo marcado é inadequado.",
+    "trap": "Tratar depressão maior apenas com benzodiazepínico ou adiamento prolongado por ausência de tentativa suicida."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 2,
+    "group": "Psiquiatria",
+    "theme": "Depressão — risco e seguimento",
+    "stem": "Mulher de 28 anos inicia sertralina há 10 dias por depressão maior. Retorna relatando maior energia e agitação, mas mantém ideias de morte passivas e agora verbaliza que 'seria um alívio desaparecer'. Mora sozinha, usa álcool ocasional e tem acesso a medicações em casa. Exame mental: afeto ansioso, sem delírios. A conduta prioritária neste momento é",
+    "correct": "reavaliar risco de suicídio de forma estruturada, restringir meios letais, reforçar rede de suporte e ajustar o plano terapêutico",
+    "wrongs": [
+      "aumentar imediatamente a dose da sertralina ao máximo e liberar sem reavaliação do risco, pois a energia aumentada indica",
+      "suspender o antidepressivo de imediato e indicar apenas fitoterapia, interpretando a verbalização como efeito colateral irrelevante",
+      "internar compulsoriamente em hospital clínico geral sem avaliação psiquiátrica, apenas pelo relato de ideia de morte passiva isolada neste contexto de cuidado",
+      "prescrever neuroléptico depot e alta, sem discutir segurança em casa nem articular acompanhante ou retorno precoce estruturado com vigilância contínua da equipe"
+    ],
+    "explain": "Nas primeiras semanas de antidepressivo pode haver ativação com persistência de ideação: reavaliar risco, restringir meios, engajar suporte e intensificar acompanhamento. Aumentar dose às cegas, suspender abruptamente por fitoterapia, internar sem critério claro ou usar depot sem plano de segurança são inadequados.",
+    "trap": "Interpretar aumento de energia sob ISRS como melhora plena e liberar sem reavaliar risco suicida."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 3,
+    "group": "Psiquiatria",
+    "theme": "Depressão atípica / diferencial",
+    "stem": "Paciente de 41 anos com humor deprimido há 3 meses, hipersonia, hiperfagia com ganho ponderal, reatividade parcial do humor a eventos positivos e sensação intensa de rejeição interpessoal. Nega mania. Exame físico: IMC 31, PA 128/82 mmHg, sem hipotireoidismo laboratorial. Já tentou dois ISRS com resposta parcial. Qual estratégia é a mais coerente neste perfil?",
+    "correct": "considerar antidepressivo com perfil adequado ao padrão atípico e reavaliar adesão, dose e comorbidades antes de concluir refratariedade",
+    "wrongs": [
+      "diagnosticar automaticamente bipolaridade tipo I e iniciar haloperidol depot, mesmo sem mania, psicose neste atendimento",
+      "indicar eletroconvulsoterapia de urgência sem falha de estratégias adequadas e sem gravidade que justifique ECT neste momento no serviço atual",
+      "suspender todo psicotrópico e orientar apenas jejum prolongado como tratamento do humor e do ganho de peso associados neste atendimento com registro claro",
+      "iniciar corticoterapia empírica em dose imunossupressora para 'estimular humor', sem indicação clínica nem investigação dirigida sem adiamento injustificado"
+    ],
+    "explain": "Sintomas atípicos (hipersonia, hiperfagia, reatividade do humor, rejeição) orientam escolha e otimização antidepressiva, checando adesão e dose. Não há mania para bipolar I; ECT não é automático; jejum e corticoide empírico são inadequados.",
+    "trap": "Rotular qualquer depressão atípica como bipolar I e iniciar antipsicótico depot sem critérios."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 4,
+    "group": "Psiquiatria",
+    "theme": "Depressão psicótica",
+    "stem": "Homem de 55 anos com depressão grave há 6 semanas, insônia, perda ponderal e delírios de ruína ('já estou falido e a família será destruída'), sem alucinações. Nega mania prévia. Hidratado, PA 130/80, glicemia normal. Recusa alimentação por culpa delirante. Familiar refere tentativa de suicídio há 1 ano. A melhor abordagem inicial é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "tratar como depressão com sintomas psicóticos: antidepressivo associado a antipsicótico e avaliar necessidade de internação por risco",
+    "wrongs": [
+      "usar apenas benzodiazepínico em dose alta e observar em casa, sem antipsicótico nem plano de segurança diante do delírio de ruína",
+      "iniciar lítio isolado em dose baixa e alta ambulatorial, sem abordar a psicose nem o risco alimentar e suicida descritos",
+      "prescrever apenas antipsicótico típico em megadose sem antidepressivo, considerando o quadro como esquizofrenia paranóide nova",
+      "indicar psicoterapia exclusiva sem medicação, pois o delírio seria 'reativo' ao estresse financeiro sem necessidade de fármaco conforme a gravidade apresentada"
+    ],
+    "explain": "Depressão com sintomas psicóticos exige AD + antipsicótico e avaliação de internação por risco (recusa alimentar, ideação, história de tentativa). Benzo isolado, lítio isolado, antipsicótico sem AD e psicoterapia exclusiva são insuficientes.",
+    "trap": "Tratar depressão psicótica só com benzodiazepínico ou psicoterapia, subestimando risco e delírio."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 5,
+    "group": "Psiquiatria",
+    "theme": "Transtorno bipolar — mania",
+    "stem": "Mulher de 29 anos há 10 dias com euforia, redução da necessidade de sono (2–3 h), fala acelerada, gastos impulsivos e convicção de 'missão divina' para salvar a cidade. Familiar refere episódio depressivo há 2 anos. Uso de álcool ocasional. PA 124/78, FC 92, afebril, sem focalidade neurológica. Agitada, pouco colaborativa, sem insight. A conduta inicial mais adequada é",
+    "correct": "manejar mania aguda com ambiente seguro, antipsicótico e/ou estabilizador conforme gravidade, e avaliar internação se risco ou prejuízo grave",
+    "wrongs": [
+      "iniciar ISRS em dose plena como monoterapia da mania, esperando redução da euforia e da redução da necessidade de sono em dias",
+      "prescrever apenas cafeína e exercício intenso para 'gastar energia', liberando a paciente sem contenção ambiental nem medicação",
+      "indicar eletroconvulsoterapia imediata em todo caso de fala acelerada, sem tentar estabilização farmacológica nem avaliar gravidade na prática clínica habitual",
+      "administrar opioide para sedação prolongada e alta no mesmo dia, sem plano de prevenção de crises nem seguimento psiquiátrico com reavaliação seriada objetiva"
+    ],
+    "explain": "Mania com prejuízo e possível psicose: segurança, estabilizador e/ou antipsicótico, internação se necessário. ISRS pode piorar mania; medidas não farmacológicas isoladas, ECT automático e opioide são inadequados.",
+    "trap": "Tratar mania com ISRS em monoterapia, precipitando ou agravando o polo maníaco."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 6,
+    "group": "Psiquiatria",
+    "theme": "Transtorno bipolar — depressão bipolar",
+    "stem": "Homem de 37 anos com história de mania há 3 anos (internação). Agora há 4 semanas com humor deprimido, anedonia, hipersonia e ideação suicida passiva. Em uso irregular de valproato. Exame mental sem mania atual. TSH normal. Qual é a melhor orientação terapêutica neste cenário? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "otimizar estabilizador do humor e considerar antidepressivo com cautela ou agentes aprovados para depressão bipolar, monitorando virada",
+    "wrongs": [
+      "iniciar ISRS em dose alta como monoterapia, suspendendo o estabilizador, para tratar mais rápido o polo depressivo atual",
+      "usar apenas metilfenidato contínuo sem estabilizador, interpretando a hipersonia como TDAH adulto primário sem reavaliar o humor",
+      "indicar haloperidol depot vitalício sem estabilizador, mesmo sem psicose ativa, como 'prevenção definitiva' de novos episódios",
+      "substituir todo tratamento por benzodiazepínico noturno isolado e alta, sem plano de risco suicida nem adesão ao estabilizador neste atendimento no serviço atual"
+    ],
+    "explain": "Depressão bipolar: manter/otimizar estabilizador; AD só com cobertura antimaníaca e vigilância de virada; há opções específicas. ISRS em monoterapia sem estabilizador é arriscado; estimulante, depot sem indicação e benzo isolado não tratam adequadamente.",
+    "trap": "Tratar depressão bipolar com ISRS em monoterapia após suspender o estabilizador."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 7,
+    "group": "Psiquiatria",
+    "theme": "Transtorno bipolar — manutenção",
+    "stem": "Paciente de 32 anos com transtorno bipolar tipo I estabilizado há 14 meses em lítio, com níveis séricos adequados e função renal/tireoidiana monitoradas. Quer engravidar em 6 meses e pergunta sobre o plano. Está eutímica, sem ideação suicida. A melhor conduta de aconselhamento é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "planejar gestação com psiquiatria e obstetrícia, discutir riscos teratogênicos e alternativas, sem suspender estabilizador de forma abrupta",
+    "wrongs": [
+      "orientar suspensão imediata e definitiva do lítio hoje, sem transição nem acompanhamento, por qualquer desejo futuro de gestação",
+      "aumentar o lítio ao dobro da dose atual empiricamente para 'proteger a gestação', sem dosagem sérica nem avaliação conjunta",
+      "trocar automaticamente para antidepressivo tricíclico em monoterapia como estabilizador da bipolaridade na gestação planejada com vigilância contínua da equipe",
+      "indicar laqueadura como única opção terapêutica, recusando qualquer discussão de manejo psicofarmacológico peri-concepcional após estabilização clínica inicial"
+    ],
+    "explain": "Gestação em bipolar exige planejamento interdisciplinar, balanço risco-benefício e transição cuidadosa — não suspensão abrupta unilateral. Dobrar dose às cegas, trocar por tricíclico como 'estabilizador' ou impor laqueadura são inadequados.",
+    "trap": "Suspender lítio abruptamente só pelo desejo futuro de engravidar, sem plano conjunto."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 8,
+    "group": "Psiquiatria",
+    "theme": "Transtorno bipolar — misturado",
+    "stem": "Mulher de 26 anos em uso de sertralina há 3 semanas por 'depressão' inicia irritabilidade intensa, aceleração do pensamento, redução do sono e ideias de grandiosidade flutuantes, mantendo choro e desespero. Familiar descreve 'alta e baixa no mesmo dia'. Nega substâncias. Qual a interpretação e manejo mais corretos? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "suspeitar de virada ou estado misto induzido; suspender ou ajustar o antidepressivo, proteger e iniciar/otimizar estabilizador sob supervisão",
+    "wrongs": [
+      "dobrar a sertralina imediatamente, interpretando irritabilidade e redução do sono apenas como ansiedade comórbida a tratar",
+      "diagnosticar TDAH e iniciar anfetamina, sem reavaliar humor nem considerar risco de piora maniforme sob estimulante neste atendimento",
+      "manter ISRS e acrescentar apenas cafeína à noite para 'regular o sono paradoxal', sem estabilizador nem reavaliação do diagnóstico sem adiamento injustificado",
+      "indicar contenção mecânica prolongada ambulatorial como tratamento de escolha do humor misto, sem farmacoterapia dirigida priorizando a segurança do paciente"
+    ],
+    "explain": "Sintomas maniformes sob AD sugerem virada/estado misto: ajustar AD, estabilizar humor e garantir segurança. Aumentar ISRS, estimulante, cafeína noturna ou contenção ambulatorial não são condutas adequadas.",
+    "trap": "Aumentar ISRS diante de irritabilidade e redução do sono, agravando virada maniforme."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 9,
+    "group": "Psiquiatria",
+    "theme": "Esquizofrenia — primeiro episódio",
+    "stem": "Homem de 21 anos, há 5 meses com alucinações auditivas comentadoras, delírios persecutórios, isolamento, embotamento afetivo e queda do rendimento universitário. Nega uso de crack; THC ocasional há 1 ano. Exame neurológico normal; TC de crânio sem lesão focal. Agitado, insight pobre. A conduta inicial mais adequada é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "iniciar antipsicótico em dose terapêutica, avaliar necessidade de internação e organizar seguimento psicossocial precoce no primeiro episódio",
+    "wrongs": [
+      "tratar apenas com benzodiazepínico crônico e psicoterapia exclusiva, adiando antipsicótico até 'confirmar' psicose por mais um ano",
+      "iniciar lítio em monoterapia como antipsicótico de primeira linha do primeiro episódio esquizofrênico sem humor elevado neste atendimento",
+      "prescrever ISRS em dose máxima isolada para as alucinações, interpretando o quadro como depressão psicótica sem delírios de humor conforme a gravidade apresentada",
+      "indicar lobotomia ou procedimento ablativo precoce antes de qualquer tentativa de antipsicótico e reabilitação psicossocial sem negligenciar o risco envolvido"
+    ],
+    "explain": "Primeiro episódio psicótico com duração e prejuízo: antipsicótico, avaliação de internação e cuidado psicossocial precoce. Adiar AD/antipsicótico, usar lítio ou ISRS isolados, ou procedimentos ablativos são inadequados.",
+    "trap": "Adiar antipsicótico por meses no primeiro episódio psicótico com prejuízo funcional claro."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 10,
+    "group": "Psiquiatria",
+    "theme": "Esquizofrenia — manutenção",
+    "stem": "Paciente de 35 anos com esquizofrenia estável há 2 anos em risperidona oral, com efeitos extrapiramidais leves controlados. Após perder o emprego, abandona a medicação e em 6 semanas retorna com recaída psicótica moderada, aderente agora a discutir opções. Qual estratégia é a mais apropriada? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "retomar antipsicótico eficaz prévio ou equivalente, discutir formulação de depósito se risco de nova má adesão e reforçar rede de cuidado",
+    "wrongs": [
+      "permanecer sem antipsicótico e usar apenas fitoterapia, pois a estabilidade prévia provaria que a doença 'já curou' neste atendimento",
+      "iniciar três antipsicóticos tipicos em megadose simultânea sem titulação, para 'garantir' resposta rápida independentemente de efeitos",
+      "substituir todo tratamento por opioide de manutenção, considerando a psicose como dependência química primária sem evidência com reavaliação seriada objetiva",
+      "indicar eletroconvulsoterapia diária indefinida como monoterapia de manutenção, sem tentar restabelecer antipsicótico eficaz diante do quadro clínico atual"
+    ],
+    "explain": "Recaída após abandono: retomar antipsicótico que funcionou; LAI se má adesão recorrente; suporte psicossocial. Fitoterapia isolada, polifarmácia tipica em megadose, opioide e ECT diária indefinida são inadequados.",
+    "trap": "Assumir cura após estabilidade e manter sem antipsicótico após recaída por abandono."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 11,
+    "group": "Psiquiatria",
+    "theme": "Esquizofrenia — efeitos extrapiramidais",
+    "stem": "Mulher de 24 anos inicia haloperidol há 5 dias por psicose aguda. No 5º dia apresenta torcicolo doloroso, desvio forçado do olhar para cima e ansiedade intensa. Afebril, CK normal, consciência preservada. Qual a conduta imediata mais correta? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "reconhecer distonia aguda induzida por neuroléptico e tratar com anticolinérgico parenteral, reavaliando o antipsicótico em seguida",
+    "wrongs": [
+      "diagnosticar síndrome neuroléptica maligna e iniciar dantroleno imediatamente, apesar de afebril e com consciência preservada",
+      "aumentar a dose do haloperidol para 'superar' o espasmo muscular, mantendo a paciente sem alívio da distonia aguda neste atendimento",
+      "indicar trombolise cerebral empírico por desvio do olhar, sem considerar reação extrapiramidal medicamentosa aguda neste atendimento neste atendimento",
+      "suspender todo cuidado e liberar com analgésico comum apenas, sem tratar a distonia nem revisar o antipsicótico em uso neste atendimento no serviço atual"
+    ],
+    "explain": "Distonia aguda (tortícola, crise oculógira) após neuroléptico: anticolinérgico (ex. biperideno) e reavaliar agente/dose. SNM exige febre/rigidez/CK; aumentar haloperidol, trombólise empírica ou alta sem tratamento são erros.",
+    "trap": "Confundir distonia aguda com SNM ou AVC e deixar de dar anticolinérgico."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 12,
+    "group": "Psiquiatria",
+    "theme": "Esquizofrenia — clozapina",
+    "stem": "Homem de 40 anos com esquizofrenia refratária a dois antipsicóticos em doses e tempos adequados. Indica-se clozapina. Antes de iniciar, o paciente pergunta o principal risco hematológico e a monitorização. A orientação correta é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "alertar para agranulocitose/neutropenia e organizar hemograma seriado conforme protocolo antes e durante o uso de clozapina na prática clínica habitual",
+    "wrongs": [
+      "informar que não há risco hematológico relevante e que hemograma é desnecessário após a primeira semana de uso da clozapina",
+      "substituir a monitorização por dosagem isolada de prolactina semanal, como único exame de segurança obrigatório da clozapina",
+      "orientar uso de clozapina sem controle laboratorial se o paciente 'se sentir bem', priorizando apenas o relato subjetivo após estabilização clínica inicial",
+      "indicar suspensão vitalícia de qualquer antipsicótico após falha de dois agentes, sem considerar clozapina na refratariedade no manejo imediato do caso"
+    ],
+    "explain": "Clozapina na refratariedade exige consentimento e hemogramas seriados pelo risco de neutropenia/agranulocitose. Dispensar lab, trocar por prolactina isolada ou abandonar tratamento são inadequados.",
+    "trap": "Iniciar clozapina sem plano de hemograma seriado, subestimando agranulocitose."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 13,
+    "group": "Psiquiatria",
+    "theme": "Transtorno de ansiedade generalizada",
+    "stem": "Mulher de 33 anos há mais de 8 meses com preocupação excessiva difícil de controlar, tensão muscular, fadiga, irritabilidade e insônia, com prejuízo laboral. Nega pânico espontâneo, TOC ou TEPT. TSH normal; não usa substâncias. Prefere evitar benzodiazepínico contínuo. A melhor abordagem inicial é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "oferecer psicoterapia eficaz (ex. TCC) e/ou ISRS/IRSN em dose adequada, com psicoeducação e plano de reavaliação sintomática",
+    "wrongs": [
+      "iniciar benzodiazepínico em dose alta de forma contínua e indefinida como única terapia, sem TCC nem antidepressivo ansiolítico",
+      "prescrever antipsicótico típico depot para a preocupação excessiva, sem psicose nem indicação de estabilização neuroléptica",
+      "indicar internamento compulsório imediato apenas pela ansiedade crônica, sem risco iminente nem falha de manejo ambulatorial priorizando a segurança do paciente",
+      "usar opioide noturno crônico para tensão muscular e insônia, sem abordar o núcleo do transtorno de ansiedade generalizada conforme o protocolo institucional"
+    ],
+    "explain": "TAG: TCC e/ou ISRS/IRSN são 1ª linha; benzo contínuo isolado não é ideal a longo prazo; antipsicótico depot, internação sem risco e opioide são inadequados.",
+    "trap": "Tratar TAG só com benzodiazepínico contínuo indefinido, sem TCC ou AD."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 14,
+    "group": "Psiquiatria",
+    "theme": "Transtorno do pânico",
+    "stem": "Homem de 27 anos apresenta crises súbitas de medo intenso com palpitações, sudorese, tremor, sensação de morte e evitação de transporte público há 4 meses. ECG e TSH normais; troponina negativa em crise prévia. Consome café excessivo. Qual a conduta mais adequada? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "diagnosticar transtorno do pânico, reduzir estimulantes, iniciar TCC e/ou ISRS e orientar manejo das crises sem medicalizar todo sintoma cardíaco",
+    "wrongs": [
+      "indicar cateterismo coronariano de rotina em todo paciente jovem com pânico, mesmo com ECG e troponina repetidamente normais",
+      "prescrever neuroléptico típico em dose antipsicótica plena como primeira linha do transtorno do pânico sem sintomas psicóticos",
+      "recomendar apenas 'ignorar' as crises sem psicoeducação nem tratamento, esperando extinção espontânea com prejuízo mantido sem negligenciar o risco envolvido",
+      "iniciar lítio como monoterapia ansiolítica de primeira linha, sem evidência de transtorno bipolar associado ao quadro de pânico na decisão terapêutica compartilhada"
+    ],
+    "explain": "Pânico: afastar orgânico relevante, cortar estimulantes, TCC e/ou ISRS. Cateterismo de rotina em jovem com exames normais, neuroléptico, omissão terapêutica e lítio isolado são inadequados.",
+    "trap": "Levar todo jovem com pânico a cateterismo apesar de avaliação cardíaca normal."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 15,
+    "group": "Psiquiatria",
+    "theme": "TOC",
+    "stem": "Mulher de 31 anos há 2 anos com obsessões de contaminação e compulsões de lavagem que ocupam 3–4 h/dia, com dermatite nas mãos e atraso laboral. Reconhece o exagero, mas não consegue interromper. Nega tiques. Já tentou 'força de vontade'. A melhor conduta é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "iniciar ISRS em dose frequentemente mais alta que na depressão, associado a TCC com exposição e prevenção de resposta quando disponível",
+    "wrongs": [
+      "usar apenas benzodiazepínico em agudo crônico como tratamento específico do TOC, sem ISRS nem exposição com prevenção de resposta",
+      "indicar antipsicótico típico em monoterapia de primeira linha para obsessões, sem ISRS e sem psicoterapia de exposição neste atendimento",
+      "recomendar lobotomia estereotáxica precoce antes de ISRS em dose adequada e TCC especializada para TOC grave neste atendimento diante do quadro clínico atual",
+      "suspender qualquer tratamento e orientar isolamento social prolongado para evitar gatilhos de contaminação no ambiente neste atendimento neste contexto de cuidado"
+    ],
+    "explain": "TOC: ISRS (muitas vezes em doses maiores) + TCC (EPR). Benzo isolado, antipsicótico em monoterapia 1ª linha, cirurgia precoce e isolamento não são adequados.",
+    "trap": "Tratar TOC só com benzodiazepínico, sem ISRS em dose adequada nem EPR."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 16,
+    "group": "Psiquiatria",
+    "theme": "TEPT",
+    "stem": "Homem de 42 anos, vítima de assalto à mão armada há 7 meses, apresenta reviviscências, evitação do local, hipervigilância, insônia e irritabilidade com prejuízo. Nega ideação suicida atual. Evita falar do evento. Qual abordagem é a mais indicada? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "oferecer psicoterapia focada em trauma com evidência (ex. TCC) e considerar ISRS se necessário, com psicoeducação sobre TEPT na decisão",
+    "wrongs": [
+      "forçar depoimento detalhado repetido na primeira consulta sem vínculo, como única intervenção, aumentando o risco de retraumatização",
+      "iniciar antipsicótico depot vitalício preventivo em todo TEPT, mesmo sem psicose, como padrão obrigatório de tratamento neste atendimento",
+      "prescrever álcool em baixa dose à noite para 'apagar memórias', orientando automedicação como estratégia de exposição neste atendimento no serviço atual",
+      "indicar eletroconvulsoterapia de rotina no TEPT ambulatorial leve a moderado antes de psicoterapia e ISRS adequados neste atendimento com registro claro"
+    ],
+    "explain": "TEPT: psicoterapias focadas em trauma e, quando preciso, ISRS; psicoeducação. Forçar relato precoce, depot, álcool e ECT de rotina são inadequados.",
+    "trap": "Forçar relato traumático detalhado na primeira consulta como 'exposição', retraumatizando."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 17,
+    "group": "Psiquiatria",
+    "theme": "Álcool — abstinência",
+    "stem": "Homem de 48 anos, etilista pesado, internado por pneumonia. No 2º dia: tremor, sudorese, TA 168/100 mmHg, FC 118 bpm, agitação e alucinações visuais transitórias. Glicemia 110 mg/dL, Na 138. Qual o manejo prioritário da abstinência? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "tratar abstinência alcoólica com benzodiazepínico titulado, suporte, tiamina e monitorização de sinais vitais e delirium tremens com suporte",
+    "wrongs": [
+      "iniciar apenas haloperidol em dose alta sem benzodiazepínico, como monoterapia da abstinência alcoólica com hipertensão neste atendimento",
+      "repor apenas soro glicosado sem tiamina, ignorando risco de precipitar ou agravar encefalopatia de Wernicke no etilista neste atendimento",
+      "liberar o paciente para beber doses controladas de destilado no leito como único tratamento da abstinência hipertensiva neste atendimento no manejo imediato do caso",
+      "usar betabloqueador isolado sem benzo, esperando resolver tremor, agitação e risco de progressão para delirium tremens neste atendimento"
+    ],
+    "explain": "Abstinência alcoólica: BZDs são a base; tiamina, suporte e vigilância de DT. Haloperidol isolado, glicose sem tiamina, 'doses de álcool' e betabloqueador isolado são inadequados.",
+    "trap": "Tratar abstinência alcoólica só com neuroléptico, sem benzodiazepínico nem tiamina."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 18,
+    "group": "Psiquiatria",
+    "theme": "Álcool — Wernicke",
+    "stem": "Mulher de 52 anos, etilista, chega com confusão, marcha atáxica e nistagmo. Familiar refere vômitos e baixa ingestão alimentar. Glicemia capilar 68 mg/dL. Antes de infundir glicose, a prioridade é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "administrar tiamina parenteral antes ou junto à reposição de glicose, suspeitando de encefalopatia de Wernicke no etilista desnutrido neste atendimento",
+    "wrongs": [
+      "infundir glicose hipertônica isolada em grande volume antes de qualquer tiamina, priorizando só o número da glicemia capilar",
+      "iniciar fenitoína empírica em dose de carga sem avaliar Wernicke, atribuindo ataxia e nistagmo apenas a convulsão focal nova",
+      "prescrever ISRS para a confusão aguda, interpretando o quadro como depressão sem exame neurológico dirigido à tríade neste atendimento",
+      "indicar alta com orientação verbal de 'comer melhor', sem tiamina nem investigação da encefalopatia suspeita neste atendimento na prática clínica habitual"
+    ],
+    "explain": "Tríade (confusão, ataxia, oftalmoplegia/nistagmo) em etilista: Wernicke — tiamina parenteral, idealmente antes da glicose. Glicose isolada, fenitoína empírica, ISRS e alta sem tratamento são erros.",
+    "trap": "Dar glicose antes da tiamina em etilista com confusão e sinais de Wernicke."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 19,
+    "group": "Psiquiatria",
+    "theme": "Substâncias — intoxicação estimulante",
+    "stem": "Jovem de 23 anos após uso de cocaína: agitação, midríase, TA 190/110 mmHg, FC 140 bpm, temperatura 38,4 °C, fala acelerada e paranoia. ECG com taquicardia sinusal. Qual a conduta inicial mais adequada? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "garantir via aérea e ambiente seguro, usar benzodiazepínico para agitação e hipertensão catecolaminérgica, evitar betabloqueador isolado",
+    "wrongs": [
+      "administrar betabloqueador puro isolado de primeira linha para a hipertensão da intoxicação por cocaína, sem benzo nem suporte",
+      "indicar trombólise coronariana empírica imediata em todo usuário agitado, sem dor torácica nem critérios eletrocardiográficos de IAM",
+      "prescrever ISRS em dose de ataque para a paranoia, sem estabilizar sinais vitais nem controlar a agitação simpaticomimética na decisão terapêutica compartilhada",
+      "liberar o paciente ainda hipertenso e taquicárdico com receita de cafeína, orientando 'equilibrar' o efeito da cocaína em casa com suporte multiprofissional adequado"
+    ],
+    "explain": "Intoxicação por estimulante: suporte, BZD para agitação/HAS; evitar BB isolado (vasoconstrição alfa). Trombólise empírica, ISRS de ataque e alta instável são inadequados.",
+    "trap": "Usar betabloqueador isolado na hipertensão da intoxicação por cocaína."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 20,
+    "group": "Psiquiatria",
+    "theme": "Substâncias — opioides",
+    "stem": "Homem de 36 anos encontrado com miose puntiforme, FR 6 irpm, SpO2 82%, sonolência profunda após uso de opioide. Via aérea parcialmente obstruída. A prioridade imediata é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "suportar via aérea e ventilação e administrar naloxona titulada, monitorando recidiva da depressão respiratória após o antídoto",
+    "wrongs": [
+      "iniciar flumazenil em dose plena como antídoto de escolha do opioide, sem suporte ventilatório nem naloxona no manejo inicial",
+      "indicar apenas observação sem oxigênio nem naloxona, aguardando metabolização completa com saturação persistentemente baixa",
+      "prescrever estimulante anfetamínico oral para 'acordar' o paciente, sem corrigir a hipoventilação ameaçadora à vida neste atendimento neste contexto de cuidado",
+      "intubar sem tentativa de suporte e naloxona quando a depressão respiratória ainda pode reverter com antídoto e ventilação com vigilância contínua da equipe"
+    ],
+    "explain": "Overdose de opioide: ABC + naloxona titulada e vigilância de renarcotização. Flumazenil não é antídoto de opioide; observar hipóxico, dar anfetamina ou intubar às cegas sem tentativa adequada são inadequados.",
+    "trap": "Usar flumazenil pensando tratar overdose de opioide, em vez de naloxona e suporte."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 21,
+    "group": "Psiquiatria",
+    "theme": "Delirium — diagnóstico",
+    "stem": "Idoso de 78 anos, 2º dia de internação por ITU, apresenta flutuação do nível de consciência, desorientação, dificuldade de atenção e alucinações visuais noturnas. Familiar diz que 'ontem à tarde estava lúcido'. Sem focalidade. Qual a interpretação mais correta? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "quadro típico de delirium: início agudo, flutuação e déficit de atenção; investigar e tratar causa orgânica precipitante de imediato",
+    "wrongs": [
+      "diagnosticar esquizofrenia de início tardio e iniciar clozapina sem investigar infecção, metabólico ou fármacos neste atendimento",
+      "rotular como demência de Alzheimer avançada irreversível apenas pela desorientação aguda flutuante em contexto de ITU hospitalar",
+      "indicar alta domiciliar imediata sem tratar a infecção, atribuindo o quadro a 'comportamento senil' sem reavaliação cognitiva seriada com registro claro",
+      "prescrever ISRS em dose máxima como tratamento específico do delirium hiperativo, sem corrigir a causa clínica de base neste atendimento sem adiamento injustificado"
+    ],
+    "explain": "Delirium = agudo, flutuante, atenção; tratar precipitantes (ITU, etc.). Não é esquizofrenia tardia nem Alzheimer 'novo' em 48 h; alta sem tratar e ISRS como terapia específica são erros.",
+    "trap": "Rotular delirium infeccioso como demência irreversível ou psicose primária sem tratar a causa."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 22,
+    "group": "Psiquiatria",
+    "theme": "Delirium — manejo",
+    "stem": "Paciente de 70 anos com delirium hiperativo em pós-operatório: tira dispositivos, grita à noite, risco de queda. Já se otimizou analgesia, sono, orientação e causa clínica. Agitação persiste com risco. A conduta farmacológica mais criteriosa é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "usar antipsicótico em dose baixa e breve apenas se risco a si/outros ou gravíssimo sofrimento, após medidas não farmacológicas",
+    "wrongs": [
+      "aplicar benzodiazepínico em dose alta de rotina em todo idoso delirante, mesmo sem abstinência alcoólica, aumentando risco",
+      "iniciar três neurolépticos tipicos simultâneos em megadose por semanas, sem revisão diária nem tentativa de medidas ambientais",
+      "prescrever opioide contínuo em dose crescente só para sedar o delirium, sem analgesia justificada nem reavaliação da causa com documentação objetiva no prontuário",
+      "indicar contenção mecânica prolongada como primeira e única medida, sem reorientar ambiente nem considerar fármaco criterioso conforme a gravidade apresentada"
+    ],
+    "explain": "Delirium: tratar causa + medidas ambientais; antipsicótico baixo/breve se risco. BZD de rotina (exceto abstinência), polineuroléptico, opioide só para sedar e contenção isolada são inadequados.",
+    "trap": "Usar benzodiazepínico de rotina no delirium do idoso, piorando confusão."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 23,
+    "group": "Psiquiatria",
+    "theme": "Delirium — precipitantes",
+    "stem": "Idosa de 82 anos com delirium novo. Usa oxibutinina, diazepam noturno e dipirona. Internada por desidratação; Na 128 mEq/L. Familiar trouxe 'remédios para dormir' da casa. Além da reposição hidroeletrolítica, o passo essencial é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "revisar e suspender ou reduzir fármacos deliriogênicos (anticolinérgicos e sedativos), tratando causas metabólicas e infecciosas associadas",
+    "wrongs": [
+      "acrescentar novo anticolinérgico potente para 'proteger a bexiga', mantendo oxibutinina e diazepam sem revisão neste atendimento",
+      "aumentar o diazepam noturno para garantir sono profundo, mesmo sabendo que sedativos podem perpetuar o delirium no idoso",
+      "iniciar quimioterapia empírica por qualquer delirium, sem evidência de neoplasia e sem corrigir hiponatremia e desidratação na prática clínica habitual",
+      "indicar demência terminal e cuidados paliativos exclusivos apenas pelo episódio agudo reversível em contexto de desidratação com reavaliação seriada objetiva"
+    ],
+    "explain": "No delirium, desprescrição de anticolinérgicos/sedativos e correção de metabólico/infecção são centrais. Acrescentar anticolinérgico, subir benzo, quimio empírica ou rotular demência terminal são erros.",
+    "trap": "Manter ou aumentar sedativos/anticolinérgicos enquanto se tenta tratar o delirium."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 24,
+    "group": "Psiquiatria",
+    "theme": "Delirium — diferencial convulsivo",
+    "stem": "Homem de 65 anos no 3º dia pós-AVE apresenta episódios de olhar fixo, automatismos e confusão flutuante. EEG solicitado. Enfermagem nota 'ausências' de 30–60 s. Qual a preocupação diagnóstica adicional ao delirium vascular? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "considerar estado epiléptico não convulsivo ou crises focais com alteração da consciência e priorizar EEG e tratamento se confirmado",
+    "wrongs": [
+      "excluir epilepsia apenas pela ausência de convulsão tônico-clônica generalizada e tratar só com antipsicótico em dose alta",
+      "iniciar quetiapina em megadose sem EEG, assumindo que todo olhar fixo pós-AVE é delirium hiperativo sem diferencial ictal",
+      "suspender investigação neurológica e indicar apenas contenção, pois 'AVE explica tudo' sem reavaliar oscilações de consciência",
+      "prescrever ISRS para as 'ausências', interpretando automatismos como ataque de pânico sem correlato eletroclínico possível neste atendimento no serviço atual"
+    ],
+    "explain": "Pós-AVE com olhar fixo/automatismos: pensar status não convulsivo — EEG e tratamento. Não excluir epilepsia por falta de tônico-clônica; antipsicótico/ISRS às cegas ou contenção isolada são inadequados.",
+    "trap": "Achar que sem convulsão motora não há epilepsia e tratar só como delirium."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 25,
+    "group": "Psiquiatria",
+    "theme": "Demência vs delirium",
+    "stem": "Familiar de paciente de 79 anos pergunta a diferença: há 3 anos esquece nomes e se perde em trajetos, progressivo, atenção relativamente preservada de dia. Há 2 dias, após pneumonia, ficou sonolento de dia, agitado à noite, incapaz de manter atenção na conversa. A melhor explicação é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "a base crônica sugere demência; o agravamento agudo flutuante com déficit de atenção indica delirium sobreposto à demência neste atendimento",
+    "wrongs": [
+      "todo idoso confuso tem apenas demência irreversível, e a pneumonia não precipita delirium mesmo com flutuação aguda da atenção",
+      "delirium nunca ocorre em quem já tem demência, portanto o quadro atual prova ausência completa de doença neurodegenerativa prévia",
+      "atenção flutuante aguda é típica de demência de Alzheimer estável, sem necessidade de investigar precipitante infeccioso hospitalar neste atendimento",
+      "alucinação visual noturna recente prova esquizofrenia de início muito tardio, dispensando tratamento da pneumonia e suporte neste atendimento no serviço atual"
+    ],
+    "explain": "Demência = crônico/progressivo; delirium = agudo/flutuante/atenção — frequentemente sobreposto (delirium on dementia). Tratar precipitante. Negar delirium, achar incompatível com demência ou rotular psicose primária são erros.",
+    "trap": "Atribuir confusão aguda flutuante só à demência e não tratar o precipitante."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 26,
+    "group": "Psiquiatria",
+    "theme": "Demência vs delirium — investigação",
+    "stem": "Mulher de 84 anos trazida por 'demência súbita' em 48 h: desorientada, atenção pobre, sonolenta. Familiar garante cognição prévia independente. Exame: febre 38,1 °C, PA 100/60, FC 110. Qual a prioridade? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "tratar como delirium até prova em contrário: estabilizar, buscar infecção/metabólico/fármacos e não rotular demência irreversível agora",
+    "wrongs": [
+      "iniciar donepezila imediatamente como tratamento da 'demência súbita', sem investigar causa aguda reversível do quadro confusional",
+      "prescrever memantina em dose plena no pronto-socorro como primeira linha da confusão febril aguda com taquicardia neste atendimento",
+      "indicar institucionalização definitiva no mesmo dia, sem tratamento da causa clínica nem reavaliação cognitiva após estabilização sem adiamento injustificado",
+      "usar eletrochoque de urgência para qualquer confusão febril no idoso, antes de antibióticos e suporte hemodinâmico adequados priorizando a segurança do paciente"
+    ],
+    "explain": "Confusão em 48 h com febre = delirium; investigar/tratar causa. IChE/memantina no PS, institucionalizar às cegas ou ECT antes do suporte são inadequados.",
+    "trap": "Rotular demência e iniciar anticolinesterásico na confusão febril aguda de 48 h."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 27,
+    "group": "Psiquiatria",
+    "theme": "Demência — comunicação familiar",
+    "stem": "Paciente de 76 anos com Alzheimer leve-moderado está estável cognitivamente. Familiar insiste em 'remédio para acabar com o delirium noturno ocasional' após mudança de casa. Sem infecção. Qual orientação é a mais adequada? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "reforçar medidas de orientação ambiental e rotina; evitar sedativos desnecessários e investigar precipitantes se houver mudança abrupta",
+    "wrongs": [
+      "iniciar benzodiazepínico noturno contínuo de longa ação em todo idoso com Alzheimer, como prevenção vitalícia de sundowning",
+      "prescrever neuroléptico típico em dose alta por meses para qualquer inquietação leve, sem risco e sem tentativa ambiental",
+      "suspender todo acompanhamento e orientar isolamento total do paciente para reduzir estímulos, piorando desorientação e risco conforme a gravidade apresentada",
+      "indicar contenção mecânica domiciliar diária preventiva, mesmo sem agitação grave nem risco iminente a si ou a terceiros sem negligenciar o risco envolvido"
+    ],
+    "explain": "Em demência, priorizar ambiente/rotina; sedativos e neurolépticos só com critério (risco). Benzo contínuo, neuroléptico crônico leve, isolamento e contenção preventiva são inadequados.",
+    "trap": "Medicalizar sundowning leve com benzodiazepínico contínuo no idoso com demência."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 28,
+    "group": "Psiquiatria",
+    "theme": "Anorexia nervosa",
+    "stem": "Adolescente de 17 anos, IMC 15,2, restrição alimentar intensa, medo de engordar, amenorreia há 6 meses, lanugo e FC 48 bpm. Negocia alta precoce. Pais ansiosos. Qual a conduta mais correta neste momento? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "avaliar critérios de internação clínica/psiquiátrica por gravidade nutricional e bradicardia, com abordagem multiprofissional da anorexia",
+    "wrongs": [
+      "liberar com dieta livre e retorno em seis meses, ignorando IMC baixo, amenorreia e bradicardia como marcadores de gravidade",
+      "iniciar estimulante anfetamínico para 'abrir apetite inverso', sem suporte nutricional nem monitoramento clínico da anorexia grave",
+      "prescrever corticosteroide em dose alta para forçar ganho de peso rápido, sem plano nutricional estruturado nem equipe especializada",
+      "indicar cirurgia bariátrica precoce como tratamento da distorção de imagem na anorexia com IMC muito baixo neste atendimento diante do quadro clínico atual"
+    ],
+    "explain": "Anorexia grave (IMC baixo, bradicardia, amenorreia): avaliar internação e cuidado multiprofissional. Alta indiferente, estimulante, corticoide e bariátrica são inadequados.",
+    "trap": "Subestimar gravidade clínica da anorexia e liberar paciente bradicárdica com IMC muito baixo."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 29,
+    "group": "Psiquiatria",
+    "theme": "Bulimia nervosa",
+    "stem": "Mulher de 24 anos com episódios de compulsão alimentar seguidos de vômitos provocados ≥1x/semana há 1 ano, preocupação excessiva com forma corporal, erosão dentária e uso de laxantes. IMC 22. Qual manejo inicial é o mais adequado? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "oferecer TCC específica para bulimia e considerar fluoxetina em dose adequada, abordando purgação, eletrólitos e risco odontológico",
+    "wrongs": [
+      "indicar gastroplastia como primeira linha da bulimia com IMC normal, sem TCC nem antidepressivo com evidência no transtorno",
+      "prescrever diurético de alça diário para 'controlar inchaço', reforçando comportamento purgativo e risco eletrolítico grave",
+      "usar antipsicótico típico depot como tratamento específico da compulsão-purgação sem psicose associada neste atendimento neste atendimento no serviço atual",
+      "recomendar jejum prolongado intermitente extremo como único tratamento, sem suporte psicológico nem monitoramento clínico no serviço atual com registro claro"
+    ],
+    "explain": "Bulimia: TCC e fluoxetina (muitas vezes em dose maior); cuidar eletrólitos/dentes. Bariátrica 1ª linha, diurético, depot e jejum extremo são inadequados.",
+    "trap": "Prescrever diurético ou reforçar purgação no manejo da bulimia."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 30,
+    "group": "Psiquiatria",
+    "theme": "Transtorno de compulsão alimentar",
+    "stem": "Homem de 38 anos com episódios de compulsão sem purgação compensatória, sentimento de culpa, IMC 34, e prejuízo. Nega mania. Já tentou dietas restritivas cíclicas. Qual abordagem é a mais coerente? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "indicar psicoterapia com evidência para compulsão (ex. TCC) e manejo multidisciplinar do peso, evitando ciclos extremos de restrição",
+    "wrongs": [
+      "iniciar ISRS em megadose sem avaliação e proibir qualquer psicoterapia, como única estratégia aceitável para compulsão alimentar",
+      "prescrever opioide para 'bloquear prazer alimentar', sem evidência e com risco de dependência no manejo da compulsão neste atendimento",
+      "orientar purgação controlada após compulsões como técnica terapêutica oficial, normalizando comportamento de risco neste atendimento",
+      "indicar eletroconvulsoterapia de rotina para compulsão alimentar sem depressão psicótica grave associada neste atendimento no manejo imediato do caso"
+    ],
+    "explain": "TCA: TCC e cuidado multidisciplinar do peso; evitar restrição extrema cíclica. Opioide, purgação 'terapêutica' e ECT de rotina são inadequados; medicação pode ajudar em casos selecionados, mas não substitui o plano.",
+    "trap": "Orientar purgação 'controlada' como tratamento da compulsão alimentar."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 31,
+    "group": "Psiquiatria",
+    "theme": "Transtorno de personalidade borderline",
+    "stem": "Mulher de 25 anos com instabilidade afetiva intensa, medo de abandono, automutilação superficial recorrente sem plano suicida atual, relacionamentos caóticos e impulsividade. Chega após briga. Qual a melhor condução inicial? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "oferecer vínculo estável, avaliar risco, indicar psicoterapia específica (ex. DBT/TCC) e evitar polifarmácia impulsiva a cada crise",
+    "wrongs": [
+      "iniciar três estabilizadores e dois antipsicóticos no mesmo dia em toda crise interpessoal, sem psicoterapia nem plano de risco",
+      "recusar qualquer atendimento por 'drama', sem avaliar risco de suicídio nem oferecer continuidade terapêutica mínima neste atendimento",
+      "indicar lobotomia afetiva experimental como tratamento padrão do medo de abandono e da automutilação superficial neste atendimento",
+      "prescrever opioide crônico para 'dor emocional', criando dependência sem abordar regulação afetiva e impulsividade neste atendimento"
+    ],
+    "explain": "Borderline: psicoterapia específica, avaliação de risco, limites e parcimônia medicamentosa. Polifarmácia a cada crise, abandono, procedimentos extremos e opioide são inadequados.",
+    "trap": "Responder a cada crise borderline com polifarmácia pesada sem psicoterapia estruturada."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 32,
+    "group": "Psiquiatria",
+    "theme": "Transtorno de personalidade antissocial",
+    "stem": "Homem de 29 anos em avaliação pericial: história desde a adolescência de agressões, mentiras reiteradas, irresponsabilidade laboral e ausência de remorso após lesões a terceiros. Busca 'laudo para benefício'. Sem psicose. A postura clínica mais adequada é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "reconhecer padrão antissocial, avaliar risco a terceiros, evitar reforçar ganhos secundários indevidos e não medicalizar com neuroléptico",
+    "wrongs": [
+      "diagnosticar esquizofrenia paranóide só pela criminalidade e iniciar clozapina, sem alucinações, delírios nem prejuízo neste atendimento",
+      "prescrever benzodiazepínico em dose alta contínua para 'corrigir o caráter', como tratamento etiológico do transtorno antissocial",
+      "emitir laudo de incapacidade total automática sem avaliação criteriosa, apenas para atender a demanda do benefício solicitado sem negligenciar o risco envolvido",
+      "indicar internação psiquiátrica vitalícia compulsória em todo antissocial, independentemente de risco atual ou crime concreto na decisão terapêutica compartilhada"
+    ],
+    "explain": "Antissocial: padrão persistente; manejo de risco e limites; fármacos não 'curam caráter'. Não confundir com esquizofrenia; benzo contínuo, laudo automático e internação vitalícia sem critério são inadequados.",
+    "trap": "Tratar comportamento antissocial como psicose e iniciar clozapina sem sintomas psicóticos."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 33,
+    "group": "Psiquiatria",
+    "theme": "Personalidade — diferencial",
+    "stem": "Paciente de 30 anos descrito como 'rígido, perfeccionista, excessivamente dedicado a regras e listas', com prejuízo em relacionamentos por inflexibilidade, sem obsessões egodistônicas típicas de TOC. Qual a distinção mais útil? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "pensar em personalidade obsessivo-compulsiva (traços egossintônicos) versus TOC (obsessões/compulsões egodistônicas com ritual egodistônico)",
+    "wrongs": [
+      "tratar automaticamente com antipsicótico depot qualquer perfeccionismo laboral, sem avaliar se há TOC ou traço de personalidade",
+      "assumir que todo perfeccionismo é mania, iniciando lítio sem euforia, redução do sono nem prejuízo maniforme claro neste atendimento",
+      "indicar ISRS em dose de TOC sem sintomas obsessivo-compulsivos egodistônicos, apenas por gostar de organização no trabalho diante do quadro clínico atual",
+      "rotular demência frontotemporal em adulto jovem só por inflexibilidade, sem declínio cognitivo progressivo nem exame dirigido neste contexto de cuidado"
+    ],
+    "explain": "POC: traços egossintônicos; TOC: obsessões/compulsões egodistônicas. Evitar medicalização indevida com depot, lítio, ISRS de TOC sem sintomas ou demência precoce.",
+    "trap": "Confundir traços de personalidade obsessivo-compulsiva com TOC e tratar como psicose."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 34,
+    "group": "Psiquiatria",
+    "theme": "Suicídio — avaliação de risco",
+    "stem": "Homem de 45 anos, desempregado, etilista, história de tentativa prévia, chega dizendo que comprou veneno e planeja usar 'hoje à noite' se for embora. Afeto constrito, pouco colaborativo. Qual a conduta prioritária? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança.",
+    "correct": "considerar risco alto iminente: não liberar, garantir ambiente seguro, restringir meios e acionar cuidado intensivo/internação conforme",
+    "wrongs": [
+      "minimizar o relato como chantagem e liberar sem plano de segurança, pois 'quem fala não faz', ignorando tentativa prévia e plano",
+      "prescrever apenas receita de antidepressivo e alta imediata, sem restringir o acesso ao veneno nem envolver rede de suporte neste atendimento",
+      "aguardar 72 horas em observação sem avaliar intenção, plano, meios e fatores protetivos, adiando decisão de proteção neste atendimento no serviço atual",
+      "indicar contenção mecânica indefinida sem avaliação clínica, como substituto de plano terapêutico e de segurança suicida com registro claro"
+    ],
+    "explain": "Plano + meio + intenção + fatores de risco = alto risco: proteção imediata, restrição de meios, possível internação. Minimizar, alta só com receita, adiar avaliação ou contenção sem plano são erros.",
+    "trap": "Liberar paciente com plano suicida concreto acreditando que 'quem fala não faz'."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 35,
+    "group": "Psiquiatria",
+    "theme": "Suicídio — prevenção",
+    "stem": "Após estabilizar crise suicida, adolescente de 16 anos e família perguntam medidas práticas de prevenção no domicílio. A orientação mais eficaz é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "restringir acesso a meios letais em casa, manter acompanhamento próximo, envolver a rede de apoio e combinar plano de crise escrito",
+    "wrongs": [
+      "deixar armas e medicações à vontade 'para testar confiança', sem restrição de meios após crise suicida recente estabilizada",
+      "suspender todo retorno ambulatorial por seis meses se houver melhora subjetiva na primeira semana de antidepressivo neste atendimento",
+      "orientar isolamento total sem contato com família ou escola, reduzindo fatores protetivos e vigilância do risco neste atendimento no manejo imediato do caso",
+      "recomendar sites que detalham métodos letais como 'informação neutra', aumentando risco de contágio e planejamento neste atendimento"
+    ],
+    "explain": "Prevenção: restrição de meios, follow-up, rede e plano de crise. Testar confiança com meios disponíveis, sumir do follow-up, isolar ou expor a métodos são perigosos.",
+    "trap": "Não restringir meios letais em casa após crise suicida, 'para testar confiança'."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 36,
+    "group": "Psiquiatria",
+    "theme": "Suicídio — comunicação",
+    "stem": "Médico residente teme 'sugerir suicídio' ao perguntar diretamente sobre ideação a paciente deprimido. Qual a orientação correta baseada em boa prática? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "perguntar de forma direta e empática sobre ideação, plano e meios não aumenta o risco e é essencial para estratificar e proteger neste atendimento",
+    "wrongs": [
+      "evitar qualquer pergunta sobre morte em deprimidos graves, pois a pergunta induziria tentativa de forma comprovadamente causal",
+      "substituir a entrevista por escala online anônima sem contato clínico, dispensando julgamento clínico de risco iminente neste atendimento",
+      "confrontar de forma acusatória o paciente por 'fraqueza moral', reduzindo vínculo e ocultação de ideação suicida neste atendimento",
+      "prometer sigilo absoluto mesmo diante de risco iminente a vida, recusando proteção e acionamento da rede necessária neste atendimento na prática clínica habitual"
+    ],
+    "explain": "Perguntar sobre suicídio é seguro e necessário. Evitar a pergunta, só escala anônima, culpar o paciente ou sigilo absoluto em risco iminente são inadequados.",
+    "trap": "Evitar perguntar sobre ideação por medo de 'plantar' a ideia de suicídio."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 37,
+    "group": "Psiquiatria",
+    "theme": "Antidepressivos — efeitos",
+    "stem": "Mulher de 29 anos em uso de ISRS há 6 semanas relata anorgasmia e redução da libido, com boa resposta do humor. Quer manter o antidepressivo. Qual a melhor conduta? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "validar o efeito adverso sexual, discutir estratégias (ajuste de dose, troca, adjuvantes) sem suspender abruptamente se houver benefício",
+    "wrongs": [
+      "suspender o ISRS de forma abrupta no mesmo dia sem plano, arriscando descontinuação e recidiva do episódio depressivo neste",
+      "acrescentar hormônio tireoidiano empírico em dose alta sem hipotireoidismo, como única resposta à disfunção sexual do ISRS",
+      "indicar cirurgia genital imediata para anorgasmia medicamentosa, sem tentativa de manejo farmacológico ou troca criteriosa na decisão terapêutica compartilhada",
+      "negar qualquer relação entre ISRS e função sexual, invalidando o relato e prejudicando adesão ao tratamento antidepressivo com suporte multiprofissional adequado"
+    ],
+    "explain": "Disfunção sexual por ISRS é comum: validar e manejar (dose/troca/adjuvante) sem corte abrupto se está respondendo. T4 empírico, cirurgia e negação do efeito são inadequados.",
+    "trap": "Suspender ISRS abruptamente só pela disfunção sexual, sem plano de manutenção da remissão."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 38,
+    "group": "Psiquiatria",
+    "theme": "Antipsicóticos — metabólicos",
+    "stem": "Homem de 33 anos em olanzapina há 5 meses ganhou 9 kg, glicemia de jejum 118 mg/dL e triglicerídeos elevados. Psicose controlada. Qual a conduta mais adequada? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "monitorar e manejar risco metabólico: orientação, atividade, laboratório seriado e considerar troca se risco superar benefício",
+    "wrongs": [
+      "ignorar ganho ponderal e glicemia porque a psicose está estável, sem nenhuma intervenção metabólica nem reavaliação neste atendimento",
+      "suspender abruptamente a olanzapina sem substituto, expondo a recaída psicótica grave imediata por medo exclusivo do peso",
+      "iniciar insulina em dose plena automaticamente em todo usuário de olanzapina com glicemia 118, sem confirmação nem medidas iniciais neste contexto de cuidado",
+      "acrescentar corticoide para 'aumentar apetite inverso', agravando o perfil metabólico já comprometido pelo antipsicótico com vigilância contínua da equipe"
+    ],
+    "explain": "Antipsicóticos (esp. olanzapina/clozapina): vigilância metabólica e manejo; troca se necessário. Ignorar, suspender sem cobertura, insulinizar às cegas ou dar corticoide são erros.",
+    "trap": "Ignorar ganho de peso e glicemia elevada sob olanzapina porque a psicose está estável."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 39,
+    "group": "Psiquiatria",
+    "theme": "Antidepressivos — hipertensão / IRSN",
+    "stem": "Paciente de 50 anos inicia venlafaxina; na reavaliação a PA sobe de 128/78 para 158/96 mmHg, dose elevada. Humor melhorou. Qual a conduta mais correta? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "reconhecer hipertensão dose-dependente possível com venlafaxina, medir PA seriadamente e ajustar dose ou trocar o antidepressivo",
+    "wrongs": [
+      "dobrar a venlafaxina apesar da PA elevada, assumindo que todo aumento pressórico é ansiedade sem relação com o IRSN neste",
+      "iniciar três anti-hipertensivos de uma vez sem reavaliar a dose do antidepressivo nem confirmar medidas seriadas da PA neste atendimento",
+      "suspender todo cuidado da depressão e indicar apenas chá diurético, ignorando o benefício já obtido e o risco pressórico com registro claro",
+      "prescrever cocaína terapêutica para 'equilibrar' a PA paradoxalmente, conduta perigosa e sem fundamento clínico neste atendimento sem adiamento injustificado"
+    ],
+    "explain": "Venlafaxina pode elevar PA em doses altas: monitorar e ajustar/trocar. Dobrar dose, polifarmácia anti-HIP sem revisão, chá isolado ou estimulante são inadequados.",
+    "trap": "Ignorar elevação pressórica sob venlafaxina e ainda aumentar a dose."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 40,
+    "group": "Psiquiatria",
+    "theme": "Antipsicóticos — hiperprolactinemia",
+    "stem": "Mulher de 27 anos em risperidona apresenta galactorreia e amenorreia; prolactina elevada. Gravidez excluída. Psicose estável em dose mínima eficaz. Qual a melhor conduta? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "avaliar hiperprolactinemia induzida por antipsicótico e considerar redução, troca por agente poupador de prolactina ou manejo dirigido",
+    "wrongs": [
+      "iniciar bromocriptina empiricamente sem discutir com psiquiatria o risco de piora psicótica e sem revisar o antipsicótico em uso",
+      "aumentar a risperidona para 'suprimir' a prolactina, agravando o efeito hiperprolactinêmico dose-relacionado do fármaco neste atendimento",
+      "indicar mastectomia bilateral por galactorreia medicamentosa antes de qualquer ajuste do antipsicótico ou investigação hormonal",
+      "negar investigação porque amenorreia seria 'psicossomática', mantendo o agente e o sintoma sem manejo adequado neste atendimento conforme a gravidade apresentada"
+    ],
+    "explain": "Risperidona eleva prolactina: revisar dose/troca; agonista dopaminérgico só com cautela. Aumentar risperidona, mastectomia ou negar o problema são erros.",
+    "trap": "Aumentar risperidona diante de galactorreia e prolactina alta."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 41,
+    "group": "Psiquiatria",
+    "theme": "Síndrome serotoninérgica",
+    "stem": "Homem de 40 anos em uso de ISRS associa IMAO caseiro e apresenta agitação, hiperreflexia, clônus induzível, midríase, diarreia, TA 170/100 e temperatura 39,2 °C. Qual o diagnóstico e a conduta inicial? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "síndrome serotoninérgica: suspender serotonérgicos, suporte, sedação com benzodiazepínico e cuidados de hipertermia conforme gravidade",
+    "wrongs": [
+      "tratar como síndrome neuroléptica maligna típica iniciando bromocriptina, apesar de clônus/hiperreflexia sugerirem serotoninérgica",
+      "acrescenter novo ISRS em dose plena para 'competir' com o IMAO, agravando a toxidade serotoninérgica já instalada neste atendimento",
+      "indicar alta com dipirona e retorno em uma semana, apesar de hipertermia, instabilidade e sinais neuromusculares graves neste atendimento",
+      "usar succinilcolina liberalmente sem suporte, como único tratamento da agitação e da hipertermia serotoninérgica neste atendimento com reavaliação seriada objetiva"
+    ],
+    "explain": "Serotoninérgica: clônus/hiperreflexia + agitação/autonômico após serotonérgicos — suspender agentes, suporte, BZD, manejar hipertermia. Não confundir com SNM; não acrescentar ISRS; não liberar grave.",
+    "trap": "Tratar síndrome serotoninérgica como SNM ou acrescentar mais serotonérgico."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 42,
+    "group": "Psiquiatria",
+    "theme": "Síndrome serotoninérgica — diferencial",
+    "stem": "Paciente em ISRS + tramadol apresenta tremor, sudorese e hiperreflexia leve, afebril, estável. Colega sugere 'é só ansiedade'. Qual a distinção-chave que eleva suspeita de serotoninérgica? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "achados neuromusculares como hiperreflexia e clônus em contexto de combinação serotonérgica diferenciam de ansiedade isolada no manejo imediato do caso",
+    "wrongs": [
+      "a ansiedade nunca coexiste com fármacos, portanto qualquer tremor sob ISRS prova ausência completa de toxidade serotoninérgica",
+      "só há serotoninérgica se houver coma profundo; hiperreflexia leve com tramadol associado pode ser sempre ignorada com segurança",
+      "prolactina elevada confirma serotoninérgica e dispensa exame neurológico de reflexos e clônus na avaliação à beira-leito com suporte multiprofissional adequado",
+      "ECG normal exclui serotoninérgica mesmo com clônus induzível, agitação autonômica e combinação de fármacos de risco neste atendimento neste atendimento"
+    ],
+    "explain": "Serotoninérgica leve pode ter hiperreflexia/clônus com combinações (ISRS+tramadol). Não exigir coma; prolactina/ECG não diagnosticam sozinhos; não ignorar sinais neuromusculares.",
+    "trap": "Atribuir hiperreflexia sob ISRS+tramadol apenas a ansiedade e manter a combinação."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 43,
+    "group": "Psiquiatria",
+    "theme": "Síndrome serotoninérgica — prevenção",
+    "stem": "Paciente deprimido em uso de IMAO pergunta se pode iniciar ISRS 'amanhã' por conta própria. A orientação correta é Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "alertar para interação grave: respeitar washout adequado entre IMAO e ISRS e só trocar sob supervisão médica especializada",
+    "wrongs": [
+      "autorizar sobreposição plena de IMAO e ISRS no mesmo dia para acelerar resposta antidepressiva sem risco relevante neste",
+      "orientar dobrar os dois fármacos juntos por uma semana, como estratégia de 'cobertura cruzada' da troca antidepressiva neste atendimento",
+      "recomendar automedicação com dextrometorfano e meperidina associados ao IMAO para potencializar o humor rapidamente neste atendimento",
+      "dizer que washout é mito e que qualquer combinação serotonérgica é segura se o paciente 'beber muita água' neste atendimento após estabilização clínica inicial"
+    ],
+    "explain": "IMAO + ISRS (e outros serotonérgicos) = risco alto de serotoninérgica; washout e supervisão. Sobreposição, dobrar doses, dextrometorfano/meperidina e negar washout são perigosos.",
+    "trap": "Permitir início imediato de ISRS sobre IMAO sem período de washout."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 44,
+    "group": "Psiquiatria",
+    "theme": "Síndrome neuroléptica maligna",
+    "stem": "Homem de 38 anos em haloperidol há 1 semana evolui com rigidez muscular difusa, temperatura 40,1 °C, instabilidade autonômica, rebaixamento e CK muito elevada. Qual a conduta prioritária? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "suspender o antipsicótico, suporte intensivo, manejar hipertermia e considerar dantroleno/agonista dopaminérgico conforme gravidade",
+    "wrongs": [
+      "aumentar o haloperidol para vencer a rigidez, mantendo o agente causal da síndrome neuroléptica maligna em curso neste atendimento",
+      "tratar apenas com paracetamol oral e alta, apesar de hipertermia grave, CK elevada e instabilidade autonômica neste atendimento",
+      "iniciar ISRS em dose alta como antídoto específico da SNM, sem suporte nem suspensão do neuroléptico neste atendimento no serviço atual sem adiamento injustificado",
+      "indicar fisioterapia exclusiva na fase aguda febril com CK elevada, sem cuidados de suporte de órgão-alvo neste atendimento priorizando a segurança do paciente"
+    ],
+    "explain": "SNM: febre, rigidez, autonômico, CK alta — suspender neuroléptico, UTI/suporte, dantroleno/bromocriptina conforme caso. Aumentar neuroléptico, alta, ISRS ou só fisioterapia são erros.",
+    "trap": "Manter ou aumentar o neuroléptico diante de febre, rigidez e CK alta."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 45,
+    "group": "Psiquiatria",
+    "theme": "SNM vs serotoninérgica",
+    "stem": "Discussão de plantão: paciente febril e rígido sob antipsicótico, hiporreflexia, CK alta. Outro colega cita clônus sob ISRS+IMAO. Qual contraste semiológico mais útil? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "SNM tende a rigidez 'chumbo' e hiporreflexia; serotoninérgica associa hiperreflexia e clônus — ambos exigem suspender o agente causal",
+    "wrongs": [
+      "SNM e serotoninérgica são idênticas e sempre se tratam com o mesmo antídoto único, sem olhar reflexos nem história medicamentosa",
+      "clônus induzível prova SNM e exclui serotoninérgica, independentemente do uso de IMAO e ISRS em combinação recente neste atendimento",
+      "CK elevada só ocorre na serotoninérgica e nunca na SNM, tornando desnecessário o exame neurológico de reflexos neste atendimento conforme a gravidade apresentada",
+      "febre exclui ambas as síndromes, pois toxidade por psicotrópicos seria sempre afebril na prática clínica diária neste atendimento sem negligenciar o risco envolvido"
+    ],
+    "explain": "Diferencial: SNM — rigidez, hiporreflexia, CK; serotoninérgica — hiperreflexia/clônus. História de fármacos é crucial. Não unificar antídoto às cegas nem negar febre/CK.",
+    "trap": "Ignorar hiperreflexia/clônus e tratar toda febre sob psicotrópico como SNM idêntica."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 46,
+    "group": "Psiquiatria",
+    "theme": "SNM — reexposição",
+    "stem": "Paciente recuperado de SNM há 3 meses precisa de antipsicótico por psicose recorrente. Qual a estratégia mais prudente? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "reintroduzir com extrema cautela, preferindo agente de menor risco, dose baixa, titulação lenta e monitorização clínica laboratorial com registro claro",
+    "wrongs": [
+      "reiniciar o mesmo neuroléptico típico em megadose imediata, sem titulação, por já ter 'passado imunidade' após a SNM neste",
+      "proibir definitivamente qualquer antipsicótico para sempre, mesmo com psicose grave recorrente e risco a si ou a terceiros",
+      "usar IMAO + ISRS juntos como substituto antipsicótico, criando risco de serotoninérgica sem tratar a psicose adequadamente com reavaliação seriada objetiva",
+      "indicar contenção mecânica crônica exclusiva como substituto vitalício de farmacoterapia antipsicótica após SNM prévia neste atendimento"
+    ],
+    "explain": "Após SNM, se antipsicótico for necessário: outro agente, dose baixa, titulação lenta e vigilância. Megadose do mesmo, proibição absoluta sem alternativa, serotonérgicos ou só contenção são inadequados.",
+    "trap": "Reiniciar o mesmo neuroléptico em dose alta logo após SNM, sem titulação cautelosa."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 47,
+    "group": "Psiquiatria",
+    "theme": "Mania — manejo agudo",
+    "stem": "Homem de 31 anos em mania grave: 1 h de sono, agressividade, delírio de grandeza, recusa medicação oral, risco de agressão a equipe. Ambiente já acolhido. Qual a melhor estratégia medicamentosa imediata? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "usar antipsicótico e/ou estabilizador conforme via possível, com sedação segura e plano de internação por mania grave com risco",
+    "wrongs": [
+      "insistir apenas em psicoterapia verbal prolongada na crise, sem medicação, apesar de agressividade e ausência de insight",
+      "prescrever ISRS em dose plena para 'equilibrar' a mania, com risco de agravamento do polo maníaco psicótico neste atendimento",
+      "administrar opioide em infusão contínua como estabilizador do humor de primeira linha na mania aguda com delírio neste atendimento neste atendimento",
+      "liberar para casa com receita de cafeína noturna, orientando reduzir o sono deliberadamente até a euforia passar neste atendimento no serviço atual"
+    ],
+    "explain": "Mania grave com risco: farmacoterapia (antipsicótico ± estabilizador), via adequada, internação. Psicoterapia isolada, ISRS, opioide e alta com cafeína são inadequados.",
+    "trap": "Tentar manejar mania grave só com conversa, sem medicação nem proteção."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 48,
+    "group": "Psiquiatria",
+    "theme": "Mania — lítio",
+    "stem": "Mulher de 35 anos inicia lítio para mania. No 10º dia: tremor fino, náusea, diarreia e ataxia leve; litemia pedida. Creatinina basal normal. Qual a conduta imediata mais correta? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "suspeitar de toxicidade: verificar litemia, hidratação, revisar dose/interações e manejar conforme gravidade dos sinais neurológicos",
+    "wrongs": [
+      "aumentar o lítio empiricamente porque tremor sempre indica dose insuficiente, sem checar nível sérico nem sinais de toxicidade",
+      "ignorar ataxia e diarreia como 'ansiedade', mantendo a mesma dose sem laboratório nem reavaliação clínica seriada neste atendimento",
+      "trocar imediatamente para IMAO sem lavagem terapêutica nem plano, apenas pelo tremor fino inicial do lítio neste atendimento após estabilização clínica inicial",
+      "indicar hemodiálise automática em todo tremor fino, sem litemia nem critérios de intoxicação grave estabelecidos neste atendimento no manejo imediato do caso"
+    ],
+    "explain": "Tremor + GI + ataxia sob lítio = possível toxicidade: litemia, suporte, ajustar dose. Aumentar às cegas, ignorar, trocar por IMAO ou dialisar todo tremor são inadequados.",
+    "trap": "Aumentar lítio diante de tremor, náusea e ataxia sem dosar litemia."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 49,
+    "group": "Psiquiatria",
+    "theme": "Mania — valproato",
+    "stem": "Homem de 28 anos com mania recebe valproato. Antes, pergunta sobre riscos em gestação futura da parceira e hepatotoxicidade. A orientação correta inclui Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "esclarecer teratogenicidade relevante do valproato, necessidade de contracepção eficaz se houver risco gestacional e monitorar enzimas hepáticas",
+    "wrongs": [
+      "afirmar que valproato é o estabilizador mais seguro na gestação e pode ser usado livremente sem contracepção nem informação",
+      "dispensar qualquer controle hepático porque hepatotoxicidade do valproato seria apenas teórica e nunca clinicamente relevante",
+      "orientar suspender preservativo e planejamento reprodutivo, pois o valproato aumentaria fertilidade sem risco fetal conhecido priorizando a segurança do paciente",
+      "substituir educação de risco por receita de isotretinoína conjunta, somando teratógenos sem justificativa clínica neste atendimento"
+    ],
+    "explain": "Valproato: alto risco teratogênico — contracepção/planejamento; monitorar fígado. Não dizer que é seguro na gestação nem omitir labs; não somar teratógenos.",
+    "trap": "Omitir teratogenicidade do valproato e dispensar contracepção em pessoa com potencial gestacional."
+  },
+  {
+    "idPrefix": "cli-psi",
+    "n": 50,
+    "group": "Psiquiatria",
+    "theme": "Mania — agitação",
+    "stem": "Paciente maníaco agitado no PS: gritos, destruição de mobiliário, recusa oral. Já se garantiu segurança da equipe. Qual princípio de manejo é o mais adequado? Na avaliação atual: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata com segurança. O prontuário traz comorbidades, uso de psicotrópicos e fatores de risco psicossociais relevantes para o diagnóstico diferencial e o manejo.",
+    "correct": "priorizar desescalada verbal quando possível e medicação intramuscular se necessário, evitando contenção prolongada como única medida",
+    "wrongs": [
+      "aplicar contenção mecânica indefinida sem medicação nem tentativa de desescalada, como protocolo único de todo paciente agitado",
+      "deixar o paciente agitado sem supervisão em sala aberta com objetos cortantes, para 'aprender limites' por consequência natural",
+      "oferecer alta sob custódia própria imediata enquanto destrói o ambiente, sem sedação segura nem avaliação de risco neste atendimento na decisão",
+      "iniciar quimioterapia empírica para agitação maníaca, sem base diagnóstica oncológica nem indicação psiquiátrica neste atendimento"
+    ],
+    "explain": "Agitação: segurança, desescalada, medicação (IM se preciso); contenção só breve e com fármaco. Contenção isolada indefinida, ambiente inseguro, alta ou quimio são inadequados.",
+    "trap": "Usar contenção mecânica prolongada sozinha, sem medicação nem desescalada."
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-hepato",
+    "n": 1,
+    "group": "Hepatologia",
+    "theme": "Hepatite A — diagnóstico",
+    "stem": "Homem de 28 anos, após viagem a área com saneamento precário, apresenta há 5 dias febre, anorexia, náuseas e, há 48 horas, icterícia e colúria. Exame: hepatomegalia dolorosa leve, afebril agora. ALT 1.850 U/L, AST 1.420 U/L, bilirrubina total 6,8 mg/dL (direta predominante), FA 180 U/L, INR 1,1. Anti-HAV IgM positivo; HBsAg negativo; anti-HCV negativo. Qual a conduta mais adequada?",
+    "correct": "Manter suporte clínico, orientar higiene e evitar hepatotóxicos, pois hepatite A é autolimitada na maioria dos casos, conforme a evidência clínica",
+    "wrongs": [
+      "Iniciar tenofovir imediatamente para reduzir cronificação, embora hepatite A não evolua para infecção crônica típica, no adulto",
+      "Indicar biópsia hepática urgente em todo adulto ictérico antes de qualquer suporte, mesmo com coagulograma normal, sem adiamento injustificado, com segurança",
+      "Prescrever ribavirina empírica por 12 semanas como tratamento antiviral específico de primeira linha para HAV, no cenário hepatológico atual",
+      "Internar em UTI e listar para transplante hepático de imediato apenas pela magnitude das aminotransferases, priorizando a segurança, diante do risco descrito"
+    ],
+    "explain": "Anti-HAV IgM confirma hepatite A aguda. Conduta é suporte; HAV não cronifica. Aminotransferases altas não indicam por si transplante; fulminância exige encefalopatia e falência sintética.",
+    "trap": "Tratar HAV como HBV/HCV crônicos ou indicar transplante só pela ALT elevada."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 2,
+    "group": "Hepatologia",
+    "theme": "Hepatite B aguda — sorologia",
+    "stem": "Mulher de 34 anos com icterícia, astenia e artralgias há 10 dias. Parceiro com HBV conhecido. Labs: ALT 2.100, AST 1.800, BT 7,2. Sorologia: HBsAg positivo, anti-HBc IgM positivo, anti-HBs negativo, HBeAg positivo, anti-HBe negativo. INR 1,0, sem encefalopatia. Qual a interpretação diagnóstica correta? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Hepatite B aguda em fase de alta replicação; suporte clínico e vigilância de falência, sem antiviral de rotina se leve, com reavaliação seriada",
+    "wrongs": [
+      "Imunidade vacinal isolada, pois anti-HBs negativo com HBsAg positivo não corresponde ao perfil pós-vacinação clássico, conforme a evidência clínica",
+      "Hepatite B crônica inativa há anos, ignorando anti-HBc IgM e o quadro clínico agudo com aminotransferases muito altas, no momento",
+      "Janela imunológica pura com HBsAg já negativo, apesar do HBsAg positivo documentado nesta sorologia apresentada, sem adiamento injustificado",
+      "Infecção resolvida com cicatriz sorológica completa, o que exigiria anti-HBs e anti-HBc IgG sem HBsAg detectável, agora, neste caso"
+    ],
+    "explain": "HBsAg + anti-HBc IgM fecha HBV agudo; HBeAg+ indica alta replicação. Na forma não fulminante do adulto, suporte é a base; antivirais reservam-se a formas graves/fulminantes.",
+    "trap": "Confundir perfil agudo com imunidade vacinal ou com HBV crônica inativa."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 3,
+    "group": "Hepatologia",
+    "theme": "Hepatite B — janela imunológica",
+    "stem": "Homem de 41 anos teve contato sexual desprotegido há 8 semanas e agora apresenta icterícia leve com ALT 980. HBsAg negativo, anti-HBs negativo, anti-HBc IgM positivo, anti-HBe negativo, HBeAg negativo. DNA-HBV ainda pendente. Qual a leitura sorológica mais coerente? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Hepatite B aguda na janela imunológica: HBsAg já negativo e anti-HBs ainda ausente, com anti-HBc IgM positivo, sem adiamento injustificado",
+    "wrongs": [
+      "Excluir HBV definitivamente porque HBsAg negativo, ignorando o anti-HBc IgM como marcador da infecção aguda recente, com segurança",
+      "Diagnosticar apenas vacinação recente, embora a vacina não induza anti-HBc IgM e o paciente esteja ictérico agudo, priorizando a segurança, diante do risco descrito",
+      "Afirmar HBV crônica HBeAg-negativa mutante pré-core sem considerar o anti-HBc IgM e o tempo de exposição recente, com registro no prontuário",
+      "Tratar como falso-positivo isolado e liberar sem seguimento, apesar da clínica e do marcador de núcleo positivo, na prática de clínica médica"
+    ],
+    "explain": "Na janela, HBsAg some antes do anti-HBs surgir; o anti-HBc IgM mantém o diagnóstico de HBV aguda. Não se descarta HBV só pelo HBsAg negativo nesse contexto.",
+    "trap": "Descartar hepatite B apenas porque o HBsAg veio negativo."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 4,
+    "group": "Hepatologia",
+    "theme": "Hepatite B crônica — tratamento",
+    "stem": "Homem de 45 anos, HBsAg positivo há 3 anos, anti-HBc IgG positivo, HBeAg positivo, anti-HBe negativo. DNA-HBV 8×10⁶ UI/mL, ALT 2,5× LSN, elastografia com fibrose significativa. Sem cirrose descompensada. Qual a melhor conduta antiviral inicial citada na prática brasileira? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Iniciar tenofovir (ou entecavir) em dose plena e acompanhar carga viral, aminotransferases e função renal seriada, no cenário hepatológico atual",
+    "wrongs": [
+      "Observar sem antiviral porque HBsAg crônico nunca indica terapia, mesmo com alta viremia e fibrose significativa, sem adiamento injustificado, agora",
+      "Usar apenas interferon peguilado por 48 semanas em todo HBeAg-positivo, sem discutir análogos de nucleot(s)ídeo, agora, neste caso",
+      "Prescrever lamivudina isolada como primeira escolha atual, ignorando resistência e as opções preferenciais vigentes, priorizando a segurança",
+      "Indicar transplante hepático eletivo imediato apenas pela viremia, sem descompensação nem carcinoma hepatocelular, no adulto, de imediato"
+    ],
+    "explain": "HBV crônica com replicação alta, ALT elevada e fibrose significativa tem indicação de análogo preferencial (tenofovir/entecavir). Lamivudina não é primeira linha atual; transplante não cabe aqui.",
+    "trap": "Adiar análogo preferencial ou escolher lamivudina como primeira linha atual."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 5,
+    "group": "Hepatologia",
+    "theme": "Hepatite B — gestação e transmissão",
+    "stem": "Gestante de 30 semanas, HBsAg positivo, HBeAg positivo, DNA-HBV 9×10⁵ UI/mL, ALT normal, sem cirrose. Obstetra pergunta sobre redução de transmissão vertical. Qual conduta antiviral é a mais adequada neste cenário? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Iniciar tenofovir nesta fase tardia da gestação e planejar profilaxia neonatal com vacina e imunoglobulina, de forma objetiva e segura",
+    "wrongs": [
+      "Contraindicar qualquer antiviral na gestação e omitir profilaxia neonatal, aceitando alto risco de transmissão vertical, com segurança",
+      "Usar interferon peguilado a partir da 28ª semana como primeira escolha segura e preferencial na gestação atual, conforme a evidência clínica",
+      "Indicar cesárea eletiva isolada como substituto completo de antiviral e de imunoprofilaxia do recém-nascido, com reavaliação seriada",
+      "Suspender o pré-natal especializado e tratar só após o parto, sem medidas para reduzir a transmissão perinatal, sem adiamento injustificado"
+    ],
+    "explain": "Carga viral alta e/ou HBeAg+ elevam transmissão vertical: tenofovir no 3º trimestre + vacina e HBIg no RN. Interferon não é a escolha gestacional usual; cesárea não substitui a profilaxia.",
+    "trap": "Omitir tenofovir e imunoprofilaxia neonatal na gestante de alta viremia."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 6,
+    "group": "Hepatologia",
+    "theme": "Hepatite C — diagnóstico e cura",
+    "stem": "Homem de 52 anos, ex-usuário de drogas injetáveis, anti-HCV positivo em check-up. ALT 68, AST 55, bilirrubinas normais, INR 1,0. Ultrassom sem nódulos. Qual o próximo passo diagnóstico essencial? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Solicitar RNA do HCV (carga viral) para confirmar infecção ativa antes de planejar terapia antiviral oral, com registro no prontuário",
+    "wrongs": [
+      "Iniciar DAAs imediatamente só com anti-HCV, sem confirmar viremia, expondo a tratamento desnecessário se RNA negativo, priorizando a segurança, no adulto",
+      "Indicar biópsia hepática obrigatória em todos antes de qualquer RNA, mesmo com elastografia e exames não invasivos, no adulto",
+      "Repetir apenas anti-HCV em seis meses e liberar, sem investigação de viremia nem avaliação de fibrose hepática, na prática de clínica médica",
+      "Prescrever interferon e ribavirina clássicos como padrão atual, ignorando os esquemas orais de ação direta, diante do risco descrito"
+    ],
+    "explain": "Anti-HCV indica exposição; infecção ativa confirma-se pelo RNA. DAAs só após viremia documentada. Interferon clássico não é o padrão atual de primeira linha.",
+    "trap": "Tratar ou liberar com base só no anti-HCV, sem RNA do vírus C."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 7,
+    "group": "Hepatologia",
+    "theme": "Hepatite C — terapia",
+    "stem": "Mulher de 48 anos com HCV crônico, genótipo 1, RNA detectável, sem cirrose descompensada, sem interação medicamentosa relevante. Já avaliada para fibrose (F2). Qual a melhor orientação terapêutica contemporânea? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Indicar esquema oral de antivirais de ação direta conforme genótipo/fibrose, visando RNA indetectável sustentado, na prática de clínica médica",
+    "wrongs": [
+      "Manter apenas silimarina e observação indefinida, pois HCV crônico nunca se trata na ausência de icterícia franca, agora",
+      "Priorizar interferon monocitário por 72 semanas como terapia preferencial atual em genótipo 1 sem cirrose, segundo o protocolo local, neste atendimento",
+      "Indicar transplante hepático profilático em F2 sem descompensação, carcinoma ou outra indicação transplantatória, neste paciente adulto",
+      "Usar lamivudina anti-HBV como tratamento do HCV, confundindo classes antivirais e alvos virais distintos, de forma objetiva e segura, com reavaliação seriada"
+    ],
+    "explain": "DAAs orais são o padrão para HCV crônico elegível, com alta taxa de RVS. Não se trata HCV com lamivudina nem se indica transplante em fibrose moderada compensada.",
+    "trap": "Adiar DAAs ou usar esquemas antiquados de interferon como primeira linha."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 8,
+    "group": "Hepatologia",
+    "theme": "Hepatite fulminante — critérios",
+    "stem": "Jovem de 24 anos com hepatite aguda (provável HAV) evolui em 5 dias com confusão, flapping e INR 2,8. Bilirrubina 18 mg/dL, glicemia 62 mg/dL, creatinina 1,1. Sem hepatopatia prévia conhecida. Qual a interpretação e prioridade? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Insuficiência hepática aguda grave/fulminante: suporte intensivo, etiologia e avaliação precoce para transplante, diante do risco descrito",
+    "wrongs": [
+      "Encefalopatia hepática crônica descompensada típica de cirrose antiga, sem necessidade de avaliar transplante agudo, na prática de clínica médica",
+      "Quadro banal de hepatite A leve: alta com analgésico e retorno ambulatorial em trinta dias sem vigilância de INR, com segurança",
+      "Priorizar apenas lactulose oral em enfermaria comum sem UTI, ignora coagulopatia e risco de edema cerebral agudo, segundo o protocolo local, neste atendimento",
+      "Indicar antibiótico para PBE de rotina como único tratamento, embora não haja ascite cirrótica estabelecida aqui, neste paciente adulto"
+    ],
+    "explain": "Falência hepática aguda: hepatite + coagulopatia + encefalopatia sem cirrose prévia. Exige UTI, suporte e contato precoce com centro transplantador; não é PBE de cirrótico.",
+    "trap": "Tratar fulminante como hepatite leve ou como descompensação crônica clássica."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 9,
+    "group": "Hepatologia",
+    "theme": "Cirrose — diagnóstico clínico",
+    "stem": "Homem de 58 anos, etilista, com ascite, eritema palmar, aranhas vasculares e baço palpável. Labs: albumina 2,8, BT 2,4, INR 1,4, plaquetas 78.000. Ultrassom: fígado nodular e esplenomegalia. Qual a conclusão mais correta? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Cirrose hepática descompensada com hipertensão portal; estadiar gravidade e prevenir complicações típicas, sem adiamento injustificado",
+    "wrongs": [
+      "Esteatose simples isolada sem fibrose, incompatível com estigmas, trombocitopenia e nódulos hepáticos descritos, agora, neste caso",
+      "Hepatite aguda viral exclusiva, ignorando cronicidade sugerida por estigmas cutâneos e hipertensão portal, priorizando a segurança, diante do risco descrito",
+      "Obstrução biliare extra-hepática pura como única causa, sem dilatação de vias biliares nem padrão colestático dominante, no adulto",
+      "Síndrome nefrótica primária explicando a ascite, apesar dos estigmas hepáticos e da coagulopatia leve associada, na prática de clínica médica"
+    ],
+    "explain": "Estigmas + hipertensão portal + alteração sintética apontam cirrose descompensada. Próximos passos: Child-Pugh/MELD, rastreio de varizes e manejo da ascite.",
+    "trap": "Negar cirrose diante de estigmas clássicos e sinais de hipertensão portal."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 10,
+    "group": "Hepatologia",
+    "theme": "Ascite — investigação inicial",
+    "stem": "Mulher de 61 anos com cirrose conhecida chega com aumento abdominal e desconforto. Afebril, PA 110/70, sem encefalopatia. Paracentese diagnóstica: aspectoclaro, celularidade 120 PMN/mm³, albumina do líquido 0,8; albumina sérica 2,9. Qual o próximo manejo da ascite? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Restringir sódio, iniciar espironolactona (± furosemida) e educar sobre peso diário, pois GASA alto indica ascite portal, neste paciente adulto",
+    "wrongs": [
+      "Tratar PBE com cefalosporina de terceira imediatamente, apesar de PMN abaixo do limiar diagnóstico usual de infecção, segundo o protocolo local, neste atendimento",
+      "Indicar shunting portossistêmico cirúrgico eletivo antes de qualquer diurético ou restrição de sódio na ascite, neste paciente adulto",
+      "Prescrever apenas albumina humana semanal como monoterapia definitiva, sem controle de sódio nem diuréticos, de forma objetiva e segura, agora",
+      "Indicar laparotomia exploradora de rotina por ascite, sem evidência de abdome cirúrgico ou outra indicação, neste atendimento, neste caso"
+    ],
+    "explain": "GASA ≥1,1 (aqui 2,1) = ascite por hipertensão portal. Sem PBE (PMN <250). Base: sal, espironolactona ± furosemida e monitoramento.",
+    "trap": "Tratar PBE sem critério de PMN ou pular direto para TIPS/cirurgia."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 11,
+    "group": "Hepatologia",
+    "theme": "PBE — diagnóstico e tratamento",
+    "stem": "Cirrótico Child B com ascite, febre 38,4 °C e dor abdominal difusa. Paracentese: 450 PMN/mm³, Gram ainda pendente. Creatinina 1,0, sem choque. Qual a conduta imediata mais correta? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Iniciar cefalosporina de terceira geração intravenosa após coleta e considerar albumina conforme indicação na PBE, de forma objetiva e segura",
+    "wrongs": [
+      "Aguardar cultura por 72 horas sem antibiótico, pois PBE só se trata com germes identificados no líquido ascítico, neste atendimento",
+      "Usar aminoglicosídeo isolado em dose alta como primeira escolha, elevando risco renal no cirrótico com ascite, conforme a evidência clínica, no momento",
+      "Indicar paracentese apenas terapêutica sem antibiótico, ignorando o limiar de PMN diagnóstico de peritonite espontânea, no momento",
+      "Listar para transplante na mesma hora como único passo, omitindo o tratamento antimicrobiano urgente da PBE, sem adiamento injustificado, agora"
+    ],
+    "explain": "PMN ≥250/mm³ no líquido = PBE até prova em contrário: antibiótico empírico precoce (± albumina). Não se espera cultura para iniciar terapia.",
+    "trap": "Esperar cultura negativa/positiva antes de antibioticar a PBE."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 12,
+    "group": "Hepatologia",
+    "theme": "Síndrome hepatorrenal",
+    "stem": "Homem de 55 anos cirrótico com ascite tensa e PBE recente tratada. Evolui com creatinina de 1,0 para 2,4 mg/dL em 5 dias, sem choque, sem nefrotóxicos, ultrassom renal normal, sem hematúria/proteinúria significativas após expansão com albumina. Qual a hipótese e manejo-chave? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Suspeitar síndrome hepatorrenal: vasoativos (ex.: terlipressina) com albumina e avaliar transplante como terapia definitiva, neste atendimento",
+    "wrongs": [
+      "Diagnosticar NTA isquêmica irreversível e iniciar diálise imediata sem tentar vasoativo nem otimizar volume com albumina, de forma objetiva e segura",
+      "Aumentar furosemida em dose máxima isolada, piorando a perfusão renal na suspeita de SHR tipo 1 agudo, neste atendimento",
+      "Suspender toda antibioticoterapia passada e omitir suporte, atribuindo a creatinina apenas a “lab error” transitório, conforme a evidência clínica",
+      "Indicar nefrobiopsia urgente de rotina antes de qualquer medida clínica, atrasando o tratamento da SHR provável, com reavaliação seriada"
+    ],
+    "explain": "SHR: IRA em cirrose avançada após exclusão de outras causas e falha/expansão adequada. Terlipressina+albumina e avaliação para transplante são pilares.",
+    "trap": "Empurrar diurético ou dialisar sem tentar vasoativo+albumina na SHR."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 13,
+    "group": "Hepatologia",
+    "theme": "Varizes esofágicas — profilaxia",
+    "stem": "Cirrótico Child A, endoscopia com varizes esofágicas de médio calibre e pontos vermelhos, sem sangramento prévio. PA 118/72, FC 78, sem ascite tensa. Qual a melhor profilaxia primária? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Iniciar betabloqueador não seletivo (ex.: propranolol/carvedilol) titulado ou ligadura conforme protocolo e risco, conforme a evidência clínica",
+    "wrongs": [
+      "Prescrever AAS em dose plena diária para “proteger” varizes, aumentando risco hemorrágico sem benefício profilático, no momento",
+      "Indicar TIPS profilático de rotina em Child A sem sangramento, com risco desnecessário de encefalopatia precoce, sem adiamento injustificado, agora",
+      "Usar octreotide subcutâneo crônico domiciliar como profilaxia primária isolada, fora do cenário de sangramento agudo, agora, neste caso",
+      "Evitar qualquer profilaxia até o primeiro sangramento maciço, aceitando alto risco com sinais endoscópicos de ameaça, priorizando a segurança"
+    ],
+    "explain": "Varizes de risco (calibre + red spots): profilaxia primária com betabloqueador não seletivo ou ligadura elástica. TIPS e octreotide não são profilaxia primária de rotina.",
+    "trap": "Esperar o primeiro sangramento ou usar AAS/TIPS sem indicação."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 14,
+    "group": "Hepatologia",
+    "theme": "HDA varicosa — manejo agudo",
+    "stem": "Cirrótico chega com hematêmese franca, PA 85/50, FC 120, confuso. Após vias aéreas e volume inicial, qual o pacote terapêutico mais adequado na suspeita de HDA varicosa? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Vasoconstritor esplâncnico (terlipressina/octreotide), antibiótico, estabilização e endoscopia terapêutica precoce, com reavaliação seriada",
+    "wrongs": [
+      "Apenas antiácido oral e observação em enfermaria, sem vasoconstritor, antibiótico nem endoscopia na HDA grave, conforme a evidência clínica, no adulto",
+      "Cirurgia de porto-cava imediata antes de qualquer reanimação, vasoconstritor ou tentativa endoscópica de hemostasia, no adulto",
+      "Betabloqueador intravenoso em choque como primeiro passo, piorando a perfusão antes da estabilização hemodinâmica, sem adiamento injustificado",
+      "Transfusão até hematócrito 45% de rotina, sem meta restritiva, aumentando riscos sem benefício comprovado, no cenário hepatológico atual"
+    ],
+    "explain": "HDA varicosa: reanimação, vasoativo esplâncnico, antibiótico (reduz infecção/rebleeding) e endoscopia precoce. Cirurgia/TIPS são rescues; meta transfusional é restritiva.",
+    "trap": "Omitir vasoativo+antibiótico+endoscopia na hematêmese do cirrótico."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 15,
+    "group": "Hepatologia",
+    "theme": "Hipertensão portal — conceitos",
+    "stem": "Paciente com esplenomegalia, varizes e plaquetopenia, porém elastografia e biópsia sem cirrose estabelecida. Investigação sugere trombose de veia porta crônica. Qual a interpretação fisiopatológica? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Hipertensão portal pré-hepática: sinais de HTP sem insuficiência hepatocelular típica de cirrose avançada, sem adiamento injustificado",
+    "wrongs": [
+      "Hipertensão portal exclusivamente pós-sinusoidal por síndrome de Budd-Chiari, apesar da trombose portal documentada, agora",
+      "Cirrose descompensada obrigatória em todo paciente com varizes, mesmo com histologia sem fibrose em ponte, priorizando a segurança, diante do risco descrito",
+      "Hipertensão porto-pulmonar primária como causa das varizes esofágicas neste contexto de trombose portal, com registro no prontuário",
+      "Ascite cardíaca direita isolada explicando as varizes, sem evidência de insuficiência cardíaca no exame atual, na prática de clínica médica, com segurança"
+    ],
+    "explain": "Trombose portal causa HTP pré-hepática: varizes/esplenomegalia com função hepática relativamente preservada. Não exige cirrose histológica.",
+    "trap": "Assumir que toda HTP com varizes implica cirrose estabelecida."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 16,
+    "group": "Hepatologia",
+    "theme": "Doença hepática alcoólica",
+    "stem": "Homem de 46 anos, ingestão >80 g álcool/dia, icterícia progressiva, febre baixa, hepatomegalia dolorosa. AST 220, ALT 90 (AST>ALT), GGT alta, BT 8, INR 1,6, neutrofilia. Ultrassom sem dilatação biliar. Qual a hipótese e pedra angular do tratamento? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Hepatite alcoólica aguda: abstinência absoluta, suporte nutricional e corticoterapia se critérios de gravidade, no cenário hepatológico atual",
+    "wrongs": [
+      "Colangite ascendente pura: CPRE imediata sem considerar o padrão AST>ALT e a história etílica predominante, sem adiamento injustificado, com registro no prontuário",
+      "HCV aguda exclusiva: iniciar DAAs na emergência sem sorologia completa nem abordagem da abstinência alcoólica, com segurança",
+      "Esteatose não alcoólica leve: liberar com orlistate e dieta, ignorando icterícia, INR e o consumo pesado de álcool, priorizando a segurança, no momento",
+      "Indicar quimioterapia sistêmica por suspeita de CHC sem imagem de nódulo e sem estabilização da hepatite alcoólica, no momento"
+    ],
+    "explain": "DHA/hepatite alcoólica: AST>ALT, GGT, icterícia e história. Abstinência e nutrição são essenciais; corticoide em formas graves elegíveis (ex.: Maddrey).",
+    "trap": "Tratar como colangite ou esteatose leve e omitir abstinência/nutrição."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 17,
+    "group": "Hepatologia",
+    "theme": "DHGNA / MASLD — abordagem",
+    "stem": "Mulher de 52 anos, IMC 34, DM2 e dislipidemia, ALT 78, AST 55, FA normal, sorologias virais negativas, consumo alcoólico <10 g/semana. Ultrassom: esteatose. Elastografia sugere fibrose moderada. Qual a conduta inicial mais adequada? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Otimizar peso, exercício e controle metabólico; estadiar fibrose e evitar hepatotóxicos, avaliando risco progressivo, priorizando a segurança",
+    "wrongs": [
+      "Iniciar prednisona em dose imunossupressora de rotina para “esteato-hepatite”, sem critérios de hepatite autoimune, no adulto",
+      "Indicar transplante hepático imediato por esteatose ultrassonográfica isolada sem insuficiência hepática terminal, na prática de clínica médica, com segurança",
+      "Prescrever metformina apenas como antiviral HCV, confundindo indicação metabólica com infecção pelo vírus C, diante do risco descrito",
+      "Liberar sem mudança de estilo de vida porque aminotransferases estão “só um pouco” acima do limite superior, segundo o protocolo local, neste atendimento"
+    ],
+    "explain": "MASLD/DHGNA: base é perda ponderal e controle metabólico; estadiar fibrose. Corticoide e transplante não cabem na esteatose compensada típica.",
+    "trap": "Medicalizar com imunossupressão ou ignorar a mudança de estilo de vida."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 18,
+    "group": "Hepatologia",
+    "theme": "Hepatite autoimune",
+    "stem": "Mulher de 29 anos com fadiga, icterícia e artralgias. ALT 650, AST 580, IgG elevada, FAN positivo, anti-AML positivo, viral negativo, ecografia sem dilatação. Sem uso de fármacos suspeitos. Qual a conduta diagnóstica-terapêutica típica? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Considerar hepatite autoimune: biópsia quando segura e iniciar imunossupressão (corticoide ± azatioprina) conforme gravidade, no adulto",
+    "wrongs": [
+      "Tratar como CBP clássica só com ácido ursodesoxicólico, apesar do padrão hepatocelular e dos autoanticorpos de HAI, priorizando a segurança, diante do risco descrito",
+      "Usar tenofovir empírico sem marcadores de HBV, ignorando o perfil autoimune fortemente sugestivo neste caso, no momento, com critério",
+      "Indicar colecistectomia urgente por icterícia, sem evidência de litíase sintomática ou colangite obstrutiva aguda, na prática de clínica médica",
+      "Observar sem terapia porque HAI nunca progride, omitindo o risco de fibrose e falência em doença ativa não tratada, diante do risco descrito"
+    ],
+    "explain": "HAI: mulher jovem, padrão hepatocelular, hipergamaglobulina e autoanticorpos. Biópsia apoia; imunossupressão é o tratamento-padrão da doença ativa.",
+    "trap": "Tratar HAI como CBP ou como viral e atrasar imunossupressão."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 19,
+    "group": "Hepatologia",
+    "theme": "Cirrose biliar primária / colangite biliar primária",
+    "stem": "Mulher de 54 anos com prurido há meses, fadiga e FA persistentemente 3× LSN, GGT alta, aminotransferases pouco elevadas. Anti-mitocondrial (AMA) positivo em título alto. Ultrassom sem dilatação de vias biliares. Qual o tratamento de primeira linha? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Iniciar ácido ursodesoxicólico e acompanhar FA/GGT, prurido e progressão; biópsia não é obrigatória se AMA+ típico, na prática de clínica médica",
+    "wrongs": [
+      "Prescrever prednisona em alta dose como monoterapia inicial padrão da CBP, à semelhança da hepatite autoimune clássica, com segurança",
+      "Indicar CPRE diagnóstica de rotina em toda AMA positiva, mesmo sem dilatação e com padrão de CBP típico, segundo o protocolo local, neste atendimento",
+      "Usar interferon peguilado por 48 semanas como terapia preferencial da colangite biliar primária AMA-positiva, neste paciente adulto",
+      "Indicar colecistectomia profilática imediata apenas pelo prurido, sem litíase sintomática documentada na imagem, de forma objetiva e segura, agora"
+    ],
+    "explain": "CBP: mulher meia-idade, FA alta, AMA+. Ursodesoxicólico é primeira linha; biópsia dispensável no fenótipo clássico. Corticoide não é o padrão inicial da CBP pura.",
+    "trap": "Tratar CBP como HAI com corticoide ou insistir em CPRE sem dilatação."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 20,
+    "group": "Hepatologia",
+    "theme": "Colangite esclerosante primária",
+    "stem": "Homem de 36 anos com retocolite ulcerativa apresenta FA elevada, episódios de colangite e RM/CPRE com estenoses multifocais de vias biliares intra e extra-hepáticas. AMA negativo. Qual a associação e manejo-chave? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "CEP associada a DII: suporte, tratar colangites, rastrear colangiocarcinoma e considerar ursodesoxi/endoscopia se estenose dominante",
+    "wrongs": [
+      "Diagnosticar CBP clássica AMA-positiva e limitar-se a isso, apesar do sexo masculino, DII e estenoses multifocais, na prática de clínica médica, agora",
+      "Curar a CEP apenas com mesalazina em dose alta, sem vigilância de estenoses nem risco de colangiocarcinoma, diante do risco descrito",
+      "Contraindicar qualquer avaliação de DII intestinal, ignorando a forte associação da CEP com colite ulcerativa, segundo o protocolo local, neste atendimento",
+      "Indicar imunossupressão padrão de HAI como terapia definitiva isolada de todas as formas de CEP tipicamente, neste paciente adulto"
+    ],
+    "explain": "CEP: homem jovem/adulto com DII, colangiografia típica, AMA−. Manejo de complicações, vigilância neoplásica; transplante em doença avançada.",
+    "trap": "Rotular CEP como CBP ou achar que mesalazina cura a doença biliar."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 21,
+    "group": "Hepatologia",
+    "theme": "Doença de Wilson",
+    "stem": "Adolescente de 17 anos com hepatite aguda grave, tremor e alteração comportamental. Ceruloplasmina baixa, cobre urinário elevado; anel de Kayser-Fleischer presente. Coombs negativo com hemólise leve. Qual a conduta específica mais adequada? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Iniciar quelante de cobre (D-penicilamina ou trientina) e zinco conforme gravidade, evitando cobre dietético excessivo, segundo o protocolo local",
+    "wrongs": [
+      "Tratar só com ácido ursodesoxicólico como terapia específica da Wilson neurológico-hepática documentada, neste paciente adulto",
+      "Usar deferasirox como primeira linha específica da Wilson, confundindo com terapia da hemocromatose por ferro, de forma objetiva e segura, com reavaliação seriada",
+      "Indicar flebotomias semanais de rotina como tratamento etiológico da sobrecarga de cobre na doença de Wilson, neste atendimento",
+      "Omitir terapia específica e liberar com benzodiazepínico apenas, apesar da hepatite grave e dos achados de cobre, conforme a evidência clínica"
+    ],
+    "explain": "Wilson: ceruloplasmina baixa, cobre urinário alto, Kayser-Fleischer ± neuro. Quelantes/zinco são específicos; flebotomia trata ferro, não cobre.",
+    "trap": "Tratar Wilson com flebotomia ou fármacos da hemocromatose/CBP."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 22,
+    "group": "Hepatologia",
+    "theme": "Hemocromatose",
+    "stem": "Homem de 48 anos com astenia, artralgias, bronzeamento cutâneo, DM de início recente e ferritina 1.200 ng/mL com saturação de transferrina 55%. Mutação HFE C282Y homozigota. ALT 70. Sem anemia. Qual o tratamento de escolha? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Flebotomias terapêuticas regulares até depleção controlada do ferro, com monitorização de ferritina e clínica, neste paciente adulto",
+    "wrongs": [
+      "Iniciar quelante de cobre imediatamente, confundindo hemocromatose com doença de Wilson hepato-neurológica, segundo o protocolo local, neste atendimento",
+      "Prescrever suplemento de ferro oral para “corrigir” a ferritina elevada, agravando a sobrecarga tecidual férrica, no adulto",
+      "Usar prednisona como terapia específica da hemocromatose hereditária HFE sem evidência de hepatite autoimune, de forma objetiva e segura, com segurança",
+      "Indicar transplante hepático imediato apenas pela ferritina, sem cirrose descompensada ou carcinoma hepatocelular, neste atendimento"
+    ],
+    "explain": "Hemocromatose HFE: saturação/ferritina altas e genética. Flebotomia é o tratamento clássico no paciente sem anemia grave. Não se repõe ferro nem se usa quelante de cobre.",
+    "trap": "Suplementar ferro ou tratar como Wilson na hemocromatose."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 23,
+    "group": "Hepatologia",
+    "theme": "DILI — hepatotoxicidade medicamentosa",
+    "stem": "Mulher de 42 anos iniciou isoniazida há 6 semanas e chega com icterícia, anorexia e ALT 900, AST 850, INR 1,3. Sorologias virais agudas negativas; ecografia sem obstrução. Qual a conduta prioritária? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Suspender imediatamente o fármaco suspeito, dar suporte e monitorar função sintética e encefalopatia de perto, de forma objetiva e segura",
+    "wrongs": [
+      "Manter isoniazida e adicionar prednisona empírica em todos os DILI, sem individualizar risco-benefício tuberculoso, neste atendimento",
+      "Indicar CPRE urgente por padrão hepatocelular sem dilatação biliar, atrasando a retirada do hepatotóxico causal, conforme a evidência clínica, no adulto",
+      "Iniciar tenofovir empírico sem marcadores de HBV, presumindo viral crônica apesar da relação temporal clara com o fármaco, no adulto",
+      "Aumentar a dose de isoniazida para “induzir tolerância”, o que agrava a lesão hepatocelular medicamentosa, sem adiamento injustificado, com segurança"
+    ],
+    "explain": "DILI: relação temporal + exclusão de outras causas. Pilar é retirar o ofensor e vigiar falência. Não se aumenta a dose do hepatotóxico.",
+    "trap": "Manter ou aumentar o fármaco suspeito diante de DILI ictérico."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 24,
+    "group": "Hepatologia",
+    "theme": "Insuficiência hepática crônica — descompensação",
+    "stem": "Cirrótico Child C internado com ascite tensa, encefalopatia grau II e INR 1,9. Sem sangramento ativo. Qual o conjunto de medidas mais coerente na descompensação da insuficiência hepática crônica? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Otimizar fatores precipitantes, manejar ascite/encefalopatia, suporte nutricional e calcular MELD para transplante, neste atendimento",
+    "wrongs": [
+      "Indicar alta imediata com alta proteica livre e sem lactulose, ignorando encefalopatia e a ascite tensa atuais, de forma objetiva e segura, com reavaliação seriada",
+      "Prescrever AAS + clopidogrel de rotina em todo Child C, elevando risco hemorrágico sem indicação cardiovascular clara, com segurança",
+      "Fazer hepatectomia parcial eletiva como tratamento da IHC descompensada fora de contexto oncológico selecionado, conforme a evidência clínica",
+      "Omitir busca de precipitantes (infecção, distúrbio hidroeletrolítico, constipação, fármacos) na encefalopatia, com reavaliação seriada"
+    ],
+    "explain": "IHC descompensada: tratar precipitantes e complicações, suporte e referenciar para transplante (MELD). Antiagregação dual rotineira e hepatectomia eletiva não cabem.",
+    "trap": "Ignorar precipitantes e não avaliar candidatura a transplante no Child C."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 25,
+    "group": "Hepatologia",
+    "theme": "Transplante hepático — indicações",
+    "stem": "Homem de 50 anos com cirrose por HCV já tratada (RNA negativo), MELD 22, ascite refratária e encefalopatia recorrente, sem contraindicação absoluta, sem CHC fora de critérios. Qual a melhor orientação? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Referenciar a centro transplantador para avaliação e listagem, pois descompensação com MELD elevado indica benefício, conforme a evidência clínica",
+    "wrongs": [
+      "Aguardar MELD acima de 40 com falência multiorgânica instalada para só então considerar avaliação de transplante, no adulto",
+      "Contraindicar transplante porque o HCV foi curado, apesar da cirrose descompensada e das complicações recorrentes, sem adiamento injustificado, com segurança",
+      "Indicar TIPS como substituto definitivo do transplante em todo paciente com encefalopatia recorrente grave, no cenário hepatológico atual",
+      "Priorizar hepatectomia total sem enxerto em hospital geral, fora de programa de transplante organizado, priorizando a segurança, diante do risco descrito"
+    ],
+    "explain": "Cirrose descompensada com MELD significativo deve ser avaliada para TH. Cura do HCV não remove a indicação se já há falência crônica descompensada.",
+    "trap": "Atrasar referência ao transplante até falência terminal irreversível."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 26,
+    "group": "Hepatologia",
+    "theme": "Colangite aguda — manejo",
+    "stem": "Idoso de 72 anos com febre, icterícia e dor em hipocôndrio direito (tríade de Charcot). FA e GGT muito altas, BT 7, leucocitose. Ultrassom: dilatação de via biliar e coledocolitíase suspeita. PA 100/60 após volume. Qual a prioridade? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Antibiótico precoce, suporte e desobstrução biliar urgente (CPRE), pois colangite obstrutiva é emergência, com reavaliação seriada",
+    "wrongs": [
+      "Observação ambulatorial com analgésico apenas, sem antibiótico nem descompressão da via biliar infectada, conforme a evidência clínica, no cenário hepatológico atual",
+      "Iniciar ursodesoxicólico isolado como tratamento da colangite aguda obstrutiva com coledocolitíase, com reavaliação seriada",
+      "Indicar corticoterapia em dose imunossupressora antes de qualquer imagem ou drenagem da árvore biliar, sem adiamento injustificado, com registro no prontuário",
+      "Fazer colecistectomia laparoscópica eletiva em 3 meses sem tratar a infecção e a obstrução atuais, no cenário hepatológico atual"
+    ],
+    "explain": "Colangite aguda: antibiótico + descompressão (CPRE). Ursodesoxi e corticoide não tratam a urgência obstrutiva infectada.",
+    "trap": "Tratar colangite só com remédio oral e adiar a desobstrução."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 27,
+    "group": "Hepatologia",
+    "theme": "Hepatograma — padrão hepatocelular",
+    "stem": "Paciente com icterícia há 4 dias: ALT 1.600, AST 1.450, FA 140 (normal até 120), GGT 90, BT 8 com predominância direta, INR 1,1. Ultrassom sem dilatação. Qual a interpretação do padrão enzimático? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Padrão hepatocelular agudo: priorizar causas de hepatite (viral, autoimune, DILI, isquêmica, toxinas) na investigação, sem adiamento injustificado",
+    "wrongs": [
+      "Padrão colestático extra-hepático puro, indicando CPRE imediata apesar de FA quase normal e vias biliares finas, com segurança",
+      "Isoladamente prova de insuficiência sintética grave, embora o INR esteja próximo do normal neste momento, priorizando a segurança, diante do risco descrito",
+      "Diagnóstico definitivo de CBP sem AMA e sem elevação proporcional de FA/GGT no perfil apresentado, com registro no prontuário",
+      "Exclusão completa de doença hepática porque a FA não está dez vezes acima do limite superior de referência, na prática de clínica médica, neste paciente adulto"
+    ],
+    "explain": "ALT/AST >> FA define padrão hepatocelular. Investiga-se hepatite; CPRE não é o primeiro passo sem dilatação/colestase dominante.",
+    "trap": "Ler aminotransferases altas como indicação automática de CPRE."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 28,
+    "group": "Hepatologia",
+    "theme": "Hepatograma — padrão colestático",
+    "stem": "Homem de 60 anos com prurido e icterícia: FA 780, GGT 620, ALT 80, AST 70, BT 6. Ultrassom mostra dilatação de vias biliares intra e extra-hepáticas. Qual o raciocínio correto? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Padrão colestático com dilatação: investigar obstrução (cálculo, estenose, neoplasia) e planejar imagem/CPRE, no cenário hepatológico atual",
+    "wrongs": [
+      "Padrão típico de hepatite A leve, tratando só com repouso e omitindo a avaliação da obstrução biliar dilatada, sem adiamento injustificado, agora",
+      "Iniciar azatioprina imediatamente por HAI, apesar do perfil colestático obstrutivo e da dilatação documentada, agora, neste caso",
+      "Diagnosticar hemocromatose só pela FA alta, sem ferritina, saturação de transferrina ou contexto clínico compatível, priorizando a segurança",
+      "Afirmar que GGT elevada isola diagnóstico de alcoolismo e dispensa qualquer investigação de obstrução biliar, com registro no prontuário"
+    ],
+    "explain": "FA/GGT altas com dilatação = colestase obstrutiva até prova em contrário. Próximo passo é definir o nível da obstrução e desobstruir se preciso.",
+    "trap": "Tratar colestase obstrutiva como hepatite hepatocellular pura."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 29,
+    "group": "Hepatologia",
+    "theme": "Hepatograma — AST>ALT no álcool",
+    "stem": "Etilista crônico assintomático em consulta: AST 120, ALT 55, GGT 280, FA 110, BT normal, INR 1,0. Ultrassom: esteatose homogênea. Qual a leitura mais útil clinicamente? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Padrão compatível com hepatopatia alcoólica/esteatose: reforçar abstinência e avaliar fibrose, sem CPRE de rotina, priorizando a segurança",
+    "wrongs": [
+      "Indicar CPRE imediata porque AST está maior que ALT, interpretando erroneamente como obstrução biliar urgente, no momento",
+      "Diagnosticar hepatite autoimune definitiva só pela relação AST>ALT, sem autoanticorpos nem biópsia quando indicada, na prática de clínica médica, agora",
+      "Iniciar quelação de cobre por Wilson em adulto etilista típico sem outros critérios da doença de sobrecarga, diante do risco descrito",
+      "Prescrever ferro oral para “melhorar enzimas”, sem evidência de deficiência e com risco se houver sobrecarga, segundo o protocolo local, neste atendimento"
+    ],
+    "explain": "AST>ALT (muitas vezes <2–3×) + GGT no etilista sugere DHA/esteatose alcoólica. Foco: abstinência e estadiamento; não é colestase obstrutiva.",
+    "trap": "Indicar CPRE só porque AST supera ALT no etilista."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 30,
+    "group": "Hepatologia",
+    "theme": "Encefalopatia hepática",
+    "stem": "Cirrótico com flapping, inversão do ciclo sono-vigília e asterixe. Familiares relatam constipação e uso recente de benzodiazepínico. Sem focalidade neurológica. Qual a conduta inicial mais adequada? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Buscar e corrigir precipitantes, iniciar lactulose (meta de evacuações) e evitar sedativos sempre que possível, com registro no prontuário",
+    "wrongs": [
+      "Indicar TC de crânio em todo caso antes de qualquer lactulose, atrasando o tratamento do precipitante óbvio, priorizando a segurança, diante do risco descrito",
+      "Aumentar dose de diazepam para “regular o sono”, agravando a encefalopatia hepática precipitada por sedativo, no adulto, de imediato",
+      "Restringir proteína a zero por tempo indefinido em todos, piorando o estado nutricional do cirrótico avançado, na prática de clínica médica, com segurança",
+      "Iniciar quimioterapia empírica por metástase cerebral sem imagem e sem avaliação dos precipitantes clássicos, diante do risco descrito"
+    ],
+    "explain": "Encefalopatia: tratar precipitantes (constipação, sedativo, infecção, distúrbio) + lactulose/rifaximina. Evitar benzodiazepínicos; proteína zerada prolongada é inadequada.",
+    "trap": "Dar mais sedativo ou zerar proteína indefinidamente na encefalopatia."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 31,
+    "group": "Hepatologia",
+    "theme": "Ascite refratária",
+    "stem": "Cirrótico com ascite que persiste apesar de restrição de sódio e doses máximas toleradas de espironolactona+furosemida, com múltiplas paracenteses de alívio. Sem PBE atual. Qual a melhor estratégia? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Paracentese de grande volume com reposição de albumina e avaliar TIPS/transplante conforme elegibilidade, na prática de clínica médica",
+    "wrongs": [
+      "Dobrar indefinidamente o diurético apesar de hiponatremia grave e creatinina em elevação, sem reavaliar a estratégia, agora",
+      "Indicar antibiótico crônico oral como único tratamento da ascite refratária sem infecção documentada no líquido, segundo o protocolo local, neste atendimento",
+      "Proibir qualquer paracentese terapêutica, deixando o paciente com comprometimento respiratório por ascite tensa, neste paciente adulto",
+      "Realizar hepatectomia esquerda isolada como terapia padrão da ascite refratária em cirrose descompensada, de forma objetiva e segura, com reavaliação seriada"
+    ],
+    "explain": "Ascite refratária: PGLV + albumina; discutir TIPS e, sobretudo, transplante. Empurrar diurético com lesão renal/hiponatremia é prejudicial.",
+    "trap": "Insistir só em diurético tóxico e não avaliar TIPS/transplante."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 32,
+    "group": "Hepatologia",
+    "theme": "Profilaxia secundária de PBE",
+    "stem": "Cirrótico que teve PBE documentada há 2 meses, agora ambulatorial, ascite controlada, sem infecção ativa. Qual medida preventiva é a mais apropriada? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Manter profilaxia antibiótica secundária (ex.: norfloxacino) e reforçar manejo da ascite e candidatura a TH, diante do risco descrito",
+    "wrongs": [
+      "Suspender toda profilaxia após a cura da PBE índice, aceitando alto risco de recidiva infecciosa espontânea, na prática de clínica médica, neste paciente adulto",
+      "Indicar vancomicina intravenosa semanal indefinida como profilaxia ambulatorial padrão após um episódio de PBE, com segurança",
+      "Usar AAS diário no lugar do antibiótico profilático para prevenir nova peritonite bacteriana espontânea, segundo o protocolo local, neste atendimento",
+      "Indicar esplenectomia profilática de rotina após PBE única, sem outra indicação hematológica ou portal específica, neste paciente adulto"
+    ],
+    "explain": "Após PBE, profilaxia secundária com quinolona (ou alternativa) reduz recidiva. Vancomicina semanal e AAS não substituem essa estratégia.",
+    "trap": "Não oferecer profilaxia secundária após um episódio de PBE."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 33,
+    "group": "Hepatologia",
+    "theme": "Síndrome hepatopulmonar",
+    "stem": "Cirrótico com platipneia e ortodeóxia, PaO2 baixa que piora na posição sentada, ecocardiograma com contraste positivo para shunt intrapulmonar. Sem pneumonia. Qual a terapia definitiva típica? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Otimizar suporte e referenciar para transplante hepático, que é o tratamento definitivo da síndrome hepatopulmonar, segundo o protocolo local",
+    "wrongs": [
+      "Indicar pneumectomia bilateral como cura padrão da síndrome hepatopulmonar em cirrose compensada ou não, neste paciente adulto",
+      "Tratar apenas com broncodilatador de longa ação indefinidamente, sem avaliar transplante na hipoxemia documentada, de forma objetiva e segura, com segurança",
+      "Usar anticoagulação plena empírica para TEP sem evidência, omitindo o diagnóstico de shunt intrapulmonar, neste atendimento, neste serviço",
+      "Contraindicar oxigênio suplementar mesmo com hipoxemia, por medo injustificado em todo cirrótico ambulatorial, conforme a evidência clínica, no momento"
+    ],
+    "explain": "Hepatopulmonar: dilatações intrapulmonares com hipoxemia/platipneia. TH é definitivo; O2 é suporte. Não é TEP nem indicação de pneumectomia.",
+    "trap": "Tratar hepatopulmonar como asma/TEP e não referenciar ao transplante."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 34,
+    "group": "Hepatologia",
+    "theme": "Carcinoma hepatocelular — rastreio",
+    "stem": "Homem de 62 anos com cirrose por HBV compensada em tenofovir. Alfa-fetoproteína 12. Qual a estratégia de vigilância oncológica mais adequada? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Ultrassom abdominal a cada 6 meses (± AFP conforme protocolo local) para rastreio de carcinoma hepatocelular, neste paciente adulto",
+    "wrongs": [
+      "Dispensar qualquer rastreio porque está em antiviral, embora o risco de CHC persista na cirrose por HBV, segundo o protocolo local, neste atendimento",
+      "Realizar biópsia hepática semestral de rotina em todo cirrótico, mesmo sem nódulo suspeito na imagem, neste paciente adulto",
+      "Indicar hepatectomia direita profilática anual na ausência de lesão focal, como prevenção primária de CHC, de forma objetiva e segura, com reavaliação seriada",
+      "Fazer PET-CT mensal indefinido como único método de rastreio populacional em cirrose compensada estável, neste atendimento, neste caso"
+    ],
+    "explain": "Rastreio de CHC na cirrose: USG a cada 6 meses. Antiviral reduz mas não zera o risco; biópsia/PET de rotina não são rastreio.",
+    "trap": "Abandonar o rastreio semestral só porque o HBV está tratado."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 35,
+    "group": "Hepatologia",
+    "theme": "CHC — nódulo em cirrótico",
+    "stem": "Cirrótico em rastreio: nódulo de 2,2 cm com hipercaptação arterial e washout portal típico em TC trifásica. AFP 85. Sem metástases evidentes. Qual a interpretação? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Diagnóstico não invasivo de CHC pelos critérios de imagem em cirrose; encaminhar para staging e terapia conforme BCLC, de forma objetiva e segura",
+    "wrongs": [
+      "Exigir biópsia obrigatória em todo nódulo típico antes de qualquer discussão terapêutica no cirrótico elegível, neste atendimento",
+      "Ignorar o nódulo porque AFP <100, embora a imagem típica já permita diagnóstico de CHC na cirrose, conforme a evidência clínica, no cenário hepatológico atual",
+      "Indicar antibiótico para abscesso hepático como primeira hipótese diante do padrão vascular clássico de CHC, com reavaliação seriada",
+      "Afirmar hemangioma típico e liberar anual, apesar do washout portal e do contexto de cirrose de risco, sem adiamento injustificado, com registro no prontuário"
+    ],
+    "explain": "Em cirrose, nódulo com padrão vascular típico fecha CHC sem biópsia. Segue-se estadiamento BCLC para tratar. Essa escolha evita atraso diagnóstico e reduz o risco de descompensação hepática imediata.",
+    "trap": "Exigir biópsia em lesão típica ou descartar CHC por AFP modestamente elevada."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 36,
+    "group": "Hepatologia",
+    "theme": "Hepatite B — mutante pré-core",
+    "stem": "Paciente HBsAg+ >6 meses, HBeAg negativo, anti-HBe positivo, ALT 3× LSN e DNA-HBV 2×10⁶ UI/mL, com fibrose. Qual a interpretação? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Perfil compatível com variante pré-core/basal core: doença ativa HBeAg-negativa; indicar antiviral preferencial, neste atendimento",
+    "wrongs": [
+      "Infecção resolvida completa, apesar do HBsAg persistente e da viremia elevada com aminotransferases altas, de forma objetiva e segura, com reavaliação seriada",
+      "Portador inativo típico, que exigiria DNA baixo e ALT persistentemente normal, o que não ocorre neste caso, neste atendimento",
+      "Janela imunológica aguda exclusiva, inadequada para HBsAg crônico documentado por mais de seis meses, conforme a evidência clínica, no adulto",
+      "Imunidade vacinal pura, incompatível com HBsAg positivo e anti-HBc de infecção natural presente, com reavaliação seriada, de imediato"
+    ],
+    "explain": "HBeAg− com DNA alto e ALT alta sugere mutante pré-core com doença ativa — trata-se com análogo preferencial, não é portador inativo.",
+    "trap": "Rotular como portador inativo apesar de viremia e ALT elevadas."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 37,
+    "group": "Hepatologia",
+    "theme": "Vacinação hepatite B — perfil",
+    "stem": "Profissional de saúde revisa sorologia pós-vacina: HBsAg negativo, anti-HBc negativo, anti-HBs 180 mUI/mL. Sem história de hepatite. Qual a interpretação correta? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Imunidade vacinal adequada: anti-HBs isolado positivo sem marcadores de infecção natural pelo HBV, conforme a evidência clínica, no momento",
+    "wrongs": [
+      "Hepatite B crônica oculta, apesar de HBsAg negativo, anti-HBc negativo e anti-HBs vacinal em título protetor, com reavaliação seriada",
+      "Infecção passada curada típica, que geralmente mostra anti-HBc positivo além do anti-HBs de memória, sem adiamento injustificado, com registro no prontuário",
+      "Necessidade obrigatória de HBIg agora, mesmo com anti-HBs protetor e sem exposição percutânea recente, no cenário hepatológico atual",
+      "Falha vacinal completa exigindo interferon, apesar do anti-HBs bem acima do limiar considerado protetor, priorizando a segurança, diante do risco descrito"
+    ],
+    "explain": "Vacina → anti-HBs isolado. Infecção passada deixa anti-HBc. Título ≥10 mUI/mL (aqui 180) indica proteção. Essa escolha evita atraso diagnóstico e reduz o risco de descompensação hepática imediata.",
+    "trap": "Confundir anti-HBs vacinal com infecção crônica ou com cicatriz de infecção natural."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 38,
+    "group": "Hepatologia",
+    "theme": "Profilaxia pós-exposição HBV",
+    "stem": "Residente sofre perfurocortante com agulha de paciente HBsAg positivo há 2 horas. O residente nunca vacinou e anti-HBs é negativo. Qual a profilaxia adequada? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Administrar imunoglobulina anti-HBs precocemente e iniciar esquema vacinal contra hepatite B imediatamente, com reavaliação seriada",
+    "wrongs": [
+      "Aguardar 30 dias para “ver se aparece HBsAg”, perdendo a janela ideal da imunoprofilaxia pós-exposição, conforme a evidência clínica, no cenário hepatológico atual",
+      "Usar apenas tenofovir por 5 dias sem vacina nem HBIg, fora do protocolo clássico de exposição ocupacional, com reavaliação seriada",
+      "Indicar interferon peguilado dose única como profilaxia padrão pós-perfurocortante em não vacinados, sem adiamento injustificado, com registro no prontuário",
+      "Prescrever ribavirina inalatória, confundindo profilaxia de HBV com estratégias usadas em outros vírus, no cenário hepatológico atual"
+    ],
+    "explain": "Não vacinado exposto a HBsAg+: HBIg o mais cedo possível + vacinação. Não se espera soroconversão para agir. Essa escolha evita atraso diagnóstico e reduz o risco de descompensação hepática imediata.",
+    "trap": "Adiar HBIg/vacina ou usar antiviral isolado fora do protocolo."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 39,
+    "group": "Hepatologia",
+    "theme": "Budd-Chiari",
+    "stem": "Mulher de 33 anos com ascite de instalação rápida, hepatomegalia dolorosa e dor abdominal. Labs com ALT elevada; ultrassom Doppler sugere oclusão das veias hepáticas. Qual a hipótese e investigação associada? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Síndrome de Budd-Chiari: confirmar imagem vascular e pesquisar trombofilia/doença mieloproliferativa de base, sem adiamento injustificado",
+    "wrongs": [
+      "PBE típica de cirrose antiga sem hepatomegalia aguda, tratando só com ceftriaxona e omitindo a imagem vascular, agora, neste caso",
+      "Hepatite A fulminante exclusiva, sem necessidade de avaliar drenagem venosa hepática na ascite aguda dolorosa, priorizando a segurança, diante do risco descrito",
+      "ICC direita pura sem ecocardiograma, atribuindo tudo a “fígado de estase” sem investigar veias hepáticas, com registro no prontuário",
+      "Colangite por cálculo apenas, apesar do Doppler apontar oclusão venosa e não dilatação biliar dominante, na prática de clínica médica, neste paciente adulto"
+    ],
+    "explain": "Budd-Chiari: oclusão das veias hepáticas → ascite aguda, dor, hepatomegalia. Confirmar imagem e caçar estado pró-trombótico.",
+    "trap": "Tratar como PBE/ICC e não investigar oclusão das veias hepáticas."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 40,
+    "group": "Hepatologia",
+    "theme": "Paracetamol — DILI hiperagudo",
+    "stem": "Jovem de 22 anos ingeriu alta dose de paracetamol há 16 horas em tentativa de autolesão. Chega lúcida, ALT 3.400, INR 2,1, BT 3,5. Qual a conduta específica prioritária? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Iniciar N-acetilcisteína prontamente, suporte intensivo e critérios de transferência para centro de TH se indicar, no cenário hepatológico atual",
+    "wrongs": [
+      "Aguardar pico enzimático máximo sem antídoto, pois “já passaram 16 horas” e nada mais seria eficaz neste momento, sem adiamento injustificado, com segurança",
+      "Indicar apenas carvão ativado tardiamente como monoterapia, omitindo a N-acetilcisteína no DILI por paracetamol, com segurança",
+      "Usar flumazenil como antídoto específico do paracetamol, confundindo com intoxicacão por benzodiazepínico, priorizando a segurança, diante do risco descrito",
+      "Prescrever prednisona em dose imunossupressora como antídoto de escolha na overdose de paracetamol aguda, com registro no prontuário"
+    ],
+    "explain": "Intoxicação por paracetamol: NAC o mais cedo possível (ainda útil após várias horas), suporte e vigilância de fulminância/transplante.",
+    "trap": "Achar que após algumas horas a NAC não deve mais ser oferecida."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 41,
+    "group": "Hepatologia",
+    "theme": "HAI — indução terapêutica",
+    "stem": "Mulher de 35 anos com HAI confirmada (biópsia + sorologia), ALT 500, sem cirrose descompensada, sem contraindicação. Qual o esquema indutor clássico mais citado? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Prednis(ol)ona isolada ou associada à azatioprina, com monitorização de enzimas, IgG e efeitos adversos, priorizando a segurança",
+    "wrongs": [
+      "Tenofovir + entecavir combinados como indução padrão da hepatite autoimune sorologicamente típica, com registro no prontuário",
+      "Ácido ursodesoxicólico em monoterapia exclusiva como indução da HAI hepatocelular clássica sem overposição, na prática de clínica médica, neste paciente adulto",
+      "Rifaximina contínua como imunossupressor específico da HAI, confundindo com terapia da encefalopatia hepática, diante do risco descrito",
+      "Quimioterapia citotóxica tipo CHOP como primeira linha da HAI do adulto sem neoplasia hematológica associada, segundo o protocolo local, neste atendimento"
+    ],
+    "explain": "Indução da HAI: corticoide ± azatioprina. Ursodesoxi é CBP/sobreposição; antivirais não tratam HAI clássica. Essa escolha evita atraso diagnóstico e reduz o risco de descompensação hepática imediata.",
+    "trap": "Tratar HAI com ursodesoxi ou antivirais como indução padrão."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 42,
+    "group": "Hepatologia",
+    "theme": "Sobreposição HAI-CBP",
+    "stem": "Mulher de 50 anos com FA 4× LSN, ALT 4× LSN, AMA positivo e anti-AML positivo, IgG elevada. Biópsia com interface e lesão de ductos. Qual a lógica terapêutica frequente? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Considerar overposição: combinar ursodesoxicólico com imunossupressão ajustada ao componente hepatocelular, com registro no prontuário",
+    "wrongs": [
+      "Usar apenas betabloqueador não seletivo como terapia etiológica da overposição autoimune-biliar descrita, priorizando a segurança, diante do risco descrito",
+      "Indicar CPRE dilatadora semanal indefinida como único tratamento, sem abordagem medicamentosa da doença, com registro no prontuário",
+      "Contraindicar qualquer ursodesoxi porque há anti-AML, omitindo o benefício no componente de CBP presente, na prática de clínica médica, neste paciente adulto",
+      "Tratar só com vitamina E megadose, sem evidência de eficácia como terapia específica dessa overposição, diante do risco descrito"
+    ],
+    "explain": "Overlap HAI-CBP mistura colestase AMA+ e hepatite autoimune: ursodesoxi + imunossupressão conforme predominância. Essa escolha evita atraso diagnóstico e reduz o risco de descompensação hepática imediata.",
+    "trap": "Tratar só um dos pólos e ignorar a combinação terapêutica."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 43,
+    "group": "Hepatologia",
+    "theme": "Hipertensão portal — betabloqueador",
+    "stem": "Cirrótico com varizes pequenas sem sangramento, FC basal 88 bpm, PA 128/78, sem ascite refratária. Discute-se profilaxia. Qual orientação sobre betabloqueador não seletivo é correta? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "Pode reduzir risco hemorrágico ao baixar pressão portal; titular conforme frequência cardíaca e tolerância pressórica, na prática de clínica médica",
+    "wrongs": [
+      "É absolutamente contraindicado em qualquer cirrótico com varizes, mesmo compensado e sem hipotensão basal, diante do risco descrito",
+      "Substitui completamente a necessidade de endoscopia diagnóstica inicial em todo paciente com cirrose suspeita, segundo o protocolo local, neste atendimento",
+      "Deve ser iniciado em dose máxima no primeiro dia, sem titulação, aceitando bradicardia e hipotensão graves, neste paciente adulto",
+      "Funciona apenas como antiviral do HBV e não tem efeito hemodinâmico portal relevante na prevenção de sangramento, de forma objetiva e segura"
+    ],
+    "explain": "Betabloqueador não seletivo é pilar da profilaxia quando indicado; titula-se FC/PA. Não elimina o papel da endoscopia quando necessária.",
+    "trap": "Achar que betabloqueador é sempre proibido ou que dispensa toda endoscopia."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 44,
+    "group": "Hepatologia",
+    "theme": "GASA — interpretação",
+    "stem": "Paracentese em paciente edemaciado: albumina sérica 3,0 g/dL e albumina no líquido 2,4 g/dL (GASA 0,6). Citologia sem malignidade óbvia. Qual a interpretação mais provável do gradiente? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "GASA baixo sugere ascite não portal (ex.: peritoneal/tuberculose/neoplasia/nefrótica); investigar causa correspondente, diante do risco descrito",
+    "wrongs": [
+      "GASA baixo confirma hipertensão portal cirrótica clássica, que tipicamente apresenta GASA ≥1,1 no líquido ascítico, na prática de clínica médica, agora",
+      "GASA independe das albuminas e só se interpreta pela cor do líquido, sem cálculo do gradiente soro-ascite, diante do risco descrito",
+      "Todo GASA baixo indica PBE automaticamente, mesmo com contagem de PMN abaixo do limiar infeccioso usual, segundo o protocolo local, neste atendimento",
+      "GASA baixo autoriza TIPS imediato como tratamento de escolha da ascite por hipertensão portal típica, neste paciente adulto, de imediato"
+    ],
+    "explain": "GASA ≥1,1 → hipertensão portal; GASA baixo → causas peritoneais/outras. Aqui 0,6 afasta HTP como mecanismo principal. Essa escolha evita atraso diagnóstico e reduz o risco de descompensação hepática imediata.",
+    "trap": "Ler GASA baixo como prova de cirrose portal típica."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 45,
+    "group": "Hepatologia",
+    "theme": "Albumina na PBE",
+    "stem": "Cirrótico com PBE, creatinina 1,6 mg/dL e bilirrubina 5 mg/dL. Já recebeu cefotaxima. Qual o papel da albumina neste contexto? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Albumina intravenosa em esquema preconizado reduz disfunção circulatória/renal e melhora desfecho em PBE de risco, segundo o protocolo local",
+    "wrongs": [
+      "Albumina é contraindicada em qualquer PBE porque “aumenta infecção”, o que não corresponde à evidência neste cenário, no momento",
+      "Substituir o antibiótico por albumina isolada, omitindo a terapia antimicrobiana essencial da peritonite espontânea, de forma objetiva e segura, agora",
+      "Usar albumina apenas intramuscular semanal ambulatorial como tratamento agudo da PBE com disfunção renal, neste atendimento, neste caso",
+      "Indicar albumina somente após cultura positiva, atrasando o benefício na janela precoce da infecção ascite, conforme a evidência clínica, no adulto"
+    ],
+    "explain": "Na PBE com bilirrubina/creatinina elevadas, albumina IV (esquema 1,5 g/kg + 1 g/kg) associada ao antibiótico reduz SHR e mortalidade.",
+    "trap": "Omitir albumina na PBE de alto risco ou usá-la no lugar do antibiótico."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 46,
+    "group": "Hepatologia",
+    "theme": "TIPS — indicações",
+    "stem": "Cirrótico Child B com HDA varicosa refratária a vasoativo+endoscopia ou com ressangramento precoce, sem encefalopatia grave prévia. Qual papel do TIPS? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Considerar TIPS de resgate/precoce selecionado para controle do sangramento portal quando terapia padrão falha, neste paciente adulto",
+    "wrongs": [
+      "Indicar TIPS como profilaxia primária em todas as varizes pequenas Child A, sem sangramento e sem falha clínica, segundo o protocolo local, neste atendimento",
+      "Usar TIPS para curar hepatite autoimune, substituindo imunossupressão específica da doença inflamatória, neste paciente adulto",
+      "Contraindicar TIPS em absolutamente todos os sangramentos varicosos, mesmo refratários à endoscopia adequada, de forma objetiva e segura, com segurança",
+      "Realizar TIPS ambulatorial eletivo no choque hemorrágico ativo sem estabilização nem tentativa endoscópica, neste atendimento, neste serviço"
+    ],
+    "explain": "TIPS é resgate (e em cenários selecionados precoce) na HDA varicosa refratária/ressangramento — não profilaxia primária universal.",
+    "trap": "Usar TIPS como profilaxia primária rotineira em varizes de baixo risco."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 47,
+    "group": "Hepatologia",
+    "theme": "Hepatite E / overlapping viral",
+    "stem": "Gestante de 28 semanas em área endêmica apresenta hepatite aguda grave com encefalopatia. HAV IgM negativo, HBV e HCV negativos; suspeita epidemiológica de HEV. Qual preocupação principal? A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito. Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "HEV na gestação associa-se a maior risco de fulminância; suporte intensivo e avaliação perinatal/terapêutica especializada, de forma objetiva e segura",
+    "wrongs": [
+      "Trivializar o quadro porque HEV nunca grave na gestação, omitindo vigilância de falência hepática aguda, neste atendimento",
+      "Iniciar DAAs anti-HCV de rotina apesar do RNA-HCV negativo e da suspeita epidemiológica de hepatite E, conforme a evidência clínica, no cenário hepatológico atual",
+      "Indicar metotrexato como antiviral específico do HEV gestacional, com risco teratogênico e sem indicação, com reavaliação seriada",
+      "Fazer colecistectomia urgente sem evidência de colecistite, apenas pela aminotransferase elevada na gestante, sem adiamento injustificado, com segurança"
+    ],
+    "explain": "HEV em gestantes tem risco aumentado de falência. Manejo é suporte especializado; não se trata empiricamente como HCV com DAAs.",
+    "trap": "Subestimar HEV gestacional ou tratar como HCV sem confirmação."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 48,
+    "group": "Hepatologia",
+    "theme": "Coagulopatia do cirrótico",
+    "stem": "Cirrótico estável, INR 1,7, plaquetas 55.000, sem sangramento, precisa de paracentese diagnóstica. Qual a abordagem mais racional da hemostasia? Na avaliação atual: sinais vitais estáveis o suficiente para decidir a conduta imediata sem adiamento injustificado. Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica.",
+    "correct": "Realizar paracentese com técnica adequada; correção rotineira de INR com PFC não é mandatória nesse procedimento, neste atendimento",
+    "wrongs": [
+      "Transfundir plasma fresco em grande volume sempre que INR >1,5 antes de qualquer paracentese em cirrótico estável, de forma objetiva e segura, com segurança",
+      "Contraindicar absolutamente paracentese se plaquetas <100.000, mesmo em ascite tensa com indicação clara, neste atendimento",
+      "Iniciar varfarina para “normalizar” o INR paradoxalmente elevado pela doença hepática crônica descompensada, conforme a evidência clínica, no momento",
+      "Indicar esplenectomia prévia obrigatória a toda paracentese em paciente com plaquetopenia portal leve a moderada, com reavaliação seriada"
+    ],
+    "explain": "No cirrótico, INR não reflete risco hemorrágico linearmente; paracentese é segura sem correção rotineira de INR. Evitar PFC desnecessário.",
+    "trap": "Exigir PFC rotineiro por INR levemente alto antes de paracentese."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 49,
+    "group": "Hepatologia",
+    "theme": "Nutrição na cirrose",
+    "stem": "Cirrótico desnutrido com encefalopatia leve controlada pergunta se deve “zerar proteína”. Qual a orientação nutricional correta? Exames laboratoriais e de imagem já disponíveis orientam o próximo passo neste atendimento de clínica médica. Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento.",
+    "correct": "Manter aporte proteico adequado (evitar desnutrição), preferindo fracionamento; restrição proteica prolongada é prejudicial, neste caso",
+    "wrongs": [
+      "Indicar dieta com proteína zero por tempo indeterminado em todo cirrótico, mesmo após resolução da encefalopatia, no adulto",
+      "Recomendar jejum prolongado noturno sem lanches, agravando a gluconeogênese e a perda muscular do cirrótico, sem adiamento injustificado, com registro no prontuário",
+      "Prescrever megadose de vitamina A sem monitorização como terapia específica que reverte fibrose estabelecida, no cenário hepatológico atual",
+      "Proibir qualquer carboidrato na dieta do cirrótico estável, sem base fisiopatológica para essa restrição absoluta, priorizando a segurança, no momento"
+    ],
+    "explain": "Desnutrição piora prognóstico. Restrição proteica só transitória em encefalopatia refratária selecionada; o padrão é proteína adequada fracionada.",
+    "trap": "Manter proteína zero crônica após estabilizar a encefalopatia."
+  },
+  {
+    "idPrefix": "cli-hepato",
+    "n": 50,
+    "group": "Hepatologia",
+    "theme": "Hepatite isquêmica",
+    "stem": "Paciente de UTI após choque hipovolêmico apresenta pico abrupto de ALT/AST >20× LSN, LDH muito alto, bilirrubina pouco elevada, melhora rápida das enzimas em 48–72 h com estabilização hemodinâmica. Qual o diagnóstico mais provável? Considere o contexto de urgência hepatológica e o risco de descompensação nas próximas horas deste atendimento. A escolha da alternativa deve refletir a conduta mais segura e baseada em evidência para o cenário descrito.",
+    "correct": "Hepatite isquêmica (choque hepático): tratar a causa do hipofluxo; enzimas caem rápido após reperfusão efetiva, com reavaliação seriada",
+    "wrongs": [
+      "CBP clássica AMA-positiva, cujo padrão é colestático crônico e não pico hiperagudo de aminotransferases, conforme a evidência clínica, no cenário hepatológico atual",
+      "Obstrução biliar completa isolada, tipicamente com FA/GGT dominantes e dilatação, não com LDH e ALT explosivas, no momento",
+      "HAI crônica indolente sem relação com o episódio de choque e sem a cinética típica de queda rápida enzimática, sem adiamento injustificado, agora",
+      "Hemocromatose genética recém-manifestada apenas nas últimas 48 horas de internação em UTI sob choque, no cenário hepatológico atual"
+    ],
+    "explain": "Isquemia hepática: elevação abrupta ALT/AST/LDH após hipoperfusão e queda rápida com reperfusão. Tratamento é hemodinâmico.",
+    "trap": "Investigar só causas crônicas e ignorar o choque como motor da necrose."
+  }
+]

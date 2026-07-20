@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-infecto",
+    "n": 1,
+    "group": "Infectologia",
+    "theme": "Dengue — classificação e alerta",
+    "stem": "Homem de 28 anos, área endêmica, febre há 4 dias, mialgia, cefaleia retro-orbitária e náuseas. Hoje surge dor abdominal contínua e vômitos. Exame: T 37,1 °C, FC 108 bpm, PA 95/60 mmHg, enchimento capilar 3 s, dor em hipocôndrio direito, petéquias em membros. Hematócrito 52%, plaquetas 68.000/mm³. Qual a melhor conduta imediata? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Classificar como dengue com sinais de alarme, iniciar hidratação venosa supervisionada e monitorar hematócrito e diurese de perto conforme protocolo",
+    "wrongs": [
+      "Liberar com hidratação oral domiciliar exclusiva por tratar-se de dengue clássica sem necessidade de reavaliação hospitalar",
+      "Indicar transfusão de plaquetas imediatamente só pelo valor absoluto, sem avaliar sangramento ativo ou choque associado com reavaliação clínica",
+      "Prescrever AAS e AINE para a mialgia intensa, mantendo observação ambulatorial sem reposição volêmica estruturada neste contexto de residência",
+      "Iniciar antibiótico de amplo espectro empírico como primeira linha, presumindo sepse bacteriana comunitária isolada atual seriada segura imediata dirigida"
+    ],
+    "explain": "Dor abdominal, vômitos, hemoconcentração e hipotensão relativa marcam dengue com sinais de alarme: hidratação EV e vigilância hemodinâmica. Plaquetas isoladas não indicam transfusão; AAS/AINE aumentam risco hemorrágico.",
+    "trap": "Tratar como dengue leve ambulatorial ou precipitar transfusão plaquetária só pelo número."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 2,
+    "group": "Infectologia",
+    "theme": "Chikungunya — artralgia vs dengue",
+    "stem": "Mulher de 42 anos, 8 dias após febre e exantema, mantém poliartralgia intensa em mãos, punhos e tornozelos, com edema e limitação matinal. Febre cedeu há 3 dias. Sem sangramento, hematócrito estável, plaquetas normais. Relata picadas em área com chikungunya. Qual a orientação diagnóstica e terapêutica mais adequada agora? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Considerar chikungunya pela artralgia proeminente persistente, analgesia/anti-inflamatório criterioso e fisioterapia precoce sem AAS desnecessário",
+    "wrongs": [
+      "Indicar internação obrigatória e hidratação venosa agressiva como na dengue grave, apesar de estabilidade hemodinâmica plena",
+      "Prescrever ácido acetilsalicílico em dose antiagregante prolongada para prevenir trombose articular inflamatória aguda conforme protocolo",
+      "Diagnosticar necessariamente artrite reumatoide soropositiva e iniciar metotrexato imediato sem investigação infecciosa prévia neste contexto de",
+      "Solicitar apenas hemocultura e iniciar vancomicina empírica por presumir artrite séptica poliarticular comunitária atual seriada segura imediata dirigida"
+    ],
+    "explain": "Chikungunya caracteriza-se por artralgia intensa e persistente após a fase febril; dengue prioriza risco de choque/hemorragia. Manejo é sintomático e reabilitador; AAS deve ser evitado na fase aguda das arboviroses sem indicação clara.",
+    "trap": "Tratar como dengue grave ou iniciar imunossupressor/ATB sem critério."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 3,
+    "group": "Infectologia",
+    "theme": "Zika — gestação e microcefalia",
+    "stem": "Gestante de 19 anos, 14 semanas, com exantema pruriginoso há 3 dias, conjuntivite não purulenta e artralgia leve, afebril agora. Reside em área com circulação de Zika. Ultrassom obstétrico ainda sem malformação. Parceiro teve quadro semelhante há 2 semanas. Qual a conduta mais adequada neste momento? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Notificar, investigar Zika conforme protocolo, reforçar prevenção de picadas/sexo seguro e manter seguimento ultrassonográfico fetal seriado",
+    "wrongs": [
+      "Indicar interrupção gestacional imediata apenas pela suspeita clínica, sem confirmação laboratorial nem avaliação fetal detalhada",
+      "Prescrever ribavirina oral de rotina na gestação como antiviral específico comprovado contra Zika congênita neste trimestre conforme protocolo",
+      "Dispensar seguimento fetal porque o ultrassom inicial está normal e a febre já cessou espontaneamente no primeiro atendimento neste contexto de residência",
+      "Tratar empiricamente com doxiciclina prolongada presumindo riquetsiose, contraindicada e sem aderência ao quadro exantemático neste atendimento de urgência"
+    ],
+    "explain": "Suspeita de Zika na gestação exige notificação, investigação e vigilância fetal; microcefalia pode surgir tardiamente. Não há antiviral específico aprovado de rotina; interrupção não se indica só por suspeita clínica.",
+    "trap": "Interromper gestação ou abandonar seguimento ultrassonográfico após US inicial normal."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 4,
+    "group": "Infectologia",
+    "theme": "Malária — P. falciparum grave",
+    "stem": "Homem de 35 anos, retorno de área amazônica há 5 dias, febre intermitente, cefaleia, icterícia e oligúria. Exame: T 39,2 °C, FC 120, PA 88/50, SpO2 94%, confusão. Gota espessa: Plasmodium falciparum, parasitemia elevada. Creatinina 2,8 mg/dL, bilirrubina alta, Hb 8,2. Qual a melhor conduta imediata? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Internar como malária grave, iniciar artesunato parenteral, suporte de órgãos e monitorar parasitemia e função renal de perto conforme protocolo",
+    "wrongs": [
+      "Prescrever apenas cloroquina oral ambulatorial por ser o esquema clássico de todas as espécies de Plasmodium no Brasil com",
+      "Aguardar hemocultura negativa por 72 horas antes de qualquer antimalárico, mantendo só antitérmico e hidratação oral conforme protocolo vigente",
+      "Indicar esplenectomia de urgência como tratamento etiológico da parasitemia elevada com icterícia e falência renal neste contexto de residência",
+      "Iniciar primaquina imediatamente em dose radical sem avaliar gravidade, G6PD nem necessidade de terapia parenteral atual seriada segura imediata dirigida"
+    ],
+    "explain": "Malária falciparum com disfunção orgânica (choque, confusão, IRA, icterícia) é forma grave: artesunato EV e suporte. Cloroquina oral ambulatorial é inadequada; primaquina não trata a fase aguda grave de falciparum.",
+    "trap": "Tratar falciparum grave como caso ambulatorial com cloroquina oral."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 5,
+    "group": "Infectologia",
+    "theme": "Malária — P. vivax e recidiva",
+    "stem": "Mulher de 29 anos, 3 semanas após tratamento de malária por P. vivax com cloroquina, retorna com febre e calafrios. Gota espessa novamente positiva para P. vivax. Nega nova viagem. G6PD normal. Relata ter usado só a fase sanguínea, sem completar hipnozoitocida. Qual a conduta mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Rettratar a forma sanguínea e completar primaquina (ou equivalente) para eliminar hipnozoítos, prevenindo novas recidivas clínicas conforme protocolo",
+    "wrongs": [
+      "Considerar falha definitiva e iniciar artesunato parenteral de rotina mesmo sem critérios de malária grave instalada com documentação",
+      "Indicar apenas observação sem antimalárico porque recidiva de vivax é sempre autolimitada e sem risco clínico algum conforme protocolo vigente",
+      "Trocar permanentemente para mefloquina semanal profilática isolada, sem tratar a parasitemia atual documentada priorizando segurança do paciente",
+      "Prescrever antibiótico betalactâmico empírico como substituto do esquema antimalárico na recidiva por hipnozoítos atual seriada segura imediata dirigida"
+    ],
+    "explain": "P. vivax forma hipnozoítos hepáticos; sem primaquina (quando G6PD ok) há recidivas. Rettratar sangue e completar antirrecidiva. Não é indicação automática de terapia parenteral grave.",
+    "trap": "Esquecer a fase hipnozoítica e tratar só a parasitemia sanguínea novamente."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 6,
+    "group": "Infectologia",
+    "theme": "HIV — pneumocistose",
+    "stem": "Homem de 34 anos, HIV conhecido, CD4 48 células/mm³, abandono de TARV. Dispneia progressiva, tosse seca e febre há 10 dias. SpO2 88% em ar, FC 118, FR 32. RX: infiltrado intersticial bilateral difuso. LDH elevada. Qual a conduta terapêutica inicial mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Iniciar sulfametoxazol-trimetoprima em dose terapêutica, oxigênio e corticosteroide se hipoxemia grave, reiniciando TARV no tempo adequado",
+    "wrongs": [
+      "Tratar apenas com azitromicina ambulatorial presumindo pneumonia atípica leve sem investigar imunodeficiência avançada com",
+      "Indicar anfotericina B lipossomal empírica de primeira linha sem critérios de histoplasmose ou criptococose meníngea conforme protocolo vigente",
+      "Prescrever isoniazida isolada como monoterapia da tuberculose pulmonar, dispensando esquema quádruplo e investigação neste contexto de residência",
+      "Aguardar biópsia pulmonar aberta obrigatória antes de qualquer antimicrobiano, mantendo o paciente em hipoxemia atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "CD4 baixo, hipoxemia e infiltrado intersticial sugerem Pneumocystis: SMX-TMP é primeira linha; corticoide se PaO2 baixa/SpO2 crítica. Não atrasar terapia por biópsia; azitromicina isolada é insuficiente.",
+    "trap": "Tratar como PAC atípica leve ou atrasar SMX-TMP aguardando anatomia patológica."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 7,
+    "group": "Infectologia",
+    "theme": "HIV — toxoplasmose cerebral",
+    "stem": "Mulher de 38 anos, HIV, CD4 72, cefaleia, hemiparesia direita e crise focal. TC com contraste: múltiplas lesões anelares em núcleos da base e junção corticomedular. Sorologia IgG toxoplasma positiva. Sem sinais de herniação. Qual a melhor conduta inicial? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Iniciar terapia empírica para toxoplasmose cerebral (sulfadiazina + pirimetamina + ácido folínico) e reavaliar resposta clínica/imagem",
+    "wrongs": [
+      "Indicar biópsia cerebral imediata em todas as lesões antes de qualquer antimicrobiano empírico, mesmo estável com documentação no",
+      "Tratar apenas com fluconazol oral presumindo criptococose cerebral sem punção lombar nem padrão meníngeo típico conforme protocolo vigente",
+      "Prescrever albendazol isolado como esquema definitivo de neurocisticercose sem considerar toxoplasmose no AIDS avançado neste contexto de residência",
+      "Iniciar só corticoterapia em altas doses sem antimicrobiano, atribuindo o quadro a linfoma primário do SNC de imediato priorizando segurança do paciente"
+    ],
+    "explain": "Lesões múltiplas em anel + IgG+ e CD4 baixo: tratar empiricamente toxoplasmose e julgar resposta em ~14 dias. Biópsia não é primeiro passo se estável; linfoma entra se falha terapêutica.",
+    "trap": "Biópsia de rotina antes da prova terapêutica empírica para toxoplasmose."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 8,
+    "group": "Infectologia",
+    "theme": "HIV — criptococose meníngea",
+    "stem": "Homem de 41 anos, HIV, CD4 35, cefaleia progressiva, febre baixa e confusão. Sem déficits focais. TC sem massa. LCR: pressão de abertura elevada, celularidade discreta, glicose baixa, tinta da China sugestiva; antígeno criptocócico positivo. Qual o manejo inicial correto? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Iniciar anfotericina B (± flucitosina) na indução, controlar hipertensão liquórica com alívios de pressão e planejar consolidação com fluconazol",
+    "wrongs": [
+      "Prescrever apenas fluconazol oral ambulatorial de baixa dose sem fase de indução parenteral na meningite criptocócica grave",
+      "Indicar corticosteroide sistêmico de rotina em todos os casos como substituto da anfotericina na fase de indução conforme protocolo vigente",
+      "Evitar qualquer punção de alívio mesmo com pressão de abertura muito elevada e deterioração neurológica progressiva neste contexto de residência",
+      "Iniciar SMX-TMP em dose de pneumocistose como tratamento etiológico da criptococose meníngea documentada atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "Criptococose meníngea no AIDS exige indução com anfotericina (± flucitosina), manejo da PIC e depois fluconazol. Fluconazol isolado ambulatorial é inadequado na meningite grave; drenagem/alívio liquórico salva vidas.",
+    "trap": "Usar só fluconazol oral fraco e ignorar a hipertensão liquórica."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 9,
+    "group": "Infectologia",
+    "theme": "TB pulmonar — diagnóstico",
+    "stem": "Homem de 52 anos, tosse produtiva há 7 semanas, sudorese noturna e perda ponderal de 6 kg. Tabagista. RX: cavidade em ápice direito. Baciloscopia de escarro pendente; TRM-TB disponível no serviço. HIV desconhecido. Qual a melhor próxima conduta diagnóstica/terapêutica? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Coletar escarro para TRM-TB/baciloscopia, testar HIV e iniciar esquema RHZE se alta probabilidade, conforme fluxo, sem atrasar indevidamente",
+    "wrongs": [
+      "Prescrever apenas amoxicilina por 5 dias e liberar, atribuindo o quadro a bronquite aguda banal sem investigação de TB com",
+      "Indicar lobectomia imediata da cavidade apical como primeira medida, antes de qualquer confirmação microbiológica conforme protocolo vigente",
+      "Iniciar monoterapia com rifampicina para “provar resposta”, aumentando risco de resistência adquirida no bacilo com documentação no prontuário",
+      "Aguardar cultura de 8 semanas sem TRM nem baciloscopia, mantendo o paciente bacilífero sem isolamento orientado atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "Síndrome consuntiva + cavidade apical: alta suspeita de TB. TRM/baciloscopia, HIV e início oportuno de RHZE (quando indicado) são essenciais; monoterapia gera resistência.",
+    "trap": "Tratar como infecção banal ou usar rifampicina isolada."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 10,
+    "group": "Infectologia",
+    "theme": "TB — ILTB e profilaxia",
+    "stem": "Mulher de 27 anos, contato intradomiciliar de TB pulmonar bacilífera. Assintomática, RX normal. Prova tuberculínica 12 mm (sem BCG recente relevante) / IGRA positivo conforme protocolo local. HIV negativo. Sem hepatopatia. Qual a conduta mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Indicar tratamento da infecção latente (ex.: isoniazida ou esquema recomendado vigente) após excluir doença ativa clinicamente/radiologicamente",
+    "wrongs": [
+      "Iniciar esquema quádruplo RHZE completo como se fosse TB ativa cavitária, apesar de RX normal e ausência de sintomas com documentação",
+      "Dispensar qualquer preventiva porque o contato foi apenas domiciliar e a baciloscopia do índice já negativou ontem conforme protocolo vigente",
+      "Vacinar com BCG adulta de rotina como substituto completo do tratamento da infecção latente neste contexto atual seriada segura imediata dirigida",
+      "Prescrever etambutol isolado por 6 meses como profilaxia padrão da infecção latente por M. tuberculosis atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Contato + teste positivo sem doença ativa = ILTB: tratar para reduzir progressão. RHZE é para doença ativa; BCG adulta não substitui o tratamento da latência.",
+    "trap": "Não oferecer tratamento da latência após contato íntimo com teste positivo."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 11,
+    "group": "Infectologia",
+    "theme": "PAC — CURB-65 e local de tratamento",
+    "stem": "Homem de 68 anos, febre, tosse produtiva e dor pleurítica há 2 dias. Confuso no tempo, ureia 58 mg/dL, FR 32 irpm, PA 100/70 mmHg. RX: consolidação em lobo inferior direito. SpO2 93% em ar. Sem choque. Qual a melhor decisão de local de cuidado e antibioticoterapia? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Internar (CURB-65 elevado), iniciar betalactâmico + macrolídeo ou FQ respiratória conforme protocolo e suporte oxigênio conforme protocolo vigente",
+    "wrongs": [
+      "Tratar ambulatorialmente só com amoxicilina baixa dose, ignorando confusão, idade e taquipneia do escore de gravidade e seguimento",
+      "Indicar intubação orotraqueal imediata de rotina em todo CURB ≥2, mesmo com SpO2 aceitável e sem falência respiratória conforme protocolo",
+      "Prescrever apenas oseltamivir sem cobertura bacteriana, presumindo influenza isolada sem infiltrado bacteriano típico neste contexto de residência",
+      "Iniciar colistina + vancomicina empíricas de rotina em PAC comunitária sem fatores de risco para MDR atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "CURB-65 com múltiplos pontos (idade, confusão, ureia, FR) favorece internação e ATB de enfermaria (β-lactâmico+macrolídeo ou FQ). Não é indicação automática de UTI/IOT nem de cobertura MDR ampla.",
+    "trap": "Manter ambulatorial em idoso confuso taquipneico com ureia alta."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 12,
+    "group": "Infectologia",
+    "theme": "PAC grave — UTI",
+    "stem": "Mulher de 55 anos, PAC com infiltrado multilobar, FR 34, PaO2/FiO2 180, confusão, PAS 85 mmHg após volume, precisando noradrenalina. Sem fatores claros de MRSA/Pseudomonas. Qual o esquema empírico mais adequado na UTI? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Betalactâmico antipneumocócico associado a macrolídeo ou fluoroquinolona, cobrindo pneumococo e Legionella na PAC grave conforme protocolo vigente",
+    "wrongs": [
+      "Fluoroquinolona respiratória em monoterapia exclusiva como única opção aceitável na PAC grave de UTI com documentação no prontuário",
+      "Apenas amoxicilina oral, pois o pneumococo sensível dispensa cobertura de atípicos mesmo em choque priorizando segurança do paciente",
+      "Anfotericina B empírica de primeira linha por infiltrado multilobar, sem critérios de fungo invasivo atual seriada segura imediata dirigida objetiva",
+      "Isoniazida + rifampicina apenas, tratando toda consolidação febril como tuberculose primária aguda atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "PAC grave (choque/VM ou múltiplos critérios) exige cobertura de pneumococo + Legionella: β-lactâmico + macrolídeo ou FQ (FQ isolada não é ideal na UTI em muitos consensos).",
+    "trap": "Usar monoterapia oral fraca ou FQ isolada inadequada na PAC de UTI."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 13,
+    "group": "Infectologia",
+    "theme": "ITU — cistite não complicada",
+    "stem": "Mulher de 26 anos, hígida, disúria, polaciúria e urgência há 2 dias, sem febre, sem dor lombar, sem corrimento. Exame normal. EAS: nitrito +, leucocitúria. Sem alergias. Qual o tratamento empírico mais apropriado? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Tratar cistite aguda não complicada com antibiótico oral de primeira linha local (ex.: nitrofurantoína/fosfomicina/SMT conforme guia) conforme",
+    "wrongs": [
+      "Internar para ceftriaxona intravenosa prolongada por toda disúria em mulher jovem sem sinais de pielonefrite com documentação no",
+      "Prescrever ciprofloxacino por 14 dias de rotina como primeira escolha obrigatória em toda cistite simples conforme protocolo vigente",
+      "Indicar apenas analgésico urinário sem antibiótico, ignorando bacteriúria sintomática típica de cistite aguda priorizando segurança do paciente",
+      "Solicitar urocultura obrigatória e aguardar antibiograma 72h antes de qualquer terapia na cistite típica atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "Cistite não complicada em mulher: ATB oral curto de primeira linha; urocultura não é obrigatória se típica. Quinolona prolongada e EV de rotina são excesso; sintomático isolado é insuficiente.",
+    "trap": "Usar quinolona longa/EV ou esperar cultura para iniciar terapia na cistite típica."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 14,
+    "group": "Infectologia",
+    "theme": "ITU — pielonefrite",
+    "stem": "Homem de 45 anos, febre 39 °C, calafrios, dor no flanco direito e náuseas há 24 h. Disúria desde ontem. PA 110/70, FC 110, sem peritonite. EAS inflamatório. Ultrassom sem abscesso. Qual a conduta inicial mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Diagnosticar pielonefrite, coletar urocultura, iniciar antibiótico sistêmico adequado e definir via/internação conforme gravidade conforme protocolo",
+    "wrongs": [
+      "Tratar como cistite simples com nitrofurantoína curta, inadequada para infecção do parênquima renal febril com documentação no",
+      "Indicar nefrectomia de urgência antes de antibiótico e imagem, por dor lombar febril sem abscesso demonstrado conforme protocolo vigente",
+      "Prescrever apenas antitérmico e hidratação, adiando antimicrobiano até hemocultura definitiva de sete dias atual seriada segura imediata dirigida",
+      "Iniciar vancomicina + anfotericina empíricas de rotina sem fatores de risco para MRSA ou fungo atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "Febre + flanco + ITU = pielonefrite: urocultura e ATB com boa penetração renal/sistêmica. Nitrofurantoína não serve; cirurgia radical sem abscesso/coleção é erro.",
+    "trap": "Tratar pielonefrite como cistite com droga sem nível adequado no rim."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 15,
+    "group": "Infectologia",
+    "theme": "Celulite — estreptococo/S. aureus",
+    "stem": "Mulher de 50 anos, diabética, eritema quente e doloroso em perna esquerda há 2 dias, com febre 38,5 °C. Sem crepitação, sem necrose, sem hipotensão. Portão de entrada: fissura interdigital. Qual o antibiótico empírico mais razoável na forma não necrotizante? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Iniciar cobertura para estreptococos e S. aureus sensível (ex.: cefalexina/oxacilina/cefazo) conforme gravidade e via adequada conforme protocolo",
+    "wrongs": [
+      "Prescrever apenas aciclovir oral presumindo erisipela herpética disseminada sem vesículas típicas de zoster com documentação no",
+      "Indicar amputação imediata do membro por qualquer celulite em diabético, sem falha terapêutica nem isquemia conforme protocolo vigente",
+      "Usar colistina monoterapia ambulatorial como primeira linha de celulite comunitária não complicada atual seriada segura imediata dirigida objetiva",
+      "Tratar só com corticosteroide tópico potente, atribuindo o quadro a dermatite de contato sem infecção atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Celulite/erisipela típica: cobrir estreptococo β-hemolítico e S. aureus. Necrose/choque mudam para fasciíte. Cirurgia radical precoce sem critério e drogas MDR de rotina são inadequados.",
+    "trap": "Escalar para cirurgia mutiladora ou antimicrobiano inadequado na celulite simples."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 16,
+    "group": "Infectologia",
+    "theme": "Fasciíte necrotizante — emergência",
+    "stem": "Homem de 60 anos, dor desproporcional em coxa, febre, hipotensão 80/50 após volume, pele com equimose rápida e crepitação. Lactato alto. Suspeita de infecção de partes moles necrotizante. Qual a prioridade terapêutica? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Reanimação, antibiótico amplo imediato e exploração cirúrgica urgente com desbridamento — a cirurgia não deve ser atrasada conforme protocolo vigente",
+    "wrongs": [
+      "Aguardar RM completa e biópsia cutânea ambulatorial antes de qualquer antibiótico ou avaliação cirúrgica com documentação no",
+      "Tratar apenas com cefalexina oral domiciliar por 10 dias, reavaliando em uma semana se houver piora local com reavaliação clínica seriada",
+      "Indicar exclusivamente câmara hiperbárica como terapia única, sem desbridamento cirúrgico da necrose atual seriada segura imediata dirigida objetiva",
+      "Prescrever AAS e heparina plena isolados, interpretando o quadro só como trombose venosa profunda clássica atual seriada segura imediata dirigida objetiva x0"
+    ],
+    "explain": "Fasciíte/necrotizante: emergência cirúrgica + ATB + suporte. Imagem não atrasa o centro cirúrgico; terapia oral ou hiperbárica isolada é insuficiente.",
+    "trap": "Atrasar cirurgia por exames de imagem enquanto a necrose progride."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 17,
+    "group": "Infectologia",
+    "theme": "Osteomielite — aguda hematogênica",
+    "stem": "Adolescente de 17 anos, febre e dor intensa em tíbia proximal há 5 dias, com limitação. RX inicial inespecífico; PCR e VHS elevados; hemoculturas colhidas. Sem coleção drenável óbvia no US. Qual a conduta inicial mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Internar, manter hemoculturas, iniciar antibiótico parenteral após coleta e planejar RM/avaliação ortopédica para foco ósseo conforme protocolo",
+    "wrongs": [
+      "Prescrever apenas AINE e fisioterapia, atribuindo a dor a entorse esportiva sem investigar infecção óssea com documentação no",
+      "Indicar artroplastia total imediata do joelho como tratamento etiológico da osteomielite hematogênica aguda conforme protocolo vigente",
+      "Iniciar rifampicina monoterapia oral prolongada sem betalactâmico e sem definição microbiológica mínima atual seriada segura imediata dirigida",
+      "Aguardar alteração radiográfica clássica de 2–3 semanas antes de qualquer terapêutica antimicrobiana atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Osteomielite aguda: RX precoce pode ser normal; RM ajuda. Coletar culturas e iniciar ATB parenteral; não esperar RX tardio. Cirurgia de prótese não é o passo inicial.",
+    "trap": "Esperar RX “clássico” tardio para começar tratamento da osteomielite aguda."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 18,
+    "group": "Infectologia",
+    "theme": "Osteomielite crônica / pé diabético",
+    "stem": "Homem de 62 anos, DM2, úlcera plantar crônica com exposição óssea ao probe-to-bone, RX com erosão. Sem toxicidade sistêmica grave. Qual a abordagem diagnóstica/terapêutica mais coerente? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Considerar osteomielite, obter cultura óssea se possível, desbridar tecidos desvitalizados e antibiótico dirigido após avaliação vascular",
+    "wrongs": [
+      "Tratar só com curativo oclusivo sem desbridamento nem antibiótico, apesar de probe-to-bone positivo com documentação no prontuário",
+      "Indicar anfotericina B lipossomal empírica de rotina em toda úlcera plantar diabética com erosão radiológica conforme protocolo vigente",
+      "Prescrever colchicina como terapia anti-infecciosa óssea, confundindo com crise de gota tofácea isolada atual seriada segura imediata dirigida",
+      "Amputar acima do joelho de imediato em todos os casos de probe-to-bone, sem tentativa de salvamento atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Probe-to-bone + erosão sugerem osteomielite do pé diabético: cultura/desbridamento, ATB e avaliação vascular. Nem todo caso exige amputação maior imediata; antifúngico empírico não é rotina.",
+    "trap": "Ignorar osteomielite ou amputar radicalmente sem plano de salvamento/vascular."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 19,
+    "group": "Infectologia",
+    "theme": "Endocardite — critérios e hemoculturas",
+    "stem": "Homem de 48 anos, febre há 3 semanas, sopro mitral novo, petéquias e hematúria microscópica. Ecocardia: vegetação em valva mitral. Ainda sem antibiótico. Qual o passo microbiológico prioritário antes da terapia empírica (se estável)? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Coletar pelo menos 3 pares de hemoculturas de sítios diferentes antes do antibiótico, se a demora breve não puser o paciente em risco conforme",
+    "wrongs": [
+      "Iniciar vancomicina imediatamente sem qualquer hemocultura, mesmo em paciente estável sem sepse fulminante com documentação no",
+      "Solicitar apenas urocultura e swab faríngeo como substitutos das hemoculturas na endocardite suspeita com reavaliação clínica seriada",
+      "Indicar troca valvar cirúrgica antes de qualquer coleta de sangue, na ausência de indicação cirúrgica clara atual seriada segura imediata dirigida",
+      "Diagnosticar febre reumática aguda só pelo sopro e iniciar penicilina profilática sem hemoculturas atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Hemoculturas adequadas são essenciais ao diagnóstico etiológico da EI. Em estáveis, coletar antes do ATB; em sepse/choque, não atrasar ATB após coletas rápidas.",
+    "trap": "Começar ATB sem hemoculturas no paciente estável com alta suspeita de endocardite."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 20,
+    "group": "Infectologia",
+    "theme": "Endocardite — profilaxia",
+    "stem": "Mulher de 55 anos, prótese valvar aórtica, vai a tratamento odontológico com manipulação gengival. Sem alergia. Pergunta sobre profilaxia de endocardite. Qual a orientação correta? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Indicar profilaxia antibiótica (ex.: amoxicilina) antes do procedimento odontológico de risco, por prótese valvar de alto risco conforme protocolo",
+    "wrongs": [
+      "Dispensar profilaxia em todo portador de prótese valvar, pois diretrizes atuais aboliram qualquer indicação odontológica com",
+      "Prescrever vancomicina EV por 14 dias após o procedimento como esquema profilático padrão ambulatorial com reavaliação clínica seriada",
+      "Indicar apenas clorexidina sem antibiótico sistêmico em paciente de alto risco com manipulação gengival atual seriada segura imediata dirigida",
+      "Usar rifampicina + gentamicina profiláticas de rotina em todo procedimento dentário simples de limpeza atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Prótese valvar é condição de alto risco: profilaxia em procedimentos odontológicos com manipulação gengival/periapical. Não é ATB prolongado pós-procedimento.",
+    "trap": "Negar profilaxia em prótese valvar ou usar esquema terapêutico prolongado indevido."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 21,
+    "group": "Infectologia",
+    "theme": "Meningite bacteriana adulta",
+    "stem": "Homem de 22 anos, febre, cefaleia intensa, rigidez de nuca e fotofobia há 18 h. Glasgow 14, PA estável, sem papiledema, sem focalização. TC disponível rapidamente se necessária. Qual a sequência mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Coletar hemoculturas, punção lombar se segura e iniciar antibiótico (± dexametasona) imediatamente sem atrasos indevidos conforme protocolo vigente",
+    "wrongs": [
+      "Aguardar cultura de LCR definitiva por 48–72 h antes da primeira dose de antibiótico parenteral com documentação no prontuário",
+      "Indicar apenas oseltamivir oral e alta, interpretando o quadro como influenza sem irritação meníngea com reavaliação clínica seriada",
+      "Prescrever aciclovir isolado sem antibiótico, apesar de síndrome meníngea bacteriana típica hiperaguda atual seriada segura imediata dirigida objetiva",
+      "Contraindicar qualquer PL e ATB até RM completa de encéfalo com contraste em paciente sem contraindicação atual seriada segura imediata dirigida objetiva x0"
+    ],
+    "explain": "Meningite bacteriana: hemoculturas + PL (se sem contraindicação) e ATB precoce; dexametasona no pneumococo. Não atrasar ATB por exames desnecessários.",
+    "trap": "Esperar microbiologia completa antes da primeira dose de antibiótico."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 22,
+    "group": "Infectologia",
+    "theme": "Meningite — cobertura empírica adulto",
+    "stem": "Mulher de 67 anos, meningite bacteriana suspeita, imunocompetente, após coleta de LCR turvo. Comunidade, sem neurocirurgia. Qual cobertura empírica mais apropriada enquanto aguarda Gram? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Ceftriaxona (ou cefotaxima) + ampicilina para cobrir pneumococo/meningococo e Listeria em idosos, ± vancomicina se resistência local conforme",
+    "wrongs": [
+      "Apenas penicilina G isolada, suficiente empiricamente em todos os idosos com meningite comunitária atual com documentação no",
+      "Somente ciprofloxacino oral, por boa penetração meníngea teórica em infecções graves do SNC atual seriada segura imediata dirigida objetiva",
+      "Metronidazol monoterapia, presumindo anaeróbio exclusivo sem foco otomastoideo ou abscesso atual seriada segura imediata dirigida objetiva clínica",
+      "Isoniazida + etambutol apenas, tratando toda meningite febril do idoso como TB meníngea atual seriada segura imediata dirigida objetiva clínica local atual"
+    ],
+    "explain": "No idoso, incluir Listeria (ampicilina) além de cefalosporina de 3ª; vancomicina conforme resistência pneumocócica. Quinolona oral ou TB empírica isolada não são o padrão comunitário inicial.",
+    "trap": "Omitir cobertura de Listeria no idoso com meningite bacteriana."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 23,
+    "group": "Infectologia",
+    "theme": "Sepse — bundle inicial",
+    "stem": "Homem de 70 anos, suspeita de sepse por foco urinário: PA 85/50, lactato 4,2, FC 125, confuso. Acesso obtido. Qual o conjunto de ações da primeira hora mais adequado? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Culturas, antibiótico amplo precoce, cristaloides (≈30 mL/kg se hipoperfusão) e reavaliar resposta/vasopressor se choque persistir conforme protocolo",
+    "wrongs": [
+      "Aguardar antibiograma completo de 72 h para iniciar a primeira dose de antibiótico na sepse hipotensa com documentação no prontuário",
+      "Restringir volume a 250 mL totais e iniciar noradrenalina antes de qualquer tentativa de reposição em hipovolemia conforme protocolo vigente",
+      "Indicar dopamina em dose “renal” isolada como tratamento definitivo da sepse sem antibiótico nem volume atual seriada segura imediata dirigida",
+      "Priorizar tomografia de corpo inteiro antes de culturas e ATB no paciente em choque infeccioso atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "Hour-1: culturas, ATB, fluidos e suporte pressórico se necessário. Atraso de ATB por imagem/antibiograma piora mortalidade.",
+    "trap": "Adiar antibiótico até o antibiograma na sepse hipotensa."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 24,
+    "group": "Infectologia",
+    "theme": "Choque séptico — vasopressor",
+    "stem": "Mulher de 63 anos, choque séptico, já recebeu 30 mL/kg de cristaloide, PAM permanece 55 mmHg, lactato alto, diurese baixa. Acesso central disponível. Qual o vasopressor de primeira linha? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Iniciar noradrenalina como vasopressor de primeira linha para atingir PAM-alvo, mantendo ATB e reavaliação da volemia neste atendimento de urgência",
+    "wrongs": [
+      "Usar apenas furosemida em alta dose para “melhorar” a oligúria do choque, sem corrigir a pressão de perfusão com documentação no",
+      "Indicar digoxina intravenosa como fármaco vasoativo principal do choque séptico distributivo atual seriada segura imediata dirigida objetiva",
+      "Prescrever nifedipino sublingual para modular o tônus vascular na hipotensão refratária ao volume atual seriada segura imediata dirigida objetiva x0",
+      "Manter só mais 5 L de salina sem vasopressor, apesar de PAM crítica após ressuscitação inicial adequada atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Após volume adequado, noradrenalina é primeira linha no choque séptico. Diurético/bloqueador de canal de cálcio são inadequados na hipotensão.",
+    "trap": "Insistir só em volume infinito ou usar fármacos inadequados no lugar da noradrenalina."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 25,
+    "group": "Infectologia",
+    "theme": "Antibióticos — ESBL",
+    "stem": "Homem de 58 anos, pielonefrite, urocultura com E. coli produtora de ESBL, sensível a carbapenêmico e amamicina; resistente a ceftriaxona e ciprofloxacino. Estável em enfermaria. Qual terapia dirigida mais apropriada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Usar carbapenêmico (ex.: ertapenem se apropriado) ou outra opção validada para ESBL conforme gravidade e antibiograma neste atendimento de urgência",
+    "wrongs": [
+      "Manter ceftriaxona apesar da resistência, aumentando dose para “vencer” a ESBL por efeito de concentração com documentação no",
+      "Trocar para nitrofurantoína isolada na pielonefrite por ESBL, mesmo com infecção parenquimatosa febril com reavaliação clínica seriada",
+      "Indicar colistina inalatória como tratamento sistêmico único da bacteremia urinária por ESBL atual seriada segura imediata dirigida objetiva clínica",
+      "Suspender todo antibiótico porque ESBL “não causa doença verdadeira” em uroculturas de pacientes sintomáticos atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "ESBL: cefalosporinas de 3ª falham; carbapenêmicos são referência clássica (com stewardhip). Nitrofurantoína não trata pielonefrite.",
+    "trap": "Insistir em ceftriaxona na infecção por enterobactéria ESBL."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 26,
+    "group": "Infectologia",
+    "theme": "Antibióticos — MRSA cutâneo",
+    "stem": "Mulher de 33 anos, abscesso doloroso em nádega com pus, febre baixa, estável. Drenagem realizada. Cultura: S. aureus resistente à oxacilina (MRSA), sensível a SMX-TMP e clindamicina. Qual a melhor conduta adjuvante? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Associar antibiótico oral ativo contra MRSA (ex.: SMX-TMP ou clindamicina) após drenagem adequada do abscesso cutâneo neste atendimento de urgência",
+    "wrongs": [
+      "Manter apenas oxacilina/cefalexina, ineficazes contra MRSA, mesmo após identificação microbiológica clara com documentação no",
+      "Indicar vancomicina intravenosa por 6 semanas de rotina em abscesso simples já drenado sem bacteremia com reavaliação clínica seriada",
+      "Prescrever anfotericina B por confundir MRSA com infecção fúngica de partes moles superficiais atual seriada segura imediata dirigida objetiva",
+      "Evitar qualquer antibiótico sistêmico e qualquer drenagem, usando só compressas mornas indefinidamente atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Abscesso: drenagem é chave; se MRSA, usar droga ativa (SMX-TMP/clinda/linezolida etc.). β-lactâmicos antistafilocócicos clássicos falham no MRSA.",
+    "trap": "Continuar cefalexina/oxacilina após cultura de MRSA."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 27,
+    "group": "Infectologia",
+    "theme": "Antibióticos — Clostridium difficile",
+    "stem": "Homem de 71 anos, diarreia aquosa há 4 dias após ceftriaxona prolongada, dor abdominal, leucocitose. Teste de C. difficile positivo. Sem megacólon. Qual o tratamento de primeira linha mais adequado? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Suspender o antibiótico indutor se possível e tratar com fidaxomicina ou vancomicina oral conforme gravidade e disponibilidade conforme protocolo",
+    "wrongs": [
+      "Indicar loperamida em altas doses como monoterapia, sem antimicrobiano específico contra C. difficile com documentação no prontuário",
+      "Prescrever metronidazol intravenoso isolado como melhor opção em todos os casos leves a moderados atuais com reavaliação clínica seriada",
+      "Reiniciar ceftriaxona e adicionar ciprofloxacino para “cobrir” a colite associada a antibiótico atual seriada segura imediata dirigida objetiva",
+      "Indicar colectomia total imediata em todo PCR positivo, mesmo sem toxicidade fulminante ou perfuração atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "C. difficile: suspender ATB indutor; vancomicina oral ou fidaxomicina são preferidas. Loperamida isolada é perigosa; cirurgia só em fulminante selecionado.",
+    "trap": "Usar antidiarreico isolado ou manter o antibiótico que precipitou a colite."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 28,
+    "group": "Infectologia",
+    "theme": "Parasitoses — ascaridíase obstrutiva",
+    "stem": "Criança/adolescente de 16 anos de zona rural, dor abdominal cólica, vômitos e massa palpável; elimina Ascaris pela boca. Estável, sem peritonite. Ultrassom sugere bolo de vermes. Qual a conduta inicial mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Estabilizar, evitar óleo mineral em obstrução completa e planejar anti-helmíntico/abordagem conforme grau de obstrução com cirurgia se necessário",
+    "wrongs": [
+      "Administrar óleo mineral em grande volume na obstrução intestinal completa por Ascaris, risco de aspiração/ perfuração com",
+      "Indicar quimioterapia citotóxica sistêmica como tratamento etiológico da ascaridíase intestinal maciça com reavaliação clínica seriada",
+      "Prescrever praziquantel isolado, específico de cestódeos/trematódeos, sem cobrir Ascaris lumbricoides atual seriada segura imediata dirigida objetiva",
+      "Negar qualquer intervenção porque a eliminação oral do verme exclui risco de complicação mecânica atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Ascaris pode obstruir: suporte, anti-helmíntico no timing certo e cirurgia se estrangulamento/peritonite. Óleo mineral na obstrução completa é clássica armadilha.",
+    "trap": "Usar óleo mineral na obstrução intestinal completa por áscaris."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 29,
+    "group": "Infectologia",
+    "theme": "Parasitoses — giardíase",
+    "stem": "Homem de 24 anos, diarreia gordurosa, flatulência e epigastralgia há 3 semanas após trilha com água de rio. Sem sangue nas fezes. Exame geral bom. Pesquisa de cistos de Giardia positiva. Qual o tratamento de escolha usual? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Tratar com metronidazol, tinidazol ou secnidazol conforme protocolo, orientando higiene e prevenção de reinfeção hídrica conforme protocolo vigente",
+    "wrongs": [
+      "Indicar vancomicina oral, própria de C. difficile, sem efeito sobre Giardia intestinalis neste contexto com documentação no prontuário",
+      "Prescrever ivermectina isolada como primeira linha da giardíase, mais usada em geo-helmintos/ectoparasitas com reavaliação clínica seriada",
+      "Usar apenas probiótico comercial sem antiparasitário, apesar de parasitológico positivo e sintomas crônicos atual seriada segura imediata dirigida",
+      "Iniciar sulfadiazina + pirimetamina, esquema de toxoplasmose, inadequado para giardíase intestinal atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Giardia: nitroimidazólicos (metro/tinidazol/secnidazol). Quadro típico pós-água não tratada; vancomicina/ivermectina não são primeira linha.",
+    "trap": "Tratar giardíase com drogas de outros parasitas/infecções."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 30,
+    "group": "Infectologia",
+    "theme": "Parasitoses — esquistossomose mansoni",
+    "stem": "Homem de 40 anos, área endêmica, hepatomegalia esquerda, hipertensão portal e história de banho em rio. Hemograma: eosinofilia. Ultrassom: fibrose periportal. Parasitológico às vezes negativo na forma crônica. Qual a droga de escolha para o trematódeo? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Prescrever praziquantel no esquema indicado para S. mansoni, além de manejar as complicações da hipertensão portal neste atendimento de urgência",
+    "wrongs": [
+      "Usar apenas albendazol em dose única de oxiuríase como terapia definitiva da esquistossomose hepatoesplênica com documentação no",
+      "Indicar metronidazol prolongado como esquistossomicida de primeira linha no Brasil para S. mansoni priorizando segurança do paciente",
+      "Tratar com cloroquina semanal, confundindo com malária, sem ação adequada sobre o esquistossomo adulto atual seriada segura imediata dirigida objetiva",
+      "Negar tratamento etiológico porque eosinofilia isolada nunca justifica praziquantel em área endêmica com fibrose atual seriada segura imediata dirigida objetiva x0"
+    ],
+    "explain": "Esquistossomose mansoni: praziquantel é a base; manejar varizes/HTP separadamente. Albendazol/metro/cloroquina não substituem o esquistossomicida.",
+    "trap": "Usar anti-helmíntico errado ou só tratar a hipertensão portal sem praziquantel."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 31,
+    "group": "Infectologia",
+    "theme": "Leishmaniose visceral",
+    "stem": "Menino/adulto jovem de 19 anos, febre prolongada, pancitopenia, esplenomegalia maciça e hipergamaglobulinemia. Reside em área de calazar. Teste rápido/rk39 positivo; mielograma a confirmar. Qual a conduta terapêutica usual no Brasil (casos elegíveis)? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência.",
+    "correct": "Tratar leishmaniose visceral com antimonial pentavalente ou anfotericina B conforme gravidade, protocolo e disponibilidade local conforme protocolo",
+    "wrongs": [
+      "Prescrever apenas doxiciclina curta como terapia curativa definitiva do calazar com pancitopenia e esplenomegalia com documentação no",
+      "Indicar esplenectomia imediata em todos antes de qualquer droga leishmanicida, como primeira linha obrigatória conforme protocolo vigente",
+      "Usar praziquantel, específico de trematódeos, sem eficácia sobre Leishmania donovani/chagasi no visceral atual seriada segura imediata dirigida",
+      "Tratar só com SMX-TMP ambulatorial, esquema de pneumocistose, inadequado como leishmanicida primário atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Calazar: febre + esplenomegalia + pancitopenia; tratamento com SbV ou anfotericina conforme guia. Cirurgia não é primeira linha; antibióticos usuais não curam.",
+    "trap": "Esplenectomizar de rotina ou usar antibiótico não leishmanicida."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 32,
+    "group": "Infectologia",
+    "theme": "Leishmaniose tegumentar",
+    "stem": "Homem de 32 anos, úlcera indolor em perna com bordas elevadas há 2 meses após exposição em mata. Sem febre. Pesquisa direta/PCR compatível com leishmaniose tegumentar americana. Qual o princípio do manejo? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Tratar com droga leishmanicida sistêmica ou local conforme forma clínica e guia (SbV, anfotericina, miltefosina etc. conforme indicação)",
+    "wrongs": [
+      "Cauterizar apenas com ácido sem diagnóstico etiológico e sem seguir protocolo de leishmaniose tegumentar com documentação no",
+      "Prescrever isoniazida monoterapia, confundindo com úlcera tuberculosa cutânea sem investigação específica conforme protocolo vigente",
+      "Usar nistatina tópica isolada como leishmanicida de escolha na forma cutânea americana clássica atual seriada segura imediata dirigida objetiva",
+      "Indicar amputação do membro por toda úlcera crônica em área endêmica, sem tentativa de terapia específica atual seriada segura imediata dirigida objetiva x0"
+    ],
+    "explain": "Úlcera crônica em área endêmica: confirmar e tratar leishmaniose tegumentar conforme forma (cutânea/mucosa). Remédios empíricos inadequados e amputação de rotina são erros.",
+    "trap": "Tratar como úlcera inespecífica ou TB cutânea sem esquema leishmanicida."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 33,
+    "group": "Infectologia",
+    "theme": "Leptospirose — fase e Weil",
+    "stem": "Homem de 36 anos, 10 dias após enchente, febre, mialgia intensa de panturrilhas, conjuntival suffusion, icterícia e creatinina 3,1. Plaquetas baixas. PA 100/60. Qual a conduta mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Internar, suporte renal/hepático e iniciar antibiótico (ex.: penicilina/ceftriaxona) precocemente na leptospirose moderada-grave conforme protocolo",
+    "wrongs": [
+      "Liberar com AAS e hidratação oral apenas, apesar de icterícia e IRA sugestivas de forma de Weil com documentação no prontuário",
+      "Indicar corticoide isolado em megadose sem antibiótico como cura etiológica da leptospira icterohemorrágica conforme protocolo vigente",
+      "Tratar empiricamente só com oseltamivir, atribuindo tudo a influenza sem epidemiologia de água contaminada atual seriada segura imediata dirigida",
+      "Aguardar cultura de leptospira de 4 semanas para só então considerar antimicrobiano na IRA e icterícia atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Pós-enchente + mialgia + icterícia/IRA: Weil. ATB precoce e suporte; não esperar cultura lenta. AAS aumenta risco hemorrágico.",
+    "trap": "Aguardar confirmação laboratorial tardia antes de tratar leptospirose grave."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 34,
+    "group": "Infectologia",
+    "theme": "Leptospirose — diferencial dengue",
+    "stem": "Mulher de 29 anos, febre, mialgia e plaquetopenia após período chuvoso. Sem hemoconcentração marcada; há icterícia e creatinina elevada; refere contato com lama. Qual o raciocínio diferencial mais correto? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Considerar leptospirose no diferencial de dengue quando há icterícia/IRA e exposição a água contaminada, iniciando ATB se provável conforme protocolo",
+    "wrongs": [
+      "Excluir leptospirose sempre que houver plaquetopenia, pois esse achado é patognomônico exclusivo de dengue clássica com documentação",
+      "Tratar automaticamente com hidratação de dengue grave e nunca usar antibiótico se houver qualquer petéquia cutânea conforme protocolo vigente",
+      "Diagnosticar obrigatoriamente hepatite A aguda só pela icterícia, ignorando creatinina e epidemiologia de enchente neste contexto de residência",
+      "Indicar transfusão plaquetária profilática em todo caso febril com plaquetas <100 mil, independentemente do diagnóstico priorizando segurança do paciente"
+    ],
+    "explain": "Dengue e leptospira se sobrepõem; icterícia + IRA + água/lama favorecem leptospira e justificam ATB. Plaquetopenia não fecha dengue sozinha.",
+    "trap": "Fechar dengue e omitir antibiótico na leptospirose provável."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 35,
+    "group": "Infectologia",
+    "theme": "Febre amarela — formas e vacina",
+    "stem": "Homem de 45 anos, não vacinado, retorno de área silvestre, febre bifásica, icterícia, sangramento gengival e oligúria. Hipotensão. Suspeita de febre amarela grave. Qual a conduta imediata e medida preventiva populacional associada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Suporte intensivo de órgãos (sem antiviral específico de rotina) e reforçar vacinação/controle vetorial para prevenção de novos casos conforme",
+    "wrongs": [
+      "Indicar ribavirina oral comprovadamente curativa em todos os casos graves de febre amarela silvestre do adulto com documentação no",
+      "Prescrever AAS para a febre e mialgia, aumentando risco hemorrágico na febre amarela ictérica com sangramento conforme protocolo vigente",
+      "Negar suporte dialítico quando indicado, por ser “contraindicado” em hepatites virais agudas febris atual seriada segura imediata dirigida objetiva",
+      "Usar apenas cloroquina como terapia etiológica, confundindo com malária sem gota espessa positiva atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Febre amarela grave: suporte (inclui dialise se preciso); sem antiviral específico padrão. Vacina é prevenção. AAS é perigoso na fase hemorrágica.",
+    "trap": "Usar AAS ou achar que existe antiviral curativo de rotina para febre amarela."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 36,
+    "group": "Infectologia",
+    "theme": "Febre amarela — vacina e contraindicações",
+    "stem": "Mulher de 28 anos, viajará em 3 semanas a área com recomendação de vacina de febre amarela. É soropositiva para HIV com CD4 420, estável em TARV, sem outras imunodeficiências. Qual a orientação mais adequada sobre a vacina 17D? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Em geral pode vacinar se CD4 adequado e estável, ponderando risco-benefício da viagem e orientações do PNI/CDC local neste atendimento de urgência",
+    "wrongs": [
+      "Contraindicar absolutamente a vacina 17D em todo paciente HIV, mesmo com CD4 alto e doença controlada com documentação no prontuário",
+      "Indicar 5 doses da vacina atenuada no mesmo dia para “garantir” soroconversão antes da viagem internacional conforme protocolo vigente",
+      "Substituir a vacina por doxiciclina contínua como profilaxia específica e suficiente contra o vírus amarílico priorizando segurança do paciente",
+      "Aplicar vacina mesmo em gestação de primeiro trimestre sem avaliar risco-benefício, como rotina obrigatória atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "Vacina 17D é atenuada: HIV com CD4 muito baixo é problema; com CD4 preservado costuma ser possível. Doxiciclina não previne febre amarela.",
+    "trap": "Contraindicar a vacina em todo HIV ou achar que antibiótico substitui imunização."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 37,
+    "group": "Infectologia",
+    "theme": "COVID-19 — hipoxemia e corticoide",
+    "stem": "Homem de 58 anos, COVID-19 confirmada, dia 8 de sintomas, SpO2 90% em ar, FR 28, RX com opacidades bilaterais. Sem necessidade de IOT ainda. Qual intervenção farmacológica tem benefício claro neste perfil hipoxêmico? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Iniciar dexametasona (ou equivalente) no paciente hipoxêmico, além de oxigênio e tromboprofilaxia conforme protocolo neste atendimento de urgência",
+    "wrongs": [
+      "Prescrever dexametasona em altas doses em todo caso leve ambulatorial sem hipoxemia, aumentando risco sem benefício com documentação",
+      "Indicar azitromicina + ivermectina + zinco como tríade obrigatória com evidência sólida de redução de mortalidade conforme protocolo vigente",
+      "Usar hidroxicloroquina padrão-ouro atual em todo PCR positivo, independentemente de gravidade e evidência atual seriada segura imediata dirigida",
+      "Evitar oxigênio suplementar até SpO2 <80%, por medo de “supressão do drive” em hipoxemia tipo 1 atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "Corticoide beneficia COVID hipoxêmica; em leves sem O2 pode prejudicar. Oxigênio e profilaxia tromboembólica fazem parte do cuidado; kits sem evidência não são padrão.",
+    "trap": "Dar corticoide em COVID leve sem hipoxemia ou confiar em terapias sem evidência."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 38,
+    "group": "Infectologia",
+    "theme": "COVID-19 — isolamento e leve",
+    "stem": "Mulher de 35 anos, PCR COVID positivo, sintomas leves (coriza, febre baixa), SpO2 98%, sem comorbidades de alto risco. Qual a orientação principal de manejo ambulatorial? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Isolamento conforme norma vigente, sintomáticos, sinais de alarme e retorno se dispneia/hipoxemia; sem antivirais hospitalares de rotina",
+    "wrongs": [
+      "Internar em UTI todos os PCR positivos leves para iniciar remdesivir intravenoso obrigatório por 10 dias com documentação no",
+      "Prescrever anticoagulação plena empírica ambulatorial em todo caso leve sem fator de risco trombótico com reavaliação clínica seriada",
+      "Indicar antibioticoterapia de amplo espectro de rotina em COVID viral leve sem evidência de coinfecção bacteriana neste contexto de residência",
+      "Liberar para evento aglomerado no mesmo dia do PCR positivo, desde que use apenas máscara de pano caseira atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "COVID leve: isolamento, educação sobre alarme e suporte. Sem ATB/anticoagulação plena de rotina; antivirais hospitalares não são para todo leve.",
+    "trap": "Medicalizar demais o caso leve ou negligenciar isolamento e sinais de alarme."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 39,
+    "group": "Infectologia",
+    "theme": "Hepatite A — aguda",
+    "stem": "Homem de 23 anos, febre, náuseas, icterícia e colúria há 5 dias; ALT/AST muito altas, FA discreta. IgM anti-HAV positivo. Coagulograma normal, consciente. Qual a conduta mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Suporte clínico, orientação de higiene/notificação e evitar hepatotóxicos; a maioria resolve sem antiviral específico neste atendimento de urgência",
+    "wrongs": [
+      "Iniciar entecavir de imediato como se fosse hepatite B crônica com carga viral elevada documentada com documentação no prontuário",
+      "Indicar transplante hepático de urgência em toda hepatite A ictérica, mesmo sem falência fulminante priorizando segurança do paciente",
+      "Prescrever prednisona prolongada de rotina para “acelerar” a clearance do HAV na forma clássica atual seriada segura imediata dirigida objetiva",
+      "Usar ribavirina + interferon como esquema padrão obrigatório da hepatite A aguda autolimitada atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "HAV aguda é em geral autolimitada: suporte e prevenção de transmissão. Antivirais de HBV/HCV não se aplicam; transplante só se fulminante selecionado.",
+    "trap": "Tratar hepatite A como B/C crônica com antivirais específicos."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 40,
+    "group": "Infectologia",
+    "theme": "Hepatite B — agudização / crônica",
+    "stem": "Mulher de 40 anos, HBsAg positivo há anos, HBeAg positivo, ALT elevada persistente, carga viral HBV alta, sem cirrose ainda. HIV negativo. Qual o princípio terapêutico mais correto? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Indicar antiviral de alta barreira (tenofovir ou entecavir) conforme critérios de tratamento da hepatite B crônica ativa conforme protocolo vigente",
+    "wrongs": [
+      "Prescrever apenas vitamina K e dieta, sem avaliar indicação de análogo nucleos(t)ídeo na doença ativa com documentação no prontuário",
+      "Usar lamivudina isolada preferencialmente hoje, apesar da alta taxa de resistência em monoterapia prolongada com reavaliação clínica seriada",
+      "Indicar interferon + ribavirina esquema de HCV como padrão da HBV crônica HBeAg positiva atual atual seriada segura imediata dirigida objetiva",
+      "Suspender seguimento porque HBsAg positivo crônico nunca progride para cirrose ou hepatocarcinoma atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "HBV crônica com necroinflamação/carga alta: tenofovir ou entecavir. Lamivudina tem resistência; ribavirina/IFN de HCV não é o padrão atual de HBV.",
+    "trap": "Deixar HBV ativa sem antiviral ou escolher lamivudina como primeira escolha moderna."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 41,
+    "group": "Infectologia",
+    "theme": "Hepatite C — tratamento",
+    "stem": "Homem de 50 anos, anti-HCV positivo, RNA-HCV detectável, fibrose moderada, sem descompensação. Genótipo definido. Qual a afirmação terapêutica mais correta na era dos DAAs? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Tratar com antivirais de ação direta (DAAs) por esquema curto oral, com alta taxa de cura (RVS), conforme genótipo/fibrose conforme protocolo vigente",
+    "wrongs": [
+      "Manter interferon pegilado + ribavirina como único esquema aceitável, ignorando os DAAs orais atuais com documentação no prontuário",
+      "Indicar apenas silimarina contínua como terapia curativa com erradicação viral documentada equivalente aos DAAs com reavaliação clínica seriada",
+      "Aguardar obrigatoriamente cirrose descompensada para só então considerar qualquer antiviral para HCV atual seriada segura imediata dirigida objetiva",
+      "Usar entecavir monoterapia, específico de HBV, como tratamento definitivo da infecção pelo HCV atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "HCV crônica: DAAs orais curam a maioria. IFN clássico caiu; esperar descompensação atrasa benefício; entecavir não trata HCV.",
+    "trap": "Persistir em interferon ou negar DAAs até cirrose avançada."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 42,
+    "group": "Infectologia",
+    "theme": "Hepatite fulminante — infecciosa",
+    "stem": "Mulher de 30 anos, hepatite viral aguda, encefalopatia grau II, INR 3,2, icterícia crescente. Sem choque. Qual a prioridade de manejo? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Cuidado em centro com suporte intensivo e avaliação precoce para transplante, tratando causa se específica e evitando hepatotóxicos conforme",
+    "wrongs": [
+      "Alta domiciliar com repouso e paracetamol livre para a cefaleia, apesar de coagulopatia e encefalopatia com documentação no prontuário",
+      "Indicar colectomia de urgência como terapia da falência hepática hiperaguda viral sem indicação abdominal conforme protocolo vigente",
+      "Prescrever AAS e AINE para febre, aumentando risco de sangramento e lesão hepática adicional atual seriada segura imediata dirigida objetiva clínica",
+      "Aguardar semanas em enfermaria comum sem contatar centro transplantador na falência com INR elevado atual seriada segura imediata dirigida objetiva clínica x0"
+    ],
+    "explain": "Falência hepática aguda: encefalopatia + coagulopatia exigem UTI/centro transplantador. Evitar hepatotóxicos; paracetamol livre é perigoso.",
+    "trap": "Subestimar hepatite fulminante e não referenciar a centro de transplante."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 43,
+    "group": "Infectologia",
+    "theme": "TB extrapulmonar — meníngea",
+    "stem": "Homem de 35 anos, HIV negativo, cefaleia há 3 semanas, febre baixa, paresia de VI par. LCR: linfocitose, proteína alta, glicose baixa. RX tórax com fibroatelectasia apical. Qual a conduta mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Iniciar esquema anti-TB meníngeo (RHZE) precocemente e corticosteroide adjuvante, sem aguardar cultura lenta se alta probabilidade conforme protocolo",
+    "wrongs": [
+      "Tratar só com aciclovir, presumindo HSV, apesar do LCR com hipoglicorraquia e proteína muito elevada subaguda com documentação no",
+      "Usar apenas ceftriaxona por 7 dias como esquema completo de meningite bacteriana aguda típica de horas com reavaliação clínica seriada",
+      "Aguardar cultura de Lowenstein de 8 semanas sem terapia, mantendo risco de sequela neurológica grave atual seriada segura imediata dirigida objetiva",
+      "Indicar fluconazol isolado por antígeno criptocócico negativo nem padrão de imunodeficiência avançada atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Meningite subaguda + LCR típico + foco pulmonar: TB meníngea — RHZE e corticoide precoce. Cultura é lenta; atraso causa sequelas.",
+    "trap": "Esperar cultura de TB para iniciar tratamento na meningite altamente suspeita."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 44,
+    "group": "Infectologia",
+    "theme": "Infecção de corrente — cateter",
+    "stem": "Mulher de 55 anos, cateter venoso central há 10 dias, febre e calafrios durante infusão; eritema no sítio. Hemoculturas de periferia e do cateter colhidas. Estável após volume. Qual a conduta geral mais correta? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Iniciar antibiótico empírico adequado, considerar remoção do cateter conforme germes/complicações e comparar tempos de positivação conforme protocolo",
+    "wrongs": [
+      "Manter o cateter a qualquer custo em bacteremia por S. aureus ou Candida, sem avaliar retirada do dispositivo com documentação no",
+      "Tratar apenas com antitérmico, sem hemoculturas nem antibiótico, atribuindo febre a “reação ao soro” com reavaliação clínica seriada",
+      "Indicar trombólise sistêmica de rotina como terapia da infecção associada a cateter sem evidência de TEP atual seriada segura imediata dirigida",
+      "Prescrever nistatina oral como cobertura empírica suficiente de bacteremia relacionada a CVC atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "ICS associada a CVC: culturas pareadas, ATB e frequentemente remoção (obrigatória em Candida/S. aureus em muitos cenários). Não ignorar o dispositivo.",
+    "trap": "Deixar o cateter infectado por germes que exigem retirada."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 45,
+    "group": "Infectologia",
+    "theme": "Neutropenia febril — overlap onco",
+    "stem": "Homem de 44 anos em quimioterapia, neutrófilos 300/mm³, febre 38,6 °C, sem foco claro, estável. Qual a conduta antimicrobiana inicial padrão? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Internar e iniciar antibiótico EV antipseudomonas empírico precoce (ex.: piperacilina-tazobactam/cefepima) após culturas conforme protocolo vigente",
+    "wrongs": [
+      "Observar em casa sem antibiótico até identificar o foco por imagem completa de corpo inteiro com documentação no prontuário",
+      "Prescrever apenas fluconazol oral ambulatorial como monoterapia da neutropenia febril de alto risco priorizando segurança do paciente",
+      "Usar nitrofurantoína isolada, inadequada para cobertura sistêmica e Pseudomonas na neutropenia atual seriada segura imediata dirigida objetiva",
+      "Aguardar 48 h afebril espontâneo antes de qualquer gram-negativo de amplo espectro parenteral atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "Neutropenia febril: ATB antipseudomonas precoce após culturas. Atraso aumenta mortalidade; fluconazol isolado não cobre bactérias.",
+    "trap": "Adiar antibiótico empírico na neutropenia febril aguardando foco definido."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 46,
+    "group": "Infectologia",
+    "theme": "Mordedura / profilaxia Pasteurella",
+    "stem": "Mulher de 27 anos, mordedura de cão há 6 horas em mão dominante, ferida profunda, vacina tétano em dia. Sem alergias. Qual a antibioticoprofilaxia mais citada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Indicar amoxicilina-clavulanato (ou equivalente) para cobrir Pasteurella/anaeróbios, além de limpeza e profilaxia antitetânica se preciso",
+    "wrongs": [
+      "Prescrever apenas cefalexina isolada, com falha frequente sobre Pasteurella em mordeduras de animais com documentação no prontuário",
+      "Usar clindamicina monoterapia como ideal absoluto, sem cobertura confiável de Pasteurella multocida priorizando segurança do paciente",
+      "Negar qualquer antibiótico em mordedura profunda de mão, por serem sempre “feridas limpas” atual seriada segura imediata dirigida objetiva clínica",
+      "Indicar vancomicina oral ambulatorial como primeira escolha para flora de cavidade oral animal atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "Mordedura (esp. mão): amoxi-clavulanato cobre Pasteurella e anaeróbios. Cefalexina/clinda isoladas falham em Pasteurella.",
+    "trap": "Escolher antibiótico sem cobertura de Pasteurella em mordedura."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 47,
+    "group": "Infectologia",
+    "theme": "Sífilis — neurossífilis overlap",
+    "stem": "Homem de 38 anos, HIV, cefaleia, alteração pupilar e VDRL sérico 1:128; LCR com VDRL positivo e pleocitose. Qual o tratamento de escolha? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Tratar neurossífilis com penicilina G cristalina intravenosa por 10–14 dias conforme protocolo, com seguimento clínico-laboratorial conforme",
+    "wrongs": [
+      "Usar apenas penicilina benzatina dose única intramuscular como esquema suficiente de neurossífilis confirmada com documentação no",
+      "Prescrever doxiciclina tópica ocular isolada, sem terapia sistêmica para infecção do SNC pelo T. pallidum conforme protocolo vigente",
+      "Indicar ceftriaxona oral domiciliar de 3 dias como substituto completo validado da penicilina EV prolongada atual seriada segura imediata dirigida",
+      "Tratar só com aciclovir, interpretando o quadro como encefalite herpética apesar do VDRL liquórico positivo atual seriada segura imediata dirigida objetiva"
+    ],
+    "explain": "Neurossífilis exige penicilina G EV prolongada; benzatina IM não atinge níveis meníngeos adequados para cura da forma neurológica.",
+    "trap": "Tratar neurossífilis com penicilina benzatina em dose única como na sífilis precoce."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 48,
+    "group": "Infectologia",
+    "theme": "Tétano — ferida e imunização",
+    "stem": "Homem de 50 anos, ferida contaminada com solo há 12 h. Histórico vacinal de tétano incerto. Sem sinais de tétano ainda. Qual a profilaxia mais adequada? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Limpar a ferida, administrar toxoide tetânico e imunoglobulina antitetânica conforme ferida téctano-prónea e vacinação duvidosa conforme protocolo",
+    "wrongs": [
+      "Aplicar apenas analgésico e sutura hermética imediata sem limpeza, imunização nem imunoglobulina quando indicada com documentação no",
+      "Prescrever metronidazol isolado como substituto completo da imunização ativa e passiva antitetânica priorizando segurança do paciente",
+      "Indicar vacina de febre amarela no lugar do toxoide tetânico por “cobertura cruzada” de clostrídios atual seriada segura imediata dirigida objetiva",
+      "Aguardar trismo e opistótono para só então considerar toxoide e imunoglobulina antitetânica atual seriada segura imediata dirigida objetiva clínica local"
+    ],
+    "explain": "Ferida de risco + vacinação duvidosa: limpeza, toxoide e, se indicado, imunoglobulina. Esperar sintomas é tarde demais para profilaxia.",
+    "trap": "Não imunizar ferida contaminada com história vacinal incerta."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 49,
+    "group": "Infectologia",
+    "theme": "Raiva — profilaxia pós-exposição",
+    "stem": "Mulher de 22 anos, mordedura de morcego em área rural há 8 horas, ferida superficial lavada com água e sabão. Nunca vacinada contra raiva. Animal não capturado. Qual a conduta? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Iniciar profilaxia pós-exposição completa (vacina + imunoglobulina conforme categoria) após limpeza adequada da ferida conforme protocolo vigente",
+    "wrongs": [
+      "Observar apenas 10 dias o morcego inexistente/não capturado antes de qualquer imunização antirrábica humana com documentação no",
+      "Indicar só antibiótico amoxi-clavulanato, suficiente para prevenir raiva viral além da infecção bacteriana local com reavaliação clínica seriada",
+      "Aplicar uma única dose de vacina antirrábica sem completar o esquema e sem imunoglobulina quando indicada atual seriada segura imediata dirigida",
+      "Cauterizar a ferida com pólvora e dispensar vacina, prática antiga sem eficácia antirrábica moderna atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Exposição a morcego: profilaxia antirrábica completa; não se observa morcego selvagem como cão domiciliado. Antibiótico não previne raiva.",
+    "trap": "Achar que antibiótico ou observação do animal dispensa vacina/imunoglobulina após morcego."
+  },
+  {
+    "idPrefix": "cli-infecto",
+    "n": 50,
+    "group": "Infectologia",
+    "theme": "Histoplasmose — HIV overlap",
+    "stem": "Homem de 37 anos, HIV, CD4 55, febre, perda ponderal, hepatoesplenomegalia e lesões cutâneas umbilicadas. Vive em área endêmica. Antígeno urinário de Histoplasma positivo. Qual o tratamento da forma disseminada grave? Sinais vitais, exame dirigido e risco de deterioração guiam a conduta imediata neste atendimento de urgência. Considere epidemiologia local, comorbidades e exposição recente ao decidir a próxima etapa terapêutica neste caso.",
+    "correct": "Iniciar anfotericina B na fase grave/indução e depois itraconazol de manutenção, além de TARV no tempo apropriado neste atendimento de urgência",
+    "wrongs": [
+      "Tratar apenas com fluconazol de baixa dose ambulatorial como equivalente à anfotericina na doença disseminada grave com documentação",
+      "Usar SMX-TMP em dose de PCP como terapia curativa exclusiva da histoplasmose disseminada confirmada priorizando segurança do paciente",
+      "Indicar isoniazida monoterapia, confundindo com TB disseminada, sem cobertura antifúngica adequada atual seriada segura imediata dirigida objetiva",
+      "Prescrever nistatina oral tópica como antifúngico sistêmico suficiente na forma disseminada do AIDS atual seriada segura imediata dirigida objetiva clínica"
+    ],
+    "explain": "Histoplasmose disseminada grave no AIDS: anfotericina na indução → itraconazol. Fluconazol fraco/nistatina não substituem; SMX-TMP trata Pneumocystis, não Histoplasma.",
+    "trap": "Tratar histoplasmose disseminada grave só com azólico fraco ou droga de outra OI."
+  }
+]

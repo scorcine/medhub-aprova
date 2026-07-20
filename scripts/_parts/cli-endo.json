@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-endo",
+    "n": 1,
+    "group": "Endocrinologia",
+    "theme": "Diabetes mellitus tipo 2 — metformina",
+    "stem": "Homem de 54 anos, IMC 32 kg/m², hipertenso, com glicemia de jejum 148 mg/dL e HbA1c 7,8%. Creatinina 0,9 mg/dL (TFGe 92 mL/min), sem contraindicações. Após educação alimentar e atividade física por 3 meses, HbA1c permanece 7,6%. Qual a melhor conduta farmacológica inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "iniciar metformina em dose titulada com reavaliação de HbA1c, reforçando mudanças de estilo de vida e monitoramento de efeitos conforme o protocolo local",
+    "wrongs": [
+      "iniciar insulina basal plena de imediato como primeira droga em DM2 estável ambulatorial sem descompensação aguda nem neste cenário clínico",
+      "prescrever apenas glibenclamida em dose máxima sem metformina, ignorando o risco hipoglicêmico e a indicação de primeira linha",
+      "adiar qualquer fármaco por mais um ano porque a HbA1c 'ainda não passou de 8%', apesar de já estar acima da meta individualizada acordada conforme o",
+      "iniciar corticoterapia crônica para 'reduzir inflamação metabólica', conduta sem indicação e potencialmente hiperglicemiante neste paciente diante dos achados"
+    ],
+    "explain": "Em DM2 do adulto sem contraindicação, metformina é primeira linha após falha parcial de mudanças de estilo de vida, com titulação e vigilância renal/GI. Insulina basal precoce cabe em hiperglicemia intensa/sintomática, não neste cenário estável.",
+    "trap": "Pular metformina e ir direto à insulina basal em DM2 ambulatorial estável."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 2,
+    "group": "Endocrinologia",
+    "theme": "Diabetes mellitus tipo 1 — diagnóstico adulto",
+    "stem": "Mulher de 28 anos com polidipsia, poliúria e perda de 6 kg em 2 meses. Glicemia 312 mg/dL, HbA1c 10,2%, cetonúria leve, IMC 21 kg/m². Anticorpos anti-GAD positivos. Sem acidose grave. Qual a melhor conduta terapêutica de base? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "iniciar insulinoterapia basal-bolus educando sobre contagem de carboidratos, monitoramento glicêmico e prevenção de hipoglicemia e cetoacidose",
+    "wrongs": [
+      "tratar apenas com metformina e dieta, como se fosse DM2 típico, adiando insulina apesar de anticorpos e fenótipo neste cenário clínico",
+      "usar apenas sulfonilureia em dose alta para estimular secreção residual, sem esquema basal-bolus indicado no diabetes autoimune do",
+      "indicar pancreatectomia parcial eletiva como tratamento inicial do DM1 autoimune, conduta sem papel neste diagnóstico e potencialmente lesiva",
+      "prescrever apenas iSGLT2 isolado sem insulina, expondo a risco de cetoacidose euglicêmica em paciente claramente insulinodependente preservando estabilidade"
+    ],
+    "explain": "DM1 do adulto (LADA/clássico) com autoanticorpos exige insulina; metformina ou secretagogos isolados não substituem a reposição. Educação e esquema basal-bolus reduzem CAD e hipoglicemia.",
+    "trap": "Tratar DM1 autoimune do adulto como DM2 só com metformina."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 3,
+    "group": "Endocrinologia",
+    "theme": "Cetoacidose diabética — manejo inicial",
+    "stem": "Homem de 35 anos com DM1, vômitos, dor abdominal e respiração de Kussmaul. Glicemia 480 mg/dL, pH 7,10, HCO3 7 mEq/L, ânion gap elevado, K 5,0 mEq/L, creatinina 1,4 mg/dL. PA 100/60 mmHg, FC 118 bpm. Conduta inicial prioritária? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "iniciar volume com cristalóide, insulina intravenosa protocolar após reposição inicial, repor potássio conforme protocolo e vigiar estado",
+    "wrongs": [
+      "aplicar insulina subcutânea domiciliar em dose alta e liberar, sem protocolo de CAD nem monitorização de eletrólitos e neste cenário clínico",
+      "infundir bicarbonato de rotina em todo pH <7,20 antes de volume e insulina, ignorando riscos e a indicação restrita desta medida de",
+      "restringir fluidos nas primeiras 12 horas por medo de edema cerebral adulto, adiando a reposição volêmica essencial na CAD grave priorizando segurança",
+      "iniciar apenas solução glicosada hipertônica sem insulina IV, postergando a correção da cetonemia e da acidose metabólica de alto gap alinhado às diretrizes"
+    ],
+    "explain": "CAD: volume, insulina IV protocolar e manejo cuidadoso de K. Bicarbonato não é rotina; insulina SC ambulatorial é insegura. Monitorar neurológico e eletrólitos evita complicações.",
+    "trap": "Usar bicarbonato de rotina ou insulina SC fora do protocolo de CAD."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 4,
+    "group": "Endocrinologia",
+    "theme": "Estado hiperosmolar hiperglicêmico",
+    "stem": "Idoso de 72 anos com DM2, confusão e desidratação após pneumonia. Glicemia 920 mg/dL, osmolaridade efetiva 330 mOsm/kg, pH 7,34, HCO3 20, cetonas negativas/fracas. PA 88/50 mmHg, Na corrigido elevado. Melhor abordagem inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "repor volume agressivamente com cristalóide, corrigir precipitantes, usar insulina IV com cautela e reduzir osmolaridade de forma gradual",
+    "wrongs": [
+      "tratar como CAD clássica com bicarbonato precoce e restrição hídrica, apesar de acidose mínima e predominância hiperosmolar",
+      "aplicar insulina SC em bolus únicos repetidos sem volume, acelerando queda osmótica e risco neurológico no idoso desidratado",
+      "indicar diálise imediata isolada sem reposição volêmica nem insulina, adiando o tratamento clínico padrão do estado hiperosmolar evitando conduta",
+      "oferecer apenas água oral livre na emergência e observar, ignorando hipotensão e hiperosmolaridade grave com alteração do sensorial neste cenário clínico"
+    ],
+    "explain": "HHNS: volume é prioridade; insulina após reposição parcial; correção osmótica gradual. Diferenciar de CAD evita bicarbonato desnecessário e queda abrupta da osmolaridade.",
+    "trap": "Priorizar insulina SC sem volume adequado no estado hiperosmolar."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 5,
+    "group": "Endocrinologia",
+    "theme": "Hipoglicemia grave — manejo",
+    "stem": "Mulher de 68 anos com DM2 em insulina NPH + regular, encontrada sonolenta. Glicemia capilar 38 mg/dL, sem acesso venoso imediato. FC 96 bpm, PA 130/80 mmHg, SpO2 97%. Qual a conduta imediata mais adequada? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "administrar glucagon intramuscular ou subcutâneo imediatamente e obter acesso venoso para glicose IV, reavaliando sensorial e causa",
+    "wrongs": [
+      "aguardar acesso venoso definitivo por tempo prolongado sem glucagon, mantendo hipoglicemia grave com risco de sequela neste cenário clínico",
+      "oferecer apenas suco oral forçado em paciente com rebaixamento, elevando risco de aspiração sem corrigir a hipoglicemia de forma",
+      "suspender definitivamente toda insulina sem plano substitutivo e liberar, sem corrigir a crise atual nem investigar a causa da hipoglicemia no contexto",
+      "iniciar insulina adicional 'para estabilizar' a glicemia baixa, conduta paradoxal e perigosa na hipoglicemia sintomática grave documentada com registro no"
+    ],
+    "explain": "Hipoglicemia grave com sensorial alterado: glucagon IM/SC se sem acesso, depois glicose IV; nunca forçar oral se risco de aspiração. Investigar causa e ajustar esquema.",
+    "trap": "Forçar via oral em hipoglicemia com rebaixamento do nível de consciência."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 6,
+    "group": "Endocrinologia",
+    "theme": "Doença de Graves — diagnóstico",
+    "stem": "Mulher de 34 anos com perda ponderal, tremor, taquicardia e oftalmopatia com retratação palpebral. TSH <0,01 mUI/L, T4L elevado, TRAb positivo. Sem nódulo dominante. Qual a melhor confirmação diagnóstico-terapêutica inicial típica? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "diagnosticar doença de Graves e discutir antitireoidianos, iodo radioativo ou cirurgia conforme gravidade, oftalmopatia e preferência, com",
+    "wrongs": [
+      "iniciar levotiroxina plena para 'normalizar o TSH baixo', agravando a tireotoxicose já documentada por T4L elevado e TRAb",
+      "indicar apenas observação sem tratamento porque o TSH baixo 'pode ser laboratorial', ignorando clínica e TRAb compatíveis com Graves",
+      "prescrever amiodarona como primeira linha antitireoidiana, fármaco inadequado e potencialmente indutor de disfunção tireoidiana adicional segundo a",
+      "realizar tireoidectomia total urgente em todo caso de TRAb positivo sem avaliar gravidade, oftalmopatia nem opções clínicas disponíveis conforme o protocolo"
+    ],
+    "explain": "Graves: TSH baixo, T4L alto, TRAb±oftalmopatia. Tratamento: antitireoidianos, RAI ou cirurgia + betabloqueador. Levotiroxina piora tireotoxicose.",
+    "trap": "Tratar Graves com levotiroxina por 'TSH baixo'."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 7,
+    "group": "Endocrinologia",
+    "theme": "Tireoidite de Hashimoto — hipotireoidismo",
+    "stem": "Mulher de 42 anos com fadiga, pele seca e ganho de peso. TSH 18 mUI/L, T4L baixo, anti-TPO fortemente positivo, bócio difuso firme. Sem gravidez. Qual a conduta mais apropriada? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "iniciar levotiroxina com dose adequada ao peso e comorbidades, reavaliar TSH em 6–8 semanas e orientar adesão e sinais de excesso ou falta de",
+    "wrongs": [
+      "prescrever antitireoidianos tionamidas para 'controlar o anti-TPO', conduta inadequada no hipotireoidismo autoimune sem neste cenário clínico",
+      "indicar iodo radioativo ablativo como tratamento inicial do Hashimoto hipotireóideo, sem indicação e potencialmente lesivo neste",
+      "usar apenas iodo suplementar em altas doses sem levotiroxina, postergando a reposição hormonal necessária no hipotireoidismo manifesto com",
+      "aguardar normalização espontânea por dois anos sem reposição, apesar de TSH elevado e T4L baixo com sintomas compatíveis evidentes de modo criterioso agora"
+    ],
+    "explain": "Hashimoto com hipotireoidismo manifesto: levotiroxina e monitoramento de TSH. Anti-TPO confirma autoimunidade; tionamidas/RAI não tratam hipotireoidismo.",
+    "trap": "Usar antitireoidianos no hipotireoidismo de Hashimoto."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 8,
+    "group": "Endocrinologia",
+    "theme": "Nódulo tireoidiano — avaliação",
+    "stem": "Homem de 48 anos com nódulo tireoidiano de 2,2 cm, sólido, hipoecoico, margens irregulares, microcalcificações. TSH normal. Sem linfadenopatia. Qual o próximo passo mais adequado? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "realizar punção aspirativa por agulha fina guiada por ultrassom conforme estratificação de risco ecográfico e tamanho, mantendo TSH como contexto",
+    "wrongs": [
+      "indicar tireoidectomia total imediata sem PAAF, baseando-se apenas no tamanho, sem citologia que oriente extensão e neste cenário clínico",
+      "prescrever levotiroxina supressiva empírica em TSH normal para 'dissolver o nódulo', conduta obsoleta e com risco neste cenário clínico evitando conduta incompleta",
+      "solicitar apenas cintilografia como único exame, adiando ultrassom/PAAF em nódulo suspeito com TSH normal na avaliação inicial de forma individualizada",
+      "observar por cinco anos sem imagem nem citologia, apesar de características ecográficas de alto risco e tamanho acima do limiar de PAAF priorizando segurança"
+    ],
+    "explain": "Nódulo suspeito: PAAF guiada por US segundo risco e tamanho; TSH normal afasta necessidade prioritária de cintilografia. Cirurgia sem citologia é prematura.",
+    "trap": "Indicar tireoidectomia sem PAAF em nódulo ainda não citado."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 9,
+    "group": "Endocrinologia",
+    "theme": "Crise tireotóxica",
+    "stem": "Mulher de 29 anos com Graves conhecida, após infecção: febre 39,2°C, FC 148 bpm, agitação, vômitos e FA de alta resposta. T4L muito elevado. PA 150/70 mmHg. Conduta prioritária na emergência? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "suporte, betabloqueador, tionamida, depois iodo inorgânico após tionamida, glicocorticoide e tratar o fator precipitante, em ambiente",
+    "wrongs": [
+      "aplicar iodo radioativo imediato na crise como primeira medida, sem estabilização clínica nem sequenciamento farmacológico",
+      "iniciar apenas paracetamol e observação, adiando bloqueio adrenérgico e antitireoidianos apesar de taquicardia e disfunção",
+      "oferecer levotiroxina IV para 'repor hormônio consumido', agravando a tireotoxicose extrema já presente na crise tireotóxica no fluxo deste serviço",
+      "realizar tireoidectomia de urgência antes de qualquer estabilização clínica, elevando mortalidade perioperatória na tempestade tireotóxica"
+    ],
+    "explain": "Crise tireotóxica: ABC, betabloqueador, tionamida antes do iodo, corticoide e tratar precipitante. RAI/cirurgia não são primeiras medidas na tempestade.",
+    "trap": "Dar iodo antes da tionamida ou operar na crise não estabilizada."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 10,
+    "group": "Endocrinologia",
+    "theme": "Coma mixedematoso",
+    "stem": "Idosa de 78 anos com hipotireoidismo irregularmente tratado: hipotermia 34,5°C, bradipsiquismo, hipoventilação, hiponatremia e TSH muito elevado com T4L indetectável. PA 90/60 mmHg. Conduta prioritária? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "suporte ventilatório e térmico, levotiroxina intravenosa, glicocorticoide empírico até excluir insuficiência adrenal associada e tratar",
+    "wrongs": [
+      "aquecer agressivamente com banho quente externo isolado e liberar sem hormônio, postergando a reposição tireoidiana neste cenário clínico",
+      "iniciar apenas antitireoidiano oral porque o TSH está 'alto demais', interpretando erroneamente o laboratório do hipotireoidismo",
+      "infundir solução hipertônica de rotina em toda hiponatremia do mixedema antes do suporte e da reposição hormonal, sem individualizar risco neste",
+      "indicar iodo radioativo urgente para ablacionar a tireoide, conduta oposta ao necessário no coma mixedematoso por déficit hormonal no contexto do adulto"
+    ],
+    "explain": "Mixedema: suporte, T4 IV, corticoide empírico (possível insuficiência adrenal) e tratar precipitante. Não usar antitireoidiano nem RAI.",
+    "trap": "Tratar mixedema com antitireoidiano por TSH elevado."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 11,
+    "group": "Endocrinologia",
+    "theme": "Síndrome de Cushing — investigação",
+    "stem": "Mulher de 41 anos com obesidade centrípeta, estrias largas violáceas, hipertensão de difícil controle e hipocalemia. Não usa corticoide exógeno. Qual a melhor estratégia diagnóstica inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "confirmar hipercortisolismo com testes de rastreio (cortisol urinário/salivar noturno ou supressão com dexametasona 1 mg) e depois investigar",
+    "wrongs": [
+      "solicitar imediatamente adrenalectomia bilateral sem confirmar hipercortisolismo nem diferenciar ACTH-dependente de neste cenário clínico",
+      "iniciar cetoconazol empírico prolongado sem documentação bioquímica de Cushing, expondo a toxicidade sem diagnóstico estabelecido",
+      "dosar apenas TSH como único exame de rastreio do Cushing, exame que não confirma nem exclui hipercortisolismo endógeno neste contexto visando o melhor",
+      "prescrever prednisona adicional para 'teste terapêutico', agravando hipercortisolismo e confundindo a investigação laboratorial necessária segundo a gravidade"
+    ],
+    "explain": "Cushing: primeiro confirmar hipercortisolismo com testes validados; depois ACTH e imagem para fonte. Cirurgia/fármacos empíricos sem confirmação são inadequados.",
+    "trap": "Operar adrenal sem confirmar hipercortisolismo bioquímico."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 12,
+    "group": "Endocrinologia",
+    "theme": "Insuficiência adrenal — crise addisoniana",
+    "stem": "Homem de 45 anos com fadiga crônica, hiperpigmentação e hipotensão. Após gastroenterite: PA 78/40 mmHg, Na 124, K 5,8, glicemia 62 mg/dL. Suspeita de crise adrenal. Conduta imediata? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "infundir cristalóide, administrar hidrocortisona intravenosa em dose de estresse sem atrasar por ACTH/cortisol se a suspeita for alta, e",
+    "wrongs": [
+      "aguardar resultado definitivo de ACTH e cortisol basal antes de qualquer corticoide, mantendo choque potencialmente fatal",
+      "iniciar apenas fludrocortisona oral isolada sem glicocorticoide IV nem volume, insuficiente na crise aguda com hipotensão grave",
+      "usar spironolactona para 'bloquear o potássio alto', piorando a hipovolemia e adiando a reposição corticosteroide essencial com reavaliação documentada",
+      "aplicar insulina IV para corrigir o potássio sem corticoide nem volume, conduta perigosa e não causal na crise adrenal primária com monitorização seriada"
+    ],
+    "explain": "Crise adrenal: volume + hidrocortisona IV imediata; não atrasar por exames. Mineralocorticoide isolado não trata a crise aguda.",
+    "trap": "Esperar cortisol/ACTH para iniciar corticoide na crise adrenal."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 13,
+    "group": "Endocrinologia",
+    "theme": "Feocromocitoma — suspeita clínica",
+    "stem": "Homem de 38 anos com crises de cefaleia, sudorese, palpitações e picos hipertensivos. TC mostra massa adrenal de 4 cm. Qual a sequência diagnóstica e pré-operatória correta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "dosar metanefrinas plasmáticas ou urinárias, confirmar feocromocitoma, iniciar bloqueio alfa antes de betabloqueador e planejar cirurgia após",
+    "wrongs": [
+      "indicar adrenalectomia imediata sem dosagem de metanefrinas nem bloqueio alfa, risco de crise hipertensiva intraoperatória",
+      "iniciar betabloqueador isolado antes de qualquer bloqueio alfa, podendo precipitar hipertensão paradoxal por vasoconstrição alfa",
+      "tratar apenas com IECA crônico e observar o tumor, adiando diagnóstico bioquímico e o preparo específico do feocromocitoma operável na decisão imediata",
+      "realizar biópsia percutânea de rotina de toda massa adrenal suspeita de feocromo, procedimento de alto risco de liberação catecolaminérgica de forma"
+    ],
+    "explain": "Feocromo: bioquímica (metanefrinas) → bloqueio alfa → depois beta se necessário → cirurgia. Biópsia e beta isolado são perigosos.",
+    "trap": "Operar ou betabloquear sem bloqueio alfa prévio no feocromocitoma."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 14,
+    "group": "Endocrinologia",
+    "theme": "Adenoma hipofisário — macroadenoma",
+    "stem": "Mulher de 32 anos com amenorreia, galactorreia e hemianopsia bitemporal. Prolactina 280 ng/mL, RM com macroadenoma selar de 1,8 cm comprimindo quiasma. Teste de gravidez negativo. Melhor conduta inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "iniciar agonista dopaminérgico (cabergolina/bromocriptina) com acompanhamento visual e de prolactina, reservando cirurgia se refratário ou",
+    "wrongs": [
+      "indicar radioterapia estereotáxica imediata como primeira linha em todo prolactinoma, sem tentativa de agonista neste cenário clínico",
+      "prescrever estrogênio isolado em alta dose sem agonista, mascarando sintomas sem reduzir o tumor nem proteger o campo visual",
+      "realizar hipofisectomia total urgente em todo macroadenoma com prolactina elevada, sem testar resposta clínica ao agonista dopaminérgico sem atraso",
+      "usar apenas levotiroxina empírica para 'reduzir a prolactina', sem evidência de hipotireoidismo e sem tratar o prolactinoma documentado no fluxo deste serviço"
+    ],
+    "explain": "Prolactinoma (mesmo macro): agonista dopaminérgico é primeira linha; cirurgia se falha/intolerância ou compressão progressiva. Radioterapia não é inicial.",
+    "trap": "Operar prolactinoma antes de agonista dopaminérgico adequado."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 15,
+    "group": "Endocrinologia",
+    "theme": "Acromegalia — diagnóstico",
+    "stem": "Homem de 49 anos com aumento de mãos/pés, prognatismo, sudorese e apneia do sono. IGF-1 elevado para idade. Qual o próximo passo diagnóstico mais adequado? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "realizar teste de tolerância à glicose oral com dosagens de GH para confirmar falta de supressão e, se confirmado, solicitar RM de sela turca",
+    "wrongs": [
+      "iniciar octreotide empírico prolongado sem confirmar acromegalia bioquímica nem imagem, expondo a custo e efeitos sem neste cenário clínico",
+      "indicar craniotomia exploradora imediata baseada só no aspecto facial, sem IGF-1/GH dinâmico nem RM que localizem o adenoma com",
+      "dosar apenas TSH como único exame confirmatório da acromegalia, insuficiente para o eixo GH/IGF-1 e o diagnóstico diferencial com vigilância de resposta",
+      "prescrever hormônio de crescimento exógeno para 'teste de resposta', conduta absurda e potencialmente agravante no excesso de GH neste atendimento atual"
+    ],
+    "explain": "Suspeita: IGF-1; confirmação com TOTG-GH; depois RM. Tratamento medicamentoso/cirúrgico vem após confirmação. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Tratar empiricamente com análogo de somatostatina sem confirmar acromegalia."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 16,
+    "group": "Endocrinologia",
+    "theme": "Diabetes insipidus — diagnóstico",
+    "stem": "Homem de 27 anos pós-cirurgia hipofisária com poliúria 8 L/dia, sede intensa, Na 152 mEq/L e osmolaridade urinária baixa. Suspeita de diabetes insipidus central. Conduta diagnóstica/terapêutica inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "repor água livre, confirmar DI (clínica/osmolaridades; teste de restrição se seguro) e tratar DI central com desmopressina titulada sob",
+    "wrongs": [
+      "restringir água rigorosamente por dias sem reposição nem desmopressina, agravando hipernatremia e risco neurológico no DI",
+      "infundir solução salina hipertônica contínua para 'corrigir a poliúria', piorando hipernatremia e a carga osmótica no diabetes",
+      "iniciar tiazídico em dose alta como primeira linha do DI central pós-cirúrgico, preferindo-se desmopressina neste contexto típico diante dos achados",
+      "usar apenas insulina para reduzir o volume urinário, confundindo DI com diurese osmótica glicêmica sem evidência de hiperglicemia dominante visando o melhor"
+    ],
+    "explain": "DI central pós-hipofisectomia: água livre + desmopressina; confirmar com osmolaridades. Restrição hídrica agressiva é perigosa se hipernatremia.",
+    "trap": "Restringir água sem desmopressina na DI central com hipernatremia."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 17,
+    "group": "Endocrinologia",
+    "theme": "Hiperparatireoidismo primário",
+    "stem": "Mulher de 58 anos com calculose renal recorrente, Ca sérico 11,4 mg/dL, PTH elevado, fósforo baixo-normal, TFGe 78 mL/min, densitometria com T-score −2,7 em rádio distal. Próximo passo? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "confirmar hiperparatireoidismo primário e avaliar indicação cirúrgica (idade, cálcio, DMO, litíase/TFG), localizando glândula com imagem",
+    "wrongs": [
+      "iniciar apenas carbonato de cálcio em alta dose e vitamina D sem investigação, agravando hipercalcemia no neste cenário clínico",
+      "prescrever bifosfonato isolado como cura definitiva do hiperparatireoidismo primário sintomático, sem avaliar cirurgia quando",
+      "indicar paratireoidectomia total de quatro glândulas de rotina sem localização nem confirmação bioquímica completa do quadro preservando estabilidade",
+      "usar furosemida crônica ambulatorial isolada como tratamento definitivo, sem hidratação contextual nem plano etiológico do PTH elevado com reavaliação"
+    ],
+    "explain": "HPTP: Ca alto + PTH inapropriadamente alto; cirurgia se critérios (litíase, DMO, idade, Ca). Localização pré-op; cálcio extra é prejudicial.",
+    "trap": "Suplementar cálcio no hiperparatireoidismo primário hipercalcêmico."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 18,
+    "group": "Endocrinologia",
+    "theme": "Hipocalcemia — pós-tireoidectomia",
+    "stem": "Mulher de 36 anos no 1º dia após tireoidectomia total: parestesias periorais, sinal de Chvostek, Ca 6,8 mg/dL, PTH baixo. SpO2 98%, sem estridor. Conduta imediata? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "repor cálcio intravenoso se sintomática/grave, associar calcitriol conforme protocolo e monitorizar cálcio, magnésio e sinais de laríngeos",
+    "wrongs": [
+      "administrar apenas solução fisiológica sem cálcio, adiando a correção da hipocalcemia sintomática pós-cirúrgica com risco",
+      "iniciar bifosfonato IV para 'estabilizar o osso', piorando hipocalcemia por reduzir a reabsorção óssea necessária neste momento",
+      "indicar reexploração cirúrgica imediata de rotina em toda parestesia leve, sem tentativa de reposição clínica de cálcio e vitamina D ativa alinhado às",
+      "prescrever diurético de alça para elevar o cálcio sérico, conduta que tende a aumentar calciúria e piorar a hipocalcemia na decisão imediata correta"
+    ],
+    "explain": "Hipoparatireoidismo pós-op: Ca IV se grave/sintomático + calcitriol; vigiar via aérea. Bifosfonato e furosemida pioram. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Usar bifosfonato na hipocalcemia aguda pós-tireoidectomia."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 19,
+    "group": "Endocrinologia",
+    "theme": "Osteoporose — indicação de tratamento",
+    "stem": "Mulher de 67 anos, menopausa há 18 anos, T-score −2,8 em colo femoral, sem fratura prévia, Ca e PTH normais, 25-OH-vitamina D 18 ng/mL. Melhor plano inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "corrigir vitamina D e cálcio dietético/suplementar se preciso, iniciar antiabsorção (ex.: bifosfonato) quando apropriado e orientar prevenção",
+    "wrongs": [
+      "prescrever apenas estrogênio isolado em alta dose sem avaliar risco cardiovascular/trombótico nem antiabsorção óssea neste cenário clínico",
+      "indicar paralise forçada prolongada no leito para 'proteger o fêmur', elevando perda óssea e risco tromboembólico sem benefício",
+      "usar corticoterapia contínua para 'reduzir inflamação óssea', conduta que agrava osteoporose e risco de fratura neste perfil neste cenário neste atendimento atual",
+      "adiar qualquer tratamento por uma década porque ainda não houve fratura, ignorando T-score de osteoporose e vitamina D insuficiente sem atraso injustificado"
+    ],
+    "explain": "Osteoporose: corrigir déficits (vit D/Ca), antiabsorção quando indicada, prevenção de quedas. Não usar corticoide; TH não é primeira linha isolada.",
+    "trap": "Adiar tratamento da osteoporose só porque ainda não fraturou."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 20,
+    "group": "Endocrinologia",
+    "theme": "Obesidade — avaliação e conduta",
+    "stem": "Homem de 41 anos, IMC 38 kg/m², esteatose, PA 148/92 mmHg, glicemia jejum 118 mg/dL. Sem contraindicações a exercício. Qual a abordagem inicial mais adequada? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "programa intensivo de estilo de vida (dieta, atividade, sono), rastrear e tratar comorbidades e considerar farmacoterapia antiobesidade se",
+    "wrongs": [
+      "indicar bypass gástrico imediato sem tentativa estruturada de mudança de estilo de vida nem avaliação multidisciplinar neste cenário clínico",
+      "prescrever anfetamina manipulada sem acompanhamento, com risco cardiovascular e sem base em protocolo seguro de obesidade do adulto",
+      "recomendar jejum absoluto prolongado hospitalar como única medida, risco de déficit nutricional e efeito rebote sem plano sustentável com registro no",
+      "iniciar insulina basal empírica para 'emagrecer', fármaco tipicamente associado a ganho ponderal e sem indicação isolada neste pré-diabetes"
+    ],
+    "explain": "Obesidade: estilo de vida estruturado + tratar comorbidades; fármacos se critérios; cirurgia após avaliação e falhas, não de primeira sem critérios.",
+    "trap": "Indicar cirurgia bariátrica sem programa clínico multidisciplinar prévio."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 21,
+    "group": "Endocrinologia",
+    "theme": "DM2 — iSGLT2 e doença cardiovascular",
+    "stem": "Homem de 62 anos com DM2, IC com FE 35%, TFGe 58 mL/min, HbA1c 7,4% em metformina. Sem cetoacidose prévia. Qual ajuste terapêutico tem maior benefício cardiorrenal adicional? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "adicionar inibidor de SGLT2 com benefício em IC/DRC conforme TFGe, mantendo metformina se tolerada e monitorando volume, geniturinário e",
+    "wrongs": [
+      "substituir tudo por sulfonilureia em dose máxima, elevando hipoglicemia sem o benefício cardiorrenal preferencial dos neste cenário clínico",
+      "suspender metformina e iniciar apenas insulina regular pré-prandial isolada, sem abordar a IC e a proteção renal prioritárias no",
+      "iniciar pioglitazona em IC sintomática com FE reduzida, risco de retenção hídrica e piora da insuficiência cardíaca congestiva conforme o protocolo",
+      "usar apenas acarbose como intensificação exclusiva, efeito glicêmico modesto sem o ganho cardiorrenal desejado na IC com FE reduzida diante dos achados atuais"
+    ],
+    "explain": "Em DM2 com IC/DRC, iSGLT2 tem benefício comprovado além da glicemia. Evitar tiazolidinediona na IC; sulfonilureia não oferece igual proteção.",
+    "trap": "Usar pioglitazona em paciente com IC e FE reduzida."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 22,
+    "group": "Endocrinologia",
+    "theme": "DM2 — GLP-1 e obesidade",
+    "stem": "Mulher de 55 anos com DM2, IMC 34, HbA1c 8,1% em metformina, sem contraindicação a incretinas, história familiar de tireoide medular negativa. Deseja perda ponderal. Melhor intensificação? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "considerar agonista de GLP-1 com efeito em peso e glicemia, educar sobre náuseas e raros riscos, mantendo metformina e reavaliando metas",
+    "wrongs": [
+      "iniciar apenas NPH noturna sem discutir GLP-1, aceitando maior ganho de peso quando há opção com benefício ponderal neste",
+      "prescrever corticoides anabolizantes para 'acelerar metabolismo', conduta sem indicação e com efeitos adversos graves metabólicos",
+      "usar glibenclamida em dose crescente como única intensificação, com hipoglicemia e ganho ponderal sem o benefício de peso do GLP-1 de modo criterioso",
+      "indicar tireoidectomia profilática antes de qualquer GLP-1 em todo adulto, sem história pessoal/familiar relevante de carcinoma medular preservando estabilidade"
+    ],
+    "explain": "GLP-1 é opção forte em DM2 com obesidade para glicemia e peso. Insulina/sulfonilureia tendem a ganho ponderal; tireoidectomia profilática não é rotina.",
+    "trap": "Preferir só insulina/sulfonilureia quando GLP-1 seria vantajoso no peso."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 23,
+    "group": "Endocrinologia",
+    "theme": "Hipoglicemia factícia vs insulinoma",
+    "stem": "Mulher de 30 anos com episódios de hipoglicemia em jejum, insulina elevada, peptídeo C elevado e triagem negativa para sulfonilureia. TC abdominal sugere nódulo pancreático. Interpretação e conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "quadro compatível com insulinoma; localizar e planejar ressecção após confirmação, evitando reposição calórica isolada como tratamento",
+    "wrongs": [
+      "diagnosticar hipoglicemia factícia por insulina exógena, apesar de peptídeo C elevado, que favorece secreção endógena e não",
+      "tratar apenas com metformina crônica como cura do insulinoma, sem abordagem localizatória e cirúrgica quando indicada no tumor",
+      "iniciar quimioterapia sistêmica de rotina antes de qualquer tentativa de localização e ressecção de insulinoma presumido ressecável priorizando",
+      "liberar sem investigação porque a glicemia 'já normalizou após o lanche', ignorando o risco de recorrência de hipoglicemia grave alinhado às diretrizes"
+    ],
+    "explain": "Insulina↑ + peptídeo C↑ + sulfonilureia− → secreção endógena (insulinoma). Factícia por insulina exógena tem peptídeo C baixo.",
+    "trap": "Rotular como factícia quando o peptídeo C está elevado."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 24,
+    "group": "Endocrinologia",
+    "theme": "Tireotoxicose factícia vs Graves",
+    "stem": "Mulher de 26 anos com taquicardia e perda de peso. TSH suprimido, T4L alto, TRAb negativo, captação de iodo muito baixa, sem dor tireoidiana. Nega uso de amiodarona. Hipótese mais provável? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "considerar tireotoxicose factícia ou excesso de hormônio exógeno; investigar uso de levotiroxina e evitar antitireoidianos desnecessários se",
+    "wrongs": [
+      "tratar como Graves clássico com iodo radioativo imediato, apesar de TRAb negativo e captação baixa incompatíveis com neste cenário clínico",
+      "iniciar tionamidas em dose máxima sem revisar captação/TRAb, potencialmente inadequado se a fonte for hormônio exógeno com síntese",
+      "indicar tireoidectomia total urgente baseada só no T4L alto, sem diferenciar causas de tireotoxicose com baixa captação evitando conduta incompleta",
+      "prescrever amiodarona para controlar a frequência, podendo agravar disfunção tireoidiana e confundir a investigação etiológica neste cenário neste atendimento atual"
+    ],
+    "explain": "T4↑ TSH↓ com captação baixa e TRAb−: factícia/exógeno, tireoidite ou excesso de iodo — não Graves típico. Tionamida/RAI não são primeira linha.",
+    "trap": "Tratar tireotoxicose factícia como Graves com RAI/tionamida."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 25,
+    "group": "Endocrinologia",
+    "theme": "Nódulo hiperfuncionante — bócio tóxico",
+    "stem": "Homem de 60 anos com nódulo único de 3 cm, TSH suprimido, T4L limítrofe-alto. Cintilografia: nódulo quente com supressão do restante. Sem malignidade suspeita. Melhor conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "tratar hipertiroidismo do adenoma tóxico com iodo radioativo ou cirurgia conforme idade/tamanho/preferência, evitando PAAF rotineira de",
+    "wrongs": [
+      "realizar PAAF de rotina em todo nódulo quente com TSH baixo, citologia pouco útil e potencialmente desnecessária neste neste cenário clínico",
+      "iniciar levotiroxina para 'equilibrar' o TSH baixo, agravando a autonomia funcional do adenoma tóxico já documentado neste",
+      "observar indefinidamente sem tratamento apesar de TSH suprimido e nódulo quente, aceitando risco cardiovascular da tireotoxicose no idoso no contexto",
+      "usar apenas iodo inorgânico crônico isolado como terapia definitiva, sem definir RAI ou cirurgia quando indicados no adenoma tóxico com registro no prontuário"
+    ],
+    "explain": "Adenoma tóxico: tratar com RAI ou cirurgia; PAAF de nódulo quente costuma ser desnecessária. Não dar T4. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Puncionar nódulo quente de rotina ou dar levotiroxina no adenoma tóxico."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 26,
+    "group": "Endocrinologia",
+    "theme": "Hipotireoidismo subclínico",
+    "stem": "Mulher de 50 anos assintomática, TSH 8,5 mUI/L, T4L normal, anti-TPO positivo, sem gravidez nem doença coronariana grave. Duas dosagens confirmam. Conduta mais razoável? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "considerar levotiroxina especialmente com anti-TPO positivo e TSH persistentemente elevado, individualizando meta e reavaliando sintomas e TSH",
+    "wrongs": [
+      "indicar tireoidectomia preventiva imediata por anti-TPO positivo, sem indicação cirúrgica no hipotireoidismo subclínico neste cenário clínico",
+      "prescrever antitireoidiano porque o TSH está elevado, invertendo a lógica terapêutica e podendo induzir hipotireoidismo mais grave",
+      "iniciar amiodarona empírica para modular a tireoide, fármaco inadequado e com risco de disfunção tireoidiana adicional segundo a gravidade atual",
+      "ignorar completamente e nunca repetir TSH, apesar de anti-TPO positivo e risco de progressão para hipotireoidismo manifesto conforme o protocolo local"
+    ],
+    "explain": "Subclínico com TSH>10 ou 7–10 com anti-TPO+/sintomas: considerar T4. Tionamida é erro. Cirurgia não trata subclínico. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Usar antitireoidiano no hipotireoidismo subclínico."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 27,
+    "group": "Endocrinologia",
+    "theme": "Crise adrenal — diferença primária vs secundária",
+    "stem": "Paciente com macroadenoma hipofisário operado há 2 dias: hipotensão, náuseas, Na 130, K normal, glicemia baixa. Hiperpigmentação ausente. Suspeita de insuficiência adrenal secundária. Conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "administrar glicocorticoide de estresse IV e volume, lembrar que mineralocorticoide costuma ser desnecessário na secundária, e investigar",
+    "wrongs": [
+      "tratar apenas com fludrocortisona em dose alta sem glicocorticoide, insuficiente para o déficit de ACTH/cortisol na neste cenário clínico",
+      "restringir fluidos e aguardar dosagens longas antes de corticoide, mantendo risco de choque na insuficiência adrenal perioperatória",
+      "iniciar desmopressina isolada como tratamento da hipotensão, confundindo com DI e não cobrindo o déficit corticosteroide agudo com monitorização seriada",
+      "aplicar insulina para a hiponatremia, conduta inadequada e potencialmente hipoglicemiante neste cenário de insuficiência adrenal de modo criterioso agora"
+    ],
+    "explain": "Secundária: falta ACTH/cortisol; aldosterona preservada (K normal). Tratar com glicocorticoide IV; fludrocortisona isolada não basta.",
+    "trap": "Tratar insuficiência adrenal secundária só com mineralocorticoide."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 28,
+    "group": "Endocrinologia",
+    "theme": "Feocromocitoma — crise hipertensiva",
+    "stem": "Paciente com feocromocitoma conhecido, no pré-operatório ainda sem bloqueio adequado, apresenta PA 230/130 mmHg, cefaleia intensa e sudorese. Qual o manejo agudo preferencial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "usar vasodilatador/bloqueador alfa intravenoso apropriado (ex.: nitroprussiato/fentolamina conforme disponibilidade), evitar beta isolado e",
+    "wrongs": [
+      "aplicar betabloqueador intravenoso isolado como primeira droga, risco de hipertensão paradoxal por bloqueio beta sem neste cenário clínico",
+      "indicar adrenalectomia imediata na mesa sem qualquer controle pressórico, com mortalidade elevada por liberação catecolaminérgica",
+      "usar apenas opioide em alta dose como anti-hipertensivo único, sem ação específica suficiente na crise catecolaminérgica documentada de forma",
+      "infundir volume mínimo e diurético de alça agressivo isolado, podendo piorar a instabilidade sem vasodilatação alfa dirigida priorizando segurança clínica"
+    ],
+    "explain": "Crise de feocromo: vasodilatação/alfa IV; nunca beta isolado. Cirurgia só após bloqueio e estabilização. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Betabloquear isoladamente na crise hipertensiva do feocromocitoma."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 29,
+    "group": "Endocrinologia",
+    "theme": "Hiperprolactinemia — causas",
+    "stem": "Mulher de 29 anos com galactorreia e ciclos irregulares. Prolactina 65 ng/mL. Usa metoclopramida crônica. RM sela normal. Qual a conduta mais adequada? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "suspender ou trocar o fármaco hiperprolactinemiante se possível, repetir prolactina e tratar a causa; evitar agonista dopaminérgico",
+    "wrongs": [
+      "indicar transesfenoidal imediata por qualquer prolactina acima do normal, apesar de RM normal e uso claro de droga indutora",
+      "iniciar cabergolina em dose máxima sem revisar medicamentos, podendo ser desnecessário se a causa for metoclopramida e a RM for",
+      "prescrever estrogênio-progestagênio apenas e manter metoclopramida, sem abordar a causa da hiperprolactinemia medicamentosa no fluxo deste serviço",
+      "solicitar petrosal sampling de rotina neste nível modesto de prolactina com RM normal, exame invasivo não indicado neste contexto evitando conduta incompleta"
+    ],
+    "explain": "Prolactina moderada + droga (metoclopramida) + RM normal: causa medicamentosa. Suspender/trocar e reavaliar antes de agonista/cirurgia.",
+    "trap": "Operar ou medicar prolactinoma sem revisar fármacos indutores."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 30,
+    "group": "Endocrinologia",
+    "theme": "Hipopituitarismo — reposição",
+    "stem": "Homem de 52 anos após apoplexia hipofisária: cortisol baixo, TSH baixo com T4L baixo, testosterona baixa, Na 132. Estável. Ordem correta de reposição hormonal? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "repor glicocorticoide antes ou junto da levotiroxina, depois considerar gonadotróficos/testosterona conforme estabilidade, evitando T4",
+    "wrongs": [
+      "iniciar levotiroxina plena antes de qualquer glicocorticoide, risco de precipitar crise adrenal em hipopituitarismo com neste cenário clínico",
+      "repor apenas testosterona intramuscular e observar eixos adrenal/tireoidiano, deixando déficits potencialmente fatais sem cobertura",
+      "usar desmopressina de rotina em todo hipopituitarismo sem evidência de DI, podendo causar hiponatremia iatrogênica desnecessária neste atendimento atual",
+      "indicar radioterapia hipofisária imediata como reposição hormonal, medida que não substitui corticosteroide/T4 e pode piorar hipopituitarismo no contexto do"
+    ],
+    "explain": "Hipopituitarismo: sempre corticoide antes/junto de T4. Sex hormones depois. Desmopressina só se DI. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Dar levotiroxina antes do corticoide no hipopituitarismo."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 31,
+    "group": "Endocrinologia",
+    "theme": "Hipercalcemia grave — manejo",
+    "stem": "Idoso de 70 anos com confusão, Ca 14,2 mg/dL, PA 100/60 mmHg, creatinina 1,8 mg/dL, ECG com encurtamento de QT. Suspeita de hipercalcemia malignidade vs HPTP. Conduta inicial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "hidratação vigorosa com SF, bifosfonato IV após volume (ou denosumabe se indicado), tratar causa e evitar diurético de alça rotineiro precoce",
+    "wrongs": [
+      "iniciar furosemida imediata sem volume prévio, piorando a pré-renal e a hipercalcemia por contração volêmica no paciente",
+      "aplicar cálcio IV adicional para 'competir com o íon', agravando a hipercalcemia sintomática já grave e o risco arritmogênico",
+      "indicar hemodiálise de rotina antes de qualquer hidratação em todo Ca >12, sem tentar medidas clínicas iniciais quando há resposta esperada visando o",
+      "usar apenas restrição absoluta de fluidos e observação, conduta oposta à necessidade de expansão volêmica na hipercalcemia grave segundo a gravidade atual"
+    ],
+    "explain": "Hipercalcemia grave: SF primeiro; depois bifosfonato/denosumabe; dialise se refratária/IRA grave. Furosemida sem volume é erro clássico.",
+    "trap": "Dar furosemida antes de hidratar na hipercalcemia grave."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 32,
+    "group": "Endocrinologia",
+    "theme": "Hipoparatireoidismo crônico",
+    "stem": "Mulher de 40 anos com hipoparatireoidismo pós-cirúrgico crônico em cálcio e calcitriol, com Ca 7,9 mg/dL sintomático leve e fósforo alto. Ajuste mais apropriado? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "titular cálcio e calcitriol visando cálcio baixo-normal, controlar hiperfosfatemia e educar sobre sintomas de hipo/hipercalcemia e conforme o protocolo local",
+    "wrongs": [
+      "suspender calcitriol definitivamente e usar apenas cálcio esporádico, risco de hipocalcemia recorrente e sintomas neste cenário clínico",
+      "iniciar PTH intacto exógeno irregular sem protocolo, ou bifosfonato, medidas inadequadas como ajuste rotineiro ambulatorial simples",
+      "prescrever fosfato oral em alta dose para 'repor fósforo', agravando hiperfosfatemia típica do hipoparatireoidismo e o produto Ca×P com reavaliação",
+      "indicar reimplante experimental imediato sem otimizar terapia médica padrão de cálcio e vitamina D ativa já em curso com reavaliação priorizando segurança clínica"
+    ],
+    "explain": "Hipopara crônico: Ca + calcitriol; meta Ca baixo-normal; evitar fosfato extra. Educação e labs seriados. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Suplementar fosfato no hipoparatireoidismo com fósforo já alto."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 33,
+    "group": "Endocrinologia",
+    "theme": "Osteoporose — bifosfonato e cuidados",
+    "stem": "Mulher de 72 anos iniciará alendronato semanal. Creatinina normal, sem hipocalcemia, capaz de permanecer ereta. Qual orientação essencial de uso seguro? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "tomar em jejum com água, permanecer ereta 30–60 min, garantir Ca/vitamina D adequados e revisar adesão, contra-indicações esofágicas e",
+    "wrongs": [
+      "instruir a tomar o bifosfonato com leite e deitar imediatamente, reduzindo absorção e elevando risco de esofagite/ulceração",
+      "associar antiácido em todo horário da dose para 'proteger o estômago', interferindo na absorção do bifosfonato oral semanal",
+      "suspender cálcio e vitamina D porque o bifosfonato 'já basta', aumentando risco de hipocalcemia e resposta óssea inadequada na decisão imediata correta",
+      "recomendar mastigar o comprimido com alimentos gordurosos para melhor tolerância, conduta que prejudica a biodisponibilidade do fármaco de forma individualizada"
+    ],
+    "explain": "Alendronato: jejum, água, ereto; Ca/vit D; evitar antiácido no horário. Má técnica = falha e esofagite. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Tomar bifosfonato com leite/deitado ou junto de antiácido."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 34,
+    "group": "Endocrinologia",
+    "theme": "Obesidade — critérios bariátricos",
+    "stem": "Mulher de 38 anos, IMC 41 kg/m², DM2 e apneia, falhou em programa multidisciplinar documentado por >6 meses. Sem contraindicação psiquiátrica ativa. Conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "encaminhar para avaliação bariátrica multidisciplinar, otimizar comorbidades e discutir riscos/benefícios das técnicas, mantendo seguimento",
+    "wrongs": [
+      "negar qualquer cirurgia porque 'emagrecer é só força de vontade', ignorando critérios de IMC/comorbidade e a falha neste cenário clínico",
+      "indicar lipoaspiração isolada como tratamento metabólico do DM2 e da apneia, sem evidência de equivalência à cirurgia bariátrica",
+      "prescrever apenas diuréticos diários para reduzir peso na balança, sem perda de gordura relevante e com risco eletrolítico sem atraso injustificado",
+      "iniciar jejum hídrico hospitalar de duas semanas como substituto da cirurgia, estratégia insegura e sem sustentação a longo prazo no fluxo deste serviço"
+    ],
+    "explain": "IMC≥40 ou ≥35 com comorbidades + falha clínica: avaliar bariátrica em equipe. Lipoaspiração/diurético não substituem. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Recusar avaliação bariátrica por estigma apesar de critérios claros."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 35,
+    "group": "Endocrinologia",
+    "theme": "CAD vs HHNS — diferenciação",
+    "stem": "Paciente de 45 anos: glicemia 520 mg/dL, pH 7,08, HCO3 6, cetonas +++ , osmolaridade 310. Outro de 75 anos: glicemia 900, pH 7,32, cetonas traços, osmolaridade 335. Qual afirmação é correta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "o primeiro perfil é CAD (acidose/cetose) e o segundo HHNS (hiperosmolaridade dominante); ambos exigem volume, mas insulina e monitoramento",
+    "wrongs": [
+      "ambos devem receber bicarbonato de rotina antes de qualquer volume, conduta não suportada como rotina nem em CAD nem em neste cenário clínico",
+      "apenas o idoso com HHNS deve receber insulina SC domiciliar imediata e alta, sem protocolo hospitalar de reposição e queda osmótica",
+      "CAD nunca ocorre em adultos e HHNS nunca ocorre em DM1, generalização falsa que atrasa reconhecimento e tratamento adequado com vigilância de resposta",
+      "a osmolaridade elevada exclui CAD e a presença de qualquer cetona exclui HHNS, regras absolutas incorretas na prática clínica neste atendimento atual"
+    ],
+    "explain": "CAD: acidose e cetose; HHNS: hiperosmolaridade, cetose mínima. Volume em ambos; insulinização protocolar com nuances. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Tratar CAD e HHNS com o mesmo protocolo rígido de bicarbonato."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 36,
+    "group": "Endocrinologia",
+    "theme": "Tireoide na gestação — hipotireoidismo",
+    "stem": "Gestante de 8 semanas com hipotireoidismo prévio em levotiroxina, TSH 4,8 mUI/L (acima da meta gestacional do 1º trimestre). Assintomática. Conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "aumentar a dose de levotiroxina e monitorar TSH com metas trimestrais, evitando antitireoidianos e iodo radioativo absolutamente conforme o protocolo local",
+    "wrongs": [
+      "suspender levotiroxina na gestação porque 'o bebê produz hormônio', risco de hipotireoidismo materno-fetal e prejuízo neste cenário clínico",
+      "indicar iodo radioativo terapêutico no primeiro trimestre para 'resetar' a tireoide, teratogênico e formalmente contraindicado na",
+      "iniciar metimazol em dose alta apesar de TSH elevado, invertendo o tratamento e podendo causar hipotireoidismo adicional diante dos achados atuais",
+      "manter a mesma dose pré-gestacional sem reavaliar TSH, ignorando o aumento típico da necessidade de T4 na gestação precoce conforme o com reavaliação documentada"
+    ],
+    "explain": "Gestação aumenta necessidade de T4; ajustar dose e metas de TSH. RAI contraindicado; tionamida não trata hipo. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Suspender levotiroxina ou usar RAI na gestação."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 37,
+    "group": "Endocrinologia",
+    "theme": "Oftalmopatia de Graves",
+    "stem": "Homem de 40 anos com Graves controlado em metimazol, tabagista, com diplopia e edema periorbitário progressivo, sem ameaça à córnea. TSH normal. Melhor conduta adjuvante? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "cessar tabagismo, referenciar oftalmologia, considerar corticoterapia/outras terapias conforme gravidade e evitar RAI se oftalmopatia ativa",
+    "wrongs": [
+      "estimular tabagismo 'para vasodilatar a órbita', fator que agrava oftalmopatia de Graves e piora o prognóstico inflamatório",
+      "indicar iodo radioativo imediato em oftalmopatia ativa moderada-grave sem avaliação, risco de piora orbitária em predispostos de",
+      "prescrever levotiroxina em excesso para 'reduzir a pressão orbitária', podendo desequilibrar o eixo e não tratar a inflamação orbitária preservando",
+      "realizar enucleação profilática bilateral precoce em todo edema palpebral, conduta mutilante sem indicação neste estágio com reavaliação documentada"
+    ],
+    "explain": "Oftalmopatia: parar tabaco, oftalmo, imunossupressão se grave; RAI pode piorar doença ativa. Não 'tratar' com T4 excesso.",
+    "trap": "Indicar RAI na oftalmopatia de Graves ativa sem mitigação."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 38,
+    "group": "Endocrinologia",
+    "theme": "Síndrome de Cushing — ACTH independente",
+    "stem": "Mulher com hipercortisolismo confirmado, ACTH suprimido e nódulo adrenal de 3,5 cm compatível. Sem sinais de carcinoma óbvio. Conduta preferencial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "planejar adrenalectomia unilateral após avaliação anestésica, com cobertura glicocorticoide perioperatória pelo risco de insuficiência",
+    "wrongs": [
+      "iniciar radioterapia hipofisária como primeira linha, inadequada no Cushing ACTH-independente adrenal com ACTH já suprimido",
+      "observar o nódulo adrenal hiperfuncionante indefinidamente sem cirurgia, mantendo morbidade do hipercortisolismo endógeno",
+      "usar apenas espironolactona crônica como cura do adenoma cortisol-secretor, sintomática para HAS/hipoK mas não definitiva da causa alinhado às",
+      "realizar biópsias hepáticas de rotina antes de qualquer imagem adrenal adicional, sem utilidade prioritária neste cenário típico na decisão imediata correta"
+    ],
+    "explain": "Cushing adrenal ACTH-independente: cirurgia unilateral + corticoide perioperatório (eixo suprimido). Radioterapia hipofisária não cabe.",
+    "trap": "Tratar Cushing adrenal com radioterapia hipofisária."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 39,
+    "group": "Endocrinologia",
+    "theme": "Doença de Addison — manutenção",
+    "stem": "Homem de 40 anos com Addison confirmado em hidrocortisona e fludrocortisona, estável. Vai realizar extração dentária sob anestesia local com estresse moderado. Orientação correta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "orientar dose de estresse de glicocorticoide conforme procedimento, manter hidratação, educar sobre pulseira de alerta e sinais de crise",
+    "wrongs": [
+      "suspender todos os corticoides 48 h antes do procedimento para 'não interferir na cicatrização', risco elevado de crise neste cenário clínico",
+      "substituir hidrocortisona por AINE em alta dose no dia da extração, sem cobertura glicocorticoide equivalente ao estresse cirúrgico",
+      "duplicar indefinidamente a fludrocortisona isolada sem ajustar glicocorticoide, inadequado para cobrir o estresse agudo do procedimento neste cenário",
+      "indicar internação em UTI de rotina para toda extração dentária em Addison, sem individualizar risco quando há plano de dose de estresse sem atraso"
+    ],
+    "explain": "Addison: education + stress dose em procedimentos; nunca suspender abruptamente. Fludrocortisona não substitui glicocorticoide de estresse.",
+    "trap": "Suspender corticoide antes de procedimento no Addison."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 40,
+    "group": "Endocrinologia",
+    "theme": "Incidentaloma adrenal",
+    "stem": "Homem de 55 anos com TC por cólica nefretica: nódulo adrenal 1,8 cm, densidade baixa sugestiva de adenoma. PA controlada, sem hipocalemia. Próximo passo? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "excluir funcionalidade com rastreio (Cushing subclínico, aldosteronismo se HAS/hipoK, metanefrinas se clinicamente indicado) e seguir com",
+    "wrongs": [
+      "adrenalectomia imediata de todo incidentaloma <2 cm sem investigação hormonal, expondo a cirurgia desnecessária em lesão",
+      "ignorar completamente o achado sem qualquer rastreio hormonal, risco de deixar hipersecreção subclínica não diagnosticada no",
+      "iniciar quimioterapia oncológica empírica baseada só no nódulo, sem critérios de malignidade e sem biópsia/indicação clara com registro no prontuário",
+      "solicitar PAAF adrenal de rotina em todo nódulo <2 cm benigno na imagem, com baixa utilidade e risco se feocromo não excluído com vigilância de resposta"
+    ],
+    "explain": "Incidentaloma: rastrear função; imagem/seguimento; operar se funcionante, suspeito ou grande. PAAF não é rotina. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Operar todo incidentaloma pequeno sem avaliação hormonal."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 41,
+    "group": "Endocrinologia",
+    "theme": "SIADH vs hipovolemia — Na baixo",
+    "stem": "Paciente neurológico com Na 122 mEq/L, euvolemia clínica, osmolaridade plasmática baixa, urina inapropriadamente concentrada, ácido úrico baixo, função adrenal e tireoidiana normais. Conduta inicial típica? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "diagnosticar SIADH após excluir hipotireoidismo/insuficiência adrenal, restringir água e tratar causa, evitando SF isotônico como estratégia",
+    "wrongs": [
+      "infundir grandes volumes de SF 0,9% como tratamento clássico do SIADH euvolemia, podendo piorar a hiponatremia por retenção",
+      "iniciar desmopressina adicional para 'corrigir o sódio', agravando retenção hídrica no SIADH já com ADH inapropriada segundo a",
+      "restringir sal severamente e oferecer água livre ilimitada, conduta oposta à restrição hídrica indicada no SIADH conforme o protocolo local",
+      "aplicar insulina para elevar o sódio sérico, sem papel na correção da hiponatremia euvolêmica por SIADH diante dos achados atuais com monitorização seriada"
+    ],
+    "explain": "SIADH: euvolemia, osm plasma baixa, urina concentrada; excluir tireoide/adrenal; restrição hídrica + causa. SF costuma falhar/piorar.",
+    "trap": "Tratar SIADH euvolemia com SF isotônico em volume alto."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 42,
+    "group": "Endocrinologia",
+    "theme": "Diabetes insipidus nefrogênico",
+    "stem": "Homem de 55 anos em lítio há anos, poliúria e polidipsia, Na 148, osmolaridade urinária baixa que não sobe adequadamente após desmopressina. Diagnóstico e conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "DI nefrogênico por lítio: ajustar/suspender lítio se possível, garantir acesso à água, considerar tiazídico/amilorida e corrigir",
+    "wrongs": [
+      "tratar como DI central com desmopressina em dose crescente indefinida, pouco eficaz quando o túbulo não responde ao ADH no",
+      "restringir água de forma rigorosa prolongada sem alternativas, risco de hipernatremia grave no paciente com perda urinária",
+      "iniciar corticoterapia em dose imunossupressora como cura do DI nefrogênico por lítio, sem evidência como terapia específica de primeira linha",
+      "indicar nefrectomia bilateral precoce para controlar a poliúria, conduta extrema sem papel neste manejo clínico inicial preservando estabilidade"
+    ],
+    "explain": "Falta de resposta à desmopressina → nefrogênico (lítio). Água livre, revisar lítio, tiazídico/amilorida. Não insistir só em DDAVP.",
+    "trap": "Tratar DI nefrogênico apenas com desmopressina em doses altas."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 43,
+    "group": "Endocrinologia",
+    "theme": "Raquitismo/osteomalácia vs osteoporose",
+    "stem": "Mulher de 60 anos com dor óssea difusa, Ca baixo-normal, fósforo baixo, FA elevada, 25-OH-vitamina D muito baixa e PTH elevado secundário. Densitometria baixa. Melhor interpretação? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "quadro de osteomalácia por deficiência de vitamina D; repor vitamina D e cálcio, tratando a causa, antes de rotular apenas como osteoporose a",
+    "wrongs": [
+      "iniciar bifosfonato IV imediato sem corrigir vitamina D, risco de hipocalcemia grave e falha em tratar a osteomalácia neste cenário clínico",
+      "diagnosticar hiperparatireoidismo primário cirúrgico de imediato, apesar do padrão secundário a déficit de vitamina D com fósforo",
+      "prescrever apenas fosfato sem vitamina D, incompleto para a mineralização e a causa principal da osteomalácia carencial priorizando segurança clínica",
+      "indicar radioterapia óssea paliativa empírica para dor difusa, sem papel e com risco, quando a reposição de vitamina D é a prioridade alinhado às diretrizes"
+    ],
+    "explain": "Vit D baixa + PTH↑ secundário + FA↑ ± Ca/P baixos = osteomalácia; corrigir vit D antes de bifosfonato. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Dar bifosfonato na osteomalácia sem corrigir vitamina D."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 44,
+    "group": "Endocrinologia",
+    "theme": "Cetoacidose — potássio",
+    "stem": "Paciente com CAD: pH 7,05, glicemia 540, K sérico 3,2 mEq/L antes da insulina. Qual o manejo correto do potássio? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "repor potássio antes ou imediatamente ao iniciar insulina se K baixo, pois a insulina reduz ainda mais o K e há risco de arritmia; monitorar",
+    "wrongs": [
+      "iniciar insulina IV em dose plena sem repor K apesar de hipocalemia, precipitando queda adicional e arritmias neste cenário clínico",
+      "administrar kayexalato de rotina porque 'CAD sempre tem hipercalemia', inadequado com K já baixo e risco de piora da hipocalemia no",
+      "usar bicarbonato isolado para elevar o K sérico, sem base e com riscos metabólicos adicionais no manejo da CAD evitando conduta incompleta com",
+      "suspender qualquer monitorização de K após a primeira hora, apesar da dinâmica rápida de potássio sob insulina e volume neste cenário clínico neste atendimento"
+    ],
+    "explain": "K total corporal baixo na CAD; insulina piora hipoK. Se K<3,3, repor antes da insulina. Monitorar sempre. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Insulina IV com potássio já baixo sem reposição prévia."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 45,
+    "group": "Endocrinologia",
+    "theme": "Tireoidite subaguda",
+    "stem": "Mulher de 38 anos após infecção viral de vias aéreas superiores: dor tireoidiana, febre baixa, TSH baixo, T4L alto, VHS elevada, captação baixa. Sem oftalmopatia. Conduta inicial típica? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "analgesia/AINE, betabloqueador se sintomática e observação da fase; tionamidas geralmente não indicadas na fase tireotóxica por liberação",
+    "wrongs": [
+      "iniciar metimazol em dose ablativa como se fosse Graves, pouco útil na tireoidite com baixa síntese e risco de efeitos neste cenário clínico",
+      "indicar iodo radioativo imediato na fase aguda dolorosa, sem indicação típica da tireoidite subaguda autolimitada em fases neste",
+      "realizar tireoidectomia de urgência por dor cervical, conduta excessiva quando anti-inflamatório e suporte costumam bastar no contexto do adulto",
+      "prescrever levotiroxina plena na fase tireotóxica inicial, agravando sintomas de excesso hormonal transitório com registro no prontuário visando o melhor"
+    ],
+    "explain": "Subaguda: dor, VHS↑, captação baixa; tratar sintoma (AINE/BB). Tionamida/RAI não são primeira linha na liberação. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Tratar tireoidite subaguda com metimazol como Graves."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 46,
+    "group": "Endocrinologia",
+    "theme": "Hiperplasia adrenal congênita — adulto",
+    "stem": "Mulher de 22 anos com hirsutismo, acne e ciclos irregulares desde a adolescência. 17-OH-progesterona basal elevada, confirmada no estímulo com ACTH. Conduta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "diagnosticar HAC forma não clássica e discutir glicocorticoide quando indicado (fertilidade/hiperandrogenismo), além de neste cenário clínico",
+    "wrongs": [
+      "indicar adrenalectomia bilateral imediata em toda elevação de 17-OHP, excessiva na forma não clássica cujo manejo costuma",
+      "tratar apenas com metformina sem considerar HAC confirmada, podendo ser adjuvante em SOP mas não substitui o diagnóstico específico",
+      "usar iodo radioativo tireoidiano para reduzir andrógenos adrenais, sem fundamento fisiopatológico neste eixo segundo a gravidade atual preservando",
+      "prescrever testosterona tópica para 'regular o eixo', agravando hiperandrogenismo clínico da paciente conforme o protocolo local com reavaliação documentada"
+    ],
+    "explain": "HAC não clássica: 17-OHP↑; tratamento individualizado (GC, ACO, antiandrogênio). Cirurgia bilateral não é rotina. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Adrenalectomia bilateral como primeira linha na HAC não clássica."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 47,
+    "group": "Endocrinologia",
+    "theme": "Mixedema — precipitantes",
+    "stem": "Idoso com hipotireoidismo, internado por pneumonia, evolui com hipotermia, hipoventilação e hiponatremia. Além da reposição tireoidiana e suporte, qual medida é essencial? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "tratar o fator precipitante (infecção) com antibiótico adequado, suporte ventilatório e evitar sedativos depressores respiratórios",
+    "wrongs": [
+      "adiar antibiótico até normalizar completamente o TSH, permitindo progressão infecciosa que mantém e agrava o mixedema neste atendimento atual",
+      "administrar opioides generosos para 'aquecer e sedar', piorando hipoventilação e hipercapnia no coma mixedematoso com reavaliação",
+      "indicar apenas fisioterapia isolada sem antibiótico nem hormônio, insuficiente na descompensação infecciosa grave com monitorização seriada alinhado às",
+      "iniciar antitireoidiano para reduzir o TSH elevado, interpretando mal o laboratório do hipotireoidismo descompensado de modo criterioso agora"
+    ],
+    "explain": "Mixedema: tratar precipitante (infecção), suporte e T4±corticoide. Sedativos/opioides e antitireoidiano são erros. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Atrasar antibiótico no mixedema precipitado por pneumonia."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 48,
+    "group": "Endocrinologia",
+    "theme": "Crise tireotóxica — precipitantes",
+    "stem": "Paciente com hipertiroidismo irregularmente tratado é submetido a cirurgia de urgência sem preparo e evolui com febre, taquicardia extrema e delirium. Além do manejo da crise, o que reconhece o precipitante? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "estresse cirúrgico/infecção/suspensão de antitireoidiano podem precipitar tempestade; prevenir com preparo e não interromper tionamida",
+    "wrongs": [
+      "a crise tireotóxica só ocorre por excesso de levotiroxina oral leve, nunca por cirurgia ou infecção, afirmação falsa e neste cenário clínico",
+      "suspender metimazol 72 h antes de qualquer cirurgia eletiva de rotina sem preparo alternativo, aumentando risco de descompensação",
+      "o betabloqueador está contraindicado em toda taquicardia da crise, quando na verdade é pilar sintomático na maioria dos protocolos de forma",
+      "a normalização isolada da temperatura exclui tempestade mesmo com disfunção orgânica, critério inadequado de resolução completa priorizando segurança clínica"
+    ],
+    "explain": "Precipitantes: cirurgia, infecção, retirada de droga, RAI. Preparo e continuidade terapêutica previnem. BB é parte do manejo.",
+    "trap": "Suspender antitireoidiano abruptamente antes de cirurgia sem preparo."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 49,
+    "group": "Endocrinologia",
+    "theme": "DM1 — honeymoon e educação",
+    "stem": "Jovem de 19 anos com DM1 recente, após alta da CAD, apresenta glicemias melhores com doses menores de insulina nas primeiras semanas. Família quer suspender insulina. Conduta correta? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado.",
+    "correct": "explicar fase de lua de mel, manter insulina (mesmo em dose reduzida), reforçar educação, monitoramento e plano de sick-days para evitar nova",
+    "wrongs": [
+      "suspender toda insulina porque 'curou', risco elevado de CAD recorrente quando a secreção residual cair novamente neste neste atendimento atual",
+      "trocar definitivamente para apenas metformina oral como monoterapia no DM1 autoimune, inadequado como substituto da insulina sem",
+      "indicar pâncreas artificial experimental imediato obrigatório em todo honeymoon, sem individualizar acesso e educação básica prioritária no fluxo deste",
+      "proibir exercício físico permanente no DM1 jovem, quando atividade supervisionada faz parte do cuidado e da qualidade de vida evitando conduta incompleta"
+    ],
+    "explain": "Honeymoon: necessidade cai, mas insulina permanece. Educação evita CAD. Não suspender insulina no DM1. Essa escolha evita pegadinhas de protocolo incompleto e prioriza o melhor próximo passo clínico no adulto, alinhado às evidências e à segurança do paciente.",
+    "trap": "Suspender insulina na fase de lua de mel do DM1."
+  },
+  {
+    "idPrefix": "cli-endo",
+    "n": 50,
+    "group": "Endocrinologia",
+    "theme": "Hipercalcemia — malignidade",
+    "stem": "Homem de 68 anos com câncer de pulmão conhecido, confusão, Ca 13,5 mg/dL, PTH suprimido, fósforo baixo-normal. Após hidratação, qual terapia específica costuma ser prioritária? Na avaliação atual registram-se PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata sem adiamento injustificado. O cenário é de clínica médica do adulto em serviço de referência; exames já disponíveis e o exame físico orientam o próximo passo mais seguro e eficaz.",
+    "correct": "bifosfonato intravenoso (ou denosumabe se apropriado) para hipercalcemia humoral/maligna, tratando o tumor e evitando suplementação de cálcio",
+    "wrongs": [
+      "paratireoidectomia urgente apesar de PTH suprimido, pois o quadro é típico de hipercalcemia mediada por PTHrP/malignidade e",
+      "reposição generosa de cálcio oral e vitamina D para 'fortalecer ossos', agravando a hipercalcemia paraneoplásica com vigilância de",
+      "usar apenas restrição de água e observação sem antiresorção, insuficiente na hipercalcemia maligna sintomática grave neste atendimento atual",
+      "iniciar levotiroxina empírica para reduzir o cálcio, sem papel etiológico neste mecanismo PTHrP/malignidade no contexto do adulto diante dos achados atuais"
+    ],
+    "explain": "Ca↑ PTH↓ em câncer: hipercalcemia maligna; SF + bifosfonato/denosumabe + tratar tumor. Cirurgia de paratireoide não cabe.",
+    "trap": "Indicar paratireoidectomia com PTH suprimido na hipercalcemia maligna."
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-neuro",
+    "n": 1,
+    "group": "Neurologia",
+    "theme": "AVC isquêmico — reconhecimento e TC",
+    "stem": "Homem de 68 anos, hipertenso e diabético, inicia súbita hemiparesia direita e afasia às 09h10. Chega ao PS às 10h05, glicemia 148 mg/dL, PA 168/92 mmHg, NIHSS 12. TC sem contraste sem hemorragia e sem hipodensidade extensa. Qual a conduta imediata mais adequada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Confirmar janela terapêutica, completar checklist de trombólise e indicar alteplase intravenosa se não houver contraindicação absoluta",
+    "wrongs": [
+      "Aguardar RM obrigatória antes de qualquer decisão de reperfusão, mesmo com TC sem sangramento e déficit tipicamente vascular, já, sim",
+      "Indicar hemicraniectomia imediata em todo NIHSS acima de dez, antes de avaliar trombólise ou trombectomia conforme protocolo, agora",
+      "Reduzir agressivamente a PA para menos de 120/70 antes de considerar reperfusão, mesmo sem indicação de abaixamento urgente, já, sim",
+      "Liberar com AAS e retorno ambulatorial porque a TC inicial não mostrou infarto consolidado ainda nesta fase hiperaguda, de imediato"
+    ],
+    "explain": "Déficit focal súbito com TC sem hemorragia na janela de 4,5 h indica avaliação para trombólise IV. RM não deve atrasar; hemicraniectomia não é o passo inicial; hipotensão iatrogênica e alta precoce são incorretas.",
+    "trap": "Aguardar RM ou tratar como AVC ‘leve’ só porque a TC ainda não mostra hipodensidade."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 2,
+    "group": "Neurologia",
+    "theme": "Trombólise — janela de 4,5 horas",
+    "stem": "Mulher de 59 anos com fibrilação atrial sem anticoagulação apresenta hemiparesia esquerda e desvio do olhar às 14h00. Chega às 17h40 (3h40 do início). TC sem sangramento; NIHSS 14; PA 176/98; plaquetas e coagulograma adequados. Sem cirurgia recente. Qual a melhor decisão? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Prosseguir com alteplase IV dentro da janela de 4,5 horas após exclusão de contraindicações e controle pressórico conforme protocolo",
+    "wrongs": [
+      "Contraindicar trombólise apenas pelo horário de chegada próximo ao limite, sem completar checklist e otimização pressórica, já, sim",
+      "Indicar apenas heparina plena intravenosa como reperfusão de escolha no AVC isquêmico na fase hiperaguda hospitalar, agora, já, sim",
+      "Aguardar 24 horas de observação sem reperfusão porque a fibrilação atrial ‘explica’ o déficit e dispensa trombólise, neste caso, já",
+      "Indicar trombólise intra-arterial isolada em todos os casos, omitindo a avaliação padronizada de alteplase intravenosa, de imediato"
+    ],
+    "explain": "Janela padrão da alteplase IV é até 4,5 h do início conhecido, com PA controlada segundo protocolo e sem contraindicações. Heparina não substitui trombólise; proximidade do limite não é contraindicação automática se ainda houver tempo.",
+    "trap": "Recusar trombólise só por estar ‘quase no limite’ sem completar o protocolo."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 3,
+    "group": "Neurologia",
+    "theme": "AVC isquêmico — trombectomia mecânica",
+    "stem": "Homem de 72 anos com oclusão de artéria cerebral média M1 confirmada na angio-TC, NIHSS 18, início há 3 horas, TC ASPECTS 8, sem hemorragia. Recebeu alteplase IV há 20 minutos. Qual a conduta adicional mais apropriada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Encaminhar à trombectomia mecânica endovascular em centro capacitado, mantendo suporte e sem suspender o benefício da reperfusão",
+    "wrongs": [
+      "Contraindicar trombectomia porque já recebeu alteplase, mesmo com oclusão proximal de grande vaso e NIHSS elevado, sem atraso, já",
+      "Indicar apenas observação clínica por 72 horas, reservando endovascular só se houver piora neurológica franca posterior, agora, já",
+      "Solicitar biópsia cerebral antes de qualquer terapia de reperfusão para ‘confirmar isquemia’ nesta fase hiperaguda, neste caso, já",
+      "Priorizar craniectomia descompressiva imediata em todo M1, antes de tentar reperfusão endovascular quando indicada, de imediato, já"
+    ],
+    "explain": "Oclusão proximal de grande vaso com NIHSS alto e ASPECTS favorável na janela indica trombectomia, frequentemente em ponte com trombólise IV. Alteplase prévia não impede endovascular.",
+    "trap": "Achar que alteplase IV exclui trombectomia em oclusão de grande vaso."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 4,
+    "group": "Neurologia",
+    "theme": "AVC hemorrágico intraparenquimatoso",
+    "stem": "Homem de 64 anos, hipertenso irregular, chega com cefaleia súbita, vômitos e hemiparesia esquerda progressiva em 40 minutos. PA 210/120 mmHg, Glasgow 12. TC: hematoma putaminal direito de 28 mL sem hidrocefalia. Qual a conduta inicial prioritária? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Estabilizar via aérea conforme necessidade, controlar pressão arterial segundo metas de HIC espontânea e evitar anticoagulação, já",
+    "wrongs": [
+      "Administrar alteplase intravenosa imediatamente, tratando o quadro como AVC isquêmico sem aguardar a tomografia, sem atraso, já, sim",
+      "Indicar heparina plena para ‘limitar expansão’ do hematoma intraparenquimatoso hipertensivo nesta fase aguda, agora, com segurança",
+      "Indicar craniectomia bilateral empírica em todo hematoma putaminal, independentemente de volume, Glasgow e hidrocefalia, neste caso",
+      "Liberar com analgésico oral e retorno em sete dias porque o hematoma ‘já está formado’ e não exige manejo agudo, de imediato, já"
+    ],
+    "explain": "Hematoma putaminal hipertensivo exige suporte, controle pressórico guiado e evitar fármacos trombolíticos/anticoagulantes. Trombólise é contraindicação absoluta; cirurgia seleciona casos específicos.",
+    "trap": "Trombolisar ou anticoagular sem distinguir hemorragia de isquemia."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 5,
+    "group": "Neurologia",
+    "theme": "AIT — definição e risco precoce",
+    "stem": "Mulher de 71 anos apresentou afasia e fraqueza braquial direita por 25 minutos, com resolução completa. Chega assintomática 2 horas depois. TC sem lesão; ritmo sinusal; sopro carotídeo à esquerda. Qual a conduta mais adequada nas primeiras 24–48 h? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Investigar etiologia (imagem vascular, ritmo, fatores de risco), iniciar antiagregação quando apropriado e estratificar risco de AVC iminente",
+    "wrongs": [
+      "Considerar evento benigno e liberar sem imagem vascular nem antiagregação, apenas com orientação de retorno se recorrência, sem atraso, já",
+      "Indicar trombólise intravenosa mesmo após resolução completa do déficit e tomografia sem isquemia estabelecida, agora, com segurança, já",
+      "Anticoagular com warfarina imediatamente em todo AIT, sem avaliação de ritmo, estenose carotídea ou sangramento, neste caso, conforme meta",
+      "Indicar endarterectomia carotídea na mesma hora sem confirmar grau de estenose por exame vascular adequado, de imediato, na prática, já, sim"
+    ],
+    "explain": "AIT é emergência vascular: alto risco de AVC precoce. Investigação etiológica e prevenção secundária imediata são essenciais; trombólise não cabe após resolução completa sem indicação.",
+    "trap": "Tratar AIT como ‘crise de ansiedade vascular’ e liberar sem prevenção."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 6,
+    "group": "Neurologia",
+    "theme": "HSA — cefaleia thunderclap",
+    "stem": "Mulher de 45 anos, tabagista, refere a pior cefaleia da vida de início explosivo há 2 horas, com vômitos e fotofobia. Glasgow 15, leve rigidez de nuca, sem déficit focal. PA 150/90. Qual a sequência diagnóstica inicial correta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Realizar TC de crânio sem contraste imediatamente e, se negativa e alta suspeita, prosseguir com punção lombar oportunamente, já",
+    "wrongs": [
+      "Prescrever apenas dipirona e alta com diagnóstico de migrânea típica, sem neuroimagem na cefaleia thunderclap, sem atraso, já, sim",
+      "Indicar trombólise empírica por suspeita de AVC isquêmico, sem tomografia, diante de cefaleia isolada sem déficit, agora, já, sim",
+      "Fazer punção lombar antes de qualquer TC em paciente com possível HSA e risco de herniação não avaliado, neste caso, conforme meta",
+      "Solicitar apenas eletroencefalograma como primeiro exame, adiando a tomografia na suspeita de hemorragia subaracnóidea, de imediato"
+    ],
+    "explain": "Cefaleia thunderclap exige exclusão de HSA: TC precoce e, se negativa com alta suspeita, PL (xantocromia/hemácias). Não se trata como migrânea banal nem se trombolisa empiricamente.",
+    "trap": "Rotular thunderclap como migrânea e omitir TC/PL."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 7,
+    "group": "Neurologia",
+    "theme": "HSA — manejo inicial e nimodipino",
+    "stem": "Homem de 52 anos com HSA aneurismática confirmada (TC e angio), Hunt-Hess II, estável. Aneurisma de comunicante anterior aguardando tratamento endovascular em 24 h. Qual medida clínica precoce é mais apropriada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Manter nimodipino oral, controle rigoroso de PA, repouso e prevenção de ressangramento até o tratamento do aneurisma, com registro",
+    "wrongs": [
+      "Suspender nimodipino porque ‘só serve após vasoespasmo instalado’ e liberar deambulação livre na enfermaria, sem atraso, de imediato",
+      "Indicar anticoagulação plena profilática para evitar isquemia por vasoespasmo nas primeiras horas da HSA, agora, com segurança, já",
+      "Induzir hipertensão arterial agressiva imediatamente em todo Hunt-Hess II antes do clampeamento ou coils, neste caso, conforme meta",
+      "Administrar alteplase intratecal de rotina em toda HSA aneurismática como terapia padrão na admissão, de imediato, na prática, já"
+    ],
+    "explain": "Nimodipino precoce reduz risco de isquemia cerebral tardia; controle de PA e prevenção de ressangramento são pilares até o tratamento do aneurisma. Anticoagulação e hipertensão empírica precoce são inadequadas.",
+    "trap": "Omitir nimodipino ou anticoagular na HSA aguda."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 8,
+    "group": "Neurologia",
+    "theme": "Epilepsia — crise tônico-clônica primeira",
+    "stem": "Homem de 28 anos apresenta primeira crise tônico-clônica generalizada testemunhada, duração 90 segundos, com recuperação gradual. TC normal; glicemia normal; sem febre; exame neurológico sem déficit residual após 2 horas. EEG a ser agendado. Qual a conduta mais razoável? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Investigar fatores precipitantes, orientar segurança, discutir início de anticrises conforme risco de recorrência e garantir seguimento",
+    "wrongs": [
+      "Internar em UTI e iniciar midazolam em bomba contínua de rotina após uma crise única já resolvida clinicamente, sem atraso, já, sim",
+      "Indicar trombólise por suspeita de AVC, apesar de crise com recuperação e tomografia sem sinais de isquemia aguda, agora, já, sim",
+      "Prescrever três anticrises em politerapia máxima já na primeira crise isolada sem avaliação de recorrência, neste caso, conforme meta",
+      "Liberar sem orientação de risco, sem restrições de segurança e sem plano de retorno ou investigação etiológica, de imediato, já, sim"
+    ],
+    "explain": "Primeira crise exige investigação e decisão individualizada sobre anticrise; não é status nem AVC hiperagudo típico. Segurança e seguimento são obrigatórios; politerapia máxima não é padrão.",
+    "trap": "Tratar primeira crise resolvida como status ou como AVC trombolisável."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 9,
+    "group": "Neurologia",
+    "theme": "Status epilepticus convulsivo",
+    "stem": "Mulher de 34 anos com epilepsia conhecida chega em crise convulsiva contínua há 12 minutos, sem recuperação. Via aérea pérvia, SpO2 92% em O2, glicemia 110 mg/dL. Já recebeu benzodiazepínico adequado na ambulância. Qual o próximo passo farmacológico típico? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Administrar anticrise de segunda linha (fenitoína/fosfenitoína, valproato ou levetiracetam) conforme protocolo local de status",
+    "wrongs": [
+      "Aguardar mais trinta minutos sem fármaco adicional porque ‘pode cessar sozinha’, mantendo apenas observação passiva, sem atraso",
+      "Indicar trombólise intravenosa imediatamente por déficit pós-ictal, sem estabilizar o status convulsivo em curso, agora, com segurança",
+      "Iniciar apenas paracetamol e hidratação como terapia específica do status epilepticus convulsivo estabelecido, neste caso, já",
+      "Indicar eletroconvulsoterapia de urgência antes de benzodiazepínico e segunda linha farmacológica padronizada, de imediato, já"
+    ],
+    "explain": "Status convulsivo: benzodiazepínico primeiro; se persistir, segunda linha IV. Não se espera passivamente; trombólise e ECT não são o passo imediato.",
+    "trap": "Atrasar a segunda linha após benzodiazepínico no status convulsivo."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 10,
+    "group": "Neurologia",
+    "theme": "Coma — abordagem inicial",
+    "stem": "Homem de 60 anos é encontrado inconsciente em casa. Glasgow 6, pupilas isocóricas fotorreagentes, PA 150/90, glicemia 38 mg/dL, SpO2 88% em ar. Sem lateralização clara. Qual a sequência prioritária correta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Garantir via aérea e oxigenação, corrigir hipoglicemia imediatamente e só então aprofundar investigação neurológica dirigida, já",
+    "wrongs": [
+      "Solicitar apenas RM eletiva ambulatorial e liberar sem corrigir glicemia nem proteger a via aérea no coma, sem atraso, de imediato",
+      "Indicar trombólise empírica sem TC e sem corrigir causas metabólicas reversíveis do rebaixamento de consciência, agora, com segurança",
+      "Administrar apenas naloxona em dose máxima e omitir glicose, apesar da hipoglicemia documentada na admissão, neste caso, conforme meta",
+      "Indicar craniotomia exploradora imediata sem imagem e sem estabilização clínica mínima do paciente comatoso, de imediato, já, sim"
+    ],
+    "explain": "No coma, ABC e causas reversíveis (glicose/oxigênio/toxinas) precedem investigação avançada. Hipoglicemia documentada exige correção imediata.",
+    "trap": "Correr para neuroimagem avançada sem corrigir hipoglicemia e via aérea."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 11,
+    "group": "Neurologia",
+    "theme": "Hipertensão intracraniana — sinais e manejo",
+    "stem": "Paciente politraumatizado com TC mostrando edema cerebral difuso evolui com bradardia, hipertensão e irregularidade respiratória (Cushing), Glasgow caindo de 10 para 7. Já intubado. Qual medida imediata é mais apropriada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Elevar cabeceira, garantir ventilação adequada, evitar hipotensão e acionar neurocirurgia/protocolo de HIC com osmoterapia se indicada",
+    "wrongs": [
+      "Induzir hipercapnia deliberada para ‘aumentar fluxo’ e omitir elevação de cabeceira no paciente com sinais de HIC, sem atraso, já",
+      "Administrar grande volume de água livre hipotônica para ‘hidratar o cérebro’ e reduzir a pressão intracraniana, agora, com segurança",
+      "Suspender sedação e deixar o paciente agitado para ‘avaliar melhor o exame’, elevando a pressão intracraniana, neste caso, já, sim",
+      "Indicar alta da UTI porque a tríade de Cushing ‘é fisiológica’ e não exige intervenção adicional neste momento, de imediato, já, sim"
+    ],
+    "explain": "Tríade de Cushing sinaliza HIC grave: cabeceira, normocapnia/leve hipocapnia controlada, estabilidade hemodinâmica, osmoterapia e neurocirurgia conforme causa. Hipotônicos e agitação pioram.",
+    "trap": "Interpretar Cushing como achado benigno ou hidratar com hipotônico."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 12,
+    "group": "Neurologia",
+    "theme": "Migrânea — diagnóstico e crise",
+    "stem": "Mulher de 32 anos com cefaleias recorrentes pulsáteis unilaterais, náuseas e fotofobia, duração 8–12 h, piora com atividade. Exame neurológico normal entre crises. TC prévia normal. Chega em crise moderada-intensa sem sinais de alarme. Qual a melhor conduta aguda? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Tratar a crise com AINE ou triptano conforme perfil, em ambiente calmo, e orientar prevenção se frequência incapacitante, já, sim",
+    "wrongs": [
+      "Indicar trombólise por hemicrania, apesar de história típica de migrânea e exame neurológico normal na crise, sem atraso, já, sim",
+      "Internar para craniotomia exploradora diante de cefaleia migranosa típica sem sinais de alarme neurológico, agora, com segurança",
+      "Prescrever opioide crônico de primeira linha em toda crise de migrânea, omitindo AINE/triptano e prevenção, neste caso, conforme meta",
+      "Solicitar angiografia cerebral de urgência em toda migrânea típica com exame normal e história estereotipada, de imediato, já, sim"
+    ],
+    "explain": "Migrânea típica sem red flags trata-se sintomaticamente (AINE/triptano) e avalia-se profilaxia se frequente. Imagem de urgência e reperfusão não cabem no padrão clássico.",
+    "trap": "Medicalizar migrânea típica como AVC ou neurocirurgia de urgência."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 13,
+    "group": "Neurologia",
+    "theme": "Cefaleia em salvas",
+    "stem": "Homem de 41 anos descreve crises de dor periorbitária direita excruciante, 45 minutos, com lacrimejamento, rinorreia e ptose ipsilateral, ocorrendo diariamente à mesma hora por 3 semanas. Exame entre crises quase normal. Qual o tratamento agudo de escolha típico? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Oferecer oxigênio a alto fluxo e/ou sumatriptano subcutâneo na crise, e discutir profilaxia (verapamil) no período de salva, já",
+    "wrongs": [
+      "Indicar apenas paracetamol oral fraco e observação, omitindo oxigênio e triptano na crise de salvas típica, sem atraso, de imediato",
+      "Administrar alteplase IV por ptose transitória, tratando como AVC isquêmico sem critérios de déficit vascular sustentado, agora",
+      "Indicar enucleação ocular como terapia de primeira linha da cefaleia em salvas episódica do adulto, neste caso, conforme meta, já",
+      "Prescrever anticoagulação plena contínua para prevenir novas crises autonômicas ipsilaterais da salva, de imediato, na prática"
+    ],
+    "explain": "Cefaleia em salvas: oxigênio 100% alto fluxo e/ou sumatriptano SC no ataque; verapamil é profilaxia clássica no cluster. Não é AVC trombolisável nem indicação cirúrgica ocular.",
+    "trap": "Tratar salvas como sinusite banal ou como AVC por ptose."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 14,
+    "group": "Neurologia",
+    "theme": "HTIC idiopática (pseudotumor cerebri)",
+    "stem": "Mulher de 27 anos, obesidade grau II, refere cefaleia diária, diplopia e escurecimento visual transitório. Exame: papiledema bilateral, abducente direito paresia. TC/RM sem massa; seios venosos sem trombose. Qual a conduta inicial mais adequada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Confirmar pressão liquórica elevada na PL, proteger visão, iniciar acetazolamida e orientar perda ponderal com seguimento, já, sim",
+    "wrongs": [
+      "Indicar trombólise por diplopia, apesar de imagem sem isquemia e quadro típico de hipertensão intracraniana idiopática, sem atraso",
+      "Contraindicar punção lombar em toda suspeita de HTIC idiopática mesmo com imagem sem massa e sem trombose, agora, com segurança, já",
+      "Indicar radioterapia craniana empírica como primeiro tratamento da hipertensão intracraniana idiopática do adulto, neste caso, já",
+      "Liberar apenas com analgésico e sem avaliação de papiledema/campo visual, ignorando risco de perda visual, de imediato, na prática"
+    ],
+    "explain": "HTIC idiopática: papiledema + pressão liquórica alta sem massa. Acetazolamida e perda de peso; PL diagnóstica/terapêutica. Risco visual exige seguimento oftalmológico.",
+    "trap": "Omitir proteção visual e tratar só a cefaleia na HTIC."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 15,
+    "group": "Neurologia",
+    "theme": "Miastenia gravis — crise",
+    "stem": "Mulher de 35 anos com MG conhecida evolui com disfagia, fala anasalada e dispneia progressiva há 12 h após infecção respiratória. Capacidade vital reduzida; SpO2 91%. Sem febre alta agora. Qual a prioridade imediata? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Avaliar necessidade de suporte ventilatório, internar em ambiente monitorizado e tratar crise (imunoglobulina ou plasmaférese), já",
+    "wrongs": [
+      "Aumentar apenas piridostigmina oral em casa e liberar, apesar de sinais de insuficiência respiratória iminente, sem atraso, já, sim",
+      "Administrar bolus alto de curare para ‘testar a junção’ na crise miastênica com hipoxemia documentada, agora, com segurança, já",
+      "Indicar trombólise por disartria, tratando crise miastênica como AVC sem déficit focal súbito vascular típico, neste caso, já, sim",
+      "Suspender toda imunoterapia e enviar para fisioterapia ambulatorial exclusiva sem suporte respiratório hospitalar, de imediato, já"
+    ],
+    "explain": "Crise miastênica ameaça via aérea: monitorização, suporte ventilatório e imunoterapia rápida (IVIG/plasmaférese). Ajuste isolado de anticolinesterásico ambulatorial é inseguro.",
+    "trap": "Liberar crise miastênica com disfagia/dispneia só com ajuste oral."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 16,
+    "group": "Neurologia",
+    "theme": "Miastenia gravis — diagnóstico",
+    "stem": "Homem de 42 anos refere diplopia flutuante e fadiga mandibular ao mastigar, pior ao final do dia, com melhora após repouso. Exame: ptose fatigável. TC de tórax pendente. Qual a melhor abordagem diagnóstica inicial? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Solicitar anticorpos anti-AChR (e anti-MuSK se preciso), avaliar timoma e confirmar com testes eletrofisiológicos quando indicado",
+    "wrongs": [
+      "Iniciar quimioterapia empírica por suspeita de câncer avançado, sem investigar miastenia nem imagem de mediastino, sem atraso, já",
+      "Indicar endarterectomia carotídea por diplopia flutuante típica de fadiga neuromuscular da junção, agora, com segurança, em vigência",
+      "Diagnosticar enxaqueca oftalmoplégica e omitir sorologia e investigação de timoma na suspeita clássica de MG, neste caso, já, sim",
+      "Prescrever aminoglicosídeo de ampla cobertura como teste terapêutico da junção neuromuscular fatigável, de imediato, na prática"
+    ],
+    "explain": "MG: clínica fatigável + anticorpos ± EMG; pesquisar timoma. Aminoglicosídeos podem piorar. Não é doença carotídea cirúrgica típica.",
+    "trap": "Tratar diplopia flutuante como AVC carotídeo cirúrgico."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 17,
+    "group": "Neurologia",
+    "theme": "Síndrome de Guillain-Barré",
+    "stem": "Homem de 29 anos, 10 dias após diarreia, apresenta parestesias ascendentes, fraqueza simétrica de membros e arreflexia. Paresia facial leve; FR 22; capacidade vital decaindo. Líquor: proteinorraquia alta com celularidade baixa. Qual a conduta prioritária? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Internar com monitorização respiratória e iniciar imunoglobulina IV ou plasmaférese precocemente, evitando atraso, com registro, já",
+    "wrongs": [
+      "Liberar com vitamina B12 oral e retorno em um mês, apesar de fraqueza ascendente e risco respiratório progressivo, sem atraso, já",
+      "Indicar corticoterapia isolada em alta dose como tratamento de primeira linha padrão do Guillain-Barré clássico, agora, com segurança",
+      "Administrar succinilcolina livremente na intubação, sem cautela, em paciente com desnervação aguda extensa, neste caso, conforme meta",
+      "Indicar laminectomia cervical empírica antes de qualquer terapia imunomoduladora na polirradiculoneuropatia aguda, de imediato, já"
+    ],
+    "explain": "GBS: fraqueza ascendente + arreflexia + dissociação albumino-citológica. IVIG ou plasmaférese; corticoides isolados não são primeira linha. Monitorar respiração.",
+    "trap": "Usar só corticoide ou liberar GBS com risco respiratório."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 18,
+    "group": "Neurologia",
+    "theme": "Parkinson — diagnóstico clínico",
+    "stem": "Homem de 66 anos com tremor de repouso assimétrico, bradicinesia e rigidez em roda denteada há 1 ano, melhora clara com levodopa. Sem quedas precoces nem disautonomia grave precoce. Qual a interpretação mais adequada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Diagnosticar doença de Parkinson clinicamente provável e otimizar terapia dopaminérgica com reabilitação e seguimento, com registro",
+    "wrongs": [
+      "Indicar trombólise por bradicinesia assimétrica, tratando Parkinson como AVC hiperagudo sem déficit súbito recente, sem atraso, já",
+      "Contraindicar levodopa de forma absoluta no idoso e indicar apenas anticolinérgico potente como monoterapia inicial, agora, já, sim",
+      "Diagnosticar automaticamente paralisia supranuclear progressiva apesar da resposta excelente à levodopa e curso típico, neste caso",
+      "Indicar estimulação cerebral profunda imediata em todo tremor inicial leve antes de otimizar medicação oral, de imediato, já, sim"
+    ],
+    "explain": "Parkinson típico: parkinsonismo assimétrico + resposta à levodopa. DBS é para casos selecionados refratários. PSP tem pistas atípicas e má resposta.",
+    "trap": "Negar levodopa no idoso ou indicar DBS prematuro."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 19,
+    "group": "Neurologia",
+    "theme": "Parkinson — complicação motora",
+    "stem": "Paciente com Parkinson avançado em levodopa apresenta flutuações ‘on-off’ e discinesias incapacitantes apesar de ajustes. Cognição preservada; sem depressão grave não tratada. Qual a melhor orientação geral? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Reavaliar fracionamento/formuladores, considerar adjuvantes e discutir terapias avançadas (DBS/infusão) em centro especializado",
+    "wrongs": [
+      "Suspender abruptamente toda dopamina e deixar o paciente em off prolongado para ‘resetar’ o sistema motor, sem atraso, de imediato",
+      "Indicar antipsicótico típico de alta potência para discinesia, elevando risco de piora parkinsoniana grave, agora, com segurança",
+      "Tratar como AVC recorrente cada período off e trombolisar repetidamente sem imagem nem critério temporal, neste caso, conforme meta",
+      "Orientar apenas ‘aceitar a doença’ sem qualquer ajuste farmacológico ou encaminhamento a terapias avançadas, de imediato, já, sim"
+    ],
+    "explain": "Flutuações e discinesias exigem otimização e, se refratárias, terapias avançadas. Suspensão abrupta e neurolépticos típicos são perigosos.",
+    "trap": "Suspender dopamina abruptamente ou usar neuroléptico típico nas discinesias."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 20,
+    "group": "Neurologia",
+    "theme": "Alzheimer — demência típica",
+    "stem": "Mulher de 78 anos com esquecimento progressivo de 3 anos, desorientação temporal, dificuldade para finanças e anomia. Exame neurológico sem sinais focais agudos. TSH e B12 normais; TC com atrofia hipocampal. Qual a conduta mais apropriada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Diagnosticar demência de Alzheimer provável, otimizar segurança, tratar comorbidades e discutir anticolinesterásico se apropriado",
+    "wrongs": [
+      "Indicar trombólise por anomia crônica progressiva de anos, tratando demência como AVC hiperagudo trombolisável, sem atraso, já",
+      "Internar em UTI e induzir coma barbitúrico como tratamento padrão da doença de Alzheimer inicial ambulatorial, agora, com segurança",
+      "Prescrever anticolinérgico potente de rotina para memória, piorando confusão no idoso com demência, neste caso, conforme meta, já",
+      "Negar qualquer suporte familiar e omitir avaliação de segurança (dirigir, finanças, fogão) na demência estabelecida, de imediato"
+    ],
+    "explain": "Alzheimer típico: declínio cognitivo progressivo com exclusão de causas reversíveis. Anticolinesterásicos podem ajudar; anticolinérgicos pioram. Segurança e suporte são centrais.",
+    "trap": "Tratar demência crônica como AVC agudo ou usar anticolinérgicos."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 21,
+    "group": "Neurologia",
+    "theme": "Esclerose múltipla — surto",
+    "stem": "Mulher de 29 anos com neurite óptica prévia apresenta agora parestesia ascendente e nível sensitivo, com RM mostrando lesões desmielinizantes novas em medula e periventriculares. Sem febre. Qual o tratamento do surto agudo típico? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Administrar corticoide em alta dose (metilprednisolona IV) para o surto e planejar terapia modificadora de doença no seguimento, já",
+    "wrongs": [
+      "Indicar apenas antibiótico empírico prolongado, tratando surto desmielinizante como meningite bacteriana sem critérios, sem atraso",
+      "Administrar alteplase por déficit sensitivo subagudo, sem critério de AVC isquêmico hiperagudo documentado, agora, com segurança",
+      "Indicar laminectomia descompressiva empírica antes de qualquer corticoterapia no surto medular de EM, neste caso, conforme meta, já",
+      "Suspender toda imunomodulação futura porque um surto ‘cura’ definitivamente a esclerose múltipla, de imediato, na prática, já, sim"
+    ],
+    "explain": "Surto de EM: corticoide em alta dose; depois DMT para reduzir recorrências. Não é infecção bacteriana típica nem AVC trombolisável.",
+    "trap": "Trombolisar ou antibioticar um surto típico de EM."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 22,
+    "group": "Neurologia",
+    "theme": "Esclerose múltipla — diagnóstico disseminação",
+    "stem": "Homem de 31 anos com dois surtos clínicos distintos no tempo (óptico e piramidal) e RM com lesões típicas em locais diferentes. Líquor com bandas oligoclonais. Infecções e déficit B12 excluídos. Qual a conclusão diagnóstica mais coerente? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Diagnosticar esclerose múltipla por disseminação no tempo e no espaço e iniciar planejamento de terapia modificadora, com registro",
+    "wrongs": [
+      "Aguardar o quinto surto clínico obrigatório antes de qualquer hipótese de EM, omitindo critérios de RM e liquor, sem atraso, já",
+      "Diagnosticar AVC lacunar múltiplo e iniciar anticoagulação plena sem evidência de fonte cardioembólica, agora, com segurança, já",
+      "Indicar radioterapia cerebral como tratamento de primeira linha da esclerose múltipla do adulto jovem, neste caso, conforme meta",
+      "Atribuir tudo a ansiedade e omitir seguimento neurológico apesar de lesões objetivas e bandas oligoclonais, de imediato, na prática"
+    ],
+    "explain": "Disseminação temporal e espacial (clínica/RM) ± BOC sustenta EM. Não se espera ‘cinco surtos’ arbitrários nem se anticoagula como AVC sem base.",
+    "trap": "Negar EM até múltiplos surtos extras ignorando RM/líquor."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 23,
+    "group": "Neurologia",
+    "theme": "Meningite bacteriana do adulto",
+    "stem": "Homem de 48 anos com febre, cefaleia intensa, confusão e rigidez de nuca há 18 h. PA 100/60, Glasgow 13, petéquias esparsas. Sem sinais focais de herniação. Qual a conduta inicial correta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Coletar hemoculturas, iniciar antibiótico precoce ± corticoide conforme protocolo e obter TC se indicada antes da PL, com registro",
+    "wrongs": [
+      "Aguardar obrigatoriamente o resultado final da cultura de liquor por 72 horas antes de qualquer antibiótico, sem atraso, de imediato",
+      "Indicar apenas oseltamivir e alta, tratando meningite bacteriana suspeita como virose respiratória leve, agora, com segurança, já",
+      "Administrar alteplase por confusão aguda, sem considerar infecção do SNC e sem neuroimagem adequada, neste caso, conforme meta, já",
+      "Fazer punção lombar a qualquer custo antes de estabilizar e sem avaliar contraindicações de imagem quando presentes, de imediato"
+    ],
+    "explain": "Suspeita de meningite bacteriana: antibiótico precoce após culturas; dexametasona conforme protocolo; PL após TC se houver indicação. Atraso antibiótico aumenta mortalidade.",
+    "trap": "Atrasar antibiótico aguardando liquor definitivo na meningite."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 24,
+    "group": "Neurologia",
+    "theme": "Meningite — interpretação do liquor",
+    "stem": "Adulto febril com meningismo. Líquor: 1.200 células (90% neutrófilos), proteína 180 mg/dL, glicose 28 mg/dL (sérica 110), Gram com diplococos gram-negativos. Qual a interpretação e ação? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Tratar como meningite bacteriana meningocócica provável, manter antibiótico adequado e medidas de isolamento/profilaxia, com registro",
+    "wrongs": [
+      "Interpretar como liquor normal de adulto e suspender antibiótico imediatamente sem reavaliação clínica, sem atraso, de imediato, já",
+      "Diagnosticar exclusivamente encefalite herpética e trocar para aciclovir isolado, omitindo cobertura bacteriana, agora, com segurança",
+      "Indicar apenas observação sem antimicrobiano porque a glicose liquórica baixa ‘não tem relevância’ clínica, neste caso, conforme meta",
+      "Liberar para domicílio com analgésico após o Gram, sem completar terapia nem notificar contatos quando indicado, de imediato, já"
+    ],
+    "explain": "Liquor neutrofílico com hipoglicorraquia e Gram típico = meningite bacteriana. Meningococo exige terapia e atenção a contatos/isolamento conforme protocolo.",
+    "trap": "Suspender antibiótico diante de liquor claramente bacteriano."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 25,
+    "group": "Neurologia",
+    "theme": "Neuropatia diabética distal",
+    "stem": "Homem de 58 anos com DM2 há 12 anos refere queimação noturna em ‘botas’, pior simetricamente nos pés, com monofilamento alterado e reflexos aquileus abolidos. Pulsos presentes; sem úlcera atual. Qual a melhor conduta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Otimizar controle glicêmico, educar proteção dos pés, tratar dor neuropática e rastrear outras complicações diabéticas, com registro",
+    "wrongs": [
+      "Indicar amputação bilateral profilática por alteração de monofilamento, sem úlcera, infecção ou isquemia crítica, sem atraso, já",
+      "Administrar alteplase mensal para ‘abrir nervos’, tratando neuropatia crônica como AVC hiperagudo recorrente, agora, com segurança",
+      "Prescrever apenas corticoterapia prolongada em alta dose como cura definitiva da neuropatia diabética distal, neste caso, já, sim",
+      "Ignorar o exame dos pés e omitir educação preventiva porque ainda não há úlcera estabelecida neste momento, de imediato, na prática"
+    ],
+    "explain": "Neuropatia diabética: controle glicêmico, cuidado dos pés e analgesia neuropática. Amputação profilática e trombólise não cabem.",
+    "trap": "Omitir prevenção de úlcera ou radicalizar com amputação precoce."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 26,
+    "group": "Neurologia",
+    "theme": "Neuropatia — Síndrome do túnel do carpo",
+    "stem": "Mulher de 46 anos com parestesia noturna em 1º–3º dedos, choque à percussão do punho e fraqueza leve de abdução do polegar. Cervicalgia leve sem sinal de mielopatia. Qual a conduta inicial mais adequada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Confirmar clinicamente, considerar eletroneuromiografia se dúvida/pré-cirúrgico, orientar órtese noturna e evitar compressão, já",
+    "wrongs": [
+      "Indicar laminectomia cervical imediata em toda parestesia de mão, sem evidência de mielopatia ou radiculopatia clara, sem atraso",
+      "Administrar trombólise por formigamento crônico noturno, sem déficit vascular agudo nem critério temporal de AVC, agora, com segurança",
+      "Prescrever anticoagulação plena contínua como tratamento específico da compressão do nervo mediano no punho, neste caso, conforme meta",
+      "Negar qualquer medida conservadora e indicar amputação digital por parestesia do túnel do carpo não complicada, de imediato, já"
+    ],
+    "explain": "Túnel do carpo: clínica ± ENMG; órtese e mudanças de hábito primeiro; cirurgia se refratário/grave. Não é AVC nem indicação de laminectomia rotineira.",
+    "trap": "Operar coluna cervical de rotina por STC típica."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 27,
+    "group": "Neurologia",
+    "theme": "Síncope versus crise epiléptica",
+    "stem": "Homem de 70 anos teve perda de consciência de 15 segundos ao levantar-se, com palidez e sudorese, recuperação rápida sem confusão prolongada. Relata ‘abalos’ breves ao cair. ECG: pausa sinusial em Holter prévio. Qual a interpretação mais correta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual.",
+    "correct": "Favorecer síncope reflexa/cardíaca, investigar causa cardiovascular e não rotular automaticamente como epilepsia por mioclonias de anóxia",
+    "wrongs": [
+      "Diagnosticar epilepsia definitiva só pelos abalos da queda e iniciar três anticrises sem avaliação cardiovascular, sem atraso, já, sim",
+      "Indicar trombólise imediata por síncope breve com recuperação completa e sem déficit focal sustentado, agora, com segurança, em vigência",
+      "Omitir ECG/Holter e tratar apenas com ácido valproico empírico em idoso com síncope postural típica, neste caso, conforme meta, já, sim",
+      "Indicar lobectomia temporal de urgência após um único episódio sincopal com recuperação imediata, de imediato, na prática, neste manejo"
+    ],
+    "explain": "Síncope: início com pródromos autonômicos, duração curta, recuperação rápida; mioclonias anóxicas não definem epilepsia. Investigue coração/PA.",
+    "trap": "Tratar mioclonias de síncope como epilepsia e omitir causa cardíaca."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 28,
+    "group": "Neurologia",
+    "theme": "Crise epiléptica versus síncope — pistas",
+    "stem": "Adolescente adulto jovem de 19 anos apresenta episódio com aura epigástrica, olhar fixo, automatismos manuais por 90 segundos e confusão pós-crítica de 30 minutos, mordedura lateral de língua. ECG normal. Qual a hipótese principal? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Considerar crise focal com consciência prejudicada (temporal) e investigar com EEG/imagem, discutindo anticrise se recorrente, já",
+    "wrongs": [
+      "Diagnosticar síncope vasovagal típica apesar de aura, automatismos prolongados e confusão pós-crítica longa, sem atraso, de imediato",
+      "Indicar marcapasso definitivo imediato sem bradiarritmia documentada, apenas pelo episódio com automatismos, agora, com segurança",
+      "Administrar alteplase por olhar fixo transitório, sem déficit motor sustentado nem critério de AVC, neste caso, conforme meta, já",
+      "Liberar sem orientação de segurança (dirigir/altura) após crise com prejuízo de consciência documentado, de imediato, na prática"
+    ],
+    "explain": "Aura + automatismos + estado pós-crítico prolongado sugerem crise focal, não síncope. EEG/RM e segurança são pilares. A conduta deve integrar tempo de evolução, exclusão de mimickers e estratificação de risco neurológico.",
+    "trap": "Rotular crise temporal típica como síncope vasovagal."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 29,
+    "group": "Neurologia",
+    "theme": "AVC isquêmico — contraindicaçao à trombólise",
+    "stem": "Homem de 62 anos com hemiparesia súbita há 2 h. TC sem hemorragia. Relata cirurgia intracraniana há 2 meses e uso de varfarina com INR 2,8. NIHSS 10. Qual a decisão correta sobre alteplase IV? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Contraindicar alteplase IV pelos riscos hemorrágicos atuais e avaliar outras estratégias (ex.: trombectomia se grande vaso), já",
+    "wrongs": [
+      "Administrar alteplase normalmente ignorando INR elevado e cirurgia intracraniana recente como contraindicações, sem atraso, já",
+      "Indicar heparina plena em dose máxima imediatamente como substituto seguro da trombólise neste cenário, agora, com segurança, já",
+      "Aguardar 48 horas sem reperfusão mesmo se houver oclusão proximal elegível a trombectomia em centro capacitado, neste caso, já",
+      "Prescrever apenas dipirona e alta precoce, omitindo investigação vascular e prevenção secundária hospitalar, de imediato, já, sim"
+    ],
+    "explain": "INR elevado e cirurgia intracraniana recente contraindicam alteplase IV. Ainda assim, avaliar trombectomia se elegível e manter prevenção secundária.",
+    "trap": "Trombolisar com INR alto/cirurgia recente ou abandonar toda reperfusão possível."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 30,
+    "group": "Neurologia",
+    "theme": "AVC — pressão arterial na fase aguda isquêmica",
+    "stem": "Paciente com AVC isquêmico há 3 h, candidato a trombólise, PA 195/110 mmHg, sem emergência hipertensiva de outro órgão. Qual o manejo pressórico mais coerente antes da alteplase? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Reduzir a PA para metas do protocolo de trombólise (tipicamente <185/110) com agente titrável e então trombolisar se elegível, já",
+    "wrongs": [
+      "Reduzir abruptamente para 90/60 com dose alta de anti-hipertensivo, riskando hipoperfusão da penumbra isquêmica, sem atraso, já",
+      "Ignorar a PA e trombolisar com 220/130 sem qualquer ajuste, fora do protocolo de segurança da alteplase, agora, com segurança, já",
+      "Suspender definitivamente a ideia de reperfusão só porque a PA estava alta na chegada, sem tentativa de controle, neste caso, já",
+      "Administrar nitrato sublingual repetido sem monitorização, visando queda não controlada da pressão arterial, de imediato, já, sim"
+    ],
+    "explain": "Antes da trombólise, PA deve atingir metas do protocolo com titulação cuidadosa. Hipotensão iatrogênica e trombólise com PA muito alta são erros.",
+    "trap": "Trombolisar com PA muito alta ou derrubar a PA agressivamente."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 31,
+    "group": "Neurologia",
+    "theme": "AIT — estenose carotídea",
+    "stem": "Homem de 69 anos com AIT hemisferico esquerdo há 5 dias. Angio-TC: estenose de 80% em carótida interna esquerda sintomática. Sem oclusão total. Cirurgião vascular disponível. Qual a orientação mais adequada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Manter antiagregação e estatina, controlar fatores de risco e indicar revascularização carotídea precoce em centro experiente, já",
+    "wrongs": [
+      "Observar apenas por dois anos sem antiagregação nem avaliação de endarterectomia/stent na estenose sintomática grave, sem atraso",
+      "Indicar trombólise agora, cinco dias após resolução completa do AIT, sem déficit atual nem critério temporal, agora, com segurança",
+      "Anticoagular com trombolítico fibrinolítico contínuo por semanas como substituto da revascularização carotídea, neste caso, já",
+      "Negar estatina e antiagregante porque a estenose ‘já será operada’, omitindo prevenção médica perioperatória, de imediato, já"
+    ],
+    "explain": "Estenose carotídea sintomática grave beneficia-se de revascularização precoce + melhor terapia médica (antiagregante, estatina, controle de risco).",
+    "trap": "Omitir terapia médica ou atrasar indefinidamente a revascularização sintomática."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 32,
+    "group": "Neurologia",
+    "theme": "HSA — ressangramento e aneurisma",
+    "stem": "Paciente com HSA por aneurisma ainda não tratado apresenta nova cefaleia explosiva e queda do Glasgow no 2º dia. Qual a preocupação prioritária e ação? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Suspeitar ressangramento, estabilizar via aérea/PA, repetir imagem e acelerar o tratamento definitivo do aneurisma, com registro",
+    "wrongs": [
+      "Atribuir sempre a migrânea hospitalar e manter o aneurisma sem plano de tratamento apesar da deterioração, sem atraso, de imediato",
+      "Indicar anticoagulação plena para ‘prevenir novo coágulo’ no espaço subaracnóideo após a piora clínica, agora, com segurança, já",
+      "Administrar alteplase IV por queda do Glasgow, sem considerar ressangramento da HSA aneurismática, neste caso, conforme meta, já",
+      "Liberar para enfermaria sem monitorização após a piora, adiando neuroimagem e avaliação neurocirúrgica, de imediato, na prática"
+    ],
+    "explain": "Ressangramento precoce é temido na HSA com aneurisma não seguro: suporte, imagem e tratamento definitivo urgentes. Trombólise/anticoagulação são deletérias.",
+    "trap": "Ignorar piora como migrânea e não tratar o aneurisma."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 33,
+    "group": "Neurologia",
+    "theme": "Status não convulsivo",
+    "stem": "Idoso de 80 anos internado por infecção fica com olhar vago, automatismos e flutuação de consciência por horas, sem convulsões tônicas. EEG mostra atividade epiléptica contínua. Qual a conduta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Tratar como status não convulsivo com benzodiazepínico e anticrise IV conforme protocolo, investigando gatilhos clínicos, já, sim",
+    "wrongs": [
+      "Interpretar como delirium puro e omitir EEG/tratamento anticrise apesar do padrão eletrográfico de status, sem atraso, de imediato",
+      "Indicar trombólise empírica por olhar vago, sem déficit motor focal súbito típico de AVC hiperagudo, agora, com segurança, já, sim",
+      "Aguardar dias sem fármaco porque ‘não há convulsão visível’, mantendo atividade epiléptica contínua no EEG, neste caso, conforme meta",
+      "Indicar lobectomia bilateral imediata no idoso frágil antes de terapia clínica do status não convulsivo, de imediato, na prática"
+    ],
+    "explain": "Status não convulsivo exige EEG e tratamento anticrise; delirium é diferencial, não exclusão automática. Não se trombolisa empiricamente.",
+    "trap": "Ignorar status não convulsivo por ausência de abalos motores."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 34,
+    "group": "Neurologia",
+    "theme": "Coma — herniação uncal",
+    "stem": "Paciente com hematoma subdural agudo evolui com dilatação pupilar unilateral, hemiparesia contralateral e queda rápida do Glasgow. Já intubado. Qual a prioridade? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Tratar HIC (cabeceira, osmoterapia conforme protocolo) e acionar neurocirurgia de emergência para descompressão, com registro, já",
+    "wrongs": [
+      "Aguardar observação passiva por 24 horas sem neurocirurgia, apesar de sinais clássicos de herniação uncal, sem atraso, de imediato",
+      "Administrar anticoagulação plena para ‘dissolver’ o subdural agudo com midríase fixa progressiva, agora, com segurança, em vigência",
+      "Indicar apenas fisioterapia motora ambulatorial como tratamento da herniação cerebral iminente, neste caso, conforme meta, já, sim",
+      "Extubar imediatamente para ‘examinar melhor a fala’, piorando hipercapnia e a pressão intracraniana, de imediato, na prática, já"
+    ],
+    "explain": "Herniação uncal é emergência neurocirúrgica: medidas de HIC e evacuação. Anticoagular subdural agudo é grave erro. A conduta deve integrar tempo de evolução, exclusão de mimickers e estratificação de risco neurológico.",
+    "trap": "Observar passivamente midríase unilateral com queda de consciência."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 35,
+    "group": "Neurologia",
+    "theme": "Migrânea com aura — diferencial de AVC",
+    "stem": "Mulher de 26 anos com aura visual scintillante típica de 20 minutos seguida de cefaleia migranosa. Déficits resolvem totalmente; exame normal. Episódios estereotipados há anos. Qual a conduta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Tratar como migrânea com aura, educar sobre sinais de alarme e evitar exposição desnecessária a exames invasivos repetidos, já",
+    "wrongs": [
+      "Trombolisar cada aura visual estereotipada de longa data, sem déficit persistente nem TC de urgência indicada, sem atraso, já, sim",
+      "Indicar anticoagulação vitalícia automática em toda aura migranosa típica de adulto jovem sem trombofilia, agora, com segurança",
+      "Solicitar cateterismo cerebral de urgência em todo episódio idêntico ao padrão habitual de anos, neste caso, conforme meta, já",
+      "Internar em UTI e induzir hipotermia como protocolo padrão da migrânea com aura visual clássica, de imediato, na prática, já, sim"
+    ],
+    "explain": "Aura típica recorrente estereotipada com recuperação completa favorece migrânea. Red flags (primeira, atípica, déficit fixo) mudam a abordagem.",
+    "trap": "Trombolisar auras migranosas típicas recorrentes."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 36,
+    "group": "Neurologia",
+    "theme": "Cefaleia — sinais de alarme",
+    "stem": "Homem de 55 anos com cefaleia nova progressiva há 3 semanas, pior pela manhã, vômitos em jato e papiledema. Sem febre. Qual a conduta imediata mais adequada? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Solicitar neuroimagem urgente para excluir massa/HIC e evitar punção lombar antes de descartar lesão com efeito de massa, já, sim",
+    "wrongs": [
+      "Fazer punção lombar imediatamente sem imagem em paciente com papiledema e suspeita de massa intracraniana, sem atraso, de imediato",
+      "Tratar apenas com triptano e alta, ignorando papiledema e cefaleia sob pressão típica de HIC, agora, com segurança, em vigência, já",
+      "Indicar fisioterapia cervical exclusiva como manejo do papiledema e vômitos matinais progressivos, neste caso, conforme meta, já",
+      "Administrar anticoagulação empírica sem imagem, presumindo trombose sem investigação adequada, de imediato, na prática, neste manejo"
+    ],
+    "explain": "Cefaleia com papiledema e vômitos matinais exige imagem antes da PL. Pode ser tumor, HTIC ou outra causa de HIC. A conduta deve integrar tempo de evolução, exclusão de mimickers e estratificação de risco neurológico.",
+    "trap": "Puncionar antes de imagem quando há papiledema e suspeita de massa."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 37,
+    "group": "Neurologia",
+    "theme": "GBS — diagnóstico diferencial botulismo",
+    "stem": "Adulto com diplopia, disartria, midríase e fraqueza descendente após conserva caseira, reflexos diminuídos, sem dissociação albumino-citológica típica precoce. Qual a distinção e conduta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Suspeitar botulismo, suporte ventilatório precoce e antitoxina conforme protocolo, diferenciando do GBS clássico ascendente, já",
+    "wrongs": [
+      "Tratar automaticamente como GBS com IVIG e omitir antitoxina apesar da história alimentar e midríase proeminente, sem atraso, já",
+      "Indicar trombólise por diplopia, sem critério de AVC e com progressão descendente sugestiva de toxina, agora, com segurança, já",
+      "Liberar com colírio lubrificante apenas, ignorando risco de falência respiratória no botulismo, neste caso, conforme meta, já",
+      "Indicar timectomia urgente como primeira medida no botulismo alimentar agudo do adulto, de imediato, na prática, neste manejo, já"
+    ],
+    "explain": "Botulismo: descendente, midríase, história alimentar; antitoxina + suporte. GBS é tipicamente ascendente com arreflexia e liquor característico.",
+    "trap": "Tratar botulismo como GBS e omitir antitoxina/suporte."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 38,
+    "group": "Neurologia",
+    "theme": "MG — fármacos que pioram",
+    "stem": "Paciente com MG estável internado por pneumonia comunitária. Prescrição inclui aminoglicosídeo e benzodiazepínico sedativo alto. Evolui com hipoventilação. Qual a lição de manejo? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Reconhecer fármacos que agravam MG, ajustar antimicrobianos/sedativos e tratar possível crise com suporte e imunoterapia, já, sim",
+    "wrongs": [
+      "Manter aminoglicosídeo e aumentar sedação para ‘descansar os músculos’, aprofundando a insuficiência respiratória, sem atraso, já",
+      "Indicar alta imediata sem reavaliar capacidade vital apesar da hipoventilação em paciente miastênico, agora, com segurança, já",
+      "Administrar curare adicional como teste diagnóstico na hipoxemia da crise miastênica hospitalar, neste caso, conforme meta, já",
+      "Omitir qualquer revisão da prescrição e atribuir tudo a ‘ansiedade’, sem medir função respiratória, de imediato, na prática, já"
+    ],
+    "explain": "Aminoglicosídeos, bloqueadores neuromusculares e sedativos excessivos podem precipitar crise. Revise fármacos e suporte respiratório.",
+    "trap": "Manter drogas piorativas na MG com hipoventilação."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 39,
+    "group": "Neurologia",
+    "theme": "Parkinson — psicose e neurolépticos",
+    "stem": "Idoso com Parkinson desenvolve alucinações visuais sob agonista dopaminérgico. Necessita antipsicótico. Qual a escolha mais segura entre opções usuais de prova? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Preferir quetiapina ou clozapina (com monitorização) em baixa dose, evitando neurolépticos típicos que pioram o parkinsonismo, já",
+    "wrongs": [
+      "Usar haloperidol em dose alta de rotina como primeira escolha, aceitando bloqueio motor grave adicional, sem atraso, de imediato, já",
+      "Suspender toda terapia dopaminérgica abruptamente e deixar o paciente em imobilidade por dias sem suporte, agora, com segurança, já",
+      "Indicar trombólise pelas alucinações, tratando psicose de Parkinson como AVC isquêmico hiperagudo, neste caso, conforme meta, já",
+      "Prescrever metoclopramida contínua para náusea e psicose, piorando o bloqueio dopaminérgico motor, de imediato, na prática, já, sim"
+    ],
+    "explain": "Na psicose do Parkinson, evitar D2 potentes (haloperidol/metoclopramida). Quetiapina/clozapina são opções relativas; ajuste dopaminérgico gradual.",
+    "trap": "Usar haloperidol ou metoclopramida na psicose do Parkinson."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 40,
+    "group": "Neurologia",
+    "theme": "Alzheimer — delirium sobreposto",
+    "stem": "Idosa com Alzheimer leve chega com confusão aguda de 2 dias, alucinações e flutuação. Familiar nega nova medicação anticolinérgica, mas há ITU. Qual a conduta correta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Tratar a causa do delirium (ITU), revisar fármacos, garantir segurança e não rotular a piora aguda como ‘só Alzheimer’, com registro",
+    "wrongs": [
+      "Aumentar donepezila abruptamente em dose tóxica como único manejo da confusão aguda infecciosa, sem atraso, de imediato, na prática",
+      "Indicar lobotomia ou sedação profunda permanente sem investigar infecção ou causa reversível do delirium, agora, com segurança, já",
+      "Negar antibiótico na ITU porque ‘demência não se trata’ e devolver ao domicílio sem estabilização, neste caso, conforme meta, já",
+      "Trombolisar por confusão flutuante de dias, sem déficit focal súbito nem imagem compatível com AVC, de imediato, na prática, já"
+    ],
+    "explain": "Delirium superposto é reversível se a causa for tratada. Não se atribui toda piora aguda à demência de base. A conduta deve integrar tempo de evolução, exclusão de mimickers e estratificação de risco neurológico.",
+    "trap": "Ignorar ITU/delirium e atribuir tudo à progressão do Alzheimer."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 41,
+    "group": "Neurologia",
+    "theme": "EM — neurite óptica",
+    "stem": "Mulher de 24 anos com perda visual subaguda monocular, dor à movimentação ocular e disco óptico edemaciado. RM encefálica com lesões típicas assintomáticas. Qual a conduta do episódio visual? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Tratar o surto com metilprednisolona IV, avaliar critérios de EM e discutir terapia modificadora conforme risco prognóstico, já",
+    "wrongs": [
+      "Indicar enucleação do olho acometido como tratamento padrão da neurite óptica desmielinizante, sem atraso, de imediato, na prática",
+      "Administrar alteplase por perda visual subaguda de dias, sem critério de oclusão arterial hiperaguda, agora, com segurança, já",
+      "Prescrever apenas colírio antibiótico e omitir corticoterapia e investigação de doença desmielinizante, neste caso, conforme meta",
+      "Contraindicar qualquer seguimento neurológico após um episódio isolado com RM já alterada tipicamente, de imediato, na prática"
+    ],
+    "explain": "Neurite óptica: corticoide IV no surto; RM ajuda no risco de EM e decisão de DMT. Não é oclusão arterial típica trombolisável.",
+    "trap": "Tratar neurite como infecção ocular banal ou como AVC retiniano trombolisável."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 42,
+    "group": "Neurologia",
+    "theme": "Meningite viral versus bacteriana",
+    "stem": "Adulto jovem afebril há 12 h com cefaleia, nucalgia leve. Líquor: 80 células linfocíticas, proteína 50, glicose normal, Gram negativo. Estado geral bom. Qual a conduta mais coerente? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Considerar meningite viral provável, suporte, reavaliar e usar antibiótico empírico se houver dúvida de bacteriana grave, já, sim",
+    "wrongs": [
+      "Diagnosticar liquor bacteriano clássico e manter meropenem+vancomicina por seis semanas sem critérios, sem atraso, de imediato, já",
+      "Indicar craniotomia exploradora por celularidade liquórica linfocítica leve em paciente estável, agora, com segurança, em vigência",
+      "Administrar anticoagulação plena de rotina em toda pleocitose linfocítica sem evidência de trombose venosa, neste caso, conforme meta",
+      "Liberar sem qualquer reavaliação apesar de cefaleia meníngea, omitendo orientações de alarme e retorno, de imediato, na prática"
+    ],
+    "explain": "Liquor linfocítico com glicose normal em paciente bom estado sugere viral; ainda assim, se houver dúvida de bacteriana, não atrase antibiótico empírico.",
+    "trap": "Tratar todo liquor inflamatório como bacteriano grave por semanas sem critério."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 43,
+    "group": "Neurologia",
+    "theme": "Neuropatia — deficiência de B12",
+    "stem": "Homem de 67 anos vegano estrito com parestesias, ataxia proprioceptiva, Romberg positivo e macrocitose. Reflexos aquileus reduzidos. Qual a conduta diagnóstica e terapêutica? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Dosar B12/ácido metilmalônico, iniciar reposição parenteral de cobalamina e investigar causa da deficiência, com registro, já, sim",
+    "wrongs": [
+      "Indicar apenas fisioterapia sem reposição de B12, apesar de ataxia proprioceptiva e macrocitose sugestivas, sem atraso, de imediato",
+      "Administrar óxido nitroso recreativo como teste, piorando a mieloneuropatia por cobalamina, agora, com segurança, em vigência, já",
+      "Trombolisar por ataxia subaguda, sem déficit vascular hiperagudo nem imagem de AVC cerebelar agudo, neste caso, conforme meta, já",
+      "Prescrever folato isolado sem B12 em megaloblastose, risco de piorar neuropatia por mascarar deficiência, de imediato, na prática"
+    ],
+    "explain": "B12: clínica + macrocitose; repor cobalamina (parenteral se sintomático/grave) e investigar causa. Folato isolado pode mascarar.",
+    "trap": "Dar só folato ou omitir reposição na mieloneuropatia por B12."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 44,
+    "group": "Neurologia",
+    "theme": "AVC hemorrágico — anticoagulado",
+    "stem": "Idoso em varfarina por FA chega com hemiparesia e TC com hematoma intraparenquimatoso. INR 3,4. Glasgow 14. Qual a prioridade hematológica? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Reverter anticoagulação com complexo protrombínico ± vitamina K conforme protocolo, além do suporte e controle pressórico, já",
+    "wrongs": [
+      "Manter varfarina e adicionar heparina para ‘equilibrar’ o hematoma em expansão no paciente anticoagulado, sem atraso, de imediato",
+      "Administrar alteplase para limpar o coágulo intraparenquimatoso, agravando o sangramento intracraniano, agora, com segurança, já",
+      "Aguardar normalização espontânea do INR em dias sem reversão, apesar de hematoma agudo sintomático, neste caso, conforme meta, já",
+      "Indicar plasmaférese de rotina como única medida, omitindo PCC/vitamina K disponíveis no protocolo local, de imediato, na prática"
+    ],
+    "explain": "HIC em anticoagulado: reversão rápida (PCC + vit. K na varfarina), suporte e PA. Não se adiciona mais anticoagulante nem trombolítico.",
+    "trap": "Não reverter INR alto na hemorragia intracraniana."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 45,
+    "group": "Neurologia",
+    "theme": "Epilepsia — estado de mal refratário",
+    "stem": "Paciente em status convulsivo persiste após benzodiazepínico e segunda linha IV adequada. Já intubado em UTI. Qual o próximo escalonamento típico? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Iniciar anestésico/coma terapêutico (midazolam, propofol ou pentobarbital) sob monitorização EEG e suporte intensivo, com registro",
+    "wrongs": [
+      "Extubar e enviar para enfermaria sem EEG, apesar de crises contínuas refratárias à segunda linha, sem atraso, de imediato, já, sim",
+      "Indicar apenas homeopatia e observação passiva como escalonamento do status refratário em UTI, agora, com segurança, em vigência, já",
+      "Administrar trombólise por atividade motora repetitiva, sem evidência de oclusão arterial aguda tratável, neste caso, conforme meta",
+      "Suspender todos os anticrises abruptamente para ‘quebrar o ciclo’, risco de agravar o status, de imediato, na prática, neste manejo"
+    ],
+    "explain": "Status refratário: anestesia/coma controlado em UTI com EEG. Não se desescalona suporte nem se trombolisa convulsões. A conduta deve integrar tempo de evolução, exclusão de mimickers e estratificação de risco neurológico.",
+    "trap": "Não escalar para anestésico no status refratário intubado."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 46,
+    "group": "Neurologia",
+    "theme": "HTIC — trombose venosa cerebral",
+    "stem": "Puérpera de 10 dias com cefaleia progressiva, crises focais e papiledema. RM/angio: trombose de seio sagital. Sem hemorragia grande contraindicante. Qual o tratamento base? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Iniciar anticoagulação conforme protocolo de TVC, tratar crises e HIC, e investigar trombofilia quando apropriado, com registro, já",
+    "wrongs": [
+      "Contraindicar anticoagulação em toda TVC mesmo sem hemorragia proibitiva, apenas pelo puerpério recente, sem atraso, de imediato",
+      "Indicar trombólise arterial sistêmica idêntica ao protocolo de AVC arterial em toda TVC com cefaleia, agora, com segurança, já, sim",
+      "Tratar apenas com paracetamol e alta, omitindo anticoagulação e controle de hipertensão intracraniana, neste caso, conforme meta",
+      "Indicar craniotomia bilateral de rotina antes de qualquer anticoagulação na TVC com crises controláveis, de imediato, na prática"
+    ],
+    "explain": "TVC: anticoagulação é base mesmo com algumas hemorragias selecionadas; manejar crises/HIC. Puerpério é fator de risco, não contraindicação absoluta.",
+    "trap": "Negar anticoagulação na TVC só por ser puérpera."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 47,
+    "group": "Neurologia",
+    "theme": "AVC — prevenção secundária",
+    "stem": "Paciente com AVC isquêmico aterotrombótico há 5 dias, sem FA, estenose carotídea <50%. Já em AAS. LDL 142 mg/dL. Qual a otimização mais importante além do controle de HAS/DM? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Iniciar estatina de alta intensidade, reforçar antiagregação conforme protocolo e controlar agressivamente fatores de risco, já",
+    "wrongs": [
+      "Suspender AAS e estatina porque o déficit já estabilizou, elevando risco de recorrência precoce, sem atraso, de imediato, já, sim",
+      "Indicar anticoagulação plena automática em todo AVC aterotrombótico sem FA nem outra indicação clara, agora, com segurança, já",
+      "Manter LDL livremente acima de 190 sem estatina, priorizando apenas analgésico para a hemiparesia residual, neste caso, conforme meta",
+      "Indicar trombólise diária profilática por 30 dias após o evento, fora de qualquer evidência clínica, de imediato, na prática, já"
+    ],
+    "explain": "Prevenção secundária aterotrombótica: antiagregante, estatina intensa e controle de risco. Anticoagulação não é rotina sem FA/indicação.",
+    "trap": "Omitir estatina/antiagregante após AVC aterotrombótico."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 48,
+    "group": "Neurologia",
+    "theme": "Neuropatia — Guillain-Barré variante Miller Fisher",
+    "stem": "Adulto após infecção apresenta oftalmoplegia, ataxia e arreflexia, consciência preservada, liquor com proteinorraquia. Anti-GQ1b positivo. Qual a conduta? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Diagnosticar variante Miller Fisher, monitorar deglutição/respiração e tratar com IVIG ou plasmaférese como no GBS, com registro, já",
+    "wrongs": [
+      "Tratar como AVC de tronco com trombólise tardia dias após início subagudo e anti-GQ1b positivo, sem atraso, de imediato, na prática",
+      "Indicar apenas colírio e óculos sem imunoterapia nem vigilância respiratória na oftalmoplegia aguda, agora, com segurança, já, sim",
+      "Prescrever levodopa como tratamento específico da ataxia do Miller Fisher com arreflexia e anti-GQ1b, neste caso, conforme meta, já",
+      "Negar qualquer relação com GBS e omitir suporte, apesar da tríade clássica e risco de progressão, de imediato, na prática, já, sim"
+    ],
+    "explain": "Miller Fisher: oftalmoplegia + ataxia + arreflexia (± anti-GQ1b). Tratamento alinhado ao GBS (IVIG/plasmaférese) e monitorização.",
+    "trap": "Trombolisar Miller Fisher como AVC de tronco sem critério."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 49,
+    "group": "Neurologia",
+    "theme": "Coma — morte encefálica introdução",
+    "stem": "Paciente em coma irreversível sob suspeita de morte encefálica, já com causa conhecida, sem fatores confundidores (sedação/hipotermia/metabólico). Qual o princípio correto? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Seguir protocolo legal de exame clínico neurológico completo ± testes complementares, com documentação rigorosa e comunicação familiar",
+    "wrongs": [
+      "Declarar morte encefálica só pela TC alterada, sem exame clínico padronizado nem exclusão de confundidores, sem atraso, de imediato",
+      "Omitir avaliação de reflexos de tronco e apnea test quando indicados, acelerando doação sem protocolo, agora, com segurança, já, sim",
+      "Manter sedação profunda e declarar morte sem washout adequado de fármacos que deprimem o SNC, neste caso, conforme meta, no hospital",
+      "Comunicar a família apenas após remoção de suporte, sem transparência nem respaldo ao protocolo vigente, de imediato, na prática, já"
+    ],
+    "explain": "Morte encefálica exige protocolo clínico estrito, exclusão de confundidores e documentação; imagem sozinha não basta. A conduta deve integrar tempo de evolução, exclusão de mimickers e estratificação de risco neurológico.",
+    "trap": "Diagnosticar morte encefálica só por imagem ou sob sedação residual."
+  },
+  {
+    "idPrefix": "cli-neuro",
+    "n": 50,
+    "group": "Neurologia",
+    "theme": "Cefaleia em salvas — profilaxia",
+    "stem": "Paciente com cluster episódico tem 3–4 crises/dia há 10 dias, respondendo parcialmente ao O2. Sem contraindicação cardiovascular absoluta ao verapamil. Qual a melhor estratégia profilática típica? Sinais vitais e glicemia capilar já foram checados e não explicam isoladamente o déficit neurológico atual. O serviço dispõe de tomografia, trombólise e suporte intensivo conforme protocolo institucional vigente.",
+    "correct": "Iniciar verapamil com monitorização eletrocardiográfica conforme dose e manter oxigênio/triptano para ataques residuais, com registro",
+    "wrongs": [
+      "Usar apenas opioides diários prolongados como profilaxia exclusiva da cefaleia em salvas episódica, sem atraso, de imediato, já",
+      "Indicar radioterapia orbital empírica como primeira linha profilática antes de verapamil e oxigênio, agora, com segurança, já, sim",
+      "Suspender oxigênio na crise porque a profilaxia ‘já foi pensada’, deixando ataques sem tratamento agudo, neste caso, conforme meta",
+      "Anticoagular cronicamente para prevenir salvas, sem indicação vascular e com risco hemorrágico injustificado, de imediato, já, sim"
+    ],
+    "explain": "Verapamil é profilaxia clássica do cluster; O2/triptano permanecem para ataques. Opioides crônicos não são profilaxia adequada.",
+    "trap": "Profilaxiar salvas com opioide crônico e omitir verapamil/O2."
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-hemato",
+    "n": 1,
+    "group": "Hematologia",
+    "theme": "Anemia ferropriva — investigação no adulto",
+    "stem": "Homem de 62 anos, previamente hígido, apresenta fadiga progressiva há 4 meses. Hemograma: Hb 9,1 g/dL, VCM 72 fL, HCM 22 pg, RDW 17%, plaquetas 420.000/mm³, leucócitos 6.800/mm³. Ferro sérico 22 μg/dL, ferritina 8 ng/mL, TIBC 430 μg/dL, saturação de transferrina 8%. Nega sangramento aparente. Qual a conduta diagnóstica mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "investigar perda digestiva oculta com endoscopia digestiva alta e colonoscopia, tratando a ferropriva e buscando a causa do sangramento crônico",
+    "wrongs": [
+      "atribuir o quadro apenas a dieta pobre em ferro e liberar sem investigação do trato gastrointestinal neste homem acima de 50 anos",
+      "iniciar eritropoetina subcutânea como primeira linha, sem corrigir ferro nem investigar sangramento oculto gastrointestinal..........",
+      "solicitar apenas mielograma com azul da Prússia e suspender qualquer investigação endoscópica por considerar o diagnóstico já fechado..................",
+      "transfundir concentrado de hemácias de rotina e dar alta, sem reposição de ferro oral nem pesquisa da fonte de perda sanguínea após estabilização inicial...."
+    ],
+    "explain": "Em homem ou paciente >50 anos, anemia ferropriva é perda crônica até prova em contrário; a prioridade é endoscopia alta e colonoscopia, além da reposição de ferro. Dieta isolada é rara nessa faixa; eritropoetina não substitui investigação; mielograma raramente é o primeiro passo.",
+    "trap": "Tratar só com ferro e ignorar investigação GI obrigatória no homem/idoso."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 2,
+    "group": "Hematologia",
+    "theme": "Anemia ferropriva — reposição",
+    "stem": "Mulher de 34 anos, menacme, com menorragia, Hb 8,8 g/dL, VCM 68 fL, ferritina 6 ng/mL. Estável hemodinamicamente, afebril. Já foi orientada sobre investigação ginecológica. Inicia tratamento da ferropriva. Qual esquema e expectativa de resposta são os mais adequados? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "ferro oral em jejum (cerca de 60 mg elementar), com vitamina C se tolerado, esperando pico reticulocitário em cerca de uma semana e correção",
+    "wrongs": [
+      "ferro intravenoso de rotina em toda mulher estável, sem tentar via oral nem corrigir a causa ginecológica da menorragia.....",
+      "suspender qualquer ferro e apenas aumentar carne vermelha na dieta, aguardando normalização espontânea da hemoglobina.............",
+      "associar eritropoetina e transfusão imediata como padrão, mesmo com estabilidade clínica e ferritina muito baixa diante do quadro atual.............",
+      "usar apenas ácido fólico em alta dose, pois microcitose com ferritina baixa seria megaloblastose disfarçada com reavaliação seriada neste contexto clínico"
+    ],
+    "explain": "Ferropriva estável: ferro oral em jejum é primeira linha; resposta reticulocitária precoce e elevação da Hb em semanas. IV fica para intolerância, má absorção ou necessidade rápida. Transfusão não é rotina se estável; folato não trata microcitose ferropênica.",
+    "trap": "Indicar ferro EV ou transfusão de rotina em paciente estável que tolera oral."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 3,
+    "group": "Hematologia",
+    "theme": "Anemia megaloblástica — deficiência de B12",
+    "stem": "Homem de 58 anos com fadiga, glossite e parestesias em botas e luvas. Hb 8,4 g/dL, VCM 118 fL, leucócitos 3.200/mm³, plaquetas 95.000/mm³. Esfregaço: macro-ovalócitos e neutrófilos hipersegmentados. LDH elevado, bilirrubina indireta 1,8 mg/dL, reticulócitos baixos. B12 140 pg/mL, folato normal. Qual conduta é a mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar reposição parenteral de vitamina B12, investigar anemia perniciosa/má absorção e não usar só folato, que não corrige o déficit neurológico",
+    "wrongs": [
+      "repor apenas ácido fólico em dose plena, pois VCM alto sempre indica deficiência isolada de folato sem necessidade de B12.........",
+      "indicar esplenectomia imediata pelo LDH alto, interpretando o quadro como hemólise esferocítica pura sem megaloblastose.................",
+      "transfundir até Hb 14 g/dL de rotina antes de qualquer reposição vitamínica, mesmo com estabilidade hemodinâmica atual no manejo hospitalar...............",
+      "iniciar quimioterapia empírica para leucemia aguda só pela pancitopenia, sem repor B12 nem revisar o esfregaço periférico sem adiamento injustificado..........."
+    ],
+    "explain": "VCM muito alto, hipersegmentação, pancitopenia e neuropatia apontam para B12; reposição parenteral e investigação de perniciosa são centrais. Folato isolado pode mascarar anemia e piorar neuropatia. LDH alto reflete eritropoiese ineficaz, não indica esplenectomia.",
+    "trap": "Tratar megaloblastose só com folato e ignorar B12 e risco neurológico."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 4,
+    "group": "Hematologia",
+    "theme": "Anemia megaloblástica — folato",
+    "stem": "Mulher de 29 anos, etilista, dieta pobre, sem sintomas neurológicos. Hb 9,0 g/dL, VCM 112 fL, B12 420 pg/mL, folato 1,2 ng/mL. Homocisteína elevada, ácido metilmalônico normal. Gravidez descartada. Qual é a interpretação e a conduta inicial correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "deficiência de folato: repor ácido fólico oral, corrigir dieta/álcool e investigar má absorção se não houver resposta adequada ao tratamento",
+    "wrongs": [
+      "deficiência de B12 confirmada pelo VCM alto, iniciando cianocobalamina parenteral mesmo com B12 sérica normal e MMA normal..",
+      "síndrome mielodisplásica provável, indicando quimioterapia hipometilante imediata sem tentativa de reposição vitamínica...........",
+      "hemólise intravascular aguda, com indicação de plasmaférese de urgência pelo LDH eventualmente elevado na megaloblastose neste atendimento..........",
+      "anemia ferropriva tipicamente macrocítica, iniciando ferro endovenoso em dose plena como única medida terapêutica no serviço de emergência................"
+    ],
+    "explain": "Folato baixo com B12 e MMA normais fecha deficiência de folato; reposição oral e correção de fatores de risco. MMA elevado distingue B12. SMD é diagnóstico de exclusão após carências; plasmaférese não cabe; ferropriva é microcítica.",
+    "trap": "Assumir toda macrocitose como B12 ou SMD sem dosar folato."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 5,
+    "group": "Hematologia",
+    "theme": "Anemia hemolítica autoimune",
+    "stem": "Mulher de 41 anos com icterícia e astenia há 10 dias. Hb 7,2 g/dL, reticulócitos 12%, bilirrubina indireta 3,4 mg/dL, LDH 780 U/L, haptoglobina indetectável. Coombs direto positivo (IgG). Esfregaço sem esquizócitos. PA estável. Qual tratamento inicial é o mais indicado? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar corticoide sistêmico como primeira linha na AHAI por anticorpo quente, com suporte transfusional criterioso e investigação de causa",
+    "wrongs": [
+      "indicar esplenectomia imediata em toda AHAI antes de qualquer corticoide, mesmo em primeira apresentação e sem falha.......",
+      "iniciar plasmaférese de urgência como padrão de AHAI quente, confundindo com PTT apesar da ausência de esquizócitos e plaquetopenia",
+      "usar apenas ferro oral, interpretando reticulocitose e icterícia como ferropriva clássica sem hemólise imune mediada na conduta imediata...........",
+      "administrar heparina plena empírica por suspeita de CID, sem evidência de coagulopatia consumptiva neste cenário de AHAI com documentação no prontuário.."
+    ],
+    "explain": "AHAI quente (Coombs IgG+): corticoide é primeira linha; transfusão se necessário com compatibilização difícil. Esplenectomia é reservada a refratários. Plasmaférese é de PTT. Ferro não trata hemólise imune.",
+    "trap": "Trocar AHAI por PTT/CID e iniciar plasmaférese ou anticoagulação indevida."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 6,
+    "group": "Hematologia",
+    "theme": "Deficiência de G6PD — crise hemolítica",
+    "stem": "Homem de 28 anos, afrodescendente, inicia nitrofurantoína para ITU e após 2 dias apresenta lombalgia, urina escura e palidez. Hb 8,0 g/dL, reticulócitos altos, bilirrubina indireta elevada, haptoglobina baixa. Esfregaço com hemácias mordidas. Coombs negativo. Qual conduta é prioritária? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "suspender o oxidante desencadeante, oferecer suporte (hidratação/transfusão se necessário) e confirmar deficiência de G6PD após a fase aguda",
+    "wrongs": [
+      "manter o antibiótico oxidante e iniciar corticoide em dose imunossupressora presumindo AHAI apesar do Coombs negativo.......",
+      "indicar esplenectomia de urgência na primeira crise, sem remover o fármaco desencadeante nem suporte clínico adequado.............",
+      "iniciar troca plasmática terapêutica imediata por confundir com PTT, apesar de plaquetas normais e ausência de esquizócitos com suporte multidisciplinar",
+      "repor vitamina B12 parenteral como tratamento específico da hemoglobinúria, sem suspender o agente oxidante conforme a gravidade descrita................."
+    ],
+    "explain": "Crise de G6PD pós-oxidante: suspender o gatilho e suporte. Diagnóstico enzimático pode ser falso-negativo na crise; confirmar depois. Não é AHAI (Coombs−). Plasmaférese e esplenectomia não são primeira linha.",
+    "trap": "Manter o fármaco oxidante e tratar como AHAI ou PTT."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 7,
+    "group": "Hematologia",
+    "theme": "Esferocitose hereditária",
+    "stem": "Homem de 22 anos com icterícia intermitente, esplenomegalia discreta e cálculos biliares. Hb 11,2 g/dL, VCM 84, CHCM 37 g/dL, reticulócitos 8%, bilirrubina indireta alta. Coombs negativo. Pai com história semelhante. Qual é a melhor interpretação diagnóstica inicial? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "esferocitose hereditária provável: hemólise extravascular crônica com CHCM alto, Coombs negativo e história familiar, avaliando necessidade de",
+    "wrongs": [
+      "AHAI quente típica, iniciando prednisona imediata apesar do Coombs negativo e da história familiar sugestiva de defeito de....",
+      "anemia ferropriva, pelo cálculo biliar, iniciando ferro EV sem avaliar reticulócitos nem marcadores de hemólise crônica.............",
+      "PTT incompleta, indicando plasmaférese só pela bilirrubina indireta elevada, sem trombocitopenia nem esquizócitos no esfregaço para o paciente adulto.",
+      "mieloma em adulto jovem, pedindo eletroforese de proteínas como único exame, ignorando o padrão hemolítico familiar conforme protocolo vigente.............."
+    ],
+    "explain": "Esferocitose: hemólise crônica, CHCM elevado, Coombs−, família positiva, colelitíase. Folato e avaliação de esplenectomia em casos selecionados. Não tratar como AHAI sem Coombs+.",
+    "trap": "Tratar esferocitose Coombs-negativa como AHAI com corticoide de rotina."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 8,
+    "group": "Hematologia",
+    "theme": "Leucemia linfoblástica aguda",
+    "stem": "Adolescente de 17 anos com fadiga, febre e petéquias há 3 semanas. Hb 7,8 g/dL, plaquetas 18.000/mm³, leucócitos 32.000/mm³ com 60% de blastos. LDH alto. Sem hepatoesplenomegalia maciça. Qual a conduta diagnóstica prioritária? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "internar, estabilizar, coletar mielograma/imunofenotipagem e citogenética para classificar LLA versus outras leucemias agudas e iniciar terapia",
+    "wrongs": [
+      "tratar empiricamente como LLC do idoso com ibrutinibe oral ambulatorial, sem mielograma, apenas pela presença de linfocitose...",
+      "indicar apenas antibiótico oral e retorno em 30 dias, atribuindo blastos a reação leucemoide infecciosa banal sem investigação medular",
+      "iniciar hidroxiureia isolada como tratamento definitivo de LLA, sem quimioterapia de indução nem suporte transfusional adequado na unidade de referência",
+      "realizar esplenectomia diagnóstica antes de qualquer estudo medular, por considerar a esplenomegalia o achado mais decisivo diante do quadro atual..........."
+    ],
+    "explain": "Pancitopenia/blastos em jovem = urgência onco-hematológica: tipagem medular completa. LLC é do idoso e não se trata assim. Atraso ambulatorial é inaceitável.",
+    "trap": "Confundir LLA do jovem com LLC e liberar para tratamento oral ambulatorial."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 9,
+    "group": "Hematologia",
+    "theme": "Leucemia mieloide aguda",
+    "stem": "Mulher de 54 anos com astenia e sangramento gengival. Hb 8,0 g/dL, plaquetas 22.000/mm³, leucócitos 45.000/mm³ com 40% de blastos mieloides. Coagulograma: TAP e TTPa alongados, fibrinogênio 80 mg/dL, D-dímero muito alto. Esfregaço com bastões de Auer. Qual associação diagnóstica e conduta inicial é a mais correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "suspeitar LMA, em especial variante promielocítica se coagulopatia intensa, e iniciar suporte de CID com referência urgente para indução específica",
+    "wrongs": [
+      "diagnosticar PTI isolada só pela plaquetopenia e iniciar prednisona ambulatorial, ignorando blastos e coagulopatia consumptiva grave",
+      "tratar como hemofilia A adquirida apenas com fator VIII, sem avaliar blastos mieloides nem a possibilidade de LMA-M3.....................",
+      "indicar plasmaférese para PTT clássica apesar dos bastões de Auer e do perfil típico de CID da leucemia promielocítica neste contexto clínico..............",
+      "liberar com ácido fólico e retorno, interpretando blastos como megaloblastos de carência sem urgência oncológica no manejo hospitalar conforme protocolo vigente."
+    ],
+    "explain": "LMA com CID intensa sugere LPA (M3): emergência com suporte coagulopático e terapia específica (ATRA/ATO conforme protocolo). Não é PTI nem PTT típica.",
+    "trap": "Tratar coagulopatia da LPA como PTI ou PTT e atrasar a indução específica."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 10,
+    "group": "Hematologia",
+    "theme": "Leucemia linfocítica crônica",
+    "stem": "Homem de 72 anos assintomático, em check-up: leucócitos 28.000/mm³ com 75% linfócitos maduros, Hb 13,2 g/dL, plaquetas 180.000/mm³. Sem adenomegalias volumosas nem esplenomegalia. Imunofenótipo compatível com LLC. Qual a conduta mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "observação expectante (watch and wait) em LLC inicial assintomática sem citopenias significativas, com seguimento clínico e hemograma periódico",
+    "wrongs": [
+      "iniciar quimioterapia intensiva de indução tipo LLA em todo paciente com linfocitose clonal, independentemente do estádio e dos",
+      "indicar esplenectomia profilática imediata mesmo sem hiperesplenismo, citopenias refratárias ou massa esplênica sintomática..........",
+      "transfundir concentrado de hemácias de rotina para manter Hb acima de 14 g/dL em paciente já com hemoglobina normal após estabilização inicial.........",
+      "iniciar rituximabe + fludarabina de imediato em todo diagnóstico de LLC, sem critérios de tratamento (Binet/Rai e sintomas) neste atendimento................"
+    ],
+    "explain": "LLC precoce assintomática: observação. Tratar quando há sintomas B, citopenias, adenomegalias volumosas ou progressão. Indução agressiva não cabe no estádio inicial.",
+    "trap": "Tratar LLC assintomática só porque há linfocitose clonal."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 11,
+    "group": "Hematologia",
+    "theme": "Linfoma de Hodgkin",
+    "stem": "Homem de 27 anos com adenomegalia cervical indolor há 2 meses, febre vespertina, sudorese noturna e prurido. Rx de tórax: alargamento mediastinal. Biópsia: células de Reed-Sternberg, CD15+/CD30+. Qual a etapa seguinte mais adequada após estadiamento básico? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "completar estadiamento (PET-CT/TC conforme disponibilidade), avaliar função cardíaca/pulmonar e iniciar quimioterapia ABVD ou protocolo equivalente",
+    "wrongs": [
+      "indicar apenas antibiótico prolongado para adenite bacteriana, sem biópsia, apesar de sintomas B e massa mediastinal típica........",
+      "iniciar Imatinib como se fosse LMC Ph+, apenas pela idade jovem e pela presença de adenomegalia cervical isolada diante do quadro atual..",
+      "realizar esplenectomia diagnóstica de rotina em todos os casos atuais, como no estadiamento cirúrgico histórico obrigatório com reavaliação seriada........",
+      "tratar com corticoide isolado ambulatorial sem quimioterapia, esperando regressão espontânea das células de Reed-Sternberg na conduta imediata no manejo hospitalar"
+    ],
+    "explain": "Hodgkin clássico: estadiamento e quimioterapia (ABVD ou similar). Esplenectomia diagnóstica não é rotina moderna. Antibiótico não trata linfoma; Imatinib é de LMC.",
+    "trap": "Atrasar estadiamento/QT tratando adenomegalia como infecção banal."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 12,
+    "group": "Hematologia",
+    "theme": "Linfoma não Hodgkin agressivo",
+    "stem": "Mulher de 55 anos com massa cervical de crescimento rápido em 4 semanas, sudorese e perda ponderal. LDH muito elevado. Biópsia: linfoma difuso de grandes células B. PET sugere estágio avançado. ECOG 1, função renal normal. Qual princípio terapêutico é o mais correto? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar imunquimioterapia curativa tipo R-CHOP (ou equivalente) prontamente, com profilaxia de síndrome de lise tumoral conforme risco..",
+    "wrongs": [
+      "observar por 6 meses como na LLC indolente, pois todo linfoma B do adulto deve seguir watch and wait inicial obrigatório",
+      "usar apenas rituximabe sem quimioterapia em doença agressiva avançada com LDH alto e massa de crescimento rápido..............",
+      "indicar radioterapia exclusiva de campo envolvido como tratamento único em doença avançada com sintomas B sem adiamento injustificado...........",
+      "iniciar hidroxiureia oral ambulatorial como padrão de linfoma agressivo, reservando R-CHOP só para recidiva com suporte multidisciplinar neste atendimento"
+    ],
+    "explain": "DLBCL é agressivo e potencialmente curável: R-CHOP precoce ± profilaxia de lise. Watch and wait cabe a indolentes selecionados, não a grandes células B avançado.",
+    "trap": "Aplicar observação de linfoma indolente a DLBCL agressivo."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 13,
+    "group": "Hematologia",
+    "theme": "Mieloma múltiplo",
+    "stem": "Homem de 68 anos com dor lombar, anemia e creatinina 2,4 mg/dL. Eletroforese: pico monoclonal IgG. Cadeias leves urinárias positivas. Rx: lesões líticas cranianas. Cálcio 12,8 mg/dL. Medula com 40% plasmócitos. Qual conduta inicial prioriza riscos imediatos? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "hidratar, tratar hipercalcemia, avaliar compressão medular/dialise se necessário e iniciar terapia antimieloma com suporte ósseo (bifosfonato) em",
+    "wrongs": [
+      "indicar apenas colecistectomia pela hipercalcemia, sem hidratação vigorosa nem investigação de lesões líticas e pico monoclonal..",
+      "transfundir plaquetas de rotina apesar de contagem normal, adiando o tratamento da hipercalcemia e da lesão renal do mieloma...........",
+      "iniciar quimioterapia intensiva de LLA sem confirmar plasmócitos, apenas pela anemia e pela creatinina elevada do idoso no serviço de emergência.........",
+      "prescrever ferro oral isolado para a anemia e liberar, ignorando CRAB (cálcio, renal, anemia, bone) do mieloma sintomático para o paciente adulto.............."
+    ],
+    "explain": "Mieloma com CRAB: estabilizar hipercalcemia/renal, afastar emergência ortopédica/neurológica e iniciar terapia específica + bifosfonato. Ferro isolado não trata.",
+    "trap": "Focar só na anemia e negligenciar hipercalcemia e lesão renal do mieloma."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 14,
+    "group": "Hematologia",
+    "theme": "Síndrome mielodisplásica",
+    "stem": "Mulher de 74 anos com fadiga há 6 meses. Hb 8,6 g/dL, VCM 104 fL, leucócitos 2.900/mm³, plaquetas 78.000/mm³. B12 e folato normais. Medula: displasia multilinhagem, blastos 4%. Cariótipo com deleção 5q. Qual abordagem geral é a mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "diagnosticar SMD, estratificar risco (IPSS/IPSS-R), oferecer suporte transfusional e terapias específicas (ex.: lenalidomida em 5q) conforme o risco",
+    "wrongs": [
+      "tratar como deficiência de B12 refratária com doses mensais indefinidas, apesar de níveis séricos normais e displasia medular.......",
+      "iniciar indução tipo LMA imediatamente em toda SMD de baixo risco com blastos <5%, sem estratificação prognóstica na conduta imediata.....",
+      "indicar esplenectomia como tratamento curativo padrão da SMD com del(5q), independentemente do risco e das citopenias com documentação no prontuário........",
+      "liberar sem seguimento por ser 'anemia do idoso', sem estadiar risco nem planejar suporte ou terapia modificadora na unidade de referência........................"
+    ],
+    "explain": "SMD: diagnóstico medular + citogenética e estratificação de risco guiam suporte versus agentes específicos/alo-TCTH. del(5q) responde a lenalidomida em casos selecionados.",
+    "trap": "Ignorar SMD como 'anemia do idoso' ou tratar toda SMD como LMA."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 15,
+    "group": "Hematologia",
+    "theme": "Neoplasias mieloproliferativas — policitemia vera",
+    "stem": "Homem de 58 anos com cefaleia, prurido aquagênico e esplenomegalia. Ht 58%, Hb 18,6 g/dL, leucócitos 14.000/mm³, plaquetas 520.000/mm³. JAK2 V617F positivo. Gasometria com saturação normal. Qual conduta inicial é a mais apropriada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "flebotomias para meta de Ht, AAS em baixa dose se sem contraindicação e avaliar citoredução (hidroxiureia) conforme risco trombótico etário",
+    "wrongs": [
+      "iniciar anticoagulação plena com varfarina em todo JAK2+, sem flebotomia, mesmo na ausência de trombose estabelecida.......",
+      "indicar esplenectomia precoce como tratamento de primeira linha da policitemia vera sintomática com prurido......................",
+      "tratar com ferro oral para 'completar' a massa eritrocitária, elevando ainda mais o hematócrito e o risco trombótico conforme a gravidade descrita.",
+      "observar sem flebotomia nem AAS em paciente sintomático com Ht muito elevado e mutação JAK2 confirmada neste contexto clínico para o paciente adulto....."
+    ],
+    "explain": "PV: flebotomia (Ht alvo), AAS e citoredução se alto risco (idade/trombose prévia). Ferro oral é contraindicado. Esplenectomia não é primeira linha.",
+    "trap": "Dar ferro ou omitir flebotomia/AAS na policitemia vera sintomática."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 16,
+    "group": "Hematologia",
+    "theme": "Neoplasias mieloproliferativas — trombocitemia essencial",
+    "stem": "Mulher de 67 anos com parestesias em mãos e eritromelalgia. Plaquetas 980.000/mm³, Ht 42%, leucócitos 9.500/mm³. JAK2 positivo. Sem trombose prévia maior. Ferro normal. Qual manejo inicial costuma ser o mais adequado? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar AAS e citoredução (ex.: hidroxiureia) por idade ≥60 anos, investigando causas reativas e monitorando risco hemorrágico se plaquetas muito",
+    "wrongs": [
+      "indicar plaquetaférese de rotina semanal indefinida como única terapia, sem AAS nem citoredução farmacológica no idoso...........",
+      "usar heparina plena contínua ambulatorial em toda trombocitose JAK2+, mesmo sem evento trombótico agudo atual para o paciente adulto...",
+      "realizar esplenectomia para reduzir plaquetas, o que pode piorar a trombocitose reativa pós-esplenectomia conforme protocolo vigente.....................",
+      "apenas observar sem AAS em paciente idosa sintomática microvascular com plaquetas próximas de 1 milhão após estabilização inicial na unidade de referência....."
+    ],
+    "explain": "TE de alto risco (idade ≥60): AAS + citoredução. Afirmar exclusão de trombocitose reativa. Esplenectomia piora. Anticoagulação plena não é rotina sem trombose.",
+    "trap": "Observar TE de alto risco sem AAS/citoredução ou indicar esplenectomia."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 17,
+    "group": "Hematologia",
+    "theme": "PTI — púrpura trombocitopênica imune",
+    "stem": "Mulher de 32 anos com petéquias e sangramento gengival leve. Plaquetas 12.000/mm³, Hb e leucócitos normais. Esfregaço sem esquizócitos. HIV e HCV negativos. Sem medicamentos novos. PA normal, creatinina normal. Qual tratamento inicial é preferível se há sangramento mucocutâneo? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar corticoide (e/ou IGIV se sangramento mais grave/necessidade rápida), evitar antiagregantes e investigar causas secundárias de...",
+    "wrongs": [
+      "indicar plasmaférese imediata como primeira linha de PTI típica, protocolo reservado a microangiopatias trombóticas.....",
+      "transfundir concentrado de hemácias apesar de Hb normal, adiando qualquer medida para elevar plaquetas na PTI sintomática.....",
+      "iniciar quimioterapia para LMA só pela plaquetopenia isolada, sem blastos nem alterações das outras séries no hemograma diante do quadro atual..",
+      "realizar esplenectomia no primeiro dia de diagnóstico, antes de corticoide/IGIV e sem falha terapêutica documentada com reavaliação seriada..........."
+    ],
+    "explain": "PTI: exclusão de outras causas; corticoide ± IGIV se sangramento/contagem muito baixa. Esplenectomia após falha. Plasmaférese não é primeira linha de PTI.",
+    "trap": "Fazer plasmaférese ou esplenectomia de primeira linha na PTI típica."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 18,
+    "group": "Hematologia",
+    "theme": "PTT — púrpura trombocitopênica trombótica",
+    "stem": "Homem de 39 anos com confusão mental, febre baixa e equimoses. Hb 8,1 g/dL, plaquetas 18.000/mm³, creatinina 1,6 mg/dL. Esfregaço: numerosos esquizócitos. Coombs negativo. TP/TTPa quase normais. Qual conduta salva vidas e deve ser iniciada prontamente? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar plasmaférese (troca plasmática) de urgência por suspeita de PTT, com suporte e sem atrasar para resultado de ADAMTS13 se a clínica for",
+    "wrongs": [
+      "tratar apenas com corticoide oral ambulatorial como PTI simples, ignorando esquizócitos, anemia e alteração neurológica.......",
+      "indicar heparina plena por 'CID', apesar de coagulograma relativamente preservado e padrão de microangiopatia trombótica............",
+      "aguardar biópsia renal obrigatória antes de qualquer plasmaférese em paciente com sintomas neurológicos e esquizócitos no manejo hospitalar...........",
+      "transfundir plaquetas de rotina em grande volume antes da plasmaférese, sem indicação de sangramento ameaçador de vida sem adiamento injustificado.........."
+    ],
+    "explain": "PTT: pentade variável com MAHA + plaquetopenia; plasmaférese urgente. Não tratar como PTI. Plaquetas só se sangramento grave. Coagulograma ajuda a distinguir de CID.",
+    "trap": "Tratar PTT como PTI e atrasar a plasmaférese."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 19,
+    "group": "Hematologia",
+    "theme": "SHU — síndrome hemolítico-urêmica",
+    "stem": "Mulher de 26 anos após diarreia sanguinolenta há 5 dias evolui com oligúria, edema e palidez. Hb 7,5 g/dL, plaquetas 55.000/mm³, creatinina 4,2 mg/dL, esquizócitos presentes. TP normal. Suspeita de SHU típico associado a STEC. Qual manejo inicial é o mais adequado? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "suporte clínico e renal (hidratação criteriosa/diálise se indicado), evitar antibiótico empírico desnecessário na fase atual e avaliar necessidade",
+    "wrongs": [
+      "iniciar plasmaférese automática em todo SHU típico pós-diarreia como se fosse PTT neurológica clássica do adulto jovem............",
+      "administrar antibiótico amplo de rotina para STEC na fase de SHU estabelecido, o que pode aumentar liberação de toxina..................",
+      "indicar esplenectomia urgente pela anemia hemolítica, sem suporte renal nem definição do tipo de microangiopatia neste atendimento diante do quadro atual.",
+      "usar AAS e clopidogrel em dose plena para 'proteger' o endotélio, sem evidência de benefício no SHU típico agudo no serviço de emergência com reavaliação seriada"
+    ],
+    "explain": "SHU típico: suporte/diálise; antibiótico na fase de SHU pode piorar. Plasmaférese é mais de PTT; eculizumabe cabe no atípico. Distinguir de PTT pela clínica (renal>>neuro).",
+    "trap": "Tratar SHU típico exatamente como PTT com plasmaférese automática."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 20,
+    "group": "Hematologia",
+    "theme": "Hemofilia A — sangramento agudo",
+    "stem": "Homem de 24 anos com hemofilia A grave conhecida chega com hemartrose de joelho após trauma leve. Sem inibidor prévio documentado. Hb estável. Qual é o princípio terapêutico imediato correto? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "repor fator VIII o mais cedo possível na dose adequada ao tipo de sangramento, com analgesia e imobilização relativa, evitando IM e AAS.",
+    "wrongs": [
+      "aplicar intramuscular de anti-inflamatório e adiar a reposição de fator até confirmação radiográfica completa da articulação",
+      "transfundir plasma fresco em volume mínimo como substituto ideal e exclusivo do concentrado de fator VIII específico..........",
+      "iniciar varfarina em dose baixa para 'prevenir' nova hemartrose, o que aumenta drasticamente o risco hemorrágico na conduta imediata............",
+      "indicar artroscopia diagnóstica imediata antes de qualquer reposição de fator no sangramento articular agudo com documentação no prontuário..........."
+    ],
+    "explain": "Hemartrose em hemofilia: reposição precoce de fator VIII, suporte local, evitar IM/AAS. PFC é inferior ao concentrado. Anticoagular é absurdo.",
+    "trap": "Adiar fator e priorizar procedimento invasivo ou AINE IM."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 21,
+    "group": "Hematologia",
+    "theme": "Doença de von Willebrand",
+    "stem": "Mulher de 19 anos com menorragia importante e epistaxe recorrente. TAP normal, TTPa limítrofe, plaquetas normais. Antígeno de vWF e atividade de cofator da ristocetina reduzidos. Fator VIII discretamente baixo. Qual conduta terapêutica inicial para sangramento mucoso é a mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "usar desmopressina (se tipo responsivo) ou concentrado de vWF/FVIII conforme o tipo, além de antifibrinolíticos e manejo ginecológico da menorragia",
+    "wrongs": [
+      "iniciar heparina não fracionada plena por TTPa limítrofe, interpretando erroneamente como estado pró-trombótico primário...........",
+      "indicar esplenectomia para aumentar plaquetas, apesar de contagem plaquetária normal na doença de von Willebrand sem adiamento injustificado",
+      "tratar apenas com vitamina K oral prolongada, como se fosse deficiência isolada de fatores dependentes de vitamina K com suporte multidisciplinar..........",
+      "usar AAS contínuo para 'melhorar' a função endotelial, agravando o fenótipo hemorrágico mucocutâneo conforme a gravidade descrita no serviço de emergência......."
+    ],
+    "explain": "vW: DDAVP em tipos responsivos ou reposição de vWF; antifibrinolíticos ajudam em mucosas. Evitar AAS. Vitamina K e heparina não tratam vW.",
+    "trap": "Dar AAS ou vitamina K como se fosse outro distúrbio hemostático."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 22,
+    "group": "Hematologia",
+    "theme": "CID — coagulação intravascular disseminada",
+    "stem": "Paciente séptica com pneumonia grave: sangramento em sítios de punção, equimoses. Plaquetas 40.000/mm³, TAP e TTPa alongados, fibrinogênio 90 mg/dL, D-dímero muito elevado. Esquizócitos raros. Qual princípio de manejo é o mais correto? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "tratar a causa (sepse/foco), dar suporte hemodinâmico e repor hemoderivados conforme sangramento (PFC, crioprecipitado, plaquetas) de forma dirigida",
+    "wrongs": [
+      "iniciar plasmaférese como primeira linha obrigatória de toda CID, sem tratar o foco infeccioso precipitante da coagulopatia.........",
+      "administrar AAS e clopidogrel para bloquear agregação plaquetária na CID séptica com sangramento ativo no serviço de emergência...........",
+      "indicar heparina plena de rotina em toda CID sangrante, sem individualizar risco e sem estabilizar o desencadeante para o paciente adulto na conduta imediata",
+      "aguardar normalização espontânea sem suporte, mesmo com fibrinogênio muito baixo e sangramento em curso conforme protocolo vigente com documentação no prontuário."
+    ],
+    "explain": "CID: tratar o gatilho + reposição dirigida se sangramento/procedimento. Heparina só em cenários selecionados (CID trombótica). Antiagregar piora sangramento.",
+    "trap": "Focar em plasmaférese/antiagregação e esquecer o tratamento da causa da CID."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 23,
+    "group": "Hematologia",
+    "theme": "Anticoagulação — INR elevado com varfarina",
+    "stem": "Homem de 70 anos em varfarina por válvula mecânica mitral chega com INR 6,8, sem sangramento. Estável. Qual conduta é a mais apropriada na maioria das diretrizes para INR alto sem hemorragia? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "suspender a varfarina temporariamente e monitorar o INR, podendo usar vitamina K oral em dose baixa em casos selecionados, sem PFC de rotina se sem",
+    "wrongs": [
+      "infundir complexo protrombínico e PFC de rotina em todo INR >5 sem sangramento, expondo a riscos transfusionais desnecessários.....",
+      "dobrar a dose de varfarina no dia seguinte para 'estabilizar' o efeito, elevando ainda mais o risco hemorrágico..........................",
+      "iniciar heparina plena concomitante sem ajustar a varfarina, apenas porque o INR está elevado neste momento na unidade de referência....................... na",
+      "indicar troca valvar emergencial só pelo INR alto, sem sangramento e sem falha estrutural da prótese diante do quadro atual conforme a gravidade descrita........"
+    ],
+    "explain": "INR elevado sem sangramento: omitir doses ± vitamina K oral baixa; hemoderivados reservados a sangramento grave ou procedimento urgente. Não aumentar a dose.",
+    "trap": "Transfundir PFC/PCC de rotina em INR alto assintomático."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 24,
+    "group": "Hematologia",
+    "theme": "Anticoagulação — sangramento em DOAC",
+    "stem": "Mulher de 78 anos em rivaroxabana por FA chega com hematêmese volumosa, PA 88/50 mmHg, FC 120 bpm. Última dose há 4 horas. Qual prioridade terapêutica está correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "estabilizar via aérea/volume, suspender o DOAC, endoscopia urgente conforme protocolo e considerar antídoto/reversão específica ou PCC conforme",
+    "wrongs": [
+      "manter a rivaroxabana e apenas observar, pois DOACs nunca causam sangramento digestivo clinicamente relevante no idoso.........",
+      "iniciar varfarina sobreposta imediatamente durante a hematêmese ativa para 'cobrir' a FA sem interrupção do anticoagulante...........",
+      "indicar vitamina K isolada como antídoto completo e específico da rivaroxabana, como se fosse antagonista da varfarina neste contexto clínico..........",
+      "realizar colonoscopia eletiva em 30 dias como única medida, sem reanimação nem suspensão do anticoagulante na urgência no manejo hospitalar.................."
+    ],
+    "explain": "Sangramento grave em DOAC: ABC, suspender fármaco, controle do foco e reversão (andexanet/PCC conforme fármaco e recurso). Vitamina K não reverte DOAC.",
+    "trap": "Usar vitamina K como se DOAC fosse varfarina e atrasar a estabilização."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 25,
+    "group": "Hematologia",
+    "theme": "Anticoagulação — ponte com heparina",
+    "stem": "Paciente com válvula mecânica mitral em varfarina precisa de cirurgia eletiva com alto risco hemorrágico. INR atual 2,6. Qual estratégia de perioperatório é a mais coerente? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "suspender varfarina com antecedência, usar ponte com heparina (HNF/HBPM) no período de INR subterapêutico e retomar anticoagulação conforme",
+    "wrongs": [
+      "manter varfarina em dose plena até o momento da incisão em cirurgia de alto risco hemorrágico sem qualquer planejamento de.",
+      "trocar definitivamente varfarina por AAS isolado no perioperatório de prótese mecânica mitral, aceitando alto risco trombótico...",
+      "usar apenas compressão mecânica local como substituto de qualquer anticoagulante em portador de válvula mecânica mitral após estabilização inicial.",
+      "indicar vitamina K em dose alta no dia anterior sem plano de heparina, deixando longo período sem anticoagulação efetiva neste atendimento..............."
+    ],
+    "explain": "Prótese mecânica mitral: alto risco trombótico — ponte com heparina ao suspender varfarina é clássica. AAS isolado é insuficiente nesse contexto.",
+    "trap": "Suspender varfarina em válvula mecânica sem ponte e sem plano de retomada."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 26,
+    "group": "Hematologia",
+    "theme": "Transfusão — reação hemolítica aguda",
+    "stem": "Durante transfusão de concentrado de hemácias, paciente apresenta lombalgia súbita, febre, hipotensão e urina escura. A enfermagem interrompe a bolsa. Qual sequência imediata é a mais correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "manter acesso venoso com cristaloides, comunicar o banco de sangue, coletar amostras para investigação e suporte de choque/IRA, nunca reiniciar a",
+    "wrongs": [
+      "acelerar a transfusão da mesma bolsa para terminar rápido, atribuindo os sintomas apenas a ansiedade do paciente adulto..........",
+      "administrar apenas paracetamol e reiniciar a transfusão após 10 minutos sem notificar o serviço de hemoterapia diante do quadro atual..",
+      "indicar plasmaférese imediata antes de qualquer comunicação ao banco de sangue ou coleta de amostras pós-reação com reavaliação seriada..................",
+      "prescrever ferro EV para 'corrigir' a hemoglobinúria, sem suporte hemodinâmico nem investigação de incompatibilidade na conduta imediata no manejo hospitalar.."
+    ],
+    "explain": "Reação hemolítica aguda: parar transfusão, manter acesso, suporte, notificar hemoterapia e investigar. Não reiniciar a bolsa suspeita.",
+    "trap": "Reiniciar a transfusão após antitérmico, sem investigação."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 27,
+    "group": "Hematologia",
+    "theme": "Transfusão — sobrecarga volêmica (TACO)",
+    "stem": "Idoso com ICC recebe 2 bolsas de concentrado de hemácias em 2 horas e evolui com dispneia, crepitações, SpO2 86%, PA 170/100 mmHg, sem febre. Rx: congestão. Qual conduta é a mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "suspender a transfusão, oferecer oxigênio, posicionar sentado e usar diurético, reconhecendo sobrecarga circulatória associada à transfusão (TACO)",
+    "wrongs": [
+      "tratar como reação hemolítica aguda com coleta de Coombs e hidratação vigorosa, apesar da hipertensão e do edema pulmonar típicos de",
+      "administrar adrenalina IM imediatamente como anafilaxia, sem avaliar congestão pulmonar nem resposta a diurético e O2 no manejo hospitalar",
+      "reiniciar transfusão mais rápida para concluir as bolsas restantes ainda com edema agudo de pulmão em curso sem adiamento injustificado...................",
+      "indicar antibiótico amplio por 'pneumonia transfusional', sem otimizar volemia nem considerar TACO no idoso cardiopata com suporte multidisciplinar............."
+    ],
+    "explain": "TACO: hipervolemia — O2, diurético, interromper/reduzir ritmo. Diferir de TRALI (febre/hipotensão) e de hemólise. Não hidratar vigorosamente.",
+    "trap": "Tratar TACO como hemólise ou anafilaxia e hidratar ainda mais."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 28,
+    "group": "Hematologia",
+    "theme": "Neutropenia febril",
+    "stem": "Paciente em quimioterapia para LMA no dia +8: neutrófilos 80/mm³, temperatura 38,5 °C, PA 110/70 mmHg, sem foco claro. Hemoculturas coletadas. Qual conduta antimicrobiana inicial é a correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "iniciar antibioticoterapia intravenosa de amplo espectro antipseudomonas de imediato, após culturas, sem aguardar resultado laboratorial do agente",
+    "wrongs": [
+      "aguardar 48 horas o resultado das hemoculturas para só então iniciar qualquer antibiótico na neutropenia febril...................",
+      "usar apenas antitérmico oral e observação ambulatorial em neutropenia profunda pós-indução de LMA com febre neste atendimento...........",
+      "iniciar vancomicina isolada sem cobertura de Gram-negativos, incluindo Pseudomonas, como monoterapia inicial padrão no serviço de emergência..............",
+      "prescrever fluconazol isolado como único antimicrobiano inicial, adiando antibacteriano de amplo espectro para o paciente adulto na conduta imediata............"
+    ],
+    "explain": "Neutropenia febril: emergência — ATB IV amplo (cobertura Pseudomonas) após culturas, imediatamente. Vancomicina conforme critérios; antifúngico depois se persistência.",
+    "trap": "Esperar cultura para iniciar antibiótico na neutropenia febril."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 29,
+    "group": "Hematologia",
+    "theme": "Anemia falciforme — crise vaso-oclusiva no adulto",
+    "stem": "Homem de 26 anos com doença falciforme chega com dor intensa em ossos longos, afebril, SpO2 97%, Rx de tórax sem infiltrado. Hb 8,2 g/dL (basal 8–9). Qual manejo inicial da crise álgica é o mais adequado? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "analgesia multimodal precoce (incluindo opioide se dor intensa), hidratação, oxigênio se hipoxemia e investigar gatilhos, sem transfusão de rotina",
+    "wrongs": [
+      "transfundir até Hb 14 g/dL de rotina em toda crise álgica, elevando viscosidade e risco de complicações sem indicação clara.......",
+      "evitar qualquer opioide por 'risco de dependência', deixando dor intensa sem analgesia adequada no serviço de urgência na conduta imediata",
+      "iniciar antibiótico de amplo espectro obrigatório em toda dor óssea, mesmo afebril e sem foco infeccioso evidente com documentação no prontuário..........",
+      "indicar esplenectomia de urgência na crise álgica típica do adulto, sem sequestro esplênico nem outra indicação na unidade de referência........................"
+    ],
+    "explain": "Crise vaso-oclusiva: analgesia precoce, hidratação, O2 se preciso. Transfusão não é rotina na dor isolada; ATB se infecção suspeita.",
+    "trap": "Transfundir rotineiramente ou subtratar a dor na crise falciforme."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 30,
+    "group": "Hematologia",
+    "theme": "Anemia falciforme — síndrome torácica aguda",
+    "stem": "Mulher de 22 anos falciforme com febre, taquipneia, dor torácica e novo infiltrado pulmonar. SpO2 89% em ar. Hb caiu 1,5 g/dL do basal. Qual conduta prioritária está correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "oxigênio, antibioticoterapia, suporte ventilatório conforme gravidade e transfusão simples ou exsanguíneo parcial conforme protocolo da síndrome",
+    "wrongs": [
+      "tratar apenas como crise álgica com opioide, sem antibiótico nem consideração de transfusão, apesar de infiltrado e hipoxemia...",
+      "indicar anticoagulação plena empírica como única medida, sem suporte respiratório nem cobertura infecciosa na STA.....................",
+      "realizar esplenectomia imediata por qualquer queda de hemoglobina em adulto falciforme com infiltrado pulmonar conforme a gravidade descrita............",
+      "usar broncodilatador isolado e alta precoce, sem monitorar saturação nem considerar transfusão na síndrome torácica neste contexto clínico para o paciente adulto"
+    ],
+    "explain": "STA é emergência: O2, ATB, suporte e transfusão/exsanguíneo conforme gravidade. Não reduzir a analgesia isolada de crise óssea.",
+    "trap": "Subestimar STA tratando só como crise álgica sem O2/ATB/transfusão."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 31,
+    "group": "Hematologia",
+    "theme": "Anemia de doença crônica",
+    "stem": "Homem de 55 anos com AR ativa há anos: Hb 10,2 g/dL, VCM 82 fL, ferro 35 μg/dL, ferritina 180 ng/mL, TIBC 220 μg/dL. Reticulócitos baixos. Sem sangramento. Qual interpretação e conduta são as mais corretas? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "anemia de doença crônica: priorizar controle da inflamação de base; ferro oral costuma ser pouco útil se ferritina não estiver baixa compatível com",
+    "wrongs": [
+      "anemia ferropriva clássica pelo ferro baixo, iniciando ferro EV obrigatório apesar da ferritina elevada e do TIBC baixo............",
+      "mieloma oculto obrigatório em toda anemia normocítica, iniciando bortezomibe empírico sem pico monoclonal nem lesões líticas.............",
+      "AHAI provável, iniciando prednisona mesmo com reticulócitos baixos e sem evidência de hemólise laboratorial conforme protocolo vigente.....................",
+      "indução de LMA ambulatorial só pela anemia, com leucócitos e plaquetas normais e sem blastos no periferico após estabilização inicial na unidade de referência..."
+    ],
+    "explain": "ADC: ferro baixo + ferritina N/alta + TIBC baixo. Trata-se a doença de base. Diferir de ferropriva (ferritina baixa, TIBC alto).",
+    "trap": "Repor ferro agressivamente na ADC com ferritina alta."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 32,
+    "group": "Hematologia",
+    "theme": "Talassemia intermedia/minor — diferencial com ferropriva",
+    "stem": "Mulher de 24 anos assintomática: Hb 10,8 g/dL, VCM 62 fL, RDW 13%, ferritina 55 ng/mL. Eletroforese com HbA2 5,2%. Nega menorragia importante. Qual é a melhor conduta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "reconhecer padrão de talassemia menor, evitar ferro desnecessário e oferecer aconselhamento genético/familiar conforme o contexto reprodutivo",
+    "wrongs": [
+      "iniciar ferro oral prolongado por microcitose, mesmo com ferritina adequada e RDW normal típicos de traço talassêmico........",
+      "indicar esplenectomia preventiva em toda microcitose com HbA2 elevada, independentemente de hemólise ou esplenomegalia.............",
+      "transfundir mensalmente para 'normalizar' o VCM em paciente estável com talassemia menor oligossintomática diante do quadro atual....................",
+      "tratar com B12 parenteral porque VCM baixo seria na verdade macrocitose mascarada por deficiência oculta com reavaliação seriada neste contexto clínico...."
+    ],
+    "explain": "Talassemia menor: microcitose com RDW ~normal e ferritina ok; HbA2 elevada na beta. Evitar ferro empírico. Aconselhamento genético importa.",
+    "trap": "Tratar talassemia menor com ferro prolongado como ferropriva."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 33,
+    "group": "Hematologia",
+    "theme": "Leucemia mieloide crônica",
+    "stem": "Homem de 45 anos com plenitude abdominal. Leucócitos 98.000/mm³ com desvio até mielócitos, basofilia, Hb 12 g/dL, plaquetas 450.000/mm³. Baço 8 cm abaixo do rebordo. BCR-ABL1 positivo. Qual tratamento de escolha na fase crônica? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "iniciar inibidor de tirosina quinase (ex.: imatinibe ou outra geração conforme protocolo), com monitorização molecular da resposta ao tratamento",
+    "wrongs": [
+      "indicar apenas hidroxiureia vitalícia sem ITQ, aceitando não tratar o alvo BCR-ABL na fase crônica da LMC.......................",
+      "iniciar R-CHOP como se fosse linfoma agressivo, sem uso de inibidor de tirosina quinase específico neste contexto clínico.............",
+      "realizar esplenectomia curativa imediata como tratamento definitivo da LMC Ph-positiva em fase crônica no manejo hospitalar conforme protocolo vigente..",
+      "observar sem terapia específica até blastagem, pois a fase crônica nunca requer tratamento direcionado sem adiamento injustificado após estabilização inicial."
+    ],
+    "explain": "LMC Ph+: ITQ é padrão na fase crônica, com monitorização BCR-ABL. Hidroxiureia é citoredução temporária; esplenectomia não cura.",
+    "trap": "Tratar LMC só com hidroxiureia e omitir o inibidor de tirosina quinase."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 34,
+    "group": "Hematologia",
+    "theme": "Mielofibrose primária",
+    "stem": "Homem de 66 anos com fadiga, sudorese e esplenomegalia maciça. Hemograma: Hb 9,0 g/dL, leucócitos 18.000/mm³, plaquetas 110.000/mm³, dacriócitos no esfregaço. Medula: fibrose. JAK2 positivo. Qual princípio terapêutico é o mais coerente? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "tratar conforme risco e sintomas: suporte transfusional, ruxolitinibe se sintomas constitucionais/esplenomegalia, e avaliar TCTH em elegíveis de",
+    "wrongs": [
+      "indicar flebotomias repetidas como na policitemia vera, apesar de anemia e não de hematócrito elevado na mielofibrose...........",
+      "usar apenas ferro EV para eliminar dacriócitos, sem avaliar fibrose medular nem sintomas hiperesplênicos após estabilização inicial...",
+      "iniciar ABVD por confundir com Hodgkin, apenas pela sudorese noturna e pela esplenomegalia do idoso neste atendimento diante do quadro atual............",
+      "realizar esplenectomia de rotina em todos os casos no diagnóstico, sem falha de inibidor de JAK nem indicação específica no serviço de emergência............."
+    ],
+    "explain": "Mielofibrose: suporte, JAK inibidor se sintomas/esplenomegalia, TCTH se alto risco elegível. Flebotomia é de PV. Esplenectomia não é rotina inicial.",
+    "trap": "Fazer flebotomia como se fosse PV na mielofibrose anêmica."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 35,
+    "group": "Hematologia",
+    "theme": "Gamopatia monoclonal de significado indeterminado (MGUS)",
+    "stem": "Homem de 70 anos assintomático: pico IgG 1,2 g/dL, Hb normal, cálcio normal, creatinina normal, sem lesões líticas. Medula com 5% plasmócitos. Qual conduta é a mais adequada? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "diagnosticar MGUS e seguir com observação periódica (laboratorial/clínica), sem iniciar quimioterapia antimieloma na ausência de CRAB/SLiM",
+    "wrongs": [
+      "iniciar imediatamente esquema VRd (bortezomibe-lenalidomida-dexa) em todo pico monoclonal, mesmo sem critérios de mieloma.",
+      "indicar radioterapia crânio-espinhal profilática por risco teórico de lesões líticas futuras não documentadas...................",
+      "transfundir plaquetas mensalmente de rotina, apesar de contagem plaquetária normal no paciente com MGUS na conduta imediata no manejo hospitalar..",
+      "realizar autotransplante de células-tronco no diagnóstico de MGUS como padrão curativo obrigatório com documentação no prontuário....................... diante do"
+    ],
+    "explain": "MGUS: observar; tratar só se evoluir para mieloma sintomático/outros critérios. QT precoce não cabe. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Tratar MGUS como mieloma sintomático com quimioterapia imediata."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 36,
+    "group": "Hematologia",
+    "theme": "PTI refratária — segunda linha",
+    "stem": "Mulher de 40 anos com PTI: plaquetas voltam a <20.000/mm³ após desmame de corticoide, com petéquias. Já usou IGIV com resposta transitória. HIV/HCV negativos. Qual opção de segunda linha é coerente na prática atual? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "considerar agonista de receptor de trombopoietina, rituximabe ou esplenectomia conforme preferência, risco e disponibilidade, após falha/recaída do",
+    "wrongs": [
+      "indicar plasmaférese semanal indefinida como segunda linha padrão de PTI, protocolo típico de PTT e não de PTI crônica.............",
+      "iniciar quimioterapia tipo LMA de indução pela plaquetopenia recorrente, sem evidência de leucemia aguda sem adiamento injustificado.....",
+      "usar AAS contínuo para elevar plaquetas, o que aumenta sangramento sem benefício na PTI refratária com suporte multidisciplinar neste atendimento..........",
+      "observar indefinidamente com plaquetas <10.000/mm³ e sangramento mucoso, sem oferecer segunda linha efetiva conforme a gravidade descrita no serviço de emergência"
+    ],
+    "explain": "PTI refratária/recidivante: TPO-RA, rituximabe ou esplenectomia. Plasmaférese não é padrão. Antiagregar piora. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Usar plasmaférese como segunda linha clássica de PTI."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 37,
+    "group": "Hematologia",
+    "theme": "Hemofilia — inibidor de fator VIII",
+    "stem": "Paciente com hemofilia A grave passa a não responder às doses habituais de fator VIII em hemartrose. Pesquisa de inibidor positiva em alto título. Qual princípio de manejo do sangramento agudo está correto? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "usar agentes de bypass (ex.: CCPa ou fator VII ativado) conforme protocolo e planejar indução de imunotolerância em centro especializado",
+    "wrongs": [
+      "aumentar indefinidamente só o fator VIII padrão sem estratégia de bypass quando há inibidor de alto título com falha clínica",
+      "iniciar varfarina para reduzir o consumo de fator VIII, o que agrava o risco hemorrágico do paciente no serviço de emergência.",
+      "indicar plaquetaférese terapêutica como tratamento específico do inibidor de fator VIII na hemofilia A para o paciente adulto na conduta imediata",
+      "suspender qualquer hemostático e apenas imobilizar, aceitando hemartrose progressiva sem cobertura hemostática conforme protocolo vigente............."
+    ],
+    "explain": "Inibidor alto título: bypass agents no agudo e imunotolerância. Mais FVIII isolado costuma falhar. Anticoagular é perigoso.",
+    "trap": "Insistir só em FVIII padrão e omitir agentes de bypass no inibidor."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 38,
+    "group": "Hematologia",
+    "theme": "Anticoagulação — TEV e DOAC",
+    "stem": "Homem de 52 anos com TVP proximal de membro inferior, estável, função renal normal, sem câncer ativo. Qual anticoagulação de manutenção ambulatorial é geralmente preferida hoje? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "iniciar DOAC (ex.: rivaroxabana/apixabana conforme bula) ou alternativa válida, por pelo menos 3 meses, educando sobre adesão e sinais de",
+    "wrongs": [
+      "usar apenas AAS 100 mg como anticoagulação única e suficiente na TVP proximal proximal sintomática do adulto.............",
+      "indicar trombólise sistêmica de rotina em toda TVP de panturrilha sem falência circulatória nem flegmasia......................",
+      "manter HBPM indefinida sem reassessorar, em paciente sem câncer, quando DOAC seria opção adequada e prática na unidade de referência.............",
+      "colocar filtro de veia cava inferior de rotina em todo TVP proximal antes de qualquer anticoagulante efetivo diante do quadro atual.................... na conduta"
+    ],
+    "explain": "TVP proximal: anticoagular ≥3 meses; DOACs são primeira linha em muitos elegíveis. AAS não substitui. Filtro se contraindicação à anticoagulação.",
+    "trap": "Tratar TVP proximal só com AAS ou filtro de rotina."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 39,
+    "group": "Hematologia",
+    "theme": "Neutropenia febril — alto risco e persistência",
+    "stem": "Paciente neutropênico febril em monoterapia antipseudomonas há 5 dias mantém febre, culturas negativas, estável, com mucosite. TC mostra infiltrado nodular. Qual próximo passo é o mais adequado? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "reavaliar foco, considerar cobertura antifúngica empírica/dirigida e imagens, mantendo antibacteriano conforme protocolo de neutropenia persistente",
+    "wrongs": [
+      "suspender todos os antimicrobianos imediatamente porque as hemoculturas ainda são negativas no quinto dia de febre.................",
+      "indicar laparotomia exploradora de rotina em toda neutropenia febril persistente sem sinais abdominais focais conforme a gravidade descrita",
+      "trocar apenas para AAS e alta domiciliar, apesar de neutropenia profunda e febre persistente sob quimioterapia neste contexto clínico para o paciente adulto",
+      "realizar plasmaférese para febre de origem indeterminada, sem evidência de microangiopatia trombótica associada no manejo hospitalar conforme protocolo vigente.."
+    ],
+    "explain": "Febre neutropênica persistente: buscar foco e considerar antifúngico empírico (especialmente com nódulos). Não suspender ATB precocemente.",
+    "trap": "Parar antibióticos só porque a cultura é negativa na neutropenia febril."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 40,
+    "group": "Hematologia",
+    "theme": "Transfusão — limiares em paciente estável",
+    "stem": "Homem de 60 anos internado por pneumonia, estável, sem SCA, sem sangramento: Hb 7,6 g/dL. Qual estratégia transfusional é a mais alinhada à evidência restritiva? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "adotar limiar restritivo (em geral Hb <7 g/dL em estáveis), avaliando sintomas; nesta Hb 7,6 g/dL estável, observar e tratar a causa costuma ser",
+    "wrongs": [
+      "transfundir até Hb 12 g/dL de rotina em todo infectado, independentemente de estabilidade clínica e de comorbidades.............",
+      "indicar eritrócitos irradiados obrigatórios em toda pneumonia comunitária do adulto imunocompetente estável conforme protocolo vigente",
+      "usar apenas ferro EV no lugar de avaliar necessidade transfusional quando houver hipóxia grave e instabilidade após estabilização inicial...............",
+      "recusar qualquer transfusão futura mesmo se Hb cair a 5 g/dL com instabilidade, por dogma restritivo absoluto neste atendimento diante do quadro atual........"
+    ],
+    "explain": "Estratégia restritiva reduz exposição: estáveis sem SCA frequentemente limiar ~7 g/dL. Individualizar sintomas e contexto (SCA, sangramento).",
+    "trap": "Transfundir liberamente até Hb 'normal' em paciente estável."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 41,
+    "group": "Hematologia",
+    "theme": "AHAI — causa secundária",
+    "stem": "Homem de 70 anos com AHAI por anticorpo quente; ao estadiar, encontra linfocitose 25.000/mm³ com imunofenótipo de LLC e adenomegalias. Qual conduta integrada é a mais correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "tratar a AHAI (corticoide ± outras linhas) e avaliar critérios para tratar a LLC subjacente, pois a doença clonal pode ser o gatilho da hemólise",
+    "wrongs": [
+      "ignorar a LLC e tratar só com ferro oral, pois Coombs positivo não mudaria a conduta em paciente idoso com linfocitose..........",
+      "indicar imediatamente alotransplante em todo idoso com AHAI, sem tentar corticoide nem avaliar a doença de base diante do quadro atual",
+      "usar rituximabe apenas se a eletroforese mostrar pico monoclonal IgM tipo Waldenström, nunca na AHAI/LLC com reavaliação seriada neste contexto clínico.",
+      "suspender investigação de secundarismos em AHAI do idoso, assumindo sempre idiopática sem hemograma completo na conduta imediata no manejo hospitalar........."
+    ],
+    "explain": "AHAI do adulto exige caça a secundarismos (LLC, LES, fármacos). Tratar hemólise e a doença de base quando indicada. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Tratar AHAI do idoso sem procurar LLC/linfoma/fármacos."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 42,
+    "group": "Hematologia",
+    "theme": "Mieloma — hipercalcemia e compressão",
+    "stem": "Paciente com mieloma conhecido apresenta dor lombar intensa, fraqueza em membros inferiores e retenção urinária há 12 horas. Ca 11,0 mg/dL. Qual prioridade diagnóstica e terapêutica está correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "tratar como possível compressão medular: corticoterapia, imagem urgente da coluna e descompressão/radioterapia conforme equipe, além do manejo do",
+    "wrongs": [
+      "atribuir tudo à hipercalcemia leve e apenas hidratar, adiando imagem neurológica apesar de déficit motor e retenção urinária.....",
+      "indicar anticoagulação plena empírica por 'mielopatia vascular', sem imagem e sem corticosteroide na suspeita compressiva..............",
+      "realizar artroplastia de joelho eletiva antes de avaliar a coluna, por dor referida em membros inferiores sem adiamento injustificado....................",
+      "aumentar só opioide em casa sem investigação, aceitando progressão de déficit neurológico por compressão não tratada com suporte multidisciplinar neste atendimento"
+    ],
+    "explain": "Déficit neurológico + mieloma = compressão medular até prova em contrário: esteroide, imagem e descompressão/RT. Não atrasar.",
+    "trap": "Atribuir paraparesia só a hipercalcemia e atrasar a imagem da coluna."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 43,
+    "group": "Hematologia",
+    "theme": "SMD — transformação e blastos",
+    "stem": "Paciente com SMD há 2 anos evolui com blastos periféricos 15%, Hb 7,0 g/dL e infecções recorrentes. Medula com 25% de blastos. Qual interpretação é a mais correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "progressão para leucemia mieloide aguda secundária a SMD, exigindo manejo de LMA/SMD de alto risco e discussão de TCTH se elegível......",
+    "wrongs": [
+      "manter apenas observação de baixo risco, pois SMD nunca progride independentemente da porcentagem de blastos medulares..",
+      "tratar exclusivamente com ferro oral, interpretando blastos como reticulócitos mal contados no analisador automatizado........",
+      "iniciar ABVD por sintomas constitucionais, sem considerar a transformação leucêmica da mielodisplasia no serviço de emergência..................",
+      "indicar esplenectomia curativa da transformação, sem quimioterapia nem avaliação de transplante alogênico para o paciente adulto na conduta imediata.."
+    ],
+    "explain": "Blastos ≥20% em medula = LMA (incluindo secundária a SMD). Alto risco: terapia intensiva/TCTH conforme elegibilidade. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Continuar observação de SMD de baixo risco após transformação leucêmica."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 44,
+    "group": "Hematologia",
+    "theme": "Policitemia — diferencial hipóxia",
+    "stem": "Mulher de 48 anos tabagista com Ht 54%, SpO2 89%, PaO2 baixa, baço não palpável, JAK2 negativo. Qual é a interpretação mais provável e a conduta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "policitemia secundária à hipoxemia: otimizar oxigenação/tratar causa pulmonar e evitar flebotomias indiscriminadas tipicamente usadas na PV primária",
+    "wrongs": [
+      "policitemia vera típica mesmo com JAK2 negativo e hipoxemia franca, iniciando flebotomia agressiva e hidroxiureia de imediato.......",
+      "trombocitemia essencial, pois qualquer elevação de Ht indica neoplasia mieloproliferativa JAK2-negativa clássica na conduta imediata......",
+      "indicar esplenectomia para reduzir Ht, apesar de não haver esplenomegalia nem diagnóstico de NMP confirmada com documentação no prontuário..................",
+      "usar eritropoetina exógena para estimular ainda mais a eritropoiese na hipoxemia crônica sintomática na unidade de referência com suporte multidisciplinar........"
+    ],
+    "explain": "Hipoxemia + JAK2− → secundária: tratar hipóxia. Flebotomia da PV não se aplica mecanicamente. EPO pioraria. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Tratar policitemia hipoxêmica como PV com flebotomia/hidroxiureia."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 45,
+    "group": "Hematologia",
+    "theme": "Falciforme — sequestro e adulto",
+    "stem": "Adulto falciforme com aumento rápido do baço, hipotensão e queda abrupta da Hb para 5,2 g/dL. Qual emergência deve ser reconhecida e qual suporte inicial? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "sequestro esplênico: reanimação volêmica e transfusão urgente, com avaliação cirúrgica/esplenectomia conforme evolução e centro de referência",
+    "wrongs": [
+      "crise álgica simples: apenas opioide e alta, sem transfusão, apesar de choque e queda rápida da hemoglobina..................",
+      "PTT: plasmaférese imediata sem considerar sequestro, mesmo com baço aumentado e sem esquizócitos descritos com suporte multidisciplinar",
+      "AHAI: corticoide isolado sem suporte transfusional na hipotensão por sequestro esplênico agudo conforme a gravidade descrita no serviço de emergência",
+      "hiperesplenismo crônico estável: observação ambulatorial sem reposição volêmica na instabilidade atual neste contexto clínico para o paciente adulto......."
+    ],
+    "explain": "Sequestro: urgência com queda de Hb + esplenomegalia/choque — volume e transfusão ± cirurgia. Não tratar como dor simples.",
+    "trap": "Subestimar sequestro como crise álgica e omitir transfusão."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 46,
+    "group": "Hematologia",
+    "theme": "Coagulopatia — vitamina K e colestase",
+    "stem": "Homem com icterícia obstrutiva prolongada apresenta equimoses e TAP muito alongado, TTPa pouco alterado, plaquetas normais. Qual a correção inicial mais adequada do TAP? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "repor vitamina K parenteral e tratar a obstrução biliar, pois há má absorção de vitaminas lipossolúveis; PFC se sangramento grave ou procedimento",
+    "wrongs": [
+      "iniciar desmopressina como se fosse von Willebrand, sem repor vitamina K na colestase com TAP isoladamente alongado..............",
+      "transfundir plaquetas de rotina apesar de contagem normal, adiando vitamina K e a desobstrução biliar para o paciente adulto...........",
+      "usar heparina para 'consumir menos fatores', agravando o risco hemorrágico do paciente ictérico conforme protocolo vigente com documentação no prontuário",
+      "indicar fator VIII concentrado como correção específica do TAP na deficiência de vitamina K após estabilização inicial na unidade de referência................"
+    ],
+    "explain": "Colestase → deficiência de K → TAP alongado: vitamina K ± PFC se urgente. Tratar a causa biliar. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Corrigir TAP da colestase com plaquetas ou FVIII e omitir vitamina K."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 47,
+    "group": "Hematologia",
+    "theme": "Linfoma — síndrome de lise tumoral",
+    "stem": "Paciente com linfoma Burkitt inicia quimioterapia e em 24 h apresenta hiperuricemia, hipercalemia, hiperfosfatemia e queda do cálcio iônico, com creatinina crescente. Qual prevenção/tratamento é essencial? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "hidratação vigorosa, monitorar eletrólitos/renal, usar hipouricemiante (alopurinol/rasburicase conforme risco) e dialisar se indicado pela gravidade",
+    "wrongs": [
+      "restringir água e usar diurético de rotina desde o início para 'proteger' o rim, piorando a precipitação de ácido úrico.............",
+      "administrar cálcio EV em bolus repetidos sem corrigir fósforo, apenas para normalizar o cálcio iônico na lise na unidade de referência....",
+      "suspender todo suporte e observar, pois a lise tumoral sempre é autolimitada sem risco de dialise diante do quadro atual conforme a gravidade descrita......",
+      "iniciar varfarina profilática como medida específica para reduzir a liberação de potássio das células tumorais com reavaliação seriada neste contexto clínico....."
+    ],
+    "explain": "Lise: hidratação + controle de úrico (rasburicase em alto risco) e manejo eletrolítico/dialise. Evitar desidratação. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Restringir volume na síndrome de lise tumoral."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 48,
+    "group": "Hematologia",
+    "theme": "Trombocitose reativa versus NMP",
+    "stem": "Mulher de 35 anos com plaquetas 780.000/mm³, Hb 10,0 g/dL microcítica, ferritina 7 ng/mL, JAK2 negativo, baço normal. Qual a interpretação mais provável? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "trombocitose reativa à ferropriva: corrigir ferro e a causa da perda, reavaliando plaquetas antes de rotular como trombocitemia essencial",
+    "wrongs": [
+      "trombocitemia essencial certa pelo número de plaquetas, iniciando hidroxiureia imediata mesmo com JAK2 negativo e ferropriva",
+      "policitemia vera latente, indicando flebotomia apesar da anemia microcítica e da ferritina muito baixa neste contexto clínico..",
+      "PTI paradoxal, iniciando prednisona para reduzir plaquetas, o que não faz sentido fisiopatológico neste cenário no manejo hospitalar.............",
+      "CID crônica, anticoagular com varfarina só pela trombocitose, sem coagulopatia consumptiva laboratorial sem adiamento injustificado...................."
+    ],
+    "explain": "Trombocitose + ferropriva clássica = reativa. Corrigir ferro antes de diagnosticar TE. JAK2− e baço normal reforçam. Essa lógica evita condutas precipitadas e prioriza o passo com melhor relação risco-benefício no adulto.",
+    "trap": "Tratar trombocitose ferropênica como TE com hidroxiureia imediata."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 49,
+    "group": "Hematologia",
+    "theme": "Anticoagulação — trombocitopenia induzida por heparina",
+    "stem": "Paciente no 7º dia de heparina não fracionada por TVP apresenta queda de plaquetas de 220.000 para 70.000/mm³ e nova isquemia digital. Qual conduta é a mais correta? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata. O exame físico dirigido e os exames já disponíveis no serviço sustentam a decisão neste momento, sem aguardar evolução espontânea indefinida.",
+    "correct": "suspender toda heparina (inclusive lavagens), evitar AAS como único tratamento, iniciar anticoagulante alternativo não heparínico e investigar HIT",
+    "wrongs": [
+      "aumentar a dose de heparina para vencer a resistência plaquetária presumida, mantendo HNF apesar da suspeita de HIT...............",
+      "transfundir plaquetas de rotina em HIT trombótico sem sangramento, podendo alimentar o consumo trombótico após estabilização inicial....",
+      "trocar apenas HNF por HBPM e considerar o problema resolvido, apesar da reação cruzada frequente na HIT neste atendimento diante do quadro atual..........",
+      "suspender anticoagulação por completo sem alternativa, deixando TVP/HIT sem cobertura antitrombótica efetiva no serviço de emergência com reavaliação seriada..."
+    ],
+    "explain": "HIT: parar heparina (todas) e anticoagular com agente alternativo (argatroban/fondaparinux etc. conforme recurso). Não trocar só para HBPM.",
+    "trap": "Manter heparina ou trocar só para HBPM na suspeita de HIT."
+  },
+  {
+    "idPrefix": "cli-hemato",
+    "n": 50,
+    "group": "Hematologia",
+    "theme": "Anemia falciforme — AVC e troca transfusional",
+    "stem": "Adulto jovem falciforme com déficit neurológico focal agudo; TC sem hemorragia. Equipe suspeita de AVC isquêmico relacionado à doença. Qual medida hematológica específica é prioritária além da abordagem do AVC? Sinais vitais atuais: PA 118/72 mmHg, FC 92 bpm, FR 18 irpm, SpO2 97% em ar ambiente e temperatura 36,8 °C, permitindo decidir a conduta imediata.",
+    "correct": "considerar exsanguineotransfusão ou transfusão agressiva conforme protocolo local para reduzir HbS, em conjunto com manejo neurológico do AVC agudo",
+    "wrongs": [
+      "evitar qualquer transfusão no AVC falciforme, mantendo apenas AAS, como se fosse prevenção primária de adulto não falciforme.......",
+      "indicar esplenectomia de urgência como tratamento específico do AVC isquêmico na hemoglobinopatia S com reavaliação seriada..............",
+      "iniciar hidroxiureia pela primeira vez durante o déficit agudo como substituto exclusivo da terapia transfusional de urgência na conduta imediata..........",
+      "usar plasmaférese para remover HbS, técnica não padrão em substituição à exsanguineotransfusão eritrocitária com documentação no prontuário......................"
+    ],
+    "explain": "AVC na falciforme: além do cuidado neurológico, reduzir HbS com troca/transfusão conforme protocolo. Hidroxiureia é crônica, não substitui a urgência.",
+    "trap": "Omitir redução de HbS no AVC agudo do falciforme."
+  }
+]
