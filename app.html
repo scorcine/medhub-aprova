@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260720q3">
+  <link rel="stylesheet" href="css/aprova.css?v=20260720q4">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -250,6 +250,22 @@
             <div class="actions-row" style="margin-bottom:0.75rem">
               <button type="button" class="btn btn-ghost btn-compact" id="q-browse-back" hidden>← Voltar</button>
             </div>
+
+            <div id="q-browse-stats" class="esp-ped-overview" hidden style="margin-bottom:1.25rem">
+              <div class="esp-exam-pick esp-ped-overview-exams">
+                <div class="label">Prova e ciclo</div>
+                <div id="q-browse-stats-options" class="esp-stat-filters"></div>
+              </div>
+              <div class="esp-ped-overview-body">
+                <div class="label" id="q-browse-stats-title">O que mais cai nesta área</div>
+                <p class="muted" id="q-browse-stats-sub">Use o gráfico para priorizar grupos e subtemas.</p>
+                <p class="esp-ped-verdict" id="q-browse-stats-verdict"></p>
+                <p class="esp-ped-unit" id="q-browse-stats-unit" hidden></p>
+                <div class="rev-bars" id="q-browse-stats-bars"></div>
+                <p class="muted esp-ped-source" id="q-browse-stats-source"></p>
+              </div>
+            </div>
+
             <div class="dash-grid dash-grid--sm" id="q-browse-grid"></div>
 
             <div class="study-card q-launch" id="q-launch" hidden style="margin-top:1rem">
@@ -735,6 +751,6 @@
   <script src="js/flashcards.js?v=20260719f"></script>
   <script src="js/questions.js?v=20260720q3"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260720q3"></script>
+  <script src="js/app.js?v=20260720q4"></script>
 </body>
 </html>

@@ -3513,6 +3513,172 @@ let aprovaQBrowse = {
   theme: ""
 };
 
+let aprovaQBrowseStatsFocus = "";
+let aprovaQBrowseStatsYear = "geral";
+let aprovaQBrowseExamChooserOpen = false;
+/** @type {Record<string, number>} */
+let aprovaQBrowseGroupWeights = Object.create(null);
+
+function aprovaQNormKey (text) {
+  if (typeof aprovaFocusNormKey === "function") return aprovaFocusNormKey(text);
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+/** Associa nome de grupo/subtema do banco ao tema das estatísticas de prova. */
+function aprovaQMatchStatPct (label, priorities) {
+  const key = aprovaQNormKey(label);
+  if (!key || !Array.isArray(priorities) || !priorities.length) return null;
+  let best = null;
+  priorities.forEach((p) => {
+    const tema = String(p.tema || "");
+    const tKey = aprovaQNormKey(tema);
+    if (!tKey) return;
+    const hit = key === tKey
+      || key.indexOf(tKey) >= 0
+      || tKey.indexOf(key) >= 0
+      || key.split(" ").some((w) => w.length > 4 && tKey.indexOf(w) >= 0)
+      || tKey.split(" ").some((w) => w.length > 4 && key.indexOf(w) >= 0);
+    if (!hit) return;
+    const pct = Number(p.pct);
+    if (!Number.isFinite(pct)) return;
+    if (!best || pct > best.pct) best = { tema, pct, n: p.n };
+  });
+  return best;
+}
+
+function aprovaQHideBrowseStats () {
+  const root = document.getElementById("q-browse-stats");
+  if (root) root.hidden = true;
+  aprovaQBrowseGroupWeights = Object.create(null);
+}
+
+function aprovaRenderQuestionBrowseStats (specialty) {
+  const root = document.getElementById("q-browse-stats");
+  const options = document.getElementById("q-browse-stats-options");
+  const bars = document.getElementById("q-browse-stats-bars");
+  const title = document.getElementById("q-browse-stats-title");
+  const sub = document.getElementById("q-browse-stats-sub");
+  const verdict = document.getElementById("q-browse-stats-verdict");
+  const unitEl = document.getElementById("q-browse-stats-unit");
+  const sourceEl = document.getElementById("q-browse-stats-source");
+  if (!root || !options || !bars) return Promise.resolve(null);
+
+  if (!specialty) {
+    root.hidden = true;
+    return Promise.resolve(null);
+  }
+
+  if (!aprovaQBrowseStatsFocus) {
+    aprovaQBrowseStatsFocus = aprovaPreferredExamFocus();
+  }
+  if (!aprovaQBrowseStatsYear) aprovaQBrowseStatsYear = "geral";
+
+  const prevSpec = aprovaActiveSpecialty;
+  const prevCli = aprovaActiveCliArea;
+  const prevGo = aprovaActiveGoArea;
+  aprovaActiveSpecialty = specialty;
+  if (specialty !== "clinica") aprovaActiveCliArea = null;
+  aprovaActiveGoArea = specialty === "go" ? (aprovaActiveGoArea || "ginecologia") : null;
+
+  return aprovaLoadOverviewStats(specialty).then((data) => {
+    aprovaActiveSpecialty = prevSpec;
+    aprovaActiveCliArea = prevCli;
+    aprovaActiveGoArea = prevGo;
+
+    if (!data || !Array.isArray(data.profiles) || !data.profiles.length) {
+      root.hidden = false;
+      bars.innerHTML = "<p class=\"muted\">Estatísticas desta área em breve — os grupos abaixo já estão disponíveis para treino.</p>";
+      if (title) title.textContent = "O que mais cai · " + aprovaQSpecialtyLabel(specialty);
+      if (sub) sub.textContent = "Quando houver levantamento, ele aparece aqui para orientar o foco.";
+      if (verdict) verdict.textContent = "";
+      if (unitEl) unitEl.hidden = true;
+      if (sourceEl) sourceEl.textContent = "";
+      options.innerHTML = "";
+      return null;
+    }
+
+    root.hidden = false;
+    const profile = data.profiles.find((p) => p.id === aprovaQBrowseStatsFocus)
+      || data.profiles.find((p) => p.id === "geral")
+      || data.profiles[0];
+    aprovaQBrowseStatsFocus = profile.id;
+
+    aprovaRenderExamYearFilters(options, {
+      profiles: data.profiles,
+      activeId: profile.id,
+      activeYear: aprovaQBrowseStatsYear,
+      chooserOpen: aprovaQBrowseExamChooserOpen,
+      onExam: (id) => {
+        aprovaQBrowseExamChooserOpen = false;
+        aprovaQBrowseStatsFocus = id;
+        aprovaRenderQuestionBrowse();
+      },
+      onYear: (y) => {
+        aprovaQBrowseStatsYear = y;
+        aprovaRenderQuestionBrowse();
+      },
+      onToggleChooser: () => {
+        aprovaQBrowseExamChooserOpen = !aprovaQBrowseExamChooserOpen;
+        aprovaRenderQuestionBrowse();
+      }
+    });
+
+    const slice = aprovaResolveYearSlice(profile, aprovaQBrowseStatsYear);
+    const sourceType = profile.sourceType || "estimativa";
+    const typeLabel = sourceType === "levantamento"
+      ? "Levantamento público (cursinho)"
+      : (sourceType === "sintese" ? "Síntese de levantamentos públicos" : "Estimativa por padrão de banca");
+    const yearTxt = aprovaYearLabel(aprovaQBrowseStatsYear);
+    const shortLabel = aprovaQSpecialtyLabel(specialty);
+
+    if (title) {
+      title.textContent = profile.id === "geral"
+        ? ("O que mais cai em " + shortLabel + " · Geral Brasil · " + yearTxt)
+        : ("O que mais cai em " + shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
+    }
+    if (sub) {
+      sub.textContent = typeLabel + " · ciclo " + yearTxt +
+        (slice.sampleSize ? (" · " + slice.sampleSize + " questões analisadas") : "") +
+        " — priorize os grupos com maior % no gráfico.";
+    }
+    if (verdict) verdict.textContent = slice.verdict || profile.foco || "";
+    if (unitEl) {
+      unitEl.hidden = false;
+      unitEl.textContent = "Cada barra = % do tema na área. Os cards de grupo acima mostram o peso estimado para ajudar a escolher o foco.";
+    }
+    bars.innerHTML = (slice.priorities || []).map((p) => {
+      const pct = Number(p.pct);
+      const width = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
+      const detail = p.n != null ? (" · " + p.n + " quest.") : "";
+      return (
+        "<div class=\"rev-bar-row\">" +
+          "<span>" + p.tema + detail + "</span>" +
+          "<div class=\"stat-bar\" aria-hidden=\"true\"><i style=\"width:" + width + "%\"></i></div>" +
+          "<em>" + aprovaFormatPct(pct) + "</em>" +
+        "</div>"
+      );
+    }).join("") || "<p class=\"muted\">Sem recorte para esta prova/ano.</p>";
+
+    if (sourceEl) {
+      sourceEl.textContent = slice.source ? ("Fonte: " + slice.source) : "";
+    }
+
+    return slice;
+  }).catch(() => {
+    aprovaActiveSpecialty = prevSpec;
+    aprovaActiveCliArea = prevCli;
+    aprovaActiveGoArea = prevGo;
+    root.hidden = false;
+    bars.innerHTML = "<p class=\"muted\">Não foi possível carregar as estatísticas agora.</p>";
+    return null;
+  });
+}
+
 function aprovaQSpecialtyLabel (id) {
   if (typeof APROVA_SPECIALTY_LABELS !== "undefined" && APROVA_SPECIALTY_LABELS[id]) {
     return APROVA_SPECIALTY_LABELS[id];
@@ -3629,6 +3795,7 @@ function aprovaRenderQuestionBrowse () {
   if (back) back.hidden = aprovaQBrowse.level === "areas";
 
   if (aprovaQBrowse.level === "areas") {
+    aprovaQHideBrowseStats();
     if (hint) hint.textContent = "Escolha a área para estudar questões.";
     const specs = AprovaQuestions.specialtyOptions();
     const order = typeof APROVA_SPECIALTY_LABELS !== "undefined"
@@ -3656,6 +3823,9 @@ function aprovaRenderQuestionBrowse () {
         aprovaQBrowse.group = "";
         aprovaQBrowse.theme = "";
         aprovaQBrowse.level = "groups";
+        aprovaQBrowseStatsFocus = aprovaPreferredExamFocus();
+        aprovaQBrowseStatsYear = "geral";
+        aprovaQBrowseExamChooserOpen = false;
         aprovaRenderQuestionBrowse();
       });
       grid.appendChild(btn);
@@ -3666,49 +3836,79 @@ function aprovaRenderQuestionBrowse () {
   if (aprovaQBrowse.level === "groups") {
     if (hint) {
       hint.textContent = aprovaQSpecialtyLabel(aprovaQBrowse.specialty) +
-        " · escolha o grupo.";
+        " · veja o que mais cai e escolha o grupo para focar.";
     }
+
     const groups = AprovaQuestions.groupOptions(aprovaQBrowse.specialty);
-
-    const allBtn = document.createElement("button");
-    allBtn.type = "button";
-    allBtn.className = "dash-card dash-card--featured";
     const allN = aprovaCountQuestions({ specialty: aprovaQBrowse.specialty });
-    allBtn.innerHTML =
-      "<span class=\"dash-card-kicker\">Atalho</span>" +
-      "<strong>Todos os grupos</strong>" +
-      "<span>" + allN + " questão" + (allN === 1 ? "" : "ões") + " da área</span>";
-    allBtn.addEventListener("click", () => {
-      aprovaQBrowse.group = "";
-      aprovaQBrowse.theme = "";
-      aprovaShowQuestionLaunch();
-    });
-    grid.appendChild(allBtn);
 
-    groups.forEach(group => {
-      const n = aprovaCountQuestions({
-        specialty: aprovaQBrowse.specialty,
-        group
+    const paintGroups = (slice) => {
+      grid.innerHTML = "";
+      const priorities = (slice && slice.priorities) || [];
+      const ranked = groups.map((group) => {
+        const match = aprovaQMatchStatPct(group, priorities);
+        return {
+          group,
+          n: aprovaCountQuestions({
+            specialty: aprovaQBrowse.specialty,
+            group
+          }),
+          pct: match ? match.pct : 0,
+          match
+        };
+      }).sort((a, b) => (b.pct - a.pct) || a.group.localeCompare(b.group, "pt-BR"));
+
+      aprovaQBrowseGroupWeights = Object.create(null);
+      ranked.forEach((row) => {
+        if (row.pct > 0) aprovaQBrowseGroupWeights[row.group] = row.pct;
       });
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "dash-card";
-      btn.innerHTML =
-        "<span class=\"dash-card-kicker\">Grupo</span>" +
-        "<strong>" + group + "</strong>" +
-        "<span>" + n + " questão" + (n === 1 ? "" : "ões") + "</span>";
-      btn.addEventListener("click", () => {
-        aprovaQBrowse.group = group;
+
+      const allBtn = document.createElement("button");
+      allBtn.type = "button";
+      allBtn.className = "dash-card dash-card--featured";
+      allBtn.innerHTML =
+        "<span class=\"dash-card-kicker\">Atalho</span>" +
+        "<strong>Todos os grupos</strong>" +
+        "<span>" + allN + " questão" + (allN === 1 ? "" : "ões") + " da área</span>";
+      allBtn.addEventListener("click", () => {
+        aprovaQBrowse.group = "";
         aprovaQBrowse.theme = "";
-        aprovaQBrowse.level = "themes";
-        aprovaRenderQuestionBrowse();
+        aprovaShowQuestionLaunch();
       });
-      grid.appendChild(btn);
+      grid.appendChild(allBtn);
+
+      ranked.forEach((row, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "dash-card" + (idx < 3 && row.pct > 0 ? " dash-card--focus" : "");
+        const focusLine = row.match
+          ? (" · cai ~" + aprovaFormatPct(row.pct) + " nas provas")
+          : "";
+        const kicker = idx < 3 && row.pct > 0 ? "Prioridade" : "Grupo";
+        btn.innerHTML =
+          "<span class=\"dash-card-kicker\">" + kicker + "</span>" +
+          "<strong>" + row.group + "</strong>" +
+          "<span>" + row.n + " questão" + (row.n === 1 ? "" : "ões") + focusLine + "</span>";
+        btn.addEventListener("click", () => {
+          aprovaQBrowse.group = row.group;
+          aprovaQBrowse.theme = "";
+          aprovaQBrowse.level = "themes";
+          aprovaRenderQuestionBrowse();
+        });
+        grid.appendChild(btn);
+      });
+    };
+
+    paintGroups(null);
+    aprovaRenderQuestionBrowseStats(aprovaQBrowse.specialty).then((slice) => {
+      if (aprovaQBrowse.level !== "groups") return;
+      paintGroups(slice);
     });
     return;
   }
 
   // themes
+  aprovaQHideBrowseStats();
   const groupLabel = aprovaQBrowse.group || "Todos os grupos";
   if (hint) {
     hint.textContent = aprovaQSpecialtyLabel(aprovaQBrowse.specialty) +
@@ -3727,10 +3927,17 @@ function aprovaRenderQuestionBrowse () {
     specialty: aprovaQBrowse.specialty,
     group: aprovaQBrowse.group
   });
+  const groupWeight = aprovaQBrowse.group
+    ? aprovaQBrowseGroupWeights[aprovaQBrowse.group]
+    : null;
   allThemesBtn.innerHTML =
     "<span class=\"dash-card-kicker\">Atalho</span>" +
     "<strong>" + (aprovaQBrowse.group ? "Todo o grupo" : "Toda a área") + "</strong>" +
-    "<span>" + allThemesN + " questão" + (allThemesN === 1 ? "" : "ões") + "</span>";
+    "<span>" + allThemesN + " questão" + (allThemesN === 1 ? "" : "ões") +
+      (groupWeight
+        ? (" · grupo ~" + aprovaFormatPct(groupWeight) + " nas provas")
+        : "") +
+    "</span>";
   allThemesBtn.addEventListener("click", () => {
     aprovaQBrowse.theme = "";
     aprovaShowQuestionLaunch();
