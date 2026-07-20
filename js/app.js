@@ -3507,7 +3507,7 @@ function aprovaRenderFlashcard () {
 }
 
 let aprovaQBrowse = {
-  level: "areas", // areas | groups | themes
+  level: "areas", // areas | groups (themes removido do fluxo)
   specialty: "",
   group: "",
   theme: ""
@@ -3772,6 +3772,7 @@ function aprovaShowQuestionViews (view) {
 
 function aprovaQBrowseBack () {
   if (aprovaQBrowse.level === "themes") {
+    // Legado: subtemas foram removidos do fluxo.
     aprovaQBrowse.theme = "";
     aprovaQBrowse.level = "groups";
   } else if (aprovaQBrowse.level === "groups") {
@@ -3892,8 +3893,7 @@ function aprovaRenderQuestionBrowse () {
         btn.addEventListener("click", () => {
           aprovaQBrowse.group = row.group;
           aprovaQBrowse.theme = "";
-          aprovaQBrowse.level = "themes";
-          aprovaRenderQuestionBrowse();
+          aprovaShowQuestionLaunch();
         });
         grid.appendChild(btn);
       });
@@ -3907,62 +3907,11 @@ function aprovaRenderQuestionBrowse () {
     return;
   }
 
-  // themes
-  aprovaQHideBrowseStats();
-  const groupLabel = aprovaQBrowse.group || "Todos os grupos";
-  if (hint) {
-    hint.textContent = aprovaQSpecialtyLabel(aprovaQBrowse.specialty) +
-      " · " + groupLabel + " · escolha o subtema.";
-  }
-
-  const themes = AprovaQuestions.themeOptions(
-    aprovaQBrowse.specialty,
-    aprovaQBrowse.group || ""
-  );
-
-  const allThemesBtn = document.createElement("button");
-  allThemesBtn.type = "button";
-  allThemesBtn.className = "dash-card dash-card--featured";
-  const allThemesN = aprovaCountQuestions({
-    specialty: aprovaQBrowse.specialty,
-    group: aprovaQBrowse.group
-  });
-  const groupWeight = aprovaQBrowse.group
-    ? aprovaQBrowseGroupWeights[aprovaQBrowse.group]
-    : null;
-  allThemesBtn.innerHTML =
-    "<span class=\"dash-card-kicker\">Atalho</span>" +
-    "<strong>" + (aprovaQBrowse.group ? "Todo o grupo" : "Toda a área") + "</strong>" +
-    "<span>" + allThemesN + " questão" + (allThemesN === 1 ? "" : "ões") +
-      (groupWeight
-        ? (" · grupo ~" + aprovaFormatPct(groupWeight) + " nas provas")
-        : "") +
-    "</span>";
-  allThemesBtn.addEventListener("click", () => {
-    aprovaQBrowse.theme = "";
-    aprovaShowQuestionLaunch();
-  });
-  grid.appendChild(allThemesBtn);
-
-  themes.forEach(themeName => {
-    const n = aprovaCountQuestions({
-      specialty: aprovaQBrowse.specialty,
-      group: aprovaQBrowse.group,
-      theme: themeName
-    });
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "dash-card";
-    btn.innerHTML =
-      "<span class=\"dash-card-kicker\">Subtema</span>" +
-      "<strong>" + themeName + "</strong>" +
-      "<span>" + n + " questão" + (n === 1 ? "" : "ões") + "</span>";
-    btn.addEventListener("click", () => {
-      aprovaQBrowse.theme = themeName;
-      aprovaShowQuestionLaunch();
-    });
-    grid.appendChild(btn);
-  });
+  // Nível "themes" descontinuado: abre direto o lançamento do grupo/área.
+  aprovaQBrowse.level = "groups";
+  aprovaQBrowse.theme = "";
+  aprovaRenderQuestionBrowse();
+  aprovaShowQuestionLaunch();
 }
 
 function aprovaShowQuestionLaunch () {
