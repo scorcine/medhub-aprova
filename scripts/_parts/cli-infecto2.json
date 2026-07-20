@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 1,
+    "group": "Infectologia",
+    "theme": "HIV — falha terapêutica virológica",
+    "stem": "Homem de 39 anos com HIV em TDF/3TC/DTG há 14 meses, adesão referida irregular. CD4 280; carga viral 18.400 cópias/mL (confirmada em segunda amostra). Sem sintomas oportunistas. Genotipagem pendente. Qual a melhor conduta agora? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Confirmar adesão, solicitar genotipagem com esquema em uso e planejar resgate antirretroviral guiado, sem trocas empíricas isoladas, ok",
+    "wrongs": [
+      "Suspender todo o antirretroviral por 8 semanas para ‘reset imunológico’ antes de qualquer genotipagem ou resgate sem atraso neste caso, sem-demora",
+      "Manter o mesmo esquema indefinidamente sem genotipagem, pois carga detectável isolada nunca indica falha em adultos com segurança conforme meta, já",
+      "Trocar empiricamente para monoterapia com ritonavir sem avaliar resistência nem barreiras de adesão documentadas em vigência no hospital, então",
+      "Indicar profilaxia com isoniazida isolada como substituto do resgate antirretroviral na falha virológica confirmada no serviço com registro, já-já"
+    ],
+    "explain": "Falha virológica confirmada exige revisar adesão e genotipagem sob pressão seletiva do esquema atual para resgate racional. Não se suspende TARV para ‘reset’ nem se troca às cegas sem dados de resistência.",
+    "trap": "Trocar esquema empiricamente ou suspender TARV sem genotipagem e revisão de adesão."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 2,
+    "group": "Infectologia",
+    "theme": "HIV — IRIS após início de TARV",
+    "stem": "Mulher de 34 anos com HIV, CD4 42, inicia TARV. Após 3 semanas, surge febre, linfadenomegalia cervical dolorosa e piora de infiltrado pulmonar; BAAR no escarro positivo. TC: linfonodos necrosados. Carga viral em queda. Qual a interpretação e conduta mais adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Considerar IRIS associado a tuberculose, manter TARV, tratar TB e avaliar corticosteroide se inflamação grave, com suporte neste manejo, ainda",
+    "wrongs": [
+      "Suspender definitivamente a TARV em todo IRIS, pois a reconstituição imunológica deve ser sempre interrompida sem atraso neste caso de imediato, certo",
+      "Ignorar tuberculose e tratar apenas como reação alérgica à dolutegravir com anti-histamínico exclusivo com segurança conforme meta na prática, neste-passo",
+      "Indicar esplenectomia urgente como terapia de primeira linha do IRIS linfonodal sem investigação de TB em vigência no hospital neste manejo, hoje",
+      "Aguardar resolução espontânea sem tratar TB porque a carga viral já está caindo com a terapia antirretroviral no serviço com registro, logo"
+    ],
+    "explain": "IRIS é deterioração paradoxal após reconstituição imunológica, frequente em TB com CD4 muito baixo. Mantém-se TARV, trata-se a infecção oportunista e corticoides reservam-se a formas graves.",
+    "trap": "Suspender TARV ao primeiro sinal de IRIS ou deixar de tratar a TB subjacente."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 3,
+    "group": "Infectologia",
+    "theme": "Toxoplasmose cerebral — tratamento de escolha",
+    "stem": "Homem de 41 anos, HIV, CD4 55, cefaleia há 10 dias, hemiparesia esquerda e convulsão focal. TC: múltiplas lesões anelares com edema. IgG anti-Toxoplasma positivo; IgM negativo. Sem contraindicação a sulfa. Qual o tratamento preferencial imediato? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Iniciar sulfadiazina + pirimetamina + ácido folínico, com corticosteroide se edema significativo, e manter TARV conforme timing neste manejo, sim",
+    "wrongs": [
+      "Indicar apenas fluconazol em dose de manutenção como terapia única das lesões anelares cerebrais no AIDS sem atraso neste caso de imediato, assim",
+      "Realizar biópsia cerebral obrigatória antes de qualquer terapia empírica, mesmo com alta probabilidade de toxoplasmose com segurança conforme meta, pronto",
+      "Tratar com isoniazida monoterapia presumindo tuberculoma exclusivo, sem cobertura para Toxoplasma nesta apresentação em vigência no hospital, jásim",
+      "Prescrever albendazol isolado por 3 dias como esquema definitivo de neurotoxoplasmose no adulto com AIDS no serviço com registro sem atraso, agora"
+    ],
+    "explain": "Lesões anelares múltiplas + IgG+ + CD4 baixo: tratar empiricamente toxoplasmose (sulfadiazina/pirimetamina/folínico; alternativa TMP-SMX). Biópsia se falha em ~14 dias. Fluconazol não trata Toxoplasma.",
+    "trap": "Atrasar terapia empírica por biópsia ou usar antifúngico/antiparasitário inadequado."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 4,
+    "group": "Infectologia",
+    "theme": "PCP — tratamento e corticoide",
+    "stem": "Mulher de 37 anos, HIV não tratado, dispneia progressiva, tosse seca, PaO2 54 mmHg em ar ambiente, LDH elevada. TC: infiltrado em vidro fosco difuso. Lavado: Pneumocystis jirovecii. Qual a conduta terapêutica mais adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar TMP-SMX em dose terapêutica e corticoide adjuvante pela hipoxemia grave, com suporte oxigenatório e TARV oportuna neste manejo, sem-demora",
+    "wrongs": [
+      "Usar apenas oxigênio sem antimicrobiano específico, aguardando resolução espontânea da pneumocistose no AIDS sem atraso neste caso de imediato, já",
+      "Prescrever fluconazol oral como droga de escolha da PCP, pois trata todos os fungos oportunistas pulmonares com segurança conforme meta na prática, então",
+      "Indicar lobectomia bilateral empírica como tratamento definitivo da PCP hipoxêmica antes de qualquer TMP-SMX em vigência no hospital neste manejo, já-já",
+      "Contraindicar corticoide em toda PCP com PaO2 <70 mmHg por risco absoluto, omitindo o benefício adjuvante no serviço com registro sem atraso, ok"
+    ],
+    "explain": "PCP grave (PaO2 <70) trata-se com TMP-SMX e corticoide adjuvante. Fluconazol não cobre Pneumocystis; cirurgia não tem papel etiológico.",
+    "trap": "Omitir corticoide na PCP hipoxêmica ou escolher antifúngico inadequado."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 5,
+    "group": "Infectologia",
+    "theme": "Criptococose meníngea — indução",
+    "stem": "Homem de 45 anos, HIV, CD4 38, cefaleia subaguda, febre baixa e diplopia. PL: abertura 32 cmH2O, linfocitose, glicose baixa, tinta da China positiva; antígeno criptocócico positivo. Qual o esquema de indução preferencial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Anfotericina B (lipossomal se disponível) associada a flucitosina na indução, com alívios de pressão intracraniana seriada neste manejo, certo",
+    "wrongs": [
+      "Iniciar apenas fluconazol 150 mg/semana como indução exclusiva da meningite criptocócica grave no AIDS sem atraso neste caso de imediato, neste-passo",
+      "Tratar com ceftriaxona + vancomicina presumindo meningite bacteriana típica, sem antifúngico específico com segurança conforme meta na prática, hoje",
+      "Indicar radioterapia craniana como terapia primária do Cryptococcus neoformans meníngeo nesta fase em vigência no hospital neste manejo, logo",
+      "Usar nistatina oral sistêmica como antifúngico de escolha na criptococose do sistema nervoso central no serviço com registro sem atraso neste caso, ainda"
+    ],
+    "explain": "Indução clássica: anfotericina ± flucitosina; fluconazol em consolidação/manutenção. Hipertensão intracraniana exige alívio por PL repetidas. Antibacterianos e nistatina não tratam criptococose meníngea.",
+    "trap": "Usar só fluconazol semanal ou antibacteriano como se fosse meningite bacteriana típica."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 6,
+    "group": "Infectologia",
+    "theme": "CMV retinite — HIV avançado",
+    "stem": "Mulher de 29 anos, HIV, CD4 22, refere baixa acuidade visual progressiva em olho direito e moscas volantes. Fundo de olho: retinite hemorrágica com exsudatos em ‘queijo e ketchup’. PCR CMV no humor vítreo positivo. Qual a conduta mais adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Iniciar terapia anti-CMV (valganciclovir/ganciclovir conforme gravidade), oftalmologia urgente e otimizar TARV imediatamente neste manejo, assim",
+    "wrongs": [
+      "Tratar apenas com colírio antibiótico empírico, pois toda uveíte no AIDS é bacteriana comunitária simples sem atraso neste caso de imediato, pronto",
+      "Aguardar recuperação espontânea visual sem antiviral, mantendo apenas vitamina A em dose elevada ambulatorial com segurança conforme meta na prática, jásim",
+      "Indicar enucleação imediata do olho acometido como primeira linha antes de qualquer terapia anti-CMV em vigência no hospital neste manejo, agora",
+      "Prescrever isoniazida isolada presumindo tuberculose ocular exclusiva sem avaliação oftalmológica especializada no serviço com registro sem atraso, sim"
+    ],
+    "explain": "Retinite CMV é emergência oftalmológica no AIDS avançado: antiviral sistêmico (± intravítreo) e TARV. Não se trata com colírio antibiótico isolado nem se opera de rotina sem antiviral.",
+    "trap": "Trivializar perda visual no AIDS avançado como ‘conjuntivite’ sem anti-CMV."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 7,
+    "group": "Infectologia",
+    "theme": "TB MDR — suspeita e manejo inicial",
+    "stem": "Homem de 48 anos, TB pulmonar previamente tratada incompleta, retorna com tosse, febre e BAAR+++. Teste molecular detecta M. tuberculosis com resistência à rifampicina. Contato íntimo com caso MDR confirmado. Qual a melhor conduta imediata? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Isolar, completar teste de sensibilidade ampliado e iniciar esquema para TB resistente conforme protocolo especializado, sem RHZE isolado, já",
+    "wrongs": [
+      "Repetir RHZE padrão por mais 6 meses ignorando a resistência documentada à rifampicina no teste molecular sem atraso neste caso de imediato, então",
+      "Liberar sem isolamento porque BAAR positivo nunca exige precaução respiratória em adultos ambulatoriais com segurança conforme meta na prática, já-já",
+      "Indicar pneumonectomia bilateral imediata como cura definitiva antes de qualquer esquema de segunda linha em vigência no hospital neste manejo, ok",
+      "Tratar apenas com amoxicilina por 10 dias presumindo pneumonia bacteriana comum sem investigar TB resistente no serviço com registro sem atraso, sem-demora"
+    ],
+    "explain": "Resistência à rifampicina exige manejo de TB-DR/MDR: isolamento, DST ampliado e esquema especializado — não reiniciar RHZE padrão. Cirurgia não substitui o tratamento medicamentoso inicial.",
+    "trap": "Reiniciar esquema sensível padrão apesar de resistência molecular à rifampicina."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 8,
+    "group": "Infectologia",
+    "theme": "Hanseníase multibacilar — tratamento",
+    "stem": "Homem de 52 anos, lesões cutâneas hipocrômicas e eritematosas disseminadas, infiltração facial e anestesia em mãos. Baciloscopia de linfa positiva (IB alto). Sem reação hansênica aguda agora. Qual o tratamento padronizado mais adequado? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Iniciar PQT multibacilar (rifampicina, dapsona e clofazimina) conforme protocolo, com educação sobre neurites e reações neste manejo, neste-passo",
+    "wrongs": [
+      "Tratar apenas com corticosteroide contínuo sem poliquimioterapia, pois hanseníase seria só doença inflamatória sem atraso neste caso, hoje",
+      "Usar monoterapia com dapsona indefinida, omitindo rifampicina e clofazimina no doente multibacilar bacilífero com segurança conforme meta, logo",
+      "Indicar excisão cirúrgica de todas as lesões cutâneas como cura etiológica antes de qualquer PQT sistêmica em vigência no hospital, ainda",
+      "Prescrever ivermectina única anual como esquema definitivo de hanseníase multibacilar no adulto bacilífero no serviço com registro sem atraso, certo"
+    ],
+    "explain": "Multibacilar (baciloscopia+/lesões numerosas) trata-se com PQT-MB. Corticoide trata reações/neurite, não substitui PQT. Ivermectina não é terapia da hanseníase.",
+    "trap": "Tratar só a reação com corticoide e omitir a poliquimioterapia multibacilar."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 9,
+    "group": "Infectologia",
+    "theme": "Febre maculosa — doxiciclina precoce",
+    "stem": "Homem de 33 anos, área rural com carrapatos, febre alta há 4 dias, mialgia, cefaleia intensa e maculopápulas em punhos/tornozelos que sobem para o tronco. Plaquetas 78.000; Na 128. Sem confirmação sorológica ainda. Qual a conduta prioritária? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Iniciar doxiciclina empiricamente na suspeita de febre maculosa, sem aguardar sorologia, com suporte e notificação neste manejo no serviço, pronto",
+    "wrongs": [
+      "Aguardar sorologia confirmatória por 14 dias antes de qualquer antibiótico, mesmo com alta suspeita clínica epidemiológica sem atraso, jásim",
+      "Tratar como dengue clássica apenas com hidratação, omitindo doxiciclina na presença de exantema acral e carrapato com segurança conforme meta, agora",
+      "Prescrever aciclovir empírico como antiviral de escolha para riquetsiose brasileira transmitida por carrapato em vigência no hospital, sim",
+      "Indicar plasmaférese de rotina como terapia etiológica primária da febre maculosa antes de qualquer doxiciclina no serviço com registro, assim"
+    ],
+    "explain": "Febre maculosa tem alta letalidade: doxiciclina precoce salva vidas e não deve aguardar sorologia. Confundir com dengue e omitir antibiótico é erro clássico de prova e de prática.",
+    "trap": "Esperar sorologia ou tratar só como dengue sem doxiciclina na suspeita de riquetsiose."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 10,
+    "group": "Infectologia",
+    "theme": "Calazar — diagnóstico e anfotericina",
+    "stem": "Mulher de 27 anos, área endêmica, febre há 6 semanas, emagrecimento, esplenomegalia maciça e pancitopenia. Teste rápido rK39 positivo; HIV negativo. Sem falência orgânica fulminante. Qual a terapêutica de escolha mais alinhada às diretrizes brasileiras? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Iniciar anfotericina B lipossomal conforme protocolo do calazar, com suporte hematológico e seguimento da resposta clínica neste manejo, então",
+    "wrongs": [
+      "Prescrever apenas antitérmico ambulatorial sem etiológico, pois esplenomegalia febril prolongada é sempre autolimitada sem atraso neste caso, já-já",
+      "Indicar esplenectomia imediata como primeira linha antes de qualquer antimonial ou anfotericina no calazar com segurança conforme meta, ok",
+      "Tratar com artesunato parenteral presumindo malária falciparum sem gota espessa nem contexto epidemiológico compatível em vigência no hospital, sem-demora",
+      "Usar fluconazol semanal exclusivo como cura definitiva da leishmaniose visceral no adulto imunocompetente no serviço com registro sem atraso, já"
+    ],
+    "explain": "Calazar (febre + esplenomegalia + pancitopenia + rK39+) trata-se preferencialmente com anfotericina lipossomal no Brasil. Esplenectomia não é primeira linha; fluconazol não cura LV.",
+    "trap": "Atrasar etiológico ou indicar esplenectomia antes da anfotericina no calazar."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 11,
+    "group": "Infectologia",
+    "theme": "Chagas aguda — reconhecimento e benznidazol",
+    "stem": "Homem de 24 anos, após moradia em área rural com barbeiros, apresenta febre há 12 dias, edema bipalpebral unilateral (Romaña), miocardite leve e parasitemia positiva para T. cruzi. Qual a conduta etiológica mais adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar benznidazol (ou nifurtimox se indicado) na fase aguda, com suporte cardíaco e notificação da doença de Chagas neste manejo no serviço, hoje",
+    "wrongs": [
+      "Aguardar a fase crônica para tratar, pois o antiparasitário só funciona décadas após a infecção inicial documentada sem atraso neste caso, logo",
+      "Indicar apenas AAS e alta, tratando o sinal de Romaña como angioedema alérgico sem investigação de T. cruzi com segurança conforme meta, ainda",
+      "Prescrever ivermectina única como esquema definitivo da doença de Chagas aguda com parasitemia comprovada em vigência no hospital neste manejo, certo",
+      "Realizar transplante cardíaco imediato em toda miocardite chagásica aguda leve antes de qualquer benznidazol no serviço com registro sem atraso, neste-passo"
+    ],
+    "explain": "Na Chagas aguda, antiparasitário (benznidazol) tem maior eficácia e deve ser iniciado precocemente. Romaña + febre + exposição é clássico; não se espera a fase crônica para tratar.",
+    "trap": "Adiar benznidazol para a fase crônica ou não reconhecer o sinal de Romaña."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 12,
+    "group": "Infectologia",
+    "theme": "Chagas crônica — forma cardíaca",
+    "stem": "Mulher de 58 anos, sorologia Chagas positiva antiga, chega com dispneia, edema e síncope. ECG: BRE + TVNS; ecocardiograma: FE 32%, aneurisma apical. Qual o foco prioritário do manejo nesta fase? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Tratar insuficiência cardíaca e arritmias conforme guidelines, avaliar CDI/ablação quando indicado e discutir etiológico caso a caso neste manejo, jásim",
+    "wrongs": [
+      "Considerar benznidazol obrigatório e suficiente isolado, omitindo manejo de IC e prevenção de morte súbita arritmogênica sem atraso neste caso, agora",
+      "Indicar colecistectomia profilática porque megaesôfago e cardiopatia chagásica sempre exigem cirurgia abdominal com segurança conforme meta, sim",
+      "Suspender todos os betabloqueadores na IC chagásica por serem ‘contraindicados absolutos’ em toda forma crônica em vigência no hospital, assim",
+      "Liberar sem avaliação cardiológica porque sorologia antiga positiva nunca se associa a cardiopatia dilatada no serviço com registro sem atraso, pronto"
+    ],
+    "explain": "Na forma cardíaca crônica, o pilar é tratar IC/arritmias e estratificar risco de morte súbita; etiológico tem benefício incerto em doença avançada e não substitui o manejo cardiológico.",
+    "trap": "Achar que só o antiparasitário resolve a cardiopatia chagásica avançada."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 13,
+    "group": "Infectologia",
+    "theme": "Sepse — foco oculto e investigação",
+    "stem": "Homem de 67 anos, diabético, febre, hipotensão e confusão. Hemoculturas positivas para S. aureus. Exame sem pneumonia, ITU ou ferida óbvia. Há sopro novo e lombalgia. Qual a prioridade diagnóstica adicional mais correta? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Investigar endocardite e osteomielite/espondilodiscite com ecocardiograma e imagem de coluna, além de foco cutâneo oculto neste manejo no serviço, já-já",
+    "wrongs": [
+      "Encerrar investigação após radiografia de tórax normal, pois bacteremia estafilocócica nunca tem foco metastático sem atraso neste caso de imediato, ok",
+      "Iniciar apenas dipirona e alta domiciliar sem antibiótico, aguardando nova hemocultura em sete dias no ambulatório com segurança conforme meta, sem-demora",
+      "Indicar laparotomia exploradora de rotina em toda bacteremia sem foco, antes de ecocardiograma ou imagem óssea em vigência no hospital neste manejo, já",
+      "Tratar com nistatina oral presumindo candidemia exclusiva sem avaliar S. aureus documentado nas hemoculturas no serviço com registro sem atraso, então"
+    ],
+    "explain": "Bacteremia por S. aureus exige caça a focos metastáticos (endocardite, coluna, abscessos). RX normal não fecha o caso; nistatina é inadequada.",
+    "trap": "Não procurar endocardite/osteomielite em bacteremia estafilocócica ‘sem foco’."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 14,
+    "group": "Infectologia",
+    "theme": "Neutropenia febril — alto risco adulto",
+    "stem": "Homem de 54 anos em quimioterapia por leucemia, neutrófilos 120/mm³, febre 38,9 °C, mucosite. PA 100/60, sem foco claro. Internado. Qual a conduta antimicrobiana inicial mais adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Coletar culturas e iniciar imediatamente betalactâmico antipseudomonas IV de amplo espectro, com estratificação de risco neste manejo no serviço, logo",
+    "wrongs": [
+      "Aguardar 48 horas de observação afebril sem antibiótico até o resultado definitivo de todas as culturas sem atraso neste caso de imediato, ainda",
+      "Prescrever apenas amoxicilina oral ambulatorial em todo neutropênico febril com mucosite e neutropenia profunda com segurança conforme meta, certo",
+      "Indicar antifúngico azólico exclusivo sem cobertura bacteriana inicial na neutropenia febril de alto risco em vigência no hospital neste manejo, neste-passo",
+      "Usar colírio antibiótico sistêmico como monoterapia empírica da sepse em neutropenia pós-quimioterapia no serviço com registro sem atraso, hoje"
+    ],
+    "explain": "Neutropenia febril de alto risco é emergência: culturas + ATB antipseudomonas IV imediato. Atraso por ‘esperar cultura’ aumenta mortalidade.",
+    "trap": "Adiar antibiótico IV até culturas fecharem no neutropênico febril."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 15,
+    "group": "Infectologia",
+    "theme": "Infecção de cateter — quando retirar",
+    "stem": "Mulher de 62 anos com CVC de longa permanência, febre e calafrios durante infusão. Hemoculturas de periferia e do cateter positivas para S. aureus com diferencial de tempo sugestivo de CLABSI. Sem outro foco. Qual a conduta mais correta? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Retirar o cateter, completar antibioticoterapia dirigida e avaliar complicações metastáticas desta bacteremia estafilocócica neste manejo, agora",
+    "wrongs": [
+      "Manter o CVC a qualquer custo com antibiotic lock exclusivo, pois S. aureus em CLABSI nunca exige remoção do dispositivo sem atraso neste caso, sim",
+      "Tratar só com antitérmico sem antibiótico sistêmico, lavando o cateter diariamente com soro fisiológico isolado com segurança conforme meta, assim",
+      "Indicar trombectomia pulmonar empírica em toda CLABSI antes de hemoculturas e retirada do acesso vascular em vigência no hospital neste manejo, pronto",
+      "Trocar o cateter sobre guia na mesma hora sem antibiótico, omitindo cobertura e investigação de metastização no serviço com registro sem atraso, jásim"
+    ],
+    "explain": "CLABSI por S. aureus: remoção do cateter + ATB sistêmico e busca de complicações. Lock isolado é insuficiente para S. aureus.",
+    "trap": "Tentar salvar o CVC com lock só, sem retirar, em CLABSI estafilocócica."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 16,
+    "group": "Infectologia",
+    "theme": "Osteomielite crônica — manejo",
+    "stem": "Homem de 49 anos, fratura exposta há 18 meses, fístula com drenagem crônica em tíbia, RX com sequestro ósseo. Cultura do sequestro: S. aureus sensível. Sem sepse. Qual a estratégia terapêutica mais eficaz? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Planejar desbridamento cirúrgico com remoção de sequestro e antibioticoterapia prolongada dirigida, em abordagem conjunta neste manejo, ok",
+    "wrongs": [
+      "Tratar apenas com antibiótico oral por 5 dias sem cirurgia, pois sequestro ósseo responde sempre à droga isolada sem atraso neste caso, sem-demora",
+      "Indicar amputação imediata de todo membro com fístula crônica antes de tentar desbridamento e ATB dirigida com segurança conforme meta, já",
+      "Usar apenas curativo tópico com pó antibiótico, sem cultura nem ressecção do tecido ósseo desvitalizado em vigência no hospital neste manejo, então",
+      "Prescrever corticoide sistêmico prolongado como terapia etiológica da osteomielite crônica fistulizante no serviço com registro sem atraso, já-já"
+    ],
+    "explain": "Osteomielite crônica com sequestro exige cirurgia (remover tecido desvitalizado) + ATB prolongada. Antibiótico isolado raramente cura quando há sequestro.",
+    "trap": "Achar que antibiótico curto sozinho resolve osteomielite crônica com sequestro."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 17,
+    "group": "Infectologia",
+    "theme": "Artrite séptica adulto — punção e ATB",
+    "stem": "Homem de 58 anos, diabético, joelho quente, febril, incapaz de apoiar o peso. Leucócitos 18.000; PCR elevada. Sem trauma. Qual a conduta imediata mais correta? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Realizar artrocentese diagnóstica urgente, coletar cultura e iniciar antibioticoterapia empírica após a punção, com drenagem neste manejo, ainda",
+    "wrongs": [
+      "Iniciar corticoide intra-articular empírico antes de qualquer punção, tratando como crise de gota sem excluir infecção sem atraso neste caso, certo",
+      "Aguardar RM obrigatória por 72 horas antes de punção, mesmo com alta suspeita de artrite séptica no adulto com segurança conforme meta, neste-passo",
+      "Prescrever apenas AINE oral ambulatorial e retorno em 10 dias sem artrocentese nem avaliação ortopédica em vigência no hospital neste manejo, hoje",
+      "Indicar prótese total imediata na fase aguda febril antes de drenagem e antibioticoterapia da articulação infectada no serviço com registro, logo"
+    ],
+    "explain": "Artrite séptica é emergência: punção antes do ATB (se possível), cultura, ATB e drenagem. Corticoide intra-articular sem excluir infecção é grave erro.",
+    "trap": "Injetar corticoide ou atrasar punção na suspeita de artrite séptica."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 18,
+    "group": "Infectologia",
+    "theme": "Meningite criptocócica vs bacteriana",
+    "stem": "Homem de 36 anos, HIV, cefaleia há 3 semanas, febre baixa, sem rigidez intensa. PL: abertura alta, linfócitos, glicorraquia baixa, Gram sem bactérias; tinta da China+. Comparado à meningite bacteriana hiperaguda, qual distinção e conduta corretas? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata.",
+    "correct": "Quadro subagudo com hipertensão liquórica favorece criptococose: antifúngico de indução e alívio de PIC, não só ceftriaxona neste manejo, sim",
+    "wrongs": [
+      "Tratar identicamente com dexametasona + ceftriaxona + vancomicina em todo HIV com cefaleia, omitindo antifúngico sem atraso neste caso, assim",
+      "Contraindicar punção lombar em toda suspeita de criptococose porque a pressão de abertura elevada proíbe o exame com segurança conforme meta, pronto",
+      "Usar apenas oseltamivir empírico, interpretando o quadro como influenza meníngea exclusiva sem liquórico em vigência no hospital neste manejo, jásim",
+      "Indicar radioterapia de crânio como primeira linha diferencial entre meningite bacteriana e criptocócica no serviço com registro sem atraso, agora"
+    ],
+    "explain": "Criptococose: curso subagudo, PIC elevada, tinta da China/CrAg+. Bacteriana: hiperaguda, turbidez, Gram+. Conduta: anfotericina±flucitosina e drenagem liquórica; não basta esquema bacteriano.",
+    "trap": "Tratar meningite subaguda no AIDS só com antibacterianos de meningite comunitária."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 19,
+    "group": "Infectologia",
+    "theme": "Sífilis primária — cancro e penicilina",
+    "stem": "Homem de 27 anos com úlcera genital indolor única há 10 dias, adenopatia inguinal. VDRL 1:32; FTA-Abs positivo. Sem alergia à penicilina. Teste HIV pendente. Qual o tratamento de escolha? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Administrar penicilina G benzatina 2,4 milhões UI IM dose única, notificar, tratar parceiros e repetir VDRL no seguimento neste manejo, sem-demora",
+    "wrongs": [
+      "Prescrever aciclovir tópico exclusivo, tratando toda úlcera genital como herpes sem considerar sífilis confirmada sem atraso neste caso, já",
+      "Usar doxiciclina por 6 meses como primeira linha obrigatória mesmo sem alergia à penicilina nesta sífilis precoce com segurança conforme meta, então",
+      "Indicar penicilina cristalina EV por 21 dias de rotina em toda sífilis primária sem sinal neurológico algum em vigência no hospital neste manejo, já-já",
+      "Observar sem antibiótico porque cancro sifilítico sempre cicatriza e dispensa tratamento etiológico e notificação no serviço com registro, ok"
+    ],
+    "explain": "Sífilis primária: penicilina benzatina 2,4 mi UI IM dose única. Aciclovir não trata Treponema; cristalina EV reserva-se a neurossífilis.",
+    "trap": "Tratar cancro só como herpes ou usar esquema de neurossífilis sem indicação."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 20,
+    "group": "Infectologia",
+    "theme": "Sífilis secundária — exantema e manejo",
+    "stem": "Mulher de 31 anos com exantema maculopapular em tronco e palmas/plantas, placas mucosas e alopecia em clareira. VDRL 1:128; FTA-Abs+. Sem déficit neurológico. Qual a conduta terapêutica adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Tratar como sífilis recente com penicilina G benzatina conforme protocolo, investigar HIV e orientar reação de Jarisch-Herxheimer neste manejo, certo",
+    "wrongs": [
+      "Prescrever prednisona isolada como cura da sífilis secundária, sem antibiótico treponemicida específico sem atraso neste caso de imediato, neste-passo",
+      "Indicar apenas anti-histamínico e alta, interpretando o exantema palmoplantar como urticária banal sem sorologia com segurança conforme meta, hoje",
+      "Usar vancomicina EV por 14 dias como droga de escolha da sífilis secundária no adulto imunocompetente em vigência no hospital neste manejo, logo",
+      "Realizar exérese de todas as lesões cutâneas antes de qualquer penicilina, como tratamento definitivo da doença no serviço com registro, ainda"
+    ],
+    "explain": "Sífilis secundária trata-se como sífilis recente com benzatina; avisar sobre Jarisch-Herxheimer. Exantema palmoplantar é pista clássica — não é urticária banal.",
+    "trap": "Não reconhecer exantema palmoplantar como sífilis e omitir penicilina."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 21,
+    "group": "Infectologia",
+    "theme": "Neurossífilis — indicação de cristalina",
+    "stem": "Homem de 44 anos com sífilis latente, cefaleia crônica, alterações pupilares e VDRL no LCR positivo. HIV negativo. Qual o esquema preferencial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Internar para penicilina G cristalina intravenosa por 10–14 dias conforme protocolo de neurossífilis, com seguimento liquórico neste manejo, assim",
+    "wrongs": [
+      "Aplicar apenas benzatina IM dose única ambulatorial, suficiente para erradicar infecção do sistema nervoso central sem atraso neste caso, pronto",
+      "Tratar com fluconazol oral prolongado porque VDRL no LCR indicaria criptococose e não neurossífilis treponêmica com segurança conforme meta, jásim",
+      "Indicar radioterapia craniana empírica antes de qualquer antibiótico na neurossífilis confirmada por LCR em vigência no hospital neste manejo, agora",
+      "Usar metronidazol EV como treponemicida de primeira linha no acometimento neurológico da sífilis no serviço com registro sem atraso neste caso, sim"
+    ],
+    "explain": "Neurossífilis exige penicilina cristalina IV prolongada; benzatina IM não atinge níveis liquóricos confiáveis. Fluconazol/metronidazol não tratam Treponema.",
+    "trap": "Tratar neurossífilis com benzatina IM como se fosse sífilis precoce simples."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 22,
+    "group": "Infectologia",
+    "theme": "Gonorreia complicada — artrite-dermatite",
+    "stem": "Mulher de 23 anos, sexualmente ativa, febre, poliartralgia migratória, tenossinovite em punhos e pústulas acrais. Cultura de secreção endocervical: N. gonorrhoeae. Líquido articular inflamatório. Qual a melhor conduta? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Internar para ceftriaxona parenteral, investigar clamídia concomitante, drenar se artrite séptica franca e tratar parceiros neste manejo, já",
+    "wrongs": [
+      "Prescrever apenas AAS e fisioterapia, tratando o quadro como febre reumática sem antibioticoterapia para gonococo sem atraso neste caso de imediato, então",
+      "Usar penicilina V oral exclusiva, ignorando resistência atual de N. gonorrhoeae e a necessidade de ceftriaxona com segurança conforme meta, já-já",
+      "Indicar metotrexato imediato por artrite reumatoide soronegativa, sem cobrir DST bacteriana disseminada em vigência no hospital neste manejo, ok",
+      "Tratar só com azitromicina tópica genital, omitindo terapia sistêmica da infecção gonocócica disseminada no serviço com registro sem atraso, sem-demora"
+    ],
+    "explain": "Síndrome artrite-dermatite gonocócica exige ceftriaxona parenteral, exclusão/tratamento de clamídia e parceiros. Não é AR nem febre reumática.",
+    "trap": "Tratar gonococcemia disseminada como doença reumatológica sem ceftriaxona."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 23,
+    "group": "Infectologia",
+    "theme": "Clamídia — DPI e complicação",
+    "stem": "Mulher de 26 anos com dor pélvica, febre baixa, corrimento e dor à mobilização cervical. β-hCG negativo. PCR positivo para C. trachomatis; gonococo negativo. Estável. Qual o tratamento mais adequado? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Tratar doença inflamatória pélvica com esquema que cubra clamídia (e cocobacilos), orientar parceiros e reavaliar em 48–72 h neste manejo, neste-passo",
+    "wrongs": [
+      "Prescrever apenas fluconazol vaginal único, interpretando todo corrimento com dor pélvica como candidíase não complicada sem atraso neste caso, hoje",
+      "Indicar histerectomia imediata em toda DPI por clamídia antes de antibioticoterapia adequada e reavaliação clínica com segurança conforme meta, logo",
+      "Usar aciclovir oral prolongado como terapia etiológica da cervicite por Chlamydia trachomatis nesta paciente em vigência no hospital neste manejo, ainda",
+      "Observar sem antibiótico porque clamídia genital nunca ascende nem causa sequela tubária no adulto jovem no serviço com registro sem atraso, certo"
+    ],
+    "explain": "DPI por clamídia exige ATB (ex.: ceftriaxona + doxiciclina ± metronidazol conforme protocolo), parceiros e reavaliação. Fluconazol/aciclovir não tratam Chlamydia.",
+    "trap": "Tratar DPI como candidíase/herpes ou omitir antibiótico e parceiros."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 24,
+    "group": "Infectologia",
+    "theme": "Abscesso hepático amebiano vs piogênico",
+    "stem": "Homem de 40 anos, retorno do Norte, febre, dor em HD e hepatomegalia. TC: abscesso único no lobo direito. Sorologia Entamoeba positiva; hemoculturas negativas; sem colangite. Qual a conduta preferencial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Tratar empiricamente como abscesso amebiano com metronidazol (seguido de intraluminal), reservando drenagem se falha ou dúvida neste manejo, pronto",
+    "wrongs": [
+      "Indicar drenagem cirúrgica imediata obrigatória em todo abscesso hepático antes de qualquer metronidazol ou antibiótico sem atraso neste caso, jásim",
+      "Prescrever apenas albendazol dose única anual como cura definitiva do abscesso hepático amebiano no adulto com segurança conforme meta, agora",
+      "Tratar só com vancomicina EV presumindo MRSA hepático exclusivo, sem cobertura para ameba em contexto epidemiológico em vigência no hospital, sim",
+      "Observar sem terapia porque abscesso hepático único sempre é achado incidental benigno sem risco clínico no serviço com registro sem atraso, assim"
+    ],
+    "explain": "Abscesso amebiano: típico único em HD + epidemiologia + sorologia — metronidazol (± diloxanida/paromomicina). Piogênico mais múltiplo/colangite/bacteremia; drenagem seletiva.",
+    "trap": "Drenar todo abscesso hepático sem tentar metronidazol quando o quadro é tipicamente amebiano."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 25,
+    "group": "Infectologia",
+    "theme": "Esquistossomose — forma hepatoesplênica",
+    "stem": "Homem de 38 anos, exposição a águas de rio endêmico, hipertensão portal com varizes esofágicas, esplenomegalia e eosinofilia. Ultrassom: fibrose periportal. OVAS positivo para S. mansoni. Qual a conduta etiológica e de portal? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Administrar praziquantel para o parasita e manejar hipertensão portal/varizes conforme risco de sangramento, com seguimento neste manejo, então",
+    "wrongs": [
+      "Usar apenas propranolol sem praziquantel, pois matar o helminto não tem papel após fibrose periportal estabelecida sem atraso neste caso, já-já",
+      "Indicar ivermectina única como droga de escolha da esquistossomose mansoni hepatoesplênica no adulto com segurança conforme meta na prática, ok",
+      "Realizar transplante hepático imediato em todo caso com OVAS positivo antes de praziquantel e profilaxia de varizes em vigência no hospital, sem-demora",
+      "Prescrever metronidazol prolongado como esquistossomicida de primeira linha nesta forma hepatoesplênica no serviço com registro sem atraso, já"
+    ],
+    "explain": "Mesmo na forma hepatoesplênica, praziquantel trata a infecção ativa; o manejo portal (beta-bloqueador/endoscopia) é paralelo. Ivermectina/metronidazol não substituem praziquantel.",
+    "trap": "Omitir praziquantel na hepatoesplênica achando que ‘só fibrose’ resta."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 26,
+    "group": "Infectologia",
+    "theme": "Esquistossomose — febre de Katayama",
+    "stem": "Mulher de 22 anos, 5 semanas após banho de rio em área endêmica, febre, urticária, tosse e eosinofilia intensa. OVAS ainda negativo. Sorologia sugestiva. Qual a interpretação e conduta mais coerente? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Diagnosticar síndrome de Katayama (fase aguda), tratar com praziquantel no momento adequado e suporte, podendo associar corticoide se grave, hoje",
+    "wrongs": [
+      "Excluir esquistossomose porque OVAS negativo precoce descarta definitivamente infecção recente por S. mansoni sem atraso neste caso de imediato, logo",
+      "Iniciar anfotericina lipossomal empírica presumindo calazar, sem eosinofilia compatível com Katayama nesta viagem com segurança conforme meta, ainda",
+      "Indicar esplenectomia urgente como terapia da fase aguda urticariforme antes de qualquer praziquantel em vigência no hospital neste manejo, certo",
+      "Tratar apenas com anti-histamínico indefinido sem antiparasitário, ignorando a possibilidade de esquistossomose aguda no serviço com registro, neste-passo"
+    ],
+    "explain": "Katayama ocorre semanas após primoinfecção; OVAS pode ser negativo cedo. Praziquantel (± corticoide em formas graves) e suporte. Não excluir só pelo OVAS precoce.",
+    "trap": "Descartar esquistossomose aguda só porque o OVAS ainda é negativo."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 27,
+    "group": "Infectologia",
+    "theme": "Strongyloides — hiperinfecção",
+    "stem": "Homem de 61 anos com DPOC em prednisona alta, diarreia, dor abdominal, exantema serpiginoso e insuficiência respiratória. Larvas de Strongyloides no escarro e fezes. Hemoculturas: Gram-negativos. Qual a prioridade terapêutica? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar ivermectina (esquema de hiperinfecção), reduzir imunossupressão se possível e tratar a bacteremia Gram-negativa associada neste manejo, jásim",
+    "wrongs": [
+      "Aumentar a dose de corticoide imediatamente, pois hiperinfecção por Strongyloides exige mais imunossupressão sistêmica sem atraso neste caso, agora",
+      "Tratar apenas com albendazol tópico cutâneo, omitindo ivermectina sistêmica na forma disseminada/hiperinfecção com segurança conforme meta, sim",
+      "Indicar colectomia total empírica antes de antiparasitário em todo paciente com larvas nas fezes e diarreia em vigência no hospital neste manejo, assim",
+      "Usar nistatina oral como droga de escolha da estrongiloidíase disseminada com falência respiratória no serviço com registro sem atraso, pronto"
+    ],
+    "explain": "Hiperinfecção por Strongyloides em corticoterapia: ivermectina, reduzir imunossupressão e cobrir bacteremia por translocação. Aumentar corticoide piora o quadro.",
+    "trap": "Manter/aumentar corticoide e esquecer ivermectina na hiperinfecção."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 28,
+    "group": "Infectologia",
+    "theme": "COVID-19 — pneumonia grave breve",
+    "stem": "Mulher de 58 anos, COVID-19 confirmado, SpO2 88% em ar, FR 32, TC com infiltrados bilaterais. Sem choque. Qual a medida terapêutica prioritária baseada em evidência neste cenário? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Ofertar oxigênio visando metas de saturação e iniciar dexametasona (ou equivalente) na hipoxemia por COVID-19 neste manejo no serviço com registro, já-já",
+    "wrongs": [
+      "Prescrever ivermectina em dose alta como terapia antiviral padrão obrigatória da pneumonia COVID grave hospitalar sem atraso neste caso, ok",
+      "Contraindicar corticoide em todo COVID hipoxêmico porque inflamação pulmonar nunca se beneficia de dexametasona com segurança conforme meta, sem-demora",
+      "Indicar lobectomia bilateral empírica para ‘retirar o vírus’ antes de oxigênio e suporte clínico hospitalar em vigência no hospital neste manejo, já",
+      "Usar apenas azitromicina isolada sem oxigênio, como cura suficiente da insuficiência respiratória por COVID-19 no serviço com registro sem atraso, então"
+    ],
+    "explain": "COVID hipoxêmico: O2 + corticoide (RECOVERY). Ivermectina não é padrão; azitromicina isolada não corrige hipoxemia. A conduta integra gravidade, imunossupressão e risco de deterioração nas próximas horas.",
+    "trap": "Omitir corticoide na COVID hipoxêmica ou priorizar terapias sem benefício comprovado."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 29,
+    "group": "Infectologia",
+    "theme": "Influenza — antiviral precoce",
+    "stem": "Homem de 72 anos, cardiopata, início há 28 horas de febre, mialgia e tosse em temporada de influenza. Teste rápido positivo para influenza A. SpO2 94%, sem pneumonia consolidada. Qual a melhor conduta? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar oseltamivir precocemente, especialmente por idade e comorbidade, com suporte e vigilância de complicações bacterianas neste manejo, logo",
+    "wrongs": [
+      "Aguardar 7 dias sem antiviral porque influenza no idoso cardiopata sempre é autolimitada e sem risco de complicação sem atraso neste caso, ainda",
+      "Prescrever aciclovir oral como antiviral de escolha da influenza A sazonal neste paciente de risco elevado com segurança conforme meta na prática, certo",
+      "Indicar oseltamivir apenas se houver confirmação por cultura viral demorada, adiando terapia fora da janela útil em vigência no hospital, neste-passo",
+      "Usar amoxicilina isolada sem antiviral, tratando todo quadro gripal febril do idoso como pneumonia bacteriana só no serviço com registro, hoje"
+    ],
+    "explain": "Grupos de risco e início <48 h: oseltamivir reduz complicações. Aciclovir não trata influenza; atraso por cultura perde a janela.",
+    "trap": "Negar oseltamivir ao idoso de risco com influenza confirmada precoce."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 30,
+    "group": "Infectologia",
+    "theme": "HIV — PrEP (profilaxia pré-exposição)",
+    "stem": "Homem de 25 anos, HIV negativo (teste recente), parceiros sexuais múltiplos sem preservativo consistente, interessado em prevenção. Creatinina normal; HBsAg negativo. Qual a orientação mais adequada sobre PrEP? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Indicar PrEP com TDF/FTC (ou esquema aprovado), testagem HIV regular, IST e aconselhamento de adesão e risco residual neste manejo no serviço, agora",
+    "wrongs": [
+      "Afirmar que PrEP é desnecessária se o paciente ‘parece saudável’, omitindo profilaxia apesar de risco sexual elevado sem atraso neste caso, sim",
+      "Iniciar efavirenz monoterapia diária como PrEP padrão, sem base nas combinações aprovadas para profilaxia pré-exposição com segurança conforme meta, assim",
+      "Prescrever PrEP sem testar HIV basal, aceitando risco de resistência se houver infecção já estabelecida não diagnosticada em vigência no hospital, pronto",
+      "Indicar apenas vitamina C megadose como substituto eficaz da PrEP antirretroviral em exposição sexual de risco no serviço com registro sem atraso, jásim"
+    ],
+    "explain": "PrEP (TDF/FTC ou atualizações) para pessoas sob risco substancial, com HIV negativo documentado e seguimento. Não iniciar sem testagem basal.",
+    "trap": "Negar PrEP por estigma ou iniciar sem excluir HIV já existente."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 31,
+    "group": "Infectologia",
+    "theme": "Vacinas adulto — pneumocócica e influenza",
+    "stem": "Mulher de 67 anos, DPOC, nunca vacinada na vida adulta. Consulta de rotina, estável. Qual a indicação vacinal prioritária mais correta neste momento? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Atualizar influenza anual e vacinação pneumocócica conforme calendário do adulto/idoso com comorbidade pulmonar neste manejo no serviço com registro, ok",
+    "wrongs": [
+      "Contraindicar todas as vacinas inativadas no DPOC estável porque ‘qualquer estímulo imune’ descompensaria a doença sem atraso neste caso de imediato, sem-demora",
+      "Indicar apenas BCG de repetição anual no adulto idoso como substituto da vacina pneumocócica e da influenza com segurança conforme meta na prática, já",
+      "Adiar influenza indefinidamente porque DPOC nunca se beneficia de prevenção de infecções respiratórias virais em vigência no hospital neste manejo, então",
+      "Aplicar varicela atenuada de rotina sem checar história/sorologia, omitindo influenza e pneumococo prioritários no serviço com registro sem atraso, já-já"
+    ],
+    "explain": "Idoso com DPOC: influenza anual + pneumocócica segundo PNI/SBI. Vacinas inativadas não são contraindicação pelo DPOC estável.",
+    "trap": "Deixar de vacinar influenza/pneumococo no idoso pneumopata estável."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 32,
+    "group": "Infectologia",
+    "theme": "HIV — IRIS criptocócico e PIC",
+    "stem": "Homem de 35 anos com criptococose meníngea em consolidação com fluconazol inicia TARV. Duas semanas depois, cefaleia explosiva e papiledema; LCR com pressão 40 cmH2O, culturas negativas. Qual a conduta mais apropriada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Manter TARV e antifúngico, aliviar hipertensão intracraniana com punções de alívio seriada e avaliar corticoide se IRIS grave neste manejo, ainda",
+    "wrongs": [
+      "Suspender antifúngico imediatamente porque cultura negativa prova cura completa e dispensa qualquer medida adicional sem atraso neste caso, certo",
+      "Contraindicar novas punções de alívio na PIC elevada criptocócica, pois ‘aumentam disseminação’ do fungo residual com segurança conforme meta, neste-passo",
+      "Trocar fluconazol por nistatina oral como manejo exclusivo do IRIS criptocócico com papiledema ameaçador em vigência no hospital neste manejo, hoje",
+      "Indicar craniotomia descompressiva bilateral empírica antes de tentar alívio liquórico por punção lombar no serviço com registro sem atraso, logo"
+    ],
+    "explain": "IRIS criptocócico: manter terapia, controlar PIC com PL de alívio (pilar). Cultura negativa não exclui IRIS inflamatório.",
+    "trap": "Suspender tratamento ou não aliviar PIC no IRIS criptocócico."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 33,
+    "group": "Infectologia",
+    "theme": "Toxoplasmose — profilaxia secundária",
+    "stem": "Mulher de 40 anos completou tratamento de neurotoxoplasmose com boa resposta. CD4 atual 88 sob TARV recente. Qual a conduta quanto à profilaxia? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Manter profilaxia secundária (sulfadiazina+pirimetamina+folínico ou TMP-SMX) até reconstituição imune sustentada conforme critério neste manejo, sim",
+    "wrongs": [
+      "Suspender toda profilaxia no dia em que a TC melhorar, independentemente do CD4 e da adesão à TARV em curso sem atraso neste caso de imediato, assim",
+      "Trocar para fluconazol semanal como profilaxia secundária exclusiva da toxoplasmose cerebral no AIDS com segurança conforme meta na prática, pronto",
+      "Indicar radioterapia profilática craniana seriada no lugar de quimioprofilaxia antiparasitária secundária em vigência no hospital neste manejo, jásim",
+      "Usar apenas ácido fólico sem sulfadiazina/pirimetamina como prevenção suficiente de recidiva de toxoplasmose no serviço com registro, agora"
+    ],
+    "explain": "Após neurotoxoplasmose, profilaxia secundária continua até CD4 >200 por período sustentado sob TARV. Fluconazol não previne Toxoplasma.",
+    "trap": "Parar profilaxia secundária só pela melhora de imagem com CD4 ainda baixo."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 34,
+    "group": "Infectologia",
+    "theme": "PCP — profilaxia primária por CD4",
+    "stem": "Homem de 32 anos, diagnóstico novo de HIV, CD4 140, carga alta, assintomático respiratório. RX normal. Iniciará TARV. Qual a profilaxia oportunista prioritária? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar TMP-SMX como profilaxia de PCP (e toxoplasmose se IgG+), junto à TARV, até reconstituição imune adequada neste manejo no serviço, sem-demora",
+    "wrongs": [
+      "Omitir TMP-SMX porque paciente assintomático nunca precisa de profilaxia com CD4 abaixo de 200 células/mm³ sem atraso neste caso de imediato, já",
+      "Indicar anfotericina semanal profilática de rotina no lugar do TMP-SMX para prevenção de pneumocistose com segurança conforme meta na prática, então",
+      "Prescrever apenas vitamina D como prevenção suficiente de infecções oportunistas com CD4 140 em vigência no hospital neste manejo no serviço, já-já",
+      "Usar pentamidina inalatória em todos, mesmo sem contraindicação a sulfa, como primeira escolha absoluta no serviço com registro sem atraso, ok"
+    ],
+    "explain": "CD4 <200: profilaxia primária de PCP com TMP-SMX (também cobre toxo se IgG+). Anfotericina não é profilaxia de PCP. A conduta integra gravidade, imunossupressão e risco de deterioração nas próximas horas.",
+    "trap": "Não iniciar TMP-SMX com CD4 <200 por o paciente estar ‘assintomático’."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 35,
+    "group": "Infectologia",
+    "theme": "Criptococose — rastreio pré-TARV",
+    "stem": "Homem de 30 anos, HIV novo, CD4 45, sem cefaleia. Antes de iniciar TARV em serviço com recurso, qual estratégia reduz risco de criptococose/IRIS meníngeo? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Rastrear antígeno criptocócico sérico e, se positivo, investigar LCR e tratar antes de iniciar TARV conforme protocolo neste manejo no serviço, certo",
+    "wrongs": [
+      "Iniciar TARV imediatamente sem qualquer rastreio, pois CD4 muito baixo nunca se associa a criptococose subclínica sem atraso neste caso, neste-passo",
+      "Administrar fluconazol único de 150 mg/semana como substituto completo do rastreio CrAg e da indução quando indicada com segurança conforme meta, hoje",
+      "Indicar TC de crânio obrigatória em todo assintomático no lugar do CrAg sérico antes da terapia antirretroviral em vigência no hospital, logo",
+      "Prescrever ceftriaxona profilática prolongada para prevenir criptococose meníngea em CD4 abaixo de 50 no serviço com registro sem atraso, ainda"
+    ],
+    "explain": "Em CD4 muito baixo, CrAg sérico pré-TARV detecta criptococose subclínica; tratar antes reduz IRIS meníngeo. Ceftriaxona não previne Cryptococcus.",
+    "trap": "Iniciar TARV em CD4 baixíssimo sem rastrear CrAg onde disponível."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 36,
+    "group": "Infectologia",
+    "theme": "CMV — colite em AIDS",
+    "stem": "Mulher de 38 anos, HIV, CD4 28, diarreia sanguinolenta, dor abdominal e febre baixa. Colonoscopia: úlceras; biópsia com inclusões CMV. Teste para C. difficile negativo. Qual o tratamento etiológico preferencial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar ganciclovir/valganciclovir sistêmico, suporte e TARV, evitando imunossupressão adicional desnecessária neste contexto neste manejo, assim",
+    "wrongs": [
+      "Tratar apenas com loperamida crônica sem antiviral, pois colite CMV no AIDS é sempre autolimitada sem risco sem atraso neste caso de imediato, pronto",
+      "Indicar colectomia total imediata em toda diarreia com inclusão CMV antes de tentativa de terapia antiviral sistêmica com segurança conforme meta, jásim",
+      "Usar nistatina oral como antiviral específico do citomegalovírus gastrointestinal disseminado no AIDS avançado em vigência no hospital, agora",
+      "Prescrever mesalazina exclusiva como se fosse DII idiopática, omitindo terapia anti-CMV documentada na biópsia no serviço com registro sem atraso, sim"
+    ],
+    "explain": "Colite CMV no AIDS: ganciclovir/valganciclovir + TARV. Cirurgia reserva-se a complicações; mesalazina não trata CMV. A conduta integra gravidade, imunossupressão e risco de deterioração nas próximas horas.",
+    "trap": "Tratar colite CMV só como DII ou com sintomáticos, sem anti-CMV."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 37,
+    "group": "Infectologia",
+    "theme": "TB — GeneXpert e rifampicina",
+    "stem": "Homem de 50 anos, tosse há 5 semanas, emagrecimento, HIV negativo. Escarro: GeneXpert MTB positivo, rifampicina sensível. RX com cavidade apical. Qual o esquema inicial correto? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar RHZE na fase intensiva conforme PNT, isolamento respiratório inicial e notificação compulsória da tuberculose neste manejo no serviço, já",
+    "wrongs": [
+      "Aguardar cultura e antibiograma completo por 8 semanas antes de qualquer tuberculostático, mesmo com Xpert positivo sem atraso neste caso, então",
+      "Tratar apenas com levofloxacino monoterapia ambulatorial como esquema padrão de TB pulmonar cavitária sensível com segurança conforme meta, já-já",
+      "Indicar esquema MDR completo apesar de rifampicina sensível no Xpert, por haver cavidade radiológica isolada em vigência no hospital neste manejo, ok",
+      "Usar só etambutol por 3 dias e alta, sem rifampicina/isoniazida/pirazinamida na fase intensiva documentada no serviço com registro sem atraso, sem-demora"
+    ],
+    "explain": "Xpert MTB+/RIF sensível: iniciar RHZE, isolar e notificar. Não atrasar por cultura; monoterapia com FQ é inadequada. A conduta integra gravidade, imunossupressão e risco de deterioração nas próximas horas.",
+    "trap": "Adiar RHZE esperando cultura ou usar monoterapia com quinolona."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 38,
+    "group": "Infectologia",
+    "theme": "Hanseníase — reação tipo 2 (ENH)",
+    "stem": "Mulher de 35 anos em PQT-MB há 4 meses apresenta nódulos eritematosos dolorosos, febre e artralgia (eritema nodoso hansênico). Neurite leve. Qual a conduta mais adequada? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Manter a PQT e tratar a reação tipo 2 com talidomida (se elegível) ou corticoide conforme gravidade e protocolo com registro sem atraso, agora",
+    "wrongs": [
+      "Suspender definitivamente a PQT em toda reação hansênica, pois os fármacos causariam a reação e não devem continuar de imediato com segurança, sim",
+      "Indicar apenas anti-histamínico tópico sem imunomodulador sistêmico no eritema nodoso hansênico febril na prática em vigência no hospital, assim",
+      "Trocar PQT por ivermectina mensal como manejo exclusivo da reação tipo 2 com nódulos e febre neste manejo no serviço com registro sem atraso, pronto",
+      "Realizar plasmaférese de rotina antes de qualquer talidomida/corticoide na reação hansênica tipo 2 sem atraso neste caso de imediato, jásim"
+    ],
+    "explain": "Reação tipo 2 (ENH): manter PQT e tratar a reação (talidomida em mulheres sem risco gestacional / corticoide). Não se suspende PQT de rotina.",
+    "trap": "Suspender PQT ao surgir eritema nodoso hansênico."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 39,
+    "group": "Infectologia",
+    "theme": "Febre maculosa — diferencial dengue",
+    "stem": "Homem de 29 anos, febre, mialgia e exantema. Hematocrito estável, plaquetas 90.000. Relata remoção de carrapato há 8 dias; mora em área de mata. Há petéquias em tornozelos. Qual o raciocínio e conduta corretos? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Manter dengue no diferencial, mas iniciar doxiciclina pela possibilidade de febre maculosa, pois atraso eleva letalidade neste manejo no serviço, pronto",
+    "wrongs": [
+      "Tratar exclusivamente como dengue com hidratação, proibindo qualquer antibiótico mesmo com epidemiologia de carrapato sem atraso neste caso, jásim",
+      "Prescrever AAS para a mialgia em ambos os diferenciais, sem considerar risco hemorrágico na dengue e inutilidade na riquetsiose com segurança, agora",
+      "Aguardar PCR de dengue negativa por 10 dias antes de cogitar doxiciclina na suspeita concomitante de riquetsiose em vigência no hospital neste manejo, sim",
+      "Indicar cloranfenicol tópico cutâneo como terapia sistêmica suficiente da febre maculosa brasileira grave no serviço com registro sem atraso, assim"
+    ],
+    "explain": "Sobreposição clínica com dengue: se houver carrapato/área de risco, doxiciclina empírica precoce. AAS é inadequado. A conduta integra gravidade, imunossupressão e risco de deterioração nas próximas horas.",
+    "trap": "Tratar só como dengue e omitir doxiciclina quando há carrapato e exantema acral."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 40,
+    "group": "Infectologia",
+    "theme": "Calazar — falha e diagnóstico diferencial",
+    "stem": "Homem de 44 anos tratado para calazar há 3 meses com anfotericina retorna com febre, esplenomegalia persistente e pancitopenia. HIV agora positivo (CD4 55). Qual a prioridade? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Reavaliar recidiva/falha de LV, iniciar TARV e discutir novo tratamento anti-Leishmania adequado ao coinfecção HIV neste manejo no serviço, então",
+    "wrongs": [
+      "Ignorar o HIV novo e repetir o mesmo esquema sem reavaliação, pois coinfecção nunca altera resposta ou recidiva sem atraso neste caso, já-já",
+      "Indicar apenas sulfato ferroso oral como terapia única da pancitopenia sem investigar LV recidivante e AIDS com segurança conforme meta, ok",
+      "Suspender qualquer nova terapia anti-Leishmania porque esplenomegalia após tratamento sempre é sequela irreversível inócua em vigência, sem-demora",
+      "Tratar empiricamente com praziquantel presumindo esquistossomose exclusiva sem reavaliar leishmaniose e HIV no serviço com registro, já"
+    ],
+    "explain": "HIV-LV: alta recidiva; precisa TARV e retratamento especializado. Não tratar pancitopenia só com ferro nem ignorar a coinfecção.",
+    "trap": "Não testar/tratar HIV em calazar com falha ou recidiva."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 41,
+    "group": "Infectologia",
+    "theme": "Chagas — megaesôfago e complicação",
+    "stem": "Homem de 55 anos, Chagas crônica, disfagia a sólidos/líquidos, regurgitação noturna e pneumonia de aspiração recorrente. Esofagograma: megaesôfago avançado. Qual a conduta mais coerente? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Manejar complicações (aspiração, nutrição), avaliar tratamento endoscópico/cirúrgico do megaesôfago e suporte multidisciplinar neste manejo, hoje",
+    "wrongs": [
+      "Resolver o megaesôfago apenas com benznidazol curto, pois o antiparasitário reverte dilatamento esofágico avançado rapidamente sem atraso, logo",
+      "Indicar dieta líquida livre em decúbito sem avaliar risco de aspiração nem opção cirúrgica/endoscópica no megaesôfago com segurança conforme meta, ainda",
+      "Prescrever metoclopramida indefinida como cura definitiva do megaesôfago chagásico grau avançado com pneumonia em vigência no hospital, certo",
+      "Negar qualquer intervenção porque megaesôfago chagásico nunca se beneficia de dilatacao ou cirurgia em adultos no serviço com registro, neste-passo"
+    ],
+    "explain": "Megaesôfago avançado exige manejo mecânico/cirúrgico e prevenção de aspiração; benznidazol não reverte dilatação estabelecida.",
+    "trap": "Esperar que antiparasitário sozinho cure megaesôfago avançado."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 42,
+    "group": "Infectologia",
+    "theme": "Sepse — bacteremia sem foco e endocardite",
+    "stem": "Mulher de 70 anos, febre prolongada, sopro mitral novo, hemoculturas com Enterococcus faecalis em 3/3 amostras. Sem ITU nem ferida. Qual a conduta prioritária? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Solicitar ecocardiograma, iniciar terapia para endocardite enterocócica conforme sensibilidade e procurar complicações embolígenas neste manejo, jásim",
+    "wrongs": [
+      "Tratar com nitrofurantoína oral ambulatorial como esquema de endocardite enterocócica com bacteremia persistente sem atraso neste caso, agora",
+      "Aguardar 14 dias sem antibiótico para ‘confirmar’ novas hemoculturas, apesar de bacteremia documentada e sopro novo com segurança conforme meta, sim",
+      "Indicar troca valvar imediata em toda bacteremia enterocócica antes de ecocardiograma e antibioticoterapia adequada em vigência no hospital, assim",
+      "Usar nistatina sistêmica presumindo fungemia exclusiva, ignorando Enterococcus isolado repetidamente no sangue no serviço com registro, pronto"
+    ],
+    "explain": "Bacteremia enterocócica + sopro novo = endocardite até prova em contrário: eco + ATB IV adequada. Nitrofurantoína não trata endocardite.",
+    "trap": "Tratar bacteremia enterocócica com sopro como ITU ambulatorial com nitrofurantoína."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 43,
+    "group": "Infectologia",
+    "theme": "Neutropenia febril — baixo risco vs alto",
+    "stem": "Mulher de 45 anos, tumor sólido, neutropenia 800/mm³, febre 38,3 °C, estável, sem mucosite grave, MASCC alto (baixo risco). Qual a estratégia antimicrobiana possível? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Considerar terapia oral combinada ambulatorial supervisionada se critérios de baixo risco estritos forem preenchidos, com retorno rápido, já-já",
+    "wrongs": [
+      "Internar obrigatoriamente em UTI e iniciar polimixina + vancomicina + antifúngico em todo neutropênico febril estável de baixo risco sem atraso, ok",
+      "Negar qualquer antibiótico porque neutropenia 800 nunca exige terapia empírica na presença de febre documentada com segurança conforme meta, sem-demora",
+      "Indicar G-CSF isolado sem antibiótico como substituto completo da terapia empírica na neutropenia febril em vigência no hospital neste manejo, já",
+      "Usar colírio de tobramicina sistêmico como monoterapia ambulatorial da neutropenia febril de qualquer risco no serviço com registro sem atraso, então"
+    ],
+    "explain": "Baixo risco (MASCC) selecionado pode usar ATB oral supervisionada; alto risco exige IV hospitalar. G-CSF não substitui antibiótico empírico.",
+    "trap": "Tratar todo neutropênico febril igual, sem estratificar risco MASCC/CISNE."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 44,
+    "group": "Infectologia",
+    "theme": "Infecção de cateter — Candida",
+    "stem": "Homem de 55 anos em NPT via CVC, hemoculturas de periferia e cateter positivas para Candida albicans. Estável, sem endoftalmite aparente ainda. Qual a conduta essencial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Retirar o CVC, iniciar equinocandina (ou fluconazol se sensível/estável), solicitar fundo de olho e hemoculturas de controle neste manejo, logo",
+    "wrongs": [
+      "Manter o CVC e tratar só com nistatina oral, pois candidemia associada a cateter responde sempre a azol tópico sem atraso neste caso de imediato, ainda",
+      "Aguardar 10 dias sem antifúngico sistêmico até tipagem completa, mantendo NPT pelo mesmo acesso infectado com segurança conforme meta na prática, certo",
+      "Indicar anfotericina tópica na pele de inserção como terapia única da candidemia com hemoculturas positivas em vigência no hospital neste manejo, neste-passo",
+      "Trocar o cateter sobre guia sem antifúngico sistêmico nem avaliação oftalmológica na candidemia documentada no serviço com registro sem atraso, hoje"
+    ],
+    "explain": "Candidemia/CLABSI fúngica: retirar cateter + antifúngico sistêmico + fundo de olho. Nistatina oral não trata candidemia.",
+    "trap": "Tentar salvar o CVC com nistatina e omitir antifúngico sistêmico na candidemia."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 45,
+    "group": "Infectologia",
+    "theme": "Osteomielite vertebral — espondilodiscite",
+    "stem": "Homem de 66 anos, lombalgia inflamatória há 4 semanas, febre baixa, VHS/PCR altos. RM: espondilodiscite L3-L4 com coleção epidural pequena, sem déficit neurológico. Hemocultura: S. aureus. Qual a conduta inicial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Iniciar antibioticoterapia IV dirigida após biópsia se necessária, repouso relativo e avaliar drenagem se compressão ou abscesso drenável, agora",
+    "wrongs": [
+      "Indicar laminectomia radical imediata em toda espondilodiscite sem déficit, antes de antibiótico e definição do abscesso sem atraso neste caso, sim",
+      "Tratar apenas com AINE e fisioterapia agressiva em extensão, sem antibiótico na osteomielite vertebral com bacteremia com segurança conforme meta, assim",
+      "Prescrever corticoide epidural empírico para a dor, omitindo cobertura estafilocócica sistêmica documentada em vigência no hospital neste manejo, pronto",
+      "Usar nitrofurantoína oral por 3 dias como esquema padrão de espondilodiscite estafilocócica no idoso no serviço com registro sem atraso neste caso, jásim"
+    ],
+    "explain": "Espondilodiscite: ATB prolongado (± biópsia se hemocultura negativa), cirurgia se déficit/compressão/falha. Corticoide epidural sem ATB é erro.",
+    "trap": "Operar todo mundo de imediato ou tratar só dor sem antibiótico na espondilodiscite."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 46,
+    "group": "Infectologia",
+    "theme": "Artrite séptica — gonocócica vs não gonocócica",
+    "stem": "Homem de 40 anos com monoartrite aguda de joelho, febre, líquido purulento com 95.000 células, Gram com cocos Gram-positivos em cachos. Sem lesões cutâneas de gonococcemia. Qual a prioridade? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Tratar como artrite séptica não gonocócica (S. aureus até prova em contrário): drenagem + ATB antiestafilocócico IV urgente neste manejo, ok",
+    "wrongs": [
+      "Tratar apenas com ceftriaxona dose única IM como se fosse uretrite gonocócica simples, sem drenagem articular sem atraso neste caso de imediato, sem-demora",
+      "Iniciar alopurinol empírico antes de cultura, interpretando pus articular com Gram positivo como crise de gota com segurança conforme meta, já",
+      "Aguardar 1 semana de AINE isolado sem drenagem, pois celularidade 95.000 nunca indica infecção piogênica em vigência no hospital neste manejo, então",
+      "Prescrever colchicina exclusiva e alta, omitindo antibioticoterapia e avaliação ortopédica de urgência no serviço com registro sem atraso, já-já"
+    ],
+    "explain": "Líquido purulento + Gram de cocos em cacho = S. aureus até prova em contrário: drenagem + ATB IV. Dose única IM de ceftriaxona não basta.",
+    "trap": "Tratar artrite piogênica estafilocócica como gonorreia com dose única IM."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 47,
+    "group": "Infectologia",
+    "theme": "Meningite — pressão de abertura criptocócica",
+    "stem": "Mulher de 33 anos, AIDS, meningite criptocócica em indução com anfotericina+flucitosina. Mantém cefaleia intensa; PL de controle com abertura 35 cmH2O, Glasgow 15. Qual medida adicional é crucial? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Realizar punções de alívio repetidas (ou drenagem liquórica) para controlar a hipertensão intracraniana associada à criptococose neste manejo, ainda",
+    "wrongs": [
+      "Suspender anfotericina porque cefaleia durante indução indica toxicidade absoluta e cura já alcançada clinicamente sem atraso neste caso de imediato, certo",
+      "Indicar manitol contínuo indefinido sem nova PL, omitindo o alívio mecânico da PIC típica da criptococose com segurança conforme meta na prática, neste-passo",
+      "Iniciar AAS pleno para ‘afinar o LCR’ e reduzir pressão de abertura sem nova punção diagnóstica-terapêutica em vigência no hospital neste manejo, hoje",
+      "Contraindicar qualquer nova punção até o fim da consolidação com fluconazol, mesmo com PIC ameaçadora no serviço com registro sem atraso neste caso, logo"
+    ],
+    "explain": "Mortalidade na criptococose liga-se à PIC: PL de alívio seriada é essencial junto ao antifúngico. Não suspender indução só pela cefaleia.",
+    "trap": "Não aliviar PIC elevada na meningite criptocócica em tratamento."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 48,
+    "group": "Infectologia",
+    "theme": "Sífilis na gestação — VDRL e tratamento",
+    "stem": "Gestante de 18 semanas, VDRL 1:64, FTA-Abs positivo, assintomática, sem tratamento prévio documentado. HIV negativo. Qual a conduta correta? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Tratar com penicilina G benzatina em esquema gestacional adequado, notificar, tratar parceiro e seguir VDRL mensal neste manejo no serviço, sim",
+    "wrongs": [
+      "Adiar tratamento para após o parto, pois penicilina na gestação é contraindicação absoluta sem exceções clínicas sem atraso neste caso, assim",
+      "Usar doxiciclina como primeira linha na gestação para sífilis, evitando penicilina mesmo sem alergia documentada com segurança conforme meta, pronto",
+      "Indicar apenas azitromicina dose única como equivalente comprovado da penicilina para prevenir sífilis congênita em vigência no hospital, jásim",
+      "Interpretar VDRL 1:64 na gestação como falso-positivo obrigatório e não tratar nem notificar o caso no serviço com registro sem atraso, agora"
+    ],
+    "explain": "Sífilis na gestação: penicilina benzatina é a única com eficácia comprovada na prevenção da congênita. Doxiciclina é contraindicada; não se adia para o puerpério.",
+    "trap": "Adiar penicilina na gestante com sífilis ou substituir por macrolídeo inadequado."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 49,
+    "group": "Infectologia",
+    "theme": "Abscesso amebiano — falha e drenagem",
+    "stem": "Homem de 42 anos com abscesso hepático amebiano em metronidazol há 5 dias mantém febre alta, dor intensa e risco de ruptura iminente na TC (abscesso grande periférico). Qual o próximo passo? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Indicar drenagem percutânea (ou cirúrgica se necessário) associada à terapia antiparasitária, diante de falha/risco de ruptura neste manejo, sem-demora",
+    "wrongs": [
+      "Dobrar apenas a dose de albendazol sem drenagem, mesmo com ameaça de ruptura do abscesso hepático volumoso sem atraso neste caso de imediato, já",
+      "Suspender metronidazol e observar, pois febre no 5º dia sempre indica cura parasitológica completa sem imagem com segurança conforme meta, então",
+      "Iniciar vancomicina exclusiva no lugar do metronidazol, sem drenagem, interpretando todo abscesso como MRSA em vigência no hospital, já-já",
+      "Indicar transplante hepático imediato como primeira opção antes de drenagem guiada por imagem no abscesso amebiano no serviço com registro, ok"
+    ],
+    "explain": "Amebiano geralmente clínico+metronidazol; drenagem se falha, diagnóstico duvidoso, infecção secundária ou risco de ruptura. Não trocar às cegas para vancomicina.",
+    "trap": "Insistir só em droga sem drenar abscesso amebiano com risco de ruptura/falha."
+  },
+  {
+    "idPrefix": "cli-infecto2",
+    "n": 50,
+    "group": "Infectologia",
+    "theme": "Vacinas adulto — herpes zoster e hepatite B",
+    "stem": "Homem de 62 anos, diabético, sem história de vacinação recente, sorologia HBV: anti-HBs negativo, HBsAg negativo, anti-HBc negativo. Consulta preventiva. Qual plano vacinal mais apropriado? Sinais vitais, oxigenação e estado mental já foram checados e não dispensam a decisão etiológica-terapêutica imediata. O serviço dispõe de isolamento, imagem e antimicrobianos conforme protocolo institucional vigente neste atendimento.",
+    "correct": "Indicar vacina de hepatite B (esquema completo), influenza/pneumococo conforme elegibilidade e discutir vacina de zoster conforme disponibilidade, certo",
+    "wrongs": [
+      "Contraindicar hepatite B no diabético adulto porque a vacina seria inútil após os 60 anos em qualquer cenário sem atraso neste caso de imediato, neste-passo",
+      "Aplicar apenas dose única de hepatite B vitalícia, sem completar esquema de 3 doses nem checar resposta quando indicado com segurança conforme meta, hoje",
+      "Indicar BCG anual repetida no lugar de hepatite B, influenza e prevenção de zoster no adulto com diabetes em vigência no hospital neste manejo, logo",
+      "Negar qualquer imunização porque diabetes tipo 2 contraindica vacinas inativadas e recombinantes de rotina no serviço com registro sem atraso, ainda"
+    ],
+    "explain": "Adulto diabético: hepatite B se suscetível, influenza, pneumococo e zoster conforme calendário. Diabetes não contraindica vacinas inativadas/recombinantes.",
+    "trap": "Deixar diabético adulto sem hepatite B/influenza por achar ‘tarde demais’."
+  }
+]
