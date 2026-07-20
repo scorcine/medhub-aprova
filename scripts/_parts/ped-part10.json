@@ -1,0 +1,722 @@
+[
+  {
+    "idPrefix": "ped-neo4",
+    "n": 1,
+    "group": "Neonatologia",
+    "theme": "Oximetria de pulso crítica — teste do coraçãozinho",
+    "stem": "Recém-nascido a termo, 36 horas de vida, em alojamento conjunto, assintomático, alimentando-se bem. Na oximetria de pulso crítica (teste do coraçãozinho), saturação em mão direita é 94% e em pé direito 92%, com diferença de 2 pontos percentuais entre membros. Exame cardíaco sem sopro evidente, pulsos palpáveis e perfusão adequada. A mãe pergunta se o resultado libera alta sem mais exames. Qual é a interpretação e a conduta mais adequada neste momento?",
+    "correct": "considerar o teste positivo/falho e indicar avaliação clínica imediata com ecocardiograma antes da alta hospitalar na abordagem inicial",
+    "wrongs": [
+      "considerar o teste negativo/aprovado porque a diferença entre membros é menor que 3% e liberar a alta sem investigação para este recém-nascido",
+      "repetir apenas a oximetria em 48 horas após a alta, sem necessidade de avaliação cardiológica na maternidade nesta avaliação",
+      "indicar cateterismo cardíaco urgente mesmo sem ecocardiograma, pelo valor absoluto da saturação no membro superior segundo as diretrizes",
+      "suspender o teste do coraçãozinho em RN assintomáticos e liberar alta apenas com exame físico normal na prática clínica atual"
+    ],
+    "explain": "No teste do coraçãozinho, saturação <95% em qualquer membro ou diferença ≥3% entre mão direita e pé configura falha. Aqui a SpO2 máxima é 94%, portanto o teste é positivo/falho independentemente da diferença de 2%. Indica-se avaliação clínica e ecocardiograma antes da alta, pois o exame físico isolado não exclui cardiopatia crítica.",
+    "trap": "Focar só na diferença entre membros e ignorar o limiar absoluto de saturação <95%, liberando alta indevida."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 2,
+    "group": "Neonatologia",
+    "theme": "Cardiopatia congênita ducto-dependente",
+    "stem": "Recém-nascido de 39 semanas, alta com 36 horas após teste do coraçãozinho normal. No 4º dia de vida, chega à emergência com dificuldade alimentar, taquipneia, cianose progressiva e pulsos femorais fracos. Saturização 82% em ar; gasometria com acidose metabólica; radiografia com cardiomegalia discreta e campos pulmonares oligoêmicos. Não há febre nem foco infeccioso claro. Qual hipótese e conduta inicial são as mais adequadas?",
+    "correct": "suspeitar cardiopatia congênita ducto-dependente e iniciar prostaglandina E1 enquanto organiza ecocardiograma urgente segundo as diretrizes",
+    "wrongs": [
+      "tratar como sepse neonatal tardia exclusiva, com antibióticos e observação, adiando imagem cardíaca por 48 horas apesar dos dados",
+      "indicar fototerapia e correção apenas da acidose com bicarbonato, sem suporte hemodinâmico específico para este recém-nascido",
+      "liberar com orientação de retorno se piorar, pois o teste do coraçãozinho normal exclui cardiopatia crítica conforme o algoritmo",
+      "iniciar óxido nítrico inalatório empírico como primeira medida, antes de qualquer avaliação cardíaca estrutural no contexto neonatal"
+    ],
+    "explain": "Colapso no fechamento do canal arterial (geralmente 2º–7º dia) com cianose, choque e oligoemia sugere lesão ducto-dependente. A prioridade é manter o ducto com prostaglandina E1 e confirmar o diagnóstico com ecocardiograma. Teste do coraçãozinho normal não exclui todas as cardiopatias; óxido nítrico não é a primeira linha sem diagnóstico de hipertensão pulmonar.",
+    "trap": "Atribuir todo colapso neonatal a sepse e atrasar a prostaglandina em cardiopatia ducto-dependente."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 3,
+    "group": "Neonatologia",
+    "theme": "Coarctação de aorta — apresentação neonatal",
+    "stem": "Lactente de 10 dias, nascido a termo, trazido por mau estado geral, vômitos e extremidades frias. Exame: taquicardia, sopro sistólico suave, pulsos braquiais palpáveis e femorais quase ausentes, pressão arterial nos membros superiores 95×55 mmHg e nos inferiores 60×35 mmHg. Saturização pré-ductal 96% e pós-ductal 90%. Radiografia com congestão pulmonar. Qual é a conduta imediata mais apropriada?",
+    "correct": "iniciar prostaglandina E1, estabilizar vias aéreas e circulação e obter ecocardiograma urgente para coarctação crítica neste momento",
+    "wrongs": [
+      "indicar apenas diurético e digoxina ambulatorial, adiando imagem cardíaca porque a saturação pré-ductal ainda é aceitável",
+      "tratar como desidratação isolada com expansão rápida de volume e alta precoce após a melhora da perfusão periférica no seguimento do RN",
+      "solicitar apenas eletrocardiograma de rotina e retorno em 7 dias se os pulsos femorais permanecerem diminuídos no cuidado imediato",
+      "contraindicar qualquer prostaglandina até confirmação cirúrgica definitiva da coarctação em centro terciário neste cenário"
+    ],
+    "explain": "Diferença pressórica membros superiores/inferiores, pulsos femorais fracos e choque no fechamento ductal sugerem coarctação crítica. A prostaglandina reabre/mantém o canal arterial e melhora a perfusão sistêmica distal enquanto se confirma o diagnóstico e se planeja correção. Adiar PGE1 até a cirurgia piora o prognóstico.",
+    "trap": "Tratar o choque apenas como desidratação/sepse e esquecer a diferença de pulsos e pressões entre membros."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 4,
+    "group": "Neonatologia",
+    "theme": "Síndrome do coração esquerdo hipoplásico",
+    "stem": "Recém-nascido de 38 semanas, sem diagnóstico pré-natal, apresenta no 3º dia de vida cianose, taquipneia e choque refratário. Pulsos periféricos filiformes, hepatoesplenomegalia e sopro discreto. Ecocardiograma à beira-leito mostra ventrículo esquerdo hipoplásico, aorta ascendente estreita e forame oval restritivo. Saturização 75% sob oxigênio. Qual medida farmacológica imediata é prioritária?",
+    "correct": "iniciar infusão contínua de prostaglandina E1 para manter o canal arterial e a perfusão sistêmica mantendo vigilância contínua dos sinais",
+    "wrongs": [
+      "administrar surfactante empírico em dose plena, como se o quadro fosse apenas doença de membrana hialina na prática clínica atual",
+      "indicar digoxina isolada e restrição hídrica sem manter o ducto arterial aberto farmacologicamente após estabilização inicial",
+      "suspender oxigênio e iniciar apenas antibióticos de amplo espectro, atribuindo tudo à sepse precoce sob monitorização contínua",
+      "usar bloqueador de canal arterial (indometacina) para fechar o ducto e reduzir o shunt esquerda-direita para este recém-nascido"
+    ],
+    "explain": "No coração esquerdo hipoplásico, a perfusão sistêmica depende do fluxo ductal direita-esquerda. Fechar o ducto precipita choque; a prostaglandina E1 é essencial até estabilização e planejamento cirúrgico (Norwood/híbrido). Indometacina é contraindicação absoluta neste contexto.",
+    "trap": "Fechar o canal arterial com anti-inflamatório ou tratar apenas como sepse/SDR, omitindo a PGE1."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 5,
+    "group": "Neonatologia",
+    "theme": "Prostaglandina E1 — efeitos e vigilância",
+    "stem": "Recém-nascido de 3 dias com suspeita de cardiopatia ducto-dependente (pulsos femorais fracos, acidose e má perfusão) inicia prostaglandina E1 em bomba de infusão sob monitorização contínua em UTI. Após 40 minutos, apresenta apneia intermitente, rubor cutâneo e temperatura de 37,8 °C, mantendo saturação melhorada e pulsos femorais mais palpáveis. Não há estridor nem edema de glote. Qual é a conduta mais adequada quanto à PGE1 neste momento?",
+    "correct": "manter a PGE1 com suporte ventilatório se necessário, pois apneia e rubor são efeitos esperados e o benefício ductal permanece na sala de parto",
+    "wrongs": [
+      "suspender imediatamente a prostaglandina por febre e rubor, interpretando como anafilaxia grave irreversível sem nova intervenção",
+      "trocar a PGE1 por indometacina para reverter a dilatação ductal e reduzir a temperatura corporal mantendo vigilância contínua dos sinais vitais",
+      "aumentar a dose de PGE1 ao máximo sem monitorar respiração, porque a apneia nunca ocorre com esse fármaco conforme o algoritmo",
+      "interromper a infusão por 24 horas e reiniciar só após ecocardiograma ambulatorial eletivo com monitoramento seriado e reassessment breve"
+    ],
+    "explain": "Apneia, rubor, hipotensão e hipertermia leve são efeitos adversos conhecidos da PGE1. Não se suspende o fármaco apenas por isso quando há indicação ducto-dependente; prepara-se suporte ventilatório e mantém-se a infusão sob monitorização. Suspender a PGE1 pode precipitar colapso.",
+    "trap": "Interpretar apneia/rubor da PGE1 como anafilaxia e suspender o fármaco que está mantendo a vida."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 6,
+    "group": "Neonatologia",
+    "theme": "Persistência da circulação fetal / HPPRN",
+    "stem": "Recém-nascido a termo, líquido meconial, Apgar 5/7, desenvolve taquipneia e cianose nas primeiras horas de vida em UTI neonatal. Saturização pré-ductal 88% e pós-ductal 78% sob oxigênio; a diferença pré/pós-ductal persiste após otimizar a máscara. Radiografia com campos relativamente claros; ecocardiograma mostra shunt direita-esquerda pelo forame oval e ducto, anatomia cardíaca normal e pressão pulmonar elevada. Qual conduta inicial é a mais adequada?",
+    "correct": "otimizar ventilação e oxigenação, corrigir acidose e hipotensão e considerar óxido nítrico se hipoxemia grave persistir nesta avaliação",
+    "wrongs": [
+      "iniciar prostaglandina E1 de rotina em todo RN cianótico, mesmo com anatomia cardíaca normal confirmada na conduta prioritária",
+      "indicar fechamento cirúrgico imediato do canal arterial como tratamento de primeira linha da hipertensão pulmonar apesar dos dados",
+      "manter apenas ar ambiente e observação, pois a diferença pré/pós-ductal é fisiológica até o 7º dia na prática clínica atual",
+      "administrar indometacina precoce para fechar o ducto e forçar o fluxo pulmonar em todos os casos após estabilização inicial"
+    ],
+    "explain": "A persistência da circulação fetal (HPPRN) cursa com shunt direita-esquerda extrapulmonar sem lesão estrutural. O manejo visa reduzir a resistência vascular pulmonar: oxigenação adequada, ventilação, correção de acidose/hipotensão e óxido nítrico nos casos graves. PGE1 não é rotina sem cardiopatia ducto-dependente.",
+    "trap": "Tratar toda cianose neonatal com PGE1 ou fechar o ducto precocemente sem diferenciar HPPRN de cardiopatia."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 7,
+    "group": "Neonatologia",
+    "theme": "Hipotermia terapêutica — critérios de inclusão",
+    "stem": "Recém-nascido de 39 semanas, 3.420 g, parto vaginal com circular de cordão e líquido meconial. Apgar 2/4/6; pH de cordão 6,92 com BE −16; aos 60 minutos mantém letargia, hipotonia e reflexos fracos, sem convulsão clínica ainda. Temperatura axilar 36,7 °C; agora com 2 horas de vida, estável hemodinamicamente sob suporte. A equipe discute neuroproteção conforme protocolo institucional. Qual decisão é a mais adequada?",
+    "correct": "indicar hipotermia terapêutica, pois há asfixxia moderada/grave a termo e encefalopatia dentro da janela de 6 horas diante da evolução",
+    "wrongs": [
+      "contraindicar hipotermia porque ainda não houve convulsão clínica, critério obrigatório absoluto em todos os protocolos após estabilização inicial",
+      "aguardar 12 horas para ver se a encefalopatia regride espontaneamente antes de qualquer resfriamento na conduta prioritária",
+      "indicar hipotermia apenas se a idade gestacional for menor que 35 semanas, reservando o termo para observação no seguimento do RN",
+      "iniciar aquecimento ativo agressivo até 38 °C para acelerar o metabolismo cerebral pós-asfixxia sob monitorização contínua"
+    ],
+    "explain": "Critérios típicos: ≥36 semanas, evidência de asfixxia perinatal (Apgar baixo, acidose) e encefalopatia moderada/grave, com início idealmente até 6 horas de vida. Convulsão não é obrigatória se já há sinais neurológicos compatíveis. Prematuros <35–36 semanas geralmente não entram no protocolo padrão.",
+    "trap": "Aguardar convulsão ou perder a janela de 6 horas antes de iniciar a hipotermia terapêutica."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 8,
+    "group": "Neonatologia",
+    "theme": "Encefalopatia hipóxico-isquêmica — estágios de Sarnat",
+    "stem": "Recém-nascido a termo em hipotermia terapêutica é reavaliado com 24 horas de vida pela equipe de neurologia neonatal. Está alertado apenas ao estímulo vigoroso, hipotônico, com reflexo de Moro incompleto, pupilas mióticas reativas, respiração irregular intermitente e convulsões clínicas controladas com fenobarbital. Não há coma profundo nem falência de tronco. Segundo a classificação de Sarnat, qual estágio melhor descreve este quadro e qual implicação prognóstica prática?",
+    "correct": "encefalopatia moderada (Sarnat II), com risco neurológico significativo e necessidade de seguimento especializado no seguimento do RN",
+    "wrongs": [
+      "encefalopatia leve (Sarnat I), tipicamente sem risco e com alta precoce sem qualquer seguimento neurológico diante deste caso",
+      "encefalopatia grave (Sarnat III) obrigatória, pois qualquer convulsão define automaticamente o estágio máximo na prática clínica atual",
+      "ausência de encefalopatia, já que o bebê ainda responde a estímulo vigoroso durante o exame neurológico conforme o algoritmo",
+      "Sarnat II apenas se houver coma profundo e ausência total de reflexos de tronco desde o nascimento para este recém-nascido"
+    ],
+    "explain": "Sarnat II (moderada) inclui letargia/estupor, hipotonia, reflexos incompletos, respiração irregular e convulsões frequentes. Sarnat I é irritabilidade com tônus normal/aumentado e sem convulsões típicas; Sarnat III é stupor/coma profundo, flacidez e falência de tronco. Convulsão sugere pelo menos estágio II, não automaticamente III.",
+    "trap": "Rotular qualquer convulsão como Sarnat III ou minimizar Sarnat II como achado benigno sem seguimento."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 9,
+    "group": "Neonatologia",
+    "theme": "Reanimação neonatal — parâmetros de VPP",
+    "stem": "Em sala de parto aquecida, RN a termo após secagem, posicionamento da via aérea e estímulo tátil permanece com frequência cardíaca de 80 bpm e respiração irregular, sem expansão torácica adequada. A oximetria em mão direita está sendo instalada e o timer da reanimação corre. A equipe inicia ventilação com pressão positiva em máscara facial e debate os parâmetros iniciais. Qual combinação de parâmetros é a mais adequada segundo o algoritmo vigente?",
+    "correct": "iniciar cerca de 40–60 ventilações/min, pressão inspiratória suficiente para elevar o tórax e FiO2 titulada pela oximetria diante do quadro",
+    "wrongs": [
+      "ventilar a 10–12/min com pressão máxima fixa de 40 cmH2O e FiO2 100% sem titulação pela saturação mantendo vigilância contínua dos sinais vitais",
+      "usar apenas fluxo livre de oxigênio a 15 L/min, sem pressão positiva, enquanto a FC estiver acima de 60 bpm sem nova intervenção",
+      "iniciar imediatamente 100 compressões/min sem ventilação, priorizando a circulação sobre a aeração pulmonar para este recém-nascido",
+      "programar volume corrente adulto de 8–10 mL/kg com frequência de 100/min em máscara neonatal padrão após estabilização inicial"
+    ],
+    "explain": "A VPP neonatal tipicamente usa 40–60 ventilações por minuto, pressão apenas a necessária para expansão torácica e oxigênio titulado por alvos de SpO2 por minuto de vida. Compressões só se FC <60 após ventilação efetiva. Fluxo livre não substitui VPP quando há bradicardia/respiração inadequada.",
+    "trap": "Usar FiO2 100% fixa, frequência de adulto ou pular direto para compressões sem VPP efetiva."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 10,
+    "group": "Neonatologia",
+    "theme": "Reanimação — massagem cardíaca 3:1",
+    "stem": "RN prematuro de 34 semanas, 1.900 g, recebe VPP efetiva com expansão torácica adequada e via aérea revisada (máscara, posição e pressão) há mais de 30 segundos. A frequência cardíaca permanece em 50 bpm sob monitorização contínua. Saturização ainda baixa apesar da ventilação. A equipe decide iniciar compressões torácicas coordenadas. Qual técnica e relação com a ventilação estão corretas neste cenário de reanimação neonatal?",
+    "correct": "comprimir o terço inferior do esterno na relação 3 compressões para 1 ventilação, coordenando com a equipe após estabilização inicial",
+    "wrongs": [
+      "usar a relação 15:2 do suporte avançado pediátrico fora do período neonatal imediato, sem coordenar ventilações com reassessment breve",
+      "comprimir apenas o terço superior do esterno, na relação 5:1, pausando a ventilação por completo durante 2 minutos no manejo imediato",
+      "manter compressões contínuas a 120/min sem qualquer ventilação até a frequência cardíaca ultrapassar 100 bpm apesar dos dados",
+      "indicar desfibrilação sincronizada imediata antes das compressões, pois bradicardia neonatal é ritmicamente chocável diante da evolução"
+    ],
+    "explain": "Na reanimação neonatal, compressões seguem a relação 3:1 (três compressões e uma ventilação), no terço inferior do esterno, após falha da VPP em elevar a FC acima de 60. A relação 15:2 é do PALS fora desse contexto. Bradicardia por hipóxia não é tratada primariamente com desfibrilação.",
+    "trap": "Aplicar a relação 15:2 do PALS ou desfibrilar bradicardia hipóxica no RN."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 11,
+    "group": "Neonatologia",
+    "theme": "Reanimação — via da adrenalina",
+    "stem": "RN a termo sob VPP efetiva e compressões 3:1 há cerca de 60 segundos mantém frequência cardíaca de 40 bpm, com acesso venoso umbilical já obtido pela equipe na sala de parto. Prepara-se adrenalina conforme o algoritmo avançado. Não há evidência de pneumotórax nem hipovolemia óbvia. Qual orientação é a mais correta quanto à via e à estratégia da adrenalina neste cenário?",
+    "correct": "preferir adrenalina intravenosa pela veia umbilical; a via traqueal é alternativa temporária com dose maior se não houver acesso apesar",
+    "wrongs": [
+      "usar apenas adrenalina intramuscular no deltoide como via de escolha na reanimação neonatal avançada para este recém-nascido",
+      "administrar adrenalina subcutânea de rotina e suspender compressões por 2 minutos para avaliar o efeito após estabilização inicial",
+      "contraindicar qualquer adrenalina enquanto a frequência cardíaca estiver acima de 30 bpm neste algoritmo conforme o algoritmo",
+      "preferir sempre a via traqueal com dose idêntica à intravenosa, mesmo com acesso umbilical já disponível no seguimento do RN"
+    ],
+    "explain": "A via preferencial da adrenalina na reanimação neonatal é intravenosa (veia umbilical). A via endotraqueal pode ser usada temporariamente se não houver acesso, geralmente com dose maior e eficácia menos previsível. IM/SC não são vias do algoritmo de sala de parto.",
+    "trap": "Escolher via intramuscular/subcutânea ou insistir na traqueal quando já existe acesso umbilical."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 12,
+    "group": "Neonatologia",
+    "theme": "Reanimação — expansão volêmica",
+    "stem": "RN a termo nasce após descolamento prematuro de placenta com sangramento materno volumoso e anemia fetal suspeita. Apesar de VPP efetiva e compressões torácicas coordenadas, permanece pálido, mal perfundido, com FC em 55 bpm e tempo de enchimento capilar prolongado. Há acesso umbilical disponível. Qual conduta de volume é a mais adequada neste momento da reanimação?",
+    "correct": "expandir com 10 mL/kg de cristaloides isotônicos ou sangue, se disponível, por acesso umbilical sob reavaliação conforme o algoritmo",
+    "wrongs": [
+      "infundir 40–50 mL/kg de coloide de rotina em bolus único antes de qualquer ventilação efetiva após estabilização inicial",
+      "evitar qualquer volume porque expansão é contraindicada em todo RN sob reanimação, mesmo com hemorragia diante deste caso",
+      "usar apenas bicarbonato de sódio isotônico como substituto exclusivo da expansão volêmica inicial na prática clínica atual",
+      "administrar furosemida intravenosa para redistribuir volume central e elevar a frequência cardíaca na conduta prioritária"
+    ],
+    "explain": "Expansão com 10 mL/kg está indicada quando há evidência de hipovolemia/hemorragia (descolamento, pallor, má resposta à reanimação). Cristaloide isotônico ou sangue (se imediato) são opções; bolos maciços empíricos e diuréticos não fazem parte do algoritmo inicial.",
+    "trap": "Negar volume em hemorragia óbvia ou usar bolos excessivos/bicarbonato como substituto da expansão."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 13,
+    "group": "Neonatologia",
+    "theme": "Líquido amniótico meconial — vigência",
+    "stem": "Parto vaginal de RN a termo com líquido amniótico meconial espesso e fétido, sem outros fatores de risco anteparto. Ao nascer, o bebê está vigoroso: choro forte imediato, tônus adequado, frequência cardíaca >100 bpm e boa perfusão cutânea. A equipe debate se deve intubar para aspirar traqueia antes dos passos iniciais, baseando-se em práticas antigas. Qual é a conduta correta segundo as recomendações atuais?",
+    "correct": "não realizar intubação/aspiração traqueal de rotina; seguir passos iniciais e suporte conforme vitalidade do RN na prática clínica atual",
+    "wrongs": [
+      "intubar e aspirar a traqueia imediatamente em todo RN com mecônio, independentemente do vigor ao nascer sob monitorização contínua",
+      "adiar secagem e estímulo até realizar lavagem brônquica com soro fisiológico em volume alto mantendo vigilância contínua dos sinais vitais",
+      "indicar surfactante empírico na sala de parto só pelo mecônio, mesmo com RN vigoroso e sem desconforto para este recém-nascido",
+      "manter o RN em posição de Trendelenburg prolongada para drenar mecônio antes de qualquer ventilação após estabilização inicial"
+    ],
+    "explain": "Recomendações atuais abandonaram a aspiração traqueal rotineira no mecônio se o RN está vigoroso. Segue-se o algoritmo usual (passos iniciais → VPP se necessário). Intubação/aspiração pode ser considerada se houver obstrução ou RN deprimido com suspeita de obstrução por mecônio, não de forma automática.",
+    "trap": "Manter a prática antiga de aspirar traqueia em todo RN com mecônio, inclusive nos vigorosos."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 14,
+    "group": "Neonatologia",
+    "theme": "Clampeamento do cordão umbilical",
+    "stem": "Gestação de 39 semanas, parto vaginal sem intercorrências, RN que chora imediatamente, tônus normal, sem necessidade de reanimação e sem hemorragia materna ativa. Cordão ainda pulsátil, bebê em contato pele a pele sobre o abdome materno. A equipe discute o momento ideal do clampeamento do cordão umbilical para maximizar benefício. Qual conduta é a mais adequada para este RN vigoroso?",
+    "correct": "realizar clampeamento tardio (cerca de 30–60 segundos ou mais) em RN vigoroso, beneficiando a transição hematológica sem nova intervenção",
+    "wrongs": [
+      "clampear imediatamente em menos de 5 segundos em todo parto vaginal, mesmo com RN vigoroso e estável na prática clínica atual",
+      "adiar o clampeamento por mais de 10 minutos de forma rotineira, mesmo com necessidade clara de reanimação com reassessment breve",
+      "contraindicar qualquer clampeamento tardio a termo, reservando-o apenas para prematuros extremos abaixo de 28 semanas no manejo imediato",
+      "realizar milking agressivo do cordão em todos os RN a termo como substituto obrigatório do clampeamento tardio apesar dos dados"
+    ],
+    "explain": "Em RN a termo vigorosos, o clampeamento tardio (geralmente ≥30–60 s) aumenta a transferência de sangue placentário e reduz anemia precoce. Se houver necessidade de reanimação imediata, prioriza-se a estabilização (clampeamento precoce pode ser necessário). Milking não substitui indiscriminadamente o clampeamento tardio em todos os termos.",
+    "trap": "Clampear sempre de imediato por hábito, perdendo o benefício hematológico no RN vigoroso."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 15,
+    "group": "Neonatologia",
+    "theme": "Cuidados imediatos — temperatura na sala de parto",
+    "stem": "RN de 30 semanas, 1.250 g, nasce em sala com ar-condicionado intenso e sem saco plástico preparado previamente. Após reanimação breve com VPP, a temperatura axilar aos 20 minutos é 35,4 °C. Há taquipneia leve, glicemia 48 mg/dL e má perfusão discreta. A equipe revisa as medidas de termorregulação imediata na transição. Qual conjunto de ações é o mais apropriado?",
+    "correct": "usar saco plástico/filme, touca, calor radiante e sala aquecida, evitando hipotermia que agrava transição e hipoglicemia no manejo imediato",
+    "wrongs": [
+      "banhar o prematuro imediatamente com água fria para remover vérnix e estimular o choro vigoroso mantendo vigilância contínua dos sinais vitais",
+      "manter o RN nu sobre superfície metálica fria para facilitar o acesso de vias aéreas sem isolamento térmico conforme descrito",
+      "aceitar temperatura de 35,4 °C como alvo terapêutico intencional em todo prematuro nas primeiras 24 horas após estabilização inicial",
+      "priorizar apenas o aquecimento cutâneo com bolsas quentes não monitoradas, sem calor radiante nem filme plástico conforme o algoritmo"
+    ],
+    "explain": "Hipotermia no prematuro aumenta mortalidade e morbidade (SDR, hipoglicemia, acidose). Medidas: ambiente aquecido, saco plástico sem secar em <32 semanas, touca, calor radiante e contato pele a pele quando estável. Banho imediato e superfícies frias são prejudiciais.",
+    "trap": "Normalizar hipotermia precoce ou banhar/expor o prematuro ao frio logo após o nascimento."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 16,
+    "group": "Neonatologia",
+    "theme": "Escore de Apgar — interpretação",
+    "stem": "RN a termo recebe Apgar 3 no 1º minuto (FC 80, respiração irregular, tônus diminuído, irritabilidade fraca, cianose) e 8 no 5º minuto após VPP efetiva bem documentada em sala de parto. A família pergunta se o Apgar 3 'prova' paralisia cerebral futura. Gasometria de cordão com pH 7,18 e BE −9. Qual é a interpretação mais correta do escore de Apgar neste caso?",
+    "correct": "o Apgar descreve a condição e a resposta à reanimação; isolado, não diagnostica asfixxia nem prevê paralisia cerebral após estabilização",
+    "wrongs": [
+      "Apgar ≤3 no 1º minuto confirma encefalopatia hipóxico-isquêmica grave e indica hipotermia obrigatória sempre nesta avaliação",
+      "Apgar 8 no 5º minuto exclui qualquer necessidade de observação, permitindo alta da sala sem reavaliação no contexto neonatal",
+      "o Apgar substitui a gasometria de cordão e basta para definir neuroproteção em todos os RN deprimidos para este recém-nascido",
+      "qualquer Apgar <7 no 1º minuto implica sepse precoce e antibioticoterapia empírica imediata e prolongada na prática clínica atual"
+    ],
+    "explain": "O Apgar avalia FC, respiração, tônus, irritabilidade e cor nos minutos 1 e 5 (e além se baixo). Serve para comunicar a condição e a resposta à reanimação, não para diagnosticar sozinho asfixxia ou prever paralisia cerebral. Decisões de hipotermia exigem critérios clínicos e laboratoriais adicionais.",
+    "trap": "Usar o Apgar isolado como predicor definitivo de paralisia cerebral ou como único critério de neuroproteção."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 17,
+    "group": "Neonatologia",
+    "theme": "CIUR / pequeno para idade gestacional",
+    "stem": "RN de 38 semanas, peso 2.150 g (abaixo do percentil 3), comprimento e perímetro cefálico no percentil 20, gestação com Doppler alterado e oligoâmnio no terceiro trimestre. Nasce vigoroso, Apgar 8/9; glicemia na 1ª hora 38 mg/dL, temperatura 36,4 °C, hematócrito 62%, sem desconforto respiratório importante. Qual plano de cuidados iniciais é o mais adequado para este RN PIG/CIUR?",
+    "correct": "monitorar glicemia, manter termorregulação e alimentação precoce, vigilando policitemia e enterocolite conforme evolução diante deste caso",
+    "wrongs": [
+      "liberar alta com 12 horas sem checagens de glicemia, pois PIG a termo não apresenta risco metabólico relevante na abordagem inicial",
+      "indicar jejum prolongado de 24 horas para evitar aspiração, mesmo com glicemia já no limite inferior sob monitorização contínua",
+      "iniciar corticosteroide sistêmico de rotina em todo PIG para acelerar o crescimento ponderal precoce na prática clínica atual",
+      "contraindicar aleitamento materno e usar apenas fórmula hipercalórica exclusiva desde a primeira hora para este recém-nascido"
+    ],
+    "explain": "RN PIG/CIUR tem risco elevado de hipoglicemia, hipotermia, policitemia e, em alguns casos, enterocolite. Conduta: termorregulação, alimentação precoce (preferencialmente leite materno), monitoramento glicêmico e observação clínica. Alta precoce sem vigilância é insegura.",
+    "trap": "Tratar PIG como RN 'só pequeno' e omitir monitoramento de glicemia e temperatura."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 18,
+    "group": "Neonatologia",
+    "theme": "Grande para idade gestacional",
+    "stem": "RN de 40 semanas, 4.350 g, filho de mãe com diabetes gestacional em uso de insulina e controle glicêmico irregular no terceiro trimestre. Parto vaginal com distocia de ombro resolvida; Apgar 7/9; clavícula íntegra ao exame. Com 45 minutos de vida apresenta tremor fino e glicemia capilar 32 mg/dL, sem febre nem sepse aparente. Qual conduta é a mais apropriada neste momento?",
+    "correct": "tratar hipoglicemia conforme protocolo (leite e/ou glicose IV), monitorar glicemias seriadas e observar trauma de parto na conduta prioritária",
+    "wrongs": [
+      "interpretar o tremor como convulsão obrigatória e iniciar fenobarbital antes de medir novamente a glicemia segundo as diretrizes",
+      "aceitar glicemia de 32 mg/dL como normal em GIG e apenas observar até a próxima mamada em 6 horas mantendo vigilância contínua dos sinais vitais",
+      "indicar jejum e insulina exógena para 'corrigir' o hiperinsulinismo transitório do filho de mãe diabética com reassessment breve",
+      "liberar alta após a primeira mamada bem-sucedida, sem novas glicemias nas primeiras 12–24 horas considerando o risco e o benefício imediato"
+    ],
+    "explain": "Filhos de mãe diabética e RN GIG têm hiperinsulinismo transitório e alto risco de hipoglicemia precoce, além de trauma (distocia de ombro). Trata-se a hipoglicemia prontamente e monitora-se nas primeiras horas. Insulina exógena é contraindicada; alta sem vigilância glicêmica é insegura.",
+    "trap": "Normalizar hipoglicemia em GIG/filho de diabética ou tratar tremor com anticonvulsivante sem corrigir glicose."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 19,
+    "group": "Neonatologia",
+    "theme": "Gemelaridade — complicações neonatais",
+    "stem": "Gemelares monocoriónicos diamnióticos nascem com 34 semanas após gestação com discordância de líquidos e suspeita de transfusão feto-fetal. O primeiro pesa 2.400 g e está estável; o segundo pesa 1.700 g, está pálido, taquicárdico e com hematócrito 28%, enquanto o co-gêmeo tem hematócrito 68% e pletora facial. Qual complicação e conduta inicial são as mais plausíveis?",
+    "correct": "suspeitar sequela de transfusão feto-fetal e estabilizar o doador anêmico, avaliando necessidade de suporte/transfusão com reassessment breve",
+    "wrongs": [
+      "atribuir a diferença de hematócrito apenas a erro laboratorial e liberar ambos sem avaliação hematológica adicional neste momento",
+      "indicar exsanguineotransfusão imediata nos dois gemelares apenas pelo fato de serem monocoriónicos após estabilização inicial",
+      "tratar o receptor pletórico com ferro parenteral alto e o doador com restrição hídrica exclusiva sem suporte conforme descrito",
+      "contraindicar qualquer investigação porque discordância ponderal em gêmeos nunca se associa a morbidade neonatal sob monitorização contínua"
+    ],
+    "explain": "Em monocoriónicos, a sequência transfusão feto-fetal pode deixar doador anêmico/PIG e receptor policitêmico/pletórico. O manejo neonatal foca estabilização, correção de anemia/policitemia conforme gravidade e vigilância de complicações. Não se ignora a discordância hematológica.",
+    "trap": "Ignorar a fisiopatologia monocoriónica e tratar os gemelares como RN dicoriónicos sem risco compartilhado."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 20,
+    "group": "Neonatologia",
+    "theme": "Corioamnionite e recém-nascido",
+    "stem": "Parto com 37 semanas após trabalho de parto prolongado; mãe com febre 38,6 °C, taquicardia, útero doloroso e líquido amniótico fétido, tratada com antibiótico intraparto há 3 horas. RN nasce vigoroso, Apgar 8/9, mas com 4 horas de vida apresenta taquipneia e temperatura 38,1 °C. Hemograma com leucopenia. Qual conduta é a mais adequada Culturas maternas ainda não estão disponíveis no momento da avaliação neonatal.?",
+    "correct": "coletar culturas, iniciar antibióticos empíricos e observar clinicamente por risco de sepse precoce pós-corioamnionite no manejo atual",
+    "wrongs": [
+      "liberar o RN sem coleta nem antibiótico, pois nasceu vigoroso e a febre materna não eleva o risco neonatal no cuidado imediato",
+      "indicar apenas antitérmico e observação domiciliar por 24 horas, sem hemograma nem hemocultura mantendo vigilância contínua dos sinais vitais",
+      "tratar somente a mãe e considerar o RN automaticamente protegido pelo antibiótico intraparto materno segundo as diretrizes",
+      "iniciar antifúngico sistêmico de primeira linha, sem cobrir bactérias típicas de sepse precoce neonatal na abordagem inicial"
+    ],
+    "explain": "Corioamnionite aumenta o risco de sepse neonatal precoce. RN sintomático (taquipneia, febre, leucopenia) deve ser investigado e tratado empiricamente, independentemente do Apgar inicial. Antibiótico materno intraparto não elimina a necessidade de avaliação do RN sintomático.",
+    "trap": "Subestimar o risco pós-corioamnionite porque o bebê 'nasceu bem' e omitir antibiótico no RN sintomático."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 21,
+    "group": "Neonatologia",
+    "theme": "Profilaxia do estreptococo do grupo B",
+    "stem": "Gestante de 39 semanas, cultura de Strepto B positiva com 36 semanas, chega em trabalho de parto ativo. Recebeu apenas uma dose de penicilina 1 hora antes do parto vaginal (intervalo intraparto incompleto <4 h). RN a termo, vigoroso, assintomático, exame normal, sem corioamnionite clínica. Qual é a conduta neonatal mais adequada quanto à observação e antibioticoterapia?",
+    "correct": "observar clinicamente com vigilância; antibiótico empírico não é automático só pela dose intraparto incompleta se RN assintomático frente aos",
+    "wrongs": [
+      "iniciar sempre penicilina por 10 dias no RN assintomático sempre que a mãe tiver cultura positiva para EGB no seguimento do RN",
+      "indicar alta imediata com 6 horas de vida sem qualquer orientação de sinais de alerta aos pais mantendo vigilância contínua dos sinais vitais",
+      "coletar liquor de rotina em todo RN assintomático filho de mãe EGB positiva, mesmo sem fatores de risco adicionais sob monitorização contínua",
+      "substituir observação por vacina antistreptocócica neonatal aplicada na sala de parto como profilaxia definitiva na conduta prioritária"
+    ],
+    "explain": "A profilaxia intraparto ideal inclui ≥4 h de antibiótico adequado antes do parto; dose incompleta aumenta atenção, mas RN a termo assintomático em geral é manejado com observação cuidadosa segundo protocolos, sem antibioticoterapia automática nem punção lombar de rotina. Não existe vacina neonatal de rotina para EGB.",
+    "trap": "Tratar automaticamente todo filho de mãe EGB+ com antibióticos prolongados, mesmo assintomático e a termo."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 22,
+    "group": "Neonatologia",
+    "theme": "Rubéola congênita",
+    "stem": "RN a termo, mãe com rubéola confirmada no primeiro trimestre e sem vacinação prévia documentada. O bebê apresenta catarata bilateral, sopro compatível com persistência do canal arterial, microcefalia e petéquias difusas. Sorologia do RN com IgM positiva para rubéola; IgG também positiva. Não há hepatite ativa no momento. Qual conduta é a mais apropriada neste momento na maternidade?",
+    "correct": "confirmar síndrome da rubéola congênita, isolar conforme protocolo e organizar avaliação cardiológica, oftalmológica e auditiva sob monito",
+    "wrongs": [
+      "iniciar aciclovir intravenoso prolongado como tratamento antiviral curativo específico da rubéola congênita conforme o algoritmo",
+      "liberar sem precauções, pois a rubéola congênita não tem risco de transmissão para contactantes suscetíveis segundo as diretrizes",
+      "indicar apenas suplementação de vitamina A, dispensando ecocardiograma e avaliação auditiva no período neonatal conforme descrito",
+      "aguardar a vacina de tríplice viral no RN ainda na maternidade para curar a infecção congênita estabelecida com reassessment breve"
+    ],
+    "explain": "A síndrome da rubéola congênita clássica inclui catarata, cardiopatia (PCA/estenose pulmonar) e surdez, além de microcefalia/púrpura. Não há antiviral curativo específico; o manejo é suporte, rastreio de órgãos-alvo e precauções de contato, pois o RN pode eliminar vírus. Vacina não trata infecção congênita.",
+    "trap": "Achar que há antiviral curativo ou que a vacina neonatal 'trata' a rubéola congênita já estabelecida."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 23,
+    "group": "Neonatologia",
+    "theme": "Varicela perinatal",
+    "stem": "Mãe apresenta varicela com início das vesículas 3 dias antes do parto vaginal a termo, ainda com lesões crostosas recentes. RN nasce sem lesões cutâneas, vigoroso, Apgar 9/10. Não há evidência de varicela fetal prévia nem imunização materna. A equipe discute profilaxia e isolamento do binômio. Qual é a conduta mais adequada para este recém-nascido na janela perinatal?",
+    "correct": "administrar imunoglobulina específica para varicela-zóster (ou IGIV se indisponível) pela janela de risco perinatal conforme descrito",
+    "wrongs": [
+      "aplicar vacina de varicela de vírus vivo atenuado imediatamente ao nascer como profilaxia de escolha neste cenário diante da evolução",
+      "não oferecer qualquer profilaxia, pois varicela materna no peri-parto nunca agrava o risco neonatal na conduta prioritária",
+      "iniciar aciclovir oral preventivo em dose domiciliar e alta precoce sem orientação de sinais de alerta no contexto neonatal",
+      "isolar o RN da mãe por 60 dias de forma absoluta, mesmo após profilaxia e sem lesões ativas maternas tratadas no manejo atual"
+    ],
+    "explain": "Varicela materna entre ~5 dias antes e 2 dias após o parto eleva risco de varicela neonatal grave por falta de transferência de anticorpos. Indica-se imunoglobulina específica (VZIG) ou IGIV. Vacina de vírus vivo não é profilaxia pós-exposição neonatal padrão nesse contexto.",
+    "trap": "Usar vacina de vírus vivo no RN ou negar profilaxia na janela crítica peri-parto."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 24,
+    "group": "Neonatologia",
+    "theme": "HIV — exposição neonatal e profilaxia",
+    "stem": "Gestante com HIV, carga viral indetectável no terceiro trimestre, parto cesáreo eletivo sem trabalho de parto nem ruptura prolongada de membranas. RN a termo, banho precoce realizado, sem amamentação planejada pela família. Contagem de CD4 materna estável e antirretrovirais em uso contínuo. A mãe pergunta sobre a profilaxia antirretroviral do bebê e o aleitamento no contexto brasileiro. Qual orientação é a mais correta?",
+    "correct": "iniciar profilaxia antirretroviral neonatal conforme risco, manter fórmula infantil e seguir testagem do RN no calendário no contexto neonatal",
+    "wrongs": [
+      "liberar aleitamento materno exclusivo sem restrições, já que a carga viral materna estava indetectável no pré-natal no seguimento do RN",
+      "dispensar qualquer antirretroviral no RN quando a cesárea eletiva foi realizada, independentemente da carga viral no cuidado imediato",
+      "indicar interrupção definitiva de todo seguimento sorológico do RN após o primeiro teste negativo na alta conforme o algoritmo",
+      "aplicar profilaxia apenas se houver lesões cutâneas maternas, sem considerar carga viral ou tipo de parto segundo as diretrizes"
+    ],
+    "explain": "No Brasil, recomenda-se não amamentar (fórmula) e oferecer profilaxia antirretroviral ao RN conforme estratificação de risco, além de testagem virológica seriada. Carga indetectável e cesárea reduzem risco, mas não eliminam a necessidade de manejo protocolo do exposto.",
+    "trap": "Autorizar aleitamento apenas pela carga indetectável ou omitir profilaxia/testagem do RN exposto."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 25,
+    "group": "Neonatologia",
+    "theme": "Hepatite B no recém-nascido",
+    "stem": "Mãe com HBsAg positivo descoberto apenas no momento do parto, sem imunização prévia conhecida e sem carga viral disponível. RN a termo, 3.200 g, nasce vigoroso, Apgar 9/10, sem intercorrências. A placenta foi encaminhada à anatomia patológica. Ainda na sala de parto/centro obstétrico discute-se a prevenção da transmissão vertical da hepatite B. Qual esquema é o mais adequado nas primeiras horas de vida?",
+    "correct": "administrar vacina contra hepatite B e imunoglobulina específica (HBIG) o mais precoce possível, preferencialmente em até 12 horas nest",
+    "wrongs": [
+      "aplicar apenas a vacina aos 2 meses, adiando qualquer dose neonatal porque o RN está assintomático na prática clínica atual",
+      "usar somente HBIG sem vacina, pois a imunização ativa não tem papel na prevenção perinatal da hepatite B no seguimento do RN",
+      "aguardar sorologia do RN com 6 meses para decidir se vacina e HBIG ainda seriam necessárias ao nascer para este recém-nascido",
+      "contraindicar vacina e HBIG se o parto foi cesáreo, assumindo ausência total de risco de transmissão sob monitorização contínua"
+    ],
+    "explain": "Filho de mãe HBsAg+ deve receber vacina de hepatite B e HBIG o mais cedo possível (ideal ≤12 h), em sítios diferentes. A combinação reduz drasticamente a transmissão perinatal. Adiar para meses posteriores perde a janela crítica de prevenção.",
+    "trap": "Adiar a profilaxia neonatal para o calendário dos 2 meses ou omitir a HBIG na mãe HBsAg positiva."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 26,
+    "group": "Neonatologia",
+    "theme": "Imunização na sala de parto — BCG e hepatite B",
+    "stem": "RN a termo, 2.900 g, mãe HBsAg negativa, sorologias de pré-natal completas e negativas para HIV/sífilis. Na maternidade, a equipe planeja as vacinas do nascimento conforme o calendário oficial. O bebê está estável, sem imunodeficiência suspeita, peso adequado e exame físico normal. A mãe pergunta se BCG e hepatite B devem ser aplicadas no mesmo internamento. Qual é a orientação correta?",
+    "correct": "aplicar hepatite B nas primeiras 24 horas e BCG o mais breve possível no período neonatal, podendo ser no mesmo internamento na abordagem",
+    "wrongs": [
+      "adiar obrigatoriamente a hepatite B para os 2 meses e a BCG para após os 6 meses em todo RN a termo saudável para este recém-nascido",
+      "contraindicar a aplicação de BCG e hepatite B no mesmo internamento por interferência imune absoluta comprovada nesta avaliação",
+      "aplicar BCG apenas se houver caso de tuberculose domiciliar, nunca como rotina na rede pública brasileira segundo as diretrizes",
+      "substituir a BCG por teste tuberculínico de rotina em todo RN antes de qualquer imunização ao nascer na prática clínica atual"
+    ],
+    "explain": "No Brasil, a vacina de hepatite B deve ser aplicada preferencialmente nas primeiras 24 h e a BCG o mais cedo possível no período neonatal (frequentemente ainda na maternidade). Podem ser administradas no mesmo internamento. Não se adia rotineiramente para meses em RN a termo saudável.",
+    "trap": "Achar que BCG e hepatite B não podem ser no período neonatal ou que BCG só vale com caso domiciliar."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 27,
+    "group": "Neonatologia",
+    "theme": "Erro inato do metabolismo — suspeita neonatal",
+    "stem": "RN a termo, alta com 48 horas após pezinho coletado, retorna com 5 dias com letargia, recusa alimentar, vômitos e odor incomum na urina. Exame: hiperventilação, hipotonia e rebaixamento do nível de consciência. Gasometria com acidose metabólica grave; amônia elevada; cetose presente. Hemocultura pendente. Qual conduta diagnóstica/terapêutica inicial é a mais adequada?",
+    "correct": "suspender oferta proteica, garantir glicose IV, coletar exames metabólicos e discutir com centro de referência em EIM segundo as diretrizes",
+    "wrongs": [
+      "aumentar carga proteica da fórmula para 'compensar' o catabolismo e observar ambulatorialmente por uma semana apesar dos dados",
+      "indicar apenas antibiótico e alta precoce, sem dosar amônia nem avaliar acidose metabólica de forma dirigida diante da evolução",
+      "iniciar dieta cetogênica imediatamente como tratamento padrão de qualquer acidemia neonatal suspeita na prática clínica atual",
+      "aguardar o resultado do teste de pezinho sem qualquer intervenção, mesmo com descompensação clínica grave no contexto neonatal"
+    ],
+    "explain": "Descompensação com acidose, hiperamonemia e alteração neurológica após intervalo livre sugere erro inato. Medidas iniciais: interromper proteína, evitar catabolismo com glicose IV, coletar amostras críticas e referenciar. Esperar só o pezinho atrasa tratamento potencialmente salvador.",
+    "trap": "Manter proteína/dieta usual e 'esperar o pezinho' durante descompensação metabólica aguda."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 28,
+    "group": "Neonatologia",
+    "theme": "Galactosemia",
+    "stem": "RN de 8 dias, aleitamento materno exclusivo, com vômitos, falha de ganho ponderal, icterícia e hepatoesplenomegalia. Internado por sepse por E. coli e apresenta catarata nuclear incipiente ao exame oftalmológico. Redução de substâncias redutoras na urina positiva com glicemia capilar normal; transaminases elevadas. Qual hipótese e conduta dietética imediata são as mais corretas?",
+    "correct": "suspeitar galactosemia clássica e suspender leite contendo lactose, substituindo por fórmula sem galactose/lactose conforme o algoritmo",
+    "wrongs": [
+      "manter aleitamento materno exclusivo e apenas suplementar lactose adicional para estimular enzimas hepáticas no manejo imediato",
+      "indicar restrição apenas de sacarose, mantendo lactose livremente, pois galactosemia não se relaciona ao leite no seguimento do RN",
+      "tratar somente a sepse e retomar leite materno sem investigação metabólica após a alta hospitalar após estabilização inicial",
+      "iniciar dieta rica em galactose para 'induzir' a enzima deficiente antes da confirmação enzimática na prática clínica atual"
+    ],
+    "explain": "Galactosemia clássica apresenta-se com intolerância ao leite, hepatopatia, catarata e predisposição a sepse por E. coli. A conduta imediata é retirar lactose/galactose da dieta (suspender leite materno/fórmula láctea) e usar fórmula apropriada, enquanto se confirma o diagnóstico.",
+    "trap": "Manter leite materno/lactose na suspeita de galactosemia enquanto trata só a infecção intercorrente."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 29,
+    "group": "Neonatologia",
+    "theme": "Fenilcetonúria — triagem neonatal",
+    "stem": "RN a termo coletou teste de pezinho com 36 horas de vida, já alimentado com leite materno. O resultado mostra fenilalanina persistentemente elevada na recoleta, com tirosina não elevada na mesma proporção. Estava assintomático na primeira semana, sem eczema nem convulsões. A família pergunta se pode esperar sintomas para iniciar dieta. Qual é a conduta correta?",
+    "correct": "confirmar o diagnóstico com dosagens quantitativas e iniciar dieta restrita em fenilalanina precocemente, mesmo assintomático no cuidado imediato",
+    "wrongs": [
+      "aguardar atraso de desenvolvimento para confirmar a necessidade de dieta, evitando restrição desnecessária no lactente na prática clínica atual",
+      "liberar dieta hiperproteica livre para 'desafiar' o metabolismo e repetir o pezinho somente aos 6 meses na conduta prioritária",
+      "iniciar suplementação de fenilalanina cristalina para acelerar a maturação enzimática hepática neonatal para este recém-nascido",
+      "considerar o resultado falso-positivo definitivo só porque o bebê ainda não apresenta convulsões ou eczema na abordagem inicial"
+    ],
+    "explain": "A fenilcetonúria é assintomática no período neonatal precoce; o dano neurológico é prevenido pela dieta iniciada o mais cedo possível após confirmação. Esperar sintomas é exatamente o que a triagem busca evitar. Coleta após alimentação adequada reduz falso-negativo.",
+    "trap": "Aguardar manifestações clínicas antes de restringir fenilalanina, perdendo a janela de prevenção."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 30,
+    "group": "Neonatologia",
+    "theme": "Fibrose cística — íleo meconial",
+    "stem": "RN a termo não elimina mecônio em 48 horas, apresenta distensão abdominal progressiva e vômitos biliosos. Radiografia mostra alças dilatadas e imagem sugerindo 'vidro fosco' em fossa ilíaca direita; enema contrastado indica microcólon distal. Há tio paterno com fibrose cística confirmada e teste do pezinho ainda pendente. Qual conduta é a mais adequada neste momento na UTI neonatal?",
+    "correct": "tratar a obstrução com equipe neonatal/cirúrgica e investigar fibrose cística (incluindo teste do suor/genética conforme protocolo) na sala de parto",
+    "wrongs": [
+      "liberar dieta plena e alta, pois atraso de mecônio até 72 horas é sempre fisiológico sem investigação para este recém-nascido",
+      "iniciar pancreatina oral empírica isolada, sem avaliar a obstrução intestinal mecanicamente mantendo vigilância contínua dos sinais vitais",
+      "contraindicar qualquer investigação de fibrose cística no período neonatal, reservando-a só para a adolescência nesta avaliação",
+      "indicar corticoterapia sistêmica prolongada como tratamento definitivo do íleo meconial sem abordagem da obstrução segundo as diretrizes"
+    ],
+    "explain": "Íleo meconial é fortemente associado à fibrose cística. Exige manejo da obstrução (enema terapêutico/cirurgia se necessário) e investigação de FC. Atraso prolongado de mecônio com vômitos biliosos não é 'normal' e não se resolve só com enzima pancreática.",
+    "trap": "Normalizar atraso de mecônio com distensão/vômitos e esquecer a associação com fibrose cística."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 31,
+    "group": "Neonatologia",
+    "theme": "Retinopatia da prematuridade — estadiamento e conduta",
+    "stem": "Prematuro de 26 semanas, 820 g, em oxigenoterapia prolongada e sepse tardia tratada, realiza mapeamento de retina com 32 semanas de idade pós-menstrual. Há neovascularização em zona II com estágio 3 e doença plus. O bebê está estável hemodinamicamente, sem contraindicação anestésica relativa absoluta. Qual conduta oftalmológica é a mais apropriada?",
+    "correct": "indicar tratamento (laser/anti-VEGF conforme protocolo local) por ROP tipo 1 com risco de progressão à descolamento diante do quadro",
+    "wrongs": [
+      "apenas observar anualmente na idade escolar, pois ROP zona II estágio 3 plus nunca requer intervenção neonatal no manejo imediato",
+      "elevar a meta de saturação para 99–100% de forma fixa para 'amadurecer' a retina sem avaliação oftalmológica apesar dos dados",
+      "contraindicar qualquer exame de fundo de olho antes dos 6 meses de vida corrigida em prematuros extremos diante da evolução",
+      "tratar com antibiótico ocular tópico exclusivo, interpretando a neovascularização como conjuntivite bacteriana neste momento"
+    ],
+    "explain": "ROP tipo 1 (ex.: zona II estágio 3 com plus) tem indicação de tratamento para prevenir descolamento de retina. O rastreio em prematuros elegíveis é essencial; hiperóxia não tratada e atraso do exame pioram o prognóstico. Anti-VEGF ou laser dependem do protocolo e da zona/estágio.",
+    "trap": "Subestimar ROP com doença plus e adiar tratamento ou exame oftalmológico no prematuro de risco."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 32,
+    "group": "Neonatologia",
+    "theme": "Leucomalácia periventricular",
+    "stem": "Prematuro de 28 semanas, internado em UTI neonatal, apresenta episódios de hipotensão precoce e infecção por germes gram-negativos. Ultrassonografia transfontanela na 3ª semana de vida revela cistos periventriculares bilaterais. Está sem convulsões no momento e com fontanela normotensa. A família pergunta o significado prognóstico. Qual orientação é a mais correta?",
+    "correct": "explicar que sugere leucomalácia periventricular, com risco de paralisia cerebral/diplegia e necessidade de seguimento multiprofissional",
+    "wrongs": [
+      "afirmar que cistos periventriculares são achado transitório sem qualquer risco neurológico futuro neste prematuro após estabilização inicial",
+      "indicar craniotomia descompressiva imediata como tratamento padrão da leucomalácia cística bilateral para este recém-nascido",
+      "iniciar anticoagulação plena de rotina para 'reverter' os cistos periventriculares já formados na imagem no seguimento do RN",
+      "suspender a fisioterapia e o seguimento motor porque a lesão já está estabelecida e é irreversível em todos no cuidado imediato"
+    ],
+    "explain": "A leucomalácia periventricular cística associa-se a lesão da substância branca e risco elevado de paralisia cerebral (especialmente diplegia espástica), déficits visuais/cognitivos. Não há cirurgia/anticoagulação curativa; o foco é prevenção de novos insultos e reabilitação precoce.",
+    "trap": "Minimizar LPV cística como 'achado sem importância' ou propor tratamentos curativos inexistentes."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 33,
+    "group": "Neonatologia",
+    "theme": "Alta do RN — critérios e puericultura neonatal",
+    "stem": "RN a termo, 48 horas de vida, peso 2% abaixo do nascimento, aleitamento em livre demanda com pega adequada, micção e evacuação presentes, icterícia zona II com bilirrubina abaixo do limiar de fototerapia, triagens auditiva e oximetria críticas normais, vacinas do nascimento aplicadas. Mãe deseja alta. Qual plano é o mais adequado A mãe demonstra compreensão das orientações de aleitamento e sinais de alerta.?",
+    "correct": "autorizar alta com orientação de aleitamento, sinais de alerta e retorno precoce para puericultura e reassessment de icterícia/peso no seguimento",
+    "wrongs": [
+      "manter internado até recuperar todo o peso de nascimento, mesmo com aleitamento eficaz e exame normal para este recém-nascido",
+      "liberar sem qualquer retorno agendado, pois RN a termo nunca necessita reassessment na primeira semana na prática clínica atual",
+      "indicar fórmula exclusiva na alta para garantir ganho ponderal, suspendendo o aleitamento materno bem estabelecido diante do quadro",
+      "repetir obrigatoriamente hemocultura e líquor antes de qualquer alta em RN a termo assintomático sem fatores de risco na sala de parto"
+    ],
+    "explain": "Alta com ~48 h pode ser segura se critérios forem preenchidos: RN a termo estável, alimentação adequada, icterícia controlada, triagens feitas e família orientada. Perda ponderal leve é esperada; retorno precoce avalia icterícia, peso e aleitamento. Internação até recuperar 100% do peso não é regra.",
+    "trap": "Reter o RN só pela perda fisiológica de peso ou liberar sem retorno precoce e orientações de alerta."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 34,
+    "group": "Neonatologia",
+    "theme": "Oximetria crítica — falso negativo e limites",
+    "stem": "RN a termo com 28 horas de vida tem teste do coraçãozinho com SpO2 97% em mão direita e 96% em pé, diferença de 1%, exame físico normal à época da alta. Com 5 dias, retorna com sudorese às mamadas, taquipneia leve e sopro. Ecocardiograma revela coarctação com ducto quase fechado. Qual lição prática sobre o rastreio é a mais correta Esse caso ilustra limitações do rastreio universal na maternidade.?",
+    "correct": "reconhecer que o teste reduz, mas não elimina, cardiopatias; sinais clínicos tardios ainda exigem avaliação urgente diante do quadro",
+    "wrongs": [
+      "concluir que o teste do coraçãozinho tem sensibilidade de 100% e que sintomas posteriores excluem cardiopatia estrutural",
+      "dispensar ecocardiograma em qualquer sintoma após teste normal, atribuindo sudorese apenas a refluxo gastroesofágico sem nova intervenção",
+      "repetir o teste diariamente até os 30 dias em todos os RN, mesmo assintomáticos, como substituto do exame clínico para este recém-nascido",
+      "considerar o teste inválido em todos os RN a termo e abandonar sua realização na rede pública de saúde conforme o algoritmo"
+    ],
+    "explain": "A oximetria crítica aumenta a detecção de cardiopatias críticas, mas tem falsos negativos (ex.: coarctação com fluxo ductal ainda presente). Sintomas como sudorese às mamadas, sopro ou má perfusão após alta exigem reavaliação, independentemente do teste prévio normal.",
+    "trap": "Achar que teste do coraçãozinho normal 'fecha' o diagnóstico e ignora sintomas cardíacos tardios."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 35,
+    "group": "Neonatologia",
+    "theme": "Prostaglandina E1 — indicação antes do eco",
+    "stem": "RN de 5 dias chega em choque frio, cianose e pulsos femorais ausentes, após alta precoce da maternidade. Há demora estimada de 2 horas para o ecocardiografista de plantão. Saturização 80%, acidose metabólica, lactato elevado; acessos obtidos e suporte ventilatório iniciado. A pressão arterial está baixa apesar de volume inicial. Qual decisão sobre a prostaglandina é a mais correta enquanto se organiza o eco?",
+    "correct": "iniciar PGE1 empiricamente na suspeita forte de lesão ducto-dependente, sem aguardar o eco se houver atraso na prática clínica atual",
+    "wrongs": [
+      "aguardar obrigatoriamente o laudo do ecocardiograma antes de qualquer PGE1, mesmo em choque com pulsos femorais ausentes",
+      "preferir indometacina empírica para fechar shunt enquanto se espera a imagem cardíaca definitiva para este recém-nascido",
+      "usar apenas expansão volêmica maciça repetida, sem fármaco ductal, até estabilização completa da pressão arterial apesar dos dados",
+      "indicar digoxina oral ambulatorial e retorno amanhã se o eco não estiver disponível no plantão noturno diante da evolução"
+    ],
+    "explain": "Em choque com sinais de obstrução do arco/fluxo sistêmico ductal, a PGE1 deve ser iniciada na suspeita clínica, especialmente se o eco atrasar. Esperar confirmação formal pode custar a vida do RN. Indometacina é o oposto do desejado.",
+    "trap": "Atrasar a PGE1 até o eco formal em RN instável com alta suspeita de cardiopatia ducto-dependente."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 36,
+    "group": "Neonatologia",
+    "theme": "Hipotermia terapêutica — exclusões e cuidados",
+    "stem": "RN de 38 semanas com critérios de asfixxia perinatal e encefalopatia moderada será submetido a hipotermia terapêutica iniciada com 3 horas de vida. Apresenta também coagulopatia leve e necessidade de ventilação mecânica. A equipe revisa alvos térmicos e vigilância laboratorial. Qual orientação prática é a mais adequada durante o resfriamento O reaquecimento controlado ao final do protocolo também será planejado.?",
+    "correct": "manter temperatura alvo cerca de 33–34 °C por 72 horas com monitorização de coagulação, glicemia e hemodinâmica sem nova intervenção",
+    "wrongs": [
+      "resfriar até 30 °C de rotina por 10 dias, pois quanto menor a temperatura, melhor o desfecho neurológico sempre no manejo atual",
+      "aquecer ativamente para 37,5–38 °C nas primeiras 6 horas e só então iniciar hipotermia tardia eletiva após estabilização inicial",
+      "suspender qualquer monitorização laboratorial durante as 72 horas para reduzir manipulação do RN sedado conforme o algoritmo",
+      "indicar hipotermia apenas por 12 horas se houver coagulação alterada, sem protocolo de reaquecimento controlado no seguimento do RN"
+    ],
+    "explain": "O protocolo usual visa 33–34 °C por 72 h, seguido de reaquecimento lento, com vigilância de hipotensão, coagulopatia, glicemia e infecção. Hipotermia mais profunda/prolongada sem protocolo aumenta riscos. Iniciar dentro da janela precoce é crítico.",
+    "trap": "Resfriar abaixo do alvo protocolar ou perder a janela iniciando hipotermia tardiamente após aquecimento ativo."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 37,
+    "group": "Neonatologia",
+    "theme": "Reanimação — mecônio e RN deprimido",
+    "stem": "Parto com mecônio espesso e odor forte; RN nasce hipotônico, sem choro, FC 70 bpm e cianose central. Após posicionar vias aéreas, há suspeita de obstrução por mecônio e a ventilação com máscara não produz expansão torácica adequada apesar de ajuste de máscara, posição e pressão. Qual sequência é a mais apropriada neste momento da reanimação O timer da reanimação está em curso e a equipe comunica os passos em voz alta.?",
+    "correct": "considerar inspeção/aspiração sob laringoscopia se obstrução, otimizar VPP e seguir o algoritmo pela frequência cardíaca conforme o algoritmo",
+    "wrongs": [
+      "manter apenas estímulo tátil prolongado sem abrir via aérea, aguardando choro espontâneo por vários minutos frente aos achados",
+      "iniciar compressões imediatamente antes de qualquer tentativa de ventilação efetiva do tórax mantendo vigilância contínua dos sinais vitais",
+      "administrar adrenalina intramuscular de primeira linha antes de corrigir a aeração pulmonar inadequada na prática clínica atual",
+      "banhar o RN com água morna como medida prioritária para remover mecônio cutâneo e melhorar a FC com monitoramento seriado e reassessment breve"
+    ],
+    "explain": "No RN deprimido com mecônio, a prioridade é via aérea e ventilação efetiva. Aspiração traqueal pode ser considerada se houver obstrução; não se atrasa VPP por manobras inúteis. Compressões e adrenalina vêm depois de ventilação inadequada/FC <60.",
+    "trap": "Pular para compressões/adrenalina ou estímulo isolado sem garantir expansão torácica no RN deprimido com mecônio."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 38,
+    "group": "Neonatologia",
+    "theme": "Apgar e reanimação — comunicação com a família",
+    "stem": "Após reanimação com VPP por 90 segundos, RN a termo tem Apgar 4/7/9 e segue estável em alojamento conjunto sob observação clínica. A mãe, ainda na sala de recuperação, pergunta se o 'Apgar baixo' significa que o bebê 'ficará sequelado'. O pediatra precisa comunicar com precisão e empatia. Qual mensagem é a mais adequada e correta O prontuário registra os minutos de suporte e a resposta à ventilação.?",
+    "correct": "explicar que o Apgar reflete a adaptação e a resposta à reanimação; o prognóstico depende da evolução neurológica e exames na prática clínica atual",
+    "wrongs": [
+      "afirmar que Apgar 4 no 1º minuto define paralisia cerebral definitiva, independentemente da evolução posterior sob monitorização contínua",
+      "dizer que Apgar 9 no 5º minuto garante ausência total de qualquer risco neurológico futuro em todos os casos na conduta prioritária",
+      "omitir qualquer informação sobre a reanimação e entregar o RN sem diálogo, evitando perguntas da família sem nova intervenção",
+      "substituir o registro do Apgar por uma nota subjetiva sem valores, por ser exame obsoleto e sem utilidade clínica para este recém-nascido"
+    ],
+    "explain": "Comunicação honesta: Apgar baixo no 1º minuto é comum quando há reanimação e não equivale a prognóstico neurológico fixo. A recuperação (5º/10º minuto), exame neurológico, gasometria e evolução guiam a conduta. O Apgar continua útil para registro e comunicação da condição ao nascer.",
+    "trap": "Equacionar Apgar baixo do 1º minuto a sequela definitiva ou garantir risco zero só pelo Apgar do 5º minuto."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 39,
+    "group": "Neonatologia",
+    "theme": "CIUR assimétrico versus simétrico",
+    "stem": "Dois RN a termo são avaliados na mesma enfermagem neonatal: A com peso no percentil 2 e perímetro cefálico no percentil 40 (assimétrico); B com peso, comprimento e PC todos no percentil 2 (simétrico), mãe com infecção congênita suspeita e ultrassom pré-natal alterado. Qual interpretação clínica é a mais adequada sobre esses padrões de CIUR/PIG Ambos os RN estão em alojamento conjunto sob observação nas primeiras horas.?",
+    "correct": "o padrão assimétrico sugere insulto tardio/placentário; o simétrico eleva suspeita de insulto precoce/constitucional/infecção sem nova intervenção",
+    "wrongs": [
+      "ambos os padrões têm a mesma fisiopatologia e nunca alteram a investigação etiológica neonatal mantendo vigilância contínua dos sinais vitais",
+      "o PIG simétrico exclui infecção congênita e erro inato, sendo sempre variante familiar benigna com monitoramento seriado e reassessment breve",
+      "o PIG assimétrico indica obrigatoriamente aneuploidia e contraindicação de qualquer aleitamento materno na conduta prioritária",
+      "perímetro cefálico preservado no assimétrico elimina risco de hipoglicemia e dispensa monitoramento após estabilização inicial"
+    ],
+    "explain": "CIUR assimétrico (peso baixo com PC relativo preservado) costuma refletir insuficiência placentária tardia; simétrico sugere insulto precoce, infecção, síndromes ou constitucional. Ambos merecem vigilância metabólica; a distinção ajuda a priorizar a investigação.",
+    "trap": "Tratar todo PIG como igual e não usar o padrão de crescimento para orientar a etologia."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 40,
+    "group": "Neonatologia",
+    "theme": "EGB — RN sintomático",
+    "stem": "RN de 20 horas de vida, mãe EGB negativa sem antibiótico intraparto, apresenta febre, taquipneia e má perfusão. Radiografia com infiltrado; hemograma com neutropenia; PCR elevada. A equipe inicia suporte ventilatório leve e coleta culturas antes da primeira dose, com monitorização contínua. Além das culturas, qual terapia empírica inicial é a mais apropriada para sepse precoce?",
+    "correct": "iniciar antibióticos intravenosos de amplo espectro típicos de sepse precoce (ex.: ampicilina + gentamicina) prontamente no manejo imediato",
+    "wrongs": [
+      "aguardar 48 horas o resultado da hemocultura para só então iniciar qualquer antibiótico no RN instável para este recém-nascido",
+      "usar apenas antifúngico empírico, pois sepse precoce neonatal é majoritariamente fúngica neste contexto na prática clínica atual",
+      "tratar com oseltamivir isolado, assumindo etiologia viral exclusiva pela idade inferior a 24 horas após estabilização inicial",
+      "prescrever antibiótico oral domiciliar e retorno em 5 dias, sem internação, apesar da má perfusão mantendo vigilância contínua dos sinais vitais"
+    ],
+    "explain": "Sepse precoce (geralmente <72 h) exige antibióticos IV imediatos após culturas, tipicamente cobrindo EGB, enterobactérias e Listeria (ampicilina + aminoglicosídeo). Esperar cultura em RN instável aumenta mortalidade. Antifungal/antiviral isolados não cobrem o espectro bacteriano típico.",
+    "trap": "Atrasar antibiótico IV até a cultura ou tentar manejo oral ambulatorial em sepse precoce."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 41,
+    "group": "Neonatologia",
+    "theme": "HIV neonatal — testagem",
+    "stem": "RN exposto ao HIV recebeu profilaxia antirretroviral adequada e não é amamentado, conforme protocolo brasileiro. Com 30 dias de vida está assintomático e ganhou peso adequadamente. A mãe traz o resultado de um teste rápido de anticorpos positivo no bebê e está desesperada. Qual interpretação e conduta são as mais corretas neste seguimento O calendário de testes virológicos do exposto ainda não foi concluído.?",
+    "correct": "explicar que anticorpos maternos cruzam a placenta; o diagnóstico do RN depende de testes virológicos conforme o calendário após estabilização",
+    "wrongs": [
+      "confirmar infecção definitiva do RN só pelo teste rápido de anticorpos positivo aos 30 dias de vida após estabilização inicial",
+      "suspender todo seguimento porque a profilaxia neonatal elimina completamente a necessidade de qualquer testagem frente aos achados",
+      "iniciar esquema antirretroviral triplo definitivo imediatamente apenas com base no anticorpo positivo isolado diante deste caso",
+      "interpretar o anticorpo positivo como falha vacinal, já que existe vacina anti-HIV de rotina na sala de parto na prática clínica atual"
+    ],
+    "explain": "Anticorpos IgG maternos anti-HIV atravessam a placenta e podem positivar testes sorológicos no RN até 12–18 meses. O diagnóstico precoce usa métodos virológicos (DNA/RNA) em tempos definidos. Anticorpo positivo isolado aos 30 dias não confirma infecção.",
+    "trap": "Diagnosticar HIV neonatal só por sorologia precoce de anticorpos, sem teste virológico."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 42,
+    "group": "Neonatologia",
+    "theme": "Hepatite B — RN prematuro extremo",
+    "stem": "Prematuro de 30 semanas, 1.100 g, filho de mãe HBsAg positiva confirmada no pré-natal, está estável em UTI neonatal no primeiro dia de vida, em ar ambiente, sem sangramento ativo. A equipe discute o timing da vacina contra hepatite B e da imunoglobulina específica (HBIG). Qual conduta é a mais adequada neste prematuro O peso atual e a estabilidade clínica permitem intramuscular se indicada.?",
+    "correct": "administrar HBIG e iniciar a série vacinal conforme peso/protocolo, sem atrasar a imunoprofilaxia passiva na mãe positiva diante deste caso",
+    "wrongs": [
+      "adiar HBIG e vacina até o peso atingir 5 kg, mesmo sendo filho de mãe HBsAg positiva documentada mantendo vigilância contínua dos sinais vitais",
+      "aplicar apenas BCG neste momento, pois a hepatite B não tem relevância perinatal em prematuros com monitoramento seriado e reassessment breve",
+      "usar somente interferona neonatal como substituto da vacina e da imunoglobulina específica considerando o risco e o benefício imediato",
+      "aguardar soroconversão materna espontânea pós-parto para decidir se o RN ainda precisa de HBIG priorizando a estabilidade cardiorrespiratória"
+    ],
+    "explain": "Em filho de mãe HBsAg+, a HBIG não deve ser atrasada; a vacina também se inicia no período neonatal conforme recomendações para prematuros (às vezes com doses adicionais segundo peso). Interferona não substitui imunoprofilaxia padrão.",
+    "trap": "Adiar HBIG/vacina no prematuro filho de mãe HBsAg+ até 'ganhar peso', perdendo prevenção perinatal."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 43,
+    "group": "Neonatologia",
+    "theme": "Triagem neonatal — coleta e janela",
+    "stem": "RN a termo recebe alta com 20 horas de vida por desejo materno e logística familiar, após exame físico normal e aleitamento iniciado. A coleta do teste de pezinho ainda não foi feita porque o bebê mamou pouco nas primeiras horas. A mãe promete retornar à unidade básica e compreende o risco de atraso na triagem. Qual orientação é a mais correta sobre a triagem neonatal neste cenário de alta precoce?",
+    "correct": "coletar preferencialmente entre 48–72 horas (após alimentação); se alta precoce, garantir coleta e retorno para nova amostra na conduta prioritária",
+    "wrongs": [
+      "dispensar o teste de pezinho se o exame físico de alta for normal, pois erros inatos sempre são clinicamente óbvios segundo as diretrizes",
+      "coletar obrigatoriamente só após os 30 dias de vida para aumentar a sensibilidade de todas as doenças rastreadas conforme descrito",
+      "realizar a coleta cordão umbilical exclusiva como substituto definitivo do pezinho em papel filtro sob monitorização contínua",
+      "adiar indefinidamente a triagem até o sexto mês, quando os sintomas de fenilcetonúria já estariam presentes no manejo imediato"
+    ],
+    "explain": "A triagem neonatal idealmente ocorre após 48 h de vida e com alimentação estabelecida. Em alta precoce, coleta-se o que for possível e assegura-se recoleta no tempo adequado. Exame físico normal não substitui o pezinho.",
+    "trap": "Abrir mão do pezinho na alta precoce ou coletar cedo demais sem planejar a amostra adequada."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 44,
+    "group": "Neonatologia",
+    "theme": "ROP — rastreio: quem e quando",
+    "stem": "Prematuro de 31 semanas, 1.450 g, usou oxigênio por 5 dias e está estável em ar ambiente com 35 semanas de idade pós-menstrual. Nunca foi avaliado pelo oftalmologista. Não há sepse ativa nem necessidade atual de suporte ventilatório. Qual conduta de rastreio para retinopatia da prematuridade é a mais adequada neste momento do seguimento O serviço dispõe de oftalmologista com experiência em mapeamento de prematuros.?",
+    "correct": "agendar mapeamento de retina conforme critérios de idade gestacional/peso e idade pós-menstrual, mesmo já em ar ambiente com reassessment",
+    "wrongs": [
+      "dispensar o exame porque o bebê já está em ar ambiente e o risco de ROP desaparece após suspender oxigênio conforme o algoritmo",
+      "realizar o primeiro exame apenas aos 12 meses de vida cronológica, independentemente da prematuridade para este recém-nascido",
+      "substituir o mapeamento por teste do reflexo vermelho único na alta, suficiente para excluir ROP grave na prática clínica atual",
+      "indicar laser profilático em todos os prematuros <32 semanas, sem exame que confirme estágios tratáveis após estabilização inicial"
+    ],
+    "explain": "O rastreio de ROP baseia-se em IG/peso e fatores de risco, com timing pela idade pós-menstrual — não pela suspensão do oxigênio. Reflexo vermelho não substitui o mapeamento. Tratamento é guiado pelo estágio/zona, não profilático universal.",
+    "trap": "Achar que sair do oxigênio dispensa o rastreio oftalmológico de ROP no prematuro elegível."
+  },
+  {
+    "idPrefix": "ped-neo4",
+    "n": 45,
+    "group": "Neonatologia",
+    "theme": "Alta neonatal — icterícia e retorno",
+    "stem": "RN a termo, 40 horas de vida, bilirrubina total 11,8 mg/dL abaixo do limiar de fototerapia para sua idade e fatores de risco, Coombs negativo, mãe O+, RN A+. Aleitamento em estabelecimento, perda ponderal de 3%, sem letargia. Deseja-se alta. Qual orientação de seguimento é a mais segura para esta díade Há incompatibilidade ABO potencial e risco de icterícia progressiva após a alta.?",
+    "correct": "programar reassessment clínico e de bilirrubina em 24–48 horas, com orientações claras de sinais de alerta aos cuidadores no manejo atual",
+    "wrongs": [
+      "liberar sem retorno até a puericultura dos 2 meses, pois bilirrubina abaixo do limiar nunca sobe após a alta no cuidado imediato",
+      "iniciar fototerapia domiciliar empírica em todos os RN com grupo sanguíneo diferente da mãe, sem nomograma conforme o algoritmo",
+      "suspender aleitamento materno por 7 dias de rotina para prevenir qualquer icterícia tardia nesta díade para este recém-nascido",
+      "indicar exsanguineotransfusão preventiva só pela incompatibilidade ABO, apesar da bilirrubina ainda controlada diante deste caso"
+    ],
+    "explain": "Mesmo abaixo do limiar, a bilirrubina pode subir após a alta, sobretudo com incompatibilidade ABO. A alta segura exige retorno precoce para reavaliação clínica/laboratorial e orientação de alerta. Não se suspende aleitamento de rotina nem se indica exsanguineo 'preventiva'.",
+    "trap": "Dar alta sem plano de reassessment precoce da icterícia em RN com fatores de risco hemolítico."
+  }
+]

@@ -1,0 +1,722 @@
+[
+  {
+    "idPrefix": "ped-neo2",
+    "n": 1,
+    "group": "Neonatologia",
+    "theme": "Reanimação neonatal (NRP)",
+    "stem": "Recém-nascido de 40 semanas, parto vaginal, líquido amniótico claro, sem fatores de risco anteparto. Após secagem, posicionamento da via aérea e estímulo tátil por cerca de 30 segundos, mantém respiração irregular, frequência cardíaca de 78 bpm e cianose central. Oximetria em mão direita mostra saturação de 65% aos 90 segundos de vida. Temperatura axilar 36,5 °C. Qual a conduta prioritária neste momento segundo o algoritmo de reanimação neonatal?",
+    "correct": "Iniciar ventilação com pressão positiva por máscara, checar expansão torácica e frequência cardíaca, titular oxigênio pelos alvos de saturação por minuto",
+    "wrongs": [
+      "Iniciar compressões torácicas na relação 3:1 e preparar adrenalina umbilical de imediato, pois a frequência cardíaca já está abaixo de 100 bpm",
+      "Oferecer apenas oxigênio em fluxo livre sem ventilação e reavaliar em cinco minutos, já que a frequência cardíaca ainda supera 60 bpm",
+      "Intubar e administrar surfactante empírico antes de qualquer ventilação com máscara, antecipando doença de membrana hialina no termo",
+      "Manter observação exclusiva por mais um minuto sem suporte ventilatório, aguardando respiração espontânea efetiva antes de intervir"
+    ],
+    "explain": "Respiração inadequada ou frequência cardíaca abaixo de 100 bpm após passos iniciais indica ventilação com pressão positiva como prioridade, com titulação de oxigênio. Compressões só com frequência abaixo de 60 bpm após ventilação efetiva.",
+    "trap": "Pular para compressões ou adrenalina com frequência entre 60 e 100 bpm sem garantir ventilação eficaz."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 2,
+    "group": "Neonatologia",
+    "theme": "Reanimação neonatal (NRP)",
+    "stem": "Em sala de parto, recém-nascido de 38 semanas recebe ventilação com pressão positiva por máscara há cerca de 60 segundos, com expansão torácica adequada e oxigênio titulado pela oximetria. A frequência cardíaca permanece em 48 bpm. Saturação em mão direita 68%. A equipe já revisou máscara, posição da cabeça e pressão ventilatória. Qual o próximo passo prioritário no algoritmo de reanimação neonatal neste cenário de bradicardia persistente?",
+    "correct": "Iniciar compressões torácicas coordenadas à ventilação na relação 3:1, manter via aérea otimizada e preparar acesso para adrenalina se a bradicardia persistir",
+    "wrongs": [
+      "Elevar a fração inspirada de oxigênio para 100% e observar por mais dois minutos sem compressões, confiando apenas na hiperóxia para recuperar a frequência",
+      "Administrar bicarbonato de sódio de rotina pela veia umbilical antes de qualquer compressão torácica, visando corrigir acidose metabólica precoce",
+      "Interromper a ventilação por sessenta segundos para avaliar se surge respiração espontânea, evitando hiperinsuflação em neonato a termo",
+      "Indicar oxigenação por membrana extracorpórea ainda na sala de parto, antes das compressões, por bradicardia refratária aparente"
+    ],
+    "explain": "Frequência cardíaca abaixo de 60 bpm após ventilação efetiva exige compressões 3:1 e checagem contínua da via aérea. Bicarbonato e ECMO não fazem parte do algoritmo inicial em sala de parto.",
+    "trap": "Acreditar que só aumentar oxigênio resolve bradicardia grave sem iniciar compressões."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 3,
+    "group": "Neonatologia",
+    "theme": "Oxigenoterapia / alvos no prematuro",
+    "stem": "Prematuro de 26 semanas, 820 g, agora com 10 dias de vida, em CPAP nasal com FiO2 0,35. A saturação oscila entre 88% e 97% conforme alarmes. A equipe debate se deve manter o bebê sempre bem rosado com saturação próxima de 100% ou aceitar hipoxemia deliberada para prevenir retinopatia. Qual a estratégia de titulação de oxigênio mais adequada neste prematuro em suporte respiratório?",
+    "correct": "Titular a FiO2 para alvos intermediários de saturação (cerca de 90–95% conforme protocolo), evitando hiperóxia sustentada e também hipoxemia prolongada",
+    "wrongs": [
+      "Manter saturação continuamente entre 98 e 100% sob CPAP, priorizando aparência rosada e ignorando o risco de retinopatia e toxicidade do oxigênio",
+      "Aceitar saturação de 75 a 80% de forma prolongada para prevenir retinopatia, mesmo com sinais de hipóxia tecidual ou acidose metabólica",
+      "Fixar FiO2 em 1,0 sem oximetria contínua por dois dias, ajustando oxigênio apenas pela coloração cutânea observada na inspeção",
+      "Desligar a oximetria noturna em prematuros estáveis sob oxigênio, guiando a FiO2 somente pela frequência respiratória à beira do leito"
+    ],
+    "explain": "No prematuro, alvos intermediários de saturação equilibram riscos de retinopatia/displasia (hiperóxia) e de hipóxia/mortalidade. Nem saturação contínua perto de 100% nem hipoxemia deliberada.",
+    "trap": "Buscar saturação próxima de 100% o tempo todo no prematuro extremo."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 4,
+    "group": "Neonatologia",
+    "theme": "SDR / membrana hialina",
+    "stem": "Recém-nascido de 29 semanas, 1.150 g, parto cesáreo por sofrimento fetal, sem corticosteroide antenatal completo. Com 40 minutos de vida apresenta gemência, retração e taquipneia de 78 irpm; saturação 86% em ar ambiente. Radiografia de tórax: padrão reticulogranular difuso e broncograma aéreo. Gasometria: pH 7,22, PaCO2 58 mmHg, PaO2 48 mmHg. Qual a conduta inicial mais adequada para o desconforto respiratório?",
+    "correct": "Estabelecer suporte respiratório precoce, administrar surfactante conforme a gravidade e manter ventilação protetora com alvos de saturação adequados ao prematuro",
+    "wrongs": [
+      "Manter apenas oxigênio em capacete sem pressão positiva e observar por seis horas, adiando surfactante até nova série radiológica completa amanhã",
+      "Indicar óxido nítrico inalatório de primeira linha antes de qualquer suporte ventilatório, presumindo hipertensão pulmonar persistente isolada",
+      "Iniciar diurético de alça e restrição hídrica agressiva como tratamento principal da membrana hialina, sem surfactante nas primeiras horas",
+      "Programar troca de sangue parcial imediata para reduzir viscosidade e melhorar oxigenação, priorizando policitemia sobre deficiência de surfactante"
+    ],
+    "explain": "O quadro clínico-radiológico é típico de síndrome do desconforto respiratório por deficiência de surfactante: suporte respiratório precoce e surfactante são a base, com ventilação protetora.",
+    "trap": "Tratar SDR clássica do prematuro como se fosse apenas TTRN ou PPHN e atrasar surfactante."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 5,
+    "group": "Neonatologia",
+    "theme": "SDR / membrana hialina",
+    "stem": "Prematuro de 31 semanas, 1.480 g, recebeu apenas uma dose antenatal de betametasona. Nasce com bom esforço respiratório, Apgar 7/8. Com duas horas de vida evolui com gemência e necessidade crescente de oxigênio. Em CPAP nasal com FiO2 0,45, saturação 88–90%, PaCO2 52 mmHg. Radiografia de tórax sugere membrana hialina moderada. Qual o próximo passo terapêutico mais apropriado neste momento?",
+    "correct": "Administrar surfactante por técnica minimamente invasiva ou após intubação breve, manter pressão positiva e evitar hiperóxia enquanto se estabiliza a troca gasosa",
+    "wrongs": [
+      "Suspender o CPAP e colocar o RN apenas em oxigênio livre, esperando resolução espontânea típica da taquipneia transitória do recém-nascido a termo",
+      "Indicar antibiótico isolado por sete dias sem ajuste ventilatório, atribuindo todo o quadro a sepse precoce sem avaliar necessidade de surfactante",
+      "Elevar a FiO2 para 1,0 de forma fixa no CPAP sem reassessorar pressão ou indicação de surfactante, visando saturação acima de 98% contínua",
+      "Programar ecocardiograma e iniciar milrinona empírica antes de qualquer surfactante, presumindo disfunção ventricular esquerda como causa principal"
+    ],
+    "explain": "SDR com necessidade crescente de oxigênio sob CPAP indica surfactante; a estratégia INSURE/LISA reduz tempo de intubação. Não se trata como TTRN nem se corrige só com hiperóxia.",
+    "trap": "Atrasar surfactante por confundir SDR com taquipneia transitória ou sepse isolada."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 6,
+    "group": "Neonatologia",
+    "theme": "Taquipneia transitória do RN",
+    "stem": "Recém-nascido a termo, 3.420 g, cesárea eletiva sem trabalho de parto, Apgar 9/9. Com uma hora de vida: taquipneia de 72 irpm, retração leve, sem gemência intensa, saturação 94% em ar ambiente. Ausculta pulmonar sem estertores grossos. Radiografia: hiperinsuflação leve e líquido em fissuras interlobares. Hemograma e proteína C-reativa normais. Qual a conduta mais adequada neste momento?",
+    "correct": "Manter observação com oxigênio ou CPAP leve se preciso, adiar dieta conforme gravidade e aguardar melhora nas primeiras 24 a 72 horas",
+    "wrongs": [
+      "Administrar surfactante exógeno imediatamente e intubar de rotina, tratando o quadro como membrana hialina grave do prematuro extremo",
+      "Indicar óxido nítrico inalatório empírico e restrição hídrica máxima, presumindo hipertensão pulmonar persistente sem avaliação ecocardiográfica",
+      "Iniciar antibiótico de amplo espectro por 14 dias e punção lombar obrigatória, mesmo com exames inflamatórios normais e radiografia típica de líquido retido",
+      "Programar exsanguineotransfusão parcial por policitemia presumida, sem hematócrito, como explicação para a taquipneia pós-cesárea eletiva"
+    ],
+    "explain": "Cesárea sem trabalho de parto favorece retenção de líquido pulmonar (taquipneia transitória): suporte conservador e observação, com melhora em 24–72 h. Surfactante e óxido nítrico não são primeira linha.",
+    "trap": "Tratar TTRN como SDR grave ou sepse automaticamente e indicar intervenções invasivas desnecessárias."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 7,
+    "group": "Neonatologia",
+    "theme": "Taquipneia transitória do RN",
+    "stem": "Recém-nascido de 38 semanas, cesárea por apresentação pélvica, peso 3.100 g, Apgar 8/9. Com três horas de vida: frequência respiratória 80 irpm, saturação 91% em ar, afebril, bom estado geral. Radiografia compatível com taquipneia transitória. Após quatro horas em oxigênio suplementar, FR 70 e saturação 93%. Alimentação ainda não iniciada. Qual o próximo passo mais apropriado na evolução deste quadro?",
+    "correct": "Manter suporte respiratório mínimo necessário, monitorar saturação e frequência respiratória e introduzir dieta conforme melhora clínica, sem surfactante empírico",
+    "wrongs": [
+      "Intubar e administrar surfactante agora porque a frequência respiratória ainda está acima de 60 irpm, independentemente da tendência de melhora",
+      "Suspender todo oxigênio imediatamente e liberar aleitamento livre, mesmo com saturação limítrofe, para não atrasar o vínculo materno",
+      "Indicar tomografia de tórax de urgência e broncoscopia diagnóstica antes de qualquer suporte, investigando malformação pulmonar congênita rara",
+      "Iniciar furosemida em bolus repetidos como tratamento específico obrigatório da taquipneia transitória, independentemente do balanço hídrico"
+    ],
+    "explain": "Na TTRN a conduta é suporte e observação com introdução gradual da dieta; diurético rotineiro e surfactante empírico não são necessários se a evolução é favorável.",
+    "trap": "Intervir de forma agressiva só porque a taquipneia ainda não normalizou nas primeiras horas."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 8,
+    "group": "Neonatologia",
+    "theme": "Aspiração meconial",
+    "stem": "Recém-nascido a termo, líquido meconial espesso, nasceu hipotônico e sem choro imediato. Após passos iniciais, recebe ventilação com pressão positiva. Com duas horas de vida: taquipneia intensa, gemência, saturação 85% em FiO2 0,50, tórax hiperinsuflado e estertores difusos. Radiografia: infiltrados irregulares e áreas de hiperinsuflação. Qual a conduta respiratória inicial mais adequada neste contexto?",
+    "correct": "Otimizar suporte ventilatório, evitar hiperinsuflação excessiva, tratar hipertensão pulmonar se houver e considerar surfactante em doença grave selecionada",
+    "wrongs": [
+      "Realizar lavagem broncoalveolar rotineira com soro fisiológico em grande volume em todo RN com líquido meconial, mesmo já estabilizado",
+      "Manter apenas observação em ar ambiente sem suporte, pois aspiração meconial sempre se resolve espontaneamente nas primeiras seis horas",
+      "Indicar corticosteroide sistêmico de alta dose como terapia única de primeira linha, sem otimizar ventilação nem avaliar hipertensão pulmonar",
+      "Programar pneumotórax terapêutico bilateral preventivo para reduzir hiperinsuflação, antes de qualquer ajuste ventilatório cuidadoso"
+    ],
+    "explain": "Síndrome de aspiração meconial exige suporte ventilatório criterioso, vigilância de hipertensão pulmonar e, em casos graves, surfactante. Lavagem broncoalveolar rotineira não é recomendada.",
+    "trap": "Indicar lavagem traqueal/broncoalveolar de rotina em todo RN com mecônio."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 9,
+    "group": "Neonatologia",
+    "theme": "Aspiração meconial",
+    "stem": "Parto a termo com líquido amniótico meconial fluido. O recém-nascido nasce vigoroso, chora imediatamente, frequência cardíaca de 140 bpm e tônus adequado, sem necessidade de ventilação inicial. A equipe discute se deve realizar aspiração traqueal sob laringoscopia ainda na sala de parto antes dos demais cuidados. Qual a conduta correta segundo as diretrizes atuais de reanimação neonatal?",
+    "correct": "Não realizar aspiração traqueal de rotina no RN vigoroso; seguir passos iniciais, monitorar e intervir apenas se houver dificuldade respiratória ou bradicardia",
+    "wrongs": [
+      "Intubar e aspirar a traqueia obrigatoriamente em todo nascimento com mecônio, vigoroso ou não, antes de qualquer estímulo ou ventilação",
+      "Administrar surfactante profilático em sala de parto a todo RN com mecônio no líquido, mesmo vigoroso e sem sinais de desconforto",
+      "Iniciar óxido nítrico inalatório empírico imediatamente após o clampeamento, prevenindo hipertensão pulmonar em mecônio fluido",
+      "Manter o RN em posição de Trendelenburg prolongada e aspirar narinas com pressão negativa máxima antes dos passos iniciais de reanimação"
+    ],
+    "explain": "No RN vigoroso com mecônio, não se faz aspiração traqueal de rotina. A intervenção invasiva cabe ao deprimido que precisa de via aérea/ventilação.",
+    "trap": "Manter a prática antiga de aspirar traqueia de todo RN nascido em mecônio, inclusive vigorosos."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 10,
+    "group": "Neonatologia",
+    "theme": "Hipertensão pulmonar persistente",
+    "stem": "Recém-nascido a termo, 3.500 g, histórico de aspiração meconial. Com seis horas de vida: cianose desproporcional ao esforço respiratório, saturação pré-ductal 88% e pós-ductal 78% sob FiO2 elevada, PaCO2 42 mmHg. Ecocardiograma mostra shunt direita-esquerda pelo forame oval e canal arterial, com pressão pulmonar elevada. Qual a conduta inicial mais apropriada?",
+    "correct": "Otimizar ventilação e oxigenação, corrigir acidose e hipotensão, e considerar óxido nítrico inalatório na PPHN confirmada com hipoxemia refratária",
+    "wrongs": [
+      "Indicar fechamento cirúrgico imediato do canal arterial como primeira medida, interrompendo o shunt sem estabilizar ventilação nem pressão arterial sistêmica",
+      "Iniciar apenas restrição hídrica e diurético sem suporte ventilatório, tratando o quadro como taquipneia transitória leve do recém-nascido a termo",
+      "Administrar surfactante isolado e reduzir FiO2 agressivamente para saturação abaixo de 85%, visando evitar retinopatia mesmo no termo com PPHN",
+      "Programar troca de sangue total eletiva por hiperviscosidade sem hematócrito elevado, adiando óxido nítrico e suporte hemodinâmico"
+    ],
+    "explain": "Na hipertensão pulmonar persistente: otimizar ventilação/oxigenação, estabilidade hemodinâmica e óxido nítrico inalatório nos casos refratários com diagnóstico ecocardiográfico.",
+    "trap": "Fechar o canal ou tratar como TTRN leve sem vasodilatação pulmonar seletiva quando indicada."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 11,
+    "group": "Neonatologia",
+    "theme": "Hipertensão pulmonar persistente",
+    "stem": "Recém-nascido de 39 semanas em ventilação mecânica por suspeita de hipertensão pulmonar persistente. Mantém saturação pré-ductal 85% em FiO2 1,0, pressão arterial sistêmica limítrofe e lactato 4,8 mmol/L. Ecocardiograma confirma PPHN sem disfunção ventricular esquerda grave. A equipe iniciará óxido nítrico inalatório. Qual cuidado associado é essencial neste momento?",
+    "correct": "Garantir pressão arterial sistêmica adequada, corrigir acidose e evitar hipercapnia ou hipóxia, pois vasodilatação pulmonar isolada não basta na hipoperfusão",
+    "wrongs": [
+      "Reduzir deliberadamente a pressão arterial sistêmica para facilitar o shunt esquerda-direita, priorizando apenas a queda da pressão pulmonar medida",
+      "Suspender todo suporte ventilatório ao iniciar óxido nítrico, confiando que a vasodilatação pulmonar resolve a hipoxemia sem ventilação adjuvante",
+      "Administrar altas doses de oxigênio apenas no período pós-ductal, ignorando a saturação pré-ductal e a diferença ductal documentada",
+      "Indicar indometacina profilática para fechar o canal arterial antes do óxido nítrico, eliminando o shunt direita-esquerda de imediato"
+    ],
+    "explain": "Óxido nítrico funciona melhor com estabilidade hemodinâmica, correção de acidose e ventilação adequada. Fechar o canal precocemente ou reduzir a pressão sistêmica pode piorar o shunt.",
+    "trap": "Focar só no vasodilatador pulmonar e negligenciar pressão sistêmica e ventilação."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 12,
+    "group": "Neonatologia",
+    "theme": "Apneia da prematuridade",
+    "stem": "Prematuro de 28 semanas, 1.050 g, agora com 8 dias de vida, em ar ambiente e alimentado por sonda orogástrica. Apresenta pausas respiratórias de cerca de 25 segundos com dessaturação a 70% e bradicardia a 70 bpm, respondendo a estímulo tátil. Hemoglucoteste normal, hemograma sem alterações e proteína C-reativa baixa. Qual a conduta farmacológica de primeira linha mais adequada?",
+    "correct": "Iniciar cafeína (citrato de cafeína) na dose de ataque e manutenção, manter monitorização e investigar causas secundárias se o padrão for atípico",
+    "wrongs": [
+      "Iniciar teofilina em dose alta sem monitorização e suspender a cafeína como opção, por ser considerada inferior em todos os protocolos atuais de prematuros",
+      "Administrar doxapram oral de rotina como primeira escolha antes de qualquer metilxantina, mesmo em apneias típicas do prematuro estável",
+      "Indicar sedação com midazolam contínuo para reduzir o drive respiratório irregular e assim diminuir o número de alarmes de monitorização",
+      "Prescrever antibiótico de amplo espectro por 14 dias como único tratamento, sem cafeína, atribuindo toda apneia a sepse sem outros sinais"
+    ],
+    "explain": "Apneia da prematuridade típica: cafeína é primeira linha, com monitorização e exclusão de causas secundárias quando indicado. Sedação e doxapram não são escolha inicial.",
+    "trap": "Tratar toda apneia só com antibiótico prolongado ou sedar o prematuro para 'acabar com os alarmes'."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 13,
+    "group": "Neonatologia",
+    "theme": "Apneia da prematuridade",
+    "stem": "Prematuro de 30 semanas, 1.300 g, 12 dias de vida, em uso regular de cafeína. Nas últimas seis horas teve três episódios de apneia com bradicardia grave exigindo ventilação com máscara. Está afebril, porém menos ativo; glicemia 62 mg/dL; abdome levemente distendido, sem vômitos. Hemocultura da admissão anterior negativa; peso atual em ganho lento. Qual a melhor conduta neste momento de mudança do padrão de apneias?",
+    "correct": "Reavaliar causas secundárias (sepse, enterocolite, anemia, temperatura), otimizar suporte respiratório e não atribuir todos os eventos à apneia idiopática",
+    "wrongs": [
+      "Aumentar apenas a dose de cafeína ao dobro sem reavaliação clínica e manter alimentação plena, ignorando a mudança do padrão de apneias",
+      "Suspender monitorização cardiorrespiratória porque o RN já completou 12 dias e a apneia da prematuridade cessa obrigatoriamente após a primeira semana",
+      "Indicar alta hospitalar imediata com monitor domiciliar, pois os eventos responderam à ventilação com máscara e a glicemia está normal",
+      "Trocar cafeína por opioide contínuo para estabilizar o padrão respiratório e reduzir a necessidade de intervenções da equipe de enfermagem"
+    ],
+    "explain": "Aumento ou mudança do padrão de apneias exige investigação de causas secundárias e eventual escalonamento de suporte, não apenas 'mais cafeína' às cegas.",
+    "trap": "Rotular sempre como apneia idiopática e perder sepse ou enterocolite necrosante iniciais."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 14,
+    "group": "Neonatologia",
+    "theme": "Icterícia neonatal",
+    "stem": "Recém-nascido a termo, 36 horas de vida, ictérico até o abdome. Mãe grupo O Rh negativo; RN grupo A Rh positivo; Coombs direto positivo. Hemoglobina 12,1 g/dL, reticulócitos 7,5%, bilirrubina total 17,8 mg/dL (indireta 17,0). Está afebril, mamando, frequência cardíaca 150 bpm, sem sinais neurológicos. Capilaridade de três segundos, diurese presente nas últimas seis horas. Qual a conduta inicial mais adequada?",
+    "correct": "Iniciar fototerapia conforme nomograma para idade e fatores de risco hemolíticos, monitorar bilirrubina seriada e avaliar limiar de exsanguineotransfusão",
+    "wrongs": [
+      "Indicar exsanguineotransfusão imediata sem tentativa de fototerapia intensiva, apenas pelo valor absoluto atual de bilirrubina total em RN a termo",
+      "Liberar alta com retorno em 72 horas sem fototerapia, porque está afebril, mamando bem e sem sinais neurológicos aparentes neste momento",
+      "Substituir o leite materno por fórmula de soja e observar sem fototerapia, atribuindo a icterícia exclusivamente ao aleitamento materno precoce",
+      "Iniciar imunoglobulina intravenosa isolada e suspender fototerapia, considerando a imunoglobulina suficiente para abortar a hemólise ABO"
+    ],
+    "explain": "Doença hemolítica ABO com bilirrubina elevada: fototerapia imediata segundo nomograma, vigilância e prontidão para exsanguineotransfusão se atingir limiar. Imunoglobulina pode ser adjuvante, não substituto isolado.",
+    "trap": "Subestimar icterícia hemolítica precoce porque o bebê 'parece bem' e liberar sem fototerapia."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 15,
+    "group": "Neonatologia",
+    "theme": "Icterícia neonatal",
+    "stem": "Recém-nascido a termo, 4 dias de vida, em fototerapia intensiva por hemólise ABO. A bilirrubina total sobe de 22 para 25 mg/dL em seis horas apesar de fototerapia otimizada; está sonolento, com choro agudo intermitente e hipotonia. Hemoglobina 10,8 g/dL, afebril. Fototerapia com irradiação adequada e exposição máxima da pele confirmadas. Qual a conduta prioritária agora diante do risco de encefalopatia bilirrubínica?",
+    "correct": "Preparar e realizar exsanguineotransfusão em centro capacitado, manter fototerapia até o procedimento e tratar como risco iminente de encefalopatia bilirrubínica",
+    "wrongs": [
+      "Apenas aumentar o número de lâmpadas e aguardar mais 24 horas sem exsanguineotransfusão, mesmo com sinais neurológicos e bilirrubina em ascensão",
+      "Suspender fototerapia e observar, pois valores acima de 20 mg/dL no termo sempre indicam apenas icterícia fisiológica tardia benigna",
+      "Indicar fenobarbital oral como única medida e adiar qualquer procedimento invasivo até a bilirrubina ultrapassar 30 mg/dL de forma isolada",
+      "Trocar fototerapia por banho de sol domiciliar e alta hospitalar, orientando retorno apenas se houver convulsões evidentes"
+    ],
+    "explain": "Bilirrubina muito elevada com sinais de encefalopatia bilirrubínica e falha da fototerapia intensiva: exsanguineotransfusão é prioritária para reduzir rapidamente a bilirrubina.",
+    "trap": "Adiar exsanguineotransfusão esperando 'mais um pouco' de fototerapia quando já há sinais neurológicos."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 16,
+    "group": "Neonatologia",
+    "theme": "Icterícia neonatal",
+    "stem": "Lactente de 18 dias de vida, nascido a termo, em aleitamento materno exclusivo, ictérico desde o quinto dia, ativo, ganhando peso adequadamente, com fezes amareladas. Bilirrubina total 14 mg/dL e direta 0,6 mg/dL. Exame neurológico normal, sem hepatoesplenomegalia. Qual a interpretação e a conduta mais adequadas neste cenário de icterícia prolongada?",
+    "correct": "Quadro compatível com icterícia do leite materno ou fisiológica prolongada; manter aleitamento, afastar colestase pela direta baixa e acompanhar",
+    "wrongs": [
+      "Indicar exsanguineotransfusão imediata por qualquer bilirrubina acima de 12 mg/dL após a segunda semana, independentemente da fração direta e do estado clínico",
+      "Suspender aleitamento materno definitivamente e introduzir fórmula de soja, sem tentativa de manutenção da amamentação nem acompanhamento seriado",
+      "Iniciar fototerapia intensiva hospitalar obrigatória por 7 dias em todo RN com icterícia visível após 14 dias, mesmo estável e com direta baixa",
+      "Solicitar apenas dosagem de amônia e iniciar dieta restrita em proteínas, tratando empiricamente como erro inato do ciclo da ureia sem outros sinais"
+    ],
+    "explain": "Icterícia prolongada com bilirrubina direta baixa, bom ganho ponderal e fezes normais sugere icterícia associada ao leite materno/fisiológica prolongada; manter aleitamento e afastar colestase.",
+    "trap": "Suspender definitivamente o peito ou indicar exsanguineo só pela idade da icterícia, sem olhar a fração direta."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 17,
+    "group": "Neonatologia",
+    "theme": "Colestase / atresia biliar",
+    "stem": "Lactente de 45 dias, nascido a termo com 3.200 g, trazido por icterícia persistente desde as primeiras semanas e fezes progressivamente hipocolólicas. Peso atual no percentil inferior. Bilirrubina total 9,8 mg/dL, direta 6,2 mg/dL, gamaglutamiltransferase elevada. Abdome sem massa palpável, fígado palpável a 3 cm do rebordo. Qual a conduta diagnóstica prioritária?",
+    "correct": "Investigar colestase neonatal de forma urgente, incluindo avaliação para atresia biliar, com exames de imagem e encaminhamento precoce ao serviço especializado",
+    "wrongs": [
+      "Apenas orientar banho de sol e retorno em 60 dias, pois icterícia após o primeiro mês é sempre fisiológica e não requer dosagem da fração direta",
+      "Iniciar fototerapia domiciliar prolongada sem dosar bilirrubina direta, tratando como hiperbilirrubinemia indireta benigna do aleitamento materno",
+      "Prescrever ácido ursodesoxicólico isolado e alta sem investigação etiológica, adiando qualquer imagem até completar seis meses de vida",
+      "Indicar exsanguineotransfusão por hiperbilirrubinemia indireta presumida, sem confirmar o predomínio da fração direta já documentada no exame"
+    ],
+    "explain": "Bilirrubina direta elevada com fezes hipocolólicas após as primeiras semanas exige investigação urgente de colestase, especialmente atresia biliar, cujo prognóstico depende da cirurgia precoce.",
+    "trap": "Rotular como 'icterícia do leite' e atrasar o diagnóstico de atresia biliar."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 18,
+    "group": "Neonatologia",
+    "theme": "Colestase / atresia biliar",
+    "stem": "Lactente de 52 dias com colestase em investigação. Ultrassonografia abdominal: vesícula pequena e ausência de visualização clara da via biliar extra-hepática. Fezes acólicas persistentes, bilirrubina direta 5,8 mg/dL. A família pergunta se pode 'esperar mais um pouco' antes de qualquer cirurgia. Enzimas hepáticas discretamente elevadas; coagulograma ainda dentro da normalidade. Qual a melhor orientação sobre o timing?",
+    "correct": "Encaminhar sem demora para avaliação cirúrgica especializada, pois a portoenterostomia de Kasai tem melhor resultado quando realizada o mais cedo possível",
+    "wrongs": [
+      "Aguardar compulsoriamente até os quatro meses para indicar qualquer cirurgia, independentemente da acolia e dos achados de imagem sugestivos de atresia",
+      "Indicar apenas vitaminas lipossolúveis e retorno em três meses, sem encaminhamento cirúrgico, enquanto se observa a cor das fezes em domicilio",
+      "Tratar empiricamente com corticosteroide prolongado como substituto da portoenterostomia, evitando qualquer procedimento operatório na lactância",
+      "Programar transplante hepático imediato em todo caso de colestase, sem tentativa de Kasai nem definição etiológica da atresia biliar"
+    ],
+    "explain": "Na atresia biliar, atraso na portoenterostomia de Kasai piora o prognóstico. Encaminhamento cirúrgico precoce é essencial; esperar meses ou só observar fezes é incorreto.",
+    "trap": "Atrasar o Kasai acreditando que se pode esperar o diagnóstico fechar até depois dos 3–4 meses."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 19,
+    "group": "Neonatologia",
+    "theme": "Sepse precoce",
+    "stem": "Recém-nascido a termo, 18 horas de vida. Mãe com ruptura de membranas de 20 horas e febre intraparto; antibiótico antenatal incompleto. O RN está taquicárdico (180 bpm), com má perfusão periférica e frequência respiratória de 70 irpm, temperatura 38,1 °C. Hemograma com leucopenia; proteína C-reativa 28 mg/L. Diurese reduzida na última hora; lactato arterial 3,2 mmol/L. Qual a conduta inicial mais adequada?",
+    "correct": "Coletar culturas, iniciar antibiótico empírico venoso precoce (ampicilina com gentamicina) e oferecer suporte hemodinâmico e respiratório conforme a gravidade",
+    "wrongs": [
+      "Aguardar resultado da hemocultura por 48 horas sem antibiótico, mesmo com fatores de risco e sinais clínicos de sepse precoce evidentes",
+      "Iniciar apenas ceftriaxona intramuscular única e liberar para alojamento conjunto sem coleta de culturas nem reavaliação seriada",
+      "Prescrever vancomicina e meropenem de primeira linha em todo RN a termo com taquipneia, sem considerar ampicilina com aminoglicosídeo",
+      "Indicar corticosteroide sistêmico isolado como tratamento da sepse precoce, sem antibiótico, visando modular a resposta inflamatória neonatal"
+    ],
+    "explain": "Sepse precoce com fatores de risco e sinais clínicos: culturas e antibiótico empírico precoce (ampicilina + gentamicina) mais suporte. Não se espera cultura para iniciar tratamento.",
+    "trap": "Esperar hemocultura para só então iniciar antibiótico em RN instável."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 20,
+    "group": "Neonatologia",
+    "theme": "Sepse precoce",
+    "stem": "Prematuro de 34 semanas, 2.050 g, 12 horas de vida. Mãe com colonização por estreptococo do grupo B não tratada adequadamente no intraparto. O RN está em ar ambiente, afebril, exame físico normal e alimentando-se. Hemograma e proteína C-reativa dentro da normalidade. Frequência cardíaca 140 bpm, saturação 97% em ar, enchimento capilar menor que dois segundos. Qual a estratégia mais apropriada de vigilância neste momento?",
+    "correct": "Manter observação clínica rigorosa por 24 a 48 horas, considerar exames conforme protocolo local e iniciar antibiótico prontamente se surgirem sinais de sepse",
+    "wrongs": [
+      "Indicar antibioticoterapia empírica obrigatória por 21 dias em todo filho de mãe colonizada por estreptococo do grupo B, mesmo assintomático e com exames normais",
+      "Liberar alta com seis horas de vida sem orientação, porque exames laboratoriais normais excluem definitivamente sepse precoce em prematuros",
+      "Realizar punção lombar de rotina e iniciar meropenem em todo RN exposto a estreptococo do grupo B, independentemente do exame físico",
+      "Administrar imunoglobulina polivalente isolada sem antibiótico como profilaxia única da doença estreptocócica precoce no prematuro estável"
+    ],
+    "explain": "RN com fator de risco mas clinicamente bem e exames normais: observação cuidadosa e limiar baixo para tratar se houver sinais. Antibiótico prolongado profilático sem indicação não é rotina.",
+    "trap": "Tratar automaticamente por semanas todo exposto a GBS assintomático ou, no extremo oposto, liberar cedo demais sem vigilância."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 21,
+    "group": "Neonatologia",
+    "theme": "Sepse tardia",
+    "stem": "Prematuro de 27 semanas, agora com 18 dias de vida, em nutrição parenteral por cateter venoso central. Torna-se letárgico, com apneias novas e glicemia capilar de 42 mg/dL. Temperatura axilar 37,8 °C. Abdome sem sinais de irritação peritoneal. Proteína C-reativa 18 mg/L; residual gástrico claro na última aspiração. Qual a conduta inicial mais adequada na suspeita de sepse neonatal tardia?",
+    "correct": "Coletar hemoculturas (incluindo do cateter se indicado), iniciar antibiótico empírico cobrindo estafilococos e Gram-negativos, com suporte metabólico imediato",
+    "wrongs": [
+      "Apenas elevar a temperatura da incubadora e observar por 24 horas sem culturas, atribuindo o quadro exclusivamente a apneia da prematuridade típica",
+      "Iniciar antifúngico isolado sem antibacteriano e sem culturas, presumindo candidíase invasiva em todo usuário de cateter central com apneia",
+      "Remover o cateter central imediatamente sem coletar culturas e sem iniciar antibiótico, confiando que a retirada sozinha resolve a sepse tardia",
+      "Prescrever apenas glicose em bolus repetidos sem investigar infecção, tratando a hipoglicemia como distúrbio isolado sem relação com sepse"
+    ],
+    "explain": "Sepse tardia associada a cateter: culturas e antibiótico empírico amplo (incluindo cobertura estafilocócica) mais suporte. Não se espera 'só apneia' em prematuro com mudança de padrão.",
+    "trap": "Atribuir novos sinais apenas à apneia da prematuridade e atrasar antibioticoterapia."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 22,
+    "group": "Neonatologia",
+    "theme": "Sepse tardia",
+    "stem": "Recém-nascido de 32 semanas, 25 dias de vida, ainda internado. Apresenta febre, má perfusão e petéquias novas. Hemocultura periférica positiva para Staphylococcus aureus sensível à oxacilina. Cateter venoso central ainda em uso. Após 48 horas de oxacilina, está hemodinamicamente estável. Qual a melhor conduta em relação ao dispositivo e ao tratamento?",
+    "correct": "Avaliar remoção do cateter central na bacteremia por S. aureus, manter antibiótico adequado e repetir culturas conforme a evolução clínica e laboratorial",
+    "wrongs": [
+      "Manter o cateter indefinidamente e trocar apenas o antibiótico para vancomicina, mesmo com sensibilidade documentada à oxacilina e estabilidade clínica",
+      "Suspender antibiótico com 48 horas só porque o RN ficou afebril, mantendo o cateter e sem nova avaliação de culturas de controle",
+      "Indicar antifúngico empírico associado por seis semanas em toda bacteremia estafilocócica, independentemente de fungo ou foco metastático",
+      "Trocar oxacilina por ceftriaxona intramuscular diária e liberar para casa com cateter central ainda posicionado na unidade neonatal"
+    ],
+    "explain": "Bacteremia por S. aureus em RN com cateter costuma exigir remoção do dispositivo e antibiótico direcionado por tempo adequado; não se encurta tratamento só pela defervescência precoce.",
+    "trap": "Manter cateter infectado e/ou parar antibiótico cedo demais na bacteremia estafilocócica."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 23,
+    "group": "Neonatologia",
+    "theme": "Sífilis congênita",
+    "stem": "Recém-nascido a termo, 2.900 g. Mãe com VDRL 1:32 no terceiro trimestre, tratada com penicilina benzatina em intervalo irregular (tratamento inadequado). No RN: VDRL 1:16, rinite serossanguinolenta e hepatoesplenomegalia. Radiografia de ossos longos mostra periostite. Plaquetas 95.000/mm³; mãe sem documentação de VDRL de alta hospitalar. Qual a conduta terapêutica correta?",
+    "correct": "Internar e tratar com penicilina G cristalina venosa por 10 dias, completar investigação (líquor, hemograma, enzimas) e notificar como sífilis congênita",
+    "wrongs": [
+      "Administrar apenas penicilina benzatina intramuscular única e liberar, considerando o tratamento materno irregular suficiente para o recém-nascido",
+      "Observar sem antibiótico porque o VDRL neonatal é menor que o materno, o que excluiria transmissão vertical mesmo com sinais clínicos",
+      "Iniciar ceftriaxona por três dias como esquema preferencial da sífilis congênita sintomática, evitando penicilina por risco teórico de reação",
+      "Tratar só a mãe novamente e acompanhar o RN ambulatorialmente sem terapia, pois a periostite isolada não indica doença congênita ativa"
+    ],
+    "explain": "Sífilis congênita sintomática com tratamento materno inadequado exige penicilina cristalina venosa prolongada e investigação completa, além de notificação.",
+    "trap": "Usar benzatina única no RN sintomático ou interpretar título neonatal menor como ausência de infecção."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 24,
+    "group": "Neonatologia",
+    "theme": "Sífilis congênita",
+    "stem": "Recém-nascido a termo assintomático. Mãe com sífilis tratada adequadamente com penicilina benzatina no segundo trimestre e VDRL em queda documentada. VDRL do RN igual ao materno em título baixo, exame físico normal e radiografia óssea sem periostite. Não há hepatoesplenomegalia, coriza nem lesões cutâneas no exame atual. Qual a conduta mais apropriada para este RN?",
+    "correct": "Seguir protocolo: muitas vezes benzatina única se investigação normal, com seguimento sorológico ambulatorial rigoroso e registro do tratamento materno",
+    "wrongs": [
+      "Indicar penicilina cristalina venosa por 14 dias obrigatoriamente em todo RN com qualquer VDRL reagente, mesmo mãe bem tratada e exame físico normal",
+      "Ignorar seguimento sorológico porque o tratamento materno adequado elimina qualquer possibilidade de sífilis congênita tardia ou falso-positivo",
+      "Prescrever azitromicina oral prolongada como substituto preferencial da penicilina no RN assintomático exposto à sífilis gestacional",
+      "Realizar exsanguineotransfusão para remover reaginas e negativar o VDRL neonatal de forma imediata sem antibiótico específico"
+    ],
+    "explain": "Com mãe adequadamente tratada e RN assintomático, a conduta segue protocolo: muitas vezes benzatina e sempre seguimento sorológico; cristalina prolongada não é automática.",
+    "trap": "Tratar todo VDRL reagente no RN com esquema venoso longo, sem olhar tratamento materno e clínica."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 25,
+    "group": "Neonatologia",
+    "theme": "Toxoplasmose congênita",
+    "stem": "Gestante com soroconversão para toxoplasmose documentada no segundo trimestre, tratada de forma irregular. Recém-nascido a termo, 2.700 g, apresenta calcificações intracranianas dispersas, coriorretinite e icterícia. IgM específica para Toxoplasma gondii reagente no RN. Líquor com discreta pleocitose; ultrassonografia transfontanelar confirma calcificações. Qual a terapêutica inicial indicada?",
+    "correct": "Iniciar pirimetamina, sulfadiazina e ácido folínico por esquema prolongado, com acompanhamento oftalmológico e neurológico especializado desde o período neonatal",
+    "wrongs": [
+      "Administrar apenas espiramicina ao RN por sete dias e alta, reservando pirimetamina com sulfadiazina exclusivamente para a gestante na gestação atual",
+      "Indicar corticosteroide isolado sem antiparasitário, visando reduzir inflamação retiniana sem cobertura específica contra o Toxoplasma gondii",
+      "Observar sem tratamento porque calcificações intracranianas já estabelecidas não se beneficiam de terapia antiparasitária neonatal em nenhum caso",
+      "Prescrever ivermectina oral em dose única como esquema de escolha para toxoplasmose congênita sintomática com coriorretinite ativa"
+    ],
+    "explain": "Toxoplasmose congênita sintomática com IgM reagente: terapia combinada com pirimetamina, sulfadiazina e ácido folínico, além de seguimento oftalmo-neurológico.",
+    "trap": "Usar só espiramicina no RN sintomático ou deixar de tratar por achar as lesões já definitivas."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 26,
+    "group": "Neonatologia",
+    "theme": "Toxoplasmose congênita",
+    "stem": "Primigesta com IgG e IgM positivos para toxoplasmose na nona semana de gestação; teste de avidez de IgG alto (75%). Não usou medicação específica na gestação. Recém-nascido a termo, exame físico normal, ultrassonografia transfontanelar sem calcificações. Sorologia neonatal IgM negativa; peso adequado para a idade gestacional. Qual a conduta mais adequada para o recém-nascido?",
+    "correct": "Manter cuidados habituais sem investigação ampliada nem tratamento antitoxoplasma, pois avidez alta precoce indica infecção materna antiga com risco desprezível",
+    "wrongs": [
+      "Iniciar pirimetamina, sulfadiazina e ácido folínico de rotina em todo filho de mãe com IgM reagente, independentemente da avidez e da época gestacional",
+      "Solicitar liquor obrigatório e iniciar espiramicina neonatal prolongada só pelo IgM materno, mesmo com avidez alta no primeiro trimestre",
+      "Indicar fundo de olho mensal compulsório por dois anos e corticosteroide profilático, apesar do baixo risco de transmissão vertical neste cenário",
+      "Isolar o RN e suspender aleitamento materno definitivamente por risco contínuo de transmissão pós-natal do Toxoplasma pelo leite humano"
+    ],
+    "explain": "Avidez de IgG alta no primeiro trimestre aponta infecção antiga; risco de transmissão é desprezível e o RN assintomático não necessita do protocolo terapêutico completo.",
+    "trap": "Tratar qualquer IgM materna como infecção aguda recente e medicar o RN automaticamente."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 27,
+    "group": "Neonatologia",
+    "theme": "Citomegalovírus congênito",
+    "stem": "Recém-nascido a termo, 2.450 g (pequeno para a idade gestacional), com petéquias, hepatoesplenomegalia e calcificações periventriculares na ultrassonografia. PCR para citomegalovírus na urina positiva na primeira semana de vida. Triagem auditiva alterada. Transaminases elevadas; plaquetas 80.000/mm³ sem sangramento ativo no momento. Qual a conduta terapêutica mais apropriada?",
+    "correct": "Considerar valganciclovir oral (ou ganciclovir venoso se grave) por curso prolongado, com monitorização de toxicidade e seguimento auditivo e neurológico",
+    "wrongs": [
+      "Apenas observar sem antiviral, porque todo citomegalovírus congênito sintomático tem evolução invariavelmente benigna sem sequelas neurossensoriais",
+      "Indicar aciclovir em altas doses como antiviral de escolha para citomegalovírus, substituindo valganciclovir ou ganciclovir em todos os protocolos",
+      "Prescrever antibiótico de amplo espectro por 21 dias como tratamento etiológico do citomegalovírus, sem antiviral específico nem seguimento auditivo",
+      "Realizar exsanguineotransfusão de rotina para clarear viremia e negativar a PCR urinária, sem terapia antiviral nem avaliação auditiva seriada"
+    ],
+    "explain": "CMV congênito sintomático com acometimento neurológico/auditivo: antiviral (valganciclovir/ganciclovir) e seguimento de toxicidade e sequelas. Aciclovir não é o fármaco de escolha.",
+    "trap": "Usar aciclovir no lugar de ganciclovir/valganciclovir ou deixar de tratar doença sintomática."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 28,
+    "group": "Neonatologia",
+    "theme": "Citomegalovírus congênito",
+    "stem": "Recém-nascido a termo assintomático, peso adequado, exame físico normal. Triagem auditiva falhou unilateralmente. PCR para citomegalovírus na saliva coletada na terceira semana de vida positiva; não há amostra da primeira semana. Gestação sem sorologia materna para citomegalovírus disponível no pré-natal. Qual a interpretação mais cautelosa deste resultado laboratorial?",
+    "correct": "Não afirmar infecção congênita só com PCR tardia; buscar evidências adicionais e garantir investigação auditiva completa, diferenciando aquisição perinatal",
+    "wrongs": [
+      "Diagnosticar citomegalovírus congênito definitivo apenas pela PCR positiva após a terceira semana e iniciar valganciclovir prolongado sem outros critérios",
+      "Ignorar a falha na triagem auditiva porque o exame físico é normal, adiando potenciais evocados até os dois anos de idade cronológica",
+      "Indicar isolamento respiratório rigoroso da mãe e suspensão definitiva do aleitamento em toda PCR saliva positiva tardia no RN assintomático",
+      "Tratar com ganciclovir venoso por seis meses automaticamente, mesmo sem confirmação de infecção congênita sintomática ou laboratorial precoce"
+    ],
+    "explain": "PCR para CMV após 2–3 semanas não distingue congênita de adquirida. Diagnóstico congênito idealmente usa amostra da 1ª–2ª semana; a falha auditiva exige investigação, sem antiviral automático.",
+    "trap": "Rotular como CMV congênito e medicar só com PCR tardia em RN assintomático."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 29,
+    "group": "Neonatologia",
+    "theme": "Herpes neonatal",
+    "stem": "Recém-nascido de 10 dias, nascido de parto vaginal, mãe com lesões genitais sugestivas de herpes no periparto não tratadas. Apresenta febre, letargia e vesículas agrupadas em tronco. Punção lombar com pleocitose linfocitária. Hemograma com plaquetopenia leve; enzimas hepáticas ainda pendentes. Qual a conduta imediata mais adequada diante da suspeita de herpes neonatal?",
+    "correct": "Coletar PCR para herpes nos sítios apropriados e no liquor, iniciar aciclovir venoso em dose neonatal sem aguardar resultados e manter suporte clínico",
+    "wrongs": [
+      "Aguardar cultura viral por vários dias antes de qualquer aciclovir, pois o antiviral só se justifica com confirmação laboratorial definitiva prévia",
+      "Indicar apenas creme de aciclovir tópico nas vesículas e observação domiciliar, sem terapia venosa nem avaliação do sistema nervoso central",
+      "Prescrever antibiótico isolado para meningite bacteriana e omitir aciclovir, mesmo com vesículas e história materna de lesões genitais no periparto",
+      "Administrar valganciclovir oral como primeira escolha para herpes neonatal disseminado, substituindo o aciclovir venoso em meningite herpética"
+    ],
+    "explain": "Suspeita de herpes neonatal (vesículas + sepse/meningoencefalite): aciclovir venoso imediato após coleta de exames, sem esperar PCR. Tópico isolado é inadequado.",
+    "trap": "Esperar confirmação laboratorial para só então iniciar aciclovir no RN grave."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 30,
+    "group": "Neonatologia",
+    "theme": "Herpes neonatal",
+    "stem": "Recém-nascido de 5 dias com febre e irritabilidade, sem vesículas cutâneas visíveis. Mãe relata primoinfecção herpética genital no final da gestação. PCR do liquor positiva para vírus herpes simples. Já em uso de aciclovir venoso. Tomografia não disponível na unidade; eletroencefalograma será solicitado. Qual informação adicional é essencial para o plano terapêutico completo?",
+    "correct": "Completar avaliação de disseminação (hemograma, enzimas, PCR em sangue) e manter aciclovir venoso pelo tempo indicado na doença de SNC",
+    "wrongs": [
+      "Suspender aciclovir com 48 horas se o RN ficar afebril, porque ausência de vesículas cutâneas exclui formas graves de herpes neonatal",
+      "Trocar aciclovir por foscarnet de rotina em todo PCR positivo no liquor, independentemente da resposta clínica e da função renal",
+      "Indicar corticosteroide isolado sem antiviral prolongado, visando edema cerebral, e liberar com anticonvulsivante profilático indefinido",
+      "Limitar o tratamento a aciclovir oral domiciliar desde o diagnóstico de meningite herpética, evitando qualquer regime venoso hospitalar"
+    ],
+    "explain": "Herpes de SNC exige aciclovir venoso prolongado e avaliação de disseminação; ausência de vesículas não exclui gravidade. Não se troca para oral precoce nem se suspende em 48 h.",
+    "trap": "Achar que sem vesícula equivale a herpes leve e encurtar o aciclovir venoso."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 31,
+    "group": "Neonatologia",
+    "theme": "Asfixxia / EHI / hipotermia terapêutica",
+    "stem": "Recém-nascido a termo, 3.300 g, asfixxia perinatal: Apgar 2/4/6, necessidade de ventilação prolongada em sala de parto. Com 40 minutos de vida: hipotonia, convulsão clínica, pH de cordão 6,95 e excesso de base −16. Gasometria atual com pH 7,15. Temperatura axilar 36,4 °C; glicemia 68 mg/dL; saturação 94% sob ventilação. Qual a conduta neuroprotetora a considerar nas primeiras seis horas de vida?",
+    "correct": "Avaliar critérios de encefalopatia hipóxico-isquêmica moderada ou grave e iniciar hipotermia terapêutica em centro capacitado idealmente nas primeiras seis horas",
+    "wrongs": [
+      "Aquecer agressivamente para temperatura acima de 38 °C nas primeiras horas, pois hipertermia melhora o desfecho neurológico após asfixxia perinatal",
+      "Indicar hipotermia terapêutica apenas após 24 horas de vida, quando o exame neurológico já estiver definitivamente estabilizado sem convulsões",
+      "Administrar bicarbonato em bolus repetidos como neuroproteção principal, substituindo a necessidade de avaliar hipotermia terapêutica",
+      "Iniciar fenobarbital em dose de coma barbitúrico em todo asfixxiado, sem critérios de encefalopatia e sem suporte em unidade terciária"
+    ],
+    "explain": "EHI moderada/grave com critérios metabólicos e neurológicos: hipotermia terapêutica iniciada preferencialmente até 6 h melhora desfecho. Hipertermia é prejudicial.",
+    "trap": "Atrasar hipotermia para ver a evolução além da janela de 6 horas ou aquecer em excesso."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 32,
+    "group": "Neonatologia",
+    "theme": "Asfixxia / EHI / hipotermia terapêutica",
+    "stem": "Recém-nascido a termo em hipotermia terapêutica por encefalopatia hipóxico-isquêmica, com temperatura alvo entre 33 e 34 °C. Apresenta bradicardia sinusal de 90 bpm, estável, boa perfusão periférica, sem sangramento ativo. A equipe questiona se deve reaquecer imediatamente por causa da frequência cardíaca. Tempo de coagulação limítrofe; pele com leve livedo sem sangramento cutâneo. Qual a melhor orientação?",
+    "correct": "Manter o protocolo de hipotermia se o RN estiver estável; bradicardia sinusal leve pode ser esperada, com vigilância de coagulação, pele e estabilidade hemodinâmica",
+    "wrongs": [
+      "Reaquecer imediatamente a qualquer frequência cardíaca abaixo de 100 bpm, interrompendo o protocolo mesmo com estabilidade hemodinâmica e boa perfusão",
+      "Elevar a temperatura alvo para 36,5 °C nas primeiras 12 horas e completar o esfriamento apenas se houver novas convulsões refratárias",
+      "Administrar adrenalina contínua de rotina em todo RN sob hipotermia terapêutica, independentemente da pressão arterial e da perfusão periférica",
+      "Suspender sedação e monitorização neurológica durante a hipotermia, porque o exame clínico isolado basta para ajustar a temperatura corporal"
+    ],
+    "explain": "Bradicardia sinusal leve é comum na hipotermia terapêutica; se há estabilidade, mantém-se o protocolo com vigilância de efeitos adversos, sem reaquecer só pelo número da FC.",
+    "trap": "Abortar hipotermia por bradicardia esperada sem instabilidade real."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 33,
+    "group": "Neonatologia",
+    "theme": "Hipoglicemia / filho de mãe diabética",
+    "stem": "Recém-nascido a termo, 4.200 g, filho de mãe com diabetes gestacional mal controlado. Com 45 minutos de vida, antes da primeira mamada efetiva, hemoglucoteste 32 mg/dL; está hipoativo, sem convulsão, temperatura 36,6 °C, saturação 98% em ar. Mãe usou insulina no terceiro trimestre; parto vaginal sem intercorrências anestésicas. Qual a conduta inicial mais adequada para a hipoglicemia?",
+    "correct": "Oferecer leite (materno ou fórmula) de imediato e, se sintomático ou glicemia muito baixa, administrar glicose venosa e rechecar a glicemia em curto intervalo",
+    "wrongs": [
+      "Aguardar a próxima mamada em três horas sem intervenção, pois valores abaixo de 40 mg/dL são fisiológicos e sempre assintomáticos no filho de diabética",
+      "Indicar insulina subcutânea para estabilizar a glicemia neonatal elevada presumida, sem confirmar hiperglicemia e apesar do valor baixo atual",
+      "Restringir calorias nas primeiras 24 horas para evitar hiperinsulinismo de rebote, mantendo o RN em jejum vigilado na unidade neonatal",
+      "Realizar exsanguineotransfusão parcial como tratamento de primeira linha da hipoglicemia do filho de mãe diabética sem tentativa de aporte calórico"
+    ],
+    "explain": "Filho de diabética com hipoglicemia sintomática/baixa: aporte enteral imediato e glicose venosa quando indicado, com rechecagens. Jejum ou insulina são inadequados.",
+    "trap": "Normalizar hipoglicemia precoce no macrossômico e atrasar correção."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 34,
+    "group": "Neonatologia",
+    "theme": "Hipoglicemia / filho de mãe diabética",
+    "stem": "Recém-nascido de 36 semanas, 3.800 g, filho de mãe com diabetes tipo 2. Após correção venosa inicial, as glicemias capilares oscilam entre 35 e 45 mg/dL nas primeiras 12 horas, com necessidade de oferta frequente. Está ativo, afebril, sem convulsões. Infusão atual de glicose a 8 mg/kg/min; eletrólitos dentro da normalidade. Qual a estratégia mais apropriada de seguimento nas primeiras 24 horas?",
+    "correct": "Manter monitorização glicêmica seriada nas primeiras 12 a 24 horas, assegurar aporte calórico regular e investigar persistência se precisar de glicose venosa alta",
+    "wrongs": [
+      "Suspender toda monitorização após uma glicemia acima de 50 mg/dL, liberando o RN sem novas checagens nas primeiras 24 horas de vida",
+      "Indicar jejum noturno prolongado para estimular a neoglicogênese, aceitando glicemias abaixo de 40 mg/dL enquanto o RN permanecer ativo",
+      "Iniciar diazóxido oral de rotina em todo filho de mãe diabética nas primeiras seis horas, sem critério de hipoglicemia hiperinsulinêmica persistente",
+      "Trocar aporte calórico por corticoide sistêmico empírico como medida única, sem ajustes de taxa de glicose venosa nem frequência alimentar"
+    ],
+    "explain": "No filho de diabética, a vigilância glicêmica nas primeiras 12–24 h é essencial; hipoglicemia persistente exige investigação e ajuste da taxa de glicose, não diazóxido automático.",
+    "trap": "Parar a monitorização cedo demais após um único valor aceitável."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 35,
+    "group": "Neonatologia",
+    "theme": "Enterocolite necrosante",
+    "stem": "Prematuro de 29 semanas, 15 dias de vida, em dieta enteral crescente com leite materno. Apresenta residual gástrico bilioso, distensão abdominal, sangue oculto nas fezes e apneias novas. Temperatura instável. Radiografia de abdome: pneumatose intestinal sem pneumoperitônio. Proteína C-reativa 22 mg/L; hemocultura coletada há uma hora ainda pendente. Qual a conduta inicial correta?",
+    "correct": "Suspender dieta, descomprimir o estômago, iniciar antibiótico de amplo espectro, suporte clínico e acompanhamento radiográfico seriado da enterocolite necrosante",
+    "wrongs": [
+      "Aumentar o volume da dieta enteral para estimular o peristaltismo e observar por 24 horas sem antibiótico nem descompressão gástrica",
+      "Indicar laparotomia imediata em todo caso com pneumatose, mesmo sem perfuração, sem tentativa de estabilização clínica inicial",
+      "Prescrever apenas probiótico e manter alimentação plena, tratando o quadro como intolerância alimentar transitória do prematuro",
+      "Realizar enema opaco terapêutico com contraste hipertônico como primeira medida, visando reduzir a pneumatose intestinal radiológica"
+    ],
+    "explain": "Enterocolite necrosante com pneumatose: jejum, descompressão, antibióticos e suporte; cirurgia se perfuração/falha clínica. Aumentar dieta é perigoso.",
+    "trap": "Manter ou aumentar dieta diante de sinais claros de enterocolite necrosante."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 36,
+    "group": "Neonatologia",
+    "theme": "Enterocolite necrosante",
+    "stem": "Prematuro de 28 semanas com enterocolite necrosante em tratamento clínico há 12 horas (jejum, descompressão e antibiótico). Evolui com piora da perfusão, acidose metabólica crescente e radiografia de abdome com pneumoperitônio. Frequência cardíaca 175 bpm; necessidade de expansão volêmica com cristaloides. Gasometria com acidose metabólica progressiva e lactato elevado. Qual o próximo passo prioritário?",
+    "correct": "Indicar avaliação cirúrgica urgente por perfuração intestinal, manter reposição volêmica, antibiótico e suporte ventilatório enquanto se prepara a intervenção",
+    "wrongs": [
+      "Apenas aumentar a concentração de oxigênio no capacete e manter conduta clínica exclusiva, ignorando o pneumoperitônio como indicação operatória",
+      "Reiniciar dieta mínima trófica para melhorar a cicatrização mucosal, apesar da perfuração radiológica e da instabilidade hemodinâmica",
+      "Trocar antibiótico empiricamente a cada quatro horas sem avaliação cirúrgica, confiando que cobertura antimicrobiana resolve a perfuração sozinha",
+      "Indicar punção abdominal descompressiva ambulatorial e alta para observação domiciliar com retorno em 48 horas se houver febre"
+    ],
+    "explain": "Pneumoperitônio na enterocolite necrosante indica perfuração e necessidade de avaliação cirúrgica urgente, com suporte intensivo concomitante.",
+    "trap": "Insistir em tratamento clínico isolado após evidência de perfuração."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 37,
+    "group": "Neonatologia",
+    "theme": "Canal arterial persistente",
+    "stem": "Prematuro de 27 semanas, 950 g, 5 dias de vida, em CPAP nasal. Apresenta sopro contínuo, pulsos amplos, precórdio hiperativo e necessidade crescente de oxigênio. Ecocardiograma: canal arterial persistente hemodinamicamente significativo, sem contraindicação a anti-inflamatório. Pressão arterial ampla; radiografia com cardiomegalia discreta e congestão pulmonar leve. Qual a conduta farmacológica inicial usual?",
+    "correct": "Considerar ibuprofeno ou indometacina conforme protocolo para fechamento farmacológico, com suporte respiratório e vigilância de função renal e plaquetas",
+    "wrongs": [
+      "Indicar digoxina e furosemida como terapia exclusiva definitiva do canal, sem avaliar fechamento farmacológico nem ecocardiograma de controle",
+      "Programar cirurgia de ligadura imediatamente em todo canal detectado, mesmo sem falha do tratamento clínico-farmacológico inicial",
+      "Iniciar altas doses de oxigênio para fechar o canal por hiperóxia induzida, aceitando saturação acima de 98% de forma contínua no prematuro",
+      "Administrar prostaglandina E1 para manter o canal aberto, como se houvesse cardiopatia dependente de canal em RN com sopro contínuo isolado"
+    ],
+    "explain": "PCA hemodinamicamente significativo no prematuro: tentativa de fechamento com ibuprofeno/indometacina (se sem contraindicação). Cirurgia reserva-se a falhas/contraindicações.",
+    "trap": "Usar PGE1 para manter aberto ou operar de imediato todo canal sem tentar fechamento clínico."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 38,
+    "group": "Neonatologia",
+    "theme": "Canal arterial persistente",
+    "stem": "Prematuro de 26 semanas com canal arterial persistente hemodinamicamente significativo ao ecocardiograma. Há enterocolite necrosante em evolução, creatinina elevada e plaquetopenia. A equipe discute fechamento farmacológico com anti-inflamatório. Fração de ejeção preservada; dependência de FiO2 0,40 no CPAP nasal. Qual a melhor decisão neste cenário?",
+    "correct": "Evitar anti-inflamatório não esteroide enquanto houver contraindicações e discutir manejo com cardiologia ou cirurgia conforme a gravidade do shunt",
+    "wrongs": [
+      "Administrar indometacina em dose plena apesar da enterocolite e da insuficiência renal, priorizando apenas o fechamento imediato do canal arterial",
+      "Indicar ibuprofeno em dose dobrada para compensar a contraindicação relativa, mantendo dieta plena durante a enterocolite necrosante ativa",
+      "Ignorar o canal arterial porque todo shunt no prematuro fecha espontaneamente até o sétimo dia, mesmo com repercussão respiratória importante",
+      "Iniciar corticosteroide sistêmico prolongado como substituto seguro e preferencial da indometacina em presença de enterocolite necrosante"
+    ],
+    "explain": "Enterocolite, disfunção renal e plaquetopenia contraindicam AINE para fechamento do PCA; nesse caso, suporte e discussão de alternativas, inclusive cirúrgica se necessário.",
+    "trap": "Insistir em indometacina ou ibuprofeno apesar de contraindicações clássicas."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 39,
+    "group": "Neonatologia",
+    "theme": "Triagem neonatal / hipotireoidismo",
+    "stem": "Recém-nascido a termo, quinto dia de vida, retorno da triagem neonatal com TSH 22 mUI/L (ponto de corte local 10) e T4 livre baixo. Está em aleitamento materno, com icterícia leve, hérnia umbilical discreta e choro rouco. Frequência cardíaca 118 bpm. Idade óssea não avaliada; ausência de bócio à palpação cervical. Familia solicita orientação imediata. Qual a conduta mais adequada?",
+    "correct": "Confirmar com dosagem sérica urgente de TSH e T4 livre e iniciar levotiroxina sem atrasar o tratamento enquanto se completa a investigação etiológica",
+    "wrongs": [
+      "Repetir apenas o teste do pezinho em 60 dias sem tratamento, aguardando maturação do eixo hipotálamo-hipófise-tireoide no lactente a termo",
+      "Iniciar iodo em altas doses isolado e observar, adiando a levotiroxina até confirmação por cintilografia marcada para daqui a três meses",
+      "Suspender aleitamento materno por suspeita de excesso de iodo no leite e aguardar normalização espontânea do TSH sem reposição hormonal",
+      "Indicar radioablação tireoidiana imediata no período neonatal como tratamento de escolha do hipotireoidismo congênito detectado na triagem"
+    ],
+    "explain": "Hipotireoidismo congênito sugestivo na triagem: confirmação sérica e início precoce de levotiroxina são essenciais para o neurodesenvolvimento; não se espera meses.",
+    "trap": "Atrasar levotiroxina esperando mais um teste do pezinho daqui a semanas ou meses."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 40,
+    "group": "Neonatologia",
+    "theme": "Triagem neonatal / hipotireoidismo",
+    "stem": "Prematuro de 32 semanas, agora com 20 dias de vida, triagem neonatal coletada em dois momentos conforme protocolo. TSH inicial limítrofe e segundo TSH 8 mUI/L com T4 livre normal. Clinicamente bem, ganhando peso, sem icterícia prolongada. Coleta do primeiro cartão ocorreu com 48 horas de vida; segunda com 15 dias. Sem bócio. Qual a interpretação mais adequada deste resultado?",
+    "correct": "Interpretar com cautela a triagem no prematuro, correlacionar clínica e dosagens séricas e seguir protocolo local de recoleta antes de rotular definitivo",
+    "wrongs": [
+      "Diagnosticar hipotireoidismo congênito definitivo só pelo primeiro cartão limítrofe e iniciar levotiroxina em dose máxima sem nova dosagem sérica",
+      "Ignorar completamente qualquer alteração de TSH em prematuros, pois o eixo tireoidiano nunca necessita reavaliação após a primeira semana de vida",
+      "Indicar tireoidectomia profilática por TSH limítrofe em prematuro estável com T4 livre normal e sem sinais de hipotireoidismo clínico",
+      "Administrar hormônio liberador de tireotrofina em bolus diário como tratamento ambulatorial, substituindo a levotiroxina em recém-nascidos"
+    ],
+    "explain": "No prematuro, a triagem tireoidiana pode ser confusa; protocolos de recoleta e correlação com T4/TSH séricos evitam tratamento desnecessário e também falhas diagnósticas.",
+    "trap": "Tratar automaticamente todo TSH limítrofe de prematuro sem confirmação, ou ignorar por completo as recoletas."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 41,
+    "group": "Neonatologia",
+    "theme": "Retinopatia da prematuridade",
+    "stem": "Prematuro de 25 semanas, 720 g, agora com seis semanas de vida pós-natal (idade corrigida ainda abaixo do termo), em uso intermitente de oxigênio suplementar. A equipe discute quando iniciar o rastreamento de retinopatia da prematuridade. Já recebeu transfusão prévia; permanece internado em unidade neonatal intermediária. Qual estratégia oftalmológica é a mais adequada?",
+    "correct": "Seguir critérios de idade gestacional e peso e de idade pós-natal para iniciar mapeamento de retina por oftalmologista experiente, com retornos conforme o estágio",
+    "wrongs": [
+      "Dispensar qualquer exame de fundo de olho se o RN já estiver em ar ambiente, porque retinopatia só ocorre durante uso contínuo de oxigênio a 100%",
+      "Realizar fotocoagulação a laser profilática em todo prematuro abaixo de 28 semanas, mesmo com retina imatura sem doença limiar documentada",
+      "Adiar o primeiro exame oftalmológico até os seis meses de idade cronológica, quando a cooperação do lactente facilita a fundoscopia ambulatorial",
+      "Substituir o mapeamento de retina por oximetria cerebral contínua como método suficiente de rastreamento da retinopatia da prematuridade"
+    ],
+    "explain": "ROP exige rastreamento oftalmológico programado por IG/peso e idade pós-natal, com follow-up por estágio. Não se espera meses nem se opera profilaticamente sem critérios.",
+    "trap": "Achar que sair do oxigênio elimina a necessidade de mapeamento de retina."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 42,
+    "group": "Neonatologia",
+    "theme": "Retinopatia da prematuridade",
+    "stem": "Prematuro de 26 semanas em seguimento oftalmológico de retinopatia da prematuridade. O oftalmologista descreve doença limiar com indicação formal de tratamento. A família pergunta qual a prioridade nas próximas 48 a 72 horas. Zona II, estágio 3 com plus disease descrito no último mapeamento oftalmológico. Idade corrigida ainda pré-termo. Qual a melhor orientação médica?",
+    "correct": "Encaminhar para tratamento oftalmológico indicado (laser ou anti-VEGF conforme protocolo) em tempo hábil, evitando progressão para descolamento de retina",
+    "wrongs": [
+      "Aguardar espontaneamente a involução por mais oito semanas sem tratamento, mesmo com doença limiar já documentada pelo especialista",
+      "Elevar a saturação alvo para 98–100% de forma contínua como único tratamento da retinopatia limiar, sem intervenção oftalmológica",
+      "Indicar enucleação profilática bilateral em todo prematuro extremo com qualquer grau de retinopatia, independentemente do estágio",
+      "Suspender o seguimento oftalmológico após o primeiro mapeamento normal precoce, sem respeitar o calendário de reavaliações por zona e estágio"
+    ],
+    "explain": "Doença limiar/pré-limiar tipo 1 exige tratamento oftalmológico tempestivo. Hiperóxia não trata ROP e pode ser prejudicial; não se espera involuir doença limiar.",
+    "trap": "Adiar laser ou anti-VEGF na doença limiar esperando resolução espontânea."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 43,
+    "group": "Neonatologia",
+    "theme": "Hemorragia peri-intraventricular",
+    "stem": "Prematuro de 26 semanas, 880 g, segundo dia de vida, em ventilação mecânica. Apresenta queda abrupta do hematócrito, fontanela anterior tensa, apneias e convulsão clínica. Ultrassom transfontanelar: hemorragia peri-intraventricular grau III com dilatação ventricular. Pressão arterial média 28 mmHg; em uso de suporte vasoativo em dose baixa. Qual a conduta imediata prioritária?",
+    "correct": "Estabilizar via aérea e circulação, corrigir coagulopatia ou anemia se houver, controlar convulsões e acionar neurocirurgia para a hidrocefalia pós-hemorrágica",
+    "wrongs": [
+      "Indicar fisioterapia motora agressiva imediata na incubadora e mobilização cervical ampla, visando drenar o sangue intraventricular clinicamente",
+      "Administrar trombolítico sistêmico de rotina em todo grau III, sem avaliar risco de sangramento adicional nem estabilização clínica prévia",
+      "Suspender monitorização neurológica porque a hemorragia grau III não evolui para hidrocefalia nem requer seguimento ultrassonográfico seriado",
+      "Iniciar anticoagulação plena com heparina para impedir extensão do sangramento peri-intraventricular no prematuro extremo instável"
+    ],
+    "explain": "HIV grave: suporte intensivo, correção de anemia/coagulopatia, controle de crises e avaliação neurocirúrgica da hidrocefalia. Trombólise/anticoagulação de rotina são contraindicadas.",
+    "trap": "Anticoagular ou mobilizar o prematuro com hemorragia intracraniana aguda."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 44,
+    "group": "Neonatologia",
+    "theme": "Hemorragia peri-intraventricular",
+    "stem": "Prematuro de 28 semanas, clinicamente estável, hematócrito estável, sem convulsões. Ultrassom transfontanelar de rotina no sétimo dia de vida mostra hemorragia peri-intraventricular grau I unilateral, sem dilatação ventricular. Não há sinais de hipertensão intracraniana; alimentação enteral plena tolerada. Pais ansiosos com o resultado. Qual a orientação mais adequada aos pais e à equipe?",
+    "correct": "Explicar que grau I costuma ter bom prognóstico, manter estabilidade clínica e programar ultrassons de seguimento conforme o protocolo da unidade",
+    "wrongs": [
+      "Indicar craniotomia descompressiva imediata em todo grau I, independentemente da estabilidade clínica e da ausência de efeito de massa",
+      "Garantir aos pais que nenhum seguimento neurológico futuro será necessário, pois grau I nunca se associa a qualquer risco de alteração do desenvolvimento",
+      "Elevar a pressão média de vias aéreas ao máximo para tamponar o sangramento germinativo, aceitando hipocarbia grave prolongada",
+      "Suspender a cafeína e o suporte nutricional por 14 dias obrigatórios, como tratamento específico da hemorragia grau I assintomática"
+    ],
+    "explain": "HIV grau I em RN estável: manejo conservador, otimização de estabilidade e seguimento ultrassonográfico/neurodesenvolvimento. Cirurgia não está indicada.",
+    "trap": "Supertratar grau I com cirurgia ou, no outro extremo, negar qualquer necessidade de seguimento."
+  },
+  {
+    "idPrefix": "ped-neo2",
+    "n": 45,
+    "group": "Neonatologia",
+    "theme": "Oxigenoterapia / alvos no prematuro",
+    "stem": "Prematuro de 27 semanas, 15 dias de vida, em CPAP nasal com FiO2 variável entre 0,25 e 0,40. A equipe discute alvos de saturação para reduzir risco de displasia broncopulmonar e retinopatia da prematuridade, sem aumentar mortalidade por hipóxia. Hemoglobina 11,2 g/dL; sem apneias nas últimas 24 horas sob cafeína. Alarmes de saturação frequentes. Qual estratégia está mais alinhada às evidências atuais?",
+    "correct": "Titular oxigênio para alvos intermediários de saturação (em geral cerca de 90–95% conforme protocolo), evitando hiperóxia sustentada e hipoxemia prolongada",
+    "wrongs": [
+      "Manter saturação continuamente entre 98 e 100% em todo prematuro sob CPAP, priorizando aparência rosada independentemente do risco de retinopatia",
+      "Aceitar saturação de 75 a 80% de forma prolongada para prevenir retinopatia, mesmo com sinais de hipóxia tecidual e acidose metabólica",
+      "Fixar FiO2 em 1,0 sem oximetria contínua nas primeiras duas semanas, ajustando oxigênio apenas pelo exame visual da coloração cutânea",
+      "Desligar oximetria noturna em prematuros estáveis sob oxigênio, confiando apenas na frequência respiratória como guia de titulação da FiO2"
+    ],
+    "explain": "No prematuro, alvos intermediários de saturação equilibram riscos de ROP/DBP (hiperóxia) e de mortalidade/hipóxia. Nem sempre 100% nem hipoxemia deliberada.",
+    "trap": "Buscar saturação próxima de 100% o tempo todo no prematuro extremo."
+  }
+]
