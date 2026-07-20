@@ -3,16 +3,16 @@
     "idPrefix": "cli-pneumo",
     "n": 1,
     "group": "Pneumologia",
-    "theme": "Asma — GINA controle",
-    "stem": "Mulher de 32 anos com asma há 8 anos usa budesonida inalatória em baixa dose irregularmente. Relata despertares noturnos 2×/semana, uso de SABA diário e limitação aos esforços. VEF1 68% do previsto, sem exacerbação grave recente. Sem tabagismo. Qual a melhor conduta segundo o GINA? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Intensificar para corticosteroide inalatório em dose média associado a formoterol (SMART) ou LABA, educar técnica inalatória e reavaliar controle em 4–12 semanas",
+    "theme": "Asma — GINA step-up",
+    "stem": "Mulher de 34 anos, asma há 10 anos, usa budesonida 200 µg 12/12 h de forma irregular. Relata despertares noturnos 3×/semana, salbutamol 5×/dia e limitação aos esforços há 2 meses. Sem tabagismo. FR 16, SpO2 97% em ar, sibilos discretos. Espirometria: VEF1 66% do previsto, VEF1/CVF 0,62. Sem ida à emergência no último ano. Segundo o GINA, qual a melhor conduta?",
+    "correct": "Aumentar para CSI em dose média com formoterol (preferencialmente SMART), checar técnica/adesão e reavaliar controle em 4–12 semanas",
     "wrongs": [
-      "Manter apenas SABA sob demanda sem corticosteroide diário, pois a espirometria ainda não está abaixo de 50% de forma imediata",
-      "Iniciar prednisona oral contínua por 6 meses como terapia de manutenção de primeira linha na asma não controlada conforme o protocolo",
-      "Suspender todo inalatório e indicar apenas anti-histamínico oral para sintomas noturnos e limitação aos esforços de forma imediata conforme o protocolo",
-      "Indicar intubação eletiva e ventilação mecânica por VEF1 reduzido, mesmo sem crise aguda ou insuficiência respiratória neste serviço na rede assistencial disponível"
+      "Manter apenas salbutamol sob demanda, pois ausência de internação recente dispensa corticosteroide inalatório diário por marcador isolado",
+      "Iniciar prednisona 40 mg/dia contínua por 6 meses como manutenção de primeira linha na asma não controlada com timing inadequado",
+      "Suspender o CSI e trocar por anti-histamínico oral noturno para os despertares e a limitação aos esforços sem base fisiopatológica clara",
+      "Indicar ventilação mecânica eletiva ambulatorial somente pelo VEF1 66%, mesmo sem crise ou falência respiratória reduzindo terapia cedo demais"
     ],
-    "explain": "Asma não controlada exige step-up: CSI + LABA (preferencialmente formoterol/SMART), checagem de adesão/técnica e reassesso. SABA isolado é inadequado; corticosteroide oral contínuo não é manutenção de primeira linha.",
+    "explain": "Sintomas diurnos frequentes, noturnos e SABA excessivo = não controlada: step-up com CSI+LABA/SMART e revisão de técnica. SABA isolado é inadequado; corticoide oral crônico não é manutenção inicial.",
     "trap": "Tratar asma não controlada só com SABA ou com prednisona oral crônica de rotina."
   },
   {
@@ -20,47 +20,47 @@
     "n": 2,
     "group": "Pneumologia",
     "theme": "Asma — exacerbação grave",
-    "stem": "Homem de 28 anos chega com crise asmática: fala em palavras, FR 34, SpO2 88% em ar, sibilos difusos, uso de musculatura acessória. Já recebeu SABA nebulizado sem melhora plena. Gasometria: pH 7,32, PaCO2 48, PaO2 55. Qual a prioridade terapêutica imediata? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Oxigenoterapia titulada, SABA contínuo ou seriado, brometo de ipratrópio, corticosteroide sistêmico precoce e vigiar sinais de falência respiratória iminente",
+    "stem": "Homem de 27 anos chega com crise asmática há 6 h: fala em palavras, FR 34, FC 128, SpO2 88% em ar, uso de acessórios e sibilos difusos. Já recebeu 3 nebulizações de salbutamol sem melhora plena. Gasometria: pH 7,31, PaCO2 46 mmHg, PaO2 54 mmHg. Qual a prioridade terapêutica imediata na emergência? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária.",
+    "correct": "Oxigênio titulado, SABA contínuo ou seriado com ipratrópio, corticosteroide sistêmico precoce e vigilância de exaustão/necessidade de via aérea",
     "wrongs": [
-      "Aguardar gasometria normalizar antes de qualquer broncodilatador, priorizando apenas hidratação venosa generosa neste serviço",
-      "Indicar antibiótico de amplo espectro isolado como tratamento principal da crise, sem broncodilatação agressiva e reavaliar a resposta",
-      "Administrar betabloqueador intravenoso para reduzir trabalho respiratório e taquicardia associada à crise no momento e monitoramento contínuo do paciente",
-      "Contraindicar corticosteroide sistêmico na primeira hora por medo de infecção, mantendo apenas oxigênio nasal neste serviço evitando atraso terapêutico relevante"
+      "Aguardar normalização da gasometria antes de novo broncodilatador, priorizando apenas hidratação venosa generosa por marcador isolado",
+      "Prescrever antibiótico de amplo espectro isolado como tratamento principal, sem intensificar broncodilatação antecipando etapa indevida",
+      "Administrar propranolol intravenoso para reduzir a taquicardia e o trabalho respiratório da crise sem correlacionar gravidade antecipando etapa indevida",
+      "Adiar corticosteroide sistêmico nas primeiras 6 h por medo de infecção, mantendo só cateter nasal de O2 sem correlacionar gravidade reduzindo terapia cedo demais"
     ],
-    "explain": "Exacerbação grave: O2, SABA (± ipratrópio), corticosteroide sistêmico precoce e vigilância de hipercapnia/exaustão. Antibiótico não trata broncoespasmo; betabloqueador é prejudicial.",
-    "trap": "Atrasar corticosteroide ou tratar crise asmática como pneumonia bacteriana isolada."
+    "explain": "Crise grave: O2, SABA±ipratrópio e corticoide sistêmico precoce; PaCO2 “normal/alta” com FR elevada sugere fadiga. ATB não trata broncoespasmo; betabloqueador agrava.",
+    "trap": "Atrasar corticoide sistêmico ou tratar crise asmática como pneumonia bacteriana isolada."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 3,
     "group": "Pneumologia",
     "theme": "Asma — GINA step-down",
-    "stem": "Mulher de 40 anos com asma bem controlada há 6 meses em CSI dose média + formoterol, sem despertares, sem SABA extra e VEF1 estável. Técnica inalatória correta, sem exposição a gatilhos novos. Deseja reduzir medicação. Conduta mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Reduzir gradualmente a dose do corticosteroide inalatório mantendo LABA/formoterol quando possível, com plano de ação escrito e reavaliação clínica seriada",
+    "stem": "Mulher de 41 anos com asma, controlada há 7 meses em budesonida/formoterol dose média: sem despertares, sem SABA extra, VEF1 estável e técnica correta. Sem exposições novas, sem rinite descompensada. Deseja reduzir medicação antes de viagem. Qual a conduta mais adequada segundo o GINA? Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Reduzir gradualmente a dose do CSI mantendo formoterol quando possível, com plano de ação escrito e reavaliação clínica seriada alinhado à gravidade",
     "wrongs": [
-      "Suspender abruptamente todo inalatório e manter apenas xarope expectorante por 3 meses sem acompanhamento de forma imediata",
-      "Trocar CSI+LABA por teofilina oral de liberação prolongada como única terapia de manutenção de longo prazo diante do quadro clínico",
-      "Indicar corticosteroide oral diário permanente para permitir retirada completa dos inalatórios de manutenção de forma imediata e reavaliar a resposta",
-      "Manter dose máxima indefinidamente mesmo com controle pleno, sem tentativa de step-down quando seguro com registro no prontuário sem adiamento injustificado"
+      "Suspender abruptamente todos os inalatórios e manter apenas xarope expectorante por 3 meses sem retorno por marcador isolado",
+      "Trocar CSI+LABA por teofilina oral isolada de liberação prolongada como única terapia de manutenção sem base fisiopatológica clara",
+      "Iniciar prednisona diária permanente para permitir retirada completa e definitiva dos inalatórios como única medida adotada ignorando contraindicação",
+      "Manter a dose máxima indefinidamente mesmo com controle pleno, sem qualquer tentativa de step-down seguro antecipando etapa indevida adiando medida essencial"
     ],
-    "explain": "Com controle sustentado, o GINA permite step-down cauteloso (reduzir CSI, preferindo não retirar LABA de imediato). Suspensão abrupta e teofilina isolada são inadequados.",
+    "explain": "Controle sustentado permite step-down cauteloso (reduzir CSI; evitar retirar LABA de súbito). Suspensão abrupta e teofilina isolada elevam risco de perda de controle.",
     "trap": "Suspender tudo de uma vez ou nunca reduzir dose após controle prolongado."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 4,
     "group": "Pneumologia",
-    "theme": "DPOC — GOLD classificação",
-    "stem": "Homem de 68 anos, 45 maços-ano, VEF1/CVF 0,55 pós-broncodilatador, VEF1 48% (GOLD 3). Duas exacerbações moderadas no último ano, mMRC 2, CAT 18. Sem eosinofilia relevante. Qual a melhor classificação e base terapêutica inicial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Grupo E (exacerbador): broncodilatador LAMA±LABA de manutenção, reabilitação pulmonar, vacinas e cessação do tabagismo como pilares do manejo no momento",
+    "theme": "DPOC — GOLD grupo E",
+    "stem": "Homem de 69 anos, 48 maços-ano, dispneia aos mínimos esforços. Espirometria pós-BD: VEF1/CVF 0,54, VEF1 47% (GOLD 3). Teve 2 exacerbações moderadas no último ano (1 com antibiótico). mMRC 2, CAT 18. Eosinófilos 120/µL. Qual a melhor classificação GOLD e base terapêutica inicial? O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade.",
+    "correct": "Grupo E: LAMA±LABA de manutenção, cessação do tabagismo, vacinas e reabilitação pulmonar como pilares do tratamento e documentação da resposta",
     "wrongs": [
-      "Grupo A apenas por VEF1 48%, tratando só com SABA sob demanda sem terapia de manutenção broncodilatadora e reavaliar a resposta",
-      "Iniciar quimioterapia pulmonar empírica porque VEF1 abaixo de 50% define câncer oculto em todo tabagista na rede assistencial disponível",
-      "Indicar oxigenoterapia domiciliar contínua sem avaliar PaO2/SpO2 em estabilidade e critérios de hipoxemia crônica no momento preservando efetividade clínica",
-      "Prescrever corticosteroide oral diário vitalício como primeira linha GOLD em todos os pacientes com VEF1 <50% de forma imediata com reassessoramento clínico seriado"
+      "Grupo A apenas pelo VEF1 47%, tratando só com SABA sob demanda sem broncodilatador de manutenção sem base fisiopatológica clara",
+      "Indicar oxigenoterapia domiciliar contínua sem PaO2/SpO2 em estabilidade nem critérios de hipoxemia crônica sem correlacionar gravidade",
+      "Prescrever prednisona oral diária vitalícia como primeira linha em todo paciente com VEF1 <50% sem base fisiopatológica clara antecipando etapa indevida",
+      "Iniciar quimioterapia empírica porque VEF1 <50% em tabagista define neoplasia pulmonar oculta sem base fisiopatológica clara ignorando contraindicação"
     ],
-    "explain": "GOLD atual: sintomas + histórico de exacerbações definem grupo; VEF1 gradua gravidade espirométrica. Grupo E prioriza LAMA±LABA, prevenção e reabilitação. O2 e CSI oral contínuo não são rotina sem critérios.",
+    "explain": "GOLD: sintomas + exacerbações definem o grupo; VEF1 gradua obstrução. Grupo E (≥2 exacerbações moderadas ou 1 grave) prioriza LAMA±LABA e prevenção. O2 e corticoide oral crônico exigem critérios.",
     "trap": "Classificar GOLD só pelo VEF1 ou iniciar O2/corticoide oral sem indicação."
   },
   {
@@ -68,95 +68,95 @@
     "n": 5,
     "group": "Pneumologia",
     "theme": "DPOC — exacerbação",
-    "stem": "Mulher de 72 anos com DPOC chega com aumento de dispneia, volume e purulência do escarro há 3 dias. SpO2 90% em ar (basal 92%), FR 28, sem confusão. Radiografia sem consolidação nova. Qual o manejo inicial mais apropriado? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Intensificar broncodilatadores de curta ação, corticosteroide sistêmico curto, oxigênio titulado e antibiótico se critérios de infecção bacteriana/purulência",
+    "stem": "Mulher de 73 anos com DPOC chega com piora da dispneia, aumento do volume e purulência do escarro há 4 dias. SpO2 89% em ar (basal 92%), FR 28, FC 98, afebril, lúcida. RX sem consolidação nova nem pneumotórax. Qual o manejo inicial mais apropriado na unidade de pronto atendimento? História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "Intensificar SABA/SAMA, corticosteroide sistêmico curto, O2 titulado (meta ~88–92%) e antibiótico pelos critérios de infecção alinhado à gravidade",
     "wrongs": [
-      "Internar em UTI e intubar de imediato apenas pela SpO2 90%, sem tentar oxigênio titulado e broncodilatação neste serviço",
-      "Suspender todos os broncodilatadores e usar apenas codeína para reduzir a tosse produtiva na exacerbação e reavaliar a resposta",
-      "Indicar trombólise pulmonar empírica sem angiotomografia, presumindo TEP em toda exacerbação de DPOC conforme o protocolo e reavaliar a resposta",
-      "Manter apenas fisioterapia sem fármacos, pois exacerbações de DPOC são autolimitadas e não necessitam tratamento neste serviço com comunicação à equipe assistencial"
+      "Intubar de imediato só pela SpO2 89%, sem tentar O2 titulado, broncodilatação e corticosteroide sistêmico antecipando etapa indevida",
+      "Suspender broncodilatadores e usar codeína para reduzir a tosse produtiva durante a exacerbação com timing inadequado em desacordo com o risco",
+      "Indicar trombólise empírica sem angio-TC, presumindo TEP em toda piora respiratória de DPOC sem correlacionar gravidade sem base fisiopatológica clara",
+      "Manter só fisioterapia respiratória sem fármacos, por considerar exacerbações sempre autolimitadas sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "Exacerbação: SABA/SAMA, corticosteroide sistêmico curto, O2 titulado (meta ~88–92%) e antibiótico se aumento de volume/purulência/dispneia. Intubação não é primeira linha na ausência de falência.",
-    "trap": "Intubar precocemente ou omitir corticosteroide/antibiótico quando houver critérios."
+    "explain": "Exacerbação: broncodilatadores de curta ação, corticoide sistêmico curto, O2 titulado e ATB se aumento de dispneia/volume/purulência. Intubação não é primeiro passo sem falência.",
+    "trap": "Intubar precocemente ou omitir corticoide/antibiótico quando há critérios infecciosos."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 6,
     "group": "Pneumologia",
     "theme": "DPOC — oxigenoterapia longa",
-    "stem": "Homem de 70 anos com DPOC estável, em tratamento otimizado, PaO2 52 mmHg em ar em duas medidas, SpO2 86%, hematócrito 54%, sem acidose. Qual indicação e meta típica de oxigenoterapia domiciliar contínua? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Indicar O2 domiciliar ≥15 h/dia por hipoxemia crônica grave, titulando para SpO2 cerca de 88–92% e reavaliando gasometria sob oxigênio neste serviço",
+    "stem": "Homem de 71 anos com DPOC estável em LAMA+LABA, cessou tabaco há 1 ano. Em duas gasometrias em ar, com 3 semanas de intervalo: PaO2 51 e 53 mmHg, SpO2 85–86%, hematócrito 55%, pH 7,40, PaCO2 46. Qual indicação e meta típica de oxigenoterapia domiciliar contínua? Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "Indicar LTOT ≥15 h/dia por hipoxemia crônica grave, titulando SpO2 para cerca de 88–92% e reavaliando gasometria sob O2 e documentação da resposta",
     "wrongs": [
-      "Contraindicar qualquer oxigênio porque pode abolir o drive hipóxico em 100% dos pacientes com DPOC estável e reavaliar a resposta",
-      "Prescrever O2 a 100% contínuo sem titulação, visando SpO2 100% permanente em todos os momentos do dia e monitoramento contínuo do paciente",
-      "Indicar O2 apenas durante o sono se PaO2 diurna for 52 mmHg, sem necessidade de uso diurno prolongado de forma imediata e monitoramento contínuo do paciente",
-      "Substituir oxigenoterapia por digoxina oral para corrigir a hipoxemia crônica e a policitemia secundária com comunicação à equipe assistencial conforme o protocolo"
+      "Contraindicar qualquer O2 pelo risco absoluto de abolir o drive hipóxico em 100% dos DPOC estáveis sem base fisiopatológica clara",
+      "Prescrever O2 a 100% contínuo sem titulação, visando SpO2 100% em todos os períodos do dia por marcador isolado fora da janela terapêutica",
+      "Restringir O2 apenas ao sono se a PaO2 diurna for ≤55 mmHg, sem uso diurno prolongado sem base fisiopatológica clara reduzindo terapia cedo demais",
+      "Substituir a oxigenoterapia por digoxina oral para corrigir hipoxemia e policitemia secundária sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "LTOT quando PaO2 ≤55 mmHg (ou 56–59 com cor pulmonale/policitemia) em estabilidade. Meta SpO2 ~88–92%; O2 a 100% sem titulação é prejudicial. Digoxina não corrige hipoxemia.",
+    "explain": "LTOT se PaO2 ≤55 mmHg (ou 56–59 com cor pulmonale/policitemia) em estabilidade. Meta SpO2 ~88–92%. O2 não titulado a 100% pode piorar hipercapnia; digoxina não corrige PaO2.",
     "trap": "Negar O2 por medo do drive ou oxigenar até SpO2 100% sem titulação."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 7,
     "group": "Pneumologia",
-    "theme": "TEP — diagnóstico",
-    "stem": "Mulher de 45 anos, 8 dias pós-cirurgia ortopédica, dispneia súbita, FC 112, PA 118/70, SpO2 91%. ECG: taquicardia sinusal. D-dímero elevado. Sem contraindicação a contraste. Qual o próximo passo diagnóstico preferencial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Realizar angiotomografia de tórax para confirmar TEP e estratificar extensão, mantendo suporte oxigenatório e avaliação de gravidade hemodinâmica",
+    "theme": "TEP — Wells e angio-TC",
+    "stem": "Mulher de 46 anos, 9 dias após artroplastia de joelho, apresenta dispneia súbita e dor pleurítica. FC 114, PA 122/74, SpO2 90% em ar, panturrilha operada edemaciada. Wells alto. D-dímero elevado. Sem alergia a contraste e creatinina 0,9 mg/dL. Qual o próximo passo diagnóstico preferencial? Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção.",
+    "correct": "Realizar angiotomografia de tórax para confirmar TEP, mantendo O2 e estratificação hemodinâmica enquanto se define anticoagulação alinhado à gravidade",
     "wrongs": [
-      "Iniciar quimioterapia empírica por suspeita de câncer oculto como causa única da dispneia pós-operatória conforme o protocolo",
-      "Solicitar apenas radiografia simples e liberar se sem consolidação, sem investigar tromboembolismo agudo nesta etapa de forma imediata",
-      "Indicar broncoscopia imediata como exame de escolha para visualizar êmbolos nas artérias pulmonares diante do quadro clínico sem adiamento injustificado",
-      "Aguardar hemograma normalizar antes de qualquer imagem, adiando o diagnóstico de TEP por vários dias e reavaliar a resposta com comunicação à equipe assistencial"
+      "Liberar com analgésico se a radiografia simples não mostrar consolidação, sem investigar tromboembolismo por marcador isolado",
+      "Indicar broncoscopia imediata como exame de escolha para visualizar êmbolos nas artérias pulmonares sem base fisiopatológica clara",
+      "Aguardar hemograma “normalizar” por 72 h antes de qualquer imagem, adiando o diagnóstico de TEP reduzindo terapia cedo demais fora da janela terapêutica",
+      "Iniciar quimioterapia empírica por suspeita de câncer oculto como única causa da dispneia pós-operatória reduzindo terapia cedo demais antecipando etapa indevida"
     ],
-    "explain": "Alta probabilidade/clínica sugestiva pós-cirúrgica: angio-TC é o exame de escolha quando viável. D-dímero sozinho não confirma. Broncoscopia não diagnostica TEP vascular.",
-    "trap": "Negativizar investigação só com RX ou usar broncoscopia para TEP."
+    "explain": "Alta probabilidade (Wells) pós-cirúrgica: angio-TC é o exame de escolha quando viável. D-dímero não confirma sozinho; broncoscopia não diagnostica TEP vascular.",
+    "trap": "Negativizar investigação só com RX de tórax ou usar broncoscopia para TEP."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 8,
     "group": "Pneumologia",
     "theme": "TEP — risco intermediário-alto",
-    "stem": "Homem de 58 anos com TEP confirmado: PA 100/60, FC 118, lactato 2,8, BNP elevado, eco com disfunção de VD, SpO2 90% com O2. Sem sangramento. Qual a melhor estratégia imediata? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Anticoagular prontamente, suporte hemodinâmico/oxigênio, monitorizar em ambiente adequado e considerar reperfusão se houver deterioração ou choque",
+    "stem": "Homem de 59 anos com TEP confirmado à angio-TC: PA 102/62, FC 120, SpO2 89% com O2 2 L/min, lactato 2,9 mmol/L, BNP elevado e ecocardiograma com disfunção de VD. Sem sangramento. Qual a melhor estratégia imediata? Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória. Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Anticoagular prontamente, suporte com O2/hemodinâmica, monitorar em ambiente adequado e reservar reperfusão se houver choque ou deterioração",
     "wrongs": [
-      "Alta domiciliar com AAS 100 mg isolado, pois a pressão arterial ainda está mensurável na admissão diante do quadro clínico",
-      "Trombólise sistêmica imediata obrigatória em todo TEP com BNP elevado, independentemente de estabilidade com registro no prontuário",
-      "Contraindicar anticoagulação até biópsia pulmonar confirmar o diagnóstico histológico do êmbolo evitando atraso terapêutico relevante neste serviço",
-      "Indicar apenas diurético de alça em alta dose como tratamento exclusivo do tromboembolismo pulmonar com comunicação à equipe assistencial conforme o protocolo"
+      "Alta domiciliar com AAS 100 mg isolado, por ainda haver pressão arterial mensurável na admissão antecipando etapa indevida",
+      "Trombólise sistêmica obrigatória em todo TEP com BNP alto, mesmo estável e sem deterioração com timing inadequado por marcador isolado",
+      "Contraindicar anticoagulação até biópsia pulmonar confirmar histologicamente o êmbolo reduzindo terapia cedo demais sem base fisiopatológica clara",
+      "Tratar só com furosemida em alta dose como terapia exclusiva do tromboembolismo pulmonar sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "TEP intermediário-alto: anticoagulação precoce, suporte e vigilância; trombólise reservada a choque/instabilidade ou deterioração selecionada. AAS/diurético não substituem anticoagulação.",
+    "explain": "Intermediário-alto: anticoagulação precoce + vigilância; trombólise em choque/deterioração selecionada, não de rotina só por BNP/VD. AAS/diurético não substituem anticoagulação.",
     "trap": "Trombolisar todo TEP com disfunção de VD ou liberar sem anticoagulação."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 9,
     "group": "Pneumologia",
-    "theme": "TEP — choque",
-    "stem": "Paciente com TEP maciço: PA 78/40 após volume, confusão, SpO2 84%, eco com VD dilatado e septal paradoxical. Sem sangramento ativo nem cirurgia recente. Conduta de reperfusão mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Iniciar anticoagulação se possível e indicar trombólise sistêmica (ou terapia dirigida) por instabilidade hemodinâmica associada ao TEP maciço",
+    "theme": "TEP — choque / trombólise",
+    "stem": "Paciente com TEP maciço: após 500 mL de cristalóide, PA 76/42, confusão, SpO2 83% com máscara, jugulares turgescentes. Eco à beira-leito: VD dilatado e septo paradoxal. Sem cirurgia recente, AVC ou sangramento ativo. Qual a conduta de reperfusão mais adequada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico.",
+    "correct": "Anticoagular se possível e indicar trombólise sistêmica (ou terapia dirigida) por instabilidade hemodinâmica do TEP maciço alinhado à gravidade",
     "wrongs": [
-      "Manter apenas observação sem anticoagulação até normalizar a pressão arterial espontaneamente por horas conforme o protocolo",
-      "Indicar corticosteroide pulsoterapia como tratamento específico do tromboembolismo pulmonar maciço com segurança conforme o protocolo",
-      "Priorizar broncodilatador nebulizado exclusivo, tratando o quadro como crise de asma sem imagem com registro no prontuário sem adiamento injustificado",
-      "Prescrever nifedipino sublingual seriado para elevar a pressão arterial no choque obstrutivo por TEP e reavaliar a resposta e monitoramento contínuo do paciente"
+      "Observar sem anticoagulação até a PA normalizar espontaneamente nas próximas horas na enfermaria sem correlacionar gravidade",
+      "Usar metilprednisolona em pulsoterapia como tratamento específico do tromboembolismo maciço por marcador isolado com esquema incompleto",
+      "Priorizar apenas nebulização de salbutamol, tratando o quadro como crise de asma sem imagem vascular omitindo a primeira linha adiando medida essencial",
+      "Administrar nifedipino sublingual seriado para elevar a PA no choque obstrutivo por TEP reduzindo terapia cedo demais sem base fisiopatológica clara"
     ],
-    "explain": "TEP com choque: reperfusão (trombólise sistêmica na ausência de contraindicação absoluta) + suporte. Observação passiva e vasodilatadores são inadequados no choque obstrutivo.",
-    "trap": "Atrasar trombólise no TEP maciço instável sem contraindicação."
+    "explain": "TEP com choque: reperfusão (trombólise na ausência de contraindicação absoluta) + suporte. Vasodilatador e observação passiva são inadequados no choque obstrutivo.",
+    "trap": "Atrasar trombólise no TEP maciço instável sem contraindicação absoluta."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 10,
     "group": "Pneumologia",
-    "theme": "SDRA — definição",
-    "stem": "Homem de 52 anos com pneumonia grave: PaO2/FiO2 160 em PEEP 8, infiltrados bilaterais novos, sem falência cardíaca esquerda evidenciada. Em VM invasiva. Como classificar pela definição de Berlin e qual meta ventilatória inicial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "SDRA moderada: ventilação protetora com volume corrente ~6 mL/kg de peso predito, platô ≤30 cmH2O e PEEP adequada à gravidade conforme o protocolo",
+    "theme": "SDRA — Berlin e VT protetor",
+    "stem": "Homem de 53 anos com pneumonia grave em VM: PaO2/FiO2 155 com PEEP 10 cmH2O, infiltrados bilaterais novos, eco sem falência esquerda franca. PA 110/70 sob sedação. Como classificar pela definição de Berlin e qual meta ventilatória inicial? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária. História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "SDRA moderada: volume corrente ~6 mL/kg de peso predito, pressão de platô ≤30 cmH2O e PEEP adequada à hipoxemia e documentação da resposta",
     "wrongs": [
-      "Descartar SDRA porque há pneumonia; SDRA só ocorre sem infecção pulmonar prévia documentada no momento diante do quadro clínico",
-      "Usar volume corrente de 12–15 mL/kg para “abrir” alvéolos e normalizar PaCO2 imediatamente na rede assistencial disponível no momento",
-      "Manter platô de 40 cmH2O de rotina para garantir recrutamento máximo em todos os ciclos com comunicação à equipe assistencial de forma imediata",
-      "Classificar como SDRA leve e liberar da VM porque PaO2/FiO2 ainda está acima de 100 com comunicação à equipe assistencial com registro no prontuário"
+      "Descartar SDRA porque há pneumonia; a definição de Berlin exige ausência total de infecção pulmonar fora da janela terapêutica",
+      "Programar volume corrente de 12–15 mL/kg para “abrir” alvéolos e normalizar PaCO2 a qualquer custo sem base fisiopatológica clara",
+      "Manter platô de 40 cmH2O de rotina para garantir recrutamento máximo em todos os ciclos ventilatórios em desacordo com o risco ignorando contraindicação",
+      "Classificar como SDRA leve e extubar agora porque PaO2/FiO2 ainda está acima de 100 sob PEEP sem base fisiopatológica clara fora da janela terapêutica"
     ],
-    "explain": "Berlin: PaO2/FiO2 100–200 = moderada (com PEEP≥5), bilaterais, origem não exclusivamente cardiogênica. Ventilação protetora (VT baixo, platô≤30) reduz mortalidade; VT alto é lesivo.",
+    "explain": "Berlin: PaO2/FiO2 100–200 = moderada (PEEP≥5), bilaterais, origem não só cardiogênica. VT baixo e platô≤30 reduzem mortalidade; VT alto é lesivo.",
     "trap": "Usar VT alto “para oxigenar” ou negar SDRA na pneumonia."
   },
   {
@@ -164,15 +164,15 @@
     "n": 11,
     "group": "Pneumologia",
     "theme": "SDRA — pronação",
-    "stem": "Mulher de 40 anos em SDRA grave (PaO2/FiO2 85) sob sedação, VM protetora otimizada, hemodinamicamente estável, sem contraindicação a pronação. Qual intervenção adicional tem evidência de benefício? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Indicar ventilação em prona por sessões prolongadas (≥12–16 h) associada à estratégia protetora já em curso na unidade conforme o protocolo",
+    "stem": "Mulher de 39 anos com SDRA grave (PaO2/FiO2 80) por influenza, em VT 6 mL/kg, PEEP otimizada e sedação adequada. Hemodinamicamente estável, sem contraindicação a prona. Qual intervenção adicional tem evidência de benefício prognóstico? Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Ventilação em prona por sessões prolongadas (≥12–16 h/dia) mantendo a estratégia protetora já instituída e vigilância seriada alinhado à gravidade",
     "wrongs": [
-      "Contraindicar prona em SDRA grave estável, reservando-a apenas para pacientes já em ECMO venovenosa e reavaliar a resposta",
-      "Aumentar VT para 10 mL/kg e reduzir PEEP a zero antes de qualquer mudança de decúbito conforme o protocolo diante do quadro clínico",
-      "Indicar toracotomia exploradora bilateral empírica para “drenar” o infiltrado alveolar da SDRA sem adiamento injustificado após estabilização inicial",
-      "Suspender PEEP completamente durante 24 h para permitir “repouso alveolar” na hipoxemia refratária conforme o protocolo evitando atraso terapêutico relevante"
+      "Reservar prona apenas para quem já está em ECMO, contraindicando-a no SDRA grave ainda estável reduzindo terapia cedo demais",
+      "Aumentar VT para 10 mL/kg e zerar PEEP antes de qualquer mudança de decúbito na hipoxemia por marcador isolado com esquema incompleto",
+      "Indicar toracotomia exploradora bilateral empírica para “drenar” o infiltrado alveolar da SDRA sem base fisiopatológica clara com iatrogenia evitável",
+      "Suspender PEEP por 24 h para permitir “repouso alveolar” na hipoxemia refratária grave sem base fisiopatológica clara ignorando contraindicação"
     ],
-    "explain": "Em SDRA grave, pronação precoce e prolongada reduz mortalidade quando associada a VT baixo. Não se abandona PEEP/proteção; cirurgia empírica não trata SDRA.",
+    "explain": "Pronação precoce e prolongada no SDRA grave reduz mortalidade junto ao VT baixo. Não se abandona PEEP/proteção; cirurgia empírica não trata SDRA.",
     "trap": "Negar prona no SDRA grave ou piorar a lesão com VT alto/PEEP zero."
   },
   {
@@ -180,31 +180,31 @@
     "n": 12,
     "group": "Pneumologia",
     "theme": "VM — hipercapnia permissiva",
-    "stem": "Paciente com SDRA em VT 6 mL/kg, platô 28, PEEP 12: pH 7,28, PaCO2 58, PaO2 75 (FiO2 0,6). Hemodinamicamente estável, sem hipertensão intracraniana. Conduta ventilatória mais coerente? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Aceitar hipercapnia permissiva se pH tolerável, mantendo estratégia protetora e otimizando sedação/sincronia paciente-ventilador conforme o protocolo",
+    "stem": "Paciente com SDRA em VT 6 mL/kg, platô 28 cmH2O, PEEP 12: pH 7,29, PaCO2 56 mmHg, PaO2 78 mmHg (FiO2 0,55). Estável, sem hipertensão intracraniana. Qual conduta ventilatória mais coerente neste momento? O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade. Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção.",
+    "correct": "Aceitar hipercapnia permissiva com pH tolerável, preservar VT baixo/platô seguro e otimizar sedação/sincronia e vigilância seriada alinhado à gravidade",
     "wrongs": [
-      "Aumentar imediatamente o VT para 12 mL/kg só para normalizar PaCO2 a qualquer custo de pressão na rede assistencial disponível",
-      "Extubar agora porque PaO2 75 “já é suficiente”, ignorando a gravidade da SDRA e a FiO2 alta na rede assistencial disponível nesta etapa",
-      "Zerar a frequência respiratória para forçar apneia e corrigir a acidose respiratória aguda com comunicação à equipe assistencial e reavaliar a resposta",
-      "Indicar bicarbonato isolado sem revisar ventilação como única medida em todo pH 7,28 na SDRA com comunicação à equipe assistencial sem adiamento injustificado"
+      "Elevar imediatamente o VT para 12 mL/kg só para normalizar PaCO2, aceitando platô >35 cmH2O sem base fisiopatológica clara",
+      "Extubar agora porque PaO2 78 “já basta”, ignorando FiO2 0,55 e a gravidade da SDRA reduzindo terapia cedo demais com iatrogenia evitável",
+      "Zerar a frequência respiratória para forçar apneia e assim “corrigir” a acidose respiratória sem base fisiopatológica clara sem correlacionar gravidade",
+      "Infundir bicarbonato isolado, sem revisar ventilação, como única medida em todo pH 7,29 na SDRA sem base fisiopatológica clara antecipando etapa indevida"
     ],
-    "explain": "Hipercapnia permissiva é aceitável para preservar VT baixo/platô seguro se pH não estiver perigosamente baixo e sem contraindicações (ex.: HIC). Normalizar PaCO2 com VT alto é prejudicial.",
-    "trap": "Sacrificar proteção alveolar só para “normalizar” PaCO2."
+    "explain": "Hipercapnia permissiva preserva proteção alveolar se pH não estiver perigosamente baixo e sem HIC. Normalizar PaCO2 com VT alto aumenta lesão.",
+    "trap": "Sacrificar proteção alveolar só para “normalizar” o PaCO2."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 13,
     "group": "Pneumologia",
     "theme": "Derrame — Light exsudato",
-    "stem": "Homem de 55 anos com derrame pleural: líquido/soro proteínas 0,65, LDH líquido 320 (soro 180; limite superior LDH sérica 200), glicose 70, celularidade linfocítica. Qual a interpretação pelos critérios de Light? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Exsudato pelos critérios de Light; investigar causa (infecção, neoplasia, inflamação) e correlacionar com clínica e imagem torácica",
+    "stem": "Homem de 56 anos, tabagista, derrame pleural direito. Toracocentese: proteína líquido/soro 0,66; LDH líquido 340 U/L (soro 190; LS LDH 200); glicose 68 mg/dL; predominância linfocítica. Sem IC descompensada. Qual a interpretação pelos critérios de Light e o foco seguinte? História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "Exsudato pelos critérios de Light; investigar infecção, neoplasia e inflamação correlacionando clínica e imagem conforme risco do caso",
     "wrongs": [
-      "Transudato definitivo, tratando apenas com diurético de alça sem investigar outras etiologias possíveis de forma imediata",
-      "Diagnóstico automático de quilotórax só pela relação protéica, sem triglicerídeos no líquido pleural sem adiamento injustificado",
-      "Indicação absoluta de pneumonectomia imediata perante qualquer exsudato linfocítico detectado neste serviço e monitoramento contínuo do paciente",
-      "Descartar neoplasia e tuberculose porque a glicose do líquido está acima de 60 mg/dL neste exame conforme o protocolo evitando atraso terapêutico relevante"
+      "Transudato definitivo, tratando só com furosemida e restrição hídrica sem investigar outras causas com esquema incompleto",
+      "Quilotórax automático só pela relação protéica, sem dosar triglicerídeos no líquido pleural sem base fisiopatológica clara",
+      "Pneumonectomia imediata perante qualquer exsudato linfocítico, sem citologia nem estadiamento por marcador isolado reduzindo terapia cedo demais",
+      "Excluir TB e câncer porque a glicose do líquido está acima de 60 mg/dL neste único exame sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "Light: proteína L/S >0,5 ou LDH L/S >0,6 ou LDH líquido >2/3 do LS = exsudato. Exige investigação etiológica; não é sinônimo de quilo nem indica cirurgia de rotina.",
+    "explain": "Light: proteína L/S >0,5 ou LDH L/S >0,6 ou LDH líquido >2/3 do LS = exsudato. Exige etiological work-up; não é quilo automático nem indicação cirúrgica de rotina.",
     "trap": "Tratar todo derrame como transudato diurético-sensível sem aplicar Light."
   },
   {
@@ -212,143 +212,143 @@
     "n": 14,
     "group": "Pneumologia",
     "theme": "Derrame — Light transudato",
-    "stem": "Mulher de 78 anos com IC descompensada: derrame bilateral. Proteína líquido/soro 0,35, LDH líquido 90 (soro 220; LS 250), sem febre. Após diurético, melhora clínica. Interpretação e conduta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Transudato compatível com IC; otimizar tratamento da insuficiência cardíaca e evitar procedimentos invasivos desnecessários se evolução favorável",
+    "stem": "Mulher de 79 anos com IC FE preservada, bilateralidade de derrame, afebril. Líquido: proteína L/S 0,34; LDH líquido 85 (soro 230; LS 250). Após 48 h de diurético, melhora de edema e dispneia. Interpretação e conduta mais adequada? Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido. Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico.",
+    "correct": "Transudato compatível com IC; otimizar tratamento da insuficiência cardíaca e evitar invasões se a evolução for favorável e documentação da resposta",
     "wrongs": [
-      "Indicar biópsia pleural imediata em todo derrame de IC, mesmo com critérios claros de transudato e melhora e reavaliar a resposta",
-      "Iniciar esquema RIPE empírico só porque há derrame, sem evidência de tuberculose pleural ou pulmonar com comunicação à equipe assistencial",
-      "Classificar como exsudato obrigatório por ser bilateral, independentemente dos critérios de Light na rede assistencial disponível com registro no prontuário",
-      "Drenar toracostomia em sucção contínua em todo transudato de IC estável sem falência respiratória com comunicação à equipe assistencial sem adiamento injustificado"
+      "Biópsia pleural imediata em todo derrame de IC, mesmo com Light de transudato e boa resposta com timing inadequado por marcador isolado",
+      "Iniciar RHZE empírico só porque há derrame, sem evidência de tuberculose pleural ou pulmonar por marcador isolado liberando paciente grave",
+      "Classificar como exsudato obrigatório por ser bilateral, independentemente dos critérios de Light sem base fisiopatológica clara sem correlacionar gravidade",
+      "Indicar toracostomia em sucção contínua em todo transudato de IC estável sem insuficiência respiratória reduzindo terapia cedo demais sem base fisiopatológica clara"
     ],
-    "explain": "Critérios de Light negativos → transudato; na IC bilateral típica, trata-se a causa. Biópsia/RIPE/dreno de rotina não se aplicam sem sinais de outra doença.",
+    "explain": "Light negativo → transudato; na IC típica bilateral, trata-se a causa. Biópsia/RHZE/dreno de rotina não cabem sem sinais de outra doença.",
     "trap": "Invadir ou tratar TB empiricamente em transudato típico de IC."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 15,
     "group": "Pneumologia",
-    "theme": "Derrame — tuberculose pleural",
-    "stem": "Homem de 28 anos, derrame unilateral linfocítico, ADA elevada, proteínas de exsudato, baciloscopia negativa no escarro. Sem IC. Próximo passo diagnóstico-terapêutico mais coerente? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Considerar TB pleural; obter cultura/histologia quando possível e iniciar antifímico conforme protocolo se alta probabilidade de forma imediata",
+    "theme": "Derrame — TB pleural",
+    "stem": "Homem de 29 anos, área endêmica, derrame unilateral há 3 semanas, febre vespertina e emagrecimento. Líquido: exsudato linfocítico, ADA 55 U/L, baciloscopia de escarro negativa, HIV negativo. Sem IC. Qual o próximo passo diagnóstico-terapêutico mais coerente? Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção.",
+    "correct": "Considerar TB pleural; obter cultura/histologia quando possível e iniciar antifímico se alta probabilidade alinhado à gravidade e vigilância seriada",
     "wrongs": [
-      "Tratar apenas com diurético e restrição hídrica, assumindo sempre transudato em jovens com derrame com registro no prontuário",
-      "Indicar quimioterapia oncológica empírica sem citologia, marcadores ou estadiamento de neoplasia com comunicação à equipe assistencial",
-      "Contraindicar qualquer punção diagnóstica porque ADA elevada “já fecha” o diagnóstico sem líquido de forma imediata e monitoramento contínuo do paciente",
-      "Usar apenas antitussígeno e liberar sem investigar exsudato linfocítico em área endêmica de tuberculose pleural na rede assistencial disponível de forma imediata"
+      "Tratar só com diurético e restrição hídrica, assumindo transudato em todo jovem com derrame sem base fisiopatológica clara",
+      "Iniciar quimioterapia oncológica empírica sem citologia, marcadores ou estadiamento de neoplasia com timing inadequado por marcador isolado",
+      "Contraindicar nova punção/biópsia porque ADA elevada “fecha” o diagnóstico sem qualquer líquido reduzindo terapia cedo demais antecipando etapa indevida",
+      "Liberar com antitussígeno apenas, sem investigar exsudato linfocítico em área endêmica de TB sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "Exsudato linfocítico + ADA alta sugere TB pleural; cultura/biópsia aumentam certeza. Tratamento antifímico conforme critérios; diurético não resolve TB pleural.",
+    "explain": "Exsudato linfocítico + ADA alta sugere TB pleural; cultura/biópsia aumentam certeza. Antifímico conforme critérios; diurético não resolve TB pleural.",
     "trap": "Tratar derrame linfocítico com ADA alta como IC ou liberar sem investigação."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 16,
     "group": "Pneumologia",
-    "theme": "Câncer de pulmão — nódulo",
-    "stem": "Homem de 64 anos, 40 maços-ano, nódulo sólido de 1,4 cm em lobo superior direito, espiculado, sem calcificação benigna. PET-CT com captação moderada. Sem metástase óbvia. Conduta mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Discutir em tumor board: estadiamento completo e biópsia/ressecção diagnóstica-terapêutica conforme operabilidade e probabilidade de malignidade",
+    "theme": "Câncer — nódulo suspeito",
+    "stem": "Homem de 65 anos, 42 maços-ano, nódulo sólido de 1,5 cm no LSD, espiculado, sem calcificação benigna. PET-CT com SUV moderado, sem metástase óbvia. PS 0, espirometria operável. Qual a conduta mais adequada neste momento? Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória. Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Completar estadiamento e discutir em tumor board biópsia/ressecção diagnóstica-terapêutica conforme probabilidade de malignidade",
     "wrongs": [
-      "Ignorar o nódulo por 5 anos porque todo nódulo <2 cm é benigno em tabagistas idosos sem adiamento injustificado no momento",
-      "Iniciar quimioterapia sistêmica empírica sem diagnóstico histológico nem estadiamento adequado diante do quadro clínico neste caso",
-      "Prescrever apenas antibiótico por 3 dias e alta definitiva sem seguimento radiológico do nódulo diante do quadro clínico sem adiamento injustificado",
-      "Indicar radioterapia craniana profilática isolada como primeiro e único tratamento do nódulo pulmonar diante do quadro clínico na rede assistencial disponível"
+      "Ignorar o nódulo por 5 anos porque todo nódulo <2 cm é benigno em tabagistas idosos sem base fisiopatológica clara por marcador isolado",
+      "Iniciar quimioterapia sistêmica empírica sem histologia nem estadiamento mediastinal adequado sem base fisiopatológica clara",
+      "Prescrever antibiótico por 5 dias e alta definitiva sem qualquer seguimento radiológico do nódulo omitindo a primeira linha adiando medida essencial",
+      "Indicar radioterapia craniana profilática isolada como único tratamento do nódulo pulmonar solitário sem base fisiopatológica clara antecipando etapa indevida"
     ],
-    "explain": "Nódulo suspeito em alto risco exige estadiamento e confirmação/abordagem oncológica. Antibiótico empírico curto e quimioterapia sem histologia são inadequados.",
-    "trap": "Achar que nódulo <2 cm nunca é câncer ou tratar sem diagnóstico."
+    "explain": "Nódulo de alto risco exige estadiamento e confirmação/abordagem oncológica. Antibiótico curto e QT sem histologia são inadequados.",
+    "trap": "Achar que nódulo <2 cm nunca é câncer ou tratar sem diagnóstico histológico."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 17,
     "group": "Pneumologia",
-    "theme": "Câncer de pulmão — SCLC",
-    "stem": "Mulher de 59 anos tabagista com massa hilar, linfonodomegalia mediastinal e síndromes paraneoplásicas. Biópsia: carcinoma de pequenas células. Estadiamento: doença limitada ao hemitórax. Melhor estratégia típica? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Quimiorradioterapia concurrente (quando elegível) com intenção curativa na doença limitada, além de cuidados de suporte e cessação do tabagismo",
+    "theme": "Câncer — SCLC doença limitada",
+    "stem": "Mulher de 58 anos, tabagista intensa, massa hilar com linfonodomegalia mediastinal ipsilateral, SIADH leve. Biópsia: carcinoma de pequenas células. Estadiamento: doença limitada ao hemitórax, sem metástase a distância. PS 1. Melhor estratégia típica? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico.",
+    "correct": "Quimiorradioterapia concurrente com intenção curativa na doença limitada, suporte e cessação do tabagismo alinhado à gravidade e vigilância seriada",
     "wrongs": [
-      "Ressecção cirúrgica ampla de rotina como tratamento padrão de todo SCLC, inclusive com doença mediastinal extensa no momento",
-      "Apenas observação sem tratamento porque o SCLC nunca responde a quimioterapia ou radioterapia nesta etapa após estabilização inicial",
-      "Antibioticoterapia prolongada exclusiva, interpretando a massa hilar como abscesso sem histologia de forma imediata conforme gravidade e recursos locais",
-      "Trombólise sistêmica empírica para reduzir o volume tumoral hilar antes de qualquer biópsia com comunicação à equipe assistencial e reavaliar a resposta"
+      "Ressecção cirúrgica ampla de rotina como padrão de todo SCLC com doença mediastinal extensa sem base fisiopatológica clara",
+      "Observação sem tratamento porque o SCLC nunca responde a quimioterapia ou radioterapia com timing inadequado adiando medida essencial",
+      "Antibioticoterapia prolongada exclusiva, interpretando a massa hilar como abscesso sem histologia sem base fisiopatológica clara com esquema incompleto",
+      "Trombólise sistêmica empírica para reduzir o volume tumoral hilar antes de qualquer biópsia sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "SCLC doença limitada: quimio + RT concurrente é padrão; cirurgia só em casos muito selecionados. É quimiossensível; observação ou antibiótico não tratam neoplasia.",
-    "trap": "Operar todo SCLC ou achar que não há tratamento eficaz."
+    "explain": "SCLC limitado: QT+RT concurrente é padrão; cirurgia só em casos muito selecionados. É quimiossensíveis; observação ou ATB não tratam neoplasia.",
+    "trap": "Operar todo SCLC mediastinal ou achar que não há tratamento eficaz."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 18,
     "group": "Pneumologia",
-    "theme": "Câncer de pulmão — NSCLC metastático",
-    "stem": "Homem de 67 anos com adenocarcinoma pulmonar estágio IV, sem mutação alvo detectada, PD-L1 elevado. Performance status 1. Qual abordagem sistêmica contemporânea é mais coerente? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Considerar imunoterapia (± quimioterapia) conforme biomarcadores e diretrizes, com suporte paliativo integrado desde o início do tratamento no momento",
+    "theme": "Câncer — NSCLC IV biomarcadores",
+    "stem": "Homem de 68 anos com adenocarcinoma pulmonar estágio IV (metástases ósseas), sem driver molecular acionável, PD-L1 70%. Performance status 1, função renal e hepática adequadas. Qual abordagem sistêmica contemporânea é mais coerente? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária. História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "Imunoterapia (± quimioterapia) conforme biomarcadores e diretrizes, com cuidados paliativos integrados desde o início e documentação da resposta",
     "wrongs": [
-      "Indicar apenas vitamina C megadose intravenosa como terapia antineoplásica exclusiva no estágio IV sem adiamento injustificado",
-      "Contraindicar qualquer tratamento sistêmico porque estágio IV nunca se beneficia de terapia moderna e monitoramento contínuo do paciente",
-      "Priorizar pneumonectomia bilateral profilática antes de definir biomarcadores e estadiamento fino com registro no prontuário sem adiamento injustificado",
-      "Tratar apenas com corticosteroide contínuo em dose imunossupressora sem plano oncológico definido com registro no prontuário com comunicação à equipe assistencial"
+      "Usar apenas vitamina C megadose intravenosa como terapia antineoplásica exclusiva no estágio IV sem base fisiopatológica clara",
+      "Contraindicar qualquer sistêmico porque estágio IV nunca se beneficia de imunoterapia moderna por marcador isolado com esquema incompleto",
+      "Indicar pneumonectomia bilateral profilática antes de definir biomarcadores e plano oncológico sem base fisiopatológica clara antecipando etapa indevida",
+      "Manter só prednisona contínua em dose imunossupressora, sem plano oncológico baseado em PD-L1 sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "NSCLC IV: terapia guiada por histologia/biomarcadores (imuno ± QT se sem driver). Suporte paliativo precoce. Cirurgia bilateral e “vitamina C” não são padrões.",
-    "trap": "Negar terapia sistêmica no estágio IV ou ignorar biomarcadores."
+    "explain": "NSCLC IV sem driver e PD-L1 alto: imunoterapia (± QT) é eixo; suporte paliativo precoce. Cirurgia bilateral e “vitamina C” não são padrão.",
+    "trap": "Negar terapia sistêmica no estágio IV ou ignorar biomarcadores/PD-L1."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 19,
     "group": "Pneumologia",
-    "theme": "TB pulmonar — diagnóstico",
-    "stem": "Homem de 35 anos com tosse há 5 semanas, sudorese noturna e perda ponderal. Radiografia: cavidade em ápice direito. Baciloscopia de escarro positiva. HIV negativo. Conduta inicial correta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Isolar conforme protocolo, notificar, coletar culturas e iniciar esquema antifímico padronizado (RHZE) após avaliação de interações e adesão",
+    "theme": "TB pulmonar — RHZE",
+    "stem": "Homem de 36 anos com tosse há 6 semanas, sudorese noturna e perda de 6 kg. RX: cavidade no ápice direito. Duas baciloscopias de escarro positivas. HIV negativo, sem hepatopatia conhecida. Qual a conduta inicial correta? Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos. Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "Isolar/notificar, coletar culturas e iniciar RHZE padronizado após avaliar adesão, interações e toxicidade e documentação da resposta",
     "wrongs": [
-      "Aguardar antibiograma completo por meses antes de iniciar qualquer droga, mantendo o paciente sem tratamento neste serviço",
-      "Tratar apenas com levofloxacino monoterapia por 7 dias como esquema definitivo de tuberculose cavitária sem adiamento injustificado",
-      "Indicar corticosteroide isolado para “fechar a cavidade”, sem fármacos antifímicos no esquema inicial com reassessoramento clínico seriado no momento",
-      "Liberar para trabalho em ambiente fechado sem máscara assim que a primeira dose for prescrita e monitoramento contínuo do paciente com registro no prontuário"
+      "Aguardar antibiograma completo por meses antes de qualquer droga, mantendo o paciente sem tratamento com esquema incompleto",
+      "Tratar com levofloxacino monoterapia por 10 dias como esquema definitivo da TB cavitária bacilífera sem base fisiopatológica clara",
+      "Usar apenas prednisona para “fechar a cavidade”, sem fármacos antifímicos no esquema inicial sem base fisiopatológica clara ignorando contraindicação",
+      "Liberar para trabalho em ambiente fechado sem máscara assim que a primeira dose for prescrita sem base fisiopatológica clara antecipando etapa indevida"
     ],
-    "explain": "TB pulmonar bacilífera: isolamento/notificação, cultura e RHZE padronizado. Monoterapia com FQ induz resistência; atraso injustificado aumenta transmissão.",
-    "trap": "Adiar RHZE esperando antibiograma ou usar monoterapia com FQ."
+    "explain": "TB bacilífera: isolamento, notificação, cultura e RHZE. Monoterapia com FQ induz resistência; atraso injustificado mantém transmissão.",
+    "trap": "Adiar RHZE esperando antibiograma ou usar monoterapia com fluoroquinolona."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 20,
     "group": "Pneumologia",
     "theme": "ILTB — tratamento",
-    "stem": "Profissional de saúde assintomática, radiografia normal, IGRA positivo após contato com TB bacilífera. HIV negativo, sem hepatopatia. Qual a conduta recomendada para infecção latente? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Tratar infecção latente com esquema recomendado (ex.: isoniazida ou rifampicina conforme protocolo), após excluir doença ativa e orientar adesão/hepatotoxicidade",
+    "stem": "Profissional de saúde de 31 anos, assintomática, RX de tórax normal, IGRA positivo 8 semanas após contato domiciliar com TB bacilífera. HIV negativo, TGO/TGP normais, sem gestação. Qual a conduta recomendada para infecção latente por tuberculose? O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade.",
+    "correct": "Tratar ILTB com esquema preconizado (isoniazida ou rifampicina conforme protocolo), após excluir doença ativa e vigilância seriada alinhado à gravidade",
     "wrongs": [
-      "Ignorar o IGRA positivo porque a radiografia é normal e nunca há risco de progressão para TB ativa nesta etapa de forma imediata",
-      "Iniciar RHZE completo de 6 meses como se fosse tuberculose pulmonar cavitária bacilífera conforme o protocolo com registro no prontuário",
-      "Indicar quimioterapia oncológica preventiva por IGRA positivo em profissional de saúde assintomática com registro no prontuário após estabilização inicial",
-      "Prescrever apenas vitamina D sem avaliação, como substituto do tratamento da infecção latente na rede assistencial disponível com comunicação à equipe assistencial"
+      "Ignorar o IGRA porque RX normal elimina qualquer risco futuro de progressão para TB ativa por marcador isolado com timing inadequado",
+      "Iniciar RHZE completo de 6 meses como se fosse tuberculose pulmonar cavitária bacilífera adiando medida essencial com esquema incompleto",
+      "Indicar quimioterapia oncológica preventiva apenas pelo IGRA positivo em profissional assintomática com iatrogenia evitável sem base fisiopatológica clara",
+      "Prescrever só vitamina D em altas doses como substituto do tratamento da infecção latente sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "ILTB (IGRA/PT positivo, sem doença ativa) deve ser tratada em contatos/risco, com esquemas curtos ou INH conforme protocolo. RHZE é para doença ativa.",
-    "trap": "Tratar ILTB com RHZE de doença ativa ou não tratar contato com IGRA+."
+    "explain": "ILTB (IGRA/PT+, sem doença ativa) deve ser tratada em contatos/risco. RHZE é para doença ativa; não tratar contato IGRA+ é erro clássico.",
+    "trap": "Tratar ILTB com RHZE de doença ativa ou deixar contato IGRA+ sem tratamento."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 21,
     "group": "Pneumologia",
-    "theme": "TB — IRIS HIV",
-    "stem": "Paciente com HIV/TB pulmonar inicia TARV após antifímicos e desenvolve piora febril e aumento de infiltrados com carga viral caindo e CD4 subindo. Baciloscopia em queda. Hipótese e conduta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Considerar IRIS paradoxal: manter TB e TARV na maioria dos casos, investigar falha/resistência se necessário e usar anti-inflamatório conforme gravidade",
+    "theme": "TB — IRIS no HIV",
+    "stem": "Homem com HIV/TB pulmonar inicia TARV 2 semanas após RHZE e, em 10 dias, tem nova febre e aumento de infiltrados. Carga viral em queda, CD4 em ascensão, baciloscopia em redução, adesão boa. Qual a hipótese principal e a conduta habitual? História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário. Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória.",
+    "correct": "IRIS paradoxal: manter TB e TARV na maioria dos casos, excluir falha/resistência se necessário e anti-inflamatório conforme gravidade",
     "wrongs": [
-      "Suspender definitivamente a TARV e o esquema antifímico em todo paciente com febre após início do tratamento nesta etapa",
-      "Diagnosticar automaticamente câncer de pulmão e iniciar quimioterapia sem nova investigação microbiológica no momento neste caso",
-      "Trocar todo esquema para anfotericina B empírica sem considerar IRIS nem reavaliar adesão/resistência diante do quadro clínico de forma imediata",
-      "Indicar pneumonectomia imediata como tratamento padrão da piora paradoxal pós-TARV na coinfecção na rede assistencial disponível com registro no prontuário"
+      "Suspender definitivamente TARV e RHZE em todo paciente com febre após o início do tratamento sem correlacionar gravidade",
+      "Diagnosticar câncer de pulmão automaticamente e iniciar QT sem nova investigação microbiológica sem base fisiopatológica clara",
+      "Trocar o esquema inteiro por anfotericina B empírica sem considerar IRIS nem reavaliar resistência por marcador isolado adiando medida essencial",
+      "Indicar pneumonectomia imediata como tratamento padrão da piora paradoxal pós-TARV reduzindo terapia cedo demais com timing inadequado por marcador isolado"
     ],
-    "explain": "IRIS paradoxal é comum após TARV; em geral mantêm-se TB+TARV, com AINE/corticoide se grave, após excluir resistência/outra infecção. Não se opera de rotina.",
-    "trap": "Parar TARV/TB automaticamente diante de IRIS sem avaliar gravidade."
+    "explain": "IRIS paradoxal é frequente após TARV; em geral mantêm-se TB+TARV, com AINE/corticoide se grave, após excluir resistência/outra infecção.",
+    "trap": "Parar TARV/TB automaticamente diante de IRIS sem avaliar gravidade e diferenciais."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 22,
     "group": "Pneumologia",
     "theme": "Intersticiais — FPI",
-    "stem": "Homem de 72 anos, ex-tabagista, dispneia progressiva e crepitações em velcro bibasais. TCAR: reticulado subpleural, faveolamento basal, sem consolidações migratórias. Sorologias autoimunes negativas. Diagnóstico mais provável? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
-    "correct": "Fibrose pulmonar idiopática com padrão PEE típico; referenciar a centro especializado e discutir antifibróticos e suporte (O2, reabilitação, vacinas)",
+    "stem": "Homem de 74 anos, ex-tabagista, dispneia progressiva há 14 meses e crepitações em velcro bibasais. TCAR: reticulado subpleural, faveolamento basal, sem consolidações migratórias. FAN/ANCA/anti-CCP negativos. Qual o diagnóstico mais provável e o encaminhamento? Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "Fibrose pulmonar idiopática com padrão PEE típico; referenciar a centro especializado e discutir antifibróticos e suporte e documentação da resposta",
     "wrongs": [
-      "Asma eosinofílica pura, tratando apenas com SABA sob demanda sem avaliação de fibrose intersticial na rede assistencial disponível",
-      "Derrame pleural transudativo bilateral como causa única dos crepitantes em velcro e do faveolamento no momento sem adiamento injustificado",
-      "TEP crônico exclusivo, indicando trombólise imediata sem angiografia nem avaliação de padrão PEE e reavaliar a resposta e monitoramento contínuo do paciente",
-      "Pneumonia bacteriana simples de resolução esperada em 48 h com amoxicilina isolada ambulatorial na rede assistencial disponível conforme gravidade e recursos locais"
+      "Asma eosinofílica pura, tratando só com SABA sob demanda sem avaliar fibrose intersticial progressiva reduzindo terapia cedo demais",
+      "Derrame pleural transudativo bilateral como causa única dos crepitantes em velcro e do faveolamento com timing inadequado por marcador isolado",
+      "TEP crônico exclusivo, indicando trombólise imediata sem angiografia nem avaliação do padrão PEE reduzindo terapia cedo demais sem base fisiopatológica clara",
+      "Pneumonia bacteriana simples a resolver em 48 h com amoxicilina ambulatorial isolada sem base fisiopatológica clara com esquema incompleto ignorando contraindicação"
     ],
-    "explain": "Idade, crepitantes em velcro e PEE típico (reticulado/faveolamento subpleural basal) sugerem FPI. Manejo: centro especializado, antifibróticos e suporte; antibiótico curto não trata fibrose.",
+    "explain": "Idade, velcro e PEE típico (reticulado/faveolamento subpleural basal) sugerem FPI. Manejo: centro especializado, antifibróticos e suporte; ATB curto não trata fibrose.",
     "trap": "Tratar FPI como pneumonia bacteriana ou asma simples."
   },
   {
@@ -356,15 +356,15 @@
     "n": 23,
     "group": "Pneumologia",
     "theme": "Intersticiais — sarcoidose",
-    "stem": "Mulher de 34 anos com dispneia leve, eritema nodoso e adenomegalia hilar bilateral na radiografia. Biópsia: granulomas não caseosos. Função pulmonar pouco alterada. Conduta inicial típica? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Estadiar envolvimento sistêmico e, se doença leve/estável sem disfunção grave, observar com seguimento; corticosteroide se houver indicação por órgão-alvo",
+    "stem": "Mulher de 33 anos com dispneia leve, eritema nodoso e adenomegalia hilar bilateral. Biópsia de linfonodo: granulomas não caseosos; BAAR negativo. Espirometria pouco alterada, SpO2 97%. Conduta inicial típica na sarcoidose pulmonar leve? Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção. Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária.",
+    "correct": "Estadiar órgãos-alvo e, se doença leve/estável sem disfunção grave, observar com seguimento; corticoide se houver indicação alinhado à gravidade",
     "wrongs": [
-      "Iniciar RHZE imediatamente em todo granuloma, sem distinguir sarcoidose de tuberculose caseosa ativa diante do quadro clínico",
-      "Indicar transplantação pulmonar urgente em toda adenomegalia hilar bilateral de adultos jovens sem adiamento injustificado nesta etapa",
-      "Prescrever quimioterapia citotóxica de rotina na primeira consulta sem avaliar gravidade orgânica na rede assistencial disponível e reavaliar a resposta",
-      "Contraindicar qualquer seguimento porque eritema nodoso exclui doença pulmonar intersticial com comunicação à equipe assistencial na rede assistencial disponível"
+      "Iniciar RHZE imediatamente em todo granuloma, sem distinguir sarcoidose de tuberculose caseosa sem base fisiopatológica clara",
+      "Indicar transplante pulmonar urgente em toda adenomegalia hilar bilateral de adulto jovem por marcador isolado liberando paciente grave",
+      "Prescrever quimioterapia citotóxica de rotina na primeira consulta sem avaliar gravidade orgânica fora da janela terapêutica sem correlacionar gravidade",
+      "Dispensar seguimento porque eritema nodoso exclui qualquer envolvimento pulmonar intersticial sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "Sarcoidose com Lofgren/leve pode ser observada; corticoide quando há disfunção/ameaça a órgão. RHZE não trata sarcoide; TB deve ser excluída quando pertinente.",
+    "explain": "Sarcoidose leve/Lofgren pode ser observada; corticoide quando há ameaça a órgão. RHZE não trata sarcoide; TB deve ser excluída quando pertinente.",
     "trap": "Tratar sarcoidose automaticamente como TB com RHZE."
   },
   {
@@ -372,15 +372,15 @@
     "n": 24,
     "group": "Pneumologia",
     "theme": "Intersticiais — hipersensibilidade",
-    "stem": "Homem de 48 anos, criador de aves, tosse e dispneia progressivas. TCAR: nódulos centrolobulares e vidro fosco. IgG precipitinas positivas ao antígeno aviário. Melhor conduta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Remover a exposição ao antígeno (aves), avaliar corticosteroide conforme gravidade e acompanhar função pulmonar e imagem seriada no momento",
+    "stem": "Homem de 49 anos, criador de pássaros há 8 anos, tosse seca e dispneia progressiva há 5 meses. TCAR: nódulos centrolobulares e vidro fosco. Precipitinas IgG positivas ao antígeno aviário. SpO2 93% em ar. Qual a melhor conduta? Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória. Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Afastar a exposição às aves, avaliar corticosteroide conforme gravidade e acompanhar função pulmonar e imagem e documentação da resposta",
     "wrongs": [
-      "Manter o contato diário com aves e tratar apenas com antitussígeno seco de longa duração no momento e reavaliar a resposta",
-      "Indicar pneumonectomia bilateral profilática antes de qualquer tentativa de remoção do antígeno no momento diante do quadro clínico",
-      "Iniciar anticoagulação plena empírica como terapia específica da pneumonite de hipersensibilidade neste serviço e monitoramento contínuo do paciente",
-      "Usar apenas oxigênio a 100% domiciliar sem afastar a exposição ambiental causal identificada sem adiamento injustificado com reassessoramento clínico seriado"
+      "Manter contato diário com as aves e tratar apenas com antitussígeno seco de longa duração sem base fisiopatológica clara",
+      "Indicar pneumonectomia bilateral profilática antes de tentar remover o antígeno ambiental com timing inadequado por marcador isolado",
+      "Iniciar anticoagulação plena empírica como terapia específica da pneumonite de hipersensibilidade ignorando contraindicação liberando paciente grave",
+      "Prescrever só O2 a 100% domiciliar sem afastar a exposição causal já identificada reduzindo terapia cedo demais com esquema incompleto com iatrogenia evitável"
     ],
-    "explain": "Pneumonite de hipersensibilidade: afastamento do antígeno é a pedra angular; corticoide em formas sintomáticas/graves. Cirurgia e anticoagulação não são tratamentos específicos.",
+    "explain": "Pneumonite de hipersensibilidade: remoção do antígeno é a base; corticoide em formas sintomáticas/graves. Cirurgia e anticoagulação não são tratamentos específicos.",
     "trap": "Tratar PH sem remover a exposição ao antígeno."
   },
   {
@@ -388,15 +388,15 @@
     "n": 25,
     "group": "Pneumologia",
     "theme": "Micoses — paracoccidioidomicose",
-    "stem": "Homem de 52 anos, zona rural, tosse crônica, perda de peso e lesão mucosa oral. Radiografia com infiltrados reticulonodulares. Pesquisa: “piloto de wheel”/células multibrotantes. Tratamento típico? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Tratar paracoccidioidomicose com itraconazol (formas leves/moderadas) ou anfotericina B nas graves, conforme gravidade e comorbidades no momento",
+    "stem": "Homem de 54 anos, zona rural de SP, tosse crônica, emagrecimento e úlcera em mucosa oral. RX com infiltrados reticulonodulares. Exame direto: células multibrotantes em “piloto de roda”. HIV negativo. Qual o tratamento típico conforme gravidade? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico.",
+    "correct": "Itraconazol nas formas leve/moderada ou anfotericina B nas graves, com seguimento clínico-radiológico prolongado e documentação da resposta",
     "wrongs": [
-      "Usar apenas amoxicilina por 5 dias como esquema curativo definitivo da infecção fúngica profunda sem adiamento injustificado",
-      "Indicar RIPE exclusivo sem antifúngico, assumindo sempre tuberculose diante de qualquer infiltrado crônico com registro no prontuário",
-      "Prescrever nistatina oral tópica isolada como tratamento sistêmico da doença pulmonar disseminada após estabilização inicial com registro no prontuário",
-      "Observar sem tratamento porque lesões orais excluem envolvimento pulmonar na paracoccidioidomicose e monitoramento contínuo do paciente diante do quadro clínico"
+      "Amoxicilina por 7 dias como esquema curativo definitivo da infecção fúngica profunda sistêmica reduzindo terapia cedo demais",
+      "RHZE exclusivo sem antifúngico, assumindo TB em todo infiltrado crônico de trabalhador rural por marcador isolado com esquema incompleto",
+      "Nistatina tópica oral isolada como tratamento sistêmico da doença pulmonar disseminada sem base fisiopatológica clara fora da janela terapêutica",
+      "Observação sem antifúngico porque lesão oral exclui envolvimento pulmonar na paracoccidioidomicose reduzindo terapia cedo demais sem base fisiopatológica clara"
     ],
-    "explain": "Paracoccidioidomicose: itraconazol na maioria; anfotericina nas formas graves. Antibiótico bacteriano e nistatina tópica não curam doença sistêmica; TB é diferencial, não automático.",
+    "explain": "PCM: itraconazol na maioria; anfotericina nas graves. Antibiótico bacteriano e nistatina tópica não curam doença sistêmica; TB é diferencial, não automático.",
     "trap": "Tratar PCM só com antibiótico bacteriano ou nistatina tópica."
   },
   {
@@ -404,15 +404,15 @@
     "n": 26,
     "group": "Pneumologia",
     "theme": "Micoses — histoplasmose",
-    "stem": "Após exposição a cavernas com morcegos, três amigos desenvolvem febre, tosse e infiltrados difusos. Um imunocompetente tem sintomas moderados persistentes. Antígeno urinário sugestivo. Conduta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Considerar histoplasmose aguda; em doença moderada/persistente, tratar com itraconazol e suporte, reservando anfotericina para formas graves",
+    "stem": "Após exploração de caverna com morcegos, três adultos têm febre, tosse e infiltrados difusos. Um imunocompetente mantém sintomas moderados há 3 semanas, SpO2 94%, antígeno urinário sugestivo de Histoplasma. Qual a conduta mais adequada para este paciente? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária.",
+    "correct": "Tratar histoplasmose aguda moderada/persistente com itraconazol e suporte; reservar anfotericina para formas graves e documentação da resposta",
     "wrongs": [
-      "Indicar esquema RHZE em todos os expostos sem avaliação fúngica, mesmo com epidemiologia de caverna com registro no prontuário",
-      "Prescrever oseltamivir isolado como tratamento definitivo de pneumonia após exposição a morcegos no momento sem adiamento injustificado",
-      "Contraindicar antifúngico em sintomas moderados persistentes, liberando sem seguimento clínico conforme o protocolo e monitoramento contínuo do paciente",
-      "Realizar lobectomia imediata em todos os contatos assintomáticos da mesma expedição à caverna com comunicação à equipe assistencial conforme o protocolo"
+      "Iniciar RHZE em todos os expostos sem avaliação fúngica, só pela epidemiologia de caverna sem base fisiopatológica clara",
+      "Usar oseltamivir isolado como terapia definitiva da pneumonia pós-exposição a morcegos antecipando etapa indevida com timing inadequado",
+      "Contraindicar antifúngico em sintomas moderados persistentes e liberar sem seguimento sem base fisiopatológica clara reduzindo terapia cedo demais",
+      "Indicar lobectomia imediata em contatos assintomáticos da mesma expedição à caverna reduzindo terapia cedo demais com timing inadequado fora da janela terapêutica"
     ],
-    "explain": "Histoplasmose pós-exposição a cavernas: formas leves podem ser observadas; moderadas → itraconazol; graves → anfotericina. RHZE/oseltamivir não são específicos.",
+    "explain": "Histoplasmose: leves podem observar; moderadas → itraconazol; graves → anfotericina. RHZE/oseltamivir não são específicos.",
     "trap": "Tratar histoplasmose como TB ou influenza sem considerar antifúngico."
   },
   {
@@ -420,15 +420,15 @@
     "n": 27,
     "group": "Pneumologia",
     "theme": "Micoses — criptococose",
-    "stem": "Paciente com HIV, CD4 40, cefaleia e nódulos pulmonares. Antígeno criptocócico sérico positivo; LCR com abertura elevada. Além do manejo neurológico, qual o princípio terapêutico? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Tratar criptococose disseminada com anfotericina ± flucitosina na indução, depois fluconazol de consolidação/manutenção, coordenando com a TARV",
+    "stem": "Paciente com AIDS, CD4 35 cél/mm³, cefaleia progressiva e nódulos pulmonares. Antígeno criptocócico sérico positivo; LCR com pressão de abertura elevada e tinta da Índia positiva. Além do manejo da PIC, qual o princípio terapêutico? Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos. Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "Indução com anfotericina ± flucitosina, depois fluconazol de consolidação/manutenção, coordenando o timing da TARV mantendo suporte adequado",
     "wrongs": [
-      "Usar apenas corticosteroide isolado sem antifúngico na meningite criptocócica do paciente com AIDS diante do quadro clínico",
-      "Tratar só com nistatina tópica oral, suficiente para limpar infecção do sistema nervoso central e monitoramento contínuo do paciente",
-      "Indicar pneumonectomia como terapia de primeira linha da criptococose meníngea em HIV avançado com registro no prontuário sem adiamento injustificado",
-      "Aguardar CD4 >500 sem antifúngico, pois a reconstituição isolada cura a infecção do LCR na rede assistencial disponível com comunicação à equipe assistencial"
+      "Usar só dexametasona sem antifúngico na meningite criptocócica do paciente com AIDS avançada sem base fisiopatológica clara",
+      "Tratar com nistatina tópica oral, suficiente para erradicar infecção do sistema nervoso central reduzindo terapia cedo demais",
+      "Indicar pneumonectomia como primeira linha da criptococose meníngea em HIV avançado sem base fisiopatológica clara sem correlacionar gravidade",
+      "Aguardar CD4 >500 sem antifúngico, pois reconstituição isolada cura a infecção do LCR sem base fisiopatológica clara ignorando contraindicação"
     ],
-    "explain": "Criptococose meníngea/disseminada no HIV: indução com anfotericina (±5-FC), depois fluconazol; manejo da PIC e timing da TARV. Corticoide/nistatina não substituem antifúngico sistêmico.",
+    "explain": "Criptococose meníngea/disseminada: indução anfotericina (±5-FC), depois fluconazol; manejar PIC e timing da TARV. Corticoide/nistatina não substituem antifúngico sistêmico.",
     "trap": "Tratar criptococose do SNC só com corticoide ou sem indução adequada."
   },
   {
@@ -436,31 +436,31 @@
     "n": 28,
     "group": "Pneumologia",
     "theme": "PAC — CURB-65",
-    "stem": "Homem de 78 anos com pneumonia adquirida na comunidade: confusão, ureia 55 mg/dL, FR 32, PA 95/60, SpO2 91%. Radiografia com consolidação lobar. Qual estratificação e local de tratamento? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "CURB-65 elevado: indicar internação hospitalar (considerar UTI se gravidade), oxigênio, coleta de culturas quando pertinente e antibiótico empírico precoce",
+    "stem": "Homem de 79 anos com pneumonia adquirida na comunidade: confusão mental nova, ureia 58 mg/dL, FR 33, PA 92/58, SpO2 90% em ar. RX com consolidação lobar direita. Qual estratificação e local de tratamento mais adequados? O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade. Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção.",
+    "correct": "CURB-65 alto: internar (considerar UTI se gravidade), oxigênio, culturas pertinentes e antibiótico empírico precoce e documentação da resposta",
     "wrongs": [
-      "Alta ambulatorial com antitussígeno apenas, pois consolidação lobar nunca exige antibiótico sistêmico com registro no prontuário",
-      "Aguardar hemocultura negativa por 72 h antes da primeira dose de antibiótico na pneumonia grave no momento na rede assistencial disponível",
-      "Indicar antifúngico azólico empírico de rotina em toda PAC do idoso sem fator de risco fúngico e reavaliar a resposta com reassessoramento clínico seriado",
-      "Contraindicar oxigênio porque SpO2 91% ainda não configura hipoxemia clinicamente relevante e monitoramento contínuo do paciente com reassessoramento clínico seriado"
+      "Alta ambulatorial só com antitussígeno, pois consolidação lobar nunca exige antibiótico sistêmico sem base fisiopatológica clara",
+      "Aguardar hemocultura negativa por 72 h antes da primeira dose de antibiótico na PAC grave por marcador isolado como única medida adotada",
+      "Iniciar azólico antifúngico empírico de rotina em toda PAC do idoso sem fator de risco fúngico sem base fisiopatológica clara sem correlacionar gravidade",
+      "Contraindicar oxigênio porque SpO2 90% ainda não configura hipoxemia clinicamente relevante sem base fisiopatológica clara antecipando etapa indevida"
     ],
-    "explain": "CURB-65 alto → internação; antibiótico precoce e O2 são pilares. Atrasar ATB por culturas piora desfecho; antifúngico empírico não é rotina na PAC típica.",
-    "trap": "Tratar PAC grave ambulatorialmente ou atrasar antibiótico."
+    "explain": "CURB-65 elevado → internação; ATB precoce e O2 são pilares. Atrasar ATB por culturas piora desfecho; antifúngico empírico não é rotina na PAC típica.",
+    "trap": "Tratar PAC grave ambulatorialmente ou atrasar a primeira dose de antibiótico."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 29,
     "group": "Pneumologia",
-    "theme": "PAC — tratamento ambulatorial",
-    "stem": "Mulher de 42 anos previamente hígida, febre e tosse há 3 dias, FR 18, SpO2 97%, PA 120/80, sem confusão. RX: consolidação periférica leve. CURB-65 0. Conduta ambulatorial adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Antibiótico empírico oral conforme diretriz local (ex.: amoxicilina), analgesia/antitérmico, orientações de alarme e reavaliação precoce se piora",
+    "theme": "PAC — ambulatorial",
+    "stem": "Mulher de 43 anos previamente hígida, febre e tosse produtiva há 3 dias. FR 18, PA 118/76, SpO2 97% em ar, lúcida. RX: consolidação periférica leve. CURB-65 0, sem comorbidades. Qual a conduta ambulatorial adequada? História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário. Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória.",
+    "correct": "Antibiótico oral empírico conforme diretriz (ex.: amoxicilina), antitérmico, orientações de alarme e reavaliação se piora e vigilância seriada",
     "wrongs": [
-      "Internação em UTI obrigatória em toda consolidação radiológica, independentemente do CURB-65 zero e reavaliar a resposta",
-      "Observação sem antibiótico por 14 dias porque adultos jovens nunca complicam pneumonia bacteriana na rede assistencial disponível",
-      "Iniciar vancomicina + meropenem ambulatoriais de rotina na PAC sem critérios de gravidade hospitalar nesta etapa na rede assistencial disponível",
-      "Indicar toracotomia imediata para ressecar a consolidação periférica antes de qualquer antibiótico diante do quadro clínico preservando efetividade clínica"
+      "Internação em UTI obrigatória em toda consolidação radiológica, mesmo com CURB-65 zero por marcador isolado liberando paciente grave",
+      "Observação sem antibiótico por 14 dias porque adulto jovem nunca complica pneumonia bacteriana sem base fisiopatológica clara",
+      "Vancomicina + meropenem ambulatoriais de rotina na PAC sem critérios de gravidade hospitalar reduzindo terapia cedo demais com timing inadequado",
+      "Toracotomia imediata para ressecar a consolidação periférica antes de qualquer antibiótico sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "PAC de baixo risco: ATB oral (beta-lactâmico conforme guia), retorno se alarme. UTI e carbapenêmicos não são primeira linha ambulatorial em hígidos.",
+    "explain": "PAC de baixo risco: ATB oral (beta-lactâmico conforme guia) e retorno se alarme. UTI e carbapenêmicos não são primeira linha ambulatorial em hígidos.",
     "trap": "Supertratar PAC leve com meropenem ou negar antibiótico."
   },
   {
@@ -468,15 +468,15 @@
     "n": 30,
     "group": "Pneumologia",
     "theme": "PAC — aspiração",
-    "stem": "Idoso com AVC prévio, má higiene oral, febre e consolidação em lobo inferior direito após episódio de engasgo. SpO2 92%. Qual o foco etiológico e terapêutico inicial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Pneumonia aspirativa: suporte oxigenatório, antibiótico com cobertura anaeróbia/oral conforme gravidade e prevenção de novos eventos aspirativos no momento",
+    "stem": "Idoso de 81 anos com AVC prévio e disfagia, febre e consolidação em LID após engasgo documentado ontem. SpO2 91% em ar, FR 26, PA 110/70. Má higiene oral. Qual o foco etiológico e o tratamento inicial? Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido. Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico.",
+    "correct": "Pneumonia aspirativa: O2, antibiótico com cobertura de flora oral/anaeróbios conforme gravidade e prevenção de nova aspiração mantendo suporte adequado",
     "wrongs": [
-      "Tratar apenas com oseltamivir, assumindo influenza em todo idoso com febre pós-engasgo documentado na rede assistencial disponível",
-      "Indicar trombólise pulmonar empírica sem imagem vascular, confundindo aspiração com TEP agudo na rede assistencial disponível no momento",
-      "Contraindicar antibiótico porque aspiração química nunca se associa a infecção bacteriana secundária com comunicação à equipe assistencial de forma imediata",
-      "Realizar lobectomia imediata em toda consolidação basal direita antes de suporte e antibiótico com comunicação à equipe assistencial com registro no prontuário"
+      "Tratar só com oseltamivir, assumindo influenza em todo idoso febril após engasgo documentado com timing inadequado por marcador isolado",
+      "Indicar trombólise empírica sem angio-TC, confundindo aspiração com TEP agudo sem base fisiopatológica clara reduzindo terapia cedo demais",
+      "Contraindicar antibiótico porque aspiração química nunca evolui com infecção bacteriana secundária reduzindo terapia cedo demais sem correlacionar gravidade",
+      "Realizar lobectomia imediata em toda consolidação basal direita antes de suporte e ATB reduzindo terapia cedo demais sem base fisiopatológica clara"
     ],
-    "explain": "Aspiração + consolidação dependente sugere pneumonia aspirativa: ATB (anaeróbios/flora oral conforme cenário), O2 e prevenção. Cirurgia de urgência não é padrão.",
+    "explain": "Aspiração + consolidação dependente: pneumonia aspirativa — ATB (flora oral/anaeróbios conforme cenário), O2 e prevenção. Cirurgia de urgência não é padrão.",
     "trap": "Negar antibiótico na pneumonia aspirativa infecciosa ou operar de rotina."
   },
   {
@@ -484,269 +484,269 @@
     "n": 31,
     "group": "Pneumologia",
     "theme": "Abscesso pulmonar",
-    "stem": "Homem de 50 anos etilista com febre há 3 semanas, tosse produtiva fétida e cavidade com nível hidroaéreo em lobo superior na TC. Hemoculturas pendentes. Conduta inicial preferencial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Antibiótico prolongado com cobertura anaeróbia/flora oral, drenagem postural/fisioterapia e reavaliação; cirurgia se falha ou complicações selecionadas",
+    "stem": "Homem de 51 anos, etilista, febre há 3 semanas, tosse com escarro fétido e cavidade com nível hidroaéreo em LSE na TC. Hemoculturas pendentes, SpO2 94%. Qual a conduta inicial preferencial? Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção. Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária.",
+    "correct": "Antibiótico prolongado com cobertura anaeróbia/flora oral, drenagem postural e reavaliação; cirurgia se falha ou complicação alinhado à gravidade",
     "wrongs": [
-      "Pneumonectomia imediata em todo abscesso antes de qualquer tentativa de antibioticoterapia adequada nesta etapa neste serviço",
-      "Tratamento apenas com antitussígeno seco, fechando a cavidade sem antibiótico sistêmico prolongado no momento diante do quadro clínico",
-      "Esquema RHZE isolado sem considerar abscesso piogênico, mesmo com secreção fétida típica anaeróbia com registro no prontuário após estabilização inicial",
-      "Anticoagulação plena como terapia específica do abscesso cavitário com nível hidroaéreo e monitoramento contínuo do paciente conforme gravidade e recursos locais"
+      "Pneumonectomia imediata em todo abscesso antes de tentar antibioticoterapia adequada e prolongada sem correlacionar gravidade",
+      "Tratar só com antitussígeno seco, “fechando” a cavidade sem antibiótico sistêmico prolongado com timing inadequado por marcador isolado",
+      "Iniciar RHZE isolado sem considerar abscesso piogênico, mesmo com secreção fétida típica reduzindo terapia cedo demais sem base fisiopatológica clara",
+      "Anticoagulação plena como terapia específica do abscesso cavitário com nível hidroaéreo sem base fisiopatológica clara fora da janela terapêutica"
     ],
-    "explain": "Abscesso piogênico: ATB prolongado (± anaeróbios) e drenagem postural; cirurgia reservada a falha/complicações. RHZE não é padrão sem TB; cirurgia não é primeira linha.",
-    "trap": "Operar abscesso de imediato ou tratar só com RIPE sem critério."
+    "explain": "Abscesso piogênico: ATB prolongado (± anaeróbios) e drenagem postural; cirurgia se falha/complicações. RHZE não é padrão sem TB.",
+    "trap": "Operar abscesso de imediato ou tratar só com RIPE sem critério de TB."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 32,
     "group": "Pneumologia",
-    "theme": "Abscesso — diferencial TB",
-    "stem": "Paciente com cavidade apical e síndrome constitucional. Diferente do abscesso anaeróbio clássico (fétido, nível hidroaéreo pós-aspiração), há hemoptise e baciloscopia positiva. Conduta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Tratar como tuberculose pulmonar cavitária com esquema antifímico, isolamento e investigação de contatos, sem rotular como abscesso anaeróbio simples",
+    "theme": "Espirometria — obstrução",
+    "stem": "Homem de 61 anos, 35 maços-ano, dispneia aos esforços. Espirometria pós-broncodilatador: VEF1/CVF 0,57, VEF1 61%, CVF 88%; resposta ao BD <12% e <200 mL. Qual a interpretação funcional e o foco de manejo? Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória. Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Obstrução fixa compatível com DPOC; correlacionar sintomas/exacerbações e iniciar broncodilatador de manutenção e documentação da resposta",
     "wrongs": [
-      "Manter apenas drenagem postural e amoxicilina curta, ignorando baciloscopia positiva e isolamento diante do quadro clínico",
-      "Indicar antifúngico azólico empírico exclusivo, sem antifímicos, apesar da baciloscopia positiva e reavaliar a resposta no momento",
-      "Prescrever AAS em alta dose como tratamento etiológico da cavidade apical bacilífera com comunicação à equipe assistencial e reavaliar a resposta",
-      "Liberar o paciente para enfermaria coletiva aberta sem precauções enquanto expectora bacilos com comunicação à equipe assistencial sem adiamento injustificado"
+      "Restrição pura porque a CVF está “quase normal”, excluindo qualquer doença obstrutiva crônica sem correlacionar gravidade",
+      "Asma totalmente controlada só pelo VEF1 61%, sem avaliar sintomas, técnica ou necessidade de CSI sem base fisiopatológica clara",
+      "Exame inválido, pois relação <0,70 nunca deve ser usada para definir obstrução em adultos sem base fisiopatológica clara fora da janela terapêutica",
+      "Indicação de intubação eletiva ambulatorial baseada apenas na relação VEF1/CVF de 0,57 sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "Cavidade + baciloscopia+ = TB: RHZE, isolamento e contatos. Abscesso anaeróbio tem outro contexto (aspiração/fétido) e não substitui o manejo da TB.",
-    "trap": "Tratar TB cavitária como abscesso anaeróbio com antibiótico curto."
+    "explain": "VEF1/CVF <0,70 pós-BD = obstrução; VEF1 gradua gravidade. CVF normal não define restrição. Manejo GOLD depende de sintomas/exacerbações.",
+    "trap": "Ler obstrução como restrição ou ignorar o critério VEF1/CVF."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 33,
     "group": "Pneumologia",
-    "theme": "Espirometria — obstrução",
-    "stem": "Homem de 60 anos tabagista com dispneia. Espirometria: VEF1/CVF 0,58 pós-BD, VEF1 62%, CVF 90%, resposta broncodilatadora <12%. Interpretação funcional mais correta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Padrão obstrutivo fixo compatível com DPOC; correlacionar com clínica, graduar VEF1 e iniciar broncodilatador de manutenção conforme sintomas/exacerbações",
-    "wrongs": [
-      "Padrão restritivo puro porque a CVF está normal, excluindo qualquer doença obstrutiva crônica na rede assistencial disponível",
-      "Asma totalmente controlada só pelo VEF1 62%, sem necessidade de avaliar sintomas ou técnica inalatória na rede assistencial disponível",
-      "Exame inválido obrigatoriamente, pois relação <0,7 nunca é usada no diagnóstico de obstrução conforme o protocolo com comunicação à equipe assistencial",
-      "Indicação de intubação eletiva ambulatorial baseada apenas na relação VEF1/CVF de 0,58 e monitoramento contínuo do paciente com reassessoramento clínico seriado"
-    ],
-    "explain": "VEF1/CVF <0,7 pós-BD = obstrução; VEF1 gradua gravidade. CVF normal não define restrição. Manejo depende de sintomas/exacerbações GOLD, não de intubação ambulatorial.",
-    "trap": "Ler obstrução como restrição ou ignorar a relação VEF1/CVF."
-  },
-  {
-    "idPrefix": "cli-pneumo",
-    "n": 34,
-    "group": "Pneumologia",
     "theme": "Espirometria — restrição",
-    "stem": "Mulher de 55 anos com dispneia e TCAR sugestiva de doença intersticial. Espirometria: VEF1/CVF 0,85, VEF1 70%, CVF 65%. Capacidade vital reduzida. Próximo passo funcional útil? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Solicitar volumes pulmonares (CPT) e DLCO para confirmar restrição e gravidade, integrando com imagem e avaliação de causas intersticiais no momento",
+    "stem": "Mulher de 56 anos com dispneia e TCAR sugestiva de doença intersticial. Espirometria: VEF1/CVF 0,84, VEF1 68%, CVF 62%. Qual o próximo passo funcional mais útil para confirmar o padrão? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade.",
+    "correct": "Solicitar volumes pulmonares (CPT) e DLCO para confirmar restrição e gravidade, integrando com a imagem alinhado à gravidade e vigilância",
     "wrongs": [
-      "Diagnosticar DPOC GOLD 4 apenas pela CVF reduzida, iniciando LAMA sem avaliar relação VEF1/CVF preservando efetividade clínica",
-      "Concluir asma grave só pelo VEF1/CVF 0,85, indicando corticosteroide oral contínuo vitalício na rede assistencial disponível no momento",
-      "Dispensar qualquer prova funcional adicional porque espirometria isolada sempre mede CPT e DLCO com comunicação à equipe assistencial de forma imediata",
-      "Indicar trombólise empírica por CVF baixa, sem angiotomografia nem probabilidade de TEP com comunicação à equipe assistencial na rede assistencial disponível"
+      "Diagnosticar DPOC GOLD 4 só pela CVF baixa, iniciando LAMA sem olhar a relação VEF1/CVF sem benefício claro fora da indicação",
+      "Concluir asma grave só pelo VEF1/CVF 0,84 e iniciar prednisona oral contínua vitalícia com timing inadequado adiando medida essencial",
+      "Dispensar provas adicionais porque a espirometria isolada sempre mede CPT e DLCO reduzindo terapia cedo demais por marcador isolado com esquema incompleto",
+      "Indicar trombólise empírica por CVF reduzida, sem angio-TC nem probabilidade de TEP sem base fisiopatológica clara adiando medida essencial por marcador isolado"
     ],
     "explain": "Relação preservada + CVF baixa sugere restrição; CPT confirma e DLCO ajuda na ILD/vascular. Não é DPOC (relação não obstrutiva).",
     "trap": "Chamar restrição de DPOC ou achar que espirometria mede CPT."
   },
   {
     "idPrefix": "cli-pneumo",
-    "n": 35,
+    "n": 34,
     "group": "Pneumologia",
-    "theme": "Espirometria — resposta BD",
-    "stem": "Jovem de 24 anos com sibilância intermitente. Pré-BD VEF1 68%; pós-BD aumento de 15% e 220 mL no VEF1, relação ainda limítrofe. Interpretação clínica mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Resposta broncodilatadora significativa favorece hiper-reatividade/asma; correlacionar com história e iniciar corticosteroide inalatório conforme controle",
+    "theme": "Espirometria — resposta ao BD",
+    "stem": "Jovem de 23 anos com sibilância intermitente e rinite. Pré-BD: VEF1 67%; pós-BD: aumento de 14% e 230 mL no VEF1. Relação ainda limítrofe. Qual a interpretação clínica mais adequada? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária. História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "Resposta broncodilatadora significativa favorece asma/hiper-reatividade; iniciar CSI conforme controle e plano de ação e documentação da resposta",
     "wrongs": [
-      "Excluir asma definitivamente porque ainda há limitação após broncodilatador na primeira espirometria e reavaliar a resposta",
-      "Diagnosticar fibrose pulmonar idiopática em jovem só pela resposta broncodilatadora positiva no momento sem adiamento injustificado",
-      "Indicar oxigenoterapia domiciliar contínua baseada apenas no incremento de 220 mL no VEF1 e reavaliar a resposta e monitoramento contínuo do paciente",
-      "Contraindicar qualquer inalatório porque a resposta ao BD prova que o paciente não precisa de CSI com comunicação à equipe assistencial com registro no prontuário"
+      "Excluir asma definitivamente porque persiste alguma limitação após o broncodilatador na primeira curva com iatrogenia evitável",
+      "Diagnosticar FPI em jovem apenas pela resposta broncodilatadora positiva na espirometria com timing inadequado em desacordo com o risco",
+      "Indicar LTOT domiciliar contínua só pelo incremento de 230 mL no VEF1 pós-broncodilatador sem base fisiopatológica clara antecipando etapa indevida",
+      "Contraindicar CSI porque a resposta ao BD provaria que o paciente nunca precisa de anti-inflamatório sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "ΔVEF1 ≥12% e ≥200 mL sugere reversibilidade (asma/hiper-reatividade). Não exclui asma se persistir limitação; CSI é base do controle, não O2 domiciliar.",
+    "explain": "ΔVEF1 ≥12% e ≥200 mL sugere reversibilidade (asma). Persistência de limitação não exclui asma; CSI é base do controle, não O2 domiciliar.",
     "trap": "Achar que resposta ao BD elimina a necessidade de CSI na asma."
   },
   {
     "idPrefix": "cli-pneumo",
-    "n": 36,
+    "n": 35,
     "group": "Pneumologia",
     "theme": "Gasometria — acidose respiratória",
-    "stem": "Paciente com DPOC em exacerbação: pH 7,25, PaCO2 68, HCO3 29, PaO2 52 em ar. SpO2 84%. Interpretação e prioridade? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Acidose respiratória agudizada em hipoxemia: oxigênio titulado, broncodilatação, corticosteroide e considerar VNI se critérios de falência ventilatória",
+    "stem": "Paciente com DPOC em exacerbação: pH 7,26, PaCO2 70 mmHg, HCO3 30 mEq/L, PaO2 50 mmHg em ar, SpO2 83%, FR 30, uso de acessórios. Qual a interpretação e a prioridade terapêutica? Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos. Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "Acidose respiratória agudizada sobre crônica com hipoxemia: O2 titulado, broncodilatação, corticoide e VNI se critérios alinhado à gravidade",
     "wrongs": [
-      "Alcalose metabólica pura pelo HCO3 29, liberando sem suporte ventilatório nem oxigênio titulado na rede assistencial disponível",
-      "Administrar O2 a 15 L/min sem titulação visando SpO2 100% permanente em DPOC hipercápnico com registro no prontuário conforme o protocolo",
-      "Indicar bicarbonato intravenoso isolado como tratamento causal da hipercapnia por hipoventilação e monitoramento contínuo do paciente conforme o protocolo",
-      "Extubar mentalmente o diagnóstico de hipercapnia porque HCO3 elevado “compensa tudo” sem risco na rede assistencial disponível e monitoramento contínuo do paciente"
+      "Alcalose metabólica pura pelo HCO3 30, liberando sem O2 titulado nem suporte ventilatório sem base fisiopatológica clara",
+      "Administrar O2 a 15 L/min sem titulação visando SpO2 100% permanente no DPOC hipercápnico com timing inadequado por marcador isolado",
+      "Infundir bicarbonato intravenoso isolado como tratamento causal da hipercapnia por hipoventilação como única medida adotada ignorando contraindicação",
+      "Ignorar a hipercapnia porque HCO3 elevado “compensa tudo” e elimina risco de falência ventilatória sem base fisiopatológica clara antecipando etapa indevida"
     ],
     "explain": "pH baixo + PaCO2 alto = acidose respiratória; HCO3 elevado sugere componente crônico. O2 titulado + broncodilatação ± VNI. Bicarbonato não trata hipoventilação.",
     "trap": "Oxigenar sem titulação ou usar HCO3 como terapia da hipercapnia."
   },
   {
     "idPrefix": "cli-pneumo",
-    "n": 37,
+    "n": 36,
     "group": "Pneumologia",
     "theme": "Gasometria — alcalose respiratória",
-    "stem": "Mulher jovem com crise de ansiedade: FR 36, formigamentos, pH 7,52, PaCO2 25, HCO3 24, PaO2 110 em ar. Conduta mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Reconhecer alcalose respiratória aguda por hiperventilação; acalmar, orientar respiração controlada e excluir causas orgânicas se houver dúvida clínica",
+    "stem": "Mulher de 26 anos em crise de ansiedade: FR 38, formigamentos periorais, SpO2 99% em ar. Gasometria: pH 7,51, PaCO2 24 mmHg, HCO3 23, PaO2 108. ECG sem isquemia. Qual a conduta mais adequada? O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade. Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção.",
+    "correct": "Reconhecer alcalose respiratória aguda por hiperventilação; acalmar, respiração controlada e excluir causa orgânica se houver dúvida alinhado à gravidade",
     "wrongs": [
-      "Intubar e hiperventilar ainda mais para “corrigir” o pH elevado na crise de ansiedade sem hipoxemia e reavaliar a resposta",
-      "Iniciar anticoagulação plena empírica sem probabilidade de TEP, só pelo parestesia e taquipneia na rede assistencial disponível",
-      "Administrar acetazolamida imediata de rotina em toda alcalose respiratória por ansiedade leve neste serviço conforme gravidade e recursos locais",
-      "Prescrever opioide em dose alta para abolir o drive respiratório como primeira medida ambulatorial com comunicação à equipe assistencial de forma imediata"
+      "Intubar e hiperventilar ainda mais para “corrigir” o pH elevado na crise ansiosa sem hipoxemia sem base fisiopatológica clara",
+      "Iniciar anticoagulação plena empírica só por parestesias e taquipneia, sem probabilidade de TEP por marcador isolado com esquema incompleto",
+      "Administrar acetazolamida de rotina em toda alcalose respiratória leve por ansiedade reduzindo terapia cedo demais com timing inadequado por marcador isolado",
+      "Prescrever opioide em dose alta para abolir o drive respiratório como primeira medida ambulatorial sem base fisiopatológica clara sem correlacionar gravidade"
     ],
     "explain": "pH alto + PaCO2 baixo + HCO3 normal ≈ alcalose respiratória aguda; na ansiedade, manejo comportamental e exclusão de diferenciais. Intubação/opioide não são primeira linha.",
     "trap": "Tratar hiperventilação ansiosa com intubação ou opioide de rotina."
   },
   {
     "idPrefix": "cli-pneumo",
+    "n": 37,
+    "group": "Pneumologia",
+    "theme": "Gasometria — shunt/V/Q",
+    "stem": "Paciente com pneumonia lobar: PaO2 54 mmHg, PaCO2 31 mmHg, gradiente alvéolo-arterial aumentado; pouca melhora com O2 em baixo fluxo. Qual mecanismo predomina e qual a implicação prática? História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário. Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória.",
+    "correct": "Desequilíbrio V/Q com componente de shunt por alvéolos preenchidos: tratar a causa, otimizar O2/recrutamento e esperar resposta limitada a FiO2 baixa",
+    "wrongs": [
+      "Hipoventilação alveolar pura como mecanismo único, já que a PaCO2 está reduzida na gasometria com timing inadequado por marcador isolado",
+      "Altitude simulada obrigatória, indicando “descida geográfica” como tratamento da consolidação como única medida adotada ignorando contraindicação",
+      "Anemia grave como causa da PaO2 54, porque PaO2 mede diretamente o conteúdo total de hemoglobina reduzindo terapia cedo demais antecipando etapa indevida",
+      "Difusão isolada como única explicação em toda pneumonia aguda, sem papel de V/Q-shunt sem base fisiopatológica clara sem correlacionar gravidade"
+    ],
+    "explain": "Pneumonia: V/Q baixo/shunt com A-a alto; PaCO2 baixa reflete hiperventilação. PaO2 não diagnostica anemia (conteúdo de O2 depende da Hb).",
+    "trap": "Chamar hipoxemia de pneumonia de “hipoventilação” só pela dispneia."
+  },
+  {
+    "idPrefix": "cli-pneumo",
     "n": 38,
     "group": "Pneumologia",
-    "theme": "Gasometria — hipoxemia mecanismos",
-    "stem": "Paciente com pneumonia lobar: PaO2 55, PaCO2 32, gradiente A-a aumentado, pouca correção com O2 baixo. Qual mecanismo fisiopatológico predomina e implicação prática? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Shunt/efeito shunt por alvéolos preenchidos: otimizar recrutamento/tratamento da causa e oxigênio; esperar resposta limitada a FiO2 baixa isolada",
+    "theme": "Pneumotórax — espontâneo primário",
+    "stem": "Homem de 21 anos, alto e magro, dor torácica súbita e dispneia leve há 4 h. RX: pneumotórax direito com bordo visceral <2 cm no ápice. SpO2 98% em ar, PA 120/70, FR 18. Primeiro episódio, não tabagista. Qual conduta inicial possível? Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido. Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico.",
+    "correct": "Observação com O2 e reassesso, ou aspiração conforme tamanho/sintomas e protocolo local, orientando risco de recorrência e documentação da resposta",
     "wrongs": [
-      "Hipoventilação alveolar pura como mecanismo único, pois PaCO2 está reduzida na gasometria atual conforme o protocolo neste serviço",
-      "Difusão isolada como única explicação em toda pneumonia aguda, sem papel de desequilíbrio V/Q-shunt de forma imediata conforme o protocolo",
-      "Altitude simulada obrigatória, indicando descida geográfica como tratamento da consolidação bacteriana com registro no prontuário após estabilização inicial",
-      "Anemia grave como causa da PaO2 55, porque PaO2 mede diretamente o conteúdo total de hemoglobina na rede assistencial disponível e monitoramento contínuo do paciente"
+      "Toracotomia com pneumonectomia imediata em todo primeiro pneumotórax espontâneo primário estável sem base fisiopatológica clara",
+      "Antibiótico de amplo espectro exclusivo como tratamento definitivo do ar no espaço pleural por marcador isolado fora da janela terapêutica",
+      "Trombólise sistêmica empírica por dor súbita, sem correlacionar com a radiografia de tórax sem base fisiopatológica clara reduzindo terapia cedo demais",
+      "Dispensar qualquer RX de controle porque o primeiro episódio nunca recidiva em jovens magros sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "Pneumonia: V/Q baixo/shunt com A-a alto; PaCO2 baixa reflete hiperventilação, não hipoventilação. PaO2 não diagnostica anemia (conteúdo O2 depende de Hb).",
-    "trap": "Chamar hipoxemia de pneumonia de “hipoventilação” só pela dispneia."
+    "explain": "PSP pequeno/estável: observação (±O2) ou aspiração conforme guia; dreno se maior/sintomático. Cirurgia reservada a recidiva/falha.",
+    "trap": "Operar de rotina o primeiro PSP estável e pequeno."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 39,
     "group": "Pneumologia",
-    "theme": "Pneumotórax — espontâneo primário",
-    "stem": "Homem de 22 anos alto e magro, dor torácica súbita e dispneia leve. RX: pneumotórax à direita <2 cm no ápice, SpO2 97%, estável. Primeiro episódio. Conduta inicial possível? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Observação com O2 e reassesso, ou aspiração/drenagem conforme tamanho/sintomas e protocolo local, orientando risco de recorrência e tabagismo",
+    "theme": "Pneumotórax — hipertensivo",
+    "stem": "Vítima de trauma torácico no pré-hospitalar: dispneia grave, desvio traqueal para a direita, MV abolido à esquerda, jugulares turgescentes, PA 78/48. Sem RX disponível na cena. Qual a conduta imediata? Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção. Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária.",
+    "correct": "Descompressão imediata do hemitórax esquerdo (agulha/dispositivo) seguida de drenagem torácica, sem atrasar por imagem mantendo suporte adequado",
     "wrongs": [
-      "Toracotomia com pneumonectomia imediata em todo primeiro pneumotórax espontâneo primário estável sem adiamento injustificado",
-      "Antibioticoterapia de amplo espectro exclusiva como tratamento definitivo do ar no espaço pleural e monitoramento contínuo do paciente",
-      "Trombólise sistêmica empírica por dor súbita, sem avaliar radiografia de tórax nem estabilidade conforme o protocolo com reassessoramento clínico seriado",
-      "Contraindicar qualquer radiografia de controle porque o primeiro episódio nunca recidiva em jovens e monitoramento contínuo do paciente com registro no prontuário"
+      "Aguardar TC de tórax completa antes de qualquer descompressão no choque obstrutivo suspeito sem base fisiopatológica clara",
+      "Administrar só furosemida para reduzir as jugulares turgescentes no pneumotórax hipertensivo por marcador isolado liberando paciente grave",
+      "Indicar broncoscopia de urgência no campo como primeiro procedimento para reexpansão pulmonar sem base fisiopatológica clara sem correlacionar gravidade",
+      "Infundir nitrato intravenoso para “reduzir pré-carga” no choque por pneumotórax hipertensivo sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "PSP pequeno/estável pode ser observado (±O2) ou aspirado conforme guia; dreno se maior/sintomático. Cirurgia reservada a recidiva/falha. ATB não trata ar pleural.",
-    "trap": "Operar de rotina o primeiro PSP estável pequeno."
+    "explain": "Pneumotórax hipertensivo é clínico: descompressão imediata + dreno. Imagem não deve atrasar; diurético/nitrato pioram o choque obstrutivo.",
+    "trap": "Esperar TC antes de descomprimir pneumotórax hipertensivo."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 40,
     "group": "Pneumologia",
-    "theme": "Pneumotórax — hipertensivo",
-    "stem": "Trauma torácico: dispneia grave, desvio de traqueia, ausência de MV à esquerda, jugulares turgidas, PA 80/50. Sem RX disponível na cena. Conduta imediata? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Descompressão imediata do hemitórax suspeito (agulha/dispositivo) seguida de drenagem torácica, sem atrasar por imagem na instabilidade",
-    "wrongs": [
-      "Aguardar TC de tórax completa antes de qualquer descompressão no choque obstrutivo suspeito na rede assistencial disponível",
-      "Administrar apenas diurético de alça para reduzir as jugulares turgescentes no pneumotórax hipertensivo com registro no prontuário",
-      "Indicar broncoscopia de urgência como primeiro procedimento para reexpansão pulmonar no campo sem adiamento injustificado após estabilização inicial",
-      "Prescrever nitrato intravenoso para “reduzir pré-carga” no choque por pneumotórax hipertensivo com registro no prontuário e monitoramento contínuo do paciente"
-    ],
-    "explain": "Pneumotórax hipertensivo é diagnóstico clínico: descompressão imediata + dreno. Imagem não deve atrasar; diurético/nitrato pioram o choque obstrutivo.",
-    "trap": "Esperar TC antes de descomprimir pneumotórax hipertensivo."
-  },
-  {
-    "idPrefix": "cli-pneumo",
-    "n": 41,
-    "group": "Pneumologia",
     "theme": "Pneumotórax — secundário",
-    "stem": "Mulher de 70 anos com DPOC grave apresenta pneumotórax espontâneo secundário sintomático. SpO2 88% com O2, FR 30. Qual a conduta preferencial típica? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Drenagem torácica e internação, otimizar DPOC, avaliar indicação cirúrgica se fuga aérea persistente ou alto risco de recidiva neste serviço",
+    "stem": "Mulher de 72 anos com DPOC grave GOLD 3 apresenta dor súbita e piora da dispneia. RX: pneumotórax esquerdo sintomático. SpO2 87% com O2 2 L/min, FR 32, PA 100/65. Qual a conduta preferencial típica? Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória. Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Drenagem torácica e internação, otimizar DPOC e avaliar cirurgia se fuga aérea persistente ou alto risco de recidiva com reassesso clínico",
     "wrongs": [
-      "Observação domiciliar sem dreno em todo pneumotórax secundário sintomático do idoso com DPOC na rede assistencial disponível",
-      "Intubação e VT alto de 12 mL/kg como primeira medida, sem drenar o pneumotórax sintomático na rede assistencial disponível no momento",
-      "Anticoagulação plena empírica no lugar da drenagem torácica para “reabsorver” o ar pleural com comunicação à equipe assistencial conforme o protocolo",
-      "Corticosteroide oral isolado sem suporte ventilatório nem avaliação de drenagem na instabilidade e monitoramento contínuo do paciente com registro no prontuário"
+      "Observação domiciliar sem dreno em todo pneumotórax secundário sintomático do idoso com DPOC reduzindo terapia cedo demais",
+      "Intubar com VT 12 mL/kg como primeira medida, sem drenar o pneumotórax sintomático com esquema incompleto adiando medida essencial",
+      "Anticoagulação plena no lugar da drenagem para “reabsorver” o ar do espaço pleural reduzindo terapia cedo demais sem base fisiopatológica clara",
+      "Prednisona oral isolada sem suporte nem avaliação de drenagem na insuficiência respiratória sem base fisiopatológica clara sem correlacionar gravidade"
     ],
     "explain": "Pneumotórax secundário sintomático geralmente exige dreno e hospitalização; cirurgia se falha/recidiva. Observação domiciliar é insegura neste perfil.",
     "trap": "Observar em casa pneumotórax secundário sintomático."
   },
   {
     "idPrefix": "cli-pneumo",
+    "n": 41,
+    "group": "Pneumologia",
+    "theme": "HP — grupo 1 HAP",
+    "stem": "Mulher de 37 anos com dispneia progressiva em classe funcional III. Cateterismo: PAPm 34 mmHg, PCP 9 mmHg, RVP elevada. Espirometria e TCAR sem DPOC/ILD; V/Q sem defeitos crônicos. Qual o grupo mais provável e o encaminhamento? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade.",
+    "correct": "Hipertensão arterial pulmonar (grupo 1): referenciar a centro especializado para estratificação e terapia específica mantendo suporte",
+    "wrongs": [
+      "HP pós-capilar exclusiva de IC esquerda, apesar da PCP 9 mmHg no cateterismo direito sem benefício claro fora da indicação",
+      "Grupo 3 obrigatório sem doença pulmonar parenquimatosa ou hipoxemia crônica documentada por marcador isolado em desacordo com o risco",
+      "CTEPH confirmado só pela PAPm 34, sem cintilografia V/Q nem angiografia adequada sem base fisiopatológica clara com timing inadequado por marcador isolado",
+      "Alta com diurético isolado, sem referência a centro de hipertensão pulmonar reduzindo terapia cedo demais liberando paciente grave reduzindo terapia cedo demais"
+    ],
+    "explain": "PAPm alta + PCP normal + RVP alta, sem grupo 2/3/4 óbvio → HAP (grupo 1). Exige centro especializado; PCP 9 afasta pós-capilar.",
+    "trap": "Chamar HAP de IC esquerda com PCP normal."
+  },
+  {
+    "idPrefix": "cli-pneumo",
     "n": 42,
     "group": "Pneumologia",
-    "theme": "Hipertensão pulmonar — classificação",
-    "stem": "Mulher de 38 anos com dispneia progressiva, cateterismo: PAPm 32, PCP 10, RVP elevada. Sem DPOC/ILD; V/Q sem defeitos crônicos. Grupo clínico mais provável? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Hipertensão arterial pulmonar (grupo 1): avaliar vasodilatadores específicos após testes de vasorreatividade/centros especializados e estratificação de risco",
+    "theme": "HP — CTEPH",
+    "stem": "Homem de 56 anos com TEP há 10 meses, dispneia crônica classe II–III. Cintilografia V/Q com defeitos segmentares mismatched; cateterismo com HP pré-capilar. Anticoagulado. Qual o diagnóstico e a referência terapêutica? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária. História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "CTEPH (grupo 4): manter anticoagulação e referenciar para endarterectomia/angioplastia em centro especializado alinhado à gravidade e vigilância seriada",
     "wrongs": [
-      "Hipertensão pulmonar pós-capilar exclusiva de IC esquerda, apesar da PCP 10 mmHg no cateterismo na rede assistencial disponível",
-      "HP do grupo 3 obrigatória sem evidência de doença pulmonar parenquimatosa ou hipoxemia crônica neste serviço com registro no prontuário",
-      "TEP crônico (grupo 4) confirmado só pela PAPm 32, sem cintilografia V/Q nem angiografia adequada de forma imediata com comunicação à equipe assistencial",
-      "Tratar com diurético isolado e alta, sem referência a centro de hipertensão pulmonar com comunicação à equipe assistencial evitando atraso terapêutico relevante"
+      "Diagnosticar asma intermitente e tratar só com SABA, ignorando os defeitos V/Q mismatch crônicos reduzindo terapia cedo demais",
+      "Indicar trombólise sistêmica ambulatorial mensal indefinida como terapia padrão do CTEPH estável com timing inadequado por marcador isolado",
+      "Suspender anticoagulação porque o TEP agudo ocorreu há mais de 3 meses sem base fisiopatológica clara em desacordo com o risco ignorando contraindicação",
+      "Tratar como pneumonia recorrente com antibióticos mensais sem investigar HP crônica tromboembólica sem base fisiopatológica clara fora da janela terapêutica"
     ],
-    "explain": "PAPm elevada + PCP normal + RVP alta, sem grupo 2/3/4 óbvio → HAP (grupo 1). Exige centro especializado e terapia específica; PCP 10 afasta pós-capilar.",
-    "trap": "Chamar HAP de IC esquerda com PCP normal."
+    "explain": "CTEPH: V/Q mismatched + HP pré-capilar pós-TEP. Anticoagulação contínua e avaliação para endarterectomia. Trombólise mensal não é padrão.",
+    "trap": "Tratar CTEPH como asma ou negar anticoagulação crônica."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 43,
     "group": "Pneumologia",
-    "theme": "Hipertensão pulmonar — CTEPH",
-    "stem": "Homem de 55 anos com TEP prévio, dispneia crônica, V/Q com defeitos segmentares mismatched, cateterismo pré-capilar. Qual o diagnóstico e referência terapêutica? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Suspeitar CTEPH (grupo 4): anticoagulação contínua e referenciar para endarterectomia/angioplastia pulmonar em centro especializado no momento",
+    "theme": "HP — grupo 2",
+    "stem": "Idosa de 77 anos com ICFEp hipertensiva, eco com PSAP estimada elevada. Cateterismo: PAPm 36 mmHg, PCP 23 mmHg. Sem defeitos V/Q. Qual a interpretação e o foco terapêutico? Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos. Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "HP pós-capilar (grupo 2): otimizar IC esquerda, volume e comorbidades; vasodilatadores de HAP não são primeira linha conforme risco do caso",
     "wrongs": [
-      "Diagnosticar asma intermitente e tratar apenas com SABA, ignorando os defeitos V/Q mismatch crônicos e reavaliar a resposta",
-      "Indicar trombólise sistêmica ambulatorial mensal indefinida como terapia padrão do CTEPH estável conforme o protocolo neste serviço",
-      "Contraindicar anticoagulação porque o evento agudo de TEP ocorreu há mais de 3 meses com comunicação à equipe assistencial e reavaliar a resposta",
-      "Tratar como pneumonia recorrente com antibióticos mensais sem investigar hipertensão pulmonar crônica com registro no prontuário sem adiamento injustificado"
+      "Iniciar epoprostenol empírico imediato como se fosse HAP idiopática, ignorando a PCP elevada sem base fisiopatológica clara",
+      "Indicar endarterectomia pulmonar de rotina na HP do grupo 2 por IC esquerda reduzindo terapia cedo demais ignorando contraindicação",
+      "Diagnosticar CTEPH só pela PSAP ecoestimada, sem V/Q e com PCP já elevada sem base fisiopatológica clara por marcador isolado com iatrogenia evitável",
+      "Suspender diuréticos e liberalizar sal para “aumentar pré-carga” na congestão da ICFEp sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "CTEPH: V/Q mismatched + HP pré-capilar pós-TEP. Anticoagulação e avaliação para endarterectomia em centro. Trombólise mensal não é padrão.",
-    "trap": "Tratar CTEPH como asma ou negar anticoagulação crônica."
+    "explain": "PCP elevada define componente pós-capilar (grupo 2): tratar IC. Drogas de HAP e endarterectomia não são terapia padrão desse grupo.",
+    "trap": "Usar droga específica de HAP no grupo 2 sem indicação."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 44,
     "group": "Pneumologia",
-    "theme": "Hipertensão pulmonar — grupo 2",
-    "stem": "Idosa com ICFEp, eco com PSAP estimada alta, PCP 22 no cateterismo, PAPm 35. Qual a interpretação e foco terapêutico? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Hipertensão pulmonar pós-capilar (grupo 2): otimizar insuficiência cardíaca esquerda, volume e comorbidades; vasodilatadores de HAP não são primeira linha",
+    "theme": "Asma — LABA sem CSI",
+    "stem": "Paciente de 29 anos com asma recebe formoterol isolado há 2 meses por “falta de CSI na farmácia”. Teve 2 exacerbações com ida à UPA. Técnica inalatória correta. Qual o problema e a correção imediata? O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade. Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção.",
+    "correct": "LABA monoterapia é inseguro na asma; associar CSI (idealmente SMART com formoterol) e revisar plano de ação e vigilância seriada alinhado à gravidade",
     "wrongs": [
-      "Iniciar epoprostenol empírico de imediato como se fosse HAP idiopática sem avaliar a PCP elevada na rede assistencial disponível",
-      "Indicar endarterectomia pulmonar de rotina na HP do grupo 2 por IC esquerda descompensada neste serviço na rede assistencial disponível",
-      "Diagnosticar CTEPH só pela PSAP ecoestimada, sem V/Q nem cateterismo com PCP elevada preservando efetividade clínica com comunicação à equipe assistencial",
-      "Suspender diuréticos e liberalizar sal para “aumentar pré-carga” na congestão da ICFEp com comunicação à equipe assistencial com reassessoramento clínico seriado"
+      "Manter LABA isolado indefinidamente porque broncodilatação plena dispensaria anti-inflamatório sem base fisiopatológica clara",
+      "Trocar para propranolol oral para reduzir a frequência respiratória durante as crises por marcador isolado reduzindo terapia cedo demais",
+      "Suspender qualquer broncodilatador de resgate, mesmo em sibilância aguda com hipoxemia sem base fisiopatológica clara sem correlacionar gravidade",
+      "Indicar biópsia pulmonar empírica por exacerbações recorrentes sem corrigir a terapia inalatória sem base fisiopatológica clara antecipando etapa indevida"
     ],
-    "explain": "PCP elevada define componente pós-capilar (grupo 2): tratar IC. Vasodilatadores de HAP e endarterectomia não são terapia padrão desse grupo.",
-    "trap": "Usar droga de HAP no grupo 2 sem indicar."
+    "explain": "Na asma, LABA sem CSI aumenta risco de exacerbação/morte; CSI (± formoterol SMART) é essencial. Betabloqueador não seletivo é perigoso.",
+    "trap": "Usar LABA sem corticosteroide inalatório na asma."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 45,
     "group": "Pneumologia",
-    "theme": "Asma — LABA isolado",
-    "stem": "Paciente com asma recebe formoterol isolado sem corticosteroide inalatório por “falta de CSI na farmácia”. Apresenta exacerbações recorrentes. Qual o problema e a correção? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "LABA monoterapia é inseguro na asma; associar corticosteroide inalatório (idealmente SMART com formoterol) e revisar plano de ação/exacerbação",
+    "theme": "DPOC — CSI com eosinofilia",
+    "stem": "Homem de 66 anos com DPOC grupo E em LAMA+LABA otimizados, ainda com 2 exacerbações/ano. Eosinófilos sanguíneos 480/µL, sem história clara de asma. Qual ajuste terapêutico tem maior racional atual? História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário. Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória.",
+    "correct": "Adicionar CSI ao LABA/LAMA pela eosinofilia e exacerbações, monitorando pneumonia e candidíase orofaríngea e documentação da resposta",
     "wrongs": [
-      "Manter LABA isolado indefinidamente porque broncodilatação plena elimina a necessidade de anti-inflamatório neste serviço",
-      "Trocar para betabloqueador não seletivo oral para reduzir a frequência respiratória nas crises e reavaliar a resposta no momento",
-      "Suspender qualquer broncodilatador de resgate, mesmo em sibilância aguda com hipoxemia e monitoramento contínuo do paciente conforme o protocolo",
-      "Indicar quimioterapia pulmonar empírica por exacerbações recorrentes sem revisão da terapia inalatória diante do quadro clínico sem adiamento injustificado"
+      "Adicionar CSI em todo DPOC grupo A sem exacerbações nem eosinofilia, como terapia universal reduzindo terapia cedo demais",
+      "Suspender LAMA+LABA e usar só prednisona oral contínua em dose imunossupressora com iatrogenia evitável adiando medida essencial",
+      "Indicar antifúngico sistêmico preventivo vitalício sempre que se inicia CSI no DPOC reduzindo terapia cedo demais sem base fisiopatológica clara",
+      "Trocar LAMA+LABA por SABA exclusivo sob demanda após documentar eosinofilia nas exacerbações sem base fisiopatológica clara sem correlacionar gravidade"
     ],
-    "explain": "Na asma, LABA sem CSI aumenta risco; CSI (± formoterol SMART) é essencial. Betabloqueador não seletivo é perigoso. A escolha correta integra achados clínicos, gasométricos e de imagem, evitando atrasos e terapias inadequadas neste cenário respiratório.",
-    "trap": "Usar LABA sem corticosteroide inalatório na asma."
+    "explain": "CSI no DPOC cabe sobretudo se exacerbações + eosinofilia (ou overlap com asma). Não é universal no grupo A; corticoide oral crônico não substitui broncodilatadores.",
+    "trap": "Colocar CSI em todo DPOC ou usar corticoide oral crônico no lugar do LAMA/LABA."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 46,
     "group": "Pneumologia",
-    "theme": "DPOC — CSI indicação",
-    "stem": "Homem com DPOC grupo E, eosinófilos 450/µL, exacerbações recorrentes apesar de LAMA+LABA. Qual ajuste terapêutico tem maior racional atual? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Adicionar corticosteroide inalatório ao LABA/LAMA na presença de eosinofilia e exacerbações, monitorando pneumonia e candidíase oral de forma imediata",
+    "theme": "Asma-DPOC overlap",
+    "stem": "Homem de 62 anos, 30 maços-ano, sibilância desde jovem e variações sazonais. Espirometria: obstrução com resposta parcial ao BD; eosinófilos 350/µL; IgE elevada. Exacerbações frequentes. Qual abordagem terapêutica mais coerente no overlap asma-DPOC? Radiografia de tórax ou equivalente está disponível ou em andamento, sem justificar atraso terapêutico indevido.",
+    "correct": "Tratar como espectro asma-DPOC: CSI+broncodilatador de manutenção, cessação do tabaco e controle de gatilhos/comorbidades e documentação da resposta",
     "wrongs": [
-      "Adicionar CSI em todo DPOC grupo A sem exacerbações nem eosinofilia, como terapia universal obrigatória com registro no prontuário",
-      "Suspender broncodilatadores de manutenção e usar apenas CSI oral contínuo em dose imunossupressora nesta etapa sem adiamento injustificado",
-      "Indicar antifúngico sistêmico preventivo vitalício sempre que se inicia CSI no DPOC estável com registro no prontuário evitando atraso terapêutico relevante",
-      "Trocar LAMA+LABA por SABA exclusivo sob demanda após eosinofilia documentada nas exacerbações com comunicação à equipe assistencial conforme o protocolo"
+      "Usar apenas LAMA isolado sem CSI, apesar de eosinofilia, atopia e história de asma desde jovem sem base fisiopatológica clara",
+      "Contraindicar qualquer broncodilatador porque overlap nunca se beneficia de LABA/LAMA como única medida adotada antecipando etapa indevida",
+      "Indicar RHZE empírico por sibilância crônica em tabagista, sem evidência de tuberculose sem base fisiopatológica clara sem correlacionar gravidade",
+      "Priorizar só O2 a 100% domiciliar sem otimizar inalatórios nem cessação do tabagismo sem base fisiopatológica clara antecipando etapa indevida com timing inadequado"
     ],
-    "explain": "CSI no DPOC cabe sobretudo se exacerbações + eosinofilia (ou história de asma). Não é universal no grupo A; CSI oral crônico não substitui broncodilatadores.",
-    "trap": "Colocar CSI em todo DPOC ou usar corticoide oral crônico no lugar do LAMA/LABA."
+    "explain": "ACO/ACO-like: componentes de asma (eosinofilia/atopia/reversibilidade) justificam CSI + broncodilatador e cessação. LAMA isolado sem CSI é insuficiente neste perfil.",
+    "trap": "Tratar overlap eosinofílico como DPOC puro sem CSI."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 47,
     "group": "Pneumologia",
     "theme": "SDRA — fluidos",
-    "stem": "Paciente em SDRA por sepse, já ressuscitado, sem choque atual, com infiltrados e PaO2/FiO2 140. Estratégia hídrica preferencial após estabilização? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Estratégia conservadora de fluidos após ressuscitação inicial, evitando sobrecarga que piore edema pulmonar e oxigenação na SDRA neste serviço",
+    "stem": "Paciente com SDRA por sepse abdominal, já ressuscitado, sem vasopressor há 12 h, PaO2/FiO2 135, balanço +4,5 L em 48 h, jugulares turgescentes. Qual estratégia hídrica preferencial após a estabilização? Reavaliar periodicamente FR, SpO2, trabalho respiratório e nível de consciência após cada intervenção. Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária.",
+    "correct": "Estratégia conservadora de fluidos após ressuscitação, evitando sobrecarga que piore edema e oxigenação na SDRA e documentação da resposta",
     "wrongs": [
-      "Manter balanço hídrico fortemente positivo indefinido mesmo após resolução do choque na SDRA conforme o protocolo nesta etapa",
-      "Contraindicar qualquer cristalóide na sepse inicial por medo de SDRA, omitindo ressuscitação precoce no momento e reavaliar a resposta",
-      "Indicar 5 L de coloide hipertônico diários de rotina em todo paciente com PaO2/FiO2 <200 e monitoramento contínuo do paciente com registro no prontuário",
-      "Usar apenas diurético em choque hipovolêmico não corrigido, antes de qualquer volume na sepse na rede assistencial disponível e monitoramento contínuo do paciente"
+      "Manter balanço fortemente positivo indefinido mesmo após resolução do choque na SDRA por marcador isolado com esquema incompleto",
+      "Contraindicar qualquer cristalóide na sepse inicial por medo de SDRA, omitindo ressuscitação com timing inadequado por marcador isolado",
+      "Infundir 5 L de coloide hipertônico/dia de rotina em todo paciente com PaO2/FiO2 <200 reduzindo terapia cedo demais sem base fisiopatológica clara",
+      "Usar só diurético no choque hipovolêmico não corrigido, antes de qualquer volume na sepse sem base fisiopatológica clara sem correlacionar gravidade"
     ],
     "explain": "Após ressuscitação, fluidos conservadores na SDRA melhoram oxigenação/dias livres de VM. Não se omite volume no choque inicial; diurético no hipovolêmico é inadequado.",
     "trap": "Manter sobrecarga hídrica após estabilizar o choque na SDRA."
@@ -755,48 +755,48 @@
     "idPrefix": "cli-pneumo",
     "n": 48,
     "group": "Pneumologia",
-    "theme": "PAC — critérios de gravidade",
-    "stem": "Paciente com PAC: PA 85/50 após 1 L de cristalóide, FR 34, confusão, ureia alta, necessidade de vasopressor. Além de ATB precoce, qual nível de cuidado? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Choque séptico/pneumonia grave: UTI, ressuscitação, culturas, antibiótico IV precoce e suporte ventilatório conforme troca gasosa e trabalho respiratório",
+    "theme": "PAC — gravidade / UTI",
+    "stem": "Paciente com PAC: após 1 L de cristalóide, PA 82/48, FR 35, confusão, ureia elevada, precisa de noradrenalina. SpO2 88% com O2. Além de antibiótico IV precoce, qual o nível de cuidado e o restante do manejo? Glicemia capilar normal; sem febre isolada que mude sozinha a prioridade da decisão respiratória. Sem trauma torácico recente aparente; ponderar gravidade, tempo de evolução e diagnósticos diferenciais clássicos.",
+    "correct": "Choque séptico por pneumonia grave: UTI, culturas, ressuscitação, ATB IV na 1ª hora e suporte ventilatório conforme troca gasosa",
     "wrongs": [
-      "Manter em observação ambulatorial com ATB oral, pois pneumonia nunca cursa com necessidade de vasopressor de forma imediata",
-      "Atrasar antibiótico até TC de alta resolução completa, mesmo em choque séptico com foco pulmonar na rede assistencial disponível",
-      "Indicar apenas fisioterapia respiratória sem antibiótico IV na hipotensão refratária por PAC de forma imediata evitando atraso terapêutico relevante",
-      "Priorizar antifúngico empírico exclusivo em todo choque por PAC sem fator de risco para fungos com comunicação à equipe assistencial e reavaliar a resposta"
+      "Observação ambulatorial com ATB oral, pois pneumonia nunca cursa com necessidade de vasopressor antecipando etapa indevida",
+      "Atrasar antibiótico até TCAR completa, mesmo em choque séptico com foco pulmonar evidente por marcador isolado com esquema incompleto",
+      "Fazer só fisioterapia respiratória sem ATB IV na hipotensão refratária por PAC sem base fisiopatológica clara com timing inadequado por marcador isolado",
+      "Priorizar antifúngico empírico exclusivo em todo choque por PAC sem fator de risco para fungos reduzindo terapia cedo demais sem base fisiopatológica clara"
     ],
-    "explain": "PAC com choque: UTI, ATB IV precoce (1ª hora), suporte. Atraso por imagem e manejo ambulatorial são inadequados. A escolha correta integra achados clínicos, gasométricos e de imagem, evitando atrasos e terapias inadequadas neste cenário respiratório.",
-    "trap": "Tratar pneumonia com choque fora de UTI ou atrasar ATB."
+    "explain": "PAC com choque: UTI, ATB IV precoce, suporte. Atraso por imagem e manejo ambulatorial são inadequados. A opção correta integra clínica, gravidade e timing; o distrator principal falha por gravidade/fármaco/tempo inadequados.",
+    "trap": "Tratar pneumonia com choque fora de UTI ou atrasar o antibiótico."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 49,
     "group": "Pneumologia",
-    "theme": "TEP — prevenção",
-    "stem": "Paciente clínico internado com ICC descompensada, mobilidade reduzida, sem sangramento. Qual profilaxia tromboembólica mais apropriada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Profilaxia farmacológica com heparina de baixa dose (ou equivalente) salvo contraindicação, associada a mobilização precoce quando possível",
+    "theme": "TEP — profilaxia hospitalar",
+    "stem": "Homem de 68 anos internado por IC descompensada, edema importante, caminha pouco no quarto. Plaquetas 180.000, sem sangramento ativo, creatinina 1,2. Qual profilaxia tromboembólica mais apropriada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. O serviço dispõe de oxigênio, nebulização e suporte ventilatório não invasivo ou invasivo conforme necessidade.",
+    "correct": "Heparina em dose profilática (ou equivalente) salvo contraindicação, associada a mobilização precoce quando possível mantendo suporte adequado",
     "wrongs": [
-      "Omitir qualquer profilaxia porque TEP só ocorre após cirurgias ortopédicas de grande porte e reavaliar a resposta no momento",
-      "Indicar trombólise profilática semanal em todo internado clínico, independentemente do risco de sangramento nesta etapa com segurança",
-      "Usar AAS 100 mg como única profilaxia suficiente em alto risco trombótico hospitalar clínico com registro no prontuário na rede assistencial disponível",
-      "Contraindicar mobilização precoce por medo de deslocar trombos ainda não formados na internação com registro no prontuário com comunicação à equipe assistencial"
+      "Omitir profilaxia porque TEP só ocorre após cirurgias ortopédicas de grande porte por marcador isolado com timing inadequado",
+      "Indicar trombólise profilática semanal em todo clínico internado, independentemente do sangramento sem base fisiopatológica clara",
+      "Usar AAS 100 mg como única profilaxia suficiente em alto risco trombótico hospitalar clínico sem correlacionar gravidade reduzindo terapia cedo demais",
+      "Contraindicar mobilização precoce por medo de “deslocar” trombos ainda não formados sem base fisiopatológica clara por marcador isolado adiando medida essencial"
     ],
-    "explain": "Pacientes clínicos de risco (ex.: ICC, imobilidade) beneficiam-se de profilaxia com heparina em dose profilática + mobilização. Trombólise semanal não é profilaxia.",
-    "trap": "Achar que só cirúrgicos precisam de profilaxia de TEV."
+    "explain": "Clínicos de risco (IC, imobilidade) beneficiam-se de heparina profilática + mobilização. Trombólise semanal não é profilaxia; AAS isolado é insuficiente nesse cenário.",
+    "trap": "Achar que só pacientes cirúrgicos precisam de profilaxia de TEV."
   },
   {
     "idPrefix": "cli-pneumo",
     "n": 50,
     "group": "Pneumologia",
     "theme": "Gasometria — acidose mista",
-    "stem": "Paciente com DPOC e sepse: pH 7,18, PaCO2 60, HCO3 18, lactato 5, PaO2 60. Qual a leitura acidobásica e prioridade? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso periférico e monitorização contínua disponíveis na unidade.",
-    "correct": "Acidose mista (respiratória + metabólica): tratar sepse/perfusão, oxigênio/ventilação conforme indicação e corrigir causas do lactato elevado",
+    "stem": "Paciente com DPOC e sepse pulmonar: pH 7,17, PaCO2 62 mmHg, HCO3 17 mEq/L, lactato 5,2 mmol/L, PaO2 58 mmHg. PA 88/50 após volume inicial. Qual a leitura acidobásica e a prioridade? Hemograma e eletrólitos estão em coleta; o quadro clínico já permite definir a conduta prioritária. História de alergias medicamentosas negativa para os fármacos usualmente considerados neste cenário.",
+    "correct": "Acidose mista (respiratória + metabólica): tratar sepse/perfusão, oxigênio/ventilação indicados e a causa do lactato e documentação da resposta",
     "wrongs": [
-      "Alcalose metabólica isolada, liberando sem suporte porque o HCO3 “ainda está próximo do normal” na rede assistencial disponível",
-      "Administrar apenas bicarbonato sem antibiótico/volume no choque séptico com lactato 5 e hipercapnia diante do quadro clínico no momento",
-      "Interpretar como gasometria normal de DPOC estável, ignorando pH 7,18 e hiperlactatemia com comunicação à equipe assistencial de forma imediata",
-      "Indicar acetazolamida imediata como única terapia da acidose mista com sepse e falência respiratória e monitoramento contínuo do paciente diante do quadro clínico"
+      "Alcalose metabólica isolada, liberando sem suporte porque o HCO3 “ainda parece próximo do normal” sem correlacionar gravidade",
+      "Administrar só bicarbonato, sem antibiótico/volume, no choque séptico com lactato 5 e hipercapnia por marcador isolado com esquema incompleto",
+      "Interpretar como gasometria “aceitável de DPOC estável”, ignorando pH 7,17 e hiperlactatemia sem base fisiopatológica clara antecipando etapa indevida",
+      "Usar acetazolamida isolada como única terapia da acidose mista com sepse e falência respiratória sem base fisiopatológica clara reduzindo terapia cedo demais"
     ],
-    "explain": "PaCO2 alto e HCO3 baixo com pH muito baixo = mista. Prioridade: causa (sepse, ventilação). Bicarbonato isolado não substitui ressuscitação/ATB.",
-    "trap": "Normalizar “só o número” com HCO3 sem tratar sepse/hipoventilação."
+    "explain": "PaCO2 alto e HCO3 baixo com pH muito baixo = mista. Prioridade: sepse, perfusão e ventilação/O2. Bicarbonato isolado não substitui ressuscitação/ATB.",
+    "trap": "Corrigir “só o número” com HCO3 sem tratar sepse e hipoventilação."
   }
 ]
