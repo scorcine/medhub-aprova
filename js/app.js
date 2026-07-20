@@ -3737,6 +3737,8 @@ function aprovaCountQuestions (partial) {
 
 let aprovaQModalMode = "treino";
 let aprovaQModalScope = "all";
+/** Quando true, o modal mostra setup normal mesmo com save (após "Começar de novo"). */
+let aprovaQModalForceSetup = false;
 
 function aprovaQModalPool (filters, scope) {
   const base = AprovaQuestions.filteredCatalog(filters || aprovaReadQuestionFilters());
@@ -3752,6 +3754,9 @@ function aprovaSyncQuestionModalUI () {
   const sizeWrap = document.getElementById("q-modal-size-wrap");
   const countEl = document.getElementById("q-start-modal-count");
   const titleEl = document.getElementById("q-start-modal-title");
+  const resumeEl = document.getElementById("q-modal-resume");
+  const setupEl = document.getElementById("q-modal-setup");
+  const resumeDetail = document.getElementById("q-modal-resume-detail");
 
   modeWrap?.querySelectorAll("[data-q-mode]").forEach((btn) => {
     btn.classList.toggle("active", btn.getAttribute("data-q-mode") === aprovaQModalMode);
@@ -3770,13 +3775,34 @@ function aprovaSyncQuestionModalUI () {
   ].filter(Boolean).join(" · ");
   if (titleEl) titleEl.textContent = path || "Iniciar estudo";
 
-  const scopeLabel = aprovaQModalScope === "new"
-    ? "novas"
-    : (aprovaQModalScope === "wrong" ? "erradas" : "neste recorte");
-  if (countEl) {
-    countEl.textContent = pool.length
-      ? (pool.length + " questão" + (pool.length === 1 ? "" : "ões") + " " + scopeLabel)
-      : ("Nenhuma questão " + scopeLabel + " com estes filtros.");
+  const saved = !aprovaQModalForceSetup
+    ? AprovaQuestions.getResumableTreino(filters, aprovaQModalScope)
+    : null;
+  const showResume = !!saved;
+
+  if (resumeEl) resumeEl.hidden = !showResume;
+  if (setupEl) setupEl.hidden = showResume;
+  if (countEl) countEl.hidden = showResume;
+
+  if (showResume && resumeDetail && saved) {
+    const total = saved.queue.length;
+    const pos = Math.min(total, (saved.index | 0) + 1);
+    const answered = saved.attempted | 0;
+    resumeDetail.textContent =
+      "Questão " + pos + " de " + total +
+      (answered ? (" · " + answered + " respondida" + (answered === 1 ? "" : "s")) : "") +
+      ". Deseja continuar ou recomeçar do zero?";
+  }
+
+  if (!showResume) {
+    const scopeLabel = aprovaQModalScope === "new"
+      ? "novas"
+      : (aprovaQModalScope === "wrong" ? "erradas" : "neste recorte");
+    if (countEl) {
+      countEl.textContent = pool.length
+        ? (pool.length + " questão" + (pool.length === 1 ? "" : "ões") + " " + scopeLabel)
+        : ("Nenhuma questão " + scopeLabel + " com estes filtros.");
+    }
   }
   return pool.length;
 }
@@ -3789,6 +3815,7 @@ function aprovaCloseQuestionModal () {
   const modal = document.getElementById("q-start-modal");
   if (modal) modal.hidden = true;
   document.body.classList.remove("modal-open");
+  aprovaQModalForceSetup = false;
 }
 
 function aprovaShowQuestionLaunch () {
@@ -3799,6 +3826,18 @@ function aprovaShowQuestionLaunch () {
   }
   aprovaQModalMode = "treino";
   aprovaQModalScope = "all";
+  aprovaQModalForceSetup = false;
+
+  const filters = aprovaReadQuestionFilters();
+  const saved = AprovaQuestions.loadSavedTreino();
+  if (saved && saved.filters &&
+      (saved.filters.specialty || "") === (filters.specialty || "") &&
+      (saved.filters.group || "") === (filters.group || "") &&
+      (saved.filters.theme || "") === (filters.theme || "") &&
+      (saved.attempted > 0 || saved.index > 0)) {
+    aprovaQModalScope = saved.scope || "all";
+  }
+
   aprovaPopulateLaunchFilters();
   modal.hidden = false;
   document.body.classList.add("modal-open");
@@ -3818,7 +3857,7 @@ function aprovaStartFromQuestionModal () {
     const size = Number(document.getElementById("q-filter-size")?.value) || 10;
     n = AprovaQuestions.startSimulado(size, pool);
   } else {
-    n = AprovaQuestions.startTreino(pool);
+    n = AprovaQuestions.startTreino(pool, aprovaQModalScope);
   }
   if (!n) {
     aprovaSyncQuestionModalUI();
@@ -3826,6 +3865,40 @@ function aprovaStartFromQuestionModal () {
   }
   aprovaCloseQuestionModal();
   aprovaRenderQuestion();
+}
+
+function aprovaResumeSavedTreino () {
+  const filters = aprovaReadQuestionFilters();
+  const saved = AprovaQuestions.getResumableTreino(filters, aprovaQModalScope);
+  if (!saved) {
+    aprovaQModalForceSetup = true;
+    aprovaSyncQuestionModalUI();
+    return;
+  }
+  const n = AprovaQuestions.resumeTreino(saved);
+  if (!n) {
+    aprovaQModalForceSetup = true;
+    aprovaSyncQuestionModalUI();
+    return;
+  }
+  aprovaCloseQuestionModal();
+  aprovaRenderQuestion();
+}
+
+function aprovaRestartTreinoFromModal () {
+  AprovaQuestions.clearSavedTreino();
+  aprovaQModalForceSetup = true;
+  aprovaQModalMode = "treino";
+  aprovaSyncQuestionModalUI();
+}
+
+function aprovaLeaveTreinoSession () {
+  if (AprovaQuestions.hasTreinoProgress()) {
+    AprovaQuestions.saveTreinoProgress();
+  }
+  AprovaQuestions.resetSession("treino");
+  AprovaQuestions.queue = [];
+  aprovaRenderQuestionBrowse();
 }
 
 function aprovaShowQuestionViews (view) {
@@ -4119,7 +4192,8 @@ function aprovaRenderQuestion () {
     aprovaRenderExamStats();
   }
 
-  const prior = AprovaQuestions.answered ? AprovaQuestions.priorAnswer() : null;
+  const prior = AprovaQuestions.priorAnswer();
+  if (prior) AprovaQuestions.answered = true;
 
   q.choices.forEach((text, i) => {
     const btn = document.createElement("button");
@@ -4470,8 +4544,7 @@ async function aprovaBoot () {
   });
 
   document.getElementById("q-abort")?.addEventListener("click", () => {
-    AprovaQuestions.resetSession("treino");
-    aprovaRenderQuestionBrowse();
+    aprovaLeaveTreinoSession();
   });
 
   ["q-filter-size"].forEach(id => {
@@ -4498,6 +4571,14 @@ async function aprovaBoot () {
 
   document.getElementById("q-start-go")?.addEventListener("click", () => {
     aprovaStartFromQuestionModal();
+  });
+
+  document.getElementById("q-resume-continue")?.addEventListener("click", () => {
+    aprovaResumeSavedTreino();
+  });
+
+  document.getElementById("q-resume-restart")?.addEventListener("click", () => {
+    aprovaRestartTreinoFromModal();
   });
 
   document.getElementById("q-result-again")?.addEventListener("click", () => {

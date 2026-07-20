@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260720q7">
+  <link rel="stylesheet" href="css/aprova.css?v=20260720r2">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -702,34 +702,45 @@
       </div>
       <p class="muted" id="q-start-modal-count" style="margin:0.35rem 0 1rem"></p>
 
-      <div class="label" style="margin-bottom:0.45rem">Modo</div>
-      <div class="q-modal-chips" id="q-modal-mode" role="group" aria-label="Modo de estudo">
-        <button type="button" class="q-modal-chip active" data-q-mode="treino">Teste</button>
-        <button type="button" class="q-modal-chip" data-q-mode="simulado">Simulado</button>
+      <div id="q-modal-resume" class="q-modal-resume" hidden>
+        <p class="q-modal-resume-title">Teste em andamento</p>
+        <p class="muted" id="q-modal-resume-detail" style="margin:0.25rem 0 0.85rem"></p>
+        <div class="aprova-modal-actions" style="margin:0">
+          <button type="button" class="btn btn-primary" id="q-resume-continue">Continuar de onde parou</button>
+          <button type="button" class="btn btn-ghost" id="q-resume-restart">Começar de novo</button>
+        </div>
       </div>
 
-      <div id="q-modal-size-wrap" hidden style="margin-top:0.85rem">
-        <label class="q-filter-field">
-          <span>Quantidade no simulado</span>
-          <select id="q-filter-size" class="profile-select">
-            <option value="5">5 questões</option>
-            <option value="10" selected>10 questões</option>
-            <option value="20">20 questões</option>
-            <option value="40">40 questões</option>
-          </select>
-        </label>
-      </div>
+      <div id="q-modal-setup">
+        <div class="label" style="margin-bottom:0.45rem">Modo</div>
+        <div class="q-modal-chips" id="q-modal-mode" role="group" aria-label="Modo de estudo">
+          <button type="button" class="q-modal-chip active" data-q-mode="treino">Teste</button>
+          <button type="button" class="q-modal-chip" data-q-mode="simulado">Simulado</button>
+        </div>
 
-      <div class="label" style="margin:1rem 0 0.45rem">Quais questões</div>
-      <div class="q-modal-chips" id="q-modal-scope" role="group" aria-label="Recorte de questões">
-        <button type="button" class="q-modal-chip active" data-q-scope="all">Todas</button>
-        <button type="button" class="q-modal-chip" data-q-scope="new">Só novas</button>
-        <button type="button" class="q-modal-chip" data-q-scope="wrong">Só erradas</button>
-      </div>
+        <div id="q-modal-size-wrap" hidden style="margin-top:0.85rem">
+          <label class="q-filter-field">
+            <span>Quantidade no simulado</span>
+            <select id="q-filter-size" class="profile-select">
+              <option value="5">5 questões</option>
+              <option value="10" selected>10 questões</option>
+              <option value="20">20 questões</option>
+              <option value="40">40 questões</option>
+            </select>
+          </label>
+        </div>
 
-      <div class="aprova-modal-actions" style="margin-top:1.1rem">
-        <button type="button" class="btn btn-ghost" data-q-modal-close>Cancelar</button>
-        <button type="button" class="btn btn-primary" id="q-start-go">Começar</button>
+        <div class="label" style="margin:1rem 0 0.45rem">Quais questões</div>
+        <div class="q-modal-chips" id="q-modal-scope" role="group" aria-label="Recorte de questões">
+          <button type="button" class="q-modal-chip active" data-q-scope="all">Todas</button>
+          <button type="button" class="q-modal-chip" data-q-scope="new">Só novas</button>
+          <button type="button" class="q-modal-chip" data-q-scope="wrong">Só erradas</button>
+        </div>
+
+        <div class="aprova-modal-actions" style="margin-top:1.1rem">
+          <button type="button" class="btn btn-ghost" data-q-modal-close>Cancelar</button>
+          <button type="button" class="btn btn-primary" id="q-start-go">Começar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -767,8 +778,8 @@
   <script src="js/schedule.js?v=20260719i"></script>
   <script src="js/exam-stats.js?v=20260720q7"></script>
   <script src="js/flashcards.js?v=20260719f"></script>
-  <script src="js/questions.js?v=20260720q8"></script>
+  <script src="js/questions.js?v=20260720r3"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260720r1"></script>
+  <script src="js/app.js?v=20260720r3"></script>
 </body>
 </html>
