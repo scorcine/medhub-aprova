@@ -1,4 +1,4 @@
-Ôªø/* Banco de quest√µes ‚Äî treino + simulado estilo resid√™ncia */
+/* Banco de questıes ó treino + simulado estilo residÍncia */
 
 const APROVA_QUESTION_FILES = [
   "data/questions-sample.json",
@@ -10,14 +10,14 @@ const APROVA_QUESTION_FILES = [
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
-  { id: "clinica", label: "Cl√≠nica m√©dica" },
+  { id: "clinica", label: "ClÌnica mÈdica" },
   { id: "cirurgia", label: "Cirurgia" },
   { id: "pediatria", label: "Pediatria" },
-  { id: "go", label: "Ginecologia e obstetr√≠cia" },
+  { id: "go", label: "Ginecologia e obstetrÌcia" },
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260720s5";
+const APROVA_QUESTION_CACHE_VER = "20260720u1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 
 function aprovaShuffleArray (arr) {
@@ -31,7 +31,7 @@ function aprovaShuffleArray (arr) {
   return out;
 }
 
-/** Embaralha alternativas e recalcula o √≠ndice do gabarito (c√≥pia rasa da quest√£o). */
+/** Embaralha alternativas e recalcula o Ìndice do gabarito (cÛpia rasa da quest„o). */
 function aprovaShuffleQuestionChoices (q) {
   if (!q || !Array.isArray(q.choices) || q.choices.length < 2) return q;
   const order = q.choices.map((_, i) => i);
@@ -126,7 +126,7 @@ const AprovaQuestions = {
     year: ""
   },
   simulado: null, // { size, startedAt, finished, answers: [] }
-  /** Sess√£o de teste (treino): respostas + metadados para Anterior e retomar. */
+  /** Sess„o de teste (treino): respostas + metadados para Anterior e retomar. */
   session: null, // { scope, startedAt, answers: [] }
 
   async load () {
@@ -249,7 +249,7 @@ const AprovaQuestions = {
     this.session = null;
   },
 
-  /** Inicia simulado com N quest√µes (ordem e alternativas embaralhadas) do filtro atual. */
+  /** Inicia simulado com N questıes (ordem e alternativas embaralhadas) do filtro atual. */
   startSimulado (size, poolOverride) {
     const pool = Array.isArray(poolOverride) ? poolOverride : this.filteredCatalog(this.filters);
     if (!pool.length) return 0;
@@ -305,7 +305,7 @@ const AprovaQuestions = {
     ].join("|");
   },
 
-  /** H√° progresso de teste para salvar (n√£o simulado). */
+  /** H· progresso de teste para salvar (n„o simulado). */
   hasTreinoProgress () {
     return this.mode === "treino" &&
       !!this.session &&
@@ -426,11 +426,11 @@ const AprovaQuestions = {
   },
 
   progressText () {
-    if (!this.queue.length) return "Nenhuma quest√£o com estes filtros.";
+    if (!this.queue.length) return "Nenhuma quest„o com estes filtros.";
     if (this.mode === "simulado" && this.simulado) {
-      return "Quest√£o " + (this.index + 1) + " de " + this.simulado.size;
+      return "Quest„o " + (this.index + 1) + " de " + this.simulado.size;
     }
-    return "Quest√£o " + (this.index + 1) + " de " + this.queue.length + " (filtro)";
+    return "Quest„o " + (this.index + 1) + " de " + this.queue.length + " (filtro)";
   },
 
   choose (choiceIndex) {
@@ -454,7 +454,7 @@ const AprovaQuestions = {
     if (this.mode === "simulado" && this.simulado) {
       this.simulado.answers.push(entry);
     } else {
-      // Sempre grava no teste ‚Äî cria sess√£o se faltar (evita "sumir" ao voltar).
+      // Sempre grava no teste ó cria sess„o se faltar (evita "sumir" ao voltar).
       if (!this.session) {
         this.session = { scope: "all", startedAt: Date.now(), answers: [] };
       }
@@ -497,8 +497,8 @@ const AprovaQuestions = {
   },
 
   /**
-   * Ao entrar numa quest√£o: marca se j√° foi respondida e restaura o estado.
-   * A ordem das alternativas fica congelada na fila (embaralha s√≥ no in√≠cio).
+   * Ao entrar numa quest„o: marca se j· foi respondida e restaura o estado.
+   * A ordem das alternativas fica congelada na fila (embaralha sÛ no inÌcio).
    */
   landOnCurrent () {
     this.answered = this.hasAnsweredCurrent();
@@ -518,10 +518,10 @@ const AprovaQuestions = {
     if (this.mode === "simulado" && this.index + 1 >= this.queue.length) {
       return "Ver resultado";
     }
-    return "Pr√≥xima";
+    return "PrÛxima";
   },
 
-  /** Indica se a quest√£o atual j√° foi respondida nesta sess√£o (teste ou simulado). */
+  /** Indica se a quest„o atual j· foi respondida nesta sess„o (teste ou simulado). */
   hasAnsweredCurrent () {
     const q = this.current();
     if (!q) return false;
@@ -565,7 +565,7 @@ const AprovaQuestions = {
       const r = this.simuladoResult();
       return r ? ("Simulado: " + r.hits + "/" + r.total + " (" + r.pct + "%)") : "";
     }
-    if (!this.attempted) return "Ainda sem respostas nesta sess√£o.";
+    if (!this.attempted) return "Ainda sem respostas nesta sess„o.";
     const pct = Math.round((this.correct / this.attempted) * 100);
     return this.correct + "/" + this.attempted + " acertos (" + pct + "%)";
   },

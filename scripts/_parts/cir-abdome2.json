@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 1,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — AIR e estratificação",
+    "stem": "Homem de 25 anos, dor em FID, Alvarado 4, PCR levemente elevada. Sem defesa. Qual estratégia de estratificação moderna? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Baixa probabilidade: observação e/ou imagem seletiva; evitar cirurgia negativa sem reavaliação clínica e laboratorial neste e sem",
+    "wrongs": [
+      "Apendicectomia imediata em todo Alvarado ≤4 para não perder perfuração oculta estatisticamente rara neste cenário sem neste",
+      "NOM antibiótico definitivo sem imagem em baixa probabilidade, liberando sem retorno estruturado neste cenário sem benefício claro",
+      "TC de crânio como primeiro exame na dor de FID de baixa probabilidade clínica neste cenário sem benefício claro fora da indicação",
+      "Anticoagulação por IMA, pois PCR elevada equivale a dor desproporcional típica neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Escores (Alvarado/AIR) triam: baixo observar/imagem; intermediário US→TC; alto imagem seletiva/cirurgia. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar baixa probabilidade sem reavaliação."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 2,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — mulher fértil β-hCG",
+    "stem": "Mulher de 31 anos com dor em FID; antes da TC, qual exame não pode faltar? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Solicitar β-hCG e avaliar diferencial ginecológico/ectópica antes de irradiar ou operar a fossa ilíaca direita neste cenário e sem",
+    "wrongs": [
+      "Indicar TC com contraste imediatamente sem β-hCG, pois gravidez nunca ocorre com dor em FID neste cenário sem benefício claro",
+      "Prescrever misoprostol empírico para embrião presumido sem confirmação laboratorial neste cenário sem benefício claro fora da indicação",
+      "Laparotomia xifo-púbica sem testes, para “não perder tempo” com laboratório neste cenário sem benefício claro fora da indicação mesmo",
+      "Apenas sumário de urina normal exclui ectópica e autoriza alta definitiva neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Em idade fértil: β-hCG + US pélvico conforme quadro. Ectópica mata; não irradiar/operar às cegas. Conduta guiada por gravidade e imagem.",
+    "trap": "Pular β-hCG na mulher com dor aguda em FID."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 3,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — perfuração e curso ATB",
+    "stem": "Pós apendicectomia por perfuração com abscesso local drenado no intraoperatório, fonte controlada, estável. Quanto de ATB? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Curso curto cerca de 2 a 3 dias se controle de foco adequado, evitando antibioticoterapia prolongada sem indicação neste cenário",
+    "wrongs": [
+      "Manter 21 dias de carbapenêmico em todo perfurado, independentemente do controle cirúrgico neste cenário sem benefício claro",
+      "Suspender ATB na sala de recuperação, sem dose alguma no perfurado com contaminação neste cenário sem benefício claro fora da indicação",
+      "Trocar diariamente de classe antibiótica de forma empírica rotativa por duas semanas neste cenário sem benefício claro fora da indicação mesmo",
+      "Usar apenas antifúngico porque perfuração apendicular é sempre candidíase peritoneal neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Complicada com fonte controlada: ATB curto. Prolongar não melhora se o foco foi resolvido. Conduta guiada por gravidade e imagem.",
+    "trap": "ATB “longo por segurança” sem critério. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 4,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — massa e idade",
+    "stem": "Homem de 62 anos com plastrão apendicular tratado clinicamente. Assintomático após 8 semanas. Além de colonoscopia, o que orientar? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Seguimento para excluir neoplasia e discutir apendicectomia intervalar se indicada pelo serviço/protocolo local neste cenário",
+    "wrongs": [
+      "Alta definitiva sem imagem diferida, pois plastrão em idoso nunca associa a tumor neste cenário sem benefício claro fora da",
+      "Quimioterapia FOLFOX empírica sem histologia por plastrão residual mínimo neste cenário sem benefício claro fora da indicação",
+      "Radioterapia abdominal profilática após plastrão tratado clinicamente com sucesso neste cenário sem benefício claro fora da indicação mesmo",
+      "Nova drenagem percutânea mensal mesmo sem coleção residual na TC de controle neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": ">40–50 a com massa/NOM: excluir neoplasia. Intervalar é individualizada por centro. Conduta guiada por gravidade e imagem.",
+    "trap": "Omitir follow-up oncológico no idoso pós-plastrão."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 5,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — contraste e alergia",
+    "stem": "Suspeita intermediária de apendicite; US falhou; alergia grave a iodo documentada. Não gestante. Alternativa razoável? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Considerar RM ou TC sem contraste conforme protocolo local, mantendo reavaliação clínica estreita neste cenário sem benefício claro",
+    "wrongs": [
+      "Desistir de qualquer imagem e operar sempre, sem estratificação, por alergia a contraste neste cenário sem benefício claro",
+      "Administrar contraste iodado pleno mesmo com anafilaxia prévia documentada sem preparo neste cenário sem benefício claro sem",
+      "Usar apenas radiografia simples como equivalente diagnóstico da TC para apendicite neste cenário sem benefício claro fora da indicação",
+      "Iniciar quimioterapia e corticoides como teste terapêutico diagnóstico da dor em FID neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Sem contraste iodado: RM é boa alternativa; clínica seriada continua essencial. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Forçar iodo ou abandonar imagem sem plano."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 6,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — anorexia clássica",
+    "stem": "Adolescente com migração da dor, anorexia marcada, náusea, febre 37,9 °C, leucócitos 13.000. Sem vômitos incoercíveis. Por que a anorexia importa? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Anorexia é critério clássico do Alvarado e reforça probabilidade de apendicite no contexto migratório típico neste cenário",
+    "wrongs": [
+      "Anorexia afasta apendicite e indica gastrite, autorizando alta sem exame de FID neste cenário sem benefício claro fora da",
+      "Anorexia obriga CPRE, pois só ocorre em colangite de Charcot estabelecida neste cenário sem benefício claro fora da indicação",
+      "Anorexia diagnostica isquemia mesentérica embolica com necessidade de EVAR neste cenário sem benefício claro fora da indicação mesmo",
+      "Anorexia contraindica laparoscopia, impondo sempre McBurney aberto nesta faixa neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Anorexia (1 ponto Alvarado) integra o escore; sozinha não opera, mas no conjunto pesa. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar anorexia ou usá-la como critério isolado absoluto."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 7,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — desvio à esquerda",
+    "stem": "Hemograma com leucócitos 11.500 e bastões 12% em jovem com FID. Demais critérios Alvarado somam 6. Como usar o desvio? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Desvio à esquerda soma no Alvarado e, no intermediário/alto, apoia imagem ou decisão cirúrgica compartilhada neste cenário e sem",
+    "wrongs": [
+      "Bastões elevados fecham diagnóstico de leucemia, suspendendo investigação de abdome agudo neste cenário sem benefício claro",
+      "Desvio à esquerda exclui apendicite e indica só virose, com alta imediata neste cenário sem benefício claro fora da indicação",
+      "Indica heparina plena por trombose mesentérica venosa sem TC contrastada neste cenário sem benefício claro fora da indicação mesmo",
+      "Obriga transfusão de granulócitos antes de qualquer apendicectomia laparoscópica neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Desvio (1 ponto) compõe Alvarado; interprete com clínica/imagem, não isolado. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar desvio como diagnóstico autônomo fora do abdome."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 8,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — líquido livre vs NOM",
+    "stem": "TC de apendicite com pequeno líquido pericecal sem abscesso organizado nem ar livre. Estável. NOM ainda é opção? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Pode permanecer candidata a NOM selecionado ou cirurgia; líquido mínimo isolado não define automaticamente complicada grave",
+    "wrongs": [
+      "Líquido pericecal mínimo impõe Hartmann imediato como única conduta aceitável neste cenário sem benefício claro fora da neste",
+      "Líquido livre mínimo proíbe qualquer antibiótico e exige alta domiciliar sem retorno neste cenário sem benefício claro fora da mesmo",
+      "Todo líquido na TC indica IMA, com angio-TC e embolectomia antes de avaliar o apêndice neste cenário sem benefício claro",
+      "Líquido contraindica laparoscopia, impondo apenas laparotomia mediana ampla neste cenário sem benefício claro fora da indicação"
+    ],
+    "explain": "Complicada típica: abscesso, flegmão extenso, perfuração. Líquido mínimo exige julgamento; reavalie seriado. Conduta guiada por gravidade e imagem.",
+    "trap": "Rotular automaticamente como peritonite fecal por líquido mínimo."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 9,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — segunda opinião NOM",
+    "stem": "Paciente compreende recorrência do NOM, mas prefere operar. Não complicada. Qual ética/conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Respeitar decisão compartilhada e oferecer apendicectomia laparoscópica como tratamento definitivo válido neste cenário sem benefício",
+    "wrongs": [
+      "Negar cirurgia porque WSES torna NOM obrigatório em 100% das não complicadas neste cenário sem benefício claro fora da neste",
+      "Condicionar a cirurgia a falha de três NOM consecutivos documentados em prontuário neste cenário sem benefício claro fora da indicação",
+      "Oferecer apenas homeopatia e probióticos como alternativa ética equivalente à apendicectomia neste cenário sem benefício claro",
+      "Exigir colonoscopia total na emergência antes de consentir qualquer apendicectomia eletiva neste cenário sem benefício claro em"
+    ],
+    "explain": "NOM não é absoluto; cirurgia permanece padrão aceito. Decisão compartilhada é central. Conduta guiada por gravidade e imagem.",
+    "trap": "Impor NOM contra a vontade do paciente elegível à cirurgia."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 10,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — antibiótico VO step-down",
+    "stem": "NOM de apendicite não complicada: 48 h IV com boa resposta, afebril, dor residual leve. Próximo passo? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Transicionar para antibiótico oral, alta com orientações de alarme e retorno precoce se piora neste cenário sem benefício claro",
+    "wrongs": [
+      "Manter acesso central e ATB IV por 14 dias obrigatórios apesar da resposta clínica neste cenário sem benefício claro fora da",
+      "Suspender todo antimicrobiano na primeira defervescência sem completar o esquema planejado neste cenário sem benefício claro sem",
+      "Indicar drenagem percutânea do apêndice normal residual na TC de controle precoce neste cenário sem benefício claro fora da indicação",
+      "Converter para laparotomia de rotina só porque houve uso inicial de via intravenosa neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "IV→VO com resposta; orientar falha. Cirurgia se piora. Evitar IV prolongado desnecessário. Conduta guiada por gravidade e imagem.",
+    "trap": "Prender o paciente no IV sem critério ou abandonar ATB precocemente sem plano."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 11,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — CCI e ASA",
+    "stem": "Idoso ASA IV, CCI alto, colecistite grau II, sem falência aguda atual. LC precoce de alto risco. Qual ponte TG18? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Suporte, antibiótico e considerar colecistostomia percutânea, planejando colecistectomia diferida se o risco melhorar neste",
+    "wrongs": [
+      "LC robótica obrigatória imediata apesar do ASA IV e CCI elevado não otimizado neste cenário sem benefício claro fora da neste",
+      "Alta com analgésico tópico sem ATB em grau II com massa inflamatória neste cenário sem benefício claro fora da indicação",
+      "Transplante hepático como tratamento da colecistite calculosa no idoso frágil neste cenário sem benefício claro fora da indicação mesmo",
+      "CPRE + prótese metálica duodenal como substituto da drenagem vesicular neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Alto risco: drenagem + ATB; cirurgia quando seguro. CCI/ASA guiam a escolha precoce vs ponte. Conduta guiada por gravidade e imagem.",
+    "trap": "Forçar LC precoce no ASA IV sem ponte. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 12,
+    "group": "Abdome agudo",
+    "theme": "Colangite — Reynolds",
+    "stem": "Idoso ictérico, febril, hipotenso e confuso, via dilatada. Após volume, ainda dependente de vasopressor baixo. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Colangite grau III: ATB, suporte de órgãos e drenagem biliar urgente (CPRE), sem atrasar por exames eletivos neste cenário",
+    "wrongs": [
+      "Aguardar hemocultura negativa por 72 h antes de qualquer descompressão da via biliar neste cenário sem benefício claro fora da",
+      "Colecistectomia laparoscópica isolada resolve Reynolds sem drenar o colédoco infectado neste cenário sem benefício claro",
+      "Alta com ciprofloxacino oral se a confusão for atribuída a “delirium senil” isolado neste cenário sem benefício claro fora da indicação",
+      "Plasmapferese de rotina como primeira linha da pentade de Reynolds biliar neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Reynolds = gravidade. Drenagem urgente + ATB + UTI. Não esperar culturas para descomprimir. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar pentade como delirium e atrasar CPRE."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 13,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — visão crítica",
+    "stem": "Durante LC por colecistite, anatomia dúbia no triângulo. Qual princípio de segurança? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Obter visão crítica de segurança antes de clipar; converter ou colangiografia se dúvida, prevenindo lesão de via neste cenário",
+    "wrongs": [
+      "Clipar estruturas dúbias rapidamente para reduzir tempo cirúrgico em colecistite aguda neste cenário sem benefício claro",
+      "Negar conversão para aberta, mesmo com inflamação que impede identificação segura neste cenário sem benefício claro fora da indicação",
+      "Ressecar sempre o hepatocholedoco se o cístico parecer curto, como profilaxia oncológica neste cenário sem benefício claro mesmo",
+      "Abandonar campo sem drenos e sem documentar dúvida anatômica no prontuário neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Lesão biliar (Strasberg) evita-se com visão crítica; dúvida = não clipar às cegas. Conduta guiada por gravidade e imagem.",
+    "trap": "Clipar no escuro para “não converter”. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 14,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — bile no dreno",
+    "stem": "Pós LC, bile pelo dreno no 1º dia, bilirrubina em alta, dor. Qual suspeita e caminho? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Suspeitar lesão ou fugade biliar: suporte, imagem/CPRE conforme gravidade e planejar correção especializada neste cenário",
+    "wrongs": [
+      "Atribuir bile no dreno a dieta precoce e liberar sem investigação da via biliar neste cenário sem benefício claro fora da",
+      "Indicar imediatamente novo LC no mesmo dia sem mapeamento da lesão neste cenário sem benefício claro fora da indicação como única",
+      "Tratar com loperamida e probióticos como fístula bilioentérica clínica leve neste cenário sem benefício claro fora da indicação",
+      "Transfusão empírica de plasma como tratamento definitivo da bilirrubina elevada pós-op neste cenário sem benefício claro"
+    ],
+    "explain": "Bile pós-op + icterícia: investigar fuga/lesão (CPRE/reconstrução conforme tipo). Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar bile no dreno como “normal”. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 15,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — litíase assintomática",
+    "stem": "US de rotina mostra cálculos em assintomática, provas hepáticas normais, sem colecistite. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Observação na maioria; colecistectomia eletiva só com indicações selecionadas (ex.: porcelana, pólipos de risco, hemolíticos) e sem",
+    "wrongs": [
+      "LC de urgência noturna em toda litíase assintomática detectada em check-up neste cenário sem benefício claro fora da indicação",
+      "CPRE profilática em todo cálculo vesicular assintomático sem dilatação de via neste cenário sem benefício claro fora da indicação mesmo",
+      "Ursacol vitalício obrigatório com proibição de acompanhamento clínico neste cenário sem benefício claro fora da indicação mesmo em",
+      "Antibiótico cíclico mensal para prevenir colecistite futura na litíase muda neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Assintomática: observação. Opere por critérios específicos, não por achado incidental isolado. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar litíase muda por reflexo. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 16,
+    "group": "Abdome agudo",
+    "theme": "Colangite — sequência pós-CPRE",
+    "stem": "Após CPRE bem-sucedida por colangite litiásica, paciente estável. Vesícula com cálculos. Qual planejamento? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Programar colecistectomia na mesma internação ou em breve intervalo, reduzindo recorrência biliar neste cenário sem benefício claro",
+    "wrongs": [
+      "Evitar colecistectomia para sempre após CPRE bem-sucedida, pois a via já está “resolvida” neste cenário sem benefício claro",
+      "Repetir CPRE semanal profilática em vez de remover a vesícula fonte dos cálculos neste cenário sem benefício claro fora da indicação",
+      "Iniciar quimioterapia do colangiocarcinoma presumido sem histologia após uma colangite neste cenário sem benefício claro mesmo",
+      "Colecistostomia permanente como substituto preferencial da colecistectomia no estável neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Após controle da colangite, colecistectomia previne novos eventos. Timing conforme estabilidade. Conduta guiada por gravidade e imagem.",
+    "trap": "Deixar a vesícula litiásica indefinidamente pós-CPRE sem plano."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 17,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — gás na parede",
+    "stem": "Diabético com dor em QHD, toxemia, US/TC com gás na parede vesicular. Qual gravidade? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Colecistite enfisematosa/grave: suporte, ATB amplo e cirurgia/drenagem urgentes pelo alto risco de perfuração neste cenário e sem",
+    "wrongs": [
+      "Achado benigno de aerobilia fisiológica, com alta e dieta gordurosa de prova neste cenário sem benefício claro fora da neste",
+      "Tratamento exclusivo com oxigenoterapia hiperbárica ambulatorial sem cirurgia neste cenário sem benefício claro fora da indicação",
+      "Observação sem ATB por 72 h, pois gás mural exclui infecção anaeróbia neste cenário sem benefício claro fora da indicação mesmo",
+      "CPRE como único gesto, sem abordar a vesícula enfisematosa no diabético tóxico neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Enfisematosa = urgência (clostrídios/anaeróbios). Não subtratar como colecistite leve. Conduta guiada por gravidade e imagem.",
+    "trap": "Liberar diabético com gás na parede vesicular."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 18,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — pancreatite biliar leve",
+    "stem": "Pancreatite biliar leve em resolução, cálculos na vesícula, colédoco limpo na RM. Momento da LC? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Colecistectomia na mesma internação após melhora clínica da pancreatite leve, prevenindo recidiva biliar neste cenário sem benefício",
+    "wrongs": [
+      "Aguardar obrigatoriamente 6 meses após toda pancreatite biliar leve antes de discutir LC neste cenário sem benefício claro",
+      "CPRE semanal mesmo com via limpa, substituindo a colecistectomia definitiva neste cenário sem benefício claro fora da indicação",
+      "Necrosectomia aberta precoce na pancreatite leve edematosa sem necrose infectada neste cenário sem benefício claro fora da indicação e",
+      "Proibir LC laparoscópica, impondo sempre cirurgia aberta após pancreatite biliar neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Pancreatite biliar leve: LC na index admission. Grave: diferir até resolução. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Adiar demais a LC após pancreatite biliar leve."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 19,
+    "group": "Abdome agudo",
+    "theme": "Colecistite — embarazo e QHD",
+    "stem": "Gestante 2º trimestre com colecistite grau I, estável. US típico. Conduta preferencial? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Suporte, ATB seguros na gestação e colecistectomia laparoscópica quando indicada, preferencialmente no 2º trimestre neste cenário",
+    "wrongs": [
+      "Contraindicar qualquer cirurgia até o puerpério, aceitando perfuração vesicular sem intervenção neste cenário sem benefício",
+      "CPRE com fluoroscopia prolongada sem proteção como primeira linha em colecistite sem colangite neste cenário sem benefício claro",
+      "Ácido ursodesoxicólico intravenoso de urgência como substituto da LC na gestante febril neste cenário sem benefício claro mesmo",
+      "Radioterapia abdominal para litólise, evitando anestesia geral no 2º trimestre neste cenário sem benefício claro fora da indicação"
+    ],
+    "explain": "Colecistite gestacional: ATB + LC quando preciso; 2º trimestre costuma ser janela favorável. Conduta guiada por gravidade e imagem.",
+    "trap": "Proibir cirurgia e aceitar complicação na gestante."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 20,
+    "group": "Abdome agudo",
+    "theme": "Colangite — hemoculturas",
+    "stem": "Antes da CPRE em colangite, coletam-se hemoculturas. Qual o papel correto? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Coletar culturas e iniciar ATB empírico imediato; não atrasar a drenagem aguardando resultado microbiológico neste cenário e sem",
+    "wrongs": [
+      "Esperar o antibiograma definitivo por 48–72 h antes de administrar a primeira dose de ATB neste cenário sem benefício claro",
+      "Culturas substituem a CPRE se crescimento de E. coli comunitária sensível a ciprofloxacino neste cenário sem benefício claro mesmo",
+      "Negar hemoculturas em febre biliar porque nunca alteram o espectro empírico inicial neste cenário sem benefício claro fora da indicação",
+      "Usar apenas antifúngico empírico até a cultura bacteriana positivar na colangite típica neste cenário sem benefício claro em"
+    ],
+    "explain": "Culturas guiam desescalonamento; ATB e drenagem não esperam o laboratório. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Atrasar ATB/CPRE por cultura. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 21,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — direita vs apendicite",
+    "stem": "Asiático com dor em FID, TC mostra diverticulite de ceco sem abscesso, apêndice normal. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Tratar como diverticulite direita conforme gravidade (conservador se não complicada), evitando apendicectomia desnecessária e sem",
+    "wrongs": [
+      "Apendicectomia obrigatória em toda dor de FID mesmo com apêndice normal documentado na TC neste cenário sem benefício claro",
+      "Hartmann esquerdo por divertículo cecal, sem avaliar localização real do processo neste cenário sem benefício claro fora da indicação",
+      "CPRE por divertículo de ceco interpretado como aerobilia patognomônica neste cenário sem benefício claro fora da indicação mesmo",
+      "Quimioterapia por câncer certo em todo espessamento cecal inflamatório agudo neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Diverticulite direita mimetiza apendicite; TC diferencia. Manejo espelha gravidade (como à esquerda). Conduta guiada por gravidade e imagem.",
+    "trap": "Operar apêndice normal por viés de FID. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 22,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — abscesso drenável",
+    "stem": "Abscesso pélvico de 6 cm por diverticulite (Hinchey II), febre, estável. Qual passo? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Antibiótico e drenagem percutânea guiada por imagem, com cirurgia se falha, peritonite ou impossibilidade de dreno neste e em",
+    "wrongs": [
+      "Apenas observação sem ATB em abscesso de 6 cm febril, aguardando resolução espontânea neste cenário sem benefício claro fora",
+      "Colonoscopia na fase febril para drenar o abscesso via pólipo diverticular neste cenário sem benefício claro fora da indicação",
+      "EVAR aórtico por abscesso pélvico interpretado como AAA roto contido neste cenário sem benefício claro fora da indicação mesmo",
+      "Transplante fecal ambulatorial como tratamento definitivo do Hinchey II neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Abscesso maior/acessível: dreno + ATB. Falha → cirurgia. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Negar drenagem em abscesso volumoso acessível."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 23,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — lavagem laparoscópica",
+    "stem": "Hinchey III em selecionado estável: discute-se lavagem laparoscópica. Qual cautela atual? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Lavagem pode ser opção em selecionados, mas não substitui ressecção quando há indicação clara de controle de foco neste neste",
+    "wrongs": [
+      "Lavagem laparoscópica é obrigatória e superior absoluta ao Hartmann em todos os ensaios sem seleção neste cenário sem neste",
+      "Lavagem ambulatorial sob sedação local resolve peritonite fecal Hinchey IV com segurança neste cenário sem benefício claro",
+      "Proibir qualquer abordagem laparoscópica na diverticulite complicada, inclusive diagnóstica neste cenário sem benefício claro mesmo",
+      "Associar sempre stent metálico cólico à lavagem como padrão WSES 2020 neste cenário sem benefício claro fora da indicação"
+    ],
+    "explain": "Evidência mista: lavagem em selecionados; ressecção permanece central em muitos cenários. Conduta guiada por gravidade e imagem.",
+    "trap": "Vender lavagem como panaceia da peritonite fecal."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 24,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — estenose crônica",
+    "stem": "Após múltiplos episódios, paciente com suboclusão e estenose sigmoide inflamatória/cicatricial na colonoscopia diferida. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Planejar ressecção eletiva do segmento doente após otimização, pois estenose sintomática é indicação clássica neste cenário e",
+    "wrongs": [
+      "Dilatações endoscópicas semanais indefinidas como cura oncológica da estenose inflamatória neste cenário sem benefício claro",
+      "NOM com SNG domiciliar permanente em vez de ressecção da estenose sintomática neste cenário sem benefício claro fora da indicação",
+      "Radioterapia para remodelar a estenose diverticular crônica do sigmoide neste cenário sem benefício claro fora da indicação mesmo",
+      "Apendicectomia intervalar como tratamento da estenose de cólon esquerdo neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Estenose/fístula/imunossupressão/QoL ruim sustentam eletiva — não o número cru de crises. Conduta guiada por gravidade e imagem.",
+    "trap": "Persistir em dilatação paliativa sem plano ressecção quando há indicação."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 25,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — pneumoperitônio mínimo",
+    "stem": "TC com bolhas pericólicas sem líquido livre abundante, paciente estável sem peritonismo. Classificação prática? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Pode corresponder a microperfuração contida: ATB, observação estreita e cirurgia se deterioração clínica neste cenário sem e sem",
+    "wrongs": [
+      "Bolhas pericólicas isoladas impõem sempre Hartmann na primeira hora, mesmo estável sem peritonismo neste cenário sem benefício",
+      "Bolhas autorizam alta imediata sem ATB nem reavaliação, como achado incidental irrelevante neste cenário sem benefício claro",
+      "Bolhas diagnosticam úlcera péptica perfurada obrigando vagotomia sem avaliar o sigmoide neste cenário sem benefício claro mesmo",
+      "Bolhas contraindicam TC futura e impõem apenas radiografia seriadas de abdome neste cenário sem benefício claro fora da indicação"
+    ],
+    "explain": "Microperfuração contida ≠ peritonite fecal. Vigilância + ATB; opere se piora. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Equacionar bolha pericólica a Hinchey IV."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 26,
+    "group": "Abdome agudo",
+    "theme": "ASBO — desafio contraste negativo",
+    "stem": "Após contraste hidrossolúvel, não há progresso para o cólon em 24 h, paciente ainda obstruído sem isquemia franca. Próximo passo? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Indicar cirurgia por falha do NOM/desafio, antes que sobrevenha sofrimento intestinal neste cenário sem benefício claro fora da",
+    "wrongs": [
+      "Repetir o mesmo desafio diariamente por uma semana sem reavaliar indicação operatória neste cenário sem benefício claro fora",
+      "Iniciar dieta sólida para “empurrar” o contraste retido na alça obstruída neste cenário sem benefício claro fora da indicação",
+      "Alta com procinético oral e retorno só se houver hematêmese neste cenário sem benefício claro fora da indicação como única medida",
+      "Stent duodenal metálico como tratamento da brida de íleo distal neste cenário sem benefício claro fora da indicação como única medida em"
+    ],
+    "explain": "Falha do contraste = alta chance de necessidade cirúrgica. Não eternizar o expectante. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar falha do Gastrografin. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 27,
+    "group": "Abdome agudo",
+    "theme": "ASBO — hérnia interna",
+    "stem": "Pós-bypass gástrico há 2 anos, dor intensa, TC com swirl e alças em C. Sem peritonite ainda. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Suspeitar hérnia interna e indicar exploração cirúrgica precoce; NOM prolongado é arriscado nesse contexto neste cenário e sem",
+    "wrongs": [
+      "NOM de ASBO clássica por brida por 72 h sem exploração, apesar do swirl pós-bypass neste cenário sem benefício claro fora da",
+      "Alta com inibidor de bomba e dieta líquida, interpretando swirl como achado normal pós-bariátrica neste cenário sem benefício claro",
+      "CPRE para descomprimir alça biliopancreática sem avaliação cirúrgica da hérnia interna neste cenário sem benefício claro mesmo",
+      "Anticoagulação exclusiva por embolia, omitindo exploração quando há fechamento de defeitos neste cenário sem benefício claro em"
+    ],
+    "explain": "Pós-bariátrica: hérnia interna é emergência relativa; operar cedo. NOM longo é perigoso. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar swirl pós-bypass como ASBO adesiva “comum” expectante."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 28,
+    "group": "Abdome agudo",
+    "theme": "ASBO — SNG papel",
+    "stem": "Paciente com ASBO vomitando, risco de aspiração, sem isquemia. Por que a SNG? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Descomprimir estômago, reduzir vômitos/aspiração e viabilizar NOM, sem substituir cirurgia se houver estrangulamento neste cenário",
+    "wrongs": [
+      "SNG dissolve aderências quimicamente e cura ASBO sem necessidade de hidratação venosa neste cenário sem benefício claro fora",
+      "SNG é contraindicada em vômitos, pois aumenta o risco de aspiração em obstrução alta neste cenário sem benefício claro fora da",
+      "SNG substitui a indicação cirúrgica mesmo com peritonismo e lactato em ascensão neste cenário sem benefício claro fora da indicação",
+      "SNG deve permanecer fechada para “exercitar” o estômago durante a oclusão ativa neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "SNG + NPO + fluidos = base do NOM. Não mascara isquemia. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Achar que SNG cura brida ou contraindica cirurgia necessária."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 29,
+    "group": "Abdome agudo",
+    "theme": "Obstrução — câncer e stent falho",
+    "stem": "Stent como ponte em oclusão esquerda falha tecnicamente; paciente distendido, ainda estável. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Partir para descompressão cirúrgica (ressecção ± estoma) sem insistir indefinidamente no stent neste cenário sem benefício claro",
+    "wrongs": [
+      "Repetir stent diariamente por duas semanas apesar de falhas técnicas sucessivas neste cenário sem benefício claro fora da",
+      "Iniciar quimioterapia com tumor ocluído e vômitos, sem descompressão efetiva neste cenário sem benefício claro fora da indicação",
+      "Alta com enema domiciliar como tratamento da oclusão neoplásica completa neste cenário sem benefício claro fora da indicação mesmo",
+      "Apendicectomia e ileostomia profilática sem abordar o tumor esquerdo oclusivo neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Stent falho → cirurgia. Não deixar ocluído sob quimioterapia. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Insistir em stent após falha técnica com oclusão persistente."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 30,
+    "group": "Abdome agudo",
+    "theme": "Íleo paralítico — opioid",
+    "stem": "Pós-op ortopédico, distensão, TC sem transição, em morfina alta, Na e K normais. Melhora esperada como? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Reduzir opioides, deambular, suporte; reavaliar se surgirem sinais de mecânica ou isquemia neste cenário sem benefício claro",
+    "wrongs": [
+      "Laparotomia imediata por brida, apesar da TC sem transition point no pós-op recente neste cenário sem benefício claro fora da",
+      "Aumentar opioide para “descansar o intestino” na suspeita de íleo adinâmico neste cenário sem benefício claro fora da indicação",
+      "Colonoscopia total na recuperação anestésica como estímulo mecânico obrigatório neste cenário sem benefício claro fora da indicação mesmo",
+      "Heparina plena empírica por IMA sem dor desproporcional nem angio-TC neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Íleo: otimizar causa (opioide, eletrólitos, sepse). Cirurgia se mecânica/isquemia. Conduta guiada por gravidade e imagem.",
+    "trap": "Operar íleo opioide como ASBO mecânica. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 31,
+    "group": "Abdome agudo",
+    "theme": "Isquemia — second look",
+    "stem": "Após embolectomia de AMS e ressecção segmentar duvidosa de alça, anastomose sob tensão mínima. Por que second look? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Reavaliar vitalidade intestinal em 24–48 h, pois a fronteira de necrose pode evoluir após revascularização neste cenário e sem",
+    "wrongs": [
+      "Second look é proibido após embolectomia bem-sucedida com pulso distal recuperado neste cenário sem benefício claro fora da",
+      "Second look substitui a anticoagulação e permite dieta hiperproteica imediata neste cenário sem benefício claro fora da indicação",
+      "Second look só se faz após 14 dias, quando o íleo pós-op já resolveu completamente neste cenário sem benefício claro fora da indicação mesmo",
+      "Second look indica sempre colectomia total, independentemente da vitalidade à relaparotomia neste cenário sem benefício claro"
+    ],
+    "explain": "Vitalidade duvidosa → second look planejado. Não apostar cegamente na primeira avaliação. Conduta guiada por gravidade e imagem.",
+    "trap": "Fechar e esquecer alça de vitalidade duvidosa."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 32,
+    "group": "Abdome agudo",
+    "theme": "Isquemia — FA e anticoagulação",
+    "stem": "Embolia mesentérica tratada, ritmo em FA, sem sangramento ativo pós-op. Estratégia antitrombótica? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Manter anticoagulação conforme risco/benefício para prevenir novos êmbolos, ajustando no perioperatório neste cenário sem benefício",
+    "wrongs": [
+      "Suspender definitivamente anticoagulação na FA após um episódio embólico esplâncnico neste cenário sem benefício claro fora da",
+      "Trocar para AAS isolado como equivalente à anticoagulação plena na FA valvular mecânica neste cenário sem benefício claro",
+      "Usar trombolítico sistêmico domiciliar sem monitorização como padrão pós-embolectomia neste cenário sem benefício claro fora da indicação",
+      "Indicar EVAR aórtico profilático para prevenir novos êmbolos cardíacos na FA neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "FA emboligênica exige anticoagulação quando seguro. Equipe clínica/cirúrgica alinha o timing. Conduta guiada por gravidade e imagem.",
+    "trap": "Omitir anticoagulação na FA após embolia mesentérica."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 33,
+    "group": "Abdome agudo",
+    "theme": "Isquemia — lactato normal",
+    "stem": "Dor desproporcional, FA, lactato 1,2, exame mole. Equipe hesita em angio-TC. Qual mensagem correta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Lactato normal não exclui isquemia precoce; manter alta suspeita e avançar para angio-TC sem demora neste cenário sem benefício",
+    "wrongs": [
+      "Lactato normal afasta IMA com VPN absoluto, autorizando alta sem imagem vascular neste cenário sem benefício claro fora da",
+      "Só pedir angio-TC se lactato ultrapassar 6 mmol/L em duas medidas consecutivas neste cenário sem benefício claro fora da indicação",
+      "Trocar investigação por US de vias biliares exclusivo, pois lactato baixo indica cólica neste cenário sem benefício claro",
+      "Iniciar NOM de apendicite por lactato normal com dor difusa e FA crônica neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Lactato eleva-se tarde; clínica e risco embólico mandam a imagem. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Usar lactato normal para afastar IMA. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 34,
+    "group": "Abdome agudo",
+    "theme": "AAA — diâmetro eletivo",
+    "stem": "Homem de 68 anos, AAA fusiforme 5,6 cm assintomático, anatomia favorável a EVAR. Indicação? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Indicar reparo eletivo (EVAR ou aberto conforme anatomia/risco), pois diâmetro ≥5,5 cm eleva risco de ruptura neste cenário e sem",
+    "wrongs": [
+      "Observar até 8 cm, pois só então o risco de ruptura supera o da intervenção eletiva neste cenário sem benefício claro fora da",
+      "Tratar apenas com estatina e anti-hipertensivo, que eliminam a indicação cirúrgica por diâmetro neste cenário sem benefício claro",
+      "Indicar EVAR de emergência noturna sem preparo, apesar de assintomático e estável neste cenário sem benefício claro fora da indicação",
+      "Contraindicar qualquer reparo porque diabetes parece “proteger” e cancela o limiar de 5,5 cm neste cenário sem benefício claro em"
+    ],
+    "explain": "Limiar clássico ≥5,5 cm (homem); crescimento rápido/sintomas também indicam. Cir1: EVAR se anatomia ok. Conduta guiada por gravidade e imagem.",
+    "trap": "Observar AAA ≥5,5 cm assintomático sem plano."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 35,
+    "group": "Abdome agudo",
+    "theme": "AAA — crescimento rápido",
+    "stem": "AAA de 4,8 cm cresceu 0,7 cm em 5 meses no US de seguimento. Assintomático. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Encaminhar para intervenção eletiva por taxa de crescimento >0,5 cm/6 meses, além do seguimento habitual neste cenário sem benefício",
+    "wrongs": [
+      "Manter só US anual, pois diâmetro ainda <5,5 cm anula qualquer critério de crescimento neste cenário sem benefício claro",
+      "Iniciar doxiciclina como alternativa comprovada que evita cirurgia no crescimento rápido neste cenário sem benefício claro mesmo",
+      "Indicar nefrectomia bilateral profilática por associação estatística fraca com AAA neste cenário sem benefício claro fora da indicação",
+      "Liberar sem controle de tabagismo, pois o crescimento rápido é irreversível e irrelevante neste cenário sem benefício claro em"
+    ],
+    "explain": "Crescimento >0,5 cm/6 meses ou >1 cm/ano indica reparo mesmo abaixo de 5,5 cm. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Olhar só o diâmetro absoluto e ignorar velocidade."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 36,
+    "group": "Abdome agudo",
+    "theme": "AAA roto — instável balão",
+    "stem": "Suspeita de AAA roto, PA 70/40 refratária, sem tempo para angio-TC completa. Centro endovascular disponível. Estratégia Cir1? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Controle com balão de oclusão aórtico via femoral, reanimar e decidir EVAR vs aberto conforme anatomia intraoperatória neste cenário",
+    "wrongs": [
+      "Colonoscopia diagnóstica na sala de emergência antes de qualquer acesso vascular femoral neste cenário sem benefício claro",
+      "Observação em leito de enfermaria com cristaloides lentos aguardando estabilização espontânea neste cenário sem benefício claro mesmo",
+      "Tomografia de crânio primeiro, pois hipotensão em idoso é AVC até prova em contrário neste cenário sem benefício claro fora da indicação",
+      "Apendicectomia sob anestesia local como teste terapêutico da dor abdominal hipotensiva neste cenário sem benefício claro em"
+    ],
+    "explain": "Instável: balão → aortografia → EVAR se possível; converter se falha. Não atrasar com exames eletivos. Conduta guiada por gravidade e imagem.",
+    "trap": "Mandar instável à TC longa ou observar choque aórtico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 37,
+    "group": "Abdome agudo",
+    "theme": "AAA — colite isquêmica pós-reparo",
+    "stem": "Pós-reparo aberto de AAA roto, diarreia sanguinolenta e necessidade aumentada de volume em 24 h. Exame de escolha? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Retossigmoidoscopia para avaliar isquemia colônica; mucosa isolada = clínico; transmural = ressecção + estoma neste cenário e sem",
+    "wrongs": [
+      "Colonoscopia total com biópsias múltiplas de íleo terminal como primeiro passo no instável neste cenário sem benefício claro",
+      "Alta com loperamida, interpretando sangue como “hemorroida pós-op irrelevante” neste cenário sem benefício claro fora da indicação",
+      "CPRE urgente por diarreia sanguinolenta atribuída a hemobilia sem investigação cólica neste cenário sem benefício claro fora da indicação mesmo",
+      "Angioplastia de AMS empírica sem endoscopia, em todo sangramento intestinal pós-AAA neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Colite isquêmica pós-AAA de emergência é frequente; retossigmoidoscopia guia mucosa vs transmural. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar diarreia sanguinolenta pós-reparo de AAA."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 38,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — redução <6 h",
+    "stem": "Homem com hérnia inguinal encarcerada há 3 h, estável, sem peritonismo, labs normais, sem hiperemia. Tentativa? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Pode tentar redução manual (Taxe) com analgesia; se reduzir, programar reparo eletivo breve; se falhar, operar neste cenário",
+    "wrongs": [
+      "Redução é sempre proibida, mesmo sem sinais de isquemia e com menos de seis horas de evolução neste cenário sem benefício",
+      "Redução sob anestesia geral na enfermaria sem sala, mesmo com hiperemia e leucocitose neste cenário sem benefício claro fora da",
+      "Watchful waiting indefinido em encarceramento agudo irredutível sem nova avaliação neste cenário sem benefício claro fora da indicação",
+      "Antibiótico isolado dissolve o saco herniário e evita qualquer manobra ou cirurgia neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Cir3: redução ok se estável, sem isquemia, <~6 h. Sinais de sofrimento → cirurgia sem reduzir. Conduta guiada por gravidade e imagem.",
+    "trap": "Reduzir estrangulada ou proibir Taxe no candidato adequado."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 39,
+    "group": "Abdome agudo",
+    "theme": "Hérnia femoral — mulher",
+    "stem": "Mulher de 70 anos com abaulamento abaixo do ligamento inguinal, pouco sintomático. Watchful waiting? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Não recomendar expectante: hérnia femoral (e mulheres) tem maior risco de encarceramento; indicar reparo eletivo neste cenário",
+    "wrongs": [
+      "Aplicar watchful waiting idêntico ao homem idoso com inguinal oligossintomática neste cenário sem benefício claro fora da",
+      "Reduzir diariamente com força na ambulância como único tratamento da femoral neste cenário sem benefício claro fora da indicação",
+      "Tratar com meia elástica abdominal como equivalente ao reparo com tela neste cenário sem benefício claro fora da indicação mesmo",
+      "Indicar apenas CPRE porque abaulamento inguinal em idosa sugere íleo biliar neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Watchful waiting: homem idoso inguinal oligosintomática. Não em mulher/femoral. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Expectante em femoral/mulher. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 40,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — peritonite e laparotomia",
+    "stem": "Hérnia inguinal estrangulada com peritonite difusa e choque séptico inicial. Via? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Laparotomia exploradora (além do controle do saco) para avaliar e tratar alça necrosada/peritonite, com suporte neste cenário",
+    "wrongs": [
+      "Apenas inguinotomia ambulatorial sob anestesia local, omitindo avaliação da cavidade peritoneal neste cenário sem benefício",
+      "NOM com SNG e ATB por 72 h na peritonite por alça estrangulada não reduzida neste cenário sem benefício claro fora da indicação",
+      "TAPP eletiva em 6 semanas sem abordar a necrose atual na vigência de sepse neste cenário sem benefício claro fora da indicação mesmo",
+      "Colonoscopia para “descomprimir” a alça herniada necrosada via endoscópica neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Peritonite/redução indevida na indução → laparotomia. Inguinal isolada se só sofrimento local sem peritonite. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar peritonite só com inguinotomia local insuficiente."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 41,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — redução na indução",
+    "stem": "Na indução anestésica de estrangulada, o saco reduz espontaneamente antes da inspeção. Conduta Cir3? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Explorar a cavidade (laparoscopia/laparotomia) para não deixar alça isquêmica reduzida “às cegas” neste cenário sem benefício claro",
+    "wrongs": [
+      "Encerrar sem explorar, pois a redução espontânea prova vitalidade intestinal completa neste cenário sem benefício claro fora",
+      "Aplicar apenas gelo inguinal e acordar o paciente sem inspecionar vísceras neste cenário sem benefício claro fora da indicação",
+      "Prescrever ATB e alta no mesmo dia, documentando redução anestésica como cura neste cenário sem benefício claro fora da indicação mesmo",
+      "Converter para EVAR aórtico por suspeita retrospectiva de AAA na redução espontânea neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Redução indevida na indução exige inspeção da alça. Risco de necrose intrapertioneal oculta. Conduta guiada por gravidade e imagem.",
+    "trap": "Aceitar redução anestésica sem olhar a cavidade."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 42,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — Lichtenstein vs emergência",
+    "stem": "Estrangulada com enterectomia e contaminação local controlada. Uso de tela? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Individualizar: reparo anatômico ou tela conforme contaminação e protocolo; prioridade é ressecar alça inviável e desobstruir",
+    "wrongs": [
+      "Tela gigante tipo Stoppa obrigatória em todo campo contaminado com enterectomia neste cenário sem benefício claro fora da",
+      "Proibir qualquer reparo da parede na mesma cirurgia, deixando a hérnia aberta propositalmente neste cenário sem benefício claro",
+      "Usar tela infectada propositalmente para estimular fibrose protetora na contaminação fecal neste cenário sem benefício claro mesmo",
+      "Adiar enterectomia para segundo tempo, reparando só com Lichtenstein na necrose estabelecida neste cenário sem benefício claro em"
+    ],
+    "explain": "Controle de alça > estética do reparo. Tela em campo limpo/limpo-contaminado selecionado; contaminado: cautela. Conduta guiada por gravidade e imagem.",
+    "trap": "Priorizar tela cosmética e deixar necrose."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 43,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — Amyand",
+    "stem": "Intraoperatório de “hérnia inguinal inflamada”: apêndice no saco, com apendicite. Conduta conceitual? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Apendicectomia conforme inflamação e reparo herniário adaptado ao grau de contaminação (hérnia de Amyand) neste cenário sem",
+    "wrongs": [
+      "Reduzir o apêndice inflamado sem ressecar e fechar com tela em campo purulento sempre neste cenário sem benefício claro fora",
+      "Colectomia direita oncológica de rotina em todo Amyand, mesmo apêndice apenas congesto neste cenário sem benefício claro",
+      "Tratar apenas com ATB sem abordar o saco herniário contendo o apêndice doente neste cenário sem benefício claro fora da indicação",
+      "Converter para CPRE porque apêndice em saco equivale a coledocolitíase neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Amyand: apêndice no saco ± apendicite. Manejo segue inflamação + reparo seguro. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Ignorar apêndice doente no saco ou forçar tela em pus."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 44,
+    "group": "Abdome agudo",
+    "theme": "Hérnia — irredutível sem isquemia",
+    "stem": "Encarcerada irredutível após Taxe adequado, estável, sem sinais de estrangulamento. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Cirurgia imediata/urgente pelo alto risco de progressão para estrangulamento, mesmo sem isquemia atual neste cenário sem benefício",
+    "wrongs": [
+      "Alta com cinta inguinal e retorno em 30 dias se ainda irredutível e indolor neste cenário sem benefício claro fora da neste",
+      "Repetir Taxe a cada hora por 24 h na enfermaria apesar de falhas repetidas neste cenário sem benefício claro fora da indicação",
+      "NOM de ASBO sem abordar o orifício herniário que causa a oclusão neste cenário sem benefício claro fora da indicação como única medida",
+      "Radioterapia local para reduzir o volume do saco e permitir redução espontânea neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Irredutível = operar. Estrangulada = emergência ainda maior. Não expectar irredutível. Conduta guiada por gravidade e imagem.",
+    "trap": "Mandar irredutível para casa com cinta. Evitar atraso terapêutico."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 45,
+    "group": "Abdome agudo",
+    "theme": "AAA vs cólica — pulsos",
+    "stem": "Idoso com dor lombar súbita e sudorese; pulsos femorais assimétricos, massa duvidosa. Lipase normal. Próximo exame? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Angio-TC de aorta/abdome (se estável) ou avaliação vascular imediata; não atribuir só a cólica nefretica sem imagem neste",
+    "wrongs": [
+      "Alta com anti-inflamatório para lombalgia mecânica, sem palpação abdominal nem imagem neste cenário sem benefício claro fora",
+      "Uretoscopia rígida imediata antes de qualquer avaliação aórtica na hipotensão relativa neste cenário sem benefício claro",
+      "Teste ergométrico na emergência por sudorese, omitindo a hipótese de AAA neste cenário sem benefício claro fora da indicação",
+      "Apendicectomia profilática por dor referida sem exames de imagem abdominais neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Dor lombar + sinais vasculares em idoso: AAA até prova em contrário. US bexiga/aorta pode ajudar se instável. Conduta guiada por gravidade e imagem.",
+    "trap": "Tratar como cólica e liberar sem excluir aorta."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 46,
+    "group": "Abdome agudo",
+    "theme": "Isquemia vs diverticulite",
+    "stem": "Idoso com FA, dor difusa desproporcional; TC sem divertículos inflamados, mas com oclusão distal de AMS. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Tratar como isquemia mesentérica embolica (revascularização ± ressecção), não como diverticulite clínica neste cenário sem benefício",
+    "wrongs": [
+      "Antibiótico seletivo de diverticulite não complicada e alta, ignorando a oclusão da AMS neste cenário sem benefício claro",
+      "Hartmann eletivo em 6 semanas por “diverticulite oculta” sem inflamação na TC neste cenário sem benefício claro fora da indicação",
+      "NOM de ASBO com SNG exclusiva, sem heparina nem abordagem da artéria mesentérica neste cenário sem benefício claro fora da indicação mesmo",
+      "Colecistectomia por gases intestinais interpretados como colecistite enfisematosa neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "Imagem define: oclusão AMS ≠ diverticulite. Conduta vascular/cirúrgica urgente. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Rotular dor do idoso com FA como diverticulite sem ver vasos."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 47,
+    "group": "Abdome agudo",
+    "theme": "ASBO — grávida",
+    "stem": "Gestante 28 semanas com vômitos biliosos, cicatriz de cesárea, TC evitada; RM sugere brida sem isquemia. Conduta? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "NOM inicial com SNG e suporte se sem isquemia, com baixo limiar cirúrgico e equipe obstétrica envolvida neste cenário sem benefício",
+    "wrongs": [
+      "Proibir SNG na gestação e insistir em dieta oral apesar dos vômitos incoercíveis neste cenário sem benefício claro fora da",
+      "Cesárea imediata de rotina em toda suspeita de ASBO, antes de avaliar a brida neste cenário sem benefício claro fora da indicação",
+      "Contraste iodado em doses altas seriadas sem proteção como único método diagnóstico neste cenário sem benefício claro fora da indicação mesmo",
+      "Anticoagulação plena empírica por IMA sem dor desproporcional nem imagem vascular neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "ASBO na gestação: NOM se seguro; cirurgia se alarme. RM ajuda a evitar TC. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Cesariana automática ou negar suporte na ASBO gestacional."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 48,
+    "group": "Abdome agudo",
+    "theme": "Diverticulite — recorrência e QoL",
+    "stem": "Paciente com episódios frequentes não complicados que limitam trabalho e sono, imunocompetente. Discussão eletiva? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Pode indicar ressecção eletiva por qualidade de vida após aconselhamento, mesmo sem “número mágico” de crises neste cenário e sem",
+    "wrongs": [
+      "Negar eletiva sempre, porque WSES proíbe cirurgia na ausência de perfuração prévia neste cenário sem benefício claro fora da",
+      "Exigir exatamente cinco internações documentadas antes de qualquer conversa sobre ressecção neste cenário sem benefício claro",
+      "Indicar radioterapia pélvica como equivalente à sigmoidectomia eletiva funcional neste cenário sem benefício claro fora da indicação",
+      "Manter ATB contínuo por anos como substituto preferencial da melhora de QoL cirúrgica neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "QoL, medo e absenteísmo entram na decisão eletiva individualizada. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Usar só a contagem de crises e ignorar impacto funcional."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 49,
+    "group": "Abdome agudo",
+    "theme": "Colangite — profilaxia pós-drenagem",
+    "stem": "Após CPRE com limpeza da via, hemoculturas positivas para E. coli sensível. Duração ATB típica se drenagem eficaz? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Curso relativamente curto após controle da fonte, ajustado à resposta clínica e ao antibiograma, sem semanas desnecessárias e sem",
+    "wrongs": [
+      "Manter carbapenêmico por 6 semanas de rotina após toda CPRE bem-sucedida em colangite neste cenário sem benefício claro fora",
+      "Suspender ATB na sala de endoscopia imediatamente após a esfincterotomia, sem doses posteriores neste cenário sem benefício claro",
+      "Trocar para vancomicina isolada apesar de bacilo gram-negativo documentado na cultura neste cenário sem benefício claro fora da indicação",
+      "Indicar antifúngico combinado obrigatório em toda bacteremia por E. coli biliar comunitária neste cenário sem benefício claro em"
+    ],
+    "explain": "Fonte controlada → ATB curto guiado por resposta/cultura. Evitar mega-cursos cegos. Conduta guiada por gravidade e imagem.",
+    "trap": "ATB interminável pós-CPRE eficaz ou parada abrupta sem critério."
+  },
+  {
+    "idPrefix": "cir-abdome2",
+    "n": 50,
+    "group": "Abdome agudo",
+    "theme": "Apendicite — US operador-dependente",
+    "stem": "US “apêndice não visualizado” em jovem magro com Alvarado 7. Próximo passo? Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica. Sinais vitais, exame dirigido e exames disponíveis permitem decidir a conduta imediata neste serviço de urgência cirúrgica.",
+    "correct": "Complementar com TC (ou RM) ou decidir cirurgia conforme probabilidade alta e recurso local, sem liberar às cegas neste cenário",
+    "wrongs": [
+      "Aceitar US não visualizado como exclusão definitiva de apendicite e alta sem retorno neste cenário sem benefício claro fora da",
+      "Repetir US diário por uma semana sem outra modalidade nem plano cirúrgico neste cenário sem benefício claro fora da indicação",
+      "Iniciar quimioterapia por linfoma, pois apêndice não visto sugere massa oculta neste cenário sem benefício claro fora da indicação mesmo",
+      "Indicar CPRE diagnóstica pela não visualização do apêndice no ultrassom neste cenário sem benefício claro fora da indicação em"
+    ],
+    "explain": "US negativo/inconclusivo ≠ afasta. Probabilidade alta → TC/cirurgia. Conduta guiada por gravidade e imagem. Conduta guiada por gravidade e imagem.",
+    "trap": "Liberar Alvarado alto porque o US “não viu”."
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cir-preop1",
+    "n": 1,
+    "group": "Pré-operatório",
+    "theme": "ASA — paciente saudável eletivo",
+    "stem": "Mulher de 34 anos, ASA candidata a hernioplastia inguinal eletiva sob anestesia. Sem comorbidades, atividade plena, exames normais quando solicitados. O anestesista discute a classificação do estado físico. Qual ASA corresponde melhor a este perfil? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "ASA I: paciente saudável sem doença sistêmica, mortalidade operatória estimada muito baixa (~0,1%) sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "ASA IIIE: doença sistêmica grave com limitação funcional marcada e caráter emergencial obrigatório sem benefício claro fora da sem sem benefício claro",
+      "ASA IV: doença sistêmica incapacitante com ameaça constante à vida sem doença ativa documentada sem benefício claro fora da indicação com risco elevado fora da",
+      "ASA V: moribundo com expectativa de óbito sem cirurgia em paciente ambulatorial eletivo estável sem benefício claro fora da indicação com risco elevado com sem benef",
+      "ASA II: doença sistêmica leve obrigatória mesmo na ausência total de comorbidades clínicas sem benefício claro fora da indicação com risco elevado neste sem sem bene"
+    ],
+    "explain": "ASA I descreve indivíduo saudável sem doença sistêmica. A letra E só se acrescenta em emergência. Mortalidade ASA I é da ordem de 0,1%, bem inferior à ASA IV.",
+    "trap": "Rotular eletivo saudável como ASA II/III só por idade ou ansiedade."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 2,
+    "group": "Pré-operatório",
+    "theme": "ASA — HAS e DM controlados",
+    "stem": "Homem de 58 anos com HAS e DM2 bem controlados, capacidade funcional preservada, programado para colecistectomia eletiva. Sem angina, IC ou DRC avançada. Qual classificação ASA é a mais adequada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "ASA II: doença sistêmica leve a moderada sem limitação funcional importante nas atividades cotidianas sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "ASA I: ausência absoluta de doença, ignorando HAS e diabetes documentados no pré-operatório sem benefício claro fora da indicação sem benefício claro neste sem benef",
+      "ASA IV: ameaça constante à vida por comorbidades leves bem compensadas em eletivo estável sem benefício claro fora da indicação com risco elevado fora da",
+      "ASA IIIE: limitação grave com sufixo emergencial em procedimento eletivo hemodinamicamente estável sem benefício claro fora da indicação com risco elevado com",
+      "ASA V: paciente moribundo sem cirurgia apesar de ambulatorial compensado e eletivo sem benefício claro fora da indicação com risco elevado neste cenário sem sem bene"
+    ],
+    "explain": "HAS/DM controlados sem limitação funcional enquadram-se tipicamente em ASA II. ASA III implica doença sistêmica grave com limitação; E é exclusivo de emergência.",
+    "trap": "Inflar ASA por comorbidades estáveis ou esquecer o E só em urgência."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 3,
+    "group": "Pré-operatório",
+    "theme": "ASA — doença grave incapacitante",
+    "stem": "Mulher de 72 anos com IC FE 28% sintomática (NYHA III), DPOC oxigênio domiciliar e creatinina 2,4 mg/dL, candidata a colectomia eletiva por neoplasia. Qual ASA melhor descreve o estado físico? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "ASA IV: doença sistêmica grave e incapacitante que representa ameaça constante à vida no perioperatório sem benefício claro fora da sem benefício claro",
+    "wrongs": [
+      "ASA II: doença leve sem impacto funcional apesar de IC avançada e oxigenoterapia contínua sem benefício claro fora da sem benefício claro",
+      "ASA I: estado saudável incompatível com falência cardíaca e pulmonar documentadas sem benefício claro fora da indicação com risco elevado sem benefício claro",
+      "ASA VE: moribundo emergencial sem avaliar se o procedimento é eletivo oncológico estável sem benefício claro fora da indicação com risco elevado sem benefício claro",
+      "ASA III apenas se houver angina instável, ignorando IC grave e DPOC oxigênio-dependente sem benefício claro fora da indicação com risco elevado neste sem sem benefíc"
+    ],
+    "explain": "Doença sistêmica grave incapacitante com ameaça constante à vida corresponde a ASA IV (mortalidade >7% em textos clássicos). ASA III é doença grave com limitação, mas menos extrema.",
+    "trap": "Subestimar ASA em falência orgânica avançada multipla."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 4,
+    "group": "Pré-operatório",
+    "theme": "ASA — sufixo E emergência",
+    "stem": "Homem de 66 anos ASA II por HAS, chega com apendicite perfurada e peritonite, indicação de laparotomia imediata. Como registrar corretamente a classificação ASA neste contexto? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "ASA IIE: manter o estado físico de base e acrescentar E porque o procedimento é emergencial sem benefício claro fora da indicação com risco elevado com",
+    "wrongs": [
+      "Trocar automaticamente para ASA V só porque há peritonite, sem avaliar estado físico prévio sem benefício claro fora da indicação sem benefício claro",
+      "Omitir o E e registrar apenas ASA II, como se o caráter emergencial não alterasse o registro sem benefício claro fora da indicação com risco elevado",
+      "Registrar ASA IE por definição em qualquer emergência abdominal, anulando comorbidades sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Usar ASA IVEexclusivamente por febre, sem critérios de ameaça constante à vida prévia sem benefício claro fora da indicação com risco elevado neste cenário sem benef"
+    ],
+    "explain": "A letra E soma-se à classe ASA de base quando a cirurgia é emergencial (ex.: ASA IIE). Não se inventa classe nova só pelo caráter de urgência.",
+    "trap": "Esquecer o E ou pular para ASA V em toda urgência."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 5,
+    "group": "Pré-operatório",
+    "theme": "RCRI — preditores de Lee",
+    "stem": "Homem de 64 anos em avaliação para gastrectomia. História de IAM antigo com angina atual, IC compensada, AVC há 3 anos, DM em insulina e creatinina 2,3 mg/dL. Cirurgia intraperitoneal aberta. Quantos preditores do Índice de Risco Cardíaco Revisado (Lee) estão presentes? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido.",
+    "correct": "Seis preditores: cirurgia de alto risco, DAC, IC, AVE/AIT, DM insulinodependente e creatinina >2 mg/dL sem benefício claro fora da indicação com sem benefício claro",
+    "wrongs": [
+      "Apenas um preditor porque só conta cirurgia vascular aórtica, ignorando os critérios clínicos do Lee sem benefício claro fora da sem benefício claro neste sem benefí",
+      "Nenhum preditor se a capacidade funcional for ≥4 METs, anulando o IRCR por completo sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Três preditores no máximo, pois idade >70 anos substitui todos os demais critérios de Lee sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Dois preditores: só DM e creatinina, desconsiderando DAC, IC, AVE e tipo de cirurgia sem benefício claro fora da indicação com risco elevado neste cenário sem benefí"
+    ],
+    "explain": "IRCR/Lee: cirurgia de alto risco (vascular/intraperitoneal/intratorácica aberta), DAC, IC, doença cerebrovascular, DM em insulina e Cr >2. Aqui todos estão presentes.",
+    "trap": "Contar idade como preditor do Lee (é do Goldman, não do RCRI)."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 6,
+    "group": "Pré-operatório",
+    "theme": "RCRI — risco percentual por preditores",
+    "stem": "Mulher de 55 anos para tireoidectomia (baixo risco procedimental). Sem DAC, IC, AVE, DM insulina ou Cr >2. Qual risco estimado de evento cardíaco maior pelo IRCR? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Nenhum preditor: risco aproximado de 0,4% de morte cardíaca, IAM ou PCR não fatal perioperatória sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Três preditores implícitos por idade, elevando risco para >11% em tireoidectomia eletiva sem benefício claro fora da indicação",
+      "Risco ≥5% automático porque qualquer anestesia geral conta como preditor de Lee sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Risco de 6,6% por ser ASA II, confundindo ASA com pontuação do índice de Lee sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Risco zero absoluto que dispensa qualquer vigilância perioperatória cardiovascular sem benefício claro fora da indicação com risco elevado neste cenário sem ganho cl"
+    ],
+    "explain": "Com zero preditores Lee o risco é ~0,4%; 1 preditor ~0,9%; 2 ~6,6%; ≥3 >11%. Tireoidectomia não é cirurgia de alto risco do IRCR.",
+    "trap": "Confundir risco do procedimento Fleisher com contagem de preditores Lee."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 7,
+    "group": "Pré-operatório",
+    "theme": "Risco procedimental — alto ≥5%",
+    "stem": "Homem de 70 anos com AAA sintomático programado para reparo aberto de aorta abdominal. Na estratificação de risco cardíaco para cirurgia não cardíaca, como classificar o procedimento? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Alto risco (≥5%): cirurgia vascular de grande porte de aorta, com probabilidade elevada de evento cardíaco sem benefício claro fora da indicação com sem",
+    "wrongs": [
+      "Baixo risco (<1%) como hernioplastia ou cirurgia oftálmica, subestimando o estresse aórtico sem benefício claro fora da indicação sem benefício claro",
+      "Risco intermediário apenas porque há opção endovascular teórica, ignorando o reparo aberto proposto sem benefício claro fora da indicação com risco elevado",
+      "Risco nulo se ECG de repouso for normal, dispensando estratificação pelo tipo de cirurgia sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Médio risco fixo de 1–5% para qualquer cirurgia abdominal, sem distinguir aorta de colecistectomia sem benefício claro fora da indicação com risco elevado sem benefí"
+    ],
+    "explain": "Reparo aórtico aberto e revascularização arterial periférica de grande porte são alto risco (≥5%). Procedimentos endoscópicos/oftálmicos/mama são baixo risco.",
+    "trap": "Classificar AAA aberto como risco intermediário por ser 'só vascular'."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 8,
+    "group": "Pré-operatório",
+    "theme": "Risco procedimental — baixo <1%",
+    "stem": "Mulher de 48 anos hipertensa controlada, candidata a mamoplastia redutora ambulatorial. Qual estrato de risco cardíaco do procedimento é o mais coerente? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Baixo risco (<1%): cirurgia de mama e procedimentos ambulatoriais com baixa probabilidade de ECMA sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Alto risco ≥5% por anestesia geral, equiparando mama a duodenopancreatectomia ou esofagectomia sem benefício claro fora da indicação",
+      "Risco intermediário obrigatório em toda cirurgia sob anestesia, sem olhar o sítio operatório sem benefício claro fora da indicação com risco elevado fora da",
+      "Alto risco porque HAS controlada eleva automaticamente o risco procedimental para ≥5% sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Risco indeterminado que exige cateterismo coronário de rotina antes de mamoplastia sem benefício claro fora da indicação com risco elevado neste cenário sem sem bene"
+    ],
+    "explain": "Mama, oftalmo, endoscopia, plástica e herniorrafias tipicamente <1%. O risco do paciente (IRCR) é separado do risco intrínseco do procedimento.",
+    "trap": "Inflar risco do procedimento por comorbidade leve."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 9,
+    "group": "Pré-operatório",
+    "theme": "Capacidade funcional — 4 METs",
+    "stem": "Homem de 62 anos com 2 preditores Lee, cirurgia intraperitoneal eletiva. Refere subir um lance de escada e caminhar em plano a ~5 km/h sem angina ou dispneia. Qual interpretação da capacidade funcional? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Capacidade ≥4 METs: em geral libera para cirurgia sem teste provocativo adicional se estável sem benefício claro fora da indicação com risco elevado com",
+    "wrongs": [
+      "Capacidade <4 METs obrigando teste de estresse em todo paciente com qualquer preditor Lee sem benefício claro fora da indicação sem sem benefício claro",
+      "Indicar cateterismo coronário imediato só porque há dois preditores, ignorando os METs sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Considerar 1 MET suficiente (vestir-se) como critério de liberação para grande porte sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Exigir >10 METs (esporte competitivo) como limiar mínimo para qualquer eletivo abdominal sem benefício claro fora da indicação com risco elevado neste sem sem benefí"
+    ],
+    "explain": "Subir um lance de escada/rampa equivale a ~4 METs. Com ≥4 METs e estável, costuma-se liberar; <4 METs ou capacidade desconhecida direciona a teste farmacológico.",
+    "trap": "Pedir teste de estresse rotineiro apesar de ≥4 METs."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 10,
+    "group": "Pré-operatório",
+    "theme": "Capacidade funcional — <4 METs",
+    "stem": "Mulher de 68 anos com DAC e DM insulina, candidata a colectomia eletiva. Não sobe escada por gonartrose bilateral e capacidade funcional é desconhecida. Qual próximo passo típico de prova? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Estimar risco elevado/indeterminado e indicar teste de estresse farmacológico antes do eletivo sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Liberar sem teste porque a cirurgia 'não é vascular', ignorando preditores e METs desconhecidos sem benefício claro fora da sem sem benefício claro",
+      "Indicar CRM profilática em todos antes de qualquer colectomia, sem prova de isquemia sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Adiar indefinidamente toda cirurgia oncológica até atingir 10 METs em esteira convencional sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Solicitar apenas RX de tórax como estratificação cardíaca definitiva neste perfil sem benefício claro fora da indicação com risco elevado neste cenário sem sem benef"
+    ],
+    "explain": "Com ≥2 preditores e METs <4 ou desconhecidos, o algoritmo clássico encaminha a teste provocativo farmacológico para definir necessidade de revascularização prévia.",
+    "trap": "Liberar eletivo de médio/alto risco com METs desconhecidos e múltiplos preditores."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 11,
+    "group": "Pré-operatório",
+    "theme": "Jejum — líquidos claros 2h",
+    "stem": "Homem de 40 anos, eletivo matinal. Ingeriu chá sem polpa e água às 6h; cirurgia prevista às 8h30. Sem gastroparesia. Qual orientação sobre o jejum de líquidos claros (ERAS/ASA)? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Permitir líquidos claros até 2 horas antes: o intervalo atual é adequado e não exige adiamento sem benefício claro fora da indicação com risco elevado sem benefício",
+    "wrongs": [
+      "Exigir 8 horas de jejum absoluto inclusive para água, cancelando o caso por 'quebra de jejum' sem benefício claro fora da indicação sem benefício claro neste",
+      "Indicar sonda nasogástrica e lavagem gástrica de rotina em todo adulto com chá recente sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Administrar metoclopramida obrigatória em todos os eletivos mesmo com esvaziamento normal sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Converter para indução sequencial rápida só porque houve líquido claro há mais de 2 horas sem benefício claro fora da indicação com risco elevado neste sem benefício"
+    ],
+    "explain": "Líquidos claros (água, chá, suco sem polpa, maltodextrina): 2h. Jejum clássico de 8h aplica-se a refeições pesadas, não a clears.",
+    "trap": "Cancelar eletivo por líquido claro dentro da janela de 2h."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 12,
+    "group": "Pré-operatório",
+    "theme": "Jejum — sólidos leves 6h",
+    "stem": "Mulher de 29 anos comeu torrada com geleia às 5h; cirurgia eletiva às 11h. Sem obesidade mórbida ou DRGE grave. Qual conduta quanto ao jejum de sólidos leves? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Jejum de 6 horas para refeição leve já cumprido: prosseguir sem adiamento por este motivo sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Exigir 12 horas de jejum para qualquer sólido, mesmo refeição leve em adulto hígido sem benefício claro fora da indicação sem benefício claro",
+      "Considerar torrada como líquido claro com jejum de apenas 2 horas em todos os casos sem benefício claro fora da indicação com risco elevado sem benefício claro",
+      "Indicar broncoaspiração inevitável e contraindicar anestesia geral eletiva neste intervalo sem benefício claro fora da indicação com risco elevado sem benefício clar",
+      "Suspender definitivamente a cirurgia por 48h só por ingestão de carboidrato leve sem benefício claro fora da indicação com risco elevado neste cenário sem sem"
+    ],
+    "explain": "Sólidos leves: 6h; refeições pesadas/frituras/carnes: ≥8h. Leite materno 4h; fórmula/leite não humano 6h. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Tratar sólido leve como se fosse fritura (8h) ou clear (2h)."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 13,
+    "group": "Pré-operatório",
+    "theme": "Jejum — leite materno 4h",
+    "stem": "Lactente de 4 meses em jejum para herniorrafia. A mãe amamentou às 7h; horário cirúrgico 11h15. Qual regra de jejum se aplica ao leite materno? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Jejum de 4 horas para leite materno: o intervalo de ~4h15 permite manter o horário previsto sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Exigir 8 horas iguais a fritura adulta, prolongando jejum desnecessário no lactente sem benefício claro fora da indicação sem benefício claro",
+      "Tratar leite materno como líquido claro com liberação após apenas 2 horas em todos sem benefício claro fora da indicação com risco elevado sem benefício claro",
+      "Igualar ao jejum de fórmula (6h) e adiar automaticamente apesar de 4h já cumpridas sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Contraindicar anestesia neonatal se houver qualquer amamentação nas últimas 12 horas sem benefício claro fora da indicação com risco elevado neste cenário sem"
+    ],
+    "explain": "Leite materno: 4h; fórmula e leite não humano: 6h; clears: 2h. Evitar jejum excessivo em pediatria. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Aplicar jejum de adulto a leite materno."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 14,
+    "group": "Pré-operatório",
+    "theme": "ATB profilaxia — timing 30–60 min",
+    "stem": "Homem de 55 anos para colectomia eletiva. Equipe discute quando infundir a primeira dose de cefoxitina/cefazolina+metronidazol. Qual timing correto da profilaxia? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Infundir 30–60 minutos antes da incisão (até 120 min se vancomicina ou quinolona) sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Iniciar o antibiótico só no fechamento da pele para 'cobrir o pós-operatório imediato' sem benefício claro fora da indicação com sem",
+      "Administrar 24 horas antes internado, sem nova dose no momento da indução/incisão sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Prescrever curso de 7 dias profilático em toda cirurgia limpa-contaminada eletiva sem benefício claro fora da indicação com risco elevado neste cenário com sem benef",
+      "Omitir ATB em cirurgia colorretal porque 'é apenas profilaxia teórica sem impacto' sem benefício claro fora da indicação com risco elevado neste cenário sem"
+    ],
+    "explain": "Primeira dose 30–60 min pré-incisão; vancomicina/quinolonas até 120 min. Colorretal é limpa-contaminada e beneficia-se de cobertura anaeróbia/Gram−.",
+    "trap": "Dar ATB tarde demais ou prolongar profilaxia como se fosse terapia."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 15,
+    "group": "Pré-operatório",
+    "theme": "ATB — cirurgia limpa com prótese",
+    "stem": "Mulher de 70 anos para artroplastia total de quadril (cirurgia limpa com implante). Qual conduta de antibioticoprofilaxia é a mais coerente? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Indicar cefazolina profilática apesar de classe limpa, pelo implante e alto custo de infecção sem benefício claro fora da indicação com sem benefício claro",
+    "wrongs": [
+      "Omitir ATB em toda cirurgia limpa, inclusive com prótese ortopédica ou vascular sem benefício claro fora da indicação com sem benefício claro",
+      "Usar esquema colorretal com metronidazol de rotina em artroplastia sem contaminação entérica sem benefício claro fora da indicação com risco sem benefício claro",
+      "Manter vancomicina isolada em todo paciente sem colonização por MRSA documentada sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Prolongar ATB por 14 dias profiláticos após artroplastia não complicada sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem sem"
+    ],
+    "explain": "Classe I geralmente sem ATB, mas próteses (órtese/vascular), cardio e neuro são exceções pelo impacto da ISC. Cefazolina cobre flora de pele.",
+    "trap": "Negar profilaxia em limpa com material sintético."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 16,
+    "group": "Pré-operatório",
+    "theme": "ATB — colorretal cobertura",
+    "stem": "Homem de 61 anos em retossigmoidectomia eletiva. Qual esquema profilático parenteral melhor cobre a flora colônica típica? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Cobertura para Gram-negativos e anaeróbios: cefoxitina ou cefazolina+metronidazol (ou equivalente) sem benefício claro fora da indicação com",
+    "wrongs": [
+      "Apenas penicilina benzatina intramuscular única, sem espectro para Bacteroides/E. coli sem benefício claro fora da indicação",
+      "Somente oxacilina por 5 dias, focando só S. aureus e omitindo anaeróbios intestinais sem benefício claro fora da indicação com risco elevado sem benefício claro",
+      "Nistatina oral isolada como profilaxia de ISC em cirurgia colorretal eletiva sem benefício claro fora da indicação com risco elevado neste cenário sem benefício clar",
+      "Ciprofloxacino tópico na pele sem dose sistêmica pré-incisão adequada sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico"
+    ],
+    "explain": "Cólon: Bacteroides e E. coli predominam. Cefoxitina ou combinações com metronidazol/ampicilina-sulbactam são opções clássicas.",
+    "trap": "Usar só cefazolina sem anaeróbios em colorretal."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 17,
+    "group": "Pré-operatório",
+    "theme": "ATB — redose por tempo/sangramento",
+    "stem": "Durante hepatectomia, cefazolina foi dada na indução; aos 3h de cirurgia há perda >1.500 mL. Qual ajuste de profilaxia é apropriado? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Repetir dose por duração >2× meia-vida do agente e/ou sangramento >1.500 mL intraoperatório sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Nunca redosar cefazolina, mesmo em cirurgias longas com grande hemorragia sem benefício claro fora da indicação com risco sem benefício claro",
+      "Trocar imediatamente para antifúngico IV como redose padrão de ISC bacteriana sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Suspender toda profilaxia após a primeira hora, independentemente do tempo cirúrgico sem benefício claro fora da indicação com risco elevado neste sem benefício clar",
+      "Iniciar terapia de 21 dias no intraoperatório só porque houve sangramento sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem"
+    ],
+    "explain": "Agentes de meia-vida curta (cefazolina/cefoxitina) exigem redose em cirurgias longas; perda >1.500 mL também indica nova dose.",
+    "trap": "Esquecer redose em cirurgia longa ou hemorrágica."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 18,
+    "group": "Pré-operatório",
+    "theme": "ATB — duração profilaxia <24h",
+    "stem": "Após hernioplastia inguinal com tela, sem contaminação, a equipe discute manter cefazolina por 5 dias 'por segurança'. Qual orientação correta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Interromper ao fim do procedimento (ou <24h se indicado): prolongar não reduz ISC e seleciona resistência sem benefício claro fora da indicação com sem",
+    "wrongs": [
+      "Manter 7–10 dias de ATB em toda hernioplastia limpa com tela, mesmo sem infecção sem benefício claro fora da indicação com risco sem",
+      "Trocar para vancomicina oral domiciliar por 14 dias como profilaxia padrão de tela sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Indicar cultura de ferida diária para decidir cada dose profilática pós-operatória sem benefício claro fora da indicação com risco elevado neste cenário com sem bene",
+      "Suspender tela e reoperar se não houver ATB por pelo menos 72 horas contínuas sem benefício claro fora da indicação com risco elevado neste cenário sem sem sem benef"
+    ],
+    "explain": "Profilaxia em geral não ultrapassa o tempo cirúrgico; quando estendida, costuma ser <24h (exceções cardiotorácicas ~48h). Classe IV é terapia, não profilaxia.",
+    "trap": "Transformar profilaxia em curso terapêutico sem infecção."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 19,
+    "group": "Pré-operatório",
+    "theme": "Warfarina — suspensão 5 dias e INR",
+    "stem": "Homem de 72 anos em warfarina por FA (sem prótese mecânica), colectomia eletiva em 1 semana. Qual manejo clássico do cumarínico? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Suspender ~5 dias antes, checar INR no pré-imediato e operar se INR ≤1,5 (bridge só se alto risco TE) sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Manter warfarina em dose plena até a incisão em toda cirurgia colorretal eletiva sem benefício claro fora da indicação com risco sem",
+      "Suspender por apenas 12 horas e operar com INR 3,5 sem reversão em eletivo sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Trocar warfarina por AAS 325 mg como bridge universal em FA não valvar sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico com",
+      "Administrar vitamina K 50 mg IM diária por 10 dias antes de qualquer eletivo sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem"
+    ],
+    "explain": "Cumarínico: suspender ~5 dias; INR ≤1,5 permite cirurgia. Bridge com HNF/HBPM reserva-se a alto risco tromboembólico (prótese mecânica, TE recente).",
+    "trap": "Bridge indiscriminado em baixo risco ou operar com INR elevado."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 20,
+    "group": "Pré-operatório",
+    "theme": "Bridge — HNF até 6h",
+    "stem": "Mulher com prótese mitral mecânica em bridge com HNF IV plena para troca valvar eletiva já suspensa warfarina. Quando suspender a HNF antes da incisão? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Suspender HNF cerca de 6 horas antes da cirurgia e reiniciar 12–24h após se hemostasia ok sem benefício claro fora da indicação com risco elevado com",
+    "wrongs": [
+      "Manter HNF em bomba até o fechamento cutâneo em toda cirurgia eletiva valvular sem benefício claro fora da indicação com risco sem benefício claro",
+      "Suspender HNF 5 dias antes, como se fosse warfarina, deixando longo gap sem anticoagulação sem benefício claro fora da indicação com risco elevado",
+      "Trocar HNF por AAS isolado no dia da cirurgia em portadora de prótese mecânica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Usar apenas compressão mecânica sem reinício de anticoagulação no pós de alto risco TE sem benefício claro fora da indicação com risco elevado neste cenário"
+    ],
+    "explain": "HNF plena: parar ~6h pré-op; HBPM plena: ~24h antes. Reinício 12–24h conforme risco de sangramento. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Parar HNF dias antes ou manter até o sangramento intraop."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 21,
+    "group": "Pré-operatório",
+    "theme": "HBPM plena — 24h",
+    "stem": "Homem em enoxaparina 1 mg/kg 12/12h como bridge, hernioplastia eletiva amanhã. Qual intervalo mínimo típico após a última dose? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Suspender HBPM em dose anticoagulante cerca de 24 horas antes do procedimento eletivo sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Aplicar enoxaparina 1h antes da raquianestesia para manter anticoagulação plena sem benefício claro fora da indicação com sem benefício claro",
+      "Suspender HBPM apenas 2 horas antes, igualando ao intervalo de clears no jejum sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Manter dose plena no dia da cirurgia e reverter com vitamina K se houver sangramento sem benefício claro fora da indicação com risco elevado neste sem benefício clar",
+      "Trocar HBPM por warfarina na manhã da cirurgia sem checar INR sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como sem"
+    ],
+    "explain": "HBPM terapêutica: última dose ~24h pré-cirurgia. Em neuroaxial, intervalos específicos (p.ex. 12h após dose profilática) devem ser respeitados.",
+    "trap": "Dar HBPM plena perto demais da punção/cirurgia."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 22,
+    "group": "Pré-operatório",
+    "theme": "Emergência — warfarina PFC + vit K",
+    "stem": "Idoso em warfarina com INR 3,8 e abdome agudo perfurativo com indicação cirúrgica imediata. Qual reversão inicial mais apropriada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Plasma fresco 15–20 mL/kg (± vitamina K 10 mg): efeito rápido do PFC e suporte tardio da vit K sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Apenas suspender warfarina e aguardar 5 dias a queda espontânea do INR antes de operar sem benefício claro fora da indicação com sem",
+      "Protamina em dose alta como antídoto específico de warfarina em perfuração fecal sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Ácido tranexâmico isolado sem repor fatores vitamina K-dependentes no INR elevado sem benefício claro fora da indicação com risco elevado neste cenário com sem benef",
+      "HBPM plena adicional para 'estabilizar' coagulação antes da laparotomia de urgência sem benefício claro fora da indicação com risco elevado neste cenário sem benefíc"
+    ],
+    "explain": "Urgência sob warfarina: PFC eleva fatores em ~1h; vitamina K age em ~6h. Protamina é para heparina, não para cumarínico.",
+    "trap": "Usar protamina para warfarina ou adiar urgência por INR."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 23,
+    "group": "Pré-operatório",
+    "theme": "AAS — manter em CEA/stent/DAP",
+    "stem": "Homem de 67 anos com stent coronário recente e DAP, programado para bypass infrainguinal. Em uso de AAS 100 mg. Qual conduta perioperatória do AAS? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Manter AAS em baixa dose no perioperatório (CEA, stent/eventos recentes e reconstrução arterial) sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Suspender AAS 10 dias em todo vascular infrainguinal, elevando risco de trombose de stent/enxerto sem benefício claro fora da indicação",
+      "Trocar AAS por clopidogrel isolado apenas no dia da cirurgia e omitir no pós imediato sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Duplicar AAS para 500 mg no pré-imediato como profilaxia hemorrágica paradoxal sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Suspender AAS e iniciar warfarina empírica em dose plena na véspera do bypass sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico"
+    ],
+    "explain": "Manter AAS em endarterectomia de carótida, stent/eventos recentes e cirurgias vasculares infrainguinais. Em outros cenários, individualizar; suspensão clássica 7–10 dias se não houver indicação de manter.",
+    "trap": "Suspender AAS rotineiramente em paciente com stent ou bypass arterial."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 24,
+    "group": "Pré-operatório",
+    "theme": "Clopidogrel — suspender 5 dias",
+    "stem": "Mulher com stent farmacológico há 10 meses, BDP (AAS+clopidogrel), necessita colecistectomia eletiva com risco hemorrágico moderado. Qual manejo antiplaquetário típico? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Manter AAS e suspender clopidogrel ~5 dias antes (prasugrel ≥7 dias); evitar eletivo muito precoce pós-stent sem benefício claro fora da indicação",
+    "wrongs": [
+      "Suspender AAS e clopidogrel juntos 24h antes, maximizando risco de trombose de stent sem benefício claro fora da indicação com risco elevado",
+      "Manter BDP pleno até a incisão em cirurgia com alto risco de sangramento sem ajuste sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Trocar ambos por HBPM plena como substituto antiplaquetário equivalente ao BDP sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Indicar descontinuação definitiva do AAS após 1 mês de stent farmacológico em todos sem benefício claro fora da indicação com risco elevado neste cenário sem ganho c"
+    ],
+    "explain": "Em risco hemorrágico médio/alto: manter AAS, pausar clopidogrel ~5 dias (prasugrel ≥7). Ideal aguardar janela segura pós-stent antes de eletivo.",
+    "trap": "Pausar os dois antiplaquetários ou operar eletivo cedo demais pós-stent."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 25,
+    "group": "Pré-operatório",
+    "theme": "Stent — timing cirurgia eletiva",
+    "stem": "Homem recebeu stent farmacológico há 60 dias. Precisa de hernioplastia eletiva assintomática. Qual timing mais seguro segundo a lógica perioperatória apresentada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação.",
+    "correct": "Adiar eletivo preferencialmente para após janela prolongada de BDP (ideal meses; mínimo semanas se urgência relativa) sem benefício claro fora da indicação",
+    "wrongs": [
+      "Operar amanhã suspendendo BDP por completo desde a véspera, sem discutir risco de trombose sem benefício claro fora da indicação sem",
+      "Indicar explante do stent antes de qualquer hérnia eletiva como condição sine qua non sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Trocar stent farmacológico por metálico no mesmo dia para liberar cirurgia imediata sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Manter apenas ticagrelor e suspender AAS, invertendo a prioridade antiplaquetária sem benefício claro fora da indicação com risco elevado neste cenário sem sem"
+    ],
+    "explain": "Pós-stent farmacológico o risco de trombose é prolongado; eletivos devem aguardar (textos citam até 6–12 meses ideal; mínimos de 4–6 semanas em necessidade maior). Metálico: janela menor (~1 mês).",
+    "trap": "Marcar eletivo precoce interrompendo BDP."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 26,
+    "group": "Pré-operatório",
+    "theme": "Glicemia — alvos perioperatórios",
+    "stem": "Mulher DM2 internada para colectomia eletiva, não crítica. Equipe discute meta glicêmica perioperatória. Qual faixa é a mais alinhada aos guidelines citados? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Alvo aproximado 110–180 mg/dL (ADA ~80–180); evitar controle intensivo <110 pelo risco de hipoglicemia sem benefício claro fora da indicação com sem benefício claro",
+    "wrongs": [
+      "Manter glicemia sempre <80 mg/dL com insulina agressiva para 'zerar' infecção de sítio sem benefício claro fora da indicação com sem benefício claro neste sem benefí",
+      "Aceitar glicemias persistentemente >250 mg/dL por medo de hipoglicemia, elevando ISC/deiscência sem benefício claro fora da indicação com risco elevado fora da",
+      "Usar apenas dieta zero e omitir qualquer insulina mesmo com glicemia 320 mg/dL perioperatória sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Meta única de 40–60 mg/dL no intraoperatório como proteção cerebral obrigatória sem benefício claro fora da indicação com risco elevado neste cenário sem sem benefíc"
+    ],
+    "explain": ">250 mg/dL aumenta ISC, deiscência e CAD; <40 aumenta arritmia. Controle intensivo demais aumenta hipoglicemia sem benefício claro.",
+    "trap": "Perseguir normoglicemia agressiva ou tolerar hiperglicemia extrema."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 27,
+    "group": "Pré-operatório",
+    "theme": "Metformina — omitir no dia",
+    "stem": "Homem DM2 em metformina, nefrectomia eletiva com risco de hipoperfusão. Qual orientação sobre a biguanida? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Omitir metformina na manhã da cirurgia e só reiniciar com função renal pós-op adequada sem benefício claro fora da indicação com risco elevado com sem sem benefício",
+    "wrongs": [
+      "Dobrar a dose de metformina no pré-imediato para prevenir hiperglicemia de estresse sem benefício claro fora da indicação com risco sem benefício claro",
+      "Manter metformina mesmo com contraste e risco de hipoperfusão renal sem reassesso sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Trocar metformina por pioglitazona plena no dia da cirurgia em paciente com IC sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Suspender metformina 3 semanas antes de qualquer procedimento ambulatorial menor sem benefício claro fora da indicação com risco elevado neste cenário sem sem benefí"
+    ],
+    "explain": "Orais/GLP-1 em geral não na manhã da cirurgia. Metformina preocupa por acidose láctica se houver hipoperfusão/contraste/disfunção renal.",
+    "trap": "Manter metformina em cenário de risco renal/perfusão."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 28,
+    "group": "Pré-operatório",
+    "theme": "Insulina NPH — ajuste pré-op",
+    "stem": "Mulher DM2 em NPH 20 U manhã e 16 U noite. Cirurgia eletiva amanhã às 8h. Qual ajuste clássico da NPH? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Noite: ~2/3 da dose; manhã da cirurgia: ~1/2 da dose habitual, com monitorização capilar sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Manter 100% das doses de NPH e adicionar sulfonilureia na manhã da cirurgia sem benefício claro fora da indicação com risco sem benefício claro",
+      "Suspender toda NPH por 5 dias antes, expondo a hiperglicemia grave sem basal sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Aplicar dose tripla de NPH na manhã para cobrir o estresse cirúrgico previsto sem benefício claro fora da indicação com risco elevado neste cenário sem benefício cla",
+      "Trocar NPH por metformina apenas no dia da cirurgia como substituto equivalente sem benefício claro fora da indicação com risco elevado neste cenário sem sem"
+    ],
+    "explain": "NPH: 2/3 à noite prévia e metade na manhã. Glargina: reduzir 30–50% da dose noturna. Cirurgias longas podem exigir insulina regular IV/SC titulada.",
+    "trap": "Zerar basal ou manter dose cheia sem ajuste."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 29,
+    "group": "Pré-operatório",
+    "theme": "Insulina glargina — redução 30–50%",
+    "stem": "Homem DM2 em glargina 40 U à noite, hernioplastia eletiva matinal. Qual ajuste da basal longa? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Reduzir a dose noturna de glargina em cerca de 30–50% e monitorar glicemia capilar no perioperatório sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Aumentar glargina para 60 U na véspera para 'antecipar' hiperglicemia cirúrgica sem benefício claro fora da indicação com risco sem sem benefício claro",
+      "Suspender glargina e iniciar apenas glibenclamida na manhã do procedimento sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Manter 40 U e associar metformina IV contínua no intraoperatório sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico com sem bene",
+      "Aplicar glargina de 12/12h no dia da cirurgia sem redução de dose sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como"
+    ],
+    "explain": "Glargina (sem pico) reduz-se 30–50% na noite anterior. Em procedimentos curtos, sliding scale de regular pode complementar.",
+    "trap": "Não reduzir basal longa e precipitar hipoglicemia em jejum."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 30,
+    "group": "Pré-operatório",
+    "theme": "DM1 — não suspender basal",
+    "stem": "Adolescente com DM1 em esquema basal-bolus, apendicectomia. Glicemia 160 mg/dL. Qual princípio perioperatório é crítico? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Nunca omitir insulina basal no DM1; titular regular/glicose conforme capilar e duração da cirurgia sem benefício claro fora da indicação com",
+    "wrongs": [
+      "Suspender toda insulina no jejum cirúrgico para evitar hipoglicemia, aceitando risco de CAD sem benefício claro fora da sem benefício claro",
+      "Substituir insulina por metformina oral no perioperatório de DM1 autoimune sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Manter apenas bolus prandiais e zerar basal enquanto estiver em dieta zero sem benefício claro fora da indicação com risco elevado neste cenário sem",
+      "Indicar pancreatectomia profilática se glicemia perioperatória ultrapassar 180 mg/dL sem benefício claro fora da indicação com risco elevado neste cenário sem"
+    ],
+    "explain": "DM1 depende de insulina basal contínua; suspensão total precipita cetose/CAD. Ajustam-se doses e oferece-se glicose conforme necessidade.",
+    "trap": "Zerar insulina no DM1 durante jejum. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 31,
+    "group": "Pré-operatório",
+    "theme": "Via aérea — Mallampati III/IV",
+    "stem": "Homem obeso, Mallampati IV, tireomento <6 cm e pescoço >40 cm, eletivo sob anestesia geral. Qual interpretação do exame da via aérea? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Preditores de intubação difícil: preparar estratégia avançada (videolaringo/fibro) e plano de falha sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Mallampati IV garante intubação fácil se a distância interincisivos for >3 polpas digitais sem benefício claro fora da indicação sem",
+      "Dispensar avaliação de via aérea porque a cirurgia é 'apenas abdominal' eletiva sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Indicar traqueostomia profilática em todo Mallampati II sem outros preditores de dificuldade sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Contraindicar anestesia geral absoluta e obrigar apenas sedação profunda sem via segura sem benefício claro fora da indicação com risco elevado neste cenário e"
+    ],
+    "explain": "Mallampati III/IV, tireomento <6 cm, esternomento <12 cm, pescoço >40 cm, retrognatia e mobilidade cervical limitada predizem dificuldade. Ventilação sob máscara também tem preditores (idade>55, IMC>26, barba, edentado, AOS).",
+    "trap": "Ignorar preditores e induzir sem plano B."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 32,
+    "group": "Pré-operatório",
+    "theme": "Via aérea — ventilação máscara difícil",
+    "stem": "Homem de 60 anos, IMC 32, barba espessa, edêntulo e AOS grave, Mallampati III. Além da intubação, o que mais preocupa na indução? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Alto risco de ventilação sob máscara difícil: otimizar posicionamento, dispositivos e ajuda experiente sem benefício claro fora da indicação",
+    "wrongs": [
+      "Risco nulo de ventilação difícil porque só Mallampati importa para o manejo da via aérea sem benefício claro fora da sem benefício claro",
+      "Barba e edentulismo protegem a vedação da máscara e reduzem vazamento sem benefício claro fora da indicação com risco elevado neste cenário sem benefício claro",
+      "AOS elimina necessidade de pré-oxigenação cuidadosa antes da indução anestésica sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "IMC >26 reduz risco de ventilação difícil em comparação a eutróficos jovens sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem"
+    ],
+    "explain": "Preditores de ventilação difícil: >55 anos, IMC>26, barba, falta de dentes, AOS, anatomia cervical anormal, sexo masculino, tireomento curto, Mallampati III/IV.",
+    "trap": "Focar só em intubação e negligenciar ventilação sob máscara."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 33,
+    "group": "Pré-operatório",
+    "theme": "Exames — <45 anos baixo risco",
+    "stem": "Mulher de 32 anos hígida, hernioplastia eletiva de baixo risco. Sem comorbidades. Quais exames pré-operatórios de rotina são necessários? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Em geral nenhum exame laboratorial de rotina; beta-hCG na manhã se em idade reprodutiva sem benefício claro fora da indicação com risco elevado com sem",
+    "wrongs": [
+      "Painel completo obrigatório (ECG, PFH, coagulograma, RX tórax) em toda mulher <45 anos sem benefício claro fora da indicação com sem",
+      "Cateterismo cardíaco profilático por protocolo institucional sem indicação clínica sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Espirometria e gasometria arterial de rotina em hernioplastia de jovem assintomática sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Hemograma seriado diário na semana prévia mesmo sem anemia ou sangramento sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem benefíc"
+    ],
+    "explain": "Exames de rotina beneficiam ~0,2%. <45 anos sem comorbidade e baixo risco: nenhum. Mulher fértil: beta-hCG. Não substituir clínica por laboratório.",
+    "trap": "Pedido em massa 'por segurança jurídica'."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 34,
+    "group": "Pré-operatório",
+    "theme": "Exames — >70 anos baixo risco",
+    "stem": "Homem de 74 anos sem comorbidades aparentes, cirurgia de catarata. Qual painel mínimo sugerido na tabela de baixo risco por idade? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "ECG, hemograma/plaquetas, eletrólitos, ureia/creatinina e glicemia conforme faixa >70 anos sem benefício claro fora da indicação com risco elevado com sem benefício",
+    "wrongs": [
+      "Nenhum exame jamais, mesmo após 70 anos, independentemente da tabela etária sem benefício claro fora da indicação com risco elevado sem benefício claro neste",
+      "Apenas marcadores tumorais de rotina em catarata sem história oncológica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico fora",
+      "RM de corpo inteiro pré-operatória como substituto de anamnese e exame físico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Teste ergométrico obrigatório em toda catarata após os 70 anos sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como sem benef"
+    ],
+    "explain": "Tabela clássica: >70 anos em baixo risco — ECG, hemograma, eletrólitos, função renal e glicemia. Catarata em si é baixo risco procedimental.",
+    "trap": "Omitir avaliação mínima no idoso ou hiperinvestigar sem alvo."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 35,
+    "group": "Pré-operatório",
+    "theme": "Exames — não rotina",
+    "stem": "Equipe pede 'check-up completo' em todo eletivo para 'se proteger juridicamente'. Qual é a crítica correta a essa prática? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Exames de rotina raramente mudam conduta, não superam anamnese/exame e não são superioridade legal sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Quanto mais exames, maior a proteção jurídica absoluta em qualquer desfecho adverso sem benefício claro fora da indicação com risco sem benefício claro",
+      "Guidelines exigem coagulograma e RX tórax em todo ASA I submetido a procedimento menor sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Achados incidentais de rotina sempre reduzem complicações perioperatórias mensuráveis sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Anamnese pode ser substituída com segurança por um painel laboratorial amplo sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem bene"
+    ],
+    "explain": "Textos enfatizam seleção dirigida por idade, cirurgia e comorbidades. Pedido indiscriminado não é respaldo médico-legal superior.",
+    "trap": "Equacionar volume de exames a qualidade/segurança jurídica."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 36,
+    "group": "Pré-operatório",
+    "theme": "Tabagismo — cessação pré-op",
+    "stem": "Homem tabagista ativo, lobectomia eletiva em 8 semanas. Qual orientação sobre tabaco e risco de CPPO? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Interromper tabagismo preferencialmente ~4–8 semanas antes (textos ~2 meses) para reduzir CPPO sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Manter cigarro até a véspera porque a cessação aguda sempre piora secreção e CPPO sem benefício claro fora da indicação com risco sem benefício claro",
+      "Cessação só no pós-operatório tardio, sem benefício se iniciada antes da cirurgia sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Tabagismo não altera risco pulmonar se a espirometria for normal em um único exame sem benefício claro fora da indicação com risco elevado neste cenário com sem bene",
+      "Substituir cigarro por narguile no perioperatório como estratégia protetora pulmonar sem benefício claro fora da indicação com risco elevado neste cenário sem benefí"
+    ],
+    "explain": "Tabagismo aumenta CPPO; recomenda-se interrupção ~2 meses (alguns textos 4 semanas). Sítio próximo ao diafragma é o maior preditor procedimental de CPPO.",
+    "trap": "Achar que parar perto demais é inútil ou prejudicial demais para nem tentar."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 37,
+    "group": "Pré-operatório",
+    "theme": "Corticosteroide — stress dose",
+    "stem": "Mulher em prednisona 25 mg/dia há 4 meses (cushingóide), colectomia eletiva. Qual suplementação perioperatória típica de estresse intenso? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Hidrocortisona ~100 mg na indução e 50 mg 8/8h por 48–72h, depois retomar dose habitual sem benefício claro fora da indicação com risco elevado com sem",
+    "wrongs": [
+      "Manter só prednisona oral habitual sem qualquer cobertura em colectomia de grande estresse sem benefício claro fora da indicação sem",
+      "Suspender todo corticoide 2 semanas antes para 'recuperar o eixo' no perioperatório sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Usar dexametasona 1 mg única como substituto completo em cirurgia de grande porte sem benefício claro fora da indicação com risco elevado neste cenário com sem benef",
+      "Indicar adrenalectomia bilateral profilática se houver qualquer uso prévio de prednisona sem benefício claro fora da indicação com risco elevado neste sem sem benefí"
+    ],
+    "explain": "Uso >20 mg/dia ≥3 semanas ou aspecto cushingoide: cobrir estresse. Moderado: 50 mg + 25 mg 8/8h 24–48h; intenso: 100 mg + 50 mg 8/8h 48–72h. <5 mg/dia ou <3 semanas: eixo preservado.",
+    "trap": "Omitir coverage em usuário crônico de alta dose em cirurgia maior."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 38,
+    "group": "Pré-operatório",
+    "theme": "IECA/BRA — manhã da cirurgia",
+    "stem": "Homem hipertenso em enalapril, colecistectomia eletiva. PA 138×82. Há controvérsia sobre IECA. Qual postura prática frequente citada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Muitos suspendem IECA/BRA ~10h antes por hipotensão; em IC estável sem hipotensão, tendência a manter sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Dobrar IECA na manhã da cirurgia para prevenir pico hipertensivo da intubação em todos sem benefício claro fora da indicação com sem",
+      "Trocar IECA por clonidina de início agudo no pré-op com base no POISE-2 positivo sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Suspender definitivamente IECA após qualquer eletivo, mesmo com IC com indicação clara sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Manter IECA apenas se PA sistólica estiver >180 mmHg na manhã da cirurgia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico"
+    ],
+    "explain": "Literatura divergente: risco de hipotensão com IECA/BRA no dia; em IC sem hipotensão frequentemente se mantém. Clonidina de novo início associou-se a hipotensão/PCR no POISE-2.",
+    "trap": "Iniciar clonidina aguda ou ignorar risco de hipotensão com IECA."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 39,
+    "group": "Pré-operatório",
+    "theme": "Betabloqueador — manter crônico",
+    "stem": "Mulher em metoprolol crônico por DAC, endarterectomia carotídea eletiva. PA 142×78, FC 68. Qual conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Manter betabloqueador crônico no perioperatório se bem tolerado; não iniciar em massa na véspera sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Suspender betabloqueador 7 dias antes em todo usuário crônico para evitar bradicardia sem benefício claro fora da indicação com sem sem benefício claro",
+      "Iniciar metoprolol alta dose na noite anterior em baixo risco sem indicação, pelo POISE sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Trocar betabloqueador por nifedipino sublingual de rotina na indução anestésica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clíni",
+      "Omitir dose se PA sistólica >130 mmHg, invertendo a lógica de titulação perioperatória sem benefício claro fora da indicação com risco elevado neste cenário"
+    ],
+    "explain": "Manter BB crônico. Início novo deve ser criterioso (≥4 semanas ideal; ≥3 preditores Lee em alguns textos). Início imediato em massa aumenta AVC/morte.",
+    "trap": "Suspender BB crônico ou iniciar alto dose na véspera."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 40,
+    "group": "Pré-operatório",
+    "theme": "Estatina — vascular perioperatório",
+    "stem": "Homem de 69 anos para revascularização femoropoplítea, LDL 110, sem estatina prévia. Qual recomendação? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Iniciar estatina ≥2 semanas antes se possível e manter no perioperatório (benefício vascular) sem benefício claro fora da indicação com risco elevado sem",
+    "wrongs": [
+      "Evitar estatina em vascular porque aumenta sangramento perioperatório de forma relevante sem benefício claro fora da indicação sem sem benefício claro",
+      "Iniciar estatina só se LDL <70 mg/dL, caso contrário não há indicação perioperatória sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Suspender estatina crônica 10 dias antes de qualquer bypass para 'limpar o fígado' sem benefício claro fora da indicação com risco elevado neste cenário com sem bene",
+      "Substituir estatina por fibrato único no dia da cirurgia como equivalente cardioprotetor sem benefício claro fora da indicação com risco elevado neste sem sem benefí"
+    ],
+    "explain": "Estatinas em cirurgia vascular reduzem eventos; iniciar ≥2 semanas e manter ≥30 dias no pós. Usuário crônico: nunca suspender abruptamente.",
+    "trap": "Suspender estatina no perioperatório. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 41,
+    "group": "Pré-operatório",
+    "theme": "HAS — PA <180×110 não adia",
+    "stem": "Homem com PA 168×100 na manhã de hernioplastia eletiva, sem sintomas de emergência hipertensiva. Qual conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "PA <180×110 sem emergência não justifica adiamento; manter anti-hipertensivos pertinentes e operar sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Cancelar obrigatoriamente todo eletivo se PA sistólica >140 mmHg na manhã da cirurgia sem benefício claro fora da indicação com sem sem benefício claro",
+      "Iniciar nitroprussiato venoso de rotina antes de qualquer hernioplastia com PA 160×95 sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Suspender todos os anti-hipertensivos 3 dias antes para evitar hipotensão anestésica sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Indicar internamento em UTI pré-op até PA <120×70 em cirurgia de baixo risco sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem bene"
+    ],
+    "explain": "<180×110 não eleva risco o bastante para adiar. Com tempo, alvo ambulatorial <140×90. Emergência: tratar se >180×110 com agentes de curta ação.",
+    "trap": "Adiar eletivo por HAS estágio 2 sem urgência hipertensiva."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 42,
+    "group": "Pré-operatório",
+    "theme": "Tricotomia — imediato com clipper",
+    "stem": "Enfermagem pergunta quando e como fazer tricotomia para laparotomia eletiva. Qual prática reduz ISC? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Tricotomia imediatamente antes, com máquina elétrica (clipper); evitar lâmina e véspera sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Raspar com lâmina na noite anterior para 'deixar a pele descansar' até a cirurgia sem benefício claro fora da indicação com sem benefício claro",
+      "Proibir qualquer remoção de pelos mesmo quando interferem tecnicamente no campo sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Usar lâmina fria no centro cirúrgico imediatamente antes como método de menor ISC sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+      "Depilar com cera quente 48h antes como padrão ouro antisséptico de tricotomia sem benefício claro fora da indicação com risco elevado neste cenário sem sem sem benef"
+    ],
+    "explain": "Lâmina e tricotomia na véspera aumentam ISC. Clipper imediato (~1,7%); cremes depilatórios ainda menores (~0,6%). A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Raspar na véspera com lâmina. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 43,
+    "group": "Pré-operatório",
+    "theme": "Preparo de pele — clorexidina alcoólica",
+    "stem": "Antes de laparotomia, discute-se antissepsia do campo. Qual evidência prática é citada sobre preparo? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Degermação + solução alcoólica; clorexidina alcoólica associou-se a menor ISC em estudo citado sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Usar apenas soro fisiológico sem antisséptico no campo de cirurgia limpa-contaminada sem benefício claro fora da indicação com risco",
+      "Aplicar PVP-I em pó seco sem degermação prévia como único passo antisséptico sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Omitir preparo de pele se o paciente tomou banho com sabonete comum na véspera sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Preferir álcool absoluto isolado sem tensoativo em pele visivelmente suja de gordura sem benefício claro fora da indicação com risco elevado neste cenário sem benefí"
+    ],
+    "explain": "Dois tempos: degermação (PVP-I ou clorexidina) + solução alcoólica. Estudo recente favoreceu clorexidina alcoólica para ISC.",
+    "trap": "Pular degermação ou achar banho doméstico suficiente."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 44,
+    "group": "Pré-operatório",
+    "theme": "Nutrição — albumina <3,5",
+    "stem": "Idoso com perda ponderal 12% em 4 meses, albumina 2,9 g/dL, candidata a gastrectomia eletiva. Qual implicação? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Albumina <3,5 g/dL prediz maior morbimortalidade; avaliar suporte nutricional pré-op se desnutrição grave sem benefício claro fora da indicação com sem",
+    "wrongs": [
+      "Albumina baixa contraindica absolutamente qualquer cirurgia oncológica eletiva para sempre sem benefício claro fora da indicação sem benefício claro",
+      "Ignorar albumina porque só pré-albumina importa e nunca se altera por inflamação sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Indicar NPT de rotina por 1 dia antes de qualquer eletivo, mesmo em eutrófico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Considerar IMC isolado suficiente, desprezando perda ponderal e proteínas viscerais sem benefício claro fora da indicação com risco elevado neste cenário sem benefíc"
+    ],
+    "explain": "Perda >10%/6 meses ou >5%/1 mês é significativa. Albumina <3,5 correlaciona com pior desfecho. Suporte pré-op beneficia desnutrição grave (NRS); preferir enteral.",
+    "trap": "Operar grande porte desnutrido sem otimizar quando há tempo."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 45,
+    "group": "Pré-operatório",
+    "theme": "Plaquetas — limiares cirúrgicos",
+    "stem": "Mulher com plaquetas 45.000/mm³, necessita colecistectomia eletiva. Sem sangramento ativo. Qual interpretação do limiar? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "<50.000/mm³ geralmente impede cirurgia; neuro/oftalmo exigem tipicamente ≥100.000/mm³ sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Qualquer contagem >20.000 permite neurocirurgia eletiva sem reposição plaquetária sem benefício claro fora da indicação com sem benefício claro",
+      "Plaquetas 45.000 são suficientes para craniotomia eletiva se o TP estiver normal sem benefício claro fora da indicação com risco elevado neste",
+      "Não existe limiar plaquetário relevante; só o INR importa em procedimentos de grande porte sem benefício claro fora da indicação com risco elevado sem benefício clar",
+      "Indicar esplenectomia imediata antes de discutir reposição e causa da trombocitopenia sem benefício claro fora da indicação com risco elevado neste cenário sem"
+    ],
+    "explain": "História de sangramento vale mais que coagulograma de rotina. Limiares clássicos: <50k qualquer cirurgia; <100k neuro/oftalmo.",
+    "trap": "Operar abaixo do limiar sem correção em eletivo."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 46,
+    "group": "Pré-operatório",
+    "theme": "Preparo colônico — mecânico + ATB oral",
+    "stem": "Homem para sigmoidectomia eletiva sem obstrução nem DII. Discute-se preparo mecânico e antibiótico oral. Qual síntese atual citada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Preparo mecânico associado a ATB oral reduz ISC/íleo/deiscência em coortes; ATB oral isolado não basta sem benefício claro fora da indicação",
+    "wrongs": [
+      "ATB oral isolado sem preparo mecânico é suficiente e superior em todos os estudos sem benefício claro fora da indicação com risco elevado",
+      "Preparo mecânico é obrigatório também na obstrução parcial e na DII ativa grave sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Omitir qualquer ATB parenteral se houver preparo mecânico completo na véspera sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Usar apenas enemas de fosfato sem ATB parenteral em cirurgia colorretal eletiva sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clíni"
+    ],
+    "explain": "Cirurgia de cólon é limpa-contaminada: ATB parenteral obrigatório. Preparo mecânico+ATB oral (neomicina/eritromicina) associou-se a menos ISC; pouco útil em DII/obstrução parcial.",
+    "trap": "Achar que preparo mecânico sozinho dispensa ATB parenteral."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 47,
+    "group": "Pré-operatório",
+    "theme": "IAM recente — eletivo 4–6 semanas",
+    "stem": "Homem com IAM há 3 semanas, sem isquemia residual em teste, precisa de hernioplastia eletiva sintomática leve. Qual timing? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Preferir aguardar cerca de 4–6 semanas após IAM antes de eletivo não cardíaco quando possível sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Liberar eletivo 48h após IAM se troponina estiver em queda, sem janela de convalescença sem benefício claro fora da indicação",
+      "Proibir qualquer cirurgia não cardíaca por 2 anos após IAM, mesmo emergências sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Indicar novo cateterismo semanal até a hernioplastia como condição obrigatória sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Operar imediatamente com suspensão de toda terapia anti-isquêmica no perioperatório sem benefício claro fora da indicação com risco elevado neste cenário sem ganho c"
+    ],
+    "explain": "Eletivo após IAM: janela clássica 4–6 semanas (mais longa em grandes ressecções pulmonares). Emergências não aguardam. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Marcar eletivo na convalescença precoce do IAM."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 48,
+    "group": "Pré-operatório",
+    "theme": "Angina instável — adiar eletivo",
+    "stem": "Mulher com angina progressiva em repouso há 48h, candidata a colecistectomia eletiva por cólica biliar intermitente. Qual prioridade? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Tratar SCA conforme guidelines e adiar eletivo até estabilização cardiológica adequada sem benefício claro fora da indicação com risco elevado com sem sem benefício",
+    "wrongs": [
+      "Prosseguir colecistectomia amanhã porque cólica biliar supera risco de SCA não estabilizada sem benefício claro fora da indicação sem benefício claro neste sem benef",
+      "Suspender AAS e estatina para 'preparar' a vesícula antes da avaliação cardiológica sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Indicar apenas RX de tórax e liberar eletivo se não houver edema pulmonar radiológico sem benefício claro fora da indicação com risco elevado neste cenário com",
+      "Iniciar digoxina empírica e operar no mesmo dia sem estratificar a síndrome coronariana sem benefício claro fora da indicação com risco elevado neste sem benefício c"
+    ],
+    "explain": "Etapa do algoritmo: SCA ativa → cardiologia/guidelines antes de eletivo. Emergências cirúrgicas seguem com otimização possível e monitorização.",
+    "trap": "Priorizar eletivo sobre SCA instável. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 49,
+    "group": "Pré-operatório",
+    "theme": "HBPM e peridural — intervalos",
+    "stem": "Paciente em HBPM profilática, programado para peridural. Qual intervalo típico para punção/retirada do cateter? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Aguardar ~12h após última HBPM para puncionar; próxima dose ≥2h após inserção/retirada do cateter sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Aplicar HBPM 30 minutos antes da punção peridural para prevenir hematoma epidural sem benefício claro fora da indicação com risco sem benefício claro",
+      "Retirar cateter durante o pico da enoxaparina sem qualquer intervalo de segurança sem benefício claro fora da indicação com risco elevado neste cenário fora da",
+      "Ignorar HBPM profilática porque só a dose plena eleva risco de hematoma neuroaxial sem benefício claro fora da indicação com risco elevado neste cenário com sem bene",
+      "Usar protamina de rotina antes de toda peridural em paciente com HBPM profilática sem benefício claro fora da indicação com risco elevado neste cenário sem sem benef"
+    ],
+    "explain": "Hematoma epidural correlaciona-se a inserção/retirada sob efeito de heparina. Intervalos ~12h pós-HBPM e ~2h antes da próxima dose são a regra prática citada.",
+    "trap": "Puncionar/retirar cateter no pico da HBPM."
+  },
+  {
+    "idPrefix": "cir-preop1",
+    "n": 50,
+    "group": "Pré-operatório",
+    "theme": "Alergia látex — frutas cruzadas",
+    "stem": "Mulher com alergia a banana, abacate e kiwi, candidata a cirurgia ginecológica. Qual cuidado pré-anestésico? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Investigar alergia a látex (reatividade cruzada) e preparar ambiente/luvas sem látex (vinil/neoprene) sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Ignorar alergias alimentares porque não têm relação com materiais cirúrgicos de borracha sem benefício claro fora da indicação",
+      "Administrar látex oral de dessensibilização na véspera como profilaxia padronizada sem benefício claro fora da indicação com risco elevado neste cenário",
+      "Contraindicar qualquer anestesia regional se houver alergia a frutas tropicais sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínic",
+      "Usar apenas luvas de látex em dobro de espessura para 'isolar' o antígeno sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico"
+    ],
+    "explain": "Alergia a banana/kiwi/abacate/etc. alerta para látex. Manifestações vão de urticária a anafilaxia; usar materiais sem látex.",
+    "trap": "Negligenciar história alimentar cruzada com látex."
+  }
+]
