@@ -3808,6 +3808,7 @@ function aprovaRenderQuestion () {
   const trapWrap = document.getElementById("q-trap-wrap");
   const trapEl = document.getElementById("q-trap");
   const nextBtn = document.getElementById("q-next");
+  const prevBtn = document.getElementById("q-prev");
   const abortBtn = document.getElementById("q-abort");
   const stats = document.getElementById("q-stats");
   const progress = document.getElementById("q-progress");
@@ -3849,54 +3850,79 @@ function aprovaRenderQuestion () {
   if (explain) explain.textContent = "";
   if (trapWrap) trapWrap.hidden = true;
   if (trapEl) trapEl.textContent = "";
-  nextBtn.hidden = true;
+  if (nextBtn) nextBtn.hidden = true;
+  if (prevBtn) prevBtn.hidden = AprovaQuestions.index <= 0;
   if (abortBtn) abortBtn.hidden = false;
   choices.innerHTML = "";
+
+  function aprovaShowQuestionFeedback (result, chosenIndex) {
+    if (!result) return;
+    choices.querySelectorAll(".choice").forEach((el, idx) => {
+      el.disabled = true;
+      if (idx === result.answer) el.classList.add("correct");
+      if (chosenIndex != null && idx === chosenIndex && !result.ok) el.classList.add("wrong");
+    });
+    if (feedback) feedback.hidden = false;
+    if (verdictEl) {
+      verdictEl.textContent = result.ok
+        ? "Acertou — veja o raciocínio e a pegadinha."
+        : "Errou — veja por que a correta é outra e onde está a pegadinha.";
+      verdictEl.className = "q-feedback-verdict " +
+        (result.ok ? "q-feedback-verdict--ok" : "q-feedback-verdict--err");
+    }
+    if (explain) {
+      explain.textContent = result.explain ||
+        (result.ok ? "Correto." : "Revise o comentário desta questão.");
+    }
+    if (trapWrap && trapEl) {
+      if (result.trap) {
+        trapEl.textContent = result.trap;
+        trapWrap.hidden = false;
+      } else {
+        trapWrap.hidden = true;
+      }
+    }
+    if (nextBtn) {
+      nextBtn.hidden = false;
+      nextBtn.textContent = AprovaQuestions.mode === "simulado" &&
+        AprovaQuestions.index + 1 >= AprovaQuestions.queue.length
+        ? "Ver resultado"
+        : "Próxima";
+    }
+    if (stats) stats.textContent = AprovaQuestions.statsText();
+    if (progress) progress.textContent = AprovaQuestions.progressText();
+    aprovaRenderExamStats();
+  }
+
+  const prior = AprovaQuestions.answered ? AprovaQuestions.priorAnswer() : null;
 
   q.choices.forEach((text, i) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "choice";
     btn.textContent = (letters[i] || String(i + 1)) + ") " + text;
-    btn.addEventListener("click", () => {
-      const result = AprovaQuestions.choose(i);
-      if (!result) return;
-      choices.querySelectorAll(".choice").forEach((el, idx) => {
-        el.disabled = true;
-        if (idx === result.answer) el.classList.add("correct");
-        if (idx === i && !result.ok) el.classList.add("wrong");
+    if (prior) {
+      btn.disabled = true;
+      if (i === prior.correct) btn.classList.add("correct");
+      if (i === prior.choice && !prior.ok) btn.classList.add("wrong");
+    } else {
+      btn.addEventListener("click", () => {
+        const result = AprovaQuestions.choose(i);
+        if (!result) return;
+        aprovaShowQuestionFeedback(result, i);
       });
-      if (feedback) feedback.hidden = false;
-      if (verdictEl) {
-        verdictEl.textContent = result.ok
-          ? "Acertou — veja o raciocínio e a pegadinha."
-          : "Errou — veja por que a correta é outra e onde está a pegadinha.";
-        verdictEl.className = "q-feedback-verdict " +
-          (result.ok ? "q-feedback-verdict--ok" : "q-feedback-verdict--err");
-      }
-      if (explain) {
-        explain.textContent = result.explain ||
-          (result.ok ? "Correto." : "Revise o comentário desta questão.");
-      }
-      if (trapWrap && trapEl) {
-        if (result.trap) {
-          trapEl.textContent = result.trap;
-          trapWrap.hidden = false;
-        } else {
-          trapWrap.hidden = true;
-        }
-      }
-      nextBtn.hidden = false;
-      nextBtn.textContent = AprovaQuestions.mode === "simulado" &&
-        AprovaQuestions.index + 1 >= AprovaQuestions.queue.length
-        ? "Ver resultado"
-        : "Próxima";
-      if (stats) stats.textContent = AprovaQuestions.statsText();
-      if (progress) progress.textContent = AprovaQuestions.progressText();
-      aprovaRenderExamStats();
-    });
+    }
     choices.appendChild(btn);
   });
+
+  if (prior) {
+    aprovaShowQuestionFeedback({
+      ok: prior.ok,
+      explain: q.explain,
+      trap: q.trap || "",
+      answer: prior.correct
+    }, prior.choice);
+  }
 
   if (stats) stats.textContent = AprovaQuestions.statsText();
 }
@@ -4201,6 +4227,11 @@ async function aprovaBoot () {
       aprovaRenderSimuladoResult();
       return;
     }
+    aprovaRenderQuestion();
+  });
+
+  document.getElementById("q-prev")?.addEventListener("click", () => {
+    if (!AprovaQuestions.prev()) return;
     aprovaRenderQuestion();
   });
 

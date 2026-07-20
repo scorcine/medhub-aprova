@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260719q6";
+const APROVA_QUESTION_CACHE_VER = "20260720q1";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -321,7 +321,7 @@ const AprovaQuestions = {
         return null;
       }
       this.index += 1;
-      this.answered = false;
+      this.answered = this.hasAnsweredCurrent();
       return this.current();
     }
 
@@ -329,6 +329,29 @@ const AprovaQuestions = {
     this.index = (this.index + 1) % this.queue.length;
     this.answered = false;
     return this.current();
+  },
+
+  prev () {
+    if (!this.queue.length || this.index <= 0) return null;
+    this.index -= 1;
+    this.answered = this.hasAnsweredCurrent();
+    return this.current();
+  },
+
+  /** No simulado, indica se a questão atual já foi respondida nesta sessão. */
+  hasAnsweredCurrent () {
+    const q = this.current();
+    if (!q) return false;
+    if (this.mode === "simulado" && this.simulado && Array.isArray(this.simulado.answers)) {
+      return this.simulado.answers.some((a) => a.id === q.id);
+    }
+    return false;
+  },
+
+  priorAnswer () {
+    const q = this.current();
+    if (!q || !this.simulado || !Array.isArray(this.simulado.answers)) return null;
+    return this.simulado.answers.find((a) => a.id === q.id) || null;
   },
 
   isSimuladoFinished () {
