@@ -1,0 +1,642 @@
+[
+  {
+    "idPrefix": "ped-gast2",
+    "n": 1,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Desidratação — plano A (SRO ambulatorial)",
+    "stem": "Lactente de 11 meses, 9,2 kg, com diarreia líquida há 18 horas (6 evacuações), sem vômitos há 6 horas. Aceita o peito e pequenos goles de água. Exame: alerta, olhos normais, mucosa oral úmida, prega cutânea com retorno imediato, enchimento capilar <2 s, diurese presente nas últimas 3 horas. Frequência cardíaca 118 bpm, frequência respiratória 32 irpm, saturação 99%, temperatura 37,4 °C. Sem sangue nas fezes. Qual o plano de hidratação mais adequado na UBS?",
+    "correct": "plano A: manter aleitamento, oferecer SRO após cada evacuação líquida e orientar sinais de alarme para retorno precoce neste atendimento",
+    "wrongs": [
+      "plano B com SRO supervisionada por 4 horas na unidade, pois qualquer diarreia aguda já indica desidratação leve neste retorno",
+      "plano C com soro fisiológico venoso em bolus imediato, mesmo com perfusão e diurese preservadas diante do quadro descrito no",
+      "suspender o aleitamento materno por 24 horas e oferecer apenas fórmula diluída ao meio para reduzir o volume fecal neste caso com vigilância clínica",
+      "iniciar antibioticoterapia empírica intravenosa e internar sem tentar reidratação oral porque há seis evacuações diárias no seguimento na prática do serviço"
+    ],
+    "explain": "Sem sinais de desidratação, o manejo é plano A: manter alimentação habitual (incluindo aleitamento), SRO após cada evacuação líquida e orientação de alarme. Plano B/C e antibiótico empírico não se aplicam a diarreia sem desidratação nem sinais de gravidade.",
+    "trap": "Escalar automaticamente para plano B ou C só pelo número de evacuações, sem avaliar o estado de hidratação."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 2,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Desidratação — plano B versus plano C",
+    "stem": "Menina de 2 anos, 12 kg, com gastroenterite há 2 dias. Chega à emergência sonolenta, com sede intensa, olhos fundos, mucosa seca, prega cutânea com retorno lento (~2 s), enchimento capilar de 3 s e diurese reduzida. Aceita pequenos goles com dificuldade. Frequência cardíaca 148 bpm, frequência respiratória 36 irpm, saturação 98%, pressão 88/54 mmHg, temperatura 37,8 °C. Sem choque franco. Qual a melhor conduta inicial de reidratação?",
+    "correct": "plano B: reidratação oral supervisionada com SRO por cerca de 4 horas, reavaliando clinicamente; reservar via endovenosa se falhar a via oral",
+    "wrongs": [
+      "plano A domiciliar com alta imediata e retorno só em 48 horas, pois ainda não há hipotensão arterial sistólica neste atendimento",
+      "plano C com expansão venosa rápida em todos os casos de sede, mesmo sem sinais de choque ou falha da via oral neste retorno",
+      "reidratar apenas com suco industrializado diluído em casa, evitando SRO porque o sabor pode reduzir a aceitação da criança com vigilância clínica",
+      "indicar solução hipertônica intravenosa contínua como primeira linha ambulatorial sem tentativa de SRO supervisionada no caso atual na prática do serviço"
+    ],
+    "explain": "Desidratação com sinais clínicos sem choque corresponde ao plano B: SRO supervisionada (~4 h) e reavaliação. Plano C (EV) reserva-se a choque, alteração grave do sensorial ou falha da via oral. Sucos e soluções inadequadas não substituem a SRO.",
+    "trap": "Partir direto para plano C só porque a criança está taquicárdica, sem evidência de choque."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 3,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Desidratação — plano C (choque hipovolêmico)",
+    "stem": "Menino de 14 meses, 10 kg, com diarreia e vômitos há 36 horas. Chega letárgico, extremidades frias, pulsos finos, enchimento capilar de 4 s, sem diurese há 8 horas, olhos muito fundos e prega cutânea com retorno muito lento. Frequência cardíaca 170 bpm, frequência respiratória 42 irpm, saturação 97%, pressão 70/40 mmHg, temperatura 37,2 °C. Não aceita nada por via oral. Qual a prioridade terapêutica imediata?",
+    "correct": "plano C: acesso venoso (ou intraósseo se necessário), expansão com cristaloides e monitorização contínua até estabilizar a perfusão neste retorno",
+    "wrongs": [
+      "tentar exclusivamente SRO por sonda nasogástrica em casa, adiando qualquer via endovenosa até completar quatro horas de observação",
+      "iniciar coloides sintéticos de rotina como primeira expansão, antes de qualquer cristaloide isotônico no atendimento de emergência",
+      "administrar diurético de alça para estimular diurese antes da reposição volêmica, visando reduzir a oligúria observada agora com vigilância clínica",
+      "manter observação expectante sem acesso vascular porque a saturação ainda está acima de 95% em ar ambiente neste caso ignorando os demais achados"
+    ],
+    "explain": "Choque hipovolêmico por desidratação grave é plano C: acesso imediato e expansão com cristaloides, com reavaliação hemodinâmica. SRO isolada é inadequada no choque; diurético piora a hipovolemia; saturação normal não exclui choque.",
+    "trap": "Atrasar a via endovenosa tentando SRO prolongada em criança com choque e anúria."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 4,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Diarreia aguda — indicação de antibiótico",
+    "stem": "Menino de 4 anos com diarreia mucossanguinolenta há 3 dias, febre 39,1 °C, tenesmo e dor abdominal tipo cólica. Estado geral preservado, hidratado, sem sinais de abdome agudo. Frequência cardíaca 110 bpm, frequência respiratória 22 irpm, saturação 99%, pressão 98/62 mmHg. Coprocultura pendente. Sem viagens recentes. Qual a conduta antimicrobiana mais racional neste momento?",
+    "correct": "considerar antibiótico se disenteria bacteriana suspeita, guiado por epidemiologia/cultura, evitando uso rotineiro indiscriminado neste retorno",
+    "wrongs": [
+      "prescrever antibiótico de amplo espectro em toda diarreia aquosa viral típica para encurtar o curso em 24 horas neste retorno",
+      "iniciar metronidazol empírico obrigatório em qualquer criança com muco fecal, mesmo sem critérios de disenteria ou parasitose",
+      "usar quinolona oral de rotina em pré-escolar saudável como primeira linha, independentemente da idade e do risco-benefício com vigilância clínica",
+      "suspender SRO e alimentação enquanto aguarda cultura, priorizando apenas o antimicrobiano intravenoso hospitalar no caso atual ignorando os demais achados"
+    ],
+    "explain": "Antibiótico na diarreia aguda pediátrica não é rotina: reserva-se a disenteria, imunodepressão, septicemia ou etiologias específicas. Reidratação e alimentação continuam essenciais. Quinolonas e metronidazol empíricos indiscriminados são inadequados.",
+    "trap": "Dar antibiótico em toda diarreia aguda 'para prevenir complicações', inclusive nas virais aquosas."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 5,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Diarreia aguda — evitar antibiótico na viral típica",
+    "stem": "Lactente de 10 meses com diarreia aquosa há 2 dias, vômitos esparsos, sem sangue nas fezes, contato com irmão com quadro semelhante. Aceita SRO e peito. Exame: hidratado, afebril agora (37,3 °C), abdome sem sinais de irritação. Frequência cardíaca 120 bpm, frequência respiratória 30 irpm, saturação 99%. Mãe insiste em 'remédio para matar a bactéria'. Qual a orientação correta?",
+    "correct": "manter plano A com SRO e aleitamento; não indicar antibiótico empírico em diarreia aquosa tipicamente viral sem sinais de disenteria ou sepse",
+    "wrongs": [
+      "iniciar amoxicilina-clavulanato por 7 dias para cobrir possíveis enteropatógenos ocultos mesmo sem sangue nas fezes neste retorno",
+      "prescrever ciprofloxacino suspensão por 5 dias como profilaxia de bacteremia em todo lactente com diarreia aquosa no atendimento",
+      "indicar rifaximina prolongada de rotina para 'esterilizar' o intestino e acelerar a recuperação do lactente diante do quadro com vigilância clínica",
+      "internar para ceftriaxona intravenosa apenas porque a mãe solicita antibiótico, sem critérios clínicos de gravidade no caso atual na prática do serviço"
+    ],
+    "explain": "Diarreia aquosa tipicamente viral em criança hidratada trata-se com reidratação e manutenção alimentar. Antibiótico empírico não encurta a doença viral e aumenta risco de efeitos adversos e resistência.",
+    "trap": "Ceder à pressão familiar e prescrever antibiótico sem indicação clínica."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 6,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Diarreia persistente — definição e abordagem",
+    "stem": "Menina de 18 meses com diarreia iniciada há 18 dias (ainda >3 evacuações líquidas/dia), após episódio agudo febril que cedeu. Peso caiu de 11,0 para 10,2 kg. Aceita alimentação, sem sangue aparente. Exame: alerta, leve perda de tecido subcutâneo, hidratação adequada. Frequência cardíaca 112 bpm, frequência respiratória 26 irpm, saturação 99%, temperatura 36,9 °C. Qual a melhor conduta inicial?",
+    "correct": "reconhecer diarreia persistente (>14 dias), revisar dieta/hidratação, investigar causas comuns e reforçar suporte nutricional sem antibiótico empírico",
+    "wrongs": [
+      "classificar como diarreia aguda simples e liberar sem reavaliação nutricional porque já passou a fase febril inicial neste retorno",
+      "iniciar esquema tríplice empírico prolongado para tuberculose intestinal sem investigação, apenas pela duração da diarreia atual",
+      "indicar jejum absoluto por 5 dias para 'descansar o intestino', suspendendo calorias até cessar completamente a diarreia líquida com vigilância clínica",
+      "prescrever corticosteroide sistêmico de rotina como tratamento de primeira linha da diarreia persistente pós-infecciosa no pré-escolar na prática do serviço"
+    ],
+    "explain": "Diarreia persistente (>14 dias) exige atenção nutricional, revisão de dieta (incluindo diluições/inadequações) e investigação seletiva. Antibiótico/corticoide empíricos e jejum prolongado pioram o desfecho.",
+    "trap": "Tratar diarreia persistente como 'ainda aguda' e negligenciar a perda ponderal."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 7,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Diarreia persistente — suporte nutricional",
+    "stem": "Lactente de 9 meses com diarreia há 3 semanas, peso no percentil 3 (antes no 25), alimentado com fórmula inadequada diluída 'para não entupir'. Sem desidratação atual, sem sangue. Frequência cardíaca 118 bpm, frequência respiratória 28 irpm, saturação 98%, temperatura 37,0 °C. Exame abdominal sem massas. Qual prioridade na condução ambulatorial? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "corrigir a oferta calórico-proteica (fórmula adequada/alimentação complementada), manter hidratação e reavaliar ganho ponderal de forma seriada no",
+    "wrongs": [
+      "manter fórmula muito diluída indefinidamente para reduzir volume fecal, aceitando a perda ponderal como efeito esperado da diarreia",
+      "indicar parenteral exclusiva domiciliar sem critério, como primeira linha em toda diarreia persistente de lactente neste atendimento",
+      "iniciar antibiótico intravenoso contínuo por 14 dias sem cultura, atribuindo a perda de peso apenas a infecção bacteriana oculta com vigilância clínica",
+      "proibir qualquer gordura na dieta por meses, mesmo após melhora, para prevenir recorrência da diarreia persistente no lactente na prática do serviço"
+    ],
+    "explain": "Na diarreia persistente, a recuperação nutricional é central: corrigir diluição inadequada e garantir aporte calórico. Nutricão parenteral e antibiótico empírico prolongado não são primeira linha ambulatorial sem gravidade.",
+    "trap": "Prolongar dieta hipocalórica 'para melhorar as fezes', agravando a desnutrição."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 8,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Invaginação intestinal — apresentação clássica",
+    "stem": "Lactente de 8 meses, previamente hígido, com episódios intermitentes de choro intenso com flexão de membros, palidez e letargia entre as crises há 12 horas. Evacuou fezes em 'geleia de morango'. Massa palpável em hipocôndrio direito. Frequência cardíaca 140 bpm, frequência respiratória 34 irpm, saturação 98%, temperatura 37,5 °C, pressão 90/55 mmHg. Qual a hipótese e próximo passo prioritário?",
+    "correct": "suspeitar invaginação; estabilizar, evitar dieta oral e solicitar imagem urgente (ultrassom) com preparo para redução não cirúrgica se indicada",
+    "wrongs": [
+      "tratar como cólica do lactente benigna e orientar massagem abdominal domiciliar, com retorno apenas se houver febre alta no seguimento",
+      "iniciar laxante osmótico em alta dose para 'desobstruir' o trânsito, mantendo alimentação plena enquanto aguarda evolução espontânea",
+      "prescrever antiespasmódico oral e alta com diagnóstico de gastroenterite viral típica, sem imagem, porque ainda está afebril agora com vigilância clínica",
+      "indicar colonoscopia diagnóstica imediata como primeiro exame em todo lactente com choro intermitente, antes de qualquer estabilização na prática do serviço"
+    ],
+    "explain": "Choro intermitente, fezes em geleia de morango e massa abdominal sugerem invaginação. Conduta: estabilização, jejum, imagem (US) e redução (enemas guiados) quando elegível; cirurgia se houver complicação.",
+    "trap": "Diagnosticar cólica ou gastroenterite e atrasar a imagem em lactente com crises e sangue fecal."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 9,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Invaginação intestinal — conduta terapêutica",
+    "stem": "Lactente de 7 meses com diagnóstico ultrassonográfico de invaginação ileocólica, estável hemodinamicamente, sem peritonite, sem sinais de perfuração. Frequência cardíaca 130 bpm, saturação 99%, temperatura 37,3 °C. Já está em jejum com acesso venoso. Qual a abordagem terapêutica inicial preferencial na maioria dos serviços? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "tentar redução não cirúrgica guiada por imagem (enema pneumático ou hidrostático) após estabilização, reservando cirurgia se houver falha ou",
+    "wrongs": [
+      "indicar laparotomia imediata em todos os casos, mesmo estáveis e sem peritonite, sem tentativa de redução não operatória neste",
+      "liberar dieta oral plena e observação domiciliar por 48 horas, esperando resolução espontânea da invaginação ileocólica confirmada",
+      "iniciar antibiótico isolado por 10 dias como tratamento definitivo da invaginação, sem redução mecânica nem avaliação cirúrgica com vigilância clínica",
+      "realizar apenas compressas mornas e antiespasmódico intravenoso como terapia exclusiva, adiando qualquer redução guiada por imagem na prática do serviço"
+    ],
+    "explain": "Na invaginação não complicada, a redução não cirúrgica guiada por imagem é primeira linha. Cirurgia indica-se em perfuração, peritonite, instabilidade ou falha da redução.",
+    "trap": "Levar todo caso estável direto à laparotomia sem tentativa de redução não operatória."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 10,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Apendicite aguda — clínica em escolar",
+    "stem": "Menino de 9 anos com dor abdominal iniciada em região periumbilical há 24 horas, migrando para fossa ilíaca direita, associada a anorexia, náuseas e febre 38,2 °C. Exame: dor à descompressão em FID, marcha antálgica. Frequência cardíaca 108 bpm, frequência respiratória 20 irpm, saturação 99%, pressão 100/64 mmHg. Leucócitos 15.800/mm³ com desvio. Qual a conduta mais adequada?",
+    "correct": "suspeitar apendicite; manter jejum, hidratação venosa, analgesia, antibioticoprofilaxia conforme protocolo e avaliação cirúrgica urgente neste retorno",
+    "wrongs": [
+      "prescrever laxante e enema evacuatório para 'aliviar a dor', mantendo alimentação plena enquanto observa por mais 24 horas em casa",
+      "tratar empiricamente como cólica renal com hidratação forçada exclusiva, sem avaliação cirúrgica, porque a dor começou no umbigo",
+      "indicar alta com anti-inflamatório e retorno só se houver diarreia, interpretando o quadro como gastroenterite viral típica no escolar com vigilância clínica",
+      "solicitar colonoscopia diagnóstica imediata antes de qualquer avaliação pelo cirúrgico pediátrico na emergência deste atendimento na prática do serviço"
+    ],
+    "explain": "Migração da dor, anorexia, febre e sinais em FID com leucocitose sugerem apendicite. Manejo: jejum, suporte, antibiótico perioperatório e cirurgia. Laxantes/enemas são contraindicados na suspeita.",
+    "trap": "Tratar como gastroenterite e liberar escolar com dor migratória e sinais de irritação peritoneal."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 11,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Apendicite — diferencial com gastroenterite",
+    "stem": "Menina de 11 anos com dor em fossa ilíaca direita há 18 horas, febre 38,5 °C, um episódio de diarreia e vômito. Está anorética, com dor à palpação e descompressão em FID, defesa voluntária. Frequência cardíaca 112 bpm, frequência respiratória 22 irpm, saturação 98%, pressão 102/66 mmHg. Ultrassom sugere apêndice não compressível. Qual a interpretação correta?",
+    "correct": "priorizar apendicite mesmo com diarreia ocasional; manter jejum e acionar cirurgia, evitando atribuir tudo à gastroenterite apenas pela evacuação",
+    "wrongs": [
+      "excluir apendicite definitivamente porque houve diarreia, iniciando apenas SRO domiciliar e retorno em 72 horas se persistir a dor",
+      "indicar colonoscopia urgente para biópsias antes de qualquer decisão cirúrgica, mesmo com ultrassom sugestivo de apendicite aguda",
+      "prescrever antiespasmódico e dieta zero por 5 dias em casa como tratamento definitivo, sem reavaliação cirúrgica neste atendimento com vigilância clínica",
+      "administrar opioide em alta dose e liberar, pois a analgesia completa afasta a necessidade de imagem ou avaliação especializada na prática do serviço"
+    ],
+    "explain": "Diarreia não exclui apendicite (pode haver irritação cecal). Clínica + US compatível exigem manejo cirúrgico. Atrasar por 'gastroenterite' aumenta risco de perfuração.",
+    "trap": "Descartar apendicite só porque houve um episódio de diarreia."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 12,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Doença celíaca — suspeita clínica",
+    "stem": "Menina de 5 anos com distensão abdominal, diarreia crônica intermitente, irritabilidade e queda do percentil ponderal (do 50 para o 10) nos últimos 8 meses. Alimentação com glúten desde o desmame. Sem febre. Frequência cardíaca 90 bpm, frequência respiratória 20 irpm, saturação 99%, temperatura 36,7 °C. Exame: abdome timpânico, sem massas. Qual a melhor etapa diagnóstica inicial?",
+    "correct": "solicitar sorologia apropriada (ex.: anti-transglutaminase IgA com dosagem de IgA total) mantendo dieta com glúten até completar a investigação",
+    "wrongs": [
+      "iniciar dieta sem glúten imediatamente sem exames, pois a resposta clínica isolada já confirma celíaca de forma definitiva neste",
+      "indicar colonoscopia total de rotina como primeiro exame, antes de qualquer sorologia, em toda criança com distensão abdominal crônica",
+      "prescrever prednisona prolongada empírico como tratamento de primeira linha da suspeita de doença celíaca no pré-escolar atual com vigilância clínica",
+      "restringir apenas lactose para sempre, considerando celíaca e intolerância à lactose como a mesma entidade clínica neste atendimento na prática do serviço"
+    ],
+    "explain": "Na suspeita de celíaca, inicia-se por sorologia (com IgA total) com a criança ainda ingerindo glúten. Dieta sem glúten precoce falseia exames. Biópsia/endoscopia seguem conforme protocolo, não corticoide empírico.",
+    "trap": "Retirar o glúten antes dos exames e depois não conseguir confirmar o diagnóstico."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 13,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Doença celíaca — tratamento",
+    "stem": "Menino de 7 anos com doença celíaca confirmada (sorologia e biópsia compatíveis). Mãe pergunta se pode liberar pizza ocasional nos aniversários e se precisa de medicação contínua. Peso ainda abaixo do esperado. Frequência cardíaca 88 bpm, saturação 99%, afebril. Qual a orientação terapêutica correta? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "indicar dieta sem glúten estrita e contínua, educação alimentar e seguimento nutricional/clínico; não há 'liberação ocasional' segura neste momento",
+    "wrongs": [
+      "permitir glúten em pequenas quantidades nos fins de semana se a criança estiver assintomática naquele dia, sem risco de lesão mucosa",
+      "substituir a dieta pela azatioprina de manutenção em todos os casos pediátricos, liberando glúten livremente na alimentação diária",
+      "usar apenas probiótico comercial como tratamento exclusivo da celíaca, sem necessidade de exclusão dietética do glúten no seguimento com vigilância clínica",
+      "indicar antibiótico cíclico mensal para controlar a inflamação intestinal da celíaca enquanto mantém dieta normal com trigo na prática do serviço"
+    ],
+    "explain": "O tratamento da celíaca é a dieta sem glúten rigorosa e permanente, com suporte nutricional. Exposições 'ocasionais' mantêm lesão. Imunossupressor/antibiótico/probiótico não substituem a exclusão do glúten.",
+    "trap": "Autorizar 'escapadas' de glúten porque a criança está sem diarreia no momento."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 14,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "RGE fisiológico versus DRGE",
+    "stem": "Lactente de 3 meses, ganho ponderal adequado (percentil 50), alerta, com regurgitações frequentes após mamadas, sem vômitos em jato, sem hematoêmese, sem crises de apneia e sem irritabilidade intensa às mamadas. Exame normal. Frequência cardíaca 130 bpm, frequência respiratória 36 irpm, saturação 99%, temperatura 36,8 °C. Qual a melhor conduta? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "orientar RGE fisiológico: medidas posturais/alimentação, tranquilizar; não iniciar IBP de rotina nem exames invasivos na ausência de sinais de alarme",
+    "wrongs": [
+      "iniciar omeprazol em dose plena imediatamente em todo lactente que regurgita, independentemente do ganho ponderal e do exame atual",
+      "indicar fundoplicatura cirúrgica precoce como primeira linha do refluxo fisiológico com ganho ponderal normal neste atendimento",
+      "solicitar endoscopia digestiva alta urgente em todos os lactentes com regurgitação, mesmo sem sinais de alarme ou falha ponderal com vigilância clínica",
+      "suspender aleitamento materno e trocar para fórmula extensamente hidrolisada de rotina sem critérios de alergia ou alarme no caso na prática do serviço"
+    ],
+    "explain": "Regurgitação com crescimento normal e sem alarmes é RGE fisiológico: orientação e medidas conservadoras. IBP, cirurgia e endoscopia não são rotina sem DRGE complicada.",
+    "trap": "Medicalizar todo refluxo do lactente com IBP só porque há regurgitação visível."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 15,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "DRGE — sinais de alarme e manejo",
+    "stem": "Lactente de 4 meses com vômitos recorrentes, recusa alimentar, choro às mamadas, estagnação ponderal (caiu do percentil 40 para o 5) e episódios de tosse/engasgos. Sem febre. Frequência cardíaca 128 bpm, frequência respiratória 38 irpm, saturação 97%, temperatura 36,9 °C. Qual a abordagem mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "considerar DRGE sintomática/complicada: otimizar medidas, avaliar causas diferenciais e considerar terapia/propedêutica conforme gravidade e falha",
+    "wrongs": [
+      "classificar como refluxo fisiológico benigno e apenas tranquilizar, ignorando a queda ponderal e a recusa alimentar neste retorno",
+      "indicar colecistectomia profilática por suspeita de refluxo biliar, sem investigação, em lactente com estagnação ponderal atual",
+      "prescrever antiemético dopaminérgico prolongado de rotina como única medida, sem revisar alimentação nem sinais de alarme no caso com vigilância clínica",
+      "manter observação domiciliar por 3 meses sem reavaliação do peso, pois todo refluxo melhora espontaneamente até os 12 meses na prática do serviço"
+    ],
+    "explain": "Falha ponderal, recusa e sintomas respiratórios sugerem DRGE ou diferencial importante — não é RGE fisiológico. Exige otimização, exclusão de outras causas e manejo escalonado.",
+    "trap": "Chamar de 'refluxo normal do bebê' na presença de estagnação ponderal e recusa."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 16,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Constipação funcional — critérios de Roma",
+    "stem": "Menino de 6 anos com evacuação a cada 4–5 dias, fezes volumosas e endurecidas, escape fecal ocasional na roupa, esforço e dor ao evacuar há 5 meses. Sem perda de peso, sem sangue vermelho vivo abundante, sem atraso puberal. Exame abdominal com fezes palpáveis em flanco esquerdo; tônes e reflexo cremastérico normais. Frequência cardíaca 88 bpm, saturação 99%. Qual o diagnóstico mais provável?",
+    "correct": "constipação funcional (Roma): manejo com desimpactação se necessário, laxante de manutenção e educação do hábito intestinal, sem imagem de rotina",
+    "wrongs": [
+      "doença de Hirschsprung típica do escolar sem história neonatal, indicando biópsia retal imediata em todos com escape fecal ocasional",
+      "hipotireoidismo obrigatório como primeira hipótese, iniciando levotiroxina empírica sem dosar TSH neste atendimento ambulatorial",
+      "tumor medular presumido, solicitando ressonância de urgência antes de qualquer tentativa de desimpactação fecal no escolar atual com vigilância clínica",
+      "alergia às proteínas do leite como única causa, suspendendo laticínios e contraindicando laxantes osmóticos no tratamento inicial na prática do serviço"
+    ],
+    "explain": "Escolar com critérios crônicos de Roma, escape e sem alarmes: constipação funcional. Tratamento é desimpactação + manutenção + reeducação. Investigação invasiva não é rotina sem sinais de alarme.",
+    "trap": "Investigar doença neurológica/Hirschsprung de imediato em todo escape fecal sem alarmes."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 17,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Constipação funcional — tratamento de manutenção",
+    "stem": "Menina de 5 anos após desimpactação bem-sucedida por constipação funcional. Mãe quer suspender o polietilenoglicol assim que evacuar 'um dia mole'. Sem alarmes. Frequência cardíaca 90 bpm, saturação 99%, afebril. Qual a orientação correta sobre a manutenção? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino. Na reavaliação, hidratação, dor abdominal e risco de deterioração guiam a conduta imediata.",
+    "correct": "manter laxante osmótico por período prolongado (semanas a meses) com ajuste da dose, fibra/fluidos e rotina de vaso, evitando suspensão precoce",
+    "wrongs": [
+      "suspender o laxante no primeiro dia de fezes moles, pois a manutenção prolongada causa dependência irreversível do intestino na criança",
+      "trocar definitivamente para enemas diários domiciliares como terapia exclusiva de manutenção por tempo indeterminado neste retorno",
+      "indicar opioide oral em baixa dose para reduzir a dor evacuatória, mantendo o ciclo de retenção fecal no tratamento atual conforme o algoritmo local",
+      "proibir atividade física e líquidos para 'não estimular o intestino', concentrando o tratamento apenas em antiespasmódicos orais na prática do serviço"
+    ],
+    "explain": "Após desimpactação, a manutenção com laxante (ex.: PEG) por tempo suficiente evita recidiva; suspensão precoce é causa comum de falha. Enemas diários e opioides não são manutenção adequada.",
+    "trap": "Parar o laxante cedo demais assim que aparece uma evacuação 'boa'."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 18,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Hepatite A — clínica e conduta",
+    "stem": "Adolescente de 13 anos com febre, mal-estar, anorexia, náuseas e colúria há 5 dias; há 2 dias notou icterícia. Contato com água de poço em viagem. Consciência normal, sem flapping. Frequência cardíaca 78 bpm, frequência respiratória 18 irpm, saturação 99%, pressão 110/70 mmHg, temperatura 37,6 °C. AST/ALT muito elevadas, bilirrubina total 4,8 mg/dL. Qual a conduta principal?",
+    "correct": "suporte clínico, hidratação e acompanhamento; hepatite A é em geral autolimitada — evitar hepatotóxicos e orientar medidas de higiene/isolamento",
+    "wrongs": [
+      "iniciar interferon e antivirais específicos de rotina em todo adolescente ictérico com aminotransferases elevadas neste atendimento",
+      "indicar transplante hepático imediato apenas pela icterícia e elevação de transaminases, sem critérios de falência hepática aguda",
+      "prescrever prednisona alta dose para 'acelerar a queda' das aminotransferases na hepatite A típica sem falência neste retorno com vigilância clínica",
+      "liberar retorno às aulas de cozinha coletiva sem orientações de higiene, pois a transmissão fecal-oral já teria cessado no 1º dia na prática do serviço"
+    ],
+    "explain": "Hepatite A pediátrica/adolescente geralmente é autolimitada: suporte, evitar hepatotóxicos e reforçar higiene. Antivirais/corticoide/transplante não são rotina sem falência.",
+    "trap": "Tratar hepatite A como hepatite B crônica e iniciar terapia antiviral específica."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 19,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Hepatite A — prevenção e transmissão",
+    "stem": "Menino de 8 anos com hepatite A confirmada (IgM anti-VHA positivo), em fase ictérica, estável. Irmã de 5 anos assintomática divide utensílios e banheiro. Frequência cardíaca 86 bpm, saturação 99%. Família pergunta sobre contágio e vacina. Qual a orientação mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "reforçar higiene de mãos/água/alimentos; avaliar imunização/profilaxia dos contactos conforme calendário e protocolo local de saúde pública neste",
+    "wrongs": [
+      "afirmar que hepatite A não se transmite entre conviventes domésticos, dispensando qualquer medida de higiene adicional no domicílio",
+      "indicar isolamento respiratório com máscara N95 por 21 dias como principal medida, pois a transmissão é essencialmente aerógena neste",
+      "prescrever lamivudina para a irmã assintomática como profilaxia pós-exposição padrão da hepatite A em pediatria ambulatorial com vigilância clínica",
+      "proibir vacinação de hepatite A em contactos suscetíveis, alegando que a vacina é inútil após qualquer exposição doméstica recente na prática do serviço"
+    ],
+    "explain": "VHA transmite-se por via fecal-oral: higiene é essencial. Contactos podem beneficiar-se de vacina/profilaxia conforme protocolo. Não é transmissão respiratória; lamivudina não é profilaxia de A.",
+    "trap": "Aplicar medidas de isolamento respiratório típicas de vírus influenza à hepatite A."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 20,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "APLV IgE-mediada — apresentação",
+    "stem": "Lactente de 5 meses, em fórmula infantil, apresenta urticária e vômitos imediatamente após as mamadas, com episódio de sibilância leve. Melhora longe da fórmula. Exame atual sem anafilaxia. Frequência cardíaca 126 bpm, frequência respiratória 36 irpm, saturação 98%, temperatura 36,8 °C. Qual a conduta inicial mais apropriada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "suspeitar APLV IgE-mediada: excluir leite de vaca, usar fórmula apropriada (ou aleitamento com dieta materna) e planejar avaliação alergológica sem",
+    "wrongs": [
+      "manter a mesma fórmula e apenas associar anti-histamínico contínuo, considerando os sintomas como refluxo fisiológico isolado neste",
+      "indicar dessensibilização oral domiciliar imediata com volumes crescentes de leite integral sem supervisão especializada no lactente",
+      "trocar para leite de soja comercial de supermercado sem orientação, como substituto definitivo em toda suspeita de APLV IgE-mediada com vigilância clínica",
+      "prescrever prednisona prolongada diária como tratamento exclusivo, mantendo a fórmula com proteína do leite de vaca intacta na prática do serviço"
+    ],
+    "explain": "Reação imediata (urticária/vômitos/respiratório) sugere APLV IgE-mediada: exclusão e substituto adequado, com avaliação especializada. Reexposição domiciliar e corticoide isolado são inadequados.",
+    "trap": "Tratar como refluxo e manter a proteína ofensora com sintomáticos."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 21,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "APLV não IgE — proctocolite do lactente",
+    "stem": "Lactente de 2 meses em aleitamento materno exclusivo com sangue vivo em pequenas quantidades nas fraldas, sem impacto no estado geral, ganho ponderal adequado, sem febre e sem vômitos biliosos. Abdome indolor. Frequência cardíaca 132 bpm, frequência respiratória 34 irpm, saturação 99%, temperatura 36,7 °C. Qual a hipótese e conduta inicial típica? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "proctocolite alérgica (APLV não IgE): dieta de exclusão materna supervisionada e seguimento; na maioria, evolução benigna com ganho ponderal preservado",
+    "wrongs": [
+      "invaginação intestinal clássica exigindo enema redutor imediato em todo lactente com qualquer sangue nas fezes, mesmo estável e afebril",
+      "enterocolite necrosante típica do RN prematuro grave, indicando laparotomia urgente neste lactente a termo estável com bom ganho",
+      "iniciar antibiótico intravenoso prolongado de rotina para 'colite infecciosa', sem critérios de sepse ou toxemia neste atendimento com vigilância clínica",
+      "suspender aleitamento e indicar soro glicosado exclusivo por 7 dias como tratamento definitivo da proctocolite alérgica no lactente na prática do serviço"
+    ],
+    "explain": "Sangramento discreto com bom estado e ganho ponderal em lactente amamentado sugere proctocolite por APLV não IgE: exclusão materna e seguimento. Não confundir com invaginação/NEC graves.",
+    "trap": "Levar todo sangue nas fezes do lactente saudável direto a protocolo de abdome agudo."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 22,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "APLV — diferenciar de intolerância à lactose",
+    "stem": "Lactente de 6 meses com urticária e angioedema labial minutos após fórmula à base de leite de vaca. Sem diarreia osmótica isolada. Teste cutâneo posteriormente positivo. Frequência cardíaca 124 bpm, saturação 98%. Avó insiste que é 'só intolerância à lactose' e quer oferecer leite sem lactose. Qual a orientação correta? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "esclarecer que APLV IgE difere de intolerância à lactose; leite 'zero lactose' ainda contém proteína do leite e não é substituto seguro neste caso",
+    "wrongs": [
+      "concordar com leite sem lactose como tratamento definitivo da APLV IgE-mediada, pois remove o desencadeante proteico principal da",
+      "liberar iogurte integral precoce para 'acostumar' o sistema imune, mantendo exposição diária à caseína e às proteínas do soro",
+      "substituir apenas a lactose por sacarose na mesma fórmula proteica intacta, considerando a alergia resolvida após a troca do açúcar com vigilância clínica",
+      "indicar bifosfonato e cálcio intravenoso de rotina como terapia antialérgica específica da APLV, mantendo a fórmula ofensora na prática do serviço"
+    ],
+    "explain": "Intolerância à lactose é enzimática; APLV é reação à proteína. Fórmulas/leites sem lactose mantêm a proteína e não tratam APLV IgE.",
+    "trap": "Trocar para 'zero lactose' achando que resolve alergia às proteínas do leite."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 23,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Intolerância à lactose — secundária pós-diarreia",
+    "stem": "Menino de 3 anos, após gastroenterite viral, apresenta distensão, flatulência e diarreia explosiva quando retoma leite integral, melhorando com restrição transitória. Sem urticária, sem anafilaxia, ganho ponderal prévio normal. Frequência cardíaca 96 bpm, saturação 99%, afebril. Qual a conduta mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "considerar intolerância transitória secundária: restringir lactose temporariamente, manter aporte calórico e reintroduzir gradualmente conforme",
+    "wrongs": [
+      "diagnosticar APLV IgE definitiva e excluir todas as proteínas do leite para o resto da vida com base apenas na diarreia pós-viral atual",
+      "indicar adrenalina autoinjetável de rotina para toda criança com flatulência após leite, interpretando como anafilaxia recorrente neste",
+      "proibir frutas e vegetais por 6 meses, atribuindo os sintomas exclusivamente à frutose sem relação com a gastroenterite recente do menino com vigilância clínica",
+      "iniciar imunossupressor oral para 'desinflamar a mucosa' como tratamento de primeira linha da intolerância lacária transitória na prática do serviço"
+    ],
+    "explain": "Pós-enterite, a deficiência transitória de lactase é comum: restrição temporária e reintrodução. Não equivale a APLV IgE nem exige adrenalina/imunossupressão.",
+    "trap": "Rotular intolerância transitória como alergia permanente ao leite."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 24,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Intolerância à lactose — manejo dietético",
+    "stem": "Adolescente de 14 anos com flatulência, dor abdominal tipo cólica e diarreia após ingestão de grandes volumes de leite, sem sintomas com iogurte em pequenas porções e sem reações cutâneas. Exame normal. Frequência cardíaca 72 bpm, saturação 99%. Qual a orientação dietética mais racional? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "ajustar a carga de lactose (porções, lácteos fermentados ou enzima), individualizando; não é necessário excluir todo cálcio lácteo se houver boa",
+    "wrongs": [
+      "excluir absolutamente qualquer derivado lácteo para sempre, inclusive queijos maturados bem tolerados, sem tentar ajuste de porção",
+      "indicar dieta sem glúten obrigatória concomitante, pois intolerância à lactose e celíaca são sempre a mesma doença no adolescente",
+      "prescrever antibiótico cíclico mensal para erradicar bactérias intestinais como tratamento definitivo da intolerância enzimática à lactose com vigilância clínica",
+      "liberar refrigerante e sucos industrializados à vontade como substitutos calóricos principais do leite, sem planejar fonte de cálcio na prática do serviço"
+    ],
+    "explain": "Na intolerância à lactose, o manejo é dose-dependente e individualizado; muitos toleram iogurte/queijos. Exclusão total desnecessária e antibiótico não tratam deficiência de lactase.",
+    "trap": "Proibir todo lácteo para sempre sem tentar modulação da carga de lactose."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 25,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Sangramento digestivo alto — criança",
+    "stem": "Menino de 6 anos com hematêmese em borra de café e melena há 12 horas, taquicárdico (128 bpm), pálido, pressão 92/55 mmHg, enchimento capilar 3 s. Sem febre. Frequência respiratória 24 irpm, saturação 98%. História de uso de AINE para dor dentária. Qual a prioridade imediata? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "estabilizar vias aéreas/circulação, acesso venoso, reposição volêmica e acionar suporte/endoscopia conforme estabilidade — não iniciar apenas antiácido",
+    "wrongs": [
+      "prescrever apenas omeprazol oral ambulatorial e alta imediata, sem acesso venoso, porque o sangramento já teria cessado espontaneamente",
+      "indicar enema contrastado diagnóstico como primeiro passo em todo sangramento alto, antes de qualquer estabilização hemodinâmica no",
+      "iniciar dieta plena rica em fibras para 'tamponar' o estômago, adiando hidratação venosa enquanto persiste a taquicardia e a palidez com vigilância clínica",
+      "realizar colonoscopia imediata como exame de escolha do sangramento digestivo alto com hematêmese e melena neste atendimento na prática do serviço"
+    ],
+    "explain": "HDA com instabilidade: ABC, volume e suporte; IBP/endoscopia conforme protocolo após estabilização. Colonoscopia não é exame do alto aparelho; alta precoce é insegura.",
+    "trap": "Focar só no IBP oral e ignorar a reposição volêmica na criança taquicárdica."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 26,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Sangramento digestivo baixo — criança",
+    "stem": "Menina de 2 anos com sangue vermelho vivo indolor nas fezes, sem comprometimento hemodinâmico, crescimento normal. Exame anal sem fissura evidente; abdome indolor. Frequência cardíaca 110 bpm, saturação 99%, pressão 95/60 mmHg, afebril. Qual a abordagem inicial mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "avaliar estabilidade, caracterizar o sangramento e investigar causas comuns (fissura, pólipo, divertículo de Meckel etc.) conforme clínica, sem",
+    "wrongs": [
+      "indicar laparotomia exploradora imediata em toda criança com qualquer sangue fecal, mesmo estável e sem sinais de abdome agudo neste",
+      "iniciar heparina terapêutica para 'melhorar a perfusão mesentérica', interpretando o sangramento como isquemia intestinal aguda no",
+      "prescrever AINE em dose anti-inflamatória plena para reduzir a inflamação mucosa presumida, aumentando o risco de novo sangramento com vigilância clínica",
+      "suspender qualquer investigação porque sangue vermelho vivo em toddler é sempre alimentar e nunca requer avaliação clínica adicional na prática do serviço"
+    ],
+    "explain": "Sangramento baixo indolor no toddler estável exige estratificação e investigação dirigida (fissura, pólipo, Meckel…). Cirurgia imediata sem critérios é inadequada.",
+    "trap": "Operar de urgência todo sangramento retal sem avaliar estabilidade nem causas frequentes."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 27,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Invaginação versus gastroenterite",
+    "stem": "Lactente de 9 meses com 'diarreia' referida pela mãe, mas a história revela episódios de choro paroxístico com letargia intercrise, um vômito bilioso e fezes com sangue escuro em fio. Está sonolento. Frequência cardíaca 150 bpm, frequência respiratória 36 irpm, saturação 97%, temperatura 37,6 °C. Qual o raciocínio correto? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "não fechar gastroenterite; a combinação de paroxismos, letargia e sangue exige excluir invaginação com urgência clínica e de imagem neste retorno",
+    "wrongs": [
+      "tratar como gastroenterite viral típica com plano A domiciliar, pois houve relato de 'diarreia', adiando qualquer imagem por 48 horas",
+      "prescrever antibiótico oral e antiemético domiciliar como terapia definitiva, sem reavaliar a possibilidade de abdome agudo obstrutivo",
+      "indicar apenas probiótico e retorno eletivo em uma semana, interpretando a letargia como sono fisiológico pós-prandial do lactente com vigilância clínica",
+      "classificar como cólica do lactente e orientar chás caseiros, ignorando vômito bilioso e sangue nas fezes descritos na anamnese atual na prática do serviço"
+    ],
+    "explain": "Paroxismos, letargia, bilioso e sangue não são gastroenterite simples — invaginação deve ser excluída. Atraso aumenta risco de isquemia.",
+    "trap": "Aceitar o rótulo materno de 'diarreia' e perder a invaginação."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 28,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Invaginação versus gastroenterite — exame e imagem",
+    "stem": "Lactente de 6 meses após quadro viral recente, agora com crises de dor e massa em hipocôndrio direito. Sem diarreia aquosa franca. Frequência cardíaca 138 bpm, saturação 98%, temperatura 37,4 °C. Pediatra cogita 'gastroenterite com cólicas'. Qual o próximo passo mais seguro? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "solicitar ultrassom abdominal com urgência na suspeita de invaginação, mantendo jejum e monitorização enquanto aguarda o exame neste atendimento",
+    "wrongs": [
+      "liberar com SRO e antiespasmódico oral, sem imagem, porque houve virose recente e isso afastaria completamente a invaginação ileocólica",
+      "indicar radiografia de tórax como único exame necessário para esclarecer dor abdominal paroxística com massa palpável no lactente",
+      "realizar teste terapêutico com laxante estimulante em alta dose para diferenciar gastroenterite de invaginação sem necessidade de ultrassom com vigilância clínica",
+      "aguardar 72 horas de observação domiciliar sem reavaliação, pois massas abdominais em lactentes são quase sempre fezes endurecidas na prática do serviço"
+    ],
+    "explain": "Virose pode ser fator precipitante de invaginação; não a exclui. Massa + crises pedem US urgente e jejum, não alta com sintomáticos.",
+    "trap": "Achar que virose recente 'explica tudo' e dispensa imagem."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 29,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Síndrome hemolítico-urêmica pós-diarreia",
+    "stem": "Menina de 3 anos com diarreia sanguinolenta há 5 dias; hoje apresenta palidez, oligúria, edema palpebral e petéquias. Laboratório: Hb 7,2 g/dL, esquizócitos, plaquetas 48.000/mm³, creatinina elevada. Frequência cardíaca 118 bpm, pressão 128/82 mmHg, saturação 98%, afebril. Qual a interpretação e conduta prioritária? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "SHU típica pós-diarreia: suporte (fluidos cuidadosos, controle pressórico, dialyse se indicado) e evitar antibiótico empírico desnecessário para EHEC na",
+    "wrongs": [
+      "transfundir plaquetas de rotina em todo caso só pelo número, sem sangramento grave, como tratamento definitivo da SHU neste retorno",
+      "iniciar quinolona em alta dose para erradicar rapidamente a toxina Shiga, estratégia padrão que reduz progressão para diálise na SHU",
+      "indicar corticoterapia pulsada como primeira linha obrigatória da SHU típica pós-diarreia em pré-escolar hemodinamicamente estável com vigilância clínica",
+      "liberar para casa com ferro oral apenas, interpretando a anemia como carencial simples sem relação com a diarreia sanguinolenta recente na prática do serviço"
+    ],
+    "explain": "Tríade anemia hemolítica microangiopática + plaquetopenia + lesão renal após diarreia sugere SHU: suporte e nefrologia. Antibiótico empírico para EHEC pode piorar; plaquetas não são rotina.",
+    "trap": "Tratar como anemia ferropriva e liberar criança com oligúria e hipertensão."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 30,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "SHU — sinais de alerta pós-disenteria",
+    "stem": "Menino de 4 anos no 6º dia de diarreia com sangue, já quase afebril, mas a mãe nota redução da diurese e face 'inchada'. Pressão 122/78 mmHg, frequência cardíaca 110 bpm, saturação 99%. Sem sinais de desidratação grave. Qual a conduta mais prudente na UBS/emergência? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "investigar urgentemente SHU (hemograma, esfregaço, função renal, eletrólitos), monitorar diurese/PA e referenciar conforme gravidade, sem alta precoce",
+    "wrongs": [
+      "orientar apenas aumento livre de sal na dieta para 'melhorar a pressão', sem dosar creatinina nem avaliar a oligúria referida pela mãe",
+      "prescrever AINE para a cefaleia e edema, reduzindo a filtração glomerular em criança com possível lesão renal aguda em curso",
+      "indicar alta com SRO ad libitum sem exames, pois o sexto dia de disenteria sempre marca resolução completa sem complicações com vigilância clínica",
+      "iniciar albumina intravenosa empírica em toda face edemaciada pediátrica, sem avaliar função renal nem hemograma no atendimento atual na prática do serviço"
+    ],
+    "explain": "Oligúria e hipertensão após disenteria alertam para SHU: laboratório e vigilância são mandatórios. AINE e alta sem exames são perigosos.",
+    "trap": "Atribuir edema só a 'alergia' ou excesso de soro e não checar função renal."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 31,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Parasitoses — oxiúrus (Enterobius)",
+    "stem": "Menina de 5 anos com prurido anal intenso noturno, sono agitado e irritabilidade. Exame geral normal; leve hiperemia perianal. Frequência cardíaca 90 bpm, saturação 99%, afebril. Sem diarreia sanguinolenta. Qual a conduta diagnóstica/terapêutica mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "suspeitar enterobíase; confirmar com fita adesiva se disponível e tratar com anti-helmíntico apropriado, estendendo orientação/tratamento aos",
+    "wrongs": [
+      "indicar colectomia parcial por suspeita de doença inflamatória em toda criança com prurido anal noturno, sem tentativa de tratamento",
+      "prescrever corticosteroide tópico anal prolongado como terapia exclusiva, sem abordar a hipótese de oxiúrus no pré-escolar neste",
+      "solicitar apenas hemocultura de rotina como exame de escolha para enterobíase, adiando qualquer anti-helmíntico por 30 dias de observação com vigilância clínica",
+      "orientar que oxiúrus não se transmite em domicílios e que tratar só o caso índice basta, sem medidas de higiene das unhas e roupas na prática do serviço"
+    ],
+    "explain": "Prurido anal noturno clássico de Enterobius: fita adesiva e anti-helmíntico, com atenção aos contactos e higiene. Não é indicação de cirurgia nem corticoide isolado.",
+    "trap": "Tratar prurido anal crônico só com pomada corticóide e não pensar em oxiúrus."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 32,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Parasitoses — Ascaris lumbricoides",
+    "stem": "Menino de 7 anos de área endêmica com dor abdominal recorrente, distensão e episódio de eliminação de verme adulto nas fezes. Sem sinais de abdome agudo agora. Frequência cardíaca 92 bpm, saturação 99%, temperatura 36,9 °C. Qual a conduta mais apropriada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino. Na reavaliação, hidratação, dor abdominal e risco de deterioração guiam a conduta imediata.",
+    "correct": "tratar ascaridíase com anti-helmíntico adequado (ex.: albendazol/mebendazol conforme protocolo), orientar higiene e avaliar complicações se houver",
+    "wrongs": [
+      "indicar antibiótico de amplo espectro por 14 dias como erradicação definitiva do Ascaris, sem anti-helmíntico específico neste",
+      "realizar laparotomia imediata em todo paciente que eliminou verme, mesmo assintomático e sem sinais de obstrução intestinal aguda",
+      "prescrever IBP em dose plena por 3 meses como tratamento etiológico da ascaridíase pediátrica em área endêmica no escolar atual com vigilância clínica",
+      "aguardar resolução espontânea sem tratamento, pois Ascaris nunca causa complicações obstrutivas ou biliares em crianças escolares na prática do serviço"
+    ],
+    "explain": "Ascaris trata-se com anti-helmíntico e educação sanitária; cirurgia só se houver complicação obstrutiva. Antibiótico/IBP não erradicam o helminto.",
+    "trap": "Negligenciar o tratamento farmacológico porque o verme 'já saiu'."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 33,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Doença de Crohn — introdução no adolescente",
+    "stem": "Adolescente de 15 anos com dor abdominal crônica, diarreia há 4 meses, perda de 6 kg, aftas orais e fissura anal. PCR elevada, anemia. Frequência cardíaca 88 bpm, saturação 99%, pressão 108/68 mmHg, afebril no momento. Qual a conduta diagnóstica mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "suspeitar doença inflamatória intestinal (Crohn); referenciar para investigação com laboratório, imagem/endoscopia e biópsias — não tratar só como",
+    "wrongs": [
+      "diagnosticar síndrome do intestino irritável definitivo e liberar sem investigação, apesar de perda ponderal, anemia e doença perianal",
+      "iniciar quimioterapia oncológica empírica por aftas orais, sem avaliação gastroenterológica da diarreia crônica e da fissura anal",
+      "prescrever loperamida contínua em alta dose como terapia exclusiva, mascarando a inflamação e adiando o diagnóstico de DII no adolescente com vigilância clínica",
+      "indicar exclusão total de fibras para sempre sem investigação, atribuindo todos os sintomas apenas a 'má digestão mecânica' dos vegetais na prática do serviço"
+    ],
+    "explain": "Perda ponderal, diarreia crônica, marcadores inflamatórios e doença perianal sugerem Crohn: investigação especializada. SII não explica alarmes.",
+    "trap": "Rotular DII como intestino irritável e atrasar endoscopia."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 34,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Retocolite ulcerativa — introdução no adolescente",
+    "stem": "Adolescente de 16 anos com diarreia com sangue e muco há 8 semanas, tenesmo, urgência fecal e dor em baixo ventre. Sem falência de crescimento prévia marcada, mas com anemia. Frequência cardíaca 92 bpm, saturação 99%, pressão 110/70 mmHg. Qual a melhor etapa? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "suspeitar retocolite ulcerativa; solicitar avaliação gastroenterológica com retossigmoidoscopia/colonoscopia e biópsias, evitando corticóide empírico",
+    "wrongs": [
+      "tratar indefinidamente com antibiótico cíclico domiciliar como cura da retocolite, sem necessidade de endoscopia nem seguimento",
+      "indicar colectomia total imediata em todo adolescente com sangue fecal há 8 semanas, antes de qualquer confirmação histológica neste",
+      "prescrever AINE diário para a dor abdominal e tenesmo, estratégia que melhora a inflamação colônica da retocolite ulcerativa ativa com vigilância clínica",
+      "orientar que sangue e muco por 8 semanas são sempre fissura anal simples, dispensando investigação mesmo com anemia associada na prática do serviço"
+    ],
+    "explain": "Disenteria crônica com tenesmo no adolescente sugere RCUI: diagnóstico endoscópico/histológico. AINE piora; cirurgia e antibiótico cíclico não são primeiro passo diagnóstico.",
+    "trap": "Dar corticoide/antibiótico empírico longo e nunca confirmar com endoscopia."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 35,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Pancreatite aguda pediátrica",
+    "stem": "Menina de 12 anos com dor abdominal epigástrica intensa irradiada para o dorso, vômitos e defensiva local. Lipase 6× o limite superior. Frequência cardíaca 110 bpm, frequência respiratória 22 irpm, saturação 98%, pressão 100/64 mmHg, temperatura 37,8 °C. Sem peritonite difusa. Qual a conduta inicial correta? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "internar para suporte: hidratação venosa, analgesia, jejum inicial conforme tolerância e investigação etiológica; não indicar antibiótico de rotina sem",
+    "wrongs": [
+      "indicar antibiótico de amplo espectro obrigatório em toda pancreatite, mesmo edematosa sem evidência de infecção neste atendimento",
+      "realizar pancreactomia total imediata como tratamento padrão da primeira crise de pancreatite aguda pediátrica com lipase elevada",
+      "liberar para casa com dieta gordurosa rica e AINE, pois lipase elevada isolada não exige observação hospitalar na adolescente atual com vigilância clínica",
+      "iniciar octreotide domiciliar empírico sem monitorização, como substituto completo da hidratação venosa e da analgesia hospitalar na prática do serviço"
+    ],
+    "explain": "Pancreatite aguda: suporte (volume, analgesia, suporte nutricional precoce conforme evolução) e busca etiológica. Antibiótico não é rotina sem infecção; cirurgia radical não é padrão na 1ª crise.",
+    "trap": "Prescrever antibiótico automaticamente só porque a lipase está alta."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 36,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Colelitíase na criança",
+    "stem": "Menino de 10 anos com anemia hemolítica conhecida apresenta cólica em hipocôndrio direito após refeição gordurosa, náuseas e ultrassom com cálculo biliar. Afebril, sem icterícia obstrutiva agora. Frequência cardíaca 88 bpm, saturação 99%, pressão 102/66 mmHg. Qual a conduta mais apropriada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "avaliar com cirurgia/hepatologia a indicação de colecistectomia conforme sintomas e doença de base; analgesia e orientar dieta, evitando alta sem plano",
+    "wrongs": [
+      "prescrever ácido ursodesoxicólico indefinidamente como substituto absoluto da avaliação cirúrgica em criança sintomática com hemolise",
+      "indicar litotripsia extracorpórea domiciliar sem acompanhamento, como padrão ouro pediátrico para todo cálculo vesicular sintomático",
+      "iniciar antibiótico intravenoso contínuo por 21 dias mesmo afebril, tratando todo cálculo como colecistite enfisematosa neste retorno com vigilância clínica",
+      "liberar dieta hipercalórica rica em gordura saturada para 'estimular a vesícula', sem reavaliação da cólica biliar recorrente no escolar na prática do serviço"
+    ],
+    "explain": "Cálculo sintomático, sobretudo com hemolise, frequentemente indica colecistectomia eletiva após avaliação. Antibiótico sem infecção e dieta gordurosa livre são inadequados.",
+    "trap": "Ignorar a associação com hemolise e tratar só com analgésico sem plano definitivo."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 37,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Icterícia colestática do lactente — diferencial",
+    "stem": "Lactente de 6 semanas com icterícia persistente, colúria, hipocolia fecal e hepatomegalia leve. Ganho ponderal limítrofe. Frequência cardíaca 130 bpm, saturação 99%, temperatura 36,8 °C. Fração direta da bilirrubina elevada. Qual a prioridade? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino. Na reavaliação, hidratação, dor abdominal e risco de deterioração guiam a conduta imediata.",
+    "correct": "reconhecer colestase neonatal/lactente: investigar causas (incluindo atresia biliar) com urgência — não atribuir apenas a 'icterícia fisiológica",
+    "wrongs": [
+      "tranquilizar como icterícia fisiológica do RN e reavaliar só após 6 meses, sem dosar fração direta nem cor das fezes no lactente atual",
+      "iniciar fototerapia domiciliar prolongada como tratamento definitivo de toda hiperbilirrubinemia direta do segundo mês de vida",
+      "prescrever ferro oral exclusivo para a hipocolia, interpretando as fezes claras como anemia ferropriva sem avaliação hepatobiliar com vigilância clínica",
+      "indicar colecistectomia imediata sem propedêutica, em todo lactente ictérico, antes de distinguir atresia biliar de outras colestases na prática do serviço"
+    ],
+    "explain": "Bilirrubina direta elevada + hipocolia exigem investigação urgente de colestase (ex.: atresia biliar). Não é fisiológica; fototerapia não trata colestase direta.",
+    "trap": "Chamar de fisiológica a icterícia com fezes hipocólicas no 2º mês."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 38,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Refluxo e ALTE/BRUE — abordagem breve",
+    "stem": "Lactente de 2 meses trazido após episódio breve de apnea, palidez e hipotonia durante regurgitação, já recuperado no pronto-socorro. Exame atual normal. Frequência cardíaca 128 bpm, frequência respiratória 36 irpm, saturação 99%, temperatura 36,7 °C. Qual a conduta mais adequada? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "avaliar como BRUE/ALTE: história detalhada, exame cuidadoso e estratificação de risco; não atribuir automaticamente tudo a refluxo nem liberar sem",
+    "wrongs": [
+      "diagnosticar refluxo fisiológico definitivo como única causa e alta imediata sem anamnese do episódio, apenas porque houve regurgitação",
+      "indicar fundoplicatura de urgência em todo BRUE, sem avaliação, como prevenção absoluta de novos eventos aparentes com risco de vida",
+      "iniciar IBP em dose máxima empiricamente em todos os lactentes após um BRUE, independentemente da estratificação de risco e do exame com vigilância clínica",
+      "realizar punção lombar obrigatória em todo BRUE já recuperado com exame normal, sem considerar idade, febre nem fatores de risco específicos na prática do serviço"
+    ],
+    "explain": "BRUE exige avaliação estruturada; refluxo pode coexistir, mas não explica automaticamente o evento. Conduta depende do risco — não cirurgia/IBP universais.",
+    "trap": "Fechar 'foi só refluxo' e liberar sem estratificar o BRUE."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 39,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Síndrome dos vômitos cíclicos",
+    "stem": "Menina de 9 anos com episódios estereotipados de vômitos incoercíveis por 24–48 h, com intervalos de semanas totalmente assintomática, história familiar de enxaqueca. Entre crises, exame normal. Frequência cardíaca 86 bpm, saturação 99%, afebril. Exclusão inicial de causas cirúrgicas/metabólicas graves negativa. Qual a melhor conduta? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "considerar síndrome dos vômitos cíclicos: suporte na crise, identificar gatilhos e profilaxia/tratamento conforme gravidade, com seguimento",
+    "wrongs": [
+      "indicar apendicectomia profilática após cada crise, mesmo com abdome indolor nos intervalos e exames de imagem previamente normais",
+      "prescrever quimioterapia antiemética oncológica contínua por 12 meses como tratamento padrão da síndrome dos vômitos cíclicos escolares",
+      "proibir qualquer hidratação venosa nas crises, forçando apenas sólidos precoces enquanto persistem vômitos incoercíveis e cetose com vigilância clínica",
+      "diagnosticar gravidez em toda escolar com vômitos recorrentes sem anamnese menstrual adequada, como única hipótese obrigatória neste caso na prática do serviço"
+    ],
+    "explain": "Crises estereotipadas com intervalos livres e vínculo com enxaqueca sugerem SVC: suporte, prevenção e exclusão de diferenciais. Cirurgia profilática não tem papel.",
+    "trap": "Operar ou medicalizar de forma agressiva sem reconhecer o padrão cíclico."
+  },
+  {
+    "idPrefix": "ped-gast2",
+    "n": 40,
+    "group": "Gastroenterologia pediátrica",
+    "theme": "Corpo estranho esofágico",
+    "stem": "Menino de 3 anos engoliu moeda há 2 horas; salivação, recusa alimentar e desconforto retroesternal. Radiografia: objeto discóide em terço superior do esôfago. Frequência cardíaca 100 bpm, frequência respiratória 22 irpm, saturação 99%, afebril, sem estridor. Qual a conduta prioritária? A equipe registra sinais vitais, aceitação oral e perfusão para decidir suporte e destino.",
+    "correct": "encaminhar para remoção endoscópica urgente do corpo estranho esofágico; manter jejum e evitar tentativas cegas de extração com dedos ou instrumentos",
+    "wrongs": [
+      "orientar dieta sólida para 'empurrar' a moeda ao estômago, com retorno só em 1 semana se persistir a sialorreia neste atendimento",
+      "tentar remoção cega com pinça doméstica pela orofaringe, sem visualização, como primeiro passo seguro em corpo estranho esofágico",
+      "indicar indução de vômito com xarope em casa para expulsar o objeto, estratégia recomendada em todo corpo estranho de esôfago proximal com vigilância clínica",
+      "aguardar 72 horas sem endoscopia porque moedas esofágicas sempre progridem espontaneamente sem risco de lesão mucosa na criança na prática do serviço"
+    ],
+    "explain": "Corpo estranho esofágico sintomático (especialmente proximal) exige remoção endoscópica. Empurrar, vômito induzido e extração cega aumentam risco de lesão/aspiração.",
+    "trap": "Esperar progressão espontânea de moeda retida no esôfago com sialorreia."
+  }
+]

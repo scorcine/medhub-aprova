@@ -3800,7 +3800,7 @@ function aprovaSyncQuestionModalUI () {
       : (aprovaQModalScope === "wrong" ? "erradas" : "neste recorte");
     if (countEl) {
       countEl.textContent = pool.length
-        ? (pool.length + " questão" + (pool.length === 1 ? "" : "ões") + " " + scopeLabel)
+        ? (pool.length + (pool.length === 1 ? " questão" : " questões") + " " + scopeLabel)
         : ("Nenhuma questão " + scopeLabel + " com estes filtros.");
     }
   }
@@ -3956,7 +3956,7 @@ function aprovaRenderQuestionBrowse () {
         "<span class=\"dash-card-kicker\">Área</span>" +
         "<strong>" + aprovaQSpecialtyLabel(id) + "</strong>" +
         "<span>" + (n
-          ? (n + " questão" + (n === 1 ? "" : "ões"))
+          ? (n + (n === 1 ? " questão" : " questões"))
           : "Em breve") + "</span>";
       btn.disabled = !n;
       btn.addEventListener("click", () => {
@@ -4010,7 +4010,7 @@ function aprovaRenderQuestionBrowse () {
       allBtn.innerHTML =
         "<span class=\"dash-card-kicker\">Atalho</span>" +
         "<strong>Todos os grupos</strong>" +
-        "<span>" + allN + " questão" + (allN === 1 ? "" : "ões") + " da área</span>";
+        "<span>" + allN + (allN === 1 ? " questão" : " questões") + " da área</span>";
       allBtn.addEventListener("click", () => {
         aprovaQBrowse.group = "";
         aprovaQBrowse.theme = "";
@@ -4029,7 +4029,7 @@ function aprovaRenderQuestionBrowse () {
         btn.innerHTML =
           "<span class=\"dash-card-kicker\">" + kicker + "</span>" +
           "<strong>" + row.group + "</strong>" +
-          "<span>" + row.n + " questão" + (row.n === 1 ? "" : "ões") + focusLine + "</span>";
+          "<span>" + row.n + (row.n === 1 ? " questão" : " questões") + focusLine + "</span>";
         btn.addEventListener("click", () => {
           aprovaQBrowse.group = row.group;
           aprovaQBrowse.theme = "";

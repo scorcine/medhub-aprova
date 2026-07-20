@@ -1,0 +1,642 @@
+[
+  {
+    "idPrefix": "ped-inf2",
+    "n": 1,
+    "group": "Infectologia pediátrica",
+    "theme": "Faringoamigdalite estreptocócica — escore de McIsaac",
+    "stem": "Menino de 9 anos procura a UBS com febre de 38,7 °C há 36 horas, odinofagia intensa e ausência de tosse. Exame: temperatura 38,4 °C, frequência cardíaca 104 bpm, frequência respiratória 18 irpm, saturação 99% em ar, pressão arterial 100/64 mmHg. Amígdalas com exsudato bilateral, linfonodo cervical anterior doloroso de 2 cm, sem coriza e sem esplenomegalia. Escore de McIsaac 4 pontos. Teste rápido de antígeno estreptocócico indisponível no momento. Qual a melhor conduta?",
+    "correct": "tratar empiricamente com amoxicilina por cerca de 10 dias ou penicilina benzatina em dose adequada ao peso e orientar retorno neste retorno",
+    "wrongs": [
+      "prescrever apenas dipirona e aguardar cultura obrigatória antes de qualquer antibiótico mesmo com escore elevado frente à queixa",
+      "iniciar azitromicina como primeira linha na ausência de alergia a beta-lactâmicos documentada neste paciente para o lactente",
+      "internar para ceftriaxona intravenosa por faringite sem abscesso periamigdaliano nem toxemia sistêmica diante do quadro descrito no atendimento",
+      "indicar corticoterapia isolada prolongada como substituto completo do antibiótico neste quadro de odinofagia ignorando os demais achados clínicos"
+    ],
+    "explain": "McIsaac ≥4 em idade escolar com clínica típica justifica tratamento empírico quando o teste rápido não está disponível, visando prevenir febre reumática. Beta-lactâmico é primeira linha; macrolídeo reserva-se à alergia. Internação e corticoide isolado não substituem o antibiótico adequado.",
+    "trap": "Esperar cultura obrigatória em todo caso de alto escore sem teste rápido, atrasando o tratamento."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 2,
+    "group": "Infectologia pediátrica",
+    "theme": "Faringoamigdalite estreptocócica — escolha do antibiótico",
+    "stem": "Menina de 6 anos, 28 kg, com teste rápido positivo para Streptococcus pyogenes, febre e exsudato amigdaliano. Sem alergia a medicamentos. Mãe pergunta se pode usar a mesma azitromicina de 3 dias que sobrou da última otite do irmão. Sinais vitais estáveis: temperatura 38,1 °C, frequência cardíaca 100 bpm, saturação 98%, pressão 96/60 mmHg. Sem abscesso. Qual a orientação correta sobre o antimicrobiano?",
+    "correct": "preferir amoxicilina oral por aproximadamente 10 dias ou penicilina benzatina em dose única intramuscular adequada ao peso neste retorno",
+    "wrongs": [
+      "usar azitromicina de rotina por ser esquema mais curto, mesmo sem alergia a penicilina documentada ao longo do seguimento",
+      "completar apenas 3 dias de amoxicilina, pois o teste rápido positivo já garante erradicação precoce diante do quadro atual",
+      "associar ácido acetilsalicílico em dose anti-inflamatória para prevenir febre reumática junto ao antibiótico sem rever o restante do caso",
+      "trocar para ciprofloxacino por melhor cobertura de estreptococo em crianças em idade escolar na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Na faringite estreptocócica sem alergia, amoxicilina (cerca de 10 dias) ou penicilina benzatina são de escolha. Macrolídeos não são primeira linha. Esquemas curtos inadequados e quinolonas não têm indicação. Ácido acetilsalicílico não previne febre reumática e tem risco em criança.",
+    "trap": "Escolher macrolídeo porque é mais prático na ausência de alergia a beta-lactâmicos."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 3,
+    "group": "Infectologia pediátrica",
+    "theme": "Dengue — sinais de alarme",
+    "stem": "Menina de 10 anos, 5º dia de febre, cefaleia retro-orbital e mialgia. Pressão arterial 88/58 mmHg, frequência cardíaca 118 bpm, frequência respiratória 24 irpm, saturação 98%, temperatura 37,9 °C. Hematócrito 46% (basal 37%), plaquetas 72.000/mm³, prova do laço positiva, dor abdominal contínua e vômitos. Enchimento capilar de 3 segundos. Qual a classificação e conduta imediata mais adequadas?",
+    "correct": "dengue com sinais de alarme: iniciar hidratação venosa supervisionada e reavaliar clínica e hematócrito de forma seriada neste retorno",
+    "wrongs": [
+      "dengue sem alarme: alta com hidratação oral exclusiva e retorno só se houver sangramento franco visível na rotina da UBS",
+      "transfundir plaquetas de rotina por contagem abaixo de 100.000/mm³ mesmo sem sangramento grave atual no seguimento atual",
+      "iniciar ceftriaxona empírica como tratamento etiológico da dengue com hemoconcentração neste caso diante do quadro descrito no atendimento",
+      "prescrever ácido acetilsalicílico para a cefaleia e a mialgia enquanto mantém observação ambulatorial ignorando os demais achados clínicos"
+    ],
+    "explain": "Dor abdominal, vômitos, hemoconcentração, prova do laço e má perfusão são sinais de alarme: manejo com hidratação venosa e vigilância. Ácido acetilsalicílico é contraindicado; plaquetopenia isolada não indica transfusão rotineira; antibiótico não trata dengue.",
+    "trap": "Liberar no 5º dia com sinais de alarme porque a saturação ainda está normal."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 4,
+    "group": "Infectologia pediátrica",
+    "theme": "Dengue — hidratação e fase crítica",
+    "stem": "Menino de 7 anos com dengue confirmada por teste rápido NS1 no 3º dia. Retorna no 5º dia com astenia, sede intensa e dor abdominal. Pressão 92/60 mmHg, frequência cardíaca 112 bpm, hematócrito subiu de 38% para 45%, plaquetas 85.000/mm³, sem sangramento espontâneo. Aceita pouco líquido oral. Qual a prioridade terapêutica neste momento? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "hidratação venosa com cristaloides sob monitorização, reavaliando hematócrito e sinais hemodinâmicos em intervalos curtos neste retorno",
+    "wrongs": [
+      "transfusão imediata de concentrado de plaquetas para elevar a contagem acima de 150.000/mm³ de rotina durante a consulta",
+      "manter apenas soro caseiro em casa e retorno em 72 horas se não houver melhora espontânea da sede ao longo do seguimento",
+      "iniciar heparina profilática por risco teórico de coagulação intravascular disseminada na dengue diante do quadro descrito no atendimento",
+      "indicar diurético de alça para reduzir o hematócrito elevado atribuído a hipervolemia absoluta na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Na fase crítica, a prioridade é reposição volêmica com cristaloides e reavaliação seriada do hematócrito e da perfusão. Transfusão plaquetária não é rotina sem hemorragia grave. Diurético e heparina não são condutas iniciais da dengue com alarme.",
+    "trap": "Fixar-se na plaquetopenia e esquecer a hemoconcentração como marcador de extravasamento plasmático."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 5,
+    "group": "Infectologia pediátrica",
+    "theme": "Dengue — plaquetas e transfusão",
+    "stem": "Adolescente de 14 anos no 6º dia de dengue, já afebril há 12 horas, hidratada por via oral, diurese presente. Pressão 108/68 mmHg, frequência cardíaca 78 bpm, enchimento capilar <2 s. Hematócrito estável em 39%, plaquetas 48.000/mm³, sem petéquias confluentes, sem sangramento de mucosas. Qual a conduta mais apropriada quanto às plaquetas? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "não transfundir plaquetas de rotina; manter observação e hidratação, com nova contagem conforme evolução clínica no seguimento atual",
+    "wrongs": [
+      "transfundir plaquetas imediatamente porque qualquer valor abaixo de 50.000/mm³ exige reposição obrigatória frente à queixa",
+      "indicar plasma fresco congelado empírico para corrigir a trombocitopenia viral da dengue nesta fase ao longo do seguimento",
+      "iniciar prednisona oral para acelerar a recuperação plaquetária após o defervescimento da febre diante do quadro descrito no atendimento",
+      "suspender líquidos e indicar restrição hídrica rigorosa até as plaquetas ultrapassarem 100.000/mm³ ignorando os demais achados clínicos"
+    ],
+    "explain": "Na dengue, a indicação de transfusão plaquetária baseia-se em sangramento grave ou procedimentos, não no número isolado. Após defervescimento com estabilidade hemodinâmica, observa-se a recuperação. Corticoides e plasma empírico não são rotina.",
+    "trap": "Transfundir plaquetas só pelo número absoluto, sem considerar sangramento nem estabilidade clínica."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 6,
+    "group": "Infectologia pediátrica",
+    "theme": "Convulsão febril — simples versus complexa",
+    "stem": "Lactente de 16 meses com febre de 39 °C há 6 horas por provável virose de vias aéreas. Apresentou crise tônico-clônica generalizada de 2 minutos, única, sem focalidade. Ao exame: despertável, exame neurológico normal, glicemia 98 mg/dL, saturação 98%, pressão 94/58 mmHg. Sem rigidez de nuca. Qual a classificação e a conduta inicial mais adequadas? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "convulsão febril simples: investigar a causa da febre, orientar a família e evitar anticonvulsivante contínuo de rotina neste retorno",
+    "wrongs": [
+      "convulsão febril complexa apenas pela idade; iniciar fenobarbital de manutenção por 2 anos obrigatoriamente frente à queixa",
+      "estado de mal convulsivo; midazolam em infusão contínua mesmo após cessação completa da crise única ao longo do seguimento",
+      "epilepsia estrutural comprovada; solicitar ressonância e iniciar dois anticonvulsivantes na emergência ignorando os demais achados clínicos",
+      "meningite bacteriana definida; punção lombar imediata em toda convulsão febril sem outros sinais meníngeos sem rever o restante do caso"
+    ],
+    "explain": "Crise generalizada breve, única, em contexto febril, com recuperação neurológica, configura convulsão febril simples: trata-se a causa da febre e orienta-se a família. Anticonvulsivante contínuo e neuroimagem não são rotina. Punção depende de sinais de alerta.",
+    "trap": "Tratar toda convulsão com febre como meningite ou como epilepsia crônica sem critérios."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 7,
+    "group": "Infectologia pediátrica",
+    "theme": "Convulsão febril complexa — conduta",
+    "stem": "Menina de 20 meses, febre 38,8 °C, apresentou duas crises focais (desvio ocular e clonias em membro superior direito) em intervalo de 3 horas, cada uma com cerca de 4 minutos. Entre as crises permanece irritável. Pressão 96/60 mmHg, saturação 97%, glicemia 90 mg/dL. Sem exantema. Qual a melhor abordagem neste momento? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "classificar como convulsão febril complexa, investigar causa da febre e considerar avaliação neurológica e exames conforme sinais de alerta",
+    "wrongs": [
+      "tratar como simples e liberar sem orientação porque a duração de cada crise foi inferior a 5 minutos no seguimento atual",
+      "iniciar três anticonvulsivantes de manutenção na primeira hora, independentemente da investigação etiológica para o lactente",
+      "indicar apenas homeopatia e observação domiciliar sem reavaliação médica nas próximas 24 horas segundo as diretrizes pediátricas conforme relatado",
+      "contraindicar qualquer antitérmico porque a redução da febre aumentaria o risco de novas crises focais diante do quadro descrito no atendimento"
+    ],
+    "explain": "Crises focais e recorrência na mesma doença febril definem convulsão febril complexa: exige investigação mais cuidadosa da causa e eventual avaliação neurológica, sem automedicação anticonvulsivante empírica múltipla. Antitérmicos tratam o desconforto febril.",
+    "trap": "Rotular como simples só porque cada crise durou pouco, ignorando focalidade e recorrência."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 8,
+    "group": "Infectologia pediátrica",
+    "theme": "Doença de Kawasaki — critérios diagnósticos",
+    "stem": "Menino de 2 anos e 8 meses, 6º dia de febre ≥39 °C refratária a antitérmicos. Apresenta conjuntivite bilateral não exsudativa, língua em framboesa, exantema polimorfo em tronco, edema endurecido de mãos e pés e linfonodo cervical único de 1,7 cm. Proteína C-reativa 95 mg/L, velocidade de hemossedimentação 80 mm. Qual a hipótese e o próximo passo prioritário?",
+    "correct": "doença de Kawasaki completa: internar e iniciar imunoglobulina intravenosa associada a ácido acetilsalicílico, com ecocardiograma neste retorno",
+    "wrongs": [
+      "faringite viral banal: manter apenas dipirona e aguardar o 10º dia de febre antes de qualquer terapia específica frente à queixa",
+      "escarlatina típica: amoxicilina isolada substitui completamente a imunoglobulina neste cenário febril prolongado para o lactente",
+      "alergia medicamentosa: suspender todos os sintomáticos e observar sem imunoglobulina nem ácido acetilsalicílico ignorando os demais achados clínicos",
+      "indicar cateterismo coronariano imediato antes de qualquer dose de imunoglobulina intravenosa no hospital diante do quadro descrito no atendimento"
+    ],
+    "explain": "Febre ≥5 dias com ≥4 critérios clássicos define Kawasaki completo. Imunoglobulina intravenosa e ácido acetilsalicílico precoces reduzem aneurismas coronarianos; ecocardiograma faz parte da avaliação. Atrasar terapia por esperar resolução espontânea aumenta risco cardíaco.",
+    "trap": "Tratar como virose prolongada e perder a janela da imunoglobulina intravenosa."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 9,
+    "group": "Infectologia pediátrica",
+    "theme": "Doença de Kawasaki — imunoglobulina e AAS",
+    "stem": "Menina de 4 anos com diagnóstico de Kawasaki no 7º dia de febre recebe imunoglobulina intravenosa (2 g/kg) e ácido acetilsalicílico. Após 36 horas permanece febril (38,9 °C), proteína C-reativa ainda elevada, sem melhora dos sinais mucocutâneos. Ecocardiograma inicial sem aneurisma. Qual a conduta mais adequada agora? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "considerar refratariedade e discutir segunda dose de imunoglobulina ou terapia de resgate conforme protocolo, mantendo vigilância coronariana",
+    "wrongs": [
+      "suspender o ácido acetilsalicílico imediatamente porque a febre persistente prova alergia grave ao fármaco frente à queixa",
+      "alta hospitalar com antitérmico apenas, pois o ecocardiograma inicial normal exclui qualquer risco coronariano futuro para o lactente",
+      "trocar a imunoglobulina por amoxicilina prolongada como tratamento definitivo da vasculite de Kawasaki diante do quadro descrito no atendimento",
+      "iniciar quimioterapia oncológica empírica por febre prolongada sem nova avaliação cardiológica seriada na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Febre persistente após imunoglobulina sugere doença refratária: indica-se reavaliação e terapia de resgate (nova imunoglobulina ou outras opções protocolares), com eco seriado. Eco inicial normal não exclui lesão posterior; antibiótico não trata Kawasaki.",
+    "trap": "Liberar após uma dose de imunoglobulina só porque o primeiro ecocardiograma foi normal."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 10,
+    "group": "Infectologia pediátrica",
+    "theme": "Doença de Kawasaki — AAS e seguimento",
+    "stem": "Lactente de 18 meses completou tratamento de Kawasaki com imunoglobulina e ácido acetilsalicílico em dose anti-inflamatória. Está afebril há 5 dias, plaquetas 520.000/mm³, ecocardiograma sem ectasia. Pediatra planeja a manutenção. Qual a orientação correta sobre o ácido acetilsalicílico neste momento? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "reduzir para dose antiagregante e manter até normalização laboratorial e liberação cardiológica conforme o seguimento nesta consulta",
+    "wrongs": [
+      "suspender abruptamente no dia da defervescência, sem necessidade de dose antiagregante nem retorno cardiológico frente à queixa",
+      "aumentar indefinidamente a dose anti-inflamatória plena por 6 meses mesmo com eco e clínica normalizados para o lactente",
+      "substituir por ibuprofeno contínuo em dose máxima para prevenir aneurisma coronariano residual neste lactente apesar dos dados do exame",
+      "associar varfarina de rotina em todo Kawasaki sem lesão coronariana no primeiro ecocardiograma hospitalar sem rever o restante do caso"
+    ],
+    "explain": "Após a fase aguda, usa-se ácido acetilsalicílico em dose antiagregante até recuperação inflamatória e avaliação cardiológica. Suspensão precoce sem seguimento é inadequada; anticoagulação plena não é rotina sem aneurisma significativo.",
+    "trap": "Parar o ácido acetilsalicílico no dia em que a febre cede, sem fase antiagregante nem eco de seguimento."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 11,
+    "group": "Infectologia pediátrica",
+    "theme": "Mononucleose — rash com amoxicilina",
+    "stem": "Adolescente de 15 anos com odinofagia, febre há 6 dias e linfonodomegalia cervical posterior. Recebeu amoxicilina por suspeita de faringite bacteriana e, 48 horas depois, desenvolveu exantema morbiliforme difuso sem prurido intenso. Exame: esplenomegalia discreta, 18% de linfócitos atípicos, teste rápido estreptocócico negativo. Pressão 112/70 mmHg, saturação 98%. Qual a interpretação e conduta?",
+    "correct": "quadro compatível com mononucleose e rash associado à amoxicilina: suspender o antibiótico, suporte e evitar trauma abdominal neste retorno",
+    "wrongs": [
+      "anafilaxia imediata à penicilina: adrenalina intramuscular obrigatória mesmo sem comprometimento respiratório ou hipotensão",
+      "escarlatina clássica: manter amoxicilina e adicionar antitoxina estreptocócica intravenosa de forma empírica para o lactente",
+      "sarampo típico: isolar e indicar vitamina A, mantendo a amoxicilina por superinfecção bacteriana presumida ignorando os demais achados clínicos",
+      "indicar esplenectomia urgente por qualquer esplenomegalia detectável ao exame físico nesta mononucleose apesar da avaliação clínica completa"
+    ],
+    "explain": "O rash após amoxicilina na mononucleose é reação conhecida, em geral não IgE mediada aguda. Conduta: suspender o beta-lactâmico desnecessário, suporte e restrição de contato/trauma por risco de ruptura esplênica. Esplenectomia não é tratamento da infecção aguda típica.",
+    "trap": "Rotular automaticamente como alergia grave a penicilina e aplicar adrenalina sem critérios de anafilaxia."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 12,
+    "group": "Infectologia pediátrica",
+    "theme": "Mononucleose — esplenomegalia e esportes",
+    "stem": "Jogador de futebol de 16 anos com mononucleose confirmada por sorologia, afebril, boa aceitação oral, baço palpável a 2 cm do rebordo. Hemograma sem anemia grave, transaminases levemente elevadas. Quer voltar a treinar em 5 dias para campeonato. Pressão 118/72 mmHg, saturação 99%. Qual a orientação mais segura? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "afastar de esportes de contato e trauma abdominal enquanto houver esplenomegalia, com reavaliação clínica antes do retorno neste retorno",
+    "wrongs": [
+      "liberar treino pleno imediato porque a defervescência elimina o risco de ruptura esplênica na mononucleose frente à queixa",
+      "indicar esplenectomia profilática para permitir competição esportiva ainda na fase aguda da infecção no seguimento atual",
+      "prescrever amoxicilina profilática durante os treinos para reduzir a duração da esplenomegalia viral ignorando os demais achados clínicos",
+      "iniciar corticoterapia em dose imunossupressora em todo adolescente atleta com linfócitos atípicos diante do quadro descrito no atendimento"
+    ],
+    "explain": "Na mononucleose, a restrição a esportes de contato visa prevenir ruptura esplênica enquanto há esplenomegalia. Febre resolvida não zera o risco. Amoxicilina e corticoide de rotina não aceleram o retorno esportivo com segurança.",
+    "trap": "Liberar esporte cedo demais só porque o paciente já está afebril e ansioso para competir."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 13,
+    "group": "Infectologia pediátrica",
+    "theme": "Sarampo — diagnóstico e notificação",
+    "stem": "Criança de 2 anos com vacinação incompleta apresenta febre, coriza, conjuntivite e tosse há 4 dias; hoje surgiu exantema máculo-papular céfalo-caudal. Manchas de Koplik em mucosa jugal. Temperatura 38,6 °C, frequência cardíaca 122 bpm, frequência respiratória 32 irpm, saturação 96% em ar. Sem dispneia grave. Qual o conjunto de medidas prioritárias?",
+    "correct": "notificar, isolar adequadamente, suporte clínico, vitamina A conforme protocolo e abordar vacinação de contatos suscetíveis neste retorno",
+    "wrongs": [
+      "tratar com antibiótico de amplo espectro como terapia etiológica específica do vírus do sarampo nesta criança frente à queixa",
+      "alta sem notificação compulsória porque a saturação ainda está acima de 95% em ar ambiente no momento durante a consulta",
+      "indicar apenas corticoide inalatório contínuo como tratamento curativo do exantema sarampento clássico ignorando os demais achados clínicos",
+      "contraindicar vitamina A em qualquer criança com sarampo por risco genérico sem avaliação do protocolo apesar da avaliação clínica completa"
+    ],
+    "explain": "Sarampo exige notificação, isolamento e suporte; vitamina A reduz complicações em protocolos pediátricos. Antibiótico só se houver superinfecção bacteriana. Contatos suscetíveis devem ser rastreados e vacinados quando indicado.",
+    "trap": "Tratar como virose comum sem notificar nem proteger contatos domiciliares e escolares."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 14,
+    "group": "Infectologia pediátrica",
+    "theme": "Sarampo — complicações e conduta",
+    "stem": "Menino de 3 anos com sarampo no 3º dia de exantema evolui com taquipneia (48 irpm), retração subcostal, saturação 89% em ar, crepitações bilaterais e febre persistente 39,2 °C. Pressão 98/60 mmHg. Radiografia com infiltrado difuso. Qual a conduta imediata mais adequada? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "oxigenoterapia, suporte ventilatório se necessário, avaliar superinfecção bacteriana e manter cuidados de isolamento e notificação neste retorno",
+    "wrongs": [
+      "alta com soro caseiro e observação domiciliar porque o exantema do sarampo sempre é autolimitado sem risco frente à queixa",
+      "iniciar apenas antitussígeno sedativo oral e adiar oxigênio até saturação abaixo de 80% de forma sistemática para o lactente",
+      "suspender vitamina A e isolamento após o surgimento do infiltrado pulmonar radiológico neste caso segundo as diretrizes pediátricas conforme relatado",
+      "indicar aciclovir empírico em dose plena como antiviral específico obrigatório para pneumonia do sarampo diante do quadro descrito no atendimento"
+    ],
+    "explain": "Pneumonia é complicação grave do sarampo: prioriza-se oxigênio/suporte e avaliação de coinfecção bacteriana, mantendo isolamento e medidas de vigilância. Aciclovir não é terapia etiológica do sarampo. Alta precoce com hipoxemia é inadequada.",
+    "trap": "Subestimar a hipoxemia no sarampo e liberar com antitussígeno apenas."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 15,
+    "group": "Infectologia pediátrica",
+    "theme": "Varicela — exclusão escolar",
+    "stem": "Menina de 5 anos com varicela típica (vesículas em diferentes estágios, tronco e couro cabeludo), afebril há 24 horas, boa aceitação oral, sem sinais de infecção bacteriana secundária. Frequência cardíaca 90 bpm, saturação 99%. A escola pergunta quando pode retornar. Qual a orientação correta? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "afastar até que todas as lesões estejam em crosta, em geral cerca de 5 a 7 dias após o início do exantema, conforme evolução neste retorno",
+    "wrongs": [
+      "retornar no mesmo dia do diagnóstico porque a transmissão cessa no momento em que a febre desaparece no seguimento atual",
+      "manter afastamento por 30 dias corridos mesmo com todas as lesões já crostosas e criança assintomática no acompanhamento",
+      "somente liberar após dose única de aciclovir intravenoso, independentemente do estado das lesões cutâneas ignorando os demais achados clínicos",
+      "exigir cultura de cada vesícula negativa antes de qualquer retorno às atividades escolares presenciais apesar da avaliação clínica completa"
+    ],
+    "explain": "Na varicela, a contagiosidade cai quando as lesões estão crostosas; o retorno escolar costuma ocorrer após esse marco clínico. Febre ausente isoladamente não libera retorno precoce. Aciclovir intravenoso não é rotina em doença leve em imunocompetente.",
+    "trap": "Liberar para a escola no dia em que a febre cede, ainda com vesículas ativas."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 16,
+    "group": "Infectologia pediátrica",
+    "theme": "Varicela — indicação de aciclovir",
+    "stem": "Adolescente de 13 anos, imunocompetente, inicia varicela com mais de 500 lesões, febre 39 °C, acometimento facial intenso e tosse seca. Chega com 24 horas de exantema. Pressão 110/68 mmHg, saturação 97%, sem pneumonia radiológica. Qual a melhor decisão sobre antiviral? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "considerar aciclovir oral precoce (idealmente nas primeiras 24 horas) por varicela mais extensa em adolescente, com suporte neste retorno",
+    "wrongs": [
+      "reservar aciclovir apenas para neonatos e nunca usar em adolescente imunocompetente com doença cutânea extensa frente à queixa",
+      "indicar aciclovir intravenoso obrigatório em todo caso de varicela escolar, mesmo oligossintomática e leve para o lactente",
+      "prescrever antibiótico de amplo espectro como antiviral específico da varicela nesta faixa etária diante do quadro descrito no atendimento",
+      "usar ácido acetilsalicílico para a febre da varicela por melhor controle térmico do que a dipirona na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Em adolescentes com varicela mais grave/extensa, aciclovir oral iniciado precocemente pode reduzir sintomas. Intravenoso reserva-se a formas graves ou imunodepressão. Ácido acetilsalicílico é contraindicado (risco de Reye). Antibiótico não trata o vírus.",
+    "trap": "Negar qualquer antiviral em adolescente com doença extensa ou, no outro extremo, usar AAS para febre."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 17,
+    "group": "Infectologia pediátrica",
+    "theme": "Coqueluche — tratamento com azitromicina",
+    "stem": "Lactente de 3 meses, tosse em acessos há 10 dias, engasgos e episódios de cianose perioral. Irmão de 8 anos com tosse há 3 semanas. Leucócitos 28.000/mm³ com linfocitose. Saturação 94% em ar, frequência respiratória 48 irpm. PCR para Bordetella pendente. Qual a terapia antimicrobiana mais adequada ao lactente? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "iniciar azitromicina (ou outro macrolídeo conforme protocolo) precocemente, com suporte respiratório e isolamento de gotículas neste retorno",
+    "wrongs": [
+      "aguardar o resultado definitivo da PCR por 7 dias antes de qualquer macrolídeo mesmo com clínica altamente sugestiva frente à queixa",
+      "tratar apenas com amoxicilina, que erradica Bordetella com a mesma eficácia dos macrolídeos nesta idade na rotina da UBS",
+      "indicar penicilina benzatina intramuscular única como esquema de escolha para coqueluche do lactente jovem ignorando os demais achados clínicos",
+      "usar ciprofloxacino oral de rotina como primeira linha em menores de 6 meses com tosse paroxística na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Na coqueluche suspeita, inicia-se macrolídeo (azitromicina é frequente) sem esperar confirmação laboratorial, para reduzir transmissão e, se precoce, a duração. Amoxicilina e benzatina não são escolha. Quinolona não é primeira linha em lactente.",
+    "trap": "Atrasar o macrolídeo até a PCR em lactente com paroxismos e cianose."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 18,
+    "group": "Infectologia pediátrica",
+    "theme": "Coqueluche — quimioprofilaxia de contato",
+    "stem": "UBS atende família: lactente de 2 meses com coqueluche confirmada. Contatos domiciliares: mãe, pai e irmã de 5 anos (vacinação em dia), todos assintomáticos até o momento. Nenhum tem alergia a macrolídeos. Qual a conduta correta para os contatos próximos? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "oferecer quimioprofilaxia com macrolídeo aos contatos domiciliares íntimos, independentemente de sintomas no momento frente à queixa",
+    "wrongs": [
+      "profilaxiar apenas quem já estiver tossindo há mais de 14 dias, ignorando contatos ainda assintomáticos no domicílio nesta idade",
+      "vacinar o lactente doente com dTpa imediata como substituto completo da antibioticoterapia e do isolamento para o lactente",
+      "indicar isolamento apenas da criança índice e dispensar qualquer macrolídeo aos conviventes assintomáticos sem rever o restante do caso",
+      "usar rifampicina isolada de rotina como quimioprofilaxia universal de coqueluche em toda a família ignorando os demais achados clínicos"
+    ],
+    "explain": "Contatos domiciliares íntimos de coqueluche recebem quimioprofilaxia com macrolídeo para interromper transmissão, mesmo assintomáticos. Vacina não substitui a profilaxia do contato recente. Rifampicina não é o esquema padrão de coqueluche.",
+    "trap": "Profilaxiar só quem já tossiu, deixando conviventes assintomáticos sem cobertura."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 19,
+    "group": "Infectologia pediátrica",
+    "theme": "Impetigo — tratamento",
+    "stem": "Menino de 4 anos com crostas melicéricas periorais e em membros há 5 dias, sem febre, sem celulite profunda. Algumas lesões novas com bolhas flácidas. Frequência cardíaca 92 bpm, saturação 99%. Frequenta creche. Qual a melhor conduta terapêutica inicial? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "tratar com antibiótico tópico (como mupirocina) se poucas lesões, ou sistêmico (cefadroxila/cefalexina) se múltiplas, e orientar higiene",
+    "wrongs": [
+      "indicar apenas lavagem com água e sabão sem qualquer antimicrobiano, mesmo com lesões crostosas extensas em creche frente à queixa",
+      "prescrever aciclovir oral como primeira linha porque toda crosta melicérica é varicela em fase de crosta para o lactente",
+      "iniciar vancomicina intravenosa ambulatorial de rotina para todo impetigo não bolhoso em pré-escolar hígido ignorando os demais achados clínicos",
+      "usar ácido acetilsalicílico tópico oclusivo prolongado como monoterapia definitiva das crostas melicéricas apesar da avaliação clínica completa"
+    ],
+    "explain": "Impetigo localizado pode ser tratado topicamente; formas extensas pedem antibiótico oral antiestafilocócico/estreptocócico. Aciclovir não trata impetigo bacteriano. Vancomicina intravenosa não é primeira linha ambulatorial em doença superficial sem gravidade.",
+    "trap": "Confundir crostas melicéricas com varicela e tratar com antiviral."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 20,
+    "group": "Infectologia pediátrica",
+    "theme": "Celulite — conduta inicial",
+    "stem": "Menina de 8 anos com eritema quente e doloroso em perna direita após escoriação, febre 38,5 °C, sem flutuação. Limites pouco nítidos, sem crepitação. Pressão 100/64 mmHg, frequência cardíaca 110 bpm, saturação 98%. Deambula com dor. Qual a conduta inicial mais adequada? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "iniciar antibiótico sistêmico com cobertura para Streptococcus pyogenes e Staphylococcus aureus, elevação do membro e reavaliação neste retorno",
+    "wrongs": [
+      "apenas compressas mornas sem antibiótico, pois celulite pediátrica sempre resolve com higiene local isolada frente à queixa",
+      "drenagem cirúrgica imediata obrigatória na ausência de abscesso flutuante detectável ao exame físico atual para o lactente",
+      "prescrever nistatina oral prolongada como terapia etiológica da celulite bacteriana de membros neste caso diante do quadro descrito no atendimento",
+      "indicar anticoagulação plena empírica antes de qualquer antibiótico por risco teórico de trombose venosa na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Celulite sem abscesso drenável trata-se com antibiótico sistêmico cobrindo estreptococo e estafilococo, além de medidas locais e reavaliação. Cirurgia indica-se se houver coleção. Antifúngico e anticoagulação empírica não são a base do tratamento inicial.",
+    "trap": "Aguardar só compressas e atrasar antibiótico em celulite febril."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 21,
+    "group": "Infectologia pediátrica",
+    "theme": "Meningite bacteriana — antibiótico empírico por idade",
+    "stem": "Lactente de 45 dias chega irritado, febril (38,9 °C), com fontanela abaulada, recusa alimentar e gemência. Pressão 78/48 mmHg, frequência cardíaca 160 bpm, saturação 96%. Punção lombar após estabilização: liquor turvo. Hemocultura colhida. Qual o esquema empírico mais apropriado nesta idade? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "associar ampicilina e cefalosporina de terceira geração (como cefotaxima/ceftriaxona conforme contexto) cobrindo Listeria e pneumococo",
+    "wrongs": [
+      "usar apenas penicilina cristalina isolada, suficiente para todos os agentes de meningite no segundo mês de vida frente à queixa",
+      "iniciar vancomicina isolada sem beta-lactâmico, porque Listeria é a causa quase exclusiva após os 28 dias para o lactente",
+      "tratar com azitromicina oral ambulatorial e retorno em 48 horas se a fontanela permanecer abaulada ignorando os demais achados clínicos",
+      "indicar aciclovir exclusivo como monoterapia empírica inicial de toda meningite febril do lactente jovem apesar da avaliação clínica completa"
+    ],
+    "explain": "No lactente jovem, a cobertura empírica de meningite inclui Listeria (ampicilina) e cocos gram-positivos/gram-negativos (cefalosporina de 3ª geração). Monoterapia com penicilina, vancomicina isolada, macrolídeo oral ou aciclovir exclusivo são inadequados como esquema inicial completo.",
+    "trap": "Esquecer ampicilina para Listeria em meningite do lactente abaixo de 2–3 meses."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 22,
+    "group": "Infectologia pediátrica",
+    "theme": "Meningite bacteriana — corticóide",
+    "stem": "Criança de 5 anos com suspeita de meningite bacteriana: febre, rigidez de nuca, vômitos e rebaixamento leve. Estabilizada, punção programada. Equipe discute dexametasona. Agente mais provável na faixa etária é pneumococo ou meningococo. Qual a orientação correta sobre o corticóide? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "considerar dexametasona imediatamente antes ou junto da primeira dose de antibiótico, especialmente se pneumococo for possível neste retorno",
+    "wrongs": [
+      "iniciar corticóide só após 48 horas de antibiótico, quando o liquor já estiver estéril em todas as crianças frente à queixa",
+      "contraindicar corticóide em qualquer meningite pediátrica porque sempre aumenta mortalidade de forma uniforme para o lactente",
+      "substituir o antibiótico pela dexametasona isolada nas primeiras 24 horas de tratamento hospitalar segundo as diretrizes pediátricas conforme relatado",
+      "usar prednisona oral domiciliar como equivalente completo da dexametasona intravenosa na meningite grave ignorando os demais achados clínicos"
+    ],
+    "explain": "Em meningite bacteriana pediátrica, dexametasona precoce (antes/junto do antibiótico) pode reduzir sequelas, sobretudo na suspeita de pneumococo. Não substitui o antibiótico e não deve ser iniciada tardiamente como rotina após dias de terapia.",
+    "trap": "Dar o antibiótico e só lembrar do corticóide no dia seguinte."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 23,
+    "group": "Infectologia pediátrica",
+    "theme": "Meningite bacteriana — manejo inicial",
+    "stem": "Menino de 9 anos com febre, cefaleia intensa, fotofobia e petéquias em tronco e membros. Pressão 85/50 mmHg, frequência cardíaca 130 bpm, enchimento capilar 4 s, saturação 95%. Está sonolento. Qual a sequência prioritária na primeira hora? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "estabilizar via aérea e circulação, coletar culturas se possível sem atrasar, iniciar antibiótico empírico precoce e suporte de choque",
+    "wrongs": [
+      "adiar qualquer antibiótico até tomografia e punção lombar completas, mesmo com instabilidade hemodinâmica evidente frente à queixa",
+      "indicar apenas hidratação oral na sala de espera e observar petéquias por 6 horas antes de acesso venoso para o lactente",
+      "iniciar ácido acetilsalicílico em dose antiagregante como tratamento específico da doença meningocócica suspeita ao longo do seguimento",
+      "realizar punção lombar imediatamente no choque descompensado antes de qualquer expansão volêmica ou via aérea apesar dos dados do exame"
+    ],
+    "explain": "Na meningococcemia/meningite com choque, a prioridade é estabilização e antibiótico precoce; exames de imagem e punção não devem atrasar a terapia se houver instabilidade. AAS não trata meningococcemia.",
+    "trap": "Atrasar antibiótico para “completar” tomografia e punção em paciente instável."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 24,
+    "group": "Infectologia pediátrica",
+    "theme": "Artrite séptica — conduta",
+    "stem": "Menino de 2 anos recusa apoiar o membro inferior direito há 24 horas, febre 39 °C, joelho quente, edemaciado e extremamente doloroso à mobilização passiva mínima. Proteína C-reativa 80 mg/L, leucócitos 18.000/mm³. Pressão 96/60 mmHg, saturação 98%. Ultrassom com derrame. Qual a conduta prioritária? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "avaliação ortopédica urgente para drenagem/lavagem articular e coleta de culturas, com antibiótico intravenoso após as amostras neste retorno",
+    "wrongs": [
+      "imobilizar em casa com analgésico oral por 7 dias e só internar se a febre persistir além de 10 dias seguidos frente à queixa",
+      "iniciar apenas anti-inflamatório não esteroide ambulatorial, pois derrame febril em toddler é sempre transitório viral para o lactente",
+      "indicar fisioterapia intensiva imediata sem punção diagnóstica nem cobertura antimicrobiana parenteral diante do quadro descrito no atendimento",
+      "prescrever colchicina empírica como primeira linha, adiando avaliação ortopédica eletiva para 15 dias na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Artrite séptica é emergência: drenagem/irrigação, culturas e antibiótico intravenoso precoce preservam a articulação. Observação ambulatorial prolongada com AINE atrasa o tratamento e eleva risco de sequela.",
+    "trap": "Tratar joelho quente febril em lactente/toddler apenas como sinovite transitória sem avaliação ortopédica."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 25,
+    "group": "Infectologia pediátrica",
+    "theme": "Osteomielite hematogênica — diagnóstico e ATB",
+    "stem": "Menina de 6 anos com febre e dor progressiva em tíbia esquerda há 4 dias, claudicação, ponto de máximo hiperemia e dor óssea à palpação. Hemoglobina 11,8 g/dL, leucócitos 16.500/mm³, proteína C-reativa 70 mg/L. Radiografia simples ainda sem rarefação clara. Ressonância pendente. Qual a melhor conduta inicial? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "internar, coletar hemoculturas, iniciar antibiótico intravenoso empírico antiestafilocócico e obter imagem avançada sem atrasar terapia",
+    "wrongs": [
+      "aguardar obrigatoriamente rarefação na radiografia simples por 14 dias antes de qualquer antibiótico intravenoso frente à queixa",
+      "tratar apenas com compressa quente e ibuprofeno domiciliar até a ressonância ambulatorial da semana seguinte para o lactente",
+      "iniciar nistatina e albendazol empíricos como cobertura etiológica da osteomielite hematogênica típica ignorando os demais achados clínicos",
+      "indicar amputação imediata sem tentativa de antibioticoterapia nem avaliação de imagem complementar apesar da avaliação clínica completa"
+    ],
+    "explain": "Na osteomielite hematogênica aguda, radiografia precoce pode ser normal; hemoculturas, antibiótico intravenoso (cobertura estafilocócica) e imagem avançada são prioritários. Atrasar antibiótico até alterações radiográficas clássicas piora o prognóstico.",
+    "trap": "Esperar a radiografia “ficar positiva” para começar o tratamento."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 26,
+    "group": "Infectologia pediátrica",
+    "theme": "Tuberculose — contato e quimioprofilaxia",
+    "stem": "Criança de 4 anos assintomática, convivente domiciliar de tio com tuberculose pulmonar bacilífera em início de tratamento. Radiografia de tórax normal, prova tuberculínica (PPD) de 8 mm (sem BCG recente que explique), exame físico normal. HIV negativo. Qual a conduta mais adequada? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "indicar isoniazida (ou esquema de prevenção conforme protocolo vigente) após excluir doença ativa, com acompanhamento clínico neste retorno",
+    "wrongs": [
+      "tratar com esquema RIPE completo de doença ativa mesmo com radiografia normal e ausência total de sintomas frente à queixa",
+      "dispensar qualquer prevenção porque a criança está assintomática e a radiografia de tórax veio normal neste retorno para o lactente",
+      "iniciar etambutol isolado em dose alta como única droga preventiva de rotina em menores de 5 anos segundo as diretrizes pediátricas conforme relatado",
+      "aplicar BCG imediatamente como substituto completo da quimioprofilaxia no contato intradomiciliar recente ignorando os demais achados clínicos"
+    ],
+    "explain": "Contato de bacilífero com infecção latente (ou alto risco) e sem doença ativa recebe terapia preventiva (classicamente isoniazida, conforme protocolo). Esquema quádruplo é para doença ativa. BCG não substitui a prevenção do contato recente.",
+    "trap": "Não oferecer prevenção só porque a criança “está bem” e a radiografia é normal."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 27,
+    "group": "Infectologia pediátrica",
+    "theme": "Tuberculose — investigação em contato sintomático",
+    "stem": "Menino de 3 anos, contato de mãe com tuberculose pulmonar, apresenta tosse há 3 semanas, febre vespertina e sudorese. Peso estagnado. Radiografia com adenomegalia hilar. PPD 12 mm. Baciloscopia de escarro da mãe positiva. Qual a conduta correta para a criança? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "tratar como tuberculose doença com esquema pediátrico indicado, notificar e investigar outros contatos do domicílio na rotina da UBS",
+    "wrongs": [
+      "apenas isoniazida preventiva, porque crianças nunca desenvolvem doença ativa mesmo com radiografia alterada frente à queixa",
+      "aguardar cultura de 8 semanas sem iniciar tratamento, apesar de clínica e imagem altamente sugestivas durante a consulta",
+      "indicar lobectomia imediata como primeira linha antes de qualquer quimioterapia antituberculosa padronizada apesar dos dados do exame",
+      "usar apenas amoxicilina prolongada para adenopatia hilar atribuída a infecção bacteriana comunitária banal sem rever o restante do caso"
+    ],
+    "explain": "Sintomas + imagem + contato bacilífero configuram tuberculose doença na criança: tratamento completo, notificação e rastreamento de contatos. Terapia preventiva isolada é insuficiente quando já há doença. Cirurgia não é primeira linha.",
+    "trap": "Dar só quimioprofilaxia em criança já sintomática com radiografia sugestiva."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 28,
+    "group": "Infectologia pediátrica",
+    "theme": "HIV pediátrico — profilaxia vertical (AZT)",
+    "stem": "Recém-nascido a termo, filho de mãe com HIV que chegou ao parto sem pré-natal adequado e carga viral desconhecida. Parto vaginal ocorreu há 2 horas. RN vigoroso, Apgar 9/10, sem malformações. Equipe discute profilaxia. Qual a conduta antirretroviral neonatal inicial mais adequada? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "iniciar zidovudina (AZT) o mais precoce possível e seguir protocolo de profilaxia combinada conforme risco de transmissão vertical neste retorno",
+    "wrongs": [
+      "aguardar sorologia do RN com 6 meses para só então decidir qualquer antirretroviral profilático neonatal frente à queixa",
+      "contraindicar qualquer AZT no RN a termo vigoroso porque a profilaxia só existe para prematuros extremos para o lactente",
+      "indicar apenas aleitamento materno exclusivo sem antirretroviral, pois o leite elimina o risco residual de HIV ignorando os demais achados clínicos",
+      "usar rifampicina isolada no RN como substituto completo da profilaxia antirretroviral pós-exposição vertical apesar da avaliação clínica completa"
+    ],
+    "explain": "Na exposição perinatal ao HIV de alto risco (carga desconhecida/sem profilaxia materna adequada), inicia-se antirretroviral neonatal precoce (AZT ± combinação conforme protocolo). Aleitamento aumenta risco e não substitui profilaxia. Aguardar sorologia atrasaria a janela crítica.",
+    "trap": "Esperar exames do bebê meses depois em vez de iniciar profilaxia nas primeiras horas."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 29,
+    "group": "Infectologia pediátrica",
+    "theme": "HIV pediátrico — aleitamento e exposição",
+    "stem": "Mãe com HIV em terapia antirretroviral, carga viral indetectável recente, pergunta na maternidade se pode amamentar exclusivamente como recomendação geral da OMS em todos os países. No contexto brasileiro de fórmula disponível e protocolo local, o pediatra deve orientar principalmente: Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "desaconselhar aleitamento materno e indicar fórmula infantil, mantendo antirretroviral neonatal e seguimento conforme protocolo nacional",
+    "wrongs": [
+      "estimular aleitamento exclusivo por 6 meses sem discutir fórmula, independentemente da disponibilidade local de substituto",
+      "suspender o antirretroviral do RN se a mãe estiver indetectável, sem necessidade de qualquer seguimento laboratorial para o lactente",
+      "liberar aleitamento misto (peito e chá) como estratégia segura para reduzir transmissão do HIV no Brasil ignorando os demais achados clínicos",
+      "substituir o seguimento por dose única de vitamina K como profilaxia completa da transmissão vertical residual sem rever o restante do caso"
+    ],
+    "explain": "No Brasil, com fórmula acessível, recomenda-se não amamentar em mãe com HIV, além de profilaxia e seguimento do RN. Carga indetectável reduz mas não elimina risco via leite no modelo brasileiro de substituição. Aleitamento misto é particularmente desaconselhado.",
+    "trap": "Aplicar indicação universal de amamentação sem considerar o protocolo nacional e a disponibilidade de fórmula."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 30,
+    "group": "Infectologia pediátrica",
+    "theme": "Giardíase — diagnóstico e tratamento",
+    "stem": "Pré-escolar de 3 anos com diarreia intermitente há 3 semanas, flatulência, fezes gordurosas e distensão abdominal. Frequenta creche. Sem sangue nas fezes. Estado geral preservado, leve perda ponderal. Exame parasitológico revela cistos de Giardia lamblia. Pressão 95/60 mmHg, saturação 99%. Qual o tratamento de escolha? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "tratar com metronidazol ou nitazoxanida (ou outro esquema eficaz protocolar) e orientar higiene e avaliação de contatos sintomáticos",
+    "wrongs": [
+      "apenas soro de reidratação oral sem antiparasitário, pois Giardia nunca causa sintomas prolongados em creche frente à queixa",
+      "indicar vancomicina oral prolongada como primeira linha para giardíase confirmada no parasitológico de fezes para o lactente",
+      "usar mebendazol isolado em dose única, suficiente para erradicar Giardia com a mesma eficácia do metronidazol apesar dos dados do exame",
+      "realizar colectomia parcial empírica por diarreia crônica antes de qualquer terapia antiparasitária específica ao longo do seguimento"
+    ],
+    "explain": "Giardíase sintomática trata-se com metronidazol, nitazoxanida ou equivalentes eficazes, além de medidas de higiene. Vancomicina não é terapia da Giardia. Mebendazol não é a escolha clássica para esse protozoário.",
+    "trap": "Tratar apenas a hidratação e ignorar o antiparasitário com parasitológico positivo."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 31,
+    "group": "Infectologia pediátrica",
+    "theme": "Parasitoses intestinais — oxiuríase",
+    "stem": "Menina de 5 anos com prurido anal noturno intenso, sono agitado e irritabilidade. Mãe visualizou “linhas brancas” na região perianal à noite. Exame geral normal, sem diarreia sanguinolenta. Escotch test solicitado. Qual a conduta terapêutica mais adequada se a hipótese de Enterobius for confirmada/clínica típica? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "tratar com anti-helmíntico apropriado (como albendazol ou mebendazol conforme protocolo), higienizar roupas/lençóis e cotratar conviventes",
+    "wrongs": [
+      "indicar metronidazol exclusivo, porque oxiúrus responde melhor a nitroimidazólicos do que a benzimidazólicos frente à queixa",
+      "realizar apendicectomia profilática em toda criança com prurido anal noturno antes de qualquer medicamento para o lactente",
+      "tratar somente a criança índice e proibir lavagem de roupas de cama por 30 dias para “prender” o parasita ignorando os demais achados clínicos",
+      "usar nistatina oral prolongada como erradicação definitiva de Enterobius em escolares sintomáticos diante do quadro descrito no atendimento"
+    ],
+    "explain": "Oxiuríase trata-se com benzimidazólicos (albendazol/mebendazol), medidas de higiene e, frequentemente, tratamento dos conviventes pela alta transmissibilidade. Metronidazol e nistatina não são a terapia de escolha. Cirurgia não tem papel.",
+    "trap": "Tratar só a criança e negligenciar conviventes e higiene do ambiente domiciliar."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 32,
+    "group": "Infectologia pediátrica",
+    "theme": "Escarlatina — diagnóstico e ATB",
+    "stem": "Menino de 7 anos com febre, odinofagia e exantema áspero tipo lixa em tronco, acentuado em dobras (Pastia), face hiperemiada com palidez perioral e língua em framboesa. Teste rápido estreptocócico positivo. Temperatura 38,7 °C, saturação 98%, sem hipotensão. Qual a conduta correta? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "tratar com penicilina ou amoxicilina em esquema adequado, orientar hidratação e sinais de alarme, com retorno se piora neste retorno",
+    "wrongs": [
+      "manter apenas antitérmico, pois o exantema escarlatiniforme nunca se associa a Streptococcus pyogenes comprovado frente à queixa",
+      "iniciar aciclovir oral por confundir sistematicamente escarlatina com varicela em fase inicial de vesículas para o lactente",
+      "indicar imunoglobulina intravenosa de rotina em todo exantema áspero, independentemente do teste estreptocócico ao longo do seguimento",
+      "usar ciprofloxacino como primeira escolha em escolares sem alergia a beta-lactâmicos documentada ignorando os demais achados clínicos"
+    ],
+    "explain": "Escarlatina é faringite estreptocócica com exantema: trata-se com beta-lactâmico (penicilina/amoxicilina). Antiviral e quinolona não são escolha. Imunoglobulina não é rotina. O teste positivo confirma a necessidade de antibiótico.",
+    "trap": "Tratar escarlatina só com sintomáticos por achar que “exantema é sempre viral”."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 33,
+    "group": "Infectologia pediátrica",
+    "theme": "Exantema súbito (roséola) — reconhecimento",
+    "stem": "Lactente de 10 meses com febre alta (39,5 °C) por 3 dias, bom estado geral entre os picos, sem foco evidente. No momento em que a febre cede, surge exantema máculo-papular róseo em tronco que se dissemina. Está afebril, brincando, saturação 99%, exame neurológico normal. Qual a conduta mais adequada? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "reconhecer exantema súbito (roséola), orientar a família sobre o curso benigno e manter observação dos sinais de alarme neste retorno",
+    "wrongs": [
+      "internar para antibiótico intravenoso de amplo espectro em todo lactente que apresentou febre alta antes do rash frente à queixa",
+      "indicar punção lombar obrigatória após defervescência só porque houve febre, mesmo com exame neurológico normal para o lactente",
+      "prescrever amoxicilina prolongada para “cobrir” escarlatina, apesar da idade típica e da sequência febre-rash apesar dos dados do exame",
+      "iniciar aciclovir empírico por varicela, embora não existam vesículas em estágios diferentes neste exame ignorando os demais achados clínicos"
+    ],
+    "explain": "Roséola: febre alta por alguns dias em lactente bem geral, seguida de exantema ao defervescer. Conduta é suporte e orientação. Antibiótico, punção e aciclovir não são rotina sem sinais de gravidade ou outro diagnóstico.",
+    "trap": "Tratar o rash pós-febre como emergencial bacteriano só pelo nível térmico prévio."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 34,
+    "group": "Infectologia pediátrica",
+    "theme": "Exantema súbito — convulsão febril associada",
+    "stem": "Lactente de 11 meses teve febre 39,8 °C e crise tônico-clônica generalizada de 1 minuto no pico febril. Após 12 horas a febre cede e aparece exantema de roséola. Agora afebril, exame neurológico normal, glicemia 95 mg/dL. Qual a melhor conduta conjunta? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "orientar como convulsão febril simples no contexto de roséola, sem anticonvulsivante contínuo de rotina e com sinais de alarme neste retorno",
+    "wrongs": [
+      "iniciar fenitoína de manutenção por 2 anos porque toda crise com exantema define epilepsia sintomática obrigatória frente à queixa",
+      "indicar tomografia de crânio urgente em todo caso de roséola após crise única já resolvida com exame normal para o lactente",
+      "prescrever antibiótico intravenoso contínuo até o desaparecimento completo do exantema róseo de tronco diante do quadro descrito no atendimento",
+      "proibir antitérmicos nas próximas febres para “evitar mascarar” novas crises convulsivas febris simples na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Convulsão febril simples pode ocorrer no pico da roséola; com recuperação neurológica, a conduta é orientação e tratamento sintomático das febres futuras. Anticonvulsivante contínuo e imagem de rotina não estão indicados sem sinais de alerta.",
+    "trap": "Medicalizar em excesso a crise única já resolvida só porque surgiu o rash típico depois."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 35,
+    "group": "Infectologia pediátrica",
+    "theme": "Rubéola — clínica e contatos",
+    "stem": "Adolescente de 14 anos não vacinada apresenta febre baixa, coriza discreta, adenopatia cervical posterior e exantema céfalo-caudal fino há 2 dias. Placas de Forschheimer em palato. Temperatura 37,8 °C, saturação 99%. Há gestante na mesma casa com 8 semanas. Qual a prioridade além do suporte à paciente? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "notificar, isolar a adolescente de gestantes suscetíveis e orientar avaliação imediata da gestante contato para risco de rubéola congênita",
+    "wrongs": [
+      "liberar contato íntimo livre com a gestante porque a rubéola pós-natal nunca implica risco fetal no primeiro trimestre frente à queixa",
+      "tratar a adolescente com amoxicilina prolongada como terapia etiológica específica do vírus da rubéola no acompanhamento",
+      "indicar interrupção gestacional automática sem qualquer sorologia ou avaliação especializada da gestante contato sem rever o restante do caso",
+      "aplicar tríplice viral imediatamente na gestante como conduta segura na gestação confirmada de 8 semanas ignorando os demais achados clínicos"
+    ],
+    "explain": "Rubéola em convivente de gestante exige isolamento, notificação e avaliação urgente da gestante (sorologia/risco de infecção congênita). Vacina tríplice viral é contraindicada na gestação. Antibiótico não trata rubéola.",
+    "trap": "Ignorar a gestante do domicílio e tratar o caso apenas como “virose de pele”."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 36,
+    "group": "Infectologia pediátrica",
+    "theme": "Eritema infeccioso — parvovírus B19",
+    "stem": "Escolar de 8 anos com febre baixa há 3 dias seguida de eritema facial em “rosto esbofeteado” e depois reticulado em membros, sem prurido intenso. Bom estado geral, saturação 99%, sem artralgia importante. Mãe está grávida de 16 semanas e preocupada. Qual a orientação correta? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "diagnosticar eritema infeccioso (parvovírus B19), suporte à criança e avaliar a gestante contato quanto ao risco de infecção fetal neste retorno",
+    "wrongs": [
+      "tratar a criança com penicilina benzatina porque o eritema malar é patognomônico exclusivo de escarlatina estreptocócica",
+      "indicar aciclovir intravenoso de rotina para erradicar o parvovírus B19 em todo escolar com face eritematosa para o lactente",
+      "afastar a necessidade de qualquer atenção à gestante, pois o parvovírus não tem relevância em gestação intermediária sem rever o restante do caso",
+      "prescrever prednisona alta dose em toda criança com exantema reticulado para encurtar a viremia do B19 na abordagem deste atendimento diante deste caso"
+    ],
+    "explain": "Eritema infeccioso é autolimitado na criança imunocompetente; o ponto crítico é o contato gestacional (anemia fetal/hidropsia). Não se trata com penicilina nem aciclovir de rotina. A gestante contato merece avaliação específica.",
+    "trap": "Focar só no rash da criança e negligenciar a gestante convivente."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 37,
+    "group": "Infectologia pediátrica",
+    "theme": "Eritema infeccioso — contagiosidade escolar",
+    "stem": "Menina de 7 anos retorna à consulta já com o exantema reticulado típico de eritema infeccioso, afebril, brincando. A professora pergunta se precisa afastar por mais 14 dias. Qual a informação correta sobre transmissão neste estágio? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "na fase do exantema clássico a criança em geral já não está transmissível; o afastamento prolongado só pelo rash costuma ser desnecessário",
+    "wrongs": [
+      "manter isolamento rigoroso por 21 dias após o início do rash porque a contagiosidade aumenta exatamente nessa fase frente à queixa",
+      "só liberar a escola após três hemogramas semanais normais, independentemente do estado clínico atual da criança para o lactente",
+      "exigir dose de imunoglobulina intravenosa antes de qualquer retorno escolar em imunocompetentes com B19 ignorando os demais achados clínicos",
+      "trocar definitivamente de escola porque o parvovírus permanece cultivável na pele por meses após o eritema apesar da avaliação clínica completa"
+    ],
+    "explain": "No eritema infeccioso, a transmissão ocorre sobretudo antes do rash; com o exantema típico, a criança imunocompetente costuma poder retornar. Isolamento prolongado apenas pela pele reticulada não se justifica.",
+    "trap": "Afastar longamente só porque o rash ainda está visível, confundindo com varicela crostosa."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 38,
+    "group": "Infectologia pediátrica",
+    "theme": "Síndrome mão-pé-boca",
+    "stem": "Lactente de 18 meses com febre há 2 dias, recusa alimentar por úlceras dolorosas em boca, e vesiculopápulas em palmas, plantas e região de fraldas. Bom estado geral, hidratado, saturação 98%, sem sinais meníngeos. Creche pergunta sobre afastamento e antibiótico. Qual a conduta? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "suporte (analgesia, hidratação), orientar curso viral usual e afastar enquanto houver febre e/ou lesões orais que dificultem o convívio",
+    "wrongs": [
+      "iniciar amoxicilina-clavulanato por 10 dias como tratamento etiológico obrigatório da doença mão-pé-boca frente à queixa",
+      "indicar aciclovir intravenoso em todo caso por se tratar sempre de herpes simples disseminado necrotizante para o lactente",
+      "realizar punção lombar de rotina em todas as crianças com vesículas palmoplantares sem sinais neurológicos ignorando os demais achados clínicos",
+      "prescrever ácido acetilsalicílico para a febre e a dor da estomatite aftoide associada ao enterovírus apesar da avaliação clínica completa"
+    ],
+    "explain": "Mão-pé-boca (enterovírus) é autolimitada: analgesia, hidratação e orientação. Antibiótico e aciclovir não são etiológicos de rotina. AAS é inadequado. Punção só com sinais neurológicos de alerta.",
+    "trap": "Tratar mão-pé-boca com antibiótico “para não virar infecção” sem necessidade."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 39,
+    "group": "Infectologia pediátrica",
+    "theme": "Abscesso cutâneo — drenagem",
+    "stem": "Menino de 9 anos com nódulo flutuante, eritematoso e doloroso de 3 cm em coxa, sem febre, após furúnculo. Ultrassom confirma coleção. Pressão 100/65 mmHg, saturação 99%. Sem imunossupressão. Qual a pedra angular do tratamento? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "realizar drenagem da coleção (incisão e drenagem), com cultura do pus quando possível, e avaliar antibiótico adjuvante conforme critérios",
+    "wrongs": [
+      "tratar apenas com antibiótico oral prolongado sem drenar, esperando resolução completa de abscesso já flutuante frente à queixa",
+      "indicar quimioterapia sistêmica empírica por confundir abscesso localizado com neoplasia de partes moles para o lactente",
+      "aplicar corticóide intralesional isolado como substituto completo da drenagem cirúrgica do pus segundo as diretrizes pediátricas conforme relatado",
+      "iniciar anticoagulação plena antes de qualquer medida local por risco genérico de embolia séptica cutânea ignorando os demais achados clínicos"
+    ],
+    "explain": "Abscesso flutuante exige drenagem; antibiótico isolado frequentemente falha. Cultura guia terapia se houver necessidade de antimicrobiano adjuvante (celulite circundante, imunodepressão, sinais sistêmicos).",
+    "trap": "Insistir só em antibiótico e adiar a drenagem de coleção já organizada."
+  },
+  {
+    "idPrefix": "ped-inf2",
+    "n": 40,
+    "group": "Infectologia pediátrica",
+    "theme": "Abscesso cutâneo / MRSA comunitário",
+    "stem": "Adolescente de 15 anos com abscesso drenado em glúteo; cultura revela Staphylococcus aureus resistente à oxacilina (MRSA comunitário), sensível a sulfametoxazol-trimetoprima e clindamicina. Há celulite residual de 2 cm ao redor, sem febre. Qual a terapia adjuvante mais racional? Não há melhora completa apenas com sintomáticos já usados em domicílio; o exame físico atual e os dados disponíveis permitem decidir a conduta mais adequada agora.",
+    "correct": "completar drenagem adequada e associar antibiótico oral ativo contra MRSA comunitário (como sulfametoxazol-trimetoprima ou clindamicina)",
+    "wrongs": [
+      "usar apenas amoxicilina simples, suficiente para MRSA comunitário após qualquer drenagem de abscesso glúteo frente à queixa",
+      "indicar vancomicina intravenosa prolongada de rotina em todo MRSA de pele mesmo sem gravidade sistêmica na rotina da UBS",
+      "suspender qualquer antibiótico e a higiene local porque MRSA comunitário nunca responde a fármacos orais ignorando os demais achados clínicos",
+      "prescrever ácido fusídico sistêmico empírico sem considerar o antibiograma já disponível da cultura do pus apesar da avaliação clínica completa"
+    ],
+    "explain": "Após drenagem, celulite residual por MRSA comunitário responde a agentes orais ativos (sulfametoxazol-trimetoprima, clindamicina, entre opções). Amoxicilina falha. Vancomicina intravenosa reserva-se a infecções graves/hospitalares.",
+    "trap": "Manter beta-lactâmico anti-MSSA em cultura já documentada de MRSA."
+  }
+]
