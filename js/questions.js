@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260720q1";
+const APROVA_QUESTION_CACHE_VER = "20260720q2";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -321,21 +321,40 @@ const AprovaQuestions = {
         return null;
       }
       this.index += 1;
-      this.answered = this.hasAnsweredCurrent();
+      this.landOnCurrent({ reshuffle: true });
       return this.current();
     }
 
     if (!this.queue.length) return null;
     this.index = (this.index + 1) % this.queue.length;
-    this.answered = false;
+    this.landOnCurrent({ reshuffle: true });
     return this.current();
   },
 
   prev () {
     if (!this.queue.length || this.index <= 0) return null;
     this.index -= 1;
-    this.answered = this.hasAnsweredCurrent();
+    this.landOnCurrent({ reshuffle: true });
     return this.current();
+  },
+
+  /**
+   * Ao entrar numa questão: restaura se já foi respondida no simulado;
+   * se ainda não, reembaralha alternativas (treino e simulado).
+   */
+  landOnCurrent (opts) {
+    const answered = this.hasAnsweredCurrent();
+    this.answered = answered;
+    const shouldShuffle = opts && opts.reshuffle && !answered;
+    if (!shouldShuffle) return;
+    const cur = this.current();
+    if (!cur) return;
+    const base = this.catalog.find((c) => c.id === cur.id) || cur;
+    this.queue[this.index] = aprovaShuffleQuestionChoices(base);
+  },
+
+  canGoPrev () {
+    return this.queue.length > 0 && this.index > 0;
   },
 
   /** No simulado, indica se a questão atual já foi respondida nesta sessão. */

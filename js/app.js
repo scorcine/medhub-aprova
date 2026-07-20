@@ -3851,7 +3851,12 @@ function aprovaRenderQuestion () {
   if (trapWrap) trapWrap.hidden = true;
   if (trapEl) trapEl.textContent = "";
   if (nextBtn) nextBtn.hidden = true;
-  if (prevBtn) prevBtn.hidden = AprovaQuestions.index <= 0;
+  if (prevBtn) {
+    const showPrev = AprovaQuestions.canGoPrev();
+    prevBtn.hidden = !showPrev;
+    prevBtn.disabled = !showPrev;
+    prevBtn.setAttribute("aria-hidden", showPrev ? "false" : "true");
+  }
   if (abortBtn) abortBtn.hidden = false;
   choices.innerHTML = "";
 
