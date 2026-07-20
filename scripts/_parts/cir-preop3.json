@@ -1,0 +1,642 @@
+[
+  {
+    "idPrefix": "cir-preop3",
+    "n": 1,
+    "group": "Pré-operatório",
+    "theme": "ASA VI — doador de órgãos",
+    "stem": "Paciente em morte encefálica em captação de órgãos. Classificação ASA? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "ASA VI: declarado morte encefálica cujos órgãos são removidos para doação sem benefício claro fora da indicação com risco elevado neste cenário com sem",
+    "wrongs": [
+      "ASA I sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício claro",
+      "ASA VE obrigatório sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Não existe ASA VI sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algorit",
+      "ASA IV igual sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem benefíci"
+    ],
+    "explain": "ASA VI é doador. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Classificar doador como ASA I. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 2,
+    "group": "Pré-operatório",
+    "theme": "Risco intermediário — exemplos",
+    "stem": "Prostatectomia radical aberta. Faixa de risco cardíaco procedimental? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Risco intermediário (>1% e <5%) tipicamente sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+    "wrongs": [
+      "Baixo <1% como oftalmológica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Alto ≥5% como aorta aberta sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Sem classificação sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algorit",
+      "Igual a biópsia de pele sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefíc"
+    ],
+    "explain": "Cir3 tabela de risco. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Chamar prostatectomia de baixo risco como catarata."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 3,
+    "group": "Pré-operatório",
+    "theme": "Cirurgia vascular — alto risco",
+    "stem": "Reparo aberto de aorta abdominal. Risco? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Alto risco cardiovascular (≥5%) — estratificação rigorosa sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+    "wrongs": [
+      "Baixo risco sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem sem benefício claro",
+      "Não precisa avaliação cardíaca sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora",
+      "Igual a herniorrafia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com sem benefí",
+      "Só risco pulmonar importa sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benef"
+    ],
+    "explain": "Aorta aberta = alto. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Subestimar risco da aorta. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 4,
+    "group": "Pré-operatório",
+    "theme": "Revascularização antes de AAA",
+    "stem": "DAC triarterial grave + AAA grande eletivo. Sequência conceitual Cir3? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Considerar revascularização miocárdica antes do reparo do aneurisma se indicada sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Ignorar DAC sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício claro",
+      "Operar AAA sob isquemia ativa sem plano sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Só estatina resolve tríplice sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Negar beta-bloqueador crônico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefíc"
+    ],
+    "explain": "Otimizar coração antes de grande vascular. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Operar AAA com isquemia não tratada. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 5,
+    "group": "Pré-operatório",
+    "theme": "Troponina pós-op",
+    "stem": "Pós-operatório de grande porte, dor torácica e troponina elevada. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Tratar como SCA perioperatória: ECG, anti-isquêmicos e cardiologia — não ignorar sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Atribuir sempre a 'cirurgia' sem ECG sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como sem benefício claro",
+      "Negar aspirina se stent recente sem discutir sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Alta imediata sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R",
+      "Só analgésico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem benefíc"
+    ],
+    "explain": "IAM perioperatório existe. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Ignorar troponina com sintoma. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 6,
+    "group": "Pré-operatório",
+    "theme": "Profilaxia TEV — Caprini",
+    "stem": "Paciente oncológico, 70 anos, cirurgia abdominal maior. Princípio? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Estratificar Caprini/risco e profilaxiar com HBPM/mecânica conforme sangramento sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Nenhuma profilaxia em câncer sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Só AAS substitui HBPM em alto risco sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Meia elástica proibida sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Anticoagulação plena obrigatória em todo baixo risco sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício"
+    ],
+    "explain": "Alto risco: farmacológica ± mecânica. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Omitir profilaxia em oncológico maior. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 7,
+    "group": "Pré-operatório",
+    "theme": "HBPM profilática — dose",
+    "stem": "Enoxaparina profilática típica em adulto com ClCr normal pós-cirurgia maior? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Dose profilática (ex.: 40 mg/dia) diferente da terapêutica 1 mg/kg 12/12 h sem benefício claro fora da indicação com risco elevado neste cenário com sem",
+    "wrongs": [
+      "Mesma dose plena sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida sem benefício claro",
+      "Única dose vitalícia pré-op só sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora",
+      "IM profunda glútea de rotina sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com",
+      "Associar trombolítico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem sem benef"
+    ],
+    "explain": "Distinguir prófilaxe vs plena. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Usar dose plena achando ser prófilaxe. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 8,
+    "group": "Pré-operatório",
+    "theme": "Compressão pneumática",
+    "stem": "Alto risco TEV com sangramento ativo. Alternativa? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Compressão pneumática intermitente ± meias enquanto sangramento impede fármaco sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Nenhuma prevenção sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício claro",
+      "Heparina plena mesmo sangrando sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "AAS 500 mg sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1",
+      "Filtro de veia cava em todo caso sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório"
+    ],
+    "explain": "Mecânica quando fármaco contraindicado. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Nada de prevenção se não pode HBPM. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 9,
+    "group": "Pré-operatório",
+    "theme": "Obeso mórbido — exames",
+    "stem": "IMC 45, eletivo bariátrico. Exames? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "ECG e laboratório dirigido (eletrólitos/glicose/hemograma) conforme tabela de comorbidades sem benefício claro fora da indicação com risco elevado com sem",
+    "wrongs": [
+      "Nenhum exame nunca sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem sem benefício claro",
+      "PET obrigatório sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Colonoscopia de rotina pré-bypass sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório",
+      "Espiro em todo IMC 30 sem clínica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício"
+    ],
+    "explain": "Obesidade mórbida: ECG + labs. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Pedir painel infinito sem indicação. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 10,
+    "group": "Pré-operatório",
+    "theme": "HIV — exames 30 dias",
+    "stem": "HIV conhecido, cirurgia maior. Prazo de labs destacados? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Desordens graves/HIV: preferir exames recentes (~30 dias) vs 90–180 em estáveis sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Labs de 2 anos bastam sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Nunca repetir CD4/carga se muda conduta sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Negar cirurgia se HIV sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Só RX tórax sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem benefício"
+    ],
+    "explain": "Cir3: 30 dias em condições graves. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Usar labs antigos em doença ativa. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 11,
+    "group": "Pré-operatório",
+    "theme": "Labs 90–180 dias",
+    "stem": "Adulto saudável, labs normais há 4 meses, baixo risco. Repetir? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Pode aceitar perfil normal recente (90–180 d) se clinicamente estável sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+    "wrongs": [
+      "Repetir diariamente sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida sem benefício claro neste sem benefício",
+      "Labs nunca expiram sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Obrigatório repetir tudo em 24 h sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Só tipagem sanguínea sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem"
+    ],
+    "explain": "Evitar repetição inútil. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Repetir rotina sem mudança clínica. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 12,
+    "group": "Pré-operatório",
+    "theme": "Emergência — rotina justificada",
+    "stem": "Trauma abdominal emergente. Papel de 'rotina'? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Em emergência, anormalidades são frequentes — labs/imagem dirigidos justificam-se mais que no eletivo saudável sem benefício claro fora da indicação",
+    "wrongs": [
+      "Nenhum exame na emergência sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Só PSA sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1",
+      "Aguardar painel completo de 48 h antes de laparotomia no choque sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Negar tipagem sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R"
+    ],
+    "explain": "Emergência ≠ eletivo. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Atrasar controle de danos por bateria completa."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 13,
+    "group": "Pré-operatório",
+    "theme": "Retardo mental — exames",
+    "stem": "Paciente sem história confiável, eletivo. Exceção Cir3? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Anamnese limitada pode justificar avaliação laboratorial mais ampla pontual sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+    "wrongs": [
+      "Nenhum exame sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício claro",
+      "Cancelar sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício claro",
+      "Anestesia sem avaliação sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício cla",
+      "Só raio-X de seios sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo sem"
+    ],
+    "explain": "Exceção à regra anti-rotina. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Operar sem qualquer avaliação por 'não rotina'."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 14,
+    "group": "Pré-operatório",
+    "theme": "Stress dose — porte médio",
+    "stem": "Prednisona 25 mg/dia há 4 meses, colecistectomia. Suplementação típica? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Hidrocortisona ~50 mg na indução + 25 mg 8/8 h 24–48 h, depois dose habitual sem benefício claro fora da indicação com risco elevado neste cenário com sem benefício",
+    "wrongs": [
+      "Sempre 1000 mg única sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida sem benefício claro",
+      "Nunca suplementar se >20 mg sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Só fludrocortisona sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algori",
+      "Suspender prednisona no dia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício"
+    ],
+    "explain": "Porte médio: esquema intermediário. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Omitir stress dose em crônico alto. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 15,
+    "group": "Pré-operatório",
+    "theme": "Stress dose — porte alto",
+    "stem": "Mesmo corticodependente, duodenopancreatectomia. Dose? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Hidrocortisona ~100 mg indução + 50 mg 8/8 h 48–72 h, depois habitual sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+    "wrongs": [
+      "Igual a procedimento sob anestesia local mínima sempre sem benefício claro fora da indicação com risco elevado neste cenário sem sem benefício claro",
+      "Nenhuma sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1",
+      "Só dexametasona 0,5 mg sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "ACTH infusion contínua obrigatória sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório"
+    ],
+    "explain": "Porte alto: doses maiores. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Usar dose de porte menor em cirurgia maior."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 16,
+    "group": "Pré-operatório",
+    "theme": "Prednisona <5 mg — sem stress",
+    "stem": "Prednisona 4 mg/dia há 2 meses, hernia sob local. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Manter dose habitual; stress dose geralmente desnecessária se <5 mg/dia sem benefício claro fora da indicação com risco elevado neste sem benefício claro",
+    "wrongs": [
+      "Stress dose máxima sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única",
+      "Suspender 1 mês sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício claro",
+      "Dobrar por 6 semanas sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício claro",
+      "Trocar por dexametasona 40 mg sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem"
+    ],
+    "explain": "<5 mg ou <3 semanas: sem supressão típica. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Supertratar com stress desnecessário. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 17,
+    "group": "Pré-operatório",
+    "theme": "Protamina — emergência HNF",
+    "stem": "Heparinizado pleno, precisa operar agora. Antídoto? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Sulfato de protamina ~1 mg por 100 U de HNF sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como sem benefício claro",
+    "wrongs": [
+      "Vitamina K IM única sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Idarucizumab sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Crioprecipitado só sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "AAS sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1 sem"
+    ],
+    "explain": "Protamina antagoniza HNF. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Usar vit K para heparina. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 18,
+    "group": "Pré-operatório",
+    "theme": "Vitamina K + PFC",
+    "stem": "Warfarina, INR 3,8, laparotomia emergente. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "PFC 15–20 mL/kg + vitamina K 10 mg para reverter sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico sem benefício claro",
+    "wrongs": [
+      "Só esperar 3 dias sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida sem benefício claro",
+      "Protamina sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefício claro",
+      "Idarucizumab sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefício claro",
+      "Nada sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1"
+    ],
+    "explain": "PFC age rápido; vit K sustenta. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Operar com INR alto sem reverter. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 19,
+    "group": "Pré-operatório",
+    "theme": "Reinício warfarina PO",
+    "stem": "Pós-op com hemostasia, bridge com HNF. Quando warfarina? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Reiniciar warfarina no PO com overLap de heparina até INR terapêutico (~5 dias) sem benefício claro fora da indicação com risco elevado neste cenário sem",
+    "wrongs": [
+      "Só warfarina sem bridge em prótese metálica de alto risco sempre sem benefício claro fora da indicação com risco elevado neste sem sem benefício claro",
+      "Nunca reiniciar sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Dobrar dose 1º dia sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com",
+      "Trocar por rivaroxaban sem plano sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório"
+    ],
+    "explain": "Overlap clássico. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Parar heparina antes do INR alvo em alto risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 20,
+    "group": "Pré-operatório",
+    "theme": "Reinício HBPM pós-op",
+    "stem": "Pós vascular com alto risco de sangramento. HBPM plena? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Considerar dose reduzida temporária antes de voltar à plena em alto risco hemorrágico sem benefício claro fora da indicação com risco sem benefício claro",
+    "wrongs": [
+      "Plena em 1 h sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Nunca reiniciar sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício claro",
+      "Só AAS sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem benefício clar",
+      "Trombólise sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem sem benefí"
+    ],
+    "explain": "Ajustar timing/dose ao sangramento. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Reiniciar plena cedo demais em campo cruento."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 21,
+    "group": "Pré-operatório",
+    "theme": "Stent farmacológico — 1 ano",
+    "stem": "Stent farmacológico há 4 meses, eletivo não urgente. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Adiar eletivo até completar dupla antiplaquetária (~1 ano) se possível; manter AAS sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Suspender AAS+clopidogrel 1 mês antes sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Operar no 1º mês livremente sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Trocar stent por cirurgia cardíaca sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório",
+      "Negar qualquer antiplaquetário vitalício sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício c"
+    ],
+    "explain": "Bare metal: ~1 mês; farmacológico: ~1 ano. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Eletivo precoce com interrupção perigosa."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 22,
+    "group": "Pré-operatório",
+    "theme": "Prasugrel — 7 dias",
+    "stem": "Prasugrel, cirurgia eletiva com sangramento moderado. Suspensão? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Suspender prasugrel ≥7 dias; clopidogrel ~5 dias; manter AAS se possível sem benefício claro fora da indicação com risco elevado neste cenário com sem sem benefício",
+    "wrongs": [
+      "1 dia basta sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem sem sem benefício claro",
+      "30 dias obrigatório sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Igual ao paracetamol sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com sem benefí",
+      "Nunca suspender mesmo sangramento incontrolável planejado sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única mesmo na"
+    ],
+    "explain": "P2Y12: janelas distintas. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Suspender só 48 h o prasugrel. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 23,
+    "group": "Pré-operatório",
+    "theme": "Ticagrelor — timing",
+    "stem": "Ticagrelor em SCA recente, eletivo. Princípio? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Suspender alguns dias antes (tipicamente ~5) conforme guia/risco; discussão Heart Team sem benefício claro fora da indicação com risco elevado com sem sem benefício",
+    "wrongs": [
+      "Manter até clamp sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem sem benefício claro",
+      "Suspender 8 semanas sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Trocar por IMAO sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo",
+      "Negar AAS sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem benefício c"
+    ],
+    "explain": "Individualizar com cardiologia. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Suspender dupla no 1º mês de stent. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 24,
+    "group": "Pré-operatório",
+    "theme": "Catarata — manter AAS",
+    "stem": "Facectomia, AAS por DAC. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Manter AAS — risco hemorrágico baixo em catarata sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+    "wrongs": [
+      "Suspender 10 dias sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida sem benefício claro",
+      "Bridge com HNF plena sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Negar cirurgia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo",
+      "Trocar por warfarina sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo"
+    ],
+    "explain": "Catarata: AAS ok. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Suspender AAS desnecessariamente. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 25,
+    "group": "Pré-operatório",
+    "theme": "POISE-2 — nuance AAS",
+    "stem": "POISE-2 e AAS perioperatório. Mensagem equilibrada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "POISE-2 mostrou mais sangramento sem benefício cardíaco amplo — exceções: CEA/stent/eventos recentes sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "AAS nunca se mantém sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "AAS sempre obrigatório em todo eletivo sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório at",
+      "POISE-2 incluiu CEA/stent sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Ignorar diretrizes locais sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o"
+    ],
+    "explain": "Matizar com exceções. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Aplicar POISE-2 a quem tem stent recente."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 26,
+    "group": "Pré-operatório",
+    "theme": "Glicemia intraop — alvos",
+    "stem": "DM no intraoperatório. Alvo pragmático? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Evitar hipo/hiperglicemia extrema; alvos moderados (ex. ~140–180 mg/dL) conforme protocolo sem benefício claro fora da indicação com risco elevado com sem benefício",
+    "wrongs": [
+      "Manter <80 sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício claro neste sem benefíci",
+      "Aceitar >400 sem insulina sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Suspender toda insulina no DM1 sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com",
+      "Soro glicosado proibido sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefíc"
+    ],
+    "explain": "Alvos moderados. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Apertar demais causando hipoglicemia. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 27,
+    "group": "Pré-operatório",
+    "theme": "Hipoglicemia perioperatória",
+    "stem": "Intraop com glicemia 48 e sudorese. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Corrigir hipoglicemia imediatamente com glicose IV e reavaliar insulina/jejum sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Dar mais insulina regular sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida sem benefício claro",
+      "Ignorar se ASA I sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Só glucagon IM em intubado com acesso IV fácil sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Aumentar sevoflurano sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefício"
+    ],
+    "explain": "Hipo mata rápido. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Tratar hipo com mais insulina. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 28,
+    "group": "Pré-operatório",
+    "theme": "HbA1c e eletivo",
+    "stem": "HbA1c 11%, eletivo não urgente. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Otimizar controle antes do eletivo quando possível; urgência não espera HbA1c perfeita sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Cancelar toda urgência se HbA1c >7 sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "HbA1c irrelevante sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Só dieta na sala sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritm",
+      "Corticosteroide livre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o alg"
+    ],
+    "explain": "Eletivo espera otimização. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Atrasar emergência por HbA1c. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 29,
+    "group": "Pré-operatório",
+    "theme": "SGLT2 — cetoacidose euglicêmica",
+    "stem": "Dapagliflozina, cirurgia maior em 4 dias. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Suspender SGLT2 3–4 dias antes por risco de cetoacidose euglicêmica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+    "wrongs": [
+      "Manter até a indução sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Aumentar dose sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R",
+      "Só suspender metformina importa sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "SGLT2 previne cetoacidose sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o"
+    ],
+    "explain": "Pausa pré-op importante. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Manter SGLT2 até o dia. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 30,
+    "group": "Pré-operatório",
+    "theme": "GLP-1 — esvaziamento gástrico",
+    "stem": "Liraglutida semanal, eletivo. Preocupação? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Retardo de esvaziamento: risco de aspiração — seguir orientação local de pausa/jejum sem benefício claro fora da indicação com risco elevado com sem benefício claro",
+    "wrongs": [
+      "Nenhum risco sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício claro neste sem benefício cla",
+      "Acelera esvaziamento sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Substitui jejum sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo",
+      "Obriga gastrostomia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefício c"
+    ],
+    "explain": "GLP-1: aspiração. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Ignorar jejum/aspiração com GLP-1. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 31,
+    "group": "Pré-operatório",
+    "theme": "Via aérea — Wilson/escore",
+    "stem": "Obeso, magalopata, pescoço curto. Além de Mallampati? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Avaliar múltiplos preditores (abertura bucal, distância tireomentoniana, mobilidade) — combinação prediz melhor sem benefício claro fora da indicação",
+    "wrongs": [
+      "Só Mallampati basta sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Nenhum preparo de via difícil sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Induzir sem plano B sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algor",
+      "Negar vídeo-laringoscópio sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o"
+    ],
+    "explain": "Via difícil = plano. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Indução sem estratégia se preditores. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 32,
+    "group": "Pré-operatório",
+    "theme": "Dente frouxo",
+    "stem": "Incisivo muito móvel antes de IOT. Conduta? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Documentar, proteger/considerar extração odontológica prévia se eletivo e risco de aspiração sem benefício claro fora da indicação com risco elevado com",
+    "wrongs": [
+      "Ignorar e forçar laringoscopia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Negar IOT sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Extrair todos os dentes sadios sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com",
+      "Só antibiótico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o sem benefí"
+    ],
+    "explain": "Dente frouxo: risco de aspiração. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Não documentar trauma dentário. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 33,
+    "group": "Pré-operatório",
+    "theme": "Estômago cheio — RSI",
+    "stem": "Obstrução intestinal, anestesia geral. Técnica? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Indução em sequência rápida com pressão cricoide conforme prática local e aspiração pronta sem benefício claro fora da indicação com risco elevado com sem benefício",
+    "wrongs": [
+      "Ventilação máscara prolongada liberal sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico sem sem benefício claro",
+      "Jejum de 2 h de sólidos basta sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora",
+      "Sonda nasogástrica proibida sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com",
+      "Extubar profundo sempre sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefíc"
+    ],
+    "explain": "RSI no estômago cheio. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Ventilar máscara enchendo estômago. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 34,
+    "group": "Pré-operatório",
+    "theme": "Aspiração — Mendelson",
+    "stem": "Aspiração de conteúdo gástrico na indução. Conduta imediata? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Aspirar via aérea, oxigenar, considerar broncoscopia se sólido e suporte — não lavar com volume grande cegamente sem benefício claro fora da indicação",
+    "wrongs": [
+      "Lavagem pulmonar maciça com água destilada sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico",
+      "Alta imediata sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R",
+      "Só antiácido depois sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algor",
+      "Negar ATB se pneumonite química evolui infecção sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioper"
+    ],
+    "explain": "Mendelson: suporte. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Lavar agressivamente cego. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 35,
+    "group": "Pré-operatório",
+    "theme": "Clorexidina × PVP-I",
+    "stem": "Preparação alcoólica da pele. Evidência citada? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Clorexidina alcoólica associou-se a menos ISC vs PVP-I em estudo destacado sem benefício claro fora da indicação com risco elevado neste cenário com com",
+    "wrongs": [
+      "PVP-I alcoólica sempre superior sem discussão sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem sem benefício claro",
+      "Água e sabão só sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Álcool puro sem antisséptico sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com",
+      "Nenhuma preparação necessária sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefíc"
+    ],
+    "explain": "Cir3: clorexidina alcoólica favorecida. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Preparar com água sem antisséptico. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 36,
+    "group": "Pré-operatório",
+    "theme": "Banho pré-op antisséptico",
+    "stem": "Orientação na véspera? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Banho com degermante antisséptico na véspera/manhã, enfatizando sítio cirúrgico sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Proibir banho sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem sem benefício claro",
+      "Só após a cirurgia sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual fora da",
+      "Usar lâmina no banho sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual com sem benefí",
+      "Tintura de iodo oral sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem sem benefí"
+    ],
+    "explain": "Higiene prévia reduz flora. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Chegar sujo sem orientação. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 37,
+    "group": "Pré-operatório",
+    "theme": "Depilatório × clipper",
+    "stem": "Alternativa à tricotomia com lâmina? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida. Sem alergia medicamentosa conhecida aos fármacos usualmente considerados neste cenário cirúrgico.",
+    "correct": "Creme depilatório tem baixa ISC; clipper imediato é preferível à lâmina sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Lâmina na véspera é ideal sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Raspar com gilete 24 h antes reduz ISC sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório at",
+      "Nunca remover pelos se atrapalham técnica sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório",
+      "Fogo no campo com álcool intencional sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atua"
+    ],
+    "explain": "Evitar lâmina/véspera. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Raspar na véspera com lâmina. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 38,
+    "group": "Pré-operatório",
+    "theme": "Nutrição enteral × parenteral",
+    "stem": "Desnutrido grave com GI íntegro, 3 semanas até eletivo. Preferência? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Enteral preferível se viável — menos infecção que NPT sem benefício claro fora da indicação com risco elevado neste cenário sem ganho sem benefício claro",
+    "wrongs": [
+      "NPT sempre superior sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única sem benefício claro",
+      "Jejuar 3 semanas sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório sem benefício claro",
+      "Só albumina IV sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefício claro",
+      "Gastrostomia obrigatória imediata sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício sem bene"
+    ],
+    "explain": "Enteral > parenteral se possível. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "NPT de rotina com GI funcionante. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 39,
+    "group": "Pré-operatório",
+    "theme": "NRS-2002 — quem nutrir",
+    "stem": "Quem mais se beneficia de nutrição pré-op segundo lógica Cir3/NRS? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Desnutrição grave (perda ponderal importante/IMC baixo + ingestão inadequada) sem benefício claro fora da indicação com risco elevado neste cenário",
+    "wrongs": [
+      "Todo ASA I sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no sem benefício claro",
+      "Só obesos sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1",
+      "Pacientes com albumina 4,5 sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Cirurgia de catarata sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual sem benefício"
+    ],
+    "explain": "Selecionar graves. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Nutrir todo mundo indiscriminadamente. Evitar atalho que ignore estratificação de risco."
+  },
+  {
+    "idPrefix": "cir-preop3",
+    "n": 40,
+    "group": "Pré-operatório",
+    "theme": "IECA manhã — reforço hipotensão",
+    "stem": "IECA na manhã de grande porte com risco de sangramento. Discussão Cir3/prática? O serviço dispõe de suporte perioperatório e exames essenciais sem justificar atraso indevido. Reavaliar periodicamente estabilidade, resposta à intervenção e necessidade de reestratificação. História, exame físico e comorbidades foram revisados na admissão; a prioridade já pode ser definida.",
+    "correct": "Muitos omitem IECA/BRA na manhã pelo risco de hipotensão refratária — individualizar sem benefício claro fora da indicação com risco elevado",
+    "wrongs": [
+      "Obrigatório dobrar IECA sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida",
+      "Suspender 4 semanas sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual",
+      "Trocar por IMAO sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo",
+      "Negar volume sem benefício claro fora da indicação com risco elevado neste cenário sem ganho clínico como única medida no perioperatório atual segundo o algoritmo R1"
+    ],
+    "explain": "Hipotensão com IECA é clássica. A conduta correta alinha-se ao algoritmo R1 perioperatório/colorretal, priorizando estratificação, timing e redução de iatrogenia.",
+    "trap": "Insistir IECA na indução hipovolêmica. Evitar atalho que ignore estratificação de risco."
+  }
+]
