@@ -1,28 +1,40 @@
 /**
  * Gera data/questions-pediatria.json (>=105 questões originais, pt-BR).
- * Estilo residência (USP/ENARE/ENAMED/UNIFESP/Santa Casa): vinheta clínica,
- * pegadinhas suaves, sem “entregar” classificação/diagnóstico no enunciado.
+ * Estilo SUS-SP (residência): vinheta densa com vitais/labs, lead-in clássico,
+ * 5 alternativas A–E (muitas compostas), pegadinhas suaves.
  *
  * Uso: node scripts/build-questions-pediatria.js
  *
  * RNG com seed fixa → rebuild determinístico.
- * Gabarito em índice aleatório 0–3 (não fica sempre em B).
+ * Gabarito em índice aleatório 0–4.
  */
 
 const fs = require("fs");
 const path = require("path");
 
-const SEED = 20260720;
+const SEED_STR = "20260720sus";
 const OUT = path.join(__dirname, "..", "data", "questions-pediatria.json");
 
-const EXAMS = ["enamed", "enare", "usp", "unifesp", "santa-casa", "amp"];
-const YEARS = [2022, 2023, 2024, 2025];
-/** Poucos fáceis; maioria média/difícil */
-const DIFF_POOL = [
-  "dificil", "dificil", "dificil", "dificil",
-  "media", "media", "media",
-  "facil"
+/** Preferir sus-sp; rotacionar demais */
+const EXAMS = [
+  "sus-sp", "sus-sp", "sus-sp", "sus-sp", "sus-sp",
+  "sus-sp", "sus-sp",
+  "usp", "enare", "enamed", "unifesp", "santa-casa"
 ];
+const YEARS = [2022, 2023, 2024, 2025];
+const DIFF_POOL = [
+  "dificil", "dificil", "dificil", "dificil", "dificil",
+  "dificil", "media", "media"
+];
+
+function seedToUint32 (str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
 
 /** Mulberry32 — RNG determinístico */
 function createRng (seed) {
@@ -36,17 +48,17 @@ function createRng (seed) {
 }
 
 /**
- * Coloca a alternativa correta em índice aleatório 0–3.
+ * Coloca a alternativa correta em índice aleatório 0–4.
  * @returns {{ choices: string[], answer: number }}
  */
 function placeCorrect (correct, distractors, rng) {
-  if (!Array.isArray(distractors) || distractors.length !== 3) {
-    throw new Error("placeCorrect exige exatamente 3 distratores");
+  if (!Array.isArray(distractors) || distractors.length !== 4) {
+    throw new Error("placeCorrect exige exatamente 4 distratores");
   }
-  const answer = Math.floor(rng() * 4);
+  const answer = Math.floor(rng() * 5);
   const pool = distractors.slice();
   const choices = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     if (i === answer) choices.push(correct);
     else choices.push(pool.shift());
   }
@@ -68,7 +80,7 @@ function meta (rng) {
  *   correct: string,
  *   wrongs: string[],
  *   explain: string,
- *   trap?: string
+ *   trap: string
  * }} RawQ
  */
 
@@ -81,220 +93,238 @@ function buildBank () {
   /** @type {RawQ[]} */
   const neo = [
     {
-      theme: "Reanimação neonatal",
-      stem: "RN a termo, parto vaginal sem intercorrências, líquido claro. Após secagem e estímulo, permanece com esforço irregular e frequência cardíaca de 78 bpm; vias aéreas estão posicionadas e a pele está cianosada. Qual a melhor conduta neste momento?",
-      correct: "Iniciar ventilação com pressão positiva e monitorar FC e expansão torácica",
+      theme: "Toxoplasmose congênita",
+      stem: "Gestante de 28 anos, G2P1, com sorologia de toxoplasmose no 1º trimestre IgG+ IgM−. No 2º trimestre, solicitou-se IgG de avididade alta (>70%). RN a termo, Apgar 9/10, exame físico normal, peso 3.180 g. Qual a melhor conduta neonatal?",
+      correct: "Cuidados habituais do RN; sem investigação específica para toxoplasmose congênita",
       wrongs: [
-        "Iniciar compressões torácicas na proporção 3:1 imediatamente",
-        "Administrar adrenalina pela veia umbilical sem ventilação prévia",
-        "Aguardar 60 segundos em observação antes de qualquer intervenção"
+        "Solicitar IgM e PCR para Toxoplasma no RN e iniciar pirimetamina + sulfadiazina + ácido folínico",
+        "Fundo de olho, liquor e US de crânio de rotina, mesmo assintomático",
+        "Isolamento de contato e tratamento com espiramicina por 6 semanas",
+        "Repetir sorologia materna e suspender aleitamento até resultado"
       ],
-      explain: "Após passos iniciais, FC < 100 bpm ou respiração inadequada indica VPP como intervenção central. Compressões só entram após VPP efetiva com FC persistente < 60 bpm. Adrenalina é reserva para falha ventilatória/circulatória.",
-      trap: "Pular direto para compressões ou adrenalina quando a FC está entre 60 e 100, sem garantir ventilação eficaz."
+      explain: "Avidade alta de IgG no 2º trimestre indica infecção antiga, com risco desprezível de transmissão vertical. O RN não necessita workup congênito nem tratamento específico; segue puericultura habitual. Tratamento e investigação ampla cabem quando há evidência de infecção aguda gestacional ou RN sintomático/com confirmação laboratorial.",
+      trap: "Associar qualquer IgG+ materna a protocolo completo de toxoplasmose congênita, ignorando a avidade alta que afasta infecção recente."
     },
     {
       theme: "Reanimação neonatal",
-      stem: "Em sala de parto, após 30 segundos de VPP com expansão torácica adequada e FiO2 titulada, a FC do RN permanece em 48 bpm. Qual o próximo passo prioritário?",
-      correct: "Iniciar compressões torácicas coordenadas à VPP (3:1) e revisar a via aérea",
+      stem: "RN a termo, parto vaginal, líquido claro. Após secagem, posicionamento e estímulo tátil por 30 s, permanece com respiração irregular, FC 72 bpm e cianose central. SatO2 em membro direito 68% aos 2 min. Qual a melhor conduta neste momento?",
+      correct: "Iniciar ventilação com pressão positiva, monitorar FC e expansão torácica e titular FiO2 pela oximetria",
       wrongs: [
-        "Elevar apenas a FiO2 para 100% e manter observação sem compressões",
-        "Administrar bicarbonato de sódio de rotina pela veia umbilical",
-        "Interromper a VPP por 1 minuto para avaliar tônus espontâneo"
+        "Iniciar compressões torácicas 3:1 imediatamente e adrenalina umbilical",
+        "Oferecer apenas O2 em fluxo livre sem ventilação e reavaliar em 5 minutos",
+        "Intubar e administrar surfactante empírico antes de qualquer VPP",
+        "Aguardar 60 s adicionais em observação, pois FC > 60 bpm"
       ],
-      explain: "FC < 60 após VPP efetiva exige compressões 3:1 e checagem da ventilação (MR. SOPA). Bicarbonato não é rotina na reanimação. Oxigênio isolado não substitui o suporte circulatório.",
+      explain: "Após passos iniciais, respiração inadequada ou FC < 100 bpm indica VPP como intervenção prioritária, com oximetria e titulação de O2. Compressões só após VPP efetiva com FC persistente < 60 bpm. Fluxo livre isolado não substitui ventilação; surfactante não é passo inicial da reanimação em termo.",
+      trap: "Pular para compressões/adrenalina com FC entre 60 e 100 sem garantir ventilação eficaz."
+    },
+    {
+      theme: "Reanimação neonatal",
+      stem: "Em sala de parto, RN de 39 semanas recebe VPP com máscara por 45 s: expansão torácica adequada, FiO2 titulada, FC permanece 46 bpm. Qual o próximo passo prioritário?",
+      correct: "Iniciar compressões torácicas coordenadas à VPP (3:1) e revisar via aérea (MR. SOPA)",
+      wrongs: [
+        "Elevar FiO2 para 100% e manter só observação por mais 2 minutos",
+        "Administrar bicarbonato de sódio de rotina pela veia umbilical",
+        "Interromper VPP por 1 minuto para avaliar tônus espontâneo",
+        "Indicar ECMO neonatal imediatamente na sala de parto"
+      ],
+      explain: "FC < 60 bpm após VPP efetiva exige compressões 3:1 e checagem da ventilação. Bicarbonato não é rotina. Oxigênio isolado não substitui suporte circulatório. ECMO não faz parte do algoritmo inicial de reanimação.",
       trap: "Acreditar que só aumentar oxigênio resolve bradicardia grave sem compressões."
     },
     {
       theme: "Reanimação neonatal",
-      stem: "RN de 27 semanas nasce com esforço respiratório fraco. Ao iniciar suporte ventilatório, qual estratégia de oxigênio é a mais adequada nas primeiras ações?",
-      correct: "Começar com FiO2 baixa (cerca de 21–30%) e titular conforme oximetria por minuto de vida",
+      stem: "RN de 27 semanas, 980 g, nasce com esforço fraco. Ao iniciar suporte, SpO2 55% aos 3 min de vida. Qual estratégia de oxigênio é a mais adequada nas primeiras ações?",
+      correct: "Iniciar FiO2 cerca de 21–30% e titular conforme alvos de SpO2 por minuto de vida",
       wrongs: [
         "Manter FiO2 100% fixa desde o primeiro minuto até estabilização completa",
-        "Usar exclusivamente ar ambiente, sem possibilidade de ajuste",
-        "Iniciar óxido nítrico inalatório empírico na sala de parto"
+        "Usar exclusivamente ar ambiente, sem possibilidade de ajuste de FiO2",
+        "Iniciar óxido nítrico inalatório empírico na sala de parto",
+        "Administrar epinefrina inalatória para elevar SpO2 antes da VPP"
       ],
-      explain: "Prematuros devem iniciar com O2 baixo e titulação guiada por SpO2 alvo. Hiperóxia desnecessária aumenta risco de lesão oxidativa. Óxido nítrico não faz parte do algoritmo inicial de reanimação.",
+      explain: "Prematuros devem iniciar com O2 baixo e titulação guiada por SpO2 alvo por minuto de vida. Hiperóxia desnecessária aumenta risco oxidativo. Óxido nítrico e epinefrina inalatória não fazem parte do algoritmo inicial de reanimação.",
       trap: "Associar prematuridade automaticamente a FiO2 100% desde o nascimento."
     },
     {
       theme: "Icterícia neonatal",
-      stem: "RN a termo, 30 horas de vida, ictérico até coxas. Mãe grupo O Rh−, RN A Rh+, Coombs direto positivo, hemoglobina 12,8 g/dL, bilirrubina total 15,8 mg/dL. Qual a melhor conduta inicial?",
-      correct: "Iniciar fototerapia guiada por nomograma e monitorar bilirrubina e hemólise",
+      stem: "RN a termo, 28 h de vida, ictérico até coxas. Mãe O Rh−, RN A Rh+, Coombs direto positivo. Hb 11,9 g/dL, Ht 35%, reticulócitos 8%, bilirrubina total 16,2 mg/dL (indireta 15,4). FC 148 bpm, SatO2 98%. Qual a melhor conduta inicial?",
+      correct: "Iniciar fototerapia conforme nomograma, monitorar bilirrubina e hemólise e avaliar limiar de exsanguineotransfusão",
       wrongs: [
-        "Liberar para domicilio com orientação de exposição solar",
+        "Liberar para domicílio com orientação de exposição solar e retorno em 7 dias",
         "Programar colangiografia e biópsia hepática nas próximas 24 horas",
-        "Iniciar levotiroxina empírico sem dosar TSH/T4"
+        "Iniciar levotiroxina empírica sem dosar TSH/T4 livre",
+        "Transfundir concentrado de hemácias imediatamente sem fototerapia"
       ],
-      explain: "Icterícia precoce com incompatibilidade ABO e Coombs positivo sugere hemólise imune; o manejo imediato é fototerapia conforme limiares, com vigilância de anemia e necessidade de exsanguineotransfusão. Atresia biliar e hipotireoidismo têm outro tempo e perfil clínico.",
-      trap: "Rotular como 'fisiológica' só pela idade gestacional, ignorando precocidade e Coombs positivo."
+      explain: "Icterícia precoce com incompatibilidade ABO e Coombs positivo sugere hemólise imune. Manejo imediato: fototerapia por limiares, vigilância de anemia e critérios de exsanguineotransfusão. Atresia biliar e hipotireoidismo têm outro perfil temporal; transfusão isolada não trata a hiperbilirrubinemia crítica.",
+      trap: "Rotular como fisiológica só pela idade gestacional, ignorando precocidade e Coombs positivo."
     },
     {
-      theme: "Icterícia neonatal",
-      stem: "Lactente de 32 dias em aleitamento materno exclusivo apresenta icterícia progressiva, fezes claras intercaladas e hepatomegalia discreta. Bilirrubina direta 3,4 mg/dL. Qual o próximo passo mais adequado?",
-      correct: "Investigar colestase com urgência, incluindo ultrassom e exclusão de atresia biliar",
+      theme: "Colestase neonatal",
+      stem: "Lactente de 35 dias, aleitamento materno exclusivo, icterícia progressiva, fezes acólicas intermitentes, hepatoesplenomegalia discreta. BT 8,1 mg/dL, BD 3,6 mg/dL, GGT 420 U/L, TGO 98, TGP 110. Qual o próximo passo mais adequado?",
+      correct: "Investigar colestase com urgência (US hepatobiliar, exclusão de atresia biliar) e referenciar a serviço especializado",
       wrongs: [
-        "Manter observação exclusiva até 3 meses por provável icterícia do leite materno",
+        "Manter observação até 3 meses por provável icterícia do leite materno",
         "Prescrever fototerapia domiciliar sem investigação etiológica",
-        "Tratar empiricamente como incompatibilidade Rh tardia"
+        "Tratar empiricamente como incompatibilidade Rh tardia",
+        "Iniciar ácido ursodesoxicólico e alta com retorno só se piorar"
       ],
-      explain: "BD elevada com fezes claras e hepatomegalia configura colestase neonatal. Atresia biliar exige diagnóstico precoce para portoenterostomia. Icterícia do leite materno não eleva BD nem causa acolia.",
+      explain: "BD elevada com fezes acólicas e hepatomegalia configura colestase. Atresia biliar exige diagnóstico precoce para portoenterostomia. Icterícia do leite materno não eleva BD nem causa acolia. Fototerapia não resolve colestase; atraso na investigação piora prognóstico.",
       trap: "Atribuir toda icterícia prolongada ao leite materno sem checar fração direta e padrão das fezes."
     },
     {
-      theme: "Sepse neonatal",
-      stem: "RN de 16 horas, filho de parto com febre materna intraparto e líquido fétido, apresenta taquicardia, enchimento capilar de 4 s e temperatura de 38,2 °C. Hemograma com neutropenia e PCR elevada. Qual antibioticoterapia empírica inicial é a mais apropriada?",
-      correct: "Ampicilina associada a gentamicina",
+      theme: "Sepse neonatal precoce",
+      stem: "RN de 14 h, parto com febre materna 38,6 °C e líquido fétido. Apresenta FC 178 bpm, FR 72 irpm, SatO2 93% em ar, enchimento capilar 4 s, T 38,3 °C. Hemograma: leucócitos 4.200/mm³ (neutropenia), PCR 48 mg/L. Qual antibioticoterapia empírica inicial é a mais apropriada?",
+      correct: "Ampicilina associada a aminoglicosídeo (gentamicina), após coleta de culturas",
       wrongs: [
-        "Vancomicina em monoterapia",
+        "Vancomicina em monoterapia sem coleta de hemocultura",
         "Ceftriaxona em dose única sem associação",
-        "Anfotericina B empírica isolada"
+        "Anfotericina B empírica isolada",
+        "Aguardar resultado da PCR e só então iniciar antibiótico"
       ],
-      explain: "Sepse precoce cobre SGB e Gram-negativos com ampicilina + aminoglicosídeo. Vancomicina e antifúngico não são primeira linha nesse cenário. Ceftriaxona no RN tem riscos (bilirrubina/cálcio) e não substitui o esquema clássico.",
-      trap: "Escolher vancomicina por 'cobertura ampla' em sepse precoce comunitária/obstétrica."
+      explain: "Sepse precoce cobre estreptococo do grupo B e enterobactérias gram-negativas; ampicilina + gentamicina é o esquema clássico após culturas. Vancomicina/anfotericina não são empíricos de primeira linha na precoce. Ceftriaxona tem riscos no RN. Atraso terapêutico aumenta mortalidade.",
+      trap: "Usar esquemas de sepse tardia/hospitalar (vancomicina) na sepse precoce comunitária."
     },
     {
-      theme: "Sepse neonatal",
-      stem: "Prematuro de 30 semanas, 14º dia de vida em UTI, com cateter venoso central, passa a ter apneias novas, distensão abdominal e glicemia instável. Hemocultura cresce Staphylococcus coagulase-negativo. Qual interpretação é a mais coerente?",
-      correct: "Sepse neonatal tardia associada a dispositivo intravascular",
+      theme: "Desconforto respiratório do RN",
+      stem: "RN de 35 semanas, cesárea eletiva, 2 h de vida: FR 78 irpm, retração subcostal, queixa leve, SatO2 89% em ar, FC 156 bpm. Radiografia: infiltrado retículo-granular difuso e broncograma aéreo. Qual o diagnóstico e a conduta iniciais mais adequados?",
+      correct: "Doença da membrana hialina; suporte respiratório e considerar surfactante conforme gravidade",
       wrongs: [
-        "Sepse precoce exclusiva por Streptococcus do grupo B",
-        "Infecção congênita por rubéola sem componente séptico",
-        "Reação transfusional hemolítica aguda isolada"
+        "Taquipneia transitória; alta em 6 h se SatO2 > 92% sem suporte",
+        "Pneumonia aspirativa meconial; antibiótico exclusivo sem suporte ventilatório",
+        "Cardiopatia congênita cianótica; prostaglandina E1 imediata sem imagem",
+        "Hérnia diafragmática; intubação e bag-mask vigorosa no leito"
       ],
-      explain: "Após 72 h de vida, sobretudo em prematuro com acesso vascular, SCN é patógeno típico de sepse tardia nosocomial. Sepse precoce e TORCH têm outros tempos e manifestações.",
-      trap: "Chamar qualquer bacteremia neonatal de 'sepse precoce' sem olhar o dia de vida."
+      explain: "Prematuridade + padrão retículo-granular sugere SDR/membrana hialina: oxigênio/CPAP ou ventilação e surfactante se indicado. Taquipneia transitória costuma ter hiperinsuflação/líquido em fissuras. Meconium é típico de termo com líquido meconial. PGE1 cabe se suspeita de ducto-dependência; bag-mask é contraindicado em HDC.",
+      trap: "Chamar todo desconforto precoce de taquipneia transitória e liberar sem suporte."
     },
     {
-      theme: "SDR/taquipneia",
-      stem: "RN de 33 semanas, desconforto respiratório crescente nas primeiras 3 horas, retrações e gemido. Radiografia com padrão reticulogranular difuso e broncograma aéreo. Qual o diagnóstico mais provável?",
-      correct: "Síndrome do desconforto respiratório por deficiência de surfactante",
+      theme: "Asfixxia perinatal",
+      stem: "RN a termo, circular de cordão, Apgar 2/4/6. Às 6 h: hipotonia, convulsão tônica breve, gasometria de cordão pH 6,95, BE −16. Temperatura 36,8 °C, SatO2 96%. Qual conduta específica deve ser considerada nas primeiras 6 h de vida?",
+      correct: "Avaliar critérios para hipotermia terapêutica e manejo de encefalopatia hipóxico-isquêmica em centro capacitado",
       wrongs: [
-        "Taquipneia transitória do RN sem acometimento alveolar",
-        "Bronquiolite por VSR com início no período neonatal imediato",
-        "Cardiopatia cianótica sem sinais de esforço ventilatório"
+        "Aguardar 48 h para decidir qualquer neuroproteção, pois Apgar melhorou",
+        "Indicar fototerapia intensiva como neuroproteção primária",
+        "Administrar bicarbonato contínuo para normalizar pH sem suporte ventilatório",
+        "Iniciar fenobarbital de manutenção vitalícia por epilepsia estrutural definida"
       ],
-      explain: "Prematuridade + desconforto precoce + reticulogranularidade/broncograma apontam para SDR/membrana hialina. Taquipneia transitória costuma ter hiperinsuflação e líquido em fissuras, com curso mais benigno.",
-      trap: "Diagnosticar taquipneia transitória em prematuro com padrão radiológico clássico de déficit de surfactante."
+      explain: "Acidose grave + encefalopatia precoce sugere EHI: hipotermia terapêutica (iniciar ≤6 h) em critérios elegíveis. Melhora parcial do Apgar não exclui indicação. Fototerapia e bicarbonato não são neuroproteção. Fenobarbital trata convulsões agudas; não define epilepsia crônica imediata.",
+      trap: "Perder a janela das 6 horas por achar que recuperação do Apgar afasta EHI."
     },
     {
-      theme: "SDR/taquipneia",
-      stem: "RN a termo nascido de cesárea eletiva, com taquipneia desde a primeira hora, boa oxigenação em ar ambiente e radiografia com líquido em fissuras e hiperinsuflação leve. Melhor conduta inicial?",
-      correct: "Suporte respiratório conforme necessidade e observação, com expectativa de resolução em 24–72 h",
+      theme: "Aleitamento e hipoglicemia",
+      stem: "RN filho de mãe diabética, 3.900 g, 3 h de vida, sonolento, glicemia capilar 32 mg/dL. Mamou mal na primeira hora. FC 140 bpm, SatO2 98%, afebril. Qual a melhor conduta imediata?",
+      correct: "Oferecer leite (materno ou fórmula) e reavaliar glicemia; se persistir baixa ou sintomático, corrigir com glicose EV conforme protocolo",
       wrongs: [
-        "Surfactante endotraqueal imediato de rotina",
-        "Antibiótico de amplo espectro por 14 dias sem avaliação",
-        "Cirurgia de emergência por suspeita de hérnia diafragmática"
+        "Aguardar próxima mamada em 4 horas sem reavaliar glicemia",
+        "Administrar insulina subcutânea para estabilizar glicemia",
+        "Iniciar corticoterapia empírica antes de qualquer oferta calórica",
+        "Indicar jejum absoluto e apenas soro fisiológico EV"
       ],
-      explain: "Quadro compatível com taquipneia transitória: termo/cesárea, curso precoce e imagem típica. Manejo é suporte e vigilância. Surfactante é para SDR; antibiótico não é automático sem critérios de infecção.",
-      trap: "Tratar todo desconforto neonatal com surfactante, como se fosse membrana hialina."
+      explain: "Filho de diabética é de risco para hipoglicemia. Conduta: alimentação precoce e monitoramento; glicose EV se sintomático ou valores persistentes baixos. Insulina agrava; corticoide não é primeira linha; jejum prolonga o risco.",
+      trap: "Tratar hipoglicemia neonatal como diabetes e usar insulina."
     },
     {
-      theme: "Asfixxia/encefalopatia",
-      stem: "RN a termo após sofrimento fetal agudo nasce com Apgar 2/4/5, necessita de VPP prolongada e, com 2 horas, apresenta hipotonia, convulsão e acidose metabólica persistente. Qual intervenção específica deve ser considerada precocemente?",
-      correct: "Hipotermia terapêutica em centro habilitado, se critérios de encefalopatia hipóxico-isquêmica forem preenchidos",
+      theme: "Infecção congênita — CMV",
+      stem: "RN a termo, microcefalia (PC 30,5 cm), petéquias, hepatoesplenomegalia. Ht 38%, plaquetas 68.000/mm³, BT 6,2 (BD 2,1). US craniano: calcificações periventriculares. PCR urinária positiva para CMV. Qual a conduta terapêutica mais adequada?",
+      correct: "Iniciar valganciclovir (ou ganciclovir) conforme protocolo de CMV sintomático e acompanhamento audiológico/oftalmológico",
       wrongs: [
-        "Fenobarbital de manutenção sem avaliação neurológica estruturada",
-        "Bicarbonato contínuo como terapia neuroprotetora isolada",
-        "Observação exclusiva em alojamento conjunto sem monitoramento"
+        "Apenas cuidados de suporte, pois não há tratamento antiviral eficaz",
+        "Pirimetamina + sulfadiazina como na toxoplasmose, sem antiviral específico",
+        "Isolamento aéreo estrito por 6 meses e suspender aleitamento sempre",
+        "Antibiótico de amplo espectro por 21 dias como tratamento curativo"
       ],
-      explain: "Encefalopatia hipóxico-isquêmica moderada/grave com critérios temporais pode se beneficiar de hipotermia terapêutica iniciada precocemente. Bicarbonato não é neuroproteção. Alojamamento conjunto é inadequado nesse perfil.",
-      trap: "Focar só em anticonvulsivante e esquecer a janela da hipotermia."
+      explain: "CMV congênito sintomático com acometimento do SNC indica antiviral (valganciclovir oral tipicamente) e seguimento de audição/visão. Esquema de toxoplasmose não se aplica. Aleitamento em CMV materno é discutido caso a caso; antibiótico não trata CMV.",
+      trap: "Usar o esquema de toxoplasmose para todo TORCH sem identificar o agente."
     },
     {
-      theme: "Infecção congênita",
-      stem: "RN pequeno para idade gestacional, microcefalia, petéquias, hepatoesplenomegalia e calcificações cerebrais periventriculares. Qual agente é o mais provável?",
-      correct: "Citomegalovírus",
+      theme: "Sífilis congênita",
+      stem: "RN a termo, mãe com VDRL 1:32 no parto, tratada com penicilina benzatina incompleta (1 dose há 10 dias). RN: VDRL 1:16, exame físico normal, liquor sem alterações, Rx de ossos longos normal. Qual a conduta recomendada?",
+      correct: "Tratar com penicilina cristalina ou procaína conforme protocolo de sífilis congênita e notificar",
       wrongs: [
-        "Streptococcus do grupo B",
-        "Vírus sincicial respiratório",
-        "Staphylococcus aureus comunitário"
+        "Alta sem tratamento, pois o exame físico é normal",
+        "Tratar apenas com azitromicina oral por 5 dias",
+        "Usar ceftriaxona intramuscular única e liberar",
+        "Aguardar VDRL mensal e tratar só se título subir"
       ],
-      explain: "A combinação de CIUR, microcefalia, petéquias, hepatoesplenomegalia e calcificações periventriculares é clássica de CMV congênito. SGB e estafilococo causam sepse perinatal/pós-natal sem esse padrão malformativo-calcificante.",
-      trap: "Assumir SGB diante de qualquer doença neonatal grave, mesmo com estigmas congênitos."
-    },
-    {
-      theme: "Triagem neonatal",
-      stem: "No teste do pezinho coletado no 3º dia, TSH está muito elevado e T4 livre baixo. Qual a melhor conduta?",
-      correct: "Confirmar com dosagens séricas e iniciar levotiroxina precocemente após confirmação/conforme protocolo",
-      wrongs: [
-        "Repetir o pezinho apenas com 6 meses de vida",
-        "Iniciar iodo radioativo diagnóstico imediatamente",
-        "Aguardar sintomas clínicos de mixedema para tratar"
-      ],
-      explain: "Hipotireoidismo congênito exige confirmação e reposição precoce de levotiroxina para proteger o neurodesenvolvimento. Esperar sintomas ou adiar meses causa dano irreversível.",
-      trap: "Aguardar 'confirmação clínica' antes de tratar, perdendo a janela crítica."
-    },
-    {
-      theme: "Aleitamento / hipoglicemia",
-      stem: "RN filho de mãe com diabetes gestacional, 2 horas de vida, sonolento e com tremor fino. Glicemia capilar 28 mg/dL. Qual a conduta mais adequada agora?",
-      correct: "Oferecer leite (ou glicose oral conforme protocolo) e reavaliar; se sintomático grave ou refratário, glicose EV",
-      wrongs: [
-        "Aguardar a próxima mamada programada em 3 horas sem intervenção",
-        "Administrar insulina regular subcutânea",
-        "Indicar jejum absoluto por 12 horas para 'descanso pancreático'"
-      ],
-      explain: "Filho de mãe diabética tem risco de hipoglicemia hiperinsulinêmica. Valores baixos com sintomas exigem correção imediata e reavaliação. Insulina agrava o quadro; jejum prolongado é inadequado.",
-      trap: "Normalizar tremor como 'imaturidade' e adiar a medida da glicemia/correção."
+      explain: "Tratamento materno incompleto/inadequado próximo ao parto configura RN de risco: mesmo assintomático, trata-se como sífilis congênita segundo protocolo (penicilina parenteral) e notificação. Azitromicina/ceftriaxona única não substituem o esquema neonatal padrão.",
+      trap: "Liberar RN assintomático sem tratar quando a mãe não foi adequadamente tratada."
     },
     {
       theme: "Enterocolite necrosante",
-      stem: "Prematuro de 29 semanas, 10º dia, em progressão de dieta enteral, evolui com distensão, resíduos biliosos, sangue nas fezes e pneumatose intestinal na radiografia. Melhor conduta inicial?",
-      correct: "Jejuar, descompressão gástrica, antibióticos e suporte intensivo com acompanhamento radiológico",
+      stem: "RN pré-termo 30 semanas, 18 dias de vida, em dieta enteral progressiva. Apresenta distensão abdominal, resíduos biliosos, apneia e sangue oculto nas fezes. PA 58/32 mmHg, FC 178 bpm, SatO2 91% em CPAP. Rx: pneumatose intestinal, sem pneumoperitônio. Qual a melhor conduta inicial?",
+      correct: "Jejuar, sonda gástrica aberta, antibióticos EV, suporte hemodinâmico/ventilatório e avaliação cirúrgica seriada",
       wrongs: [
-        "Aumentar o volume da dieta para 'estimular o intestino'",
-        "Alta precoce com fórmula hipercalórica exclusiva",
-        "Corticoterapia sistêmica empírica como tratamento definitivo"
+        "Aumentar volume da dieta para estimular peristaltismo",
+        "Apenas probiótico oral e manter dieta plena",
+        "Laparotomia imediata em todos os casos com pneumatose",
+        "Alta com dieta elementar e retorno ambulatorial em 48 h"
       ],
-      explain: "Sinais clínicos e radiológicos de enterocolite necrosante pedem suspensão da dieta, suporte, antibióticos e vigilância de indicação cirúrgica. Aumentar dieta piora a isquemia/inflamação intestinal.",
-      trap: "Insistir em alimentação enteral perante resíduos biliosos e pneumatose."
+      explain: "Suspeita de ECN: jejum, descompressão, antibióticos, suporte e imagem seriada. Cirurgia urgente tipicamente se perfuração/necrose refratária; pneumatose isolada não manda operar de rotina. Aumentar dieta agrava.",
+      trap: "Operar automaticamente por pneumatose ou insistir em dieta na ECN suspeita."
     },
     {
-      theme: "Hiperbilirrubinemia",
-      stem: "RN a termo, 4º dia, bilirrubina total em nível de exsanguineotransfusão pelo nomograma, com sinais de encefalopatia bilirrubínica inicial. Além da fototerapia intensiva, qual medida deve ser preparada?",
-      correct: "Exsanguineotransfusão em ambiente adequado",
+      theme: "Icterícia e aleitamento",
+      stem: "RN a termo, 5 dias, aleitamento materno exclusivo com pega inadequada, perda ponderal de 12% do peso de nascimento, diurese reduzida, BT 18,5 mg/dL (quase toda indireta), Coombs negativo, Hb 15,2 g/dL. Qual a melhor conduta?",
+      correct: "Fototerapia conforme limiar, otimizar aleitamento (ou suplementar se necessário) e reavaliar peso, diurese e bilirrubina",
       wrongs: [
-        "Apenas observação com retorno ambulatorial em 72 horas",
-        "Colecistectomia de urgência",
-        "Suspensão definitiva do aleitamento materno para sempre"
+        "Suspender definitivamente o aleitamento materno e indicar fórmula exclusiva",
+        "Exsanguineotransfusão imediata sem tentativa de fototerapia",
+        "Observação domiciliar sem fototerapia por ser 'icterícia do leite'",
+        "Iniciar fenobarbital oral como primeira linha para baixar bilirrubina"
       ],
-      explain: "Limiar de exsanguineotransfusão e/ou sinais neurológicos exigem ET sob fototerapia intensiva. Colecistectomia não trata hiperbilirrubinemia neonatal. Suspensão permanente do aleitamento não é a resposta.",
-      trap: "Subestimar icterícia intensa no termo por achar que 'sempre resolve com sol/fototerapia leve'."
+      explain: "Quadro de icterícia por privação/ falha de estabelecimento do aleitamento: fototerapia se limiar atingido + suporte à amamentação e hidratação. Não se suspende aleitamento definitivamente. Exsanguineotransfusão segue limiares específicos. Fenobarbital não é primeira linha.",
+      trap: "Confundir icterícia por privação com icterícia do leite materno e liberar sem fototerapia."
     },
     {
-      theme: "Distúrbio metabólico",
-      stem: "RN de 5 dias com vômitos, letargia, odor incomum e acidose metabólica com anion gap elevado após introdução de fórmula. Qual conduta diagnóstica inicial é mais útil?",
-      correct: "Solicitar amônia, gasometria, glicemia e aminoácidos/acilcarnitinas conforme protocolo de erro inato",
+      theme: "Screening neonatal",
+      stem: "RN de 7 dias retorna com teste do pezinho solicitando repetição por TSH 18 mUI/L (limítrofe). Está em aleitamento materno, afebril, exame normal. Qual a conduta mais adequada?",
+      correct: "Repetir TSH e T4 livre com urgência e encaminhar à endocrinologia se confirmado anormal; não aguardar sintomas",
       wrongs: [
-        "Tratar apenas como refluxo fisiológico com espessante",
-        "Indicar fundoplicatura de Nissen imediata",
-        "Prescrever antibiótico único sem investigação metabólica"
+        "Aguardar 3 meses, pois hipotireoidismo congênito sempre tem bócio evidente",
+        "Iniciar levotiroxina só após atraso de marco motor",
+        "Ignorar o resultado por estar em aleitamento materno",
+        "Solicitar apenas ultrassom de tireoide e observar sem hormônios séricos"
       ],
-      explain: "Descompensação neonatal precoce com acidose de anion gap e alteração do sensorium levanta erro inato do metabolismo. Painel metabólico urgente guia suporte e dieta. Refluxo isolado não explica acidose grave.",
-      trap: "Atribuir vômitos neonatais sempre a refluxo e atrasar a investigação metabólica."
+      explain: "Rastreio alterado exige confirmação laboratorial rápida e tratamento precoce do hipotireoidismo congênito para preservar neurodesenvolvimento. Sintomas clínicos tardios não devem guiar o início. US não substitui dosagem hormonal.",
+      trap: "Esperar sinais clínicos clássicos antes de investigar/tratar hipotireoidismo congênito."
     },
     {
-      theme: "Oftalmia neonatal",
-      stem: "RN de 7 dias com secreção ocular purulenta bilateral intensa e edema palpebral. Qual a hipótese etiológica mais preocupante e o foco do manejo?",
-      correct: "Gonococo; antibiótico sistêmico e avaliação de complicações, além de higiene ocular",
+      theme: "Distúrbio ácido-básico no RN",
+      stem: "RN de 2 dias, vômitos biliosos intermitentes, distensão. PA 70/40, FC 165, FR 55, SatO2 97%. Gasometria: pH 7,28, HCO3 14, BE −10, Na 130, K 2,9, Cl 90. Rx: dupla bolha. Qual o diagnóstico e a conduta iniciais?",
+      correct: "Suspeita de atresia duodenal; jejum, SNG, hidratação com reposição de eletrólitos e avaliação cirúrgica",
       wrongs: [
-        "Alergia ao shampoo; apenas suspender produtos tópicos",
-        "Obstrução isolada do ducto lacrimal; massagem exclusiva por 2 meses",
-        "Infecção fúngica exclusiva; antifúngico tópico empírico"
+        "Gastroenterite viral; plano C oral e alta em 12 horas",
+        "Alergia ao leite; fórmula extensamente hidrolisada e observação ambulatorial",
+        "Sepse neonatal sem imagem; só antibiótico e dieta plena",
+        "Refluxo fisiológico; espessar leite e elevar cabeceira"
       ],
-      explain: "Secreção purulenta intensa na primeira semana sugere oftalmia gonocócica, que pode perfurar a córnea; exige tratamento sistêmico. Obstrução lacrimal costuma ser mais tardia e menos inflamatória aguda.",
-      trap: "Tratar toda secreção ocular neonatal como dacriocistite/obstrução simples."
+      explain: "Vômitos biliosos + dupla bolha sugerem obstrução duodenal (atresia). Manejo: estabilização hidroeletrolítica, descompressão e cirurgia. Plano C oral, troca de fórmula ou refluxo não abordam emergência cirúrgica neonatal.",
+      trap: "Tratar vômito bilioso no RN como refluxo ou gastroenterite banal."
     },
     {
-      theme: "Vitamina K / hemorragia",
-      stem: "RN de 3 semanas, parto domiciliar sem profilaxia ao nascer, apresenta sangramento do coto umbilical e hematomas. Coagulograma com TP muito alongado. Qual a causa mais provável?",
-      correct: "Doença hemorrágica do RN por deficiência de vitamina K",
+      theme: "Oxigenoterapia e alvo SpO2",
+      stem: "RN pré-termo 29 semanas, 10 dias de vida, em CPAP. SpO2 oscila 96–99% com FiO2 0,35. Hemoglobina 12 g/dL. Qual ajuste é o mais apropriado?",
+      correct: "Reduzir FiO2 para manter SpO2 na faixa alvo do prematuro, evitando hiperóxia sustentada",
       wrongs: [
-        "Hemofilia A sem necessidade de investigação familiar",
-        "Púrpura trombocitopênica imune com plaquetas normais",
-        "Escorbuto por deficiência de vitamina C materna aguda"
+        "Elevar FiO2 para 0,60 para manter SpO2 sempre 100%",
+        "Suspender CPAP abruptamente e manter em ar ambiente sem monitoramento",
+        "Indicar transfusão imediata só porque SpO2 não está em 100%",
+        "Iniciar óxido nítrico por SpO2 > 95% em CPAP"
       ],
-      explain: "Ausência de vitamina K ao nascer e sangramento tardio com TP alongado são típicos de doença hemorrágica por deficiência de K. PTI altera plaquetas; hemofilia tem outro padrão e história.",
-      trap: "Pensar primeiro em hemofilia diante de qualquer sangramento neonatal, sem olhar profilaxia de K e TP."
+      explain: "Em prematuros, alvos de SpO2 evitam hiperóxia (risco de ROP/lesão oxidativa) e hipóxia. SpO2 persistentemente alta com FiO2 elevada pede redução de oxigênio. Transfusão e NO têm outras indicações.",
+      trap: "Perseguir SpO2 100% no prematuro como se fosse meta universal."
+    },
+    {
+      theme: "Ictericia e infecção",
+      stem: "RN de 20 dias, icterícia, letargia, recusa alimentar. T 38,1 °C, FC 170, FR 60, SatO2 95%. BT 14 (BD 4,2), leucócitos 18.000, PCR 65 mg/L, EAS com piúria. Qual a conduta inicial mais adequada?",
+      correct: "Internar, coletar culturas (incluindo urina), iniciar antibiótico EV e investigar colestase associada a sepse/ITU",
+      wrongs: [
+        "Fototerapia domiciliar exclusiva sem investigação infecciosa",
+        "Apenas troca de leite para fórmula sem antibiótico",
+        "Alta com antitérmico e retorno em 1 semana",
+        "Solicitar apenas ultrassom de vias biliares e observar ambulatorialmente"
+      ],
+      explain: "Icterícia com BD elevada + sinais sistêmicos em RN sugere sepse/ITU até prova em contrário. Exige internação, culturas e antibiótico; fototerapia isolada não trata a causa. Colestase pode secundar infecção e também precisa investigação.",
+      trap: "Tratar só a bilirrubina e ignorar sepse/ITU no RN ictérico febril."
     }
   ];
   neo.forEach((q, i) => {
@@ -305,732 +335,790 @@ function buildBank () {
   /** @type {RawQ[]} */
   const puer = [
     {
-      theme: "Vacinação",
-      stem: "Lactente de 2 meses, hígido, comparece para consulta de rotina. Além das vacinas do calendário da faixa etária, a mãe pergunta se pode aplicar vacinas inativadas no mesmo dia. Qual a orientação correta?",
-      correct: "Vacinas do calendário podem ser aplicadas na mesma visita conforme indicação, respeitando sites e técnicas",
+      theme: "Imunização — calendário",
+      stem: "Lactente de 4 meses, saudável, recebe hoje a segunda dose de pentavalente e VIP. A mãe pergunta sobre a vacina contra rotavírus: a primeira dose foi aos 2 meses; hoje está no limite da idade. Qual a orientação correta?",
+      correct: "Aplicar a segunda dose de rotavírus hoje, respeitando intervalo mínimo e idade máxima do esquema",
       wrongs: [
-        "Nunca se deve aplicar mais de uma vacina no mesmo dia",
-        "Só é permitido combinar vacinas se houver febre no momento",
-        "Vacinas inativadas exigem intervalo mínimo de 90 dias entre si"
+        "Não aplicar rotavírus após os 2 meses em nenhuma hipótese",
+        "Reiniciar o esquema completo de rotavírus aos 6 meses",
+        "Substituir rotavírus por VIP adicional no mesmo dia",
+        "Adiar todas as vacinas injetáveis por 30 dias após rotavírus"
       ],
-      explain: "No calendário, múltiplas vacinas podem ser administradas na mesma consulta se indicadas. Intervalos longos obrigatórios aplicam-se sobretudo a certas combinações de vacinas vivas, não a todas as inativadas.",
-      trap: "Acreditar que 'uma vacina por dia' reduz eventos adversos de forma geral."
+      explain: "O esquema de rotavírus tem idade máxima para cada dose; a 2ª dose pode ser aplicada se ainda dentro da janela e com intervalo adequado após a 1ª. Não se reinicia tardiamente fora da idade. VIP não substitui rotavírus. Vacinas injetáveis do calendário podem coexistir conforme normas.",
+      trap: "Achar que rotavírus só existe dose única aos 2 meses e perder a segunda dose ainda elegível."
     },
     {
-      theme: "Vacinação",
-      stem: "Criança de 12 meses HIV exposta, não infectada, com esquema em dia. A mãe questiona a vacina tríplice viral. Qual a melhor conduta?",
-      correct: "Aplicar SCR conforme calendário, pois criança não infectada não tem contraindicação por esse motivo",
+      theme: "Aleitamento materno",
+      stem: "Nutriz de 25 dias refere 'leite fraco': bebê mama 10–12×/dia, diurese 6 fraldas/dia, evacuação amarela pastosa, ganho de 28 g/dia. Exame das mamas normal, pega adequada. Qual a melhor conduta?",
+      correct: "Manter aleitamento materno exclusivo, tranquilizar e reforçar sinais de ingestão adequada",
       wrongs: [
-        "Contraindicar definitivamente todas as vacinas vivas para sempre",
-        "Substituir SCR por imunoglobulina mensal de rotina",
-        "Adiar SCR até os 10 anos independentemente do status"
+        "Introduzir fórmula de complemento de rotina a cada mamada",
+        "Solicitar densitometria do leite materno antes de manter AME",
+        "Indicar chá de erva-doce entre as mamadas para 'fortalecer'",
+        "Suspender noturnas para 'aumentar estoque diurno'"
       ],
-      explain: "Exposição ao HIV sem infecção não contraindica SCR. Imunodeficiência grave sintomática é o cenário de cautela com vacinas vivas, não a mera exposição resolvida.",
-      trap: "Contraindicar vacinas vivas em toda criança 'exposta ao HIV', sem distinguir infectada/imunossuprimida."
-    },
-    {
-      theme: "Crescimento",
-      stem: "Menino de 18 meses com peso no percentil 3 e estatura no percentil 50, bom desenvolvimento, exame abdominal normal e história alimentar restrita em calorias. Qual a interpretação mais provável?",
-      correct: "Déficit ponderal predominantemente nutricional; reforçar oferta calórica e acompanhar curva",
-      wrongs: [
-        "Doença celíaca confirmada sem necessidade de exames",
-        "Deficiência de GH como primeira hipótese isolada",
-        "Hipotireoidismo congênito não tratado como causa exclusiva"
-      ],
-      explain: "Peso baixo com estatura preservada e exame normal sugere ingestão insuficiente. Déficit de GH e hipotireoidismo costumam afetar mais a estatura. Celíaca exige investigação dirigida se houver sinais.",
-      trap: "Ir direto a endocrinopatia rara sem avaliar história alimentar e proporcionalidade da curva."
-    },
-    {
-      theme: "Desenvolvimento",
-      stem: "Lactente de 9 meses não senta sem apoio, não transferem objetos e não balbucia. Gestação e peri‑parto sem intercorrências relatadas. Qual a melhor conduta?",
-      correct: "Reconhecer atraso global e iniciar avaliação diagnóstica e intervenção precoce",
-      wrongs: [
-        "Aguardar os 18 meses porque 'cada criança tem seu tempo' sem avaliação",
-        "Prescrever apenas polivitamínico e reavaliar em 1 ano",
-        "Diagnosticar autismo de forma definitiva só por ausência de balbucio"
-      ],
-      explain: "Marcos ausentes aos 9 meses exigem investigação e estimulação/reabilitação precoces. Esperar passivamente perde janela terapêutica. Autismo não se fecha só por um marco isolado.",
-      trap: "Normalizar atrasos evidentes com a frase 'cada um no seu tempo'."
-    },
-    {
-      theme: "Aleitamento",
-      stem: "Puérpera no 5º dia refere fissura mamilar e dor à mamada; o bebê ganha peso adequadamente, mas a pega é superficial. Melhor conduta?",
-      correct: "Corrigir a pega/posição e manter aleitamento, com manejo da fissura",
-      wrongs: [
-        "Suspender o peito e iniciar fórmula integral imediatamente",
-        "Indicar antibiótico materno de amplo espectro de rotina",
-        "Orientar intervalo fixo de 6/6 horas entre mamadas"
-      ],
-      explain: "Fissura com pega inadequada melhora com técnica e suporte. Suspensão desnecessária do peito e intervalos rígidos prejudicam o aleitamento. Antibiótico não é rotina sem mastite infecciosa.",
-      trap: "Trocar para fórmula na primeira dor mamilar, sem ajustar a pega."
+      explain: "Sinais de boa ingestão (diurese, fezes, ganho ponderal, pega) afastam 'leite fraco'. Complemento desnecessário, chás e suspensão de mamadas noturnas prejudicam o AME. Não existe densitometria clínica rotineira do leite para essa queixa.",
+      trap: "Introduzir fórmula por percepção materna de 'leite fraco' apesar de crescimento adequado."
     },
     {
       theme: "Introdução alimentar",
-      stem: "Lactente de 6 meses em AME, prontidão adequada. A família pergunta sobre consistência e alérgenos. Qual orientação é a mais correta?",
-      correct: "Iniciar complementar com alimentos em papa/amassados e introduzir alérgenos precocemente de forma segura",
+      stem: "Lactente de 6 meses e 10 dias, AME até agora, peso no percentil 50. A mãe pergunta como iniciar alimentação complementar. Qual orientação é a mais adequada?",
+      correct: "Iniciar papas salgadas e frutas, manter leite materno, oferecer água nos intervalos e evitar mel e açúcar",
       wrongs: [
-        "Manter só líquidos até 12 meses para evitar engasgo",
-        "Evitar absolutamente ovo e amendoim até os 5 anos",
-        "Oferecer mel como adoçante natural desde os 6 meses"
+        "Manter só leite materno até 12 meses, sem nenhum alimento",
+        "Iniciar sucos industrializados adocicados antes das papas",
+        "Oferecer mel puro diariamente para prevenir alergia",
+        "Substituir todas as mamadas por fórmula e papinha doce"
       ],
-      explain: "Aos 6 meses inicia-se alimentação complementar em consistência adequada; introdução precoce de alérgenos pode reduzir alergia em risco. Mel é contraindicado abaixo de 1 ano pelo botulismo.",
-      trap: "Atrasar alérgenos 'por precaução' e oferecer mel precocemente."
+      explain: "Aos 6 meses inicia-se alimentação complementar mantendo AM; água é oferecida; mel é contraindicado <1 ano (botulismo); açúcar/sucos industrializados devem ser evitados. AME exclusivo além de 6 meses não cobre necessidades de ferro/energia.",
+      trap: "Atrasar indefinidamente a introdução alimentar ou oferecer mel precocemente."
     },
     {
-      theme: "Vitamina D / ferro",
-      stem: "RN a termo em AME exclusivo. Qual suplementação preventiva é recomendada na puericultura brasileira típica?",
-      correct: "Vitamina D desde os primeiros dias e ferro a partir de cerca de 6 meses (ou conforme protocolo local para termo)",
+      theme: "Crescimento e desnutrição",
+      stem: "Pré-escolar de 3 anos: peso/idade −2,3 escores-z, estatura/idade −1,0, IMC/idade −2,1. Sem edema. Apetite reduzido, moradia com insegurança alimentar. Qual classificação e conduta inicial?",
+      correct: "Desnutrição aguda (magreza); avaliar complicações, orientar reabilitação nutricional e abordar segurança alimentar",
       wrongs: [
-        "Nenhuma suplementação se o peito for exclusivo",
-        "Vitamina A megadose mensal desde o nascimento",
-        "Cálcio endovenoso semanal de rotina"
+        "Obesidade grau I; iniciar restrição calórica rigorosa",
+        "Apenas baixa estatura familiar; alta sem intervenção",
+        "Kwashiorkor típico; albumina EV de rotina em ambulatório",
+        "Diagnóstico exclusivo de doença celíaca sem investigação clínica"
       ],
-      explain: "AME não fornece vitamina D suficiente; a suplementação precoce é padrão. Ferro profilático no termo costuma iniciar perto dos 6 meses (prematuros mais cedo). Megadoses e cálcio EV não são rotina.",
-      trap: "Achar que aleitamento exclusivo dispensa qualquer suplemento."
+      explain: "IMC baixo com estatura relativamente preservada sugere desnutrição aguda/magreza. Conduta: avaliar gravidade, realimentação segura e determinantes sociais. Não é obesidade nem kwashiorkor (sem edema). Celíaca exige investigação dirigida, não rótulo automático.",
+      trap: "Olhar só peso/idade e chamar de 'baixa estatura' sem analisar IMC e contexto."
     },
     {
-      theme: "Obesidade",
-      stem: "Escolar de 8 anos com IMC acima do percentil 97, acantose nigricans e história familiar de DM2. Qual o próximo passo mais adequado na abordagem inicial?",
-      correct: "Avaliar comorbidades (glicemia/perfil metabólico) e iniciar mudanças intensivas de estilo de vida",
+      theme: "Obesidade infantil",
+      stem: "Escolar de 9 anos, IMC percentil 97, PA 118/76 mmHg (percentil elevado para idade/altura), acanthosis nigricans cervical. Glicemia jejum 98 mg/dL, HDL 32 mg/dL. Qual a melhor conduta inicial?",
+      correct: "Mudança intensiva de estilo de vida familiar, rastrear comorbidades e reavaliar PA; fármacos só em casos selecionados",
       wrongs: [
-        "Indicar bariátrica imediatamente como primeira medida",
-        "Prescrever insulina basal mesmo com glicemia normal",
-        "Ignorar o IMC porque a criança ainda está em crescimento"
+        "Iniciar orlistate e metformina de rotina em toda criança com IMC > P95",
+        "Cirurgia bariátrica imediata sem tentativa de mudança de hábitos",
+        "Dieta da moda cetogênica sem acompanhamento e sem investigar PA",
+        "Apenas orientar 'comer menos' e retorno em 2 anos"
       ],
-      explain: "Obesidade com sinais de resistência insulínica pede rastreio de comorbidades e intervenção comportamental familiar. Cirurgia e insulina não são primeira linha nesse cenário inicial.",
-      trap: "Esperar o fim do crescimento para abordar obesidade grave."
+      explain: "Base do tratamento é intervenção familiar em dieta/atividade, com rastreio de PA, glicose/lipídios e esteatose. Fármacos e cirurgia são excepcionais e criteriosos. Intervalo de 2 anos é inadequado diante de risco cardiometabólico.",
+      trap: "Medicalizar de imediato ou minimizar obesidade com orientação vaga sem seguimento."
     },
     {
-      theme: "Sono / choro",
-      stem: "Lactente de 6 semanas chora intensamente no fim da tarde, ganha peso bem, exame normal e episódios autolimitados. Pais exaustos. Melhor conduta?",
-      correct: "Orientar sobre cólica/choro fisiológico, técnicas de acalento e sinais de alarme para retorno",
+      theme: "Desenvolvimento neuropsicomotor",
+      stem: "Lactente de 9 meses não senta sem apoio, não transferindo objetos, não balbucia sílabas. Reflexo de Moro ainda presente. Perímetro cefálico no P50. Qual a conduta mais adequada?",
+      correct: "Reconhecer atraso global, investigar causas e encaminhar precocemente para estimulação/reabilitação",
       wrongs: [
-        "Solicitar imediatamente TC de crânio sem sinais focais",
-        "Trocar para fórmula de soja sem avaliação",
-        "Iniciar opioide antitussígeno para sedar o choro"
+        "Aguardar 18 meses, pois 'cada criança tem seu tempo' sem avaliação",
+        "Diagnosticar autismo definitivamente só por atraso motor",
+        "Indicar contenção de Moro com faixa torácica domiciliar",
+        "Solicitar apenas EEG e iniciar anticonvulsivante empírico"
       ],
-      explain: "Choro do fim da tarde com crescimento e exame normais é compatível com cólica. Educação e suporte são a base; exames de imagem e sedativos são inadequados.",
-      trap: "Medicalizar choro fisiológico com exames invasivos ou mudança alimentar precoce."
+      explain: "Marcos atrasados + persistência de reflexo primitivo exigem investigação e intervenção precoce. Esperar passivamente piora prognóstico. Autismo não se fecha só por motor; anticonvulsivante empírico sem indicação é inadequado.",
+      trap: "Normalizar atraso evidente com 'cada um tem seu tempo' e perder janela de intervenção."
     },
     {
-      theme: "Higiene / segurança",
-      stem: "Consulta de 4 meses: pais perguntam sobre transporte no carro e posição para dormir. Qual orientação é a mais segura?",
-      correct: "Sono em decúbito dorsal em superfície firme e uso de bebê-conforto/cadeirinha adequada no banco traseiro",
+      theme: "Vitamina D e raquitismo",
+      stem: "Lactente de 10 meses, pele escura, pouca exposição solar, AME + alimentação irregular. Apresenta alargamento de punhos e atraso de marcha. Ca 8,2 mg/dL, P 3,1 mg/dL, FA 980 U/L, 25(OH)D 8 ng/mL. Qual a melhor conduta?",
+      correct: "Tratar deficiência de vitamina D com reposição terapêutica, cálcio conforme necessidade e orientar prevenção",
       wrongs: [
-        "Dormir de bruços para reduzir refluxo, sem outras medidas",
-        "Viajar no colo do adulto com cinto do adulto envolvendo os dois",
-        "Usar travesseiros e protetores soltos no berço para 'aconchego'"
+        "Apenas aumentar banho de sol sem reposição farmacológica",
+        "Paratireoidectomia urgente como primeira medida",
+        "Corticoterapia prolongada para reduzir FA",
+        "Imobilização gessada bilateral por 3 meses sem tratamento clínico"
       ],
-      explain: "Decúbito dorsal e berço seguro reduzem risco de morte súbita. Cadeirinha correta é obrigatória; colo com cinto do adulto é perigoso. Objetos soltos no berço aumentam risco.",
-      trap: "Colocar o bebê de bruços 'para não engasgar com refluxo'."
-    },
-    {
-      theme: "Triagem / saúde bucal",
-      stem: "Criança de 12 meses ainda sem primeira consulta odontológica, usa mamadeira noturna com leite adoçado. Qual a melhor orientação?",
-      correct: "Encaminhar ao odontopediatra e suspender açúcar/mamadeira noturna cariogênica",
-      wrongs: [
-        "Aguardar a troca da dentição permanente para cuidar dos dentes",
-        "Indicar refrigerante 'diet' à noite como substituto",
-        "Prescrever antibiótico mensal para prevenir cáries"
-      ],
-      explain: "A primeira avaliação odontológica deve ser precoce; mamadeira noturna açucarada favorece cárie de estresse precoce. Antibiótico não previne cárie.",
-      trap: "Adiar cuidado bucal até a dentição permanente."
+      explain: "Clínica + laboratório de raquitismo carencial: reposição de vitamina D e cálcio, além de orientação preventiva. Sol isolado é insuficiente na deficiência instalada. Cirurgia/corticoide/gesso não tratam a causa.",
+      trap: "Tratar raquitismo só com 'mais sol' sem reposição adequada de vitamina D."
     },
     {
       theme: "Anemia ferropriva",
-      stem: "Lactente de 14 meses alimentado predominantemente com leite de vaca integral e poucos alimentos ferrosos apresenta palidez e Hb 8,9 g/dL, VCM baixo. Melhor conduta inicial?",
-      correct: "Iniciar reposição de ferro e orientar diversificação alimentar, investigando resposta",
+      stem: "Lactente de 14 meses, leite de vaca integral 800 mL/dia, pouco consumo de carnes. Palidez, Hb 8,9 g/dL, VCM 68 fL, RDW alto, ferritina 8 ng/mL. Qual a conduta terapêutica inicial?",
+      correct: "Sulfato ferroso terapêutico, orientação alimentar e investigar sangramento oculto se não houver resposta esperada",
       wrongs: [
-        "Transfundir concentrado de hemácias de rotina por Hb < 10",
-        "Indicar medula óssea imediata sem tentativa terapêutica",
-        "Prescrever apenas vitamina B12 intramuscular sem ferro"
+        "Transfusão de hemácias de rotina em todo Hb < 10 g/dL ambulatorial",
+        "Vitamina B12 intramuscular sem avaliar ferro",
+        "Suspender todos os alimentos e manter só leite de vaca",
+        "Ácido fólico isolado como tratamento definitivo"
       ],
-      explain: "Perfil microcítico com dieta pobre em ferro e leite de vaca excessivo é ferropriva clássica. Ferro terapêutico e dieta são a base; transfusão e mielograma não são primeiro passo se estável.",
-      trap: "Transfundir anemia ferropriva crônica estável só pelo número da Hb."
+      explain: "Perfil microcítico com ferritina baixa = ferropriva: ferro oral terapêutico + dieta. Transfusão é para instabilidade/anemia grave selecionada. B12/folato não são primeira linha nesse perfil. Leite excessivo é fator de risco a corrigir.",
+      trap: "Transfundir anemia ferropriva estável ou tratar com vitamina errada."
+    },
+    {
+      theme: "Sono e cólicas",
+      stem: "Lactente de 6 semanas, choro intenso no fim da tarde, ganho ponderal adequado, exame normal, episódios <3 h/dia. Mãe ansiosa pede troca de leite. Qual a melhor conduta?",
+      correct: "Orientar cólica do lactente/periodo de choro fisiológico, suporte à família e manter AME se bem estabelecido",
+      wrongs: [
+        "Trocar imediatamente para fórmula de soja sem avaliação",
+        "Solicitar tomografia de crânio de rotina",
+        "Iniciar opioide oral para sedação noturna",
+        "Diagnosticar refluxo grave e indicar fundoplicatura"
+      ],
+      explain: "Choro paroxístico com exame e crescimento normais sugere cólica/periodo de choro; manejo é suporte e evitar intervenções desnecessárias. Trocas empíricas, imagem neurológica, sedação e cirurgia são inadequados nesse cenário.",
+      trap: "Medicalizar cólica com troca precoce de leite ou exames invasivos."
+    },
+    {
+      theme: "Saúde bucal e hábitos",
+      stem: "Pré-escolar de 2 anos usa mamadeira noturna com leite adocicado, múltiplas cáries em dentes anteriores. Qual a orientação prioritária?",
+      correct: "Suspender mamadeira noturna adocicada, higiene oral, avaliação odontopediátrica e orientar risco de cárie de mamadeira",
+      wrongs: [
+        "Manter mamadeira até 5 anos para conforto emocional",
+        "Prescrever antibiótico contínuo para 'esterilizar' a boca",
+        "Indicar extração de todos os dentes decíduos imediatamente em casa",
+        "Ignorar porque dente de leite 'não importa'"
+      ],
+      explain: "Cárie de mamadeira exige mudança de hábito (sem açúcar noturno), higiene e cuidado odontológico. Antibiótico contínuo e extrações caseiras são inadequados. Dentes decíduos importam para função, dor e sucessores.",
+      trap: "Minimizar cárie em decíduos ou manter mamadeira adocicada noturna."
+    },
+    {
+      theme: "Acidentes e prevenção",
+      stem: "Lactente de 11 meses engatinhando em domicílio. Na consulta de puericultura, além do calendário vacinal em dia, qual orientação preventiva é prioritária?",
+      correct: "Proteção de escadas/tomadas, evitar objetos pequenos, supervisão no banho e não usar andador",
+      wrongs: [
+        "Incentivar andador para acelerar marcha",
+        "Oferecer amendoim inteiro como snack diário",
+        "Deixar sozinho na banheira com 'pouca água'",
+        "Guardar medicamentos em prateleira baixa da cozinha"
+      ],
+      explain: "Na fase de exploração aumentam quedas, engasgos, afogamento e intoxicações. Andador eleva risco de trauma; sólidos redondos engasgam; banho exige supervisão; medicamentos devem ficar inacessíveis.",
+      trap: "Recomendar andador ou deixar ambiente inseguro por achar 'normal da idade'."
     },
     {
       theme: "Puberdade precoce",
-      stem: "Menina de 6 anos e 8 meses com telarca progressiva, aceleração estatural e idade óssea avançada. Qual o próximo passo mais adequado?",
-      correct: "Encaminhar para avaliação endocrinológica de puberdade precoce central vs periférica",
+      stem: "Menina de 7 anos e 2 meses com telarca bilateral e aceleração estatural. Idade óssea 9,5 anos. Sem lesão cutânea. Qual o próximo passo mais adequado?",
+      correct: "Encaminhar à endocrinologia pediátrica para investigar puberdade precoce central versus periférica",
       wrongs: [
-        "Apenas observar até os 12 anos sem investigação",
-        "Iniciar contraceptivo oral combinado imediatamente",
-        "Diagnosticar obesidade isolada e liberar sem exames"
+        "Apenas observar até 12 anos sem investigação",
+        "Iniciar anticoncepcional combinado oral de rotina",
+        "Indicar ooforectomia bilateral empírica",
+        "Prescrever GH para 'sincronizar' idade óssea"
       ],
-      explain: "Telarca + aceleração de crescimento antes de 8 anos exige investigação de puberdade precoce. Observação passiva pode comprometer altura final. ACO não é o tratamento específico.",
-      trap: "Normalizar telarca precoce como 'obesidade' sem avaliar eixo e idade óssea."
+      explain: "Telarca + avanço de idade óssea antes dos 8 anos exige avaliação de puberdade precoce. Observação passiva pode comprometer altura final. ACO, cirurgia empírica e GH não são condutas iniciais.",
+      trap: "Normalizar telarca aos 7 anos como 'variação' sem avaliar idade óssea/eixo."
     },
     {
       theme: "Enurese",
-      stem: "Menino de 7 anos com enurese noturna primária, diurnos secos, exame normal e sem poliúria. Família solicita 'exame de imagem urgente'. Melhor conduta?",
-      correct: "Orientar medidas comportamentais e considerar alarme/desmopressina conforme impacto, sem imagem de rotina",
+      stem: "Menino de 6 anos e meio, enurese noturna primária monossintomática, 4 noites/semana, exame físico normal, EAS normal. Pais punitivos. Qual a melhor conduta inicial?",
+      correct: "Orientação, evitar punição, restrigir líquidos à noite, diário miccional e considerar alarme/desmopressina conforme impacto",
       wrongs: [
-        "Solicitar urografia excretora e cistoscopia de imediato",
-        "Indicar cirúrgica de reimplante ureteral empírico",
-        "Restringir absolutamente líquidos por 24 h antes da escola"
+        "Urografia excretora e cistoscopia de rotina em todo caso",
+        "Antibiótico profilático contínuo sem ITU",
+        "Cateterismo vesical noturno diário",
+        "Diagnóstico de diabetes mellitus só pela enurese, sem glicemia"
       ],
-      explain: "Enurese monosintomática primária com exame normal não pede imagem invasiva inicial. Educação, alarme e, em casos selecionados, desmopressina são o caminho.",
-      trap: "Partir para investigação urológica invasiva sem critérios de alarme."
+      explain: "Enurese monossintomática: educação, medidas comportamentais e, se necessário, alarme ou desmopressina. Imagem invasiva e antibiótico sem ITU são desnecessários. Diabetes exige outros sinais/labs.",
+      trap: "Punir a criança ou investigar com exames invasivos de rotina."
     },
     {
-      theme: "Tela / comportamento",
-      stem: "Pré-escolar de 3 anos passa mais de 4 horas/dia em telas, com irritabilidade e atraso de linguagem. Qual a orientação mais adequada?",
-      correct: "Reduzir drasticamente o tempo de tela e estimular interação verbal presencial",
+      theme: "Triagem visual/auditiva",
+      stem: "Lactente de 3 meses sem sorriso social claro, não responde a sons altos, teste da orelhinha não realizado na maternidade. Qual a conduta?",
+      correct: "Solicitar potencial evocado/audiometria infantil com urgência e avaliar visão/interação; não aguardar fala",
       wrongs: [
-        "Aumentar desenhos educativos para compensar o atraso",
-        "Iniciar metilfenidato empírico por irritabilidade",
-        "Indicar internação psiquiátrica imediata"
+        "Esperar até 2 anos para ver se começa a falar",
+        "Indicar apenas aparelho auditivo sem diagnóstico etiológico/limiar",
+        "Tratar com antibiótico otológico empírico contínuo",
+        "Afastar surdez porque o perímetro cefálico é normal"
       ],
-      explain: "Excesso de tela associa-se a atraso de linguagem; a intervenção inicial é limitar exposição e enriquecer interação. Estimulante empírico é inadequado.",
-      trap: "Substituir interação humana por 'mais conteúdo educativo' em tela."
+      explain: "Ausência de resposta a sons e falta de triagem neonatal exigem avaliação auditiva precoce. Atraso de fala é consequência tardia. PC normal não exclui deficiência auditiva.",
+      trap: "Esperar a fala para investigar audição e perder a janela de intervenção precoce."
     },
     {
-      theme: "Calendário vacinal / atraso",
-      stem: "Criança de 4 anos chega sem carteira e a mãe refere 'quase nenhuma vacina'. Estado geral bom. Qual a melhor conduta?",
-      correct: "Iniciar esquema de atualização (catch-up) conforme calendário e idade, sem reiniciar do zero desnecessariamente",
+      theme: "Parasitoses e puericultura",
+      stem: "Pré-escolar de 4 anos, prurido anal noturno, sono agitado, exame perianal com irritação. Sem diarreia. Qual a conduta mais apropriada?",
+      correct: "Tratar enterobíase (ex.: mebendazol/albendazol conforme protocolo) e orientar higiene; considerar tratamento de conviventes",
       wrongs: [
-        "Aplicar todas as doses da vida no mesmo instante sem planejamento",
-        "Aguardar documentos escolares para qualquer vacina",
-        "Contraindicar vacinas porque o atraso 'anula' o benefício"
+        "Colonoscopia diagnóstica antes de qualquer tratamento",
+        "Metronidazol prolongado como primeira escolha para oxiúrus",
+        "Apenas corticoide tópico sem antiparasitário",
+        "Internação para ivermectina EV de rotina"
       ],
-      explain: "Atraso vacinal se corrige com catch-up por idade, priorizando proteção. Falta de caderneta não impede vacinação; doses podem ser registradas e agendadas de forma segura.",
-      trap: "Recusar vacinar até aparecer a caderneta antiga."
+      explain: "Prurido anal noturno é clássico de Enterobius: tratamento antiparasitário adequado + medidas de higiene e conviventes. Colonoscopia é desnecessária. Metronidazol não é de escolha; corticoide só mascara.",
+      trap: "Investigações invasivas antes do tratamento empírico bem indicado."
     },
     {
-      theme: "Prevenção de acidentes",
-      stem: "Família com criança de 2 anos pergunta sobre prevenção no domicílio. Qual medida tem maior impacto nessa faixa?",
-      correct: "Supervisionar, manter medicamentos/produtos de limpeza trancados e proteger escadas/tomadas",
+      theme: "Saúde do adolescente",
+      stem: "Adolescente de 15 anos, consulta de rotina, IMC adequado. Refere início de atividade sexual; solicita orientação. Qual abordagem é a mais adequada?",
+      correct: "Acolhimento confidencial conforme legislação, orientação sobre contracepção, ISTs e vacina HPV se pendente",
       wrongs: [
-        "Permitir álcool em gel ao alcance para 'higiene autônoma'",
-        "Deixar baldes com água no quintal para brincar",
-        "Guardar cloro em garrafa de refrigerante na cozinha baixa"
+        "Negar qualquer orientação sem presença obrigatória dos pais em todos os tópicos",
+        "Prescrever antibiótico contínuo como 'prevenção' de IST",
+        "Indicar DIU apenas após gestação prévia obrigatória",
+        "Desconsiderar vacina HPV por já ter vida sexual"
       ],
-      explain: "Intoxicações e afogamento doméstico são riscos centrais no toddler. Acesso a químicos e água acumulada deve ser bloqueado. Repackaging de cloro em garrafa de bebida é clássico de acidente.",
-      trap: "Subestimar afogamento em pequenos volumes de água e intoxicação por produtos domésticos."
+      explain: "Adolescentes têm direito a acolhimento e informação sobre saúde sexual, com confidencialidade nos limites legais. Profilaxia antibiótica contínua é inadequada. HPV ainda pode beneficiar; DIU não exige gestação prévia.",
+      trap: "Recusar cuidado confidencial ou achar que vida sexual impede vacina HPV."
     },
     {
-      theme: "Crescimento / percentis",
-      stem: "Menina de 3 anos caiu do percentil 50 para o 10 de estatura em 12 meses, com ganho ponderal preservado e cansaço. Qual a conduta mais adequada?",
-      correct: "Investigar causas de desaceleração estatural (incluindo tireoide e doença crônica)",
+      theme: "Deficiência de vitamina A",
+      stem: "Pré-escolar de 3 anos em área de vulnerabilidade, xerose conjunctival e manchas de Bitot. Qual a conduta?",
+      correct: "Reposição de vitamina A em doses terapêuticas segundo protocolo e investigar outras deficiências/nutrição",
       wrongs: [
-        "Apenas tranquilizar porque ainda está acima do percentil 3",
-        "Prescrever GH empírico sem investigação",
-        "Indicar dieta restritiva para 'afinamento'"
+        "Apenas colírio lubrificante sem vitamina A sistêmica",
+        "Cirurgia de córnea imediata em todos os casos",
+        "Corticoterapia sistêmica prolongada como tratamento etiológico",
+        "Restringir vegetais pigmentados da dieta"
       ],
-      explain: "Queda cruzando percentis de estatura é sinal de alerta, mesmo acima do P3. Exige investigação etiológica antes de qualquer hormônio. Dieta restritiva é inadequada.",
-      trap: "Aceitar qualquer valor acima do P3 como crescimento normal, ignorando a velocidade."
+      explain: "Manchas de Bitot indicam deficiência de vitamina A: reposição protocolar e abordagem nutricional. Lubrificante isolado não corrige. Cirurgia não é primeira linha. Restringir vegetais piora o quadro.",
+      trap: "Tratar só sintoma ocular local e esquecer a reposição sistêmica."
+    },
+    {
+      theme: "Calendário e atraso vacinal",
+      stem: "Criança de 18 meses chega sem registro de tríplice viral. Nega varicela. Exame normal. Qual a melhor conduta hoje?",
+      correct: "Aplicar SCR (e demais atrasadas elegíveis) agora, sem necessidade de sorologia prévia de rotina",
+      wrongs: [
+        "Solicitar sorologia de sarampo e só vacinar se negativa em 30 dias",
+        "Adiar todas as vacinas até os 5 anos",
+        "Aplicar apenas imunoglobulina e nunca vacina",
+        "Indicar isolamento domiciliar permanente em vez de vacinar"
+      ],
+      explain: "Atraso vacinal se corrige aplicando doses faltantes conforme idade, sem sorologia rotineira. Adiar expõe a sarampo/caxumba/rubéola. Imunoglobulina tem indicações pontuais pós-exposição, não substitui calendário.",
+      trap: "Pedir sorologia desnecessária e atrasar ainda mais a vacinação."
     }
   ];
   puer.forEach((q, i) => {
     raw.push({ idPrefix: "ped-puer", n: i + 1, group: "Puericultura", ...q });
   });
 
-  // ── Infectologia pediátrica (14) ───────────────────────────────
+  // ── Infectologia pediátrica (14) ────────────────────────────────
   /** @type {RawQ[]} */
   const inf = [
     {
       theme: "Dengue",
-      stem: "Escolar de 9 anos no 4º dia de febre, dor retro-ocular e mialgia, plaquetas 78.000/mm³, hematócrito estável, bom estado geral, pressão arterial normal, sem sangramento espontâneo, aceitando líquidos. Qual a melhor conduta?",
-      correct: "Hidratação vigorosa ambulatorial/observação conforme grupo clínico e reavaliação seriada",
+      stem: "Menina de 8 anos, 5º dia de febre, cefaleia retro-orbital, mialgia. PA 90/60 mmHg, FC 110 bpm, FR 22, SatO2 98%, T 38,0 °C. Ht 44% (basal 38%), plaquetas 78.000/mm³, prova do laço positiva, dor abdominal leve, enchimento capilar 3 s. Qual a melhor conduta?",
+      correct: "Hidratação venosa supervisionada, monitoramento de hematócrito/sinais de choque e internamento conforme gravidade",
       wrongs: [
-        "Transfundir plaquetas imediatamente pelo número isolado",
-        "Prescrever AAS para a dor e febre",
-        "Internar em UTI e iniciar noradrenalina empírico"
+        "AAS 100 mg 8/8 h para a dor e alta imediata",
+        "Alta com hidratação oral liberal sem reavaliação do hematócrito",
+        "Transfusão de plaquetas de rotina porque plaquetas < 100.000",
+        "Antibiótico de amplo espectro como tratamento específico da dengue"
       ],
-      explain: "Em dengue, a classificação e a hidratação guiam o manejo mais do que a plaquetopenia isolada em paciente estável. AAS aumenta risco de sangramento. Transfusão de plaquetas não é automática pelo valor laboratorial.",
-      trap: "Transfundir plaquetas só porque estão baixas, sem sangramento ou procedimento, e usar AAS."
+      explain: "Hemoconcentração, prova do laço+, dor abdominal e perfusão alterada indicam dengue com sinais de alarme: hidratação EV monitorada e observação hospitalar. AAS é contraindicado. Plaquetopenia isolada não manda transfundir. Antibiótico não trata dengue.",
+      trap: "Liberar com orientação vaga ou usar AAS, apesar de hemoconcentração e dor abdominal."
     },
     {
-      theme: "Dengue",
-      stem: "Adolescente com dengue, dor abdominal intensa, vômitos, hematócrito em elevação rápida e extremidades frias. Qual a prioridade?",
-      correct: "Reconhecer extravasamento plasmático e hidratar com cristaloides conforme protocolo de dengue grave/com sinais de alarme",
+      theme: "Convulsão febril",
+      stem: "Menino de 18 meses, febre 38,9 °C há 8 h (possível IVAS). Apresentou crise tônico-clônica generalizada de 90 s, única, sem focalidade. Ao chegar: sonolento mas despertável, PA 95/60, FC 130, FR 28, SatO2 98%, glicemia 92 mg/dL, exame neurológico sem déficits. Qual o diagnóstico e a conduta iniciais?",
+      correct: "Convulsão febril simples; observação, antitérmico, orientação e seguimento; benzodiazepínico intranasal/retal na crise prolongada futura se recorrência",
       wrongs: [
-        "Aumentar oferta oral exclusiva em domicilio sem reavaliação",
-        "Administrar diurético de alça para 'desinchar'",
-        "Iniciar AAS e dexametasona empíricos"
+        "Epilepsia mioclônica; iniciar valproato contínuo imediatamente",
+        "Meningite bacteriana certa; punção em todo caso sem avaliação clínica",
+        "Estado de mal; intubar e tiopental de rotina após crise de 90 s já cessada",
+        "AVC isquêmico; trombólise e AAS"
       ],
-      explain: "Dor abdominal, vômitos persistentes, hemoconcentração e má perfusão indicam extravasamento. Cristaloides e vigilância são centrais; diurético e AAS são prejudiciais nessa fase.",
-      trap: "Tratar má perfusão da dengue como desidratação simples ambulatorial ou como congestão a ser diuretada."
-    },
-    {
-      theme: "Sarampo / exantemas",
-      stem: "Pré-escolar não vacinado, febre alta, coriza, conjuntivite e, no 4º dia, exantema máculo-papular cefalocaudal com manchas esbranquiçadas na mucosa oral. Diagnóstico mais provável?",
-      correct: "Sarampo",
-      wrongs: [
-        "Roséola apenas, pelo exantema após defervescência",
-        "Escarlatina sem faringite",
-        "Urticária aguda por alimento"
-      ],
-      explain: "Tríade tosse/coriza/conjuntivite, febre e exantema cefalocaudal com enantema (Koplik) apontam sarampo, especialmente em não vacinado. Roséola tipicamente exantema após queda da febre.",
-      trap: "Chamar de roséola qualquer exantema viral sem olhar o timing da febre e o enantema."
+      explain: "Crise breve, generalizada, idade típica, febre e recuperação sem déficit = convulsão febril simples. Manejo: tranquilizar, orientar recorrência e benzo de resgate se crise prolongada. Antiepiléptico contínuo não é rotina. PL se sinais de meningite. Crise já cessada não é status.",
+      trap: "Iniciar anticonvulsivante contínuo ou fechar epilepsia após uma convulsão febril simples."
     },
     {
       theme: "Kawasaki",
-      stem: "Menino de 3 anos com febre há 6 dias, injeção conjuntival não exsudativa, língua em framboesa, exantema polimorfo, edema de mãos e descamação periungueal inicial. Qual a melhor conduta?",
-      correct: "Internar e iniciar imunoglobulina EV e AAS em doses adequadas, com ecocardiograma",
+      stem: "Menino de 3 anos, 6º dia de febre ≥39 °C. Apresenta conjuntivite não exsudativa, glossite em framboesa, exantema polimorfo, edema de mãos e pés, adenopatia cervical única de 1,8 cm. PCR 90 mg/L, VHS 78 mm, plaquetas 480.000. Qual a conduta inicial correta?",
+      correct: "Internar, imunoglobulina EV + AAS e solicitar ecocardiograma",
       wrongs: [
-        "Tratar apenas com amoxicilina ambulatorial por 10 dias",
-        "Aguardar 14 dias de febre para confirmar diagnóstico",
-        "Indicar anticoagulação plena empírica sem avaliação coronariana"
+        "Apenas antitérmico ambulatorial e retorno em 10 dias sem imunoglobulina",
+        "Antibiótico de amplo espectro por 14 dias como tratamento definitivo",
+        "Corticoterapia isolada sem imunoglobulina como primeira linha universal",
+        "Anticoagulação plena com heparina sem AAS/IGIV"
       ],
-      explain: "Critérios de Kawasaki com febre ≥5 dias exigem IGIV precoce e AAS, além de avaliação coronariana. Antibiótico isolado não trata a vasculite. Atrasar aumenta risco de aneurisma.",
-      trap: "Esperar 'todos os critérios clássicos por mais tempo' e perder a janela da IGIV."
-    },
-    {
-      theme: "Meningite",
-      stem: "Lactente de 8 meses com febre, irritabilidade, fontanela tensa e vômitos. Estável hemodinamicamente. Qual o exame mais adequado para confirmar a hipótese central?",
-      correct: "Punção lombar com análise do líquor (após estabilidade e sem contraindicação)",
-      wrongs: [
-        "Apenas hemograma, adiando o líquor indefinidamente",
-        "Radiografia de crânio em duas incidências",
-        "Teste rápido de estreptococo faríngeo como substituto"
-      ],
-      explain: "Suspeita de meningite bacteriana no lactente pede líquor tão logo seja seguro. Hemograma isolado não confirma. Imagem de crânio simples não substitui PL.",
-      trap: "Tratar empiricamente sem líquor quando não há contraindicação, perdendo definição etiológica."
-    },
-    {
-      theme: "Otite / faringite",
-      stem: "Escolar com odinofagia, febre, exsudato amigdaliano e linfonodos cervicais dolorosos, sem tosse. Teste rápido de estreptococo positivo. Melhor conduta?",
-      correct: "Antibiótico adequado para Streptococcus pyogenes (ex.: penicilina/amoxicilina)",
-      wrongs: [
-        "Apenas sintomáticos, pois toda faringite é viral",
-        "Oseltamivir empírico",
-        "Corticoterapia prolongada sem antibiótico"
-      ],
-      explain: "Critérios clínicos + teste positivo confirmam faringite estreptocócica; antibiótico reduz complicações. Nem toda faringite é viral — o teste guia a decisão.",
-      trap: "Negar antibiótico em faringite estreptocócica documentada por 'evitar uso excessivo' de forma absoluta."
-    },
-    {
-      theme: "IVAS / antibiótico",
-      stem: "Pré-escolar com coriza, tosse e febre baixa há 3 dias, otoscopia normal, ausculta limpa e bom estado. Mãe insiste em antibiótico 'para não virar pneumonia'. Melhor conduta?",
-      correct: "Orientar suporte sintomático e sinais de alarme; não indicar antibiótico neste momento",
-      wrongs: [
-        "Prescrever azitromicina 'por precaução'",
-        "Solicitar TC de tórax de rotina",
-        "Internar para oxigênio e ceftriaxona empíricos"
-      ],
-      explain: "Quadro típico de IVAS viral autolimitada não se beneficia de antibiótico. TC e internação são desproporcionais sem gravidade.",
-      trap: "Ceder à pressão por antibiótico profilático em resfriado comum."
-    },
-    {
-      theme: "Tuberculose",
-      stem: "Criança de 5 anos contato intradomiciliar de TB pulmonar bacilífera, assintomática, radiografia normal, prova tuberculínica de 12 mm, sem BCG recente explicando o valor. Qual a melhor conduta?",
-      correct: "Tratar infecção latente pelo esquema indicado na faixa etária/protocolo",
-      wrongs: [
-        "Esquema completo de TB doença com 4 drogas por 6 meses sem outros critérios",
-        "Apenas repetir radiografia em 1 ano sem quimioprofilaxia",
-        "Isolar em UTI e iniciar corticoterapia isolada"
-      ],
-      explain: "Contato + PT positiva sem sinais de doença configura infecção latente, tratada com esquema próprio. TB doença exige critérios clínicos/radiológicos/bacteriológicos.",
-      trap: "Tratar como TB doença todo contato com PT positiva, ou não tratar latente."
-    },
-    {
-      theme: "HIV pediátrico",
-      stem: "Lactente filho de mãe HIV+, com carga viral materna alta no parto, sem profilaxia adequada. Com 6 semanas apresenta candidíase oral exuberante e pneumonia. Qual a prioridade diagnóstica?",
-      correct: "Teste virológico para HIV (não apenas sorologia) e avaliação de infecções oportunistas",
-      wrongs: [
-        "Apenas ELISA materno repetido na criança como único exame",
-        "Aguardar sorologia após os 18 meses sem investigação atual",
-        "Tratar só candidíase tópica e liberar sem follow-up"
-      ],
-      explain: "Em menores de 18 meses, diagnóstico de HIV exige teste virológico. Clínica sugestiva e falha de profilaxia aumentam urgência. Sorologia isolada reflete anticorpos maternos.",
-      trap: "Usar só sorologia precoce como regra-out definitivo de infecção."
-    },
-    {
-      theme: "Imunização pós-exposição",
-      stem: "Adolescente não vacinado contra hepatite B sofre exposição percutânea com sangue de fonte HBsAg positiva há 8 horas. Melhor conduta?",
-      correct: "Imunoglobulina específica e iniciar esquema vacinal o mais precocemente possível",
-      wrongs: [
-        "Apenas observar sintomas por 6 meses",
-        "Indicar interferon empírico imediato",
-        "Única dose de vacina após 30 dias"
-      ],
-      explain: "Pós-exposição a fonte HBsAg+ em suscetível: HBIG + vacina precoces. Observação isolada é insuficiente.",
-      trap: "Adiar imunoprofilaxia para 'ver se aparece icterícia'."
-    },
-    {
-      theme: "Varicela / zoster",
-      stem: "Criança de 2 anos imunocompetente com varicela típica, bom estado, sem sinais de infecção bacteriana secundária. Conduta?",
-      correct: "Cuidados de suporte e isolamento de contatos suscetíveis de risco; antivirais só em critérios selecionados",
-      wrongs: [
-        "Aciclovir EV de rotina em todo caso ambulatorial",
-        "Antibiótico de amplo espectro para todas as lesões",
-        "Corticoterapia sistêmica para reduzir prurido"
-      ],
-      explain: "Varicela não complicada em imunocompetente é suporte. Antiviral sistêmico reserva-se a risco/complicação. Corticoide pode piorar disseminação.",
-      trap: "Medicalizar varicela leve com aciclovir EV e antibiótico 'por segurança'."
+      explain: "Febre ≥5 dias + ≥4 critérios = Kawasaki: IGIV + AAS e eco para coronárias. Atraso aumenta aneurisma. Antibiótico não trata. Corticoide pode ser adjuvante em casos refratários/selecionados, não substitui IGIV de rotina.",
+      trap: "Esperar a febre passar sem IGIV porque 'pode ser viral'."
     },
     {
       theme: "Mononucleose",
-      stem: "Adolescente com febre, odinofagia exsudativa, linfadenomegalia cervical posterior e esplenomegalia. Iniciou amoxicilina e surgiu rash. Qual a interpretação mais provável?",
-      correct: "Síndrome mononucleose-like (EBV); suspender aminopenicilina e dar suporte",
+      stem: "Adolescente de 15 anos, febre há 7 dias, odinofagia, adenomegalia cervical posterior, esplenomegalia. Hemograma: linfócitos atípicos 15%, TGO 85, TGP 92. Teste rápido de estreptococo negativo. Qual a melhor conduta?",
+      correct: "Suporte sintomático, evitar contato esportivo por risco de ruptura esplênica e não usar aminopenicilina de rotina",
       wrongs: [
-        "Alergia IgE grave à amoxicilina comprovada sem outra hipótese",
-        "Escalação imediata para vancomicina e UTI",
-        "Leucemia aguda definida só pelo rash medicamentoso"
+        "Amoxicilina imediatamente para cobrir EBV",
+        "Esplenectomia profilática na fase aguda",
+        "Isolamento aéreo por tuberculose até cultura negativa",
+        "Quimioterapia como em leucemia sem imunofenotipagem"
       ],
-      explain: "Quadro clássico de EBV + rash após aminopenicilina é conhecido. Nem todo rash pós-amoxicilina é alergia IgE verdadeira. Manejo é suporte e evitar esporte de contato se baço aumentado.",
-      trap: "Rotular definitivamente alergia à penicilina e privar o paciente do antibiótico para sempre sem nuance."
+      explain: "Quadro compatível com mononucleose: cuidado de suporte e restrição de esportes de contato. Aminopenicilinas associam-se a exantema. Cirurgia/isolamento de TB/quimioterapia não se aplicam.",
+      trap: "Prescrever amoxicilina e precipitar rash típico da mononucleose."
     },
     {
-      theme: "Parasitoses",
-      stem: "Escolar com prurido anal noturno intenso, sono agitado e exame perianal com estrias. Qual o diagnóstico mais provável e a conduta típica?",
-      correct: "Enterobíase; tratar com anti-helmíntico adequado e higiene, considerando contactantes",
+      theme: "Sarampo",
+      stem: "Criança de 2 anos, incompleta vacinal, febre, coriza, conjuntivite e exantema céfalo-caudal no 4º dia. Manchas de Koplik em mucosa jugal. PA 100/65, FC 120, FR 30, SatO2 97%. Qual a conduta?",
+      correct: "Notificar, suporte, vitamina A conforme protocolo e isolamento; avaliar profilaxia de contatos",
       wrongs: [
-        "Ascaridíase pulmonar; iniciar corticoide inalatório",
-        "Alergia alimentar exclusiva; dieta de eliminação ampla",
-        "Candidíase sistêmica; antifúngico EV"
+        "AAS em doses anti-inflamatórias como tratamento específico",
+        "Antibiótico de amplo espectro obrigatório em todos os casos sem complicação",
+        "Alta sem notificação por ser 'virose comum'",
+        "Corticoterapia inalatória como cura do sarampo"
       ],
-      explain: "Prurido anal noturno é altamente sugestivo de oxiúrus. Tratamento anti-helmíntico e medidas de higiene/contactantes. Não se confunde com ascaridíase pulmonar.",
-      trap: "Investigar alergia alimentar complexa antes de considerar enterobíase."
+      explain: "Sarampo clínico clássico: notificação, suporte, vitamina A (reduz complicações) e controle de contatos/vacinação. AAS evita-se (risco Reye). Antibiótico só se superinfecção. Não é virose banal não notificável.",
+      trap: "Tratar como virose inespecífica sem notificar nem oferecer vitamina A."
     },
     {
-      theme: "Celulite / abscessos",
-      stem: "Pré-escolar com febre e área eritematosa quente e dolorosa em perna, sem fluctuação. Qual a melhor conduta inicial?",
-      correct: "Antibiótico com cobertura para estreptococo/estafilococo e reavaliação seriada",
+      theme: "Varicela",
+      stem: "Pré-escolar de 4 anos, vesículas em vários estágios, prurido, afebril há 24 h, imunocompetente. Irmão neonato em casa. Qual a melhor conduta?",
+      correct: "Cuidados sintomáticos na criança; avaliar risco do neonato/contato e profilaxia (VZig/vacina) conforme status imune e tempo",
       wrongs: [
-        "Apenas compressa morna por 10 dias sem antibiótico",
-        "Cirurgia exploratória óssea imediata sem imagem/indicação",
-        "Antiviral sistêmico empírico"
+        "Aciclovir EV de rotina em toda varicela imunocompetente leve",
+        "AAS para febre e prurido",
+        "Antibiótico antistafilocócico contínuo sem infecção bacteriana",
+        "Ignorar o contato neonatal por varicela ser 'benigna'"
       ],
-      explain: "Celulite não purulenta típica trata-se com antibiótico dirigido aos cocos gram-positivos e seguimento. Ausência de abscesso não indica drenagem. Antiviral não tem papel.",
-      trap: "Aguardar 'amadurecer' celulite sem antibiótico, ou operar precocemente sem critério."
+      explain: "Varicela leve em imunocompetente: suporte. Contato com RN exige avaliação de profilaxia. AAS contraindicado. Aciclovir EV reserva-se a graves/imunocomprometidos. Antibiótico só se impetiginização.",
+      trap: "Esquecer o risco do neonato convivente e liberar sem orientação de profilaxia."
+    },
+    {
+      theme: "Coqueluche",
+      stem: "Lactente de 2 meses, tosse paroxística com cianose, linfocitose 22.000/mm³, SatO2 91% no acesso. Vacinação incompleta (só BCG/HepB). Qual a conduta?",
+      correct: "Internar, suporte respiratório, macrolídeo (azitromicina) e quimioprofilaxia dos contatos íntimos",
+      wrongs: [
+        "Apenas nebulização com soro e alta",
+        "Penicilina benzatina dose única como tratamento definitivo",
+        "Corticoterapia isolada sem macrolídeo",
+        "Vacina pertussis terapêutica na fase aguda como cura"
+      ],
+      explain: "Lactente pequeno com coqueluche: risco de apneia — internar, macrolídeo e profilaxia de contatos. Benzatina não trata Bordetella. Vacina não é terapêutica na doença aguda.",
+      trap: "Liberar lactente com tosse paroxística e cianose como 'bronquite'."
+    },
+    {
+      theme: "IVAS estreptocócica",
+      stem: "Escolar de 7 anos, febre, odinofagia, exsudato amigdaliano, adenomegalia dolorosa, ausência de tosse. Centor/McIsaac alto. Teste rápido positivo. Qual a melhor conduta?",
+      correct: "Antibiótico (penicilina/amoxicilina) por duração adequada para prevenir febre reumática",
+      wrongs: [
+        "Apenas antitérmico, pois estreptococo 'sempre autolimitado' sem risco",
+        "Aciclovir por suspeita de herpes faríngeo",
+        "Corticosteroide isolado sem antibiótico",
+        "Tonsilectomia na fase aguda febril"
+      ],
+      explain: "Faringoamigdalite estreptocócica confirmada: antibiótico adequado reduz complicações supurativas e febre reumática. Sintomáticos isolados não bastam. Cirurgia não se faz na aguda.",
+      trap: "Não tratar estreptococo documentado por achar sempre autolimitado."
+    },
+    {
+      theme: "Celulite / impetigo",
+      stem: "Criança de 5 anos, lesões crostosas melicéricas perinasais e celulite de face com febre 38,4 °C, FC 120, FR 24. Sem sinais orbitários. Qual a conduta?",
+      correct: "Antibiótico sistêmico cobrindo S. aureus/S. pyogenes e reavaliação; internar se toxemia ou progressão rápida",
+      wrongs: [
+        "Apenas sabão e observar 10 dias sem antibiótico",
+        "Aciclovir tópico como tratamento único",
+        "Antifúngico sistêmico empírico",
+        "Drenagem cirúrgica de todas as crostas em centro cirúrgico"
+      ],
+      explain: "Impetigo crostoso/celulite facial febril merece antibiótico sistêmico antistafilocócico/estreptocócico. Antivirais/antifúngicos não tratam. Cirurgia não é rotina para crostas.",
+      trap: "Tratar celulite febril só com higiene local."
+    },
+    {
+      theme: "Meningite bacteriana",
+      stem: "Pré-escolar de 3 anos, febre, vômitos, sonolência, rigidez de nuca. PA 85/50, FC 130, FR 28, SatO2 97%, glicemia 70. Sem papiledema. Qual a sequência mais adequada?",
+      correct: "Coletar hemoculturas, iniciar antibiótico EV precoce (e corticoide se indicado) e punção lombar assim que segura",
+      wrongs: [
+        "Aguardar resultado do liquor por 24 h antes de qualquer antibiótico",
+        "AAS em alta dose como tratamento etiológico",
+        "Alta com amoxicilina oral e retorno se piorar",
+        "Ressonância obrigatória antes de qualquer terapia em todo caso"
+      ],
+      explain: "Suspeita de meningite bacteriana: antibiótico precoce após culturas; PL quando não houver contraindicação. Atraso por exames de imagem desnecessários piora prognóstico. Alta oral é inadequada.",
+      trap: "Adiar antibiótico até liquor 'fechar' o diagnóstico."
+    },
+    {
+      theme: "Osteomielite",
+      stem: "Menino de 6 anos, febre, claudicação, dor à palpação de tíbia proximal. PA 100/60, FC 115, PCR 70, leucócitos 16.000. Rx simples inicial sem alterações. Qual a melhor conduta?",
+      correct: "Suspeitar osteomielite, solicitar RM (ou cintilografia se necessário), hemoculturas e antibiótico EV após coleta quando indicado",
+      wrongs: [
+        "Afastar osteomielite porque o Rx inicial é normal",
+        "Imobilizar só com gesso e alta sem antibiótico",
+        "Iniciar quimioterapia por sarcoma sem imagem",
+        "Fisioterapia intensiva na fase febril aguda como única medida"
+      ],
+      explain: "Rx precoce pode ser normal na osteomielite. RM ajuda; culturas e antibiótico EV são pilares. Não se afasta diagnóstico por Rx normal. Fisioterapia/quimioterapia não são iniciais.",
+      trap: "Excluir osteomielite com radiografia simples no início dos sintomas."
+    },
+    {
+      theme: "Tuberculose",
+      stem: "Criança de 4 anos, contato intradomiciliar com TB pulmonar bacilífera. Assintomática, exame normal, radiografia de tórax normal, prova tuberculínica 12 mm. Qual a conduta?",
+      correct: "Tratar infecção latente (ou quimioprofilaxia) conforme protocolo e investigar bem o contato",
+      wrongs: [
+        "Esquema RIPE completo de TB doença apesar de Rx normal e ausência de sintomas",
+        "Nenhuma medida, pois assintomática",
+        "BCG terapêutica como tratamento da infecção latente",
+        "Isolamento aéreo domiciliar por 1 ano sem medicação"
+      ],
+      explain: "Contato + PT positiva com investigação sem doença = infecção latente: isoniazida/esquema de ILTB conforme protocolo. RIPE reserva-se à doença. BCG não trata latência.",
+      trap: "Não oferecer profilaxia a contato com PT positiva porque 'não tem sintomas'."
+    },
+    {
+      theme: "HIV pediátrico",
+      stem: "Lactente de 2 meses, filho de mãe HIV+, que usou profilaxia incompleta. RN recebeu AZT por 4 semanas. Carga viral do bebê aos 45 dias detectável. Qual a conduta?",
+      correct: "Confirmar infecção com novo teste, iniciar TARV pediátrica e acompanhamento especializado",
+      wrongs: [
+        "Aguardar 5 anos para decidir TARV",
+        "Tratar apenas com sulfametoxazol sem antirretrovirais",
+        "Suspender aleitamento e nada mais, sem TARV",
+        "Usar apenas vitamina C megadoses"
+      ],
+      explain: "CV detectável no exposto indica infecção: confirmação e início precoce de TARV melhoram prognóstico. SMX-TMP é profilaxia de PCP em elegíveis, não substitui TARV.",
+      trap: "Adiar TARV no lactente infectado aguardando 'idade maior'."
+    },
+    {
+      theme: "Giardíase",
+      stem: "Pré-escolar de 3 anos, diarreia gordurosa intermitente, distensão, flatulência, creche. EPF: cistos de Giardia. Sem desidratação. Qual a melhor conduta?",
+      correct: "Antiparasitário adequado (ex.: metronidazol/secnidazol/albendazol conforme protocolo) e higiene",
+      wrongs: [
+        "Vancomicina oral por C. difficile sem evidência",
+        "Cirurgia de intestino delgado",
+        "Jejum prolongado de 7 dias em hospital",
+        "Apenas probiótico sem erradicar o parasita"
+      ],
+      explain: "Giardíase sintomática trata-se com antiparasitário efetivo e medidas de higiene. Vancomicina, cirurgia e jejum longo não são indicados.",
+      trap: "Tratar giardíase só com probiótico ou antibiótico errado."
     }
   ];
   inf.forEach((q, i) => {
     raw.push({ idPrefix: "ped-inf", n: i + 1, group: "Infectologia pediátrica", ...q });
   });
 
-  // ── Pneumologia (10) ───────────────────────────────────────────
+  // ── Pneumologia / respiratório (10) ─────────────────────────────
   /** @type {RawQ[]} */
   const pneumo = [
     {
       theme: "Bronquiolite",
-      stem: "Lactente de 5 meses, 3º dia de coriza, agora com taquipneia, sibilos e saturação 96% em ar ambiente, alimentando-se com pausas. Qual a melhor conduta?",
-      correct: "Suporte (oxigênio se necessário, hidratação/alimentação) e evitar terapias sem benefício rotineiro",
+      stem: "Lactente de 4 meses, coriza há 3 dias, tosse, sibilos e tiragem subcostal. PA 85/55, FC 158, FR 68, SatO2 89% em ar, afebril no momento. Qual a melhor conduta?",
+      correct: "Oxigênio para SatO2 alvo, suporte hidroeletrolítico e observação; broncodilatador/corticoide não de rotina",
       wrongs: [
-        "Corticosteroide sistêmico de rotina em todos os casos",
-        "Salbutamol nebulizado seriado como padrão obrigatório",
-        "Antibiótico de amplo espectro por 10 dias"
+        "Corticosteroide sistêmico e alta imediata em todo caso",
+        "Antibiótico de amplo espectro obrigatório",
+        "Fisioterapia torácica vigorosa como terapia principal",
+        "Intubação eletiva só porque há sibilos, sem falência respiratória"
       ],
-      explain: "Bronquiolite viral é suporte. Corticoide e broncodilatador não têm benefício rotineiro comprovado; antibiótico só se coinfecção bacteriana. A decisão de internar depende de hipoxemia, dificuldade alimentar e idade.",
-      trap: "Tratar bronquiolite como crise asmática com corticoide + β2 de rotina."
+      explain: "Bronquiolite viral: oxigênio se hipoxemia, hidratação e monitorização. Broncodilatador/corticoide não são rotina. Antibiótico só se coinfecção. Intubação se insuficiência respiratória, não por sibilo isolado.",
+      trap: "Tratar bronquiolite como asma e liberar com corticoide oral."
     },
     {
-      theme: "Asma",
-      stem: "Escolar com sibilância recorrente, despertares noturnos e uso de salbutamol >2 vezes/semana. Exame entre crises quase normal. Melhor passo terapêutico de manutenção?",
-      correct: "Iniciar corticoide inalatório em dose adequada e plano de ação",
+      theme: "Asma agudizada",
+      stem: "Escolar de 9 anos, asma prévia, crise há 6 h. Fala frases incompletas, tiragem, sibilos difusos. PA 110/70, FC 128, FR 36, SatO2 90% em ar. Qual a conduta inicial?",
+      correct: "SABA inalatório seriados + corticoide sistêmico precoce e oxigênio; reavaliar resposta",
       wrongs: [
-        "Manter só salbutamol sob demanda indefinidamente",
-        "Antibiótico mensal profilático",
-        "Antitussígeno opioide noturno"
+        "Apenas antibiótico macrolídeo e observação",
+        "Sedação com opioide para reduzir FR",
+        "Beta-bloqueador oral para controlar taquicardia",
+        "Alta com xarope expectorante sem broncodilatador"
       ],
-      explain: "Sintomas frequentes definem necessidade de controle com CI. Resgate isolado não trata inflamação. Antibiótico e opioide não têm papel no controle.",
-      trap: "Aceitar uso frequente de resgate como 'normal da asma' sem preventivo."
+      explain: "Exacerbação asmática moderada/grave: SABA repetido, corticoide sistêmico e O2. Antibiótico não é rotina. Sedação/opioide e beta-bloqueador são perigosos.",
+      trap: "Omitir corticoide sistêmico precoce na crise asmática."
     },
     {
-      theme: "Pneumonia",
-      stem: "Pré-escolar com febre, taquipneia, tiragem e estertores localizados; radiografia com consolidação lobar. Estável, SatO2 94%. Melhor conduta ambulatorial típica?",
-      correct: "Antibiótico empírico para pneumonia adquirida na comunidade (ex.: amoxicilina) e reavaliação",
+      theme: "Pneumonia comunitária",
+      stem: "Pré-escolar de 3 anos, febre 39 °C, tosse, FR 48, SatO2 94%, crepitações focais em base direita. Sem toxemia extrema. Qual a melhor conduta ambulatorial típica?",
+      correct: "Amoxicilina em dose adequada e reavaliação em 48–72 h; orientar sinais de alarme",
       wrongs: [
-        "Apenas nebulização com soro fisiológico",
-        "Oseltamivir + corticoide sem antibiótico",
-        "Internação em UTI e ventilação invasiva imediata"
+        "Vancomicina oral de rotina como primeira escolha",
+        "Oseltamivir em todo caso sem padrão influenza",
+        "Internação em UTI só por crepitação, sem critérios de gravidade",
+        "Radiografia obrigatória diária até normalizar imagem"
       ],
-      explain: "Consolidação lobar febril com esforço sugere pneumonia bacteriana típica; amoxicilina é primeira linha em muitos protocolos ambulatoriais se não houver gravidade. UTI não é automática com Sat aceitável e estabilidade.",
-      trap: "Tratar pneumonia lobar só com suporte de bronquiolite."
-    },
-    {
-      theme: "Corpo estranho",
-      stem: "Menino de 2 anos apresentou engasgo súbito com amendoim seguido de tosse e sibilância unilateral persistente. Radiografia pode ser normal na expiração. Qual o próximo passo mais adequado?",
-      correct: "Broncoscopia diagnóstica/terapêutica em centro experiente",
-      wrongs: [
-        "Corticoterapia prolongada ambulatorial como tratamento definitivo",
-        "Antibiótico por 3 semanas sem investigação",
-        "Observação exclusiva por 30 dias"
-      ],
-      explain: "História de engasgo + sinais focais persistentes impõe exclusão de corpo estranho por broncoscopia. Tratamento clínico isolado atrasa remoção e aumenta complicações.",
-      trap: "Tratar como asma/pneumonia de repetição sem valorizar o engasgo súbito."
+      explain: "PNM típica ambulatorial: amoxicilina (pneumococo) e reassesso. Vancomicina não é 1ª linha oral. Rx seriado diário não é necessário se melhora clínica.",
+      trap: "Usar antibiótico de amplo espectro desnecessário na pneumonia ambulatorial."
     },
     {
       theme: "Laringite / crupe",
-      stem: "Pré-escolar com rouquidão, tosse metálica e estridor leve em repouso, SatO2 normal, sem toxemia. Melhor conduta?",
-      correct: "Corticosteroide (ex.: dexametasona) e observação; adrenalina nebulizada se estridor moderado/grave",
+      stem: "Lactente de 18 meses, rouquidão, tosse metálica, estridor leve em repouso, SatO2 97%, FR 34. Qual a conduta?",
+      correct: "Corticosteroide (dexametasona) e observar; adrenalina nebulizada se estridor moderado/grave",
       wrongs: [
-        "Antibiótico de rotina para cobrir difteria em todo crupe",
-        "Intubação imediata em todo estridor leve",
-        "Sedação com opioide para reduzir a tosse"
+        "Antibiótico de amplo espectro de rotina",
+        "Broncoscopia imediata em todo crupe leve",
+        "AAS e sedação para 'diminuir tosse'",
+        "Intubação eletiva preventiva em estridor leve"
       ],
-      explain: "Crupe viral leve/moderado responde a corticoide; adrenalina nebulizada nos casos com esforço maior. Intubação é para falência/imminente obstrução. Opioide é perigoso.",
-      trap: "Intubar precocemente crupe leve ou usar antibiótico indiscriminado."
+      explain: "Crupe viral: dexametasona; adrenalina se estridor significativo. Antibiótico não trata vírus. Intubação não é rotina no leve.",
+      trap: "Intubar ou antibioticar crupe leve sem necessidade."
+    },
+    {
+      theme: "Corpo estranho",
+      stem: "Pré-escolar de 2 anos, engasgo súbito com amendoim, tosse e sibilo unilateral. SatO2 94%, FR 40. Rx: hiperinsuflação de hemitórax direito. Qual a conduta?",
+      correct: "Suspeitar aspiração de corpo estranho e indicar broncoscopia diagnóstica/terapêutica",
+      wrongs: [
+        "Tratar como asma com corticoide e alta",
+        "Fisioterapia para 'expulsar' sem avaliação especializada",
+        "Antibiótico prolongado sem remover o corpo estranho",
+        "Observação domiciliar por 2 semanas sem intervenção"
+      ],
+      explain: "História súbita + assimetria + hiperinsuflação = corpo estranho: broncoscopia. Tratar como asma atrasa remoção e eleva risco.",
+      trap: "Conduzir aspiração como 'sibilância recorrente' sem broncoscopia."
     },
     {
       theme: "Fibrose cística",
-      stem: "Lactente com íleo meconial neonatal, agora com esteatorarreia, desnutrição e colonizações respiratórias de repetição. Teste do pezinho alterado. Exame confirmatório mais adequado?",
-      correct: "Teste do suor (cloreto) e/ou estudo genético conforme protocolo",
+      stem: "Lactente de 7 meses, evacuações gordurosas, baixo ganho ponderal, tosse crônica, suor 'muito salgado'. Teste do pezinho com IRT elevado; suor cloreto 78 mEq/L. Qual a conduta?",
+      correct: "Confirmar FC, iniciar enzimas pancreáticas, fisioterapia respiratória, suporte nutricional e centro especializado",
       wrongs: [
-        "Apenas IgE total elevada como critério diagnóstico",
-        "Biópsia hepática de rotina como primeiro teste",
-        "Teste ergométrico em esteira"
+        "Apenas dieta restrita em gordura sem enzimas",
+        "Negar FC porque ainda não teve íleo meconial",
+        "Transplante pulmonar imediato em todo diagnóstico",
+        "Suspender vacinas do calendário"
       ],
-      explain: "Fenótipo clássico + triagem neonatal levam a confirmação por suor/genética. IgE não diagnostica FC. Biópsia hepática não é o primeiro passo.",
-      trap: "Atribuir só 'alergia/asma' a infecções e má absorção com história de íleo meconial."
-    },
-    {
-      theme: "Coqueluche",
-      stem: "Lactente de 2 meses com acessos de tosse em salvas, engasgos e episódios de cianose, sem febre alta. Leucocitose com linfocitose. Qual a melhor conduta?",
-      correct: "Internar conforme gravidade, antibiótico macrolídeo e notificação/profilaxia de contactantes",
-      wrongs: [
-        "Apenas antitussígeno sedativo domiciliar",
-        "Corticoide inalatório como tratamento etiológico",
-        "Vacina DTPa como único tratamento da doença atual"
-      ],
-      explain: "Coqueluche em lactente jovem é potencialmente grave: suporte, macrolídeo e controle de focos. Sedativos antitussígenos são perigosos. Vacina protege a médio prazo, não trata a infecção instalada.",
-      trap: "Mandar para casa com xarope sedativo um lactente com salvas e cianose."
+      explain: "Cloreto no suor elevado + clínica: manejo multiprofissional com enzimas, nutrição e TORax. Íleo meconial não é obrigatório. Transplante não é inicial. Vacinas devem ser mantidas/atualizadas.",
+      trap: "Restringir gordura sem repor enzimas pancreáticas."
     },
     {
       theme: "Derrame pleural",
-      stem: "Criança com pneumonia em tratamento, mantém febre e desconforto; ultrassom mostra derrame pleural septado significativo. Próximo passo?",
-      correct: "Avaliar drenagem/intervenção pleural e ajuste antimicrobiano em ambiente hospitalar",
+      stem: "Criança de 6 anos com pneumonia, febre persistente no 5º dia de antibiótico. PA 95/60, FC 120, FR 38, SatO2 91%. Rx/US: derrame parapneumônico significativo. Qual a melhor conduta?",
+      correct: "Avaliar drenagem (e/ou fibrinolítico/VATS conforme características) além de antibiótico EV e oxigênio",
       wrongs: [
-        "Aumentar só antitussígeno oral e manter ambulatorial",
-        "Fisioterapia isolada como terapia definitiva",
-        "Suspender antibiótico por 'falha' e observar"
+        "Manter só antibiótico oral ambulatorial sem imagem seriada",
+        "Diuréticos de alça como tratamento definitivo do empiema",
+        "Antituberculoso empírico imediato sem critérios",
+        "Toracocentese diagnóstica proibida em qualquer derrame"
       ],
-      explain: "Derrame parapneumônico complicado frequentemente precisa drenagem e otimização antimicrobiana. Suspender antibiótico ou tratar só com xarope é inadequado.",
-      trap: "Persistir no oral ambulatorial perante derrame septado e febre persistente."
+      explain: "Derrame parapneumônico complicado/empiema exige antibiótico EV e muitas vezes drenagem. Diurético não trata pus. TB só com critérios. Toracocentese/drenagem são ferramentas válidas.",
+      trap: "Persistir só com antibiótico oral perante derrame significativo e hipoxemia."
     },
     {
-      theme: "Apneia / SAOS",
-      stem: "Escolar obeso com roncos, pausas respiratórias referidas pelos pais, enurese secundária e baixo rendimento escolar. Exame com hipertrofia amigdaliana. Melhor próximo passo?",
-      correct: "Avaliar apneia obstrutiva do sono (ex.: polissonografia/encaminhamento ORL conforme disponibilidade)",
+      theme: "Apneia obstrutiva",
+      stem: "Escolar de 5 anos, roncos, pausas respiratórias noturnas, enurese secundária, hipertrofia amigdaliana 3+/4. SatO2 diurna 98%. Qual o próximo passo?",
+      correct: "Encaminhar para avaliação de AOS (polissonografia quando disponível) e considerar adenotonsilectomia se indicada",
       wrongs: [
-        "Prescrever benzodiazepínico noturno para 'profundar o sono'",
-        "Indicar adenoidectomia sem qualquer avaliação",
-        "Ignorar porque ronco é normal na infância"
+        "Benzodiazepínico noturno para 'profundar o sono'",
+        "CPAP domiciliar empírico sem avaliação em toda criança",
+        "Ignorar porque SatO2 diurna é normal",
+        "Antibiótico contínuo por 6 meses como cura"
       ],
-      explain: "Ronco + pausas + sintomas diurnos sugerem SAOS; investigação e eventual ORL são indicados. Benzodiazepínico piora obstrução.",
-      trap: "Sedative para ronco ou banalizar pausas respiratórias."
+      explain: "Clínica de AOS com hipertrofia amigdaliana: avaliação especializada; cirurgia frequentemente curativa. Sedativos pioram obstrução. SpO2 diurna normal não afasta AOS.",
+      trap: "Normalizar ronco/pausas porque a oximetria diurna é normal."
     },
     {
-      theme: "Bronquiectasia / infecção",
-      stem: "Criança com tosse produtiva crônica, baqueteamento digital e infecções de repetição no mesmo lobo. Qual exame de imagem é o mais útil para caracterizar a via aérea?",
-      correct: "TC de tórax de alta resolução",
+      theme: "Tuberculose pulmonar",
+      stem: "Adolescente de 14 anos, tosse >3 semanas, sudorese noturna, emagrecimento. Rx: infiltrado em ápice. BAAR escarro 1+. HIV negativo. Qual a conduta?",
+      correct: "Notificar e iniciar esquema RIPE supervisionado conforme protocolo, com investigação de contatos",
       wrongs: [
-        "Radiografia de seios da face como único exame",
-        "Ultrassom abdominal de rotina",
-        "Ressonância de coluna lombar"
+        "Apenas azitromicina 3 dias e alta",
+        "Corticoterapia isolada sem tuberculostáticos",
+        "Cirurgia de ressecção apical imediata sem tratamento clínico",
+        "Observação por 2 meses antes de tratar BAAR positivo"
       ],
-      explain: "TCAR é o padrão para mapear bronquiectasias e guiar investigação de causas (FC, imunodeficiência, aspiração). Outros exames não caracterizam a árvore brônquica.",
-      trap: "Contentar-se com radiografia simples normal e não avançar na tosse crônica produtiva."
+      explain: "TB pulmonar bacteriológica positiva: notificação + RIPE. Macrolídeo curto não trata. Cirurgia não é primeira linha. Atraso terapêutico mantém transmissão.",
+      trap: "Tratar TB bacilífera como 'bronquite' com azitromicina."
+    },
+    {
+      theme: "Crise de asma grave",
+      stem: "Menina de 11 anos, asma, chega em UPA com FR 42, SatO2 86% em ar, uso de musculatura acessória, fala palavras. Após 3 ciclos de SABA+ipratrópio e corticoide EV, SatO2 88% com O2, sonolência. Qual o próximo passo?",
+      correct: "Considerar sulfato de magnésio EV, suporte avançado de via aérea se necessário e UTI",
+      wrongs: [
+        "Alta com budesonida isolada",
+        "Beta-bloqueador para FC 140 bpm",
+        "Suspender oxigênio para 'estimular drive'",
+        "Antibiótico único como salvamento da crise"
+      ],
+      explain: "Asma grave/quase fatal refratária: MgSO4, cuidado intensivo e via aérea se fadiga/hipoxemia. Alta é perigosa. Beta-bloqueador e retirar O2 são deletérios.",
+      trap: "Negar gravidade e liberar paciente sonolenta hipoxêmica."
     }
   ];
   pneumo.forEach((q, i) => {
     raw.push({ idPrefix: "ped-pneumo", n: i + 1, group: "Pneumologia / respiratório", ...q });
   });
 
-  // ── Gastroenterologia (8) ──────────────────────────────────────
+  // ── Gastroenterologia (8) ───────────────────────────────────────
   /** @type {RawQ[]} */
   const gastro = [
     {
-      theme: "Diarreia aguda",
-      stem: "Lactente de 11 meses com diarreia aquosa há 2 dias, olhos fundos, lágrimas diminuídas, turgor lento e sede intensa; ainda responsivo. Qual a melhor conduta?",
-      correct: "Reidratação com SRO conforme plano B (ou equivalente) e reavaliação",
+      theme: "Desidratação — plano B",
+      stem: "Lactente de 10 meses, diarreia há 2 dias, olhos fundos, sede aumentada, mucosas secas, lágrimas diminuídas. PA 90/55, FC 140, FR 32, SatO2 98%, peso atual 8,2 kg (prévio 8,8 kg). Sem choque. Qual a melhor conduta?",
+      correct: "Plano B: TRO sob supervisão (SRO 50–100 mL/kg em 4–6 h) e reavaliação seriada",
       wrongs: [
-        "Antibiotico empírico para todos os vírus enterais",
-        "Loperamida para reduzir o número de evacuações",
-        "Jejum absoluto por 48 horas"
+        "Plano A exclusivo em casa sem supervisão, apesar de sinais de desidratação",
+        "Plano C com SF 20 mL/kg em bolus imediato na ausência de choque",
+        "Antiemético intramuscular obrigatório antes de qualquer SRO",
+        "Antibiótico empírico em toda diarreia aquosa"
       ],
-      explain: "Sinais de desidratação moderada pedem SRO supervisionada e reavaliação. Loperamida é contraindicada em lactentes. Antibiótico não é rotina em diarreia aquosa viral. Jejum prolongado atrasa recuperação.",
-      trap: "Usar antidiarreico antimotilidade em lactente desidratado."
+      explain: "Sinais de desidratação sem choque = Plano B com SRO supervisionada. Plano A é prevenção/manutenção sem desidratação. Plano C reserva-se a choque/desidratação grave com falha oral. Antibiótico não é rotina na aquosa.",
+      trap: "Aplicar Plano C em criança desidratada mas hemodinamicamente estável e com sede."
     },
     {
-      theme: "Constipação",
-      stem: "Pré-escolar com evacuações endurecidas, escape fecal e massa fecal em ampola. Qual a abordagem inicial mais adequada?",
-      correct: "Desimpactação e laxativo de manutenção com orientações de banheiro e fibras/líquidos",
+      theme: "Desidratação — plano C",
+      stem: "Lactente de 8 meses, diarreia e vômitos, letárgico, enchimento capilar 5 s, extremidades frias. PA 70/40, FC 175, FR 40, SatO2 96%. Sem diurese há 8 h. Qual a conduta imediata?",
+      correct: "Plano C: acesso venoso, expansões com cristaloides e reavaliação; via aérea/oxigênio se necessário",
       wrongs: [
-        "Apenas punição comportamental sem tratamento orgânico da impactação",
-        "Cirurgia de Hartmann de rotina",
-        "Antibiótico prolongado para 'flora intestinal'"
+        "Apenas SRO oral forçada na criança letárgica em choque",
+        "Diurético de alça para 'estimular diurese'",
+        "Alta após 100 mL de SRO e antitérmico",
+        "Coloide obrigatório como primeiro líquido em todo choque hipovolêmico"
       ],
-      explain: "Constipação funcional com escape (sobretudo retentiva) exige desimpactação e manutenção. Punir a criança piora o ciclo. Cirurgia não é primeira linha.",
-      trap: "Tratar escape fecal como 'falta de educação' sem desimpactar."
+      explain: "Choque hipovolêmico = Plano C com EV rápido. Oral isolada falha na letargia/choque. Diurético piora. Cristaloide é primeira linha.",
+      trap: "Insistir em TRO oral na criança em choque."
     },
     {
-      theme: "RGE / DRGE",
-      stem: "Lactente de 2 meses regurgita após mamadas, ganha peso bem, sem crises de apneia ou sangramento. Melhor conduta?",
-      correct: "Tranquilizar e medidas posturais/espessamento se necessário; evitar exames invasivos de rotina",
+      theme: "Invaginação intestinal",
+      stem: "Lactente de 9 meses, crises de choro com palidez, vômitos, fezes em 'geleia de morango'. PA 85/50, FC 150, massa palpável em hipocôndrio direito. US: sinal do alvo. Qual a conduta?",
+      correct: "Estabilizar e indicar enema seletivo/redução sob orientação ou cirurgia se falha/perfuração",
       wrongs: [
-        "Fundoplicatura imediata",
-        "IBP em dose máxima por 12 meses sem critérios",
-        "Endoscopia urgente em todo regurgitador"
+        "Alta com antiespasmódico e fibra",
+        "Colonoscopia ambulatorial em 30 dias",
+        "Apenas probiótico e observação domiciliar",
+        "Apendicectomia laparoscópica empírica sem imagem"
       ],
-      explain: "Regurgitação com bom ganho é tipicamente fisiológica. Invasivo e IBP prolongado reservam-se a DRGE complicada. Cirurgia é excepcional.",
-      trap: "Medicalizar refluxo fisiológico com IBP prolongado."
+      explain: "Invaginação clássica: estabilização e redução radiológica guiada; cirurgia se complicação/falha. Condutas domiciliares atrasam tratamento de emergência.",
+      trap: "Tratar invaginação como cólica e liberar sem US/redução."
     },
     {
       theme: "Apendicite",
-      stem: "Escolar com dor periumbilical migrando para fossa ilíaca direita, vômitos, febre baixa e descompressão dolorosa. Ultrassom inconclusivo. Qual a melhor conduta?",
-      correct: "Manter alta suspeita clínica; observação cirúrgica/imagem complementar e não liberar com analgésico isolado",
+      stem: "Menino de 10 anos, dor periumbilical migrando para FID há 20 h, vômitos, febre 38,2 °C. PA 110/70, FC 112, FR 22, defesao de Blumberg. Leucócitos 15.500 (desvio). Qual a melhor conduta?",
+      correct: "Jejum, hidratação, antibiótico quando indicado e avaliação cirúrgica para apendicectomia",
       wrongs: [
-        "Alta com dipirona e retorno 'se piorar' sem plano",
-        "Antibiótico oral ambulatorial como tratamento definitivo sem avaliação",
-        "Lavagem intestinal forçada em domicilio"
+        "Analgésico potente e alta com diagnóstico de 'vírus intestinal'",
+        "Laxativo para 'limpar o apêndice'",
+        "Colonoscopia terapêutica como padrão",
+        "Corticosteroide para reduzir inflamação e evitar cirurgia"
       ],
-      explain: "Migratória clássica com sinais peritoneais mantém indicação de avaliação cirúrgica mesmo com US inconclusivo. Alta precoce com analgésico mascara evolução.",
-      trap: "Confiar cegamente em ultrassom negativo e liberar o paciente."
-    },
-    {
-      theme: "Intussuscepção",
-      stem: "Lactente de 8 meses com episódios de choro intenso e palidez intercalados com letargia, vômitos e evacuações com sangue escuro em geleia. Massa em forma de salsicha em hipocôndrio. Próximo passo?",
-      correct: "Estabilizar e encaminhar para redução (enema guiado/cirurgia conforme disponibilidade e gravidade)",
-      wrongs: [
-        "Apenas probiótico e observação domiciliar",
-        "Tratar como fissura anal com pomada",
-        "Colonoscopia ambulatorial eletiva em 30 dias"
-      ],
-      explain: "Quadro clássico de intussuscepção exige redução urgente após estabilização. Pomada para fissura não aborda a urgência. Atraso aumenta risco de necrose.",
-      trap: "Atribuir sangue nas fezes só a fissura e mandar para casa."
+      explain: "Síndrome apendicular: manejo perioperatório e cirurgia. Laxativo, alta com analgésico ou corticoide são inadequados e perigosos, pois atrasam o tratamento da inflamação/perfuração.",
+      trap: "Mascarar apendicite com analgésico e alta."
     },
     {
       theme: "Doença celíaca",
-      stem: "Escolar com diarreia crônica, anemia ferropriva refratária, baixo peso e distensão. Come glúten regularmente. Qual a estratégia diagnóstica correta?",
-      correct: "Sorologias específicas (ex.: anti-transglutaminase IgA + IgA total) com dieta contendo glúten, e biópsia conforme protocolo",
+      stem: "Pré-escolar de 4 anos, diarreia crônica, distensão, anemia ferropriva refratária. Anti-transglutaminase IgA elevado, IgA sérica normal. Qual o próximo passo?",
+      correct: "Manter dieta com glúten até biópsia duodenal (se indicada) e então dieta isenta sob orientação",
       wrongs: [
-        "Retirar glúten por 6 meses e só então dosar sorologia",
-        "Diagnosticar só por teste IgG anti-gliadina antigo isolado",
-        "Indicar pancreatectomia"
+        "Retirar glúten imediatamente antes de qualquer confirmação e nunca biopsiar",
+        "Dieta sem lactose definitiva como cura da celíaca",
+        "Corticoterapia prolongada sem dieta",
+        "Cirurgia de bypass intestinal"
       ],
-      explain: "Investigação de celíaca deve ocorrer sob dieta com glúten. Retirar glúten antes dos testes falseia resultados. Confirmação segue algoritmo sorológico ± biópsia.",
-      trap: "Começar dieta sem glúten 'de teste' antes da investigação formal."
+      explain: "Sorologia positiva: confirmação histológica tipicamente com glúten na dieta; depois dieta sem glúten vitalícia. Retirar glúten antes pode falsear biópsia. Lactose não trata celíaca.",
+      trap: "Começar dieta sem glúten antes da confirmação diagnóstica adequada."
     },
     {
-      theme: "Hepatite / icterícia",
-      stem: "Adolescente com icterícia, colúria, anorexia e ALT/AST muito elevadas após quadro prodrômico. Sorologia anti-HBc IgM positiva e HBsAg positivo. Diagnóstico?",
-      correct: "Hepatite B aguda",
+      theme: "RGE vs DRGE",
+      stem: "Lactente de 3 meses, regurgitações frequentes após mamadas, ganho ponderal adequado (P50), sem apneia, sem anemia, exame normal. Qual a conduta?",
+      correct: "Orientação postural/volume e tranquilização; sem exame invasivo nem IBP de rotina",
       wrongs: [
-        "Hepatite A exclusiva, sem necessidade de sorologia B",
-        "Obstrução por cálculo como primeira hipótese sem dor",
-        "Síndrome de Gilbert com aminotransferases normais"
+        "Fundoplicatura de Nissen imediata",
+        "Endoscopia digestiva alta em todo regurgitador",
+        "IBP em dose plena por 6 meses sem critérios de DRGE",
+        "Suspender aleitamento materno obrigatoriamente"
       ],
-      explain: "HBsAg + anti-HBc IgM definem infecção aguda por HBV. Gilbert não eleva muito as transaminases. Cálculo costuma ter padrão colestático e dor.",
-      trap: "Chamar toda hepatite aguda de A sem sorologias."
+      explain: "RGE fisiológico com crescimento bom: medidas conservadoras. IBP/endoscopia/cirurgia reservam-se a DRGE complicada. Não se suspende AME por regurgitação isolada.",
+      trap: "Prescrever IBP em regurgitação fisiológica."
     },
     {
-      theme: "Alergia alimentar",
-      stem: "Lactente em fórmula padrão com sangue nas fezes, irritabilidade e bom estado geral, sem anemia grave. Hipótese de proctocolite. Melhor conduta inicial?",
-      correct: "Prova terapêutica com fórmula extensamente hidrolisada (ou dieta materna se AME) e seguimento",
+      theme: "Constipação funcional",
+      stem: "Escolar de 6 anos, evacuações endurecidas a cada 4 dias, escape fecal, massa fecal em ampula. Sem perda ponderal, sem sangue nas fezes, crescimento normal. Qual a conduta?",
+      correct: "Desimpactação, laxativo de manutenção (ex. PEG) e treino intestinal com fibra/líquidos",
       wrongs: [
-        "Colonoscopia imediata em todos os casos leves",
-        "Adrenalina intramuscular de rotina a cada mamada",
-        "Antibiótico por 14 dias"
+        "Cirurgia de Hartmann de rotina",
+        "Antibiótico prolongado",
+        "Jejum e NPP por 2 semanas",
+        "Punção lombar para excluir neurogênica em todo caso funcional típico"
       ],
-      explain: "Proctocolite por proteína do leite costuma ser leve e responde a exclusão/fórmula hidrolisada. Colonoscopia não é primeiro passo. Adrenalina é para anafilaxia.",
-      trap: "Indicar endoscopia invasiva precoce em proctocolite leve típica."
+      explain: "Constipação funcional com escape: desimpactar + manutenção + hábitos. Cirurgia/NPP/antibiótico não cabem. PL não é rotina sem sinais neurológicos.",
+      trap: "Tratar só o escape com antidiarréico e ignorar a fecaloma."
+    },
+    {
+      theme: "Hepatite A",
+      stem: "Criança de 8 anos, icterícia, colúria, fezes hipocólicas, febre baixa há 5 dias. TGO 980, TGP 1100, bilirrubina total 6,8 (BD 4,1), anti-HAV IgM positivo. INR 1,1, sensorium normal. Qual a conduta?",
+      correct: "Suporte sintomático, higiene, notificação e vigilância de falência hepática; sem antivirais específicos de rotina",
+      wrongs: [
+        "Oseltamivir por 5 dias",
+        "Corticoterapia alta dose como cura",
+        "Transplante hepático imediato com INR 1,1 e bom estado mental",
+        "Antibiótico de amplo espectro obrigatório"
+      ],
+      explain: "Hepatite A aguda típica é autolimitada: suporte e vigilância. Transplante cabe em falência. Antivirais/antibióticos/corticoides não são tratamento padrão.",
+      trap: "Indicar transplante precocemente sem critérios de falência."
     }
   ];
   gastro.forEach((q, i) => {
     raw.push({ idPrefix: "ped-gastro", n: i + 1, group: "Gastroenterologia", ...q });
   });
 
-  // ── Urgências (8) ──────────────────────────────────────────────
+  // ── Urgências e emergências (8) ─────────────────────────────────
   /** @type {RawQ[]} */
   const urg = [
     {
-      theme: "PCR / PALS",
-      stem: "Criança em PCR, ritmo não chocável, via aérea aberta. Qual a sequência medicamentosa/energia mais coerente com PALS?",
-      correct: "Adrenalina a cada 3–5 minutos; identificar e tratar causas reversíveis",
+      theme: "Picada de escorpião",
+      stem: "Menino de 4 anos, picada de escorpião há 40 min. Choro intenso, sudorese, vômitos repetidos, dor local. PA 130/90 mmHg, FC 150 bpm, FR 32, SatO2 97%, glicemia 160 mg/dL. Qual a melhor conduta?",
+      correct: "Classificar como acidente moderado/grave na criança, suporte e soro antiescorpiônico precoce em ambiente monitorado",
       wrongs: [
-        "Amiodarona em bolus repetidos sem indicação de ritmo",
-        "Cardioversão sincronizada como primeiro ato em assistolia",
-        "Bicarbonato de rotina em todos os ciclos"
+        "Apenas compressa local e alta, pois adulto com mesmo quadro seria leve",
+        "Torniquete apertado e sucção do veneno",
+        "Corticosteroide EV como antídoto específico",
+        "Antibiótico de amplo espectro no lugar do soro"
       ],
-      explain: "Em ritmos não chocáveis, adrenalina periódica e busca de Hs/Ts são pilares. Cardioversão sincronizada não trata assistolia/AESP. Bicarbonato não é rotina.",
-      trap: "Aplicar lógica de FV/TV sem pulso (choque/antiarrítmico) em assistolia."
-    },
-    {
-      theme: "Choque",
-      stem: "Lactente com taquicardia, enchimento capilar de 5 s, pressão limítrofe e história de diarreia intensa. Qual a prioridade imediata?",
-      correct: "Expansão volumétrica com cristaloide em bolus e reavaliação da perfusão",
-      wrongs: [
-        "Noradrenalina como primeiro passo sem volume",
-        "Diurético para evitar sobrecarga",
-        "Aguardar hemocultura por 2 horas antes de qualquer fluido"
-      ],
-      explain: "Choque hipovolêmico/distributivo inicial na criança responde a bolus de cristaloide e reassessment. Vasopressor vem após volume inadequado/refratariedade, não antes em hipovolemia pura.",
-      trap: "Começar vasoativo em choque hipovolêmico sem repor volume."
+      explain: "Em crianças, manifestações sistêmicas (vômitos, sudorese, hipertensão/taquicardia) indicam maior gravidade e uso precoce de soro antiescorpiônico com monitorização. Torniquete/sucção e corticoide não substituem o soro.",
+      trap: "Subestimar escorpionismo na criança porque em adulto o mesmo quadro poderia ser menos grave."
     },
     {
       theme: "Anafilaxia",
-      stem: "Escolar após ingestão de amendoim apresenta urticária, vômitos, sibilância e queda da pressão. Qual a droga de primeira linha?",
-      correct: "Adrenalina intramuscular na face ântero-lateral da coxa",
+      stem: "Escolar de 7 anos, após amendoim: urticária, estridor, vômitos. PA 78/45, FC 140, FR 36, SatO2 91%. Qual a conduta prioritária?",
+      correct: "Adrenalina intramuscular na face anterolateral da coxa, O2 e suporte; repetir se necessário",
       wrongs: [
-        "Apenas anti-histamínico oral e observação domiciliar",
-        "Corticoide EV como única medida",
-        "Salbutamol nebulizado isolado sem adrenalina"
+        "Apenas anti-histamínico oral e observar 10 minutos em casa",
+        "Corticosteroide EV como primeira droga antes da adrenalina",
+        "Salbutamol isolado sem adrenalina",
+        "Esperar confirmação IgE específica antes de tratar"
       ],
-      explain: "Anafilaxia exige adrenalina IM imediata. Anti-histamínico e corticoide são adjuvantes e não substituem a adrenalina. Broncodilatador ajuda o broncoespasmo, mas não trata o choque/anafilaxia global.",
+      explain: "Anafilaxia com comprometimento respiratório/hemodinâmico: adrenalina IM imediata. Anti-histamínico e corticoide são adjuvantes, não salvam via aérea/choque.",
       trap: "Priorizar anti-histamínico/corticoide e atrasar a adrenalina."
     },
     {
-      theme: "Convulsão",
-      stem: "Pré-escolar em crise tônico-clônica contínua há 8 minutos na emergência, acesso obtido. Qual o medicamento de primeira linha?",
-      correct: "Benzodiazepínico (ex.: diazepam/midazolam/lorazepam) na dose e via adequadas",
+      theme: "PCR pediátrica",
+      stem: "Criança de 2 anos em PCR, ritmo assistolia. Via aérea posicionada. Qual a sequência correta de drogas/compressões?",
+      correct: "RCP de alta qualidade, acesso, adrenalina EV/IO a cada 3–5 min e tratar causas reversíveis",
       wrongs: [
-        "Fenitoína intramuscular como primeiro agente",
-        "Antibiótico empírico antes de cessar a crise",
-        "Observação sem fármaco até 30 minutos"
+        "Choque desfibrilável imediato na assistolia",
+        "Amiodarona como primeira droga na assistolia",
+        "Bicarbonato de rotina em toda PCR",
+        "Suspender RCP após 2 min sem ROSC em toda criança"
       ],
-      explain: "Estado de mal convulsivo inicia com benzodiazepínico. Fenitoína/outros vêm depois se a crise persistir. Esperar 30 minutos é inaceitável.",
-      trap: "Pular o benzodiazepínico e ir direto a anticonvulsivante de manutenção."
+      explain: "Assistolia não é ritmo chocável: RCP + adrenalina periódica e H’s/T’s. Amiodarona cabe em FV/TV refratária. Bicarbonato não é rotina.",
+      trap: "Aplicar desfibrilação na assistolia, confundindo com ritmo chocável."
     },
     {
-      theme: "TCE",
-      stem: "Menino de 6 anos caiu da própria altura, sem perda de consciência, exame neurológico normal, sem vômitos repetidos nem mecanismo grave. Qual a conduta mais adequada?",
-      correct: "Observação e orientações de retorno; imagem não é rotina",
+      theme: "Choque séptico",
+      stem: "Lactente de 11 meses, febre, letargia, enchimento capilar 5 s, petéquias. PA 70/40, FC 180, FR 50, SatO2 94%. Qual a conduta na primeira hora?",
+      correct: "Expansões com cristaloides, antibiótico EV precoce após culturas quando possíveis, e suporte vasoativo se refratário",
       wrongs: [
-        "TC de crânio imediata em todos os TCE leves",
-        "Internação em UTI por 72 horas obrigatória",
-        "Punção lombar diagnóstica"
+        "Aguardar hemograma para iniciar antibiótico em petéquias e choque",
+        "Diuréticos para reduzir FC",
+        "AAS em dose de Kawasaki como única medida",
+        "Alta com amoxicilina oral"
       ],
-      explain: "TCE leve de baixo risco com exame normal pode ser observado sem TC rotineira, reduzindo radiação. Critérios de PECARN/similares guiam imagem.",
-      trap: "Pedir TC em todo batida de cabeça, sem estratificar risco."
+      explain: "Choque séptico: fluidos, antibiótico imediato e reavaliação para aminas. Atraso por exames é deletério. Alta oral é inadequada.",
+      trap: "Esperar 'provas' laboratoriais antes do antibiótico no choque com púrpura."
     },
     {
-      theme: "Intoxicação",
-      stem: "Adolescente trazido 45 minutos após ingestão de grande quantidade de paracetamol em tentativa de autoextermínio, ainda assintomático. Melhor conduta?",
-      correct: "Avaliar níveis/tempo e iniciar N-acetilcisteína conforme protocolo, além de suporte e cuidado em saúde mental",
+      theme: "Cetoacidose diabética",
+      stem: "Adolescente de 13 anos, polidipsia, vômitos, respiração de Kussmaul. Glicemia 480 mg/dL, pH 7,12, HCO3 8, K 5,2, SatO2 98%. Qual a conduta inicial?",
+      correct: "Hidratação com SF, insulina EV contínua após iniciar fluidos, reposição cuidadosa de K e monitorar edema cerebral",
       wrongs: [
-        "Alta liberada porque ainda não há icterícia",
-        "Aguardar falência hepática para tratar",
-        "Induzir vômito com água sanitária"
+        "Insulina subcutânea bolus alto sem hidratação",
+        "Bicarbonato de rotina em todo pH < 7,20",
+        "Restrição hídrica total por risco de edema cerebral sem reposição inicial",
+        "Hipoglicemiante oral como primeira linha na CAD"
       ],
-      explain: "Toxicidade por paracetamol pode ser inicialmente silenciosa; NAC precoce previne hepatotoxicidade. Esperar icterícia é tarde. Eméticos cáusticos são perigosos.",
-      trap: "Liberar intoxicação por paracetamol 'assintomática' sem protocolo de NAC."
+      explain: "CAD: fluidos primeiro, insulina EV, potássio conforme protocolo; bicarbonato só em casos extremos selecionados. Edema cerebral exige vigilância, não jejum hídrico absoluto inicial.",
+      trap: "Dar insulina subcutânea agressiva sem hidratação adequada."
     },
     {
-      theme: "Desidratação grave",
-      stem: "Lactente letárgico, sem lágrimas, turgor muito diminuído, pulsos fracos e enchimento capilar >5 s após diarreia. Qual a prioridade?",
-      correct: "Acesso vascular/intraósseo e expansão EV imediata",
+      theme: "Intoxicação — paracetamol",
+      stem: "Pré-escolar de 3 anos ingeriu paracetamol há 3 h (dose estimada 200 mg/kg). Afebril, exame normal. Qual a melhor conduta?",
+      correct: "Dosar paracetamol sérico no tempo adequado, iniciar N-acetilcisteína se critério de risco e suporte",
       wrongs: [
-        "Tentar apenas SRO oral por 2 horas na sala de espera",
-        "Restrição hídrica por risco de SIADH",
-        "Sonda nasogástrica com dieta hipercalórica como primeiro ato"
+        "Alta imediata porque está assintomático nas primeiras horas",
+        "Carvão ativado após 24 h como única medida",
+        "Fomepizol como antídoto do paracetamol",
+        "Hemodiálise de rotina em toda ingestão"
       ],
-      explain: "Desidratação grave com choque exige volume EV/IO imediato. SRO é para planos A/B em pacientes que bebem e não estão em choque.",
-      trap: "Insistir em SRO oral na criança em choque hipovolêmico."
+      explain: "Intoxicação por paracetamol pode ser inicialmente assintomática; usa-se nomograma e NAC. Fomepizol é para metanol/etilenoglicol. Alta precoce é perigosa.",
+      trap: "Liberar criança assintomática após overdose significativa de paracetamol."
     },
     {
-      theme: "Corpo estranho em via aérea",
-      stem: "Lactente engasgado, consciente, com tosse ineficaz e cianose crescente. Qual a manobra imediata?",
-      correct: "Manobras de desobstrução da via aérea adequadas à idade (tapotagem/compressões)",
+      theme: "Afogamento",
+      stem: "Menino de 5 anos resgatado de piscina, tossindo, SatO2 90% em ar, FR 36, ausculta com crepitações. PA 100/60, FC 120. Qual a conduta?",
+      correct: "Oxigênio, observação hospitalar prolongada e suporte respiratório conforme necessidade",
       wrongs: [
-        "Oferecer água para 'empurrar' o objeto",
-        "Realizar varredura digital cega de rotina",
-        "Aguardar parada completa antes de qualquer ação"
+        "Alta em 30 minutos se tossir menos",
+        "Antibiótico profilático obrigatório em todo submerso",
+        "Corticosteroide de rotina para prevenir edema pulmonar",
+        "Diurético imediato mesmo hemodinamicamente estável sem sobrecarga"
       ],
-      explain: "Obstrução grave com tosse ineficaz exige desobstrução imediata por manobras etárias. Varredura cega pode impactar o objeto. Água não remove corpo estranho.",
-      trap: "Fazer finger sweep cego ou esperar a PCR para agir."
+      explain: "Após submersão com hipoxemia, há risco de deterioração tardia: O2 e observação. Antibiótico/corticoide/diurético não são rotina.",
+      trap: "Alta precoce pós-afogamento com hipoxemia inicial."
+    },
+    {
+      theme: "Traumatismo craniano",
+      stem: "Criança de 2 anos, queda de 1,2 m. Choro imediato, vômito único, agora alerta, Glasgow 15, sem déficit, hematomas cefálicos pequenos. Qual a melhor conduta?",
+      correct: "Observação guiada por regras de decisão (PECARN) e TC se fatores de risco; orientação de sinais de alarme",
+      wrongs: [
+        "TC de crânio obrigatória em toda queda, mesmo baixo risco",
+        "Punção lombar de rotina",
+        "Alta sem orientações de alarme",
+        "Manitol empírico em Glasgow 15"
+      ],
+      explain: "TCE pediátrico leve usa critérios clínicos para TC vs observação. Manitol não cabe em Glasgow 15 estável. Orientação de alarme é essencial.",
+      trap: "Tomografar indiscriminadamente ou liberar sem orientação."
     }
   ];
   urg.forEach((q, i) => {
@@ -1041,76 +1129,82 @@ function buildBank () {
   /** @type {RawQ[]} */
   const nefro = [
     {
-      theme: "ITU",
-      stem: "Lactente febril sem foco aparente, bom estado, urina de jato médio contaminada. Qual a melhor estratégia diagnóstica?",
-      correct: "Obter urocultura por método adequado (saco com cautela/cateterismo/punção) antes do antibiótico quando possível",
+      theme: "ITU e treinamento esfincteriano",
+      stem: "Menina de 2 anos e 8 meses em treinamento de toalete, febre 38,8 °C, disúria, urina fétida. EAS: esterase leucocitária positiva, nitrito negativo, piúria 25/campo. Qual a melhor conduta?",
+      correct: "Coletar urocultura (melhor por método adequado) e iniciar antibiótico empírico para ITU, com reavaliação",
       wrongs: [
-        "Tratar por 3 dias sem cultura porque 'toda febre é viral'",
-        "Diagnosticar ITU só pelo odor da fralda",
-        "TC de abdome de rotina em toda febre"
+        "Afastar ITU porque o nitrito é negativo",
+        "Tomografia de abdome antes de tratar",
+        "Internar em UTI e vancomicina de rotina sem critérios de gravidade",
+        "Tratar só com hidratação e analgésico, sem antibiótico"
       ],
-      explain: "Febre sem foco no lactente exige exclusão de ITU com urocultura bem colhida. Odor isolado não diagnostica. Antibiótico sem cultura dificulta o manejo.",
-      trap: "Tratar empiricamente sem cultura ou diagnosticar por cheiro da fralda."
+      explain: "Esterase+ e piúria com clínica sugerem ITU mesmo com nitrito− (comum se gram-positivos ou urina pouco tempo na bexiga). Urocultura + antibiótico empírico. Nitrito negativo não exclui.",
+      trap: "Excluir ITU só porque o nitrito é negativo em criança no desfralde."
     },
     {
       theme: "Síndrome nefrótica",
-      stem: "Pré-escolar com edema periorbitário matinal, proteinúria maciça, hipoalbuminemia e colesterol elevado, sem hipertensão grave nem hematúria franca. Conduta inicial típica?",
-      correct: "Corticoterapia conforme protocolo de nefrótica idiopática e orientações sobre complicações",
+      stem: "Menino de 4 anos, edema palpebral e de membros, urina espumosa. PA 100/65, albumina 2,1 g/dL, colesterol 280, EAS com proteinúria 3+, creatinina normal. Qual a conduta inicial típica?",
+      correct: "Diagnóstico de síndrome nefrótica; corticoterapia segundo protocolo e orientação de complicações (infecção/trombose)",
       wrongs: [
-        "Biópsia renal imediata em todos os pré-escolares típicos antes de qualquer corticoide",
-        "Antibiótico prolongado como tratamento da proteinúria",
-        "Restrição absoluta de água e sal sem acompanhamento"
+        "Antibiótico contínuo sem edema e sem infecção",
+        "Biópsia renal obrigatória antes de qualquer corticoide em todo pré-escolar típico",
+        "Restrição proteica severa como pilar único",
+        "Diurético de alça em altas doses sem albumina/avaliação"
       ],
-      explain: "Nefrótica idiopática típica em pré-escolar costuma iniciar corticoide sem biópsia imediata. Biópsia reserva-se a atípicos/refratários. Antibiótico não trata a proteinúria.",
-      trap: "Biópsiar todo caso típico antes da prova terapêutica com corticoide."
+      explain: "Pré-escolar com SN idiopática típica: corticoide empírico; biópsia se atípico/refratário. Infecção e trombose são riscos. Restrição proteica severa não é base.",
+      trap: "Biopsiar todo pré-escolar típico antes do corticoide."
     },
     {
-      theme: "Glomerulonefrite",
-      stem: "Escolar 2 semanas após impetigo apresenta edema, hipertensão e urina cor de chá com hematúria dismórfica. C3 baixo. Diagnóstico mais provável?",
-      correct: "Glomerulonefrite pós-estreptocócica",
+      theme: "Glomerulonefrite aguda",
+      stem: "Escolar de 7 anos, edema, hematúria cola, PA 130/90 mmHg. Antecedente de impetigo há 3 semanas. C3 baixo, creatinina 0,9, ASLO elevado. Qual a conduta?",
+      correct: "Suporte, restrição hídrica/sal, anti-hipertensivo se necessário e vigilância de função renal; antibiótico se infecção ativa",
       wrongs: [
-        "Síndrome nefrótica de mudanças mínimas pura",
-        "ITU baixa sem acometimento glomerular",
-        "Diabetes insipidus central"
+        "Imunossupressão agressiva imediata como na LES sem critérios",
+        "Biópsia imediata em todo caso típico autolimitado",
+        "Alta sem controle pressórico",
+        "Anticoagulação plena de rotina"
       ],
-      explain: "Intervalo pós-estreptocócico cutâneo, síndrome nefrítica e C3 baixo são clássicos de GNPE. Mudanças mínimas é nefrótica sem hematúria/hipertensão típicas.",
-      trap: "Chamar de nefrótica todo edema, ignorando hematúria e hipertensão."
+      explain: "GNPE clássica: suporte e controle de volume/PA; C3 baixa é transitória. Imunossupressão e biópsia não são rotina no quadro típico pós-estreptocócico.",
+      trap: "Tratar GNPE típica como nefrite lúpica com imunossupressão."
     },
     {
-      theme: "SHA / HUS",
-      stem: "Pré-escolar após diarreia sanguinolenta evolui com palidez, oligúria, hipertensão, plaquetopenia e esquizócitos. Qual o diagnóstico sindrômico?",
-      correct: "Síndrome hemolítico-urêmica",
-      wrongs: [
-        "Púrpura de Henoch-Schönlein sem alterações renais laboratoriais",
-        "Anemia ferropriva isolada",
-        "Cistite simples"
-      ],
-      explain: "Tríade anemia hemolítica microangiopática + plaquetopenia + injúria renal após diarreia sanguinolenta define SHU típica. Ferropriva não gera esquizócitos nem IRA assim.",
-      trap: "Tratar só a diarreia e perder a microangiopatia renal."
-    },
-    {
-      theme: "Hipertensão",
-      stem: "Adolescente obeso com PA persistentemente elevada em consultório e em casa, sem sintomas. Exame de fundo de olho normal. Melhor abordagem inicial?",
-      correct: "Confirmar técnica/medidas, investigar causas secundárias selecionadas e iniciar mudanças de estilo de vida",
+      theme: "Hipertensão pediátrica",
+      stem: "Adolescente de 15 anos, PA repetida 145/95 mmHg, IMC percentil 96, creatinina normal, EAS normal. Qual a melhor conduta inicial?",
+      correct: "Confirmar com medidas adequadas/MAPA se preciso, mudanças de estilo de vida e investigar causa secundária se indicado",
       wrongs: [
         "Iniciar três anti-hipertensivos de uma vez sem confirmação",
-        "Ignorar porque 'criança não tem hipertensão'",
-        "Internar em UTI para nitroprussiato empírico"
+        "Ignorar porque 'PA de adulto não se aplica'",
+        "Nefrectomia empírica",
+        "AAS em dose antiplaquetária como único tratamento"
       ],
-      explain: "PA elevada exige confirmação e estratificação. Em obesos, estilo de vida é central; investigação secundária é dirigida. Nitroprussiato é para emergência hipertensiva.",
-      trap: "Negar a existência de hipertensão pediátrica ou tratar como emergência sem critérios."
+      explain: "HAS pediátrica exige confirmação técnica, intervenção em hábitos e investigação selecionada. Polifarmácia imediata sem confirmação é inadequada.",
+      trap: "Descartar HAS na infância por desconhecer percentis/critérios."
     },
     {
-      theme: "Enurese / anomalia",
-      stem: "Menina de 5 anos nunca teve continência diurna, com escapes constantes e infecções urinárias de repetição. Qual a preocupação anatômica principal a investigar?",
-      correct: "Malformação/ectopia ureteral ou outra anomalia do trato urinário",
+      theme: "HUS / SHU",
+      stem: "Pré-escolar de 3 anos, diarreia sanguinolenta há 5 dias, agora palidez, oligúria. Hb 7,2, plaquetas 55.000, esquizócitos, creatinina 1,8, PA 120/80. Qual o diagnóstico e conduta?",
+      correct: "Síndrome hemolítico-urêmica; suporte, controle volêmico/PA e dialisar se critérios; evitar antibiótico empírico desnecessário na fase diarréica típica",
       wrongs: [
-        "Apenas enurese noturna monosintomática típica",
-        "Diabetes mellitus sem poliúria/polidipsia",
-        "Constipação exclusiva sem avaliação urológica"
+        "PTT clássico do adulto; plasmaférese imediata em todo caso pediátrico típico pós-diarreia",
+        "Transfusão de plaquetas de rotina sem sangramento",
+        "Alta com ferro oral apenas",
+        "Corticosteroide como cura da SHU típica"
       ],
-      explain: "Incontinência diurna contínua desde sempre em menina sugere ectopia ureteral (ureter em vestíbulo/vagina). Não é enurese noturna clássica. Exige imagem/urologia.",
-      trap: "Tratar como enurese comportamental uma incontinência diurna contínua primária."
+      explain: "Tríade anemia hemolítica microangiopática + plaquetopenia + LRA pós-diarreia = SHU típica: suporte/diálise se preciso. Plaquetas só se sangramento/procedimento. Antibiótico na EHEC pode ser controverso/prejudicial.",
+      trap: "Transfundir plaquetas de rotina ou tratar como anemia ferropriva."
+    },
+    {
+      theme: "Refluxo vesicoureteral",
+      stem: "Lactente de 5 meses, segunda ITU febril. US com dilatação pielocalicinal. UCM: RVU grau III. Qual a conduta habitual?",
+      correct: "Profilaxia antibiótica selecionada, acompanhamento e avaliar procedimento se infecções recorrentes/piora",
+      wrongs: [
+        "Nefrectomia imediata em grau III",
+        "Ignorar RVU após tratar a ITU aguda",
+        "Corticosteroide prolongado",
+        "Restrição hídrica severa permanente"
+      ],
+      explain: "RVU grau III: muitas vezes manejo clínico com profilaxia e vigilância; cirurgia em falhas/complicações. Nefrectomia não é inicial.",
+      trap: "Operar de imediato todo RVU sem tentativa de manejo clínico."
     }
   ];
   nefro.forEach((q, i) => {
@@ -1121,76 +1215,82 @@ function buildBank () {
   /** @type {RawQ[]} */
   const endo = [
     {
-      theme: "Cetoacidose",
-      stem: "Escolar polidipsia e emagrecimento, agora com vômitos, respiração profunda, glicemia 480 mg/dL e pH 7,12. Qual a prioridade terapêutica inicial?",
-      correct: "Hidratação com cristaloide e insulina EV conforme protocolo de CAD, monitorando potássio",
+      theme: "Diabetes tipo 1 — início",
+      stem: "Menina de 9 anos, poliúria, polidipsia, emagrecimento 3 kg. Glicemia 320 mg/dL, HbA1c 10,2%, pH 7,36, HCO3 20, sem vômitos. Qual a conduta?",
+      correct: "Iniciar insulinoterapia, educação em diabetes e rastrear tireoide/celíaca; não usar hipoglicemiante oral como base",
       wrongs: [
-        "Insulina subcutânea isolada sem hidratação",
-        "Bicarbonato de rotina em todo pH < 7,20",
-        "Jejuar e só observar até gasometria normalizar sozinha"
+        "Metformina isolada como no adulto obeso",
+        "Apenas dieta sem insulina porque pH não está acidótico",
+        "Sulfonilureia oral",
+        "Pancreatectomia diagnóstica"
       ],
-      explain: "CAD pediátrica exige volume cuidadoso + insulina EV e vigilância de K e edema cerebral. Bicarbonato não é rotina. Insulina SC isolada é insuficiente na CAD grave.",
-      trap: "Corrigir agressivamente com bicarbonato ou negligenciar o potássio na CAD."
+      explain: "DM1 pediátrico: insulina desde o diagnóstico, mesmo sem CAD. Hipoglicemiantes orais não substituem. Educação evita CAD futura.",
+      trap: "Tratar DM1 pediátrico com metformina como se fosse DM2 do adulto."
     },
     {
       theme: "Hipotireoidismo congênito",
-      stem: "RN com icterícia prolongada, hernia umbilical, macroglossia e hipotonia; pezinho com TSH elevado. Melhor conduta?",
-      correct: "Confirmar função tireoidiana e iniciar levotiroxina precocemente",
+      stem: "RN de 20 dias, icterícia prolongada, hérnia umbilical, hipotonia. TSH 80 mUI/L, T4 livre baixo. Qual a conduta?",
+      correct: "Iniciar levotiroxina imediatamente em dose pediátrica e acompanhar com endocrinologia",
       wrongs: [
-        "Aguardar 1 ano para ver se 'amadurece'",
-        "Indicar tireoidectomia imediata",
-        "Tratar só com iodo tópico cutâneo"
+        "Aguardar 6 meses para 'madurar' o eixo",
+        "Iodo radioativo ablativo",
+        "Tireoidectomia urgente",
+        "Apenas banho de sol para a icterícia"
       ],
-      explain: "Fenótipo + TSH alto pedem confirmação e reposição imediata. Atraso no tratamento compromete QI. Cirurgia não é o manejo do hipotireoidismo congênito típico.",
-      trap: "Adiar hormônio esperando resolução espontânea."
+      explain: "Hipotireoidismo congênito confirmado exige reposição imediata de levotiroxina para proteger o neurodesenvolvimento; qualquer atraso terapêutico é iatrogênico.",
+      trap: "Adiar levotiroxina aguardando 'maduração'."
     },
     {
-      theme: "Hiperplasia adrenal",
-      stem: "RN do sexo feminino com genitália ambígua e, na 2ª semana, vômitos, desidratação e hiponatremia com hipercalemia. Qual a hipótese mais importante?",
-      correct: "Hiperplasia adrenal congênita por deficiência de 21-hidroxilase (forma perdedora de sal)",
+      theme: "Hiperplasia adrenal congênita",
+      stem: "RN genitália atípica, 10 dias de vida, vômitos, desidratação. Na 135, K 6,8, glicemia 48 mg/dL, 17-OH-progesterona muito elevada. Qual a conduta?",
+      correct: "Tratar crise perdedora de sal: SF, glicose, hidrocortisona e fludrocortisona; investigação adrenal",
       wrongs: [
-        "Diabetes neonatal transitório isolado",
-        "Hipotireoidismo primário puro",
-        "Fibrose cística sem alterações eletrolíticas típicas"
+        "Espironolactona para hipercalemia como única medida",
+        "Insulina para a hipercalemia sem estabilizar",
+        "Alta com fórmula especial sem hormônios",
+        "Cirurgia genital na crise eletrolítica"
       ],
-      explain: "Virilização feminina + crise perdedora de sal com hipoNa/hiperK é clássica de HAC 21-OH. Exige hidrocortisona, fludrocortisona e sal. Outras endocrinopatias não reúnem esse conjunto.",
-      trap: "Tratar só como gastroenterite a crise adrenal neonatal."
+      explain: "HAC clássica em crise: corticoides + mineralocorticoide + volume/glicose. Cirurgia eletiva só após estabilização e definição de sexo social/diagnóstico.",
+      trap: "Corrigir só o potássio e esquecer hidrocortisona/mineralocorticoide."
     },
     {
       theme: "Baixa estatura",
-      stem: "Menino de 10 anos no percentil 3 de estatura, velocidade normal, pai e mãe baixos, idade óssea compatível com a cronológica. Interpretação mais provável?",
-      correct: "Baixa estatura familiar",
+      stem: "Menino de 8 anos, altura −2,8 escores-z, velocidade de crescimento 3 cm/ano, idade óssea atrasada 2 anos, exame sem dismorfismos. Qual o próximo passo?",
+      correct: "Investigar causas (incluindo GH/IGF-1, tireoide, doença crônica) antes de tratar empiricamente",
       wrongs: [
-        "Deficiência de GH clássica com velocidade zero",
-        "Hipotireoidismo não tratado com queda livre da curva",
-        "Doença celíaca ativa sem outros sinais e com velocidade normal"
+        "GH empírico sem investigação",
+        "Testosterona de reposição imediata em pré-púbere",
+        "Afirmar baixa familiar sem medir velocidade de crescimento",
+        "Dieta hiperproteica exclusiva como cura"
       ],
-      explain: "Estatura baixa proporcional à família, com velocidade e idade óssea preservadas, sugere padrão familiar. Déficit de GH costuma ter velocidade baixa e atraso ósseo.",
-      trap: "Investigar GH invasivamente em toda criança no P3 sem olhar velocidade e alvo familiar."
+      explain: "Baixa estatura com baixa velocidade exige investigação etiológica. GH só com indicação. Testosterona não é primeira linha nesse contexto.",
+      trap: "Prescrever GH 'para crescer' sem diagnóstico."
     },
     {
-      theme: "Puberdade precoce",
-      stem: "Menina de 5 anos com telarca, aceleração de crescimento e pico de LH após GnRH elevado. Qual o tratamento específico mais usado?",
-      correct: "Análogo de GnRH",
+      theme: "Tireotoxicose",
+      stem: "Adolescente de 14 anos, taquicardia, perda ponderal, bócio difuso, exoftalmo leve. TSH suprimido, T4 livre alto, TRAb positivo. Qual a conduta inicial típica?",
+      correct: "Antitireoidiano (ex. metimazol) e betabloqueador sintomático; discutir opções definitivas depois",
       wrongs: [
-        "Estrogênio oral contínuo para 'completar a puberdade'",
-        "Testosterona depot mensal",
-        "Iodo radioativo tireoidiano"
+        "Iodo radioativo imediato sem estabilização em toda adolescente",
+        "Levotiroxina para 'equilibrar'",
+        "Cirurgia na primeira consulta sem preparação",
+        "Apenas restrição de iodo alimentar como cura"
       ],
-      explain: "Puberdade precoce central confirma-se com eixo ativado; análogos de GnRH freiam a progressão e preservam potencial estatural. Estrogênio agravaria o quadro.",
-      trap: "Usar hormônio sexual em vez de bloquear o eixo na puberdade precoce central."
+      explain: "Doença de Graves: antitireoidiano ± betabloqueador; terapêutica definitiva depois. Levotiroxina piora. Cirurgia/RAI exigem preparação.",
+      trap: "Dar levotiroxina em hipertireoidismo por confusão com hipo."
     },
     {
-      theme: "Obesidade / DM2",
-      stem: "Adolescente obeso com poliúria, glicemia de jejum 180 mg/dL, HbA1c 8,2%, sem cetoacidose. Anticorpos anti-GAD negativos. Melhor conduta inicial típica?",
-      correct: "Educação, mudanças de estilo de vida e metformina (com insulina se gravidade/protocolo exigir)",
+      theme: "Hipoglicemia — adrenal",
+      stem: "Lactente de 14 meses, convulsão, hipoglicemia 38 mg/dL, Na 128, K 5,9, pigmentação discreta. Cortisol baixo na crise. Qual a conduta?",
+      correct: "Corrigir glicemia/sódio, iniciar hidrocortisona de estresse e investigar insuficiência adrenal",
       wrongs: [
-        "Pancreatectomia parcial empírica",
-        "Apenas dieta sem acompanhamento glicêmico",
-        "Iodo radioativo para 'reduzir metabolismo'"
+        "Apenas suco e alta sem corticoide",
+        "Insulina para 'estabilizar' glicose",
+        "Mineralocorticoide isolado sem glicocorticoide na crise",
+        "Observação sem laboratório hormonal"
       ],
-      explain: "Perfil de DM2 pediátrico (obesidade, anticorpos negativos) inicia com estilo de vida e metformina; insulina entra conforme gravidade/HbA1c. Cirurgia pancreática não é tratamento.",
-      trap: "Tratar todo diabetes pediátrico automaticamente como tipo 1 com esquema basal-bolus sem olhar o fenótipo."
+      explain: "Hipoglicemia + hiponatremia/hipercalemia sugere insuficiência adrenal: glicocorticoide de estresse e investigação. Insulina é perigosa.",
+      trap: "Tratar só a glicemia e liberar sem corticoide."
     }
   ];
   endo.forEach((q, i) => {
@@ -1201,64 +1301,69 @@ function buildBank () {
   /** @type {RawQ[]} */
   const cardio = [
     {
-      theme: "SOP / cardiopatia",
-      stem: "RN de 10 dias com sudorese às mamadas, taquipneia, hepatomegalia e sopro; saturando 88% em ar ambiente. Qual a prioridade diagnóstica inicial?",
-      correct: "Avaliar cardiopatia congênita com urgência (oximetria crítica/ecocardiograma) e estabilizar",
+      theme: "Estenose aórtica / síncope",
+      stem: "Adolescente de 15 anos, síncope aos esforços. PA 100/70, FC 72. Sopro ejetivo 3+/6 em foco aórtico irradiando para o pescoço, 2ª bulha hipofonética. ECG: HVE. Qual o diagnóstico e a conduta iniciais?",
+      correct: "Estenose aórtica importante suspeita; restringir esforço competitivo, evitar vasodilatadores e referenciar à cardiologia/cirurgia com eco",
       wrongs: [
-        "Tratar como bronquiolite exclusiva sem avaliação cardíaca",
-        "Alta com orientação de cólica",
-        "Iniciar AAS antiagregante como única medida"
+        "Prescrever nifedipino para 'reduzir pós-carga' e liberar esportes",
+        "Diagnóstico de sopro inocente; alta sem eco",
+        "Anticoagulação plena empírica",
+        "Marca-passo definitivo antes da imagem"
       ],
-      explain: "Insuficiência cardíaca/cianose no período neonatal de fechamento do ducto sugere cardiopatia crítica. Ecocardiograma e suporte (prostaglandina se ducto-dependente) são centrais.",
-      trap: "Atribuir cansaço às mamadas só a 'pulmão' ou cólica."
+      explain: "Síncope + sopro aórtico irradiado ao pescoço sugere EA grave: risco de morte súbita — eco urgente, restrição de esforço, evitar vasodilatadores. Sopro inocente não causa síncope aos esforços.",
+      trap: "Usar vasodilatador ou liberar esporte em possível EA grave."
     },
     {
-      theme: "CIA / CIV",
-      stem: "Escolar assintomático com sopro sistólico suave e desdobramento fixo de B2. Radiografia com hiperfluxo pulmonar leve. Diagnóstico mais provável?",
-      correct: "Comunicação interatrial",
+      theme: "Tetralogia de Fallot — crise",
+      stem: "Lactente de 6 meses com Fallot conhecido, choro intenso, cianose intensa, SatO2 55%, sopro diminuiu. Qual a conduta na crise hipoxêmica?",
+      correct: "Posição joelho-peito, O2, morfina/volume conforme protocolo e beta-bloqueador; avaliar necessidade de intervenção",
       wrongs: [
-        "Estenose aórtica crítica do neonato",
-        "Tetralogia de Fallot com crises de hipoxia",
-        "Pericardite constritiva aguda"
+        "Digoxina em bolus e diurético agressivo de rotina",
+        "Vasodilatador arterial potente imediato",
+        "Alta com orientação de 'mais choro para fortalecer'",
+        "Antibiótico como tratamento da crise"
       ],
-      explain: "Desdobramento fixo de B2 com hiperfluxo é clássico de CIA. Fallot cursa com cianose/crises; estenose aórtica crítica é neonatal grave.",
-      trap: "Associar qualquer sopro a CIV, sem valorizar o B2 fixo."
+      explain: "Crise de Fallot: reduzir retorno/chorо (joelho-peito), O2, sedação cautelosa e betabloqueador. Vasodilatação sistêmica pode piorar shunt direito-esquerdo.",
+      trap: "Tratar crise hipoxêmica como ICC com diurético/vasodilatador."
     },
     {
-      theme: "Febre reumática",
-      stem: "Adolescente com migratória de grandes articulações, sopro de regurgitação mitral novo e evidência de infecção estreptocócica prévia. Qual o diagnóstico sindrômico?",
-      correct: "Febre reumática aguda (cardite + artrite)",
+      theme: "Insuficiência cardíaca — CIV",
+      stem: "Lactente de 2 meses, taquipneia, sudorese às mamadas, hepatomegalia. PA 85/45, FC 160, SatO2 96%, sopro holossistólico. Rx: cardiomegalia e hiperfluxo. Qual a conduta inicial?",
+      correct: "Tratar ICC (diurético ± anticongestivos), suporte nutricional e avaliação cardiológica para CIV/defeito shunt",
       wrongs: [
-        "Artrite séptica poliarticular sem foco",
-        "Lúpus com anti-DNA negativo e sem outros critérios",
-        "Miocardite viral exclusiva sem critérios de Jones"
+        "Prostaglandina E1 para fechar o canal",
+        "Restrição absoluta de diuréticos",
+        "Alta com ferro apenas",
+        "Anticoagulação plena sem diagnóstico"
       ],
-      explain: "Artrite migratória + cardite + evidência de estreptococo preenchem critérios de Jones para febre reumática. Isso muda profilaxia secundária e manejo.",
-      trap: "Tratar só a artrite e esquecer a cardite/profilaxia."
+      explain: "Clínica de ICC por hiperfluxo (CIV): diuréticos/suporte e cardio pedia. PGE1 mantém canal aberto (útil em lesões ducto-dependentes), não 'fecha' CIV.",
+      trap: "Usar PGE1 achando que trata toda cardiopatia do lactente."
     },
     {
-      theme: "Síncope",
-      stem: "Adolescente com síncope durante exercício, história familiar de morte súbita e ECG com intervalo QT longo. Melhor conduta?",
-      correct: "Afastar de esportes competitivos, investigar canalopatia e referir à cardiologia/eletrofisiologia",
+      theme: "Pericardite",
+      stem: "Adolescente de 16 anos, dor precordial piora ao deitar, melhora ao sentar, atrito pericárdico. Troponina leve↑, ECG: supradesnível difuso. PA 110/70, SatO2 98%. Qual a conduta?",
+      correct: "Anti-inflamatório (AINEs/colchicina conforme protocolo) e investigação; ecocardiograma para derrame",
       wrongs: [
-        "Liberar esporte integral após soro caseiro",
-        "Diagnosticar síncope vasovagal típica sem ECG",
-        "Prescrever estimulante para melhorar o rendimento"
+        "Trombólise como IAM com supradesnível",
+        "Antibiótico antituberculoso empírico imediato sem critérios",
+        "Cirurgia de revascularização urgente",
+        "Alta sem eco nem seguimento"
       ],
-      explain: "Síncope de esforço + QT longo + história familiar é alto risco de arritmia hereditária. Exige restrição e avaliação especializada, não liberação esportiva.",
-      trap: "Rotular toda síncope adolescente como vasovagal sem ECG e contexto de esforço."
+      explain: "Pericardite aguda: AINE ou colchicina e ecocardiograma. Trombólise aplica-se a SCA selecionada do adulto e não é o padrão nesse quadro pediátrico típico.",
+      trap: "Trombolisar pericardite confundida com IAM."
     },
     {
-      theme: "Kawasaki / coronárias",
-      stem: "Criança no 10º dia de Kawasaki tratado tardiamente apresenta sopro e ecocardiograma com aneurisma coronariano médio. Além do seguimento, qual cuidado é essencial?",
-      correct: "Antiagregação (e anticoagulação se critério de tamanho/risco) e seguimento cardiológico estrito",
+      theme: "Endocardite",
+      stem: "Criança de 8 anos com CIV residual, febre há 12 dias, petéquias, sopro mudou. Hemoculturas pendentes. PA 100/60, FC 110. Qual a conduta?",
+      correct: "Coletar hemoculturas adequadas, eco e iniciar antibiótico EV conforme protocolo de endocardite",
       wrongs: [
-        "Alta definitiva sem reavaliação de coronárias",
-        "Antibiótico isolado por 6 meses",
-        "Vacina viva imediata no mesmo dia da IGIV sem intervalo"
+        "Antibiótico oral ambulatorial curto sem hemoculturas",
+        "Anticoagulação como tratamento etiológico",
+        "Troca valvar imediata antes de qualquer antibiótico em todo caso",
+        "Aguardar 2 semanas febril sem investigação"
       ],
-      explain: "Aneurisma coronariano exige antiagregação ± anticoagulação conforme risco e follow-up de imagem. IGIV recente também impacta intervalo de vacinas vivas.",
-      trap: "Considerar Kawasaki 'curado' só porque a febre cedeu, ignorando coronárias."
+      explain: "Suspeita de endocardite em cardiopata: hemoculturas adequadas, ecocardiograma e antibiótico venoso. Tratamento oral curto ambulatorial é inadequado.",
+      trap: "Tratar febre prolongada em cardiopata como virose sem hemoculturas."
     }
   ];
   cardio.forEach((q, i) => {
@@ -1269,108 +1374,116 @@ function buildBank () {
   /** @type {RawQ[]} */
   const hemato = [
     {
-      theme: "Anemia ferropriva",
-      stem: "Lactente de 15 meses com Hb 8,2 g/dL, VCM 62 fL, RDW alto, ferritina baixa, estável hemodinamicamente. Melhor conduta?",
-      correct: "Sulfato ferroso terapêutico e ajuste dietético, com controle da resposta",
+      theme: "Púrpura trombocitopênica imune",
+      stem: "Pré-escolar de 4 anos, petéquias e equimoses após IVAS. Hb 12,1, leucócitos 8.500, plaquetas 12.000, exame sem hepatoesplenomegalia, afebril. Qual a conduta?",
+      correct: "PTI típica: observar se assintomático de sangramento grave ou tratar (IgIV/corticoide) se risco/sangramento; evitar AAS",
       wrongs: [
-        "Transfusão de plaquetas",
-        "Transfusão de hemácias de rotina por Hb < 9 em paciente estável",
-        "Biópsia de medula imediata sem prova de ferro"
+        "Esplenectomia imediata na primeira crise",
+        "Transfusão de plaquetas de rotina sem sangramento maior",
+        "Quimioterapia como em leucemia sem blastos",
+        "AAS para 'proteger vasos'"
       ],
-      explain: "Anemia microcítica com ferritina baixa em lactente com dieta inadequada é ferropriva: ferro oral e dieta. Transfusão não é rotina se estável; plaquetas não tratam anemia.",
-      trap: "Transfundir anemia crônica estável apenas pelo valor da Hb."
+      explain: "PTI aguda típica: conduta conforme sangramento; esplenectomia não é primeira linha. Plaquetas só em emergência. AAS agrava.",
+      trap: "Transfundir plaquetas ou operar de rotina na PTI típica."
     },
     {
-      theme: "Púrpura trombocitopênica",
-      stem: "Pré-escolar após IVAS apresenta petéquias e plaquetas 12.000/mm³, sem sangramento maior, exame sem hepatoesplenomegalia, hemoglobina normal. Conduta mais adequada na maioria dos protocolos atuais?",
-      correct: "Observação ou terapia dirigida ao sangramento conforme risco; evitar procedimentos invasivos desnecessários",
+      theme: "Anemia falciforme — vaso-oclusão",
+      stem: "Menino de 9 anos com DF, dor intensa em ossos longos, afebril, SatO2 97%, PA 110/70, reticulócitos 8%, Hb 8,0 (basal 8,2). Qual a conduta?",
+      correct: "Analgesia adequada, hidratação e investigar desencadeantes; transfusão só com indicações específicas",
       wrongs: [
-        "Esplenectomia imediata em todos os casos de primeira crise",
-        "Transfusão de plaquetas de rotina só pelo número, sem sangramento grave",
-        "Quimioterapia multiagente empírica"
+        "Antibiótico de amplo espectro obrigatório em toda dor sem febre",
+        "Esplenectomia na crise álgica",
+        "Restrição hídrica",
+        "Ferro EV de rotina na crise"
       ],
-      explain: "PTI aguda típica com sangramento leve frequentemente é expectante ou usa Ig/corticoide conforme risco. Transfusão plaquetária isolada pelo número é pouco duradoura e não rotina; esplenectomia é excepcional na primeira crise.",
-      trap: "Transfundir plaquetas automaticamente porque 'estão muito baixas', mesmo sem hemorragia grave."
+      explain: "Crise vaso-oclusiva: dor + hidratação. Antibiótico se febre/infecção. Transfusão não é rotina só por dor. Ferro EV não trata a crise.",
+      trap: "Transfundir automaticamente em toda crise álgica."
     },
     {
-      theme: "Drepanocitose",
-      stem: "Criança com anemia falciforme chega com febre 39 °C, bom estado relativo, sem foco claro. Qual a preocupação e conduta inicial?",
-      correct: "Risco de sepse por germes encapsulados; coletar culturas e iniciar antibiótico empírico conforme protocolo",
+      theme: "Leucemia",
+      stem: "Criança de 5 anos, palidez, febre, dores ósseas, petéquias. Hb 7,0, leucócitos 35.000 com blastos, plaquetas 30.000. Qual a conduta?",
+      correct: "Internar, suporte, evitar punções desnecessárias e encaminhar à onco-hematologia para confirmação e tratamento",
       wrongs: [
-        "Apenas antitérmico domiciliar sem avaliação, por ser 'febre da doença'",
-        "Transfusão de troca imediata em toda febre",
-        "Suspender penicilina profilática definitivamente"
+        "Sulfato ferroso ambulatorial por 3 meses",
+        "Alta com antitérmico",
+        "Vacina viva imediata antes da investigação",
+        "Cirurgia de 'biópsia óssea em pronto-socorro' sem equipe"
       ],
-      explain: "Febre na falciforme é emergência potencial por asplenia funcional. Antibiótico empírico precoce após culturas é regra em muitos protocolos. Nem toda febre é crise vaso-oclusiva simples.",
-      trap: "Liberar febre na falciforme como 'só dor/crise' sem cobrir sepse."
+      explain: "Suspeita de leucemia aguda: suporte e referência especializada. Ferro não trata blastos. Vacinas vivas são contraindicadas sem avaliação.",
+      trap: "Tratar leucemia como anemia ferropriva ambulatorial."
     },
     {
       theme: "Hemofilia",
-      stem: "Menino de 3 anos com hematoma muscular após trauma mínimo e história familiar materna de sangradores. TTPA alongado, TP normal, plaquetas normais. Próximo passo?",
-      correct: "Dosar fatores VIII/IX e manejar com reposição do fator deficiente",
+      stem: "Menino de 3 anos, hematoma muscular após trauma leve, história familiar materna de sangradores. TTPa alongado, TP normal, plaquetas normais. Qual a conduta?",
+      correct: "Repor fator VIII/IX conforme tipo, evitar IM e AAS; profilaxia em hemofilia grave sob especialista",
       wrongs: [
-        "Transfundir plaquetas empiricamente",
-        "Indicar AAS para 'afinar e prevenir trombose'",
-        "Apenas vitamina K intramuscular sem investigação de fator"
+        "AAS e anti-inflamatório de rotina",
+        "Vitamina K como tratamento definitivo da hemofilia",
+        "Plasma fresco em toda artrose futura sem fator",
+        "Exercício de contato liberado sem proteção"
       ],
-      explain: "Padrão de coagulopatia intrínseca em menino sugere hemofilia: dosar FVIII/FIX e repor. AAS é contraindicado. Plaquetas e vitamina K não corrigem deficiência de fator.",
-      trap: "Dar AAS ou plaquetas em suspeita de hemofilia."
+      explain: "Hemofilia: reposição do fator deficiente e prevenção de trauma/IM/AAS. Vitamina K não corrige deficiência de fator VIII/IX.",
+      trap: "Usar vitamina K ou AAS achando que resolve hemofilia."
     }
   ];
   hemato.forEach((q, i) => {
     raw.push({ idPrefix: "ped-hemato", n: i + 1, group: "Hematologia", ...q });
   });
 
-  // ── Reumatologia / ortopedia (4) ───────────────────────────────
+  // ── Reumatologia / ortopedia (4) ────────────────────────────────
   /** @type {RawQ[]} */
   const reuma = [
     {
-      theme: "AIJ",
-      stem: "Menina de 4 anos com artrite de joelho e tornozelo há 10 semanas, afebril, FAN positivo, sem rash quotidianos. Forma mais compatível?",
-      correct: "AIJ oligoarticular",
+      theme: "Artrite idiopática juvenil",
+      stem: "Menina de 6 anos, artrite de joelho e tornozelo há 8 semanas, rigidez matinal, afebril. FAN+, VHS 40. Qual a conduta inicial?",
+      correct: "Encaminhar à reumatologia, AINEs e rastrear uveíte; imunossupressor conforme subtipo",
       wrongs: [
-        "AIJ sistêmica com febre e rash típicos",
-        "Artrite séptica poliarticular de horas de evolução",
-        "Dor de crescimento sem artrite objetiva"
+        "Antibiótico prolongado como na febre reumática sem evidência",
+        "Corticosteroide articulado sem avaliação oftalmológica nunca",
+        "Imobilização gessada permanente",
+        "Negar AIJ porque FAN pode ser positivo em saudáveis e não investigar"
       ],
-      explain: "≤4 articulações por ≥6 semanas em pré-escolar com FAN+ sugere oligo AIJ; rastrear uveíte. Sistêmica exige febre/rash característicos. Séptica é hiperaguda e tóxica.",
-      trap: "Chamar de dor de crescimento uma artrite objetiva persistente."
+      explain: "Artrite >6 semanas: AIJ — reumato, AINE, screening de uveíte. Antibiótico de FR não se aplica sem critérios. FAN ajuda no risco de uveíte, não fecha sozinho.",
+      trap: "Tratar AIJ como febre reumática com penicilina prolongada."
+    },
+    {
+      theme: "Febre reumática",
+      stem: "Escolar de 10 anos, cardite, poliartrite migratória, Coreia ausente. ASLO elevado, ECG com PR longo. Qual a conduta?",
+      correct: "Anti-inflamatório, erradicação do estreptococo e profilaxia secundária com penicilina benzatina",
+      wrongs: [
+        "Apenas repouso sem antibiótico/profilaxia",
+        "Imunoglobulina como tratamento único da FR",
+        "Anticoagulação plena de rotina em toda cardite leve",
+        "Suspender profilaxia após 3 meses em cardite"
+      ],
+      explain: "FR com cardite: AINE/aspirina conforme protocolo, tratar estreptococo e profilaxia secundária prolongada. Interromper cedo eleva recorrência.",
+      trap: "Omitir profilaxia secundária após o primeiro surto com cardite."
+    },
+    {
+      theme: "Osgood-Schlatter",
+      stem: "Menino de 12 anos, esportista, dor tibial anterior ao pular, edema local, sem febre, PCR normal. Qual a conduta?",
+      correct: "Medidas conservadoras: repouso relativo, gelo, analgesia e retorno gradual ao esporte",
+      wrongs: [
+        "Antibiótico EV por osteomielite sem sinais sistêmicos",
+        "Biópsia óssea imediata",
+        "Cirurgia de rotina na primeira consulta",
+        "Imobilização com gesso por 6 meses obrigatória"
+      ],
+      explain: "Osgood-Schlatter é apofisite de tração do adolescente esportista: manejo conservador. Antibiótico EV ou cirurgia não são primeira linha no quadro típico afebril.",
+      trap: "Tratar apofisite típica como osteomielite."
     },
     {
       theme: "Artrite séptica",
-      stem: "Lactente recusa apoiar o membro, febre, PCR muito elevada e mobilização do quadril extremamente dolorosa. Ultrassom com derrame. Prioridade?",
-      correct: "Artrite séptica até prova em contrário; punção/drenagem e antibiótico urgentes",
+      stem: "Lactente de 14 meses, recusa apoiar o membro, febre 39 °C, joelho quente. PA 90/55, FC 140, leucócitos 18.000, PCR 80. Qual a conduta?",
+      correct: "Punção articular urgente, antibiótico EV e avaliação ortopédica para drenagem",
       wrongs: [
-        "Sinovite transitória; alta com AINE sem investigação",
-        "Apenas fisioterapia ambulatorial por 2 semanas",
-        "Observação exclusiva por 7 dias sem exames"
+        "Apenas AINE ambulatorial por 1 semana",
+        "Fisioterapia na fase febril como única medida",
+        "Corticosteroide intra-articular empírico sem culturas",
+        "Observação domiciliar se Rx simples for normal"
       ],
-      explain: "Febre + impotência + inflamação alta + derrame no lactente é séptica até excluir. Atraso em drenagem/antibiótico ameaça a articulação.",
-      trap: "Tratar como sinovite transitória um lactente tóxico com PCR alta."
-    },
-    {
-      theme: "Sinovite transitória",
-      stem: "Pré-escolar após IVAS, claudicação leve, afebril, bom estado, PCR normal, ultrassom com pequeno derrame. Hipótese mais provável?",
-      correct: "Sinovite transitória do quadril",
-      wrongs: [
-        "Artrite séptica com toxemia",
-        "Fratura exposta",
-        "Osteomielite crônica de longa data sem história"
-      ],
-      explain: "Pós-viral, criança bem, inflamação baixa e derrame discreto apontam sinovite transitória. Séptica cursa com toxemia e marcadores altos.",
-      trap: "Operar/agredir terapeutamente todo derrame de quadril sem estratificar toxicidade."
-    },
-    {
-      theme: "Perthes",
-      stem: "Menino de 6 anos com claudicação progressiva, dor referida no joelho e limitação de rotação interna do quadril. Radiografia sugere necrose da cabeça femoral. Diagnóstico?",
-      correct: "Doença de Legg-Calvé-Perthes",
-      wrongs: [
-        "Pé torto congênito não tratado como causa aguda aos 6 anos",
-        "Displasia do desenvolvimento do quadril exclusiva do RN",
-        "Escoliose idiopática sem acometimento de quadril"
-      ],
-      explain: "Perthes é necrose avascular da cabeça femoral em escolares, muitas vezes com dor referida no joelho e limitação de RI. Exige descarga/seguimento ortopédico.",
-      trap: "Investigar só o joelho e perder a patologia do quadril."
+      explain: "Artrite séptica é emergência: drenagem + antibiótico. AINE/corticoide sem drenagem são inadequados. Rx normal não afasta.",
+      trap: "Tratar joelho séptico febril só com AINE ambulatorial."
     }
   ];
   reuma.forEach((q, i) => {
@@ -1381,52 +1494,56 @@ function buildBank () {
   /** @type {RawQ[]} */
   const maus = [
     {
-      theme: "Suspeita",
-      stem: "Lactente de 3 meses com hematomas em diferentes estágios em dorso e orelhas; cuidadores relatam 'queda do sofá' com narrativa inconsistente. Conduta médica prioritária?",
-      correct: "Garantir segurança, investigar lesões ocultas e notificar Conselho Tutelar/autoridades competentes",
+      theme: "Fratura suspeita",
+      stem: "Lactente de 4 meses trazido por 'queda do sofá'. Rx: fratura de fêmur espiralada. Exame com equimoses em diferentes estágios em tronco. Qual a conduta?",
+      correct: "Estabilizar, investigar lesões ocultas, notificar conselho tutelar/autoridades e proteger a criança",
       wrongs: [
-        "Alta sem comunicação por ser acidente doméstico comum",
-        "Confrontar agressivamente os responsáveis na sala de espera",
-        "Apenas analgésico e retorno em 6 meses"
+        "Aceitar exclusivamente a queda do sofá sem notificar",
+        "Alta com analgésico e retorno em 30 dias sem proteção",
+        "Confrontar agressivamente o cuidador no corredor sem plano de segurança",
+        "Adiar avaliação por radiografia única 'bastar'"
       ],
-      explain: "Hematomas em locais atípicos e história incompatível são red flags. O médico deve proteger, avaliar (incluindo lesões ocultas) e notificar — obrigação legal/ética.",
-      trap: "Aceitar história improvável e liberar sem notificação."
+      explain: "Fratura espiralada em não deambulador + equimoses em estágios diferentes = alta suspeita de maus-tratos: proteção, notificação e investigação completa (incluindo outras lesões).",
+      trap: "Aceitar mecanismo improvável e não notificar."
     },
     {
-      theme: "Notificação",
-      stem: "Diante de suspeita fundamentada de violência contra criança, a notificação ao Conselho Tutelar é:",
-      correct: "Obrigatória, independentemente de certeza absoluta ou autorização dos responsáveis",
+      theme: "Abuso sexual",
+      stem: "Menina de 7 anos, relato espontâneo de toque genital por convivente, ansiedade, dor ao urinar. Exame genital sem laceração aguda. Qual a conduta?",
+      correct: "Acolher, notificar, avaliação especializada/perícia conforme fluxo e profilaxias se indicadas; exame normal não exclui abuso",
       wrongs: [
-        "Opcional e só após sentença judicial",
-        "Proibida pelo sigilo médico absoluto sem exceções",
-        "Permitida apenas se houver confissão do agressor"
+        "Afastar abuso porque o exame está normal",
+        "Exigir prova fotográfica da família antes de notificar",
+        "Alta sem notificação por falta de laceração",
+        "Entrevista repetida por vários profissionais sem protocolo"
       ],
-      explain: "A legislação e os códigos de ética impõem notificação de suspeita de violência contra criança/adolescente. Não se exige prova judicial prévia nem anuência do agressor.",
-      trap: "Usar o sigilo médico como justificativa para não notificar."
+      explain: "Relato da criança tem valor; exame normal é frequente. Deve-se notificar e seguir fluxo de proteção/perícia, evitando múltiplas entrevistas não protocolares.",
+      trap: "Achar que exame genital normal exclui abuso sexual."
     },
     {
-      theme: "Fratura metafisária",
-      stem: "Lactente de 4 meses com fratura metafisária em 'canto' (corner fracture) do úmero distal, sem mecanismo plausível. Qual o significado clínico mais importante?",
-      correct: "Lesão altamente sugestiva de maus-tratos; investigar outras lesões e notificar",
+      theme: "Negligência",
+      stem: "Lactente de 9 meses, desnutrição grave, dermatite de fraldas extensa, vacinas atrasadas, mãe com sinais de sobrecarga e sem rede. Qual a conduta?",
+      correct: "Tratar condições clínicas, acionar rede de proteção/notificar e planejar seguimento interdisciplinar",
       wrongs: [
-        "Fratura típica isolada de osteopenia do prematuro sem outros cuidados",
-        "Achado normal da marcha",
-        "Sempre decorrente de raquitismo sem avaliação social"
+        "Apenas entregar fórmula e alta sem acionar proteção",
+        "Retirar a criança da mãe imediatamente sem avaliação da rede, sempre",
+        "Ignorar determinantes sociais",
+        "Punir a mãe com exposição pública"
       ],
-      explain: "Fraturas metafisárias clássicas em lactentes não deambuladores são altamente específicas de abuso físico e exigem investigação completa (incluindo fundo de olho/imagem óssea) e notificação.",
-      trap: "Atribuir fratura metafisária clássica só a raquitismo/osteopenia sem protocolo de proteção."
+      explain: "Negligência/desnutrição exige cuidado clínico + proteção social. Alta só com fórmula não resolve risco. Medidas devem ser proporcionais e via rede oficial.",
+      trap: "Tratar só o biológico e devolver ao mesmo risco sem notificação."
     },
     {
-      theme: "Violência sexual",
-      stem: "Adolescente relata abuso sexual recente e apresenta-se ansioso. Além do acolhimento clínico, qual ação é necessária no fluxo de proteção?",
-      correct: "Notificar órgãos de proteção e acionar fluxo de atendimento a violência sexual conforme protocolo",
+      theme: "Síndrome de bebê sacudido",
+      stem: "Lactente de 3 meses, convulsão, fontanela tensa, hemorragias retinianas bilaterais, sem história traumática clara. TC: hematoma subdural. Qual a conduta?",
+      correct: "Estabilizar via aérea/neurocirurgia se preciso, investigar maus-tratos, notificar e avaliar outras lesões",
       wrongs: [
-        "Pedir que resolva 'em família' sem notificar",
-        "Adiar atendimento para depois das provas escolares",
-        "Divulgar o caso em redes sociais da unidade"
+        "Diagnosticar apenas 'epilepsia genética' e alta",
+        "Atribuir sempre a queda não testemunhada sem investigar",
+        "Evitar exame de fundo de olho",
+        "Não notificar até confissão do agressor"
       ],
-      explain: "Violência sexual exige acolhimento, cuidados, preservação de evidências quando indicado e acionamento do fluxo de proteção/notificação. Sigilo não impede a comunicação compulsória.",
-      trap: "Devolver o caso à família sem acionar a rede de proteção."
+      explain: "Tríade sugestiva de trauma craniano abusivo: estabilização, investigação completa e notificação — independe de confissão.",
+      trap: "Esperar confissão para notificar trauma abusivo evidente."
     }
   ];
   maus.forEach((q, i) => {
@@ -1437,14 +1554,25 @@ function buildBank () {
 }
 
 function main () {
-  const rng = createRng(SEED);
+  const rng = createRng(seedToUint32(SEED_STR));
   const raw = buildBank();
   const questions = raw.map((q) => {
+    if (!q.trap || String(q.trap).trim().length < 40) {
+      throw new Error(`Trap curta em ${q.idPrefix}-${q.n}: ${(q.trap || "").length}`);
+    }
+    if (!q.explain || q.explain.length < 120) {
+      throw new Error(`Explain curto em ${q.idPrefix}-${q.n}: ${q.explain.length}`);
+    }
+    if (!Array.isArray(q.wrongs) || q.wrongs.length !== 4) {
+      throw new Error(`Wrongs != 4 em ${q.idPrefix}-${q.n}`);
+    }
+    if (/sem sinais de alarme/i.test(q.stem)) {
+      throw new Error(`Stem proibido ("Sem sinais de alarme") em ${q.idPrefix}-${q.n}`);
+    }
     const { choices, answer } = placeCorrect(q.correct, q.wrongs, rng);
     const m = meta(rng);
     const num = String(q.n).padStart(3, "0");
-    /** @type {Record<string, unknown>} */
-    const out = {
+    return {
       id: `${q.idPrefix}-${num}`,
       specialty: "pediatria",
       group: q.group,
@@ -1455,10 +1583,9 @@ function main () {
       stem: q.stem,
       choices,
       answer,
-      explain: q.explain
+      explain: q.explain,
+      trap: q.trap
     };
-    if (q.trap && String(q.trap).trim()) out.trap = q.trap;
-    return out;
   });
 
   if (questions.length < 105) {
@@ -1469,14 +1596,16 @@ function main () {
   fs.writeFileSync(OUT, JSON.stringify(questions, null, 2) + "\n", "utf8");
 
   const byGroup = {};
-  const letters = { A: 0, B: 0, C: 0, D: 0 };
+  const letters = { A: 0, B: 0, C: 0, D: 0, E: 0 };
   let withTrap = 0;
   let shortExplain = 0;
+  let shortTrap = 0;
   for (const q of questions) {
     byGroup[q.group] = (byGroup[q.group] || 0) + 1;
-    letters["ABCD"[q.answer]]++;
+    letters["ABCDE"[q.answer]]++;
     if (q.trap && String(q.trap).trim()) withTrap++;
-    if (!q.explain || q.explain.length <= 80) shortExplain++;
+    if (!q.explain || q.explain.length < 120) shortExplain++;
+    if (!q.trap || q.trap.length < 40) shortTrap++;
   }
 
   console.log("Wrote:", OUT);
@@ -1485,9 +1614,10 @@ function main () {
   Object.keys(byGroup)
     .sort((a, b) => byGroup[b] - byGroup[a] || a.localeCompare(b))
     .forEach((g) => console.log(`  ${g}: ${byGroup[g]}`));
-  console.log("Distribuição gabarito (A/B/C/D):", letters);
+  console.log("Distribuição gabarito (A/B/C/D/E):", letters);
   console.log("Com trap:", withTrap);
-  console.log("Explain <= 80 chars:", shortExplain);
+  console.log("Explain < 120:", shortExplain);
+  console.log("Trap < 40:", shortTrap);
 }
 
 main();
