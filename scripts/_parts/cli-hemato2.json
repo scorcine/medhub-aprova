@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 1,
+    "group": "Hematologia",
+    "theme": "PTT × CID × SHU — diferencial laboratorial",
+    "stem": "Mulher de 36 anos com confusão, petéquias e Hb 7,8 g/dL. Esfregaço com esquizócitos; plaquetas 18.000/mm³; creatinina 1,4 mg/dL. TP e TTPa normais, fibrinogênio 320 mg/dL, D-dímero levemente elevado. Coombs negativo. Qual a interpretação mais adequada do padrão laboratorial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Microangiopatia com coagulação preservada favorece PTT/SHU sobre CID; priorizar ADAMTS13 e plasmaférese se PTT, sem transfusão de plaquetas de rotina neste caso",
+    "wrongs": [
+      "CID confirmada pelo D-dímero isolado, iniciando heparina plena e plasma fresco sem avaliar ADAMTS13 nem esquizócitos no manejo",
+      "AHAI quente típica; iniciar corticoide e suspender investigação de microangiopatia trombótica apesar dos esquizócitos claramente de imediato",
+      "SHU típica pós-diarreia obrigatória em toda adulta com creatinina 1,4, excluindo PTT sem dosar ADAMTS13 com reavaliação clínica seriada documentado na prática",
+      "PTI isolada; transfundir plaquetas até >100.000/mm³ antes de qualquer avaliação de hemólise microangiopática com reavaliação clínica seriada documentado com suporte"
+    ],
+    "explain": "PTT/SHU: MAHA + plaquetopenia com TP/TTPa e fibrinogênio tipicamente normais. CID consome fatores (TP/TTPa ↑, fibrinogênio ↓). Distinguir guia plasmaférese urgente na PTT.",
+    "trap": "Tratar toda MAHA+plaquetopenia como CID ou PTI e atrasar plasmaférese na PTT."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 2,
+    "group": "Hematologia",
+    "theme": "PTT — ADAMTS13 e contraindicação de plaquetas",
+    "stem": "Homem de 42 anos com febre, afasia transitória, Hb 8,1, plaquetas 12.000, esquizócitos numerosos, LDH 1.900, haptoglobina indetectável. TP/TTPa normais. Suspeita de PTT; plasmaférese será iniciada em 2 horas. Qual conduta transfusional é a mais correta agora? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Evitar transfusão de plaquetas de rotina na PTT suspeita; iniciar plasmaférese com PFC e corticoide, usando plaquetas só se sangramento agora neste caso",
+    "wrongs": [
+      "Transfundir plaquetas até 80.000/mm³ antes da plasmaférese para prevenir AVC hemorrágico em toda PTT na unidade de atendimento no manejo",
+      "Aguardar resultado de ADAMTS13 por 48 h sem plasmaférese, pois confirmação é obrigatória antes de tratar na unidade de atendimento de imediato",
+      "Indicar esplenectomia imediata como primeira linha, suspendendo plasmaférese e imunossupressão conforme gravidade do caso na unidade de atendimento na prática",
+      "Iniciar heparina terapêutica empírica por microtrombos, interpretando o quadro como CID clássica diante do quadro apresentado conforme gravidade do caso com suporte"
+    ],
+    "explain": "Na PTT, plaquetas podem alimentar microtrombos; plasmaférese urgente não deve aguardar ADAMTS13. Corticoide associa-se; plaquetas só em hemorragia grave.",
+    "trap": "Transfundir plaquetas rotineiramente ou atrasar plasmaférese aguardando ADAMTS13."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 3,
+    "group": "Hematologia",
+    "theme": "SHU atípica — complemento e eculizumab",
+    "stem": "Criança de 8 anos sem diarreia prévia evolui com MAHA, plaquetopenia e IRA dialítica. Cultura de fezes negativa para STEC; ADAMTS13 62%. Complemento C3 baixo. Após suporte, mantém atividade de doença. Qual terapia dirigida é a mais apropriada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Considerar SHU atípica por desregulação do complemento e indicar inibidor de C5 (eculizumab) após vacinação meningocócica e suporte renal neste caso",
+    "wrongs": [
+      "Tratar como PTT clássica com plasmaférese exclusiva indefinida, ignorando ADAMTS13 >10% e ausência de diarreia documentado no manejo",
+      "Usar apenas antibiótico empírico para E. coli O157 em toda SHU, mesmo sem evidência de STEC diante do quadro apresentado em foco de imediato",
+      "Indicar esplenectomia urgente como padrão da SHU atípica antes de qualquer terapia anticomplemento com reavaliação clínica seriada documentado na prática",
+      "Administrar rituximabe isolado como primeira linha, presumindo autoanticorpo anti-ADAMTS13 sem dosagem com reavaliação clínica seriada documentado com suporte"
+    ],
+    "explain": "SHU atípica: MAHA+IRA sem STEC e ADAMTS13 não muito baixo. Eculizumab (anti-C5) é terapia dirigida; vacinar contra meningococo. Plasmaférese não substitui anticomplemento nesses casos.",
+    "trap": "Tratar SHUa como PTT/STEC-HUS e omitir eculizumab quando indicado."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 4,
+    "group": "Hematologia",
+    "theme": "HIT tipo II — escore 4Ts e conduta",
+    "stem": "Homem de 58 anos no 8º dia de heparina não fracionada pós-TEP: plaquetas caíram de 220.000 para 78.000/mm³, sem sangramento. Novo trombo em veia poplítea contralateral. Ultrassom sem outras causas óbvias. Qual a melhor conduta imediata? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Suspender toda heparina (incluindo lavagens), iniciar anticoagulação não heparínica (argatroban/fondaparinux) e solicitar ensaio de anticorpo anti-PF4 neste caso",
+    "wrongs": [
+      "Manter heparina e apenas transfundir plaquetas até normalizar a contagem, pois HIT nunca trombosa na unidade de atendimento no manejo",
+      "Trocar HNF por enoxaparina em dose plena, considerando segura a troca entre heparinas na HIT diante do quadro apresentado também de imediato",
+      "Suspender anticoagulação por completo por 7 dias até recuperação plaquetária sem alternativa diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Indicar AAS isolado e filtro de veia cava como substituto da anticoagulação na HIT suspeita diante do quadro apresentado conforme gravidade do caso agora com suporte"
+    ],
+    "explain": "HIT tipo II: queda plaquetária 5–10 dias + trombose; 4Ts altos → parar heparina e anticoagular com agente não heparínico; anti-PF4 confirma. LMWH também é contraindicada.",
+    "trap": "Trocar HNF por enoxaparina ou só suspender anticoagulação sem alternativa na HIT."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 5,
+    "group": "Hematologia",
+    "theme": "HIT — transição para anticoagulação oral",
+    "stem": "Mulher de 49 anos com HIT confirmada (ELISA anti-PF4 positivo, plaquetas nadir 55.000, agora 148.000 sob argatroban). Precisa anticoagulação prolongada por TEV. Qual a transição mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Iniciar varfarina só após plaquetas ≥150.000, com sobreposição ao anticoagulante parenteral por ≥5 dias e INR terapêutico estável, agora neste caso",
+    "wrongs": [
+      "Começar varfarina isolada no nadir plaquetário para ‘acelerar’ a transição sem parenteral conforme gravidade do caso agora no manejo",
+      "Manter heparina em dose profilática associada à varfarina até INR 4,0 na HIT confirmada com reavaliação clínica seriada no total de imediato",
+      "Usar apenas clopidogrel por 3 meses como anticoagulação definitiva do TEV na HIT diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Indicar trombolítico sistêmico de rotina em toda HIT antes de qualquer anticoagulação oral sem adiamento injustificado após estabilização inicial já com suporte"
+    ],
+    "explain": "Na HIT, varfarina precoce (plaquetas baixas) pode precipitar necrose cutânea/gangrena venosa por queda de proteína C. Sobrepor parenteral até plaquetas recuperadas e INR estável.",
+    "trap": "Iniciar varfarina cedo no nadir plaquetário da HIT sem anticoagulação parenteral."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 6,
+    "group": "Hematologia",
+    "theme": "SAF — trombose arterial e anticoagulação",
+    "stem": "Homem de 34 anos com AVC isquêmico e livedo. Anticardiolipina IgG alto e anti-β2GP1 positivo em duas dosagens com 12 semanas. Sem fator de risco aterosclerótico. Qual a anticoagulação de longo prazo preferencial após a fase aguda? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Anticoagulação com varfarina (INR alvo usualmente 2–3) prolongada no SAF trombótico; DOACs não são primeira escolha, sobretudo após evento arterial neste caso",
+    "wrongs": [
+      "AAS isolado vitalício sem anticoagulação, pois SAF arterial nunca se beneficia de varfarina sem adiamento injustificado já no manejo",
+      "Rivaroxabana como primeira linha preferencial após AVC no SAF de alto risco conforme gravidade do caso na unidade de atendimento de imediato",
+      "Suspender anticoagulação após 3 meses se o segundo anticorpo negativar espontaneamente com reavaliação clínica seriada diante do quadro apresentado agora na prática",
+      "Heparina subcutânea profilática isolada como terapia definitiva do SAF com AVC prévio com reavaliação clínica seriada diante do quadro apresentado também com suporte"
+    ],
+    "explain": "SAF com trombose (arterial ou venosa) indica anticoagulação prolongada; varfarina permanece padrão, especialmente no arterial. DOACs têm evidência desfavorável em SAF de alto risco.",
+    "trap": "Escolher DOAC ou AAS isolado como padrão no SAF trombótico arterial."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 7,
+    "group": "Hematologia",
+    "theme": "SAF catastrófico — critérios e plasmaférese",
+    "stem": "Mulher de 29 anos com SAF conhecido evolui em 5 dias com TEP, isquemia digital e IRA; biópsia renal sugere microtrombose. Anticorpos aPL persistentemente positivos. Qual o manejo mais adequado da forma catastrófica? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Tratar SAF catastrófico com anticoagulação, corticoide em alta dose e considerar plasmaférese e/ou imunoglobulina intravenosa, além de suporte de órgãos neste caso",
+    "wrongs": [
+      "Usar apenas hidratação oral e observar, pois microtromboses no SAF sempre se resolvem sem terapia na unidade de atendimento no manejo",
+      "Indicar rituximabe isolado sem anticoagulação, priorizando apenas depleção de células B com reavaliação clínica seriada no total de imediato",
+      "Suspender anticoagulação por risco de sangramento e iniciar só AAS em dose anti-inflamatória diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Realizar esplenectomia de urgência como primeira medida em todo SAF catastrófico adulto diante do quadro apresentado conforme gravidade do caso inclusive com suporte"
+    ],
+    "explain": "SAF catastrófico: tromboses em ≥3 órgãos em curto intervalo. Tríade clássica: anticoagulação + glicocorticoide + plasmaférese/IgIV, com suporte intensivo.",
+    "trap": "Tratar SAF catastrófico só com AAS ou sem anticoagulação/imunossupressão."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 8,
+    "group": "Hematologia",
+    "theme": "SAF gestacional — heparina e AAS",
+    "stem": "Gestante de 8 semanas com SAF obstétrico (3 abortos <10 semanas e aPL persistentes), sem trombose prévia. Ultrassom sem batimentos ainda. Qual a profilaxia mais recomendada nesta gestação? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Associar AAS em baixa dose e heparina (HNF ou enoxaparina) profilática ao longo da gestação, com acompanhamento obstétrico-hematológico conjunto neste caso",
+    "wrongs": [
+      "Usar varfarina com INR 3–4 desde o primeiro trimestre como padrão no SAF obstétrico com reavaliação clínica seriada também no manejo",
+      "Manter apenas AAS 500 mg/dia sem heparina, pois abortos prévios não mudam a conduta com reavaliação clínica seriada documentado de imediato",
+      "Indicar DOAC oral (apixabana) por melhor aderência na gestação com SAF clássico com reavaliação clínica seriada diante do quadro apresentado inclusive na prática",
+      "Contraindicar qualquer antitrombótico e apenas observar até o terceiro trimestre com reavaliação clínica seriada diante do quadro apresentado documentado com suporte"
+    ],
+    "explain": "No SAF obstétrico, AAS + heparina profilática reduz perda gestacional. Varfarina é teratogênica no 1º trimestre; DOACs são contraindicados na gestação.",
+    "trap": "Usar varfarina/DOAC na gestação ou omitir heparina no SAF obstétrico."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 9,
+    "group": "Hematologia",
+    "theme": "Falciforme — sequestro hepático versus vaso-oclusão",
+    "stem": "Adulto com anemia falciforme chega com dor em hipocôndrio direito, icterícia, Hb caindo de 9,0 para 6,2 em 24 h, reticulócitos altos, fígado aumentado e doloroso. Sem febre alta. Qual a hipótese e conduta prioritária? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Suspeitar sequestro hepático agudo: suporte, hidratação, analgesia e transfusão/troca conforme gravidade, evitando atribuir tudo a vaso-oclusão simples neste caso",
+    "wrongs": [
+      "Tratar apenas como colecistite litiásica sem avaliar queda abrupta da Hb e hepatomegalia aguda sem adiamento injustificado no manejo",
+      "Indicar esplenectomia imediata em todo adulto falciforme com dor abdominal e icterícia com reavaliação clínica seriada inclusive de imediato",
+      "Administrar ferro intravenoso em alta dose como terapia exclusiva da queda da hemoglobina diante do quadro apresentado conforme gravidade do caso no total na prática",
+      "Iniciar quimioterapia citotóxica empírica por suspeita de LMA sem mielograma nem esfregaço diante do quadro apresentado conforme gravidade do caso também com suporte"
+    ],
+    "explain": "Sequestro hepático: queda rápida da Hb + hepatomegalia dolorosa em falciforme. Distingue-se de crise vaso-oclusiva “pura”; manejo é suporte e transfusão/troca conforme gravidade.",
+    "trap": "Rotular toda dor abdominal falciforme como vaso-oclusão e atrasar suporte transfusional."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 10,
+    "group": "Hematologia",
+    "theme": "Falciforme — priapismo isquêmico",
+    "stem": "Adolescente com anemia falciforme há 5 horas com ereção dolorosa persistente, sem trauma. PA estável, Hb 8,4. Já recebeu hidratação e analgesia. Qual a sequência mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Priapismo isquêmico: aspiração cavernosa ± injeção de agonista adrenérgico e, se refratário, considerar troca transfusional/urologia; já neste caso",
+    "wrongs": [
+      "Aguardar 24 h sem intervenção, pois priapismo falciforme sempre resolve só com opioide diante do quadro apresentado também no manejo",
+      "Indicar cinesioterapia pélvica exclusiva e alta domiciliar com anti-inflamatório oral com reavaliação clínica seriada claramente de imediato",
+      "Transfundir plaquetas de rotina antes de qualquer abordagem urológica do priapismo conforme gravidade do caso na unidade de atendimento também na prática",
+      "Iniciar anticoagulação plena empírica como tratamento único e definitivo do priapismo diante do quadro apresentado conforme gravidade do caso também com suporte"
+    ],
+    "explain": "Priapismo >4 h é emergência: aspiração/injeção adrenérgica; troca transfusional e urologia se falha. Atraso aumenta risco de disfunção erétil permanente.",
+    "trap": "Observar priapismo falciforme por muitas horas só com analgesia."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 11,
+    "group": "Hematologia",
+    "theme": "Falciforme — osteomielite versus crise óssea",
+    "stem": "Mulher falciforme com dor intensa em tíbia há 4 dias, febre 38,7 °C, PCR elevada. Rx sem fratura. Dúvida entre crise vaso-oclusiva óssea e osteomielite por Salmonella. Qual a melhor abordagem inicial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Tratar dor como crise, coletar culturas e iniciar antibiótico se infecção provável, usando imagem (RM) e avaliação ortopédica inclusive neste caso",
+    "wrongs": [
+      "Excluir osteomielite clinicamente sem cultura nem imagem, pois febre nunca ocorre em crise óssea na unidade de atendimento no manejo",
+      "Indicar amputação imediata da tíbia em toda dor falciforme febril sem tentativa diagnóstica diante do quadro apresentado em foco de imediato",
+      "Usar apenas hidroxiureia aguda intravenosa como antibiótico substituto na suspeita infecciosa com reavaliação clínica seriada documentado na prática",
+      "Contraindicar qualquer analgésico até biópsia óssea obrigatória em todas as crises diante do quadro apresentado conforme gravidade do caso inclusive com suporte"
+    ],
+    "explain": "Crise óssea e osteomielite se sobrepõem; febre/PCR não bastam. Culturas, antibiótico se infecção provável e RM ajudam. Salmonella é clássica no falciforme.",
+    "trap": "Assumir que febre exclui vaso-oclusão ou que crise nunca coexiste com osteomielite."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 12,
+    "group": "Hematologia",
+    "theme": "Transfusão — TRALI versus TACO",
+    "stem": "Homem de 67 anos recebe 2 CH; em 1 hora: dispneia, SpO2 84%, estertores, febre baixa. BNP normal-baixo, PCWP não elevado, Rx com infiltrado bilateral novo. Sem sobrecarga hídrica evidente. Qual o diagnóstico mais provável e a conduta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "TRALI: hipoxemia aguda por lesão pulmonar relacionada à transfusão; interromper hemo, oxigênio/ventilação se preciso, e notificar agora neste caso",
+    "wrongs": [
+      "TACO típico; forçar diurético em alta dose e nova transfusão imediata do mesmo componente conforme gravidade do caso agora no manejo",
+      "Reação hemolítica aguda ABO; priorizar apenas alcalinização sem suporte respiratório com reavaliação clínica seriada documentado de imediato",
+      "Anafilaxia isolada; administrar só anti-histamínico e retomar a mesma bolsa lentamente sem adiamento injustificado após estabilização inicial na prática",
+      "Sobrecarga férrica aguda; iniciar deferoxamina intravenosa de urgência na primeira hora com reavaliação clínica seriada diante do quadro apresentado com suporte"
+    ],
+    "explain": "TRALI: edema não cardiogênico pós-transfusão (BNP baixo/normal). TACO é cardiogênico (BNP alto, resposta a diurético). Manejo: suporte + notificação; diurético não é padrão no TRALI.",
+    "trap": "Tratar TRALI como TACO com diurético agressivo ou retomar a mesma transfusão."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 13,
+    "group": "Hematologia",
+    "theme": "Transfusão — reação febril não hemolítica",
+    "stem": "Mulher de 45 anos, politransfundida, durante CH: febre 38,9 °C, calafrios, sem hipotensão, sem dor lombar, urina clara, Coombs direto negativo pós. Qual a conduta mais apropriada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Interromper a transfusão, avaliar hemolítica/contaminção, e se confirmada reação febril não hemolítica tratar suporte/antipirético agora neste caso",
+    "wrongs": [
+      "Ignorar febre e acelerar a infusão, pois calafrios são sempre benignos em politransfundidas sem adiamento injustificado já no manejo",
+      "Administrar adrenalina intramuscular de rotina em toda febre transfusional sem anafilaxia com reavaliação clínica seriada também de imediato",
+      "Indicar esplenectomia urgente por febre isolada durante concentrado de hemácias diante do quadro apresentado conforme gravidade do caso também na prática",
+      "Trocar para plasma fresco congelado como substituto do CH na reação febril na rede assistencial disponível com reavaliação clínica seriada inclusive com suporte"
+    ],
+    "explain": "Febre/calafrios sem hemólise sugerem RFNH (citocinas/leucócitos). Sempre excluir hemolítica e sepse; leucorredução previne recorrência. Não é indicação de adrenalina.",
+    "trap": "Prosseguir a bolsa sem avaliar hemólise/sepse ou medicar como anafilaxia."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 14,
+    "group": "Hematologia",
+    "theme": "Transfusão — anafilaxia e deficiência de IgA",
+    "stem": "Homem de 22 anos com deficiência seletiva de IgA, ao iniciar plasma: urticária intensa, broncoespasmo e hipotensão em minutos. Qual a prevenção/tratamento mais corretos? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Tratar anafilaxia (adrenalina IM, suporte) e, em futuras exposições, usar hemocomponentes lavados ou de doador IgA-deficiente, evitando neste caso",
+    "wrongs": [
+      "Continuar o plasma lentamente sob anti-histamínico, pois IgA baixa nunca causa anafilaxia conforme gravidade do caso agora no manejo",
+      "Indicar apenas AAS e reiniciar o mesmo plasma após 10 minutos de observação conforme gravidade do caso na unidade de atendimento de imediato",
+      "Transfundir plaquetas em vez de plasma em toda anafilaxia, independentemente da indicação conforme gravidade do caso na unidade de atendimento na prática",
+      "Administrar ferro intravenoso como antídoto específico da anafilaxia transfusional diante do quadro apresentado conforme gravidade do caso inclusive com suporte"
+    ],
+    "explain": "Deficiência de IgA pode causar anafilaxia a plasma/IgA. Emergência: adrenalina. Prevenção: produtos lavados ou IgA-deficientes.",
+    "trap": "Retomar plasma padrão após anafilaxia em paciente IgA-deficiente."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 15,
+    "group": "Hematologia",
+    "theme": "Sobrecarga férrica — quelação pós-transfusional",
+    "stem": "Paciente com talassemia major, ferritina seriada 2.800 ng/mL, T2* cardíaco reduzido, em regime transfusional crônico. Sem infecção ativa. Qual a estratégia mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Iniciar/otimizar quelação férrica (deferasirox/deferoxamina/deferiprona conforme perfil) e monitorar ferritina e sobrecarga cardíaca/hepática por imagem neste caso",
+    "wrongs": [
+      "Flebotomias semanais agressivas como primeira linha na talassemia major dependente de transfusão na unidade de atendimento no manejo",
+      "Suspender transfusões definitivamente sem quelação, aceitando anemia grave sintomática com reavaliação clínica seriada inclusive de imediato",
+      "Usar apenas vitamina C em megadose como quelante exclusivo da sobrecarga cardíaca com reavaliação clínica seriada diante do quadro apresentado documentado na prática",
+      "Indicar eritropoetina isolada para ‘consumir’ o ferro depositado no miocárdio na rede assistencial disponível com reavaliação clínica seriada documentado com suporte"
+    ],
+    "explain": "Sobrecarga férrica transfusional exige quelação e monitoramento (ferritina, T2*). Flebotomia não cabe em anemia dependente de transfusão; vitamina C não substitui quelante.",
+    "trap": "Indicar flebotomia ou omitir quelação na sobrecarga pós-transfusional."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 16,
+    "group": "Hematologia",
+    "theme": "Sobrecarga férrica — hemocromatose hereditária",
+    "stem": "Homem de 52 anos com astenia, hiperpigmentação, ferritina 1.100, saturação de transferrina 78%, mutação HFE C282Y homozigoto. Hb 14,8. Sem insuficiência cardíaca descompensada. Qual o tratamento de escolha? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Flebotomias terapêuticas seriadas visando reduzir ferritina, com monitoramento clínico-laboratorial; quelação reserva-se documentado neste caso",
+    "wrongs": [
+      "Transfusões regulares de concentrado de hemácias para ‘diluir’ o ferro hepático com reavaliação clínica seriada em foco no manejo",
+      "Quelação com deferoxamina de rotina como primeira linha em todo C282Y com Hb normal com reavaliação clínica seriada inclusive de imediato",
+      "Esplenectomia profilática para reduzir absorção intestinal de ferro na hemocromatose na unidade de atendimento sem adiamento injustificado já na prática",
+      "Corticoterapia prolongada para bloquear a mutação HFE e normalizar a ferritina com reavaliação clínica seriada diante do quadro apresentado no total com suporte"
+    ],
+    "explain": "Hemocromatose hereditária com Hb adequada: flebotomia é primeira linha. Quelação fica para anemia ou impossibilidade de flebotomia.",
+    "trap": "Quelação de primeira linha ou transfusão na hemocromatose com Hb normal."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 17,
+    "group": "Hematologia",
+    "theme": "SMD — IPSS-R e decisão terapêutica",
+    "stem": "Idoso de 74 anos com SMD confirmada: citopenias, 4% de blastos medulares, cariótipo com del(5q) isolada, dependência transfusional. Performance status bom. Qual a lógica terapêutica mais correta? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Estratificar risco (IPSS-R): em del(5q) com risco mais baixo e dependência transfusional, lenalidomida é opção; risco alto favorece já neste caso",
+    "wrongs": [
+      "Iniciar indução estilo LMA em todo SMD com <5% de blastos sem estratificação de risco diante do quadro apresentado também no manejo",
+      "Observar indefinidamente sem suporte nem terapia específica apesar de dependência transfusional com reavaliação clínica seriada de imediato",
+      "Usar apenas ferro oral em alta dose como tratamento disease-modifying da SMD com del(5q) conforme gravidade do caso na unidade de atendimento na prática",
+      "Indicar rituximabe semanal como padrão universal de todas as síndromes mielodisplásicas com reavaliação clínica seriada diante do quadro apresentado com suporte"
+    ],
+    "explain": "SMD exige IPSS-R. Del(5q) com necessidade transfusional responde a lenalidomida. Alto risco: hipometilantes ± alo-TMO. Indução de LMA não é rotina em blastos baixos.",
+    "trap": "Tratar todo SMD como LMA ou ignorar del(5q)/IPSS na escolha terapêutica."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 18,
+    "group": "Hematologia",
+    "theme": "SMD — hipometilantes e falha",
+    "stem": "Paciente de 68 anos com SMD de alto risco em azacitidina há 6 ciclos: blastos subiram para 18%, citopenias pioraram, sem doador aparentado. Qual a interpretação e próximo passo? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Considerar falha ao hipometilante; discutir ensaios clínicos, decitabina alternativa se couber, cuidados de suporte e alo-TMO se tornar neste caso",
+    "wrongs": [
+      "Aumentar indefinidamente a dose de ferro intravenoso como salvamento da progressão blástica sem adiamento injustificado já no manejo",
+      "Declarar remissão completa só pela estabilidade clínica subjetiva sem reavaliar blastos com reavaliação clínica seriada no total de imediato",
+      "Iniciar imatinibe empírico sem evidência de BCR-ABL, presumindo LMC em todo SMD diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Suspender suporte transfusional por completo para ‘forçar’ recuperação medular espontânea diante do quadro apresentado conforme gravidade do caso já com suporte"
+    ],
+    "explain": "Progressão sob azacitidina = falha. Reavaliar para TMO/ensaio/suporte. Não há papel para ferro IV ou TKI empírico sem alvo molecular.",
+    "trap": "Persistir cegamente no mesmo hipometilante sem reestratificar após progressão."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 19,
+    "group": "Hematologia",
+    "theme": "LMC — marcos de resposta ao TKI",
+    "stem": "Homem de 45 anos com LMC fase crônica inicia imatinibe. Aos 3 meses: BCR-ABL 12% na escala internacional; aos 6 meses: 2%; aos 12 meses: 0,08%. Qual a avaliação dos marcos? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Resposta adequada: aos 12 meses BCR-ABL ≤0,1% (resposta molecular maior); manter TKI e monitorar RQ-PCR seriado, sem troca precoce injustificada neste caso",
+    "wrongs": [
+      "Falha primária aos 3 meses exigindo alo-TMO imediato apesar de tendência decrescente do BCR-ABL conforme gravidade do caso no manejo",
+      "Trocar para quimioterapia hidroxiureia exclusiva porque 0,08% ainda não é indetectável com reavaliação clínica seriada inclusive de imediato",
+      "Suspender o TKI aos 6 meses se o paciente estiver assintomático, sem RQ-PCR de seguimento com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "Indicar plasmaférese mensal como adjuvante obrigatório de todo TKI na LMC crônica com reavaliação clínica seriada diante do quadro apresentado claramente com suporte"
+    ],
+    "explain": "Marcos ELN: MMR (≤0,1%) em 12 meses é meta importante. Queda progressiva favorece manter TKI. Troca/TMO reservam-se a falha/intolerância/mutações.",
+    "trap": "Trocar TKI ou indicar TMO só porque o transcrito ainda é detectável em queda."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 20,
+    "group": "Hematologia",
+    "theme": "LMC — falha ao imatinibe e mutação T315I",
+    "stem": "Mulher com LMC em imatinibe há 18 meses: perda de resposta citogenética, BCR-ABL sobe para 8%. Análise de mutação revela T315I. Qual a melhor opção dirigida? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Na mutação T315I, considerar ponatinibe (ou asciminibe conforme disponibilidade/indicação) e discutir alo-TMO; evitar trocas para TKIs neste caso",
+    "wrongs": [
+      "Aumentar apenas a dose de imatinibe sem testar mutação nem considerar TKI de nova geração com reavaliação clínica seriada no manejo",
+      "Trocar empiricamente para nilotinibe assumindo eficácia plena contra T315I documentada com reavaliação clínica seriada no total de imediato",
+      "Suspender toda terapia-alvo e observar até crise blástica para então transplantar conforme gravidade do caso na unidade de atendimento também na prática",
+      "Iniciar rituximabe semanal como resgate molecular da LMC com mutação T315I na rede assistencial disponível com reavaliação clínica seriada inclusive com suporte"
+    ],
+    "explain": "T315I confere resistência a vários TKIs de 1ª/2ª geração; ponatinibe/asciminibe e TMO entram na discussão. Genotipagem de mutação guia a troca.",
+    "trap": "Trocar para TKI sem atividade em T315I ou só aumentar imatinibe."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 21,
+    "group": "Hematologia",
+    "theme": "LMC — crise blástica",
+    "stem": "Paciente com LMC conhecida chega com Hb 7,0, plaquetas 22.000, leucócitos 95.000 com 28% de blastos no sangue, febre e dor óssea. FISH BCR-ABL positivo. Qual a conduta prioritária? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Reconhecer crise blástica: indução conforme linhagem (mieloide/linfoide), manter/otimizar TKI, suporte e avaliar alo-TMO após controle, neste caso",
+    "wrongs": [
+      "Tratar apenas com AAS e flebotomia, como se fosse policitemia vera em fase estável com reavaliação clínica seriada em foco no manejo",
+      "Observar ambulatorialmente por 4 semanas com imatinibe de baixa dose sem indução com reavaliação clínica seriada documentado de imediato",
+      "Indicar esplenectomia urgente como terapia curativa exclusiva da crise blástica diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Transfundir granulócitos diários sem quimioterapia nem TKI na hiperleucocitose blástica com reavaliação clínica seriada diante do quadro apresentado com suporte"
+    ],
+    "explain": "Crise blástica (≥20% blastos) comporta-se como leucemia aguda: indução + TKI + ponte para alo-TMO. Suporte e prevenção de lise são essenciais.",
+    "trap": "Manejar crise blástica como fase crônica estável só com TKI de baixa intensidade."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 22,
+    "group": "Hematologia",
+    "theme": "LLC — Rai versus Binet na prática",
+    "stem": "Homem de 71 anos com LLC: linfocitose 28.000, adenomegalias cervicais e axilares, baço palpável, Hb 13,2, plaquetas 165.000. Sem infecções. Como estadiar e qual a implicação? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Rai II (linfadenopatia + esplenomegalia) / Binet B (≥3 áreas); se assintomático sem citopenias, watch and wait permanece adequado na maioria neste caso",
+    "wrongs": [
+      "Rai IV obrigatório por linfocitose >20.000, indicando ibrutinibe imediato em todo idoso com reavaliação clínica seriada já no manejo",
+      "Binet C automaticamente por adenomegalia, mesmo com Hb e plaquetas normais na unidade de atendimento sem adiamento injustificado de imediato",
+      "Estadiamento irrelevante; iniciar CHOP em toda LLC recém-diagnosticada assintomática diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Classificar como LMA pela linfocitose e iniciar antraciclina sem imunofenótipo com reavaliação clínica seriada diante do quadro apresentado documentado com suporte"
+    ],
+    "explain": "Rai II = hepato/esplenomegalia; Binet B = ≥3 territórios. Sem anemia/plaquetopenia (Rai III/IV ou Binet C) e assintomático → observação.",
+    "trap": "Tratar LLC precoce só pela contagem linfocitária absoluta."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 23,
+    "group": "Hematologia",
+    "theme": "LLC — indicação de tratar versus observar",
+    "stem": "Mulher de 66 anos com LLC Rai I há 2 anos: agora Hb 9,4 (não hemolítica), plaquetas 85.000, sudorese noturna e linfonodos progressivos. Imunofenótipo clássico CD5+/CD23+. Qual a melhor decisão? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Há indicação de tratamento (citopenias + sintomas B/progressão); discutir terapia moderna (BTK/BCL2 ± anti-CD20) conforme comorbidades também neste caso",
+    "wrongs": [
+      "Manter watch and wait indefinido apesar de anemia, plaquetopenia e sintomas constitucionais sem adiamento injustificado já no manejo",
+      "Indicar apenas antibiótico profilático contínuo como substituto da terapia antineoplásica com reavaliação clínica seriada também de imediato",
+      "Fazer esplenectomia de primeira linha em toda LLC com Hb <10 sem avaliar medula/hemólise diante do quadro apresentado conforme gravidade do caso já na prática",
+      "Iniciar ATRA + trióxido de arsênio presumindo LPA pela plaquetopenia isolada na rede assistencial disponível com reavaliação clínica seriada documentado com suporte"
+    ],
+    "explain": "Tratar LLC com citopenias progressivas, sintomas B, progressão em massa ou complicações. Agentes BTK/venetoclax±anti-CD20 são padrões atuais; observação só se estável.",
+    "trap": "Observar LLC avançada sintomática ou usar quimioterapia inadequada sem biomarcadores."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 24,
+    "group": "Hematologia",
+    "theme": "LLC — transformação de Richter",
+    "stem": "Paciente com LLC estável há anos evolui com linfonodo cervical crescendo rapidamente, LDH muito alta, febre e perda ponderal. PET com SUV muito elevado em uma cadeia. Qual a conduta diagnóstica prioritária? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Suspeitar síndrome de Richter: biopsiar a lesão mais avidade no PET para confirmar LNH agressivo e estadiar, sem atribuir tudo à LLC indolente neste caso",
+    "wrongs": [
+      "Aumentar apenas a dose de observação clínica sem biópsia, pois LLC nunca transforma com reavaliação clínica seriada também no manejo",
+      "Iniciar plasmaférese por hiperviscosidade presumida sem imagem nem histologia conforme gravidade do caso na unidade de atendimento de imediato",
+      "Tratar empiricamente tuberculose ganglionar sem biópsia em todo linfonodo PET-positivo diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Indicar flebotomia por LDH elevada, interpretando como policitemia vera mascarada com reavaliação clínica seriada diante do quadro apresentado claramente com suporte"
+    ],
+    "explain": "Richter: transformação para linfoma agressivo (geralmente DLBCL). Biópsia da lesão discordante/PET-avid é mandatória; muda prognóstico e terapia.",
+    "trap": "Ignorar crescimento discordante/LDH alta como ‘LLC comum’ sem biópsia."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 25,
+    "group": "Hematologia",
+    "theme": "Mieloma — critérios CRAB e SLiM",
+    "stem": "Homem de 63 anos com dor lombar, pico monoclonal IgG 3,8 g/dL, cadeia leve livre κ/λ muito alterada, lesões líticas em crânio, creatinina 2,1, Hb 9,6, cálcio 11,8. Medula com 35% plasmócitos. Qual o diagnóstico? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Mieloma múltiplo sintomático (CRAB ± biomarcadores SLiM): iniciar terapia antimieloma, hidratação/tratar hipercalcemia e avaliar também neste caso",
+    "wrongs": [
+      "MGUS isolada; apenas observar anualmente sem tratar hipercalcemia nem lesões líticas com reavaliação clínica seriada agora no manejo",
+      "Smoldering myeloma obrigatório porque o pico é <4 g/dL, ignorando CRAB evidente conforme gravidade do caso na unidade de atendimento de imediato",
+      "Metástase óssea de carcinoma sem pico monoclonal, contraindicando imunofixação diante do quadro apresentado conforme gravidade do caso também na prática",
+      "PTI pura; tratar só com corticoide a hipercalcemia e as lesões líticas cranianas com reavaliação clínica seriada diante do quadro apresentado também com suporte"
+    ],
+    "explain": "CRAB (cálcio, renal, anemia, bone) ± critérios SLiM definem mieloma tratável. MGUS/smoldering não têm dano de órgão. Urgências: hipercalcemia e lesão renal.",
+    "trap": "Rotular como MGUS/smoldering apesar de CRAB claro."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 26,
+    "group": "Hematologia",
+    "theme": "Mieloma — elegibilidade a ASCT",
+    "stem": "Paciente de 58 anos com mieloma recém-tratado com indução (VRd), resposta parcial muito boa, PS 1, sem comorbidade cardíaca/pulmonar grave. Qual o papel do ASCT? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Em elegível <65–70 anos, consolidar com TMO autólogo após indução permanece padrão para prolongar sobrevida livre de progressão, também neste caso",
+    "wrongs": [
+      "Contraindicar ASCT em todo paciente >55 anos, mesmo elegível e responsivo à indução com reavaliação clínica seriada também no manejo",
+      "Indicar alo-TMO de rotina como primeira consolidação em todo mieloma de novo conforme gravidade do caso na unidade de atendimento de imediato",
+      "Suspender qualquer terapia após indução sem consolidação nem manutenção se houver VGPR sem adiamento injustificado após estabilização inicial na prática",
+      "Substituir ASCT por esplenectomia profilática para reduzir a carga plasmocitária com reavaliação clínica seriada diante do quadro apresentado também com suporte"
+    ],
+    "explain": "ASCT autólogo pós-indução é padrão em elegíveis. Alo-TMO não é rotina de primeira consolidação. Manutenção (ex.: lenalidomida) costuma seguir o ASCT.",
+    "trap": "Negar ASCT só pela idade cronológica em paciente fit, ou indicar alo de rotina."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 27,
+    "group": "Hematologia",
+    "theme": "Mieloma — evento ósseo e bifosfonato",
+    "stem": "Mulher com mieloma ativo e lesões líticas múltiplas, cálcio já corrigido, creatinina 1,1, prontuário odontológico pendente. Vai iniciar terapia. Qual medida óssea é essencial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Iniciar bifosfonato (ou denosumabe se couber) para reduzir eventos ósseos, após avaliação dentária para risco de osteonecrose, além já neste caso",
+    "wrongs": [
+      "Evitar qualquer anti-reabsortivo até o fim da vida, pois lesões líticas não se beneficiam com reavaliação clínica seriada no manejo",
+      "Indicar radioiodo terapêutico como padrão das lesões líticas do mieloma ósseo conforme gravidade do caso na unidade de atendimento de imediato",
+      "Usar só carbonato de cálcio sem anti-reabsortivo nem avaliação de osteonecrose mandibular conforme gravidade do caso na unidade de atendimento na prática",
+      "Realizar laminectomia profilática em todas as vértebras com qualquer lesão lítica com reavaliação clínica seriada diante do quadro apresentado agora com suporte"
+    ],
+    "explain": "Anti-reabsortivos reduzem eventos ósseos no mieloma. Avaliação dentária prévia mitiga osteonecrose de mandíbula. Cirurgia/radioterapia são reservadas a indicações focais.",
+    "trap": "Omitir bifosfonato/denosumabe ou negligenciar risco de osteonecrose."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 28,
+    "group": "Hematologia",
+    "theme": "Linfoma — Ann Arbor e sintomas B",
+    "stem": "Homem de 32 anos com linfoma de Hodgkin clássico: linfonodos cervicais e mediastinais, sem infra-diafragmáticos, febre e sudorese noturna, sem acometimento extranodal. Qual o estadiamento Ann Arbor? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Estádio IIB: dois ou mais territórios do mesmo lado do diafragma com sintomas B; orientar quimio±radio conforme risco e resposta intermediária/avançada neste caso",
+    "wrongs": [
+      "Estádio IA obrigatório por ser Hodgkin, independentemente da extensão nodal e sintomas diante do quadro apresentado também no manejo",
+      "Estádio IVB automático por febre, mesmo sem doença extranodal ou medular diante do quadro apresentado conforme gravidade do caso de imediato",
+      "Estádio IIIA por mediastino acometido, ignorando que ambos os sítios são supra-diafragmáticos com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "Não se estadiam linfomas; inicia-se apenas corticosteroide isolado indefinidamente com reavaliação clínica seriada diante do quadro apresentado inclusive com suporte"
+    ],
+    "explain": "Ann Arbor: II = ≥2 regiões mesmo lado do diafragma; B = febre/sudorese/perda ponderal. Estádio IV exige extranodal disseminado/medula. Sintomas B não definem IV sozinhos.",
+    "trap": "Chamar de IV todo paciente com sintomas B ou errar o lado do diafragma."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 29,
+    "group": "Hematologia",
+    "theme": "Linfoma — compressão medular emergencial",
+    "stem": "Paciente com LNH conhecido apresenta dor lombar intensa, fraqueza em membros inferiores e retenção urinária há 12 horas. RM: massa epidural compressiva. Qual a prioridade? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Emergência oncológica: corticoide imediato, imagem completa, discutir radioterapia/descompressão cirúrgica e iniciar terapia sistêmica neste caso",
+    "wrongs": [
+      "Aguardar biópsia eletiva em 2 semanas sem corticoide, pois déficit neurológico é sempre reversível na unidade de atendimento no manejo",
+      "Indicar apenas fisioterapia ambulatorial sem imagem nem terapia antitumoral conforme gravidade do caso na unidade de atendimento de imediato",
+      "Transfundir plaquetas empiricamente como único tratamento da compressão medular diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Iniciar anticoagulação plena presumindo apenas trombose venosa epidural sem RM com reavaliação clínica seriada diante do quadro apresentado no total com suporte"
+    ],
+    "explain": "Compressão medular: corticoide + RM + radio/cirurgia ± sistêmico. Horas importam para preservar função neurológica. A conduta deve seguir a fisiopatologia e a gravidade clínica apresentadas.",
+    "trap": "Atrasar corticoide/descompressão aguardando investigação eletiva."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 30,
+    "group": "Hematologia",
+    "theme": "Linfoma — síndrome da veia cava superior",
+    "stem": "Jovem com massa mediastinal (suspeita de linfoma/LLA-T) chega com edema facial, turgência jugular e dispneia ao deitar. Biópsia ainda não realizada. Qual a conduta inicial mais segura? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Elevar cabeceira, oxigênio, corticoide se via aérea/SVCS grave, evitar acesso venoso em MMSS edemaciados e obter diagnóstico claramente neste caso",
+    "wrongs": [
+      "Deitar o paciente em Trendelenburg e infundir grande volume em veia do braço edemaciado com reavaliação clínica seriada já no manejo",
+      "Iniciar quimioterapia empírica definitiva sem qualquer tentativa de diagnóstico quando estável conforme gravidade do caso também de imediato",
+      "Indicar trombolítico sistêmico de rotina em toda SVCS sem avaliar massa mediastinal sem adiamento injustificado após estabilização inicial já na prática",
+      "Alta com AAS e retorno em 30 dias se a SpO2 estiver >90% no ar ambiente na rede assistencial disponível com reavaliação clínica seriada documentado com suporte"
+    ],
+    "explain": "SVCS: suporte postural/O2, evitar acessos no território obstruído, corticoide se grave, e diagnóstico rápido (biópsia) para terapia dirigida. Trombólise não é padrão da massa.",
+    "trap": "Acessos venosos em MMSS edemaciados ou atrasar suporte/diagnóstico."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 31,
+    "group": "Hematologia",
+    "theme": "Anemia aplásica — diagnóstico versus HPN",
+    "stem": "Jovem de 24 anos com pancitopenia: Hb 7,1, neutrófilos 420, plaquetas 15.000, reticulócitos baixos. Medula hipocelular sem displasia significativa nem blastos. HPN clone 8%. Qual a interpretação? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Anemia aplásica grave; clone HPN pequeno é frequente e não define HPN clássica hemolítica — tratar como aplásica (ATG/CSA ou alo-TMO) já neste caso",
+    "wrongs": [
+      "LMA provável; iniciar indução 7+3 sem revisão da celularidade medular hipoplásica com reavaliação clínica seriada no total no manejo",
+      "HPN franca obrigatória pelo clone 8%; eculizumab imediato sem avaliar gravidade aplásica com reavaliação clínica seriada em foco de imediato",
+      "PTI isolada; usar só corticoide e ignorar neutropenia e anemia reticulocitopênica com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "SMD de alto risco por definição em todo jovem com pancitopenia e medula hipocelular diante do quadro apresentado conforme gravidade do caso no total com suporte"
+    ],
+    "explain": "Aplasia: medula vazia + reticulócitos baixos. Clones HPN pequenos são comuns na aplásica. Terapia: IST (ATG+CSA) ou alo-TMO em jovens com doador.",
+    "trap": "Tratar clone HPN mínimo como HPN clássica ou induzir LMA em medula aplásica."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 32,
+    "group": "Hematologia",
+    "theme": "Anemia aplásica — alo-TMO versus IST",
+    "stem": "Adolescente de 17 anos com aplasia grave, irmão HLA-idêntico disponível, sem infecção ativa descontrolada. Qual a terapia com maior potencial curativo de primeira linha? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Alotransplante de medula de irmão HLA-idêntico é primeira escolha em jovens com aplasia grave; IST (ATG+Ciclosporina) se sem doador já neste caso",
+    "wrongs": [
+      "Corticosteroide isolado prolongado como cura definitiva da aplasia grave do adolescente conforme gravidade do caso também no manejo",
+      "Apenas suporte transfusional vitalício sem IST nem TMO, mesmo com doador idêntico com reavaliação clínica seriada documentado de imediato",
+      "Lenalidomida em alta dose como padrão da aplasia adquirida grave pediátrica/juvenil sem adiamento injustificado após estabilização inicial já na prática",
+      "Esplenectomia imediata antes de qualquer avaliação de doador HLA na aplasia grave com reavaliação clínica seriada diante do quadro apresentado agora com suporte"
+    ],
+    "explain": "Em crianças/jovens com doador aparentado idêntico, alo-TMO é preferível. ATG+CSA é alternativa padrão sem doador. Corticoide isolado não cura aplasia grave.",
+    "trap": "Adiar TMO em jovem com doador idêntico usando só corticoide/suporte."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 33,
+    "group": "Hematologia",
+    "theme": "HPN — hemólise intravascular e eculizumab",
+    "stem": "Homem de 38 anos com hemoglobinúria matinal, LDH 2×ULN, haptoglobina indetectável, Coombs negativo, citometria com clone HPN grande em granulócitos. Sem aplasia grave. Qual o tratamento dirigido da hemólise? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Iniciar inibidor de complemento (eculizumab/ravulizumabe) após vacinação meningocócica, com suporte transfusional se preciso e anticoagulação neste caso",
+    "wrongs": [
+      "Esplenectomia de primeira linha em toda HPN hemolítica, como na esferocitose sem clone diante do quadro apresentado também no manejo",
+      "Corticoterapia isolada prolongada como padrão, pois HPN seria AHAI Coombs-negativa com reavaliação clínica seriada documentado de imediato",
+      "Imatinibe empírico por semelhança com LMC, sem evidência de BCR-ABL conforme gravidade do caso na unidade de atendimento sem adiamento injustificado na prática",
+      "Suspender vacinas meningocócicas porque o eculizumab não aumenta risco infeccioso com reavaliação clínica seriada diante do quadro apresentado inclusive com suporte"
+    ],
+    "explain": "HPN: hemólise por complemento; anti-C5 reduz hemólise e trombose. Vacina meningocócica é mandatória. Esplenectomia/corticoide não são terapia dirigida.",
+    "trap": "Tratar HPN como AHAI com corticoide/esplenectomia e omitir vacina pré-eculizumab."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 34,
+    "group": "Hematologia",
+    "theme": "HPN — trombose venosa abdominal",
+    "stem": "Mulher com HPN conhecida apresenta dor abdominal intensa, ascite leve e TC com trombose de veias hepáticas. Hb 9,0, LDH alta. Qual a conduta prioritária? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Anticoagular, manter/iniciar inibidor de complemento, suporte hepático e evitar atrasar terapia por medo injustificado de sangramento na trombose HPN neste caso",
+    "wrongs": [
+      "Contraindicar anticoagulação em qualquer trombose da HPN por risco hemorrágico absoluto com reavaliação clínica seriada já no manejo",
+      "Tratar só com diurético e dieta hipossódica, sem anticoagulação nem anticomplemento com reavaliação clínica seriada documentado de imediato",
+      "Indicar colecistectomia imediata como terapia da síndrome de Budd-Chiari na HPN na rede assistencial disponível com reavaliação clínica seriada claramente na prática",
+      "Trocar eculizumab por ferro oral exclusivo para reduzir a trombogenicidade do clone com reavaliação clínica seriada diante do quadro apresentado no total com suporte"
+    ],
+    "explain": "Trombose (hepática/abdominal/cerebral) é marca da HPN: anticoagular + anticomplemento. Budd-Chiari exige manejo especializado; diurético não substitui anticoagulação.",
+    "trap": "Negar anticoagulação na trombose da HPN ou omitir terapia anticomplemento."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 35,
+    "group": "Hematologia",
+    "theme": "Hemofilia × vWD — padrão laboratorial",
+    "stem": "Garoto de 6 anos com hematomas profundos e hemartrose; mãe refere tio materno com sangramentos. TP normal, TTPa alargado que corrige na mistura, PFA-100 normal, antígeno de vWF normal. Qual o diagnóstico mais provável? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço.",
+    "correct": "Hemofilia (deficiência de VIII ou IX): TTPa alongado com correção na mistura e hemostasia primária preservada; dosar fatores e repor já neste caso",
+    "wrongs": [
+      "Doença de von Willebrand tipo 1 típica, pois hemartrose é a marca clássica do vWD leve diante do quadro apresentado também no manejo",
+      "CID aguda, apesar de TP normal e ausência de consumo de fibrinogênio conforme gravidade do caso na unidade de atendimento também de imediato",
+      "PTI grave isolada, indicando transfusão de plaquetas antes de qualquer dosagem de fator na unidade de atendimento sem adiamento injustificado na prática",
+      "Deficiência de fator VII isolada, que tipicamente alarga o TP e não o TTPa na rede assistencial disponível com reavaliação clínica seriada inclusive com suporte"
+    ],
+    "explain": "Hemofilia: sangramento profundo + TTPa ↑ (VIII/IX) com TP e plaquetas normais. vWD afeta mais mucosas e pode alterar PFA/vWF. Mistura que corrige sugere deficiência, não inibidor.",
+    "trap": "Chamar de vWD todo sangramento hereditário ou confundir com PTI/CID."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 36,
+    "group": "Hematologia",
+    "theme": "vWD tipo 1 — DDAVP no procedimento",
+    "stem": "Mulher de 27 anos com vWD tipo 1 (vWF 28%), menorragia controlada, vai a biópsia odontológica menor. Resposta prévia a DDAVP documentada. Qual a profilaxia mais adequada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Usar desmopressina (DDAVP) pré-procedimento com antifibrinolítico se indicado, reservando concentrado de vWF/FVIII para não documentado neste caso",
+    "wrongs": [
+      "Indicar fator IX recombinante em alta dose, como se fosse hemofilia B, no vWD tipo 1 com reavaliação clínica seriada agora no manejo",
+      "Contraindicar qualquer hemostático e operar sob AAS para ‘melhorar o fluxo’ conforme gravidade do caso na unidade de atendimento de imediato",
+      "Transfundir plaquetas de rotina em todo vWD tipo 1 antes de procedimento menor diante do quadro apresentado conforme gravidade do caso também na prática",
+      "Iniciar varfarina profilática perioperatória para prevenir trombose no vWD na rede assistencial disponível com reavaliação clínica seriada inclusive com suporte"
+    ],
+    "explain": "vWD 1: DDAVP libera vWF endógeno; antifibrinolíticos ajudam em mucosas. Concentrados para falha/porte maior. Fator IX e plaquetas não são padrão do tipo 1.",
+    "trap": "Tratar vWD tipo 1 como hemofilia B ou usar plaquetas/varfarina indevidamente."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 37,
+    "group": "Hematologia",
+    "theme": "Hemofilia A — hemartrose aguda",
+    "stem": "Adolescente com hemofilia A grave (VIII <1%) chega 2 horas após hemartrose de joelho: calor, dor, limitação. Sem inibidor conhecido. Qual a prioridade terapêutica? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Repor fator VIII precocemente na dose para hemartrose, com analgesia e repouso/proteção articular; fisioterapia precoce após claramente neste caso",
+    "wrongs": [
+      "Aguardar 48 h sem reposição para ‘confirmar’ o derrame, pois hemartrose não sangra mais com reavaliação clínica seriada já no manejo",
+      "Indicar artrocentese diagnóstica imediata em todo derrame antes de qualquer fator VIII com reavaliação clínica seriada inclusive de imediato",
+      "Usar apenas gelo e ibuprofeno em dose anti-inflamatória plena sem repor fator com reavaliação clínica seriada diante do quadro apresentado já na prática",
+      "Transfundir PFC em volume mínimo como equivalente perfeito ao concentrado de VIII com reavaliação clínica seriada diante do quadro apresentado agora com suporte"
+    ],
+    "explain": "Hemartrose: reposição precoce do fator. Evitar AINE que agravam sangramento; punção não é rotina. PFC é inferior ao concentrado de VIII.",
+    "trap": "Atrasar fator VIII ou usar AINE/punção como primeira medida."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 38,
+    "group": "Hematologia",
+    "theme": "PTI gestacional — diferencial com trombocitopenia gestacional",
+    "stem": "Gestante de 28 semanas, plaquetas 62.000, Hb e leucócitos normais, sem HAS/proteinúria, sem esquizócitos. Plaquetas no 1º trimestre já eram 95.000. Qual a interpretação mais provável? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Compatível com PTI gestacional/preexistente mais que trombocitopenia gestacional isolada (esta costuma ser >70–100 mil e no fim em foco neste caso",
+    "wrongs": [
+      "HELLP certo pela plaquetopenia isolada sem hipertensão, hemólise nem enzimas hepáticas diante do quadro apresentado também no manejo",
+      "PTT obstétrica obrigatória com plasmaférese imediata apesar de ausência de MAHA conforme gravidade do caso na unidade de atendimento de imediato",
+      "CID do descolamento, indicando cesárea imediata sem avaliação clínica/obstétrica com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "HIT por heparina inexistente no prontuário, iniciando argatroban empiricamente com reavaliação clínica seriada diante do quadro apresentado no total com suporte"
+    ],
+    "explain": "Trombocitopenia gestacional: leve, tardia, sem história prévia. PTI: pode ser mais precoce/baixa. HELLP/PTT exigem MAHA/HAS. Conduta: observar ou tratar conforme sangramento/contagem.",
+    "trap": "Tratar toda plaquetopenia gestacional como HELLP/PTT sem critérios."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 39,
+    "group": "Hematologia",
+    "theme": "PTI na gestação — limiares e parto",
+    "stem": "Gestante de 36 semanas com PTI, plaquetas 38.000, sem sangramento, parto vaginal iminente. Anestesia de condução sendo discutida. Qual a meta mais razoável? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Elevar plaquetas com corticoide e/ou IgIV se necessário para parto seguro e, se possível, ≥70–80 mil para anestesia neuroaxial; em foco neste caso",
+    "wrongs": [
+      "Indicar esplenectomia intraparto de rotina em toda PTI com plaquetas <50.000 com reavaliação clínica seriada documentado no manejo",
+      "Contraindicar qualquer tratamento e aceitar neuroaxial com 20.000 sem preparação com reavaliação clínica seriada documentado de imediato",
+      "Usar heparina plena intraparto para ‘proteger’ de trombose na PTI não trombótica com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "Indicar cesárea obrigatória em toda PTI, independentemente da contagem e obstetrícia com reavaliação clínica seriada diante do quadro apresentado já com suporte"
+    ],
+    "explain": "No parto, mira-se contagem segura (em geral >30–50 mil para vaginal; mais alta para neuroaxial). Corticoide/IgIV sobem plaquetas; cesárea só por indicação obstétrica.",
+    "trap": "Cesárea/esplenectomia de rotina ou neuroaxial sem preparar a contagem."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 40,
+    "group": "Hematologia",
+    "theme": "Neutropenia febril — MASCC baixo risco",
+    "stem": "Paciente de 52 anos em quimioterapia para tumor sólido: neutrófilos 380, febre 38,4 °C, PA estável, sem mucosite grave, sem foco clínico, MASCC alto (≥21). Qual a estratégia possível? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Em baixo risco (MASCC alto), considerar antibiótico oral (ciprofloxacino+amoxicilina-clavulanato se tolerar) ou EV curto com alta agora neste caso",
+    "wrongs": [
+      "Internar em UTI e iniciar anfotericina lipossomal de imediato em todo baixo risco com reavaliação clínica seriada no total no manejo",
+      "Observar sem antibiótico por 72 h, pois febre em neutropenia nunca indica infecção com reavaliação clínica seriada documentado de imediato",
+      "Usar apenas paracetamol ambulatorial sem cobertura de Pseudomonas/Gram-negativos com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "Indicar G-CSF como monoterapia exclusiva, omitindo antibiótico na neutropenia febril com reavaliação clínica seriada diante do quadro apresentado já com suporte"
+    ],
+    "explain": "MASCC ≥21 sugere baixo risco: regimes orais validados em selecionados. Alto risco exige EV antipseudomonas. Antifúngico empírico não é imediato no dia 0 sem fatores.",
+    "trap": "Omitir antibiótico ou usar antifúngico/UTI de rotina no baixo risco estável."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 41,
+    "group": "Hematologia",
+    "theme": "Neutropenia febril — alto risco antipseudomonas",
+    "stem": "Homem de 61 anos pós-indução de LMA: neutrófilos 50, febre 39,1 °C, mucosite, hipotensão responsiva a volume. Qual o antibiótico empírico inicial mais adequado? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Iniciar monoterapia EV antipseudomonas de amplo espectro (ex.: piperacilina-tazobactam, cefepime ou carbapenêmico se indicado) após já neste caso",
+    "wrongs": [
+      "Usar apenas cefazolina oral, insuficiente para Pseudomonas e instabilidade na LMA com reavaliação clínica seriada em foco no manejo",
+      "Aguardar hemoculturas definitivas 48 h antes de qualquer antibiótico intravenoso com reavaliação clínica seriada documentado de imediato",
+      "Iniciar vancomicina isolada sem cobertura Gram-negativa/Pseudomonas no choque inicial diante do quadro apresentado conforme gravidade do caso na prática",
+      "Tratar com oseltamivir exclusivo presumindo gripe, sem antibacteriano empírico com reavaliação clínica seriada diante do quadro apresentado no total com suporte"
+    ],
+    "explain": "Alto risco (LMA, mucosite, instabilidade): antibiótico EV antipseudomonas imediato pós-culturas. Vancomicina acrescenta-se por critérios (choque, cateter, MRSA). Atraso aumenta mortalidade.",
+    "trap": "Atrasar antipseudomonas ou usar esquema estreito oral no alto risco."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 42,
+    "group": "Hematologia",
+    "theme": "Neutropenia febril — persistência e antifúngico",
+    "stem": "Após 5 dias de piperacilina-tazobactam, neutropênico profundo por LMA mantém febre, estável, culturas negativas, TC de tórax com nódulo suspeito. Qual o próximo passo típico? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Reavaliar foco com imagem e considerar antifúngico empírico/preemptivo (ex.: caspofungina ou voriconazol conforme lesão) na febre agora neste caso",
+    "wrongs": [
+      "Suspender todos os antibióticos imediatamente por culturas negativas, mesmo neutropênico conforme gravidade do caso também no manejo",
+      "Indicar lobectomia diagnóstica obrigatória no 5º dia antes de qualquer antifúngico com reavaliação clínica seriada documentado de imediato",
+      "Trocar apenas para AAS e alta domiciliar enquanto a neutropenia profunda persiste conforme gravidade do caso na unidade de atendimento também na prática",
+      "Administrar rituximabe empírico para febre de origem indeterminada no neutropênico diante do quadro apresentado conforme gravidade do caso inclusive com suporte"
+    ],
+    "explain": "Febre persistente em alto risco levanta fungos (Candida/Aspergillus). Imagem + antifúngico empírico/preemptivo são padrões; não se suspende antibacteriano só por cultura negativa.",
+    "trap": "Parar antibióticos no 5º dia ou atrasar antifúngico na febre persistente de alto risco."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 43,
+    "group": "Hematologia",
+    "theme": "AHAI fria versus quente — terapia",
+    "stem": "Idoso com Hb 8,0, reticulócitos altos, Coombs positivo para C3 e negativo/fraco para IgG, aglutinação a frio, sintomas pioram no inverno. Sem linfoma detectado ainda. Qual o manejo inicial? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "AHAI por aglutinina fria: evitar frio, tratar causa subjacente; rituximabe se necessário; corticoide isolado costuma ser pouco eficaz já neste caso",
+    "wrongs": [
+      "Mesma conduta da AHAI quente: corticoide em alta dose como resposta esperada universal diante do quadro apresentado também no manejo",
+      "Plasmaférese de PTT imediata apesar de ausência de esquizócitos e plaquetopenia conforme gravidade do caso na unidade de atendimento de imediato",
+      "Esplenectomia de primeira linha antes de medidas de evitação do frio e rituximabe com reavaliação clínica seriada diante do quadro apresentado na prática",
+      "Transfusão de plaquetas aquecidas como terapia específica da hemólise por aglutinina fria diante do quadro apresentado conforme gravidade do caso já com suporte"
+    ],
+    "explain": "AHAI fria (C3+): evitar frio; rituximabe é opção; corticoide/esplenectomia menos eficazes que na quente. Investigar Linfoma/Mycoplasma/EBV.",
+    "trap": "Tratar AHAI fria exatamente como quente só com corticoide/esplenectomia."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 44,
+    "group": "Hematologia",
+    "theme": "Waldenström — hiperviscosidade",
+    "stem": "Homem de 70 anos com IgM monoclonal 5,2 g/dL, epistaxe, visão turva, cefaleia e fundoscopia com engurgitamento venoso. Viscosidade sérica elevada. Qual a medida urgente? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Síndrome de hiperviscosidade: plasmaférese urgente para reduzir IgM, evitar transfusão de CH antes da aférese se possível, e iniciar já neste caso",
+    "wrongs": [
+      "Transfundir vários CH antes de qualquer plasmaférese, aumentando a viscosidade com reavaliação clínica seriada documentado no manejo",
+      "Indicar apenas ferro oral e observação, pois IgM alta nunca causa emergência conforme gravidade do caso na unidade de atendimento de imediato",
+      "Iniciar varfarina com INR 3–4 como tratamento único da hiperviscosidade por IgM diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Fazer esplenectomia emergencial no lugar da plasmaférese na hiperviscosidade com reavaliação clínica seriada diante do quadro apresentado claramente com suporte"
+    ],
+    "explain": "Hiperviscosidade por IgM: plasmaférese remove paraproteína; CH pré-aférese pode piorar viscosidade. Depois, tratar a linfoproliferação (Waldenström).",
+    "trap": "Transfundir CH antes da plasmaférese ou omitir aférese na hiperviscosidade."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 45,
+    "group": "Hematologia",
+    "theme": "LMA M3 — CIVD e ATRA precoce",
+    "stem": "Mulher de 35 anos com pancitopenia, blastos com bastonetes de Auer, coagulação com TP alargado, fibrinogênio 80 mg/dL e D-dímero alto. Suspeita de LPA. Qual a prioridade nas primeiras horas? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Iniciar ATRA precocemente na suspeita de LPA, corrigir coagulopatia com suporte (PFC/crio/plaquetas conforme metas) e confirmar em foco neste caso",
+    "wrongs": [
+      "Aguardar cariótipo definitivo por 1 semana sem ATRA, aceitando risco de CIVD fatal com reavaliação clínica seriada em foco no manejo",
+      "Indicar heparina terapêutica isolada sem ATRA nem suporte de fatores na LPA suspeita com reavaliação clínica seriada documentado de imediato",
+      "Tratar como PTI com IgIV exclusiva, ignorando blastos e coagulopatia de consumo diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Realizar biópsia hepática diagnóstica antes de qualquer medida hemostática na rede assistencial disponível com reavaliação clínica seriada inclusive com suporte"
+    ],
+    "explain": "LPA=emergência: ATRA na suspeita + suporte agressivo da CIVD. Confirmação molecular não deve atrasar ATRA. Mortalidade precoce é hemorrágica.",
+    "trap": "Atrasar ATRA aguardando genética ou tratar só a coagulopatia sem ATRA."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 46,
+    "group": "Hematologia",
+    "theme": "Leucostase — hiperleucocitose sintomática",
+    "stem": "Homem com LMA: leucócitos 185.000 (maioria blastos), dispneia, SpO2 86%, confusão. Gasometria com hipoxemia; Rx com infiltrados. Qual o manejo imediato além de suporte? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Leucostase: iniciar citorredução urgente (hidroxiureia/quimioterapia de indução) ± leucoaférese se disponível/indicação, evitar em foco neste caso",
+    "wrongs": [
+      "Transfundir vários CH para Ht 40% antes de qualquer citorredução na hiperleucocitose com reavaliação clínica seriada agora no manejo",
+      "Observar ambulatorialmente com AAS, pois blastos altos são sempre assintomáticos com reavaliação clínica seriada documentado de imediato",
+      "Indicar digoxina como terapia específica da hipoxemia por leucostase pulmonar com reavaliação clínica seriada diante do quadro apresentado já na prática",
+      "Suspender planos de quimioterapia até normalização espontânea dos leucócitos com reavaliação clínica seriada diante do quadro apresentado claramente com suporte"
+    ],
+    "explain": "Leucostase é emergência: citorredução rápida ± leucoaférese. CH aumenta viscosidade; priorizar redução de blastos e suporte ventilatório.",
+    "trap": "Transfundir CH agressivamente antes de citorreduzir na leucostase."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 47,
+    "group": "Hematologia",
+    "theme": "Trombocitopenia gestacional — limiar benigno",
+    "stem": "Primigesta de 34 semanas, assintomática, plaquetas 92.000, hemograma prévio normal no 1º trimestre, sem HAS, sem MAHA. Qual a conduta mais apropriada? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Provável trombocitopenia gestacional: observação, evitar tratamentos desnecessários, reassessorar no periparto e investigar PTI/HELLP já neste caso",
+    "wrongs": [
+      "Plasmaférese imediata por PTT presumida sem esquizócitos nem disfunção orgânica com reavaliação clínica seriada claramente no manejo",
+      "Esplenectomia antenatais de rotina para ‘corrigir’ plaquetas entre 90 e 100 mil conforme gravidade do caso na unidade de atendimento de imediato",
+      "Iniciar prednisona 1 mg/kg em toda gestante com plaquetas <100.000 assintomática diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Indicar interrupção imediata da gestação só pela plaquetometria de 92.000 na rede assistencial disponível com reavaliação clínica seriada claramente com suporte"
+    ],
+    "explain": "Trombocitopenia gestacional é comum, leve e tardia. Não exige corticoide/IgIV se estável. Tratar/investigar se mais grave, precoce ou com features de microangiopatia/HAS.",
+    "trap": "Tratar trombocitopenia gestacional leve como PTT/PTI com terapia agressiva."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 48,
+    "group": "Hematologia",
+    "theme": "Inibidor de fator VIII — Bethesda e bypass",
+    "stem": "Adulto com hemofilia A grave em reposição: sangramento muscular que não cede a doses usuais de VIII; TTPa não corrige na mistura; Bethesda 28 UB. Qual a terapia do sangramento agudo? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Com inibidor de alto título, usar agente de bypass (aPCC ou rFVIIa) no sangramento agudo e planejar ITI/emicizumabe na profilaxia, agora neste caso",
+    "wrongs": [
+      "Aumentar indefinidamente só o fator VIII padrão sem considerar bypass no alto título com reavaliação clínica seriada agora no manejo",
+      "Transfundir plaquetas como substituto do fator VIII na presença de inibidor conforme gravidade do caso na unidade de atendimento de imediato",
+      "Indicar varfarina para ‘competir’ com o inibidor e reduzir o TTPa na rede assistencial disponível com reavaliação clínica seriada documentado na prática",
+      "Suspender qualquer hemostático e observar hematoma muscular profundo por 1 semana com reavaliação clínica seriada diante do quadro apresentado agora com suporte"
+    ],
+    "explain": "Inibidor alto título: bypass (rFVIIa/aPCC) no agudo; ITI para erradicar; emicizumabe na profilaxia. Mistura que não corrige sugere inibidor.",
+    "trap": "Insistir apenas em VIII padrão no inibidor de alto título com sangramento."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 49,
+    "group": "Hematologia",
+    "theme": "Mielofibrose — risco e ruxolitinibe",
+    "stem": "Paciente com mielofibrose primária, esplenomegalia sintomática, sudorese, perda ponderal, JAK2+, anemia moderada, risco intermediário-2. Qual terapia sintomática dirigida à via JAK? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Ruxolitinibe (inibidor JAK) alivia sintomas constitucionais e esplenomegalia; alo-TMO permanece única cura potencial em elegíveis de risco mais alto neste caso",
+    "wrongs": [
+      "Esplenectomia de primeira linha em todos antes de qualquer inibidor de JAK com reavaliação clínica seriada documentado no manejo",
+      "Imatinibe empírico sem BCR-ABL, presumindo equivalência com LMC na mielofibrose conforme gravidade do caso na unidade de atendimento de imediato",
+      "Apenas reposição de vitamina B12 como therapy-modifying da fibrose medular na rede assistencial disponível com reavaliação clínica seriada documentado na prática",
+      "Anticoagulação plena vitalícia automática sem trombose na mielofibrose JAK2+ na rede assistencial disponível com reavaliação clínica seriada documentado com suporte"
+    ],
+    "explain": "Ruxolitinibe melhora sintomas/baço na MF sintomática. TMO cura em selecionados. Esplenectomia tem morbidade e não é primeira linha rotineira.",
+    "trap": "Indicar esplenectomia precoce ou TKI BCR-ABL empírico na mielofibrose."
+  },
+  {
+    "idPrefix": "cli-hemato2",
+    "n": 50,
+    "group": "Hematologia",
+    "theme": "Neutropenia congênita versus agranulocitose medicamentosa",
+    "stem": "Mulher de 40 anos inicia metamizol; em 10 dias: febre, odinofagia, neutrófilos 100/mm³, Hb e plaquetas normais. Medula com maturativo mielóide escasso. Qual a conduta prioritária? Sinais vitais na chegada: PA, FC, FR, SpO2 e temperatura compatíveis com a gravidade descrita, permitindo decidir a conduta imediata neste serviço. O paciente nega alergias medicamentosas conhecidas; há acesso venoso e monitorização contínua disponíveis na unidade de atendimento.",
+    "correct": "Suspender o fármaco suspeito, iniciar antibiótico empírico se febril e considerar G-CSF; agranulocitose medicamentosa exige remoção já neste caso",
+    "wrongs": [
+      "Manter metamizol e iniciar quimioterapia de LMA sem blastos nem hipercelularidade com reavaliação clínica seriada em foco no manejo",
+      "Indicar alo-TMO imediato em toda neutropenia aguda por droga antes de suspender o agente com reavaliação clínica seriada também de imediato",
+      "Tratar apenas com ferro oral, interpretando neutropenia isolada como ferropriva diante do quadro apresentado conforme gravidade do caso agora na prática",
+      "Administrar heparina plena empírica por confundir com HIT apesar de plaquetas normais diante do quadro apresentado conforme gravidade do caso também com suporte"
+    ],
+    "explain": "Agranulocitose por droga: suspender agente + antibiótico se febril ± G-CSF. Não é LMA sem evidência. HIT afeta plaquetas, não neutrófilos isolados.",
+    "trap": "Manter o fármaco culpado ou tratar como leucemia sem critério."
+  }
+]

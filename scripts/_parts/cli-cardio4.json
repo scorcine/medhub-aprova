@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 1,
+    "group": "Cardiologia",
+    "theme": "Síncope ESC — alto risco",
+    "stem": "Homem de 72 anos, hipertenso, apresenta síncope súbita sem pródromos ao esforço leve, com recuperação espontânea. ECG: BRE novo e QTc 480 ms. PA 108/70 mmHg, sem déficit neurológico. Qual a estratificação segundo orientação ESC e a conduta imediata mais adequada na unidade de emergência? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica.",
+    "correct": "Síncope de alto risco (cardíaca suspeita): internar com monitorização, investigar causa estrutural/arrítmica e evitar alta precoce no plano atual",
+    "wrongs": [
+      "Classificar como vasovagal típico e liberar sem ECG de controle apenas porque houve recuperação completa e atrasa o manejo",
+      "Indicar teste de mesa basculante como primeiro exame antes de qualquer observação hospitalar monitorizada sem ganho clínico líquido sem respaldo atual",
+      "Tratar com fludrocortisona empírica e alta, sem ecocardiograma nem Holter na presença de BRE novo sem ganho clínico líquido elevando iatrogenia vã",
+      "Atribuir a AIT e iniciar antiagregante isolado, ignorando os marcadores de alto risco no ECG adiando a conduta de primeira linha prioridade invertida"
+    ],
+    "explain": "ESC: síncope sem pródromo, ao esforço, com ECG anormal (BRE novo, QTc longo) = alto risco — observação/internação e investigação cardíaca, não alta como reflexa.",
+    "trap": "Liberar síncope ‘recuperada’ ignorando critérios ESC de alto risco no ECG."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 2,
+    "group": "Cardiologia",
+    "theme": "Síncope ESC — baixo risco e alta",
+    "stem": "Mulher de 24 anos, sem comorbidades, teve síncope após dor intensa e náuseas em ambiente quente, com pródromos (palidez, sudorese) e recuperação em segundos. Exame normal, ECG sinus normal, sem história familiar de morte súbita. Qual a melhor conduta alinhada à ESC? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Síncope reflexa de baixo risco: orientar gatilhos, medidas físicas e alta sem internação rotineira nem exames invasivos com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Indicar Holter invasivo implantável imediatamente em toda síncope jovem sem estratificar o risco clínico e atrasa o manejo",
+      "Internar em UTI coronariana por protocolo, independentemente da história tipicamente reflexa e ECG normal sem ganho clínico líquido sem respaldo atual",
+      "Solicitar coronariografia de urgência antes de qualquer avaliação clínica e eletrocardiográfica seriada sem ganho clínico líquido com iatrogenia inútil",
+      "Iniciar amiodarona profilática e restrição esportiva definitiva sem diagnóstico de canalopatia documentada fora da prioridade clínica imediata"
+    ],
+    "explain": "História clássica reflexa + ECG normal + ausência de red flags = baixo risco ESC: educação e alta; evitar over-investigation e internação desnecessária.",
+    "trap": "Internar ou implantar monitor em síncope vasovagal típica de baixo risco."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 3,
+    "group": "Cardiologia",
+    "theme": "Brugada — padrão tipo 1",
+    "stem": "Homem de 41 anos, assintomático, ECG de rotina mostra elevação de ST ≥2 mm em V1–V2 com morfologia de BRE e onda T negativa (padrão tipo 1 espontâneo). Sem febre no momento. História familiar de morte súbita aos 38 anos. Qual a interpretação e próximo passo prioritário? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica.",
+    "correct": "Brugada tipo 1 espontâneo com história familiar de MS: referir a eletrofisiologia; CDI se indicação de prevenção secundária/primária selecionada no plano atual",
+    "wrongs": [
+      "Ignorar o ECG por ausência de sintomas e liberar sem avaliação especializada nem aconselhamento familiar e atrasa o manejo",
+      "Indicar fibrinólise plena por ‘supra de ST’ em V1–V2 sem clínica de SCA oclusiva nem troponina sem ganho clínico líquido sem respaldo atual",
+      "Prescrever flecainida crônica para ‘suprimir’ o padrão Brugada como terapia de primeira linha ambulatorial elevando iatrogenia sem benefício",
+      "Liberar para esporte competitivo de alta intensidade sem estratificação de risco nem opinião especializada fora da prioridade clínica imediata"
+    ],
+    "explain": "Padrão Brugada tipo 1 espontâneo é diagnóstico; com história familiar de MS, avaliação por EP é mandatória. Não tratar como STEMI nem liberar para esporte de risco.",
+    "trap": "Trombolisar supra em V1–V2 de Brugada como se fosse STEMI anterior."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 4,
+    "group": "Cardiologia",
+    "theme": "Brugada — gatilhos e fármacos",
+    "stem": "Paciente com Brugada conhecido, tipo 1 documentado, chega febril (39,2 °C) com síncope. ECG atual acentuou o padrão. Lista de medicações inclui amitriptilina recente para dor. Qual a conduta imediata mais correta além do suporte? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Tratar a febre agressivamente, suspender fármacos pró-Brugada (ex.: antidepressivos tricíclicos) e monitorizar risco arrítmico no plano atual",
+    "wrongs": [
+      "Aumentar a dose de amitriptilina para controlar a dor, pois tricíclicos são seguros no Brugada espontâneo e atrasa o manejo",
+      "Administrar ajmalina diagnóstica na vigência de febre e síncope para ‘confirmar’ o diagnóstico já estabelecido sem ganho clínico líquido sem respaldo atual",
+      "Indicar teste ergométrico máximo imediato antes de controlar a temperatura e revisar a farmacoterapia sem ganho clínico líquido com iatrogenia inútil",
+      "Prescrever verapamil EV em bolus como antiarrítmico empírico de primeira linha na síncope febril em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Febre e fármacos (tricíclicos, bloqueadores de Na+) desmascaram/agravam Brugada. Antitérmicos + suspender gatilhos + monitorização; provocação farmacológica não é prioridade aguda.",
+    "trap": "Manter tricíclico e ignorar febre como gatilho de arritmia no Brugada."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 5,
+    "group": "Cardiologia",
+    "theme": "QT longo — reconhecimento congênito",
+    "stem": "Adolescente de 16 anos com síncope aos esforços/natação. ECG: QTc 520 ms, ondas T bifásicas. Pais relatam primo com morte súbita. Eletrólitos normais; sem fármacos QT+. Qual a hipótese e conduta inicial? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Suspeitar SQTL congênito: evitar gatilhos, suspender fármacos QT+, referir genética/EP e discutir prevenção de MS com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Diagnosticar ansiedade de desempenho e liberar para natação competitiva sem restrição nem investigação familiar e atrasa o manejo",
+      "Indicar ablação de VE imediata como primeira linha antes de estratificar canalopatia e risco de torsades sem ganho clínico líquido sem respaldo atual",
+      "Tratar com sotalol empírico para ‘encurtar’ o QT, mesmo sendo fármaco que prolonga o intervalo QT em desacordo com a evidência com iatrogenia inútil",
+      "Atribuir a desidratação isolada e alta sem cálculo de QTc nem aconselhamento sobre esportes aquáticos sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "QTc muito longo + síncope aos esforços/natação + HF de MS = SQTL até prova em contrário. Evitar gatilhos; sotalol é contraindicado por prolongar QT.",
+    "trap": "Prescrever antiarrítmico QT+ (sotalol) em suspeita de síndrome do QT longo."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 6,
+    "group": "Cardiologia",
+    "theme": "QT longo adquirido — torsades",
+    "stem": "Mulher de 68 anos internada por pneumonia recebe moxifloxacino e ondansetrona; K+ 3,1. Apresenta síncope e ECG com TV polimórfica em ‘torção das pontas’ sobre QTc 560 ms. PA 88/50. Qual a conduta antiarrítmica prioritária? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Desfibrilar se instável; magnésio EV mesmo com Mg sérico ‘normal’, corrigir K+ e suspender fármacos QT+ com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Administrar amiodarona EV em bolus como primeira escolha em torsades por QT longo adquirido com hipocalemia e atrasa o manejo",
+      "Indicar lidocaína isolada e manter moxifloxacino, pois antibiótico não influencia o intervalo QT corrigido sem ganho clínico líquido sem respaldo atual",
+      "Aguardar resolução espontânea sem corrigir eletrólitos, mantendo ondansetrona em dose plena antiemética sem ganho clínico líquido com iatrogenia inútil",
+      "Cardioverter de forma assíncrona em TV monomórfica estável sem avaliar QTc nem fatores precipitantes sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Torsades (QT longo adquirido): Mg EV é tratamento específico; corrigir K+/Mg e remover fármacos QT+. Amiodarona pode piorar QT; estabilização elétrica se instável.",
+    "trap": "Tratar torsades com amiodarona como se fosse TV monomórfica isquêmica."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 7,
+    "group": "Cardiologia",
+    "theme": "Torsades — pacing e isoproterenol",
+    "stem": "Após Mg EV e reposição de K+, paciente com QT longo adquirido mantém salvas de torsades recorrentes e bradicardia sinusal 48 bpm. Está monitorizado em UTI. Qual a estratégia adicional mais adequada enquanto se remove o gatilho? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Aumentar FC com isoproterenol ou pacing temporário para encurtar QT e reduzir recorrência de torsades com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Induzir bradicardia adicional com betabloqueador EV em dose plena para ‘proteger’ contra arritmias ventriculares e atrasa o manejo",
+      "Manter apenas observação sem acelerar a FC, pois torsades recorrente nunca responde a overdrive pacing sem ganho clínico líquido sem respaldo atual",
+      "Iniciar digoxina para controle cronotrópico negativo na bradicardia com QT longo e salvas polimórficas sem ganho clínico líquido com iatrogenia inútil",
+      "Administrar adenosina em bolus repetidos como terapia específica de torsades por prolongamento do QT sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Torsades pausa-dependente: aumentar FC (isoproterenol/overdrive) reduz dispersão de repolarização. Betabloqueador/digoxina que bradiquem pioram o cenário adquirido.",
+    "trap": "Bradicar ainda mais o paciente com torsades recorrente e QT longo."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 8,
+    "group": "Cardiologia",
+    "theme": "Esporte — clearance e MH",
+    "stem": "Atleta de 19 anos, futebol competitivo, ecocardiograma mostra MH com gradiente significativo e septo 22 mm; refere síncope aos sprints. ECG com hipertrofia e ondas T negativas. Qual a orientação de aptidão esportiva mais correta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Restringir esportes competitivos de alta intensidade; referir cardiologia/EP; avaliar CDI se alto risco de MS com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Liberar integralmente para competição se o atleta ‘sente-se bem’ entre os episódios de síncope aos esforços e atrasa o manejo",
+      "Indicar suplemento de creatina e aumento de carga anaeróbica máxima sem reavaliação estrutural seriada sem ganho clínico líquido sem respaldo atual",
+      "Prescrever nifedipino de ação curta pré-jogo para reduzir gradiente e manter o atleta em campo em desacordo com a evidência elevando iatrogenia vã",
+      "Autorizar apenas se houver teste ergométrico ‘normal’, ignorando síncope e fenótipo de alto risco na MH sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "MH com síncope aos esforços e hipertrofia marcada: contraindicação a esportes competitivos intensos; estratificar MS (CDI). Vasodilatadores de ação curta são perigosos.",
+    "trap": "Liberar atleta com MH sintomática só porque o teste de esforço ‘foi normal’."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 9,
+    "group": "Cardiologia",
+    "theme": "Esporte — canalopatia e restrição",
+    "stem": "Nadadora de 17 anos com SQTL tipo 1 confirmado geneticamente, QTc 500 ms, em betabloqueador. Quer retornar a competições de elite em piscina. Sem CDI. Qual a recomendação mais segura de clearance? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Manter restrição a natação/competições aquáticas de alto risco; otimizar BB e discutir CDI se síncope/alto risco conforme estratificação do caso",
+    "wrongs": [
+      "Liberar natação competitiva plena imediatamente após iniciar qualquer dose baixa de betabloqueador oral e atrasa o manejo",
+      "Trocar betabloqueador por sotalol para ‘melhorar performance’ e permitir retorno irrestrito às provas sem ganho clínico líquido sem respaldo atual",
+      "Indicar apenas alongamento e liberar sem discutir risco de arritmia desencadeada por imersão/esforço sem ganho clínico líquido com iatrogenia inútil",
+      "Suspender betabloqueador no dia da prova para evitar redução de desempenho cronotrópico sob supervisão sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "LQT1: gatilho clássico é natação/esforço. Mesmo com BB, competições aquáticas de elite costumam ser restritas; CDI em selecionados. Nunca suspender BB no dia da prova.",
+    "trap": "Liberar natação competitiva em LQT1 só porque ‘já usa betabloqueador’."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 10,
+    "group": "Cardiologia",
+    "theme": "CCHD adulto — Fallot reparado",
+    "stem": "Homem de 32 anos com tetralogia de Fallot corrigida na infância refere dispneia progressiva e palpitações. Exame: sopro diastólico pulmonar. RM: regurgitação pulmonar severa e VD dilatado. Qual o princípio de conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Avaliar indicação de troca/plástica valvar pulmonar e estratificar arritmias; seguimento em centro de cardiopatia congênita do adulto no plano atual",
+    "wrongs": [
+      "Ignorar a regurgitação pulmonar porque a correção cirúrgica na infância ‘resolve definitivamente’ a anatomia e atrasa o manejo",
+      "Indicar digoxina isolada e alta sem imagem de VD nem discussão de reintervenção valvar pulmonar sem ganho clínico líquido sem respaldo atual",
+      "Prescrever vasodilatador arterial sistêmico empírico como cura da dilatação de VD na Fallot reparada sem ganho clínico líquido com iatrogenia inútil",
+      "Contraindicar qualquer exercício leve e negar reavaliação cirúrgica mesmo com VD muito dilatado em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Pós-Fallot: regurgitação pulmonar crônica dilata VD e favorece arritmias — timing de reintervenção valvar em centro especializado, não ‘alta por correção antiga’.",
+    "trap": "Assumir que Fallot corrigido na infância dispensa seguimento de adulto."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 11,
+    "group": "Cardiologia",
+    "theme": "CCHD adulto — CIA sintomática",
+    "stem": "Mulher de 45 anos com dispneia e FA paroxística. Ecocardiograma: CIA ostium secundum com shunt E-D significativo, dilatação de câmaras direitas, sem hipertensão pulmonar severa irreversível. Qual a conduta preferencial? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Indicar fechamento da CIA (percutâneo se anatomia favorável ou cirúrgico) após avaliação de HAP e arritmia conforme estratificação do caso",
+    "wrongs": [
+      "Observar indefinidamente sem fechamento, pois toda CIA em adulto é physiologicamente irrelevante e benigna e atrasa o manejo",
+      "Indicar transplante cardíaco como primeira linha antes de avaliar fechamento do defeito septal atrial sem ganho clínico líquido sem respaldo atual",
+      "Iniciar apenas AAS e negar fechamento mesmo com dilatação direita e shunt significativo documentados sem ganho clínico líquido com iatrogenia inútil",
+      "Fechar urgente na presença de Eisenmenger estabelecido com shunt D-E fixo e cianose crônica severa em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "CIA com sobrecarga direita e sem HAP irreversível: fechamento (preferência percutânea se adequada). Eisenmenger contraindica fechamento simples do defeito.",
+    "trap": "Fechar CIA em hipertensão pulmonar com shunt reverso (Eisenmenger)."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 12,
+    "group": "Cardiologia",
+    "theme": "CCHD — coarctação no adulto",
+    "stem": "Homem de 28 anos com HAS de difícil controle nos membros superiores, PA mais baixa nas pernas, sopro interestcapular e radiografia com erosões costais. Qual a hipótese e conduta diagnóstica prioritária? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Suspeitar coarctação de aorta: confirmar com angio-TC/RM, avaliar aorta/bicaúspide e planejar intervenção conforme estratificação do caso",
+    "wrongs": [
+      "Tratar só com três anti-hipertensivos orais sem imagem aórtica, assumindo HAS essencial do adulto jovem e atrasa o manejo",
+      "Indicar nefrectomia empírica bilateral por ‘HAS renovascular’ sem mapear gradiente aórtico torácico sem ganho clínico líquido sem respaldo atual",
+      "Prescrever stimulantes e liberar musculação intensa com manobra de Valsalva máxima sem avaliar aorta sem ganho clínico líquido com iatrogenia inútil",
+      "Diagnosticar feocromocitoma apenas pela diferença de PA entre braços e pernas, sem imagem vascular em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "HAS em jovens com gradiente MMSS/MMII e sinais de circulação colateral = coarctação até prova em contrário; imagem + avaliar valva aórtica bivalvular associada.",
+    "trap": "Tratar como HAS essencial sem investigar coarctação no adulto jovem."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 13,
+    "group": "Cardiologia",
+    "theme": "Gestação — pré-eclâmpsia e HAS",
+    "stem": "Gestante de 32 semanas, PA 168/110 mmHg, cefaleia e proteinúria nova. Sem convulsão. Bebê com boa vitalidade. Qual o manejo hipertensivo e obstétrico mais adequado neste cenário? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Diagnosticar pré-eclâmpsia: anti-hipertensivo seguro (labetalol/nifedipino/hidralazina), MgSO4 se grave e avaliar resolução no manejo individualizado",
+    "wrongs": [
+      "Iniciar IECA e espirolactona em dose plena, priorizando proteção renal materna na gestação avançada sem ganho clínico líquido e atrasa o manejo",
+      "Usar nitroprussiato prolongado como primeira linha ambulatorial sem monitorar toxicidade fetal por cianeto sem ganho clínico líquido sem respaldo atual",
+      "Aguardar PA 220/130 sem tratamento, pois toda HAS gestacional se resolve espontaneamente ao termo sem ganho clínico líquido elevando iatrogenia vã",
+      "Indicar apenas restrição hídrica severa e diurético de alça sem anti-hipertensivo nem avaliação obstétrica fora da prioridade clínica imediata"
+    ],
+    "explain": "Pré-eclâmpsia: controle com fármacos seguros na gestação; MgSO4 na forma grave/iminência de eclâmpsia; IECA/BRA/espironolactona contraindicados; definir timing do parto.",
+    "trap": "Prescrever IECA ou espirolactona para HAS na gestação."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 14,
+    "group": "Cardiologia",
+    "theme": "Gestação — miocardiopatia periparto",
+    "stem": "Puérpera de 28 anos, 1 semana pós-parto, dispneia progressiva, ortopneia e edema. Ecocardiograma: FE 28%, ventrículo dilatado, sem SCA. Troponina discretamente elevada. Qual a hipótese e princípio terapêutico? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Miocardiopatia periparto: tratar IC (BB, IECA/BRA no puerpério, diurético), anticoagular se FE muito baixa/trombo e suporte no plano atual",
+    "wrongs": [
+      "Diagnosticar apenas ‘ansiedade do puerpério’ e alta sem ecocardiograma nem terapia de insuficiência cardíaca e atrasa o manejo",
+      "Indicar gestação imediata seguinte para ‘recuperar’ a FE, sem intervalo nem aconselhamento de risco sem ganho clínico líquido sem respaldo atual",
+      "Usar apenas digoxina e negar neuro-hormonal, pois IC pós-parto nunca responde a GDMT convencional sem ganho clínico líquido elevando iatrogenia vã",
+      "Trombolisar empiricamente como STEMI sem ECG isquêmico, apenas pela troponina levemente aumentada em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "CMP periparto: IC no último mês de gestação ou meses pós-parto com FE reduzida. Tratar IC; cautela com fármacos na amamentação; aconselhar risco de nova gestação.",
+    "trap": "Minimizar dispneia puerperal como ansiedade sem ecocardiograma."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 15,
+    "group": "Cardiologia",
+    "theme": "Gestação — fármacos cardiovasculares",
+    "stem": "Gestante de 18 semanas com ICFEr conhecida bem controlada pergunta quais ajustes farmacológicos são necessários. Usa carvedilol, enalapril, espirolectona e furosemida. Qual a orientação mais correta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Suspender IECA/BRA e antagonista mineralocorticoide; manter betabloqueador selecionado e diurético se congestão; planejar com cardio-obstetrícia no plano atual",
+    "wrongs": [
+      "Manter enalapril e espironolactona em doses plenas porque são ‘essenciais’ e seguras em qualquer trimestre e atrasa o manejo",
+      "Suspender todos os fármacos inclusive betabloqueador e diurético, deixando a IC sem qualquer terapia sem ganho clínico líquido sem respaldo atual",
+      "Trocar carvedilol por atenolol em alta dose como opção preferencial mais segura na gestação com IC em desacordo com a evidência com iatrogenia inútil",
+      "Iniciar warfarina com INR 3,5–4,5 rotineiramente em toda gestante com FE reduzida sem prótese mecânica sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Na gestação: evitar IECA/BRA/ARNI e ARM por teratogenia/toxicidade fetal; BB (ex. carvedilol/metoprolol) e diuréticos com critério; atenolol tem mais restrições.",
+    "trap": "Manter IECA e espironolactona ao longo da gestação na IC."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 16,
+    "group": "Cardiologia",
+    "theme": "Cardio-oncologia — antraciclinas",
+    "stem": "Mulher de 52 anos iniciará doxorrubicina por linfoma. FE basal 62%, sem IC. Qual a estratégia de cardio-oncologia mais adequada para mitigar cardiotoxicidade? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Definir dose cumulativa, monitorar FE/strain seriado e discutir cardioproteção (ex.: dexrazoxano/BB/IECA) conforme risco no manejo individualizado",
+    "wrongs": [
+      "Ignorar dose cumulativa e só ecocardiografar se houver edema agudo de pulmão franco durante o ciclo sem ganho clínico líquido e atrasa o manejo",
+      "Contraindicar qualquer quimioterapia antraciclínica apenas pela idade, sem estratificar risco cardiovascular sem ganho clínico líquido sem respaldo atual",
+      "Iniciar digoxina profilática em todos os pacientes como proteção miocárdica comprovada contra antraciclina elevando iatrogenia sem benefício",
+      "Suspender AAS preventivo e negar seguimento, pois cardiotoxicidade por antraciclina é sempre irreversível e fútil fora da prioridade clínica imediata"
+    ],
+    "explain": "Antraciclinas: risco dose-dependente; monitorar função ventricular (FE/GLS) e considerar cardioproteção em alto risco. Detecção precoce permite ajuste terapêutico.",
+    "trap": "Só investigar coração depois de IC manifesta sob antraciclina."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 17,
+    "group": "Cardiologia",
+    "theme": "Cardio-oncologia — HER2 / trastuzumabe",
+    "stem": "Paciente em trastuzumabe adjuvante apresenta queda assintomática da FE de 60% para 45% no ecocardiograma de controle. Sem congestão. Qual a conduta típica de cardio-oncologia? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Interromper temporariamente o anti-HER2, iniciar/otimizar IECA/BB e reassessorar FE antes de decidir reidrodução no manejo individualizado",
+    "wrongs": [
+      "Manter trastuzumabe sem pausa e sem terapia neuro-hormonal, pois queda de FE assintomática é irrelevante e atrasa o manejo",
+      "Indicar transplante cardíaco imediato como única opção, sem tentar recuperação com pausa e GDMT sem ganho clínico líquido sem respaldo atual",
+      "Trocar para antraciclina em dose plena no mesmo dia para ‘compensar’ a pausa do anti-HER2 oncológico sem ganho clínico líquido com iatrogenia inútil",
+      "Iniciar amiodarona profilática e negar ecocardiogramas futuros por ‘estabilização clínica subjetiva’ sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Cardiotoxicidade por trastuzumabe costuma ser mais reversível: pausar, tratar disfunção (IECA/BB) e reavaliar FE para possível reexposição sob vigilância.",
+    "trap": "Continuar anti-HER2 sem ajuste quando a FE cai de forma relevante."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 18,
+    "group": "Cardiologia",
+    "theme": "Cardio-oncologia — miocardite por ICI",
+    "stem": "Homem de 64 anos em inibidor de checkpoint (anti-PD-1) há 4 semanas chega com fadiga, elevação de troponina, BAV de 2º grau e FE levemente reduzida. Coronárias sem obstrução crítica. Qual a prioridade? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Suspeitar miocardite imunomediada: internar, suspender ICI e iniciar imunossupressão (corticoide em alta dose) precoce com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Manter ICI e observar ambulatorialmente, pois BAV novo sob imunoterapia nunca indica miocardite grave sem ganho clínico líquido e atrasa o manejo",
+      "Indicar apenas AAS e estatina, tratando como SCA típica sem considerar toxicidade imune do checkpoint sem ganho clínico líquido sem respaldo atual",
+      "Administrar alteplase plena imediatamente sem imagem coronária, apenas pela troponina elevada sob ICI em desacordo com a evidência com iatrogenia inútil",
+      "Prescrever AINE em alta dose e alta, adiando corticoide até confirmação histológica obrigatória demorada fora da prioridade clínica imediata"
+    ],
+    "explain": "Miocardite por ICI é emergência: arritmias/BAV + troponina. Suspender ICI e corticoterapia precoce; mortalidade alta se atraso. Não tratar só como SCA.",
+    "trap": "Manter imunoterapia e atrasar corticoide na miocardite por ICI."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 19,
+    "group": "Cardiologia",
+    "theme": "CIED — infecção de gerador",
+    "stem": "Idoso com marca-passo há 2 anos apresenta eritema, flutuação e drenagem purulenta no bolso do gerador, sem febre alta. Hemoculturas pendentes. Qual a conduta definitiva mais correta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Tratar como infecção de dispositivo: antibiótico e remoção completa do sistema (gerador + cabos) em centro experiente com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Apenas trocar o gerador no mesmo bolso sem extrair cabos, mantendo infecção do hardware intravascular sem ganho clínico líquido e atrasa o manejo",
+      "Tratar só com antibiótico oral prolongado sem remoção, esperando esterilização definitiva do dispositivo sem ganho clínico líquido sem respaldo atual",
+      "Ignorar a drenagem local porque hemoculturas ainda não resultaram, adiando qualquer avaliação de extração sem ganho clínico líquido com iatrogenia inútil",
+      "Indicar radioterapia local do bolso como alternativa à extração cirúrgica/intervencionista dos cabos em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Infecção de bolso/CIED: antibioticoterapia + extração completa do sistema é o padrão; troca local sem remover cabos falha com alta recorrência.",
+    "trap": "Trocar só o gerador e deixar cabos infectados in situ."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 20,
+    "group": "Cardiologia",
+    "theme": "CIED — endocardite de cabo",
+    "stem": "Paciente com CDI, febre, hemoculturas positivas para S. aureus e vegetação aderida ao cabo no ecocardiograma transesofágico. Sem abscessos à distância. Qual o princípio terapêutico? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Antibiótico dirigido e extração do sistema completo o mais breve possível; não confiar só em ATB prolongado conforme estratificação do caso",
+    "wrongs": [
+      "Manter o CDI intacto e completar 6 semanas de antibiótico como cura definitiva sem avaliar extração sem ganho clínico líquido e atrasa o manejo",
+      "Indicar apenas desbridamento superficial do bolso, deixando vegetação de cabo e bacteremia por S. aureus sem ganho clínico líquido sem respaldo atual",
+      "Suspender antibiótico após 48 h afebril, mesmo com vegetação documentada e hemoculturas inicialmente positivas elevando iatrogenia sem benefício",
+      "Implantar novo CDI contralateral no mesmo dia da bacteremia, antes de controle infeccioso e extração sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Endocardite de cabo (esp. S. aureus): ATB + remoção completa do hardware. Reimplante só após controle infeccioso, em sítio adequado.",
+    "trap": "Tentar curar infecção de cabo só com antibiótico, sem extração."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 21,
+    "group": "Cardiologia",
+    "theme": "TRC — indicação clássica",
+    "stem": "Homem de 66 anos com ICFEr (FE 28%), NYHA III apesar de GDMT otimizada, ritmo sinusal, QRS 162 ms com BRE típico. Sem isquemia tratável pendente. Qual a terapia de dispositivo mais indicada? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Indicar terapia de ressincronização cardíaca (TRC), idealmente TRC-D conforme prevenção de MS, para reduzir sintomas/internações no plano atual",
+    "wrongs": [
+      "Indicar apenas marca-passo monocameral VVI sem ressincronização, apesar de BRE largo e FE muito reduzida e atrasa o manejo",
+      "Contraindicar TRC porque FE <35% ‘nunca se beneficia’ de estimulação biventricular em ritmo sinusal sem ganho clínico líquido sem respaldo atual",
+      "Priorizar ablação de nó AV e marca-passo sem considerar TRC como primeira estratégia de ressincronização sem ganho clínico líquido com iatrogenia inútil",
+      "Aguardar QRS >200 ms obrigatoriamente antes de discutir TRC, mesmo com BRE de 162 ms e NYHA III como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "TRC: FE≤35%, NYHA II–IV sintomático sob GDMT, ritmo sinusal e QRS largo com BRE (≥130–150 ms conforme diretriz) — benefício sintomático e de remodelamento.",
+    "trap": "Negar TRC em BRE largo + FE baixa + GDMT otimizada por ‘aguardar QRS extremo’."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 22,
+    "group": "Cardiologia",
+    "theme": "TRC — QRS estreito e seleção",
+    "stem": "Mulher com ICFEr FE 30%, NYHA III, ritmo sinusal e QRS 105 ms sem BRE. GDMT plena. Equipe discute TRC ‘por sintoma’. Qual a decisão mais alinhada às evidências? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Não indicar TRC de rotina em QRS estreito sem bloqueio de ramo; otimizar GDMT e avaliar outras causas de sintoma conforme estratificação do caso",
+    "wrongs": [
+      "Implantar TRC em todo paciente com FE ≤35%, independentemente da largura do QRS e da morfologia sem ganho clínico líquido e atrasa o manejo",
+      "Indicar TRC-P imediatamente porque NYHA III sozinha define indicação absoluta de ressincronização sem ganho clínico líquido sem respaldo atual",
+      "Trocar GDMT por estimulação trifocal empírica sem ecocardiograma nem análise do QRS na seleção sem ganho clínico líquido elevando iatrogenia vã",
+      "Suspender SGLT2 e ARM para ‘testar’ se a TRC isolada melhora a classe funcional sem GDMT sem reassesso da gravidade do quadro prioridade invertida"
+    ],
+    "explain": "Benefício da TRC concentra-se em QRS largo (especialmente BRE). QRS estreito: TRC rotineira não indicada e pode não ajudar; manter GDMT.",
+    "trap": "Indicar TRC só pela FE baixa com QRS estreito e sem BRE."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 23,
+    "group": "Cardiologia",
+    "theme": "HAP — grupos clínicos OMS",
+    "stem": "Paciente com esclerodermia, dispneia e cateterismo direito: PAPm 32 mmHg, PCP 10 mmHg, RVP elevada. Sem doença pulmonar parenquimatosa relevante nem TEP crônico. Qual o grupo de hipertensão pulmonar? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Grupo 1 — hipertensão arterial pulmonar (associada a conectivista), distinta de HP pós-capilar por PCP normal com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Grupo 2 — HP por doença do coração esquerdo, apesar de PCP normal e RVP elevada no cateterismo sem ganho clínico líquido e atrasa o manejo",
+      "Grupo 3 — HP por doença pulmonar/hipóxia, sem evidência de parenquima relevante ou hipoxemia dominante sem ganho clínico líquido sem respaldo atual",
+      "Grupo 4 — HP tromboembólica crônica, sem história/imagem de trombos crônicos organizados nas artérias sem ganho clínico líquido com iatrogenia inútil",
+      "Grupo 5 — mecanismo indefinido único, ignorando a associação clara com doença do tecido conectivo sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "OMS: Grupo 1 HAP (inclui conectivistas) = pré-capilar (PCP≤15) com RVP alta. Grupo 2 tem PCP elevada; 3 parenquima/hipóxia; 4 CTEPH; 5 multifatorial.",
+    "trap": "Chamar de grupo 2 toda HP, mesmo com PCP normal."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 24,
+    "group": "Cardiologia",
+    "theme": "HAP — grupo 2 vs terapia específica",
+    "stem": "Idoso com ICFEp severa, PCP 24 mmHg e PAPm elevada no cateterismo. Dispneia aos esforços. Qual a implicação terapêutica sobre vasodilatadores pulmonares específicos? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "HP grupo 2: tratar a doença do coração esquerdo; vasodilatadores de HAP (grupo 1) não são terapia de rotina conforme estratificação do caso",
+    "wrongs": [
+      "Iniciar epoprostenol EV empírico como primeira linha em toda HP com PAPm >20 mmHg por IC esquerda sem ganho clínico líquido e atrasa o manejo",
+      "Indicar bosentana de rotina sem otimizar congestão e pressões de enchimento do coração esquerdo sem ganho clínico líquido sem respaldo atual",
+      "Ignorar diuréticos e restrição de volume, priorizando só inibidor de PDE-5 em edema pulmonar em desacordo com a evidência elevando iatrogenia vã",
+      "Diagnosticar HAP grupo 1 automaticamente sempre que a PAPm estiver elevada, sem olhar a PCP como medida isolada inadequada fora da prioridade clínica imediata"
+    ],
+    "explain": "Grupo 2 (pós-capilar): manejo da IC esquerda/valvopatia. Fármacos específicos de HAP podem piorar edema pulmonar se usados indiscriminadamente.",
+    "trap": "Tratar HP do grupo 2 com prostanoides/ERA como se fosse HAP grupo 1."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 25,
+    "group": "Cardiologia",
+    "theme": "HAP — CTEPH grupo 4",
+    "stem": "Paciente com dispneia crônica, história de TEP há 2 anos, V/Q com mismatches segmentares persistentes e cateterismo pré-capilar. Anticoagulado. Qual a via terapêutica específica a considerar? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Suspeitar CTEPH (grupo 4): referir centro especializado para avaliar tromboendarterectomia pulmonar e/ou balão no manejo individualizado",
+    "wrongs": [
+      "Tratar apenas com oxigênio domiciliar e negar avaliação cirúrgica, pois CTEPH não tem opção curativa o que atrasa o manejo",
+      "Suspender anticoagulação definitivamente após 3 meses, mesmo com hipertensão pulmonar tromboembólica crônica sem ganho clínico líquido sem respaldo atual",
+      "Indicar fibrinólise sistêmica plena ambulatorial de rotina em CTEPH estável crônica sem instabilidade sem ganho clínico líquido com iatrogenia inútil",
+      "Fechar empiricamente forame oval patente como cura da hipertensão pulmonar tromboembólica crônica em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "CTEPH: anticoagulação + avaliação em centro para endarterectomia (potencialmente curativa) ou angioplastia por balão; riociguat em selecionados inoperáveis.",
+    "trap": "Negar referência cirúrgica em CTEPH potencialmente operável."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 26,
+    "group": "Cardiologia",
+    "theme": "Miocardite fulminante — suporte",
+    "stem": "Jovem de 22 anos, pós-viral, entra em choque frio em 24 h, FE 15%, troponina alta, coronárias limpas. Lactato em ascensão apesar de noradrenalina. Qual a prioridade além de etiologia? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Suporte hemodinâmico avançado precoce (INO/MECÂNICO conforme recurso) em centro capaz, enquanto trata miocardite no manejo individualizado",
+    "wrongs": [
+      "Manter só diurético oral e alta, pois miocardite viral jovem sempre tem curso benigno autolimitado sem ganho clínico líquido e atrasa o manejo",
+      "Indicar exercício físico intenso imediato para ‘reabilitar’ o miocárdio inflamado em choque sem ganho clínico líquido sem respaldo atual",
+      "Administrar AINE em dose anti-inflamatória plena como terapia que melhora sobrevida na miocardite fulminante elevando iatrogenia sem benefício",
+      "Atrasar suporte mecânico até falência multiorgânica irreversível para ‘confirmar’ a gravidade clínica sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Miocardite fulminante: choque e queda rápida da FE — suporte inotrópico/mecânico precoce; AINE não é tratamento padrão; repouso na fase aguda.",
+    "trap": "Subestimar miocardite fulminante e atrasar suporte mecânico."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 27,
+    "group": "Cardiologia",
+    "theme": "Miocardite — retorno ao esporte",
+    "stem": "Atleta amador teve miocardite aguda confirmada há 2 meses, hoje assintomático, FE normal, biomarcadores normalizados, RM sem edema residual relevante. Quer voltar a treinos intensos. Qual a orientação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Retorno gradual só após resolução clínica/imagem e período de restrição (em geral ≥3–6 meses) sob reavaliação com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Liberar competição máxima na mesma semana da normalização da troponina, sem imagem nem teste funcional sem ganho clínico líquido e atrasa o manejo",
+      "Proibir exercício leve de caminhada para sempre, mesmo com recuperação completa documentada da função sem ganho clínico líquido sem respaldo atual",
+      "Indicar anabolizante e sobrecarga isométrica máxima imediata para acelerar o remodelamento miocárdico sem ganho clínico líquido com iatrogenia inútil",
+      "Manter AINE contínuo como condição obrigatória para qualquer retorno esportivo após miocardite em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Após miocardite: restrição a esportes intensos por meses até normalizar FE, biomarcadores e, idealmente, inflamação na RM; retorno progressivo supervisionado.",
+    "trap": "Retorno esportivo imediato só porque a troponina ‘zerou’."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 28,
+    "group": "Cardiologia",
+    "theme": "MINOCA — definição e investigação",
+    "stem": "Mulher de 55 anos com dor típica, troponina em curva e infra de ST; coronariografia sem obstrução ≥50%. FE preservada. Qual a definição e o próximo passo racional? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "MINOCA: IAM com coronárias não obstrutivas — investigar causa (RM, espasmo, trombo lisado, dissecção, miocardite) com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Descartar qualquer injúria miocárdica e alta sem investigação, pois ‘coronárias limpas’ excluem doença sem ganho clínico líquido e atrasa o manejo",
+      "Indicar stent empírico em artérias normais como rotina para ‘prevenir’ novo evento isquêmico sem ganho clínico líquido sem respaldo atual",
+      "Tratar apenas com ansiolítico e negar antiagregante/estatina mesmo se placa/erosão for suspeita como medida isolada inadequada com iatrogenia inútil",
+      "Diagnosticar automaticamente Takotsubo sem ECG, ventriculografia nem critérios de balonamento apical em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "MINOCA exige critérios de IAM + coronárias sem obstrução significativa. Não é ‘alta’ — RM e investigação etiológica guiam terapia e prognóstico.",
+    "trap": "Liberar MINOCA como ‘falso positivo’ só porque a coronária está ‘limpa’."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 29,
+    "group": "Cardiologia",
+    "theme": "SCAD — reconhecimento",
+    "stem": "Mulher de 38 anos, puérpera recente, dor torácica intensa, supra de ST anterolateral, troponina elevada. Coronariografia: estenose longa, lisa, sem ateroma típico, sugestiva de dissecção espontânea. Estável após suporte. Qual a leitura? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Suspeitar SCAD (dissecção coronariana espontânea): preferir manejo conservador se estável e fluxo adequado conforme estratificação do caso",
+    "wrongs": [
+      "Implantar stents múltiplos de rotina em todo segmento ‘suspeito’, mesmo com TIMI 3 e estabilidade clínica e atrasa o manejo",
+      "Indicar fibrinólise plena antes da angiografia em toda puérpera com dor, sem estratificar SCAD sem ganho clínico líquido sem respaldo atual",
+      "Negar antiagregante e estatina individualizados, assumindo que SCAD nunca se associa a risco isquêmico sem ganho clínico líquido com iatrogenia inútil",
+      "Diagnosticar necessariamente aterosclerose clássica e indicar CRVM de urgência em lesão única distal sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "SCAD: mulher jovem/puérpera; angiografia característica. Se estável com bom fluxo, conservador (cicatriza); ICP reservada a isquemia contínua/instabilidade.",
+    "trap": "Stentear rotineiramente toda SCAD estável com fluxo preservado."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 30,
+    "group": "Cardiologia",
+    "theme": "SCAD — manejo e seguimento",
+    "stem": "Paciente com SCAD tratada conservadoramente, estável, recebe AAS. Pergunta sobre gestação futura e exercício. Qual o aconselhamento mais prudente na alta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Reabilitação gradual, controle de fatores desencadeantes; aconselhar risco em nova gestação e seguimento especializado com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Liberar levantamento de peso máximo e Valsalva intenso na primeira semana pós-evento sem restrição sem ganho clínico líquido e atrasa o manejo",
+      "Indicar gestação imediata ‘para testar’ a cicatrização coronariana sem intervalo nem planejamento sem ganho clínico líquido sem respaldo atual",
+      "Suspender AAS no primeiro dia e negar qualquer imagem de controle, mesmo com sintomas recorrentes como medida isolada inadequada com iatrogenia inútil",
+      "Prescrever anticoagulação plena vitalícia de rotina em toda SCAD sem prótese nem trombo documentado em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Pós-SCAD: antiagregação individualizada, evitar gatilhos (esforço extremo), aconselhamento reprodutivo e seguimento — nova gestação exige planejamento.",
+    "trap": "Estimular esforço isométrico máximo precoce após SCAD recente."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 31,
+    "group": "Cardiologia",
+    "theme": "Lipídios — meta LDL muito alto risco",
+    "stem": "Homem de 60 anos, IAM recente com stent, diabético e DRC estágio 3. LDL atual 98 mg/dL sob atorvastatina 40 mg. Qual a meta e intensificação preferencial? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Muito alto risco: buscar LDL <55 mg/dL (e redução ≥50%); otimizar estatina de alta intensidade e associar ezetimiba com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Aceitar LDL 98 mg/dL como meta suficiente em prevenção secundária após IAM com diabetes e DRC sem ganho clínico líquido e atrasa o manejo",
+      "Suspender estatina por ‘LDL já abaixo de 100’ e manter apenas dieta sem reavaliação do risco residual sem ganho clínico líquido sem respaldo atual",
+      "Iniciar apenas fibrato isolado no lugar da estatina de alta intensidade na prevenção secundária pós-IAM sem ganho clínico líquido com iatrogenia inútil",
+      "Indicar LDL-alvo de 130 mg/dL como prevenção primária, ignorando o evento aterotrombótico recente como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "Pós-IAM (muito alto risco): LDL <55 mg/dL e ↓≥50%. Estatina alta intensidade ± ezetimiba; se não atingir, considerar PCSK9.",
+    "trap": "Conformismo com LDL ~100 mg/dL após IAM em muito alto risco."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 32,
+    "group": "Cardiologia",
+    "theme": "PCSK9 — indicação prática",
+    "stem": "Paciente pós-IAM em rosuvastatina 40 mg + ezetimiba, aderente, LDL 78 mg/dL após 8 semanas. Sem intolerância. Qual a próxima escalada hipolipemiante mais apropriada? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Adicionar inibidor de PCSK9 (ou equivalente disponível) para atingir meta de muito alto risco com LDL ainda acima do alvo no manejo individualizado",
+    "wrongs": [
+      "Reduzir a estatina pela metade porque ‘já usou ezetimiba’, aceitando LDL longe da meta pós-IAM sem ganho clínico líquido e atrasa o manejo",
+      "Trocar estatina por monoterapia de ômega-3 em alta dose como substituto hipolipemiante de primeira linha sem ganho clínico líquido sem respaldo atual",
+      "Indicar plasmaférese mensal de rotina antes de considerar anticorpo PCSK9 em LDL residual elevado sem ganho clínico líquido elevando iatrogenia vã",
+      "Suspender ezetimiba e observar 12 meses sem nova terapia, esperando queda espontânea do LDL adiando a conduta de primeira linha prioridade invertida"
+    ],
+    "explain": "Se LDL permanece acima da meta em muito alto risco sob estatina máxima + ezetimiba, PCSK9 (evolocumabe/alirocumabe) ou inclisirana conforme disponibilidade.",
+    "trap": "Parar de intensificar lipídio quando ainda longe de LDL <55 pós-IAM."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 33,
+    "group": "Cardiologia",
+    "theme": "DAPT — duração SCA com DES",
+    "stem": "Homem de 58 anos, SCA tratado com stent farmacológico, sem alto risco hemorrágico. Recebeu AAS + ticagrelor. Qual a duração padrão de DAPT na ausência de sangramento relevante? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Manter DAPT tipicamente por 12 meses após SCA com DES, depois AAS (ou estratégia validada de desescalonamento) conforme estratificação do caso",
+    "wrongs": [
+      "Encerrar P2Y12 com 7 dias de uso em todo SCA, independentemente do risco isquêmico e do tipo de stent sem ganho clínico líquido e atrasa o manejo",
+      "Manter tripla terapia com warfarina + DAPT por 5 anos de rotina sem indicação de anticoagulação sem ganho clínico líquido sem respaldo atual",
+      "Suspender AAS no dia 2 e ficar só com ticagrelor indefinidamente sem base em evidência de rotina sem ganho clínico líquido elevando iatrogenia vã",
+      "Indicar DAPT vitalício obrigatório em todo paciente com um único stent, sem reavaliar risco hemorrágico sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Pós-SCA com DES: DAPT ~12 meses é o padrão se sangramento não for alto; depois antiagregação simples. Estratégias curtas existem para alto risco hemorrágico.",
+    "trap": "Parar DAPT em uma semana após SCA com DES sem alto risco de sangramento."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 34,
+    "group": "Cardiologia",
+    "theme": "DAPT — encurtamento por sangramento",
+    "stem": "Idosa frágil com DES por angina estável, HAS-BLED alto, sangramento GI recente controlado. Equipe discute duração do P2Y12 além do AAS. Qual a estratégia mais razoável? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Considerar DAPT encurtada (1–3 meses) e depois monoterapia, equilibrando risco hemorrágico e trombose de stent no manejo individualizado",
+    "wrongs": [
+      "Insistir em DAPT 30 meses obrigatórios apesar de sangramento recente e fragilidade com alto HAS-BLED o que atrasa o manejo",
+      "Suspender AAS e P2Y12 no laboratório de hemodinâmica imediatamente após o implante do DES sem ganho clínico líquido sem respaldo atual",
+      "Trocar DAPT por anticoagulação plena sem antiagregante em angina estável sem FA nem prótese mecânica sem ganho clínico líquido com iatrogenia inútil",
+      "Adicionar AINE crônico para ‘proteger’ o estômago enquanto mantém DAPT prolongada sem proteção gástrica sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Alto risco hemorrágico / sangramento recente: diretrizes permitem DAPT curta após DES (especialmente PCI eletiva) e monoterapia subsequente.",
+    "trap": "Forçar DAPT prolongada em idosa com sangramento GI recente."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 35,
+    "group": "Cardiologia",
+    "theme": "Stent + FA — duração da tripla",
+    "stem": "Paciente com FA (CHA2DS2-VASc 4) e IAM com DES ontem. Sem sangramento ativo. Qual o princípio atual da terapia antitrombótica inicial? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Tripla curta (ACO + AAS + P2Y12) por período breve, depois dupla (ACO + P2Y12) e por fim ACO isolado conforme risco com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Manter tripla terapia plena por 3 anos sem reavaliar, mesmo com alto risco hemorrágico acumulado sem ganho clínico líquido e atrasa o manejo",
+      "Usar apenas AAS isolado, suspendendo anticoagulação da FA no contexto de stent coronariano recente sem suporte nas diretrizes atuais",
+      "Indicar trombólise adicional diária enquanto mantém warfarina e DAPT em doses plenas prolongadas como medida isolada inadequada com iatrogenia inútil",
+      "Negar qualquer P2Y12 após DES em FA, mantendo só ACO, com alto risco de trombose precoce do stent como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "FA + stent: minimizar tripla (dias a 1–4 semanas conforme risco), depois ACO+P2Y12 até ~6–12 meses, então ACO. Evitar tripla prolongada desnecessária.",
+    "trap": "Manter tripla terapia por anos após stent em paciente com FA."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 36,
+    "group": "Cardiologia",
+    "theme": "Amiloidose cardíaca — red flags",
+    "stem": "Homem de 74 anos com IC, FE 50%, espessamento ventricular simétrico, voltagem ECG desproporcionalmente baixa, síndrome do túnel do carpo bilateral e proteína Bence-Jones negativa em rastreio inicial. Qual a suspeita e caminho? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Suspeitar amiloidose ATTR wild-type: investigar com cintilografia óssea/marcadores de cadeia leve e especialista conforme estratificação do caso",
+    "wrongs": [
+      "Tratar como HÁSica simples com verapamil e digoxina em doses altas sem investigar infiltração amiloide e atrasa o manejo",
+      "Indicar ressincronização imediata só pelo espessamento, sem confirmar fenótipo restritivo/infiltrativo sem ganho clínico líquido sem respaldo atual",
+      "Descartar amiloidose porque FE não está <40%, ignorando red flags clínicos e eletrocardiográficos sem ganho clínico líquido elevando iatrogenia vã",
+      "Iniciar quimioterapia empírica para AL sem dosar cadeias leves nem diferenciar ATTR de AL sem reassesso da gravidade do quadro prioridade invertida"
+    ],
+    "explain": "Idoso + hipertrofia + baixa voltagem + túnel do carpo = pensar ATTR-wt. Distinguir AL (urgente) de ATTR com laboratório + cintilografia/biópsia conforme algoritmo.",
+    "trap": "Tratar ‘hipertrofia’ do idoso com digoxina/verapamil sem pensar em amiloide."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 37,
+    "group": "Cardiologia",
+    "theme": "TAVI vs SAVR — seleção",
+    "stem": "Paciente de 82 anos, estenose aórtica severa sintomática, STS alto, aorta em porcelana e fragilidade moderada. Coronárias sem lesão proximal crítica. Qual a escolha valvular mais apropriada em heart team? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Favorecer TAVI após heart team, pelos riscos cirúrgicos e anatomia desfavorável à esternotomia convencional conforme estratificação do caso",
+    "wrongs": [
+      "Indicar apenas balão aórtico paliativo definitivo em todo octogenário, sem avaliar TAVI contemporânea sem ganho clínico líquido e atrasa o manejo",
+      "Forçar SAVR de alto risco com aorta em porcelana, ignorando alternativa percutânea disponível no centro sem ganho clínico líquido sem respaldo atual",
+      "Negar qualquer intervenção porque a idade isolada contraindica tratamento da estenose aórtica severa sem ganho clínico líquido com iatrogenia inútil",
+      "Indicar plástica mitral percutânea como substituto da intervenção aórtica na estenose aórtica crítica sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "EA severa sintomática em idoso de alto risco/aorta em porcelana: TAVI é frequentemente preferida pelo heart team frente à SAVR.",
+    "trap": "Negar intervenção na EA severa sintomática só pela idade avançada."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 38,
+    "group": "Cardiologia",
+    "theme": "Insuficiência tricúspide severa",
+    "stem": "Paciente com IC direita, ascite e IT severa funcional por dilatação do anel, FEVE 40%, pressão pulmonar moderada. Já otimizou diurético. Qual o raciocínio sobre intervenção da tricúspide? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Avaliar correção da IT (cirúrgica/transcateter em centros) especialmente se outra cirurgia cardíaca ou sintoma refratário conforme o caso",
+    "wrongs": [
+      "Ignorar a valva tricúspide para sempre, pois IT funcional ‘nunca’ contribui para congestão sistêmica direita e atrasa o manejo",
+      "Indicar transplante pulmonar como primeira linha isolada para IT funcional sem avaliar cirurgia valvar sem ganho clínico líquido sem respaldo atual",
+      "Usar só digoxina e negar diurético, mesmo com ascite e edema importantes por hipertensão venosa sem ganho clínico líquido elevando iatrogenia vã",
+      "Contraindicar qualquer imagem seriada do VD, assumindo que a dilatação regride sem tratar a IT como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "IT severa sintomática/funcional pode merecer intervenção (junto a outra cirurgia ou em centros com dispositivo). Diurético alivia, mas não corrige a causa anular.",
+    "trap": "Subestimar IT severa como achado inócuo na IC direita refratária."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 39,
+    "group": "Cardiologia",
+    "theme": "TVNS — estratificação",
+    "stem": "Homem de 55 anos pós-IAM há 6 meses, FE 32%, Holter com salvas de TVNS assintomáticas (8 batimentos). Em GDMT. Qual a conduta mais adequada quanto a risco de MS? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Otimizar GDMT; TVNS com FE baixa aumenta risco — discutir CDI para prevenção primária conforme critérios conforme estratificação do caso",
+    "wrongs": [
+      "Ignorar FE e TVNS, pois salvas curtas assintomáticas nunca modificam indicação de CDI pós-IAM sem ganho clínico líquido e atrasa o manejo",
+      "Indicar ablação epicárdica imediata de toda TVNS antes de avaliar prevenção primária com CDI sem ganho clínico líquido sem respaldo atual",
+      "Suspender betabloqueador para facilitar documentação de mais arritmias no próximo Holter de 24 h sem ganho clínico líquido elevando iatrogenia vã",
+      "Tratar com flecainida plena pós-IAM e FE reduzida como antiarrítmico de primeira escolha seguro como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "Pós-IAM com FE≤35% e TVNS: risco arrítmico elevado — CDI em prevenção primária (após tempo/GDMT conforme diretriz). Flecainida é contraindicada em cardiopatia isquêmica/FE baixa.",
+    "trap": "Usar flecainida em paciente pós-IAM com FE reduzida e TVNS."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 40,
+    "group": "Cardiologia",
+    "theme": "Carga de ESV — quando tratar",
+    "stem": "Mulher de 42 anos com palpitações, FE 58%, Holter com 28% de ESV monomórficas, origem provável via de saída. Sem cardiopatia estrutural grave. Qual a abordagem? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "ESV de alta carga: BB como primeira linha; considerar ablação se sintoma refratário ou queda futura da FE conforme estratificação do caso",
+    "wrongs": [
+      "Indicar CDI de prevenção primária apenas pela contagem de ESV, com FE normal e sem TV sustentada sem ganho clínico líquido e atrasa o manejo",
+      "Prescrever flecainida sem exclusão de cardiopatia e sem tentar betabloqueador em sintomas leves sem ganho clínico líquido sem respaldo atual",
+      "Negar qualquer tratamento e reassesso de FE, mesmo com carga >20–25% e risco de CMP induzida por ESV sem ganho clínico líquido com iatrogenia inútil",
+      "Realizar troca valvar aórtica empírica como terapia das extrassístoles da via de saída do VD adiando a conduta de primeira linha prioridade invertida"
+    ],
+    "explain": "Carga alta de ESV (>15–25%) pode causar CMP: BB ± ablação (especialmente outflow). CDI não se indica só por ESV com FE normal.",
+    "trap": "Implantar CDI só por extrassístoles frequentes com FE preservada."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 41,
+    "group": "Cardiologia",
+    "theme": "Holter vs ILR na síncope",
+    "stem": "Idoso com síncope recorrente inexplicada, ECG basal normal, Holter 24 h sem achados, estrutural sem MH/estenose grave. Intervalos entre crises de semanas. Qual o método diagnóstico mais rendimento? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Considerar monitor implantável (ILR) para correlacionar sintoma-ritmo em síncope recorrente de baixa frequência no manejo individualizado",
+    "wrongs": [
+      "Repetir apenas ECG de 10 segundos na emergência após cada crise, sem estratégia de monitorização prolongada e atrasa o manejo",
+      "Indicar estudo eletrofisiológico invasivo imediato em todo idoso antes de qualquer monitorização externa/ILR sem ganho clínico líquido sem respaldo atual",
+      "Negar investigação porque Holter de 24 h único ‘exclui’ arritmia em síncope espaçada por semanas sem ganho clínico líquido elevando iatrogenia vã",
+      "Implantar CDI empiricamente sem documentar arritmia, apenas pela idade avançada e síncope recorrente sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Síncope rara: Holter curto tem baixo yield. ILR aumenta correlação sintoma-ritmo. CDI empírico sem documentação/indicação não é padrão.",
+    "trap": "Achar que um Holter de 24 h normal encerra investigação de síncope recorrente."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 42,
+    "group": "Cardiologia",
+    "theme": "Cardiorrenal — congestão refratária",
+    "stem": "Paciente com ICFEr, creatinina sobe de 1,2 para 1,7 mg/dL após diurético de alça, ainda com estertores, edema 3+ e PVJ elevada. PA 110/70. Qual a interpretação e conduta? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Congestão persistente: manter estratégia de descongestão (diurético/ajuste), pois creatinina pode subir na remoção de volume no plano atual",
+    "wrongs": [
+      "Suspender todo diurético imediatamente e infundir volume generoso apenas pelo aumento isolado da creatinina e atrasa o manejo",
+      "Indicar dopamina renal ‘em dose renal’ como terapia comprovada que substitui diurético na congestão sem ganho clínico líquido sem respaldo atual",
+      "Parar GDMT inteira (BB/IECA/SGLT2/ARM) de uma vez por creatinina 1,7 sem avaliar congestão clínica sem ganho clínico líquido elevando iatrogenia vã",
+      "Negar qualquer reassesso de peso/diurese e tratar só com hidralazina isolada na anasarca franca como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "Na IC congestiva, pequena elevação de creatinina com melhora da congestão pode ser aceitável. Prioridade é tirar volume; não ‘inundar’ só pelo número.",
+    "trap": "Parar diurético e dar volume em paciente ainda francamente congesto."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 43,
+    "group": "Cardiologia",
+    "theme": "ARNI — troca do IECA",
+    "stem": "Paciente com ICFEr NYHA II, FE 30%, tolera enalapril 10 mg 12/12 h, K+ e função renal ok, PA 118/74. Sem história de angioedema. Qual a otimização preferencial do eixo RAA? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Substituir IECA por ARNI (sacubitril/valsartana) após washout adequado do IECA, titulação conforme PA/K+ conforme estratificação do caso",
+    "wrongs": [
+      "Associar ARNI ao enalapril no mesmo dia, sem washout, aumentando risco de angioedema grave sem ganho clínico líquido e atrasa o manejo",
+      "Trocar IECA por ARNI apenas se FE >50%, pois ARNI não tem papel na ICFEr sintomática sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Suspender betabloqueador para ‘abrir espaço’ pressórico antes de qualquer troca para ARNI sem ganho clínico líquido elevando iatrogenia sem benefício",
+      "Preferir nifedipino de ação curta ao ARNI para remodelamento reverso na insuficiência com FE reduzida sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Na ICFEr, trocar IECA por ARNI melhora desfechos se tolerado. Obrigatório intervalo (washout) após IECA antes do ARNI por risco de angioedema.",
+    "trap": "Combinar IECA + ARNI sem washout. Evitar esse atalho diagnóstico-terapêutico no caso."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 44,
+    "group": "Cardiologia",
+    "theme": "Prevenção primária CDI — timing pós-IAM",
+    "stem": "Homem de 61 anos, 25 dias pós-STEMI anterior reperfundo, FE 28% no eco hospitalar, NYHA II, em GDMT iniciada. Sem TV sustentada. Pergunta sobre CDI agora. Qual a orientação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Aguardar reavaliação da FE (~40 dias pós-IAM) sob GDMT antes de CDI de prevenção primária, salvo indicação secundária com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Implantar CDI no 3º dia pós-IAM em todos com FE <35%, independentemente de reavaliação e GDMT sem ganho clínico líquido e atrasa o manejo",
+      "Contraindicar CDI para sempre porque houve reperfusão, mesmo se FE permanecer ≤35% crônica sem ganho clínico líquido sem respaldo atual",
+      "Indicar só colete desfibrilador externo vitalício sem plano de reassessorar FE e indicação de CDI como medida isolada inadequada com iatrogenia inútil",
+      "Suspender GDMT para ver se a FE cai mais e ‘ Antecipar’ critério de implante imediato do dispositivo em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Prevenção primária pós-IAM: reassessorar FE após período (~40 dias) e GDMT; CDI precoce rotineiro não se indica só pela FE hospitalar precoce sem TV/FV.",
+    "trap": "Implantar CDI de prevenção primária nos primeiros dias só pela FE baixa pós-IAM."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 45,
+    "group": "Cardiologia",
+    "theme": "Miocardite vs MINOCA — RM cardíaca",
+    "stem": "Homem de 34 anos com dor, troponina alta e coronárias limpas. RM: realce tardio subepicárdico/patchy sem padrão isquêmico subendocárdico. Qual a interpretação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Padrão de RM compatível com miocardite: tratar suporte/restrição de esforço e seguir função ventricular com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Interpretar como infarto transmural típico e indicar stent empírico apesar de coronárias angiograficamente limpas e atrasa o manejo",
+      "Ignorar a RM e diagnosticar ‘dor muscular’ sem seguimento de FE nem restrição na fase inflamatória sem suporte nas diretrizes atuais",
+      "Indicar anticoagulação plena vitalícia de rotina em toda miocardite com realce tardio subepicárdico sem ganho clínico líquido com iatrogenia inútil",
+      "Classificar automaticamente como SCAD oculta e programar TEVAR aórtico sem evidência de dissecção sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "RM diferencia: realce subendocárdico/transmural favorece isquemia; subepicárdico/intramiocárdico favorece miocardite. Guia conduta e retorno ao exercício.",
+    "trap": "Tratar miocardite de RM como IAM e stentear artérias normais."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 46,
+    "group": "Cardiologia",
+    "theme": "Hipertensão pulmonar — teste vasorreatividade",
+    "stem": "Paciente com HAP grupo 1 idiopática, classe funcional II, cateterismo pré-capilar. Equipe discute bloqueador de canal de cálcio em alta dose. Qual o pré-requisito clássico? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Reservar CCB em alta dose aos respondedores no teste de vasorreatividade aguda; não usar empiricamente em todos no manejo individualizado",
+    "wrongs": [
+      "Prescrever nifedipino de ação curta em todo HAP sem teste, inclusive em falência de VD franca sem ganho clínico líquido e atrasa o manejo",
+      "Indicar CCB apenas no grupo 2 com PCP muito alta como terapia específica validada de HAP sem ganho clínico líquido sem respaldo atual",
+      "Negar qualquer terapia específica de HAP em respondedores, pois CCB nunca tem papel selecionado sem ganho clínico líquido elevando iatrogenia vã",
+      "Fazer teste de vasorreatividade somente após transplante pulmonar, nunca no diagnóstico inicial como medida isolada inadequada prioridade invertida"
+    ],
+    "explain": "Só minoria com HAP idiopática é vasorreativa; CCB em altas doses apenas se resposta aguda documentada e sem falência avançada de VD.",
+    "trap": "Dar CCB empírico em alta dose a todo paciente com HAP."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 47,
+    "group": "Cardiologia",
+    "theme": "Dispositivo — hematoma de bolso",
+    "stem": "No 2º dia pós-implante de marca-passo, há hematoma tenso no bolso sem drenagem purulenta, Hb estável, sem comprometimento cutâneo. Anticoagulação por FA foi retomada cedo. Qual a conduta inicial? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Conduta conservadora na maioria: compressão, evitar punção rotineira do hematoma e revisar anticoagulação conforme estratificação do caso",
+    "wrongs": [
+      "Puncionar e drenar todo hematoma imediatamente à beira do leito para ‘esvaziar’, elevando risco de infecção e atrasa o manejo",
+      "Indicar extração completa do sistema no mesmo dia por hematoma estéril sem sinais de infecção sem ganho clínico líquido sem respaldo atual",
+      "Aumentar anticoagulação para INR 4–5 visando ‘dissolver’ o coágulo no bolso do gerador em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Iniciar antibiótico de amplo espectro vitalício apenas pelo hematoma, sem outros critérios infecciosos sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Hematoma de bolso: em geral conservador; evacuação/punção aumenta infecção. Revisar timing da anticoagulação; exploração se tensão extrema/risco de deiscência.",
+    "trap": "Puncionar hematoma de bolso de CIED por rotina."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 48,
+    "group": "Cardiologia",
+    "theme": "Periparto — anticoagulação e FE baixa",
+    "stem": "Puérpera com miocardiopatia periparto, FE 20%, átrio esquerdo dilatado, sem trombo visível no eco transtorácico. Em aleitamento. Qual a decisão sobre anticoagulação? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Considerar anticoagular na FE muito baixa (risco tromboembolismo), escolhendo agente compatível com puerpério/aleitamento conforme o caso",
+    "wrongs": [
+      "Negar qualquer anticoagulação só porque não há trombo no eco, apesar de FE 20% e alto risco embólico o que atrasa o manejo",
+      "Indicar rivaroxabana sem discutir evidência/aleitamento e sem avaliar alternativa com mais experiência sem ganho clínico líquido sem respaldo atual",
+      "Usar trombolítico sistêmico profilático sem trombo, como rotina em toda CMP periparto com FE reduzida sem ganho clínico líquido com iatrogenia inútil",
+      "Suspender betabloqueador e IECA puerperais para ‘evitar sangramento’, deixando a IC sem GDMT adiando a conduta de primeira linha prioridade invertida"
+    ],
+    "explain": "FE muito baixa na CMP periparto eleva risco de trombo: anticoagulação frequentemente considerada; individualizar fármaco no puerpério/aleitamento com especialista.",
+    "trap": "Deixar FE 20% sem avaliar anticoagulação só porque o eco ‘não mostrou trombo’."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 49,
+    "group": "Cardiologia",
+    "theme": "Esporte — SCA jovem e retorno",
+    "stem": "Homem de 35 anos após IAM por placa, com stent, FE 55%, 4 meses de DAPT sem isquemia residual. Quer voltar a corrida de rua. Qual o princípio de clearance esportivo? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Retorno gradual após avaliação funcional sem isquemia, FE estável e adesão à prevenção secundária/DAPT conforme plano com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Liberar ultramaratona competitiva na primeira semana pós-stent, ainda sob risco de trombose precoce sem ganho clínico líquido e atrasa o manejo",
+      "Proibir caminhada leve permanente, mesmo com revascularização completa e função ventricular preservada sem ganho clínico líquido sem respaldo atual",
+      "Suspender estatina e AAS para melhorar performance esportiva antes de provas de longa distância adiando a conduta de primeira linha com iatrogenia inútil",
+      "Indicar teste ergométrico apenas após suspender betabloqueador e antiagregante por 30 dias sem reassesso da gravidade do quadro prioridade invertida"
+    ],
+    "explain": "Pós-IAM jovem: retorno esportivo progressivo após cicatrização, sem isquemia residual e com prevenção secundária mantida — não liberar esforço extremo precoce.",
+    "trap": "Retorno a esporte extremo na primeira semana após stent por IAM."
+  },
+  {
+    "idPrefix": "cli-cardio4",
+    "n": 50,
+    "group": "Cardiologia",
+    "theme": "Brugada — CDI indicação secundária",
+    "stem": "Homem de 45 anos com Brugada tipo 1 espontâneo foi reanimado de FV noturna. Recuperou-se neurologicmente. Qual a indicação de dispositivo? Reavaliar PA, FC, perfusão e nível de consciência após cada intervenção clínica. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "CDI é indicado em prevenção secundária após FV/PCR reanimada no Brugada; evitar fármacos pró-arrítmicos com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Tratar só com quinidina e negar CDI após PCR por FV documentada em padrão Brugada tipo 1 sem ganho clínico líquido e atrasa o manejo",
+      "Indicar marca-passo VVI sem desfibrilador como proteção suficiente após morte súbita abortada sem ganho clínico líquido sem respaldo atual",
+      "Liberar sem dispositivo porque o ECG basal às vezes ‘normaliza’ fora da crise arrítmica noturna sem ganho clínico líquido elevando iatrogenia vã",
+      "Fazer apenas ablação empírica de VE sem discussão de CDI em sobrevivente de FV pelo Brugada como medida isolada inadequada fora da prioridade clínica imediata"
+    ],
+    "explain": "PCR por FV no Brugada = indicação clara de CDI (prevenção secundária). Quinidina pode ser adjuvante em casos selecionados, não substitui CDI pós-FV.",
+    "trap": "Negar CDI a sobrevivente de FV com síndrome de Brugada."
+  }
+]
