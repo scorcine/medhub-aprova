@@ -3986,13 +3986,6 @@ function aprovaRenderQuestionBrowse () {
   aprovaShowQuestionLaunch();
 }
 
-function aprovaShowQuestionLaunch () {
-  const launch = document.getElementById("q-launch");
-  if (launch) launch.hidden = false;
-  aprovaPopulateLaunchFilters();
-  launch?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
 function aprovaRenderQuestoesPanel () {
   if (AprovaQuestions.isSimuladoFinished()) {
     aprovaRenderSimuladoResult();
