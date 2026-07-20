@@ -3694,8 +3694,8 @@ function aprovaReadQuestionFilters () {
     specialty: aprovaQBrowse.specialty || "",
     group: aprovaQBrowse.group || "",
     theme: aprovaQBrowse.theme || "",
-    exam: document.getElementById("q-filter-exam")?.value || "",
-    year: document.getElementById("q-filter-year")?.value || ""
+    exam: "",
+    year: ""
   };
 }
 
