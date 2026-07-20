@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260720q6";
+const APROVA_QUESTION_CACHE_VER = "20260720q7";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -246,8 +246,8 @@ const AprovaQuestions = {
   },
 
   /** Inicia simulado com N questões (ordem e alternativas embaralhadas) do filtro atual. */
-  startSimulado (size) {
-    const pool = this.filteredCatalog(this.filters);
+  startSimulado (size, poolOverride) {
+    const pool = Array.isArray(poolOverride) ? poolOverride : this.filteredCatalog(this.filters);
     if (!pool.length) return 0;
     const n = Math.max(1, Math.min(pool.length, size | 0 || 10));
     this.resetSession("simulado");
@@ -263,11 +263,10 @@ const AprovaQuestions = {
     return this.queue.length;
   },
 
-  startTreino () {
+  startTreino (poolOverride) {
     this.resetSession("treino");
-    this.queue = aprovaWithShuffledChoices(
-      aprovaShuffleArray(this.filteredCatalog(this.filters))
-    );
+    const pool = Array.isArray(poolOverride) ? poolOverride : this.filteredCatalog(this.filters);
+    this.queue = aprovaWithShuffledChoices(aprovaShuffleArray(pool));
     return this.queue.length;
   },
 
@@ -293,7 +292,7 @@ const AprovaQuestions = {
     const ok = choiceIndex === q.answer;
     if (ok) this.correct += 1;
     if (typeof aprovaRecordExamAnswer === "function") {
-      aprovaRecordExamAnswer(q.theme, ok);
+      aprovaRecordExamAnswer(q.theme, ok, q.id);
     }
     if (this.mode === "simulado" && this.simulado) {
       this.simulado.answers.push({

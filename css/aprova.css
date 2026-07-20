@@ -2851,6 +2851,36 @@ html[data-theme="dark"] .aprova-modal-panel {
   margin-top: 0.85rem;
 }
 
+.q-modal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.q-modal-chip {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.q-modal-chip:hover {
+  border-color: rgba(15, 159, 154, 0.55);
+}
+
+.q-modal-chip.active {
+  border-color: rgba(15, 159, 154, 0.7);
+  background: rgba(15, 159, 154, 0.14);
+  color: var(--accent);
+}
+
 @media (max-width: 560px) {
   .aprova-modal-actions {
     flex-direction: column-reverse;

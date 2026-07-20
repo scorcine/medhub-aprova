@@ -3735,30 +3735,102 @@ function aprovaCountQuestions (partial) {
   }).length;
 }
 
-function aprovaPopulateLaunchFilters () {
-  const examEl = document.getElementById("q-filter-exam");
-  const yearEl = document.getElementById("q-filter-year");
-  const countEl = document.getElementById("q-launch-count");
-  const titleEl = document.getElementById("q-launch-title");
+let aprovaQModalMode = "treino";
+let aprovaQModalScope = "all";
+
+function aprovaQModalPool (filters, scope) {
+  const base = AprovaQuestions.filteredCatalog(filters || aprovaReadQuestionFilters());
+  if (!scope || scope === "all" || typeof aprovaQuestionMatchesScope !== "function") {
+    return base;
+  }
+  return base.filter((q) => aprovaQuestionMatchesScope(q.id, scope));
+}
+
+function aprovaSyncQuestionModalUI () {
+  const modeWrap = document.getElementById("q-modal-mode");
+  const scopeWrap = document.getElementById("q-modal-scope");
+  const sizeWrap = document.getElementById("q-modal-size-wrap");
+  const countEl = document.getElementById("q-start-modal-count");
+  const titleEl = document.getElementById("q-start-modal-title");
+
+  modeWrap?.querySelectorAll("[data-q-mode]").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-q-mode") === aprovaQModalMode);
+  });
+  scopeWrap?.querySelectorAll("[data-q-scope]").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-q-scope") === aprovaQModalScope);
+  });
+  if (sizeWrap) sizeWrap.hidden = aprovaQModalMode !== "simulado";
+
   const filters = aprovaReadQuestionFilters();
-
-  aprovaFillQuestionFilterSelect(examEl, AprovaQuestions.examOptions(), "Todas as bancas", filters.exam);
-  aprovaFillQuestionFilterSelect(yearEl, AprovaQuestions.yearOptions(), "Todos os anos", filters.year);
-
-  const matched = aprovaCountQuestions(aprovaReadQuestionFilters());
+  const pool = aprovaQModalPool(filters, aprovaQModalScope);
   const path = [
     aprovaQSpecialtyLabel(aprovaQBrowse.specialty),
     aprovaQBrowse.group,
     aprovaQBrowse.theme
   ].filter(Boolean).join(" · ");
-
   if (titleEl) titleEl.textContent = path || "Iniciar estudo";
+
+  const scopeLabel = aprovaQModalScope === "new"
+    ? "novas"
+    : (aprovaQModalScope === "wrong" ? "erradas" : "neste recorte");
   if (countEl) {
-    countEl.textContent = matched
-      ? (matched + " questão" + (matched === 1 ? "" : "ões") + " neste recorte")
-      : "Nenhuma questão neste recorte — escolha outro filtro ou subtema.";
+    countEl.textContent = pool.length
+      ? (pool.length + " questão" + (pool.length === 1 ? "" : "ões") + " " + scopeLabel)
+      : ("Nenhuma questão " + scopeLabel + " com estes filtros.");
   }
-  return matched;
+  return pool.length;
+}
+
+function aprovaPopulateLaunchFilters () {
+  const examEl = document.getElementById("q-filter-exam");
+  const yearEl = document.getElementById("q-filter-year");
+  const filters = aprovaReadQuestionFilters();
+  aprovaFillQuestionFilterSelect(examEl, AprovaQuestions.examOptions(), "Todas as bancas", filters.exam);
+  aprovaFillQuestionFilterSelect(yearEl, AprovaQuestions.yearOptions(), "Todos os anos", filters.year);
+  return aprovaSyncQuestionModalUI();
+}
+
+function aprovaCloseQuestionModal () {
+  const modal = document.getElementById("q-start-modal");
+  if (modal) modal.hidden = true;
+  document.body.classList.remove("modal-open");
+}
+
+function aprovaShowQuestionLaunch () {
+  const modal = document.getElementById("q-start-modal");
+  if (!modal) return;
+  if (modal.parentElement !== document.body) {
+    document.body.appendChild(modal);
+  }
+  aprovaQModalMode = "treino";
+  aprovaQModalScope = "all";
+  aprovaPopulateLaunchFilters();
+  modal.hidden = false;
+  document.body.classList.add("modal-open");
+}
+
+function aprovaStartFromQuestionModal () {
+  const filters = aprovaReadQuestionFilters();
+  AprovaQuestions.applyFilters(filters, { rebuild: true });
+  const pool = aprovaQModalPool(filters, aprovaQModalScope);
+  if (!pool.length) {
+    aprovaSyncQuestionModalUI();
+    return;
+  }
+
+  let n = 0;
+  if (aprovaQModalMode === "simulado") {
+    const size = Number(document.getElementById("q-filter-size")?.value) || 10;
+    n = AprovaQuestions.startSimulado(size, pool);
+  } else {
+    n = AprovaQuestions.startTreino(pool);
+  }
+  if (!n) {
+    aprovaSyncQuestionModalUI();
+    return;
+  }
+  aprovaCloseQuestionModal();
+  aprovaRenderQuestion();
 }
 
 function aprovaShowQuestionViews (view) {
@@ -4343,6 +4415,11 @@ async function aprovaBoot () {
 
   document.addEventListener("keydown", e => {
     if (e.key !== "Escape") return;
+    const qModal = document.getElementById("q-start-modal");
+    if (qModal && !qModal.hidden) {
+      aprovaCloseQuestionModal();
+      return;
+    }
     const modal = document.getElementById("esp-deck-modal");
     if (modal && !modal.hidden) aprovaClosePedDeckModal();
   });
@@ -4409,35 +4486,35 @@ async function aprovaBoot () {
     aprovaRenderQuestionBrowse();
   });
 
-  ["q-filter-exam", "q-filter-year"].forEach(id => {
-    document.getElementById(id)?.addEventListener("change", () => aprovaPopulateLaunchFilters());
+  ["q-filter-exam", "q-filter-year", "q-filter-size"].forEach(id => {
+    document.getElementById(id)?.addEventListener("change", () => aprovaSyncQuestionModalUI());
   });
 
-  document.getElementById("q-start-treino")?.addEventListener("click", () => {
-    AprovaQuestions.applyFilters(aprovaReadQuestionFilters(), { rebuild: true });
-    const n = AprovaQuestions.startTreino();
-    if (!n) {
-      const countEl = document.getElementById("q-launch-count");
-      if (countEl) countEl.textContent = "Nenhuma questão neste recorte. Amplie a seleção.";
-      return;
-    }
-    aprovaRenderQuestion();
+  document.querySelectorAll("[data-q-modal-close]").forEach((el) => {
+    el.addEventListener("click", () => aprovaCloseQuestionModal());
   });
 
-  document.getElementById("q-start-simulado")?.addEventListener("click", () => {
-    AprovaQuestions.applyFilters(aprovaReadQuestionFilters(), { rebuild: true });
-    const size = Number(document.getElementById("q-filter-size")?.value) || 10;
-    const n = AprovaQuestions.startSimulado(size);
-    if (!n) {
-      const countEl = document.getElementById("q-launch-count");
-      if (countEl) countEl.textContent = "Nenhuma questão neste recorte para montar o simulado.";
-      return;
-    }
-    aprovaRenderQuestion();
+  document.getElementById("q-modal-mode")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-q-mode]");
+    if (!btn) return;
+    aprovaQModalMode = btn.getAttribute("data-q-mode") || "treino";
+    aprovaSyncQuestionModalUI();
+  });
+
+  document.getElementById("q-modal-scope")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-q-scope]");
+    if (!btn) return;
+    aprovaQModalScope = btn.getAttribute("data-q-scope") || "all";
+    aprovaSyncQuestionModalUI();
+  });
+
+  document.getElementById("q-start-go")?.addEventListener("click", () => {
+    aprovaStartFromQuestionModal();
   });
 
   document.getElementById("q-result-again")?.addEventListener("click", () => {
-    document.getElementById("q-start-simulado")?.click();
+    aprovaQModalMode = "simulado";
+    aprovaShowQuestionLaunch();
   });
 
   document.getElementById("q-result-treino")?.addEventListener("click", () => {

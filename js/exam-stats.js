@@ -1,6 +1,7 @@
 /* Estatísticas de provas — persistidas no localStorage */
 
 const APROVA_EXAM_STATS_KEY = "medhub-aprova-exam-stats-v1";
+const APROVA_Q_HISTORY_KEY = "medhub-aprova-q-history-v1";
 
 function aprovaDefaultExamStats () {
   return {
@@ -30,7 +31,27 @@ function aprovaSaveExamStats (stats) {
   localStorage.setItem(APROVA_EXAM_STATS_KEY, JSON.stringify(stats));
 }
 
-function aprovaRecordExamAnswer (theme, ok) {
+function aprovaDefaultQuestionHistory () {
+  return { byId: {} };
+}
+
+function aprovaLoadQuestionHistory () {
+  try {
+    const data = JSON.parse(localStorage.getItem(APROVA_Q_HISTORY_KEY) || "null");
+    if (!data || typeof data !== "object") return aprovaDefaultQuestionHistory();
+    return {
+      byId: data.byId && typeof data.byId === "object" ? data.byId : {}
+    };
+  } catch {
+    return aprovaDefaultQuestionHistory();
+  }
+}
+
+function aprovaSaveQuestionHistory (hist) {
+  localStorage.setItem(APROVA_Q_HISTORY_KEY, JSON.stringify(hist));
+}
+
+function aprovaRecordExamAnswer (theme, ok, questionId) {
   const stats = aprovaLoadExamStats();
   const key = theme || "Geral";
 
@@ -50,7 +71,33 @@ function aprovaRecordExamAnswer (theme, ok) {
 
   stats.lastAt = Date.now();
   aprovaSaveExamStats(stats);
+
+  const id = String(questionId || "").trim();
+  if (id) {
+    const hist = aprovaLoadQuestionHistory();
+    if (!hist.byId[id]) {
+      hist.byId[id] = { attempted: 0, correct: 0, wrong: 0, lastOk: null, lastAt: null };
+    }
+    const row = hist.byId[id];
+    row.attempted += 1;
+    if (ok) row.correct += 1;
+    else row.wrong += 1;
+    row.lastOk = !!ok;
+    row.lastAt = Date.now();
+    aprovaSaveQuestionHistory(hist);
+  }
+
   return stats;
+}
+
+/** Escopo: all | new | wrong */
+function aprovaQuestionMatchesScope (questionId, scope) {
+  const id = String(questionId || "").trim();
+  if (!id || !scope || scope === "all") return true;
+  const row = aprovaLoadQuestionHistory().byId[id];
+  if (scope === "new") return !row || !row.attempted;
+  if (scope === "wrong") return !!(row && (row.lastOk === false || (row.wrong > 0 && row.correct === 0)));
+  return true;
 }
 
 function aprovaExamStatsSummary () {

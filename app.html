@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=20260720q5">
+  <link rel="stylesheet" href="css/aprova.css?v=20260720q7">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -268,33 +268,7 @@
               </div>
             </div>
 
-            <div class="study-card q-launch" id="q-launch" hidden style="margin-top:1rem">
-              <div class="label" id="q-launch-title">Iniciar estudo</div>
-              <p class="muted" id="q-launch-count" style="margin:0.35rem 0 0.75rem"></p>
-              <div class="q-filter-grid">
-                <label class="q-filter-field">
-                  <span>Banca (opcional)</span>
-                  <select id="q-filter-exam" class="profile-select"></select>
-                </label>
-                <label class="q-filter-field">
-                  <span>Ano (opcional)</span>
-                  <select id="q-filter-year" class="profile-select"></select>
-                </label>
-                <label class="q-filter-field">
-                  <span>Simulado (nº)</span>
-                  <select id="q-filter-size" class="profile-select">
-                    <option value="5">5 questões</option>
-                    <option value="10" selected>10 questões</option>
-                    <option value="20">20 questões</option>
-                    <option value="40">40 questões</option>
-                  </select>
-                </label>
-              </div>
-              <div class="actions-row" style="margin-top:0.85rem">
-                <button type="button" class="btn btn-primary" id="q-start-treino">Treinar</button>
-                <button type="button" class="btn btn-ghost" id="q-start-simulado">Iniciar simulado</button>
-              </div>
-            </div>
+            <div class="study-card q-launch" id="q-launch" hidden></div>
           </div>
 
           <div class="study-card" id="q-card" hidden>
@@ -716,6 +690,61 @@
   </div>
 
   <!-- Fora do app-shell para não herdar hidden/stacking e o quadro abrir sobre o app -->
+  <div id="q-start-modal" class="aprova-modal" hidden>
+    <div class="aprova-modal-backdrop" data-q-modal-close></div>
+    <div class="aprova-modal-panel" role="dialog" aria-modal="true" aria-labelledby="q-start-modal-title">
+      <div class="aprova-modal-head">
+        <div>
+          <p class="esp-exam-label" style="margin:0 0 0.25rem">Banco de questões</p>
+          <h3 id="q-start-modal-title" class="esp-decks-title" style="margin:0">Iniciar</h3>
+        </div>
+        <button type="button" class="btn btn-ghost btn-compact" data-q-modal-close aria-label="Fechar">✕</button>
+      </div>
+      <p class="muted" id="q-start-modal-count" style="margin:0.35rem 0 1rem"></p>
+
+      <div class="label" style="margin-bottom:0.45rem">Modo</div>
+      <div class="q-modal-chips" id="q-modal-mode" role="group" aria-label="Modo de estudo">
+        <button type="button" class="q-modal-chip active" data-q-mode="treino">Teste</button>
+        <button type="button" class="q-modal-chip" data-q-mode="simulado">Simulado</button>
+      </div>
+
+      <div id="q-modal-size-wrap" hidden style="margin-top:0.85rem">
+        <label class="q-filter-field">
+          <span>Quantidade no simulado</span>
+          <select id="q-filter-size" class="profile-select">
+            <option value="5">5 questões</option>
+            <option value="10" selected>10 questões</option>
+            <option value="20">20 questões</option>
+            <option value="40">40 questões</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="label" style="margin:1rem 0 0.45rem">Quais questões</div>
+      <div class="q-modal-chips" id="q-modal-scope" role="group" aria-label="Recorte de questões">
+        <button type="button" class="q-modal-chip active" data-q-scope="all">Todas</button>
+        <button type="button" class="q-modal-chip" data-q-scope="new">Só novas</button>
+        <button type="button" class="q-modal-chip" data-q-scope="wrong">Só erradas</button>
+      </div>
+
+      <div class="q-filter-grid" style="margin-top:1rem">
+        <label class="q-filter-field">
+          <span>Banca (opcional)</span>
+          <select id="q-filter-exam" class="profile-select"></select>
+        </label>
+        <label class="q-filter-field">
+          <span>Ano (opcional)</span>
+          <select id="q-filter-year" class="profile-select"></select>
+        </label>
+      </div>
+
+      <div class="aprova-modal-actions" style="margin-top:1.1rem">
+        <button type="button" class="btn btn-ghost" data-q-modal-close>Cancelar</button>
+        <button type="button" class="btn btn-primary" id="q-start-go">Começar</button>
+      </div>
+    </div>
+  </div>
+
   <div id="esp-deck-modal" class="aprova-modal" hidden>
     <div class="aprova-modal-backdrop" data-esp-modal-close></div>
     <div class="aprova-modal-panel" role="dialog" aria-modal="true" aria-labelledby="esp-deck-modal-title">
@@ -747,10 +776,10 @@
   <script src="js/plan.js?v=20260719h"></script>
   <script src="js/tasks.js?v=20260719i"></script>
   <script src="js/schedule.js?v=20260719i"></script>
-  <script src="js/exam-stats.js?v=20260718dd"></script>
+  <script src="js/exam-stats.js?v=20260720q7"></script>
   <script src="js/flashcards.js?v=20260719f"></script>
-  <script src="js/questions.js?v=20260720q6"></script>
+  <script src="js/questions.js?v=20260720q7"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app.js?v=20260720q6"></script>
+  <script src="js/app.js?v=20260720q7"></script>
 </body>
 </html>
