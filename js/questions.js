@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260720q3";
+const APROVA_QUESTION_CACHE_VER = "20260720q6";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
