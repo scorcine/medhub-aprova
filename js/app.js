@@ -3802,7 +3802,11 @@ function aprovaRenderQuestion () {
   const theme = document.getElementById("q-theme");
   const stem = document.getElementById("q-stem");
   const choices = document.getElementById("q-choices");
+  const feedback = document.getElementById("q-feedback");
+  const verdictEl = document.getElementById("q-feedback-verdict");
   const explain = document.getElementById("q-explain");
+  const trapWrap = document.getElementById("q-trap-wrap");
+  const trapEl = document.getElementById("q-trap");
   const nextBtn = document.getElementById("q-next");
   const abortBtn = document.getElementById("q-abort");
   const stats = document.getElementById("q-stats");
@@ -3837,8 +3841,14 @@ function aprovaRenderQuestion () {
   if (theme) theme.textContent = meta.join(" · ");
   if (progress) progress.textContent = AprovaQuestions.progressText();
   stem.textContent = q.stem;
-  explain.hidden = true;
-  explain.textContent = "";
+  if (feedback) feedback.hidden = true;
+  if (verdictEl) {
+    verdictEl.textContent = "";
+    verdictEl.className = "q-feedback-verdict";
+  }
+  if (explain) explain.textContent = "";
+  if (trapWrap) trapWrap.hidden = true;
+  if (trapEl) trapEl.textContent = "";
   nextBtn.hidden = true;
   if (abortBtn) abortBtn.hidden = false;
   choices.innerHTML = "";
@@ -3856,8 +3866,26 @@ function aprovaRenderQuestion () {
         if (idx === result.answer) el.classList.add("correct");
         if (idx === i && !result.ok) el.classList.add("wrong");
       });
-      explain.textContent = result.explain || (result.ok ? "Correto." : "Revise o comentário desta questão.");
-      explain.hidden = false;
+      if (feedback) feedback.hidden = false;
+      if (verdictEl) {
+        verdictEl.textContent = result.ok
+          ? "Acertou — veja o raciocínio e a pegadinha."
+          : "Errou — veja por que a correta é outra e onde está a pegadinha.";
+        verdictEl.className = "q-feedback-verdict " +
+          (result.ok ? "q-feedback-verdict--ok" : "q-feedback-verdict--err");
+      }
+      if (explain) {
+        explain.textContent = result.explain ||
+          (result.ok ? "Correto." : "Revise o comentário desta questão.");
+      }
+      if (trapWrap && trapEl) {
+        if (result.trap) {
+          trapEl.textContent = result.trap;
+          trapWrap.hidden = false;
+        } else {
+          trapWrap.hidden = true;
+        }
+      }
       nextBtn.hidden = false;
       nextBtn.textContent = AprovaQuestions.mode === "simulado" &&
         AprovaQuestions.index + 1 >= AprovaQuestions.queue.length

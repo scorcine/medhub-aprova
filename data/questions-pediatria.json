@@ -4,54 +4,57 @@
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "Reanimação neonatal",
-    "exam": "enare",
+    "exam": "santa-casa",
     "year": 2022,
-    "difficulty": "dificil",
-    "stem": "RN a termo, nascido de parto vaginal, ao nascer apresenta FC de 80 bpm e respiração irregular após secagem e estímulo tátil. Vias aéreas posicionadas. Qual a próxima conduta prioritária segundo o algoritmo de reanimação neonatal?",
+    "difficulty": "media",
+    "stem": "RN a termo, parto vaginal sem intercorrências, líquido claro. Após secagem e estímulo, permanece com esforço irregular e frequência cardíaca de 78 bpm; vias aéreas estão posicionadas e a pele está cianosada. Qual a melhor conduta neste momento?",
     "choices": [
-      "Iniciar compressões torácicas imediatamente",
-      "Iniciar ventilação com pressão positiva (VPP)",
-      "Administrar adrenalina endovenosa",
-      "Observar por mais 60 segundos sem intervenção"
+      "Iniciar compressões torácicas na proporção 3:1 imediatamente",
+      "Administrar adrenalina pela veia umbilical sem ventilação prévia",
+      "Aguardar 60 segundos em observação antes de qualquer intervenção",
+      "Iniciar ventilação com pressão positiva e monitorar FC e expansão torácica"
     ],
-    "answer": 1,
-    "explain": "FC < 100 bpm ou esforço respiratório inadequado → VPP é o passo central. Compressões só após VPP efetiva se FC < 60."
+    "answer": 3,
+    "explain": "Após passos iniciais, FC < 100 bpm ou respiração inadequada indica VPP como intervenção central. Compressões só entram após VPP efetiva com FC persistente < 60 bpm. Adrenalina é reserva para falha ventilatória/circulatória.",
+    "trap": "Pular direto para compressões ou adrenalina quando a FC está entre 60 e 100, sem garantir ventilação eficaz."
   },
   {
     "id": "ped-neo-002",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "Reanimação neonatal",
-    "exam": "enamed",
-    "year": 2022,
-    "difficulty": "media",
-    "stem": "Durante reanimação neonatal, após 30 segundos de VPP efetiva com expansão torácica adequada, a FC permanece em 50 bpm. Qual a conduta imediata?",
+    "exam": "usp",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "Em sala de parto, após 30 segundos de VPP com expansão torácica adequada e FiO2 titulada, a FC do RN permanece em 48 bpm. Qual o próximo passo prioritário?",
     "choices": [
-      "Aumentar apenas a FiO2 para 100% sem compressões",
-      "Administrar bicarbonato de sódio de rotina",
-      "Interromper a VPP e observar",
-      "Iniciar compressões torácicas coordenadas à VPP (3:1) e garantir via aérea"
+      "Elevar apenas a FiO2 para 100% e manter observação sem compressões",
+      "Administrar bicarbonato de sódio de rotina pela veia umbilical",
+      "Interromper a VPP por 1 minuto para avaliar tônus espontâneo",
+      "Iniciar compressões torácicas coordenadas à VPP (3:1) e revisar a via aérea"
     ],
     "answer": 3,
-    "explain": "FC < 60 após VPP efetiva indica compressões 3:1 e revisão da ventilação; adrenalina se persistir."
+    "explain": "FC < 60 após VPP efetiva exige compressões 3:1 e checagem da ventilação (MR. SOPA). Bicarbonato não é rotina na reanimação. Oxigênio isolado não substitui o suporte circulatório.",
+    "trap": "Acreditar que só aumentar oxigênio resolve bradicardia grave sem compressões."
   },
   {
     "id": "ped-neo-003",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "Reanimação neonatal",
-    "exam": "santa-casa",
+    "exam": "usp",
     "year": 2024,
-    "difficulty": "facil",
-    "stem": "RN de 28 semanas, nascimento em sala de parto. Qual concentração inicial de oxigênio é preferível ao iniciar a reanimação, conforme diretrizes atuais?",
+    "difficulty": "dificil",
+    "stem": "RN de 27 semanas nasce com esforço respiratório fraco. Ao iniciar suporte ventilatório, qual estratégia de oxigênio é a mais adequada nas primeiras ações?",
     "choices": [
-      "Sempre FiO2 100% desde o primeiro minuto",
-      "Oxigênio em baixa concentração (cerca de 21–30%), titulando pela oximetria",
-      "Ar ambiente sem possibilidade de titulação",
-      "Óxido nítrico inalatório de rotina"
+      "Manter FiO2 100% fixa desde o primeiro minuto até estabilização completa",
+      "Começar com FiO2 baixa (cerca de 21–30%) e titular conforme oximetria por minuto de vida",
+      "Usar exclusivamente ar ambiente, sem possibilidade de ajuste",
+      "Iniciar óxido nítrico inalatório empírico na sala de parto"
     ],
     "answer": 1,
-    "explain": "Em prematuros inicia-se com O2 baixo (≈21–30%) e titula-se pela SpO2 alvo por minuto de vida."
+    "explain": "Prematuros devem iniciar com O2 baixo e titulação guiada por SpO2 alvo. Hiperóxia desnecessária aumenta risco de lesão oxidativa. Óxido nítrico não faz parte do algoritmo inicial de reanimação.",
+    "trap": "Associar prematuridade automaticamente a FiO2 100% desde o nascimento."
   },
   {
     "id": "ped-neo-004",
@@ -59,1834 +62,1936 @@
     "group": "Neonatologia",
     "theme": "Icterícia neonatal",
     "exam": "usp",
-    "year": 2025,
-    "difficulty": "facil",
-    "stem": "RN a termo, 36 horas de vida, ictérico até raíz de coxas, mãe O−, RN A+, Coombs direto positivo, bilirrubina total 16 mg/dL. Qual a hipótese mais provável e o manejo inicial típico?",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "RN a termo, 30 horas de vida, ictérico até coxas. Mãe grupo O Rh−, RN A Rh+, Coombs direto positivo, hemoglobina 12,8 g/dL, bilirrubina total 15,8 mg/dL. Qual a melhor conduta inicial?",
     "choices": [
-      "Icterícia fisiológica isolada; apenas observação domiciliar",
-      "Doença hemolítica por incompatibilidade ABO; fototerapia conforme nomograma",
-      "Atresia de vias biliares; colangiografia imediata",
-      "Hipotireoidismo congênito; levotiroxina sem fototerapia"
+      "Liberar para domicilio com orientação de exposição solar",
+      "Programar colangiografia e biópsia hepática nas próximas 24 horas",
+      "Iniciar fototerapia guiada por nomograma e monitorar bilirrubina e hemólise",
+      "Iniciar levotiroxina empírico sem dosar TSH/T4"
     ],
-    "answer": 1,
-    "explain": "Icterícia precoce + incompatibilidade ABO/Coombs+ sugere hemólise; fototerapia guiada por nomograma (e exsanguineotransfusão se limiar)."
+    "answer": 2,
+    "explain": "Icterícia precoce com incompatibilidade ABO e Coombs positivo sugere hemólise imune; o manejo imediato é fototerapia conforme limiares, com vigilância de anemia e necessidade de exsanguineotransfusão. Atresia biliar e hipotireoidismo têm outro tempo e perfil clínico.",
+    "trap": "Rotular como 'fisiológica' só pela idade gestacional, ignorando precocidade e Coombs positivo."
   },
   {
     "id": "ped-neo-005",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "Icterícia neonatal",
-    "exam": "enamed",
-    "year": 2023,
+    "exam": "enare",
+    "year": 2022,
     "difficulty": "media",
-    "stem": "Lactente de 28 dias com icterícia persistente, fezes acólicas e hepatomegalia. Bilirrubina direta elevada. Qual conduta diagnóstica inicial mais adequada?",
+    "stem": "Lactente de 32 dias em aleitamento materno exclusivo apresenta icterícia progressiva, fezes claras intercaladas e hepatomegalia discreta. Bilirrubina direta 3,4 mg/dL. Qual o próximo passo mais adequado?",
     "choices": [
-      "Aguardar resolução espontânea até 3 meses",
-      "Indicar fototerapia domiciliar isolada",
-      "Tratar empiricamente como incompatibilidade Rh",
-      "Investigar colestase (ex.: ultrassom e exclusão urgente de atresia biliar)"
+      "Investigar colestase com urgência, incluindo ultrassom e exclusão de atresia biliar",
+      "Manter observação exclusiva até 3 meses por provável icterícia do leite materno",
+      "Prescrever fototerapia domiciliar sem investigação etiológica",
+      "Tratar empiricamente como incompatibilidade Rh tardia"
     ],
-    "answer": 3,
-    "explain": "Colestase neonatal (BD elevada, fezes acólicas) exige investigação urgente — atresia biliar tem janela cirúrgica crítica."
+    "answer": 0,
+    "explain": "BD elevada com fezes claras e hepatomegalia configura colestase neonatal. Atresia biliar exige diagnóstico precoce para portoenterostomia. Icterícia do leite materno não eleva BD nem causa acolia.",
+    "trap": "Atribuir toda icterícia prolongada ao leite materno sem checar fração direta e padrão das fezes."
   },
   {
     "id": "ped-neo-006",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "Sepse neonatal",
-    "exam": "usp",
-    "year": 2025,
-    "difficulty": "media",
-    "stem": "RN de 18 horas de vida, filho de mãe com corioamnionite, apresenta taquicardia, má perfusão e febre. Hemograma com neutropenia e PCR elevada. Qual antibioticoterapia empírica inicial típica para sepse precoce?",
+    "exam": "amp",
+    "year": 2024,
+    "difficulty": "facil",
+    "stem": "RN de 16 horas, filho de parto com febre materna intraparto e líquido fétido, apresenta taquicardia, enchimento capilar de 4 s e temperatura de 38,2 °C. Hemograma com neutropenia e PCR elevada. Qual antibioticoterapia empírica inicial é a mais apropriada?",
     "choices": [
-      "Vancomicina isolada",
-      "Ampicilina associada a gentamicina",
+      "Vancomicina em monoterapia",
       "Ceftriaxona em dose única sem associação",
-      "Somente antifúngico empírico"
+      "Ampicilina associada a gentamicina",
+      "Anfotericina B empírica isolada"
     ],
-    "answer": 1,
-    "explain": "Sepse precoce: cobrir SGB e bacilos Gram-negativos com ampicilina + aminoglicosídeo."
+    "answer": 2,
+    "explain": "Sepse precoce cobre SGB e Gram-negativos com ampicilina + aminoglicosídeo. Vancomicina e antifúngico não são primeira linha nesse cenário. Ceftriaxona no RN tem riscos (bilirrubina/cálcio) e não substitui o esquema clássico.",
+    "trap": "Escolher vancomicina por 'cobertura ampla' em sepse precoce comunitária/obstétrica."
   },
   {
     "id": "ped-neo-007",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "Sepse neonatal",
-    "exam": "usp",
+    "exam": "santa-casa",
     "year": 2024,
-    "difficulty": "media",
-    "stem": "RN pré-termo internado em UTI neonatal, dia 12 de vida, com apneias novas, distensão abdominal e hemocultura positiva para Staphylococcus coagulase-negativo. Qual o contexto clínico mais compatível?",
+    "difficulty": "dificil",
+    "stem": "Prematuro de 30 semanas, 14º dia de vida em UTI, com cateter venoso central, passa a ter apneias novas, distensão abdominal e glicemia instável. Hemocultura cresce Staphylococcus coagulase-negativo. Qual interpretação é a mais coerente?",
     "choices": [
       "Sepse precoce exclusiva por Streptococcus do grupo B",
-      "Infecção congênita por rubéola sem sepse",
-      "Reação transfusional hemolítica aguda",
-      "Sepse neonatal tardia associada a dispositivo/cateter"
+      "Sepse neonatal tardia associada a dispositivo intravascular",
+      "Infecção congênita por rubéola sem componente séptico",
+      "Reação transfusional hemolítica aguda isolada"
     ],
-    "answer": 3,
-    "explain": "Sepse tardia (>72 h) em prematuro com acesso vascular costuma envolver SCN e outros nosocomiais."
+    "answer": 1,
+    "explain": "Após 72 h de vida, sobretudo em prematuro com acesso vascular, SCN é patógeno típico de sepse tardia nosocomial. Sepse precoce e TORCH têm outros tempos e manifestações.",
+    "trap": "Chamar qualquer bacteremia neonatal de 'sepse precoce' sem olhar o dia de vida."
   },
   {
     "id": "ped-neo-008",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "SDR/taquipneia",
-    "exam": "enare",
-    "year": 2022,
-    "difficulty": "media",
-    "stem": "RN de 34 semanas, desconforto respiratório progressivo nas primeiras horas, retrações e grunting. Radiografia com reticulogranularidade difusa e broncograma aéreo. Diagnóstico mais provável?",
+    "exam": "santa-casa",
+    "year": 2024,
+    "difficulty": "dificil",
+    "stem": "RN de 33 semanas, desconforto respiratório crescente nas primeiras 3 horas, retrações e gemido. Radiografia com padrão reticulogranular difuso e broncograma aéreo. Qual o diagnóstico mais provável?",
     "choices": [
-      "Taquipneia transitória do RN sem envolvimento alveolar",
-      "Síndrome do desconforto respiratório (doença da membrana hialina)",
-      "Pneumonia a vírus sincicial exclusivamente",
-      "Cardiopatia congênita cianótica sem desconforto"
+      "Taquipneia transitória do RN sem acometimento alveolar",
+      "Síndrome do desconforto respiratório por deficiência de surfactante",
+      "Bronquiolite por VSR com início no período neonatal imediato",
+      "Cardiopatia cianótica sem sinais de esforço ventilatório"
     ],
     "answer": 1,
-    "explain": "SDR do prematuro: déficit de surfactante → padrão reticulogranular e broncograma; manejo com suporte e surfactante se indicado."
+    "explain": "Prematuridade + desconforto precoce + reticulogranularidade/broncograma apontam para SDR/membrana hialina. Taquipneia transitória costuma ter hiperinsuflação e líquido em fissuras, com curso mais benigno.",
+    "trap": "Diagnosticar taquipneia transitória em prematuro com padrão radiológico clássico de déficit de surfactante."
   },
   {
     "id": "ped-neo-009",
     "specialty": "pediatria",
     "group": "Neonatologia",
     "theme": "SDR/taquipneia",
-    "exam": "santa-casa",
-    "year": 2024,
+    "exam": "usp",
+    "year": 2022,
     "difficulty": "media",
-    "stem": "RN a termo, nascido de cesárea eletiva sem trabalho de parto, com taquipneia desde o nascimento, boa oxigenação em ar ambiente e RX com líquido em fissuras. Evolução favorável em 24–48 h. Diagnóstico mais provável?",
+    "stem": "RN a termo nascido de cesárea eletiva, com taquipneia desde a primeira hora, boa oxigenação em ar ambiente e radiografia com líquido em fissuras e hiperinsuflação leve. Melhor conduta inicial?",
     "choices": [
-      "Doença da membrana hialina clássica do termo",
-      "Hérnia diafragmática congênita",
-      "Taquipneia transitória do recém-nascido",
-      "Atresia de esôfago com fístula"
+      "Surfactante endotraqueal imediato de rotina",
+      "Suporte respiratório conforme necessidade e observação, com expectativa de resolução em 24–72 h",
+      "Antibiótico de amplo espectro por 14 dias sem avaliação",
+      "Cirurgia de emergência por suspeita de hérnia diafragmática"
     ],
-    "answer": 2,
-    "explain": "TTRN: retardo na reabsorção do líquido pulmonar, comum após cesárea; curso autolimitado."
+    "answer": 1,
+    "explain": "Quadro compatível com taquipneia transitória: termo/cesárea, curso precoce e imagem típica. Manejo é suporte e vigilância. Surfactante é para SDR; antibiótico não é automático sem critérios de infecção.",
+    "trap": "Tratar todo desconforto neonatal com surfactante, como se fosse membrana hialina."
   },
   {
     "id": "ped-neo-010",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "Hipoglicemia",
-    "exam": "santa-casa",
+    "theme": "Asfixxia/encefalopatia",
+    "exam": "unifesp",
     "year": 2022,
-    "difficulty": "facil",
-    "stem": "RN filho de mãe diabética, 2 horas de vida, assintomático. Glicemia capilar 35 mg/dL. Conduta inicial mais adequada?",
+    "difficulty": "dificil",
+    "stem": "RN a termo após sofrimento fetal agudo nasce com Apgar 2/4/5, necessita de VPP prolongada e, com 2 horas, apresenta hipotonia, convulsão e acidose metabólica persistente. Qual intervenção específica deve ser considerada precocemente?",
     "choices": [
-      "Administrar glucagon IM de rotina sem alimentar",
-      "Iniciar insulina intravenosa",
-      "Oferecer aleitamento/leite e reavaliar a glicemia precocemente",
-      "Aguardar 12 horas sem intervenção"
+      "Hipotermia terapêutica em centro habilitado, se critérios de encefalopatia hipóxico-isquêmica forem preenchidos",
+      "Fenobarbital de manutenção sem avaliação neurológica estruturada",
+      "Bicarbonato contínuo como terapia neuroprotetora isolada",
+      "Observação exclusiva em alojamento conjunto sem monitoramento"
     ],
-    "answer": 2,
-    "explain": "Hipoglicemia assintomática leve: alimentar e monitorar; glicose IV se sintomático, grave ou refratário."
+    "answer": 0,
+    "explain": "Encefalopatia hipóxico-isquêmica moderada/grave com critérios temporais pode se beneficiar de hipotermia terapêutica iniciada precocemente. Bicarbonato não é neuroproteção. Alojamamento conjunto é inadequado nesse perfil.",
+    "trap": "Focar só em anticonvulsivante e esquecer a janela da hipotermia."
   },
   {
     "id": "ped-neo-011",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "Hipoglicemia",
-    "exam": "enamed",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "RN a termo com tremores, hypotonia e convulsão no período neonatal precoce. Glicemia 18 mg/dL. Qual a prioridade terapêutica imediata?",
+    "theme": "Infecção congênita",
+    "exam": "unifesp",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "RN pequeno para idade gestacional, microcefalia, petéquias, hepatoesplenomegalia e calcificações cerebrais periventriculares. Qual agente é o mais provável?",
     "choices": [
-      "Fenobarbital antes de medir/corrigir glicemia",
-      "Apenas fórmula oral fracionada sem via venosa",
-      "Exsanguineotransfusão como primeira medida",
-      "Corrigir a hipoglicemia com glicose intravenosa (bolus + manutenção)"
+      "Streptococcus do grupo B",
+      "Vírus sincicial respiratório",
+      "Citomegalovírus",
+      "Staphylococcus aureus comunitário"
     ],
-    "answer": 3,
-    "explain": "Hipoglicemia sintomática grave é emergência: glicose IV imediata para proteger o SNC."
+    "answer": 2,
+    "explain": "A combinação de CIUR, microcefalia, petéquias, hepatoesplenomegalia e calcificações periventriculares é clássica de CMV congênito. SGB e estafilococo causam sepse perinatal/pós-natal sem esse padrão malformativo-calcificante.",
+    "trap": "Assumir SGB diante de qualquer doença neonatal grave, mesmo com estigmas congênitos."
   },
   {
     "id": "ped-neo-012",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "TORCH/infecções congênitas",
-    "exam": "enamed",
-    "year": 2025,
+    "theme": "Triagem neonatal",
+    "exam": "santa-casa",
+    "year": 2024,
     "difficulty": "facil",
-    "stem": "RN com microcefalia, calcificações intracranianas periventriculares, coriorretinite e petéquias. Sorologia materna IgM para CMV positiva na gestação. Agente mais provável?",
+    "stem": "No teste do pezinho coletado no 3º dia, TSH está muito elevado e T4 livre baixo. Qual a melhor conduta?",
     "choices": [
-      "Toxoplasmose congênita com calcificações exclusivamente difusas sem outros achados",
-      "Citomegalovírus congênito",
-      "Sífilis congênita sem acometimento neurológico",
-      "HSV neonatal limitado a vesículas cutâneas"
+      "Repetir o pezinho apenas com 6 meses de vida",
+      "Confirmar com dosagens séricas e iniciar levotiroxina precocemente após confirmação/conforme protocolo",
+      "Iniciar iodo radioativo diagnóstico imediatamente",
+      "Aguardar sintomas clínicos de mixedema para tratar"
     ],
     "answer": 1,
-    "explain": "CMV congênito clássico: microcefalia, calcificações periventriculares, coriorretinite e alterações hematológicas."
+    "explain": "Hipotireoidismo congênito exige confirmação e reposição precoce de levotiroxina para proteger o neurodesenvolvimento. Esperar sintomas ou adiar meses causa dano irreversível.",
+    "trap": "Aguardar 'confirmação clínica' antes de tratar, perdendo a janela crítica."
   },
   {
     "id": "ped-neo-013",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "TORCH/infecções congênitas",
-    "exam": "enare",
+    "theme": "Aleitamento / hipoglicemia",
+    "exam": "usp",
     "year": 2025,
     "difficulty": "media",
-    "stem": "RN com coriza sanguinolenta, hepatoesplenomegalia, rash maculopapular e radiografia com periostite. VDRL materno positivo não tratado. Diagnóstico mais provável?",
+    "stem": "RN filho de mãe com diabetes gestacional, 2 horas de vida, sonolento e com tremor fino. Glicemia capilar 28 mg/dL. Qual a conduta mais adequada agora?",
     "choices": [
-      "Rubéola congênita sem achados ósseos",
-      "Sífilis congênita",
-      "Infecção por Zika com apenas microcefalia",
-      "Sepse exclusiva por Listeria sem manifestações cutâneo-ósseas"
+      "Aguardar a próxima mamada programada em 3 horas sem intervenção",
+      "Oferecer leite (ou glicose oral conforme protocolo) e reavaliar; se sintomático grave ou refratário, glicose EV",
+      "Administrar insulina regular subcutânea",
+      "Indicar jejum absoluto por 12 horas para 'descanso pancreático'"
     ],
     "answer": 1,
-    "explain": "Sífilis congênita: snuffles, hepatoesplenomegalia, rash e alterações ósseas; tratar com penicilina."
+    "explain": "Filho de mãe diabética tem risco de hipoglicemia hiperinsulinêmica. Valores baixos com sintomas exigem correção imediata e reavaliação. Insulina agrava o quadro; jejum prolongado é inadequado.",
+    "trap": "Normalizar tremor como 'imaturidade' e adiar a medida da glicemia/correção."
   },
   {
     "id": "ped-neo-014",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "TORCH/infecções congênitas",
-    "exam": "enamed",
-    "year": 2023,
+    "theme": "Enterocolite necrosante",
+    "exam": "usp",
+    "year": 2024,
     "difficulty": "media",
-    "stem": "Gestante com primoinfecção por toxoplasmose no 2º trimestre. RN assintomático ao nascer. Qual medida é fundamental no seguimento?",
+    "stem": "Prematuro de 29 semanas, 10º dia, em progressão de dieta enteral, evolui com distensão, resíduos biliosos, sangue nas fezes e pneumatose intestinal na radiografia. Melhor conduta inicial?",
     "choices": [
-      "Investigação e tratamento do RN conforme protocolo (ex.: IgM/IgA, PCR e oftalmo/neuroimagem)",
-      "Alta sem qualquer investigação por estar assintomático",
-      "Vacinação antimeningocócica exclusiva como prevenção",
-      "Corticoterapia sistêmica de rotina em todos os RN"
+      "Aumentar o volume da dieta para 'estimular o intestino'",
+      "Alta precoce com fórmula hipercalórica exclusiva",
+      "Jejuar, descompressão gástrica, antibióticos e suporte intensivo com acompanhamento radiológico",
+      "Corticoterapia sistêmica empírica como tratamento definitivo"
     ],
-    "answer": 0,
-    "explain": "Toxoplasmose congênita pode ser subclínica ao nascer; exige investigação e tratamento para prevenir sequelas."
+    "answer": 2,
+    "explain": "Sinais clínicos e radiológicos de enterocolite necrosante pedem suspensão da dieta, suporte, antibióticos e vigilância de indicação cirúrgica. Aumentar dieta piora a isquemia/inflamação intestinal.",
+    "trap": "Insistir em alimentação enteral perante resíduos biliosos e pneumatose."
   },
   {
     "id": "ped-neo-015",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "Prematuridade",
-    "exam": "unifesp",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "RN de 27 semanas, 980 g, em UTI. Além do suporte respiratório, qual intervenção é essencial para prevenir hemorragia peri-intraventricular nas primeiras horas?",
+    "theme": "Hiperbilirrubinemia",
+    "exam": "santa-casa",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "RN a termo, 4º dia, bilirrubina total em nível de exsanguineotransfusão pelo nomograma, com sinais de encefalopatia bilirrubínica inicial. Além da fototerapia intensiva, qual medida deve ser preparada?",
     "choices": [
-      "Estimular mudanças posturais frequentes e vigorosas",
-      "Restringir completamente qualquer suporte ventilatório",
-      "Manter estabilidade hemodinâmica/térmica e evitar manobras que gerem flutuações bruscas de fluxo cerebral",
-      "Administrar AINE de rotina em todos os prematuros extremos sem critério"
+      "Apenas observação com retorno ambulatorial em 72 horas",
+      "Exsanguineotransfusão em ambiente adequado",
+      "Colecistectomia de urgência",
+      "Suspensão definitiva do aleitamento materno para sempre"
     ],
-    "answer": 2,
-    "explain": "Prevenção de HIVH: minimal handling, estabilidade térmica/hemodinâmica e ventilação cuidadosa."
+    "answer": 1,
+    "explain": "Limiar de exsanguineotransfusão e/ou sinais neurológicos exigem ET sob fototerapia intensiva. Colecistectomia não trata hiperbilirrubinemia neonatal. Suspensão permanente do aleitamento não é a resposta.",
+    "trap": "Subestimar icterícia intensa no termo por achar que 'sempre resolve com sol/fototerapia leve'."
   },
   {
     "id": "ped-neo-016",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "Prematuridade",
-    "exam": "enare",
-    "year": 2022,
-    "difficulty": "facil",
-    "stem": "Prematuro de 30 semanas, 10 dias de vida, recebe dieta enteral crescente por sonda e apresenta distensão, resíduos biliosos e sangue nas fezes. Radiografia com pneumatose intestinal. Diagnóstico mais provável?",
+    "theme": "Distúrbio metabólico",
+    "exam": "amp",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "RN de 5 dias com vômitos, letargia, odor incomum e acidose metabólica com anion gap elevado após introdução de fórmula. Qual conduta diagnóstica inicial é mais útil?",
     "choices": [
-      "Refluxo gastroesofágico fisiológico simples",
-      "Enterocolite necrosante",
-      "Invaginação intestinal típica do lactente maior",
-      "Constipação funcional do prematuro"
+      "Tratar apenas como refluxo fisiológico com espessante",
+      "Solicitar amônia, gasometria, glicemia e aminoácidos/acilcarnitinas conforme protocolo de erro inato",
+      "Indicar fundoplicatura de Nissen imediata",
+      "Prescrever antibiótico único sem investigação metabólica"
     ],
     "answer": 1,
-    "explain": "ECN: prematuro + sinais digestivos + pneumatose; jejum, ATB e suporte; cirurgia se perfuração/necrose."
+    "explain": "Descompensação neonatal precoce com acidose de anion gap e alteração do sensorium levanta erro inato do metabolismo. Painel metabólico urgente guia suporte e dieta. Refluxo isolado não explica acidose grave.",
+    "trap": "Atribuir vômitos neonatais sempre a refluxo e atrasar a investigação metabólica."
   },
   {
     "id": "ped-neo-017",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "Prematuridade",
-    "exam": "amp",
+    "theme": "Oftalmia neonatal",
+    "exam": "enamed",
     "year": 2025,
-    "difficulty": "media",
-    "stem": "RN prematuro de 32 semanas recebe profilaxia com surfactante e CPAP. Qual vitaminoprofilaxia/suplementação é rotineiramente importante no seguimento do prematuro para prevenir doença metabólica óssea e deficiências?",
+    "difficulty": "dificil",
+    "stem": "RN de 7 dias com secreção ocular purulenta bilateral intensa e edema palpebral. Qual a hipótese etiológica mais preocupante e o foco do manejo?",
     "choices": [
-      "Vitamina K diária em altas doses por 6 meses sem indicação",
-      "Suplementação de vitamina D (e atenção a cálcio/fósforo conforme protocolo)",
-      "Vitamina A em megadoses semanais para todos",
-      "Suspensão de ferro até os 2 anos"
+      "Alergia ao shampoo; apenas suspender produtos tópicos",
+      "Obstrução isolada do ducto lacrimal; massagem exclusiva por 2 meses",
+      "Gonococo; antibiótico sistêmico e avaliação de complicações, além de higiene ocular",
+      "Infecção fúngica exclusiva; antifúngico tópico empírico"
     ],
-    "answer": 1,
-    "explain": "Prematuros precisam de vitamina D (e monitoramento mineral); ferro também é suplementado em momento adequado."
+    "answer": 2,
+    "explain": "Secreção purulenta intensa na primeira semana sugere oftalmia gonocócica, que pode perfurar a córnea; exige tratamento sistêmico. Obstrução lacrimal costuma ser mais tardia e menos inflamatória aguda.",
+    "trap": "Tratar toda secreção ocular neonatal como dacriocistite/obstrução simples."
   },
   {
     "id": "ped-neo-018",
     "specialty": "pediatria",
     "group": "Neonatologia",
-    "theme": "Reanimação neonatal",
-    "exam": "enamed",
+    "theme": "Vitamina K / hemorragia",
+    "exam": "usp",
     "year": 2023,
-    "difficulty": "media",
-    "stem": "RN com mecônio espesso no líquido amniótico nasce vigoroso, chora e tem bom tônus. Qual a conduta em relação às vias aéreas?",
+    "difficulty": "facil",
+    "stem": "RN de 3 semanas, parto domiciliar sem profilaxia ao nascer, apresenta sangramento do coto umbilical e hematomas. Coagulograma com TP muito alongado. Qual a causa mais provável?",
     "choices": [
-      "Intubação e aspiração traqueal obrigatória em todos com mecônio",
-      "Laringoscopia de rotina mesmo se vigoroso",
-      "Adrenalina profilática antes de qualquer avaliação",
-      "Cuidados de rotina; não é mandatória aspiração traqueal só pelo mecônio se vigoroso"
+      "Hemofilia A sem necessidade de investigação familiar",
+      "Púrpura trombocitopênica imune com plaquetas normais",
+      "Doença hemorrágica do RN por deficiência de vitamina K",
+      "Escorbuto por deficiência de vitamina C materna aguda"
     ],
-    "answer": 3,
-    "explain": "Se o RN com mecônio está vigoroso: cuidados de rotina. Aspiração traqueal não é rotina só pela presença de mecônio."
+    "answer": 2,
+    "explain": "Ausência de vitamina K ao nascer e sangramento tardio com TP alongado são típicos de doença hemorrágica por deficiência de K. PTI altera plaquetas; hemofilia tem outro padrão e história.",
+    "trap": "Pensar primeiro em hemofilia diante de qualquer sangramento neonatal, sem olhar profilaxia de K e TP."
   },
   {
     "id": "ped-puer-001",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Vacinas/PNI",
-    "exam": "enare",
-    "year": 2025,
-    "difficulty": "media",
-    "stem": "Lactente de 2 meses em consulta de puericultura, saudável, sem contraindicações. Segundo o calendário do PNI, qual conjunto melhor representa vacinas típicas dessa idade?",
+    "theme": "Vacinação",
+    "exam": "santa-casa",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "Lactente de 2 meses, hígido, comparece para consulta de rotina. Além das vacinas do calendário da faixa etária, a mãe pergunta se pode aplicar vacinas inativadas no mesmo dia. Qual a orientação correta?",
     "choices": [
-      "Pentavalente, VIP, pneumocócica 10-valente e rotavírus",
-      "HPV e herpes-zóster",
-      "Apenas febre amarela e dTpa adulto",
-      "BCG e hepatite B como únicas doses aos 2 meses"
+      "Nunca se deve aplicar mais de uma vacina no mesmo dia",
+      "Só é permitido combinar vacinas se houver febre no momento",
+      "Vacinas do calendário podem ser aplicadas na mesma visita conforme indicação, respeitando sites e técnicas",
+      "Vacinas inativadas exigem intervalo mínimo de 90 dias entre si"
     ],
-    "answer": 0,
-    "explain": "Aos 2 meses: penta, VIP, pneumo e rota (além de esquemas já iniciados ao nascer: BCG/HepB)."
+    "answer": 2,
+    "explain": "No calendário, múltiplas vacinas podem ser administradas na mesma consulta se indicadas. Intervalos longos obrigatórios aplicam-se sobretudo a certas combinações de vacinas vivas, não a todas as inativadas.",
+    "trap": "Acreditar que 'uma vacina por dia' reduz eventos adversos de forma geral."
   },
   {
     "id": "ped-puer-002",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Vacinas/PNI",
+    "theme": "Vacinação",
     "exam": "enamed",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "Criança de 15 meses comparece para vacinação. Além de reforços do esquema básico, qual vacina é tipicamente aplicada nessa faixa no PNI (quando indicada na idade)?",
+    "year": 2024,
+    "difficulty": "media",
+    "stem": "Criança de 12 meses HIV exposta, não infectada, com esquema em dia. A mãe questiona a vacina tríplice viral. Qual a melhor conduta?",
     "choices": [
-      "Vacina meningocócica ACWY exclusiva de adultos",
-      "Tríplice viral (SCR) — dose do esquema, se ainda não aplicada/conforme calendário",
-      "Vacina contra herpes-zóster",
-      "Vacina antirrábica de rotina em todos sem exposição"
+      "Aplicar SCR conforme calendário, pois criança não infectada não tem contraindicação por esse motivo",
+      "Contraindicar definitivamente todas as vacinas vivas para sempre",
+      "Substituir SCR por imunoglobulina mensal de rotina",
+      "Adiar SCR até os 10 anos independentemente do status"
     ],
-    "answer": 1,
-    "explain": "SCR integra o calendário na infância (1ª dose em geral aos 12 meses; reforços conforme PNI vigente)."
+    "answer": 0,
+    "explain": "Exposição ao HIV sem infecção não contraindica SCR. Imunodeficiência grave sintomática é o cenário de cautela com vacinas vivas, não a mera exposição resolvida.",
+    "trap": "Contraindicar vacinas vivas em toda criança 'exposta ao HIV', sem distinguir infectada/imunossuprimida."
   },
   {
     "id": "ped-puer-003",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Vacinas/PNI",
-    "exam": "enamed",
-    "year": 2022,
+    "theme": "Crescimento",
+    "exam": "usp",
+    "year": 2023,
     "difficulty": "facil",
-    "stem": "Adolescente de 11 anos, sexo feminino, em consulta. Qual vacina é priorizada no PNI nessa faixa etária para prevenção de câncer relacionado ao HPV?",
+    "stem": "Menino de 18 meses com peso no percentil 3 e estatura no percentil 50, bom desenvolvimento, exame abdominal normal e história alimentar restrita em calorias. Qual a interpretação mais provável?",
     "choices": [
-      "Vacina HPV conforme calendário do PNI para a faixa etária",
-      "BCG de reforço anual",
-      "Rotavírus de rotina aos 11 anos",
-      "Pentavalente como dose única na adolescência"
+      "Doença celíaca confirmada sem necessidade de exames",
+      "Déficit ponderal predominantemente nutricional; reforçar oferta calórica e acompanhar curva",
+      "Deficiência de GH como primeira hipótese isolada",
+      "Hipotireoidismo congênito não tratado como causa exclusiva"
     ],
-    "answer": 0,
-    "explain": "HPV está no calendário do adolescente (faixas e doses conforme PNI atualizado)."
+    "answer": 1,
+    "explain": "Peso baixo com estatura preservada e exame normal sugere ingestão insuficiente. Déficit de GH e hipotireoidismo costumam afetar mais a estatura. Celíaca exige investigação dirigida se houver sinais.",
+    "trap": "Ir direto a endocrinopatia rara sem avaliar história alimentar e proporcionalidade da curva."
   },
   {
     "id": "ped-puer-004",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Vacinas/PNI",
-    "exam": "enare",
-    "year": 2024,
-    "difficulty": "dificil",
-    "stem": "Lactente de 4 meses recebeu rotavírus monovalente. A mãe pergunta sobre contraindicação absoluta. Qual situação impede nova dose de rotavírus?",
+    "theme": "Desenvolvimento",
+    "exam": "santa-casa",
+    "year": 2025,
+    "difficulty": "media",
+    "stem": "Lactente de 9 meses não senta sem apoio, não transferem objetos e não balbucia. Gestação e peri‑parto sem intercorrências relatadas. Qual a melhor conduta?",
     "choices": [
-      "Coriza leve no dia da vacina",
-      "Uso de paracetamol há 24 horas",
-      "Irmão com asma controlada",
-      "História de invaginação intestinal prévia"
+      "Aguardar os 18 meses porque 'cada criança tem seu tempo' sem avaliação",
+      "Prescrever apenas polivitamínico e reavaliar em 1 ano",
+      "Reconhecer atraso global e iniciar avaliação diagnóstica e intervenção precoce",
+      "Diagnosticar autismo de forma definitiva só por ausência de balbucio"
     ],
-    "answer": 3,
-    "explain": "Invaginação prévia é contraindicação à vacina contra rotavírus."
+    "answer": 2,
+    "explain": "Marcos ausentes aos 9 meses exigem investigação e estimulação/reabilitação precoces. Esperar passivamente perde janela terapêutica. Autismo não se fecha só por um marco isolado.",
+    "trap": "Normalizar atrasos evidentes com a frase 'cada um no seu tempo'."
   },
   {
     "id": "ped-puer-005",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Crescimento/DNPM",
-    "exam": "enamed",
-    "year": 2023,
-    "difficulty": "facil",
-    "stem": "Lactente de 6 meses, em aleitamento materno exclusivo, percentil 50 de peso e comprimento. Marcos: sustenta a cabeça, rola, agarra objetos e balbucia. Conduta?",
+    "theme": "Aleitamento",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Puérpera no 5º dia refere fissura mamilar e dor à mamada; o bebê ganha peso adequadamente, mas a pega é superficial. Melhor conduta?",
     "choices": [
-      "Solicitar imediatamente RM de crânio",
-      "Iniciar estimulação como se houvesse atraso grave",
-      "Suspender aleitamento e introduzir fórmula exclusivamente",
-      "Manter acompanhamento de rotina; desenvolvimento adequado para a idade"
+      "Suspender o peito e iniciar fórmula integral imediatamente",
+      "Indicar antibiótico materno de amplo espectro de rotina",
+      "Orientar intervalo fixo de 6/6 horas entre mamadas",
+      "Corrigir a pega/posição e manter aleitamento, com manejo da fissura"
     ],
     "answer": 3,
-    "explain": "Marcos e crescimento adequados → reforçar puericultura e orientação alimentar oportuna."
+    "explain": "Fissura com pega inadequada melhora com técnica e suporte. Suspensão desnecessária do peito e intervalos rígidos prejudicam o aleitamento. Antibiótico não é rotina sem mastite infecciosa.",
+    "trap": "Trocar para fórmula na primeira dor mamilar, sem ajustar a pega."
   },
   {
     "id": "ped-puer-006",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Crescimento/DNPM",
-    "exam": "enare",
+    "theme": "Introdução alimentar",
+    "exam": "usp",
     "year": 2023,
-    "difficulty": "media",
-    "stem": "Criança de 18 meses ainda não anda sem apoio e não fala palavras com significado. Gestação e neonatal sem intercorrências. Qual a conduta mais adequada?",
+    "difficulty": "dificil",
+    "stem": "Lactente de 6 meses em AME, prontidão adequada. A família pergunta sobre consistência e alérgenos. Qual orientação é a mais correta?",
     "choices": [
-      "Investigar atraso de DNPM e encaminhar para avaliação especializada/estimulação precoce",
-      "Aguardar até os 4 anos para qualquer avaliação",
-      "Diagnosticar autismo apenas pelo atraso motor",
-      "Indicar cirurgia ortopédica de rotina"
+      "Manter só líquidos até 12 meses para evitar engasgo",
+      "Iniciar complementar com alimentos em papa/amassados e introduzir alérgenos precocemente de forma segura",
+      "Evitar absolutamente ovo e amendoim até os 5 anos",
+      "Oferecer mel como adoçante natural desde os 6 meses"
     ],
-    "answer": 0,
-    "explain": "Não andar aos 18 meses e ausência de palavras exige investigação e intervenção precoce."
+    "answer": 1,
+    "explain": "Aos 6 meses inicia-se alimentação complementar em consistência adequada; introdução precoce de alérgenos pode reduzir alergia em risco. Mel é contraindicado abaixo de 1 ano pelo botulismo.",
+    "trap": "Atrasar alérgenos 'por precaução' e oferecer mel precocemente."
   },
   {
     "id": "ped-puer-007",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Crescimento/DNPM",
-    "exam": "enare",
-    "year": 2023,
-    "difficulty": "media",
-    "stem": "Pré-escolar com queda do percentil de peso de P50 para P3 em 6 meses, apetite seletivo e telas prolongadas nas refeições. Primeiro passo na abordagem?",
+    "theme": "Vitamina D / ferro",
+    "exam": "usp",
+    "year": 2025,
+    "difficulty": "dificil",
+    "stem": "RN a termo em AME exclusivo. Qual suplementação preventiva é recomendada na puericultura brasileira típica?",
     "choices": [
-      "Indicar gastrostomia de imediato",
-      "Prescrever corticoides anabolizantes",
-      "Internar em UTI para nutrição parenteral sem avaliação",
-      "Avaliar história alimentar, dinâmica das refeições e causas orgânicas comuns; orientar rotina"
+      "Vitamina D desde os primeiros dias e ferro a partir de cerca de 6 meses (ou conforme protocolo local para termo)",
+      "Nenhuma suplementação se o peito for exclusivo",
+      "Vitamina A megadose mensal desde o nascimento",
+      "Cálcio endovenoso semanal de rotina"
     ],
-    "answer": 3,
-    "explain": "Queda ponderal: anamnese alimentar/psicossocial + exclusão de orgânico; orientação da rotina alimentar."
+    "answer": 0,
+    "explain": "AME não fornece vitamina D suficiente; a suplementação precoce é padrão. Ferro profilático no termo costuma iniciar perto dos 6 meses (prematuros mais cedo). Megadoses e cálcio EV não são rotina.",
+    "trap": "Achar que aleitamento exclusivo dispensa qualquer suplemento."
   },
   {
     "id": "ped-puer-008",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Aleitamento",
-    "exam": "usp",
-    "year": 2024,
-    "difficulty": "facil",
-    "stem": "RN de 10 dias, perda ponderal de 12% em relação ao nascimento, mamadas demoradas, dor materna no mamilo e esvaziamento incompleto. Conduta prioritária?",
+    "theme": "Obesidade",
+    "exam": "amp",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "Escolar de 8 anos com IMC acima do percentil 97, acantose nigricans e história familiar de DM2. Qual o próximo passo mais adequado na abordagem inicial?",
     "choices": [
-      "Avaliar e corrigir pega/posição, aumentar frequência de mamadas e acompanhar ganho de peso",
-      "Suspender aleitamento e iniciar fórmula sem tentativa de correção",
-      "Antibiótico materno de rotina sem avaliação",
-      "Internação para fototerapia sem checar icterícia"
+      "Indicar bariátrica imediatamente como primeira medida",
+      "Prescrever insulina basal mesmo com glicemia normal",
+      "Ignorar o IMC porque a criança ainda está em crescimento",
+      "Avaliar comorbidades (glicemia/perfil metabólico) e iniciar mudanças intensivas de estilo de vida"
     ],
-    "answer": 0,
-    "explain": "Perda >10% e dificuldades de pega: suporte ao aleitamento, correção técnica e monitoramento."
+    "answer": 3,
+    "explain": "Obesidade com sinais de resistência insulínica pede rastreio de comorbidades e intervenção comportamental familiar. Cirurgia e insulina não são primeira linha nesse cenário inicial.",
+    "trap": "Esperar o fim do crescimento para abordar obesidade grave."
   },
   {
     "id": "ped-puer-009",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Aleitamento",
-    "exam": "enamed",
+    "theme": "Sono / choro",
+    "exam": "amp",
     "year": 2022,
-    "difficulty": "facil",
-    "stem": "Mãe HIV positiva em acompanhamento, deseja amamentar. No Brasil, qual a orientação padrão de alimentação do RN em relação ao aleitamento materno?",
+    "difficulty": "media",
+    "stem": "Lactente de 6 semanas chora intensamente no fim da tarde, ganha peso bem, exame normal e episódios autolimitados. Pais exaustos. Melhor conduta?",
     "choices": [
-      "Contraindicar aleitamento materno e oferecer fórmula infantil conforme protocolo",
-      "Estimular aleitamento exclusivo sem restrições",
-      "Permitir aleitamento apenas à noite",
-      "Indicar aleitamento misto livre sem orientação"
+      "Solicitar imediatamente TC de crânio sem sinais focais",
+      "Orientar sobre cólica/choro fisiológico, técnicas de acalento e sinais de alarme para retorno",
+      "Trocar para fórmula de soja sem avaliação",
+      "Iniciar opioide antitussígeno para sedar o choro"
     ],
-    "answer": 0,
-    "explain": "No Brasil, mães vivendo com HIV não devem amamentar; usa-se fórmula e medidas do protocolo."
+    "answer": 1,
+    "explain": "Choro do fim da tarde com crescimento e exame normais é compatível com cólica. Educação e suporte são a base; exames de imagem e sedativos são inadequados.",
+    "trap": "Medicalizar choro fisiológico com exames invasivos ou mudança alimentar precoce."
   },
   {
     "id": "ped-puer-010",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Aleitamento",
+    "theme": "Higiene / segurança",
     "exam": "usp",
     "year": 2025,
     "difficulty": "dificil",
-    "stem": "Lactente de 3 meses em AME, mãe retorna ao trabalho. Qual orientação está mais alinhada à promoção do aleitamento?",
+    "stem": "Consulta de 4 meses: pais perguntam sobre transporte no carro e posição para dormir. Qual orientação é a mais segura?",
     "choices": [
-      "Interromper aleitamento definitivamente aos 3 meses",
-      "Introduzir mel para complementar calorias",
-      "Ordenha e armazenamento adequado do leite; manter AME até 6 meses se possível",
-      "Oferecer chá de erva-doce em substituição às mamadas"
+      "Dormir de bruços para reduzir refluxo, sem outras medidas",
+      "Sono em decúbito dorsal em superfície firme e uso de bebê-conforto/cadeirinha adequada no banco traseiro",
+      "Viajar no colo do adulto com cinto do adulto envolvendo os dois",
+      "Usar travesseiros e protetores soltos no berço para 'aconchego'"
     ],
-    "answer": 2,
-    "explain": "AME até 6 meses; ordenha e conservação correta permitem manutenção do aleitamento."
+    "answer": 1,
+    "explain": "Decúbito dorsal e berço seguro reduzem risco de morte súbita. Cadeirinha correta é obrigatória; colo com cinto do adulto é perigoso. Objetos soltos no berço aumentam risco.",
+    "trap": "Colocar o bebê de bruços 'para não engasgar com refluxo'."
   },
   {
     "id": "ped-puer-011",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Aleitamento",
-    "exam": "santa-casa",
+    "theme": "Triagem / saúde bucal",
+    "exam": "unifesp",
     "year": 2024,
-    "difficulty": "facil",
-    "stem": "Qual alimento é contraindicado abaixo de 1 ano de idade pelo risco de botulismo?",
+    "difficulty": "dificil",
+    "stem": "Criança de 12 meses ainda sem primeira consulta odontológica, usa mamadeira noturna com leite adoçado. Qual a melhor orientação?",
     "choices": [
-      "Banana amassada após 6 meses",
-      "Mel",
-      "Carne bem cozida na introdução alimentar",
-      "Iogurte natural sem açúcar após idade apropriada"
+      "Aguardar a troca da dentição permanente para cuidar dos dentes",
+      "Indicar refrigerante 'diet' à noite como substituto",
+      "Prescrever antibiótico mensal para prevenir cáries",
+      "Encaminhar ao odontopediatra e suspender açúcar/mamadeira noturna cariogênica"
     ],
-    "answer": 1,
-    "explain": "Mel é contraindicado <1 ano pelo risco de botulismo infantil."
+    "answer": 3,
+    "explain": "A primeira avaliação odontológica deve ser precoce; mamadeira noturna açucarada favorece cárie de estresse precoce. Antibiótico não previne cárie.",
+    "trap": "Adiar cuidado bucal até a dentição permanente."
   },
   {
     "id": "ped-puer-012",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Anemia ferropriva prevenção",
-    "exam": "enare",
-    "year": 2025,
-    "difficulty": "media",
-    "stem": "Lactente a termo, 6 meses, em aleitamento materno, inicia alimentação complementar. Qual medida preventiva de anemia ferropriva é recomendada na prática brasileira?",
+    "theme": "Anemia ferropriva",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "facil",
+    "stem": "Lactente de 14 meses alimentado predominantemente com leite de vaca integral e poucos alimentos ferrosos apresenta palidez e Hb 8,9 g/dL, VCM baixo. Melhor conduta inicial?",
     "choices": [
-      "Suplementação profilática de ferro conforme protocolo (e alimentação rica em ferro)",
-      "Evitar qualquer fonte de ferro até os 2 anos",
-      "Transfusão sanguínea profilática trimestral",
-      "Vitamina C isolada sem atenção ao ferro"
+      "Iniciar reposição de ferro e orientar diversificação alimentar, investigando resposta",
+      "Transfundir concentrado de hemácias de rotina por Hb < 10",
+      "Indicar medula óssea imediata sem tentativa terapêutica",
+      "Prescrever apenas vitamina B12 intramuscular sem ferro"
     ],
     "answer": 0,
-    "explain": "Profilaxia com ferro (esquema MS/SBP) e introdução de alimentos fontes de ferro."
+    "explain": "Perfil microcítico com dieta pobre em ferro e leite de vaca excessivo é ferropriva clássica. Ferro terapêutico e dieta são a base; transfusão e mielograma não são primeiro passo se estável.",
+    "trap": "Transfundir anemia ferropriva crônica estável só pelo número da Hb."
   },
   {
     "id": "ped-puer-013",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Anemia ferropriva prevenção",
-    "exam": "unifesp",
-    "year": 2023,
-    "difficulty": "facil",
-    "stem": "Prematuro de 34 semanas, agora com 2 meses de idade corrigida, em seguimento ambulatorial. Em relação ao ferro, qual afirmação é mais correta?",
+    "theme": "Puberdade precoce",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "dificil",
+    "stem": "Menina de 6 anos e 8 meses com telarca progressiva, aceleração estatural e idade óssea avançada. Qual o próximo passo mais adequado?",
     "choices": [
-      "Prematuros nunca precisam de ferro suplementar",
-      "Ferro só se inicia após os 5 anos",
-      "Prematuros têm maior risco de deficiência e geralmente necessitam suplementação mais precoce/intensificada",
-      "Anemia ferropriva não ocorre em prematuros"
+      "Encaminhar para avaliação endocrinológica de puberdade precoce central vs periférica",
+      "Apenas observar até os 12 anos sem investigação",
+      "Iniciar contraceptivo oral combinado imediatamente",
+      "Diagnosticar obesidade isolada e liberar sem exames"
     ],
-    "answer": 2,
-    "explain": "Reservas de ferro são menores no prematuro; suplementação costuma ser mais precoce."
+    "answer": 0,
+    "explain": "Telarca + aceleração de crescimento antes de 8 anos exige investigação de puberdade precoce. Observação passiva pode comprometer altura final. ACO não é o tratamento específico.",
+    "trap": "Normalizar telarca precoce como 'obesidade' sem avaliar eixo e idade óssea."
   },
   {
     "id": "ped-puer-014",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Vacinas/PNI",
+    "theme": "Enurese",
     "exam": "amp",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "Criança de 5 anos chega para reforço escolar. Qual vacina de reforço é típica nessa idade no calendário nacional?",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "Menino de 7 anos com enurese noturna primária, diurnos secos, exame normal e sem poliúria. Família solicita 'exame de imagem urgente'. Melhor conduta?",
     "choices": [
-      "DTP (ou reforço tríplice bacteriana) e VIP/VOP conforme esquema vigente, além de SCR se indicado",
-      "Apenas vacina contra COVID como única dose da vida",
-      "Rotavírus de reforço aos 5 anos",
-      "BCG anual obrigatória"
+      "Orientar medidas comportamentais e considerar alarme/desmopressina conforme impacto, sem imagem de rotina",
+      "Solicitar urografia excretora e cistoscopia de imediato",
+      "Indicar cirúrgica de reimplante ureteral empírico",
+      "Restringir absolutamente líquidos por 24 h antes da escola"
     ],
     "answer": 0,
-    "explain": "Por volta dos 4–5 anos há reforços de DTP e pólio (e verificação de SCR), conforme PNI."
+    "explain": "Enurese monosintomática primária com exame normal não pede imagem invasiva inicial. Educação, alarme e, em casos selecionados, desmopressina são o caminho.",
+    "trap": "Partir para investigação urológica invasiva sem critérios de alarme."
   },
   {
     "id": "ped-puer-015",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Crescimento/DNPM",
+    "theme": "Tela / comportamento",
     "exam": "enare",
-    "year": 2024,
+    "year": 2022,
     "difficulty": "dificil",
-    "stem": "Na curva de crescimento, menina de 4 anos está no P97 de IMC, com história familiar de obesidade. Melhor abordagem inicial?",
+    "stem": "Pré-escolar de 3 anos passa mais de 4 horas/dia em telas, com irritabilidade e atraso de linguagem. Qual a orientação mais adequada?",
     "choices": [
-      "Cirurgia bariátrica imediata",
-      "Dieta cetogênica rígida sem acompanhamento",
-      "Orientar hábitos alimentares e atividade física; investigar comorbidades conforme indicação",
-      "Apenas tranquilizar sem qualquer orientação"
+      "Reduzir drasticamente o tempo de tela e estimular interação verbal presencial",
+      "Aumentar desenhos educativos para compensar o atraso",
+      "Iniciar metilfenidato empírico por irritabilidade",
+      "Indicar internação psiquiátrica imediata"
     ],
-    "answer": 2,
-    "explain": "Obesidade infantil: mudanças de estilo de vida e rastreio de comorbidades; evitar medidas extremas iniciais."
+    "answer": 0,
+    "explain": "Excesso de tela associa-se a atraso de linguagem; a intervenção inicial é limitar exposição e enriquecer interação. Estimulante empírico é inadequado.",
+    "trap": "Substituir interação humana por 'mais conteúdo educativo' em tela."
   },
   {
     "id": "ped-puer-016",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Crescimento/DNPM",
-    "exam": "amp",
-    "year": 2022,
-    "difficulty": "facil",
-    "stem": "Lactente de 9 meses não senta sem apoio e apresenta hipotonia. Reflexo de Moro ainda presente. Conduta?",
+    "theme": "Calendário vacinal / atraso",
+    "exam": "unifesp",
+    "year": 2025,
+    "difficulty": "media",
+    "stem": "Criança de 4 anos chega sem carteira e a mãe refere 'quase nenhuma vacina'. Estado geral bom. Qual a melhor conduta?",
     "choices": [
-      "Encaminhar para avaliação neurológica/DNPM por atraso motor e persistência de reflexo primitivo",
-      "Considerar normal até os 2 anos sem avaliação",
-      "Indicar apenas troca de fórmula",
-      "Prescrever antibiótico empírico"
+      "Aplicar todas as doses da vida no mesmo instante sem planejamento",
+      "Iniciar esquema de atualização (catch-up) conforme calendário e idade, sem reiniciar do zero desnecessariamente",
+      "Aguardar documentos escolares para qualquer vacina",
+      "Contraindicar vacinas porque o atraso 'anula' o benefício"
     ],
-    "answer": 0,
-    "explain": "Não sentar aos 9 meses + Moro persistente sugere atraso/neurológico — avaliação especializada."
+    "answer": 1,
+    "explain": "Atraso vacinal se corrige com catch-up por idade, priorizando proteção. Falta de caderneta não impede vacinação; doses podem ser registradas e agendadas de forma segura.",
+    "trap": "Recusar vacinar até aparecer a caderneta antiga."
   },
   {
     "id": "ped-puer-017",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Anemia ferropriva prevenção",
-    "exam": "santa-casa",
-    "year": 2022,
-    "difficulty": "media",
-    "stem": "Pré-escolar de 2 anos com dieta baseada em leite de vaca em excesso (>700 mL/dia) e poucos alimentos com ferro. Principal risco nutricional?",
+    "theme": "Prevenção de acidentes",
+    "exam": "enare",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "Família com criança de 2 anos pergunta sobre prevenção no domicílio. Qual medida tem maior impacto nessa faixa?",
     "choices": [
-      "Escorbuto por excesso de vitamina C",
-      "Hipervitaminose D exclusiva",
-      "Deficiência de vitamina K por leite",
-      "Anemia ferropriva"
+      "Permitir álcool em gel ao alcance para 'higiene autônoma'",
+      "Deixar baldes com água no quintal para brincar",
+      "Supervisionar, manter medicamentos/produtos de limpeza trancados e proteger escadas/tomadas",
+      "Guardar cloro em garrafa de refrigerante na cozinha baixa"
     ],
-    "answer": 3,
-    "explain": "Excesso de leite de vaca e baixa ingestão de ferro → clássico risco de anemia ferropriva."
+    "answer": 2,
+    "explain": "Intoxicações e afogamento doméstico são riscos centrais no toddler. Acesso a químicos e água acumulada deve ser bloqueado. Repackaging de cloro em garrafa de bebida é clássico de acidente.",
+    "trap": "Subestimar afogamento em pequenos volumes de água e intoxicação por produtos domésticos."
   },
   {
     "id": "ped-puer-018",
     "specialty": "pediatria",
     "group": "Puericultura",
-    "theme": "Vacinas/PNI",
-    "exam": "unifesp",
+    "theme": "Crescimento / percentis",
+    "exam": "enare",
     "year": 2023,
     "difficulty": "media",
-    "stem": "RN na maternidade, mãe AgHBs positiva. Além da vacina hepatite B nas primeiras 12–24 h, qual medida adicional é indicada?",
+    "stem": "Menina de 3 anos caiu do percentil 50 para o 10 de estatura em 12 meses, com ganho ponderal preservado e cansaço. Qual a conduta mais adequada?",
     "choices": [
-      "Imunoglobulina específica para hepatite B o mais breve possível",
-      "Aguardar sorologia do RN aos 6 meses para decidir vacina",
-      "Isolar o RN sem vacinar",
-      "Indicar apenas vitamina K como profilaxia da hepatite"
+      "Apenas tranquilizar porque ainda está acima do percentil 3",
+      "Investigar causas de desaceleração estatural (incluindo tireoide e doença crônica)",
+      "Prescrever GH empírico sem investigação",
+      "Indicar dieta restritiva para 'afinamento'"
     ],
-    "answer": 0,
-    "explain": "Filho de mãe AgHBs+: vacina HepB + imunoglobulina específica precocemente."
+    "answer": 1,
+    "explain": "Queda cruzando percentis de estatura é sinal de alerta, mesmo acima do P3. Exige investigação etiológica antes de qualquer hormônio. Dieta restritiva é inadequada.",
+    "trap": "Aceitar qualquer valor acima do P3 como crescimento normal, ignorando a velocidade."
   },
   {
     "id": "ped-inf-001",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Meningite",
-    "exam": "enamed",
-    "year": 2025,
-    "difficulty": "facil",
-    "stem": "Lactente de 8 meses com febre, irritabilidade, fontanela abaulada e recusa alimentar. Suspeita de meningite bacteriana. Após estabilização e coleta quando possível, qual antibioticoterapia empírica inicial típica nessa idade?",
+    "theme": "Dengue",
+    "exam": "enare",
+    "year": 2024,
+    "difficulty": "dificil",
+    "stem": "Escolar de 9 anos no 4º dia de febre, dor retro-ocular e mialgia, plaquetas 78.000/mm³, hematócrito estável, bom estado geral, pressão arterial normal, sem sangramento espontâneo, aceitando líquidos. Qual a melhor conduta?",
     "choices": [
-      "Apenas penicilina G isolada",
-      "Oseltamivir como monoterapia",
-      "Isoniazida + rifampicina sem cobrir pneumococo/meningococo",
-      "Ceftriaxona (ou cefotaxima) associada a vancomicina, conforme protocolo local"
+      "Transfundir plaquetas imediatamente pelo número isolado",
+      "Hidratação vigorosa ambulatorial/observação conforme grupo clínico e reavaliação seriada",
+      "Prescrever AAS para a dor e febre",
+      "Internar em UTI e iniciar noradrenalina empírico"
     ],
-    "answer": 3,
-    "explain": "Meningite bacteriana comunitária: cefalosporina de 3ª geração ± vancomicina (resistência pneumocócica)."
+    "answer": 1,
+    "explain": "Em dengue, a classificação e a hidratação guiam o manejo mais do que a plaquetopenia isolada em paciente estável. AAS aumenta risco de sangramento. Transfusão de plaquetas não é automática pelo valor laboratorial.",
+    "trap": "Transfundir plaquetas só porque estão baixas, sem sangramento ou procedimento, e usar AAS."
   },
   {
     "id": "ped-inf-002",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Meningite",
-    "exam": "amp",
+    "theme": "Dengue",
+    "exam": "enamed",
     "year": 2022,
-    "difficulty": "media",
-    "stem": "Escolar com meningite meningocócica confirmada. Além do tratamento do caso índice, qual medida é essencial para contatos domiciliares íntimos?",
+    "difficulty": "dificil",
+    "stem": "Adolescente com dengue, dor abdominal intensa, vômitos, hematócrito em elevação rápida e extremidades frias. Qual a prioridade?",
     "choices": [
-      "Vacinar apenas o caso índice após alta, sem profilaxia dos contatos",
-      "Isolamento dos contatos por 40 dias sem medicação",
-      "Quimioprofilaxia dos contatos íntimos conforme protocolo",
-      "Corticoterapia em todos os contatos assintomáticos"
+      "Aumentar oferta oral exclusiva em domicilio sem reavaliação",
+      "Administrar diurético de alça para 'desinchar'",
+      "Reconhecer extravasamento plasmático e hidratar com cristaloides conforme protocolo de dengue grave/com sinais de alarme",
+      "Iniciar AAS e dexametasona empíricos"
     ],
     "answer": 2,
-    "explain": "Contatos íntimos de doença meningocócica recebem quimioprofilaxia (ex.: rifampicina/ceftriaxona/cipro conforme guia)."
+    "explain": "Dor abdominal, vômitos persistentes, hemoconcentração e má perfusão indicam extravasamento. Cristaloides e vigilância são centrais; diurético e AAS são prejudiciais nessa fase.",
+    "trap": "Tratar má perfusão da dengue como desidratação simples ambulatorial ou como congestão a ser diuretada."
   },
   {
     "id": "ped-inf-003",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Dengue",
+    "theme": "Sarampo / exantemas",
     "exam": "santa-casa",
-    "year": 2025,
+    "year": 2024,
     "difficulty": "dificil",
-    "stem": "Criança de 7 anos no 4º dia de dengue, plaquetas 90.000, hematócrito estável, sem sangramento, alimentando-se e urinando bem. Sem sinais de alarme. Conduta?",
+    "stem": "Pré-escolar não vacinado, febre alta, coriza, conjuntivite e, no 4º dia, exantema máculo-papular cefalocaudal com manchas esbranquiçadas na mucosa oral. Diagnóstico mais provável?",
     "choices": [
-      "Internação em UTI e expansão agressiva com coloides de rotina",
-      "Manejo ambulatorial com hidratação oral vigorosa, analgesia sem AINE e retorno se alarme",
-      "Transfusão de plaquetas profilática",
-      "AAS em dose antiagregante"
+      "Sarampo",
+      "Roséola apenas, pelo exantema após defervescência",
+      "Escarlatina sem faringite",
+      "Urticária aguda por alimento"
     ],
-    "answer": 1,
-    "explain": "Sem sinais de alarme e estável: hidratação oral, evitar AAS/AINE, vigilância de alarme."
+    "answer": 0,
+    "explain": "Tríade tosse/coriza/conjuntivite, febre e exantema cefalocaudal com enantema (Koplik) apontam sarampo, especialmente em não vacinado. Roséola tipicamente exantema após queda da febre.",
+    "trap": "Chamar de roséola qualquer exantema viral sem olhar o timing da febre e o enantema."
   },
   {
     "id": "ped-inf-004",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Dengue",
-    "exam": "usp",
-    "year": 2024,
-    "difficulty": "facil",
-    "stem": "Adolescente com dengue apresenta dor abdominal intensa, vômitos persistentes, aumento rápido do hematócrito e pulso fino. Classificação e prioridade?",
+    "theme": "Kawasaki",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "dificil",
+    "stem": "Menino de 3 anos com febre há 6 dias, injeção conjuntival não exsudativa, língua em framboesa, exantema polimorfo, edema de mãos e descamação periungueal inicial. Qual a melhor conduta?",
     "choices": [
-      "Dengue com sinais de alarme/grave em evolução; hidratação venosa supervisionada imediata",
-      "Dengue clássica sem risco; alta com dipirona apenas",
-      "Indicação exclusiva de antibiótico de amplo espectro",
-      "Antiviral específico obrigatório em todos os casos"
+      "Tratar apenas com amoxicilina ambulatorial por 10 dias",
+      "Aguardar 14 dias de febre para confirmar diagnóstico",
+      "Internar e iniciar imunoglobulina EV e AAS em doses adequadas, com ecocardiograma",
+      "Indicar anticoagulação plena empírica sem avaliação coronariana"
     ],
-    "answer": 0,
-    "explain": "Sinais de alarme → observação e hidratação IV criteriosa; pode evoluir para choque."
+    "answer": 2,
+    "explain": "Critérios de Kawasaki com febre ≥5 dias exigem IGIV precoce e AAS, além de avaliação coronariana. Antibiótico isolado não trata a vasculite. Atrasar aumenta risco de aneurisma.",
+    "trap": "Esperar 'todos os critérios clássicos por mais tempo' e perder a janela da IGIV."
   },
   {
     "id": "ped-inf-005",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "IVAS",
-    "exam": "enamed",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "Pré-escolar com coriza, tosse e febre baixa há 3 dias, orofaringe hiperemiada sem exsudato, sem dificuldade respiratória. Melhor conduta?",
+    "theme": "Meningite",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Lactente de 8 meses com febre, irritabilidade, fontanela tensa e vômitos. Estável hemodinamicamente. Qual o exame mais adequado para confirmar a hipótese central?",
     "choices": [
-      "Amoxicilina por 10 dias em todos os casos",
-      "Medidas de suporte; antibiótico não indicado de rotina",
-      "Corticoterapia sistêmica de rotina",
-      "Internação para oxigênio mesmo com saturação normal"
+      "Punção lombar com análise do líquor (após estabilidade e sem contraindicação)",
+      "Apenas hemograma, adiando o líquor indefinidamente",
+      "Radiografia de crânio em duas incidências",
+      "Teste rápido de estreptococo faríngeo como substituto"
     ],
-    "answer": 1,
-    "explain": "IVAS viral: suporte. Antibiótico só se critérios de bacterialidade (ex.: otite/faringite estreptocócica)."
+    "answer": 0,
+    "explain": "Suspeita de meningite bacteriana no lactente pede líquor tão logo seja seguro. Hemograma isolado não confirma. Imagem de crânio simples não substitui PL.",
+    "trap": "Tratar empiricamente sem líquor quando não há contraindicação, perdendo definição etiológica."
   },
   {
     "id": "ped-inf-006",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Pneumonia",
-    "exam": "unifesp",
-    "year": 2023,
+    "theme": "Otite / faringite",
+    "exam": "enamed",
+    "year": 2025,
     "difficulty": "media",
-    "stem": "Criança de 3 anos com febre, taquipneia, tiragem subcostal e crepitações unilaterais. SatO2 96% em ar ambiente, aceitando via oral. Conduta inicial típica para pneumonia comunitária sem sinais de gravidade?",
+    "stem": "Escolar com odinofagia, febre, exsudato amigdaliano e linfonodos cervicais dolorosos, sem tosse. Teste rápido de estreptococo positivo. Melhor conduta?",
     "choices": [
-      "Vancomicina IV de rotina em todos",
-      "Amoxicilina oral e reavaliação ambulatorial próxima",
-      "Oseltamivir isolado sem considerar bacteriano",
-      "Observação sem antibiótico em pneumonia bacteriana típica com tiragem"
+      "Apenas sintomáticos, pois toda faringite é viral",
+      "Oseltamivir empírico",
+      "Antibiótico adequado para Streptococcus pyogenes (ex.: penicilina/amoxicilina)",
+      "Corticoterapia prolongada sem antibiótico"
     ],
-    "answer": 1,
-    "explain": "PAC sem gravidade: amoxicilina é primeira linha empírica em muitas faixas; gravidade indica internação."
+    "answer": 2,
+    "explain": "Critérios clínicos + teste positivo confirmam faringite estreptocócica; antibiótico reduz complicações. Nem toda faringite é viral — o teste guia a decisão.",
+    "trap": "Negar antibiótico em faringite estreptocócica documentada por 'evitar uso excessivo' de forma absoluta."
   },
   {
     "id": "ped-inf-007",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Diarreia/desidratação infecciosa",
-    "exam": "enare",
-    "year": 2023,
-    "difficulty": "facil",
-    "stem": "Lactente de 11 meses com diarreia aquosa há 2 dias, sem sangue, ativo, olhos úmidos, bebe com vontade. Qual plano de hidratação?",
+    "theme": "IVAS / antibiótico",
+    "exam": "unifesp",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Pré-escolar com coriza, tosse e febre baixa há 3 dias, otoscopia normal, ausculta limpa e bom estado. Mãe insiste em antibiótico 'para não virar pneumonia'. Melhor conduta?",
     "choices": [
-      "Plano C com SF 0,9% em bolus repetidos na UTI",
-      "Suspender alimentação por 72 horas",
-      "Loperamida de rotina",
-      "Plano A: SRO no domicílio, manter alimentação e orientar sinais de alarme"
+      "Prescrever azitromicina 'por precaução'",
+      "Solicitar TC de tórax de rotina",
+      "Orientar suporte sintomático e sinais de alarme; não indicar antibiótico neste momento",
+      "Internar para oxigênio e ceftriaxona empíricos"
     ],
-    "answer": 3,
-    "explain": "Sem desidratação: Plano A (SRO preventivo, alimentação, vigilância)."
+    "answer": 2,
+    "explain": "Quadro típico de IVAS viral autolimitada não se beneficia de antibiótico. TC e internação são desproporcionais sem gravidade.",
+    "trap": "Ceder à pressão por antibiótico profilático em resfriado comum."
   },
   {
     "id": "ped-inf-008",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Diarreia/desidratação infecciosa",
-    "exam": "enare",
+    "theme": "Tuberculose",
+    "exam": "enamed",
     "year": 2023,
-    "difficulty": "media",
-    "stem": "Pré-escolar com diarreia, muco e sangue, febre e tenesmo. Qual etiologia é mais sugestiva?",
+    "difficulty": "dificil",
+    "stem": "Criança de 5 anos contato intradomiciliar de TB pulmonar bacilífera, assintomática, radiografia normal, prova tuberculínica de 12 mm, sem BCG recente explicando o valor. Qual a melhor conduta?",
     "choices": [
-      "Rotavírus exclusivamente aquoso sem sangue",
-      "Diarreia invasiva (ex.: Shigella/Salmonella/Campylobacter)",
-      "Intolerância à lactose como única causa de sangue",
-      "Doença celíaca aguda febril típica"
+      "Tratar infecção latente pelo esquema indicado na faixa etária/protocolo",
+      "Esquema completo de TB doença com 4 drogas por 6 meses sem outros critérios",
+      "Apenas repetir radiografia em 1 ano sem quimioprofilaxia",
+      "Isolar em UTI e iniciar corticoterapia isolada"
     ],
-    "answer": 1,
-    "explain": "Disenteria (sangue/muco/febre) sugere enteropatógeno invasivo."
+    "answer": 0,
+    "explain": "Contato + PT positiva sem sinais de doença configura infecção latente, tratada com esquema próprio. TB doença exige critérios clínicos/radiológicos/bacteriológicos.",
+    "trap": "Tratar como TB doença todo contato com PT positiva, ou não tratar latente."
   },
   {
     "id": "ped-inf-009",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Exantemas",
+    "theme": "HIV pediátrico",
     "exam": "enare",
     "year": 2025,
     "difficulty": "media",
-    "stem": "Lactente 10 meses: febre alta por 3 dias que cessa, seguida de exantema maculopapular róseo no tronco. Diagnóstico mais provável?",
+    "stem": "Lactente filho de mãe HIV+, com carga viral materna alta no parto, sem profilaxia adequada. Com 6 semanas apresenta candidíase oral exuberante e pneumonia. Qual a prioridade diagnóstica?",
     "choices": [
-      "Sarampo clássico com tosse/coriza/conjuntivite e manchas de Koplik",
-      "Varicela com vesículas em vários estágios",
-      "Exantema súbito (roséola, HHV-6)",
-      "Escarlatina com sandpaper rash e Signal de Pastia"
+      "Apenas ELISA materno repetido na criança como único exame",
+      "Aguardar sorologia após os 18 meses sem investigação atual",
+      "Tratar só candidíase tópica e liberar sem follow-up",
+      "Teste virológico para HIV (não apenas sorologia) e avaliação de infecções oportunistas"
     ],
-    "answer": 2,
-    "explain": "Roséola: febre alta → defervescência → exantema."
+    "answer": 3,
+    "explain": "Em menores de 18 meses, diagnóstico de HIV exige teste virológico. Clínica sugestiva e falha de profilaxia aumentam urgência. Sorologia isolada reflete anticorpos maternos.",
+    "trap": "Usar só sorologia precoce como regra-out definitivo de infecção."
   },
   {
     "id": "ped-inf-010",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Exantemas",
-    "exam": "enamed",
+    "theme": "Imunização pós-exposição",
+    "exam": "usp",
     "year": 2023,
-    "difficulty": "facil",
-    "stem": "Escolar com febre, tosse, coriza, conjuntivite e exantema céfalo-caudal; há manchas esbranquiçadas na mucosa oral. Diagnóstico?",
+    "difficulty": "media",
+    "stem": "Adolescente não vacinado contra hepatite B sofre exposição percutânea com sangue de fonte HBsAg positiva há 8 horas. Melhor conduta?",
     "choices": [
-      "Roséola",
-      "Sarampo",
-      "Eritema infeccioso (parvovírus) sem pródomos respiratórios intensos",
-      "Urticária aguda isolada"
+      "Apenas observar sintomas por 6 meses",
+      "Imunoglobulina específica e iniciar esquema vacinal o mais precocemente possível",
+      "Indicar interferon empírico imediato",
+      "Única dose de vacina após 30 dias"
     ],
     "answer": 1,
-    "explain": "Sarampo: pródomos (3C) + Koplik + exantema céfalo-caudal."
+    "explain": "Pós-exposição a fonte HBsAg+ em suscetível: HBIG + vacina precoces. Observação isolada é insuficiente.",
+    "trap": "Adiar imunoprofilaxia para 'ver se aparece icterícia'."
   },
   {
     "id": "ped-inf-011",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "ITU",
-    "exam": "enare",
+    "theme": "Varicela / zoster",
+    "exam": "unifesp",
     "year": 2023,
-    "difficulty": "facil",
-    "stem": "Lactente febril de 3 meses, sem foco claro, urinálise com nitrito e leucócitos. Qual a melhor conduta inicial?",
+    "difficulty": "dificil",
+    "stem": "Criança de 2 anos imunocompetente com varicela típica, bom estado, sem sinais de infecção bacteriana secundária. Conduta?",
     "choices": [
-      "Coletar urocultura (método adequado) e iniciar antibiótico; avaliar necessidade de internação pela idade/gravidade",
-      "Tratar só com analgesia sem antibiótico",
-      "Aguardar 7 dias sem coleta de urina",
-      "Cistoscopia de urgência em todos"
+      "Cuidados de suporte e isolamento de contatos suscetíveis de risco; antivirais só em critérios selecionados",
+      "Aciclovir EV de rotina em todo caso ambulatorial",
+      "Antibiótico de amplo espectro para todas as lesões",
+      "Corticoterapia sistêmica para reduzir prurido"
     ],
     "answer": 0,
-    "explain": "ITU febril no lactente: urocultura + ATB; <3 meses frequentemente internar."
+    "explain": "Varicela não complicada em imunocompetente é suporte. Antiviral sistêmico reserva-se a risco/complicação. Corticoide pode piorar disseminação.",
+    "trap": "Medicalizar varicela leve com aciclovir EV e antibiótico 'por segurança'."
   },
   {
     "id": "ped-inf-012",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "ITU",
-    "exam": "santa-casa",
-    "year": 2022,
-    "difficulty": "media",
-    "stem": "Menina de 5 anos com disúria, polaciúria, sem febre, bom estado geral. Urocultura com E. coli sensível. Tratamento típico?",
+    "theme": "Mononucleose",
+    "exam": "amp",
+    "year": 2024,
+    "difficulty": "dificil",
+    "stem": "Adolescente com febre, odinofagia exsudativa, linfadenomegalia cervical posterior e esplenomegalia. Iniciou amoxicilina e surgiu rash. Qual a interpretação mais provável?",
     "choices": [
-      "Antibiótico oral de acordo com o antibiograma/padrão local por curso curto adequado",
-      "Nefrectomia parcial",
-      "Apenas aumento de líquidos sem antibiótico em cistite sintomática confirmada",
-      "Vancomicina IV prolongada de rotina"
+      "Alergia IgE grave à amoxicilina comprovada sem outra hipótese",
+      "Escalação imediata para vancomicina e UTI",
+      "Síndrome mononucleose-like (EBV); suspender aminopenicilina e dar suporte",
+      "Leucemia aguda definida só pelo rash medicamentoso"
     ],
-    "answer": 0,
-    "explain": "Cistite não complicada: ATB oral guiado por sensibilidade/padrão empírico local."
+    "answer": 2,
+    "explain": "Quadro clássico de EBV + rash após aminopenicilina é conhecido. Nem todo rash pós-amoxicilina é alergia IgE verdadeira. Manejo é suporte e evitar esporte de contato se baço aumentado.",
+    "trap": "Rotular definitivamente alergia à penicilina e privar o paciente do antibiótico para sempre sem nuance."
   },
   {
     "id": "ped-inf-013",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "IVAS",
-    "exam": "santa-casa",
-    "year": 2023,
+    "theme": "Parasitoses",
+    "exam": "amp",
+    "year": 2024,
     "difficulty": "dificil",
-    "stem": "Criança de 6 anos com odinofagia, febre, exsudato amigdaliano e ausência de tosse. Teste rápido para estreptococo positivo. Conduta?",
+    "stem": "Escolar com prurido anal noturno intenso, sono agitado e exame perianal com estrias. Qual o diagnóstico mais provável e a conduta típica?",
     "choices": [
-      "Apenas xarope antitussígeno",
-      "Antibiótico (ex.: penicilina/amoxicilina) para faringoamigdalite estreptocócica",
-      "Oseltamivir como primeira escolha",
-      "Internação para drenagem sem abscessos"
+      "Ascaridíase pulmonar; iniciar corticoide inalatório",
+      "Enterobíase; tratar com anti-helmíntico adequado e higiene, considerando contactantes",
+      "Alergia alimentar exclusiva; dieta de eliminação ampla",
+      "Candidíase sistêmica; antifúngico EV"
     ],
     "answer": 1,
-    "explain": "Estreptococo do grupo A confirmado: antibiótico para reduzir complicações e transmissão."
+    "explain": "Prurido anal noturno é altamente sugestivo de oxiúrus. Tratamento anti-helmíntico e medidas de higiene/contactantes. Não se confunde com ascaridíase pulmonar.",
+    "trap": "Investigar alergia alimentar complexa antes de considerar enterobíase."
   },
   {
     "id": "ped-inf-014",
     "specialty": "pediatria",
     "group": "Infectologia pediátrica",
-    "theme": "Pneumonia",
+    "theme": "Celulite / abscessos",
     "exam": "unifesp",
-    "year": 2022,
+    "year": 2023,
     "difficulty": "dificil",
-    "stem": "Adolescente com pneumonia atípica (tosse seca, febre baixa, infiltrado intersticial). Qual agente/tratamento empírico é frequentemente considerado?",
+    "stem": "Pré-escolar com febre e área eritematosa quente e dolorosa em perna, sem fluctuação. Qual a melhor conduta inicial?",
     "choices": [
-      "Mycoplasma pneumoniae; macrolídeo quando indicado",
-      "Apenas Staphylococcus aureus comunitário tratado com aciclovir",
-      "Strongyloides como causa típica de pneumonia lobar",
-      "Tratamento exclusivo com antifúngico azólico"
+      "Antibiótico com cobertura para estreptococo/estafilococo e reavaliação seriada",
+      "Apenas compressa morna por 10 dias sem antibiótico",
+      "Cirurgia exploratória óssea imediata sem imagem/indicação",
+      "Antiviral sistêmico empírico"
     ],
     "answer": 0,
-    "explain": "Em escolares/adolescentes, Mycoplasma é causa comum de PAC atípica; macrolídeo é opção clássica."
+    "explain": "Celulite não purulenta típica trata-se com antibiótico dirigido aos cocos gram-positivos e seguimento. Ausência de abscesso não indica drenagem. Antiviral não tem papel.",
+    "trap": "Aguardar 'amadurecer' celulite sem antibiótico, ou operar precocemente sem critério."
   },
   {
     "id": "ped-pneumo-001",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
     "theme": "Bronquiolite",
-    "exam": "enamed",
-    "year": 2025,
-    "difficulty": "facil",
-    "stem": "Lactente de 5 meses, sibilância, tiragem, saturação 90% em ar ambiente, dificuldade para mamar, no pico sazonal de VSR. Conduta hospitalar prioritária?",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Lactente de 5 meses, 3º dia de coriza, agora com taquipneia, sibilos e saturação 96% em ar ambiente, alimentando-se com pausas. Qual a melhor conduta?",
     "choices": [
-      "Corticoterapia sistêmica obrigatória em todos os casos",
-      "Oxigenoterapia e suporte; evitar broncodilatador/corticoide de rotina sem resposta clara",
-      "Antibiótico de amplo espectro de rotina",
-      "Fisioterapia torácica agressiva como tratamento específico"
+      "Corticosteroide sistêmico de rotina em todos os casos",
+      "Salbutamol nebulizado seriado como padrão obrigatório",
+      "Suporte (oxigênio se necessário, hidratação/alimentação) e evitar terapias sem benefício rotineiro",
+      "Antibiótico de amplo espectro por 10 dias"
     ],
-    "answer": 1,
-    "explain": "Bronquiolite: suporte (O2, hidratação). Beta2/corticoide não são rotina."
+    "answer": 2,
+    "explain": "Bronquiolite viral é suporte. Corticoide e broncodilatador não têm benefício rotineiro comprovado; antibiótico só se coinfecção bacteriana. A decisão de internar depende de hipoxemia, dificuldade alimentar e idade.",
+    "trap": "Tratar bronquiolite como crise asmática com corticoide + β2 de rotina."
   },
   {
     "id": "ped-pneumo-002",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Bronquiolite",
-    "exam": "enare",
-    "year": 2022,
-    "difficulty": "facil",
-    "stem": "Lactente com bronquiolite leve, saturação 97%, alimentando-se bem, sem tiragem importante. Conduta?",
+    "theme": "Asma",
+    "exam": "santa-casa",
+    "year": 2025,
+    "difficulty": "dificil",
+    "stem": "Escolar com sibilância recorrente, despertares noturnos e uso de salbutamol >2 vezes/semana. Exame entre crises quase normal. Melhor passo terapêutico de manutenção?",
     "choices": [
-      "Internação obrigatória em UTI",
-      "Ribavirina inalatória em todos",
-      "Manejo ambulatorial com orientações de alarme e higiene das vias aéreas superiores",
-      "Amoxicilina por 10 dias"
+      "Manter só salbutamol sob demanda indefinidamente",
+      "Antibiótico mensal profilático",
+      "Iniciar corticoide inalatório em dose adequada e plano de ação",
+      "Antitussígeno opioide noturno"
     ],
     "answer": 2,
-    "explain": "Formas leves: ambulatorial com critérios de retorno."
+    "explain": "Sintomas frequentes definem necessidade de controle com CI. Resgate isolado não trata inflamação. Antibiótico e opioide não têm papel no controle.",
+    "trap": "Aceitar uso frequente de resgate como 'normal da asma' sem preventivo."
   },
   {
     "id": "ped-pneumo-003",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Asma",
-    "exam": "usp",
+    "theme": "Pneumonia",
+    "exam": "amp",
     "year": 2023,
-    "difficulty": "facil",
-    "stem": "Criança de 8 anos com crise asmática: fala frases, SatO2 94%, sibilos difusos, FR elevada. Primeira linha na crise?",
+    "difficulty": "media",
+    "stem": "Pré-escolar com febre, taquipneia, tiragem e estertores localizados; radiografia com consolidação lobar. Estável, SatO2 94%. Melhor conduta ambulatorial típica?",
     "choices": [
-      "Beta2 de curta duração inalatório + corticoide sistêmico precoce",
-      "Antibiótico de rotina",
-      "Antitussígeno opioide",
-      "Apenas nebulização com SF sem broncodilatador"
+      "Apenas nebulização com soro fisiológico",
+      "Oseltamivir + corticoide sem antibiótico",
+      "Internação em UTI e ventilação invasiva imediata",
+      "Antibiótico empírico para pneumonia adquirida na comunidade (ex.: amoxicilina) e reavaliação"
     ],
-    "answer": 0,
-    "explain": "Crise asmática: SABA + corticoide sistêmico; O2 se hipoxemia; reavaliar gravidade."
+    "answer": 3,
+    "explain": "Consolidação lobar febril com esforço sugere pneumonia bacteriana típica; amoxicilina é primeira linha em muitos protocolos ambulatoriais se não houver gravidade. UTI não é automática com Sat aceitável e estabilidade.",
+    "trap": "Tratar pneumonia lobar só com suporte de bronquiolite."
   },
   {
     "id": "ped-pneumo-004",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Asma",
-    "exam": "santa-casa",
+    "theme": "Corpo estranho",
+    "exam": "amp",
     "year": 2024,
-    "difficulty": "facil",
-    "stem": "Escolar com asma persistente moderada, despertares noturnos semanais apesar de SABA sob demanda. Próximo passo no controle?",
+    "difficulty": "dificil",
+    "stem": "Menino de 2 anos apresentou engasgo súbito com amendoim seguido de tosse e sibilância unilateral persistente. Radiografia pode ser normal na expiração. Qual o próximo passo mais adequado?",
     "choices": [
-      "Manter apenas SABA contínuo de hora em hora no domicílio",
-      "Iniciar/otimizar corticoide inalatório de manutenção e revisar técnica inalatória",
-      "Suspender toda medicação e observar",
-      "Indicar lobectomia"
+      "Corticoterapia prolongada ambulatorial como tratamento definitivo",
+      "Antibiótico por 3 semanas sem investigação",
+      "Observação exclusiva por 30 dias",
+      "Broncoscopia diagnóstica/terapêutica em centro experiente"
     ],
-    "answer": 1,
-    "explain": "Controle inadequado → CI (e educação/técnica); SABA não é manutenção isolada."
+    "answer": 3,
+    "explain": "História de engasgo + sinais focais persistentes impõe exclusão de corpo estranho por broncoscopia. Tratamento clínico isolado atrasa remoção e aumenta complicações.",
+    "trap": "Tratar como asma/pneumonia de repetição sem valorizar o engasgo súbito."
   },
   {
     "id": "ped-pneumo-005",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Pneumonia",
-    "exam": "unifesp",
+    "theme": "Laringite / crupe",
+    "exam": "santa-casa",
     "year": 2024,
-    "difficulty": "media",
-    "stem": "Lactente de 14 meses com pneumonia e SatO2 89%, tiragem intensa e recusa alimentar. Conduta?",
+    "difficulty": "dificil",
+    "stem": "Pré-escolar com rouquidão, tosse metálica e estridor leve em repouso, SatO2 normal, sem toxemia. Melhor conduta?",
     "choices": [
-      "Alta com xarope expectorante apenas",
-      "Observação domiciliar sem oxigênio",
-      "Internação, oxigênio e antibiótico parenteral conforme protocolo",
-      "Corticoterapia isolada sem antibiótico/suporte"
+      "Corticosteroide (ex.: dexametasona) e observação; adrenalina nebulizada se estridor moderado/grave",
+      "Antibiótico de rotina para cobrir difteria em todo crupe",
+      "Intubação imediata em todo estridor leve",
+      "Sedação com opioide para reduzir a tosse"
     ],
-    "answer": 2,
-    "explain": "Sinais de gravidade (hipoxemia, tiragem, má aceitação) → internação."
+    "answer": 0,
+    "explain": "Crupe viral leve/moderado responde a corticoide; adrenalina nebulizada nos casos com esforço maior. Intubação é para falência/imminente obstrução. Opioide é perigoso.",
+    "trap": "Intubar precocemente crupe leve ou usar antibiótico indiscriminado."
   },
   {
     "id": "ped-pneumo-006",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Laringite/crupe",
-    "exam": "unifesp",
-    "year": 2023,
-    "difficulty": "facil",
-    "stem": "Pré-escolar com rouquidão, tosse metálica e estridor leve sob agitação, sem cianose, SatO2 98%. Diagnóstico e tratamento inicial?",
+    "theme": "Fibrose cística",
+    "exam": "amp",
+    "year": 2024,
+    "difficulty": "dificil",
+    "stem": "Lactente com íleo meconial neonatal, agora com esteatorarreia, desnutrição e colonizações respiratórias de repetição. Teste do pezinho alterado. Exame confirmatório mais adequado?",
     "choices": [
-      "Amigdalectomia de urgência",
-      "Antibiótico antipseudomonas de rotina",
-      "Intubação imediata em todos os crupes leves",
-      "Crupe viral; corticoide (ex.: dexametasona) e observação; adrenalina nebulizada se estridor em repouso/grave"
+      "Apenas IgE total elevada como critério diagnóstico",
+      "Biópsia hepática de rotina como primeiro teste",
+      "Teste ergométrico em esteira",
+      "Teste do suor (cloreto) e/ou estudo genético conforme protocolo"
     ],
     "answer": 3,
-    "explain": "Crupe: dexametasona; adrenalina nebulizada nas formas moderadas/graves."
+    "explain": "Fenótipo clássico + triagem neonatal levam a confirmação por suor/genética. IgE não diagnostica FC. Biópsia hepática não é o primeiro passo.",
+    "trap": "Atribuir só 'alergia/asma' a infecções e má absorção com história de íleo meconial."
   },
   {
     "id": "ped-pneumo-007",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Laringite/crupe",
+    "theme": "Coqueluche",
     "exam": "usp",
     "year": 2023,
     "difficulty": "media",
-    "stem": "Criança com febre alta, toxicidade, drooling e estridor, sentada em posição de tripé. Hipótese e conduta?",
+    "stem": "Lactente de 2 meses com acessos de tosse em salvas, engasgos e episódios de cianose, sem febre alta. Leucocitose com linfocitose. Qual a melhor conduta?",
     "choices": [
-      "Crupe leve; alta com hidratação apenas",
-      "Asma; apenas SABA",
-      "Epiglotite (diferencial de crupe); via aérea em ambiente controlado, sem examinar orofaringe agressivamente",
-      "Corpo estranho esofágico tratado com antibóticos"
+      "Apenas antitussígeno sedativo domiciliar",
+      "Corticoide inalatório como tratamento etiológico",
+      "Vacina DTPa como único tratamento da doença atual",
+      "Internar conforme gravidade, antibiótico macrolídeo e notificação/profilaxia de contactantes"
     ],
-    "answer": 2,
-    "explain": "Toxicidade + drooling + tripé sugere epiglotite — priorizar via aérea segura."
+    "answer": 3,
+    "explain": "Coqueluche em lactente jovem é potencialmente grave: suporte, macrolídeo e controle de focos. Sedativos antitussígenos são perigosos. Vacina protege a médio prazo, não trata a infecção instalada.",
+    "trap": "Mandar para casa com xarope sedativo um lactente com salvas e cianose."
   },
   {
     "id": "ped-pneumo-008",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Asma",
-    "exam": "santa-casa",
+    "theme": "Derrame pleural",
+    "exam": "enare",
     "year": 2024,
-    "difficulty": "media",
-    "stem": "Adolescente asmático em UTI com crise grave, pouca entrada de ar, sonolência e SatO2 caindo. Além de O2/SABA/anticolinérgico/corticoide, qual medida pode ser necessária?",
+    "difficulty": "facil",
+    "stem": "Criança com pneumonia em tratamento, mantém febre e desconforto; ultrassom mostra derrame pleural septado significativo. Próximo passo?",
     "choices": [
-      "Alta hospitalar imediata",
-      "Suspender oxigênio para 'estimular drive'",
-      "Apenas anti-histamínico oral",
-      "Suporte ventilatório e cuidados de emergência; considerar adjuvantes (ex.: sulfato de magnésio IV) conforme gravidade"
+      "Avaliar drenagem/intervenção pleural e ajuste antimicrobiano em ambiente hospitalar",
+      "Aumentar só antitussígeno oral e manter ambulatorial",
+      "Fisioterapia isolada como terapia definitiva",
+      "Suspender antibiótico por 'falha' e observar"
     ],
-    "answer": 3,
-    "explain": "Crise ameaçadora à vida: suporte avançado; MgSO4 IV é adjuvante em crises graves."
+    "answer": 0,
+    "explain": "Derrame parapneumônico complicado frequentemente precisa drenagem e otimização antimicrobiana. Suspender antibiótico ou tratar só com xarope é inadequado.",
+    "trap": "Persistir no oral ambulatorial perante derrame septado e febre persistente."
   },
   {
     "id": "ped-pneumo-009",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Bronquiolite",
-    "exam": "santa-casa",
-    "year": 2024,
-    "difficulty": "facil",
-    "stem": "Qual fator de risco aumenta a chance de bronquiolite grave por VSR?",
+    "theme": "Apneia / SAOS",
+    "exam": "enamed",
+    "year": 2025,
+    "difficulty": "dificil",
+    "stem": "Escolar obeso com roncos, pausas respiratórias referidas pelos pais, enurese secundária e baixo rendimento escolar. Exame com hipertrofia amigdaliana. Melhor próximo passo?",
     "choices": [
-      "Prematuridade e idade inferior a 6 meses",
-      "Vacinação completa contra rotavírus",
-      "Aleitamento materno exclusivo",
-      "Idade escolar sem comorbidades"
+      "Prescrever benzodiazepínico noturno para 'profundar o sono'",
+      "Indicar adenoidectomia sem qualquer avaliação",
+      "Ignorar porque ronco é normal na infância",
+      "Avaliar apneia obstrutiva do sono (ex.: polissonografia/encaminhamento ORL conforme disponibilidade)"
     ],
-    "answer": 0,
-    "explain": "Prematuros e lactentes jovens têm maior risco de formas graves de VSR."
+    "answer": 3,
+    "explain": "Ronco + pausas + sintomas diurnos sugerem SAOS; investigação e eventual ORL são indicados. Benzodiazepínico piora obstrução.",
+    "trap": "Sedative para ronco ou banalizar pausas respiratórias."
   },
   {
     "id": "ped-pneumo-010",
     "specialty": "pediatria",
     "group": "Pneumologia / respiratório",
-    "theme": "Pneumonia",
-    "exam": "unifesp",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "Criança vacinada incompletamente, pneumonia lobar com efusão. Agente bacteriano mais frequentemente implicado na PAC típica pediátrica?",
+    "theme": "Bronquiectasia / infecção",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "Criança com tosse produtiva crônica, baqueteamento digital e infecções de repetição no mesmo lobo. Qual exame de imagem é o mais útil para caracterizar a via aérea?",
     "choices": [
-      "Clostridium botulinum",
-      "HPV",
-      "Streptococcus pneumoniae",
-      "Plasmodium vivax"
+      "Radiografia de seios da face como único exame",
+      "TC de tórax de alta resolução",
+      "Ultrassom abdominal de rotina",
+      "Ressonância de coluna lombar"
     ],
-    "answer": 2,
-    "explain": "Pneumococo permanece o principal agente da pneumonia bacteriana típica na infância."
+    "answer": 1,
+    "explain": "TCAR é o padrão para mapear bronquiectasias e guiar investigação de causas (FC, imunodeficiência, aspiração). Outros exames não caracterizam a árvore brônquica.",
+    "trap": "Contentar-se com radiografia simples normal e não avançar na tosse crônica produtiva."
   },
   {
     "id": "ped-gastro-001",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Desidratação/planos",
+    "theme": "Diarreia aguda",
     "exam": "enamed",
-    "year": 2023,
-    "difficulty": "facil",
-    "stem": "Criança com diarreia, olhos fundos, sinal da prega lento, bebendo avidamente, lúcida. Qual plano de hidratação do MS?",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Lactente de 11 meses com diarreia aquosa há 2 dias, olhos fundos, lágrimas diminuídas, turgor lento e sede intensa; ainda responsivo. Qual a melhor conduta?",
     "choices": [
-      "Plano A exclusivamente domiciliar sem observação",
-      "Plano C com acesso venoso imediato como única opção em todos",
-      "Plano B: reidratação oral supervisionada com SRO em serviço de saúde",
-      "Jeum absoluto por 48 h"
+      "Antibiotico empírico para todos os vírus enterais",
+      "Reidratação com SRO conforme plano B (ou equivalente) e reavaliação",
+      "Loperamida para reduzir o número de evacuações",
+      "Jejum absoluto por 48 horas"
     ],
-    "answer": 2,
-    "explain": "Desidratação moderada → Plano B (SRO supervisionada)."
+    "answer": 1,
+    "explain": "Sinais de desidratação moderada pedem SRO supervisionada e reavaliação. Loperamida é contraindicada em lactentes. Antibiótico não é rotina em diarreia aquosa viral. Jejum prolongado atrasa recuperação.",
+    "trap": "Usar antidiarreico antimotilidade em lactente desidratado."
   },
   {
     "id": "ped-gastro-002",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Desidratação/planos",
-    "exam": "santa-casa",
-    "year": 2024,
+    "theme": "Constipação",
+    "exam": "enare",
+    "year": 2025,
     "difficulty": "facil",
-    "stem": "Lactente com diarreia, muito prostrado, choque, não bebe, pulsos fracos. Plano indicado?",
+    "stem": "Pré-escolar com evacuações endurecidas, escape fecal e massa fecal em ampola. Qual a abordagem inicial mais adequada?",
     "choices": [
-      "Plano C: expansão intravenosa imediata com SF 0,9%",
-      "Plano A domiciliar",
-      "Apenas SRO por via oral forçada no choque",
-      "Loperamida e alta"
+      "Desimpactação e laxativo de manutenção com orientações de banheiro e fibras/líquidos",
+      "Apenas punição comportamental sem tratamento orgânico da impactação",
+      "Cirurgia de Hartmann de rotina",
+      "Antibiótico prolongado para 'flora intestinal'"
     ],
     "answer": 0,
-    "explain": "Desidratação grave/choque → Plano C (IV)."
+    "explain": "Constipação funcional com escape (sobretudo retentiva) exige desimpactação e manutenção. Punir a criança piora o ciclo. Cirurgia não é primeira linha.",
+    "trap": "Tratar escape fecal como 'falta de educação' sem desimpactar."
   },
   {
     "id": "ped-gastro-003",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Refluxo",
-    "exam": "amp",
-    "year": 2023,
-    "difficulty": "dificil",
-    "stem": "Lactente de 2 meses, regurgitações frequentes após mamadas, ganho ponderal adequado, sem sintomas de alarme. Conduta?",
+    "theme": "RGE / DRGE",
+    "exam": "enamed",
+    "year": 2024,
+    "difficulty": "facil",
+    "stem": "Lactente de 2 meses regurgita após mamadas, ganha peso bem, sem crises de apneia ou sangramento. Melhor conduta?",
     "choices": [
       "Fundoplicatura imediata",
-      "Orientações posturais/volume e tranquilização; RGE fisiológico",
-      "IBP de rotina em todos os regurgitadores",
-      "Internação para NPT"
+      "IBP em dose máxima por 12 meses sem critérios",
+      "Tranquilizar e medidas posturais/espessamento se necessário; evitar exames invasivos de rotina",
+      "Endoscopia urgente em todo regurgitador"
     ],
-    "answer": 1,
-    "explain": "RGE fisiológico: ganho adequado sem alarmes → medidas conservadoras."
+    "answer": 2,
+    "explain": "Regurgitação com bom ganho é tipicamente fisiológica. Invasivo e IBP prolongado reservam-se a DRGE complicada. Cirurgia é excepcional.",
+    "trap": "Medicalizar refluxo fisiológico com IBP prolongado."
   },
   {
     "id": "ped-gastro-004",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Refluxo",
-    "exam": "enamed",
+    "theme": "Apendicite",
+    "exam": "unifesp",
     "year": 2022,
-    "difficulty": "facil",
-    "stem": "Lactente com refluxo, irritabilidade intensa, recusa alimentar, anemia e falha de crescimento. Próximo passo?",
+    "difficulty": "media",
+    "stem": "Escolar com dor periumbilical migrando para fossa ilíaca direita, vômitos, febre baixa e descompressão dolorosa. Ultrassom inconclusivo. Qual a melhor conduta?",
     "choices": [
-      "Avaliar DRGE complicada e considerar investigação/tratamento conforme gravidade",
-      "Ignorar por ser sempre fisiológico",
-      "Indicar apenas antitussígeno",
-      "Cirurgia cardíaca de rotina"
+      "Alta com dipirona e retorno 'se piorar' sem plano",
+      "Manter alta suspeita clínica; observação cirúrgica/imagem complementar e não liberar com analgésico isolado",
+      "Antibiótico oral ambulatorial como tratamento definitivo sem avaliação",
+      "Lavagem intestinal forçada em domicilio"
     ],
-    "answer": 0,
-    "explain": "Sinais de alarme/falha ponderal sugerem DRGE patológica — avaliar e tratar."
+    "answer": 1,
+    "explain": "Migratória clássica com sinais peritoneais mantém indicação de avaliação cirúrgica mesmo com US inconclusivo. Alta precoce com analgésico mascara evolução.",
+    "trap": "Confiar cegamente em ultrassom negativo e liberar o paciente."
   },
   {
     "id": "ped-gastro-005",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Invaginação",
-    "exam": "usp",
-    "year": 2025,
-    "difficulty": "facil",
-    "stem": "Lactente de 9 meses com crises de choro intenso intermitente, palidez, vômitos e fezes em 'geleia de morango'. Massa palpável em hipocôndrio direito. Diagnóstico mais provável?",
+    "theme": "Intussuscepção",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "Lactente de 8 meses com episódios de choro intenso e palidez intercalados com letargia, vômitos e evacuações com sangue escuro em geleia. Massa em forma de salsicha em hipocôndrio. Próximo passo?",
     "choices": [
-      "Invaginação intestinal",
-      "Constipação funcional simples",
-      "Apendicite típica do adolescente",
-      "Refluxo fisiológico"
+      "Apenas probiótico e observação domiciliar",
+      "Tratar como fissura anal com pomada",
+      "Estabilizar e encaminhar para redução (enema guiado/cirurgia conforme disponibilidade e gravidade)",
+      "Colonoscopia ambulatorial eletiva em 30 dias"
     ],
-    "answer": 0,
-    "explain": "Idade + dor intermitente + fezes em geleia ± massa → invaginação; imagem e redução guiada/cirurgia."
+    "answer": 2,
+    "explain": "Quadro clássico de intussuscepção exige redução urgente após estabilização. Pomada para fissura não aborda a urgência. Atraso aumenta risco de necrose.",
+    "trap": "Atribuir sangue nas fezes só a fissura e mandar para casa."
   },
   {
     "id": "ped-gastro-006",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Invaginação",
-    "exam": "usp",
+    "theme": "Doença celíaca",
+    "exam": "santa-casa",
     "year": 2022,
-    "difficulty": "facil",
-    "stem": "Suspeita de invaginação em lactente estável, sem peritonite. Qual método terapêutico não operatório é frequentemente empregado após confirmação?",
+    "difficulty": "dificil",
+    "stem": "Escolar com diarreia crônica, anemia ferropriva refratária, baixo peso e distensão. Come glúten regularmente. Qual a estratégia diagnóstica correta?",
     "choices": [
-      "Apendicectomia laparoscópica de rotina",
-      "Enema de ar ou contraste hidrostático guiado por imagem",
-      "Apenas antiespasmódico oral em casa",
-      "Colonoscopia com polipectomia em todos"
+      "Retirar glúten por 6 meses e só então dosar sorologia",
+      "Diagnosticar só por teste IgG anti-gliadina antigo isolado",
+      "Indicar pancreatectomia",
+      "Sorologias específicas (ex.: anti-transglutaminase IgA + IgA total) com dieta contendo glúten, e biópsia conforme protocolo"
     ],
-    "answer": 1,
-    "explain": "Redução por enema pneumático/hidrostático é padrão se sem sinais de perfuração/necrose."
+    "answer": 3,
+    "explain": "Investigação de celíaca deve ocorrer sob dieta com glúten. Retirar glúten antes dos testes falseia resultados. Confirmação segue algoritmo sorológico ± biópsia.",
+    "trap": "Começar dieta sem glúten 'de teste' antes da investigação formal."
   },
   {
     "id": "ped-gastro-007",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Constipação",
-    "exam": "amp",
+    "theme": "Hepatite / icterícia",
+    "exam": "unifesp",
     "year": 2022,
-    "difficulty": "media",
-    "stem": "Pré-escolar com evacuação a cada 4–5 dias, fezes endurecidas, escape fecal e medo de evacuar. Sem sinais de alarme. Abordagem inicial?",
+    "difficulty": "facil",
+    "stem": "Adolescente com icterícia, colúria, anorexia e ALT/AST muito elevadas após quadro prodrômico. Sorologia anti-HBc IgM positiva e HBsAg positivo. Diagnóstico?",
     "choices": [
-      "Desimpactação se necessário, laxativo osmótico (ex.: PEG) e treino intestinal/dieta",
-      "Cirurgia de Hirschsprung sem investigação em todos",
-      "Antibiótico prolongado",
-      "Jeum e SNE de rotina"
+      "Hepatite A exclusiva, sem necessidade de sorologia B",
+      "Obstrução por cálculo como primeira hipótese sem dor",
+      "Hepatite B aguda",
+      "Síndrome de Gilbert com aminotransferases normais"
     ],
-    "answer": 0,
-    "explain": "Constipação funcional: desimpactar, manutenção com PEG e hábitos."
+    "answer": 2,
+    "explain": "HBsAg + anti-HBc IgM definem infecção aguda por HBV. Gilbert não eleva muito as transaminases. Cálculo costuma ter padrão colestático e dor.",
+    "trap": "Chamar toda hepatite aguda de A sem sorologias."
   },
   {
     "id": "ped-gastro-008",
     "specialty": "pediatria",
     "group": "Gastroenterologia",
-    "theme": "Constipação",
-    "exam": "amp",
-    "year": 2025,
-    "difficulty": "dificil",
-    "stem": "RN com atraso na eliminação do mecônio (>48 h), distensão e vômitos biliosos. Qual hipótese deve ser investigada?",
+    "theme": "Alergia alimentar",
+    "exam": "unifesp",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Lactente em fórmula padrão com sangue nas fezes, irritabilidade e bom estado geral, sem anemia grave. Hipótese de proctocolite. Melhor conduta inicial?",
     "choices": [
-      "Constipação funcional típica do escolar",
-      "Intolerância à lactose do adulto",
-      "Úlcera péptica duodenal clássica",
-      "Doença de Hirschsprung (entre outros diferenciais de obstrução)"
+      "Colonoscopia imediata em todos os casos leves",
+      "Adrenalina intramuscular de rotina a cada mamada",
+      "Antibiótico por 14 dias",
+      "Prova terapêutica com fórmula extensamente hidrolisada (ou dieta materna se AME) e seguimento"
     ],
     "answer": 3,
-    "explain": "Atraso de mecônio e obstrução no RN → investigar Hirschsprung/outras malformações."
+    "explain": "Proctocolite por proteína do leite costuma ser leve e responde a exclusão/fórmula hidrolisada. Colonoscopia não é primeiro passo. Adrenalina é para anafilaxia.",
+    "trap": "Indicar endoscopia invasiva precoce em proctocolite leve típica."
   },
   {
     "id": "ped-urg-001",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Anafilaxia",
-    "exam": "enare",
+    "theme": "PCR / PALS",
+    "exam": "santa-casa",
     "year": 2022,
     "difficulty": "media",
-    "stem": "Criança com urticária disseminada, sibilos e hipotensão minutos após ingestão de amendoim. Conduta imediata prioritária?",
+    "stem": "Criança em PCR, ritmo não chocável, via aérea aberta. Qual a sequência medicamentosa/energia mais coerente com PALS?",
     "choices": [
-      "Apenas anti-histamínico oral e observar em casa",
-      "Corticoide isolado como primeira droga",
-      "Antibiótico venoso",
-      "Adrenalina intramuscular na face ântero-lateral da coxa"
+      "Amiodarona em bolus repetidos sem indicação de ritmo",
+      "Cardioversão sincronizada como primeiro ato em assistolia",
+      "Adrenalina a cada 3–5 minutos; identificar e tratar causas reversíveis",
+      "Bicarbonato de rotina em todos os ciclos"
     ],
-    "answer": 3,
-    "explain": "Anafilaxia: adrenalina IM imediata; depois suporte, anti-H1/corticoide como adjuvantes."
+    "answer": 2,
+    "explain": "Em ritmos não chocáveis, adrenalina periódica e busca de Hs/Ts são pilares. Cardioversão sincronizada não trata assistolia/AESP. Bicarbonato não é rotina.",
+    "trap": "Aplicar lógica de FV/TV sem pulso (choque/antiarrítmico) em assistolia."
   },
   {
     "id": "ped-urg-002",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Anafilaxia",
-    "exam": "usp",
+    "theme": "Choque",
+    "exam": "enamed",
     "year": 2024,
-    "difficulty": "dificil",
-    "stem": "Após adrenalina IM por anafilaxia, a criança melhora, mas há risco de reação bifásica. Conduta adequada?",
+    "difficulty": "media",
+    "stem": "Lactente com taquicardia, enchimento capilar de 5 s, pressão limítrofe e história de diarreia intensa. Qual a prioridade imediata?",
     "choices": [
-      "Alta imediata em 5 minutos sem orientação",
-      "Proibir qualquer acompanhamento alergológico",
-      "Substituir adrenalina por dipirona de rotina",
-      "Observação hospitalar por período adequado e prescrição de autoinjetor/orientação"
+      "Expansão volumétrica com cristaloide em bolus e reavaliação da perfusão",
+      "Noradrenalina como primeiro passo sem volume",
+      "Diurético para evitar sobrecarga",
+      "Aguardar hemocultura por 2 horas antes de qualquer fluido"
     ],
-    "answer": 3,
-    "explain": "Observar após anafilaxia; educar e disponibilizar adrenalina autoinjetável quando indicado."
+    "answer": 0,
+    "explain": "Choque hipovolêmico/distributivo inicial na criança responde a bolus de cristaloide e reassessment. Vasopressor vem após volume inadequado/refratariedade, não antes em hipovolemia pura.",
+    "trap": "Começar vasoativo em choque hipovolêmico sem repor volume."
   },
   {
     "id": "ped-urg-003",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Estado de mal",
-    "exam": "enare",
-    "year": 2024,
-    "difficulty": "media",
-    "stem": "Criança em convulsão tônico-clônica há 8 minutos, sem acesso venoso ainda. Medicação de primeira linha preferível?",
+    "theme": "Anafilaxia",
+    "exam": "amp",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "Escolar após ingestão de amendoim apresenta urticária, vômitos, sibilância e queda da pressão. Qual a droga de primeira linha?",
     "choices": [
-      "Benzodiazepínico (ex.: midazolam intramuscular/intranasal ou diazepam retal conforme disponibilidade)",
-      "Fenitoína oral ambulatorial",
-      "Antibiótico intramuscular",
-      "Insulina regular"
+      "Apenas anti-histamínico oral e observação domiciliar",
+      "Corticoide EV como única medida",
+      "Salbutamol nebulizado isolado sem adrenalina",
+      "Adrenalina intramuscular na face ântero-lateral da coxa"
     ],
-    "answer": 0,
-    "explain": "Estado de mal: benzodiazepínico precoce; depois fármacos de segunda linha se persistir."
+    "answer": 3,
+    "explain": "Anafilaxia exige adrenalina IM imediata. Anti-histamínico e corticoide são adjuvantes e não substituem a adrenalina. Broncodilatador ajuda o broncoespasmo, mas não trata o choque/anafilaxia global.",
+    "trap": "Priorizar anti-histamínico/corticoide e atrasar a adrenalina."
   },
   {
     "id": "ped-urg-004",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Estado de mal",
-    "exam": "amp",
-    "year": 2023,
-    "difficulty": "dificil",
-    "stem": "Lactente convulsivo, glicemia capilar 25 mg/dL. Além do benzodiazepínico se ainda convulsando, qual correção é imprescindível?",
+    "theme": "Convulsão",
+    "exam": "enare",
+    "year": 2025,
+    "difficulty": "media",
+    "stem": "Pré-escolar em crise tônico-clônica contínua há 8 minutos na emergência, acesso obtido. Qual o medicamento de primeira linha?",
     "choices": [
-      "Glicose intravenosa para corrigir hipoglicemia",
-      "Apenas restrição hídrica",
-      "Bicarbonato de rotina sem gasometria",
-      "Manitol empírico em todos"
+      "Benzodiazepínico (ex.: diazepam/midazolam/lorazepam) na dose e via adequadas",
+      "Fenitoína intramuscular como primeiro agente",
+      "Antibiótico empírico antes de cessar a crise",
+      "Observação sem fármaco até 30 minutos"
     ],
     "answer": 0,
-    "explain": "Sempre checar/corrigir hipoglicemia em convulsão pediátrica."
+    "explain": "Estado de mal convulsivo inicia com benzodiazepínico. Fenitoína/outros vêm depois se a crise persistir. Esperar 30 minutos é inaceitável.",
+    "trap": "Pular o benzodiazepínico e ir direto a anticonvulsivante de manutenção."
   },
   {
     "id": "ped-urg-005",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "PCR pediátrica",
-    "exam": "amp",
-    "year": 2023,
-    "difficulty": "dificil",
-    "stem": "Criança em PCR em ritmo não chocável. Relação compressão:ventilação para 2 socorristas (via aérea avançada ainda não estabelecida) mais citada nas diretrizes pediátricas?",
+    "theme": "TCE",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "media",
+    "stem": "Menino de 6 anos caiu da própria altura, sem perda de consciência, exame neurológico normal, sem vômitos repetidos nem mecanismo grave. Qual a conduta mais adequada?",
     "choices": [
-      "30:2 exclusiva de adultos em qualquer cenário pediátrico com 2 socorristas",
-      "5:1 com pausas de 1 minuto a cada ciclo",
-      "Apenas ventilações sem compressões",
-      "15 compressões : 2 ventilações"
+      "Observação e orientações de retorno; imagem não é rotina",
+      "TC de crânio imediata em todos os TCE leves",
+      "Internação em UTI por 72 horas obrigatória",
+      "Punção lombar diagnóstica"
     ],
-    "answer": 3,
-    "explain": "PCR pediátrica com 2 socorristas (sem via avançada): 15:2; após via avançada, compressões contínuas + ventilações."
+    "answer": 0,
+    "explain": "TCE leve de baixo risco com exame normal pode ser observado sem TC rotineira, reduzindo radiação. Critérios de PECARN/similares guiam imagem.",
+    "trap": "Pedir TC em todo batida de cabeça, sem estratificar risco."
   },
   {
     "id": "ped-urg-006",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Choque",
-    "exam": "usp",
-    "year": 2024,
+    "theme": "Intoxicação",
+    "exam": "santa-casa",
+    "year": 2025,
     "difficulty": "media",
-    "stem": "Lactente com taquicardia, tempo de enchimento capilar 5 s, extremidades frias, PA ainda normal, pós-diarreia. Tipo de choque e conduta inicial?",
+    "stem": "Adolescente trazido 45 minutos após ingestão de grande quantidade de paracetamol em tentativa de autoextermínio, ainda assintomático. Melhor conduta?",
     "choices": [
-      "Choque cardiogênico; restringir volume em todos os casos de diarreia",
-      "Choque distributivo exclusivo por adrenalina IM",
-      "Choque hipovolêmico compensado; expansão com cristaloides e reavaliação",
-      "Observação sem volume"
+      "Alta liberada porque ainda não há icterícia",
+      "Aguardar falência hepática para tratar",
+      "Avaliar níveis/tempo e iniciar N-acetilcisteína conforme protocolo, além de suporte e cuidado em saúde mental",
+      "Induzir vômito com água sanitária"
     ],
     "answer": 2,
-    "explain": "Sinais de má perfusão após perdas → hipovolemia; bolus de cristaloide e reassessorar."
+    "explain": "Toxicidade por paracetamol pode ser inicialmente silenciosa; NAC precoce previne hepatotoxicidade. Esperar icterícia é tarde. Eméticos cáusticos são perigosos.",
+    "trap": "Liberar intoxicação por paracetamol 'assintomática' sem protocolo de NAC."
   },
   {
     "id": "ped-urg-007",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Corpo estranho",
-    "exam": "amp",
+    "theme": "Desidratação grave",
+    "exam": "santa-casa",
     "year": 2025,
-    "difficulty": "media",
-    "stem": "Pré-escolar engasgou com brinquedo pequeno: tosse ineficaz, cianose e estridor. Está consciente. Conduta imediata?",
+    "difficulty": "dificil",
+    "stem": "Lactente letárgico, sem lágrimas, turgor muito diminuído, pulsos fracos e enchimento capilar >5 s após diarreia. Qual a prioridade?",
     "choices": [
-      "Oferecer água para 'empurrar' o objeto",
-      "Deitar e observar por 30 minutos sem manobras",
-      "Antibiótico inalatório",
-      "Manobras de desobstrução da via aérea adequadas à idade (compressões abdominais/torácicas conforme protocolo)"
+      "Tentar apenas SRO oral por 2 horas na sala de espera",
+      "Restrição hídrica por risco de SIADH",
+      "Acesso vascular/intraósseo e expansão EV imediata",
+      "Sonda nasogástrica com dieta hipercalórica como primeiro ato"
     ],
-    "answer": 3,
-    "explain": "Obstrução grave consciente: manobras de desobstrução; se IOR, iniciar RCP."
+    "answer": 2,
+    "explain": "Desidratação grave com choque exige volume EV/IO imediato. SRO é para planos A/B em pacientes que bebem e não estão em choque.",
+    "trap": "Insistir em SRO oral na criança em choque hipovolêmico."
   },
   {
     "id": "ped-urg-008",
     "specialty": "pediatria",
     "group": "Urgências e emergências",
-    "theme": "Corpo estranho",
-    "exam": "unifesp",
-    "year": 2022,
+    "theme": "Corpo estranho em via aérea",
+    "exam": "santa-casa",
+    "year": 2023,
     "difficulty": "media",
-    "stem": "Criança com história de engasgo há dias, tosse persistente unilateral e sibilância localizada. Radiografia com hiperinsuflação de um hemitórax. Hipótese?",
+    "stem": "Lactente engasgado, consciente, com tosse ineficaz e cianose crescente. Qual a manobra imediata?",
     "choices": [
-      "Asma exclusivamente simétrica sem história",
-      "Pneumonia só por fungos",
-      "Derrame pleural hipertensivo sem outros dados",
-      "Aspiração de corpo estranho com mecanismo valvular"
+      "Manobras de desobstrução da via aérea adequadas à idade (tapotagem/compressões)",
+      "Oferecer água para 'empurrar' o objeto",
+      "Realizar varredura digital cega de rotina",
+      "Aguardar parada completa antes de qualquer ação"
     ],
-    "answer": 3,
-    "explain": "Sibilância/hiperinsuflação unilateral + engasgo → corpo estranho; broncoscopia."
+    "answer": 0,
+    "explain": "Obstrução grave com tosse ineficaz exige desobstrução imediata por manobras etárias. Varredura cega pode impactar o objeto. Água não remove corpo estranho.",
+    "trap": "Fazer finger sweep cego ou esperar a PCR para agir."
   },
   {
     "id": "ped-nefro-001",
     "specialty": "pediatria",
     "group": "Nefrologia",
-    "theme": "Síndrome nefrótica",
-    "exam": "amp",
-    "year": 2022,
-    "difficulty": "media",
-    "stem": "Pré-escolar com edema periorbitário matinal, proteinúria maciça, hipoalbuminemia e dislipidemia. PA normal, complemento normal. Forma mais comum e conduta inicial típica?",
+    "theme": "ITU",
+    "exam": "santa-casa",
+    "year": 2025,
+    "difficulty": "dificil",
+    "stem": "Lactente febril sem foco aparente, bom estado, urina de jato médio contaminada. Qual a melhor estratégia diagnóstica?",
     "choices": [
-      "GNPE; antibiótico isolado sem abordar proteinúria",
-      "SHU; diálise imediata em todos",
-      "Doença de lesão mínima; corticoterapia conforme protocolo",
-      "ITU; apenas nitrofurantoína"
+      "Tratar por 3 dias sem cultura porque 'toda febre é viral'",
+      "Diagnosticar ITU só pelo odor da fralda",
+      "Obter urocultura por método adequado (saco com cautela/cateterismo/punção) antes do antibiótico quando possível",
+      "TC de abdome de rotina em toda febre"
     ],
     "answer": 2,
-    "explain": "SN idiopática (lesão mínima) é a mais comum em pré-escolares; corticoide é o tratamento inicial usual."
+    "explain": "Febre sem foco no lactente exige exclusão de ITU com urocultura bem colhida. Odor isolado não diagnostica. Antibiótico sem cultura dificulta o manejo.",
+    "trap": "Tratar empiricamente sem cultura ou diagnosticar por cheiro da fralda."
   },
   {
     "id": "ped-nefro-002",
     "specialty": "pediatria",
     "group": "Nefrologia",
     "theme": "Síndrome nefrótica",
-    "exam": "enare",
-    "year": 2023,
+    "exam": "unifesp",
+    "year": 2022,
     "difficulty": "dificil",
-    "stem": "Criança com síndrome nefrótica em uso de corticoide apresenta ascite tensa e dor abdominal com sinais de peritonite. Complicação infecciosa clássica?",
+    "stem": "Pré-escolar com edema periorbitário matinal, proteinúria maciça, hipoalbuminemia e colesterol elevado, sem hipertensão grave nem hematúria franca. Conduta inicial típica?",
     "choices": [
-      "Otite média exclusiva",
-      "Bronquiolite por VSR como única possibilidade",
-      "Faringite viral sem relação",
-      "Peritonite bacteriana espontânea"
+      "Corticoterapia conforme protocolo de nefrótica idiopática e orientações sobre complicações",
+      "Biópsia renal imediata em todos os pré-escolares típicos antes de qualquer corticoide",
+      "Antibiótico prolongado como tratamento da proteinúria",
+      "Restrição absoluta de água e sal sem acompanhamento"
     ],
-    "answer": 3,
-    "explain": "Nefróticos têm risco de PBE (ex.: pneumococo); força avaliação e ATB."
+    "answer": 0,
+    "explain": "Nefrótica idiopática típica em pré-escolar costuma iniciar corticoide sem biópsia imediata. Biópsia reserva-se a atípicos/refratários. Antibiótico não trata a proteinúria.",
+    "trap": "Biópsiar todo caso típico antes da prova terapêutica com corticoide."
   },
   {
     "id": "ped-nefro-003",
     "specialty": "pediatria",
     "group": "Nefrologia",
-    "theme": "GNPE",
-    "exam": "unifesp",
-    "year": 2022,
+    "theme": "Glomerulonefrite",
+    "exam": "amp",
+    "year": 2023,
     "difficulty": "media",
-    "stem": "Escolar com hematúria cola, edema e hipertensão 2 semanas após impetigo. C3 baixo. Diagnóstico mais provável?",
+    "stem": "Escolar 2 semanas após impetigo apresenta edema, hipertensão e urina cor de chá com hematúria dismórfica. C3 baixo. Diagnóstico mais provável?",
     "choices": [
-      "Nefropatia por IgA sincronizada com a faringite no mesmo dia",
-      "Síndrome nefrótica por lesão mínima sem hematúria",
-      "Glomerulonefrite pós-estreptocócica",
-      "SHU típica por E. coli sem relação estreptocócica"
+      "Síndrome nefrótica de mudanças mínimas pura",
+      "ITU baixa sem acometimento glomerular",
+      "Diabetes insipidus central",
+      "Glomerulonefrite pós-estreptocócica"
     ],
-    "answer": 2,
-    "explain": "GNPE: latência após pele/faringe, hematúria, HAS, C3 ↓."
+    "answer": 3,
+    "explain": "Intervalo pós-estreptocócico cutâneo, síndrome nefrítica e C3 baixo são clássicos de GNPE. Mudanças mínimas é nefrótica sem hematúria/hipertensão típicas.",
+    "trap": "Chamar de nefrótica todo edema, ignorando hematúria e hipertensão."
   },
   {
     "id": "ped-nefro-004",
     "specialty": "pediatria",
     "group": "Nefrologia",
-    "theme": "SHU",
+    "theme": "SHA / HUS",
     "exam": "santa-casa",
-    "year": 2022,
+    "year": 2024,
     "difficulty": "media",
-    "stem": "Pré-escolar após diarreia sanguinolenta evolui com palidez, oligúria, plaquetopenia e esquizócitos. Diagnóstico?",
+    "stem": "Pré-escolar após diarreia sanguinolenta evolui com palidez, oligúria, hipertensão, plaquetopenia e esquizócitos. Qual o diagnóstico sindrômico?",
     "choices": [
-      "Púrpura de Henoch-Schönlein sem falência renal",
+      "Síndrome hemolítico-urêmica",
+      "Púrpura de Henoch-Schönlein sem alterações renais laboratoriais",
       "Anemia ferropriva isolada",
-      "Síndrome hemolítico-urêmica típica (D+)",
-      "ITP sem anemia hemolítica nem insuficiência renal"
+      "Cistite simples"
     ],
-    "answer": 2,
-    "explain": "Tríade da SHU: anemia hemolítica microangiopática, plaquetopenia e LRA, frequentemente pós-diarreia (STEC)."
+    "answer": 0,
+    "explain": "Tríade anemia hemolítica microangiopática + plaquetopenia + injúria renal após diarreia sanguinolenta define SHU típica. Ferropriva não gera esquizócitos nem IRA assim.",
+    "trap": "Tratar só a diarreia e perder a microangiopatia renal."
   },
   {
     "id": "ped-nefro-005",
     "specialty": "pediatria",
     "group": "Nefrologia",
-    "theme": "ITU febril",
-    "exam": "unifesp",
+    "theme": "Hipertensão",
+    "exam": "enamed",
     "year": 2023,
     "difficulty": "dificil",
-    "stem": "Lactente de 5 meses com ITU febril. Após tratamento agudo, qual exame de imagem é frequentemente indicado na primeira ITU febril nessa faixa?",
+    "stem": "Adolescente obeso com PA persistentemente elevada em consultório e em casa, sem sintomas. Exame de fundo de olho normal. Melhor abordagem inicial?",
     "choices": [
-      "Uretrocistografia miccional obrigatória em absolutamente todos sem critério",
-      "RM de corpo inteiro de rotina",
-      "Nenhum exame nunca é necessário",
-      "Ultrassonografia de vias urinárias"
+      "Iniciar três anti-hipertensivos de uma vez sem confirmação",
+      "Confirmar técnica/medidas, investigar causas secundárias selecionadas e iniciar mudanças de estilo de vida",
+      "Ignorar porque 'criança não tem hipertensão'",
+      "Internar em UTI para nitroprussiato empírico"
     ],
-    "answer": 3,
-    "explain": "USG é o exame inicial usual após ITU febril no lactente; UCM conforme critérios de risco/recorrência."
+    "answer": 1,
+    "explain": "PA elevada exige confirmação e estratificação. Em obesos, estilo de vida é central; investigação secundária é dirigida. Nitroprussiato é para emergência hipertensiva.",
+    "trap": "Negar a existência de hipertensão pediátrica ou tratar como emergência sem critérios."
   },
   {
     "id": "ped-nefro-006",
     "specialty": "pediatria",
     "group": "Nefrologia",
-    "theme": "ITU febril",
-    "exam": "enare",
-    "year": 2025,
+    "theme": "Enurese / anomalia",
+    "exam": "santa-casa",
+    "year": 2022,
     "difficulty": "dificil",
-    "stem": "Menino de 8 meses com pielonefrite, jato urinário fraco e globo vesical intermitente. Qual preocupação anatômica merece investigação?",
+    "stem": "Menina de 5 anos nunca teve continência diurna, com escapes constantes e infecções urinárias de repetição. Qual a preocupação anatômica principal a investigar?",
     "choices": [
-      "Apenas fimose fisiológica sem avaliação do jato",
-      "Refluxo exclusivo descartado só pela idade",
-      "Obstrução/valva de uretra posterior ou outra uropatia",
-      "Litíase renal sem ultrassom"
+      "Apenas enurese noturna monosintomática típica",
+      "Diabetes mellitus sem poliúria/polidipsia",
+      "Malformação/ectopia ureteral ou outra anomalia do trato urinário",
+      "Constipação exclusiva sem avaliação urológica"
     ],
     "answer": 2,
-    "explain": "Sinais de obstrução em menino lactente → avaliar uropatia (ex.: VUP)."
+    "explain": "Incontinência diurna contínua desde sempre em menina sugere ectopia ureteral (ureter em vestíbulo/vagina). Não é enurese noturna clássica. Exige imagem/urologia.",
+    "trap": "Tratar como enurese comportamental uma incontinência diurna contínua primária."
   },
   {
     "id": "ped-endo-001",
     "specialty": "pediatria",
     "group": "Endocrinologia",
-    "theme": "DM1 cetoacidose",
+    "theme": "Cetoacidose",
     "exam": "unifesp",
-    "year": 2023,
+    "year": 2024,
     "difficulty": "media",
-    "stem": "Criança com poliúria, polidipsia, hálito cetônico, FC elevada, glicemia 480 mg/dL e pH 7,15. Conduta inicial prioritária na CAD?",
+    "stem": "Escolar polidipsia e emagrecimento, agora com vômitos, respiração profunda, glicemia 480 mg/dL e pH 7,12. Qual a prioridade terapêutica inicial?",
     "choices": [
+      "Hidratação com cristaloide e insulina EV conforme protocolo de CAD, monitorando potássio",
       "Insulina subcutânea isolada sem hidratação",
-      "Bicarbonato de rotina em toda CAD",
-      "Restrição hídrica absoluta",
-      "Expansão com SF 0,9% e início de insulina IV após reposição inicial, com reposição de potássio conforme protocolo"
+      "Bicarbonato de rotina em todo pH < 7,20",
+      "Jejuar e só observar até gasometria normalizar sozinha"
     ],
-    "answer": 3,
-    "explain": "CAD: volume com SF, depois insulina IV; K+ é crítico; bicarbonato não é rotina."
+    "answer": 0,
+    "explain": "CAD pediátrica exige volume cuidadoso + insulina EV e vigilância de K e edema cerebral. Bicarbonato não é rotina. Insulina SC isolada é insuficiente na CAD grave.",
+    "trap": "Corrigir agressivamente com bicarbonato ou negligenciar o potássio na CAD."
   },
   {
     "id": "ped-endo-002",
     "specialty": "pediatria",
     "group": "Endocrinologia",
-    "theme": "DM1 cetoacidose",
-    "exam": "enare",
-    "year": 2024,
+    "theme": "Hipotireoidismo congênito",
+    "exam": "unifesp",
+    "year": 2023,
     "difficulty": "dificil",
-    "stem": "Durante tratamento de CAD, a criança apresenta cefaleia intensa e queda do nível de consciência. Complicação temida?",
+    "stem": "RN com icterícia prolongada, hernia umbilical, macroglossia e hipotonia; pezinho com TSH elevado. Melhor conduta?",
     "choices": [
-      "Hiperglicemia de rebote exclusiva sem neuro",
-      "Edema cerebral",
-      "Crise asmática",
-      "Apendicite"
+      "Aguardar 1 ano para ver se 'amadurece'",
+      "Indicar tireoidectomia imediata",
+      "Tratar só com iodo tópico cutâneo",
+      "Confirmar função tireoidiana e iniciar levotiroxina precocemente"
     ],
-    "answer": 1,
-    "explain": "Edema cerebral é complicação grave do tratamento da CAD pediátrica."
+    "answer": 3,
+    "explain": "Fenótipo + TSH alto pedem confirmação e reposição imediata. Atraso no tratamento compromete QI. Cirurgia não é o manejo do hipotireoidismo congênito típico.",
+    "trap": "Adiar hormônio esperando resolução espontânea."
   },
   {
     "id": "ped-endo-003",
     "specialty": "pediatria",
     "group": "Endocrinologia",
-    "theme": "Hipotireoidismo congênito",
-    "exam": "santa-casa",
-    "year": 2024,
-    "difficulty": "dificil",
-    "stem": "Teste do pezinho com TSH elevado. RN ainda sem resultado confirmatório. Conduta correta em relação ao tempo?",
+    "theme": "Hiperplasia adrenal",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "facil",
+    "stem": "RN do sexo feminino com genitália ambígua e, na 2ª semana, vômitos, desidratação e hiponatremia com hipercalemia. Qual a hipótese mais importante?",
     "choices": [
-      "Aguardar 1 ano para iniciar hormônio",
-      "Confirmar prontamente e iniciar levotiroxina sem atrasar o tratamento",
-      "Tratar apenas com iodo tópico",
-      "Indicar tireoidectomia neonatal de rotina"
+      "Diabetes neonatal transitório isolado",
+      "Hipotireoidismo primário puro",
+      "Fibrose cística sem alterações eletrolíticas típicas",
+      "Hiperplasia adrenal congênita por deficiência de 21-hidroxilase (forma perdedora de sal)"
     ],
-    "answer": 1,
-    "explain": "Hipotireoidismo congênito: tratamento precoce com LT4 evita déficit neurocognitivo."
+    "answer": 3,
+    "explain": "Virilização feminina + crise perdedora de sal com hipoNa/hiperK é clássica de HAC 21-OH. Exige hidrocortisona, fludrocortisona e sal. Outras endocrinopatias não reúnem esse conjunto.",
+    "trap": "Tratar só como gastroenterite a crise adrenal neonatal."
   },
   {
     "id": "ped-endo-004",
     "specialty": "pediatria",
     "group": "Endocrinologia",
-    "theme": "Hipotireoidismo congênito",
-    "exam": "unifesp",
+    "theme": "Baixa estatura",
+    "exam": "usp",
     "year": 2025,
-    "difficulty": "dificil",
-    "stem": "RN com icterícia prolongada, hernia umbilical, macroglossia e hipotonia. Qual endocrinopatia deve ser lembrada?",
+    "difficulty": "media",
+    "stem": "Menino de 10 anos no percentil 3 de estatura, velocidade normal, pai e mãe baixos, idade óssea compatível com a cronológica. Interpretação mais provável?",
     "choices": [
-      "Hipertireoidismo neonatal exclusivo",
-      "Hipotireoidismo congênito",
-      "Puberdade precoce central",
-      "Hiperplasia adrenal sem outros dados"
+      "Baixa estatura familiar",
+      "Deficiência de GH clássica com velocidade zero",
+      "Hipotireoidismo não tratado com queda livre da curva",
+      "Doença celíaca ativa sem outros sinais e com velocidade normal"
     ],
-    "answer": 1,
-    "explain": "Fenótipo clássico de hipotireoidismo congênito; rastreio neonatal é essencial."
+    "answer": 0,
+    "explain": "Estatura baixa proporcional à família, com velocidade e idade óssea preservadas, sugere padrão familiar. Déficit de GH costuma ter velocidade baixa e atraso ósseo.",
+    "trap": "Investigar GH invasivamente em toda criança no P3 sem olhar velocidade e alvo familiar."
   },
   {
     "id": "ped-endo-005",
     "specialty": "pediatria",
     "group": "Endocrinologia",
-    "theme": "Puberdade",
+    "theme": "Puberdade precoce",
     "exam": "santa-casa",
-    "year": 2023,
-    "difficulty": "media",
-    "stem": "Menina de 7 anos e meio com telarca isolada, idade óssea compatível com cronológica, sem estirão acelerado. Abordagem inicial mais razoável?",
+    "year": 2022,
+    "difficulty": "dificil",
+    "stem": "Menina de 5 anos com telarca, aceleração de crescimento e pico de LH após GnRH elevado. Qual o tratamento específico mais usado?",
     "choices": [
-      "Análogo de GnRH imediato sem avaliação",
-      "Ovariectomia bilateral",
-      "Acompanhar evolução (telarca prematura isolada é possível) e reavaliar progressão",
-      "Corticoide em altas doses de rotina"
+      "Estrogênio oral contínuo para 'completar a puberdade'",
+      "Análogo de GnRH",
+      "Testosterona depot mensal",
+      "Iodo radioativo tireoidiano"
     ],
-    "answer": 2,
-    "explain": "Telarca prematura isolada pode ser benigna; vigiar progressão/idade óssea/outros caracteres."
+    "answer": 1,
+    "explain": "Puberdade precoce central confirma-se com eixo ativado; análogos de GnRH freiam a progressão e preservam potencial estatural. Estrogênio agravaria o quadro.",
+    "trap": "Usar hormônio sexual em vez de bloquear o eixo na puberdade precoce central."
   },
   {
     "id": "ped-endo-006",
     "specialty": "pediatria",
     "group": "Endocrinologia",
-    "theme": "Puberdade",
-    "exam": "amp",
-    "year": 2023,
+    "theme": "Obesidade / DM2",
+    "exam": "unifesp",
+    "year": 2024,
     "difficulty": "dificil",
-    "stem": "Menino de 9 anos com volume testicular 12 mL bilateral, estirão e idade óssea avançada. Diagnóstico sindrômico?",
+    "stem": "Adolescente obeso com poliúria, glicemia de jejum 180 mg/dL, HbA1c 8,2%, sem cetoacidose. Anticorpos anti-GAD negativos. Melhor conduta inicial típica?",
     "choices": [
-      "Atraso puberal",
-      "Telarca prematura feminina",
-      "Puberdade precoce (central até prova em contrário)",
-      "Hipotireoidismo congênito não tratado como causa exclusiva sem dados"
+      "Pancreatectomia parcial empírica",
+      "Apenas dieta sem acompanhamento glicêmico",
+      "Iodo radioativo para 'reduzir metabolismo'",
+      "Educação, mudanças de estilo de vida e metformina (com insulina se gravidade/protocolo exigir)"
     ],
-    "answer": 2,
-    "explain": "Sinais puberais precoces + avanço de IO → puberdade precoce; investigar eixo."
+    "answer": 3,
+    "explain": "Perfil de DM2 pediátrico (obesidade, anticorpos negativos) inicia com estilo de vida e metformina; insulina entra conforme gravidade/HbA1c. Cirurgia pancreática não é tratamento.",
+    "trap": "Tratar todo diabetes pediátrico automaticamente como tipo 1 com esquema basal-bolus sem olhar o fenótipo."
   },
   {
     "id": "ped-cardio-001",
     "specialty": "pediatria",
     "group": "Cardiologia",
-    "theme": "Sopros",
-    "exam": "enare",
-    "year": 2025,
-    "difficulty": "media",
-    "stem": "Pré-escolar assintomático com sopro suave, vibratório, em borda esternal esquerda, que diminui sentado. Exame normal. Hipótese mais provável?",
+    "theme": "SOP / cardiopatia",
+    "exam": "unifesp",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "RN de 10 dias com sudorese às mamadas, taquipneia, hepatomegalia e sopro; saturando 88% em ar ambiente. Qual a prioridade diagnóstica inicial?",
     "choices": [
-      "Estenose aórtica grave sintomática",
-      "Tetralogia de Fallot cianótica",
-      "Sopro inocente (ex.: Still)",
-      "Miocardite fulminante"
+      "Tratar como bronquiolite exclusiva sem avaliação cardíaca",
+      "Alta com orientação de cólica",
+      "Iniciar AAS antiagregante como única medida",
+      "Avaliar cardiopatia congênita com urgência (oximetria crítica/ecocardiograma) e estabilizar"
     ],
-    "answer": 2,
-    "explain": "Sopro inocente: suave, posição-dependente, criança assintomática, exame normal."
+    "answer": 3,
+    "explain": "Insuficiência cardíaca/cianose no período neonatal de fechamento do ducto sugere cardiopatia crítica. Ecocardiograma e suporte (prostaglandina se ducto-dependente) são centrais.",
+    "trap": "Atribuir cansaço às mamadas só a 'pulmão' ou cólica."
   },
   {
     "id": "ped-cardio-002",
     "specialty": "pediatria",
     "group": "Cardiologia",
-    "theme": "IC congestiva",
-    "exam": "enamed",
-    "year": 2024,
+    "theme": "CIA / CIV",
+    "exam": "santa-casa",
+    "year": 2022,
     "difficulty": "media",
-    "stem": "Lactente de 2 meses com sudorese às mamadas, taquipneia, hepatomegalia e dificuldade ponderal. Qual síndrome clínica?",
+    "stem": "Escolar assintomático com sopro sistólico suave e desdobramento fixo de B2. Radiografia com hiperfluxo pulmonar leve. Diagnóstico mais provável?",
     "choices": [
-      "Apenas RGE fisiológico",
-      "Insuficiência cardíaca congestiva",
-      "Asma do lactente sem outros achados",
-      "ITU baixa sem febre"
+      "Estenose aórtica crítica do neonato",
+      "Comunicação interatrial",
+      "Tetralogia de Fallot com crises de hipoxia",
+      "Pericardite constritiva aguda"
     ],
     "answer": 1,
-    "explain": "Sudorese às mamadas + taquipneia + hepatomegalia + falha ponderal → ICC no lactente."
+    "explain": "Desdobramento fixo de B2 com hiperfluxo é clássico de CIA. Fallot cursa com cianose/crises; estenose aórtica crítica é neonatal grave.",
+    "trap": "Associar qualquer sopro a CIV, sem valorizar o B2 fixo."
   },
   {
     "id": "ped-cardio-003",
     "specialty": "pediatria",
     "group": "Cardiologia",
-    "theme": "Kawasaki",
+    "theme": "Febre reumática",
     "exam": "unifesp",
-    "year": 2025,
-    "difficulty": "facil",
-    "stem": "Criança com febre há 6 dias, conjuntivite não exsudativa, glossite, rash polimorfo, edema de mãos e pés e adenopatia cervical. Principal preocupação e tratamento agudo?",
+    "year": 2023,
+    "difficulty": "dificil",
+    "stem": "Adolescente com migratória de grandes articulações, sopro de regurgitação mitral novo e evidência de infecção estreptocócica prévia. Qual o diagnóstico sindrômico?",
     "choices": [
-      "Doença de Kawasaki; imunoglobulina IV + AAS na fase aguda",
-      "Apenas antibiótico para escarlatina sem considerar Kawasaki",
-      "Corticoterapia isolada sem IGIV como padrão universal",
-      "Anticoagulação plena sem diagnóstico"
+      "Artrite séptica poliarticular sem foco",
+      "Lúpus com anti-DNA negativo e sem outros critérios",
+      "Febre reumática aguda (cardite + artrite)",
+      "Miocardite viral exclusiva sem critérios de Jones"
     ],
-    "answer": 0,
-    "explain": "Kawasaki: IGIV + AAS para reduzir risco de aneurisma coronariano."
+    "answer": 2,
+    "explain": "Artrite migratória + cardite + evidência de estreptococo preenchem critérios de Jones para febre reumática. Isso muda profilaxia secundária e manejo.",
+    "trap": "Tratar só a artrite e esquecer a cardite/profilaxia."
   },
   {
     "id": "ped-cardio-004",
     "specialty": "pediatria",
     "group": "Cardiologia",
-    "theme": "Cardiopatia congênita básica",
-    "exam": "unifesp",
+    "theme": "Síncope",
+    "exam": "usp",
     "year": 2024,
-    "difficulty": "dificil",
-    "stem": "RN cianótico que melhora temporariamente com prostaglandina E1. Qual mecanismo é o alvo dessa terapia?",
+    "difficulty": "media",
+    "stem": "Adolescente com síncope durante exercício, história familiar de morte súbita e ECG com intervalo QT longo. Melhor conduta?",
     "choices": [
-      "Fechar o canal arterial imediatamente",
-      "Manter o canal arterial pérvio em cardiopatia canal-dependente",
-      "Tratar pneumonia viral",
-      "Induzir fechamento do forame oval"
+      "Liberar esporte integral após soro caseiro",
+      "Diagnosticar síncope vasovagal típica sem ECG",
+      "Afastar de esportes competitivos, investigar canalopatia e referir à cardiologia/eletrofisiologia",
+      "Prescrever estimulante para melhorar o rendimento"
     ],
-    "answer": 1,
-    "explain": "PGE1 mantém o canal aberto em lesões canal-dependentes (fluxo pulmonar ou sistêmico)."
+    "answer": 2,
+    "explain": "Síncope de esforço + QT longo + história familiar é alto risco de arritmia hereditária. Exige restrição e avaliação especializada, não liberação esportiva.",
+    "trap": "Rotular toda síncope adolescente como vasovagal sem ECG e contexto de esforço."
   },
   {
     "id": "ped-cardio-005",
     "specialty": "pediatria",
     "group": "Cardiologia",
-    "theme": "Cardiopatia congênita básica",
-    "exam": "santa-casa",
+    "theme": "Kawasaki / coronárias",
+    "exam": "enare",
     "year": 2025,
-    "difficulty": "media",
-    "stem": "Escolar com sopro holossistólico em borda esternal esquerda baixa e frêmito. Diagnóstico mais compatível entre as CIV?",
+    "difficulty": "dificil",
+    "stem": "Criança no 10º dia de Kawasaki tratado tardiamente apresenta sopro e ecocardiograma com aneurisma coronariano médio. Além do seguimento, qual cuidado é essencial?",
     "choices": [
-      "Comunicação interatrial com sopro exclusivamente diastólico apical clássico",
-      "Persistência do canal sem sopro contínuo",
-      "Prolapso mitral sem sopro sistólico",
-      "Comunicação interventricular hemodinamicamente significativa"
+      "Alta definitiva sem reavaliação de coronárias",
+      "Antiagregação (e anticoagulação se critério de tamanho/risco) e seguimento cardiológico estrito",
+      "Antibiótico isolado por 6 meses",
+      "Vacina viva imediata no mesmo dia da IGIV sem intervalo"
     ],
-    "answer": 3,
-    "explain": "CIV: sopro holossistólico em BEIE baixa ± frêmito."
+    "answer": 1,
+    "explain": "Aneurisma coronariano exige antiagregação ± anticoagulação conforme risco e follow-up de imagem. IGIV recente também impacta intervalo de vacinas vivas.",
+    "trap": "Considerar Kawasaki 'curado' só porque a febre cedeu, ignorando coronárias."
   },
   {
     "id": "ped-hemato-001",
     "specialty": "pediatria",
     "group": "Hematologia",
     "theme": "Anemia ferropriva",
-    "exam": "amp",
+    "exam": "unifesp",
     "year": 2022,
-    "difficulty": "facil",
-    "stem": "Pré-escolar com palidez, VCM baixo, RDW alto, ferritina baixa e dieta pobre em ferro. Tratamento de escolha?",
+    "difficulty": "media",
+    "stem": "Lactente de 15 meses com Hb 8,2 g/dL, VCM 62 fL, RDW alto, ferritina baixa, estável hemodinamicamente. Melhor conduta?",
     "choices": [
-      "Sulfato ferroso oral na dose terapêutica por tempo adequado",
-      "Vitamina B12 isolada como primeira linha",
-      "Transfusão de rotina em anemia leve assintomática",
-      "Eritropoetina em todos os casos dietéticos"
+      "Transfusão de plaquetas",
+      "Sulfato ferroso terapêutico e ajuste dietético, com controle da resposta",
+      "Transfusão de hemácias de rotina por Hb < 9 em paciente estável",
+      "Biópsia de medula imediata sem prova de ferro"
     ],
-    "answer": 0,
-    "explain": "Anemia ferropriva: ferro oral terapêutico + orientação dietética."
+    "answer": 1,
+    "explain": "Anemia microcítica com ferritina baixa em lactente com dieta inadequada é ferropriva: ferro oral e dieta. Transfusão não é rotina se estável; plaquetas não tratam anemia.",
+    "trap": "Transfundir anemia crônica estável apenas pelo valor da Hb."
   },
   {
     "id": "ped-hemato-002",
     "specialty": "pediatria",
     "group": "Hematologia",
-    "theme": "Púrpura",
+    "theme": "Púrpura trombocitopênica",
     "exam": "amp",
-    "year": 2022,
-    "difficulty": "facil",
-    "stem": "Criança após virose com petéquias e equimoses, plaquetas 12.000, Hb e leucócitos normais, bom estado geral. Diagnóstico mais provável?",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "Pré-escolar após IVAS apresenta petéquias e plaquetas 12.000/mm³, sem sangramento maior, exame sem hepatoesplenomegalia, hemoglobina normal. Conduta mais adequada na maioria dos protocolos atuais?",
     "choices": [
-      "Púrpura trombocitopênica imune (PTI) aguda",
-      "Leucemia sem alterações nas outras linhagens e sem sintomas",
-      "Hemofilia A com plaquetas baixas",
-      "Anemia falciforme em crise vaso-oclusiva típica"
+      "Esplenectomia imediata em todos os casos de primeira crise",
+      "Observação ou terapia dirigida ao sangramento conforme risco; evitar procedimentos invasivos desnecessários",
+      "Transfusão de plaquetas de rotina só pelo número, sem sangramento grave",
+      "Quimioterapia multiagente empírica"
     ],
-    "answer": 0,
-    "explain": "PTI pós-viral: plaquetopenia isolada em criança bem."
+    "answer": 1,
+    "explain": "PTI aguda típica com sangramento leve frequentemente é expectante ou usa Ig/corticoide conforme risco. Transfusão plaquetária isolada pelo número é pouco duradoura e não rotina; esplenectomia é excepcional na primeira crise.",
+    "trap": "Transfundir plaquetas automaticamente porque 'estão muito baixas', mesmo sem hemorragia grave."
   },
   {
     "id": "ped-hemato-003",
     "specialty": "pediatria",
     "group": "Hematologia",
-    "theme": "Púrpura",
-    "exam": "enamed",
-    "year": 2023,
-    "difficulty": "dificil",
-    "stem": "Escolar com púrpura palpável em membros inferiores, dor abdominal e artralgia após IVAS. Urina com hematúria. Hipótese?",
+    "theme": "Drepanocitose",
+    "exam": "unifesp",
+    "year": 2025,
+    "difficulty": "facil",
+    "stem": "Criança com anemia falciforme chega com febre 39 °C, bom estado relativo, sem foco claro. Qual a preocupação e conduta inicial?",
     "choices": [
-      "Vasculite por IgA (Púrpura de Henoch-Schönlein)",
-      "PTI com plaquetas muito baixas como achado obrigatório",
-      "Kawasaki sem febre prolongada",
-      "Escorbuto exclusivo do lactente alimentado com leite"
+      "Apenas antitérmico domiciliar sem avaliação, por ser 'febre da doença'",
+      "Risco de sepse por germes encapsulados; coletar culturas e iniciar antibiótico empírico conforme protocolo",
+      "Transfusão de troca imediata em toda febre",
+      "Suspender penicilina profilática definitivamente"
     ],
-    "answer": 0,
-    "explain": "IgA vasculitis: púrpura palpável + dor abdominal/artralgia ± nefrite."
+    "answer": 1,
+    "explain": "Febre na falciforme é emergência potencial por asplenia funcional. Antibiótico empírico precoce após culturas é regra em muitos protocolos. Nem toda febre é crise vaso-oclusiva simples.",
+    "trap": "Liberar febre na falciforme como 'só dor/crise' sem cobrir sepse."
   },
   {
     "id": "ped-hemato-004",
     "specialty": "pediatria",
     "group": "Hematologia",
-    "theme": "Leucemia sinais",
-    "exam": "enare",
-    "year": 2025,
+    "theme": "Hemofilia",
+    "exam": "enamed",
+    "year": 2023,
     "difficulty": "dificil",
-    "stem": "Criança com palidez, febre persistente, dores ósseas, hepatoesplenomegalia e petéquias. Hemograma com blastos. Conduta inicial?",
+    "stem": "Menino de 3 anos com hematoma muscular após trauma mínimo e história familiar materna de sangradores. TTPA alongado, TP normal, plaquetas normais. Próximo passo?",
     "choices": [
-      "Alta com ferro oral e retorno em 3 meses",
-      "Encaminhar urgentemente para centro especializado; evitar procedimentos invasivos desnecessários antes da avaliação",
-      "Vacina de vírus vivos imediatamente antes da investigação",
-      "Cirurgia abdominal exploratória de rotina"
+      "Transfundir plaquetas empiricamente",
+      "Indicar AAS para 'afinar e prevenir trombose'",
+      "Dosar fatores VIII/IX e manejar com reposição do fator deficiente",
+      "Apenas vitamina K intramuscular sem investigação de fator"
     ],
-    "answer": 1,
-    "explain": "Suspeita de leucemia aguda → referência hematológica urgente."
+    "answer": 2,
+    "explain": "Padrão de coagulopatia intrínseca em menino sugere hemofilia: dosar FVIII/FIX e repor. AAS é contraindicado. Plaquetas e vitamina K não corrigem deficiência de fator.",
+    "trap": "Dar AAS ou plaquetas em suspeita de hemofilia."
   },
   {
     "id": "ped-reuma-001",
     "specialty": "pediatria",
     "group": "Reumatologia / ortopedia",
     "theme": "AIJ",
-    "exam": "unifesp",
-    "year": 2025,
-    "difficulty": "media",
-    "stem": "Menina de 4 anos com artrite de joelho há 8 semanas, sem febre diária, FAN positivo, sem comprometimento sistêmico grave. Forma mais compatível de AIJ?",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "dificil",
+    "stem": "Menina de 4 anos com artrite de joelho e tornozelo há 10 semanas, afebril, FAN positivo, sem rash quotidianos. Forma mais compatível?",
     "choices": [
-      "AIJ sistêmica com febre quotidianas e rash",
-      "Artrite séptica aguda de poucas horas",
-      "Dor de crescimento sem artrite objetiva",
-      "AIJ oligoarticular"
+      "AIJ sistêmica com febre e rash típicos",
+      "Artrite séptica poliarticular de horas de evolução",
+      "AIJ oligoarticular",
+      "Dor de crescimento sem artrite objetiva"
     ],
-    "answer": 3,
-    "explain": "Oligo AIJ: ≤4 articulações, comum em pré-escolares; rastrear uveíte."
+    "answer": 2,
+    "explain": "≤4 articulações por ≥6 semanas em pré-escolar com FAN+ sugere oligo AIJ; rastrear uveíte. Sistêmica exige febre/rash característicos. Séptica é hiperaguda e tóxica.",
+    "trap": "Chamar de dor de crescimento uma artrite objetiva persistente."
   },
   {
     "id": "ped-reuma-002",
     "specialty": "pediatria",
     "group": "Reumatologia / ortopedia",
-    "theme": "Artrite séptica vs transitória",
+    "theme": "Artrite séptica",
     "exam": "amp",
-    "year": 2022,
-    "difficulty": "facil",
-    "stem": "Lactente recusa apoiar o membro, febre, PCR muito elevada e mobilização extremamente dolorosa do quadril. Prioridade?",
+    "year": 2023,
+    "difficulty": "media",
+    "stem": "Lactente recusa apoiar o membro, febre, PCR muito elevada e mobilização do quadril extremamente dolorosa. Ultrassom com derrame. Prioridade?",
     "choices": [
+      "Artrite séptica até prova em contrário; punção/drenagem e antibiótico urgentes",
       "Sinovite transitória; alta com AINE sem investigação",
-      "Apenas fisioterapia ambulatorial",
-      "Observação por 1 semana sem exames",
-      "Artrite séptica até prova em contrário; punção/drenagem e antibiótico urgentes"
+      "Apenas fisioterapia ambulatorial por 2 semanas",
+      "Observação exclusiva por 7 dias sem exames"
     ],
-    "answer": 3,
-    "explain": "Febre + impotência funcional + inflamação alta no lactente → séptica até excluir."
+    "answer": 0,
+    "explain": "Febre + impotência + inflamação alta + derrame no lactente é séptica até excluir. Atraso em drenagem/antibiótico ameaça a articulação.",
+    "trap": "Tratar como sinovite transitória um lactente tóxico com PCR alta."
   },
   {
     "id": "ped-reuma-003",
     "specialty": "pediatria",
     "group": "Reumatologia / ortopedia",
-    "theme": "Artrite séptica vs transitória",
-    "exam": "enare",
-    "year": 2024,
-    "difficulty": "facil",
+    "theme": "Sinovite transitória",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media",
     "stem": "Pré-escolar após IVAS, claudicação leve, afebril, bom estado, PCR normal, ultrassom com pequeno derrame. Hipótese mais provável?",
     "choices": [
+      "Artrite séptica com toxemia",
       "Sinovite transitória do quadril",
-      "Artrite séptica com toxicidade",
       "Fratura exposta",
       "Osteomielite crônica de longa data sem história"
     ],
-    "answer": 0,
-    "explain": "Sinovite transitória: pós-viral, criança bem, inflamação baixa."
+    "answer": 1,
+    "explain": "Pós-viral, criança bem, inflamação baixa e derrame discreto apontam sinovite transitória. Séptica cursa com toxemia e marcadores altos.",
+    "trap": "Operar/agredir terapeutamente todo derrame de quadril sem estratificar toxicidade."
   },
   {
     "id": "ped-reuma-004",
     "specialty": "pediatria",
     "group": "Reumatologia / ortopedia",
-    "theme": "Marcha",
+    "theme": "Perthes",
     "exam": "enamed",
-    "year": 2023,
-    "difficulty": "facil",
-    "stem": "Menino de 6 anos com claudicação progressiva, dor referida no joelho, limitação de rotação interna do quadril. Radiografia sugere necrose avascular da cabeça femoral. Diagnóstico?",
+    "year": 2025,
+    "difficulty": "dificil",
+    "stem": "Menino de 6 anos com claudicação progressiva, dor referida no joelho e limitação de rotação interna do quadril. Radiografia sugere necrose da cabeça femoral. Diagnóstico?",
     "choices": [
-      "Doença de Legg-Calvé-Perthes",
       "Pé torto congênito não tratado como causa aguda aos 6 anos",
-      "Displasia do desenvolvimento do quadril do RN apenas",
-      "Escoliose idiopática sem acometimento de quadril"
+      "Displasia do desenvolvimento do quadril exclusiva do RN",
+      "Escoliose idiopática sem acometimento de quadril",
+      "Doença de Legg-Calvé-Perthes"
     ],
-    "answer": 0,
-    "explain": "Perthes: necrose avascular da cabeça femoral em escolares, claudicação/limitação de RI."
+    "answer": 3,
+    "explain": "Perthes é necrose avascular da cabeça femoral em escolares, muitas vezes com dor referida no joelho e limitação de RI. Exige descarga/seguimento ortopédico.",
+    "trap": "Investigar só o joelho e perder a patologia do quadril."
   },
   {
     "id": "ped-maus-001",
     "specialty": "pediatria",
     "group": "Maus-tratos / proteção",
     "theme": "Suspeita",
-    "exam": "enare",
-    "year": 2025,
+    "exam": "usp",
+    "year": 2024,
     "difficulty": "media",
-    "stem": "Lactente de 3 meses com hematomas em diferentes estágios em dorso e orelhas, história inconsistente de 'queda do sofá'. Conduta médica prioritária?",
+    "stem": "Lactente de 3 meses com hematomas em diferentes estágios em dorso e orelhas; cuidadores relatam 'queda do sofá' com narrativa inconsistente. Conduta médica prioritária?",
     "choices": [
-      "Alta sem comunicação por ser 'acidente doméstico comum'",
-      "Confrontar agressivamente os pais na sala de espera",
-      "Apenas receitar analgésico e retorno em 6 meses",
-      "Garantir segurança da criança, avaliar lesões ocultas e notificar o Conselho Tutelar/autoridades competentes"
+      "Alta sem comunicação por ser acidente doméstico comum",
+      "Garantir segurança, investigar lesões ocultas e notificar Conselho Tutelar/autoridades competentes",
+      "Confrontar agressivamente os responsáveis na sala de espera",
+      "Apenas analgésico e retorno em 6 meses"
     ],
-    "answer": 3,
-    "explain": "Suspeita de maus-tratos: proteger, investigar e notificar — obrigação legal/ética."
+    "answer": 1,
+    "explain": "Hematomas em locais atípicos e história incompatível são red flags. O médico deve proteger, avaliar (incluindo lesões ocultas) e notificar — obrigação legal/ética.",
+    "trap": "Aceitar história improvável e liberar sem notificação."
   },
   {
     "id": "ped-maus-002",
     "specialty": "pediatria",
     "group": "Maus-tratos / proteção",
     "theme": "Notificação",
-    "exam": "enamed",
-    "year": 2022,
-    "difficulty": "media",
+    "exam": "enare",
+    "year": 2024,
+    "difficulty": "dificil",
     "stem": "Diante de suspeita fundamentada de violência contra criança, a notificação ao Conselho Tutelar é:",
     "choices": [
-      "Obrigatória, independentemente de certeza absoluta ou autorização dos responsáveis",
       "Opcional e só após sentença judicial",
       "Proibida pelo sigilo médico absoluto sem exceções",
-      "Permitida apenas se houver confissão do agressor"
+      "Permitida apenas se houver confissão do agressor",
+      "Obrigatória, independentemente de certeza absoluta ou autorização dos responsáveis"
     ],
-    "answer": 0,
-    "explain": "Notificação de suspeita de violência contra criança/adolescente é mandatória."
+    "answer": 3,
+    "explain": "A legislação e os códigos de ética impõem notificação de suspeita de violência contra criança/adolescente. Não se exige prova judicial prévia nem anuência do agressor.",
+    "trap": "Usar o sigilo médico como justificativa para não notificar."
   },
   {
     "id": "ped-maus-003",
     "specialty": "pediatria",
     "group": "Maus-tratos / proteção",
     "theme": "Fratura metafisária",
-    "exam": "enare",
-    "year": 2024,
-    "difficulty": "facil",
-    "stem": "RN de 4 meses com fratura metafisária em 'canto' (corner fracture) do úmero distal, sem mecanismo plausível. Significado clínico mais importante?",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "dificil",
+    "stem": "Lactente de 4 meses com fratura metafisária em 'canto' (corner fracture) do úmero distal, sem mecanismo plausível. Qual o significado clínico mais importante?",
     "choices": [
-      "Fratura típica de osteopenia do prematuro sem outros cuidados",
+      "Fratura típica isolada de osteopenia do prematuro sem outros cuidados",
+      "Lesão altamente sugestiva de maus-tratos; investigar outras lesões e notificar",
       "Achado normal da marcha",
-      "Sempre decorrente de raquitismo sem avaliação social",
-      "Lesão altamente sugestiva de maus-tratos; investigar outras lesões e notificar"
+      "Sempre decorrente de raquitismo sem avaliação social"
     ],
-    "answer": 3,
-    "explain": "Fraturas metafisárias clássicas em lactentes são red flags de abuso físico."
+    "answer": 1,
+    "explain": "Fraturas metafisárias clássicas em lactentes não deambuladores são altamente específicas de abuso físico e exigem investigação completa (incluindo fundo de olho/imagem óssea) e notificação.",
+    "trap": "Atribuir fratura metafisária clássica só a raquitismo/osteopenia sem protocolo de proteção."
   },
   {
     "id": "ped-maus-004",
     "specialty": "pediatria",
     "group": "Maus-tratos / proteção",
-    "theme": "Suspeita",
-    "exam": "enare",
+    "theme": "Violência sexual",
+    "exam": "usp",
     "year": 2023,
-    "difficulty": "facil",
-    "stem": "Adolescente relata abuso sexual e apresenta-se ansioso. Além do cuidado clínico e acolhimento, qual ação é necessária no fluxo de proteção?",
+    "difficulty": "dificil",
+    "stem": "Adolescente relata abuso sexual recente e apresenta-se ansioso. Além do acolhimento clínico, qual ação é necessária no fluxo de proteção?",
     "choices": [
-      "Pedir que o adolescente 'resolva em família' sem notificar",
-      "Adiar qualquer atendimento para depois dos exames escolares",
-      "Divulgar o caso em redes sociais da unidade",
-      "Notificar órgãos de proteção e acionar fluxo de atendimento a violência sexual conforme protocolo"
+      "Pedir que resolva 'em família' sem notificar",
+      "Notificar órgãos de proteção e acionar fluxo de atendimento a violência sexual conforme protocolo",
+      "Adiar atendimento para depois das provas escolares",
+      "Divulgar o caso em redes sociais da unidade"
     ],
-    "answer": 3,
-    "explain": "Violência sexual: acolher, cuidar, preservar evidências quando indicado e acionar proteção/notificação."
+    "answer": 1,
+    "explain": "Violência sexual exige acolhimento, cuidados, preservação de evidências quando indicado e acionamento do fluxo de proteção/notificação. Sigilo não impede a comunicação compulsória.",
+    "trap": "Devolver o caso à família sem acionar a rede de proteção."
   }
 ]

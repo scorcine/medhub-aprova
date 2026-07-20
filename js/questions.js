@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260719q2";
+const APROVA_QUESTION_CACHE_VER = "20260719q3";
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -59,6 +59,7 @@ function aprovaNormalizeQuestion (raw, fileHint) {
     : null;
   const difficulty = String(raw.difficulty || raw.dificuldade || "").trim().toLowerCase();
   const explain = String(raw.explain || raw.explanation || raw.comentario || "").trim();
+  const trap = String(raw.trap || raw.pegadinha || "").trim();
 
   return {
     id,
@@ -71,7 +72,8 @@ function aprovaNormalizeQuestion (raw, fileHint) {
     stem,
     choices: choices.map(c => String(c)),
     answer: answer | 0,
-    explain
+    explain,
+    trap
   };
 }
 
@@ -279,7 +281,12 @@ const AprovaQuestions = {
         ok
       });
     }
-    return { ok, explain: q.explain, answer: q.answer };
+    return {
+      ok,
+      explain: q.explain,
+      trap: q.trap || "",
+      answer: q.answer
+    };
   },
 
   next () {
