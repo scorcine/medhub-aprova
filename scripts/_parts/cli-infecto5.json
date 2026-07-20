@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 1,
+    "group": "Infectologia",
+    "theme": "Dengue — grupo A ambulatorial",
+    "stem": "Mulher de 28 anos, área endêmica, febre há 3 dias, mialgia e cefaleia, sem sangramento, prova do laço negativa, sem comorbidades. Hematócrito normal. Classificada como grupo A. Qual a conduta inicial mais adequada? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário.",
+    "correct": "Hidratação oral ambulatorial (cerca de 60 ml/kg/dia no adulto), orientar sinais de alarme e reavaliar na com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Internar em UTI e expandir com albumina de rotina apesar de estabilidade sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Prescrever AAS e ibuprofeno para a mialgia, por serem analgésicos de escolha em arbovirose sem ganho clínico líquido sem respaldo atual",
+      "Iniciar vancomicina empírica sem foco bacteriano, só pela febre, omitindo hidratação e vigilância de alarme sem ganho clínico líquido com iatrogenia inútil",
+      "Transfundir plaquetas profiláticas com contagem >100.000/mm³ e sem sangramento ativo documentado sem ganho clínico líquido prioridade invertida"
+    ],
+    "explain": "Grupo A: ambulatorial, hidratação VO, educação sobre sinais de alarme e retorno na defervescência. AAS/AINE contraindicados; expansão IV/UTI e transfusão plaquetária não cabem sem gravidade.",
+    "trap": "Internar ou usar AAS/AINE no grupo A estável sem alarme."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 2,
+    "group": "Infectologia",
+    "theme": "Dengue — grupo B e hemograma",
+    "stem": "Homem de 55 anos, hipertenso e diabético, febre e mialgia há 4 dias, petéquias em membros, sem sinais de alarme, PA estável. Suspeita de dengue. Qual estratificação e conduta imediata? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Conduzir como grupo B: observar até hemograma (Ht), hidratação oral enquanto aguarda e reavaliar com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Liberar sem hemograma porque petéquias isoladas nunca alteram o risco nesta sem ganho clínico líquido o que atrasa o manejo",
+      "Indicar expansão rápida 20 ml/kg em 20 min como se fosse choque, apesar de pressão e sem ganho clínico líquido sem suporte diretriz",
+      "Usar apenas observação domiciliar sem orientar sangramento ou retorno, mesmo com comorbidades sem ganho clínico líquido elevando iatrogenia vã",
+      "Iniciar quimioterapia antitumoral empírica por petéquias, presumindo leucemia sem avaliação hematológica sem ganho clínico líquido fora da prioridade já"
+    ],
+    "explain": "Grupo B inclui sangramento espontâneo/induzido, comorbidades, extremos de idade, gestação ou risco social. Hemograma é obrigatório; Ht elevado vira alarme (grupo C).",
+    "trap": "Tratar petéquias/comorbidade como grupo A sem hemograma seriado."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 3,
+    "group": "Infectologia",
+    "theme": "Dengue — grupo C expansão IV",
+    "stem": "Adolescente de 16 anos com dengue: na defervescência surge dor abdominal intensa, vômitos persistentes e Ht em ascensão; PA ainda mantida. Qual a prioridade terapêutica? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Internar e iniciar reposição IV imediata (fase de expansão do grupo C), monitorar Ht/hemodinâmica e completar exames obrigatórios no manejo individualizado",
+    "wrongs": [
+      "Manter só hidratação oral domiciliar porque a pressão arterial ainda não caiu para valores de choque o que atrasa o manejo correto",
+      "Administrar diurético de alça de rotina na fase crítica para 'evitar edema', reduzindo volume efetivo sem suporte nas diretrizes atuais",
+      "Transfundir concentrado de hemácias sem sangramento e com Ht alto por extravasamento plasmático sem ganho clínico líquido elevando iatrogenia sem benefício",
+      "Prescrever corticosteroide isolado como antídoto do extravasamento, omitindo expansão volumétrica sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Sinais de alarme = grupo C: expansão IV imediata onde estiver, observação hospitalar ≥48 h até estabilizar, Ht e imagem para derrames.",
+    "trap": "Aguardar hipotensão para hidratar IV quando já há alarme e hemoconcentração."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 4,
+    "group": "Infectologia",
+    "theme": "Dengue — grupo D choque",
+    "stem": "Mulher de 32 anos com dengue: extremidades frias, enchimento capilar >2 s, PA convergente, oligúria e Ht elevado. Qual a fase inicial de reposição? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Expansão rápida com SF 0,9% ou Ringer 20 ml/kg em até 20 min, reavaliar a cada 15–30 min e repetir até 3 vezes se necessário conforme estratificação do caso",
+    "wrongs": [
+      "Restringir líquidos rigorosamente por medo de edema pulmonar, mesmo com choque hipovolêmico por extravasamento e atrasa o manejo",
+      "Iniciar noradrenalina antes de qualquer volume, tratando como choque distributivo bacteriano sem expansão sem ganho clínico líquido sem respaldo atual",
+      "Usar apenas coloides sintéticos na primeira alíquota, sem tentativa de cristaloides na expansão rápida sem ganho clínico líquido com iatrogenia inútil",
+      "Indicar plasmaférese de urgência como tratamento etiológico do vírus da dengue no choque sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Grupo D: expansão rápida com cristaloides, reavaliações frequentes; se Ht sobe e choque persiste → albumina/coloides; se Ht cai com choque → sangramento/CIVD.",
+    "trap": "Usar vasopressor sem volume ou restringir líquidos no choque da dengue."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 5,
+    "group": "Infectologia",
+    "theme": "Dengue — critérios de alta",
+    "stem": "Homem de 40 anos internado por dengue com alarme, já estável: afebril 48 h sem antitérmico, Ht estável 24 h, plaquetas 80.000 em ascensão, hemodinâmica ok 48 h. Pode receber alta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Sim, se todos os critérios de alta estiverem presentes, com retorno orientado e cartão de acompanhamento conforme protocolo no plano atual",
+    "wrongs": [
+      "Não: exigir plaquetas >150.000 sempre, mesmo com estabilidade clínica e Ht normalizado sem ganho clínico líquido o que atrasa o manejo",
+      "Não: manter UTI por 14 dias em todo caso que já teve alarme, independentemente da recuperação sem ganho clínico líquido sem suporte diretriz",
+      "Sim, mesmo com febre diária e Ht ainda em ascensão, desde que o paciente 'queira ir embora' sem ganho clínico líquido elevando iatrogenia vã",
+      "Alta só após biópsia hepática obrigatória em todo paciente que elevou aminotransferases leves sem ganho clínico líquido fora da prioridade já"
+    ],
+    "explain": "Alta exige: afebril 48 h, melhora clínica, Ht normal/estável 24 h, plaquetas >50.000 em ascensão e estabilidade hemodinâmica 48 h.",
+    "trap": "Reter alta por plaquetas 'não normalizadas' ou liberar com febre/Ht em ascensão."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 6,
+    "group": "Infectologia",
+    "theme": "Dengue — NS1 e janela",
+    "stem": "Paciente no 2º dia de febre suspeita de dengue; serviço tem NS1 e sorologia. Qual estratégia diagnóstica mais coerente nesta fase? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Priorizar métodos diretos (NS1/PCR/isolamento) até o 5º dia; IgM ganha valor a partir do 6º dia e NS1 com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Pedir só IgG no D2, pois confirma infecção aguda com alta especificidade neste sem ganho clínico líquido o que atrasa o manejo correto",
+      "Aguardar o 10º dia sem NS1/PCR porque métodos diretos só funcionam após a 2ª semana sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Descartar dengue se NS1 negativo no D4 em paciente com infecção prévia, sem sorologia posterior sem ganho clínico líquido elevando iatrogenia sem benefício",
+      "Usar hemocultura bacteriana como único exame confirmatório de dengue em epidemia sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Até D5: NS1/PCR/isolamento. Do D6: IgM ELISA. Infecção secundária reduz sensibilidade do NS1; negatividade não descarta.",
+    "trap": "Confiar só em IgG precoce ou descartar dengue por NS1 negativo isolado."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 7,
+    "group": "Infectologia",
+    "theme": "Dengue — prova do laço",
+    "stem": "Durante atendimento de febre aguda em área de dengue, sem sangramento espontâneo. Como executar e interpretar a prova do laço no adulto? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Insufilar ao valor médio (PAS+PAD)/2, observar 2,5 cm² por até 5 min; ≥20 petéquias no com reassesso clínico seriado no manejo individualizado",
+    "wrongs": [
+      "Usar a fórmula da PAM (PAS+2PAD)/3 como alvo de insuflação e considerar 5 sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Realizar só em quem já tem hematêmese, pois sem sangramento a prova nunca acrescenta sem ganho clínico líquido sem respaldo atual",
+      "Considerar positiva com qualquer equimose fora do quadrado, independentemente do tempo e contagem sem ganho clínico líquido com iatrogenia inútil",
+      "Contraindicar a prova em todos os adultos, reservando-a exclusivamente a lactentes sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Prova do laço: manguito em (PAS+PAD)/2, quadrado 2,5 cm, adulto até 5 min (≥20 petéquias) e criança até 3 min (≥10). Falso-negativa em obesos/choque.",
+    "trap": "Confundir com PAM ou omitir a prova no caso sem sangramento espontâneo."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 8,
+    "group": "Infectologia",
+    "theme": "Dengue — AAS e AINE",
+    "stem": "Homem de 35 anos com febre, dor retro-orbitária e mialgia intensa em epidemia de dengue pede 'remédio forte para dor'. Qual analgesia é a mais segura? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Preferir paracetamol/dipirona conforme protocolo e evitar AAS e demais AINE pelo risco com reassesso clínico seriado conforme estratificação do caso",
+    "wrongs": [
+      "Associar AAS 300 mg 8/8 h como antiagregante profilático da dengue hemorrágica sem ganho clínico líquido o que atrasa o manejo",
+      "Usar diclofenaco intramuscular de rotina por ser superior aos antitérmicos simples na sem ganho clínico líquido sem suporte diretriz",
+      "Indicar varfarina empírica para prevenir trombose associada ao Ht elevado sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Prescrever corticosteroide oral em todo caso febril para reduzir citocinas sem hidratação sem ganho clínico líquido fora da prioridade já"
+    ],
+    "explain": "Não há antiviral específico; sintomáticos + hidratação. AAS/AINE aumentam risco de sangramento e são contraindicados na suspeita.",
+    "trap": "Usar AAS/AINE para 'quebra-ossos' na dengue."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 9,
+    "group": "Infectologia",
+    "theme": "Dengue — gestante estratificação",
+    "stem": "Gestante de 28 semanas com febre e mialgia em área de dengue, estável, sem alarme. Qual conduta mais prudente? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Estadiar e tratar como dengue segundo o grupo clínico, com limiar baixo de observação; cesárea só com indicação obstétrica criteriosa no plano atual",
+    "wrongs": [
+      "Ignorar o protocolo de dengue e atribuir taquicardia apenas à gestação, sem reavaliação na defervescência o que atrasa o manejo correto",
+      "Indicar cesárea eletiva imediata em toda suspeita de dengue no 3º trimestre para 'proteger o feto' sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Usar AAS diário por risco trombótico gestacional sobreposto à dengue sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Contraindicar qualquer hidratação IV mesmo com sinais de alarme, por medo de edema gestacional sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Gestante entra em grupo de risco especial (B ou superior conforme clínica). Risco materno de hemorragia obstétrica; cesárea criteriosa. Tratar pelo estadiamento.",
+    "trap": "Atrasar estadiamento ou cesárea automática só pela dengue."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 10,
+    "group": "Infectologia",
+    "theme": "Dengue — vacina Dengvaxia",
+    "stem": "Adulto de 30 anos, sem imunossupressão, pergunta sobre Dengvaxia. Qual ponto crítico de indicação/segurança? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Esquema de 3 doses (0-6-12 meses) em elegíveis; evitar em soronegativos prévios pelo risco paradoxal de com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Vacinar preferencialmente soronegativos, pois só eles se beneficiam da proteção sem ganho clínico líquido e atrasa o manejo",
+      "Aplicar dose única anual em gestantes, por ser vacina inativada sem vírus vivo sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Indicar em imunodeprimidos graves como substituto do controle vetorial sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Garantir eficácia de 100% após a primeira dose, dispensando as demais sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Dengvaxia (backbone 17D): 9–45 anos, 3 doses SC. Contraindicada em gestantes/imunodeprimidos e, após alertas, em soronegativos (Halstead paradoxal).",
+    "trap": "Vacinar soronegativos ou gestantes com Dengvaxia."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 11,
+    "group": "Infectologia",
+    "theme": "Dengue — hipervolemia na recuperação",
+    "stem": "Paciente em fase de recuperação da dengue: Ht caindo, melhora clínica, mas após hidratação intensa apresenta dispneia e crepitações. Conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Suspeitar hipervolemia/reabsorção; reduzir infusão, considerar diurético e suporte, distinguindo de novo extravasamento no manejo individualizado",
+    "wrongs": [
+      "Dobrar a expansão IV presumindo choque recorrente só porque o Ht caiu na recuperação sem ganho clínico líquido o que atrasa o manejo",
+      "Iniciar anfotericina empírica por dispneia, presumindo histoplasmose sem contexto sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Intubar de rotina sem tentativa de ajuste volêmico em paciente acordado e estável sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Transfundir plaquetas isoladamente como tratamento da congestão iatrogênica sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Na recuperação o líquido retorna ao intravascular; Ht pode cair. Hipervolemia exige reduzir volume ± diurético; não confundir com fase crítica.",
+    "trap": "Expandir mais volume quando a queda do Ht reflete recuperação/hipervolemia."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 12,
+    "group": "Infectologia",
+    "theme": "Dengue — infecção secundária Halstead",
+    "stem": "Homem com dengue prévia há 4 anos agora apresenta novamente febre e mialgia; família pergunta por que há risco de gravidade. Qual a melhor explicação clínica? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Infecção secundária por sorotipo diferente com anticorpos subneutralizantes pode facilitar entrada viral conforme estratificação do caso",
+    "wrongs": [
+      "A gravidade só ocorre na primoinfecção; reinfecção sempre é mais leve e sem sem ganho clínico líquido o que atrasa o manejo correto",
+      "O risco depende exclusivamente de reinfectar pelo mesmo sorotipo idêntico ao primeiro sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Formas graves resultam apenas de bactéria secundária, nunca de imunopatogenia viral sem ganho clínico líquido elevando iatrogenia sem benefício",
+      "Anticorpos prévios sempre neutralizam por completo qualquer sorotipo futuro sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Teoria de Halstead: anticorpos heterólogos subneutralizantes opsonizam novo sorotipo → ↑ carga em macrófagos → citocinas e permeabilidade. Sorotipo 2 frequentemente mais virulento.",
+    "trap": "Achar que reinfecção é sempre benigna ou que só o mesmo sorotipo agrava."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 13,
+    "group": "Infectologia",
+    "theme": "Dengue — leucocitose diferencial",
+    "stem": "Mulher febril há 2 dias com mialgia; hemograma mostra leucocitose importante com desvio à esquerda. Equipe pensou em dengue. Próximo passo? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Reavaliar foco bacteriano (pielonefrite, pneumonia, etc.) e não atribuir o quadro automaticamente à dengue só pela epidemia no plano atual",
+    "wrongs": [
+      "Confirmar dengue clinicamente e omitir exame de urina/tórax porque a epidemia 'explica tudo' sem ganho clínico líquido e atrasa o manejo",
+      "Iniciar expansão IV de grupo D sem sinais de choque, só pelo desvio à esquerda sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Prescrever oseltamivir e corticosteroide combinados sem avaliar foco bacteriano sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Indicar esplenectomia por leucocitose, presumindo mieloproliferação sem investigação sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Leucocitose com desvio fala contra dengue típica e a favor de infecção piogênica ou leptospirose. Exame físico completo evita omitir foco tratável.",
+    "trap": "Rotular como dengue e ignorar foco bacteriano diante de leucocitose com desvio."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 14,
+    "group": "Infectologia",
+    "theme": "Dengue — miocardite como gravidade",
+    "stem": "Homem de 29 anos com dengue: febril, depois dor torácica, bradicardia inapropriada, inversão de T e queda da FE. Qual classificação operacional? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Tratar como dengue grave por acometimento de órgão (miocardite), com suporte, monitorização e condução hospitalar adequada conforme o caso",
+    "wrongs": [
+      "Manter grupo A ambulatorial porque não houve extravasamento plasmático documentado sem ganho clínico líquido o que atrasa o manejo",
+      "Aguardar Ht >55% obrigatoriamente para rotular gravidade, ignorando disfunção cardíaca sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Usar digoxina empírica em dose tóxica sem avaliar volume e eletrocardiograma seriado sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Indicar trombólise coronariana de rotina em toda alteração de repolarização na dengue sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Dengue grave inclui choque, sangramento grave ou lesão de órgão (miocardite, hepatite grave, SNC), mesmo sem extravasamento clássico.",
+    "trap": "Exigir choque/hemoconcentração para chamar de grave quando já há miocardite."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 15,
+    "group": "Infectologia",
+    "theme": "Chikungunya — artrite crônica",
+    "stem": "Mulher de 42 anos teve chikungunya há 4 meses e mantém poliartralgia incapacitante; inflamação articular persistente. Qual 1ª linha citada para fase crônica? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Hidroxicloroquina (± sulfassalazina) por cerca de 6 semanas; metotrexato se falha, com analgesia com reassesso clínico seriado no manejo individualizado",
+    "wrongs": [
+      "Vancomicina prolongada por presumir artrite séptica crônica sem punção nem sem ganho clínico líquido o que atrasa o manejo correto",
+      "Anfotericina lipossomal semanal como imunomodulador da artropatia pós-chik sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Artroplastia bilateral imediata antes de tentativa medicamentosa imunomoduladora sem ganho clínico líquido elevando iatrogenia sem benefício",
+      "AAS em alta dose contínua como única terapia, ignorando risco e ausência de benefício específico sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Fase crônica da chik: HCQ ± sulfassalazina ~6 semanas; MTX se refratária. Não confundir com artrite séptica sem evidência.",
+    "trap": "Tratar artropatia crônica pós-chik só com ATB ou cirurgia precoce."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 16,
+    "group": "Infectologia",
+    "theme": "Chikungunya — alphavirus clínico",
+    "stem": "Homem de 30 anos: febre alta e artralgia intensa incapacitante desde o início, edema articular, sem sinais de extravasamento. Em epidemia mista. Qual pista favorece chikungunya? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Artralgia/artrite intensa e precoce (alphavirus) sem síndrome de extravasamento típica da com reassesso clínico seriado no manejo individualizado",
+    "wrongs": [
+      "Choque por extravasamento e Ht em ascensão como marca exclusiva da chikungunya sem ganho clínico líquido e atrasa o manejo",
+      "Icterícia intensa com IRA como apresentação mais comum do alphavirus urbano sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Úlcera genital indolor como critério clínico obrigatório para chikungunya sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "BAAR positivo no escarro como confirmação etiológica da artralgia febril sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "CHIKV: Alphavirus/Togaviridae; Aedes; clínica marcada por artralgia incapacitante. Dengue: flavivírus com risco de extravasamento/alarme.",
+    "trap": "Atribuir extravasamento/choque típicos da dengue à chikungunya."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 17,
+    "group": "Infectologia",
+    "theme": "Zika — Guillain-Barré",
+    "stem": "Homem de 35 anos, 10 dias após exantema febril leve com conjuntivite, desenvolve paresia ascendente e arreflexia. Líquor com dissociação albumino-citológica. Conduta prioritária? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Tratar como SGB (suporte ventilatório se necessário, imunoglobulina/plasmaférese conforme protocolo) e investigar vínculo com Zika no plano atual",
+    "wrongs": [
+      "Prescrever albendazol + corticoide como neurocisticercose sem imagem nem contexto sem ganho clínico líquido o que atrasa o manejo",
+      "Iniciar RHZE empírico para meningite tuberculosa sem LCR compatível com SGB sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Usar apenas AAS domiciliar e observar a paresia por 4 semanas sem suporte sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Indicar laminectomia descompressiva de rotina antes de terapia imunomoduladora sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Zika associa-se a SGB (e raramente mielite/meningoencefalite). Manejo do SGB é suporte + IGIV/plasmaférese; não confundir com infecções do SNC tratáveis por ATB/antiparasitário empírico inadequado.",
+    "trap": "Tratar SGB pós-Zika como neuroinfecção parasitária/TB sem critérios."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 18,
+    "group": "Infectologia",
+    "theme": "Zika — abstinência sexual",
+    "stem": "Homem sintomático por Zika pergunta por quanto tempo evitar sexo desprotegido, especialmente se a parceira puder engravidar. Orientação mais alinhada à apostila? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Homem sintomático: abster-se de sexo desprotegido por pelo menos 6 meses; se parceira gestante, durante com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Liberar sexo desprotegido após 48 h da defervescência, sem risco de transmissão sem ganho clínico líquido o que atrasa o manejo correto",
+      "Indicar abstinência apenas se houver microcefalia fetal já confirmada sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Usar doxiciclina pós-coito como profilaxia específica anti-Zika sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Vacinar o casal com Dengvaxia para bloquear transmissão sexual do Zika sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Há transmissão sexual do Zika. Homens sintomáticos: ≥6 meses de sexo protegido/abstinência; parceira grávida: toda a gestação. Viajante assintomático: tipicamente ≥8 semanas.",
+    "trap": "Negar transmissão sexual ou liberar precoce demais o sexo desprotegido."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 19,
+    "group": "Infectologia",
+    "theme": "Febre amarela — ciclo silvestre",
+    "stem": "Trabalhador rural febril-ictérico após área de mata; sem foco urbano claro de Aedes. Qual epidemiologia de transmissão silvestre da febre amarela? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Ciclo silvestre com Haemagogus/Sabethes e primatas não humanos como reservatório; humano é hospedeiro acidental conforme estratificação do caso",
+    "wrongs": [
+      "Transmissão exclusiva por Anopheles darlingi no intradomicílio urbano sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Ciclo mantido só por carrapato Amblyomma sem participação de mosquitos sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Contágio pessoa a pessoa por gotículas como principal via na mata sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Reservatório exclusivo humano com transmissão fecal-oral na floresta sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "FA silvestre: Haemagogus/Sabethes + macacos; urbano: Aedes aegypti. Diferenciar de dengue (mesmo Aedes urbano, mas FA com icterícia/hepatite grave proeminente).",
+    "trap": "Atribuir FA silvestre ao Anopheles ou negar o papel de Haemagogus/Sabethes."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 20,
+    "group": "Infectologia",
+    "theme": "Febre amarela — suporte e notificação",
+    "stem": "Paciente com febre, icterícia e hemorragia compatíveis com febre amarela grave. Sem antiviral específico disponível. Conduta essencial além do suporte? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Suporte intensivo, notificação compulsória e isolamento de contato com sangue/fluidos conforme protocolo; conforme estratificação do caso",
+    "wrongs": [
+      "Prescrever oseltamivir como antiviral específico curativo da febre amarela sem ganho clínico líquido o que atrasa o manejo",
+      "Omitir notificação porque casos silvestres não entram em vigilância sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Indicar Dengvaxia de resgate no doente grave como terapia antiviral sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Usar cloroquina endovenosa como tratamento etiológico padrão sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "FA grave: suporte (hepático/renal/hemorrágico), notificação, sem antiviral de rotina. Prevenção = vacina 17D + controle vetorial.",
+    "trap": "Buscar antiviral específico inexistente ou falhar a notificação."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 21,
+    "group": "Infectologia",
+    "theme": "Leptospirose — ATB forma leve",
+    "stem": "Homem de 25 anos após enchente: febre, mialgia de panturrilhas, cefaleia, sem icterícia nem IRA. Suspeita de leptospirose leve. Tratamento? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Doxiciclina ou amoxicilina VO por 5–7 dias, com suporte e vigilância de progressão para forma grave com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Anfotericina lipossomal por 14 dias como primeira linha da lepto anictérica sem ganho clínico líquido o que atrasa o manejo correto",
+      "RHZE completo empírico sem evidência de TB, só pelo contato com água sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Observação sem ATB porque lepto leve nunca se beneficia de antimicrobiano sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Ceftriaxona associada a vancomicina de rotina em todo caso anictérico ambulatorial sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Lepto leve: doxiciclina ou amoxicilina VO 5–7 dias. Doxiciclina contraindicada em gestante, <9 anos, IRA/hepatopatia grave conforme apostila.",
+    "trap": "Tratar lepto leve com antifúngico/TB ou negar ATB."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 22,
+    "group": "Infectologia",
+    "theme": "Leptospirose — ATB forma grave",
+    "stem": "Mulher com síndrome de Weil (icterícia, hemorragia, IRA) após exposição a enchente. Qual ATB parenteral preferencial? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Penicilina G cristalina IV ou ceftriaxona IV por ≥7 dias; se alergia a betalactâmicos, azitromicina IV com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Apenas doxiciclina VO mesmo com IRA e impossibilidade de via oral confiável sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Metronidazol isolado como esquema curativo da espiroqueta sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Fluconazol + corticosteroide sem ATB antibacteriano adequado sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Isoniazida monoterapia por 6 meses presumindo TB miliare ictérica sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Forma grave (Weil): penicilina cristalina ou ceftriaxona IV ≥7 dias; alternativa azitromicina IV se alergia. Doxiciclina VO não é a melhor escolha na grave com falência.",
+    "trap": "Manter só doxiciclina oral na leptospirose grave com Weil."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 23,
+    "group": "Infectologia",
+    "theme": "Calazar — Glucantime esquema",
+    "stem": "Homem de 34 anos, endêmico, febre prolongada, esplenomegalia e pancitopenia; diagnóstico de leishmaniose visceral sem critérios de gravidade especiais. 1ª opção no Brasil? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Antimonial pentavalente (Glucantime) 20 mg Sb5+/kg/dia IV/IM por 20–30 dias (protocolo), monitorando toxicidade no manejo individualizado",
+    "wrongs": [
+      "Isoniazida isolada por 9 meses como erradicação do calazar sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Fluconazol semanal único como cura parasitológica definitiva sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Esplenectomia imediata antes de qualquer antiparasitário sistêmico sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Praziquantel em dose única, suficiente para Leishmania infantum sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Calazar não especial: antimonial pentavalente 20 mg/kg/dia 20–30(–40) dias. Anfotericina lipossomal para HIV, extremos de idade, gravidade, falha/intolerância.",
+    "trap": "Tratar calazar com INH, azol isolado ou cirurgia de primeira linha."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 24,
+    "group": "Infectologia",
+    "theme": "Calazar — anfotericina lipossomal",
+    "stem": "Paciente com calazar, HIV e Hb 7,2 g/dL, baço >10 cm. Qual escolha terapêutica mais alinhada ao protocolo MS? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Preferir anfotericina lipossomal (indicações especiais: HIV, gravidade, falha/intolerância ao antimonial, extremos de idade) conforme estratificação do caso",
+    "wrongs": [
+      "Insistir só em Glucantime sem considerar HIV/gravidade como critérios de anfotericina sem ganho clínico líquido o que atrasa o manejo correto",
+      "Usar nistatina oral como terapia sistêmica da leishmaniose visceral sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Prescrever itraconazol tópico cutâneo para erradicar o parasito visceral sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Indicar radioterapia esplênica como substituto do antiparasitário sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Anfo lipossomal é escolha em HIV, <1 a ou >50 a, quadros graves, IRA, falha/intolerância ao antimonial e outras situações do MS. Refratariedade correlaciona com baço/fígado grandes e citopenias graves.",
+    "trap": "Negar anfotericina no calazar com HIV/gravidade."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 25,
+    "group": "Infectologia",
+    "theme": "Malária — ACT falciparum não grave",
+    "stem": "Viajante da Amazônia com P. falciparum confirmado, sem critérios de gravidade, consegue VO. Tratamento de escolha? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Esquema ACT (ex.: artemeter-lumefantrina ou artesunato-mefloquina) + primaquina dose única gametocitocida no D1 com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Cloroquina monoterapia por 3 dias como 1ª linha confiável do falciparum no Brasil sem ganho clínico líquido e atrasa o manejo",
+      "Primaquina por 14 dias sem ACT, suficiente para erradicar falciparum eritrocitário sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Apenas paracetamol e observação, pois falciparum não grave não exige etiológico sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Vancomicina + ceftriaxona sem antimalárico, tratando como sepse bacteriana exclusiva sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Falciparum não grave: ACT + primaquina dose única (gametócitos). Cloroquina é ineficaz na maioria das cepas brasileiras desde décadas.",
+    "trap": "Usar cloroquina como 1ª linha do P. falciparum no Brasil."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 26,
+    "group": "Infectologia",
+    "theme": "Malária — gametocitocida dose única",
+    "stem": "Paciente com falciparum tratado com ACT; equipe discute primaquina. Qual o papel da dose única? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Reduzir transmissão ao eliminar gametócitos; não substitui o ACT na cura clínica do falciparum com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Erradicar hipnozoítas hepáticos do falciparum, prevenindo recidiva meses depois sem ganho clínico líquido o que atrasa o manejo",
+      "Substituir completamente o ACT em gestantes com malaria grave sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Servir como profilaxia pré-exposição semanal do viajante por 6 meses sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Tratar anemia hemolítica por G6PD causada pelo próprio Plasmodium sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "No falciparum, primaquina em dose única é gametocitocida (interrupção de transmissão). Hipnozoítas existem em vivax/ovale, não no falciparum.",
+    "trap": "Achar que dose única de primaquina cura hipnozoíta de falciparum."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 27,
+    "group": "Infectologia",
+    "theme": "Malária — Anopheles e Amazônia",
+    "stem": "Questão de vigilância: qual vetor e contexto epidemiológico mais corretos para malária no Brasil? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Transmissão por Anopheles (A. darlingi frequente); maioria dos casos na Amazônia, com notificação e investigação de importados no manejo individualizado",
+    "wrongs": [
+      "Transmissão urbana clássica por Aedes aegypti intradomiciliar como na dengue sem ganho clínico líquido o que atrasa o manejo correto",
+      "Ciclo mantido por Lutzomyia longipalpis em todo o território nacional sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Contágio respiratório de pessoa a pessoa em aglomerados urbanos sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Reservatório exclusivo de carrapatos Amblyomma em áreas urbanas litorâneas sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Malária: Anopheles spp. (BR: A. darlingi). Endemia amazônica; fora da Amazônia pensar em importação. Não confundir vetores com Aedes/Lutzomyia.",
+    "trap": "Atribuir malária ao Aedes ou negar o eixo amazônico."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 28,
+    "group": "Infectologia",
+    "theme": "Malária — P. malariae",
+    "stem": "Paciente com febre em padrão quartã e gota espessa positiva para P. malariae. Qual peculiaridade clínica relevante? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Ciclo eritrocitário de ~72 h (febre quartã); pode cronificar e associar-se a nefropatia; tratar conforme protocolo da espécie conforme estratificação do caso",
+    "wrongs": [
+      "Sempre causa coma malárico como o falciparum, exigindo artesunato IV de rotina sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Possui hipnozoítas hepáticos idênticos ao vivax, exigindo primaquina 14 dias obrigatória sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "É a espécie mais prevalente no Brasil contemporâneo (~90% dos casos) sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Não infecta humanos, apenas primatas, tornando o esfregaço um artefato sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "P. malariae: esquizogonia ~72 h (quartã), pode persistir anos e ligar-se a glomerulopatia. Sem hipnozoíta clássico como vivax/ovale. No BR, vivax predomina.",
+    "trap": "Tratar malariae como falciparum grave automático ou como vivax com hipnozoíta."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 29,
+    "group": "Infectologia",
+    "theme": "Febre maculosa — início precoce do rash",
+    "stem": "Homem do interior com febre, cefaleia intensa e exantema que inclui palmas e plantas desde o 3º–4º dia; possível carrapato. Conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Iniciar doxiciclina imediatamente na suspeita clínica, sem aguardar confirmação sorológica se o quadro com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Esperar biópsia cutânea e cultura de Rickettsia antes de qualquer ATB sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Tratar só com oseltamivir presumindo influenza, omitindo doxiciclina sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Usar penicilina benzatina dose única como esquema curativo da riquétsia sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Indicar plasmapférese de rotina antes do antimicrobiano sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Febre maculosa (R. rickettsii / Amblyomma): febre, cefaleia, rash ± palmoplantar. Doxiciclina precoce salva vidas — não atrasar por exames.",
+    "trap": "Aguardar confirmação laboratorial para iniciar doxiciclina."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 30,
+    "group": "Infectologia",
+    "theme": "Febre tifoide — cultura vs Widal",
+    "stem": "Adulto com febre em platô, bradicardia relativa e roséolas; suspeita de febre tifoide. Qual abordagem diagnóstica mais confiável? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Priorizar hemocultura (e cultura de medula se disponível); Widal é auxiliar com FP/FN e títulos >1:100 apenas sugestivos conforme o caso",
+    "wrongs": [
+      "Confiar só no Widal positivo único no D3 como ouro diagnóstico absoluto sem ganho clínico líquido o que atrasa o manejo correto",
+      "Negar hemocultura porque Salmonella Typhi nunca cresce em sangue sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Usar NS1 dengue como confirmatório da tifoide ictérica sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Diagnosticar apenas por RX de tórax, sem microbiologia sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Ouro: cultura (sangue/medula). Widal (anti-O/H) tem muitos falso-positivos/negativos; >1:100 é apenas sugestivo. Não substituir cultura.",
+    "trap": "Fechar tifoide só com Widal precoce e omitir hemocultura."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 31,
+    "group": "Infectologia",
+    "theme": "Febre tifoide — complicação intestinal",
+    "stem": "Paciente com tifoide em tratamento evolui com dor abdominal súbita, defesa e sinais de peritonite. Qual complicação temer e conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Suspeitar perfuração ileal; avaliação cirúrgica urgente, ATB de amplo espectro e suporte, sem atrasar imagem/cirurgia no manejo individualizado",
+    "wrongs": [
+      "Aumentar só a dose de antipirético e observar 72 h sem avaliação abdominal sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Indicar colonoscopia diagnóstica imediata em instabilidade com peritonite sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Trocar para anfotericina presumindo mucormicose intestinal sem contexto sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Suspender ATB porque a peritonite indica cura da salmonelose sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Perfuração do íleo terminal é complicação temida da tifoide; exige cirurgia + ATB e suporte. Hemorragia intestinal também é risco.",
+    "trap": "Observar peritonite na tifoide sem avaliação cirúrgica."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 32,
+    "group": "Infectologia",
+    "theme": "Mpox — isolamento e precauções",
+    "stem": "Homem com febre e lesões cutâneas vesiculo-pustulares suspeitas de mpox. Qual medida de controle de infecção prioritária? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Isolamento com precauções de contato (± gotículas/aerossóis conforme protocolo), higiene de mãos e evitar conforme estratificação do caso",
+    "wrongs": [
+      "Manter enfermaria aberta sem precauções porque Orthopox não se transmite entre sem ganho clínico líquido o que atrasa o manejo",
+      "Usar apenas máscara cirúrgica do paciente sem proteger pele/lesões da equipe sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Indicar quarentena de 1 ano para todos os contatos domiciliares assintomáticos sem avaliação sem ganho clínico líquido elevando iatrogenia vã",
+      "Prescrever ivermectina em massa na enfermaria como profilaxia específica validada sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Mpox (Orthopoxvirus): transmissão por contato com lesões/fluidos/material contaminado (± gotículas). Isolamento e EPI adequados; notificar.",
+    "trap": "Negar transmissão humana ou omitir precaução de contato."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 33,
+    "group": "Infectologia",
+    "theme": "Mpox — diferencial varicela",
+    "stem": "Paciente com exantema: lesões no mesmo estágio evolutivo, distribuição centrífuga com acometimento de face/palmas; contexto epidemiológico de mpox. Diferencial com varicela? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Mpox tende a lesões mais monomórficas e pode acometer palmas/plantas; varicela clássica é polimórfica em surtos sucessivos no plano atual",
+    "wrongs": [
+      "Varicela nunca acomete tronco, enquanto mpox é estritamente intertriginosa sem ganho clínico líquido o que atrasa o manejo correto",
+      "Ambas são flavivírus transmitidos por Aedes, sendo indistinguíveis clinicamente sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Mpox é sempre hemorrágico fulminante, varicela nunca tem febre sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "O diagnóstico diferencial é irrelevante porque o tratamento antiviral é idêntico e obrigatório em todos sem ganho clínico líquido fora da prioridade clínica imediata"
+    ],
+    "explain": "Varicela: polimorfismo (pápula-vesícula-crostas simultâneas). Mpox: frequentemente lesões mais sincronizadas; pode envolver palmas/plantas. Confirmar com PCR quando disponível.",
+    "trap": "Tratar todo exantema vesicular como varicela sem considerar mpox epidemiológico."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 34,
+    "group": "Infectologia",
+    "theme": "Dengue — transmissão vertical",
+    "stem": "Gestante com dengue no peri-parto; RN febril precoce. Qual risco e conduta sensata? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Considerar dengue neonatal por transmissão vertical; suporte/hidratação segundo gravidade e investigação diagnóstica adequada conforme o caso",
+    "wrongs": [
+      "Afirmar que não há transmissão vertical possível, dispensando avaliação do RN sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Indicar troca total de sangue de rotina em todo RN de mãe com dengue, sem critérios sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Usar aciclovir empírico como antiviral específico da dengue neonatal sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Isolar o RN por gotículas por 40 dias sem avaliar estado clínico sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Há relatos de transmissão vertical com dengue neonatal potencialmente grave. Manejo é suporte e estadiamento; sem antiviral específico.",
+    "trap": "Negar dengue neonatal ou indicar procedimentos invasivos sem critério."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 35,
+    "group": "Infectologia",
+    "theme": "Chikungunya — fase aguda sintomática",
+    "stem": "Mulher no 3º dia de chikungunya aguda: febre e poliartralgia intensa, sem sinais de alarme de dengue. Conduta aguda? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Analgesia/antitérmicos seguros, repouso articular relativo e hidratação; evitar AAS/AINE se dengue não puder ser excluída no manejo individualizado",
+    "wrongs": [
+      "Iniciar metotrexato já no D3 como 1ª linha da fase aguda sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Prescrever vancomicina IV por 14 dias para 'esterilizar' a articulação sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Indicar artroscopia diagnóstica urgente em todas as articulações dolorosas sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Usar anfotericina por suspeita automática de artrite fúngica sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Fase aguda: sintomáticos e suporte. Imunomoduladores (HCQ/MTX) são da fase crônica. Em epidemia mista, evitar AAS/AINE até afastar dengue.",
+    "trap": "Começar MTX/ATB na fase aguda da chik sem indicação."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 36,
+    "group": "Infectologia",
+    "theme": "Zika — conjuntivite não purulenta",
+    "stem": "Jovem com exantema pruriginoso, febrícula e conjuntivite não purulenta bilateral em área com Zika. Qual leitura clínica? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Quadro compatível com Zika; orientar risco reprodutivo, sexo protegido e notificação, com suporte sintomático conforme estratificação do caso",
+    "wrongs": [
+      "Tratar com colírio antibiótico prolongado como se fosse gonocócica sem cultura sem ganho clínico líquido o que atrasa o manejo correto",
+      "Internar em isolamento aéreo por 21 dias de rotina em todo exantema sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Indicar punção lombar imediata em todos os casos com conjuntivite sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Prescrever cloroquina como antiviral específico do Zika sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Zika: exantema ± febre baixa, conjuntivite não purulenta, artralgia de pequenas articulações. Suporte; foco em gestação/SGB/transmissão sexual.",
+    "trap": "Tratar conjuntivite do Zika como bacteriana gonocócica sem evidência."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 37,
+    "group": "Infectologia",
+    "theme": "Calazar — vetor e clínica",
+    "stem": "Criança de zona endêmica: febre longa, hepatoesplenomegalia e pancitopenia sem eosinofilia. Qual associação etiológica/vetorial correta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Leishmania infantum/chagasi transmitida por Lutzomyia (mosquito-palha); investigar e tratar calazar conforme protocolo conforme estratificação do caso",
+    "wrongs": [
+      "Plasmodium vivax por Aedes aegypti urbano como causa típica dessa tríade sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Trypanosoma cruzi por Anopheles com pancitopenia isolada sem megacólon sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Paracoccidioides por carrapato Amblyomma com esplenomegalia febril exclusiva sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Strongyloides por gotículas respiratórias com eosinofilia sempre ausente sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Calazar: L. infantum (chagasi), Lutzomyia longipalpis, febre + HSM + pancitopenia, sem eosinofilia típica. DD: malária, tifoide, hematológico.",
+    "trap": "Confundir vetor do calazar com Aedes/Anopheles."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 38,
+    "group": "Infectologia",
+    "theme": "Malária — Duffy e vivax",
+    "stem": "Discussão clínica: por que algumas populações africanas têm relativa resistência ao P. vivax? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "P. vivax usa o fator Duffy eritrocitário; fenótipo Duffy-negativo reduz invasão e infecção por vivax com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Porque vivax não infecta humanos fora da Amazônia em hipótese alguma sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Por ausência congênita de baço em toda a população Duffy-negativa sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Por imunidade cruzada completa conferida pela vacina de febre amarela sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Porque vivax parasita apenas reticulócitos de indivíduos do grupo AB sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Vivax depende do Duffy para invadir hemácias; Duffy-negativo (frequente em africanos) confere resistência relativa. Falciparum usa outros receptores (ex.: glicoforina A).",
+    "trap": "Atribuir resistência ao vivax a vacina de FA ou a ausência de baço."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 39,
+    "group": "Infectologia",
+    "theme": "Leptospirose — exposição a enchente",
+    "stem": "Surto após enchente urbana: vários adultos com febre e mialgia de panturrilhas; alguns anictéricos. Mensagem de suspeição? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Pensar leptospirose mesmo sem icterícia; investigar, notificar e iniciar ATB conforme gravidade, com DD de dengue no manejo individualizado",
+    "wrongs": [
+      "Só diagnosticar lepto se houver icterícia franca; formas anictéricas não existem sem ganho clínico líquido o que atrasa o manejo correto",
+      "Tratar todos empiricamente como malaria falciparum sem gota espessa sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Atribuir todos os casos a influenza e liberar sem vigilância epidemiológica sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Indicar vacina 17D de urgência como profilaxia pós-enchente específica sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Lepto anictérica mimetiza dengue; contexto de enchente/roedores é chave. Forma ictérica (Weil) é a grave. ATB precoce + notificação.",
+    "trap": "Exigir icterícia para suspeitar leptospirose pós-enchente."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 40,
+    "group": "Infectologia",
+    "theme": "Ancilostomíase — anemia ferropriva",
+    "stem": "Homem de zona rural com anemia ferropriva, epigastralgia e eosinofilia discreta; parasitológico sugere ancilostomídeo. Conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Anti-helmíntico apropriado (ex.: albendazol/mebendazol conforme protocolo) + reposição de ferro e saneamento/calçados conforme estratificação do caso",
+    "wrongs": [
+      "Transfusão semanal indefinida sem erradicar o parasito nem repor ferro sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Praziquantel isolado como droga de escolha dos ancilostomídeos sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Esplenectomia por anemia, presumindo hiperesplenismo primário sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Vancomicina oral para esterilizar o intestino delgado sem ganho clínico líquido em desacordo com a evidência adiando a conduta de primeira linha prioridade invertida"
+    ],
+    "explain": "Necator/Ancylostoma: perda crônica de sangue → anemia ferropriva. Tratar helminto + ferro; prevenção com calçados/saneamento.",
+    "trap": "Só transfundir sem tratar ancilostomíase."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 41,
+    "group": "Infectologia",
+    "theme": "Amebíase — colite invasiva",
+    "stem": "Viajante com disenteria (muco/sangue), tenesmo e dor em FID; pesquisa de Entamoeba histolytica positiva. Tratamento? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Amebicida tecidual (metronidazol/tinidazol) seguido de amebicida luminal para erradicar cistos, com suporte hídrico com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Apenas loperamida crônica sem amebicida, suficiente para curar invasão sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Vancomicina VO como 1ª linha da amebíase disentérica sem ganho clínico líquido em desacordo com a evidência adiando a conduta de primeira linha sem suporte diretriz",
+      "Cirurgia de colectomia total imediata em todo sangramento mucoso sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Praziquantel em dose única sem cobertura de protozoário sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Amebíase invasiva: nitroimidazol (tecidual) + agente luminal (paromomicina/iodoquinol etc.). Não usar só antimotilidade.",
+    "trap": "Tratar colite amebiana só com loperamida ou vancomicina."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 42,
+    "group": "Infectologia",
+    "theme": "Ascaridíase — síndrome de Löeffler",
+    "stem": "Jovem com tosse, infiltrados pulmonares migratórios e eosinofilia; depois eliminação de verme adulto nas fezes. Interpretação? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Ciclo pulmonar da ascaridíase (Löeffler); tratar com anti-helmíntico após/conforme fase e suporte respiratório se necessário conforme o caso",
+    "wrongs": [
+      "TB miliare confirmada só pela eosinofilia, iniciando RHZE sem BAAR/GeneXpert sem ganho clínico líquido o que atrasa o manejo correto",
+      "Aspergilose invasiva em imunocompetente, com voriconazol empírico obrigatório sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Pneumocystis exigindo sulfametoxazol mesmo com CD4 normal e eosinofilia sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Tromboembolia crônica, anticoagular sem investigar parasitose sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Ascaris: migração larvária pulmonar → Löeffler (tosse, infiltrados, eosinofilia). Depois fase intestinal. Anti-helmíntico (albendazol/mebendazol/ivermectina conforme protocolo).",
+    "trap": "Tratar Löeffler como TB/PCP sem considerar Ascaris."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 43,
+    "group": "Infectologia",
+    "theme": "ITU gestante — bacteriúria assintomática",
+    "stem": "Gestante de 12 semanas, assintomática, urocultura com E. coli >10⁵ UFC/mL. Conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Tratar bacteriúria assintomática na gestação com ATB seguro por 3–7 dias e documentar cura com urocultura de controle no manejo individualizado",
+    "wrongs": [
+      "Não tratar porque bacteriúria assintomática na gestação nunca tem risco sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Usar fluoroquinolona prolongada como 1ª escolha absoluta em todas as gestantes sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Indicar nefroureterectomia profilática antes do ATB sem ganho clínico líquido em desacordo com a evidência adiando a conduta de primeira linha com iatrogenia inútil",
+      "Tratar apenas com analgésico urinários, sem antimicrobiano sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Na gestação, bacteriúria assintomática deve ser tratada (risco de pielonefrite/prematuridade). Escolher ATB seguro e confirmar erradicação.",
+    "trap": "Deixar de tratar bacteriúria assintomática gestacional."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 44,
+    "group": "Infectologia",
+    "theme": "Pielonefrite gestacional",
+    "stem": "Gestante de 28 semanas com febre, dor lombar, náuseas e piúria; PA estável. Conduta inicial? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Internar, hidratar e iniciar ATB parenteral seguro para gestação, com ajuste após cultura e vigilância materno-fetal conforme estratificação do caso",
+    "wrongs": [
+      "Tratar só com analgésico e observação domiciliar sem ATB sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Usar doxiciclina IV como 1ª linha na gestação por cobertura atípica sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Indicar parto cesáreo imediato em toda pielonefrite do 2º trimestre sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Prescrever nitrofurantoína isolada se já há sepse e vômitos incoercíveis sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Pielonefrite gestacional: internação + ATB IV (ex.: cefalosporina) e suporte; risco de trabalho de parto prematuro. Evitar tetraciclinas/quinolonas conforme restrições.",
+    "trap": "Manejar pielonefrite gestacional ambulatorialmente sem ATB IV."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 45,
+    "group": "Infectologia",
+    "theme": "HIV — candidíase esofágica",
+    "stem": "Homem com AIDS, CD4 60, odinofagia e disfagia; mucosa oral com placas removíveis. Qual conduta usual? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Tratar empiricamente candidíase esofágica (fluconazol sistêmico), otimizar TARV e reservar com reassesso clínico seriado no plano atual",
+    "wrongs": [
+      "Usar apenas nistatina tópica oral, suficiente para candidíase esofágica sem ganho clínico líquido o que atrasa o manejo correto",
+      "Iniciar anfotericina + flucitosina como se fosse criptococose meníngea sem LCR sem ganho clínico líquido sem suporte nas diretrizes atuais",
+      "Indicar esofagectomia imediata antes de azol sistêmico sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia sem benefício",
+      "Suspender TARV até resolução completa da odinofagia sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Candidíase esofágica: fluconazol sistêmico empírico é padrão; endoscopia se não responder. TARV é essencial. Nistatina tópica não trata esôfago adequadamente.",
+    "trap": "Tratar esofagite candidiásica só com nistatina tópica."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 46,
+    "group": "Infectologia",
+    "theme": "HIV — sinusite por encapsulados",
+    "stem": "PVHIV com febre, cefaleia facial e rinorreia purulenta; CD4 180. Qual etiologia bacteriana mais esperada e conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Pensar pneumococo/Haemophilus como no imunocompetente; ATB dirigido a encapsulados e imagem se complicação com reassesso clínico seriado conforme o caso",
+    "wrongs": [
+      "Tratar sempre como mucormicose com anfotericina + desbridamento sem critérios sem ganho clínico líquido em desacordo com a evidência e atrasa o manejo",
+      "Usar apenas descongestionante nasal por 3 semanas sem ATB na sinusite febril sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Prescrever RHZE empírico para toda sinusite em PVHIV sem ganho clínico líquido em desacordo com a evidência adiando a conduta de primeira linha com iatrogenia inútil",
+      "Indicar radioterapia de seios da face como terapia antimicrobiana sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "Sinusite em PVHIV costuma ter os mesmos encapsulados da população geral (S. pneumoniae, H. influenzae), com incidência aumentada. ATB + avaliar complicações.",
+    "trap": "Assumir fungo invasivo em toda sinusite de HIV sem sinais de gravidade."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 47,
+    "group": "Infectologia",
+    "theme": "HIV — TARV e TB timing",
+    "stem": "Paciente com TB pulmonar e HIV recém-diagnosticado, CD4 40, já em RHZE há 1 semana, estável. Quando iniciar TARV? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Iniciar TARV precocemente (em geral nas 2 primeiras semanas se CD4 muito baixo), mantendo com reassesso clínico seriado no manejo individualizado",
+    "wrongs": [
+      "Aguardar o fim completo dos 6 meses de RHZE antes de qualquer TARV sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Suspender RHZE ao iniciar TARV para evitar interações, sem esquema alternativo sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Usar só isoniazida + TARV, omitindo rifampicina/pirazinamida/etambutol sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Indicar corticosteroide de rotina em todos antes do TARV, mesmo sem IRIS sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Com CD4 baixo, TARV precoce após início do tratamento da TB reduz mortalidade; monitorar IRIS paradoxal. Não adiar meses a fio sem motivo.",
+    "trap": "Adiar TARV até o fim da TB em AIDS avançada estável."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 48,
+    "group": "Infectologia",
+    "theme": "Cistite — fosfomicina dose única",
+    "stem": "Mulher jovem com cistite não complicada, sem febre nem dor lombar; alergia a sulfametoxazol. Opção conveniente? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Fosfomicina trometamol dose única (ou outro ATB curto validado), analgesia e orientar com reassesso clínico seriado no manejo individualizado",
+    "wrongs": [
+      "Carbapenêmico IV por 14 dias em cistite simples ambulatorial sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo correto",
+      "Anfotericina vesical contínua por 7 dias sem urocultura de fungo sem ganho clínico líquido em desacordo com a evidência sem suporte nas diretrizes atuais",
+      "Observação sem ATB em disúria intensa com bacteriúria documentada sintomática sem ganho clínico líquido elevando iatrogenia sem benefício",
+      "Gentamicina intramuscular diária por 3 semanas sem ajuste renal sem ganho clínico líquido em desacordo com a evidência fora da prioridade clínica imediata"
+    ],
+    "explain": "Cistite não complicada: esquemas curtos (fosfomicina 1 dose, nitrofurantoína 5 dias, etc.). Reservar ATB de amplo espectro/parenteral para complicadas.",
+    "trap": "Usar carbapenêmico IV em cistite simples."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 49,
+    "group": "Infectologia",
+    "theme": "ITU associada a cateter",
+    "stem": "Homem internado com SVD há 10 dias: febre e dor suprapúbica; urina turva. Conduta racional? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diferenciais clássicos antes de escalar.",
+    "correct": "Trocar/remover o cateter se possível, coletar cultura e iniciar ATB dirigido após gravidade, evitando tratar colonização assintomática no plano atual",
+    "wrongs": [
+      "Manter o mesmo cateter indefinidamente e irrigar com ATB tópico como terapia definitiva sem ganho clínico líquido e atrasa o manejo",
+      "Tratar toda bacteriúria de SVD assintomática com carbapenêmico prolongado sem ganho clínico líquido em desacordo com a evidência sem respaldo atual",
+      "Indicar nefrectomia bilateral empírica por febre em paciente cateterizado sem ganho clínico líquido em desacordo com a evidência com iatrogenia inútil",
+      "Usar apenas ácido ascórbico sem remover foco e sem ATB na infecção sintomática sem ganho clínico líquido em desacordo com a evidência prioridade invertida"
+    ],
+    "explain": "CAUTI: remover/trocar SVD, cultura e ATB se infecção sintomática. Não tratar colonização assintomática do cateter (exceto gestação/procedimentos específicos).",
+    "trap": "Tratar colonização de SVD ou manter cateter infectado sem troca."
+  },
+  {
+    "idPrefix": "cli-infecto5",
+    "n": 50,
+    "group": "Infectologia",
+    "theme": "Paracoccidioidomicose — forma aguda juvenil",
+    "stem": "Adolescente de área rural com febre, emagrecimento, adenomegalia generalizada e hepatoesplenomegalia; mucosas sem úlcera. Suspeita de paracoccidioidomicose juvenil. Conduta? Reavaliar sinais vitais, perfusão e sensorium após cada intervenção. Sem alergias conhecidas aos fármacos usualmente considerados neste cenário. Exames em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Confirmar com micologia/histopatológico e tratar com itraconazol (ou anfotericina se grave), seguimento prolongado no manejo individualizado",
+    "wrongs": [
+      "Usar só nistatina oral, curativa da forma disseminada juvenil sem ganho clínico líquido em desacordo com a evidência o que atrasa o manejo",
+      "Prescrever penicilina benzatina mensal como na febre reumática sem ganho clínico líquido em desacordo com a evidência sem suporte diretriz",
+      "Indicar esplenectomia diagnóstica antes de qualquer antifúngico sem ganho clínico líquido em desacordo com a evidência elevando iatrogenia vã",
+      "Tratar como TB só com INH, sem investigar fungo dimórfico sem ganho clínico líquido em desacordo com a evidência fora da prioridade já"
+    ],
+    "explain": "Forma aguda/juvenil: acometimento SRES (linfonodos, fígado, baço) sem lesão mucosa clássica. Itraconazol; anfotericina nas graves. Não confundir com linfoma/TB sem micologia.",
+    "trap": "Tratar forma juvenil só com nistatina ou INH isolada."
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 1,
+    "group": "Pneumologia",
+    "theme": "Fisiologia — PaCO2 termômetro ventilatório",
+    "stem": "Homem de 68 anos com DPOC: SpO2 90% em ar, FR 22, lúcido. Gasometria: pH 7,38, PaCO2 58, PaO2 58, HCO3 33. Colega interpreta “hipoventilação só pela PaO2 baixa”. Qual a leitura fisiológica mais correta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "A PaCO2 (não a PaO2) reflete a ventilação alveolar: aqui há hipoventilação crônica compensada com hipoxemia por V/Q com reassesso clínico seriado",
+    "wrongs": [
+      "A PaO2 isolada basta para afirmar hipoventilação alveolar pura e indicar BiPAP imediato fora da indicação fisiopatológica clássica",
+      "PaCO2 elevada com HCO3 alto sempre significa acidose metabólica aguda a tratar com bicarbonato fora da indicação fisiopatológica clássica",
+      "SpO2 90% prova espaço morto zero e exclui qualquer distúrbio V/Q na DPOC substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "HCO3 elevado indica necessariamente alcalose respiratória aguda por hiperventilação substituindo indevidamente a primeira linha sem benefício claro neste fenótipo"
+    ],
+    "explain": "Fonte CM Pneumo1: PaCO2 é o termômetro da ventilação alveolar; PaO2 depende sobretudo da distribuição V/Q. No DPOC crônico, hipercapnia com HCO3 elevado sugere retenção compensada.",
+    "trap": "Usar PaO2 como marcador exclusivo de ventilação alveolar."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 2,
+    "group": "Pneumologia",
+    "theme": "Fisiologia — espaço morto anatômico",
+    "stem": "Mulher de 45 anos em avaliação pré-operatória: volume minuto 7 L/min, ventilação alveolar estimada ~5 L/min. Perguntam o significado dos ~2 L/min restantes. Qual a melhor resposta didática? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Cerca de 30% do volume minuto preenche vias de condução (espaço morto anatômico) e não participa da troca gasosa com reassesso clínico seriado",
+    "wrongs": [
+      "Todo o volume minuto chega aos alvéolos; não existe espaço morto em adultos saudáveis fora da indicação fisiopatológica clássica",
+      "Os 2 L/min restantes representam shunt verdadeiro obrigatório igual à fração de shunt patológico fora da indicação fisiopatológica clássica",
+      "Espaço morto anatômico elimina CO2 melhor que a ventilação alveolar e deve ser maximizado substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Espaço morto só ocorre em TEP maciço e nunca em fisiologia normal substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: ~70% do volume corrente/minuto chega aos alvéolos; ~30% é espaço morto anatômico (traqueia/brônquios). Só a ventilação alveolar determina a eliminação de CO2.",
+    "trap": "Achar que todo o volume minuto participa da troca gasosa."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 3,
+    "group": "Pneumologia",
+    "theme": "Fisiologia — estímulo hipóxico no DPOC",
+    "stem": "Homem de 74 anos retentor crônico de CO2: PaCO2 62, PaO2 48 em ar. Equipe cogita O2 a 15 L/min visando SpO2 100%. Qual o raciocínio mais adequado sobre o drive ventilatório? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Em retentores crônicos o drive ao CO2 está atenuado; hipoxemia intensa passa a estimular ventilação — titular O2 sem hiperoxia desnecessária neste cenário clínico",
+    "wrongs": [
+      "O2 em alto fluxo nunca altera ventilação e pode ser oferecido sem meta de saturação fora da indicação fisiopatológica clássica",
+      "Todo DPOC depende só do estímulo hipóxico desde o diagnóstico leve, independentemente da PaCO2 fora da indicação fisiopatológica clássica",
+      "Hiperoxia é obrigatória porque PaO2 < 65 mmHg nunca estimula quimiorreceptores substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Suspender qualquer O2 até normalizar PaCO2, aceitando hipoxemia grave prolongada substituindo indevidamente a primeira linha adiando medida essencial já justificada"
+    ],
+    "explain": "CM Pneumo1: retentores crônicos tornam-se menos sensíveis ao CO2; o estímulo hipóxico (PaO2 < ~65) ganha relevância. Titular O2 (metas usuais 88–92% quando aplicável) evita hipercapnia iatrogênica.",
+    "trap": "Oferecer O2 ilimitado a retentor crônico sem titular saturação."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 4,
+    "group": "Pneumologia",
+    "theme": "Fisiologia — complacência na VM",
+    "stem": "Paciente em VM controlada: VT 420 mL, pressão de platô 28 cmH2O, PEEP 8. Qual o cálculo conceitual mais útil da complacência estática? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Complacência estática ≈ VT/(Pplatô − PEEP); queda sugere stiff lung (edema, fibrose, atelectasia) segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Complacência = Pplatô × PEEP sem relação com o volume corrente administrado substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Usar só pressão de pico (não platô) para complacência estática, ignorando resistência substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Complacência alta sempre indica SDRA grave e exige VT de 12 mL/kg substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "PEEP não entra no denominador; basta dividir VT pela FiO2 substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: CP = ∆V/∆P. Na VM, complacência estática usa platô e PEEP. Queda orienta recrutamento, otimização de PEEP e busca de causa de stiff lung.",
+    "trap": "Calcular complacência só com pressão de pico ou sem subtrair PEEP."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 5,
+    "group": "Pneumologia",
+    "theme": "Asma — fenótipo obesidade",
+    "stem": "Mulher de 42 anos, IMC 38, sibilos e dispneia de esforço, IgE normal, eosinófilos baixos, pouco responsiva a CSI alto. Qual abordagem mais coerente com o fenótipo? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Integrar perda ponderal, reabilitação e otimizar controladores; fenótipo obesidade responde menos a escalada isolada de CSI com reassesso clínico seriado",
+    "wrongs": [
+      "Indicar imediatamente omalizumabe sem critério de atopia/IgE elevada substituindo indevidamente a primeira linha fora da indicação sem benefício claro",
+      "Suspender todo corticosteroide inalatório porque asma e obesidade nunca coexistem substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Indicar pneumonectomia redutora como primeira linha no fenótipo obesidade substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Tratar só com SABA diário contínuo sem anti-inflamatório controlador substituindo indevidamente a primeira linha substituindo indevidamente a primeira"
+    ],
+    "explain": "CM Pneumo1 (fenótipos): asma relacionada à obesidade tem inflamação distinta e benefício de perda de peso; escalada cega de CSI/biológico sem fenótipo adequado é inadequada.",
+    "trap": "Escalar biológicos T2 em fenótipo obesidade não eosinofílico sem critérios."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 6,
+    "group": "Pneumologia",
+    "theme": "Asma — catamenial",
+    "stem": "Mulher de 29 anos com crises graves recorrentes no período pré-menstrual, bem controlada no restante do ciclo, espirometria com reversibilidade. Qual a melhor orientação? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Reconhecer asma catamenial: reforçar plano de ação e controlador no peri-menstruo, avaliar com especialista se refratária com reassesso clínico seriado",
+    "wrongs": [
+      "Atribuir os sintomas só a ansiedade cíclica e suspender corticosteroide inalatório fora da indicação fisiopatológica clássica",
+      "Indicar ooforectomia de urgência como primeira medida em toda crise pré-menstrual substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Trocar CSI por LABA isolado contínuo no peri-menstruo sem anti-inflamatório substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Ignorar o padrão cíclico porque asma nunca flutua com hormônios sexuais substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: asma catamenial associa crises ao pré-menstruo (queda hormonal). Manejo: otimizar controle basilar e antecipar intensificação no peri-menstruo; cirurgia ovariana não é primeira linha.",
+    "trap": "Negar o padrão catamenial ou indicar cirurgia ovariana precoce."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 7,
+    "group": "Pneumologia",
+    "theme": "Asma — variabilidade do PFE",
+    "stem": "Homem de 33 anos com tosse e aperto torácico intermitente: espirometria basal limítrofe; PFE matinal e noturno com variação diária > 20% por 2 semanas. Qual a interpretação diagnóstica mais adequada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Variabilidade significativa do PFE apoia o diagnóstico de asma quando a clínica é compatível segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Variabilidade do PFE exclui asma e confirma DPOC irreversível em jovem não tabagista fora da indicação fisiopatológica clássica",
+      "Só a TC de tórax confirma asma; PFE não tem papel diagnóstico substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Variação > 20% do PFE indica sempre trombólise por TEP oculto substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "PFE só serve após intubação e não deve ser usado ambulatorialmente substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: quanto maior a variação de VEF1/PFE, maior a confiabilidade diagnóstica de asma. Monitorar PFE ajuda quando a espirometria isolada é inconclusiva.",
+    "trap": "Descartar asma apesar de variabilidade clara do PFE e clínica típica."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 8,
+    "group": "Pneumologia",
+    "theme": "Asma — variante tosse",
+    "stem": "Mulher de 36 anos com tosse seca há 4 meses, sem sibilos audíveis, RX normal, PFE com variação; melhora com CSI+SABA. Qual o diagnóstico sindrômico mais provável? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Asma oculta/variante tosse: limitação reversível pode existir sem sibilos contínuos; tratar como asma segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Tuberculose miliar obrigatória só pela tosse, sem imagem nem microbiologia substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Refluxo como única causa, suspendendo CSI apesar da resposta objetiva substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Neoplasia de cordas vocais até prova em contrário, sem avaliar função pulmonar substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Psicogênica definitiva; negar trial de controlador anti-inflamatório substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1 descreve “asma oculta” por tosse com demonstração de limitação reversível. Resposta a CSI reforça o diagnóstico; ausência de sibilo não exclui.",
+    "trap": "Exigir sibilos contínuos para diagnosticar e tratar asma."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 9,
+    "group": "Pneumologia",
+    "theme": "Asma — gestação e risco futuro",
+    "stem": "Gestante de 28 anos, asma previamente controlada, agora com uso de SABA > 1 frasco/mês e VEF1 55%. Qual a prioridade de manejo? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Reconhecer gravidez e uso excessivo de SABA/VEF1 baixo como risco de exacerbação; otimizar CSI segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Suspender todo CSI na gestação por teratogenicidade absoluta presumida substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Manter só SABA contínuo e evitar retorno ao controlador até o parto substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar interrupção da gestação como único tratamento da asma substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Internar para trombólise empírica sem investigar causa respiratória substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM/GINA: gravidez, uso excessivo de SABA e VEF1 reduzido elevam risco de exacerbação. Controladores (CSI) devem ser mantidos/otimizados; exacerbação não tratada é mais arriscada.",
+    "trap": "Suspender CSI na gestação por medo injustificado de teratogenicidade."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 10,
+    "group": "Pneumologia",
+    "theme": "DPOC — mMRC e CAT",
+    "stem": "Homem de 66 anos, VEF1 48% (GOLD 3), mMRC 1 e CAT 8, sem exacerbações no último ano. Qual a leitura correta da avaliação integrada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Obstrução grave (GOLD 3) pode coexistir com poucos sintomas (mMRC/CAT baixos); a terapia inicial segue o grupo ABE pelos sintomas/exacerbações",
+    "wrongs": [
+      "GOLD 3 obriga automaticamente grupo E e CSI de alta dose independentemente de sintomas fora da indicação fisiopatológica clássica",
+      "mMRC 1 com CAT 8 define sempre grupo E e oxigenoterapia domiciliar contínua substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "VEF1 baixo torna desnecessário medir sintomas ou história de exacerbações substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "CAT só se aplica a asma; no DPOC usar apenas PaO2 para classificar grupos substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1/GOLD: gravidade espirométrica (1–4) ≠ impacto sintomático. mMRC ≥2 ou CAT >10 marcam sintomas intensos; grupos A/B/E usam sintomas + exacerbações.",
+    "trap": "Igualar GOLD 3–4 automaticamente a grupo E sem olhar sintomas/exacerbações."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 11,
+    "group": "Pneumologia",
+    "theme": "DPOC — grupo A terapia inicial",
+    "stem": "Mulher de 61 anos, tabagista, VEF1/CVF 0,62, VEF1 72%, mMRC 0, CAT 6, sem exacerbações. Qual terapia farmacológica inicial mais adequada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Grupo A: broncodilatador de curta ou longa ação conforme necessidade/preferência, com ênfase em cessação e vacinas com reassesso clínico seriado",
+    "wrongs": [
+      "Iniciar CSI+LABA de alta dose como primeira linha no grupo A oligossintomático substituindo indevidamente a primeira linha",
+      "Prescrever oxigenoterapia longa duração com PaO2 68 mmHg sem critérios substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar LABA+LAMA+CSI tripla de imediato sem história de exacerbações substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Negar qualquer broncodilatador porque VEF1 > 70% “exclui” DPOC substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "GOLD/CM: grupo A (poucos sintomas, baixo risco de exacerbação) inicia com broncodilatador; não há indicação rotineira de CSI ou tripla. Cessação é central.",
+    "trap": "Começar CSI ou tripla em DPOC grupo A sem indicações."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 12,
+    "group": "Pneumologia",
+    "theme": "DPOC — grupo B dual LABA/LAMA",
+    "stem": "Homem de 70 anos, mMRC 3, CAT 18, VEF1 45%, sem exacerbações moderadas/graves no último ano. Qual a terapia inicial preferencial? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Grupo B: iniciar dual LABA+LAMA; CSI não é primeira linha sem eosinofilia/exacerbações frequentes segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Manter só SABA sob demanda apesar de sintomas intensos e limitação marcada substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "CSI monoterapia inalatória como único controlador no grupo B substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Antibiotico contínuo macrolídeo como primeira escolha no grupo B sem exacerbações substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Teofilina oral isolada em dose alta preferindo-a à dual broncodilatadora substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "GOLD atual: grupo B (sintomas intensos, sem critério de grupo E) prefere LABA+LAMA. CSI entra sobretudo com exacerbações e/ou eosinofilia relevante.",
+    "trap": "Usar CSI isolado ou SABA só no grupo B sintomático."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 13,
+    "group": "Pneumologia",
+    "theme": "DPOC — alfa-1 antitripsina",
+    "stem": "Homem de 48 anos, tabagista leve, enfisema panlobular basal precoce, história familiar de doença hepática. Qual investigação adicional é prioritária? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Dosar alfa-1 antitripsina (e genótipo se baixa) perante enfisema precoce/basal atípico segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Ignorar dosagem porque deficiência de AAT só ocorre após os 70 anos substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar imediatamente transplante hepático sem confirmar deficiência substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Tratar como asma ocupacional exclusiva sem imagem de enfisema substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Solicitar só PPD e encerrar investigação respiratória substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM/GOLD: suspeitar deficiência de AAT em enfisema precoce, panlobular basal ou história familiar hepática/pulmonar. Confirmação laboratorial orienta aconselhamento e possível reposição selecionada.",
+    "trap": "Deixar de investigar AAT em enfisema precoce atípico."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 14,
+    "group": "Pneumologia",
+    "theme": "DPOC — cessação tabágica",
+    "stem": "Mulher de 58 anos com DPOC recém-diagnosticada, 30 maços-ano, motivada a parar. Qual a conduta com maior impacto prognóstico? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Oferecer aconselhamento estruturado + farmacoterapia para cessação (vareniclina/bupropiona/reposição de nicotina conforme perfil) com reassesso clínico seriado",
+    "wrongs": [
+      "Adiar cessação até VEF1 < 30%, pois parar cedo “não muda” a curva de declínio substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Proibir qualquer suporte farmacológico e indicar só força de vontade isolada substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Substituir cigarro por narguilé diário como estratégia segura de redução de dano substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Indicar lobectomia imediatamente como substituto da cessação substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Cessação é a intervenção que mais altera a história natural do DPOC. Combinar aconselhamento e fármacos aumenta taxa de sucesso; narguilé/eletrônicos não são estratégia segura padrão.",
+    "trap": "Adiar cessação ou achar que só cirurgia substitui parar de fumar."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 15,
+    "group": "Pneumologia",
+    "theme": "TEP — probabilidade baixa e D-dímero",
+    "stem": "Mulher de 34 anos com dor pleurítica leve, Wells < 4 (baixa probabilidade), estável, sem hemoptise, sem sinais de TVP. Qual a melhor sequência? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Dosar D-dímero altamente sensível; se negativo, afastar TEP sem angio-TC imediata segundo diretrizes clínicas atuais conforme gravidade e resposta",
+    "wrongs": [
+      "Indicar trombólise empírica pela dor pleurítica isolada substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Angio-TC obrigatória em toda dor torácica mesmo com Wells baixo e D-dímero negativo substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Anticoagular por 6 meses sem diagnóstico porque “TEP é o grande mascarado” substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Ignorar TEP e alta imediata sem D-dímero nem reassesso substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1/Wells: probabilidade baixa permite estratégia D-dímero; negativo reduz necessidade de imagem. Probabilidade moderada/alta → imagem direta.",
+    "trap": "Angio-TC ou trombólise em probabilidade baixa sem passar pelo D-dímero."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 16,
+    "group": "Pneumologia",
+    "theme": "TEP — gestação e diagnóstico",
+    "stem": "Gestante de 29 anos (2º trimestre) com dispneia súbita, FC 118, Wells modificado sugerindo probabilidade não baixa. Qual a melhor estratégia diagnóstica? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Não atrasar: após avaliação clínica, preferir algoritmos obstétricos (USG de MMII se sinais; se negativo, angio-TC ou scintigrafia conforme neste cenário clínico",
+    "wrongs": [
+      "Aguardar o parto para investigar qualquer suspeita de TEP substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Trombólise imediata em toda gestante taquicárdica sem imagem nem estratificação substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "D-dímero isolado negativo exclui sempre TEP na gestação com alta probabilidade substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Anticoagular com varfarina oral no 1º trimestre como primeira escolha substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Na gestação, suspeita não baixa exige investigação ativa; D-dímero tem limitações. Evitar varfarina na gestação; HBPM é anticoagulação usual quando indicada.",
+    "trap": "Adiar investigação de TEP até o parto em gestante instável/suspeita."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 17,
+    "group": "Pneumologia",
+    "theme": "TEP — diferencial embolia gordurosa",
+    "stem": "Homem de 25 anos, 24 h após fratura de fêmur: dispneia, petéquias, confusão, PaO2 baixa, angio-TC sem trombos grandes. Qual a hipótese mais coerente? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Considerar síndrome de embolia gordurosa no contexto traumático; suporte e estabilização, não segundo diretrizes clínicas atuais neste cenário clínico com",
+    "wrongs": [
+      "Trombólise sistêmica imediata como se fosse TEP de alto risco confirmado substituindo indevidamente a primeira linha fora da indicação sem benefício claro",
+      "Diagnosticar só crise asmática e liberar sem suporte oxigenatório substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar heparina plena sem considerar diferencial traumático específico substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Atribuir tudo a ansiedade e negar oxigênio apesar da hipoxemia substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha e"
+    ],
+    "explain": "CM Pneumo1 lista embolia gordurosa entre causas não trombóticas de EP/SDRA. Quadro típico pós-fratura longa: hipoxemia, neurológico, petéquias; manejo é suporte.",
+    "trap": "Trombolisar como TEP usual sem considerar embolia gordurosa."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 18,
+    "group": "Pneumologia",
+    "theme": "Câncer — síndrome de Pancoast",
+    "stem": "Homem de 62 anos, tabagista, dor no ombro direito, atrofia da mão, ptose e miose ipsilaterais; RX com opacidade apical. Qual a conduta diagnóstica prioritária? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Suspeitar tumor de Pancoast: TC/RM de tórax e estadiamento com biópsia antes de tratar só como segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Infiltrar corticosteroide no ombro e alta sem imagem torácica substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Iniciar quimioterapia empírica sem histologia nem estadiamento substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Tratar como AVC de tronco só pela síndrome de Horner, sem RX/TC substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Indicar fisioterapia isolada por 6 meses antes de qualquer imagem substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: Pancoast (ápice) pode causar dor escapular, plexopatia e Horner. Imagem e diagnóstico histológico/estadiamento guiam terapia multimodal.",
+    "trap": "Tratar dor de ombro sem investigar massa apical em tabagista."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 19,
+    "group": "Pneumologia",
+    "theme": "Câncer — síndrome da veia cava superior",
+    "stem": "Mulher de 58 anos com edema facial, circulação colateral torácica, dispneia e massa mediastinal; estável hemodinamicamente. Qual a prioridade? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Assegurar via aérea/oxigenação, elevar cabeceira, obter histologia/estadiamento rápido e discutir terapia oncológica dirigida (SCLC vs linfoma com com",
+    "wrongs": [
+      "Trombólise sistêmica imediata sem imagem vascular nem diagnóstico tumoral substituindo indevidamente a primeira linha fora da indicação sem sem benefício claro",
+      "Antibiotico empírico isolado por 14 dias como tratamento definitivo da SVCS substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Cirurgia de ressecção emergencial sem estadiamento em toda SVCS substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Alta com diurético oral e retorno em 3 meses sem investigação substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "SVCS por neoplasia mediastinal exige suporte, diagnóstico etiológico rápido e terapia específica (quimio/RT conforme histologia). Trombólise não é rotina.",
+    "trap": "Trombolisar SVCS neoplásica sem diagnóstico oncológico."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 20,
+    "group": "Pneumologia",
+    "theme": "Câncer — hipercalcemia PTHrP",
+    "stem": "Homem de 67 anos com carcinoma epidermoide pulmonar: confusão, poliúria, Ca 14,2 mg/dL, PTH baixo. Qual o manejo agudo prioritário? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Hidratação vigorosa com SF, pamidronato/zoledronato e, se extremo, calcitonina associada; investigar/tratar o tumor com reassesso clínico seriado",
+    "wrongs": [
+      "Restringir água e dar tiazídico para “reter cálcio” substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Reposição de PTH exógeno porque o PTH está baixo substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Hemodiálise imediata em todo Ca > 12 sem tentar hidratação substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Apenas observação ambulatorial sem hidratação substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha com risco elevado de iatrogenia"
+    ],
+    "explain": "CM Pneumo1: hipercalcemia paraneoplásica (PTHrP) no epidermoide — PTH baixo. Tratamento: volume, bifosfonato ± calcitonina se muito alto; tiazídico piora.",
+    "trap": "Usar tiazídico ou ignorar hidratação na hipercalcemia grave."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 21,
+    "group": "Pneumologia",
+    "theme": "Câncer — SIADH no SCLC",
+    "stem": "Mulher de 59 anos com SCLC: Na 118, osmolaridade plasmática baixa, urina inapropriadamente concentrada, euvolêmica, sem edema. Qual a conduta inicial? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Restrição hídrica e tratar a neoplasia; em sintomática grave, considerar correção cuidadosa com segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Infundir 3–4 L de SF a 0,45% em bolus sem monitorar sódio substituindo indevidamente a primeira linha fora da indicação fisiopatológica sem benefício claro",
+      "Iniciar varfarina como tratamento específico da hiponatremia substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Administrar desmopressina para “repor ADH deficiente” substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Diurético tiazídico diário para elevar o sódio rapidamente substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha e sem"
+    ],
+    "explain": "CM Pneumo1: SIADH típica do SCLC. Euvolêmica hiposmolar com urina concentrada → restrição hídrica + terapia oncológica; correção agressiva demais risco de mielinólise.",
+    "trap": "Dar desmopressina ou corrigir Na de forma abrupta sem protocolo."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 22,
+    "group": "Pneumologia",
+    "theme": "Câncer — rastreamento LDCT",
+    "stem": "Homem de 64 anos, 35 maços-ano, parou há 5 anos, assintomático. Pergunta sobre rastreamento. Qual a melhor orientação baseada em evidência? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Discutir TC de baixa dose anual em critérios de alto risco (idade/carga tabágica), com segundo diretrizes clínicas atuais neste cenário clínico com",
+    "wrongs": [
+      "RX de tórax anual substitui completamente a LDCT no rastreamento substituindo indevidamente a primeira linha fora da indicação sem benefício claro",
+      "Rastrear com PET-CT anual em toda a população adulta sem critérios substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Negar qualquer rastreamento porque câncer de pulmão “não tem prevenção” substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar broncoscopia de rotina anual em assintomáticos tabagistas substituindo indevidamente a primeira linha substituindo indevidamente a primeira"
+    ],
+    "explain": "Rastreamento com LDCT reduz mortalidade em selecionados de alto risco; RX não é equivalente. Decisão compartilhada e cessação permanecem essenciais.",
+    "trap": "Substituir LDCT por RX anual ou rastrear sem critérios de risco."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 23,
+    "group": "Pneumologia",
+    "theme": "Derrame — edema de reexpansão",
+    "stem": "Homem de 71 anos com derrame maligno crônico volumoso: após drenar 2,8 L de uma vez, fica hipoxêmico com infiltrado ipsilateral. Qual a interpretação e prevenção? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Edema de reexpansão: limitar dreno inicial a ~1–1,5 L/24 h em derrames crônicos e dar suporte respiratório segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Diagnosticar TEP e trombolisar imediatamente pela hipoxemia pós-drenagem substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Repetir drenagem de mais 3 L na mesma hora para “secar” o espaço substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Iniciar antibiótico só por reexpansão, sem suporte de O2 substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Atribuir a imagem a artefato e negar oxigênio substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha com risco elevado de iatrogenia"
+    ],
+    "explain": "CM Pneumo1: drenagem súbita de grandes volumes crônicos pode causar edema de reexpansão/SDRA local. Limitar volume nas primeiras 24 h e monitorar.",
+    "trap": "Drenar vários litros de uma vez em derrame crônico volumoso."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 24,
+    "group": "Pneumologia",
+    "theme": "Derrame — parapneumônico complicado",
+    "stem": "Mulher de 48 anos com PAC: derrame loculado, pH do líquido 7,05, glicose 35, LDH muito alta, Gram negativo até agora. Qual a conduta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Tratar como parapneumônico complicado/empiema iminente: antibiótico + drenagem torácica precoce segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Observar só com analgésico porque todo derrame na PAC é transudato benigno substituindo indevidamente a primeira linha fora da indicação sem benefício claro",
+      "Iniciar quimioterapia empírica por “derrame maligno” sem citologia substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Fazer só toracocentese diagnóstica repetida sem drenar apesar de pH baixo substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Anticoagular em dose plena como tratamento do líquido pleural ácido substituindo indevidamente a primeira linha substituindo indevidamente a primeira"
+    ],
+    "explain": "Exsudato parapneumônico com pH baixo/glicose baixa/loculação indica complicado: drenagem + ATB. Atraso favorece empiema organizado.",
+    "trap": "Observar derrame parapneumônico ácido/loculado sem drenar."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 25,
+    "group": "Pneumologia",
+    "theme": "SDRA — causa direta vs indireta",
+    "stem": "Paciente com pancreatite grave evolui com infiltrados bilaterais, P/F 160, sem falência ventricular esquerda. Qual a classificação etiológica mais correta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "SDRA por injúria indireta (pancreatite); manejo com VT protetor, PEEP e suporte da causa de base segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Não é SDRA porque só pneumonia bacteriana causa a síndrome substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "É edema cardiogênico puro; diurético substitui ventilação protetora substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar antibiótico anti-TB empírico em toda pancreatite com infiltrado substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "VT 12 mL/kg ideal porque a causa é extrapulmonar substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: SDRA direta (pneumonia, aspiração) vs indireta (sepse, pancreatite, trauma). Critérios Berlin + VT baixo independentemente da via.",
+    "trap": "Negar SDRA em causa indireta ou usar VT alto."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 26,
+    "group": "Pneumologia",
+    "theme": "SDRA — ECMO de resgate",
+    "stem": "Homem de 40 anos com SDRA grave refratária: P/F < 80 sob VT protetor, PEEP otimizada e pronação; centro tem ECMO. Qual a melhor leitura? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Considerar ECMO vv como resgate em centro experiente após falha das medidas padrão; não é primeira linha isolada com reassesso clínico seriado com com",
+    "wrongs": [
+      "Indicar ECMO antes de tentar VT protetor, PEEP e pronação substituindo indevidamente a primeira linha fora da indicação fisiopatológica sem sem benefício claro",
+      "ECMO substitui antibióticos e tratamento da causa infecciosa substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Negar qualquer resgate porque ECMO nunca deve ser cogitada na SDRA substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Trocar para VT 15 mL/kg em vez de avaliar ECMO/cuidados avançados substituindo indevidamente a primeira linha substituindo indevidamente a primeira"
+    ],
+    "explain": "CM Pneumo1 cita ECMO/ECCO2R como estratégias de resgate em refratariedade; evidência de mortalidade é selecionada — após otimizar ventilação protetora e pronação.",
+    "trap": "Ir direto à ECMO sem esgotar ventilação protetora/pronação."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 27,
+    "group": "Pneumologia",
+    "theme": "VM — indicações de intubação",
+    "stem": "Mulher de 55 anos com PAC: sonolenta, FR 40, uso de acessórios, PaCO2 58 com pH 7,22, SpO2 86% em O2 alto, secreções abundantes. Qual a decisão? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Intubar e instituir ventilação invasiva: rebaixamento, fadiga, hipoxemia refratária e acidose segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Manter só cateter nasal e aguardar 6 h novas gasometrias sem suporte substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Sedação profunda em enfermaria sem via aérea protegida substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Alta domiciliar com salbutamol oral porque “tosse limpa o pulmão” substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "VNI apesar de rebaixamento e secreções copiosas sem reavaliar via aérea substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1 lista indicações de IOT/VM: rebaixamento, fadiga, hipoxemia refratária, hipercapnia com acidose, secreções não depuradas. Clínica prevalece sobre número isolado.",
+    "trap": "Atrasar intubação em fadiga/rebaixamento com acidose."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 28,
+    "group": "Pneumologia",
+    "theme": "VM — modo assistido-controlado",
+    "stem": "Após intubação por SDRA, a equipe escolhe modo ventilatório para garantir repouso muscular inicial. Qual a escolha mais coerente? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Modo assistido-controlado (volume ou pressão) com VT protetor e FR mínima, permitindo disparos do paciente sob sincronia com reassesso clínico seriado",
+    "wrongs": [
+      "CPAP puro sem suporte em paciente recém-intubado exausto substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Ventilação espontânea sem backup de frequência na falência aguda substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Bloqueio neuromuscular contínuo obrigatório em todo assistido-controlado desde o minuto zero substituindo indevidamente a primeira linha",
+      "VT 12–15 mL/kg no assistido-controlado como padrão na SDRA substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo1: assistido-controlado é amplamente usado para garantir VT/FR e repouso muscular. Na SDRA, VT baixo; bloqueio só se assincronia refratária selecionada.",
+    "trap": "Usar VT alto ou CPAP isolado no início da falência respiratória grave."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 29,
+    "group": "Pneumologia",
+    "theme": "Sarcoidose — síndrome de Löfgren",
+    "stem": "Mulher de 32 anos com eritema nodoso, adenopatia hilar bilateral, artralgia e febre baixa; ACE discretamente elevada. Qual a conduta inicial mais adequada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Reconhecer Löfgren (bom prognóstico): suporte sintomático/AINE e observar; biópsia pode ser dispensada no quadro clássico com reassesso clínico seriado",
+    "wrongs": [
+      "Iniciar RHZE empírico imediatamente sem considerar sarcoidose substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Quimioterapia citotóxica de urgência por adenopatia hilar substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Corticosteroide em dose imunossupressora alta em todo Löfgren oligossintomático substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Pneumonectomia diagnóstica bilateral como primeiro passo substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Löfgren (eritema nodoso + adenopatia hilar ± artrite) tem alta taxa de remissão; muitos não precisam de biópsia nem corticoide precoce. Diferenciar de TB/linfoma se atípico.",
+    "trap": "Tratar Löfgren clássico como TB ou neoplasia sem avaliação sindrômica."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 30,
+    "group": "Pneumologia",
+    "theme": "Sarcoidose — hipercalcemia",
+    "stem": "Homem de 41 anos com sarcoidose pulmonar: poliúria, litíase, Ca elevado, PTH baixo, 1,25-(OH)2-vitD elevada. Qual o mecanismo e manejo inicial? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Produção extrarrenal de calcitriol pelos macrófagos do granuloma; hidratação, corticoide e evitar excesso de vitamina D/sol com reassesso clínico seriado",
+    "wrongs": [
+      "Hiperparatireoidismo primário típico com PTH alto a operar de urgência substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "SIADH do SCLC como única explicação do cálcio alto substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Restrição hídrica como tratamento da hipercalcemia da sarcoidose substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Reposição de vitamina D em altas doses para “corrigir” o calcitriol substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Na sarcoidose, granulomas hidroxilam vitamina D → hipercalcemia/hipercalciúria com PTH baixo. Corticoide reduz a produção de calcitriol; hidratar.",
+    "trap": "Tratar como hiperpara primário ou oferecer vitamina D em excesso."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 31,
+    "group": "Pneumologia",
+    "theme": "TB — TRM-TB e rifampicina",
+    "stem": "Homem de 45 anos com tosse há 5 semanas, RX com caverna apical; TRM-TB positivo com resistência à rifampicina sinalizada. Qual o próximo passo? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Não iniciar esquema sensível padrão cegamente: isolar, notificar e seguir fluxo de TB-RR com segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Iniciar só isoniazida monoterapia por 9 meses e liberar sem isolamento substituindo indevidamente a primeira linha fora da indicação sem benefício claro",
+      "Ignorar o TRM e tratar como pneumonia comunitária ambulatorial substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Prescrever RHZE padrão completo apesar do sinal de resistência à R substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Aguardar 8 semanas sem tratamento até cultura clássica positivar substituindo indevidamente a primeira linha substituindo indevidamente a primeira"
+    ],
+    "explain": "CM Pneumo2: TRM detecta M. tuberculosis e resistência à rifampicina. TB-RR exige manejo especializado e revisão com cultura/TSA; RHZE padrão é inadequado.",
+    "trap": "Manter RHZE padrão após TRM com resistência à rifampicina."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 32,
+    "group": "Pneumologia",
+    "theme": "TB — TDO",
+    "stem": "Mulher de 39 anos inicia RHZE; há risco social de má adesão. Qual estratégia é prioritária no SUS/protocolo brasileiro? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Tratamento diretamente observado (TDO) para garantir tomadas e reduzir resistência/falência segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Entregar caixas para 6 meses sem qualquer observação ou retorno substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Trocar para esquema de 2 semanas “curto” por conta própria substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Suspender etambutol sempre no início para “facilitar adesão” substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Indicar internamento compulsório de 6 meses em todo caso sensível substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2 enfatiza TDO como estratégia de adesão e controle de resistência. Autogestão sem suporte eleva falência e transmissão.",
+    "trap": "Dispensar meses de tuberculostáticos sem TDO em paciente de risco."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 33,
+    "group": "Pneumologia",
+    "theme": "TB — falência terapêutica",
+    "stem": "Homem em RHZE sob TDO: após 4–5 meses, baciloscopia persiste positiva e clínica não melhora. Qual a conduta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Investigar falência: nova cultura/TSA, aderência real, exclusão de resistência e referenciar segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Aumentar só a dose de pirazinamida indefinidamente sem novos testes substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Suspender todos os fármacos e observar 3 meses sem isolamento substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Adicionar fluorquinolona isolada (monoterapia) à falência substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Diagnosticar cura sorológica e encerrar o caso substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2: falência = persistência bacteriológica/clínica sob tratamento. Exige reavaliação de resistência e esquema dirigido — evitar monoterapia adicional.",
+    "trap": "Adicionar um único fármaco a esquema em falência."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 34,
+    "group": "Pneumologia",
+    "theme": "TB — hepatotoxicidade maior",
+    "stem": "Mulher de 52 anos no 3º semana de RHZE: icterícia, náuseas, ALT > 5× LSN, bilirrubina alta. Qual a conduta imediata? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Suspender fármacos hepatotóxicos (especialmente H, R, Z), investigar outras causas e reintroduzir sob protocolo após recuperação com reassesso clínico seriado",
+    "wrongs": [
+      "Manter o esquema completo e apenas adicionar hepatoprotetor herbário substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Trocar para isoniazida monoterapia em dose dobrada substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Ignorar enzimas porque “sempre sobem” e manter Z em dose máxima substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Indicar transplante hepático de urgência sem suspender tuberculostáticos substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2 classifica hepatotoxicidade maior: suspender ofensores, monitorar e reexpor sequencialmente conforme protocolo. Manter Z/H/R na hepatite clínica é perigoso.",
+    "trap": "Manter RHZE completo na hepatite medicamentosa franca."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 35,
+    "group": "Pneumologia",
+    "theme": "TB — miliar",
+    "stem": "Idoso de 78 anos com febre, hipoxemia, padrão miliar difuso na TC, PPD anérgico. Qual a conduta mais adequada? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Alta suspeita de TB miliar: coletar amostras (escarro/LBA/urina/medula conforme contexto), segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Tratar só com oseltamivir e negar investigação de micobactéria substituindo indevidamente a primeira linha fora da indicação fisiopatológica",
+      "Aguardar PPD positivo para iniciar qualquer tuberculostático em grave substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Corticosteroide isolado sem cobrir TB em padrão miliar febril substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Alta com azitromicina por 3 dias como tratamento definitivo substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha e"
+    ],
+    "explain": "TB miliar: disseminação hematogênica, padrão em grãos de milheto; PPD pode ser negativo. Diagnóstico agressivo + tratamento oportuno reduzem mortalidade.",
+    "trap": "Exigir PPD positivo antes de tratar TB miliar grave."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 36,
+    "group": "Pneumologia",
+    "theme": "TB — padrão na AIDS avançada",
+    "stem": "Homem com HIV, CD4 45: febre, infiltrado difuso, adenopatia mediastinal e derrame; BAAR ainda pendente. Qual a leitura radioclínica? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Com CD4 muito baixo a TB pode mimetizar primária/atípica (difusa, adenopatia, derrame); investigar TB e diferenciais (PCP etc.) com prioridade com com",
+    "wrongs": [
+      "CD4 baixo exclui TB porque o bacilo “precisa” de imunidade íntegra substituindo indevidamente a primeira linha fora da indicação sem sem benefício claro",
+      "Padrão apical cavitário é obrigatório para diagnosticar TB no HIV substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Iniciar só fluconazol e encerrar investigação respiratória substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Negar isolamento respiratório em suspeita de TB pulmonar substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha e sem"
+    ],
+    "explain": "CM Pneumo2: na AIDS avançada a TB perde o padrão pós-primário clássico e aproxima-se do primário/disseminado. Isolamento e diagnóstico rápido são essenciais.",
+    "trap": "Exigir caverna apical para suspeitar TB em AIDS avançada."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 37,
+    "group": "Pneumologia",
+    "theme": "Contato TB — avaliação do PPD",
+    "stem": "Criança de 6 anos, contato intradomiciliar de bacilífero; assintomática, RX normal, PPD 12 mm (sem BCG recente justificando). Qual a conduta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Tratar como infecção latente (ILTB) após excluir doença ativa: quimioprofilaxia conforme protocolo e acompanhar alinhado à fisiopatologia do caso",
+    "wrongs": [
+      "Iniciar RHZE completo de doença ativa só pelo PPD, sem clínica/RX substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Ignorar o contato porque criança assintomática nunca se infecta substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Repetir BCG imediatamente como substituto da avaliação de ILTB substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Isolar a criança em UTI e intubar profilaticamente substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2 Cap. 3: contatos de bacilífero devem ser avaliados; PPD/IGRA positivos sem doença ativa → tratamento de ILTB. RHZE é para doença, não para latência.",
+    "trap": "Tratar ILTB com esquema de doença ativa (RHZE) desnecessário."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 38,
+    "group": "Pneumologia",
+    "theme": "ILTB — IGRA vs PPD",
+    "stem": "Adulto vacinado com BCG na infância, contato de TB, PPD 8 mm duvidoso, sem doença ativa. Qual o papel do IGRA? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "IGRA pode ajudar a discriminar infecção verdadeira em vacinados/PPD limítrofe; se positivo e doença excluída, tratar ILTB com reassesso clínico seriado",
+    "wrongs": [
+      "IGRA substitui sempre a radiografia no diagnóstico de TB ativa cavitária substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "IGRA positivo confirma resistência à rifampicina e indica TB-RR substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "PPD e IGRA são inúteis após BCG e nunca devem ser solicitados substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "IGRA negativo na AIDS avançada exclui definitivamente qualquer TB substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2: PT/PPD ou IGRA detectam infecção; IGRA sofre menos influência da BCG. Nenhum dos dois sozinho diagnostica doença ativa nem resistência.",
+    "trap": "Usar IGRA para diagnosticar TB ativa ou resistência."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 39,
+    "group": "Pneumologia",
+    "theme": "BCG — proteção formas graves",
+    "stem": "Gestante pergunta se o RN deve tomar BCG e o que a vacina realmente previne. Qual a orientação correta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "BCG ao nascer (conforme indicação nacional) reduz formas graves (miliar/meníngea) na infância; segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "BCG elimina 100% o risco de TB pulmonar do adulto e dispensa TDO futuro substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "BCG é contraindicada em todo RN e só se aplica após os 10 anos substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "BCG trata ILTB estabelecida e substitui isoniazida substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "BCG deve ser aplicada só após PPD positivo no RN saudável substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2: BCG intraderme no RN reduz TB grave da infância (~75% em miliar/meníngea), sem proteção absoluta contra TB do adulto.",
+    "trap": "Achar que BCG previne toda TB do adulto ou trata ILTB."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 40,
+    "group": "Pneumologia",
+    "theme": "TB — espondilodiscite de Pott",
+    "stem": "Homem de 55 anos com lombalgia crônica, gibosidade, RX com destruição de corpo vertebral e abscesso do psoas; BAAR no aspirado pendente. Qual a conduta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Tratar como TB osteoarticular (Pott): tuberculostáticos prolongados e discutir drenagem/estabilização se déficit/compressão com reassesso clínico seriado",
+    "wrongs": [
+      "Antibiotico curto para piogênico por 5 dias e alta sem imagem de controle substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Radioterapia isolada presumindo metástase sem biópsia/microbiologia substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Corticosteroide isolado sem tuberculostático em abscesso do psoas substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Cirurgia de escoliose estética imediata sem terapia antimicrobiana substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Mal de Pott: TB vertebral com risco neurológico. Base é quimioterapia prolongada; cirurgia se compressão/instabilidade. Não tratar como lombalgia inespecífica.",
+    "trap": "Negar tuberculostáticos em espondilodiscite sugestiva de Pott."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 41,
+    "group": "Pneumologia",
+    "theme": "TB — pericardite",
+    "stem": "Mulher de 40 anos com febre, atrito pericárdico, derrame pericárdico e adenopatia mediastinal; alta prevalência de TB. Qual a abordagem? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Investigar TB (líquido/biopsia quando seguro), iniciar terapia se alta probabilidade e segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Anticoagular em dose plena como tratamento etiológico do atrito substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Aspirar todo derrame e liberar sem investigação etiológica substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Iniciar só ibuprofeno indefinidamente sem cobrir TB em área endêmica substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Marcapasso definitivo imediato em todo atrito febril substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "TB pericárdica é causa importante de derrame em endemias; diagnóstico + RHZE (e corticoide em protocolos selecionados) reduzem evolução para constrição.",
+    "trap": "Tratar pericardite tuberculosa só com AINE sem tuberculostático."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 42,
+    "group": "Pneumologia",
+    "theme": "Aspergiloma — fungus ball pós-TB",
+    "stem": "Homem com sequela cavitária de TB antiga: hemoptise intermitente, TC com bola móvel dentro da cavidade e sinal do crescente. Qual a conduta? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Aspergiloma: avaliar gravidade da hemoptise; antifúngico sistêmico tem papel limitado — embolização/cirurgia em sangramento significativo neste cenário clínico",
+    "wrongs": [
+      "RHZE novo por 6 meses como tratamento definitivo do fungus ball substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Corticosteroide alto para “dissolver” a bola fúngica substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Observar hemoptise maciça sem via aérea nem embolização substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Itraconazol curto ambulatorial cura sempre sem avaliação intervencionista substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2: cavidades pós-TB podem abrigar aspergiloma. Hemoptise é a complicação temida; manejo intervencionista/cirúrgico conforme gravidade.",
+    "trap": "Tratar aspergiloma só com novo ciclo de RHZE."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 43,
+    "group": "Pneumologia",
+    "theme": "TB — empiema e fístula broncopleural",
+    "stem": "Paciente com TB cavitária evolui com hidropneumotórax e febre; suspeita de empiema tuberculoso com fístula. Qual a prioridade? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Drenagem torácica precoce + tuberculostáticos; atraso da drenagem aumenta sequelas pleurales segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Observar hidropneumotórax febril sem dreno porque “é só ar residual” substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "VNI com pressões altas antes de qualquer drenagem do pneumotórax substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Quimioterapia oncológica empírica pelo nível hidroaéreo substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Toracocentese única diagnóstica sem planejar drenagem contínua substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "CM Pneumo2: extensão da caverna à pleura pode gerar empiema/fístula e hidropneumotórax — drenagem precoce + terapia específica.",
+    "trap": "Deixar de drenar empiema tuberculoso com hidropneumotórax."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 44,
+    "group": "Pneumologia",
+    "theme": "PCM — forma aguda juvenil",
+    "stem": "Adolescente de 16 anos de área endêmica: febre, adenomegalia generalizada, hepatoesplenomegalia, infiltrado intersticial; mucosas orais ainda poupadas. Qual a hipótese? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Paracoccidioidomicose forma aguda/juvenil (reticuloendotelial); confirmar com segundo diretrizes clínicas atuais conforme gravidade e resposta com com",
+    "wrongs": [
+      "Apenas amigdalite viral; liberar sem investigação em endemia substituindo indevidamente a primeira linha fora da indicação fisiopatológica sem benefício claro",
+      "Sarcoidose de Löfgren típica sem considerar micose profunda substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "TB óssea de Pott como única hipótese sem acometimento axial substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Asma intrínseca a tratar só com SABA substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha adiando medida essencial"
+    ],
+    "explain": "PCM aguda/juvenil acomete sistema mononuclear-fagocitário em jovens; distinta da forma crônica adulto (pulmonar/mucosa). Confirmação e antifúngico adequados à gravidade.",
+    "trap": "Confundir PCM juvenil com virose banal em área endêmica."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 45,
+    "group": "Pneumologia",
+    "theme": "Histoplasmose — disseminada no HIV",
+    "stem": "Homem com AIDS (CD4 30): febre prolongada, pancitopenia, hepatoesplenomegalia, infiltrado difuso; antígeno urinário de Histoplasma positivo. Qual o tratamento inicial na forma grave? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Anfotericina B na fase de indução da forma disseminada grave, seguida de itraconazol de manutenção e início/otimização de TARV com reassesso clínico seriado",
+    "wrongs": [
+      "Apenas fluconazol tópico oral por 3 dias substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "RHZE isolado sem antifúngico apesar do antígeno positivo substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Corticosteroide único sem cobertura fúngica substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha com risco elevado de iatrogenia",
+      "Cirurgia de ressecção pulmonar bilateral imediata substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Histoplasmose disseminada no HIV grave: indução com anfo B e consolidação com itraconazol; integrar TARV com cuidado para IRIS.",
+    "trap": "Tratar forma disseminada grave só com azólico tópico ou sem antifúngico."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 46,
+    "group": "Pneumologia",
+    "theme": "Pneumocistose — PCP no HIV",
+    "stem": "Mulher com HIV, CD4 80: dispneia progressiva, SpO2 cai ao esforço, TC com vidro fosco bilateral, LDH alta, BAAR negativo. Qual a terapia de escolha? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada.",
+    "correct": "Trimetoprima-sulfametoxazol em dose para PCP; associar corticoide se hipoxemia moderada/grave, segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "Oseltamivir isolado por 5 dias como tratamento definitivo substituindo indevidamente a primeira linha fora da indicação fisiopatológica sem benefício claro",
+      "RHZE empírico sem considerar PCP no padrão clássico substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Itraconazol único porque vidro fosco “é sempre fungo dimórfico” substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Alta com azitromicina e negar oxigênio apesar da dessaturação substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha e"
+    ],
+    "explain": "PCP: vidro fosco, hipoxemia esforçada, LDH↑ em AIDS. Primeira linha TMP-SMX; corticoide se PaO2 baixa. Diferenciar de TB/viral.",
+    "trap": "Tratar PCP clássica só com oseltamivir ou negar TMP-SMX."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 47,
+    "group": "Pneumologia",
+    "theme": "Atelectasia — manejo pós-operatório",
+    "stem": "Homem no 1º dia após laparotomia: febre baixa, SpO2 91%, RX com elevação de hemicúpula e opacificação basal. Qual a conduta inicial? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Estimular expansão pulmonar: analgesia adequada, fisioterapia, incentivador e deambulação precoce; O2 titulado alinhado à fisiopatologia do caso com com",
+    "wrongs": [
+      "Trombólise imediata sem considerar atelectasia pós-operatória substituindo indevidamente a primeira linha fora da indicação fisiopatológica sem benefício claro",
+      "Antibiotico de amplo espectro obrigatório em toda febre de D1 substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Intubação imediata só pela SpO2 91% sem tentativa de expansão substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Diurético de alça em alto volume como primeira medida isolada substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Atelectasia é causa frequente de hipoxemia/febre precoce pós-op. Base: analgesia, higiene brônquica e expansão; nem toda febre D1 é pneumonia/TEP.",
+    "trap": "Trombolisar ou intubar de imediato toda atelectasia pós-op leve."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 48,
+    "group": "Pneumologia",
+    "theme": "Gasometria — gradiente A-a elevado",
+    "stem": "Mulher de 50 anos em ar: PaO2 55, PaCO2 32, PAO2 calculada ~110 (gradiente A-a muito alto). Qual a interpretação? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Gradiente A-a elevado indica V/Q, shunt ou limite de difusão — não hipoventilação pura; investigar causa pulmonar/circulatória com reassesso clínico seriado",
+    "wrongs": [
+      "Gradiente alto prova hipoventilação alveolar pura corrigida só com bicarbonato substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "PaCO2 baixa com A-a alto exclui pneumonia e TEP automaticamente substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "A-a elevado é artefato; repetir gaso sem O2 resolve qualquer hipoxemia substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indica sempre intoxicação por cianeto e exige nitrito de amila substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "Hipoventilação pura eleva PaCO2 com A-a normal. A-a alto aponta distúrbio de troca (V/Q, shunt, difusão) — alinhado a CM Pneumo1.",
+    "trap": "Interpretar A-a alto como hipoventilação pura."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 49,
+    "group": "Pneumologia",
+    "theme": "Função pulmonar — DLCO reduzida",
+    "stem": "Homem de 63 anos tabagista: espirometria com obstrução leve, DLCO 45% do previsto, dispneia desproporcional. Qual a leitura mais útil? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "DLCO baixa em tabagista sugere enfisema/vasculatura/interstício; correlacionar com TC e segundo diretrizes clínicas atuais neste cenário clínico",
+    "wrongs": [
+      "DLCO baixa exclui enfisema e confirma asma pura reversível substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "DLCO só se interpreta na gestação e é inútil no DPOC substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Toda DLCO baixa indica anemia exclusiva sem necessidade de imagem substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "DLCO reduzida obriga trombólise empírica imediata substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha"
+    ],
+    "explain": "DLCO reflete superfície/perfusão alveolar. Redução marcada no tabagista apoia enfisema ou doença vascular/intersticial e guia TC e manejo.",
+    "trap": "Ignorar DLCO baixa como “apenas falta de condicionamento”."
+  },
+  {
+    "idPrefix": "cli-pneumo4",
+    "n": 50,
+    "group": "Pneumologia",
+    "theme": "Tabagismo — aconselhamento motivacional",
+    "stem": "Paciente com DPOC pergunta “já danifiquei tudo, para que parar agora?”. Qual a melhor resposta clínica? Há acesso venoso periférico e oximetria contínua; a equipe discute o próximo passo diagnóstico-terapêutico. Exames complementares disponíveis ou em andamento não devem atrasar a conduta prioritária já justificada. Ponderar tempo de evolução, comorbidades e diagnósticos diferenciais clássicos antes de escalar terapia.",
+    "correct": "Explicar que cessar em qualquer idade reduz declínio do VEF1, exacerbações e mortalidade segundo diretrizes clínicas atuais neste cenário clínico com",
+    "wrongs": [
+      "Concordar que após 20 maços-ano a cessação não altera prognóstico substituindo indevidamente a primeira linha fora da indicação sem benefício claro",
+      "Recomendar aumentar o tabagismo para “acelerar adaptação hipóxica” substituindo indevidamente a primeira linha fora da indicação fisiopatológica clássica",
+      "Indicar só oxigênio domiciliar e desencorajar tentativa de parar substituindo indevidamente a primeira linha substituindo indevidamente a primeira linha",
+      "Afirmar que medicamentos de cessação são sempre proibidos no DPOC substituindo indevidamente a primeira linha substituindo indevidamente a primeira"
+    ],
+    "explain": "Benefício da cessação existe em qualquer momento da história natural. Combinar motivação, suporte e farmacoterapia é padrão ouro.",
+    "trap": "Validar a ideia de que “já não adianta parar”."
+  }
+]
