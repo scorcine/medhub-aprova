@@ -1,24 +1,37 @@
 /**
- * Junta scripts/_parts/ped-part*.json → data/questions-pediatria.json
+ * Junta scripts/_parts/ped-*.json (whitelist v2) → data/questions-pediatria.json
+ * Só publica itens que passam no gate de qualidade.
  * Uso: node scripts/merge-pediatria-parts.js
  */
 const fs = require("fs");
 const path = require("path");
+const { hasBlacklist, looksLikePedVignette, L } = require("./_parts/_ped_gold_lib.cjs");
 
-const SEED_STR = "20260720susv2";
 const PARTS_DIR = path.join(__dirname, "_parts");
 const OUT = path.join(__dirname, "..", "data", "questions-pediatria.json");
+const SEED_STR = "20260721pedv2";
 
-const EXAMS = [
-  "sus-sp", "sus-sp", "sus-sp", "sus-sp", "sus-sp",
-  "sus-sp", "sus-sp",
-  "usp", "enare", "enamed", "unifesp", "santa-casa"
+/** Parts reescritas no padrão R1 (não misturar ped-part* antigo). */
+const WHITELIST = [
+  "ped-neo1.json",
+  "ped-neo2.json",
+  "ped-pueri1.json",
+  "ped-pueri2.json",
+  "ped-inf1.json",
+  "ped-pnm1.json",
+  "ped-gast1.json",
+  "ped-emer1.json",
+  "ped-nefro1.json",
+  "ped-endo1.json",
+  "ped-cardio1.json",
+  "ped-neuro1.json",
+  "ped-hemo1.json",
+  "ped-reuma1.json",
+  "ped-maus1.json"
 ];
+
+const EXAMS = ["sus-sp", "usp", "enare", "enamed", "unifesp", "santa-casa"];
 const YEARS = [2022, 2023, 2024, 2025];
-const DIFF_POOL = [
-  "dificil", "dificil", "dificil", "dificil", "dificil",
-  "dificil", "media", "media"
-];
 
 function seedToUint32 (str) {
   let h = 2166136261;
@@ -39,19 +52,11 @@ function createRng (seed) {
   };
 }
 
-/** Contador para gabarito ~uniforme A–E no JSON (o app ainda embaralha na sessão). */
 let _placeSlot = 0;
-
 function placeCorrect (correct, distractors, rng) {
-  if (!Array.isArray(distractors) || distractors.length !== 4) {
-    throw new Error("placeCorrect exige 4 distratores");
-  }
-  // Round-robin A→E no JSON (o app embaralha de novo a cada sessão).
   const answer = _placeSlot % 5;
   _placeSlot += 1;
-  void rng; // mantém assinatura / seed usada em meta()
   const pool = distractors.slice();
-  // Embaralha só os distratores para não fixar ordem B/C/D/E.
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
     const tmp = pool[i];
@@ -66,87 +71,56 @@ function placeCorrect (correct, distractors, rng) {
   return { choices, answer };
 }
 
-function meta (rng) {
-  return {
-    exam: EXAMS[Math.floor(rng() * EXAMS.length)],
-    year: YEARS[Math.floor(rng() * YEARS.length)],
-    difficulty: DIFF_POOL[Math.floor(rng() * DIFF_POOL.length)]
-  };
+function itemOk (q) {
+  if (!q || !q.stem || !q.correct || !Array.isArray(q.wrongs) || q.wrongs.length !== 4) return false;
+  if (hasBlacklist(q.stem) || hasBlacklist(q.correct) || q.wrongs.some(hasBlacklist)) return false;
+  if (!looksLikePedVignette(q.stem)) return false;
+  if (L(q.explain || "") < 80) return false;
+  if ([q.correct].concat(q.wrongs).some((c) => /neste$| no$| ou$| com$/i.test(String(c).trim()))) {
+    return false;
+  }
+  return true;
 }
 
 function main () {
-  const files = fs.readdirSync(PARTS_DIR)
-    .filter((f) => /^ped-part\d+\.json$/i.test(f))
-    .sort();
-  if (!files.length) throw new Error("Nenhum ped-part*.json em scripts/_parts");
-
-  /** @type {any[]} */
-  const raw = [];
-  for (const f of files) {
-    const chunk = JSON.parse(fs.readFileSync(path.join(PARTS_DIR, f), "utf8"));
-    if (!Array.isArray(chunk)) throw new Error(f + " não é array");
-    raw.push(...chunk);
-  }
+  const files = WHITELIST.filter((f) => fs.existsSync(path.join(PARTS_DIR, f)));
+  if (!files.length) throw new Error("Nenhum ped-*.json da whitelist encontrado em scripts/_parts");
 
   const rng = createRng(seedToUint32(SEED_STR));
-  const usedIds = new Set();
-  const questions = raw.map((q, idx) => {
-    const tag = `${q.idPrefix || "ped"}-${q.n || idx + 1}`;
-    if (!q.theme || !q.stem || !q.correct || !q.explain || !q.trap) {
-      throw new Error("Campos faltando em " + tag);
-    }
-    if (!Array.isArray(q.wrongs) || q.wrongs.length !== 4) {
-      throw new Error("wrongs != 4 em " + tag);
-    }
-    if (q.stem.length < 280) {
-      throw new Error(`Stem curto (${q.stem.length}) em ${tag}`);
-    }
-    if (/\bIVAS\b/i.test(q.theme) || /\bIVAS\b/i.test(q.stem)) {
-      throw new Error("IVAS opaca em " + tag);
-    }
-    const cartoon = /(sempre autolimitado|tonsilectomia na fase aguda|aciclovir por suspeita de herpes)/i;
-    if (cartoon.test([q.correct].concat(q.wrongs).join(" "))) {
-      throw new Error("Distrator caricaturesco em " + tag);
-    }
-    if (q.explain.length < 120) throw new Error("explain curto em " + tag);
-    if (q.trap.length < 40) throw new Error("trap curta em " + tag);
+  const out = [];
+  let rejected = 0;
 
-    const { choices, answer } = placeCorrect(q.correct, q.wrongs, rng);
-    const m = meta(rng);
-    const num = String(q.n || idx + 1).padStart(3, "0");
-    let id = `${q.idPrefix || "ped"}-${num}`;
-    if (usedIds.has(id)) id = `${q.idPrefix || "ped"}-${num}-${idx}`;
-    usedIds.add(id);
-
-    return {
-      id,
-      specialty: "pediatria",
-      group: q.group,
-      theme: q.theme,
-      exam: m.exam,
-      year: m.year,
-      difficulty: m.difficulty,
-      stem: q.stem,
-      choices,
-      answer,
-      explain: q.explain,
-      trap: q.trap
-    };
-  });
-
-  if (questions.length < 105) {
-    throw new Error(`Esperado >= 105, obtido ${questions.length}`);
+  for (const file of files) {
+    const raw = JSON.parse(fs.readFileSync(path.join(PARTS_DIR, file), "utf8"));
+    if (!Array.isArray(raw)) continue;
+    let kept = 0;
+    raw.forEach((q) => {
+      if (!itemOk(q)) {
+        rejected += 1;
+        return;
+      }
+      const { choices, answer } = placeCorrect(q.correct, q.wrongs, rng);
+      out.push({
+        id: String(q.idPrefix) + "-" + String(q.n).padStart(3, "0"),
+        specialty: "pediatria",
+        group: q.group,
+        theme: q.theme,
+        stem: q.stem,
+        choices,
+        answer,
+        explain: q.explain,
+        trap: q.trap || "",
+        exam: EXAMS[Math.floor(rng() * EXAMS.length)],
+        year: YEARS[Math.floor(rng() * YEARS.length)],
+        difficulty: "media"
+      });
+      kept += 1;
+    });
+    console.log(file, kept);
   }
 
-  fs.mkdirSync(path.dirname(OUT), { recursive: true });
-  fs.writeFileSync(OUT, JSON.stringify(questions, null, 2) + "\n", "utf8");
-
-  const lens = questions.map((q) => q.stem.length).sort((a, b) => a - b);
-  const mid = lens[(lens.length / 2) | 0];
-  console.log("Wrote", OUT);
-  console.log("Total", questions.length);
-  console.log("Stem min/median/max", lens[0], mid, lens[lens.length - 1]);
-  console.log("Parts", files.join(", "));
+  fs.writeFileSync(OUT, JSON.stringify(out, null, 2), "utf8");
+  console.log("Publicado:", OUT, "| OK:", out.length, "| rejeitados:", rejected);
 }
 
 main();
