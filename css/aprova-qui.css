@@ -2570,36 +2570,16 @@ html[data-theme="dark"] .aprova-modal-panel {
   margin-top: 0.75rem;
   border-radius: calc(var(--radius) + 0.1rem);
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line-strong));
-  /* Fundo nas cores do app (navy + teal) — substitui o branco do vídeo */
-  background:
-    radial-gradient(ellipse 90% 70% at 50% 38%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 68%),
-    radial-gradient(circle at 85% 10%, color-mix(in srgb, var(--signal, #1a6cff) 22%, transparent), transparent 45%),
-    linear-gradient(165deg, #0b1220 0%, #10263a 42%, color-mix(in srgb, var(--accent-deep) 65%, #0b1220) 100%);
-  box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent),
-    0 12px 28px rgba(11, 18, 32, 0.22);
-}
-
-.welcome-mascot-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, transparent 55%, color-mix(in srgb, #0b1220 55%, transparent) 100%),
-    radial-gradient(ellipse 80% 55% at 50% 100%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%);
+  border: 1px solid var(--line-strong);
+  background: #0b1220;
 }
 
 .welcome-mascot-video {
   display: block;
   width: 100%;
   max-height: min(52vh, 22rem);
-  object-fit: cover;
-  background: transparent;
-  /* Branco do vídeo “some” e mostra o fundo teal/navy por baixo */
-  mix-blend-mode: darken;
+  background: #0b1220;
+  /* Sem filtros — o vídeo fica original; só o ícone do Início usa as cores do app */
   pointer-events: none;
 }
 
@@ -2617,7 +2597,7 @@ html[data-theme="dark"] .aprova-modal-panel {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  background: color-mix(in srgb, #0b1220 58%, transparent);
+  background: rgba(8, 14, 28, 0.55);
   backdrop-filter: blur(2px);
 }
 
@@ -2627,7 +2607,7 @@ html[data-theme="dark"] .aprova-modal-panel {
 
 .welcome-mascot-tap:hover,
 .welcome-mascot-tap:focus-visible {
-  background: color-mix(in srgb, #0b1220 40%, color-mix(in srgb, var(--accent) 18%, transparent));
+  background: rgba(8, 14, 28, 0.4);
 }
 
 .aprova-banner {
