@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — MedHub R1</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("medhub-aprova-theme");
+        if (t !== "dark" && t !== "light") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/aprova.css?v=admin1">
+</head>
+<body class="admin-page">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="wrap admin-page-header">
+    <a class="brand" href="index.html" aria-label="MedHub R1">
+      <img class="brand-logo brand-logo--full" src="/assets/medhub-r1-logo.png" alt="MedHub R1" width="44" height="44">
+    </a>
+    <span class="admin-badge">Admin</span>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Alternar tema" aria-pressed="false" title="Tema">
+      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+      </svg>
+      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="admin-main wrap">
+    <section id="admin-login-panel" class="admin-gate-card" hidden>
+      <h1>Painel administrativo</h1>
+      <p class="admin-muted">Entre com a conta dona do MedHub R1. Neste protótipo os dados de usuários ficam no navegador (localStorage).</p>
+      <form id="admin-login-form" class="admin-login-form">
+        <label for="admin-email">E-mail</label>
+        <input id="admin-email" name="email" type="email" required autocomplete="username">
+        <label for="admin-password">Senha</label>
+        <input id="admin-password" name="password" type="password" required autocomplete="current-password">
+        <label for="admin-pin">PIN admin (opcional)</label>
+        <input id="admin-pin" name="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="Se configurado em Configurações">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+      <p id="admin-login-error" class="admin-status admin-status--err" hidden></p>
+    </section>
+
+    <section id="admin-forbidden-panel" class="admin-gate-card" hidden>
+      <h1>Sem permissão</h1>
+      <p class="admin-muted">A conta <strong id="admin-forbidden-email"></strong> entrou, mas não está na lista de administradores.</p>
+      <p class="admin-muted">Em Configurações do admin (depois do primeiro acesso dono), adicione este e-mail à lista de owners — ou edite <code>APROVA_OWNER_EMAILS</code> em <code>js/admin.js</code>.</p>
+      <button type="button" class="btn btn-ghost" id="admin-forbidden-logout">Sair</button>
+    </section>
+
+    <section id="admin-panel" class="admin-panel" hidden>
+      <div class="admin-shell">
+        <aside class="admin-sidebar" aria-label="Menu administrativo">
+          <p class="admin-sidebar-title">MedHub R1 Admin</p>
+          <nav class="admin-nav" id="admin-nav">
+            <button type="button" class="admin-nav-btn is-active" data-admin-section="overview">Visão geral</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="users">Usuários</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="access">Liberar acesso</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="content">Conteúdo</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="plans">Interesse em planos</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="marketing">Marketing</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="settings">Configurações</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="log">Auditoria</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="pages">Páginas do site</button>
+          </nav>
+          <div class="admin-sidebar-foot">
+            <p class="admin-muted" id="admin-signed-as"></p>
+            <button type="button" class="btn btn-ghost btn-compact" id="admin-logout-btn">Sair</button>
+          </div>
+        </aside>
+
+        <div class="admin-content">
+          <header class="admin-content-head">
+            <div>
+              <h1 id="admin-section-title">Visão geral</h1>
+              <p class="admin-muted" id="admin-section-desc">Resumo de conteúdo, contas locais e planos.</p>
+            </div>
+            <div class="admin-toolbar">
+              <button type="button" class="btn btn-ghost btn-compact" id="admin-refresh-btn">Atualizar</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="admin-export-btn">Exportar CSV</button>
+            </div>
+          </header>
+
+          <div class="admin-section" id="admin-section-overview" data-admin-section="overview">
+            <div id="admin-stats-grid" class="admin-stats-grid"></div>
+            <div class="admin-quick-grid">
+              <button type="button" class="admin-quick-card" data-admin-goto="users"><strong>Usuários</strong><span>Contas deste navegador</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="access"><strong>Liberar acesso</strong><span>Free, Pro mensal/anual, cortesia</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="content"><strong>Conteúdo</strong><span>Bancos de questões e flashcards</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="plans"><strong>Planos</strong><span>Interesse no cadastro</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="marketing"><strong>Marketing</strong><span>Links e contatos</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="pages"><strong>Páginas</strong><span>Atalhos do site</span></button>
+            </div>
+            <p class="admin-note">Protótipo estático: usuários e grants ficam no <strong>localStorage deste dispositivo</strong>. Conteúdo (questões) é lido dos JSON públicos do deploy.</p>
+          </div>
+
+          <div class="admin-section" id="admin-section-users" data-admin-section="users" hidden>
+            <div class="admin-card">
+              <div class="admin-users-head">
+                <h2>Contas locais</h2>
+                <p class="admin-muted" id="admin-user-count"></p>
+              </div>
+              <div class="admin-filters">
+                <input id="admin-search" type="search" placeholder="Buscar e-mail ou nome…" autocomplete="off">
+                <select id="admin-filter-plan">
+                  <option value="all">Todos os planos</option>
+                  <option value="free">Free</option>
+                  <option value="pro-mensal">Pro mensal</option>
+                  <option value="pro-anual">Pro anual</option>
+                  <option value="cortesia">Cortesia</option>
+                  <option value="lifetime">Vitalício</option>
+                </select>
+              </div>
+              <div id="admin-users-list" class="admin-users-list"></div>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-access" data-admin-section="access" hidden>
+            <div class="admin-card">
+              <h2>Liberar acesso</h2>
+              <form id="admin-grant-form" class="admin-grant-form">
+                <label for="grant-email">E-mail</label>
+                <input id="grant-email" type="email" required placeholder="usuario@email.com">
+                <label for="grant-name">Nome (opcional)</label>
+                <input id="grant-name" type="text" placeholder="Nome para nova conta">
+                <label for="grant-type">Tipo de acesso</label>
+                <select id="grant-type">
+                  <option value="free">Free</option>
+                  <option value="pro-mensal">Pro mensal</option>
+                  <option value="pro-anual">Pro anual</option>
+                  <option value="cortesia-1">Cortesia — 1 mês</option>
+                  <option value="cortesia-3">Cortesia — 3 meses</option>
+                  <option value="lifetime">Vitalício</option>
+                </select>
+                <label for="grant-password">Senha (opcional — cria/redefine conta)</label>
+                <input id="grant-password" type="password" autocomplete="new-password" placeholder="Mín. 4 caracteres; vazio só altera plano">
+                <button type="submit" class="btn btn-primary">Salvar acesso</button>
+              </form>
+              <p id="admin-grant-status" class="admin-status" hidden></p>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-content" data-admin-section="content" hidden>
+            <div class="admin-card">
+              <h2>Bancos de questões</h2>
+              <p class="admin-muted">Contagem ao vivo dos arquivos publicados no deploy.</p>
+              <div id="admin-content-banks" class="admin-table-wrap">Carregando…</div>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-plans" data-admin-section="plans" hidden>
+            <div class="admin-card">
+              <h2>Interesse em planos</h2>
+              <p class="admin-muted">Quem clicou em Free / Pro no cadastro (neste navegador).</p>
+              <div id="admin-plans-list"></div>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-marketing" data-admin-section="marketing" hidden>
+            <div class="admin-card">
+              <h2>Marketing</h2>
+              <form id="admin-marketing-form" class="admin-grant-form">
+                <label for="mkt-instagram">Instagram</label>
+                <input id="mkt-instagram" type="url" placeholder="https://instagram.com/...">
+                <label for="mkt-support">E-mail de suporte</label>
+                <input id="mkt-support" type="email" placeholder="suporte@medhubr1.com.br">
+                <label for="mkt-site">Site público</label>
+                <input id="mkt-site" type="url" placeholder="https://www.medhubr1.com.br">
+                <label for="mkt-pixel">Meta Pixel ID</label>
+                <input id="mkt-pixel" type="text" placeholder="Opcional">
+                <button type="submit" class="btn btn-primary">Salvar marketing</button>
+              </form>
+              <p id="admin-marketing-status" class="admin-status" hidden></p>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-settings" data-admin-section="settings" hidden>
+            <div class="admin-card">
+              <h2>Configurações admin</h2>
+              <form id="admin-settings-form" class="admin-grant-form">
+                <label for="cfg-owners">E-mails admin (um por linha)</label>
+                <textarea id="cfg-owners" rows="4" placeholder="seu@email.com"></textarea>
+                <label for="cfg-pin">PIN admin (deixe vazio para desligar)</label>
+                <input id="cfg-pin" type="password" autocomplete="off" placeholder="Opcional">
+                <button type="submit" class="btn btn-primary">Salvar configurações</button>
+              </form>
+              <p id="admin-settings-status" class="admin-status" hidden></p>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-log" data-admin-section="log" hidden>
+            <div class="admin-card">
+              <h2>Auditoria local</h2>
+              <div id="admin-log-list" class="admin-log-list"></div>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-pages" data-admin-section="pages" hidden>
+            <div class="admin-pages-grid">
+              <a class="admin-page-link" href="index.html"><strong>Landing</strong><span>index.html</span></a>
+              <a class="admin-page-link" href="index.html#planos"><strong>Planos</strong><span>#planos</span></a>
+              <a class="admin-page-link" href="app.html"><strong>Área de estudo</strong><span>app.html</span></a>
+              <a class="admin-page-link" href="cadastro.html"><strong>Cadastro</strong><span>cadastro.html</span></a>
+              <a class="admin-page-link" href="https://medhub-aprova.vercel.app" target="_blank" rel="noopener"><strong>Vercel</strong><span>medhub-aprova.vercel.app</span></a>
+              <a class="admin-page-link" href="https://www.medhubr1.com.br" target="_blank" rel="noopener"><strong>Domínio</strong><span>medhubr1.com.br</span></a>
+              <a class="admin-page-link" href="https://www.medhub.ia.br" target="_blank" rel="noopener"><strong>MedHub clínico</strong><span>medhub.ia.br</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js?v=1"></script>
+</body>
+</html>

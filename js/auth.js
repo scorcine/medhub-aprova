@@ -120,6 +120,18 @@ function aprovaLogin (login, password) {
   return true;
 }
 
+/** Lista/atualiza plano do usuário (admin / gates futuras). */
+function aprovaGetUserPlan (login) {
+  const users = aprovaLoadUsers();
+  const user = users[String(login || "").toLowerCase()];
+  if (!user) return { plan: "free", planUntil: null };
+  const until = user.planUntil || null;
+  if (until && Date.now() > until && user.plan !== "lifetime") {
+    return { plan: "free", planUntil: until, expired: true };
+  }
+  return { plan: user.plan || "free", planUntil: until, expired: false };
+}
+
 function aprovaEnterAppAfterLogin () {
   if (document.getElementById("app-shell")) {
     if (typeof aprovaSyncAppAuthUI === "function") aprovaSyncAppAuthUI();
