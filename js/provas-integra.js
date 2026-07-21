@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare5";
+const APROVA_PROVAS_CACHE_VER = "20260721enare6";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -320,12 +320,13 @@ async function aprovaRenderProvasModo (root, data, seq) {
         "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
           "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
           "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Como deseja fazer?</strong></p>" +
-          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Prova completa na ordem da banca, ou só uma grande área.</p>" +
+          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Prova completa na ordem da banca, ou um recorte por grande área.</p>" +
           "<div class=\"actions-row\" style=\"margin-bottom:1rem\">" +
             "<button type=\"button\" class=\"btn btn-primary\" data-prova-start=\"" +
               String(meta.id) + "\" data-prova-area=\"\">Prova na íntegra (" + total + ")</button>" +
           "</div>" +
-          "<div class=\"label\" style=\"margin-bottom:0.5rem\">Por grande área</div>" +
+          "<div class=\"label\" style=\"margin-bottom:0.35rem\">Por grande área</div>" +
+          "<p class=\"muted\" style=\"margin:0 0 0.65rem;font-size:0.85rem\">Classificação automática MedHub R1 (aproximada). A prova na íntegra mantém a ordem oficial.</p>" +
           "<div class=\"provas-area-grid\">" + areaBtns + "</div>" +
         "</article>" +
       "</div>";
