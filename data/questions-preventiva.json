@@ -1,53 +1,1502 @@
 [
   {
-    "id": "prev-sus-001",
+    "id": "prev-ind1-001",
     "specialty": "preventiva",
-    "theme": "SUS / APS",
-    "exam": "enamed",
-    "year": 2024,
-    "difficulty": "facil",
-    "stem": "Qual princípio do SUS garante acesso às ações e serviços sem preconceito ou privilégios?",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Indicadores · conceitos · qualidade · absolutos vs relativos",
+    "stem": "Gestor municipal de saúde compara dois municípios vizinhos e observa que o Município A teve 40 óbitos por doenças cardiovasculares no ano, enquanto o Município B teve apenas 15 óbitos pela mesma causa no mesmo período. Antes de concluir que o Município A tem maior risco de morte cardiovascular, qual informação adicional é indispensável para uma comparação válida entre indicadores de saúde?",
     "choices": [
-      "Regionalização",
-      "Universalidade",
-      "Hierarquização",
-      "Descentralização apenas financeira"
+      "O tamanho da população de cada município, pois números absolutos não permitem comparação de risco sem serem transformados em coeficientes relativos à população exposta",
+      "O valor investido em saúde pelas duas prefeituras no orçamento anual do exercício",
+      "O número de leitos hospitalares disponíveis em cada município no período analisado",
+      "O número de médicos cardiologistas cadastrados no CNES de cada município",
+      "A distância geográfica entre os dois municípios comparados no estudo epidemiológico"
     ],
-    "answer": 1,
-    "explain": "Universalidade: acesso a todos, sem discriminação."
+    "answer": 0,
+    "explain": "Números absolutos, como contagem de óbitos, não expressam risco e não permitem comparação direta entre populações de tamanhos diferentes; é necessário calcular coeficientes, dividindo o número de eventos pela população de referência, para obter uma medida relativa comparável entre municípios.",
+    "trap": "Comparar diretamente números absolutos de óbitos entre municípios de população muito diferente, concluindo erroneamente sobre risco relativo.",
+    "exam": "usp",
+    "year": 2024,
+    "difficulty": "media"
   },
   {
-    "id": "prev-epi-001",
+    "id": "prev-ind1-002",
     "specialty": "preventiva",
-    "theme": "Epidemiologia / testes",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Indicadores · conceitos · qualidade · absolutos vs relativos",
+    "stem": "Médico epidemiologista apresenta ao conselho municipal de saúde dois indicadores: a taxa de mortalidade por acidentes de trânsito, que caiu de 25 para 18 por 100 mil habitantes em cinco anos, e o número absoluto de óbitos por essa causa, que caiu de 250 para 200 no mesmo período em um município cuja população cresceu significativamente. Qual conclusão é mais adequada sobre a qualidade desses indicadores para avaliar a política de segurança viária?",
+    "choices": [
+      "Nenhum dos dois indicadores é válido sem a inclusão do coeficiente de letalidade por acidente de trânsito",
+      "O coeficiente relativo é mais adequado, pois já leva em conta o crescimento populacional, revelando queda real de risco que o número absoluto isoladamente poderia mascarar",
+      "Ambos os indicadores são igualmente inadequados, pois nenhuma medida de mortalidade refletiria a política de segurança viária",
+      "O número absoluto é mais adequado, pois reflete diretamente o impacto social e humano da causa de morte",
+      "O número absoluto deve substituir totalmente o coeficiente relativo em qualquer avaliação de política pública municipal"
+    ],
+    "answer": 1,
+    "explain": "Coeficientes relativos consideram o denominador populacional, permitindo avaliar corretamente a tendência de risco ao longo do tempo mesmo diante de crescimento demográfico, enquanto números absolutos podem sugerir melhora aparente que não reflete necessariamente redução do risco individual.",
+    "trap": "Valorizar apenas a redução do número absoluto de óbitos, ignorando o crescimento populacional que torna o coeficiente relativo mais informativo.",
+    "exam": "unifesp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-003",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Indicadores · conceitos · qualidade · absolutos vs relativos",
+    "stem": "Conselheiro de saúde municipal, auxiliado pela equipe técnica da secretaria, questiona por que o relatório usa a expressão por 1.000 habitantes para o coeficiente de natalidade e por 100.000 habitantes para o coeficiente de mortalidade por câncer no mesmo município. Qual explicação técnica justifica essa diferença entre as bases multiplicadoras dos indicadores?",
+    "choices": [
+      "A base multiplicadora é escolhida aleatoriamente pelo estatístico responsável, sem qualquer critério técnico padronizado",
+      "A base multiplicadora depende exclusivamente do tamanho absoluto da população total do município analisado",
+      "A base multiplicadora é escolhida para tornar o coeficiente um número inteiro de fácil leitura, sendo maior quanto mais raro o evento estudado na população",
+      "Todos os coeficientes de saúde pública devem obrigatoriamente utilizar a mesma base multiplicadora de 100.000 habitantes",
+      "Eventos mais frequentes exigem base multiplicadora maior, enquanto eventos raros exigem base multiplicadora menor"
+    ],
+    "answer": 2,
+    "explain": "A escolha da base multiplicadora, como 1.000, 10.000 ou 100.000 habitantes, busca evitar números decimais pouco intuitivos; eventos mais raros, como certos cânceres, exigem bases maiores, enquanto eventos mais frequentes, como nascimentos, podem usar bases menores para expressar o coeficiente de forma legível.",
+    "trap": "Achar que a base multiplicadora é arbitrária ou fixa para todos os indicadores, sem relação com a frequência do evento estudado.",
+    "exam": "enamed",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-004",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Indicadores · conceitos · qualidade · absolutos vs relativos",
+    "stem": "Médica da vigilância em saúde, à frente da equipe técnica, precisa avaliar a qualidade de um indicador de cobertura vacinal antes de utilizá-lo para tomada de decisão no município. Qual atributo de qualidade de indicador está relacionado à capacidade do indicador de refletir de fato o que se propõe a medir?",
+    "choices": [
+      "Mensurabilidade, atributo que expressa exclusivamente o custo financeiro necessário para calcular o indicador",
+      "Relevância, atributo que expressa exclusivamente a popularidade do indicador entre gestores de saúde pública",
+      "Confiabilidade, atributo que expressa exclusivamente a facilidade de coleta do dado pela equipe de vigilância",
+      "Validade, atributo que expressa a capacidade do indicador de medir efetivamente o fenômeno que se pretende avaliar",
+      "Especificidade, atributo que expressa exclusivamente a exclusão de casos falso-positivos na cobertura vacinal"
+    ],
+    "answer": 3,
+    "explain": "A validade é o atributo que indica se o indicador realmente mede o fenômeno de interesse, sendo essencial diferenciá-la da confiabilidade, que se refere à reprodutibilidade da medida, e de outros atributos como mensurabilidade e relevância, cada um com significado técnico distinto na avaliação de indicadores.",
+    "trap": "Confundir validade, que mede se o indicador reflete o fenômeno real, com confiabilidade, que mede a reprodutibilidade da medição.",
+    "exam": "santa-casa",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-005",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Indicadores · conceitos · qualidade · absolutos vs relativos",
+    "stem": "Gestor estadual de saúde compara dois indicadores para avaliar mortalidade materna: um expresso como número absoluto de óbitos maternos no ano e outro como razão de mortalidade materna por 100.000 nascidos vivos. Qual vantagem principal a razão de mortalidade materna tem sobre o número absoluto para comparação entre estados?",
+    "choices": [
+      "Elimina completamente qualquer necessidade de investigação individual dos óbitos maternos notificados no estado",
+      "Substitui integralmente a necessidade de vigilância epidemiológica dos óbitos maternos em cada município do estado",
+      "Reflete exclusivamente a qualidade da assistência hospitalar, sem qualquer influência de fatores sociais ou de acesso",
+      "Garante que nenhum óbito materno deixará de ser notificado ao sistema de informação sobre mortalidade",
+      "Permite comparação padronizada entre estados com populações e números de nascimentos muito diferentes, ao relacionar os óbitos maternos ao volume de nascidos vivos"
+    ],
+    "answer": 4,
+    "explain": "A razão de mortalidade materna relaciona os óbitos maternos ao número de nascidos vivos no período e área, permitindo comparação válida entre estados com volumes populacionais distintos, o que o número absoluto isolado não permite por não considerar a exposição ao risco.",
+    "trap": "Achar que a razão de mortalidade materna dispensa investigação epidemiológica de cada óbito, quando na verdade apenas melhora a comparabilidade.",
     "exam": "usp",
     "year": 2023,
-    "difficulty": "media",
-    "stem": "Em um teste diagnóstico, aumentar o ponto de corte tende a:",
-    "choices": [
-      "Aumentar sensibilidade e reduzir especificidade",
-      "Aumentar especificidade e reduzir sensibilidade",
-      "Não alterar sensibilidade nem especificidade",
-      "Zerar os falsos negativos sempre"
-    ],
-    "answer": 1,
-    "explain": "Elevar o limiar costuma ↑ especificidade e ↓ sensibilidade (menos falsos positivos, mais falsos negativos)."
+    "difficulty": "media"
   },
   {
-    "id": "prev-vigilancia-001",
+    "id": "prev-ind1-006",
     "specialty": "preventiva",
-    "theme": "Vigilância / ética",
-    "exam": "enare",
-    "year": 2024,
-    "difficulty": "media",
-    "stem": "Notificação compulsória imediata é típica de doenças com potencial de:",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Indicadores · conceitos · qualidade · absolutos vs relativos",
+    "stem": "Gestor de indicadores da secretaria estadual de saúde precisa classificar um indicador de saúde quanto à sua natureza matemática, ao apresentar a taxa de letalidade de uma doença calculada como número de óbitos dividido pelo número de casos da mesma doença no mesmo período. Qual classificação matemática corresponde a essa razão?",
     "choices": [
-      "Apenas impacto individual sem risco coletivo",
-      "Surto, epidemia ou risco à saúde pública",
-      "Exclusivamente doenças crônicas não transmissíveis",
-      "Somente eventos hospitalares privados"
+      "Proporção, pois o numerador, óbitos, está contido no denominador, casos totais, variando entre 0 e 1 ou entre 0% e 100%",
+      "Taxa de variação, pois mediria exclusivamente a mudança percentual de um indicador entre dois períodos distintos",
+      "Coeficiente de incidência, pois mediria exclusivamente novos casos em relação à população total exposta ao risco",
+      "Índice de dispersão, pois mediria exclusivamente a variabilidade estatística dos casos em torno da média populacional",
+      "Razão simples, pois o numerador representaria uma categoria totalmente distinta e não incluída no denominador utilizado"
+    ],
+    "answer": 0,
+    "explain": "A letalidade é classicamente uma proporção, pois os óbitos pela doença estão contidos no total de casos da mesma doença, diferentemente de uma razão simples, em que numerador e denominador seriam categorias mutuamente exclusivas, ou de um coeficiente de incidência, que usa a população total como denominador.",
+    "trap": "Confundir letalidade, proporção com numerador contido no denominador, com coeficiente de incidência, que usa a população total exposta.",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-007",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Perfil demográfico · pirâmide · esperança de vida · urbanização",
+    "stem": "Gestor de planejamento em saúde da secretaria municipal analisa a pirâmide etária do município e observa base estreita, predominância de adultos jovens e topo discretamente mais largo que em décadas anteriores. Qual fase da transição demográfica esse padrão sugere?",
+    "choices": [
+      "Transição demográfica incipiente, com natalidade e mortalidade ainda muito elevadas e base extremamente larga e persistente",
+      "Transição demográfica avançada, com redução da natalidade, envelhecimento populacional progressivo e ampliação relativa da população idosa",
+      "Explosão demográfica recente, com aumento abrupto e simultâneo de todas as faixas etárias da população local",
+      "Estabilidade demográfica plena, sem qualquer alteração na estrutura etária da população ao longo das últimas décadas",
+      "Regressão demográfica absoluta, com redução do número total de habitantes em todas as faixas etárias simultaneamente"
     ],
     "answer": 1,
-    "explain": "A vigilância prioriza eventos de relevância coletiva / risco de disseminação."
+    "explain": "A base estreita da pirâmide indica queda da natalidade, enquanto o topo mais largo reflete aumento da expectativa de vida e envelhecimento populacional, características da transição demográfica avançada, distinta do padrão de base larga típico de populações jovens em transição incipiente.",
+    "trap": "Interpretar base estreita e topo mais largo como estabilidade, quando na verdade indicam processo dinâmico de envelhecimento populacional.",
+    "exam": "santa-casa",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-008",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Perfil demográfico · pirâmide · esperança de vida · urbanização",
+    "stem": "Médico sanitarista compara a esperança de vida ao nascer entre dois municípios da mesma região, encontrando 68 anos no Município X e 78 anos no Município Y, ambos com sistemas de saúde estruturados de forma semelhante. Qual grupo de determinantes é mais provável explicar essa diferença expressiva entre os dois municípios?",
+    "choices": [
+      "Exclusivamente a disponibilidade de exames de imagem de alta complexidade em cada município comparado",
+      "Exclusivamente a distância geográfica entre os dois municípios e a capital do estado correspondente",
+      "Determinantes sociais mais amplos, como saneamento básico, educação, renda e condições de moradia, que impactam fortemente a esperança de vida além da estrutura assistencial em saúde",
+      "Exclusivamente o número absoluto de leitos hospitalares disponíveis em cada município da comparação",
+      "Exclusivamente o número de especialistas cadastrados no CNES de cada município da região analisada"
+    ],
+    "answer": 2,
+    "explain": "A esperança de vida ao nascer é fortemente influenciada por determinantes sociais amplos, como saneamento, educação e renda, que atuam sobre múltiplas causas de morbimortalidade ao longo da vida, superando isoladamente o efeito da estrutura assistencial em saúde quando essa é semelhante entre as áreas comparadas.",
+    "trap": "Atribuir diferenças de esperança de vida exclusivamente à estrutura assistencial em saúde, ignorando o peso dos determinantes sociais mais amplos.",
+    "exam": "enamed",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-009",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Perfil demográfico · pirâmide · esperança de vida · urbanização",
+    "stem": "Gestor de planejamento urbano do município apresenta dado de que 87% da população do estado reside atualmente em áreas urbanas, contra 45% há cinco décadas. Qual repercussão epidemiológica esse processo de urbanização acelerada mais classicamente favorece?",
+    "choices": [
+      "Aumento exclusivo da mortalidade infantil, sem qualquer repercussão sobre doenças crônicas da população adulta",
+      "Redução automática e uniforme de todas as doenças infecciosas, independentemente das condições de saneamento nas áreas urbanas",
+      "Manutenção idêntica do perfil de morbimortalidade observado décadas atrás, sem qualquer alteração relacionada à urbanização",
+      "Aumento relativo das doenças crônico-degenerativas e mudança do perfil de morbimortalidade, com transição do predomínio de doenças infecciosas para doenças cardiovasculares e neoplasias",
+      "Eliminação completa das desigualdades em saúde entre diferentes bairros e regiões da mesma área urbana"
+    ],
+    "answer": 3,
+    "explain": "A urbanização acelerada está classicamente associada à transição epidemiológica, com mudança de hábitos, sedentarismo e maior exposição a fatores de risco cardiovascular, favorecendo o predomínio crescente de doenças crônico-degenerativas em detrimento das doenças infecciosas típicas de perfis populacionais mais rurais.",
+    "trap": "Achar que a urbanização reduz automaticamente todas as doenças, sem considerar a transição para maior carga de doenças crônicas.",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-010",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Perfil demográfico · pirâmide · esperança de vida · urbanização",
+    "stem": "Médica epidemiologista, junto à equipe de planejamento, analisa a razão de dependência de um município, encontrando valor elevado decorrente principalmente do aumento da população idosa, e não mais da população jovem como ocorria décadas atrás. Qual implicação para o planejamento em saúde essa mudança na composição da razão de dependência mais diretamente sugere?",
+    "choices": [
+      "Necessidade de eliminar completamente os programas de imunização infantil, pois a população jovem estaria em franco declínio",
+      "Necessidade de ampliar exclusivamente os programas de saúde materno-infantil, já que a razão de dependência sempre refletiria natalidade",
+      "Necessidade de reduzir investimentos em atenção primária, pois a população idosa demandaria exclusivamente cuidados hospitalares complexos",
+      "Necessidade de concentrar todos os recursos exclusivamente na vigilância de doenças infecciosas emergentes na população idosa",
+      "Necessidade de reorientar investimentos para atenção a doenças crônicas, cuidados de longa duração e suporte à população idosa dependente"
+    ],
+    "answer": 4,
+    "explain": "Quando a razão de dependência se eleva por aumento da proporção de idosos, e não de jovens, o planejamento em saúde deve se voltar a doenças crônico-degenerativas, cuidados continuados e suporte social ao envelhecimento, refletindo uma transição demográfica e epidemiológica que demanda reorganização dos serviços.",
+    "trap": "Interpretar qualquer elevação da razão de dependência como sinal de aumento da população jovem, sem verificar qual componente etário aumenta.",
+    "exam": "enamed",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-011",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Perfil demográfico · pirâmide · esperança de vida · urbanização",
+    "stem": "Enfermeira da vigilância em saúde do município observa que a pirâmide etária local mostra estreitamento importante na base, mesmo com manutenção de bom acesso a serviços de saúde reprodutiva. Qual fator populacional mais diretamente explica esse estreitamento da base da pirâmide?",
+    "choices": [
+      "Redução da taxa de fecundidade, refletindo menor número médio de filhos por mulher em idade reprodutiva na população estudada",
+      "Aumento da mortalidade materna, reduzindo indiretamente o número de nascimentos registrados no município no período",
+      "Redução da esperança de vida ao nascer, reduzindo o número de pessoas que alcançam idades mais avançadas",
+      "Aumento da migração de idosos para o município, elevando desproporcionalmente o topo da pirâmide etária local",
+      "Aumento da taxa de mortalidade infantil, reduzindo artificialmente o número de crianças sobreviventes na base da pirâmide"
+    ],
+    "answer": 0,
+    "explain": "O estreitamento da base da pirâmide etária reflete predominantemente a redução da taxa de fecundidade, ou seja, menor número médio de filhos por mulher, processo distinto de aumento de mortalidade infantil, que reduziria sobreviventes já nascidos, mas não a base de nascimentos propriamente dita.",
+    "trap": "Confundir queda de fecundidade, que reduz nascimentos, com aumento de mortalidade infantil, que reduziria sobreviventes de nascimentos já ocorridos.",
+    "exam": "unifesp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-012",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Perfil demográfico · pirâmide · esperança de vida · urbanização",
+    "stem": "Médico sanitarista, ao planejar a rede de atenção do município para a próxima década, utiliza a pirâmide etária projetada, que mostra manutenção da base estreita e ampliação progressiva do topo nos próximos vinte anos. Qual conduta de planejamento é mais consistente com essa projeção demográfica?",
+    "choices": [
+      "Priorizar exclusivamente programas de saúde escolar, dado o crescimento projetado da população em idade escolar no município",
+      "Ampliar progressivamente a capacidade de atenção a doenças crônicas, cuidados paliativos e reabilitação, antecipando o envelhecimento populacional projetado",
+      "Reduzir drasticamente os leitos de longa permanência, pois a população idosa tenderia a diminuir nos próximos vinte anos",
+      "Manter a rede de atenção exatamente como está hoje, pois pirâmides etárias projetadas não orientariam o planejamento em saúde",
+      "Concentrar todo o investimento futuro exclusivamente em maternidades e unidades neonatais, antecipando aumento da natalidade"
+    ],
+    "answer": 1,
+    "explain": "A projeção de manutenção de base estreita com topo em expansão indica envelhecimento populacional continuado, exigindo planejamento antecipado de recursos para doenças crônicas, cuidados paliativos e reabilitação, de modo a evitar defasagem da rede assistencial frente à mudança estrutural da população.",
+    "trap": "Planejar a rede assistencial com base no perfil demográfico atual, ignorando a tendência de envelhecimento já evidente na pirâmide projetada.",
+    "exam": "sus-sp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-013",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Morbidade · prevalência · incidência · densidade",
+    "stem": "Médico da vigilância em saúde realiza inquérito em uma comunidade de 2.000 habitantes e encontra 100 pessoas com diabetes tipo 2 já diagnosticada em um determinado dia do levantamento. Qual medida epidemiológica esse achado representa?",
+    "choices": [
+      "Incidência acumulada de diabetes tipo 2, pois representaria apenas os casos novos diagnosticados no período do inquérito",
+      "Letalidade por diabetes tipo 2, pois representaria a proporção de óbitos entre os casos diagnosticados na comunidade",
+      "Prevalência pontual de diabetes tipo 2, pois representa a proporção de casos existentes, novos e antigos, em um momento definido",
+      "Densidade de incidência de diabetes tipo 2, pois representaria a razão entre novos casos e pessoas-tempo de observação",
+      "Risco relativo de diabetes tipo 2, pois representaria a razão de incidência entre expostos e não expostos a um fator"
+    ],
+    "answer": 2,
+    "explain": "A prevalência pontual mede todos os casos existentes, novos e antigos, em um momento específico no tempo, diferindo da incidência, que mede apenas casos novos surgidos em um período de observação; o inquérito transversal descrito é exemplo clássico de medida de prevalência.",
+    "trap": "Confundir prevalência, que inclui casos antigos e novos em um ponto no tempo, com incidência, que mede apenas casos novos em um período.",
+    "exam": "unifesp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-014",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Morbidade · prevalência · incidência · densidade",
+    "stem": "Médica pesquisadora, com apoio de sua equipe, conduz estudo de coorte acompanhando 500 trabalhadores saudáveis por dois anos e identifica 40 casos novos de hipertensão arterial ao longo do período de seguimento completo. Qual medida epidemiológica é calculada diretamente a partir desses dados, sem necessidade de ajuste por tempo de acompanhamento individual?",
+    "choices": [
+      "Prevalência de hipertensão arterial, calculada como o número total de casos existentes dividido pela população total no início",
+      "Densidade de incidência, calculada obrigatoriamente como razão entre casos novos e pessoas-tempo de observação individual",
+      "Prevalência período, calculada como o número de casos existentes durante todo o intervalo de dois anos de estudo",
+      "Incidência acumulada de hipertensão arterial, calculada como o número de casos novos dividido pela população livre da doença no início do seguimento",
+      "Letalidade por hipertensão arterial, calculada como o número de óbitos pela doença dividido pelo número de casos"
+    ],
+    "answer": 3,
+    "explain": "A incidência acumulada, ou risco, é calculada dividindo o número de casos novos pela população inicialmente livre da doença e acompanhada por período fixo e completo, sendo medida direta quando todos os participantes completam o seguimento sem necessidade de ajuste por tempo individual de observação.",
+    "trap": "Escolher densidade de incidência quando o enunciado descreve seguimento completo e uniforme de toda a coorte, situação em que a incidência acumulada é mais apropriada.",
+    "exam": "sus-sp",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-015",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Morbidade · prevalência · incidência · densidade",
+    "stem": "Médico epidemiologista conduz estudo de coorte com perdas de seguimento heterogêneas, em que os participantes contribuem com tempos de observação diferentes antes de desenvolverem a doença, saírem do estudo ou completarem o acompanhamento. Qual medida de incidência é mais apropriada para lidar com esse tempo de observação variável entre os participantes?",
+    "choices": [
+      "Taxa de letalidade, calculada como o número de óbitos pela doença dividido pelo número total de casos confirmados",
+      "Razão de prevalências, calculada como a razão entre a prevalência em dois grupos distintos de exposição ao fator estudado",
+      "Prevalência pontual, calculada como o número de casos existentes em um único momento definido do estudo de coorte",
+      "Incidência acumulada, calculada como o número de casos novos dividido pela população inicial, ignorando completamente o tempo individual",
+      "Densidade de incidência, calculada como o número de casos novos dividido pela soma do tempo de observação de todos os participantes, expressa em pessoas-tempo"
+    ],
+    "answer": 4,
+    "explain": "Quando o tempo de observação varia entre participantes, devido a perdas de seguimento ou entradas em momentos diferentes, a densidade de incidência, que usa pessoas-tempo no denominador, é a medida mais apropriada, pois incorpora corretamente o tempo real de exposição ao risco de cada indivíduo.",
+    "trap": "Utilizar incidência acumulada simples em coortes com tempo de seguimento heterogêneo, o que distorce a medida ao ignorar diferenças no tempo de observação.",
+    "exam": "usp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-016",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Morbidade · prevalência · incidência · densidade",
+    "stem": "Gestor de vigilância epidemiológica municipal recebe relatório mostrando que a prevalência de tuberculose no município permaneceu estável ao longo de cinco anos, mesmo com aumento evidente da incidência anual da doença no mesmo período. Qual explicação é mais plausível para essa aparente contradição entre os dois indicadores?",
+    "choices": [
+      "Aumento concomitante da mortalidade ou da cura dos casos, elevando a saída de casos da prevalência na mesma proporção em que novos casos entram por maior incidência",
+      "Queda real da incidência, mascarada por um erro de cálculo, sendo a prevalência a única medida confiável nesse município",
+      "Impossibilidade estatística desse padrão, pois a prevalência seria sempre diretamente proporcional à incidência em qualquer cenário",
+      "Erro necessário de digitação no sistema de informação, pois prevalência e incidência sempre deveriam variar exatamente na mesma direção",
+      "Ausência de qualquer relação matemática entre prevalência e incidência, tornando essa comparação metodologicamente sem qualquer sentido"
+    ],
+    "answer": 0,
+    "explain": "A prevalência depende tanto da entrada de novos casos, a incidência, quanto da saída de casos, por cura ou óbito; se a duração média da doença diminui na mesma proporção em que a incidência aumenta, a prevalência pode permanecer estável, refletindo equilíbrio dinâmico entre entrada e saída de casos.",
+    "trap": "Assumir que prevalência e incidência devem sempre variar na mesma direção, ignorando o papel da duração da doença nessa relação.",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-017",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Morbidade · prevalência · incidência · densidade",
+    "stem": "Médica sanitarista, à frente da equipe de vigilância, calcula a prevalência de obesidade em adultos de um município e obtém valor de 30%, mas percebe que a duração média da obesidade não tratada na população é muito prolongada, frequentemente superior a dez anos. Qual relação matemática entre prevalência, incidência e duração da doença explica esse valor elevado de prevalência mesmo com incidência anual moderada?",
+    "choices": [
+      "A prevalência é calculada exclusivamente a partir da letalidade da doença, sem qualquer relação com incidência ou duração",
+      "A prevalência é aproximadamente proporcional ao produto da incidência pela duração média da doença, de modo que doenças de longa duração acumulam prevalência elevada mesmo com incidência moderada",
+      "A prevalência é inversamente proporcional à duração da doença, sendo tanto menor quanto mais prolongado for o quadro clínico",
+      "A prevalência independe completamente da duração da doença, dependendo exclusivamente do número absoluto de casos novos anuais",
+      "A prevalência reflete exclusivamente a qualidade do tratamento disponível, sem qualquer relação matemática com incidência anual"
+    ],
+    "answer": 1,
+    "explain": "Em condições de equilíbrio, a prevalência é aproximadamente igual ao produto da incidência pela duração média da doença; assim, doenças crônicas de longa duração, como obesidade não tratada, tendem a acumular prevalência elevada mesmo quando a incidência anual de novos casos não é particularmente alta.",
+    "trap": "Ignorar o papel da duração da doença na relação matemática com prevalência, atribuindo o valor elevado exclusivamente à incidência anual.",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-018",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Morbidade · prevalência · incidência · densidade",
+    "stem": "Enfermeira da atenção primária realiza levantamento na UBS e encontra que, entre os pacientes hipertensos acompanhados, 8% morreram por complicações cardiovasculares diretamente relacionadas à hipertensão no último ano. Qual medida epidemiológica esse percentual representa?",
+    "choices": [
+      "Coeficiente de mortalidade geral por hipertensão, pois expressaria óbitos em relação à população total do território, não aos casos",
+      "Incidência de complicações cardiovasculares, pois expressaria exclusivamente novos casos de complicação, sem relação com óbitos",
+      "Letalidade por complicações cardiovasculares da hipertensão, pois expressa a proporção de óbitos entre os casos da doença acompanhados, não da população geral",
+      "Prevalência de hipertensão arterial, pois expressaria o total de casos existentes da doença na população acompanhada pela UBS",
+      "Risco atribuível populacional, pois expressaria a proporção de óbitos evitáveis caso o fator de risco fosse eliminado"
+    ],
+    "answer": 2,
+    "explain": "Letalidade é a proporção de óbitos entre os casos de determinada doença, aqui os pacientes hipertensos acompanhados, diferindo do coeficiente de mortalidade, que usa como denominador a população geral do território, e não apenas os casos já diagnosticados e acompanhados.",
+    "trap": "Confundir letalidade, que usa como denominador o número de casos da doença, com coeficiente de mortalidade, que usa a população total.",
+    "exam": "enamed",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-019",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade · letalidade · coeficientes · padronização",
+    "stem": "Gestor de saúde municipal recebe relatório mostrando coeficiente de mortalidade geral de 12 por 1.000 habitantes no Município A, mais alto que os 7 por 1.000 habitantes do Município B, mesmo o Município A tendo população reconhecidamente mais jovem. Qual explicação técnica pode justificar esse coeficiente bruto aparentemente contraditório?",
+    "choices": [
+      "Populações mais jovens sempre apresentariam coeficiente de mortalidade geral mais baixo, sem qualquer exceção possível",
+      "O resultado indicaria necessariamente erro de digitação no sistema de informação sobre mortalidade de um dos municípios",
+      "A mortalidade geral seria influenciada exclusivamente pela estrutura hospitalar disponível em cada município comparado",
+      "O coeficiente bruto pode ser distorcido por outras causas de morte concentradas em jovens, como violência, exigindo padronização por idade para comparação mais adequada entre os municípios",
+      "Coeficientes brutos nunca poderiam ser comparados entre municípios em nenhuma circunstância, tornando qualquer análise impossível"
+    ],
+    "answer": 3,
+    "explain": "O coeficiente de mortalidade geral bruto não considera a estrutura etária da população, podendo ser elevado em populações jovens por causas específicas como violência ou acidentes; a padronização por idade, direta ou indireta, permite comparação mais justa entre populações com estruturas etárias distintas.",
+    "trap": "Assumir que população jovem sempre implica coeficiente de mortalidade geral mais baixo, ignorando causas específicas que elevam a mortalidade.",
+    "exam": "usp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-020",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade · letalidade · coeficientes · padronização",
+    "stem": "Médica epidemiologista, com apoio da equipe estadual, precisa comparar a mortalidade por doença cardiovascular entre dois estados com estruturas etárias muito diferentes, um com população mais envelhecida que o outro. Qual método é mais adequado para tornar essa comparação válida, eliminando o efeito da diferença de idade entre as populações?",
+    "choices": [
+      "Cálculo exclusivo da letalidade da doença cardiovascular, substituindo totalmente a necessidade de comparar coeficientes de mortalidade",
+      "Exclusão completa da análise de qualquer estado com população predominantemente idosa da comparação epidemiológica",
+      "Utilização exclusiva do número absoluto de óbitos por doença cardiovascular em cada estado, sem qualquer coeficiente",
+      "Utilização exclusiva do coeficiente bruto de mortalidade, sem qualquer ajuste, pois refletiria diretamente o risco real",
+      "Padronização, direta ou indireta, ajustando os coeficientes de mortalidade a uma população-padrão comum antes da comparação entre os estados"
+    ],
+    "answer": 4,
+    "explain": "A padronização de coeficientes, seja pelo método direto, aplicando taxas específicas a uma população-padrão, seja pelo indireto, aplicando taxas de uma população-padrão à estrutura local, permite eliminar o efeito de confundimento da estrutura etária ao comparar mortalidade entre populações distintas.",
+    "trap": "Comparar diretamente coeficientes brutos entre populações com estruturas etárias muito diferentes, sem qualquer padronização prévia.",
+    "exam": "sus-sp",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-021",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade · letalidade · coeficientes · padronização",
+    "stem": "Médico plantonista de UBS avalia surto de doença diarreica aguda em uma comunidade rural, com 200 casos confirmados e 4 óbitos atribuídos diretamente à doença no mesmo período. Qual medida epidemiológica é calculada a partir desses dois números, e qual seu significado?",
+    "choices": [
+      "Letalidade de 2%, medida que expressa a gravidade da doença entre os casos, ou seja, a proporção de óbitos entre os que efetivamente adoeceram",
+      "Incidência acumulada de 2%, medida que expressaria exclusivamente novos casos em relação à população total exposta",
+      "Coeficiente de mortalidade geral de 2%, medida que expressaria óbitos em relação à população total do território rural",
+      "Risco atribuível de 2%, medida que expressaria a proporção de casos evitáveis caso o fator de risco fosse eliminado",
+      "Prevalência de 2%, medida que expressaria o total de casos existentes da doença em um momento específico do surto"
+    ],
+    "answer": 0,
+    "explain": "A letalidade é calculada dividindo o número de óbitos pela doença pelo número total de casos da mesma doença, expressando gravidade clínica; no exemplo, 4 óbitos entre 200 casos resultam em letalidade de 2%, distinta do coeficiente de mortalidade, que usaria a população total do território como denominador.",
+    "trap": "Confundir letalidade, calculada sobre o total de casos, com coeficiente de mortalidade, calculado sobre a população total exposta.",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-022",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade · letalidade · coeficientes · padronização",
+    "stem": "Médico diretor da vigilância epidemiológica estadual analisa os coeficientes de mortalidade proporcional por causa em um município e observa que 45% dos óbitos ocorrem em pessoas com 50 anos ou mais. Qual indicador clássico de nível de saúde é calculado diretamente a partir dessa proporção?",
+    "choices": [
+      "Coeficiente de mortalidade infantil, que expressaria óbitos de menores de 1 ano em relação aos nascidos vivos do período",
+      "Índice de Swaroop-Uemura, que expressa a proporção de óbitos ocorridos em pessoas com 50 anos ou mais em relação ao total de óbitos, sendo tanto maior quanto melhor o nível de saúde da população",
+      "Coeficiente de natalidade, que expressaria o número de nascimentos vivos em relação à população total do município",
+      "Índice de Nelson de Moraes, que classifica a qualidade da mortalidade infantil em categorias de A a E conforme componentes etários",
+      "Razão de mortalidade materna, que expressaria óbitos maternos em relação ao número de nascidos vivos no mesmo período"
+    ],
+    "answer": 1,
+    "explain": "O índice de Swaroop-Uemura, também chamado indicador de mortalidade proporcional de 50 anos e mais, calcula a proporção de óbitos ocorridos nessa faixa etária em relação ao total de óbitos, sendo indicador clássico e indireto de nível de saúde, pois populações com melhor saúde concentram óbitos em idades mais avançadas.",
+    "trap": "Confundir o índice de Swaroop-Uemura, que avalia mortalidade proporcional geral por idade, com o índice de Nelson de Moraes, específico da mortalidade infantil.",
+    "exam": "usp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-023",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade · letalidade · coeficientes · padronização",
+    "stem": "Médica sanitarista, junto à equipe de vigilância estadual, analisa série histórica de coeficientes de mortalidade por câncer de mama em um estado, ajustados pelo método direto de padronização, utilizando a população brasileira do censo como padrão. Qual finalidade específica esse ajuste metodológico cumpre na análise da série histórica?",
+    "choices": [
+      "Eliminar completamente qualquer influência do acesso a exames de mamografia sobre o coeficiente de mortalidade calculado",
+      "Substituir totalmente a necessidade de notificação compulsória dos óbitos por câncer de mama no estado analisado",
+      "Permitir comparação válida da mortalidade ao longo do tempo, eliminando o efeito de mudanças na estrutura etária da população do estado ao longo dos anos analisados",
+      "Calcular diretamente a incidência de câncer de mama no estado, substituindo a necessidade de registros de câncer de base populacional",
+      "Garantir que nenhum óbito por câncer de mama deixe de ser registrado corretamente no sistema de informação sobre mortalidade"
+    ],
+    "answer": 2,
+    "explain": "A padronização por idade, usando uma população-padrão comum como referência, remove o efeito de mudanças na estrutura etária ao longo do tempo, permitindo que variações no coeficiente reflitam mudanças reais no risco de morte por câncer de mama, e não apenas o envelhecimento populacional.",
+    "trap": "Achar que a padronização por idade tem finalidade relacionada a notificação ou completude de registro, quando sua finalidade é a comparabilidade.",
+    "exam": "unifesp",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-024",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade · letalidade · coeficientes · padronização",
+    "stem": "Médico da vigilância em saúde do município avalia dois bairros com coeficiente de mortalidade infantil de 25 e 8 por 1.000 nascidos vivos, respectivamente, no mesmo ano. Qual conjunto de fatores mais classicamente explica diferenças tão expressivas de mortalidade infantil entre áreas de um mesmo município?",
+    "choices": [
+      "Diferenças exclusivamente climáticas entre os dois bairros, sem qualquer relação com acesso a serviços de saúde",
+      "Diferenças exclusivamente relacionadas ao número de leitos de UTI neonatal, sem qualquer outro fator determinante associado",
+      "Diferenças exclusivamente genéticas entre as populações dos dois bairros, sem qualquer relação com determinantes sociais",
+      "Diferenças em condições socioeconômicas, saneamento básico, acesso ao pré-natal e à assistência ao parto entre os bairros comparados",
+      "Erro necessário de notificação em um dos bairros, sendo essa a única explicação possível para a diferença observada"
+    ],
+    "answer": 3,
+    "explain": "A mortalidade infantil é indicador sensível às condições de vida, refletindo saneamento, acesso a pré-natal, qualidade da assistência ao parto e condições socioeconômicas; diferenças expressivas entre bairros do mesmo município tipicamente refletem desigualdades nesses determinantes, e não fatores genéticos ou climáticos isolados.",
+    "trap": "Buscar explicações exclusivamente biológicas ou pontuais para diferenças de mortalidade infantil que classicamente refletem desigualdades sociais.",
+    "exam": "enare",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-025",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade infantil · ISU · Nelson Moraes · Guedes",
+    "stem": "Médico neonatologista revisa os componentes do coeficiente de mortalidade infantil de um município e identifica que 70% dos óbitos ocorreram nos primeiros 6 dias de vida, predominando afecções perinatais como asfixia e prematuridade. Qual componente da mortalidade infantil está proporcionalmente mais elevado nesse município?",
+    "choices": [
+      "Componente fetal tardio, referente a óbitos ocorridos ainda durante a gestação, antes do nascimento do concepto",
+      "Componente materno direto, referente exclusivamente a óbitos maternos ocorridos durante o parto ou puerpério imediato",
+      "Componente neonatal tardio, de 7 a 27 dias de vida, tipicamente associado a infecções adquiridas após a alta hospitalar",
+      "Componente pós-neonatal, de 28 dias a 11 meses completos, tipicamente associado a causas evitáveis como diarreia e pneumonia",
+      "Componente neonatal precoce, de 0 a 6 dias de vida, tipicamente associado a causas perinatais como asfixia, prematuridade e malformações, refletindo qualidade da assistência ao parto"
+    ],
+    "answer": 4,
+    "explain": "O componente neonatal precoce, de 0 a 6 dias completos de vida, concentra classicamente óbitos por causas perinatais como asfixia, prematuridade e malformações congênitas, refletindo principalmente a qualidade da assistência pré-natal, ao parto e imediatamente após o nascimento.",
+    "trap": "Confundir componente neonatal precoce, ligado a causas perinatais, com componente pós-neonatal, mais associado a causas ambientais evitáveis.",
+    "exam": "sus-sp",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-026",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade infantil · ISU · Nelson Moraes · Guedes",
+    "stem": "Gestora municipal de saúde, junto à equipe de vigilância, recebe relatório mostrando que, no seu município, o componente pós-neonatal responde pela maior parte dos óbitos infantis, com diarreia e pneumonia como principais causas. Qual interpretação epidemiológica mais adequada esse padrão sugere sobre as condições de vida do município?",
+    "choices": [
+      "Predomínio de causas evitáveis relacionadas a condições ambientais e socioeconômicas desfavoráveis, como saneamento precário e acesso limitado a cuidados básicos após o nascimento",
+      "Predomínio de causas genéticas incontornáveis, sem qualquer relação com condições ambientais ou socioeconômicas do município",
+      "Predomínio de malformações congênitas graves, incompatíveis com qualquer intervenção preventiva disponível no município",
+      "Predomínio de causas exclusivamente relacionadas à assistência hospitalar durante o parto, sem qualquer fator ambiental envolvido",
+      "Padrão totalmente esperado e inevitável, sem qualquer relação com o nível de desenvolvimento socioeconômico local"
+    ],
+    "answer": 0,
+    "explain": "O predomínio do componente pós-neonatal, com causas como diarreia e pneumonia, indica classicamente maior peso de fatores ambientais e sociais evitáveis, como saneamento inadequado e dificuldades de acesso a cuidados básicos, sinalizando município com maior potencial de redução da mortalidade infantil com intervenções básicas.",
+    "trap": "Atribuir o padrão pós-neonatal a causas genéticas ou hospitalares, quando classicamente reflete condições ambientais e sociais evitáveis.",
+    "exam": "santa-casa",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-027",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade infantil · ISU · Nelson Moraes · Guedes",
+    "stem": "Médico sanitarista utiliza o índice de Nelson de Moraes para classificar a qualidade da mortalidade infantil de um município, com base na distribuição proporcional dos componentes neonatal precoce, neonatal tardio e pós-neonatal. Qual padrão de distribuição corresponde à melhor classificação nesse índice?",
+    "choices": [
+      "Predomínio relativo do componente pós-neonatal sobre os demais componentes, associado à categoria de melhor nível de saúde na classificação",
+      "Predomínio relativo do componente neonatal precoce sobre os demais componentes, associado à categoria de melhor nível de saúde na classificação de Nelson de Moraes",
+      "Distribuição exatamente igual entre os três componentes, associada obrigatoriamente à melhor categoria possível na classificação de Nelson de Moraes",
+      "Predomínio absoluto de óbitos fetais tardios sobre os componentes neonatal e pós-neonatal na classificação de Nelson de Moraes",
+      "Ausência total de óbitos no componente neonatal precoce, associada automaticamente à pior categoria da classificação de Nelson de Moraes"
+    ],
+    "answer": 1,
+    "explain": "O índice de Nelson de Moraes classifica municípios em categorias de A, com melhor nível de saúde, a E, com pior nível, com base na predominância relativa dos componentes da mortalidade infantil; quando o componente neonatal precoce predomina sobre os demais, isso indica melhor nível de saúde, pois o peso relativo desloca-se de causas evitáveis pós-neonatais para causas perinatais menos evitáveis.",
+    "trap": "Achar que predomínio do componente pós-neonatal indicaria melhor nível de saúde, quando na verdade é situação associada a categorias piores.",
+    "exam": "enare",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-028",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade infantil · ISU · Nelson Moraes · Guedes",
+    "stem": "Enfermeira da vigilância em saúde do município utiliza o índice de Swaroop-Uemura para comparar o nível de saúde geral de duas regiões, obtendo valor de 78% em uma região e 42% na outra. Qual interpretação correta desse indicador?",
+    "choices": [
+      "Ambas as regiões apresentam nível de saúde equivalente, pois o índice de Swaroop-Uemura não permitiria qualquer comparação entre áreas",
+      "A região com 42% apresenta melhor nível de saúde, pois menor proporção de óbitos tardios indicaria maior expectativa de vida",
+      "A região com 78% apresenta melhor nível de saúde, pois maior proporção de óbitos em pessoas com 50 anos ou mais indica menor peso de mortes precoces evitáveis",
+      "Valores do índice de Swaroop-Uemura acima de 50% indicariam obrigatoriamente colapso do sistema de saúde da região analisada",
+      "O índice de Swaroop-Uemura mediria exclusivamente a qualidade da assistência hospitalar disponível em cada região comparada"
+    ],
+    "answer": 2,
+    "explain": "O índice de Swaroop-Uemura é tanto maior quanto melhor o nível de saúde da população, pois reflete a proporção de óbitos concentrados em idades mais avançadas, 50 anos ou mais; valores mais altos, como 78%, indicam que a maioria das mortes ocorre em idade avançada, sinalizando menor peso de mortalidade precoce evitável.",
+    "trap": "Interpretar valor mais baixo do índice de Swaroop-Uemura como sinal de melhor saúde, quando na verdade indica maior mortalidade precoce.",
+    "exam": "usp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-029",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade infantil · ISU · Nelson Moraes · Guedes",
+    "stem": "Médico epidemiologista aplica a curva de Nelson de Moraes para avaliar a evolução da mortalidade infantil de um município ao longo de vinte anos, observando deslocamento progressivo do padrão de distribuição dos componentes ao longo do tempo. Qual mudança na curva indicaria melhoria progressiva das condições de saúde do município?",
+    "choices": [
+      "Redução simultânea e uniforme de todos os componentes na mesma proporção, sem qualquer alteração na distribuição relativa entre eles",
+      "Aumento da participação relativa do componente pós-neonatal em relação ao neonatal precoce, refletindo melhoria das condições ambientais do município",
+      "Manutenção idêntica da distribuição dos componentes ao longo de todo o período, independentemente de qualquer intervenção realizada no município",
+      "Aumento da participação relativa do componente neonatal precoce em relação ao pós-neonatal, refletindo redução das causas evitáveis pós-neonatais ao longo do período estudado",
+      "Aumento exclusivo do componente fetal tardio, sem qualquer alteração relativa nos componentes neonatal precoce e pós-neonatal"
+    ],
+    "answer": 3,
+    "explain": "A melhoria das condições de saúde e de vida tende a reduzir progressivamente as causas evitáveis do componente pós-neonatal, como diarreia e infecções, deslocando o peso relativo da mortalidade infantil para o componente neonatal precoce, ligado a causas perinatais menos evitáveis, padrão consistente com a evolução descrita por Nelson de Moraes.",
+    "trap": "Interpretar aumento do componente pós-neonatal como sinal de melhoria, quando a melhoria classicamente se reflete no aumento do componente precoce.",
+    "exam": "sus-sp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-ind1-030",
+    "specialty": "preventiva",
+    "group": "Indicadores · mortalidade · Swaroop-Uemura",
+    "theme": "Mortalidade infantil · ISU · Nelson Moraes · Guedes",
+    "stem": "Gestor de saúde municipal compara dois índices distintos utilizados para avaliar o nível de saúde de sua população: um baseado na distribuição etária de todos os óbitos, o índice de Swaroop-Uemura, e outro baseado especificamente na distribuição dos óbitos infantis, o índice de Nelson de Moraes. Qual diferença fundamental existe entre o escopo de aplicação desses dois índices?",
+    "choices": [
+      "O índice de Swaroop-Uemura avalia exclusivamente óbitos infantis, enquanto o índice de Nelson de Moraes avalia exclusivamente óbitos de idosos",
+      "O índice de Nelson de Moraes avalia exclusivamente óbitos maternos, enquanto o índice de Swaroop-Uemura avalia exclusivamente óbitos fetais",
+      "Ambos os índices avaliam exclusivamente a mortalidade materna, diferindo apenas na base multiplicadora utilizada no cálculo final",
+      "Ambos os índices são matematicamente idênticos, apenas com nomenclaturas diferentes atribuídas por autores de países distintos",
+      "O índice de Swaroop-Uemura avalia o nível de saúde geral da população a partir de todos os óbitos, enquanto o índice de Nelson de Moraes avalia especificamente a qualidade da mortalidade infantil por componentes etários"
+    ],
+    "answer": 4,
+    "explain": "O índice de Swaroop-Uemura é um indicador geral de nível de saúde baseado na proporção de óbitos em pessoas com 50 anos ou mais entre o total de óbitos da população, enquanto o índice de Nelson de Moraes é específico para qualificar a mortalidade infantil, classificando municípios conforme a distribuição proporcional dos componentes etários.",
+    "trap": "Achar que os dois índices avaliam o mesmo fenômeno com nomenclaturas diferentes, quando na verdade têm escopos de aplicação distintos.",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-001",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "Enfermeiro da vigilância epidemiológica municipal recebe boletim semanal de casos suspeitos de dengue de todas as UBS e calcula a incidência semanal para comparar com o mesmo período do ano anterior. Qual função clássica da vigilância epidemiológica ele está exercendo?",
+    "choices": [
+      "Coleta e análise sistemática de dados para detectar variações na ocorrência da doença e orientar medidas de controle",
+      "Notificação individual compulsória imediata de caso confirmado de dengue grave à Secretaria Estadual de Saúde",
+      "Auditoria de prontuários hospitalares para verificar adequação do tratamento antitérmico prescrito",
+      "Fiscalização sanitária de imóveis com reservatórios de água para aplicação de multa administrativa",
+      "Investigação epidemiológica de campo com visita domiciliar para identificar foco do Aedes aegypti"
+    ],
+    "answer": 0,
+    "explain": "A vigilância epidemiológica tem como função central a coleta, consolidação, análise e interpretação contínua de dados para detectar mudanças no padrão da doença e subsidiar decisões; o cálculo semanal de incidência comparado a série histórica é exemplo direto dessa função de monitoramento sistemático.",
+    "trap": "Confundir a função analítica de monitoramento com a notificação compulsória de um caso isolado, que é apenas a etapa inicial de coleta de dados.",
+    "exam": "unifesp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-002",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "Médico sanitarista revisa o desempenho do sistema de vigilância de sarampo na região e observa que quase todos os casos confirmados por laboratório foram capturados pelo sistema, porém grande parte dos casos notificados como suspeitos não se confirma após investigação. Qual atributo do sistema de vigilância está comprometido?",
+    "choices": [
+      "Oportunidade baixa, pois o tempo entre notificação e investigação estaria inaceitavelmente longo",
+      "Valor preditivo positivo baixo, pois muitos casos notificados como suspeitos não se confirmam na investigação, mesmo com boa sensibilidade",
+      "Estabilidade baixa, pois o sistema estaria indisponível com frequência para registro dos casos",
+      "Representatividade baixa, pois a notificação não reflete a distribuição por faixa etária da população",
+      "Sensibilidade baixa, pois o sistema não conseguiria detectar os casos verdadeiros de sarampo na região"
+    ],
+    "answer": 1,
+    "explain": "O valor preditivo positivo mede a proporção de casos notificados que realmente são confirmados; alta sensibilidade com muitos falsos positivos indica VPP baixo, situação comum quando a definição de caso suspeito é ampla para não perder casos verdadeiros.",
+    "trap": "Confundir VPP baixo com sensibilidade baixa, que são atributos opostos do desempenho de um sistema de vigilância.",
+    "exam": "enare",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-003",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "ACS realiza busca ativa domiciliar em área de risco para leishmaniose visceral e leva as informações coletadas para a equipe de vigilância epidemiológica da UBS analisar a tendência de casos ao longo dos meses. Essa atividade de busca ativa exemplifica qual característica da vigilância epidemiológica?",
+    "choices": [
+      "Caráter amostral, pois investiga apenas uma fração aleatória dos domicílios do município",
+      "Caráter estritamente passivo, pois a UBS apenas aguarda a chegada espontânea dos pacientes sintomáticos",
+      "Caráter essencialmente ativo e contínuo da vigilância, que não depende exclusivamente da notificação espontânea dos serviços de saúde",
+      "Caráter retrospectivo, pois analisa somente óbitos já registrados no sistema de informação sobre mortalidade",
+      "Caráter estritamente laboratorial, pois depende exclusivamente da confirmação por exame parasitológico"
+    ],
+    "answer": 2,
+    "explain": "A busca ativa de casos, como a realizada por ACS em áreas de risco, é instrumento clássico da vigilância epidemiológica ativa, complementando a notificação passiva e permitindo detectar casos que não chegariam espontaneamente ao serviço.",
+    "trap": "Achar que vigilância epidemiológica se limita a receber notificações passivamente, ignorando a busca ativa como ferramenta central.",
+    "exam": "santa-casa",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-004",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "Equipe de vigilância epidemiológica estadual identifica aumento incomum de casos de síndrome respiratória aguda grave em um município e decide investigar imediatamente a cadeia de transmissão antes de aguardar a consolidação mensal dos dados. Essa decisão reflete qual objetivo primário da vigilância epidemiológica?",
+    "choices": [
+      "Definir a alocação orçamentária anual da secretaria de saúde para o próximo exercício fiscal",
+      "Substituir a assistência clínica individual dos pacientes internados na unidade de referência",
+      "Calcular o coeficiente de mortalidade geral do município para o próximo censo demográfico",
+      "Detectar precocemente mudanças no padrão de ocorrência da doença para permitir intervenção oportuna e reduzir a magnitude do problema",
+      "Produzir estatísticas vitais oficiais para publicação anual no sistema nacional de informação"
+    ],
+    "answer": 3,
+    "explain": "O objetivo central da vigilância epidemiológica é a detecção oportuna de alterações no padrão de doenças, permitindo resposta rápida; investigar antes da consolidação mensal exemplifica a lógica de ação em tempo real que diferencia vigilância de estatística retrospectiva.",
+    "trap": "Confundir o objetivo de detecção precoce com a mera produção de estatísticas vitais consolidadas ao final do período.",
+    "exam": "sus-sp",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-005",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "Gestor municipal de saúde precisa escolher um indicador para avaliar a oportunidade do sistema de vigilância epidemiológica de tuberculose no município. Qual medida é a mais adequada para esse fim?",
+    "choices": [
+      "Coeficiente de incidência de tuberculose por 100 mil habitantes no município no último ano",
+      "Percentual de municípios da região que aderiram ao sistema de notificação compulsória",
+      "Número absoluto de óbitos por tuberculose registrados no sistema de informação sobre mortalidade",
+      "Proporção de casos de tuberculose confirmados por baciloscopia positiva no município",
+      "Tempo médio transcorrido entre o início dos sintomas do paciente e a notificação do caso ao sistema de informação"
+    ],
+    "answer": 4,
+    "explain": "Oportunidade avalia a rapidez do fluxo de informação, sendo medida pelo tempo entre eventos-chave, como início dos sintomas e notificação; os demais indicadores medem magnitude ou cobertura, e não a velocidade do sistema de vigilância.",
+    "trap": "Escolher indicadores de magnitude, como incidência ou número de óbitos, para responder a uma pergunta sobre velocidade do fluxo de informação.",
+    "exam": "sus-sp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-006",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "Médica da vigilância epidemiológica hospitalar detecta um caso de tétano em paciente adulto internado na enfermaria e decide notificar de imediato, mesmo sabendo que se trata de doença rara e não transmissível de pessoa a pessoa. Qual justificativa mais adequada sustenta a manutenção da vigilância de doenças não transmissíveis e raras como o tétano?",
+    "choices": [
+      "Doenças evitáveis por vacinação com baixa incidência exigem vigilância para monitorar falhas de cobertura vacinal e evitar reintrodução da circulação do agente",
+      "A notificação de tétano visa apenas fins estatísticos sem qualquer repercussão em política vacinal",
+      "Doenças raras nunca compõem a lista nacional de notificação compulsória por não representarem risco coletivo",
+      "A vigilância epidemiológica deve se restringir exclusivamente a doenças com potencial de causar surtos explosivos",
+      "Apenas doenças transmissíveis de pessoa a pessoa justificam notificação compulsória em qualquer situação clínica"
+    ],
+    "answer": 0,
+    "explain": "Doenças imunopreveníveis como o tétano permanecem de notificação compulsória mesmo sendo não transmissíveis pessoa a pessoa, pois casos indicam falhas de cobertura vacinal e sinalizam necessidade de reforço das estratégias de imunização na população.",
+    "trap": "Achar que só doenças transmissíveis entre pessoas justificam vigilância e notificação compulsória, ignorando doenças imunopreveníveis.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-007",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Vigilância epidemiológica · conceitos e funções",
+    "stem": "Equipe de vigilância epidemiológica de um município de fronteira recebe alerta de caso suspeito de febre amarela silvestre em trabalhador rural e aciona simultaneamente a vigilância ambiental, a vigilância de vetores e a rede assistencial do SUS. Essa articulação exemplifica qual princípio organizativo da vigilância em saúde?",
+    "choices": [
+      "Fragmentação proposital das ações entre os níveis de gestão para evitar sobreposição de competências",
+      "Integração entre vigilância epidemiológica, ambiental e sanitária, e assistência, como resposta unificada e mais efetiva ao evento de saúde pública",
+      "Centralização da resposta unicamente no nível federal, excluindo a atuação da vigilância municipal",
+      "Verticalização exclusiva do programa nacional, sem qualquer participação da esfera municipal na resposta",
+      "Priorização única da assistência hospitalar em detrimento das ações de vigilância e controle vetorial"
+    ],
+    "answer": 1,
+    "explain": "A Política Nacional de Vigilância em Saúde preconiza a integração das vigilâncias epidemiológica, sanitária, ambiental e saúde do trabalhador com a assistência, permitindo resposta coordenada a eventos como febre amarela silvestre, que envolve vetor, ambiente e clínica.",
+    "trap": "Pensar que a vigilância epidemiológica atua isolada das demais vigilâncias e da assistência prestada na rede.",
+    "exam": "usp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-008",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Gestor da secretaria municipal de saúde precisa identificar o número de nascidos vivos com baixo peso ocorridos no município no último ano para planejar ações de atenção neonatal. Qual sistema nacional de informação é a fonte primária mais adequada?",
+    "choices": [
+      "SIM, Sistema de Informações sobre Mortalidade, pois registraria exclusivamente óbitos ocorridos no município",
+      "SIH, Sistema de Informações Hospitalares, pois registraria somente internações pagas pelo SUS no período",
+      "SINASC, Sistema de Informações sobre Nascidos Vivos, que registra a declaração de nascido vivo com dados como peso ao nascer",
+      "SINAN, Sistema de Informação de Agravos de Notificação, pois registraria apenas doenças de notificação compulsória",
+      "CNES, Cadastro Nacional de Estabelecimentos de Saúde, pois registraria a estrutura física das unidades de saúde"
+    ],
+    "answer": 2,
+    "explain": "O SINASC utiliza a Declaração de Nascido Vivo como instrumento padrão, contendo peso ao nascer, idade gestacional e outras variáveis essenciais para planejamento de ações de saúde materno-infantil, sendo a fonte primária correta para esse indicador.",
+    "trap": "Confundir SINASC com SIM, pois ambos usam declarações-padrão, mas um registra nascimentos e outro registra óbitos.",
+    "exam": "santa-casa",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-009",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Médico epidemiologista precisa calcular o coeficiente de mortalidade infantil do município utilizando dados oficiais consolidados. Qual par de sistemas de informação deve ser combinado para obter numerador e denominador do indicador?",
+    "choices": [
+      "SIM para nascidos vivos no numerador e SINASC para óbitos no denominador do mesmo período e área",
+      "CNES para óbitos no numerador e SIH para nascidos vivos no denominador do mesmo período e área",
+      "SINAN para óbitos no numerador e CNES para nascidos vivos no denominador do mesmo período e área",
+      "SIM para óbitos de menores de 1 ano no numerador e SINASC para nascidos vivos no denominador do mesmo período e área",
+      "SIH para óbitos no numerador e SIA para nascidos vivos no denominador do mesmo período e área"
+    ],
+    "answer": 3,
+    "explain": "O coeficiente de mortalidade infantil é calculado dividindo o número de óbitos de menores de 1 ano, obtidos no SIM, pelo número de nascidos vivos no mesmo período e área, obtido no SINASC, multiplicado por mil; a combinação correta desses dois sistemas é essencial para o cálculo válido do indicador.",
+    "trap": "Inverter as fontes, usando o SIM para nascidos vivos e o SINASC para óbitos, o que geraria erro grosseiro no cálculo do indicador.",
+    "exam": "santa-casa",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-010",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Médico auditor do sistema hospitalar municipal precisa avaliar o volume de internações por doenças respiratórias no SUS ao longo do último trimestre para dimensionar leitos de enfermaria. Qual sistema de informação fornece esse dado de forma mais direta?",
+    "choices": [
+      "e-SUS APS, sistema de informação da atenção primária, pois registraria exclusivamente atendimentos em unidades básicas",
+      "SINASC, Sistema de Informações sobre Nascidos Vivos, pois registraria apenas nascimentos hospitalares do período",
+      "SIM, Sistema de Informações sobre Mortalidade, pois registraria apenas óbitos ocorridos durante a internação",
+      "SIA-SUS, Sistema de Informações Ambulatoriais, pois registraria exclusivamente procedimentos realizados em nível ambulatorial",
+      "SIH-SUS, Sistema de Informações Hospitalares, que registra internações financiadas pelo SUS por meio da Autorização de Internação Hospitalar"
+    ],
+    "answer": 4,
+    "explain": "O SIH-SUS tem como unidade de registro a Autorização de Internação Hospitalar, permitindo quantificar internações financiadas pelo SUS por causa, período e local, sendo a fonte adequada para dimensionamento de leitos por morbidade internada no trimestre.",
+    "trap": "Confundir SIH com SIA, que trata de procedimentos ambulatoriais e não de internações hospitalares financiadas pelo SUS.",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-011",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Enfermeira da atenção primária precisa registrar diariamente as consultas de pré-natal, visitas domiciliares e vacinas aplicadas na UBS para alimentar a base nacional de informações da atenção básica. Qual sistema ela deve utilizar?",
+    "choices": [
+      "e-SUS Atenção Primária, sistema que integra o registro eletrônico dos atendimentos individuais e coletivos realizados na atenção básica",
+      "SIM, pois seria o sistema responsável por registrar exclusivamente os óbitos ocorridos no território",
+      "CNES, pois seria o sistema responsável por cadastrar estabelecimentos e profissionais, não atendimentos individuais",
+      "SIH-SUS, pois seria o sistema responsável por registrar exclusivamente internações hospitalares financiadas pelo SUS",
+      "SINAN, pois seria o sistema destinado exclusivamente ao registro de agravos de notificação compulsória"
+    ],
+    "answer": 0,
+    "explain": "O e-SUS APS foi criado para informatizar e padronizar o registro dos atendimentos da atenção básica, incluindo pré-natal, visitas domiciliares e vacinação, alimentando indicadores nacionais de cobertura e produção assistencial da APS.",
+    "trap": "Confundir o e-SUS APS, voltado à atenção primária, com sistemas hospitalares ou de notificação de agravos específicos.",
+    "exam": "enamed",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-012",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Médico diretor da vigilância em saúde de um estado precisa monitorar em tempo real a evolução de um possível surto de meningite em diferentes municípios simultaneamente. Qual sistema de informação é voltado especificamente para esse monitoramento de agravos de notificação?",
+    "choices": [
+      "SIH-SUS, pois centralizaria exclusivamente informações de internações hospitalares financiadas pelo SUS",
+      "SINAN, Sistema de Informação de Agravos de Notificação, que consolida dados de doenças e eventos de notificação compulsória em todo o território nacional",
+      "SINASC, pois centralizaria exclusivamente informações sobre nascidos vivos em todo o território nacional",
+      "SIA-SUS, pois centralizaria exclusivamente a produção de procedimentos ambulatoriais do SUS",
+      "CNES, pois centralizaria exclusivamente o cadastro de estabelecimentos e equipamentos de saúde"
+    ],
+    "answer": 1,
+    "explain": "O SINAN foi concebido justamente para coletar e processar dados sobre agravos de notificação compulsória, permitindo análise da distribuição temporal e espacial dos casos, essencial para monitorar surtos como o de meningite em múltiplos municípios simultaneamente.",
+    "trap": "Buscar informações de surto de doença de notificação compulsória em sistemas voltados à produção assistencial, como SIH ou SIA.",
+    "exam": "usp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-013",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Médico gestor da secretaria estadual de saúde deseja avaliar a estrutura física, os equipamentos disponíveis e os profissionais cadastrados em cada unidade básica de saúde do estado antes de planejar a expansão da rede de urgência. Qual sistema fornece essa informação estrutural?",
+    "choices": [
+      "SIA-SUS, Sistema de Informações Ambulatoriais, pois reuniria exclusivamente dados de procedimentos realizados",
+      "SINAN, Sistema de Informação de Agravos de Notificação, pois reuniria exclusivamente dados de doenças notificadas",
+      "CNES, Cadastro Nacional de Estabelecimentos de Saúde, que reúne dados de infraestrutura, equipamentos e profissionais vinculados a cada unidade",
+      "SINASC, Sistema de Informações sobre Nascidos Vivos, pois reuniria exclusivamente dados de partos por unidade",
+      "SIM, Sistema de Informações sobre Mortalidade, pois reuniria exclusivamente dados de óbitos por unidade de saúde"
+    ],
+    "answer": 2,
+    "explain": "O CNES é a base de cadastro de toda a rede de saúde, pública e privada, contendo dados sobre leitos, equipamentos, serviços especializados e profissionais vinculados a cada estabelecimento, sendo essencial ao planejamento estrutural da rede de urgência.",
+    "trap": "Buscar dados estruturais de estabelecimentos em sistemas voltados a eventos vitais ou agravos, como SIM ou SINAN.",
+    "exam": "enamed",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-014",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Sistemas nacionais de informação em saúde",
+    "stem": "Médico da vigilância municipal precisa relacionar o número de óbitos por causas externas em determinado bairro no último ano com dados de escolaridade e renda para subsidiar um plano intersetorial de prevenção de violência. Qual sistema fornece a informação primária de mortalidade por causas externas com o atestado de óbito como base?",
+    "choices": [
+      "SINASC, Sistema de Informações sobre Nascidos Vivos, pois utilizaria a Declaração de Nascido Vivo como instrumento-padrão",
+      "SIA-SUS, Sistema de Informações Ambulatoriais, pois registraria apenas procedimentos ambulatoriais sem vínculo com óbitos",
+      "CNES, Cadastro Nacional de Estabelecimentos de Saúde, pois não conteria qualquer variável relativa a causas de óbito",
+      "SIM, Sistema de Informações sobre Mortalidade, que utiliza a Declaração de Óbito como instrumento-padrão e permite codificação da causa básica pela CID",
+      "SIH-SUS, Sistema de Informações Hospitalares, pois registraria apenas internações e não captaria óbitos extra-hospitalares"
+    ],
+    "answer": 3,
+    "explain": "O SIM tem como instrumento a Declaração de Óbito, permitindo identificar a causa básica do óbito codificada pela CID, incluindo causas externas como violência, sendo a fonte primária para análises de mortalidade mesmo para óbitos ocorridos fora do hospital.",
+    "trap": "Usar o SIH, que só capta óbitos intra-hospitalares, subestimando óbitos por causas externas ocorridos fora do ambiente hospitalar.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-015",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Médico de UBS atende paciente com quadro compatível com sarampo e precisa decidir o prazo de notificação compulsória à vigilância epidemiológica. Qual conduta é a correta quanto ao prazo?",
+    "choices": [
+      "Notificação apenas após confirmação laboratorial definitiva, podendo levar semanas para ocorrer",
+      "Notificação facultativa, a critério do médico, sem prazo definido pelo Ministério da Saúde",
+      "Notificação mensal, junto ao relatório de produção ambulatorial da unidade de saúde",
+      "Notificação semanal, agrupando o caso ao relatório consolidado de doenças exantemáticas do mês",
+      "Notificação imediata, em até 24 horas, por se tratar de doença de notificação compulsória imediata com risco de surto"
+    ],
+    "answer": 4,
+    "explain": "O sarampo consta na lista de doenças de notificação compulsória imediata, com prazo de até 24 horas a partir da suspeita clínica, justamente pelo alto potencial de transmissibilidade e risco de surto, não sendo necessário aguardar confirmação laboratorial para notificar.",
+    "trap": "Esperar a confirmação laboratorial para notificar, o que atrasa a resposta e permite a propagação do surto.",
+    "exam": "santa-casa",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-016",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Enfermeira de UBS identifica caso suspeito de dengue sem sinais de gravidade em área sem transmissão sustentada reconhecida. Qual é o prazo correto de notificação nesse cenário, segundo a lista nacional de notificação compulsória?",
+    "choices": [
+      "Notificação em até uma semana, pois dengue sem sinais de alarme é doença de notificação compulsória semanal, salvo em situação de possível surto",
+      "Notificação apenas se o paciente evoluir para óbito durante o acompanhamento ambulatorial",
+      "Notificação mensal consolidada junto ao boletim de produtividade da unidade básica de saúde",
+      "Notificação imediata em até 24 horas, independentemente da gravidade clínica apresentada pelo paciente",
+      "Notificação facultativa, pois dengue não integraria a lista nacional de notificação compulsória"
+    ],
+    "answer": 0,
+    "explain": "A dengue sem sinais de alarme é doença de notificação compulsória semanal; já os casos graves, óbitos e situações de possível surto exigem notificação imediata, refletindo a gradação de urgência conforme o risco associado ao evento notificado.",
+    "trap": "Tratar toda arbovirose como notificação imediata, ignorando a distinção entre casos leves e situações de gravidade ou surto.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-017",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Médico infectologista, em articulação com a vigilância epidemiológica nacional, confirma o primeiro caso importado de uma doença nunca antes identificada no país, com potencial de disseminação internacional. Qual instrumento regulatório orienta a notificação desse evento à Organização Mundial da Saúde?",
+    "choices": [
+      "Estatuto da Criança e do Adolescente, que trata exclusivamente da proteção de menores de idade no Brasil",
+      "Regulamento Sanitário Internacional, que rege a notificação de Emergências de Saúde Pública de Importância Internacional pelo ponto focal nacional",
+      "Portaria de Consolidação nº 4, que trata exclusivamente da lista nacional de doenças de notificação compulsória",
+      "Código de Ética Médica, que trata exclusivamente da relação entre médico e paciente no atendimento clínico",
+      "Lei 6.259/79, que trata exclusivamente do sistema nacional de vigilância epidemiológica no território brasileiro"
+    ],
+    "answer": 1,
+    "explain": "O Regulamento Sanitário Internacional estabelece os critérios e o fluxo para notificação de Emergências de Saúde Pública de Importância Internacional à OMS, aplicável a eventos com potencial de disseminação internacional, como doenças emergentes nunca antes identificadas.",
+    "trap": "Confundir a notificação compulsória nacional prevista na legislação brasileira com a notificação internacional prevista no Regulamento Sanitário Internacional.",
+    "exam": "enare",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-018",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Equipe de vigilância avalia um evento de saúde pública quanto aos critérios do Regulamento Sanitário Internacional para classificá-lo como possível Emergência de Saúde Pública de Importância Internacional. Qual conjunto de critérios deve ser aplicado nessa avaliação?",
+    "choices": [
+      "Apenas a distância geográfica entre o local do evento e a sede da Organização Mundial da Saúde",
+      "Apenas a letalidade observada nos primeiros pacientes atendidos na unidade de referência hospitalar",
+      "Gravidade do impacto na saúde pública, caráter inusitado ou inesperado, risco de disseminação internacional e risco de restrições a viagens e comércio",
+      "Apenas o número absoluto de casos confirmados laboratorialmente até o momento da avaliação do evento",
+      "Apenas a existência de vacina disponível para a doença causadora do evento em avaliação"
+    ],
+    "answer": 2,
+    "explain": "O Regulamento Sanitário Internacional propõe um instrumento de decisão com quatro perguntas-chave sobre gravidade, caráter inusitado, risco de disseminação internacional e risco de repercussão em viagens e comércio, para orientar se o evento deve ser notificado como potencial ESPII.",
+    "trap": "Reduzir a avaliação a um único critério isolado, como número de casos ou letalidade, ignorando a lógica multicritério do instrumento.",
+    "exam": "usp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-019",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Médico plantonista de pronto-socorro atende paciente com suspeita de raiva humana após agressão por morcego e precisa decidir sobre a notificação à vigilância epidemiológica. Qual conduta está correta quanto ao prazo de notificação?",
+    "choices": [
+      "Notificar apenas se o paciente evoluir para óbito durante a internação na unidade de referência",
+      "Notificar semanalmente, junto ao consolidado de agravos por acidentes com animais peçonhentos e outros",
+      "Não notificar, pois a raiva humana não integraria a lista nacional de doenças de notificação compulsória",
+      "Notificar imediatamente o caso suspeito, pois a raiva humana é doença de notificação compulsória imediata dada sua letalidade quase absoluta",
+      "Aguardar confirmação por exame de imunofluorescência antes de notificar o caso à vigilância epidemiológica"
+    ],
+    "answer": 3,
+    "explain": "A raiva humana, por sua letalidade praticamente universal após início dos sintomas, exige notificação compulsória imediata desde a suspeita clínica, permitindo ação rápida de profilaxia pós-exposição em contatos e investigação da fonte de exposição.",
+    "trap": "Adiar a notificação até confirmação laboratorial, perdendo a janela de intervenção crítica dada a letalidade da doença.",
+    "exam": "enamed",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-020",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Médico de UBS atende paciente vítima de violência sexual e precisa decidir sobre a notificação compulsória desse agravo. Qual é a conduta correta nesse caso?",
+    "choices": [
+      "Não notificar, pois violência sexual contra adulto não constaria na lista nacional de notificação compulsória",
+      "Notificar apenas se o paciente autorizar expressamente por escrito o compartilhamento da informação com a polícia",
+      "Notificar apenas quando houver lesão corporal grave documentada em exame de corpo de delito",
+      "Aguardar orientação do conselho tutelar antes de proceder à notificação do caso ao sistema de vigilância",
+      "Notificar compulsoriamente o caso de violência sexual, independentemente de haver ou não registro de ocorrência policial pelo paciente"
+    ],
+    "answer": 4,
+    "explain": "A violência interpessoal e autoprovocada, incluindo violência sexual, é de notificação compulsória no Brasil, servindo à finalidade epidemiológica e de vigilância, independentemente de registro policial, sendo a notificação em ficha específica um dever do profissional de saúde.",
+    "trap": "Condicionar a notificação compulsória à autorização do paciente ou à existência de boletim de ocorrência policial prévio.",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-021",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Notificação compulsória · critérios e ESPII",
+    "stem": "Médico diretor da vigilância epidemiológica estadual recebe notificação de caso de tuberculose multirresistente em paciente que abandonou tratamento anteriormente em outro município. Qual prazo de notificação compulsória se aplica a esse cenário específico?",
+    "choices": [
+      "Notificação em até uma semana, pois a tuberculose é doença de notificação compulsória semanal, mantendo-se esse prazo mesmo em casos de resistência ou abandono prévio",
+      "Notificação facultativa, pois casos de retratamento e resistência não exigiriam nova notificação ao sistema",
+      "Notificação mensal consolidada junto ao relatório trimestral do programa de controle da tuberculose",
+      "Notificação imediata em até 24 horas, pois a multirresistência elevaria automaticamente a doença à categoria de notificação imediata",
+      "Notificação apenas ao final do tratamento, quando confirmada cura bacteriológica ou falha terapêutica definitiva"
+    ],
+    "answer": 0,
+    "explain": "A tuberculose, incluindo suas formas resistentes, permanece na lista de notificação compulsória semanal; a gravidade clínica ou a resistência bacteriana não alteram esse prazo, que é definido pela característica epidemiológica geral da doença e não pela gravidade individual do caso.",
+    "trap": "Presumir que toda apresentação grave ou resistente de uma doença muda automaticamente seu prazo de notificação compulsória.",
+    "exam": "enare",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-022",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Processo epidêmico · endemia, surto, pandemia",
+    "stem": "Médico epidemiologista da vigilância municipal observa que os casos de uma doença respiratória viral vêm ocorrendo continuamente na região há décadas, com oscilação sazonal previsível, sem caracterizar aumento inesperado. Qual termo descreve corretamente esse padrão de ocorrência?",
+    "choices": [
+      "Epidemia, pois qualquer doença respiratória viral recorrente seria automaticamente classificada como epidêmica",
+      "Endemia, pois representa a presença constante e habitual da doença na população, dentro dos limites esperados historicamente",
+      "Surto, pois a ocorrência estaria restrita a uma área geográfica pequena e bem delimitada como uma instituição",
+      "Pandemia, pois a doença estaria distribuída por múltiplos continentes simultaneamente neste momento",
+      "Epizootia, pois o padrão descrito se referiria exclusivamente à ocorrência de doença em animais"
+    ],
+    "answer": 1,
+    "explain": "Endemia é a ocorrência habitual de uma doença em determinada área geográfica, mantendo-se dentro de padrões esperados, com oscilações sazonais previsíveis; a definição não exige raridade nem ausência completa de variação temporal, apenas estabilidade em relação ao esperado.",
+    "trap": "Achar que qualquer doença recorrente ou sazonal deve ser chamada de epidemia, confundindo padrão esperado com desvio inesperado.",
+    "exam": "unifesp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-023",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Processo epidêmico · endemia, surto, pandemia",
+    "stem": "Médico sanitarista da vigilância epidemiológica analisa o número de casos de uma doença em um bairro e verifica que ultrapassou claramente o limite superior esperado com base na série histórica dos últimos cinco anos, configurando aumento inesperado, ainda que restrito à área. Qual termo se aplica a esse evento?",
+    "choices": [
+      "Pandemia, pois o evento estaria disseminado por diversos países e continentes ao mesmo tempo",
+      "Endemia, pois o padrão de ocorrência estaria dentro da variação historicamente esperada para aquela área",
+      "Surto, pois representa o aumento inesperado de casos em área geograficamente limitada e bem definida, como um bairro ou instituição",
+      "Holoendemia, pois todos os moradores do bairro estariam necessariamente infectados neste momento",
+      "Epizootia, pois o evento se referiria exclusivamente à ocorrência de doença em populações animais"
+    ],
+    "answer": 2,
+    "explain": "Surto é o aumento inesperado de casos em área geograficamente delimitada, como bairro, escola ou instituição; a epidemia é conceitualmente equivalente em termos de desvio inesperado do padrão histórico, mas costuma se referir a áreas mais amplas que um surto localizado.",
+    "trap": "Confundir surto restrito a uma área pequena com endemia, ignorando que o critério central é o desvio inesperado do padrão histórico.",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-024",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Processo epidêmico · endemia, surto, pandemia",
+    "stem": "Médica da vigilância estadual, junto à equipe municipal, acompanha a disseminação de um novo vírus respiratório que já atinge múltiplos continentes simultaneamente, com transmissão sustentada de pessoa a pessoa em diversos países. Qual termo descreve corretamente esse cenário?",
+    "choices": [
+      "Surto, pois o evento estaria necessariamente restrito a uma instituição ou comunidade específica",
+      "Epizootia, pois o termo descreveria apenas a ocorrência de doença exclusivamente em animais silvestres",
+      "Epidemia, pois o termo se aplicaria exclusivamente a eventos restritos a um único país ou região",
+      "Pandemia, pois caracteriza a disseminação mundial de uma doença, com transmissão sustentada em múltiplos continentes",
+      "Endemia, pois a doença já estaria estabelecida na população há muitos anos sem variação relevante"
+    ],
+    "answer": 3,
+    "explain": "Pandemia é definida pela disseminação de uma doença por diversos países e continentes, com transmissão sustentada e ampla, diferenciando-se da epidemia por sua abrangência geográfica muito maior e da endemia por representar desvio do padrão habitual da doença.",
+    "trap": "Aplicar o termo pandemia a eventos apenas regionais, sem considerar a exigência de disseminação em múltiplos continentes.",
+    "exam": "sus-sp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-025",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Processo epidêmico · endemia, surto, pandemia",
+    "stem": "Médico da vigilância epidemiológica constrói a curva epidêmica de um surto de gastroenterite em um evento social e observa ascensão abrupta de casos seguida de pico único e declínio, todos concentrados dentro de um único período de incubação. Qual padrão de curva epidêmica esse achado sugere?",
+    "choices": [
+      "Padrão sazonal, sugerindo variação cíclica anual esperada sem relação com um evento pontual específico",
+      "Padrão propagado, sugerindo transmissão sucessiva de pessoa a pessoa ao longo de múltiplos períodos de incubação",
+      "Padrão misto, sugerindo exposição contínua a uma fonte comum seguida de transmissão secundária sustentada",
+      "Padrão endêmico estável, sugerindo manutenção da doença na comunidade por tempo indeterminado sem picos",
+      "Padrão de fonte comum e exposição pontual, sugerindo que todos os casos foram expostos à mesma fonte em um único momento"
+    ],
+    "answer": 4,
+    "explain": "Curvas com ascensão abrupta, pico único e queda rápida, concentradas em um único período de incubação, são típicas de surto por fonte comum com exposição pontual, como contaminação de alimento único em evento social, diferindo do padrão propagado com múltiplos picos sucessivos.",
+    "trap": "Confundir o padrão de fonte comum pontual com o padrão propagado, que exigiria múltiplas ondas de casos ao longo de vários períodos de incubação.",
+    "exam": "santa-casa",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-026",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Processo epidêmico · endemia, surto, pandemia",
+    "stem": "Médico da vigilância epidemiológica precisa decidir o próximo passo diante da confirmação de um surto de sarampo em uma creche, com três casos confirmados em uma semana. Qual conduta inicial é mais adequada nesse cenário?",
+    "choices": [
+      "Deflagrar investigação epidemiológica de campo, com busca ativa de casos e contatos, e reforço vacinal seletivo conforme protocolo",
+      "Encerrar o caso após a notificação, sem necessidade de investigação adicional, por já haver confirmação laboratorial",
+      "Solicitar apenas o fechamento definitivo da creche, sem qualquer ação de busca ativa de contatos",
+      "Aguardar resultado de inquérito sorológico de toda a cidade antes de iniciar qualquer ação local na creche",
+      "Aguardar a notificação espontânea de novos casos pelos responsáveis antes de iniciar qualquer investigação"
+    ],
+    "answer": 0,
+    "explain": "A confirmação de um surto exige investigação epidemiológica de campo imediata, com busca ativa de casos e contatos e avaliação da situação vacinal, permitindo interromper a cadeia de transmissão rapidamente, sendo essa conduta mais eficaz do que aguardar passivamente novas notificações.",
+    "trap": "Aguardar passivamente novas notificações espontâneas em vez de deflagrar investigação ativa imediata do surto confirmado.",
+    "exam": "enamed",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-027",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Processo epidêmico · endemia, surto, pandemia",
+    "stem": "Equipe de vigilância percebe que uma doença historicamente rara na região começou a apresentar casos persistentes ano após ano, estabilizando-se em um novo patamar mais elevado do que o histórico anterior. Qual termo mais adequado descreve essa transição epidemiológica?",
+    "choices": [
+      "A doença mantém padrão de surto contínuo, pois surtos por definição poderiam persistir indefinidamente sem resolução",
+      "A doença passou de padrão esporádico para endêmico, estabelecendo novo padrão habitual de ocorrência na região",
+      "A doença configura holoendemia, pois toda a população estaria necessariamente infectada de forma crônica",
+      "A doença retorna ao padrão esporádico anterior, pois a elevação seria apenas um artefato estatístico transitório",
+      "A doença permanece em padrão pandêmico, pois qualquer elevação sustentada de casos já caracterizaria pandemia"
+    ],
+    "answer": 1,
+    "explain": "Quando uma doença antes esporádica passa a ocorrer de forma persistente e estabelecida em novo patamar, ainda que mais elevado que o histórico remoto, ela é reclassificada como endêmica para aquele novo padrão, pois endemia se refere à manutenção habitual, não a um valor fixo imutável no tempo.",
+    "trap": "Achar que qualquer aumento sustentado de casos deve ser chamado de pandemia, ignorando a distinção de escala geográfica.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-028",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "História natural da doença · prevenção",
+    "stem": "Médico de família, na UBS, orienta paciente hipertenso assintomático, sem lesão de órgão-alvo, sobre a importância de manter dieta hipossódica e atividade física regular antes mesmo do diagnóstico clínico estabelecido. Em qual período da história natural da doença essa orientação se encaixa e qual nível de prevenção corresponde?",
+    "choices": [
+      "Período de convalescença, correspondendo à reabilitação, pois o paciente estaria se recuperando de um evento agudo prévio",
+      "Horizonte clínico, correspondendo à prevenção terciária, pois o paciente já apresentaria sinais e sintomas evidentes da doença",
+      "Período pré-patogênico, correspondendo à prevenção primária, pois busca reduzir a exposição a fatores de risco antes do início do processo patológico",
+      "Período patogênico subclínico, correspondendo à prevenção secundária, pois já haveria alteração fisiopatológica estabelecida no paciente",
+      "Período de latência, correspondendo ao rastreamento populacional, pois a doença estaria presente de forma assintomática detectável"
+    ],
+    "answer": 2,
+    "explain": "Ações voltadas à redução da exposição a fatores de risco antes do início do processo fisiopatológico, como orientações dietéticas e de atividade física em pessoa ainda sem doença estabelecida, correspondem ao período pré-patogênico do modelo de Leavell e Clark e caracterizam prevenção primária.",
+    "trap": "Classificar orientações de estilo de vida como prevenção secundária, confundindo prevenção de fatores de risco com detecção precoce de doença já instalada.",
+    "exam": "enamed",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-029",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "História natural da doença · prevenção",
+    "stem": "Enfermeira realiza teste de Papanicolau em mulher assintomática de 35 anos, sem qualquer sintoma sugestivo de câncer de colo uterino, como parte do rastreamento populacional programado pela UBS. Qual nível de prevenção corresponde a essa ação?",
+    "choices": [
+      "Promoção da saúde, pois o exame teria como objetivo único a educação em saúde sexual e reprodutiva",
+      "Prevenção quaternária, pois o exame visaria exclusivamente evitar intervenções médicas desnecessárias na paciente",
+      "Prevenção primária, pois o exame impediria diretamente a infecção pelo HPV antes de qualquer contato com o vírus",
+      "Prevenção secundária, pois visa à detecção precoce de lesões ainda assintomáticas, no período patogênico subclínico da história natural da doença",
+      "Prevenção terciária, pois o exame seria realizado apenas após diagnóstico confirmado de câncer invasivo já estabelecido"
+    ],
+    "answer": 3,
+    "explain": "O rastreamento com Papanicolau busca identificar lesões precursoras ou câncer em fase assintomática, permitindo tratamento precoce antes do agravamento clínico, o que caracteriza classicamente prevenção secundária dentro do período patogênico subclínico da história natural da doença.",
+    "trap": "Confundir rastreamento de doença já iniciada, ainda assintomática, com prevenção primária, que atuaria antes do início do processo patológico.",
+    "exam": "santa-casa",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-030",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "História natural da doença · prevenção",
+    "stem": "Fisioterapeuta acompanha, em serviço de reabilitação vinculado ao SUS, paciente que sofreu infarto agudo do miocárdio há três meses, já estabilizado clinicamente, e conduz programa de reabilitação cardiovascular para reduzir sequelas e limitação funcional. Qual nível de prevenção corresponde a essa intervenção?",
+    "choices": [
+      "Promoção da saúde, pois o programa teria como único objetivo a educação nutricional geral da população",
+      "Proteção específica, pois o programa equivaleria à administração de vacina contra doença cardiovascular",
+      "Prevenção primária, pois a reabilitação impediria retroativamente a ocorrência do evento cardiovascular já ocorrido",
+      "Prevenção secundária, pois o programa visaria detectar precocemente um infarto ainda assintomático no paciente",
+      "Prevenção terciária, pois visa limitar incapacidades e promover reabilitação após o estabelecimento da doença e suas sequelas"
+    ],
+    "answer": 4,
+    "explain": "A reabilitação cardiovascular após evento agudo já estabelecido busca limitar sequelas, restaurar função e prevenir incapacidades adicionais, caracterizando prevenção terciária, que atua no horizonte clínico avançado da história natural da doença, após o dano já ter ocorrido.",
+    "trap": "Confundir reabilitação pós-evento com prevenção secundária, que se aplicaria antes do dano clínico estar plenamente estabelecido.",
+    "exam": "enare",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-031",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "História natural da doença · prevenção",
+    "stem": "Médico do trabalho, atuante em serviço de saúde ocupacional vinculado ao SUS, recomenda o uso de protetor auricular a trabalhadores expostos a ruído intenso em uma fábrica, antes que qualquer perda auditiva seja detectada nos exames admissionais. Qual nível de prevenção corresponde a essa recomendação segundo o modelo de Leavell e Clark?",
+    "choices": [
+      "Prevenção primária, na modalidade de proteção específica, pois reduz a exposição ao agente agressor antes do início de qualquer dano",
+      "Diagnóstico precoce, pois o uso do protetor equivaleria à realização de audiometria periódica ocupacional",
+      "Prevenção terciária, pois o equipamento seria destinado à reabilitação de trabalhadores já com perda auditiva estabelecida",
+      "Prevenção secundária, pois o uso do equipamento permitiria detectar precocemente a perda auditiva já instalada no trabalhador",
+      "Limitação do dano, pois o equipamento seria utilizado exclusivamente após confirmação de doença ocupacional instalada"
+    ],
+    "answer": 0,
+    "explain": "A proteção específica é uma das duas modalidades da prevenção primária no modelo de Leavell e Clark, incluindo medidas como uso de equipamentos de proteção individual e vacinação, que atuam antes do início do processo patológico, diferentemente do diagnóstico precoce e da limitação do dano.",
+    "trap": "Classificar equipamentos de proteção individual como prevenção secundária, confundindo proteção contra exposição com detecção precoce de dano já ocorrido.",
+    "exam": "unifesp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-032",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "História natural da doença · prevenção",
+    "stem": "Gestor de saúde pública planeja, na rede SUS, campanha de vacinação de rotina contra hepatite B para recém-nascidos na maternidade, antes de qualquer possibilidade de exposição ao vírus. Em qual componente da prevenção primária essa ação se classifica?",
+    "choices": [
+      "Diagnóstico precoce, pois a vacinação permitiria identificar infecção subclínica já presente no recém-nascido",
+      "Proteção específica, pois a vacinação confere imunidade direcionada contra um agente etiológico determinado antes da exposição",
+      "Promoção da saúde, pois a vacinação atuaria de forma inespecífica sobre determinantes gerais de saúde da população",
+      "Limitação do dano, pois a vacinação reduziria sequelas em recém-nascidos já infectados pelo vírus da hepatite B",
+      "Reabilitação, pois a vacinação restauraria a função hepática em crianças com hepatite crônica já estabelecida"
+    ],
+    "answer": 1,
+    "explain": "A proteção específica corresponde a medidas dirigidas contra um agente etiológico ou fator de risco determinado, como a vacinação, distinguindo-se da promoção da saúde, que atua de forma inespecífica sobre determinantes gerais, mesmo ambas compondo a prevenção primária no modelo de Leavell e Clark.",
+    "trap": "Confundir proteção específica, dirigida a um agente determinado, com promoção da saúde, que age de forma inespecífica sobre múltiplos determinantes.",
+    "exam": "unifesp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-033",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "História natural da doença · prevenção",
+    "stem": "Médica sanitarista, à frente da equipe de vigilância, planeja, no âmbito do SUS municipal, política de saneamento básico, arborização urbana e incentivo a hábitos alimentares saudáveis, sem direcionamento a nenhuma doença específica. Qual componente da prevenção primária corresponde a essa política?",
+    "choices": [
+      "Diagnóstico precoce, pois a política permitiria identificar doenças subclínicas já presentes na população local",
+      "Reabilitação, pois a política teria como finalidade restaurar a capacidade funcional de pacientes já incapacitados",
+      "Promoção da saúde, pois atua de forma inespecífica sobre determinantes gerais de saúde, sem visar a um agente ou doença específica",
+      "Proteção específica, pois a política estaria dirigida contra um agente etiológico determinado e bem definido",
+      "Limitação do dano, pois a política visaria reduzir sequelas em pacientes já diagnosticados com doença crônica"
+    ],
+    "answer": 2,
+    "explain": "A promoção da saúde compõe a prevenção primária junto à proteção específica, mas se distingue por atuar de forma inespecífica sobre condições gerais de vida, ambiente e comportamento, como saneamento e hábitos alimentares, sem alvo em um agente etiológico único.",
+    "trap": "Classificar ações inespecíficas de melhoria das condições de vida como proteção específica, que exige direcionamento a um agente ou risco determinado.",
+    "exam": "unifesp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-034",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Saúde do trabalhador · acidentes e doenças ocupacionais",
+    "stem": "Médico do trabalho, em articulação com a vigilância em saúde do trabalhador, avalia trabalhador de mineração com quadro de silicose comprovada por exposição ocupacional a poeira de sílica por 15 anos. Qual conduta é a correta quanto à notificação desse caso?",
+    "choices": [
+      "Notificar apenas ao sindicato da categoria profissional, sem qualquer obrigação de notificação ao sistema de saúde",
+      "Aguardar afastamento definitivo do trabalho para proceder à notificação do caso ao sistema de vigilância",
+      "Notificar apenas se o trabalhador solicitar expressamente abertura de processo trabalhista contra o empregador",
+      "Notificar compulsoriamente o caso ao SINAN, pois a silicose é doença relacionada ao trabalho de notificação obrigatória",
+      "Não notificar, pois doenças ocupacionais crônicas de instalação lenta estariam dispensadas de notificação compulsória"
+    ],
+    "answer": 3,
+    "explain": "A silicose, como doença relacionada ao trabalho de evolução crônica, integra a lista nacional de doenças e agravos de notificação compulsória, devendo ser notificada ao SINAN independentemente de desfecho trabalhista ou afastamento, com finalidade epidemiológica e de vigilância em saúde do trabalhador.",
+    "trap": "Achar que apenas acidentes agudos de trabalho exigem notificação, ignorando que doenças ocupacionais crônicas também exigem notificação.",
+    "exam": "unifesp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-035",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Saúde do trabalhador · acidentes e doenças ocupacionais",
+    "stem": "Enfermeiro do trabalho recebe trabalhador que sofreu corte profundo na mão durante operação de máquina na linha de produção, exigindo afastamento das atividades e notificação à vigilância em saúde do trabalhador. Qual documento formal deve ser emitido para caracterizar esse evento junto à Previdência Social?",
+    "choices": [
+      "Atestado de óbito fetal, documento destinado exclusivamente ao registro de perdas gestacionais tardias",
+      "Declaração de Nascido Vivo, documento destinado exclusivamente ao registro de partos ocorridos em ambiente hospitalar",
+      "Ficha de notificação de violência interpessoal, documento destinado a registrar agressões físicas intencionais entre pessoas",
+      "Declaração de Óbito, documento destinado exclusivamente ao registro de falecimentos ocorridos no ambiente de trabalho",
+      "Comunicação de Acidente de Trabalho, a CAT, documento obrigatório para registro formal do acidente junto ao INSS"
+    ],
+    "answer": 4,
+    "explain": "A Comunicação de Acidente de Trabalho, CAT, é o documento obrigatório emitido pela empresa, ou na ausência desta pelo próprio trabalhador, sindicato ou médico assistente, para formalizar o acidente junto ao INSS, garantindo direitos previdenciários e alimentando estatísticas oficiais.",
+    "trap": "Confundir a CAT com documentos de outros sistemas de informação, como declaração de óbito ou de nascido vivo, que não se aplicam a acidentes.",
+    "exam": "enamed",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-036",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Saúde do trabalhador · acidentes e doenças ocupacionais",
+    "stem": "Médico perito, em avaliação acompanhada pela vigilância em saúde do trabalhador do município, avalia trabalhador com síndrome do túnel do carpo bilateral, exercendo função com movimentos repetitivos de digitação por oito anos ininterruptos, sem outra causa identificada. Qual classificação de nexo causal se aplica mais adequadamente a esse caso?",
+    "choices": [
+      "Doença relacionada ao trabalho do Grupo I, na classificação de Schilling, em que o trabalho é causa necessária para o desenvolvimento da doença",
+      "Doença relacionada ao trabalho do Grupo II, em que o trabalho seria fator contribuinte, mas não necessário à causa",
+      "Doença comum sem qualquer relação com a atividade laboral, pois a digitação não causaria lesão musculoesquelética",
+      "Doença relacionada ao trabalho do Grupo III, em que o trabalho seria apenas provocador de um distúrbio latente preexistente",
+      "Doença ocupacional exclusivamente genética, sem qualquer participação de fatores ambientais ou laborais no seu desenvolvimento"
+    ],
+    "answer": 0,
+    "explain": "Na classificação de Schilling, doenças do Grupo I têm o trabalho como causa necessária, como algumas LER/DORT clássicas ligadas diretamente à exposição ocupacional específica; já o Grupo II tem o trabalho como fator contribuinte e o Grupo III como fator desencadeante de doença já latente.",
+    "trap": "Classificar toda LER/DORT automaticamente como Grupo II ou III, sem considerar que exposições específicas e bem caracterizadas podem se encaixar no Grupo I.",
+    "exam": "sus-sp",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-037",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Saúde do trabalhador · acidentes e doenças ocupacionais",
+    "stem": "Gestor de recursos humanos de uma indústria química, em articulação com a vigilância em saúde do trabalhador do SUS, precisa implementar programa para identificar precocemente exposições a agentes químicos antes que causem doença clinicamente detectável nos trabalhadores. Qual instrumento de gestão de saúde ocupacional é mais adequado para esse monitoramento periódico?",
+    "choices": [
+      "Comunicação de Acidente de Trabalho, pois seria o instrumento adequado para registrar exposições antes de qualquer dano",
+      "Programa de Controle Médico de Saúde Ocupacional, o PCMSO, que estabelece exames médicos periódicos conforme os riscos identificados no ambiente de trabalho",
+      "Cadastro Nacional de Estabelecimentos de Saúde, pois seria o instrumento adequado para monitorar exposições ocupacionais individuais",
+      "Declaração de Nascido Vivo, pois seria o instrumento adequado para monitorar a saúde reprodutiva dos trabalhadores expostos",
+      "Sistema de Informação de Agravos de Notificação, pois seria o instrumento primário de monitoramento clínico individual periódico"
+    ],
+    "answer": 1,
+    "explain": "O PCMSO estabelece o planejamento e execução de exames médicos ocupacionais, admissionais, periódicos e demissionais, conforme os riscos identificados no Programa de Gerenciamento de Riscos, permitindo detecção precoce de alterações relacionadas à exposição antes do agravamento clínico.",
+    "trap": "Confundir o PCMSO, instrumento de monitoramento clínico periódico, com a CAT, que é apenas o registro formal de um acidente já ocorrido.",
+    "exam": "enamed",
+    "year": 2024,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-038",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Saúde do trabalhador · acidentes e doenças ocupacionais",
+    "stem": "Médica do trabalho, apoiada pela equipe de segurança, investiga possível surto de dermatite ocupacional entre trabalhadores de uma linha de produção que manipula solvente recém-introduzido no processo industrial. Qual conduta inicial é mais adequada frente a esse achado?",
+    "choices": [
+      "Aguardar reclamação formal por escrito dos trabalhadores à direção da empresa antes de iniciar qualquer investigação",
+      "Afastar definitivamente todos os trabalhadores da linha de produção antes de qualquer investigação da causa do problema",
+      "Notificar o agravo relacionado ao trabalho, investigar a exposição ao solvente e articular com a equipe de segurança do trabalho a reavaliação do risco químico",
+      "Encaminhar isoladamente cada trabalhador ao dermatologista, sem qualquer investigação da exposição ocupacional comum",
+      "Orientar apenas o uso de creme hidratante e cosméticos protetores, sem qualquer reavaliação do risco ocupacional presente"
+    ],
+    "answer": 2,
+    "explain": "Diante de um agrupamento de casos de dermatite relacionados a uma exposição ocupacional comum e recente, a conduta correta envolve notificação do agravo, investigação epidemiológica da exposição e articulação com a segurança do trabalho para reavaliar e controlar o risco, e não apenas tratamento individual sintomático.",
+    "trap": "Tratar cada caso isoladamente como problema dermatológico individual, sem investigar e intervir na exposição ocupacional comum.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-039",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Saúde do trabalhador · acidentes e doenças ocupacionais",
+    "stem": "Médico auditor fiscal do trabalho, em articulação com a vigilância em saúde do trabalhador, analisa se determinada doença apresentada por um grupo de trabalhadores de escritório, relacionada a estresse crônico e sobrecarga psíquica, pode ser reconhecida como transtorno mental relacionado ao trabalho. Qual abordagem conceitual melhor orienta essa análise?",
+    "choices": [
+      "Negação automática do nexo com o trabalho, pois transtornos mentais nunca poderiam ser considerados de origem ocupacional",
+      "Análise exclusivamente biológica, desconsiderando qualquer influência da organização do trabalho sobre o adoecimento mental",
+      "Reconhecimento automático de nexo com o trabalho para qualquer transtorno mental relatado por trabalhador de escritório",
+      "Análise multicausal considerando organização do trabalho, carga psíquica e fatores individuais, reconhecendo o trabalho como fator contribuinte relevante mesmo sem ser causa exclusiva",
+      "Análise restrita ao diagnóstico psiquiátrico isolado, sem qualquer investigação da organização e das condições de trabalho"
+    ],
+    "answer": 3,
+    "explain": "A saúde do trabalhador propõe abordagem multicausal para transtornos mentais relacionados ao trabalho, considerando organização do trabalho, carga psíquica, relações hierárquicas e fatores individuais, evitando tanto a negação automática do nexo quanto seu reconhecimento automático sem investigação adequada.",
+    "trap": "Adotar postura extremista, negando categoricamente qualquer nexo entre trabalho e transtorno mental ou reconhecendo-o automaticamente sem investigação.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-040",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Código de Ética Médica · highlights Prev3",
+    "stem": "Médico de UBS é solicitado pela família de paciente adulto e lúcido a não revelar a ele o diagnóstico de câncer avançado, alegando que a informação lhe causaria sofrimento excessivo. Qual conduta é eticamente adequada segundo o Código de Ética Médica?",
+    "choices": [
+      "Informar apenas a família, mantendo o paciente permanentemente alheio ao próprio diagnóstico, por solicitação familiar",
+      "Aguardar autorização judicial prévia antes de comunicar qualquer diagnóstico grave ao paciente adulto e lúcido",
+      "Omitir o diagnóstico de todos, inclusive da família, para evitar qualquer repercussão emocional no núcleo familiar",
+      "Revelar o diagnóstico a qualquer pessoa que pergunte, incluindo vizinhos, para maior transparência da equipe de saúde",
+      "Respeitar a autonomia do paciente lúcido, informando o diagnóstico diretamente a ele, salvo se a comunicação puder lhe causar dano e ele mesmo delegar a terceiros essa informação"
+    ],
+    "answer": 4,
+    "explain": "O Código de Ética Médica preconiza o direito do paciente à informação sobre seu próprio estado de saúde, sendo vedado ao médico deixar de informar salvo quando a comunicação direta possa lhe causar dano e o próprio paciente tenha indicado quem deve receber essa informação em seu lugar.",
+    "trap": "Priorizar automaticamente o desejo da família em detrimento do direito à informação do próprio paciente lúcido e capaz.",
+    "exam": "usp",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-041",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Código de Ética Médica · highlights Prev3",
+    "stem": "Médica atende, na UBS, adolescente de 16 anos, sozinha na consulta, que solicita prescrição de método contraceptivo e pede que a informação não seja compartilhada com os pais. Qual conduta é eticamente adequada?",
+    "choices": [
+      "Respeitar o sigilo médico e a autonomia progressiva do adolescente, orientando e prescrevendo conforme avaliação clínica, sem comunicar os pais sem consentimento da paciente",
+      "Recusar o atendimento sem a presença de um responsável legal para qualquer decisão relativa à adolescente",
+      "Comunicar obrigatoriamente os pais antes de qualquer prescrição, independentemente da vontade e capacidade da adolescente",
+      "Encaminhar a adolescente ao conselho tutelar antes de fornecer qualquer orientação sobre saúde sexual e reprodutiva",
+      "Negar a prescrição e aguardar autorização judicial expressa antes de qualquer orientação contraceptiva à paciente"
+    ],
+    "answer": 0,
+    "explain": "Adolescentes com capacidade de discernimento têm direito ao sigilo em questões de saúde sexual e reprodutiva, e o Código de Ética Médica resguarda essa confidencialidade, cabendo ao médico avaliar a capacidade de compreensão e orientar de forma responsável, sem quebra automática de sigilo aos responsáveis.",
+    "trap": "Assumir que menores de idade nunca têm direito a sigilo, exigindo comunicação automática aos pais independentemente da avaliação clínica.",
+    "exam": "santa-casa",
+    "year": 2022,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-042",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Código de Ética Médica · highlights Prev3",
+    "stem": "Médico plantonista do pronto-atendimento se depara com paciente em risco iminente de morte, sem acompanhante e inconsciente, necessitando de procedimento invasivo de urgência para salvar sua vida. Qual conduta é eticamente correta quanto ao consentimento?",
+    "choices": [
+      "Recusar-se a intervir sem consentimento formal assinado, mesmo diante de risco iminente de morte do paciente inconsciente",
+      "Realizar o procedimento necessário sem consentimento prévio, pois em iminente risco de vida o médico deve agir para preservá-la, buscando autorização de familiares posteriormente quando possível",
+      "Solicitar autorização judicial de urgência antes de qualquer procedimento invasivo em paciente inconsciente e sem acompanhante",
+      "Aguardar localização de familiares antes de qualquer intervenção, mesmo que isso implique risco iminente de óbito do paciente",
+      "Aguardar a recuperação da consciência do próprio paciente antes de proceder a qualquer intervenção médica necessária"
+    ],
+    "answer": 1,
+    "explain": "O Código de Ética Médica permite e exige a atuação do médico em situação de iminente risco de vida sem necessidade de consentimento prévio, quando a impossibilidade de obtê-lo decorre da própria condição clínica do paciente, priorizando a preservação da vida sobre a formalidade do consentimento informado.",
+    "trap": "Priorizar rigidamente a obtenção de consentimento formal em detrimento da vida do paciente, quando a urgência torna essa obtenção impossível.",
+    "exam": "enamed",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-043",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Código de Ética Médica · highlights Prev3",
+    "stem": "Médico de hospital da rede SUS é convidado a integrar comitê de ética institucional para analisar denúncia de possível conduta inadequada de colega em relação a um paciente internado. Qual princípio deve nortear a atuação desse médico no comitê?",
+    "choices": [
+      "Defesa automática e incondicional do colega denunciado, independentemente das evidências apresentadas no processo de apuração",
+      "Recusa em participar da apuração, delegando toda a responsabilidade exclusivamente ao paciente que fez a denúncia",
+      "Isenção, imparcialidade e sigilo na análise dos fatos, buscando apurar a verdade e orientar condutas éticas, sem prejulgamento do colega denunciado",
+      "Divulgação ampla dos detalhes do caso à imprensa local, para garantir transparência total do processo de apuração",
+      "Condenação antecipada do colega antes mesmo da conclusão da investigação e do direito de resposta e defesa"
+    ],
+    "answer": 2,
+    "explain": "A atuação em comitês de ética exige isenção, sigilo e imparcialidade, com apuração cuidadosa dos fatos e garantia do direito de defesa do médico denunciado, sem prejulgamento nem exposição pública indevida do processo em curso, preservando a dignidade do paciente e do profissional investigado.",
+    "trap": "Assumir posição de defesa corporativa automática ou, no extremo oposto, condenação antecipada, ambas incompatíveis com a isenção exigida.",
+    "exam": "unifesp",
+    "year": 2023,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-044",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Código de Ética Médica · highlights Prev3",
+    "stem": "Médico de telemedicina realiza consulta remota com paciente em município distante, sem exame físico presencial possível, para avaliação de queixa que exigiria conduta imediata de maior complexidade. Qual conduta é eticamente adequada nesse atendimento remoto?",
+    "choices": [
+      "Delegar toda a responsabilidade clínica ao paciente, que decidiria sozinho sobre a necessidade de avaliação presencial",
+      "Prosseguir com toda e qualquer conduta terapêutica remota, ignorando completamente as limitações do exame físico presencial",
+      "Recusar-se a realizar qualquer atendimento remoto, mesmo diante de orientações e triagens de baixa complexidade possíveis",
+      "Reconhecer os limites do exame remoto e encaminhar o paciente para avaliação presencial sempre que a limitação impedir conduta segura, documentando adequadamente essa limitação",
+      "Prescrever tratamento de alta complexidade sem qualquer registro da limitação do exame físico realizado a distância"
+    ],
+    "answer": 3,
+    "explain": "A telemedicina exige do médico reconhecimento claro dos limites do atendimento remoto, sendo dever ético encaminhar para avaliação presencial sempre que a ausência de exame físico comprometer a segurança da conduta, com documentação adequada dessa limitação no registro clínico.",
+    "trap": "Tratar a telemedicina como substituto irrestrito da consulta presencial, ignorando situações em que a limitação do exame remoto compromete a segurança.",
+    "exam": "sus-sp",
+    "year": 2025,
+    "difficulty": "media"
+  },
+  {
+    "id": "prev-vig1-045",
+    "specialty": "preventiva",
+    "group": "Vigilância · HND · ética",
+    "theme": "Código de Ética Médica · highlights Prev3",
+    "stem": "Médica que atende pacientes da rede SUS recebe solicitação de uma seguradora de saúde para fornecer informações do prontuário de um paciente sem autorização expressa dele, sob alegação de necessidade administrativa para pagamento de reembolso. Qual conduta é eticamente adequada?",
+    "choices": [
+      "Repassar a solicitação diretamente ao hospital, sem qualquer análise sobre a necessidade de autorização do próprio paciente",
+      "Fornecer integralmente o prontuário à seguradora, pois questões administrativas de reembolso dispensariam autorização do paciente",
+      "Fornecer as informações e comunicar ao paciente posteriormente, considerando essa notificação suficiente para regularizar a quebra de sigilo",
+      "Fornecer apenas um resumo verbal por telefone, considerando que a ausência de documento escrito preservaria o sigilo médico",
+      "Recusar o fornecimento das informações sem autorização expressa do paciente, pois o sigilo médico é regra e sua quebra exige consentimento ou justa causa legalmente prevista"
+    ],
+    "answer": 4,
+    "explain": "O sigilo médico é princípio fundamental do Código de Ética Médica, e sua quebra exige consentimento expresso do paciente ou justa causa prevista em lei; solicitações administrativas de terceiros, como seguradoras, não dispensam essa autorização, independentemente da forma de fornecimento da informação.",
+    "trap": "Achar que a natureza administrativa da solicitação, ou a informalidade do meio de comunicação, dispensa a exigência de autorização expressa do paciente.",
+    "exam": "enamed",
+    "year": 2025,
+    "difficulty": "media"
   }
 ]
