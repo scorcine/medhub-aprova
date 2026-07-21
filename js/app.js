@@ -2683,6 +2683,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const qQuotaEl = document.getElementById("metas-q-quota");
   const qThemesEl = document.getElementById("metas-q-themes");
   const qWeekEl = document.getElementById("metas-q-week");
+  const qPeriodsEl = document.getElementById("metas-q-periods");
 
   if (program) {
     const daily = (program.tasks || []).find((t) => t.id === "daily");
@@ -2699,12 +2700,26 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
       if (qQuotaEl) {
         qQuotaEl.innerHTML =
           "<span class=\"dash-seu-plano-chip\">" + program.qQuota.daily + " questões/dia</span>" +
+          "<span class=\"dash-seu-plano-chip\">~" +
+            (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") +
+            "/ano</span>" +
           "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>";
       }
+      if (qPeriodsEl) {
+        const rows = [
+          ["Hoje", program.qProgress.daily.done, program.qProgress.daily.goal],
+          ["Semana", program.qProgress.weekly.done, program.qProgress.weekly.goal],
+          ["Quinzena", program.qProgress.biweekly.done, program.qProgress.biweekly.goal],
+          ["Mês", program.qProgress.monthly.done, program.qProgress.monthly.goal]
+        ];
+        qPeriodsEl.innerHTML = rows.map((r) => (
+          "<li><strong>" + r[0] + "</strong><em>" + r[1] + "/" + r[2] + "</em></li>"
+        )).join("");
+      }
       if (qWeekEl) {
-        qWeekEl.textContent =
-          "Semana " + program.qProgress.weekly.done + "/" + program.qProgress.weekly.goal +
-          " · Mês " + program.qProgress.monthly.done + "/" + program.qProgress.monthly.goal;
+        qWeekEl.textContent = "Equivalência de ~" +
+          (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") +
+          " questões/ano (padrão de cursinho).";
       }
       if (qThemesEl) {
         const esc = (s) => String(s || "")

@@ -84,20 +84,34 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
 }
 
 /**
- * Meta diária de questões (~2,2 min/questão no bloco de estudo).
+ * Meta de questões alinhada ao volume típico de cursinho/mentoria R1.
+ * Referência: ~15.000 questões/ano → equivalências dia / semana / quinzena / mês.
+ * (Independe do tamanho atual do banco — o banco continua crescendo.)
  */
+const APROVA_Q_ANNUAL_TARGET = 15000;
+
 function aprovaPlanQuestionQuota (horizon, daysLeft) {
-  const midMin = ((horizon.dailyMin || 30) + (horizon.dailyMax || 55)) / 2;
-  let daily = (midMin * 0.45) / 2.2;
-  if (daysLeft != null && daysLeft > 0 && daysLeft <= 21) daily *= 1.2;
-  else if (daysLeft != null && daysLeft > 0 && daysLeft <= 60) daily *= 1.1;
-  else if (daysLeft != null && daysLeft > 300) daily *= 0.9;
-  daily = aprovaClampInt(daily, 10, 35);
+  // Base calendário: 15000 / 365 ≈ 41,1 → 41/dia
+  let daily = Math.round(APROVA_Q_ANNUAL_TARGET / 365);
+  // Perto da prova: sobe um pouco (ainda na faixa realista de treino)
+  if (daysLeft != null && daysLeft > 0 && daysLeft <= 21) daily = Math.round(daily * 1.25);
+  else if (daysLeft != null && daysLeft > 0 && daysLeft <= 60) daily = Math.round(daily * 1.12);
+  else if (daysLeft != null && daysLeft > 300) daily = Math.round(daily * 0.95);
+  daily = aprovaClampInt(daily, 35, 60);
+
+  const weekly = daily * 7;
+  const biweekly = daily * 14;
+  const monthly = daily * 30;
+  const annual = daily * 365;
+
   return {
     daily,
-    weekly: daily * 7,
-    monthly: daily * 30,
-    minutesHint: Math.round(daily * 2.2) + "–" + Math.round(daily * 2.8) + " min"
+    weekly,
+    biweekly,
+    monthly,
+    annual,
+    annualTarget: APROVA_Q_ANNUAL_TARGET,
+    minutesHint: Math.round(daily * 1.5) + "–" + Math.round(daily * 2.2) + " min"
   };
 }
 
@@ -532,12 +546,16 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
   const qQuota = aprovaPlanQuestionQuota(plan.horizon, daysLeft);
   const qDone = typeof aprovaQActivityToday === "function" ? aprovaQActivityToday(now) : 0;
   const qWeekFrom = aprovaIsoOffset(-6, now);
+  const qBiFrom = aprovaIsoOffset(-13, now);
   const qMonthFrom = aprovaIsoOffset(-29, now);
   const todayIso = typeof aprovaActivityDayKey === "function"
     ? aprovaActivityDayKey(now)
     : aprovaIsoOffset(0, now);
   const qWeekDone = typeof aprovaQActivitySumRange === "function"
     ? aprovaQActivitySumRange(qWeekFrom, todayIso)
+    : 0;
+  const qBiDone = typeof aprovaQActivitySumRange === "function"
+    ? aprovaQActivitySumRange(qBiFrom, todayIso)
     : 0;
   const qMonthDone = typeof aprovaQActivitySumRange === "function"
     ? aprovaQActivitySumRange(qMonthFrom, todayIso)
@@ -551,7 +569,7 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
       qThemes.push({
         specialty: area.id,
         label: area.label,
-        n: Math.max(3, Math.round(qQuota.daily / Math.min(4, focusPack.areas.length)))
+        n: Math.max(5, Math.round(qQuota.daily / Math.min(4, focusPack.areas.length)))
       });
     });
   }
@@ -562,6 +580,7 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     qProgress: {
       daily: { done: qDone, goal: qQuota.daily, pct: qStatus.pct, status: qStatus.status },
       weekly: { done: qWeekDone, goal: qQuota.weekly },
+      biweekly: { done: qBiDone, goal: qQuota.biweekly },
       monthly: { done: qMonthDone, goal: qQuota.monthly }
     },
     qThemes,
