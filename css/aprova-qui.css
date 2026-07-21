@@ -2490,8 +2490,34 @@ html[data-theme="dark"] .aprova-modal-panel {
 }
 
 .inicio-welcome {
-  max-width: 36rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  max-width: 40rem;
   margin: 0 0 1.25rem;
+}
+
+.inicio-mascot {
+  flex: 0 0 auto;
+}
+
+.inicio-mascot[hidden] {
+  display: none !important;
+}
+
+.inicio-mascot img {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+}
+
+.inicio-welcome-copy {
+  min-width: 0;
+  flex: 1;
 }
 
 .inicio-welcome-hello {
@@ -2509,6 +2535,35 @@ html[data-theme="dark"] .aprova-modal-panel {
   font-size: 0.98rem;
   line-height: 1.45;
   color: var(--ink-soft, #5b6b7c);
+}
+
+.welcome-mascot-panel {
+  width: min(28rem, 100%);
+}
+
+.welcome-mascot-media {
+  margin-top: 0.75rem;
+  border-radius: calc(var(--radius) + 0.1rem);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: #0b1220;
+}
+
+.welcome-mascot-video {
+  display: block;
+  width: 100%;
+  max-height: min(52vh, 22rem);
+  background: #0b1220;
+}
+
+.welcome-mascot-fallback {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(52vh, 22rem);
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .aprova-banner {

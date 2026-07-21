@@ -4186,6 +4186,12 @@ function aprovaRenderDashboard () {
 
   aprovaRenderToday();
   aprovaRenderExamStats();
+
+  if (typeof aprovaMaybeShowWelcomeMascot === "function") {
+    aprovaMaybeShowWelcomeMascot();
+  } else if (typeof aprovaRenderInicioMascot === "function") {
+    aprovaRenderInicioMascot();
+  }
 }
 
 let aprovaPerfilActiveTab = 0;

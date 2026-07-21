@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721revcard1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721mascot1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -147,8 +147,13 @@
         <section id="panel-inicio" class="panel active" aria-labelledby="inicio-title">
           <h2 id="inicio-title" class="sr-only">Início</h2>
           <div class="inicio-welcome" id="inicio-welcome">
-            <p class="inicio-welcome-hello">Bem-vindo, <span id="dash-hello">estudante</span>.</p>
-            <p class="inicio-welcome-lead">Nem sempre quantidade é qualidade. Estude com intenção: menos itens bem feitos valem mais do que uma maratona sem revisão.</p>
+            <div class="inicio-mascot" id="inicio-mascot" hidden>
+              <img id="inicio-mascot-img" src="/assets/mascote.png" alt="Mascote MedHub R1" width="88" height="88">
+            </div>
+            <div class="inicio-welcome-copy">
+              <p class="inicio-welcome-hello">Bem-vindo, <span id="dash-hello">estudante</span>.</p>
+              <p class="inicio-welcome-lead">Nem sempre quantidade é qualidade. Estude com intenção: menos itens bem feitos valem mais do que uma maratona sem revisão.</p>
+            </div>
           </div>
 
           <div id="dash-profile-banner" class="aprova-banner">
@@ -954,6 +959,47 @@
   </div>
 
   <!-- Fora do app-shell para não herdar hidden/stacking e o quadro abrir sobre o app -->
+  <div id="welcome-mascot-modal" class="aprova-modal" hidden>
+    <div class="aprova-modal-backdrop" data-welcome-mascot-close></div>
+    <div class="aprova-modal-panel welcome-mascot-panel" role="dialog" aria-modal="true" aria-labelledby="welcome-mascot-title">
+      <div class="aprova-modal-head">
+        <div>
+          <p class="label" style="margin:0 0 0.25rem">MedHub R1</p>
+          <h3 id="welcome-mascot-title" class="esp-decks-title" style="margin:0">Olá!</h3>
+        </div>
+        <button type="button" class="btn btn-ghost btn-compact" data-welcome-mascot-close aria-label="Fechar">✕</button>
+      </div>
+      <div class="welcome-mascot-media">
+        <video
+          id="welcome-mascot-video"
+          class="welcome-mascot-video"
+          controls
+          playsinline
+          preload="metadata"
+          poster="/assets/mascote.png"
+        >
+          <source src="/assets/mascote-welcome.mp4" type="video/mp4">
+        </video>
+        <img
+          id="welcome-mascot-fallback"
+          class="welcome-mascot-fallback"
+          src="/assets/mascote.png"
+          alt="Mascote MedHub R1"
+          width="220"
+          height="220"
+          hidden
+        >
+      </div>
+      <p class="muted" id="welcome-mascot-caption" style="margin:0.85rem 0 0">
+        Bem-vindo ao MedHub R1.
+      </p>
+      <div class="aprova-modal-actions" style="margin-top:1.1rem">
+        <button type="button" class="btn btn-ghost" id="welcome-mascot-speak">Ouvir com meu nome</button>
+        <button type="button" class="btn btn-primary" data-welcome-mascot-close>Começar a estudar</button>
+      </div>
+    </div>
+  </div>
+
   <div id="study-mode-info-modal" class="aprova-modal" hidden>
     <div class="aprova-modal-backdrop" data-study-mode-info-close></div>
     <div class="aprova-modal-panel" role="dialog" aria-modal="true" aria-labelledby="study-mode-info-title">
@@ -1070,7 +1116,8 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721hojemetas1"></script>
+  <script src="js/welcome-mascot.js?v=20260721mascot1"></script>
+  <script src="js/app-qui.js?v=20260721mascot1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>
