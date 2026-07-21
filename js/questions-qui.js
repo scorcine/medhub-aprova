@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260720cirv2q";
+const APROVA_QUESTION_CACHE_VER = "20260720cirv2q2";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 
 function aprovaShuffleArray (arr) {

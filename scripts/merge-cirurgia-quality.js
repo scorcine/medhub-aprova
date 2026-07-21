@@ -69,8 +69,8 @@ function itemOk (q) {
 const WHITELIST = new Set([
   "cir-trauma-atls1.json",
   "cir-trauma-atls2.json",
+  "cir-trauma-atls3.json",
   "cir-abdome1.json"
-  // cir-trauma-atls3.json — entra após validação 100%
 ]);
 
 function main () {
