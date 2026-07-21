@@ -2571,6 +2571,56 @@ html[data-theme="dark"] .aprova-modal-panel {
   letter-spacing: -0.02em;
 }
 
+.provas-year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: 0.65rem;
+}
+
+.provas-year-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0.75rem 0.8rem;
+  border-radius: var(--radius-sm, 0.5rem);
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.provas-year-chip-year {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+}
+
+.provas-year-chip-status {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.provas-year-chip.is-ready {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line-strong));
+}
+
+.provas-year-chip.is-ready:hover,
+.provas-year-chip.is-ready:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.provas-year-chip:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .welcome-mascot-panel {
   width: min(28rem, 100%);
 }
