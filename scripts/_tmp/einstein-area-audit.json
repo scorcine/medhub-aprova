@@ -7,11 +7,11 @@
       "blockCount": 50,
       "gabCount": 50,
       "hist": {
-        "clinica": 28,
-        "pediatria": 7,
-        "go": 9,
-        "preventiva": 2,
-        "cirurgia": 4
+        "clinica": 11,
+        "cirurgia": 8,
+        "pediatria": 10,
+        "go": 11,
+        "preventiva": 10
       },
       "choiceHist": {
         "5": 50
@@ -26,63 +26,63 @@
             "stem": "Paciente sexo masculino, 45 anos, agricultor, foi levado ao pronto-socorro por quadro de fraqueza, diarreia, hipersalivação, vômitos há duas"
           },
           {
-            "n": 2,
+            "n": 29,
             "why": "default",
-            "stem": "qual passam artéria e veia femorais, é delimitado pelos músculos"
+            "stem": "pequenos e médios vasos, que acomete predominantemente homens, entre 40 e 60 anos. Febre é a manifestação clínica inicial mais comum e a pol"
           },
           {
-            "n": 4,
+            "n": 30,
             "why": "default",
-            "stem": "uma semana. Sua família optou por uma dieta vegana, ou seja, sem leite, sem ovo e sem nenhum tipo de carne. Está em acompanhamento com a nut"
+            "stem": "Paciente sexo feminino, 72 anos, hipertensa e diabética, deu entrada no pronto-socorro com quadro de desvio de rima labial para direita e he"
           },
           {
-            "n": 5,
+            "n": 32,
             "why": "default",
-            "stem": "Diagnóstico diferencial Pediatria Doença de Kawasaki A Síndrome InGamatória Multissistêmica em crianças e adolescentes associada à COVID-19 "
+            "stem": "Hb: 8,5 g/dL, VCM: 83 fL, CHCM: 32 pg, reticulócitos: 1%, ferro sérico: 40 μg/dL, TIBIC: 130 mmol/L, saturação de transferrina 22%, ferritin"
           }
         ],
         "cirurgia": [
           {
+            "n": 2,
+            "why": "cir-core",
+            "stem": "qual passam artéria e veia femorais, é delimitado pelos músculos"
+          },
+          {
+            "n": 44,
+            "why": "cir-core",
+            "stem": "associada à intubação orotraqueal de urgência, em doentes críticos:"
+          },
+          {
+            "n": 45,
+            "why": "cir-core",
+            "stem": "Um homem de 63 anos queixa-se de jato urinário fraco, noctúria e esforço miccional. A ultrassonografia de trato urinário constatou bexiga es"
+          },
+          {
             "n": 46,
-            "why": "cir-strong",
-            "stem": "Um homem de 56 anos, sem morbidades signiBcativas, está no pós-operatório imediato de hemorroidectomia à Milligan- Morgan. Refere muita dor "
-          },
-          {
-            "n": 47,
-            "why": "cir-strong",
-            "stem": "Medicina de Emergência Pediatria Clínica Médica Ortopedia e Traumatologia Profilaxia do Tromboembolismo Venoso Cirurgia Um homem de 33 anos,"
-          },
-          {
-            "n": 48,
-            "why": "cir-strong",
-            "stem": "Um senhor de 41 anos, tabagista e obeso mórbido, está no quarto pós-operatório de reoperação, por evisceração após colectomia direita, por n"
-          },
-          {
-            "n": 50,
-            "why": "cir-strong",
-            "stem": "Um homem de 35 anos está no segundo pós-operatório de sutura de úlcera gástrica, com patch de omento. Ainda não foi realimentado após a oper"
+            "why": "cir-core",
+            "stem": "Um homem de 56 anos, sem morbidades significativas, está no pós-operatório imediato de hemorroidectomia à Milligan- Morgan. Refere muita dor"
           }
         ],
         "pediatria": [
           {
             "n": 3,
             "why": "rn-neonatal",
-            "stem": "Cardiopatias congênitas Cuidados pós-natais Recém-nascido, filho de mãe diabética com 38 semanas, parto cesárea por macrossomia fetal e card"
+            "stem": "Recém-nascido, filho de mãe diabética com 38 semanas, parto cesárea por macrossomia fetal e cardiotocograBa não tranquilizadora, apresenta A"
+          },
+          {
+            "n": 4,
+            "why": "manual",
+            "stem": "uma semana. Sua família optou por uma dieta vegana, ou seja, sem leite, sem ovo e sem nenhum tipo de carne. Está em acompanhamento com a nut"
+          },
+          {
+            "n": 5,
+            "why": "ped-theme",
+            "stem": "Pediatria Doença de Kawasaki A Síndrome Inflamatória Multissistêmica em crianças e adolescentes associada à COVID-19 apresenta manifestações"
           },
           {
             "n": 6,
             "why": "pediatric-patient",
             "stem": "Paciente, sexo feminino, 3 anos de idade, é levada ao pediatra com história de manchas avermelhadas em face e posteriormente em tronco e ext"
-          },
-          {
-            "n": 8,
-            "why": "pediatric-theme",
-            "stem": "Na consulta de 4 anos de idade, Susi pesou 17,8 kg (escore-z entre 0 e +1), mediu 99 cm (escore-z entre −1 e 0). O escore-z do peso para est"
-          },
-          {
-            "n": 9,
-            "why": "pediatric-patient",
-            "stem": "Criança de 5 anos de idade é atendida com queixa de apresentar, 30 minutos após a ingestão de alimentos, alterações cutâneas, com placas eri"
           }
         ],
         "go": [
@@ -98,7 +98,7 @@
           },
           {
             "n": 13,
-            "why": "go-strong",
+            "why": "go-gestation",
             "stem": "na pré-eclâmpsia:"
           },
           {
@@ -111,12 +111,22 @@
           {
             "n": 15,
             "why": "prev-strong",
-            "stem": "NR6 Equipamento de Proteção Individual Dentre as medidas a serem implementadas para a prevenção e o controle da disseminação do SARS-CoV-2 e"
+            "stem": "serem implementadas para a prevenção e o controle da disseminação do SARS-CoV-2 em serviços hospitalares, a Agência Nacional de Vigilância S"
+          },
+          {
+            "n": 16,
+            "why": "manual",
+            "stem": "de órgãos e tecidos, é correto afirmar:"
+          },
+          {
+            "n": 17,
+            "why": "prev-core",
+            "stem": "sobre a doença causada pelo coronavírus (COVID-19) podem ser acessados pelos Boletins Epidemiológicos Especiais do Ministério da Saúde do Br"
           },
           {
             "n": 18,
-            "why": "prev-strong",
-            "stem": "Outras Vigilâncias em Saúde Sistemas de Informação em Saúde SIS e Bases de dados do SUS Vigilância em Saúde A questão da administração abusi"
+            "why": "manual",
+            "stem": "um paciente leucêmico é do escopo:"
           }
         ]
       }
@@ -128,11 +138,11 @@
       "blockCount": 75,
       "gabCount": 75,
       "hist": {
-        "clinica": 43,
-        "pediatria": 15,
-        "preventiva": 2,
-        "go": 11,
-        "cirurgia": 4
+        "clinica": 30,
+        "pediatria": 13,
+        "preventiva": 5,
+        "cirurgia": 11,
+        "go": 16
       },
       "choiceHist": {
         "4": 75
@@ -164,24 +174,24 @@
         ],
         "cirurgia": [
           {
+            "n": 12,
+            "why": "cir-core",
+            "stem": "Paciente de 4 anos de idade previamente hígido estava internado com pneumonia bilateral na enfermaria. Evoluiu com insu8ciência respiratória"
+          },
+          {
+            "n": 40,
+            "why": "cir-core",
+            "stem": "Paciente sexo feminino, 45 anos, tabagista, realizou cirurgia de abdominoplastia há 2 semanas, procura o pronto-socorro com queixa de dor to"
+          },
+          {
+            "n": 42,
+            "why": "cir-strong",
+            "stem": "Paciente sexo masculino, 25 anos, vítima de acidente de moto versus auto, com traumatismo cranioencefálico grave, evolui com pupilas médio f"
+          },
+          {
             "n": 62,
-            "why": "cir-strong",
+            "why": "cir-core",
             "stem": "uma colectomia direita por neoplasia de ceco, com acesso por laparotomia, numa paciente de 50 kg. A previsão é que a operação dure 3 horas. "
-          },
-          {
-            "n": 68,
-            "why": "cir-strong",
-            "stem": "uma paciente que será submetida a gastrectomia por laparotomia, como deve ser disposto o material de diérese, hemostasia, afastadores e sínt"
-          },
-          {
-            "n": 70,
-            "why": "cir-strong",
-            "stem": "Um homem de 61 anos, com IMC: 29 kg/m², que nunca fumou nem tem doença pulmonar, foi submetido à operação de Hartmann, por abdômen agudo obs"
-          },
-          {
-            "n": 75,
-            "why": "cir-strong",
-            "stem": "No idoso com hérnia umbilical encarcerada agudamente, irredutível, com dor, sem evidências clínicas ou laboratoriais de estrangulamento, a s"
           }
         ],
         "pediatria": [
@@ -197,7 +207,7 @@
           },
           {
             "n": 5,
-            "why": "pediatric-patient",
+            "why": "rn-neonatal",
             "stem": "no RN Recém-nascido pré-termo tardio, com 36 semanas e 4 dias de idade gestacional, é levado ao pronto-socorro no quinto dia de vida com que"
           },
           {
@@ -235,6 +245,16 @@
             "stem": "Paciente de 3 anos de idade apresenta abscesso quente no braço, 55 horas após receber dose de vacina adsorvida para difteria, tétano e pertú"
           },
           {
+            "n": 25,
+            "why": "manual",
+            "stem": "Uma pesquisa indicou que, em duas cidades, os números de cirurgias em pacientes com câncer de próstata eram distintos e a diferença não era "
+          },
+          {
+            "n": 27,
+            "why": "manual",
+            "stem": "Considere a 8gura abaixo, referente a um estudo com lavradores de uma região agrícola e seu risco de desenvolver quadros de intoxicação ao l"
+          },
+          {
             "n": 28,
             "why": "prev-strong",
             "stem": "na APS Um programa de promoção da saúde, para prevenir e controlar doenças cardíacas, diabetes tipo 2 e câncer, bem como para reduzir os sin"
@@ -249,10 +269,11 @@
       "blockCount": 75,
       "gabCount": 75,
       "hist": {
-        "clinica": 43,
-        "pediatria": 15,
-        "go": 12,
-        "cirurgia": 5
+        "clinica": 27,
+        "pediatria": 18,
+        "cirurgia": 9,
+        "go": 19,
+        "preventiva": 2
       },
       "choiceHist": {
         "4": 75
@@ -272,53 +293,53 @@
             "stem": "Uma mulher de 23 anos de idade foi encaminhada para a UTI, após tentativa de suicídio, com quadro de agitação, delirium, em midríase, hipert"
           },
           {
-            "n": 3,
+            "n": 28,
             "why": "default",
-            "stem": "na Pessoa Psiquiatria Fábio, 19 anos, homem transgênero, negro, estudante cotista de administração em uma faculdade particular. Acompanhado "
+            "stem": "Mulher, 26 anos de idade, proMssional do sexo, dá entrada em pronto-socorro com dor tipo cólica suprapúbica de moderada intensidade e sangra"
           },
           {
-            "n": 4,
+            "n": 29,
             "why": "default",
-            "stem": "Homem, 62 anos de idade, é levado a um pronto atendimento com queixa de tontura e sensação de que o ambiente está girando. Refere ter tido n"
+            "stem": "Considere o caso abaixo para responder à questão Uma queixa frequente de pacientes que tiveram Covid-19 é de uma alteração cognitiva leve, c"
           }
         ],
         "cirurgia": [
           {
+            "n": 4,
+            "why": "cir-strong",
+            "stem": "Homem, 62 anos de idade, é levado a um pronto atendimento com queixa de tontura e sensação de que o ambiente está girando. Refere ter tido n"
+          },
+          {
+            "n": 45,
+            "why": "cir-strong",
+            "stem": "Homem de 35 anos de idade, vítima de colisão moto × auto, chega ao pronto-socorro imobilizado em prancha rígida, com colar cervical. Dados n"
+          },
+          {
+            "n": 46,
+            "why": "cir-core",
+            "stem": "Um paciente de 58 anos de idade sofreu queda de aproximadamente 6 metros. Atendido na cena, ele consegue falar seu nome, tem pulso de 115 bp"
+          },
+          {
             "n": 66,
             "why": "cir-strong",
             "stem": "Homem de 48 anos de idade é acompanhado por dor em cólica há cerca de 3 anos. A dor é referida em região epigástrica e ocorre quase sempre a"
-          },
-          {
-            "n": 67,
-            "why": "cir-strong",
-            "stem": "Um homem de 35 anos de idade, com antecedente de hérnia incisional há 2 anos, decorrente de laparotomia mediana por ferimento de arma branca"
-          },
-          {
-            "n": 68,
-            "why": "cir-strong",
-            "stem": "Homem de 68 anos de idade tem hérnia inguinoescrotal volumosa, cronicamente encarcerada, há 5 anos. É hipertenso, diabético e dislipidêmico."
-          },
-          {
-            "n": 70,
-            "why": "cir-strong",
-            "stem": "Um paciente de 49 anos está em sala operatória para ser operado por abdome agudo obstrutivo, secundário a neoplasia de cólon sigmoide. Comor"
           }
         ],
         "pediatria": [
           {
-            "n": 5,
+            "n": 3,
             "why": "pediatric-patient",
-            "stem": "Na consulta de rotina de um lactente de 40 dias de vida, o médico nota que a criança apresenta estridor inspiratório ao choro. A mãe realizo"
-          },
-          {
-            "n": 6,
-            "why": "pediatric-patient",
-            "stem": "Lactente do sexo masculino de 3 meses de idade chega para consulta de rotina na Unidade Básica de Saúde. A mãe realizou prénatal adequado, s"
+            "stem": "na Pessoa Psiquiatria Fábio, 19 anos, homem transgênero, negro, estudante cotista de administração em uma faculdade particular. Acompanhado "
           },
           {
             "n": 7,
             "why": "rn-neonatal",
             "stem": "Primigesta, 15 anos, com pré-natal tardio, dá à luz um recém-nascido com 38 semanas e peso de 1.894 g. Ao exame na sala de parto observou-se"
+          },
+          {
+            "n": 8,
+            "why": "rn-neonatal",
+            "stem": "neonato com boa vitalidade Neonato de 40 semanas nasceu de parto cesáreo por alteração na cardiotocografia e líquido amniótico meconial bem "
           },
           {
             "n": 9,
@@ -328,6 +349,16 @@
         ],
         "go": [
           {
+            "n": 5,
+            "why": "obstetric-case",
+            "stem": "Na consulta de rotina de um lactente de 40 dias de vida, o médico nota que a criança apresenta estridor inspiratório ao choro. A mãe realizo"
+          },
+          {
+            "n": 6,
+            "why": "obstetric-case",
+            "stem": "Lactente do sexo masculino de 3 meses de idade chega para consulta de rotina na Unidade Básica de Saúde. A mãe realizou prénatal adequado, s"
+          },
+          {
             "n": 21,
             "why": "obstetric-case",
             "stem": "na gestação Primigesta de 20 semanas de idade gestacional apresenta quadro de tosse e leve dor de garganta. Teste para Covid-19 positivo. Ne"
@@ -336,19 +367,20 @@
             "n": 22,
             "why": "obstetric-case",
             "stem": "Gestante 7 semanas vai à primeira consulta de pré-natal. É hígida e refere ser doadora de sangue frequente. A última doação foi há 2 meses, "
-          },
-          {
-            "n": 23,
-            "why": "obstetric-case",
-            "stem": "uma maternidade de São Paulo, durante a passagem de plantão, dois colegas começam a discutir sobre uma paciente em trabalho de parto: primig"
-          },
-          {
-            "n": 24,
-            "why": "obstetric-case",
-            "stem": "na gestação DHEG Obstetrícia Primigesta, 31 anos de idade, gestante no 3º trimestre (36 semanas), realizando consultas de pré-natal a cada 3"
           }
         ],
-        "preventiva": []
+        "preventiva": [
+          {
+            "n": 11,
+            "why": "manual",
+            "stem": "No segundo semestre de 2022, entre os meses de julho a setembro, a cidade de São Paulo registrou um surto de meningite. Com o intuito de pre"
+          },
+          {
+            "n": 30,
+            "why": "manual",
+            "stem": "um estudo sobre a eficácia de uma vacina contra a Covid-19. Os resultados foram os seguintes: De acordo com os dados acima, a eficácia desta"
+          }
+        ]
       }
     },
     "2024": {
@@ -358,11 +390,11 @@
       "blockCount": 75,
       "gabCount": 75,
       "hist": {
-        "pediatria": 12,
-        "clinica": 42,
-        "go": 13,
-        "preventiva": 3,
-        "cirurgia": 5
+        "pediatria": 17,
+        "clinica": 20,
+        "go": 21,
+        "preventiva": 6,
+        "cirurgia": 11
       },
       "choiceHist": {
         "4": 75
@@ -374,22 +406,22 @@
           {
             "n": 2,
             "why": "default",
-            "stem": "Paciente masculino, 54 anos, procura pronto-socorro por dor lombar há 30 dias, com piora progressiva e irradiação para membros inferiores, p"
+            "stem": "masculino, 54 anos, procura pronto-socorro por dor lombar há 30 dias, com piora progressiva e irradiação para membros inferiores, principalm"
           },
           {
-            "n": 6,
+            "n": 34,
             "why": "default",
-            "stem": "Tratamento Púrpura de HenochSchöinleinVasculite por IgA Pediatria PFJ, cinco anos de idade, sexo feminino, comparece ao pronto atendimento l"
+            "stem": "Homem trans homossexual, 34 anos de idade, sexualmente ativo, dá entrada no pronto-socorro referindo sangramento genital vultuoso há 3 dias "
           },
           {
-            "n": 9,
-            "why": "default",
-            "stem": "Criança de 1 ano de idade, sem anormalidades cardíacas detectadas previamente, é levada ao pronto-socorro pelos pais por acharem que o \"cora"
+            "n": 40,
+            "why": "clin-strong",
+            "stem": "Homem, 75 anos de idade, procura pronto-socorro por dispneia de longa data, principalmente ao subir ladeiras, com piora progressiva há 3 dia"
           },
           {
-            "n": 10,
-            "why": "default",
-            "stem": "Maria, seis anos de idade, apresenta quadro de febre até 38,5 °C, cefaleia, artralgias e exantema morbiliforme de aspecto rendilhado em face"
+            "n": 41,
+            "why": "clin-strong",
+            "stem": "Mulher, 68 anos, com diagnóstico de DPOC, ex-tabagista com carga tabágica de 80 maços-ano, comparece em consulta de seguimento com queixa de"
           }
         ],
         "cirurgia": [
@@ -399,19 +431,19 @@
             "stem": "Paciente de 25 anos, usuário de crack é submetido a laparotomia por pneumoperitônio e sepse grave, necessitando de noradrenalina para manter"
           },
           {
+            "n": 66,
+            "why": "cir-core",
+            "stem": "Paciente de 73 anos está internada por quadro de distensão abdominal, inapetência e parada de eliminação de gases e fezes há 5 dias. Anteced"
+          },
+          {
             "n": 67,
             "why": "cir-strong",
             "stem": "na Doença de Crohn Íleo Paralítico Paciente de 17 anos, IMC: 20 kg/m², vai ao pronto-socorro com dor abdominal difusa há 6 meses, contínua, "
           },
           {
-            "n": 70,
-            "why": "cir-strong",
-            "stem": "no trauma Condutas Paciente de 35 anos, vítima de acidente com veículo automotor. No serviço de emergência está instável, com pressão arteri"
-          },
-          {
-            "n": 71,
-            "why": "cir-strong",
-            "stem": "Paciente masculino, 71 anos, vai ao pronto-socorro queixando-se dor abdominal, em cólica, difusa, associada a parada de eliminação de Datos "
+            "n": 68,
+            "why": "cir-core",
+            "stem": "Paciente com 62 anos vai ao pronto-socorro com dor em hipocôndrio direito, com irradiação para o dorso, associada a náuseas e vômitos, há 1 "
           }
         ],
         "pediatria": [
@@ -427,13 +459,13 @@
           },
           {
             "n": 5,
-            "why": "rn-neonatal",
+            "why": "pediatric-patient",
             "stem": "Amamentação Aleitamento Materno Hiperbilirrubinemia direta neonatal Recém-nascida apresentou a seguinte evolução (conforme a imagem): Com 20"
           },
           {
-            "n": 7,
+            "n": 6,
             "why": "pediatric-patient",
-            "stem": "Lactente de 6 meses, sexo masculino, apresenta fontanela bregmática fechada e perímetro cefálico (PC) de 40,5 cm (escore z de PC para idade "
+            "stem": "Pediatria PFJ, cinco anos de idade, sexo feminino, comparece ao pronto atendimento levada por seus pais, devido a história de lesões purpúri"
           }
         ],
         "go": [
@@ -455,24 +487,29 @@
           {
             "n": 16,
             "why": "obstetric-case",
-            "stem": "na gestação Diagnóstico Tratamento das parcerias sexuais Marina, 25 anos, gestante de 20 semanas, realiza seu primeiro pré-natal na Unidade "
+            "stem": "gestante de 20 semanas, realiza seu primeiro pré-natal na Unidade Básica de Saúde (UBS) onde é cadastrada. Relata que ainda não fez nenhum e"
           }
         ],
         "preventiva": [
           {
+            "n": 23,
+            "why": "prev-core",
+            "stem": "Prevenção Quaternária Níveis de Prevenção e outros conceitos associados Rafael, 40 anos, bancário, procura atendimento médico por apresentar"
+          },
+          {
             "n": 24,
             "why": "prev-strong",
-            "stem": "Medicina Preventiva Atributos gerais da Atenção Primária à Saúde APS Joana, 45 anos, hipertensa e diabética, procura a Unidade Básica de Saú"
+            "stem": "Atributos gerais da Atenção Primária à Saúde APS Joana, 45 anos, hipertensa e diabética, procura a Unidade Básica de Saúde (UBS) onde é acom"
           },
           {
-            "n": 28,
-            "why": "prev-strong",
-            "stem": "Bioética Medicina Preventiva Ética Médica Clarice, 48 anos, procurou a unidade básica de saúde da comunidade onde vive por apresentar dor de"
+            "n": 26,
+            "why": "prev-core",
+            "stem": "No ano de 2020, em um município no interior de São Paulo, com 100.000 habitantes, foram notiOcados 2.000 óbitos. Dentre estes, 50 foram por "
           },
           {
-            "n": 50,
-            "why": "prev-strong",
-            "stem": "Paciente feminina de 62 anos com história de enterorragia e perda ponderal de 8 kg vai ao pronto-socorro com fadiga, dores no ânus e hipogás"
+            "n": 27,
+            "why": "prev-core",
+            "stem": "No ano de 2020, em um município no interior de São Paulo, com 100.000 habitantes, foram notiOcados 2.000 óbitos. Dentre estes, 50 foram por "
           }
         ]
       }
@@ -484,11 +521,11 @@
       "blockCount": 75,
       "gabCount": 75,
       "hist": {
-        "preventiva": 5,
-        "clinica": 42,
-        "pediatria": 13,
-        "go": 10,
-        "cirurgia": 5
+        "preventiva": 7,
+        "pediatria": 15,
+        "go": 12,
+        "clinica": 34,
+        "cirurgia": 7
       },
       "choiceHist": {
         "4": 75
@@ -498,16 +535,6 @@
       "samples": {
         "clinica": [
           {
-            "n": 2,
-            "why": "default",
-            "stem": "Uma paciente com transtorno por uso de álcool chega a um Centro de Atenção Psicossocial (CAPS) solicitando apoio para >car abstinente. Crist"
-          },
-          {
-            "n": 12,
-            "why": "default",
-            "stem": "Adolescente de 12 anos, sexo feminino, comparece à consulta de rotina com pediatra. Apresenta desenvolvimento puberal em estágio M3P3 de Tan"
-          },
-          {
             "n": 15,
             "why": "default",
             "stem": "Um paciente do sexo masculino de 37 anos de idade, portador de doença de Crohn, atualmente em uso de adalimumabe 40 mg em infusões quinzenai"
@@ -516,6 +543,16 @@
             "n": 18,
             "why": "default",
             "stem": "Paciente de 40 anos comparece à consulta obstétrica pré-concepção. Encontra-se com obesidade grau I e diabetes tipo 2 há 8 anos, em uso de m"
+          },
+          {
+            "n": 19,
+            "why": "default",
+            "stem": "Paciente IIGIPN, 35 anos, primeira gestação com o atual parceiro, apresenta-se na 35ª semana gestacional com PA: 173 x 121 mmHg, confirmada "
+          },
+          {
+            "n": 20,
+            "why": "default",
+            "stem": "Mulher de 28 anos, com atraso menstrual de 7 semanas, refere sangramento vaginal associado a dor em baixo ventre. Assinale a alternativa que"
           }
         ],
         "cirurgia": [
@@ -525,19 +562,19 @@
             "stem": "Mulher, 70 anos, DM tipo 2 e HAS, ambas com controle adequado. Hematoquezia há 3 meses. Refere emagrecimento não intencional de 10 kg, em 6 "
           },
           {
+            "n": 57,
+            "why": "cir-core",
+            "stem": "Paciente do sexo masculino, 58 anos, vem por quadro de hematêmese e melena há 2 horas. Acompanhante refere que esse é o segundo episódio de "
+          },
+          {
             "n": 71,
-            "why": "cir-strong",
+            "why": "cir-core",
             "stem": "Homem, 22 anos, vítima de queda de motocicleta a 50 km/h, sem capacete, há 30 minutos. Trazido pelo resgate em prancha rígida e com colar ce"
           },
           {
-            "n": 73,
+            "n": 72,
             "why": "cir-strong",
-            "stem": "Paciente vítima de trauma moto versus auto foi diagnosticado com pneumotórax direito, e esse paciente foi drenado pelo médico que o atendeu."
-          },
-          {
-            "n": 74,
-            "why": "cir-strong",
-            "stem": "Paciente do sexo masculino, 35 anos, foi submetido à hernioplastia inguinal direita, por via laparoscópica, pela técnica transabdominal pré-"
+            "stem": "Homem, 22 anos, vítima de colisão de carro a 70 km/h contra um caminhão; o condutor estava sem cinto de segurança. Dados locais: PA 100 x 70"
           }
         ],
         "pediatria": [
@@ -549,7 +586,7 @@
           {
             "n": 4,
             "why": "pediatric-patient",
-            "stem": "Um menino de 4 anos com diagnóstico de TDAH (transtorno do dé>cit de atenção com hiperatividade) é levado ao pronto- socorro pela avó matern"
+            "stem": "menino de 4 anos com diagnóstico de TDAH (transtorno do dé>cit de atenção com hiperatividade) é levado ao pronto- socorro pela avó materna d"
           },
           {
             "n": 6,
@@ -559,7 +596,7 @@
           {
             "n": 7,
             "why": "pediatric-patient",
-            "stem": "escolar de 3 anos com episódios recorrentes de febre alta (acima de 39 ºC), com duração de 3 a 5 dias, associados a dor de garganta, estomat"
+            "stem": "episódios recorrentes de febre alta (acima de 39 ºC), com duração de 3 a 5 dias, associados a dor de garganta, estomatite aftosa e adenite c"
           }
         ],
         "go": [
@@ -576,12 +613,12 @@
           {
             "n": 17,
             "why": "obstetric-case",
-            "stem": "na gestação Testes imunológicos Diagnóstico da sífilis Gestante com sorologias de sí>lis não reagentes, no início do pré-natal, retorna na 2"
+            "stem": "Gestante com sorologias de sí>lis não reagentes, no início do pré-natal, retorna na 28ª semana com teste treponêmico positivo. É correto afi"
           },
           {
-            "n": 30,
+            "n": 21,
             "why": "obstetric-case",
-            "stem": "Redes de Atenção à Saúde RAS Projeto Terapêutico Singular Atenção Primária à Saúde APS no Brasil Um médico de família e comunidade em uma un"
+            "stem": "Paciente de 30 anos, antecedente de hipotireoidismo e hipertensão crônica, encontra-se na primeira hora do puerpério de parto vaginal gemela"
           }
         ],
         "preventiva": [
@@ -589,6 +626,11 @@
             "n": 1,
             "why": "prev-strong",
             "stem": "Qual das alternativas a seguir descreve, corretamente, as características da população assistida pela Atenção Primária à Saúde (APS) no Bras"
+          },
+          {
+            "n": 2,
+            "why": "prev-policy",
+            "stem": "Uma paciente com transtorno por uso de álcool chega a um Centro de Atenção Psicossocial (CAPS) solicitando apoio para ficar abstinente. Cris"
           },
           {
             "n": 24,
@@ -599,11 +641,6 @@
             "n": 25,
             "why": "prev-epi-method",
             "stem": "Sobre revisão sistemática e meta-análise, assinale a alternativa correta."
-          },
-          {
-            "n": 26,
-            "why": "prev-epi-method",
-            "stem": "um ensaio clínico controlado, o planejamento de delineamento de cross-over"
           }
         ]
       }
@@ -615,11 +652,11 @@
       "blockCount": 75,
       "gabCount": 75,
       "hist": {
-        "preventiva": 4,
-        "clinica": 40,
-        "pediatria": 13,
-        "go": 13,
-        "cirurgia": 5
+        "pediatria": 14,
+        "clinica": 31,
+        "preventiva": 7,
+        "go": 15,
+        "cirurgia": 8
       },
       "choiceHist": {
         "4": 75
@@ -628,11 +665,6 @@
       "sampleIssues": [],
       "samples": {
         "clinica": [
-          {
-            "n": 2,
-            "why": "default",
-            "stem": "Christian tem 16 anos e foi à UBS sozinho buscar ajuda. Está preocupado porque fuma desde os 12 anos, e ontem seu tio foi internado por toss"
-          },
           {
             "n": 4,
             "why": "default",
@@ -647,31 +679,46 @@
             "n": 20,
             "why": "default",
             "stem": "Um paciente de 62 anos, com histórico de hipertensão e diabetes, é atendido em pronto-socorro de um município do interior por um médico plan"
+          },
+          {
+            "n": 21,
+            "why": "default",
+            "stem": "Young et al. (“Glucose self-monitoring in non-insulin-treated patients with type 2 diabetes in primary care settings: a randomized trial”) e"
           }
         ],
         "cirurgia": [
           {
             "n": 40,
-            "why": "cir-strong",
+            "why": "cir-core",
             "stem": "Um paciente de 7 anos encontra-se internado em UTI pediátrica devido a queimaduras que acometem 40% da superfície corpórea. Está intubado e "
           },
           {
+            "n": 55,
+            "why": "cir-core",
+            "stem": "Homem de 32 anos, previamente hígido, com história de dor abdominal em andar superior de forte intensidade há 2 dias, associada a dois episó"
+          },
+          {
+            "n": 64,
+            "why": "cir-core",
+            "stem": "Homem de 28 anos sofreu trauma doméstico com serra elétrica, evoluindo com perda de substância na ponta do II quirodáctilo direito, com expo"
+          },
+          {
             "n": 67,
-            "why": "cir-strong",
+            "why": "cir-core",
             "stem": "Homem de 47 anos foi submetido a hemorroidectomia aberta por doença hemorroidária grau III pela técnica de Milligan- Morgan. Evoluiu bem no "
-          },
-          {
-            "n": 70,
-            "why": "cir-strong",
-            "stem": "Uma mulher de 35 anos foi socorrida pelo resgate após incêndio no seu local de trabalho. A paciente trabalhava em um ambiente pequeno e fech"
-          },
-          {
-            "n": 71,
-            "why": "cir-strong",
-            "stem": "Mulher de 42 anos, vítima de capotamento de veículo a 90 km/h seguido de colisão com árvore, há uma hora, condutora do veículo, com cinto de"
           }
         ],
         "pediatria": [
+          {
+            "n": 1,
+            "why": "pediatric-patient",
+            "stem": "Lúcia, 74 anos, viúva, aposentada, vive sozinha e apresenta hipertensão controlada com losartana, além de insuficiência renal leve (TFG esti"
+          },
+          {
+            "n": 2,
+            "why": "manual",
+            "stem": "Christian tem 16 anos e foi à UBS sozinho buscar ajuda. Está preocupado porque fuma desde os 12 anos, e ontem seu tio foi internado por toss"
+          },
           {
             "n": 3,
             "why": "pediatric-patient",
@@ -681,16 +728,6 @@
             "n": 5,
             "why": "pediatric-patient",
             "stem": "Uma criança do sexo feminino, 4 anos, é levada ao pronto atendimento com história de febre há 48 horas, de até 38,8 ºC. Nas últimas 12 horas"
-          },
-          {
-            "n": 6,
-            "why": "pediatric-patient",
-            "stem": "Lactente de 5 meses é admitido no pronto-socorro com febre há 6 dias, conjuntivite bilateral não purulenta, língua em framboesa, exantema po"
-          },
-          {
-            "n": 7,
-            "why": "pediatric-patient",
-            "stem": "Menina de 1 ano e 8 meses, previamente saudável, apresenta febre há 3 dias, irritabilidade, recusa alimentar e vômitos isolados. Ao exame, e"
           }
         ],
         "go": [
@@ -717,14 +754,14 @@
         ],
         "preventiva": [
           {
-            "n": 1,
-            "why": "prev-strong",
-            "stem": "Lúcia, 74 anos, viúva, aposentada, vive sozinha e apresenta hipertensão controlada com losartana, além de insuficiência renal leve (TFG esti"
-          },
-          {
             "n": 12,
             "why": "prev-strong",
             "stem": "Quanto à vigilância do bem-estar fetal diante de quadro de restrição do crescimento, é correto afirmar que"
+          },
+          {
+            "n": 22,
+            "why": "manual",
+            "stem": "Forde et al. publicaram recentemente (“Overall survival with neoadjuvant nivolumab plus chemotherapy in lung cancer”) os resultados de sobre"
           },
           {
             "n": 24,
@@ -741,11 +778,11 @@
     }
   },
   "totals": {
-    "clinica": 238,
-    "cirurgia": 28,
-    "pediatria": 75,
-    "go": 68,
-    "preventiva": 16
+    "clinica": 153,
+    "cirurgia": 54,
+    "pediatria": 87,
+    "go": 94,
+    "preventiva": 37
   },
   "note": "Einstein/HIAE — áreas por enunciado (conteúdo-first). Banco AINDA NÃO gerado — aguardando ok."
 }

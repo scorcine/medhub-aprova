@@ -13,6 +13,17 @@ const OVR_DIR = path.join(OUT_DIR, "area-overrides");
 const YEARS = [2021, 2022, 2023, 2024, 2025, 2026];
 const EXAM_ID = "einstein";
 const EXAM_LABEL = "Einstein (HIAE)";
+const MANUAL_PATH = path.join(__dirname, "einstein-manual-areas.json");
+let MANUAL = Object.create(null);
+try {
+  const raw = JSON.parse(fs.readFileSync(MANUAL_PATH, "utf8"));
+  Object.keys(raw || {}).forEach((k) => {
+    if (k.startsWith("_")) return;
+    MANUAL[k] = raw[k];
+  });
+} catch {
+  MANUAL = Object.create(null);
+}
 
 const THEME_LABEL = {
   clinica: "Clínica médica",
@@ -197,12 +208,14 @@ function expectedAltCount (year, gabMap) {
 }
 
 const SPEC_TAG =
-  /^(?:Ginecologia(?: e Obstetrícia)?|Obstetrícia|Psiquiatria|Cirurgia(?: Geral| Básica| Cardiovascular| Pediátrica)?|Ortopedia(?: e Traumatologia)?|Oftalmologia|Otorrinolaringologia|Pediatria|Patologia|Medicina da Família(?: e Comunidade)?|Medicina de Família|Medicina do Trabalho|Neurocirurgia|Neurologia|Anestesiologia|Infectologia|Radiologia(?: e Diagnóstico por Imagem)?|Cardiologia|Hepatologia|Hematologia(?: Pediátrica)?|Pneumologia|Clínica Médica|Dermatologia|Urologia|Endocrinologia|Nefrologia|Reumatologia|Saúde Pública|Público\s*-\s*Municipal|Público\s*-\s*Estadual|\d+\s*anos)\b\s*/i;
+  /^(?:Ginecologia(?: e Obstetrícia)?|Obstetrícia|Psiquiatria|Cirurgia(?: Geral| Básica| Cardiovascular| Pediátrica| Vascular)?|Ortopedia(?: e Traumatologia)?|Oftalmologia|Otorrinolaringologia|Pediatria|Patologia|Medicina de Emergência|Medicina Preventiva|Medicina da Família(?: e Comunidade)?|Medicina de Família|Medicina do Trabalho|Neurocirurgia|Neurologia|Anestesiologia|Infectologia|Radiologia(?: e Diagnóstico por Imagem)?|Cardiologia|Hepatologia|Hematologia(?: Pediátrica)?|Pneumologia|Clínica Médica|Dermatologia|Urologia|Endocrinologia|Nefrologia|Reumatologia|Saúde Pública|Epidemiologia|Mastologia|Público\s*-\s*Municipal|Público\s*-\s*Estadual|\d+\s+anos)\b\s*/i;
+
+const TOPIC_PREFIX =
+  /^(?:Diagnóstico diferencial|Doen[cç]a de Kawasaki|Programa Nacional de Imuniza[cç][oõ]es|NR6[^\n]{0,60}|Outras Vigilâncias[^\n]{0,80}|Sistemas de Informa[cç][aã]o[^\n]{0,80}|Vigilância em Sa[uú]de|Índice de Vulnerabilidade[^\n]{0,40}|Hierarquia das Evidências|O sistema GRADE|Medidas de Desempenho[^\n]{0,80}|Medidas de Performance[^\n]{0,80}|Anatomia do Assoalho[^\n]{0,40}|Tratamento cir[uú]rgico|Poliarterite nodosa[^\n]{0,20}|Acidentes Vasculares[^\n]{0,60}|Manejo da Nefropatia[^\n]{0,40}|Indica[cç][oõ]es de rastreio[^\n]{0,40}|Vias A[eé]reas[^\n]{0,60}|Profilaxia do Tromboembolismo[^\n]{0,40}|Trauma Cervical|Doa[cç][aã]o e transplante[^\n]{0,40}|Cardiopatias cong[eê]nitas|Cuidados p[oó]s-?natais|Quadro cl[ií]nico[^\n]{0,60}|Tratamento[^\n]{0,50}|Patologias Auditivas|Audiologia|Exames Audiol[oó]gicos|Transtorno do Humor[^\n]{0,40}|Diagn[oó]stico da Depress[aã]o|Depress[aã]o)\s+/i;
 
 function stripSpecialtyDump (stem) {
   let s = String(stem || "").replace(/\s+/g, " ").trim();
-  // Remove prefixo de tags de especialidade (comum no material 2021)
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 50; i++) {
     const m = s.match(SPEC_TAG);
     if (!m) break;
     s = s.slice(m[0].length).trim();
@@ -212,14 +225,29 @@ function stripSpecialtyDump (stem) {
 
 function findClinicalStart (s) {
   const re =
-    /\b(?:Sobre|Qual|Assinale|Observe|Em qual|Em relação|Um|Uma|Homem|Mulher|Paciente|Criança|Menino|Menina|Recém-nasc|\bRN\b|Dona|Lactente|Gestante|Primigesta|Adolescente|Escolar|João|Maria|Cleiton|Na |No |A política|A correta|Durante|Você está|O tratamento|As hérnias|Lesões)\b/i;
+    /\b(?:Sobre|Qual|Assinale|Observe|Em qual|Em rela[cç][aã]o|Um|Uma|Homem|Mulher|Paciente|Crian[cç]a|Menino|Menina|Rec[eé]m-nasc|\bRN\b|Neonato|Dona|Lactente|Gestante|Primigesta|Adolescente|Escolar|Jo[aã]o|Maria|Cleiton|Cec[ií]lia|Felipe|L[uú]cia|Christian|Aurora|Susi|Na |No |A pol[ií]tica|A correta|Durante|Voc[eê] est[aá]|O tratamento|As h[eé]rnias|Les[oõ]es|Dentre|Considere|Analise|De acordo)\b/i;
   const m = re.exec(s);
   return m ? m.index : -1;
 }
 
 function cleanStemText (stem) {
-  let s = String(stem || "").replace(/\s+/g, " ").trim();
-  for (let i = 0; i < 8; i++) {
+  let s = String(stem || "")
+    .replace(/\s+/g, " ")
+    .replace(/InGamatória/gi, "Inflamatória")
+    .replace(/inGuenza/gi, "influenza")
+    .replace(/modiBca/gi, "modifica")
+    .replace(/signiBc/gi, "signific")
+    .replace(/ultrassonograBa/gi, "ultrassonografia")
+    .replace(/Guxo/gi, "fluxo")
+    .replace(/8xas/gi, "fixas")
+    .replace(/re>exos/gi, "reflexos")
+    .replace(/>car/gi, "ficar")
+    .replace(/hipo%sário/gi, "hipofisário")
+    .replace(/cardiotocograMa/gi, "cardiotocografia")
+    .replace(/core-biposy/gi, "core-biopsy")
+    .replace(/parceiro 8xo/gi, "parceiro fixo")
+    .trim();
+  for (let i = 0; i < 10; i++) {
     const next = s
       .replace(/^(?:Não se aplica|Privado|Acesso Direto \(R1\)|Residência \(Acesso Direto\)|\d+\s+anos)\s+/i, "")
       .replace(/^\d{4}\s+/, "")
@@ -233,46 +261,85 @@ function cleanStemText (stem) {
     s = next;
   }
   s = stripSpecialtyDump(s);
+  for (let i = 0; i < 6; i++) {
+    const next = s.replace(TOPIC_PREFIX, "").trim();
+    if (next === s) break;
+    s = next;
+  }
   const at = findClinicalStart(s);
-  // se ainda sobrou título temático curto antes do caso clínico, corta
-  if (at > 0 && at <= 120) {
+  if (at > 0 && at <= 160) {
     const before = s.slice(0, at).trim();
-    if (before && !/[.?]$/.test(before) && before.split(/\s+/).length <= 12) {
+    if (before && !/[.?]$/.test(before) && before.split(/\s+/).length <= 16) {
       s = s.slice(at).trim();
     }
   }
-  s = s.replace(
-    /^(Reforma Psiquiátrica[^\n.]{0,80}|Sumário dos Tóxicos[^\n.]{0,40}|Apresentação Clínica|Retinopatia da Prematuridade|Síndrome do desconforto[^\n.]{0,60}|Anafilaxia|Bradiarritmias|Colecistectomia|Colecistite Aguda[^\n.]{0,40}|na Infância(?: Tratamento)?|Doença de Kawasaki|Exantema Súbito|Classificação e Tratamento da Crise)\s+/i,
-    ""
-  );
   return s.replace(/\s+/g, " ").trim();
 }
 
 function ageYears (text) {
-  const m = text.match(/\b(\d{1,2})\s*anos(?:\s+de\s+idade)?/i);
+  const m = text.match(/\b(\d{1,2})\s*anos?(?:\s+de\s+idade)?\b/i);
   return m ? Number(m[1]) : null;
 }
 
+function ageMonths (text) {
+  // Não usar "há 3 meses" (duração da queixa).
+  const t = String(text || "").replace(/\bhá\s+\d{1,2}\s*meses\b/gi, " ");
+  const m = t.match(
+    /\b(\d{1,2})\s*meses(?:\s+e\s+\d+\s*dias)?(?:\s+de\s+(?:idade|vida))?\b|\b(?:com|de)\s+(\d{1,2})\s*meses(?:\s+de\s+(?:idade|vida))?\b/i
+  );
+  if (!m) return null;
+  const n = Number(m[1] || m[2]);
+  // Exige contexto de idade se não veio "de idade/vida"
+  if (!/meses(?:\s+e\s+\d+\s*dias)?\s+de\s+(?:idade|vida)/i.test(t) &&
+      !/\b(?:lactente|beb[eê]|crian[cç]a|menino|menina).{0,30}\b\d{1,2}\s*meses\b/i.test(t) &&
+      !/\b\d{1,2}\s*meses(?:\s+e\s+\d+\s*dias)?\s+de\s+idade\b/i.test(text)) {
+    if (!/\b(?:Cec[ií]lia|lactente).{0,40}\b\d{1,2}\s*meses\b/i.test(text)) return null;
+  }
+  return n;
+}
+
 function isPediatricPatient (text) {
-  if (/lactente|rec[eé]m-nasc|\bRN\b|neonatal|puericultura|caderneta da crian|aleitamento materno|bronquiolite|pronto.?atendimento pedi|desenvolvimento no primeiro ano|retinopatia da prematuridade|membrana hialina/i.test(text)) return true;
-  if (/\b\d{1,2}\s*meses(?:\s+e\s+\d+\s*dias)?(?:\s+de\s+idade)?\b/i.test(text) && /\b(filho|filha|crian[cç]a|lactente|menino|menina|beb[eê])\b/i.test(text)) return true;
-  if (/meses de (idade|vida)/i.test(text)) return true;
-  if (/\b(menina|menino)\b.{0,40}\b\d{1,2}\s*(anos|meses)\b/i.test(text)) return true;
-  if (/\bcrian[cç]a de\s+\d{1,2}\s*anos\b/i.test(text)) return true;
-  if (/\bescolar de\s+\d{1,2}\s*anos\b/i.test(text)) return true;
-  const a = ageYears(text);
-  if (a != null && a <= 12 && /\b(menina|menino|crian[cç]a|escolar|lactente)\b/i.test(text)) return true;
-  if (a != null && a <= 17 && /\b(levad[oa] ao|pronto-atendimento pedi|pediatr|m[aã]e|pai)\b/i.test(text)) return true;
+  const t = String(text || "");
+  // Caso obstétrico da mãe (com menção a RN) ≠ pediatria
+  if (/\b(mulher|gestante|pu[ée]rpera|primigesta|tercigesta|nuligesta)\b/i.test(t) &&
+      /parto|pr[eé]-natal|puerp[eé]rio|f[oó]rcipe|ces[aá]rea|n[oó]dulo de mama|sangramento vaginal|menopausa|climat/i.test(t) &&
+      !/^(RN|Rec[eé]m-nasc|Neonato|Lactente|Crian|Menino|Menina)/i.test(t.trim())) {
+    return false;
+  }
+  if (/lactente|puericultura|caderneta da crian|aleitamento materno|bronquiolite|pronto.?atendimento pedi|desenvolvimento no primeiro ano|retinopatia da prematuridade|membrana hialina|Doen[cç]a de Kawasaki|S[ií]ndrome Inflamat[oó]ria Multissist[eê]mica|Henoch|P[uú]rpura de Henoch|escore-z|consulta de \d+ anos de idade/i.test(t)) return true;
+  // RN/neonato como protagonista (não só citado no parto da mãe)
+  if (/^(RN|Rec[eé]m-nasc|Neonato)\b/i.test(t.trim()) ||
+      /\b(rec[eé]m-nasc|\bRN\b|neonato)\b.{0,80}\b(apgar|peso|choro|icter|aleitamento|taquipne|t[oô]nus)/i.test(t)) {
+    return true;
+  }
+  const months = ageMonths(t);
+  if (months != null && months <= 24) return true;
+  if (/meses de (idade|vida)/i.test(t)) return true;
+  if (/\b(menina|menino)\b.{0,50}\b\d{1,2}\s*(anos|meses)\b/i.test(t)) return true;
+  if (/\bcrian[cç]a(?:\s+do\s+sexo)?\b.{0,40}\b\d{1,2}\s*(anos|meses)\b/i.test(t)) return true;
+  if (/\bcrian[cç]a de\s+\d{1,2}\s*anos?\b/i.test(t)) return true;
+  if (/\b(?:crian[cç]a|menino|menina|Maria|Fernando).{0,40}\b(?:dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze)\s*anos\b/i.test(t)) return true;
+  if (/\b(?:seis|cinco|quatro|tr[eê]s|dois)\s*anos de idade\b/i.test(t) && !/\b(mulher|homem|paciente sexo)\b/i.test(t)) return true;
+  if (/\blevado pela m[aã]e ao pronto-socorro\b|\bsua m[aã]e, com hist[oó]ria de dores articulares\b/i.test(t)) return true;
+  if (/\b(?:PFJ|[A-Z]{2,4}),\s*(?:dois|tr[eê]s|quatro|cinco|seis|\d{1,2})\s*anos/i.test(t)) return true;
+  if (/\bescolar de\s+\d{1,2}\s*anos?\b/i.test(t)) return true;
+  if (/\b(levad[oa] (?:à|a|ao|para)).{0,40}pediatra/i.test(t)) return true;
+  if (/\brelatado pela m[aã]e que a crian[cç]a\b/i.test(t)) return true;
+  if (/\bno RN\b|\bRec[eé]m-nascido pr[eé]-termo/i.test(t)) return true;
+  const a = ageYears(t);
+  if (a != null && a >= 18) return false;
+  if (a != null && a <= 12 && /\b(menina|menino|crian[cç]a|escolar|lactente|pediatra|Fernando)\b/i.test(t)) return true;
+  if (a != null && a <= 17 && /\b(levad[oa] ao|pronto-atendimento pedi|pediatr|acidente of[ií]dico|insufici[eê]ncia card[ií]aca pedi)/i.test(t)) return true;
+  if (a != null && a <= 17 && /\badolescente\b/i.test(t) && !/gestante|contracep|DIU|colo|HPV|gravidez|ginecol|n[oó]dulo de mama/i.test(t)) return true;
   return false;
 }
 
 function isObstetricCase (text) {
   if (/n[aã]o gestantes?/i.test(text) && !/primigesta|pr[eé]-?natal|pu[ée]rpera/i.test(text)) return false;
-  // vacinação de criança / puericultura NÃO é obstetrícia
   if (/\b(menino|menina|crian[cç]a|lactente|meses de idade)\b/i.test(text) && /vacina|BCG|calend[aá]rio|puericultura|escore-z|peso adequado/i.test(text) && !/gestante|pr[eé]-natal/i.test(text)) {
     return false;
   }
-  if (/primigesta|secundigesta|mult[ií]para|gestante|pr[eé]-?natal|trabalho de parto|parto pr[eé]-termo|pu[ée]rpera|semanas de gesta[cç][aã]o|pronto.?socorro obst|hipertonia uterina|\bBCF\b|clampeamento.*cord[aã]o|assist[eê]ncia ao parto|diabetes mellitus gestacional|VDRL.*gesta|IG\s*=\s*\d|durante a gesta[cç][aã]o|na gesta[cç][aã]o|G\dP\d/i.test(text)) return true;
+  if (/primigesta|secundigesta|tercigesta|mult[ií]para|nuligesta|gestante|pr[eé]-?natal|trabalho de parto|parto pr[eé]-termo|pu[ée]rpera|puerp[eé]rio|semanas de gesta[cç][aã]o|pronto.?socorro obst|hipertonia uterina|\bBCF\b|clampeamento.*cord[aã]o|assist[eê]ncia ao parto|diabetes mellitus gestacional|VDRL.*gesta|IG\s*=\s*\d|durante a gesta[cç][aã]o|na gesta[cç][aã]o|G\dP\d|parto (?:vaginal|ces[aá]reo|normal)|l[ií]quido amni[oó]tico/i.test(text)) return true;
   return false;
 }
 
@@ -280,23 +347,24 @@ function isStrongGO (text) {
   const t = text
     .replace(/n[aã]o gestantes?/gi, " ")
     .replace(/nega corrimento vaginal/gi, " ");
-  return /gestante|primigesta|pu[ée]rpera|pr[eé]-?natal|ces[aá]rea|ecl[aâ]mpsia|pr[eé]-ecl|\bNIC\b|Papanicolaou|colo do [uú]tero|mioma|endometriose|menopausa|climat[eé]rio|\bDIU\b|sangramento uterino|metrorragia|menarca|vaginose|\bHPV\b|mamografia|BI-RADS|c[aâ]ncer de mama|ov[aá]rios polic|\bSOP\b|placenta|mola hidatiforme|\bRPMO\b|HELLP|gravidez ect|amenorreia|dismenorreia|corrimento vaginal|histerectomia|Robson|trabalho de parto|parto pr[eé]-termo|Febrasgo|m[eé]todos contraceptivos/i.test(t);
+  return /gestante|primigesta|pu[ée]rpera|puerp[eé]rio|pr[eé]-?natal|ces[aá]rea|ecl[aâ]mpsia|pr[eé]-ecl|\bNIC\b|Papanicolaou|papanicolau|colo do [uú]tero|mioma|endometriose|menopausa|climat[eé]rio|ondas de calor|sudorese noturna.{0,40}ins[oô]nia|\bDIU\b|sangramento uterino|metrorragia|menarca|vaginose|vulvovaginit|\bHPV\b|mamografia|BI-RADS|c[aâ]ncer de mama|n[oó]dulo de mama|core-biopsy|ov[aá]rios polic|\bSOP\b|placenta|mola hidatiforme|\bRPMO\b|HELLP|gravidez ect|amenorreia|oligomenorreia|dismenorreia|corrimento vaginal|histerectomia|Robson|trabalho de parto|parto pr[eé]-termo|Febrasgo|m[eé]todos contraceptivos|contraceptivo hormonal|assoalho p[eé]lvico|ginecol[oó]gic|prolapso|bola na vagina|sangramento ap[oó]s rela[cç][aã]o|ciclos menstruais|PS da Ginecologia|dispareunia|fluxo menstrual|infertilidade|abortamentos espont|urge-incontin|incontin[eê]ncia urin[aá]ria|profissional do sexo|sa[uú]de da fam[ií]lia.{0,40}vida sexual|antifosfol[ií]pide/i.test(t);
 }
 
 function isStrongPrev (text) {
-  return /\bPNAB\b|\bESF\b|\bAPS\b|aten[cç][aã]o prim[aá]ria|agente comunit[aá]rio|\bACS\b|Pol[ií]tica Nacional|financiamento do SUS|\bRAPS\b|Redu[cç][aã]o de Danos|conselhos de sa[uú]de|caso-controle|coorte|meta-an[aá]lise|Swaroop|vigil[aâ]ncia|\bSINAN\b|C[oó]digo de [eÉ]tica|\bCFM\b|sigilo profissional|sa[uú]de do trabalhador|determinante social|promo[cç][aã]o da sa[uú]de|Programa Sa[uú]de na Escola|\bPSE\b|8[aª] Confer[eê]ncia|participa[cç][aã]o social|Reforma Psiqui[aá]trica|Sa[uú]de Mental/i.test(text) ||
-    /Reforma Psiqui[aá]trica|pol[ií]tica de sa[uú]de mental brasileira/i.test(text);
+  return /\bPNAB\b|\bESF\b|\bAPS\b|aten[cç][aã]o prim[aá]ria|agente comunit[aá]rio|\bACS\b|Pol[ií]tica Nacional|financiamento do SUS|princ[ií]pios.{0,20}SUS|\bRAPS\b|\bCAPS\b|Redu[cç][aã]o de Danos|conselhos de sa[uú]de|caso-controle|coorte|meta-an[aá]lise|Swaroop|vigil[aâ]ncia|\bSINAN\b|C[oó]digo de [eÉ]tica|\bCFM\b|sigilo profissional|sa[uú]de do trabalhador|determinante social|promo[cç][aã]o da sa[uú]de|Programa Sa[uú]de na Escola|\bPSE\b|8[aª] Confer[eê]ncia|participa[cç][aã]o social|Reforma Psiqui[aá]trica|Medicina Preventiva|Epidemiologia|Boletins Epidemiol|Índice de Vulnerabilidade|\bIVS\b|\bGRADE\b|hierarquia das evid|medicina baseada em evid|rastreio|USPSTF|triagem da osteoporose|valor preditivo|sensibilidade e especificidade|raz[aã]o de verossimilhan|likelihood|agrupadas por sorteio|dois tipos distintos de interven|Calend[aá]rio Vacinal Nacional|doa[cç][aã]o.{0,30}[oó]rg[aã]os|NR6|Equipamento de Prote[cç][aã]o Individual|notifica[cç][aã]o compuls/i.test(text);
 }
 
 function isStrongCir (text) {
-  return /\bATLS\b|politraumat|abdome agudo|apendicite|diverticulite|Hartmann|colecistite|colecistectomia|obstru[cç][aã]o intestinal|queimadura|toracostomia|pneumot[oó]rax|\bTCE\b|trauma cranio|\bFAST\b|h[eé]rnia|bypass g[aá]strico|pr[eé]-operat[oó]rio|p[oó]s-operat[oó]rio|risco cir[uú]rgico|\bASA\b|anastomose|pancreatite|isquemia mesent|Forrest|hepatectomia|tireoidectomia|anest[eé]sicos inalat|queloide|cicatriza[cç][aã]o|s[ií]ndrome compartimental abdominal|laparotomia|Le Fort|cricotireoid|via a[eé]rea dif[ií]cil|trauma.*f[ií]gado|les[oõ]es hep[aá]ticas.*trauma/i.test(text);
+  return /\bATLS\b|politraumat|abdome agudo|apendicite|diverticulite|Hartmann|colecistite|colecistectomia|obstru[cç][aã]o intestinal|queimadura|toracostomia|pneumot[oó]rax|\bTCE\b|trauma (?:cranio|cervical|abdominal|tor[aá]cico|dom[eé]stico)|traumatismo cranio|\bFAST\b|h[eé]rnia|bypass g[aá]strico|pr[eé]-operat[oó]rio|p[oó]s-operat[oó]rio|risco cir[uú]rgico|anastomose|isquemia mesent|Forrest|hepatectomia|tireoidectomia|anest[eé]sicos?(?: locais| inalat)|queloide|s[ií]ndrome compartimental|laparotomia|Le Fort|cricotireoid|via a[eé]rea dif[ií]cil|ferimento por arma|ferimento.{0,20}cervical|hemorroidectomia|colectomia|eviscera[cç]|[uú]lcera (?:g[aá]strica|duodenal)|patch de omento|quirod[aá]ctilo|perda de subst[aâ]ncia|intuba[cç][aã]o orotraqueal|vias a[eé]reas definitivas|profilaxia.{0,30}trombo|art[eé]ria e veia femorais|tri[aâ]ngulo femoral|jato urin[aá]rio fraco|noct[uú]ria e esfor[cç]o miccional|laparosc|v[ií]tima de (?:colis[aã]o|acidente de moto|ferimento)/i.test(text);
 }
 
 function isStrongClin (text) {
-  return /insufici[eê]ncia card[ií]aca|infarto|angina|fibrila[cç]|hipertens[aã]o arterial|diabetes mellitus|\bDPOC\b|pneumonia|cirrose|\bAVC\b|l[uú]pus|\bHIV\b|di[aá]lise|tireoid|cetoacidose|artrite reumatoide|depress[aã]o|esquizofr|delirium|transtorno bipolar|litio|l[ií]tio|sertralina|fluoxetina/i.test(text);
+  return /insufici[eê]ncia card[ií]aca|infarto|angina|fibrila[cç]|hipertens[aã]o arterial|diabetes mellitus|\bDPOC\b|pneumonia|cirrose|\bAVC\b|l[uú]pus|\bHIV\b|di[aá]lise|tireoid|cetoacidose|artrite reumatoide|depress[aã]o|esquizofr|delirium|transtorno bipolar|litio|l[ií]tio|sertralina|fluoxetina|poliarterite|nefropatia diab|s[ií]ndrome colin[eé]rgica|fibromialgia/i.test(text);
 }
 
-function resolveSpecialty (stem) {
+function resolveSpecialty (stem, rawStem) {
+  // Usa só o enunciado limpo. O raw do PDF traz dump de TODAS as especialidades e polui.
+  void rawStem;
   const text = String(stem || "");
   const ped = isPediatricPatient(text);
   const go = isStrongGO(text);
@@ -305,56 +373,67 @@ function resolveSpecialty (stem) {
   const clin = isStrongClin(text);
   const obst = isObstetricCase(text);
 
-  if (/\bNIC\b|Papanicolaou|colo do [uú]tero|colposcop/i.test(text)) return { specialty: "go", why: "oncogin" };
-
-  // RN / neonato como protagonista (antes de obstetrícia da mãe)
-  if (/^(RN|Rec[eé]m-nasc)/i.test(text) ||
-      /retinopatia da prematuridade|membrana hialina|seguimento desse lactente/i.test(text) ||
-      (/rec[eé]m-nasc|\bRN\b/i.test(text) && /apgar|taquipne|icter|aleitamento|choro forte|tônus|pele a pele/i.test(text) && !/gestante|trabalho de parto|pronto-socorro obst/i.test(text))) {
-    return { specialty: "pediatria", why: "rn-neonatal" };
-  }
-  // Sepse neonatal / agentes — ped, mesmo com contexto obstétrico
-  if (/sepse neonatal|risco de sepse neonatal|agentes mais frequentes dessa condi[cç]/i.test(text)) {
-    return { specialty: "pediatria", why: "rn-neonatal" };
+  if (/\bNIC\b|Papanicolaou|colo do [uú]tero|colposcop|vulvovaginit|assoalho p[eé]lvico/i.test(text)) {
+    return { specialty: "go", why: "oncogin" };
   }
 
-  if (/trabalho de parto|primigesta|assist[eê]ncia ao parto|clampeamento.*cord[aã]o|diabetes mellitus gestacional/i.test(text) &&
-      !/^(RN|Rec[eé]m-nasc)/i.test(text)) {
+  // Neonato protagonista (não usar \b após "nasc" — a palavra é "nascido")
+  if (/^(RN\b|Rec[eé]m-nasc|Neonato\b)/i.test(text.trim()) ||
+      /retinopatia da prematuridade|membrana hialina|seguimento desse lactente|Recep[cç][aã]o do neonato/i.test(text) ||
+      (/\b(rec[eé]m-nascido|rec[eé]m-nasc|\bRN\b|neonato)\b/i.test(text) &&
+        /apgar|taquipne|icter|aleitamento|choro forte|t[oô]nus|pele a pele|meconial|boa vitalidade|per[ií]odo neonatal|pr[eé]-termo/i.test(text) &&
+        !/\b(mulher|gestante|primigesta|pu[ée]rpera).{0,40}\b(teve parto|em trabalho de parto)\b/i.test(text))) {
+    return { specialty: "pediatria", why: "rn-neonatal" };
+  }
+  if (/sepse neonatal|Kawasaki|Multissist[eê]mica em crian/i.test(text)) {
+    return { specialty: "pediatria", why: "ped-theme" };
+  }
+
+  // Obstetrícia da mãe (mesmo se citar RN)
+  if (obst || (/trabalho de parto|primigesta|puerp[eé]rio|assist[eê]ncia ao parto|parto f[oó]rcipe|bloqueio de pudendo/i.test(text) &&
+      !/^(RN\b|Rec[eé]m-nasc|Neonato\b|Lactente|Crian)/i.test(text.trim()))) {
     return { specialty: "go", why: "obstetric-case" };
   }
 
-  if (/e-SUS|sistemas de informa[cç][aã]o do SUS|falhas no cuidado e nos sistemas/i.test(text)) {
-    return { specialty: "preventiva", why: "prev-audit" };
+  // Preventiva / epi / SUS
+  if (/e-SUS|sistemas de informa[cç][aã]o do SUS|Boletins Epidemiol|[IÍ]ndice de Vulnerabilidade|\bIVS\b|\bGRADE\b|hierarquia das evid|valor preditivo|sensibilidade e especificidade|agrupadas por sorteio|USPSTF|triagem da osteoporose|Calend[aá]rio Vacinal Nacional|NR6|Equipamento de Prote[cç][aã]o|princ[ií]pios filos[oó]ficos do SUS|[oó]rg[aã]os e tecidos|doa[cç][aã]o.{0,40}[oó]rg[aã]os|efic[aá]cia de uma vacina|estudo sobre a efic|estudo com lavradores|surto de meningite|Sistema [UÚ]nico de Sa[uú]de|usu[aá]rio idoso do Sistema|[IÍ]ndice de Swaroop|dados do IBGE|taxa desde 2015|overall survival with neoadjuvant|publicaram recentemente|Preven[cç][aã]o Quatern[aá]ria|[Nn][ií]veis de Preven[cç][aã]o|foram noti[Oóf]cados \d|munic[ií]pio.{0,40}\d{1,3}\.?000 habitantes|100\.000 habitantes/i.test(text)) {
+    return { specialty: "preventiva", why: "prev-core" };
   }
-
-  // Método epidemiológico (não ensaio clínico só como cenário de fármaco/doença)
-  if (/caso-controle|meta-an[aá]lise|revis[aã]o sistem[aá]tica|Bradford Hill|delineamento|surto de casos|vi[eé]s de sele[cç]|valor preditivo|sensibilidade e especificidade/i.test(text)) {
+  if (/caso-controle|meta-an[aá]lise|revis[aã]o sistem[aá]tica|Bradford Hill|delineamento|vi[eé]s de sele[cç]|likelihood|raz[aã]o de chances|odds ratio|testes diagn[oó]sticos/i.test(text)) {
     return { specialty: "preventiva", why: "prev-epi-method" };
   }
-  if (/\bestudo de coorte\b|\bcoorte prospectiv|\bensaios? cl[ií]nicos?\b.*\b(aleatoriz|randomiz|placebo|grupo controle)\b/i.test(text) &&
-      !/esquizofr|antipsic[oó]t|antibi[oó]tico|tratamento da|prescrev/i.test(text)) {
+  if (/\bestudo de coorte\b|\bcoorte prospectiv|\bensaios? cl[ií]nicos?\b.*\b(aleatoriz|randomiz|placebo|grupo controle|sorteio)\b/i.test(text)) {
     return { specialty: "preventiva", why: "prev-epi-method" };
   }
-
-  if (/princ[ií]pios bio[eé]ticos|C[oó]digo de [eÉ]tica|Parecer CFM|Reforma Psiqui[aá]trica|RAPS|Redu[cç][aã]o de Danos|PNAB|participa[cç][aã]o social|Confer[eê]ncia Nacional de Sa[uú]de|Programa Sa[uú]de na Escola/i.test(text)) {
+  if (/princ[ií]pios bio[eé]ticos|C[oó]digo de [eÉ]tica|Parecer CFM|Reforma Psiqui[aá]trica|\bRAPS\b|\bCAPS\b|Redu[cç][aã]o de Danos|PNAB|participa[cç][aã]o social|Confer[eê]ncia Nacional de Sa[uú]de|medicina baseada em evid/i.test(text)) {
     return { specialty: "preventiva", why: "prev-policy" };
   }
 
-  // criança clara vence (vacina/puericultura/escore-z)
   if (ped) return { specialty: "pediatria", why: "pediatric-patient" };
-  if (/\b(crian[cç]as? menores de|escore-z|peso adequado para a idade|vacina BCG|Calend[aá]rio Nacional de Vacina[cç])/i.test(text)) {
+  if (/\b(crian[cç]as? menores de|escore-z|peso adequado para a idade|vacina BCG)\b/i.test(text)) {
     return { specialty: "pediatria", why: "pediatric-theme" };
   }
-  if (obst) return { specialty: "go", why: "obstetric-case" };
-  if (/durante a gesta[cç][aã]o|na gesta[cç][aã]o|vacinas?.*gesta[cç]|gesta[cç].*vacina/i.test(text)) {
+
+  if (/durante a gesta[cç][aã]o|na (?:pr[eé]-?)?ecl[aâ]mpsia|na gesta[cç][aã]o/i.test(text)) {
     return { specialty: "go", why: "go-gestation" };
   }
-  if (prev && !ped && !obst) return { specialty: "preventiva", why: "prev-strong" };
-  if (go && !ped) return { specialty: "go", why: "go-strong" };
+  if (go) return { specialty: "go", why: "go-strong" };
+
+  if (prev) return { specialty: "preventiva", why: "prev-strong" };
+
+  if (/p[oó]s-operat[oó]rio|hemorroidectomia|colectomia|eviscera|patch de omento|trauma cervical|ferimento por arma|queimadura|quirod[aá]ctilo|anest[eé]sicos? locais|intuba[cç][aã]o orotraqueal|vias a[eé]reas definitivas|art[eé]ria e veia femorais|profilaxia.{0,30}trombo|jato urin[aá]rio fraco|hemot[oó]rax|drenagem de t[oó]rax|queda de (?:motocicleta|aproximadamente)|abdominoplastia|dor abdominal em andar superior|[Oo]leo Biliar|[Óó]leo Biliar|c[oó]lica.{0,40}andar superior|obstru[cç][aã]o arterial aguda|embolec|parada de elimina[cç][aã]o|distens[aã]o abdominal.{0,40}parada|hipoc[oô]ndrio direito.{0,40}irradia|dor abdominal intensa e distens/i.test(text)) {
+    return { specialty: "cirurgia", why: "cir-core" };
+  }
   if (cir && !clin) return { specialty: "cirurgia", why: "cir-strong" };
   if (cir && clin) {
-    return { specialty: /h[eé]rnia|abdome agudo|apendic|colecist|trauma|ATLS|queimadura|anest[eé]sico/i.test(text) ? "cirurgia" : "clinica", why: "cir-clin-tie" };
+    return {
+      specialty: /h[eé]rnia|abdome agudo|apendic|colecist|trauma |ATLS|queimadura|anest[eé]sico|p[oó]s-operat|pr[eé]-operat|ferimento|intuba/i.test(text)
+        ? "cirurgia"
+        : "clinica",
+      why: "cir-clin-tie"
+    };
   }
+
   if (clin) return { specialty: "clinica", why: "clin-strong" };
   return { specialty: "clinica", why: "default" };
 }
@@ -384,8 +463,8 @@ function parseYear (year) {
 
   for (const { num, content } of blocks) {
     const { stemLines, choices } = extractChoices(content);
-    let stem = stemLines.join(" ").replace(/\s+/g, " ").trim();
-    stem = cleanStemText(stem);
+    const rawStem = stemLines.join(" ").replace(/\s+/g, " ").trim();
+    let stem = cleanStemText(rawStem);
     const g = gab[num] || { letter: "", annulled: false };
     const annulled = !!g.annulled;
 
@@ -410,7 +489,12 @@ function parseYear (year) {
       continue;
     }
 
-    const { specialty, why } = resolveSpecialty(stem);
+    let { specialty, why } = resolveSpecialty(stem, rawStem);
+    const manualKey = year + "-" + num;
+    if (MANUAL[manualKey]) {
+      specialty = MANUAL[manualKey];
+      why = "manual";
+    }
     byNumber[String(num)] = specialty;
     if (samples[specialty] && samples[specialty].length < 4) {
       samples[specialty].push({
