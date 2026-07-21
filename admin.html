@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=admin2">
+  <link rel="stylesheet" href="css/aprova.css?v=admin3">
 </head>
 <body class="admin-page">
   <div class="page-bg" aria-hidden="true"></div>
@@ -101,7 +101,7 @@
             <div id="admin-stats-grid" class="admin-stats-grid"></div>
             <div class="admin-quick-grid">
               <button type="button" class="admin-quick-card" data-admin-goto="users"><strong>Usuários</strong><span>Contas deste navegador</span></button>
-              <button type="button" class="admin-quick-card" data-admin-goto="access"><strong>Liberar acesso</strong><span>Free, Pro mensal/anual, cortesia</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="access"><strong>Liberar acesso</strong><span>Vitalício, 1 / 3 / 6 / 12 meses</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="content"><strong>Conteúdo</strong><span>Bancos de questões e flashcards</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="plans"><strong>Planos</strong><span>Interesse no cadastro</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="marketing"><strong>Marketing</strong><span>Links e contatos</span></button>
@@ -120,11 +120,15 @@
                 <input id="admin-search" type="search" placeholder="Buscar e-mail ou nome…" autocomplete="off">
                 <select id="admin-filter-plan">
                   <option value="all">Todos os planos</option>
-                  <option value="free">Free</option>
-                  <option value="pro-mensal">Pro mensal</option>
-                  <option value="pro-anual">Pro anual</option>
-                  <option value="cortesia">Cortesia</option>
                   <option value="lifetime">Vitalício</option>
+                  <option value="m1">1 mês</option>
+                  <option value="m3">3 meses</option>
+                  <option value="m6">6 meses</option>
+                  <option value="m12">12 meses</option>
+                  <option value="cortesia">Cortesia (legado)</option>
+                  <option value="pro-mensal">Pro mensal (legado)</option>
+                  <option value="pro-anual">Pro anual (legado)</option>
+                  <option value="free">Free</option>
                 </select>
               </div>
               <div id="admin-users-list" class="admin-users-list"></div>
@@ -140,13 +144,11 @@
                 <input id="grant-email" type="email" required placeholder="usuario@email.com" autocomplete="off">
                 <label for="grant-type">Tipo de acesso</label>
                 <select id="grant-type">
-                  <option value="trial-10">Teste grátis — 10 dias</option>
-                  <option value="cortesia-1">Cortesia — 1 mês</option>
-                  <option value="cortesia-3">Cortesia — 3 meses</option>
-                  <option value="pro-mensal">Pro mensal</option>
-                  <option value="pro-anual">Pro anual</option>
                   <option value="lifetime">Vitalício</option>
-                  <option value="free">Free</option>
+                  <option value="m1">1 mês</option>
+                  <option value="m3" selected>3 meses</option>
+                  <option value="m6">6 meses</option>
+                  <option value="m12">12 meses</option>
                 </select>
                 <button type="submit" class="btn btn-primary">Liberar e gerar link</button>
               </form>
@@ -260,8 +262,8 @@
   </main>
 
   <script src="js/theme.js"></script>
-  <script src="js/access.js?v=2"></script>
+  <script src="js/access.js?v=3"></script>
   <script src="js/auth.js"></script>
-  <script src="js/admin.js?v=3"></script>
+  <script src="js/admin.js?v=4"></script>
 </body>
 </html>

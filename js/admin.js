@@ -85,12 +85,17 @@ function adminSetStatus (id, text, ok) {
 function adminPlanLabel (plan) {
   const map = {
     free: "Free",
-    "pro-mensal": "Pro mensal",
-    "pro-anual": "Pro anual",
+    lifetime: "Vitalício",
+    m1: "1 mês",
+    m3: "3 meses",
+    m6: "6 meses",
+    m12: "12 meses",
+    "pro-mensal": "1 mês",
+    "pro-anual": "12 meses",
     cortesia: "Cortesia",
-    "cortesia-1": "Cortesia 1 mês",
-    "cortesia-3": "Cortesia 3 meses",
-    lifetime: "Vitalício"
+    "cortesia-1": "1 mês",
+    "cortesia-3": "3 meses",
+    "trial-10": "10 dias"
   };
   return map[plan] || plan || "Free";
 }
@@ -196,7 +201,7 @@ async function adminRenderOverview () {
   grid.innerHTML = [
     { v: total, l: "Questões publicadas", c: "ok" },
     { v: users.length, l: "Contas neste navegador", c: "" },
-    { v: pro, l: "Com plano Pro/cortesia", c: "ok" },
+    { v: pro, l: "Com acesso pago/liberado", c: "ok" },
     { v: interest?.plano ? adminPlanLabel(interest.plano) : "—", l: "Último interesse no cadastro", c: "warn" }
   ].map((s) => (
     "<div class=\"admin-stat-card" + (s.c ? " admin-stat-card--" + s.c : "") + "\">" +
@@ -656,7 +661,7 @@ function adminBoot () {
   document.getElementById("admin-grant-form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("grant-email")?.value || "";
-    const type = document.getElementById("grant-type")?.value || "trial-10";
+    const type = document.getElementById("grant-type")?.value || "m3";
     const result = adminGrantAccess(email, "", type, "");
     adminSetStatus("admin-grant-status", result.msg, result.ok);
     const box = document.getElementById("admin-invite-box");

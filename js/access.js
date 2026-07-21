@@ -32,14 +32,22 @@ function aprovaAccessSaveInvites (map) {
 function aprovaAccessPlanMeta (type) {
   const now = Date.now();
   const day = 86400000;
+  const month = 30 * day;
   if (type === "free") return { plan: "free", planUntil: null };
   if (type === "lifetime") return { plan: "lifetime", planUntil: null };
-  if (type === "pro-mensal") return { plan: "pro-mensal", planUntil: now + 30 * day };
-  if (type === "pro-anual") return { plan: "pro-anual", planUntil: now + 365 * day };
-  if (type === "cortesia-1") return { plan: "cortesia", planUntil: now + 30 * day };
-  if (type === "cortesia-3") return { plan: "cortesia", planUntil: now + 90 * day };
-  if (type === "trial-10") return { plan: "cortesia", planUntil: now + 10 * day };
-  return { plan: "free", planUntil: null };
+  if (type === "m1" || type === "cortesia-1" || type === "pro-mensal") {
+    return { plan: "m1", planUntil: now + 1 * month };
+  }
+  if (type === "m3" || type === "cortesia-3") {
+    return { plan: "m3", planUntil: now + 3 * month };
+  }
+  if (type === "m6") return { plan: "m6", planUntil: now + 6 * month };
+  if (type === "m12" || type === "pro-anual") {
+    return { plan: "m12", planUntil: now + 12 * month };
+  }
+  if (type === "trial-10") return { plan: "m1", planUntil: now + 10 * day };
+  if (type === "cortesia") return { plan: "m1", planUntil: now + 1 * month };
+  return { plan: "m3", planUntil: now + 3 * month };
 }
 
 function aprovaAccessEncodeInvite (payload) {

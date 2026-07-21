@@ -195,15 +195,18 @@ function aprovaBootSignupPage () {
     }
     if (phoneField) phoneField.hidden = false;
     if (note) {
-      const planLabel = grantFromUrl.plan === "pro-mensal"
-        ? "Pro Mensal"
-        : grantFromUrl.plan === "pro-anual"
-          ? "Pro Anual"
-          : grantFromUrl.plan === "lifetime"
-            ? "Vitalício"
-            : grantFromUrl.plan === "cortesia"
-              ? "Cortesia / teste"
-              : "Free";
+      const planLabel = typeof adminPlanLabel === "function"
+        ? adminPlanLabel(grantFromUrl.plan)
+        : ({
+          lifetime: "Vitalício",
+          m1: "1 mês",
+          m3: "3 meses",
+          m6: "6 meses",
+          m12: "12 meses",
+          "pro-mensal": "1 mês",
+          "pro-anual": "12 meses",
+          cortesia: "Cortesia / teste"
+        }[grantFromUrl.plan] || grantFromUrl.plan || "liberado");
       note.hidden = false;
       note.textContent = "Acesso liberado: " + planLabel +
         ". Preencha nome, celular e senha para ativar sua conta.";
