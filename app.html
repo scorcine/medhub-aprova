@@ -168,12 +168,12 @@
             <button type="button" class="dash-card" data-goto="hoje">
               <span class="dash-card-kicker">Agenda</span>
               <strong>Hoje</strong>
-              <span id="dash-hoje-preview">Metas do dia e atrasadas · fila de flashcards.</span>
+              <span id="dash-hoje-preview">Meta do dia · questões e cards.</span>
             </button>
             <button type="button" class="dash-card" data-goto="revisoes">
               <span class="dash-card-kicker">Espaçamento</span>
               <strong>Revisões</strong>
-              <span id="dash-revisoes-preview">Flashcards iguais · questões similares · 3 / 7 / 14 dias</span>
+              <span id="dash-revisoes-preview">Nada vencido agora — toque para abrir</span>
             </button>
             <button type="button" class="dash-card" data-goto="flashcards">
               <span class="dash-card-kicker">Memória</span>
@@ -219,11 +219,11 @@
               </button>
               <button type="button" class="hoje-hub-item" data-hoje-pick="revisoes">
                 <span class="hoje-hub-item-label">Revisões</span>
-                <span class="hoje-hub-item-hint" id="hoje-hub-revisoes-preview">Flashcards iguais · questões similares</span>
+                <span class="hoje-hub-item-hint" id="hoje-hub-revisoes-preview">Nada vencido agora</span>
               </button>
               <button type="button" class="hoje-hub-item" data-hoje-pick="flashcards">
                 <span class="hoje-hub-item-label">Flashcards</span>
-                <span class="hoje-hub-item-hint" id="hoje-hub-fc-preview">Fila de revisão do dia</span>
+                <span class="hoje-hub-item-hint" id="hoje-hub-fc-preview">Meta de flashcards do dia</span>
               </button>
               <button type="button" class="hoje-hub-item" data-hoje-pick="questoes">
                 <span class="hoje-hub-item-label">Questões</span>
@@ -282,21 +282,22 @@
           <div id="hoje-view-revisoes" class="hoje-view" hidden>
             <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
             <h2 class="hoje-view-title">Revisões</h2>
-            <p class="muted">Flashcards: os mesmos cards. Questões: temas semelhantes — nunca a mesma pergunta.</p>
+            <p class="muted" id="hoje-rev-intro">
+              Aqui entram só os itens vencidos. Nos flashcards, você revisa os mesmos cards
+              (errou → 3 dias · acertou → 7 → 14 → 28…). Nas questões, o app traz perguntas
+              similares do mesmo tema — não as mesmas.
+            </p>
 
             <div class="study-card hoje-metas-card">
-              <div class="label">Flashcards · mesmos cards</div>
+              <div class="label">Flashcards</div>
               <p class="hoje-metas-summary" id="hoje-rev-fc-summary">Carregando…</p>
-              <p class="muted" id="hoje-rev-fc-hint" style="margin:0.35rem 0 0.75rem;font-size:0.88rem">
-                Errou → 3 dias · Acertou → 7 → 14 → 28…
-              </p>
-              <div class="actions-row">
+              <div class="actions-row" style="margin-top:0.75rem">
                 <button type="button" class="btn btn-primary" id="hoje-rev-fc-start">Revisar flashcards</button>
               </div>
             </div>
 
             <div class="study-card hoje-metas-card">
-              <div class="label">Questões · similares (não iguais)</div>
+              <div class="label">Questões</div>
               <p class="hoje-metas-summary" id="hoje-rev-q-summary">Carregando…</p>
               <ul class="dash-task-themes" id="hoje-rev-q-themes" style="margin-top:0.65rem"></ul>
               <p class="muted" id="hoje-rev-q-upcoming" style="margin:0.65rem 0 0;font-size:0.85rem"></p>
@@ -1069,7 +1070,7 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721loginfix3"></script>
+  <script src="js/app-qui.js?v=20260721dashmeta1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

@@ -4494,7 +4494,7 @@ function aprovaHojePick (pick) {
     const title = document.getElementById("workspace-title");
     const sub = document.getElementById("workspace-sub");
     if (title) title.textContent = "Revisões";
-    if (sub) sub.textContent = "Flashcards iguais · questões similares";
+    if (sub) sub.textContent = "O que venceu para revisar agora";
     aprovaRenderHojeRevisoes();
     return;
   }
@@ -4585,9 +4585,7 @@ function aprovaRenderHojeRevisoes () {
   if (qUp && typeof aprovaQSrsUpcoming === "function") {
     const upcoming = aprovaQSrsUpcoming(Date.now(), 14).slice(0, 4);
     if (!upcoming.length) {
-      qUp.textContent = dueThemes.length
-        ? ""
-        : "Intervalos: errou → 3 dias · acertou → 7 → 14 → 28…";
+      qUp.textContent = "";
     } else {
       qUp.textContent = "Próximas: " + upcoming.map((u) => {
         const d = Math.max(1, Math.ceil((u.due - Date.now()) / APROVA_DAY_MS));
@@ -4598,11 +4596,11 @@ function aprovaRenderHojeRevisoes () {
 
   if (hubPrev) {
     const bits = [];
-    if (dueFc) bits.push(dueFc + " cards");
-    if (dueThemes.length) bits.push(dueThemes.length + " tema" + (dueThemes.length === 1 ? "" : "s") + " Q");
-    hubPrev.textContent = bits.length
-      ? ("Hoje: " + bits.join(" · "))
-      : "Flashcards iguais · questões similares";
+    if (dueFc) bits.push(dueFc + " flashcard" + (dueFc === 1 ? "" : "s"));
+    if (dueThemes.length) {
+      bits.push(dueThemes.length + " tema" + (dueThemes.length === 1 ? "" : "s") + " de questões");
+    }
+    hubPrev.textContent = bits.length ? ("Vencido: " + bits.join(" · ")) : "Nada vencido agora";
   }
 
   const dashRev = document.getElementById("dash-revisoes-preview");
@@ -4615,7 +4613,7 @@ function aprovaRenderHojeRevisoes () {
       }
       dashRev.textContent = "Vencido hoje: " + bits.join(" · ");
     } else {
-      dashRev.textContent = "Flashcards iguais · questões similares · 3 / 7 / 14 dias";
+      dashRev.textContent = "Nada vencido agora — toque para abrir";
     }
   }
 }
@@ -4690,12 +4688,22 @@ function aprovaRenderToday () {
 
   const hubFc = document.getElementById("hoje-hub-fc-preview");
   if (hubFc) {
-    const dueLabel = srs.due === 1 ? "1 revisão" : (srs.due + " revisões");
-    hubFc.textContent = srs.pending
-      ? (srs.pending + " na fila · " + dueLabel)
-      : (srs.studiedToday
-        ? (srs.studiedToday + " estudados hoje · fila em dia")
-        : "Fila em dia — nada pendente");
+    let fcGoalLine = "";
+    if (typeof aprovaBuildStudyPlan === "function" && typeof aprovaBuildStudyProgram === "function" &&
+        typeof aprovaLoadProfile === "function" && typeof aprovaProfileIsComplete === "function") {
+      const profile = aprovaLoadProfile();
+      if (aprovaProfileIsComplete(profile)) {
+        const plan = aprovaBuildStudyPlan(profile, aprovaSeuFocoCache, Date.now(), aprovaSeuFocoAreaId);
+        const prog = plan && plan.ok ? aprovaBuildStudyProgram(plan, null, Date.now(), aprovaSeuFocoCache) : null;
+        if (prog && prog.quota) {
+          const done = typeof aprovaActivityToday === "function" ? aprovaActivityToday() : (srs.studiedToday || 0);
+          fcGoalLine = "Meta " + done + "/" + prog.quota.daily + " cards";
+        }
+      }
+    }
+    hubFc.textContent = fcGoalLine || (srs.studiedToday
+      ? (srs.studiedToday + " estudados hoje")
+      : "Meta de flashcards do dia");
   }
 
   if (prompt) prompt.textContent = summary.prompt;
@@ -4714,8 +4722,8 @@ function aprovaRenderToday () {
 
   const dashPreview = document.getElementById("dash-hoje-preview");
   if (dashPreview) {
-    let metaBit = "";
-    let goalBit = "";
+    const todayBits = [];
+    let nLate = 0;
     if (typeof aprovaBuildStudyPlan === "function" && typeof aprovaBuildStudyProgram === "function" &&
         typeof aprovaLoadProfile === "function" && typeof aprovaProfileIsComplete === "function") {
       const profile = aprovaLoadProfile();
@@ -4723,34 +4731,31 @@ function aprovaRenderToday () {
         const plan = aprovaBuildStudyPlan(profile, aprovaSeuFocoCache, Date.now(), aprovaSeuFocoAreaId);
         const prog = plan && plan.ok ? aprovaBuildStudyProgram(plan, null, Date.now(), aprovaSeuFocoCache) : null;
         if (prog && prog.qProgress && prog.qProgress.daily) {
-          metaBit = "Questões " + prog.qProgress.daily.done + "/" + prog.qProgress.daily.goal;
+          todayBits.push("Questões " + prog.qProgress.daily.done + "/" + prog.qProgress.daily.goal);
         }
         if (prog && prog.quota) {
           const done = typeof aprovaActivityToday === "function" ? aprovaActivityToday() : (srs.studiedToday || 0);
-          goalBit = " · cards " + done + "/" + prog.quota.daily;
+          todayBits.push("Cards " + done + "/" + prog.quota.daily);
         }
       }
     }
-    let lateBit = "";
     if (typeof aprovaBuildMateriaBoard === "function") {
       const board = aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 });
-      const nLate = (board.overdue || []).length;
-      if (nLate) lateBit = " · " + nLate + " atrasada" + (nLate === 1 ? "" : "s");
+      nLate = (board.overdue || []).length;
     }
-    if (metaBit) {
-      dashPreview.textContent = metaBit + lateBit +
-        (srs.pending ? (" · " + srs.pending + " cards na fila") : " · cards em dia") + goalBit;
+    if (todayBits.length) {
+      let line = "Hoje: " + todayBits.join(" · ");
+      if (nLate) {
+        line += " · Atrasado: " + nLate + " matéria" + (nLate === 1 ? "" : "s");
+      }
+      dashPreview.textContent = line;
     } else if (!cardIds.length) {
-      dashPreview.textContent = "Carregando flashcards…";
-    } else if (srs.pending) {
-      dashPreview.textContent = srs.pending + " na fila · " + srs.due + " revisão · " +
-        srs.newCards + " novo" + (srs.newCards === 1 ? "" : "s") +
-        (srs.studiedToday ? (" · " + srs.studiedToday + " feitos hoje") : "") +
-        goalBit;
+      dashPreview.textContent = "Carregando…";
     } else {
-      dashPreview.textContent = (srs.studiedToday
-        ? ("Fila em dia · " + srs.studiedToday + " estudados hoje")
-        : "Fila em dia — nada pendente agora.") + goalBit;
+      dashPreview.textContent = nLate
+        ? ("Configure o perfil para a meta do dia · Atrasado: " + nLate +
+          " matéria" + (nLate === 1 ? "" : "s"))
+        : "Configure o perfil para ver a meta do dia";
     }
   }
 
