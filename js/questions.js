@@ -441,7 +441,10 @@ const AprovaQuestions = {
     const ok = choiceIndex === q.answer;
     if (ok) this.correct += 1;
     if (typeof aprovaRecordExamAnswer === "function") {
-      aprovaRecordExamAnswer(q.theme, ok, q.id);
+      aprovaRecordExamAnswer(q.theme, ok, q.id, {
+        specialty: q.specialty,
+        group: q.group
+      });
     }
     const entry = {
       id: q.id,

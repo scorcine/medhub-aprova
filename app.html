@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721acc1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721mat1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -650,8 +650,22 @@
                       <ol class="metas-waves-list" id="metas-waves-list"></ol>
                     </div>
                     <div class="metas-weak-nudge" id="metas-weak-nudge" hidden></div>
+                    <div class="metas-materia" id="metas-materia">
+                      <div class="metas-materia-col">
+                        <div class="label">Matéria em dia</div>
+                        <ul class="metas-materia-list" id="metas-materia-onday"></ul>
+                      </div>
+                      <div class="metas-materia-col">
+                        <div class="label">Matéria atrasada</div>
+                        <ul class="metas-materia-list" id="metas-materia-late"></ul>
+                      </div>
+                    </div>
                     <div class="label" style="margin-top:0.55rem">Foco de hoje · pelas suas provas</div>
                     <ul class="dash-task-themes" id="metas-q-themes"></ul>
+                    <details class="metas-details" style="margin-top:0.65rem">
+                      <summary>Prévia de amanhã</summary>
+                      <ul class="dash-task-themes" id="metas-q-themes-tomorrow" style="margin-top:0.55rem"></ul>
+                    </details>
                     <div class="actions-row" style="margin-top:0.75rem">
                       <button type="button" class="btn btn-primary" id="metas-q-start-day">Responder bloco de hoje</button>
                     </div>
@@ -844,12 +858,12 @@
   <script src="js/profile.js?v=20260721acc1"></script>
   <script src="js/focus.js?v=20260719h"></script>
   <script src="js/plan.js?v=20260719h"></script>
-  <script src="js/tasks.js?v=20260721acc1"></script>
+  <script src="js/tasks.js?v=20260721mat1"></script>
   <script src="js/schedule.js?v=20260721acc1"></script>
-  <script src="js/exam-stats.js?v=20260721acc1"></script>
+  <script src="js/exam-stats.js?v=20260721mat1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
-  <script src="js/questions-qui.js?v=1"></script>
+  <script src="js/questions-qui.js?v=20260721mat1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721acc1"></script>
+  <script src="js/app-qui.js?v=20260721mat1"></script>
 </body>
 </html>

@@ -2801,6 +2801,9 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const wavesEl = document.getElementById("metas-review-waves");
   const wavesListEl = document.getElementById("metas-waves-list");
   const weakNudgeEl = document.getElementById("metas-weak-nudge");
+  const materiaOnEl = document.getElementById("metas-materia-onday");
+  const materiaLateEl = document.getElementById("metas-materia-late");
+  const qTomorrowEl = document.getElementById("metas-q-themes-tomorrow");
 
   if (program) {
     const daily = (program.tasks || []).find((t) => t.id === "daily");
@@ -2879,6 +2882,100 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
         } else {
           weakNudgeEl.hidden = true;
           weakNudgeEl.innerHTML = "";
+        }
+      }
+      if (materiaOnEl || materiaLateEl) {
+        const esc = (s) => String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;");
+        const board = program.materiaBoard || {};
+        const onDay = [].concat(board.onTrack || [], board.pendingToday || []);
+        if (materiaOnEl) {
+          if (!onDay.length) {
+            materiaOnEl.innerHTML = "<li class=\"muted\">Nada atribuído ainda — abra o foco de hoje.</li>";
+          } else {
+            materiaOnEl.innerHTML = onDay.map((row) => {
+              const ok = (row.done | 0) >= (row.goal | 0);
+              return (
+                "<li class=\"" + (ok ? "metas-materia--ok" : "") + "\">" +
+                  "<strong>" + esc(row.tema) + "</strong>" +
+                  "<span>" +
+                    (row.areaLabel ? esc(row.areaLabel) + " · " : "") +
+                    (ok
+                      ? ("Cumprido hoje · " + row.done + "/" + row.goal)
+                      : ("Hoje · " + row.done + "/" + row.goal + " · faltam " + row.remaining)) +
+                  "</span>" +
+                  (!ok
+                    ? ("<button type=\"button\" class=\"btn btn-ghost btn-compact\"" +
+                      " data-meta-q-spec=\"" + esc(row.specialty) + "\"" +
+                      " data-meta-q-tema=\"" + esc(row.tema) + "\"" +
+                      " data-meta-q-n=\"" + (row.remaining || row.goal) + "\">Responder</button>")
+                    : "") +
+                "</li>"
+              );
+            }).join("");
+          }
+        }
+        if (materiaLateEl) {
+          const late = board.overdue || [];
+          if (!late.length) {
+            materiaLateEl.innerHTML = "<li class=\"muted\">Nenhuma matéria atrasada.</li>";
+          } else {
+            materiaLateEl.innerHTML = late.slice(0, 8).map((row) => (
+              "<li class=\"metas-materia--late\">" +
+                "<strong>" + esc(row.tema) + "</strong>" +
+                "<span>" +
+                  (row.areaLabel ? esc(row.areaLabel) + " · " : "") +
+                  (row.daysLate === 1
+                    ? "1 dia atrasado"
+                    : (row.daysLate + " dias atrasados")) +
+                  " · " + row.done + "/" + row.goal +
+                  (row.remaining ? (" · faltam " + row.remaining) : "") +
+                "</span>" +
+                "<button type=\"button\" class=\"btn btn-ghost btn-compact\"" +
+                  " data-meta-q-spec=\"" + esc(row.specialty) + "\"" +
+                  " data-meta-q-tema=\"" + esc(row.tema) + "\"" +
+                  " data-meta-q-n=\"" + (row.remaining || row.goal) + "\">Recuperar</button>" +
+              "</li>"
+            )).join("");
+          }
+        }
+        const materiaRoot = document.getElementById("metas-materia");
+        if (materiaRoot && !materiaRoot.dataset.metaQBound) {
+          materiaRoot.dataset.metaQBound = "1";
+          materiaRoot.addEventListener("click", (evt) => {
+            const btn = evt.target.closest("[data-meta-q-tema]");
+            if (!btn) return;
+            evt.preventDefault();
+            aprovaFulfillMetaQuestions(
+              btn.getAttribute("data-meta-q-spec"),
+              btn.getAttribute("data-meta-q-tema"),
+              Number(btn.getAttribute("data-meta-q-n")) || 10
+            );
+          });
+        }
+      }
+      if (qTomorrowEl) {
+        const esc = (s) => String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;");
+        const tom = program.qThemesTomorrow || [];
+        if (!tom.length) {
+          qTomorrowEl.innerHTML = "<li class=\"muted\" style=\"list-style:none\">Sem prévia.</li>";
+        } else {
+          qTomorrowEl.innerHTML = tom.map((th) => (
+            "<li>" +
+              "<button type=\"button\" class=\"dash-task-theme-btn\" disabled>" +
+                "<strong>" + (th.n | 0) + "</strong>" +
+                "<span class=\"dash-task-theme-copy\">" +
+                  esc(th.tema) +
+                  (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
+                "</span>" +
+              "</button>" +
+            "</li>"
+          )).join("");
         }
       }
       if (qWeekEl) {

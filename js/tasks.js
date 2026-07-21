@@ -223,6 +223,36 @@ function aprovaWeightThemesByAccuracy (themes, targetAccuracy, statsSummary) {
   });
 }
 
+/** Dia civil → número estável (UTC) para rotacionar temas. */
+function aprovaDayNumber (iso) {
+  const s = String(iso || "");
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (!m) return 0;
+  return Math.floor(Date.UTC(+m[1], +m[2] - 1, +m[3]) / 86400000);
+}
+
+/**
+ * Escolhe N temas diferentes por dia (janela deslizante no pool).
+ * Amanhã ≠ hoje: avança N posições no ranking das estatísticas.
+ */
+function aprovaPickThemesForDay (pool, dateIso, take) {
+  const list = Array.isArray(pool) ? pool.slice() : [];
+  if (!list.length) return [];
+  const n = Math.max(1, Math.min(take | 0 || 6, list.length));
+  const start = (aprovaDayNumber(dateIso) * n) % list.length;
+  const picked = [];
+  const seen = Object.create(null);
+  for (let i = 0; i < list.length && picked.length < n; i++) {
+    const t = list[(start + i) % list.length];
+    if (!t || !t.tema) continue;
+    const key = (t.areaId || "") + "::" + String(t.tema);
+    if (seen[key]) continue;
+    seen[key] = true;
+    picked.push(t);
+  }
+  return picked;
+}
+
 /**
  * Temas priorizados entre áreas.
  * @param {object} focusPack
@@ -565,9 +595,12 @@ function aprovaBuildPeriodTasks (quota, themeSets, now = Date.now()) {
       detail: todayComplete
         ? ("Adiante até " + quota.daily + " cards — contam para amanhã")
         : "Continue o adiantamento de amanhã",
-      themesLabel: "Foco de amanhã (mesmo ritmo)",
-      themesHint: "Cada card estudado aqui entra na meta de amanhã, não na de hoje.",
-      themeCards: aprovaDistributeThemeCards(dailyThemes, quota.daily),
+      themesLabel: "Foco de amanhã",
+      themesHint: "Temas diferentes dos de hoje — cada card aqui conta para amanhã.",
+      themeCards: aprovaDistributeThemeCards(
+        (themeSets && themeSets.tomorrow) || dailyThemes,
+        quota.daily
+      ),
       newCards: quota.dailyNew,
       reviewCards: quota.dailyReview,
       cta: stT.status === "done" ? "Estudar mais" : "Adiantar agora",
@@ -626,12 +659,19 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     areaId: plan.areaId || ""
   }));
 
-  const dailyThemes = aprovaCollectCrossAreaThemes(focusPack, 8, { perArea: 1 });
+  const todayIso = typeof aprovaActivityDayKey === "function"
+    ? aprovaActivityDayKey(now)
+    : aprovaIsoOffset(0, now);
+  const tomorrowIso = aprovaIsoOffset(1, now);
+  const themePool = aprovaCollectCrossAreaThemes(focusPack, 24, { perArea: 3 });
+  const dailyThemes = aprovaPickThemesForDay(themePool, todayIso, 8);
+  const tomorrowThemes = aprovaPickThemesForDay(themePool, tomorrowIso, 8);
   const weeklyThemes = aprovaCollectCrossAreaThemes(focusPack, 14, { perArea: 2 });
   const monthlyThemes = aprovaCollectCrossAreaThemes(focusPack, 22, { perArea: 3 });
 
   const themeSets = {
     daily: dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, 8),
+    tomorrow: tomorrowThemes.length ? tomorrowThemes : (dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, 8)),
     weekly: weeklyThemes.length ? weeklyThemes : fallbackThemes.slice(0, 14),
     monthly: monthlyThemes.length ? monthlyThemes : fallbackThemes
   };
@@ -667,9 +707,6 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
   const qWeekFrom = aprovaIsoOffset(-6, now);
   const qBiFrom = aprovaIsoOffset(-13, now);
   const qMonthFrom = aprovaIsoOffset(-29, now);
-  const todayIso = typeof aprovaActivityDayKey === "function"
-    ? aprovaActivityDayKey(now)
-    : aprovaIsoOffset(0, now);
   const qWeekDone = typeof aprovaQActivitySumRange === "function"
     ? aprovaQActivitySumRange(qWeekFrom, todayIso)
     : 0;
@@ -688,10 +725,9 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     statsSummary
   );
 
-  // Temas do dia: estatísticas das provas + peso pelo desempenho vs meta
-  const qFocusThemes = aprovaCollectCrossAreaThemes(focusPack, 8, { perArea: 2 });
+  // Temas do dia: pool das provas + rotação por data + peso vs meta
   const qWeighted = aprovaWeightThemesByAccuracy(
-    qFocusThemes.length ? qFocusThemes : themeSets.daily,
+    themeSets.daily,
     targetAccuracy,
     statsSummary
   );
@@ -710,6 +746,42 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     };
   });
 
+  // Prévia de amanhã (temas diferentes)
+  const qTomorrowWeighted = aprovaWeightThemesByAccuracy(
+    themeSets.tomorrow || [],
+    targetAccuracy,
+    statsSummary
+  );
+  const qTomorrowDistributed = aprovaDistributeThemeCards(qTomorrowWeighted, qQuota.daily);
+  const qThemesTomorrow = qTomorrowDistributed.map((t) => ({
+    specialty: t.areaId || "",
+    areaLabel: t.areaLabel || "",
+    tema: t.tema,
+    pct: t.pct,
+    n: t.cards
+  }));
+
+  if (typeof aprovaEnsureMateriaDay === "function") {
+    // Trava o plano de hoje; gera ontem se faltar (para marcar 1 dia de atraso ao pular)
+    const daysToLock = [todayIso, aprovaIsoOffset(-1, now)];
+    daysToLock.forEach((iso) => {
+      const dayPool = aprovaPickThemesForDay(themePool.length ? themePool : themeSets.daily, iso, 8);
+      const dayWeighted = aprovaWeightThemesByAccuracy(dayPool, targetAccuracy, statsSummary);
+      const dayDist = aprovaDistributeThemeCards(dayWeighted, qQuota.daily);
+      const dayThemes = dayDist.map((t) => ({
+        specialty: t.areaId || "",
+        areaLabel: t.areaLabel || "",
+        tema: t.tema,
+        n: t.cards
+      }));
+      aprovaEnsureMateriaDay(iso, dayThemes);
+    });
+  }
+
+  const materiaBoard = typeof aprovaBuildMateriaBoard === "function"
+    ? aprovaBuildMateriaBoard(now, { lookbackDays: 14 })
+    : { onTrack: [], overdue: [], pendingToday: [] };
+
   const accuracyGoal = {
     target: targetAccuracy,
     current: statsSummary.attempted ? statsSummary.pct : null,
@@ -727,6 +799,8 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
       monthly: { done: qMonthDone, goal: qQuota.monthly }
     },
     qThemes,
+    qThemesTomorrow,
+    materiaBoard,
     accuracyGoal,
     reviewWaves,
     weakThemes: (reviewWaves && reviewWaves.weakThemes) || [],
