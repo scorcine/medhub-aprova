@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-once";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-voice2";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
@@ -68,11 +68,43 @@ function aprovaMascotStopSpeech () {
   } catch (e) { /* ignore */ }
 }
 
+/** Escolhe a voz pt-BR mais natural/animada disponível no aparelho. */
 function aprovaMascotPickPtVoice () {
   try {
     const voices = window.speechSynthesis.getVoices() || [];
-    const pt = voices.filter((v) => /^pt/i.test(v.lang || ""));
-    return pt.find((v) => /brazil|brasil|pt-BR/i.test(v.lang + " " + v.name)) || pt[0] || null;
+    if (!voices.length) return null;
+
+    const score = (v) => {
+      const name = String(v.name || "");
+      const lang = String(v.lang || "");
+      const blob = (name + " " + lang).toLowerCase();
+      let s = 0;
+      if (/^pt-br/i.test(lang) || /brazil|brasil/.test(blob)) s += 50;
+      else if (/^pt/i.test(lang)) s += 20;
+      else return -1;
+      // Vozes geralmente mais naturais / amigáveis no Windows/Chrome/Edge
+      if (/google.*(portugu|brasil)|microsoft.*(maria|francisca|thalita|antonio)|luciana|fernanda|vit[oó]ria|daniela/.test(blob)) {
+        s += 40;
+      }
+      if (/maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina/.test(blob)) {
+        s += 25; // tom mais acolhedor / carismático
+      }
+      if (/neural|natural|enhanced|premium|online/.test(blob)) s += 15;
+      if (/compact|mini|eloquence|siri/.test(blob)) s -= 10;
+      if (v.localService) s += 5;
+      return s;
+    };
+
+    let best = null;
+    let bestScore = -1;
+    voices.forEach((v) => {
+      const s = score(v);
+      if (s > bestScore) {
+        bestScore = s;
+        best = v;
+      }
+    });
+    return best;
   } catch (e) {
     return null;
   }
@@ -85,13 +117,32 @@ function aprovaMascotSpeakWelcome (firstName) {
     const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, firstName);
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "pt-BR";
-    u.rate = 1;
+    u.rate = 1.18;   // um pouco mais ágil
+    u.pitch = 1.12;  // tom um pouco mais animado / carismático
+    u.volume = 1;
     const voice = aprovaMascotPickPtVoice();
-    if (voice) u.voice = voice;
+    if (voice) {
+      u.voice = voice;
+      if (voice.lang) u.lang = voice.lang;
+    }
     window.speechSynthesis.speak(u);
     return true;
   } catch (e) {
     return false;
+  }
+}
+
+function aprovaMascotStartSpeechWhenReady (firstName) {
+  const start = () => aprovaMascotSpeakWelcome(firstName);
+  if (!window.speechSynthesis) return;
+  if (window.speechSynthesis.getVoices().length === 0) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      window.speechSynthesis.onvoiceschanged = null;
+      start();
+    };
+    window.setTimeout(start, 450);
+  } else {
+    window.setTimeout(start, 180);
   }
 }
 
@@ -172,28 +223,19 @@ function aprovaOpenWelcomeMascotModal (opts) {
 
   modal.hidden = false;
 
-  // Áudio = trilha do vídeo. volume sempre 1 para o unmute do player funcionar.
-  // (Antes volume=0 impedia ouvir mesmo com a caixa de som ativada.)
+  // Vídeo = imagem; fala = voz do navegador (mais ágil e carismática, com o nome).
+  // Se o usuário desmutar o player, ouve a trilha gravada do vídeo.
   aprovaMascotStopSpeech();
   if (video) {
     video.volume = 1;
-    try { video.currentTime = 0; } catch (e) { /* ignore */ }
-
-    const tryPlayWithSound = () => {
-      video.muted = false;
-      return video.play();
-    };
-
-    const playPromise = tryPlayWithSound();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {
-        // Autoplay com som bloqueado: inicia mudo, mas volume=1 — ao desmutar, ouve.
-        video.muted = true;
-        video.volume = 1;
-        video.play().catch(() => {});
-      });
-    }
+    video.muted = true;
+    try {
+      video.playbackRate = 1.12;
+      video.currentTime = 0;
+    } catch (e) { /* ignore */ }
+    video.play().catch(() => {});
   }
+  aprovaMascotStartSpeechWhenReady(first);
 }
 
 function aprovaRenderInicioMascot () {
@@ -244,18 +286,16 @@ function aprovaBindWelcomeMascot () {
 
   document.getElementById("welcome-mascot-replay")?.addEventListener("click", () => {
     const video = document.getElementById("welcome-mascot-video");
-    aprovaMascotStopSpeech();
     if (video) {
       try {
         video.volume = 1;
-        video.muted = false;
+        video.muted = true;
+        video.playbackRate = 1.12;
         video.currentTime = 0;
-        video.play().catch(() => {
-          video.muted = true;
-          video.play().catch(() => {});
-        });
+        video.play().catch(() => {});
       } catch (e) { /* ignore */ }
     }
+    aprovaMascotStartSpeechWhenReady(aprovaMascotFirstName());
   });
 
   const videoEl = document.getElementById("welcome-mascot-video");
