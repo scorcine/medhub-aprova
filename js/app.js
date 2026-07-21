@@ -234,6 +234,13 @@ let aprovaFcHomeStatsYear = "geral";
 let aprovaFcHomeExamChooserOpen = false;
 let aprovaSeuFocoAreaId = "clinica";
 let aprovaSeuFocoCache = null;
+/** Pack exibido no painel por área (mix do perfil ou prova isolada). */
+let aprovaSeuFocoViewPack = null;
+/** "perfil" | id da banca (geral, enamed, sus-sp…) */
+let aprovaSeuFocoStatsMode = "perfil";
+let aprovaSeuFocoStatsYear = "geral";
+let aprovaSeuFocoExamChooserOpen = false;
+let aprovaSeuFocoProfilesCache = null;
 const aprovaOverviewStatsCache = Object.create(null);
 
 /** Banca preferida do perfil (1ª prioridade), ou "geral". */
@@ -2534,9 +2541,10 @@ function aprovaRenderSeuFocoArea (pack, areaId) {
   const moreEl = document.getElementById("dash-seu-foco-more");
   const lessEl = document.getElementById("dash-seu-foco-less");
   const areasEl = document.getElementById("dash-seu-foco-areas");
-  if (!pack || !pack.ok || !moreEl || !lessEl) return;
+  const view = pack || aprovaSeuFocoViewPack || aprovaSeuFocoCache;
+  if (!view || !view.ok || !moreEl || !lessEl) return;
 
-  const area = pack.areas.find(a => a.id === areaId) || pack.areas[0];
+  const area = view.areas.find(a => a.id === areaId) || view.areas[0];
   if (!area) return;
   aprovaSeuFocoAreaId = area.id;
 
@@ -2568,7 +2576,198 @@ function aprovaRenderSeuFocoArea (pack, areaId) {
       return "<li><span>" + t.tema + "</span><em>" + label + "</em></li>";
     }).join("");
   }
-  // Metas no topo já usam todas as áreas — o clique só muda o detalhe acima
+}
+
+async function aprovaSeuFocoLoadExamProfiles () {
+  if (aprovaSeuFocoProfilesCache) return aprovaSeuFocoProfilesCache;
+  if (typeof aprovaFocusLoadArea !== "function" || typeof APROVA_FOCUS_AREAS === "undefined") {
+    return [];
+  }
+  const data = await aprovaFocusLoadArea(APROVA_FOCUS_AREAS[0]);
+  aprovaSeuFocoProfilesCache = (data && Array.isArray(data.profiles)) ? data.profiles : [];
+  return aprovaSeuFocoProfilesCache;
+}
+
+function aprovaRenderSeuFocoExamFilters (profiles) {
+  const container = document.getElementById("dash-seu-foco-exam-filters");
+  if (!container) return;
+
+  const list = (Array.isArray(profiles) ? profiles : [])
+    .filter((p) => p && p.id && p.id !== "__perfil__");
+  const examChoices = list.filter((p) => p.id !== "geral");
+  const mode = aprovaSeuFocoStatsMode || "perfil";
+  const activeExam = list.find((p) => p.id === mode);
+  const pickLabel = mode !== "perfil" && mode !== "geral" && activeExam
+    ? (activeExam.label || mode)
+    : "Escolher prova";
+
+  container.innerHTML = "";
+
+  const row = document.createElement("div");
+  row.className = "esp-stat-filters-row";
+
+  function addModeBtn (id, label, title) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "esp-exam-btn" + (mode === id ? " active" : "");
+    btn.textContent = label;
+    if (title) btn.title = title;
+    btn.addEventListener("click", () => {
+      aprovaSeuFocoExamChooserOpen = false;
+      aprovaSeuFocoStatsMode = id;
+      aprovaRefreshSeuFocoStatsView();
+    });
+    row.appendChild(btn);
+  }
+
+  addModeBtn(
+    "perfil",
+    "Minhas provas",
+    "Mistura das provas do seu perfil (pesos 50% / 30% / 20%)"
+  );
+  addModeBtn(
+    "geral",
+    "Geral Brasil",
+    "Síntese nacional · ciclo 2024–2026"
+  );
+
+  const pickBtn = document.createElement("button");
+  pickBtn.type = "button";
+  pickBtn.className = "esp-exam-pick-btn" +
+    (mode !== "perfil" && mode !== "geral" ? " esp-exam-pick-btn--set" : "") +
+    (aprovaSeuFocoExamChooserOpen ? " open" : "");
+  pickBtn.setAttribute("aria-expanded", aprovaSeuFocoExamChooserOpen ? "true" : "false");
+  pickBtn.textContent = pickLabel + (aprovaSeuFocoExamChooserOpen ? " ▴" : " ▾");
+  pickBtn.title = "Ver estatística de outra prova (SUS-SP, Enamed, USP…)";
+  pickBtn.addEventListener("click", () => {
+    aprovaSeuFocoExamChooserOpen = !aprovaSeuFocoExamChooserOpen;
+    aprovaRenderSeuFocoExamFilters(profiles);
+  });
+  row.appendChild(pickBtn);
+
+  const yearWrap = document.createElement("label");
+  yearWrap.className = "esp-year-pick";
+  yearWrap.innerHTML = "<span>Ano</span>";
+  const yearSelect = document.createElement("select");
+  yearSelect.setAttribute("aria-label", "Ano da estatística");
+  yearSelect.disabled = mode === "perfil";
+  [
+    { id: "geral", label: "2024–2026" },
+    { id: "2024", label: "2024" },
+    { id: "2025", label: "2025" },
+    { id: "2026", label: "2026" }
+  ].forEach((y) => {
+    const opt = document.createElement("option");
+    opt.value = y.id;
+    opt.textContent = y.label;
+    if (y.id === (aprovaSeuFocoStatsYear || "geral")) opt.selected = true;
+    yearSelect.appendChild(opt);
+  });
+  yearSelect.addEventListener("change", () => {
+    aprovaSeuFocoStatsYear = yearSelect.value || "geral";
+    aprovaRefreshSeuFocoStatsView();
+  });
+  yearWrap.appendChild(yearSelect);
+  row.appendChild(yearWrap);
+  container.appendChild(row);
+
+  if (aprovaSeuFocoExamChooserOpen) {
+    const chooser = document.createElement("div");
+    chooser.className = "esp-exam-chooser";
+    chooser.setAttribute("role", "listbox");
+    chooser.setAttribute("aria-label", "Provas com estatística");
+    const sorted = typeof aprovaSortExamProfiles === "function"
+      ? aprovaSortExamProfiles(examChoices)
+      : examChoices.slice().sort((a, b) =>
+        String(a.label || "").localeCompare(String(b.label || ""), "pt-BR"));
+    sorted.forEach((p) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "esp-exam-chooser-btn" + (mode === p.id ? " active" : "");
+      btn.setAttribute("role", "option");
+      btn.setAttribute("aria-selected", mode === p.id ? "true" : "false");
+      btn.textContent = p.label || p.id;
+      btn.addEventListener("click", () => {
+        aprovaSeuFocoExamChooserOpen = false;
+        aprovaSeuFocoStatsMode = p.id;
+        aprovaRefreshSeuFocoStatsView();
+      });
+      chooser.appendChild(btn);
+    });
+    if (!sorted.length) {
+      const empty = document.createElement("p");
+      empty.className = "muted";
+      empty.textContent = "Nenhuma outra prova com estatística neste ciclo.";
+      chooser.appendChild(empty);
+    }
+    container.appendChild(chooser);
+  }
+}
+
+async function aprovaRefreshSeuFocoStatsView () {
+  const weightsEl = document.getElementById("dash-seu-foco-weights");
+  const noteEl = document.getElementById("dash-seu-foco-note");
+  const areasEl = document.getElementById("dash-seu-foco-areas");
+  const moreEl = document.getElementById("dash-seu-foco-more");
+
+  let view = null;
+  if (aprovaSeuFocoStatsMode === "perfil") {
+    view = aprovaSeuFocoCache;
+  } else if (typeof aprovaBuildFocusPackForSingleExam === "function") {
+    if (moreEl) moreEl.innerHTML = "<p class=\"muted\">Carregando estatística…</p>";
+    view = await aprovaBuildFocusPackForSingleExam(
+      aprovaSeuFocoStatsMode,
+      aprovaSeuFocoStatsYear
+    );
+  }
+
+  aprovaSeuFocoViewPack = view && view.ok ? view : aprovaSeuFocoCache;
+
+  const profiles = await aprovaSeuFocoLoadExamProfiles();
+  aprovaRenderSeuFocoExamFilters(profiles);
+
+  if (!aprovaSeuFocoViewPack || !aprovaSeuFocoViewPack.ok) {
+    if (weightsEl) {
+      weightsEl.textContent = (view && view.reason) ||
+        "Não há estatística desta prova nesta área.";
+    }
+    return;
+  }
+
+  if (weightsEl) {
+    weightsEl.textContent = aprovaSeuFocoStatsMode === "perfil"
+      ? ("Pesos: " + (aprovaSeuFocoViewPack.weightLine || "") +
+        (aprovaSeuFocoViewPack.others && aprovaSeuFocoViewPack.others.length
+          ? " · “Outra” sem estatística no app"
+          : ""))
+      : (aprovaSeuFocoViewPack.weightLine || "");
+  }
+  if (noteEl) {
+    noteEl.hidden = false;
+    noteEl.textContent = aprovaSeuFocoStatsMode === "perfil"
+      ? "Consulta por área com o mix do seu perfil. Use os filtros acima para ver outra prova (SUS-SP, Enamed, Brasil…)."
+      : "Consulta por área nesta prova. As metas do dia continuam com o mix do seu perfil.";
+  }
+
+  if (areasEl) {
+    areasEl.innerHTML = "";
+    aprovaSeuFocoViewPack.areas.forEach((area) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "esp-exam-btn" + (area.id === aprovaSeuFocoAreaId ? " active" : "");
+      btn.dataset.area = area.id;
+      btn.textContent = area.label;
+      btn.addEventListener("click", () => {
+        aprovaRenderSeuFocoArea(aprovaSeuFocoViewPack, area.id);
+      });
+      areasEl.appendChild(btn);
+    });
+  }
+
+  const startId = aprovaSeuFocoViewPack.areas.some((a) => a.id === aprovaSeuFocoAreaId)
+    ? aprovaSeuFocoAreaId
+    : aprovaSeuFocoViewPack.areas[0].id;
+  aprovaRenderSeuFocoArea(aprovaSeuFocoViewPack, startId);
 }
 
 function aprovaFulfillDailyMeta () {
@@ -3438,34 +3637,11 @@ function aprovaRenderSeuFoco () {
         if (areasEl) areasEl.innerHTML = "";
         if (wrap) wrap.hidden = true;
       } else {
-        if (weightsEl) {
-          weightsEl.textContent = "Pesos: " + pack.weightLine +
-            (pack.others && pack.others.length
-              ? " · “Outra” sem estatística no app"
-              : "");
+        aprovaSeuFocoViewPack = pack;
+        if (aprovaSeuFocoStatsMode === "perfil") {
+          // mantém modo perfil ao recarregar
         }
-        if (noteEl) {
-          noteEl.textContent = "Consulta por área. As metas acima já misturam todas as áreas com os pesos das suas provas.";
-        }
-
-        const areasEl = document.getElementById("dash-seu-foco-areas");
-        if (areasEl) {
-          areasEl.innerHTML = "";
-          pack.areas.forEach(area => {
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = "esp-exam-btn" + (area.id === aprovaSeuFocoAreaId ? " active" : "");
-            btn.dataset.area = area.id;
-            btn.textContent = area.label;
-            btn.addEventListener("click", () => aprovaRenderSeuFocoArea(pack, area.id));
-            areasEl.appendChild(btn);
-          });
-        }
-
-        const startId = pack.areas.some(a => a.id === aprovaSeuFocoAreaId)
-          ? aprovaSeuFocoAreaId
-          : pack.areas[0].id;
-        aprovaRenderSeuFocoArea(pack, startId);
+        aprovaRefreshSeuFocoStatsView();
 
         if (pack.primaryExamId) {
           aprovaFcHomeStatsFocus = pack.primaryExamId;

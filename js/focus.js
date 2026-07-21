@@ -221,3 +221,70 @@ async function aprovaBuildPersonalizedFocus (profile) {
     primaryExamId: exams[0].id
   };
 }
+
+/**
+ * Monta o painel "o que mais cai" para UMA prova (ex.: SUS-SP, Enamed, Geral Brasil).
+ * Não altera o mix do perfil usado nas metas.
+ */
+async function aprovaBuildFocusPackForSingleExam (examId, year) {
+  const id = String(examId || "geral");
+  const y = year || "geral";
+  let examLabel = id === "geral"
+    ? "Geral Brasil"
+    : (typeof aprovaExamOptionLabel === "function" ? aprovaExamOptionLabel(id) : id);
+  const areas = [];
+
+  for (const area of APROVA_FOCUS_AREAS) {
+    const data = await aprovaFocusLoadArea(area);
+    if (!data || !Array.isArray(data.profiles)) continue;
+    const profile = data.profiles.find((p) => p.id === id);
+    if (!profile) continue;
+    if (profile.label) examLabel = profile.label;
+    const slice = typeof aprovaResolveYearSlice === "function"
+      ? aprovaResolveYearSlice(profile, y)
+      : { priorities: profile.priorities || [] };
+    const themes = (slice.priorities || [])
+      .map((p) => ({
+        tema: String(p.tema || "").trim(),
+        pct: Number(p.pct) || 0
+      }))
+      .filter((t) => t.tema)
+      .sort((a, b) => b.pct - a.pct);
+    if (!themes.length) continue;
+    const focus = themes.slice(0, 4);
+    const tail = themes.length > 5
+      ? themes.slice(-3).reverse()
+      : themes.slice(Math.max(0, themes.length - 2)).reverse();
+    const less = tail.filter((t) =>
+      !focus.some((f) => aprovaFocusNormKey(f.tema) === aprovaFocusNormKey(t.tema))
+    );
+    areas.push({
+      id: area.id,
+      label: area.label,
+      themes,
+      focus,
+      less,
+      title: data.title || "",
+      usedExams: [{ id, label: examLabel, rank: 0, weight: 100, weightLabel: 100 }]
+    });
+  }
+
+  if (!areas.length) {
+    return {
+      ok: false,
+      reason: "Esta prova ainda não tem estatística nas áreas disponíveis."
+    };
+  }
+
+  const yearTxt = y === "geral" ? "2024–2026" : String(y);
+  return {
+    ok: true,
+    weightLine: "Estatística: " + examLabel + " · " + yearTxt,
+    mixLine: "Consulta em " + examLabel,
+    others: [],
+    exams: [{ id, label: examLabel, rank: 0 }],
+    areas,
+    primaryExamId: id,
+    viewMode: "exam"
+  };
+}
