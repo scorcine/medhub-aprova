@@ -2,15 +2,16 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-voice2";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-voice3";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
  * Roteiro da 1ª visita. Use {nome} onde o nome da pessoa deve entrar.
+ * Frases pensadas para a voz do navegador (evita “precilando” / “revulucionar”).
  */
 const APROVA_MASCOT_SCRIPT =
-  "Seja bem-vindo, {nome}, ao aplicativo que irá revolucionar seus estudos. " +
-  "Inicie preenchendo o seu perfil para uma experiência personalizada de acordo com a sua prova.";
+  "Seja bem-vindo, {nome}, ao aplicativo que vai transformar os seus estudos. " +
+  "Comece a preencher o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
 let aprovaMascotReplayMode = false;
 
