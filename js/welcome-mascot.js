@@ -1,6 +1,8 @@
-/* Mascote de boas-vindas — 1ª visita: vídeo + fala com nome; depois: foto no Início */
+/* Mascote de boas-vindas — 1ª visita automática; depois só se clicar no avatar */
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
+const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-once";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
@@ -9,6 +11,8 @@ const APROVA_MASCOT_IMG = "/assets/mascote.png";
 const APROVA_MASCOT_SCRIPT =
   "Seja bem-vindo, {nome}, ao aplicativo que irá revolucionar seus estudos. " +
   "Inicie preenchendo o seu perfil para uma experiência personalizada de acordo com a sua prova.";
+
+let aprovaMascotReplayMode = false;
 
 function aprovaMascotFirstName () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
@@ -40,6 +44,24 @@ function aprovaMascotMarkWelcomeSeen () {
   } catch (e) { /* ignore */ }
 }
 
+/** One-shot: reabre o vídeo uma vez para scorcine@gmail.com. */
+function aprovaMascotMaybeForceOwnerOnce () {
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  const email = String(session && session.login || "").trim().toLowerCase();
+  if (email !== "scorcine@gmail.com") return false;
+  try {
+    if (localStorage.getItem(APROVA_MASCOT_FORCE_KEY) === APROVA_MASCOT_FORCE_TOKEN) {
+      return false;
+    }
+    localStorage.removeItem(APROVA_MASCOT_SEEN_KEY);
+    localStorage.setItem(APROVA_MASCOT_FORCE_KEY, APROVA_MASCOT_FORCE_TOKEN);
+    aprovaMaybeShowWelcomeMascot._opened = false;
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 function aprovaMascotStopSpeech () {
   try {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
@@ -56,7 +78,6 @@ function aprovaMascotPickPtVoice () {
   }
 }
 
-/** Uma única fala personalizada (sem misturar com o áudio do vídeo). */
 function aprovaMascotSpeakWelcome (firstName) {
   if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
   try {
@@ -77,6 +98,9 @@ function aprovaMascotSpeakWelcome (firstName) {
 function aprovaCloseWelcomeMascotModal () {
   const modal = document.getElementById("welcome-mascot-modal");
   const video = document.getElementById("welcome-mascot-video");
+  const wasReplay = aprovaMascotReplayMode;
+  aprovaMascotReplayMode = false;
+
   aprovaMascotStopSpeech();
   if (video) {
     try {
@@ -88,7 +112,9 @@ function aprovaCloseWelcomeMascotModal () {
   aprovaMascotMarkWelcomeSeen();
   aprovaRenderInicioMascot();
 
-  // Depois da boas-vindas: Início pedindo o preenchimento do perfil.
+  // Replay pelo avatar: só fecha, sem empurrar perfil de novo.
+  if (wasReplay) return;
+
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
 
@@ -120,11 +146,15 @@ function aprovaCloseWelcomeMascotModal () {
   }, 120);
 }
 
-function aprovaOpenWelcomeMascotModal () {
+function aprovaOpenWelcomeMascotModal (opts) {
+  const options = opts || {};
+  aprovaMascotReplayMode = !!options.replay;
+
   const modal = document.getElementById("welcome-mascot-modal");
   const video = document.getElementById("welcome-mascot-video");
   const title = document.getElementById("welcome-mascot-title");
   const caption = document.getElementById("welcome-mascot-caption");
+  const closeBtn = modal && modal.querySelector("[data-welcome-mascot-close].btn-primary");
   const first = aprovaMascotFirstName();
   const spoken = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, first);
 
@@ -132,20 +162,26 @@ function aprovaOpenWelcomeMascotModal () {
 
   if (title) title.textContent = "Olá, " + first + "!";
   if (caption) caption.textContent = spoken;
+  if (closeBtn) {
+    closeBtn.textContent = aprovaMascotReplayMode ? "Fechar" : "Preencher meu perfil";
+  }
+
+  // Esconde o avatar enquanto o modal está aberto (evita “duas versões”).
+  const wrap = document.getElementById("inicio-mascot");
+  if (wrap) wrap.hidden = true;
 
   modal.hidden = false;
 
   if (video) {
-    // Silencia o áudio gravado para não haver “duas vozes”.
     video.muted = true;
     video.volume = 0;
+    try { video.currentTime = 0; } catch (e) { /* ignore */ }
     const play = video.play();
     if (play && typeof play.catch === "function") {
-      play.catch(() => { /* autoplay bloqueado — usuário dá play */ });
+      play.catch(() => { /* autoplay bloqueado */ });
     }
   }
 
-  // Fala com o nome (única trilha de áudio da boas-vindas).
   const startSpeech = () => aprovaMascotSpeakWelcome(first);
   if (window.speechSynthesis && window.speechSynthesis.getVoices().length === 0) {
     window.speechSynthesis.onvoiceschanged = () => {
@@ -161,14 +197,21 @@ function aprovaOpenWelcomeMascotModal () {
 function aprovaRenderInicioMascot () {
   const wrap = document.getElementById("inicio-mascot");
   const img = document.getElementById("inicio-mascot-img");
+  const btn = document.getElementById("inicio-mascot-btn");
   if (!wrap || !img) return;
 
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  const logged = !!(session && session.login);
   const seen = aprovaMascotHasSeenWelcome();
-  // Foto só depois da 1ª visita (não junto com o modal).
-  wrap.hidden = !seen;
-  if (seen) {
+  const modal = document.getElementById("welcome-mascot-modal");
+  const modalOpen = modal && !modal.hidden;
+
+  // Avatar visível depois da 1ª visita; oculto se o modal estiver aberto.
+  wrap.hidden = !logged || !seen || modalOpen;
+  if (!wrap.hidden) {
     img.src = APROVA_MASCOT_IMG;
-    img.alt = "Mascote MedHub R1";
+    img.alt = "Mascote MedHub R1 — toque para ouvir de novo";
+    if (btn) btn.title = "Ouvir boas-vindas de novo";
   }
 }
 
@@ -176,6 +219,7 @@ function aprovaMaybeShowWelcomeMascot () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   if (!session || !session.login) return;
 
+  aprovaMascotMaybeForceOwnerOnce();
   aprovaRenderInicioMascot();
 
   if (aprovaMascotHasSeenWelcome()) return;
@@ -183,7 +227,7 @@ function aprovaMaybeShowWelcomeMascot () {
   aprovaMaybeShowWelcomeMascot._opened = true;
 
   window.setTimeout(() => {
-    aprovaOpenWelcomeMascotModal();
+    aprovaOpenWelcomeMascotModal({ replay: false });
   }, 280);
 }
 
@@ -206,6 +250,10 @@ function aprovaBindWelcomeMascot () {
       } catch (e) { /* ignore */ }
     }
     aprovaMascotSpeakWelcome(aprovaMascotFirstName());
+  });
+
+  document.getElementById("inicio-mascot-btn")?.addEventListener("click", () => {
+    aprovaOpenWelcomeMascotModal({ replay: true });
   });
 
   const video = document.getElementById("welcome-mascot-video");
