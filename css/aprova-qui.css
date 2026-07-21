@@ -2965,6 +2965,55 @@ html[data-theme="dark"] .aprova-modal-panel {
   margin: 0 0 1rem;
 }
 
+.metas-tracks {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.metas-track {
+  margin: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.metas-track-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.metas-track-summary::-webkit-details-marker {
+  display: none;
+}
+
+.metas-track-title {
+  letter-spacing: -0.02em;
+}
+
+.metas-track-progress {
+  color: var(--accent-deep);
+  font-size: 0.95rem;
+}
+
+.metas-track-body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.metas-track--questions[open] .metas-track-summary,
+.metas-track--flashcards[open] .metas-track-summary {
+  color: var(--accent-deep);
+}
+
 button.linkish {
   display: inline;
   padding: 0;

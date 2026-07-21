@@ -84,6 +84,24 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
 }
 
 /**
+ * Meta diária de questões (~2,2 min/questão no bloco de estudo).
+ */
+function aprovaPlanQuestionQuota (horizon, daysLeft) {
+  const midMin = ((horizon.dailyMin || 30) + (horizon.dailyMax || 55)) / 2;
+  let daily = (midMin * 0.45) / 2.2;
+  if (daysLeft != null && daysLeft > 0 && daysLeft <= 21) daily *= 1.2;
+  else if (daysLeft != null && daysLeft > 0 && daysLeft <= 60) daily *= 1.1;
+  else if (daysLeft != null && daysLeft > 300) daily *= 0.9;
+  daily = aprovaClampInt(daily, 10, 35);
+  return {
+    daily,
+    weekly: daily * 7,
+    monthly: daily * 30,
+    minutesHint: Math.round(daily * 2.2) + "–" + Math.round(daily * 2.8) + " min"
+  };
+}
+
+/**
  * Temas priorizados entre áreas.
  * @param {object} focusPack
  * @param {number} maxTotal
@@ -511,8 +529,42 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
 
   const dailyTask = tasks.find(t => t.id === "daily");
 
+  const qQuota = aprovaPlanQuestionQuota(plan.horizon, daysLeft);
+  const qDone = typeof aprovaQActivityToday === "function" ? aprovaQActivityToday(now) : 0;
+  const qWeekFrom = aprovaIsoOffset(-6, now);
+  const qMonthFrom = aprovaIsoOffset(-29, now);
+  const todayIso = typeof aprovaActivityDayKey === "function"
+    ? aprovaActivityDayKey(now)
+    : aprovaIsoOffset(0, now);
+  const qWeekDone = typeof aprovaQActivitySumRange === "function"
+    ? aprovaQActivitySumRange(qWeekFrom, todayIso)
+    : 0;
+  const qMonthDone = typeof aprovaQActivitySumRange === "function"
+    ? aprovaQActivitySumRange(qMonthFrom, todayIso)
+    : 0;
+  const qStatus = aprovaTaskStatus(qDone, qQuota.daily);
+
+  // Temas/áreas para atalhos de questões
+  const qThemes = [];
+  if (focusPack && focusPack.ok && Array.isArray(focusPack.areas)) {
+    focusPack.areas.slice(0, 4).forEach((area) => {
+      qThemes.push({
+        specialty: area.id,
+        label: area.label,
+        n: Math.max(3, Math.round(qQuota.daily / Math.min(4, focusPack.areas.length)))
+      });
+    });
+  }
+
   return {
     quota,
+    qQuota,
+    qProgress: {
+      daily: { done: qDone, goal: qQuota.daily, pct: qStatus.pct, status: qStatus.status },
+      weekly: { done: qWeekDone, goal: qQuota.weekly },
+      monthly: { done: qMonthDone, goal: qQuota.monthly }
+    },
+    qThemes,
     tasks,
     themeProgram,
     themesForGoals: themeSets.daily,

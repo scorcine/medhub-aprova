@@ -2664,11 +2664,9 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
     toneEl.hidden = true;
   }
   if (metaEl) {
-    metaEl.innerHTML =
-      (plan.assumed
-        ? "<span class=\"dash-seu-plano-chip\">Data padrão: fim do ano</span>"
-        : "") +
-      "<span class=\"dash-seu-plano-chip\">" + plan.dailyLine + "</span>";
+    metaEl.innerHTML = plan.assumed
+      ? "<span class=\"dash-seu-plano-chip\">Data padrão: fim do ano</span>"
+      : "";
   }
 
   const program = typeof aprovaBuildStudyProgram === "function"
@@ -2679,14 +2677,62 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const quotaEl = document.getElementById("dash-seu-plano-quota");
   const tasksEl = document.getElementById("dash-seu-plano-tasks");
   const tasksMoreEl = document.getElementById("dash-seu-plano-tasks-more");
+  const fcSummary = document.getElementById("metas-fc-summary");
+  const qSummary = document.getElementById("metas-q-summary");
+  const qBar = document.getElementById("metas-q-bar");
+  const qQuotaEl = document.getElementById("metas-q-quota");
+  const qThemesEl = document.getElementById("metas-q-themes");
+  const qWeekEl = document.getElementById("metas-q-week");
 
   if (program) {
+    const daily = (program.tasks || []).find((t) => t.id === "daily");
+    if (fcSummary && daily) {
+      fcSummary.textContent = daily.done + "/" + daily.goal + " hoje";
+    } else if (fcSummary && program.quota) {
+      fcSummary.textContent = "0/" + program.quota.daily + " hoje";
+    }
+
+    if (program.qProgress && program.qQuota) {
+      const qp = program.qProgress.daily;
+      if (qSummary) qSummary.textContent = qp.done + "/" + qp.goal + " hoje";
+      if (qBar) qBar.style.width = Math.min(100, qp.pct || 0) + "%";
+      if (qQuotaEl) {
+        qQuotaEl.innerHTML =
+          "<span class=\"dash-seu-plano-chip\">" + program.qQuota.daily + " questões/dia</span>" +
+          "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>";
+      }
+      if (qWeekEl) {
+        qWeekEl.textContent =
+          "Semana " + program.qProgress.weekly.done + "/" + program.qProgress.weekly.goal +
+          " · Mês " + program.qProgress.monthly.done + "/" + program.qProgress.monthly.goal;
+      }
+      if (qThemesEl) {
+        const esc = (s) => String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;");
+        const themes = program.qThemes || [];
+        if (!themes.length) {
+          qThemesEl.innerHTML = "";
+        } else {
+          qThemesEl.innerHTML = themes.map((th) => (
+            "<li>" +
+              "<button type=\"button\" class=\"dash-task-theme-btn\" data-goto=\"questoes\" data-meta-q-spec=\"" +
+                esc(th.specialty) + "\">" +
+                "<strong>" + th.n + "</strong>" +
+                "<span class=\"dash-task-theme-copy\">" + esc(th.label) + "</span>" +
+                "<span class=\"dash-task-theme-go\">Responder</span>" +
+              "</button>" +
+            "</li>"
+          )).join("");
+        }
+      }
+    }
+
     if (progSum) {
-      // Uma linha prática: progresso de hoje
-      const daily = (program.tasks || []).find((t) => t.id === "daily");
       progSum.textContent = daily
-        ? ("Hoje: " + daily.done + "/" + daily.goal + " flashcards")
-        : (program.summaryLine || "");
+        ? ("Hoje: " + daily.done + "/" + daily.goal)
+        : "";
     }
     if (divisionEl) {
       divisionEl.textContent = "";

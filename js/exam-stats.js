@@ -72,6 +72,10 @@ function aprovaRecordExamAnswer (theme, ok, questionId) {
   stats.lastAt = Date.now();
   aprovaSaveExamStats(stats);
 
+  if (typeof aprovaLogQuestionActivity === "function") {
+    aprovaLogQuestionActivity(1);
+  }
+
   const id = String(questionId || "").trim();
   if (id) {
     const hist = aprovaLoadQuestionHistory();
@@ -122,4 +126,51 @@ function aprovaExamStatsSummary () {
     lastAt: stats.lastAt,
     themes
   };
+}
+
+/* Atividade diária de questões (metas) */
+const APROVA_Q_ACTIVITY_KEY = "medhub-aprova-q-activity-v1";
+
+function aprovaLoadQActivity () {
+  try {
+    return JSON.parse(localStorage.getItem(APROVA_Q_ACTIVITY_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function aprovaSaveQActivity (map) {
+  localStorage.setItem(APROVA_Q_ACTIVITY_KEY, JSON.stringify(map || {}));
+}
+
+function aprovaLogQuestionActivity (count = 1, now = Date.now()) {
+  const n = Math.max(1, count | 0);
+  const map = aprovaLoadQActivity();
+  const dayKey = typeof aprovaActivityDayKey === "function"
+    ? aprovaActivityDayKey(now)
+    : new Date(now).toISOString().slice(0, 10);
+  map[dayKey] = (Number(map[dayKey]) || 0) + n;
+  const keys = Object.keys(map).sort();
+  while (keys.length > 420) delete map[keys.shift()];
+  aprovaSaveQActivity(map);
+  return map[dayKey];
+}
+
+function aprovaQActivityToday (now = Date.now()) {
+  const map = aprovaLoadQActivity();
+  const dayKey = typeof aprovaActivityDayKey === "function"
+    ? aprovaActivityDayKey(now)
+    : new Date(now).toISOString().slice(0, 10);
+  return Number(map[dayKey]) || 0;
+}
+
+function aprovaQActivitySumRange (fromIso, toIso) {
+  const map = aprovaLoadQActivity();
+  const from = String(fromIso || "");
+  const to = String(toIso || "");
+  let total = 0;
+  Object.keys(map).forEach((key) => {
+    if (key >= from && key <= to) total += Number(map[key]) || 0;
+  });
+  return total;
 }

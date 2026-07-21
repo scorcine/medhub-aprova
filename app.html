@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721metas1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721metas2">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -617,38 +617,64 @@
             </div>
 
             <div id="dash-seu-plano-body" hidden>
-              <p class="dash-seu-plano-program-summary" id="dash-seu-plano-program-summary"></p>
-              <p class="muted" id="dash-seu-plano-division" hidden></p>
-              <div class="dash-seu-plano-quota" id="dash-seu-plano-quota"></div>
-
-              <div class="label" style="margin-top:0.85rem">Hoje</div>
-              <ul class="dash-seu-plano-tasks" id="dash-seu-plano-tasks"></ul>
-
-              <details class="metas-details" id="metas-period-more" style="margin-top:0.75rem">
-                <summary>Semana e mês</summary>
-                <ul class="dash-seu-plano-tasks" id="dash-seu-plano-tasks-more" style="margin-top:0.65rem"></ul>
-              </details>
-
-              <div class="actions-row" style="margin-top:1rem">
-                <button type="button" class="btn btn-primary" data-goto="hoje">Cumprir meta de hoje</button>
-                <button type="button" class="btn btn-ghost" data-goto="flashcards">Flashcards</button>
-              </div>
-
-              <details class="metas-details" style="margin-top:1.1rem">
-                <summary>Mapa até a prova</summary>
-                <div class="dash-curriculum" id="dash-curriculum" hidden style="margin-top:0.75rem">
-                  <div class="dash-curriculum-head">
-                    <strong class="sr-only">Mapa até a prova</strong>
-                    <p class="muted" id="dash-curriculum-note"></p>
+              <div class="metas-tracks">
+                <details class="metas-track metas-track--questions" id="metas-track-questions" open>
+                  <summary class="metas-track-summary">
+                    <span class="metas-track-title">Questões</span>
+                    <span class="metas-track-progress" id="metas-q-summary">0/0</span>
+                  </summary>
+                  <div class="metas-track-body">
+                    <div class="dash-task-bar" aria-hidden="true"><i id="metas-q-bar" style="width:0%"></i></div>
+                    <div class="dash-seu-plano-quota" id="metas-q-quota"></div>
+                    <ul class="dash-task-themes" id="metas-q-themes"></ul>
+                    <div class="actions-row" style="margin-top:0.75rem">
+                      <button type="button" class="btn btn-primary" data-goto="questoes">Responder agora</button>
+                    </div>
+                    <p class="muted" id="metas-q-week" style="margin:0.65rem 0 0;font-size:0.85rem"></p>
                   </div>
-                  <div id="dash-curriculum-body"></div>
-                </div>
-              </details>
+                </details>
 
-              <details class="metas-details" style="margin-top:0.65rem">
-                <summary>Fases do calendário</summary>
-                <ol class="dash-seu-plano-phases" id="dash-seu-plano-phases" style="margin-top:0.65rem"></ol>
-              </details>
+                <details class="metas-track metas-track--flashcards" id="metas-track-flashcards">
+                  <summary class="metas-track-summary">
+                    <span class="metas-track-title">Flashcards</span>
+                    <span class="metas-track-progress" id="metas-fc-summary">0/0</span>
+                  </summary>
+                  <div class="metas-track-body">
+                    <p class="dash-seu-plano-program-summary" id="dash-seu-plano-program-summary"></p>
+                    <p class="muted" id="dash-seu-plano-division" hidden></p>
+                    <div class="dash-seu-plano-quota" id="dash-seu-plano-quota"></div>
+
+                    <div class="label" style="margin-top:0.55rem">Hoje</div>
+                    <ul class="dash-seu-plano-tasks" id="dash-seu-plano-tasks"></ul>
+
+                    <details class="metas-details" id="metas-period-more" style="margin-top:0.75rem">
+                      <summary>Semana e mês</summary>
+                      <ul class="dash-seu-plano-tasks" id="dash-seu-plano-tasks-more" style="margin-top:0.65rem"></ul>
+                    </details>
+
+                    <div class="actions-row" style="margin-top:0.85rem">
+                      <button type="button" class="btn btn-primary" data-goto="hoje">Cumprir meta de hoje</button>
+                      <button type="button" class="btn btn-ghost" data-goto="flashcards">Abrir flashcards</button>
+                    </div>
+
+                    <details class="metas-details" style="margin-top:1rem">
+                      <summary>Mapa até a prova</summary>
+                      <div class="dash-curriculum" id="dash-curriculum" hidden style="margin-top:0.75rem">
+                        <div class="dash-curriculum-head">
+                          <strong class="sr-only">Mapa até a prova</strong>
+                          <p class="muted" id="dash-curriculum-note"></p>
+                        </div>
+                        <div id="dash-curriculum-body"></div>
+                      </div>
+                    </details>
+
+                    <details class="metas-details" style="margin-top:0.65rem">
+                      <summary>Fases do calendário</summary>
+                      <ol class="dash-seu-plano-phases" id="dash-seu-plano-phases" style="margin-top:0.65rem"></ol>
+                    </details>
+                  </div>
+                </details>
+              </div>
             </div>
           </div>
 
@@ -793,12 +819,12 @@
   <script src="js/profile.js?v=20260719b"></script>
   <script src="js/focus.js?v=20260719h"></script>
   <script src="js/plan.js?v=20260719h"></script>
-  <script src="js/tasks.js?v=20260721metas1"></script>
+  <script src="js/tasks.js?v=20260721metas2"></script>
   <script src="js/schedule.js?v=20260719i"></script>
-  <script src="js/exam-stats.js?v=20260720q7"></script>
+  <script src="js/exam-stats.js?v=20260721metas2"></script>
   <script src="js/flashcards.js?v=20260719f"></script>
   <script src="js/questions-qui.js?v=1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721metas1"></script>
+  <script src="js/app-qui.js?v=20260721metas2"></script>
 </body>
 </html>
