@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721welcome1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721studymode1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -764,6 +764,12 @@
             </div>
 
             <div id="dash-seu-plano-body" hidden>
+              <div class="study-mode-picker" id="study-mode-picker">
+                <div class="label">Como estudar as questões do dia</div>
+                <p class="muted" style="margin:0.25rem 0 0.65rem;font-size:0.88rem">Escolha o formato da meta. O padrão recomendado é Foco.</p>
+                <div class="study-mode-options" id="study-mode-options" role="radiogroup" aria-label="Modo de estudo das questões"></div>
+              </div>
+
               <div class="metas-tracks">
                 <details class="metas-track metas-track--questions" id="metas-track-questions">
                   <summary class="metas-track-summary">
@@ -779,7 +785,7 @@
                       <p id="metas-review-alert-body"></p>
                       <div class="actions-row" id="metas-review-alert-actions"></div>
                     </div>
-                    <div class="label" style="margin-top:0.55rem">Foco de hoje · o que mais caiu</div>
+                    <div class="label" style="margin-top:0.55rem" id="metas-q-themes-label">Foco de hoje · o que mais caiu</div>
                     <ul class="dash-task-themes" id="metas-q-themes"></ul>
                     <div class="actions-row" style="margin-top:0.75rem">
                       <button type="button" class="btn btn-primary" id="metas-q-start-day">Responder bloco de hoje</button>
@@ -910,6 +916,25 @@
   </div>
 
   <!-- Fora do app-shell para não herdar hidden/stacking e o quadro abrir sobre o app -->
+  <div id="study-mode-info-modal" class="aprova-modal" hidden>
+    <div class="aprova-modal-backdrop" data-study-mode-info-close></div>
+    <div class="aprova-modal-panel" role="dialog" aria-modal="true" aria-labelledby="study-mode-info-title">
+      <div class="aprova-modal-head">
+        <div>
+          <p class="esp-exam-label" style="margin:0 0 0.25rem">Como estudar</p>
+          <h3 id="study-mode-info-title" class="esp-decks-title" style="margin:0">Saiba mais</h3>
+        </div>
+        <button type="button" class="btn btn-ghost btn-compact" data-study-mode-info-close aria-label="Fechar">✕</button>
+      </div>
+      <p class="muted" id="study-mode-info-short" style="margin:0.35rem 0 0.85rem"></p>
+      <div id="study-mode-info-body" class="study-mode-info-body"></div>
+      <div class="aprova-modal-actions" style="margin-top:1.1rem">
+        <button type="button" class="btn btn-primary" id="study-mode-info-use">Usar este modo</button>
+        <button type="button" class="btn btn-ghost" data-study-mode-info-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
   <div id="q-start-modal" class="aprova-modal" hidden>
     <div class="aprova-modal-backdrop" data-q-modal-close></div>
     <div class="aprova-modal-panel" role="dialog" aria-modal="true" aria-labelledby="q-start-modal-title">
@@ -998,16 +1023,16 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260721acc2"></script>
+  <script src="js/profile.js?v=20260721studymode1"></script>
   <script src="js/focus.js?v=20260721foco1"></script>
   <script src="js/plan.js?v=20260719h"></script>
-  <script src="js/tasks.js?v=20260721acc2"></script>
+  <script src="js/tasks.js?v=20260721studymode1"></script>
   <script src="js/schedule.js?v=20260721rev1"></script>
   <script src="js/exam-stats.js?v=20260721rev1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721welcome1"></script>
+  <script src="js/app-qui.js?v=20260721studymode1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

@@ -33,6 +33,86 @@ function aprovaDefaultProfile () {
   };
 }
 
+/** Modo de distribuição das questões do dia (localStorage separado). */
+const APROVA_STUDY_MODE_KEY = "medhub-aprova-study-mode-v1";
+
+function aprovaNormalizeStudyMode (mode) {
+  const m = String(mode || "").trim().toLowerCase();
+  if (m === "miscelania" || m === "misc" || m === "interleaved") return "miscelania";
+  if (m === "bloco" || m === "block" || m === "single") return "bloco";
+  return "foco";
+}
+
+function aprovaGetStudyMode () {
+  try {
+    return aprovaNormalizeStudyMode(localStorage.getItem(APROVA_STUDY_MODE_KEY));
+  } catch {
+    return "foco";
+  }
+}
+
+function aprovaSetStudyMode (mode) {
+  const m = aprovaNormalizeStudyMode(mode);
+  localStorage.setItem(APROVA_STUDY_MODE_KEY, m);
+  return m;
+}
+
+function aprovaStudyModeMeta (mode) {
+  const id = aprovaNormalizeStudyMode(mode);
+  const all = {
+    foco: {
+      id: "foco",
+      label: "Foco (1–2 temas)",
+      badge: "Recomendado",
+      short: "Mais questões de um ou dois temas no dia — melhor para consolidar.",
+      splitHint: "Ex.: meta 45 → cerca de 25 + 20",
+      body:
+        "No modo Foco você estuda com profundidade: a meta do dia concentra-se em 1 ou 2 temas " +
+        "(cerca de 55% no primeiro e 45% no segundo). Assim você consolida o núcleo do assunto " +
+        "em vez de tocar leve em muitos temas.\n\n" +
+        "Os temas rotacionam pela fila de prioridade (o que mais cai × onde você está mais fraco). " +
+        "Quando um bloco do tema avança, ele volta depois pela revisão espaçada (3 → 7 → 14 dias), " +
+        "com questões similares — não as mesmas.\n\n" +
+        "É o equilíbrio mais produtivo para a maior parte do ano: profundidade no dia e cobertura " +
+        "de todos os temas ao longo das semanas, sem a sensação de ter que revisar o conteúdo inteiro todo dia."
+    },
+    miscelania: {
+      id: "miscelania",
+      label: "Miscelânia",
+      badge: "",
+      short: "Vários temas no mesmo dia, em fatias menores — formato da prova.",
+      splitHint: "Vários temas dividem a meta do dia",
+      body:
+        "Na Miscelânia a meta diária se espalha por vários temas (fatias menores de cada um). " +
+        "É o formato mais parecido com a prova R1, que mistura assuntos.\n\n" +
+        "A ciência da aprendizagem chama isso de prática intercalada: costuma parecer mais difícil " +
+        "no dia, mas ajuda a distinguir temas parecidos — útil na reta final e em simulados.\n\n" +
+        "O ponto fraco: poucas questões por tema no dia, então a consolidação inicial fica mais lenta. " +
+        "Use quando quiser treinar o “estilo prova” ou já tiver passado uma vez pelos temas principais."
+    },
+    bloco: {
+      id: "bloco",
+      label: "Bloco (1 tema)",
+      badge: "",
+      short: "Toda a meta do dia em um único tema — primeira passagem ou tema muito fraco.",
+      splitHint: "100% da meta em um tema",
+      body:
+        "No Bloco, todas as questões do dia vão para um único tema. Ideal para primeira passagem " +
+        "forte ou quando um assunto está bem abaixo da sua meta de acerto.\n\n" +
+        "Não significa “esgotar o tema para nunca mais”: você fecha um bloco (volume do dia ou " +
+        "série de dias) e o tema entra na revisão espaçada. No dia seguinte a fila segue para o " +
+        "próximo tema prioritário.\n\n" +
+        "Use com parcimônia: estudo só em bloco o ano inteiro atrasa a prática de misturar temas, " +
+        "que a prova exige. Alterne com Foco ou Miscelânia conforme a fase."
+    }
+  };
+  return all[id] || all.foco;
+}
+
+function aprovaStudyModeList () {
+  return ["foco", "miscelania", "bloco"].map(aprovaStudyModeMeta);
+}
+
 function aprovaNormalizeExamDate (value) {
   const s = String(value || "").trim();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;

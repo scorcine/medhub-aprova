@@ -3592,6 +3592,9 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const reviewAlertActions = document.getElementById("metas-review-alert-actions");
 
   if (program) {
+    if (typeof aprovaRenderStudyModePicker === "function") {
+      aprovaRenderStudyModePicker(program.studyMode);
+    }
     const daily = (program.tasks || []).find((t) => t.id === "daily");
     if (fcSummary && daily) {
       fcSummary.textContent = daily.done + "/" + daily.goal + " hoje";
@@ -3672,9 +3675,24 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
         const freqBit = examRef
           ? ("Frequência = quanto o tema cai na estatística de " + examRef + ".")
           : "Frequência = quanto o tema cai nas provas de residência.";
-        qWeekEl.textContent = (t
-          ? ("Volume para meta de " + t + "% · temas rotacionam todo dia. ")
-          : "Temas do dia com base no que mais caiu. ") + freqBit;
+        const modeMeta = typeof aprovaStudyModeMeta === "function"
+          ? aprovaStudyModeMeta(program.studyMode)
+          : null;
+        const modeBit = modeMeta
+          ? ("Modo " + modeMeta.label + (modeMeta.splitHint ? (" · " + modeMeta.splitHint) : "") + ". ")
+          : "";
+        qWeekEl.textContent = modeBit + (t
+          ? ("Volume para meta de " + t + "%. ")
+          : "") + freqBit;
+      }
+      const themesLabel = document.getElementById("metas-q-themes-label");
+      if (themesLabel) {
+        const mode = program.studyMode || (typeof aprovaGetStudyMode === "function" ? aprovaGetStudyMode() : "foco");
+        themesLabel.textContent = mode === "bloco"
+          ? "Tema do dia · bloco"
+          : (mode === "miscelania"
+            ? "Temas de hoje · miscelânia"
+            : "Foco de hoje · 1–2 temas");
       }
       if (qThemesEl) {
         qThemesEl.innerHTML = aprovaBuildMetasQThemesHtml(program, focusPack || aprovaSeuFocoCache);
@@ -3880,6 +3898,90 @@ function aprovaRenderCurriculumMap (curriculum) {
       );
     });
   }
+}
+
+function aprovaEscapeStudyModeHtml (s) {
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/"/g, "&quot;");
+}
+
+function aprovaRenderStudyModePicker (activeMode) {
+  const root = document.getElementById("study-mode-options");
+  if (!root || typeof aprovaStudyModeList !== "function") return;
+  const current = typeof aprovaNormalizeStudyMode === "function"
+    ? aprovaNormalizeStudyMode(activeMode || aprovaGetStudyMode())
+    : "foco";
+  const list = aprovaStudyModeList();
+  root.innerHTML = list.map((meta) => {
+    const active = meta.id === current;
+    return (
+      "<article class=\"study-mode-option" + (active ? " is-active" : "") + "\" data-study-mode=\"" +
+        aprovaEscapeStudyModeHtml(meta.id) + "\" role=\"radio\" aria-checked=\"" + (active ? "true" : "false") +
+        "\" tabindex=\"0\">" +
+        "<div class=\"study-mode-option-top\">" +
+          "<span class=\"study-mode-option-title\">" + aprovaEscapeStudyModeHtml(meta.label) + "</span>" +
+          (meta.badge
+            ? ("<span class=\"study-mode-option-badge\">" + aprovaEscapeStudyModeHtml(meta.badge) + "</span>")
+            : "") +
+        "</div>" +
+        "<p class=\"study-mode-option-short\">" + aprovaEscapeStudyModeHtml(meta.short) + "</p>" +
+        "<div class=\"study-mode-option-foot\">" +
+          "<span class=\"study-mode-option-hint\">" + aprovaEscapeStudyModeHtml(meta.splitHint || "") + "</span>" +
+          "<button type=\"button\" class=\"linkish\" data-study-mode-info=\"" +
+            aprovaEscapeStudyModeHtml(meta.id) + "\">Saiba mais</button>" +
+        "</div>" +
+      "</article>"
+    );
+  }).join("");
+}
+
+let aprovaStudyModeInfoId = "foco";
+
+function aprovaOpenStudyModeInfo (modeId) {
+  const meta = typeof aprovaStudyModeMeta === "function"
+    ? aprovaStudyModeMeta(modeId)
+    : null;
+  if (!meta) return;
+  aprovaStudyModeInfoId = meta.id;
+  const modal = document.getElementById("study-mode-info-modal");
+  const title = document.getElementById("study-mode-info-title");
+  const shortEl = document.getElementById("study-mode-info-short");
+  const body = document.getElementById("study-mode-info-body");
+  const useBtn = document.getElementById("study-mode-info-use");
+  if (title) title.textContent = meta.label;
+  if (shortEl) shortEl.textContent = meta.short;
+  if (body) body.textContent = meta.body;
+  if (useBtn) {
+    useBtn.textContent = "Usar " + meta.label;
+  }
+  if (modal) modal.hidden = false;
+}
+
+function aprovaCloseStudyModeInfo () {
+  const modal = document.getElementById("study-mode-info-modal");
+  if (modal) modal.hidden = true;
+}
+
+function aprovaApplyStudyMode (modeId) {
+  if (typeof aprovaSetStudyMode !== "function") return;
+  aprovaSetStudyMode(modeId);
+  aprovaCloseStudyModeInfo();
+  aprovaRenderStudyModePicker(modeId);
+  if (typeof aprovaLoadProfile === "function" &&
+      typeof aprovaProfileIsComplete === "function" &&
+      aprovaProfileIsComplete()) {
+    const profile = aprovaLoadProfile();
+    if (typeof aprovaBuildStudyPlan === "function" && typeof aprovaRenderSeuPlano === "function") {
+      aprovaRenderSeuPlano(
+        aprovaBuildStudyPlan(profile, aprovaSeuFocoCache, Date.now(), aprovaSeuFocoAreaId),
+        true,
+        aprovaSeuFocoCache
+      );
+    }
+  }
+  if (typeof aprovaRenderHojeMetas === "function") aprovaRenderHojeMetas();
 }
 
 function aprovaRenderMetas () {
@@ -5885,6 +5987,40 @@ async function aprovaBoot () {
   document.getElementById("hoje-metas-fc-start")?.addEventListener("click", () => {
     if (typeof aprovaFulfillDailyMeta === "function") aprovaFulfillDailyMeta();
   });
+
+  document.getElementById("study-mode-options")?.addEventListener("click", (e) => {
+    const info = e.target.closest("[data-study-mode-info]");
+    if (info) {
+      e.preventDefault();
+      e.stopPropagation();
+      aprovaOpenStudyModeInfo(info.getAttribute("data-study-mode-info"));
+      return;
+    }
+    const opt = e.target.closest("[data-study-mode]");
+    if (!opt) return;
+    aprovaApplyStudyMode(opt.getAttribute("data-study-mode"));
+  });
+  document.getElementById("study-mode-options")?.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const opt = e.target.closest("[data-study-mode]");
+    if (!opt) return;
+    e.preventDefault();
+    aprovaApplyStudyMode(opt.getAttribute("data-study-mode"));
+  });
+  document.getElementById("study-mode-info-modal")?.addEventListener("click", (e) => {
+    if (e.target.closest("[data-study-mode-info-close]")) {
+      aprovaCloseStudyModeInfo();
+    }
+  });
+  document.getElementById("study-mode-info-use")?.addEventListener("click", () => {
+    aprovaApplyStudyMode(aprovaStudyModeInfoId);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const modal = document.getElementById("study-mode-info-modal");
+    if (modal && !modal.hidden) aprovaCloseStudyModeInfo();
+  });
+
   document.getElementById("hoje-rev-fc-start")?.addEventListener("click", () => {
     aprovaStartHojeRevisaoFlashcards();
   });

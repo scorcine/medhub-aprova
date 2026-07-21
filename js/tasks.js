@@ -436,6 +436,76 @@ function aprovaDistributeThemeCards (themes, totalCards) {
   })).filter(t => t.cards > 0);
 }
 
+/**
+ * Distribui a meta diária conforme o modo: miscelânia · foco (≈55/45) · bloco (100%).
+ */
+function aprovaDistributeThemesByStudyMode (themes, totalCards, mode) {
+  const list = Array.isArray(themes) ? themes.slice() : [];
+  const total = Math.max(0, totalCards | 0);
+  if (!list.length || !total) return [];
+
+  const m = typeof aprovaNormalizeStudyMode === "function"
+    ? aprovaNormalizeStudyMode(mode)
+    : String(mode || "foco");
+
+  if (m === "bloco") {
+    const one = list[0];
+    return [{
+      tema: one.tema,
+      areaLabel: one.areaLabel || "",
+      areaId: one.areaId || "",
+      pct: one.pct,
+      cards: total
+    }];
+  }
+
+  if (m === "foco") {
+    if (list.length === 1) {
+      return [{
+        tema: list[0].tema,
+        areaLabel: list[0].areaLabel || "",
+        areaId: list[0].areaId || "",
+        pct: list[0].pct,
+        cards: total
+      }];
+    }
+    const a = Math.max(1, Math.round(total * 0.55));
+    const b = Math.max(1, total - a);
+    // Ajuste se arredondamento passou do total
+    let first = a;
+    let second = b;
+    if (first + second > total) second = total - first;
+    if (first + second < total) first += total - (first + second);
+    return [
+      {
+        tema: list[0].tema,
+        areaLabel: list[0].areaLabel || "",
+        areaId: list[0].areaId || "",
+        pct: list[0].pct,
+        cards: first
+      },
+      {
+        tema: list[1].tema,
+        areaLabel: list[1].areaLabel || "",
+        areaId: list[1].areaId || "",
+        pct: list[1].pct,
+        cards: second
+      }
+    ].filter((t) => t.cards > 0);
+  }
+
+  return aprovaDistributeThemeCards(list.slice(0, 8), total);
+}
+
+function aprovaStudyModeThemeTake (mode) {
+  const m = typeof aprovaNormalizeStudyMode === "function"
+    ? aprovaNormalizeStudyMode(mode)
+    : String(mode || "foco");
+  if (m === "bloco") return 1;
+  if (m === "foco") return 2;
+  return 8;
+}
+
 function aprovaThemeReviewProgram (themes, daysLeft, weeks) {
   const list = Array.isArray(themes) ? themes : [];
   const w = Math.max(1, weeks || 1);
@@ -665,14 +735,18 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     : aprovaIsoOffset(0, now);
   const tomorrowIso = aprovaIsoOffset(1, now);
   const themePool = aprovaCollectCrossAreaThemes(focusPack, 24, { perArea: 3 });
-  const dailyThemes = aprovaPickThemesForDay(themePool, todayIso, 8);
-  const tomorrowThemes = aprovaPickThemesForDay(themePool, tomorrowIso, 8);
+  const studyMode = typeof aprovaGetStudyMode === "function" ? aprovaGetStudyMode() : "foco";
+  const themeTake = typeof aprovaStudyModeThemeTake === "function"
+    ? aprovaStudyModeThemeTake(studyMode)
+    : 8;
+  const dailyThemes = aprovaPickThemesForDay(themePool, todayIso, themeTake);
+  const tomorrowThemes = aprovaPickThemesForDay(themePool, tomorrowIso, themeTake);
   const weeklyThemes = aprovaCollectCrossAreaThemes(focusPack, 14, { perArea: 2 });
   const monthlyThemes = aprovaCollectCrossAreaThemes(focusPack, 22, { perArea: 3 });
 
   const themeSets = {
-    daily: dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, 8),
-    tomorrow: tomorrowThemes.length ? tomorrowThemes : (dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, 8)),
+    daily: dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, themeTake),
+    tomorrow: tomorrowThemes.length ? tomorrowThemes : (dailyThemes.length ? dailyThemes : fallbackThemes.slice(0, themeTake)),
     weekly: weeklyThemes.length ? weeklyThemes : fallbackThemes.slice(0, 14),
     monthly: monthlyThemes.length ? monthlyThemes : fallbackThemes
   };
@@ -726,13 +800,15 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     statsSummary
   );
 
-  // Temas do dia: pool das provas + rotação por data + peso vs meta
+  // Temas do dia: pool das provas + rotação por data + modo (foco / miscelânia / bloco)
   const qWeighted = aprovaWeightThemesByAccuracy(
     themeSets.daily,
     targetAccuracy,
     statsSummary
   );
-  const qDistributed = aprovaDistributeThemeCards(qWeighted, qQuota.daily);
+  const qDistributed = typeof aprovaDistributeThemesByStudyMode === "function"
+    ? aprovaDistributeThemesByStudyMode(qWeighted, qQuota.daily, studyMode)
+    : aprovaDistributeThemeCards(qWeighted, qQuota.daily);
   const qThemes = qDistributed.map((t) => {
     const src = qWeighted.find((w) => w.tema === t.tema && (w.areaId || "") === (t.areaId || "")) || t;
     return {
@@ -758,7 +834,9 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     targetAccuracy,
     statsSummary
   );
-  const qTomorrowDistributed = aprovaDistributeThemeCards(qTomorrowWeighted, qQuota.daily);
+  const qTomorrowDistributed = typeof aprovaDistributeThemesByStudyMode === "function"
+    ? aprovaDistributeThemesByStudyMode(qTomorrowWeighted, qQuota.daily, studyMode)
+    : aprovaDistributeThemeCards(qTomorrowWeighted, qQuota.daily);
   const qThemesTomorrow = qTomorrowDistributed.map((t) => ({
     specialty: t.areaId || "",
     areaLabel: t.areaLabel || "",
@@ -805,6 +883,7 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
   return {
     quota,
     qQuota,
+    studyMode,
     qProgress: {
       daily: { done: qDone, goal: qQuota.daily, pct: qStatus.pct, status: qStatus.status },
       weekly: { done: qWeekDone, goal: qQuota.weekly },
