@@ -1,7 +1,7 @@
 /* Prova na íntegra — catálogo por banca/ano + início de simulado ordenado */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721prova2";
+const APROVA_PROVAS_CACHE_VER = "20260721prova3";
 
 let aprovaProvasCatalog = null;
 let aprovaProvasBound = false;
@@ -66,7 +66,11 @@ function aprovaRenderProvasIntegra () {
   aprovaLoadProvasCatalog()
     .then((provas) => {
       if (!provas.length) {
-        root.innerHTML = "<p class=\"muted\">Nenhuma prova publicada ainda.</p>";
+        root.innerHTML =
+          "<div class=\"study-card\">" +
+            "<div class=\"label\">Em montagem</div>" +
+            "<p class=\"prompt\">Nenhuma prova publicada ainda. Vamos montar do zero com critério (banca, ano, reescrita e espelho no treino).</p>" +
+          "</div>";
         return;
       }
       root.innerHTML = provas.map((p) => {
