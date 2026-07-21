@@ -172,25 +172,27 @@ function aprovaOpenWelcomeMascotModal (opts) {
 
   modal.hidden = false;
 
+  // Áudio = trilha do vídeo. volume sempre 1 para o unmute do player funcionar.
+  // (Antes volume=0 impedia ouvir mesmo com a caixa de som ativada.)
+  aprovaMascotStopSpeech();
   if (video) {
-    video.muted = true;
-    video.volume = 0;
+    video.volume = 1;
     try { video.currentTime = 0; } catch (e) { /* ignore */ }
-    const play = video.play();
-    if (play && typeof play.catch === "function") {
-      play.catch(() => { /* autoplay bloqueado */ });
-    }
-  }
 
-  const startSpeech = () => aprovaMascotSpeakWelcome(first);
-  if (window.speechSynthesis && window.speechSynthesis.getVoices().length === 0) {
-    window.speechSynthesis.onvoiceschanged = () => {
-      window.speechSynthesis.onvoiceschanged = null;
-      startSpeech();
+    const tryPlayWithSound = () => {
+      video.muted = false;
+      return video.play();
     };
-    window.setTimeout(startSpeech, 400);
-  } else {
-    window.setTimeout(startSpeech, 200);
+
+    const playPromise = tryPlayWithSound();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        // Autoplay com som bloqueado: inicia mudo, mas volume=1 — ao desmutar, ouve.
+        video.muted = true;
+        video.volume = 1;
+        video.play().catch(() => {});
+      });
+    }
   }
 }
 
@@ -242,20 +244,31 @@ function aprovaBindWelcomeMascot () {
 
   document.getElementById("welcome-mascot-replay")?.addEventListener("click", () => {
     const video = document.getElementById("welcome-mascot-video");
+    aprovaMascotStopSpeech();
     if (video) {
       try {
-        video.muted = true;
+        video.volume = 1;
+        video.muted = false;
         video.currentTime = 0;
-        video.play().catch(() => {});
+        video.play().catch(() => {
+          video.muted = true;
+          video.play().catch(() => {});
+        });
       } catch (e) { /* ignore */ }
     }
-    aprovaMascotSpeakWelcome(aprovaMascotFirstName());
+  });
+
+  const videoEl = document.getElementById("welcome-mascot-video");
+  videoEl?.addEventListener("volumechange", () => {
+    // Se o usuário ligar o som do vídeo, para a voz do navegador (se houver).
+    if (videoEl && !videoEl.muted && videoEl.volume > 0) {
+      aprovaMascotStopSpeech();
+    }
   });
 
   document.getElementById("inicio-mascot-btn")?.addEventListener("click", () => {
     aprovaOpenWelcomeMascotModal({ replay: true });
   });
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {
