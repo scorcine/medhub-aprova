@@ -966,7 +966,21 @@ html[data-theme="dark"] .pricing-badge {
   border-radius: var(--radius-sm);
 }
 
-.field input:focus {
+.field textarea {
+  width: 100%;
+  min-height: 7rem;
+  border: 1px solid var(--line-strong);
+  background: var(--input-bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
   outline: 2px solid rgba(15, 159, 154, 0.35);
   outline-offset: 1px;
   border-color: var(--accent);
@@ -3153,6 +3167,34 @@ html[data-theme="dark"] .aprova-modal-panel {
 
 .metas-review-alert p {
   margin: 0.35rem 0 0;
+}
+
+.contact-official {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.contact-official a {
+  color: var(--accent-deep);
+  text-decoration: none;
+}
+
+.contact-official a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 32rem;
+}
+
+.contact-panel-card .contact-form {
+  max-width: 32rem;
 }
 
 .hoje-metas-card {

@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=trial2">
+  <link rel="stylesheet" href="css/aprova.css?v=contato1">
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
@@ -35,6 +35,7 @@
         <a class="btn btn-ghost btn-compact" href="index.html" aria-current="page">Início</a>
         <a class="btn btn-ghost btn-compact" href="#ciencia">Método</a>
         <a class="btn btn-ghost btn-compact" href="#planos">Planos</a>
+        <a class="btn btn-ghost btn-compact" href="#contato">Contato</a>
         <form class="auth-form" id="auth-form" autocomplete="on">
           <label class="sr-only" for="auth-login">E-mail</label>
           <input class="auth-input" type="email" name="login" id="auth-login" placeholder="E-mail" autocomplete="email" required>
@@ -313,14 +314,40 @@
 
       <p class="pricing-fineprint">Lançamento com <strong>10 dias de teste grátis</strong>. Pagamento online em breve — ao entrar na lista, a gente te chama em 10 dias para assinar com o valor exibido acima.</p>
     </section>
+
+    <section class="wrap section" id="contato" aria-label="Contato">
+      <p class="section-eyebrow">Fale conosco</p>
+      <h2>Contato oficial</h2>
+      <p class="lead">Dúvidas sobre planos, acesso ou o método? Escreva — respondemos pelo e-mail oficial do MedHub R1.</p>
+      <p class="contact-official">
+        <a href="mailto:medhubr1@gmail.com">medhubr1@gmail.com</a>
+      </p>
+      <form class="contact-form" id="landing-contact-form" autocomplete="on">
+        <label class="field">
+          <span>Nome</span>
+          <input type="text" name="name" placeholder="Seu nome" autocomplete="name" required maxlength="80">
+        </label>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder="seu@email.com" autocomplete="email" required maxlength="120">
+        </label>
+        <label class="field">
+          <span>Mensagem</span>
+          <textarea name="message" rows="5" placeholder="Como podemos ajudar?" required maxlength="2000"></textarea>
+        </label>
+        <p class="auth-msg" id="landing-contact-form-msg" hidden></p>
+        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+      </form>
+    </section>
   </main>
 
   <footer class="wrap site-footer">
-    <p>MedHub R1 — aprovação inteligente para residência médica. Produto clínico: <a href="https://www.medhub.ia.br">medhub.ia.br</a></p>
+    <p>MedHub R1 — aprovação inteligente para residência médica. Contato: <a href="mailto:medhubr1@gmail.com">medhubr1@gmail.com</a> · Produto clínico: <a href="https://www.medhub.ia.br">medhub.ia.br</a></p>
   </footer>
 
   <script src="js/theme.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/trial-lead.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

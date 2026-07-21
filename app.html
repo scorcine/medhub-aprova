@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721hoje1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721contato1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -91,6 +91,7 @@
         <p class="sidebar-label">Conta</p>
         <button type="button" class="side-link" data-panel="perfil">Meu perfil</button>
         <button type="button" class="side-link" data-panel="config">Configurações</button>
+        <button type="button" class="side-link" data-panel="contato">Contato</button>
         <a class="side-link side-link-a" href="index.html">Página inicial</a>
       </nav>
 
@@ -166,6 +167,11 @@
               <span class="dash-card-kicker">Acompanhar</span>
               <strong>Meu progresso</strong>
               <span id="dash-progress-preview">Resumo do que você já revisou e o desempenho nas questões.</span>
+            </button>
+            <button type="button" class="dash-card" data-goto="contato">
+              <span class="dash-card-kicker">Suporte</span>
+              <strong>Contato</strong>
+              <span>medhubr1@gmail.com — mande sua dúvida ou sugestão.</span>
             </button>
           </div>
         </section>
@@ -783,6 +789,33 @@
             </div>
           </div>
         </section>
+
+        <section id="panel-contato" class="panel" aria-labelledby="contato-title" hidden>
+          <h2 id="contato-title">Contato</h2>
+          <p class="muted">Fale com o time do MedHub R1. Respondemos pelo e-mail oficial.</p>
+          <div class="study-card contact-panel-card">
+            <div class="label">E-mail oficial</div>
+            <p class="contact-official" style="margin:0.35rem 0 1rem">
+              <a href="mailto:medhubr1@gmail.com">medhubr1@gmail.com</a>
+            </p>
+            <form class="contact-form" id="app-contact-form" autocomplete="on">
+              <label class="field">
+                <span>Nome</span>
+                <input type="text" name="name" placeholder="Seu nome" autocomplete="name" required maxlength="80">
+              </label>
+              <label class="field">
+                <span>E-mail</span>
+                <input type="email" name="email" placeholder="seu@email.com" autocomplete="email" required maxlength="120">
+              </label>
+              <label class="field">
+                <span>Mensagem</span>
+                <textarea name="message" rows="5" placeholder="Como podemos ajudar?" required maxlength="2000"></textarea>
+              </label>
+              <p class="auth-msg" id="app-contact-form-msg" hidden></p>
+              <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            </form>
+          </div>
+        </section>
       </main>
     </div>
   </div>
@@ -885,6 +918,7 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721caiu1"></script>
+  <script src="js/app-qui.js?v=20260721contato1"></script>
+  <script src="js/contact.js?v=1"></script>
 </body>
 </html>

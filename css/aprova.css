@@ -852,6 +852,52 @@ html[data-theme="light"] .hero-trial-pitch strong {
   margin-top: 1.75rem;
 }
 
+.contact-official {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.contact-official a {
+  color: var(--accent-deep);
+  text-decoration: none;
+}
+
+.contact-official a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 28rem;
+}
+
+.contact-form textarea {
+  width: 100%;
+  min-height: 7rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.contact-form textarea:focus {
+  outline: 2px solid rgba(15, 159, 154, 0.35);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.contact-panel-card .contact-form {
+  max-width: 32rem;
+}
+
 /* ——— Ciência do aprendizado (landing) ——— */
 .section-eyebrow {
   margin: 0 0 0.55rem;
