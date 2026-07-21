@@ -3992,7 +3992,11 @@ function aprovaRenderSeuFoco () {
 function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
-  if (hello) hello.textContent = (session && (session.name || session.login)) || "estudante";
+  if (hello) {
+    const raw = (session && (session.name || session.login)) || "estudante";
+    const first = String(raw).trim().split(/\s+/)[0] || "estudante";
+    hello.textContent = first;
+  }
 
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const summary = typeof aprovaProfileSummary === "function"
