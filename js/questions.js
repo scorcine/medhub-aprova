@@ -6,7 +6,8 @@ const APROVA_QUESTION_FILES = [
   "data/questions-cirurgia.json",
   "data/questions-pediatria.json",
   "data/questions-go.json",
-  "data/questions-preventiva.json"
+  "data/questions-preventiva.json",
+  "data/questions-sus-sp.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -30,7 +31,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     const catData = await catRes.json();
     const provas = Array.isArray(catData) ? catData : (catData.provas || []);
     for (const prova of provas) {
-      if (!prova || prova.status !== "ready" || !prova.file) continue;
+      if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
@@ -45,6 +46,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
         list.forEach((raw) => {
           const q = aprovaNormalizeQuestion(raw, hint);
           if (!q || seen[q.id]) return;
+          if (q.annulled) return;
           seen[q.id] = true;
           bag.push(q);
         });

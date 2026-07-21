@@ -6,7 +6,8 @@ const APROVA_QUESTION_FILES = [
   "data/questions-cirurgia.json",
   "data/questions-pediatria.json",
   "data/questions-go.json",
-  "data/questions-preventiva.json"
+  "data/questions-preventiva.json",
+  "data/questions-sus-sp.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -17,7 +18,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare12";
+const APROVA_QUESTION_CACHE_VER = "20260721sussp2";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
@@ -43,7 +44,8 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     const catData = await catRes.json();
     const provas = Array.isArray(catData) ? catData : (catData.provas || []);
     for (const prova of provas) {
-      if (!prova || prova.status !== "ready" || !prova.file) continue;
+      // Só espelha no banco quando áreas (specialty/group/theme) estão curadas.
+      if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
@@ -58,6 +60,8 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
         list.forEach((raw) => {
           const q = aprovaNormalizeQuestion(raw, hint);
           if (!q || seen[q.id]) return;
+          // Anuladas ficam na prova na íntegra, mas não entram no treino aleatório.
+          if (q.annulled) return;
           seen[q.id] = true;
           bag.push(q);
         });
