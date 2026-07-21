@@ -2563,6 +2563,7 @@ html[data-theme="dark"] .aprova-modal-panel {
 }
 
 .welcome-mascot-media {
+  position: relative;
   margin-top: 0.75rem;
   border-radius: calc(var(--radius) + 0.1rem);
   overflow: hidden;
@@ -2575,6 +2576,35 @@ html[data-theme="dark"] .aprova-modal-panel {
   width: 100%;
   max-height: min(52vh, 22rem);
   background: #0b1220;
+  /* Sem controles nativos — o “mudo” do browser confunde; a fala é a voz do sistema */
+  pointer-events: none;
+}
+
+.welcome-mascot-tap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: rgba(8, 14, 28, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.welcome-mascot-tap[hidden] {
+  display: none !important;
+}
+
+.welcome-mascot-tap:hover,
+.welcome-mascot-tap:focus-visible {
+  background: rgba(8, 14, 28, 0.4);
 }
 
 .aprova-banner {

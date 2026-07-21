@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-unmute1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-taphear1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
@@ -126,54 +126,60 @@ function aprovaMascotSetVideoVolume (video, volume, muted) {
   window.setTimeout(() => { aprovaMascotSyncingVolume = false; }, 0);
 }
 
+function aprovaMascotHideTapToHear () {
+  const tap = document.getElementById("welcome-mascot-tap");
+  if (tap) tap.hidden = true;
+}
+
+function aprovaMascotShowTapToHear () {
+  const tap = document.getElementById("welcome-mascot-tap");
+  if (tap) tap.hidden = false;
+}
+
+/** Precisa ser chamado no clique do usuário (gesto) para o som sair no Chrome/mobile. */
 function aprovaMascotSpeakWelcome (firstName) {
   if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
   const name = firstName || aprovaMascotFirstName();
   try {
+    // Chrome às vezes fica “paused” — resume ajuda a liberar o áudio
+    try { window.speechSynthesis.resume(); } catch (e) { /* ignore */ }
     aprovaMascotStopSpeech();
+
     const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, name);
-    // Garante que o nome entrou no texto falado
-    if (text.indexOf(name) === -1) {
-      console.warn("[mascote] nome ausente no roteiro", { name, text });
-    }
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "pt-BR";
     u.rate = 1.12;
     u.pitch = 1.1;
-    u.volume = APROVA_MASCOT_SPEECH_VOLUME;
+    u.volume = 1;
     const voice = aprovaMascotPickPtVoice();
     if (voice) {
       u.voice = voice;
       if (voice.lang) u.lang = voice.lang;
     }
+
     const video = document.getElementById("welcome-mascot-video");
-    // Player sem ícone de mudo; volume 0 = trilha do vídeo silenciosa (só a fala do mascote).
-    if (video) aprovaMascotSetVideoVolume(video, 0, false);
-    u.onend = () => {
-      if (video) aprovaMascotSetVideoVolume(video, 0, false);
-    };
-    u.onerror = () => {
-      if (video) aprovaMascotSetVideoVolume(video, 0, false);
-    };
+    if (video) {
+      aprovaMascotSetVideoVolume(video, 0, true);
+      try {
+        video.play().catch(() => {});
+      } catch (e) { /* ignore */ }
+    }
+
+    aprovaMascotHideTapToHear();
     window.speechSynthesis.speak(u);
     return true;
   } catch (e) {
+    aprovaMascotShowTapToHear();
     return false;
   }
 }
 
-function aprovaMascotStartSpeechWhenReady (firstName) {
-  const start = () => aprovaMascotSpeakWelcome(firstName);
-  if (!window.speechSynthesis) return;
-  if (window.speechSynthesis.getVoices().length === 0) {
-    window.speechSynthesis.onvoiceschanged = () => {
-      window.speechSynthesis.onvoiceschanged = null;
-      start();
-    };
-    window.setTimeout(start, 450);
-  } else {
-    window.setTimeout(start, 180);
+function aprovaMascotHearNow () {
+  // Carrega vozes e fala no mesmo gesto do usuário
+  if (window.speechSynthesis) {
+    try { window.speechSynthesis.getVoices(); } catch (e) { /* ignore */ }
   }
+  return aprovaMascotSpeakWelcome(aprovaMascotFirstName());
 }
 
 function aprovaCloseWelcomeMascotModal () {
@@ -252,29 +258,22 @@ function aprovaOpenWelcomeMascotModal (opts) {
   if (wrap) wrap.hidden = true;
 
   modal.hidden = false;
-
-  // Sem mute na UI. Trilha do vídeo em 0; fala do mascote em volume alto, COM o nome.
+  aprovaMascotShowTapToHear();
   aprovaMascotStopSpeech();
+
+  // Vídeo só visual (mudo de propósito — sem controles nativos / sem ícone de mudo).
   if (video) {
     try {
-      video.playbackRate = 1.08;
+      video.playbackRate = 1.05;
       video.currentTime = 0;
     } catch (e) { /* ignore */ }
-    aprovaMascotSetVideoVolume(video, 0, false);
+    aprovaMascotSetVideoVolume(video, 0, true);
     video.play().catch(() => {});
   }
-  window.setTimeout(() => {
-    aprovaMascotStartSpeechWhenReady(first);
-  }, 120);
 
-  // Se o navegador bloquear fala automática, o 1º toque no modal dispara a voz.
-  if (!aprovaOpenWelcomeMascotModal._speechUnlock) {
-    aprovaOpenWelcomeMascotModal._speechUnlock = (ev) => {
-      if (!ev.target.closest("#welcome-mascot-modal")) return;
-      if (window.speechSynthesis && window.speechSynthesis.speaking) return;
-      aprovaMascotStartSpeechWhenReady(aprovaMascotFirstName());
-    };
-    document.addEventListener("pointerdown", aprovaOpenWelcomeMascotModal._speechUnlock, true);
+  // Em replay (clique no avatar), já há gesto → fala na hora.
+  if (aprovaMascotReplayMode) {
+    aprovaMascotHearNow();
   }
 }
 
@@ -324,23 +323,22 @@ function aprovaBindWelcomeMascot () {
     el.addEventListener("click", () => aprovaCloseWelcomeMascotModal());
   });
 
+  document.getElementById("welcome-mascot-tap")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    aprovaMascotHearNow();
+  });
+
   document.getElementById("welcome-mascot-replay")?.addEventListener("click", () => {
     const video = document.getElementById("welcome-mascot-video");
     if (video) {
       try {
-        video.playbackRate = 1.08;
         video.currentTime = 0;
-        aprovaMascotSetVideoVolume(video, 0, false);
+        aprovaMascotSetVideoVolume(video, 0, true);
         video.play().catch(() => {});
       } catch (e) { /* ignore */ }
     }
-    aprovaMascotStartSpeechWhenReady(aprovaMascotFirstName());
-  });
-
-  const videoEl = document.getElementById("welcome-mascot-video");
-  videoEl?.addEventListener("volumechange", () => {
-    if (aprovaMascotSyncingVolume) return;
-    // Usuário baixou o som do player para zero / mute → não corta a fala do mascote.
+    aprovaMascotHearNow();
   });
 
   document.getElementById("inicio-mascot-btn")?.addEventListener("click", () => {
