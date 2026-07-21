@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-reset1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-energy1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /** Legenda + fala (português do Brasil). */
@@ -18,9 +18,9 @@ const APROVA_MASCOT_SCRIPT_SPEECH =
   "Este é o aplicativo que irá revolucionar seus estudos. " +
   "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
-/** Velocidade natural · voz masculina jovem */
-const APROVA_MASCOT_SPEECH_RATE = 1.08;
-const APROVA_MASCOT_SPEECH_PITCH = 1.2;
+/** Mesmo roteiro · mais jovem e empolgante (sem acelerar demais). */
+const APROVA_MASCOT_SPEECH_RATE = 1.16;
+const APROVA_MASCOT_SPEECH_PITCH = 1.26;
 const APROVA_MASCOT_SPEECH_VOLUME = 1;
 const APROVA_MASCOT_VIDEO_RATE = 1;
 
@@ -154,12 +154,19 @@ function aprovaMascotSpeakWelcome (firstName) {
   const name = firstName || aprovaMascotFirstName();
   const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT_SPEECH, name);
 
-  aprovaMascotStopSpeech();
+  let needsGap = false;
+  try {
+    needsGap = !!(window.speechSynthesis.speaking || window.speechSynthesis.pending);
+    if (needsGap || aprovaMascotSpeakTimer) aprovaMascotStopSpeech();
+  } catch (e) {
+    needsGap = true;
+    aprovaMascotStopSpeech();
+  }
+
   aprovaMascotPlayVideo();
   aprovaMascotHideTapToHear();
 
-  // Um único speak, sem keepalive/resume (evita travamento no Chrome)
-  aprovaMascotSpeakTimer = window.setTimeout(() => {
+  const speak = () => {
     aprovaMascotSpeakTimer = null;
     try {
       const u = new SpeechSynthesisUtterance(text);
@@ -177,7 +184,10 @@ function aprovaMascotSpeakWelcome (firstName) {
     } catch (e) {
       aprovaMascotShowTapToHear();
     }
-  }, 80);
+  };
+
+  // Gap só quando houve cancel — senão fala na hora (menos travamento)
+  aprovaMascotSpeakTimer = window.setTimeout(speak, needsGap ? 120 : 0);
 
   return true;
 }
