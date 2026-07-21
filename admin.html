@@ -73,7 +73,7 @@
             <button type="button" class="admin-nav-btn" data-admin-section="users">Usuários</button>
             <button type="button" class="admin-nav-btn" data-admin-section="access">Liberar acesso</button>
             <button type="button" class="admin-nav-btn" data-admin-section="content">Conteúdo</button>
-            <button type="button" class="admin-nav-btn" data-admin-section="plans">Interesse em planos</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="plans">Leads / planos</button>
             <button type="button" class="admin-nav-btn" data-admin-section="marketing">Marketing</button>
             <button type="button" class="admin-nav-btn" data-admin-section="settings">Configurações</button>
             <button type="button" class="admin-nav-btn" data-admin-section="log">Auditoria</button>
@@ -166,6 +166,14 @@
 
           <div class="admin-section" id="admin-section-plans" data-admin-section="plans" hidden>
             <div class="admin-card">
+              <h2>Teste grátis — leads (10 dias)</h2>
+              <p class="admin-muted">Nome, celular e e-mail capturados na landing. Follow-up sugerido em 10 dias. Também chega por e-mail (FormSubmit).</p>
+              <div class="admin-toolbar" style="margin:0 0 0.85rem;justify-content:flex-start">
+                <button type="button" class="btn btn-ghost btn-compact" id="admin-export-leads-btn">Exportar leads CSV</button>
+              </div>
+              <div id="admin-trial-leads-list"></div>
+            </div>
+            <div class="admin-card" style="margin-top:1rem">
               <h2>Interesse em planos</h2>
               <p class="admin-muted">Quem clicou em Free / Pro no cadastro (neste navegador).</p>
               <div id="admin-plans-list"></div>
@@ -229,6 +237,6 @@
 
   <script src="js/theme.js"></script>
   <script src="js/auth.js"></script>
-  <script src="js/admin.js?v=1"></script>
+  <script src="js/admin.js?v=2"></script>
 </body>
 </html>

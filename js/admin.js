@@ -20,7 +20,7 @@ const SECTION_META = {
   users: { title: "Usuários", desc: "Contas salvas neste navegador." },
   access: { title: "Liberar acesso", desc: "Definir plano Free/Pro/cortesia." },
   content: { title: "Conteúdo", desc: "Inventário dos bancos publicados." },
-  plans: { title: "Interesse em planos", desc: "Cliques Free/Pro no cadastro." },
+  plans: { title: "Leads e planos", desc: "Teste grátis e cliques Free/Pro no cadastro." },
   marketing: { title: "Marketing", desc: "Links e contatos públicos." },
   settings: { title: "Configurações", desc: "Owners e PIN do painel." },
   log: { title: "Auditoria", desc: "Ações recentes neste dispositivo." },
@@ -275,6 +275,33 @@ async function adminRenderContent () {
 
 function adminRenderPlans () {
   const el = document.getElementById("admin-plans-list");
+  const leadsEl = document.getElementById("admin-trial-leads-list");
+  if (leadsEl) {
+    const leads = adminLoadJson("medhub-aprova-trial-leads-v1", []);
+    const rows = Array.isArray(leads) ? leads : [];
+    if (!rows.length) {
+      leadsEl.innerHTML = "<p class=\"admin-muted\">Nenhum lead de teste grátis neste navegador ainda.</p>";
+    } else {
+      leadsEl.innerHTML = rows.map((row) =>
+        "<article class=\"admin-user-card\">" +
+          "<div class=\"admin-user-card-head\">" +
+            "<strong>" + adminEscape(row.name || "—") + "</strong>" +
+            "<span class=\"admin-pill\">teste 10d</span>" +
+          "</div>" +
+          "<dl class=\"admin-user-dl\">" +
+            "<div><dt>E-mail</dt><dd>" + adminEscape(row.email || "—") + "</dd></div>" +
+            "<div><dt>Celular</dt><dd>" + adminEscape(row.phone || "—") + "</dd></div>" +
+            "<div><dt>Entrou em</dt><dd>" +
+              (row.at ? new Date(row.at).toLocaleString("pt-BR") : "—") +
+            "</dd></div>" +
+            "<div><dt>Follow-up</dt><dd>" +
+              (row.followUpAt ? new Date(row.followUpAt).toLocaleDateString("pt-BR") : "—") +
+            "</dd></div>" +
+          "</dl>" +
+        "</article>"
+      ).join("");
+    }
+  }
   if (!el) return;
   const interest = adminLoadJson(APROVA_PLAN_INTEREST_KEY, null);
   if (!interest?.plano) {
@@ -288,6 +315,30 @@ function adminRenderPlans () {
       "<p class=\"admin-muted\">Registrado em " +
       (interest.ts ? new Date(interest.ts).toLocaleString("pt-BR") : "—") +
       "</p></div>";
+}
+
+function adminExportTrialLeadsCsv () {
+  const leads = adminLoadJson("medhub-aprova-trial-leads-v1", []);
+  const rows = Array.isArray(leads) ? leads : [];
+  const lines = ["name,phone,email,at,followUpAt,source"];
+  rows.forEach((row) => {
+    lines.push([
+      JSON.stringify(row.name || ""),
+      JSON.stringify(row.phone || ""),
+      JSON.stringify(row.email || ""),
+      row.at || "",
+      row.followUpAt || "",
+      JSON.stringify(row.source || "")
+    ].join(","));
+  });
+  const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "medhub-r1-trial-leads.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+  adminPushLog("export_trial_leads", rows.length + " leads");
 }
 
 function adminFillMarketing () {
@@ -491,6 +542,7 @@ function adminBoot () {
     adminGoto(hash);
   });
   document.getElementById("admin-export-btn")?.addEventListener("click", adminExportCsv);
+  document.getElementById("admin-export-leads-btn")?.addEventListener("click", adminExportTrialLeadsCsv);
 
   document.getElementById("admin-nav")?.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-admin-section]");

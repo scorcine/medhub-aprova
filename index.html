@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css">
+  <link rel="stylesheet" href="css/aprova.css?v=trial1">
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
@@ -78,11 +78,55 @@
           <p class="hero-sub">Feito para quem está na reta final ou montando a rotina diária de estudo: menos improviso, mais consistência até o dia da prova.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="app.html">Começar a estudar agora</a>
-            <a class="btn btn-ghost" href="#planos">Ver planos</a>
+            <button type="button" class="btn btn-ghost" id="trial-open-btn" data-trial-open>
+              Ver planos <span class="hero-trial-tag">(Teste grátis)</span>
+            </button>
           </div>
+          <button type="button" class="hero-trial-pitch" id="trial-pitch-btn" data-trial-open>
+            <strong>10 dias grátis no lançamento</strong>
+            <span>Entre na lista agora — em 10 dias a gente te chama pra assinar o Pro.</span>
+          </button>
         </div>
       </div>
     </section>
+  </div>
+
+  <div id="trial-modal" class="aprova-modal" hidden>
+    <div class="aprova-modal-backdrop" data-trial-close></div>
+    <div class="aprova-modal-panel trial-modal-panel" role="dialog" aria-modal="true" aria-labelledby="trial-modal-title">
+      <div class="aprova-modal-head">
+        <div>
+          <p class="trial-modal-kicker">Lançamento MedHub R1</p>
+          <h3 id="trial-modal-title" class="esp-decks-title" style="margin:0">10 dias de teste grátis</h3>
+        </div>
+        <button type="button" class="btn btn-ghost btn-compact" data-trial-close aria-label="Fechar">✕</button>
+      </div>
+      <p class="trial-modal-lead">Deixe só nome, celular e e-mail. Guardamos seus dados e, em 10 dias, enviamos o convite para assinar.</p>
+      <form class="trial-form" id="trial-form" autocomplete="on">
+        <label class="field">
+          <span>Nome</span>
+          <input type="text" name="name" id="trial-name" placeholder="Seu nome" autocomplete="name" required maxlength="80">
+        </label>
+        <label class="field">
+          <span>Celular</span>
+          <input type="tel" name="phone" id="trial-phone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="tel" required maxlength="20">
+        </label>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" id="trial-email" placeholder="seu@email.com" autocomplete="email" required maxlength="120">
+        </label>
+        <p class="auth-msg" id="trial-msg" hidden></p>
+        <div class="aprova-modal-actions">
+          <button type="submit" class="btn btn-primary" id="trial-submit">Quero meu teste grátis</button>
+          <a class="btn btn-ghost" href="#planos" data-trial-close>Ver preços</a>
+        </div>
+      </form>
+      <div class="trial-success" id="trial-success" hidden>
+        <p class="trial-success-title">Pronto — você entrou na lista</p>
+        <p class="trial-success-body">Em até 10 dias entramos em contato no e-mail e no celular cadastrados com o link para assinar.</p>
+        <button type="button" class="btn btn-primary" data-trial-close>Fechar</button>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -213,7 +257,7 @@
     <section class="wrap section" id="planos" aria-label="Planos e preços">
       <h2>Planos</h2>
       <p class="lead">Menos que um cursinho. Mais útil no dia a dia da prova: casos clínicos no padrão R1 e revisão que não deixa esquecer.</p>
-      <p class="pricing-note">Preço de lançamento · 7 dias para testar o fluxo no plano Pro</p>
+      <p class="pricing-note">Preço de lançamento · 10 dias de teste grátis para quem entrar na lista</p>
 
       <div class="pricing-grid">
         <article class="pricing-plan">
@@ -275,5 +319,6 @@
 
   <script src="js/theme.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/trial-lead.js"></script>
 </body>
 </html>
