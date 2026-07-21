@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721mascot26">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721prova1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -111,6 +111,7 @@
         <p class="sidebar-label">Estudo</p>
         <button type="button" class="side-link" data-panel="flashcards">Flashcards</button>
         <button type="button" class="side-link" data-panel="questoes">Banco de questões</button>
+        <button type="button" class="side-link" data-panel="provas-integra">Prova na íntegra</button>
         <button type="button" class="side-link" data-panel="material">Material de apoio</button>
         <button type="button" class="side-link" data-panel="videos">Vídeos</button>
 
@@ -596,13 +597,22 @@
 
         <section id="panel-simulados" class="panel" aria-labelledby="sim-title" hidden>
           <h2 id="sim-title">Simulados</h2>
-          <p class="muted">Blocos no estilo das provas de R1 — em breve com cronômetro e ranking pessoal.</p>
+          <p class="muted">Blocos rápidos no estilo R1. Para prova completa por banca, use <strong>Prova na íntegra</strong>.</p>
           <div class="study-card">
-            <div class="label">Em construção</div>
-            <p class="prompt">Enquanto isso, treine no banco de questões.</p>
+            <div class="label">Atalhos</div>
+            <p class="prompt">Monte um bloco aleatório no banco ou abra uma prova reescrita com referência de banca.</p>
             <div class="actions-row">
-              <button type="button" class="btn btn-primary" data-goto="questoes">Abrir questões</button>
+              <button type="button" class="btn btn-primary" data-goto="questoes">Banco de questões</button>
+              <button type="button" class="btn btn-ghost" data-goto="provas-integra">Prova na íntegra</button>
             </div>
+          </div>
+        </section>
+
+        <section id="panel-provas-integra" class="panel" aria-labelledby="provas-integra-title" hidden>
+          <h2 id="provas-integra-title">Prova na íntegra</h2>
+          <p class="muted">Provas reescritas no padrão MedHub R1, com referência de banca e ano. Ordem da prova preservada.</p>
+          <div id="provas-integra-list" class="provas-integra-list" aria-live="polite">
+            <p class="muted">Carregando provas…</p>
           </div>
         </section>
 
@@ -1112,10 +1122,11 @@
   <script src="js/schedule.js?v=20260721reset1"></script>
   <script src="js/exam-stats.js?v=20260721rev1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
-  <script src="js/questions-qui.js?v=20260721day1"></script>
+  <script src="js/questions-qui.js?v=20260721prova1"></script>
+  <script src="js/provas-integra.js?v=20260721prova1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260721nav1"></script>
+  <script src="js/app-qui.js?v=20260721prova1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

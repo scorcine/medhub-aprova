@@ -269,6 +269,38 @@ const AprovaQuestions = {
   },
 
   /**
+   * Prova na íntegra: mantém a ordem das questões; só embaralha alternativas.
+   * meta: { id, title, exam, year }
+   */
+  startProvaIntegra (list, meta) {
+    const info = meta || {};
+    const pool = [];
+    (list || []).forEach((raw, i) => {
+      const q = typeof aprovaNormalizeQuestion === "function"
+        ? aprovaNormalizeQuestion(raw, info.id || "prova")
+        : raw;
+      if (q) pool.push(q);
+    });
+    if (!pool.length) return 0;
+    this.clearSavedTreino();
+    this.resetSession("simulado");
+    this.queue = aprovaWithShuffledChoices(pool);
+    this.simulado = {
+      size: this.queue.length,
+      startedAt: Date.now(),
+      finished: false,
+      answers: [],
+      provaId: String(info.id || ""),
+      provaTitle: String(info.title || "Prova na íntegra"),
+      exam: String(info.exam || ""),
+      year: info.year != null ? Number(info.year) : null
+    };
+    this.index = 0;
+    this.answered = false;
+    return this.queue.length;
+  },
+
+  /**
    * Continua um bloco: questões já feitas vêm anotadas; as novas ainda sem resposta.
    * priorRows: [{ q, entry: { id, choice, correct, ok } }]
    */

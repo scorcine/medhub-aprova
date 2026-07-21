@@ -7,6 +7,7 @@ const APROVA_PANEL_META = {
   revisoes: { title: "Revisões", sub: "O que venceu para revisar agora" },
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
+  "provas-integra": { title: "Prova na íntegra", sub: "Provas reescritas por banca e ano" },
   material: { title: "Material de apoio", sub: "Em construção" },
   videos: { title: "Vídeos", sub: "Em construção" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
@@ -135,6 +136,9 @@ function aprovaGoTo (id, options) {
   }
   if (id === "progresso") aprovaRenderProgress();
   if (id === "metas") aprovaRenderMetas();
+  if (id === "provas-integra" && typeof aprovaRenderProvasIntegra === "function") {
+    aprovaRenderProvasIntegra();
+  }
   if (id === "perfil") aprovaRenderPerfil();
   if (id === "config") aprovaRenderConfig();
   if (id === "contato" && typeof aprovaPrefillContactFromSession === "function") {
@@ -147,6 +151,10 @@ function aprovaGoTo (id, options) {
   if (id === "questoes") {
     if (AprovaQuestions.isSimuladoFinished()) {
       aprovaRenderSimuladoResult();
+    } else if (AprovaQuestions.mode === "simulado" && AprovaQuestions.current()) {
+      // Prova na íntegra / simulado em andamento (mesmo com 0 respostas ainda)
+      aprovaShowQuestionViews("card");
+      aprovaRenderQuestion();
     } else if (AprovaQuestions.current() && (AprovaQuestions.answered || AprovaQuestions.attempted > 0)) {
       aprovaShowQuestionViews("card");
       aprovaRenderQuestion();
@@ -5822,7 +5830,12 @@ function aprovaRenderSimuladoResult () {
   const r = AprovaQuestions.simuladoResult();
   aprovaShowQuestionViews("result");
   if (!r) return;
-  if (score) score.textContent = r.hits + "/" + r.total + " acertos (" + r.pct + "%)";
+  const sim = AprovaQuestions.simulado;
+  const provaTitle = sim && sim.provaTitle ? String(sim.provaTitle) : "";
+  if (score) {
+    score.textContent = (provaTitle ? provaTitle + " · " : "") +
+      r.hits + "/" + r.total + " acertos (" + r.pct + "%)";
+  }
   if (timeEl) timeEl.textContent = "Tempo aproximado: " + r.minutes + " min";
   if (themesEl) {
     themesEl.innerHTML = r.themes.length
