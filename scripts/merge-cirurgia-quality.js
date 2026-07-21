@@ -80,7 +80,10 @@ const WHITELIST = new Set([
   "cir-abdome2.json",
   "cir-abdome3.json",
   "cir-abdome4.json",
-  "cir-abdome5.json"
+  "cir-abdome5.json",
+  "cir-abdome6.json",
+  "cir-abdome7.json",
+  "cir-trauma-neuro2.json"
 ]);
 
 function main () {
