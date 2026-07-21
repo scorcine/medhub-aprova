@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721contato1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721hojehub2">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -177,60 +177,104 @@
         </section>
 
         <section id="panel-hoje" class="panel" aria-labelledby="hoje-title" hidden>
-          <h2 id="hoje-title">Hoje</h2>
-          <p class="muted">Metas de questões (hoje e atrasadas) em primeiro lugar · flashcards SRS em seguida.</p>
+          <div id="hoje-hub" class="hoje-hub">
+            <h2 id="hoje-title">Hoje</h2>
+            <p class="hoje-hub-question" id="hoje-hub-question">O que iremos estudar hoje?</p>
+            <nav class="hoje-hub-menu" aria-labelledby="hoje-hub-question">
+              <button type="button" class="hoje-hub-item" data-hoje-pick="metas">
+                <span class="hoje-hub-item-label">Suas metas?</span>
+                <span class="hoje-hub-item-hint" id="hoje-hub-metas-preview">Metas do dia e atrasadas</span>
+              </button>
+              <button type="button" class="hoje-hub-item" data-hoje-pick="flashcards">
+                <span class="hoje-hub-item-label">Flashcards</span>
+                <span class="hoje-hub-item-hint" id="hoje-hub-fc-preview">Fila de revisão do dia</span>
+              </button>
+              <button type="button" class="hoje-hub-item" data-hoje-pick="questoes">
+                <span class="hoje-hub-item-label">Questões</span>
+                <span class="hoje-hub-item-hint">Banco no formato da prova</span>
+              </button>
+              <button type="button" class="hoje-hub-item is-soon" data-hoje-pick="material">
+                <span class="hoje-hub-item-label">Material de apoio</span>
+                <span class="hoje-hub-item-hint">Em construção</span>
+              </button>
+              <button type="button" class="hoje-hub-item is-soon" data-hoje-pick="videos">
+                <span class="hoje-hub-item-label">Vídeos</span>
+                <span class="hoje-hub-item-hint">Em construção</span>
+              </button>
+            </nav>
+          </div>
 
-          <div class="study-card hoje-metas-card" id="hoje-metas-card">
-            <div class="label">Metas de questões</div>
-            <div id="hoje-metas-empty" class="hoje-metas-empty" hidden>
-              <p class="muted" style="margin:0.35rem 0 0.75rem">Configure o perfil para liberar as metas do dia.</p>
-              <button type="button" class="btn btn-primary btn-compact" data-goto="perfil">Abrir meu perfil</button>
-            </div>
-            <div id="hoje-metas-body" hidden>
-              <p class="hoje-metas-summary" id="hoje-metas-summary"></p>
-              <div class="dash-seu-plano-quota" id="hoje-metas-quota"></div>
-              <div id="hoje-metas-overdue-wrap" class="hoje-metas-overdue" hidden>
-                <div class="label">Atrasadas</div>
-                <ul class="prog-materia-rows" id="hoje-metas-overdue"></ul>
+          <div id="hoje-view-metas" class="hoje-view" hidden>
+            <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
+            <h2 class="hoje-view-title">Suas metas</h2>
+            <p class="muted">Metas de questões (hoje e atrasadas).</p>
+
+            <div class="study-card hoje-metas-card" id="hoje-metas-card">
+              <div class="label">Metas de questões</div>
+              <div id="hoje-metas-empty" class="hoje-metas-empty" hidden>
+                <p class="muted" style="margin:0.35rem 0 0.75rem">Configure o perfil para liberar as metas do dia.</p>
+                <button type="button" class="btn btn-primary btn-compact" data-goto="perfil">Abrir meu perfil</button>
               </div>
-              <div class="label" style="margin-top:0.65rem">Foco de hoje · o que mais caiu</div>
-              <ul class="dash-task-themes" id="hoje-metas-themes"></ul>
-              <div class="actions-row" style="margin-top:0.75rem">
-                <button type="button" class="btn btn-primary" id="hoje-metas-start-day">Responder bloco de hoje</button>
-                <button type="button" class="btn btn-ghost" data-goto="metas">Plano completo</button>
+              <div id="hoje-metas-body" hidden>
+                <p class="hoje-metas-summary" id="hoje-metas-summary"></p>
+                <div class="dash-seu-plano-quota" id="hoje-metas-quota"></div>
+                <div id="hoje-metas-overdue-wrap" class="hoje-metas-overdue" hidden>
+                  <div class="label">Atrasadas</div>
+                  <ul class="prog-materia-rows" id="hoje-metas-overdue"></ul>
+                </div>
+                <div class="label" style="margin-top:0.65rem">Foco de hoje · o que mais caiu</div>
+                <ul class="dash-task-themes" id="hoje-metas-themes"></ul>
+                <div class="actions-row" style="margin-top:0.75rem">
+                  <button type="button" class="btn btn-primary" id="hoje-metas-start-day">Responder bloco de hoje</button>
+                  <button type="button" class="btn btn-ghost" data-goto="metas">Plano completo</button>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="hoje-fc-block">
-            <div class="label">Flashcards · revisão espaçada</div>
-            <div class="stat-grid" id="hoje-stat-grid" style="margin-bottom:0.85rem">
-              <article class="stat-card">
-                <span class="stat-card-label">Na fila</span>
-                <strong id="hoje-stat-pending">—</strong>
-              </article>
-              <article class="stat-card">
-                <span class="stat-card-label">Revisões</span>
-                <strong id="hoje-stat-due">—</strong>
-              </article>
-              <article class="stat-card">
-                <span class="stat-card-label">Novos</span>
-                <strong id="hoje-stat-new">—</strong>
-              </article>
-              <article class="stat-card">
-                <span class="stat-card-label">Estudados hoje</span>
-                <strong id="hoje-stat-done">—</strong>
-              </article>
-            </div>
+          <div id="hoje-view-flashcards" class="hoje-view" hidden>
+            <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
+            <h2 class="hoje-view-title">Flashcards</h2>
+            <p class="muted">Revisão espaçada do dia.</p>
 
-            <div class="study-card" id="today-summary">
-              <div class="label">Agenda de cards</div>
-              <p class="prompt" id="today-prompt">Carregando…</p>
-              <div class="actions-row">
-                <button type="button" class="btn btn-primary" id="today-start">Começar revisão</button>
-                <button type="button" class="btn btn-ghost" data-goto="flashcards">Escolher tema</button>
+            <div class="hoje-fc-block">
+              <div class="label">Flashcards · revisão espaçada</div>
+              <div class="stat-grid" id="hoje-stat-grid" style="margin-bottom:0.85rem">
+                <article class="stat-card">
+                  <span class="stat-card-label">Na fila</span>
+                  <strong id="hoje-stat-pending">—</strong>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-card-label">Revisões</span>
+                  <strong id="hoje-stat-due">—</strong>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-card-label">Novos</span>
+                  <strong id="hoje-stat-new">—</strong>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-card-label">Estudados hoje</span>
+                  <strong id="hoje-stat-done">—</strong>
+                </article>
               </div>
-              <div class="stats" id="today-stats"></div>
+
+              <div class="study-card" id="today-summary">
+                <div class="label">Agenda de cards</div>
+                <p class="prompt" id="today-prompt">Carregando…</p>
+                <div class="actions-row">
+                  <button type="button" class="btn btn-primary" id="today-start">Começar revisão</button>
+                  <button type="button" class="btn btn-ghost" data-goto="flashcards">Escolher tema</button>
+                </div>
+                <div class="stats" id="today-stats"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="hoje-view-soon" class="hoje-view" hidden>
+            <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
+            <h2 class="hoje-view-title" id="hoje-soon-title">Em construção</h2>
+            <div class="study-card">
+              <p class="prompt" id="hoje-soon-text">Esta área ainda está em construção. Em breve no MedHub R1.</p>
             </div>
           </div>
         </section>
@@ -918,7 +962,7 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721contato1"></script>
+  <script src="js/app-qui.js?v=20260721hojehub2"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

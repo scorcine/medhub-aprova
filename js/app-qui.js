@@ -2,7 +2,7 @@
 
 const APROVA_PANEL_META = {
   inicio: { title: "Início", sub: "Escolha o que estudar agora" },
-  hoje: { title: "Hoje", sub: "Metas do dia e atrasadas · flashcards SRS" },
+  hoje: { title: "Hoje", sub: "O que iremos estudar hoje?" },
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
@@ -103,7 +103,10 @@ function aprovaGoTo (id, options) {
       aprovaShowFlashcardBrowse();
     }
   }
-  if (id === "hoje") aprovaRenderToday();
+  if (id === "hoje") {
+    aprovaHojeShowHub();
+    aprovaRenderToday();
+  }
   if (id === "progresso") aprovaRenderProgress();
   if (id === "metas") aprovaRenderMetas();
   if (id === "perfil") aprovaRenderPerfil();
@@ -3342,9 +3345,12 @@ function aprovaRenderHojeMetas () {
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
 
+  const hubMetas = document.getElementById("hoje-hub-metas-preview");
+
   if (!complete) {
     if (emptyEl) emptyEl.hidden = false;
     if (bodyEl) bodyEl.hidden = true;
+    if (hubMetas) hubMetas.textContent = "Configure o perfil para liberar as metas";
     return;
   }
 
@@ -3361,6 +3367,14 @@ function aprovaRenderHojeMetas () {
 
   if (program && program.qProgress && program.qQuota) {
     const qp = program.qProgress.daily;
+    if (hubMetas) {
+      let lateBit = "";
+      if (typeof aprovaBuildMateriaBoard === "function") {
+        const nLate = (aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 }).overdue || []).length;
+        if (nLate) lateBit = " · " + nLate + " atrasada" + (nLate === 1 ? "" : "s");
+      }
+      hubMetas.textContent = qp.done + "/" + qp.goal + " questões hoje" + lateBit;
+    }
     if (summaryEl) {
       summaryEl.textContent = qp.done + "/" + qp.goal + " questões hoje · meta " +
         ((program.qQuota.targetAccuracy != null
@@ -3379,6 +3393,7 @@ function aprovaRenderHojeMetas () {
     }
   } else if (summaryEl) {
     summaryEl.textContent = "Monte o perfil com provas para liberar o bloco do dia.";
+    if (hubMetas) hubMetas.textContent = "Metas do dia e atrasadas";
   }
 
   if (themesEl) {
@@ -4233,6 +4248,69 @@ function aprovaSavePerfilFromForm () {
   return saved;
 }
 
+function aprovaHojeShowHub () {
+  const hub = document.getElementById("hoje-hub");
+  const views = ["hoje-view-metas", "hoje-view-flashcards", "hoje-view-soon"];
+  if (hub) hub.hidden = false;
+  views.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.hidden = true;
+  });
+  aprovaSetWorkspaceMeta("hoje");
+}
+
+function aprovaHojeShowView (viewId) {
+  const hub = document.getElementById("hoje-hub");
+  if (hub) hub.hidden = true;
+  ["hoje-view-metas", "hoje-view-flashcards", "hoje-view-soon"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.hidden = id !== viewId;
+  });
+}
+
+function aprovaHojePick (pick) {
+  const key = String(pick || "");
+  if (key === "metas") {
+    aprovaHojeShowView("hoje-view-metas");
+    const title = document.getElementById("workspace-title");
+    const sub = document.getElementById("workspace-sub");
+    if (title) title.textContent = "Suas metas";
+    if (sub) sub.textContent = "Metas do dia e atrasadas";
+    aprovaRenderHojeMetas();
+    return;
+  }
+  if (key === "flashcards") {
+    aprovaHojeShowView("hoje-view-flashcards");
+    const title = document.getElementById("workspace-title");
+    const sub = document.getElementById("workspace-sub");
+    if (title) title.textContent = "Flashcards";
+    if (sub) sub.textContent = "Revisão espaçada do dia";
+    aprovaRenderToday();
+    return;
+  }
+  if (key === "questoes") {
+    aprovaGoTo("questoes");
+    return;
+  }
+  if (key === "material" || key === "videos") {
+    aprovaHojeShowView("hoje-view-soon");
+    const soonTitle = document.getElementById("hoje-soon-title");
+    const soonText = document.getElementById("hoje-soon-text");
+    const wsTitle = document.getElementById("workspace-title");
+    const wsSub = document.getElementById("workspace-sub");
+    if (key === "material") {
+      if (soonTitle) soonTitle.textContent = "Material de apoio";
+      if (soonText) soonText.textContent = "Material de apoio em construção. Em breve no MedHub R1.";
+      if (wsTitle) wsTitle.textContent = "Material de apoio";
+    } else {
+      if (soonTitle) soonTitle.textContent = "Vídeos";
+      if (soonText) soonText.textContent = "Vídeos em construção. Em breve no MedHub R1.";
+      if (wsTitle) wsTitle.textContent = "Vídeos";
+    }
+    if (wsSub) wsSub.textContent = "Em construção";
+  }
+}
+
 function aprovaRenderToday () {
   const prompt = document.getElementById("today-prompt");
   const stats = document.getElementById("today-stats");
@@ -4249,6 +4327,15 @@ function aprovaRenderToday () {
     };
 
   aprovaRenderHojeMetas();
+
+  const hubFc = document.getElementById("hoje-hub-fc-preview");
+  if (hubFc) {
+    hubFc.textContent = srs.pending
+      ? (srs.pending + " na fila · " + srs.due + " revisão" + (srs.due === 1 ? "" : "ões"))
+      : (srs.studiedToday
+        ? (srs.studiedToday + " estudados hoje · fila em dia")
+        : "Fila em dia — nada pendente");
+  }
 
   if (prompt) prompt.textContent = summary.prompt;
   if (stats) {
@@ -5545,6 +5632,17 @@ async function aprovaBoot () {
 
   document.querySelectorAll("[data-goto]").forEach(btn => {
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
+  });
+
+  document.getElementById("panel-hoje")?.addEventListener("click", (e) => {
+    const pick = e.target.closest("[data-hoje-pick]");
+    if (pick) {
+      aprovaHojePick(pick.getAttribute("data-hoje-pick"));
+      return;
+    }
+    if (e.target.closest("[data-hoje-back]")) {
+      aprovaHojeShowHub();
+    }
   });
 
   document.getElementById("metas-q-start-day")?.addEventListener("click", () => {

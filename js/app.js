@@ -2,7 +2,7 @@
 
 const APROVA_PANEL_META = {
   inicio: { title: "Início", sub: "Escolha o que estudar agora" },
-  hoje: { title: "Hoje", sub: "Metas do dia e atrasadas · flashcards SRS" },
+  hoje: { title: "Hoje", sub: "O que iremos estudar hoje?" },
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
