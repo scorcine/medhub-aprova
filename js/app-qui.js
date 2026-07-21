@@ -103,6 +103,17 @@ function aprovaGoTo (id, options) {
       aprovaShowFlashcardBrowse();
     }
   }
+
+  // Atalho do Início (e links): abre direto a tela de Revisões dentro de Hoje
+  if (id === "revisoes") {
+    aprovaRenderToday();
+    if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
+    aprovaShowPanel("hoje");
+    aprovaMarkNav("revisoes");
+    if (typeof aprovaHojePick === "function") aprovaHojePick("revisoes");
+    return;
+  }
+
   if (id === "hoje") {
     aprovaHojeShowHub();
     aprovaRenderToday();
@@ -115,7 +126,10 @@ function aprovaGoTo (id, options) {
   if (id === "contato" && typeof aprovaPrefillContactFromSession === "function") {
     aprovaPrefillContactFromSession("app-contact-form");
   }
-  if (id === "inicio") aprovaRenderDashboard();
+  if (id === "inicio") {
+    aprovaRenderDashboard();
+    if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
+  }
   if (id === "questoes") {
     if (AprovaQuestions.isSimuladoFinished()) {
       aprovaRenderSimuladoResult();
@@ -4589,6 +4603,20 @@ function aprovaRenderHojeRevisoes () {
     hubPrev.textContent = bits.length
       ? ("Hoje: " + bits.join(" · "))
       : "Flashcards iguais · questões similares";
+  }
+
+  const dashRev = document.getElementById("dash-revisoes-preview");
+  if (dashRev) {
+    if (dueFc || dueThemes.length) {
+      const bits = [];
+      if (dueFc) bits.push(dueFc + " flashcard" + (dueFc === 1 ? "" : "s"));
+      if (dueThemes.length) {
+        bits.push(dueThemes.length + " tema" + (dueThemes.length === 1 ? "" : "s") + " de questões");
+      }
+      dashRev.textContent = "Vencido hoje: " + bits.join(" · ");
+    } else {
+      dashRev.textContent = "Flashcards iguais · questões similares · 3 / 7 / 14 dias";
+    }
   }
 }
 

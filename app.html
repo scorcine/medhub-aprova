@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721studymode1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721revcard1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -79,6 +79,7 @@
         <p class="sidebar-label">Principal</p>
         <button type="button" class="side-link active" data-panel="inicio">Início</button>
         <button type="button" class="side-link" data-panel="hoje">Hoje</button>
+        <button type="button" class="side-link" data-panel="revisoes">Revisões</button>
         <button type="button" class="side-link" data-panel="flashcards">Flashcards</button>
         <button type="button" class="side-link" data-panel="questoes">Banco de questões</button>
 
@@ -145,6 +146,11 @@
               <span class="dash-card-kicker">Agenda</span>
               <strong>Hoje</strong>
               <span id="dash-hoje-preview">Metas do dia e atrasadas · fila de flashcards.</span>
+            </button>
+            <button type="button" class="dash-card" data-goto="revisoes">
+              <span class="dash-card-kicker">Espaçamento</span>
+              <strong>Revisões</strong>
+              <span id="dash-revisoes-preview">Flashcards iguais · questões similares · 3 / 7 / 14 dias</span>
             </button>
             <button type="button" class="dash-card" data-goto="flashcards">
               <span class="dash-card-kicker">Memória</span>
@@ -1032,7 +1038,7 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721studymode1"></script>
+  <script src="js/app-qui.js?v=20260721revcard1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>
