@@ -3,7 +3,7 @@
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
 const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-voicefile1";
-const APROVA_MASCOT_IMG = "/assets/mascote.png";
+const APROVA_MASCOT_IMG = "/assets/mascote.png?v=20260721icon2";
 /** Voz gravada do mascote (pasta Divulgação/Macote). */
 const APROVA_MASCOT_AUDIO_SRC = "/assets/mascote-welcome.mp3";
 

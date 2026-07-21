@@ -2530,11 +2530,10 @@ html[data-theme="dark"] .aprova-modal-panel {
   width: 4.5rem;
   height: 4.5rem;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 1rem;
   border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line-strong));
-  background:
-    radial-gradient(circle at 40% 30%, color-mix(in srgb, var(--accent) 42%, transparent), transparent 62%),
-    linear-gradient(160deg, #0b1220 0%, #10263a 48%, color-mix(in srgb, var(--accent-deep) 70%, #0b1220) 100%);
+  background: #0b1220;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
   transition: transform 0.15s ease;
 }
