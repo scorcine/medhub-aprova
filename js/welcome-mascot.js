@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-energy2";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-bright1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /** Legenda + fala (português do Brasil). */
@@ -18,9 +18,10 @@ const APROVA_MASCOT_SCRIPT_SPEECH =
   "Este é o aplicativo que irá revolucionar seus estudos. " +
   "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
-/** Mesmo roteiro · masculino jovem, empolgado com o lançamento. */
-const APROVA_MASCOT_SPEECH_RATE = 1.24;
-const APROVA_MASCOT_SPEECH_PITCH = 1.32;
+/** Mesmo roteiro · tom claro/feliz (evita grave de “senhor”), ritmo empolgado. */
+const APROVA_MASCOT_SPEECH_RATE = 1.3;
+const APROVA_MASCOT_SPEECH_PITCH = 1.45;
+const APROVA_MASCOT_SPEECH_PITCH_DEEP = 1.55; // Antonio e afins (muito graves)
 const APROVA_MASCOT_SPEECH_VOLUME = 1;
 const APROVA_MASCOT_VIDEO_RATE = 1;
 
@@ -86,7 +87,12 @@ function aprovaMascotStopSpeech () {
   } catch (e) { /* ignore */ }
 }
 
-/** Voz masculina jovem em pt-BR (Daniel / Felipe / Antonio). */
+function aprovaMascotVoiceIsDeep (voice) {
+  if (!voice) return false;
+  return /antonio|ant[oô]nio|ricardo|david|jorge/.test(String(voice.name || "").toLowerCase());
+}
+
+/** Prefere masculina clara/jovem (Daniel…). Evita Antonio grave quando houver opção. */
 function aprovaMascotPickPtVoice () {
   try {
     const voices = window.speechSynthesis.getVoices() || [];
@@ -101,11 +107,13 @@ function aprovaMascotPickPtVoice () {
       if (!isPtBr(v) || isFemale(v)) return -1;
       const b = blob(v);
       let s = 0;
-      if (/daniel|felipe|gustavo/.test(b)) s += 80;
-      else if (/antonio|ant[oô]nio|ricardo/.test(b)) s += 55;
-      else if (/male|masculin|homem/.test(b)) s += 40;
+      // Mais claros / jovens
+      if (/daniel|felipe|gustavo/.test(b)) s += 100;
+      else if (/male|masculin|homem/.test(b)) s += 50;
+      else if (/antonio|ant[oô]nio|ricardo/.test(b)) s += 15; // último recurso (grave)
       else return -1;
-      if (v.localService) s += 10;
+      if (v.localService) s += 8;
+      if (/online|neural/.test(b)) s += 5; // às vezes mais expressiva
       return s;
     };
 
@@ -169,12 +177,14 @@ function aprovaMascotSpeakWelcome (firstName) {
   const speak = () => {
     aprovaMascotSpeakTimer = null;
     try {
+      const voice = aprovaMascotPickPtVoice();
       const u = new SpeechSynthesisUtterance(text);
       u.lang = "pt-BR";
       u.rate = APROVA_MASCOT_SPEECH_RATE;
-      u.pitch = APROVA_MASCOT_SPEECH_PITCH;
+      u.pitch = aprovaMascotVoiceIsDeep(voice)
+        ? APROVA_MASCOT_SPEECH_PITCH_DEEP
+        : APROVA_MASCOT_SPEECH_PITCH;
       u.volume = APROVA_MASCOT_SPEECH_VOLUME;
-      const voice = aprovaMascotPickPtVoice();
       if (voice) {
         u.voice = voice;
         if (voice.lang) u.lang = voice.lang;
