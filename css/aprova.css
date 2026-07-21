@@ -755,6 +755,99 @@ html[data-theme="light"] .hero-visual {
   margin-top: 1.75rem;
 }
 
+/* ——— Ciência do aprendizado (landing) ——— */
+.section-eyebrow {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.science-habits {
+  margin-bottom: 1.5rem;
+}
+
+.science-avoid {
+  margin: 0 0 1.75rem;
+  padding: 1rem 1.1rem;
+  max-width: 42rem;
+  border-left: 3px solid var(--line-strong, var(--line));
+  background: linear-gradient(90deg, rgba(15, 159, 154, 0.07), transparent 70%);
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.science-avoid strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.science-bridge {
+  margin: 0 0 1.25rem;
+  padding: 1.35rem 0 0;
+  border-top: 1px solid var(--line);
+  max-width: 42rem;
+}
+
+.science-bridge-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.science-product-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.science-product-list li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.science-product-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 1px;
+  background: var(--accent);
+}
+
+.science-result {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.science-source {
+  margin: 0 0 0.25rem;
+  max-width: 42rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink-mute, var(--ink-soft));
+}
+
 /* ——— Planos / preços ——— */
 .pricing-note {
   margin: -1rem 0 1.5rem;
