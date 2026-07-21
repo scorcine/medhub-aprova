@@ -7,6 +7,11 @@
   <meta name="description" content="MedHub R1: revisão programada para provas de residência médica. Flashcards, questões e agenda de estudo para quem quer passar no R1.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f8f8b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MedHub R1">
   <script>
     (function () {
       try {
@@ -21,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=contato1">
+  <link rel="stylesheet" href="css/aprova.css?v=20260721pwa1">
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
@@ -81,6 +86,16 @@
             <a class="btn btn-primary" href="app.html">Começar a estudar agora</a>
             <button type="button" class="btn btn-ghost" id="trial-open-btn" data-trial-open>
               Ver planos <span class="hero-trial-tag">(Teste grátis)</span>
+            </button>
+            <button
+              type="button"
+              class="btn btn-ghost"
+              data-aprova-install
+              data-label-android="Instalar app"
+              data-label-ios="Instalar no iPhone"
+              data-label-default="Instalar app"
+            >
+              <span data-aprova-install-label>Instalar app</span>
             </button>
           </div>
           <button type="button" class="hero-trial-pitch" id="trial-pitch-btn" data-trial-open>
@@ -357,5 +372,6 @@
   <script src="js/auth.js?v=20260721trial2"></script>
   <script src="js/trial-lead.js?v=20260721trial2"></script>
   <script src="js/contact.js"></script>
+  <script src="js/install.js?v=20260721pwa1"></script>
 </body>
 </html>

@@ -1191,6 +1191,12 @@ html[data-theme="dark"] .pricing-badge {
   font-weight: 650;
 }
 
+.field-optional {
+  font-style: normal;
+  font-weight: 500;
+  opacity: 0.72;
+}
+
 .field input {
   width: 100%;
   border: 1px solid var(--line-strong);
@@ -4179,4 +4185,42 @@ html[data-theme="dark"] .admin-pill--warn {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* —— Instalar app (PWA) —— */
+.aprova-install-steps {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.aprova-install-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 1rem;
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+}
+
+.aprova-install-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.aprova-install-banner strong {
+  color: var(--ink);
+}
+
+.aprova-install-panel {
+  max-width: 26rem;
 }
