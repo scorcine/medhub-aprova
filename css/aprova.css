@@ -3756,6 +3756,23 @@ button.linkish {
   font: inherit;
 }
 
+/* Lista nativa do <select>: fundo claro + texto escuro (legível no Windows/Chrome em tema escuro) */
+.admin-page select option,
+.admin-grant-form select option,
+.admin-filters select option {
+  background-color: #ffffff;
+  color: #142033;
+}
+
+html[data-theme="dark"] .admin-page select,
+html[data-theme="dark"] .admin-grant-form select,
+html[data-theme="dark"] .admin-filters select {
+  color-scheme: light;
+  background: #f4f7fb;
+  color: #142033;
+  border-color: rgba(20, 32, 51, 0.22);
+}
+
 .admin-status {
   margin-top: 0.75rem;
   font-size: 0.9rem;
