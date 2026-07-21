@@ -1202,7 +1202,21 @@ html[data-theme="dark"] .pricing-badge {
   border-radius: var(--radius-sm);
 }
 
-.field input:focus {
+.field textarea {
+  width: 100%;
+  min-height: 7rem;
+  border: 1px solid var(--line-strong);
+  background: var(--input-bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
   outline: 2px solid rgba(15, 159, 154, 0.35);
   outline-offset: 1px;
   border-color: var(--accent);

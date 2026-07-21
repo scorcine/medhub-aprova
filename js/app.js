@@ -11,7 +11,8 @@ const APROVA_PANEL_META = {
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
   metas: { title: "Minhas metas", sub: "Diária, semanal e temas de flashcards" },
   perfil: { title: "Meu perfil", sub: "Provas e datas que você pretende prestar" },
-  config: { title: "Configurações", sub: "Conta e preferências" }
+  config: { title: "Configurações", sub: "Conta e preferências" },
+  contato: { title: "Contato", sub: "medhubr1@gmail.com" }
 };
 
 /** "study" = Flashcards · "stats" = o que mais caiu nas provas */
@@ -107,6 +108,9 @@ function aprovaGoTo (id, options) {
   if (id === "metas") aprovaRenderMetas();
   if (id === "perfil") aprovaRenderPerfil();
   if (id === "config") aprovaRenderConfig();
+  if (id === "contato" && typeof aprovaPrefillContactFromSession === "function") {
+    aprovaPrefillContactFromSession("app-contact-form");
+  }
   if (id === "inicio") aprovaRenderDashboard();
   if (id === "questoes") {
     if (AprovaQuestions.isSimuladoFinished()) {
