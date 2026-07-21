@@ -1,0 +1,22 @@
+---
+description: Sempre fazer commit e push ao concluir entregas shippable
+alwaysApply: true
+---
+
+# Commit e push automáticos
+
+Quando uma entrega do MedHub R1 estiver pronta para o usuário testar (UI, conteúdo de provas, correção de bug visível no app), **faça commit e push para `origin` sem pedir confirmação**.
+
+## Faça
+
+- Incluir só os arquivos da entrega atual (não misturar scripts `_tmp` soltos, apostilas gold, `package-lock` irrelevante, etc., salvo se forem necessários ao deploy).
+- Mensagem de commit curta, em inglês no estilo do repo, focada no *porquê*.
+- `git push -u origin HEAD` (ou `git push`) após o commit bem-sucedido.
+- Avisar o usuário que subiu e, se houver cache `?v=`, qual versão usar / pedir hard refresh.
+
+## Não faça
+
+- Não alterar `git config`.
+- Não usar `--force` em `main`/`master` nem hooks `--no-verify`.
+- Não commitar segredos (`.env`, credenciais).
+- Não fazer commit vazio se não houver mudanças relevantes.
