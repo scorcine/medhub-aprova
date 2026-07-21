@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare4";
+const APROVA_PROVAS_CACHE_VER = "20260721enare5";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -15,6 +15,7 @@ const APROVA_PROVAS_AREA_LABELS = {
 let aprovaProvasCatalogData = null;
 let aprovaProvasBound = false;
 let aprovaProvasPackCache = Object.create(null);
+let aprovaProvasRenderSeq = 0;
 let aprovaProvasView = {
   mode: "familias", // familias | anos | modo
   familyId: null,
@@ -138,6 +139,7 @@ function aprovaBindProvasIntegra () {
     const back = el.closest("[data-prova-back]");
     if (back) {
       e.preventDefault();
+      e.stopPropagation();
       const to = back.getAttribute("data-prova-back") || "familias";
       if (to === "anos") {
         aprovaProvasView.mode = "anos";
@@ -149,27 +151,32 @@ function aprovaBindProvasIntegra () {
       return;
     }
 
-    const familyBtn = el.closest("[data-prova-family]");
-    if (familyBtn) {
-      e.preventDefault();
-      aprovaProvasGoAnos(familyBtn.getAttribute("data-prova-family"));
-      return;
-    }
-
+    // IMPORTANTE: year antes de family — o chip do ano também tinha data-prova-family
+    // e o handler de family chamava GoAnos, cancelando a abertura.
     const yearBtn = el.closest("[data-prova-year]");
     if (yearBtn) {
       e.preventDefault();
+      e.stopPropagation();
       if (yearBtn.disabled) return;
-      aprovaProvasGoModo(
-        yearBtn.getAttribute("data-prova-family"),
-        yearBtn.getAttribute("data-prova-year")
-      );
+      const familyId = yearBtn.getAttribute("data-prova-year-family") ||
+        aprovaProvasView.familyId ||
+        yearBtn.getAttribute("data-prova-family");
+      aprovaProvasGoModo(familyId, yearBtn.getAttribute("data-prova-year"));
+      return;
+    }
+
+    const familyBtn = el.closest("[data-prova-family]");
+    if (familyBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      aprovaProvasGoAnos(familyBtn.getAttribute("data-prova-family"));
       return;
     }
 
     const startBtn = el.closest("[data-prova-start]");
     if (startBtn) {
       e.preventDefault();
+      e.stopPropagation();
       if (startBtn.disabled) return;
       const packId = startBtn.getAttribute("data-prova-start");
       const area = startBtn.getAttribute("data-prova-area") || "";
@@ -226,16 +233,11 @@ function aprovaRenderProvasAnos (root, data, familyId) {
     const pack = aprovaProvasFindPack(family, y, data);
     const ready = !!pack;
     const fid = String(family.id).replace(/"/g, "");
-    // onclick inline: fallback se a delegação de evento falhar no browser
-    const onClick = ready
-      ? ("onclick=\"window.aprovaProvasGoModo('" + fid + "', " + y + "); return false;\"")
-      : "";
     return (
       "<button type=\"button\" class=\"provas-year-chip" + (ready ? " is-ready" : "") + "\"" +
         " data-prova-year=\"" + y + "\"" +
-        " data-prova-family=\"" + fid + "\"" +
+        " data-prova-year-family=\"" + fid + "\"" +
         (ready ? "" : " disabled") +
-        " " + onClick +
         " aria-label=\"" + (ready ? ("Abrir " + family.label + " " + y) : (y + " em breve")) + "\">" +
         "<span class=\"provas-year-chip-year\">" + y + "</span>" +
         "<span class=\"provas-year-chip-status\">" + (ready ? "Disponível" : "Em breve") + "</span>" +
@@ -255,7 +257,7 @@ function aprovaRenderProvasAnos (root, data, familyId) {
     "</div>";
 }
 
-async function aprovaRenderProvasModo (root, data) {
+async function aprovaRenderProvasModo (root, data, seq) {
   const family = aprovaProvasFindFamily(aprovaProvasView.familyId, data);
   const year = Number(aprovaProvasView.year);
   if (!family || !Number.isFinite(year)) {
@@ -284,7 +286,7 @@ async function aprovaRenderProvasModo (root, data) {
 
   try {
     const pack = await aprovaLoadProvaFile(meta.file);
-    // Se o usuário voltou enquanto carregava, não sobrescreve outra tela
+    if (seq != null && seq !== aprovaProvasRenderSeq) return;
     if (aprovaProvasView.mode !== "modo" || Number(aprovaProvasView.year) !== year) return;
 
     const questions = aprovaProvasQuestionsFromPack(pack);
@@ -346,17 +348,14 @@ function aprovaRenderProvasIntegra () {
   const root = document.getElementById("provas-integra-list");
   if (!root) return;
 
-  const viewMode = aprovaProvasView.mode;
+  const seq = ++aprovaProvasRenderSeq;
   root.innerHTML = "<p class=\"muted\">Carregando…</p>";
 
   aprovaLoadProvasCatalogData()
     .then((data) => {
-      // Mantém a tela pedida mesmo se houver renders concorrentes
-      if (aprovaProvasView.mode !== viewMode && viewMode !== "modo") {
-        // se o usuário mudou de tela, o render mais novo cuida
-      }
+      if (seq !== aprovaProvasRenderSeq) return null;
       if (aprovaProvasView.mode === "modo") {
-        return aprovaRenderProvasModo(root, data);
+        return aprovaRenderProvasModo(root, data, seq);
       }
       if (aprovaProvasView.mode === "anos" && aprovaProvasView.familyId) {
         aprovaRenderProvasAnos(root, data, aprovaProvasView.familyId);
@@ -366,6 +365,7 @@ function aprovaRenderProvasIntegra () {
       return null;
     })
     .catch((err) => {
+      if (seq !== aprovaProvasRenderSeq) return;
       const detail = err && err.message ? String(err.message) : "";
       root.innerHTML = "<p class=\"muted\">Não foi possível carregar o catálogo de provas." +
         (detail ? (" " + detail) : "") + "</p>";
