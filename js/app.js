@@ -277,7 +277,8 @@ const APROVA_EXAM_RANK = {
   "sus-ba": 16,
   "ses-pe": 17,
   ufrj: 18,
-  einstein: 19
+  einstein: 19,
+  fmabc: 20
 };
 
 function aprovaExamRank (id) {

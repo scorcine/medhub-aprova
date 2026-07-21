@@ -15,6 +15,7 @@ const APROVA_TARGET_EXAMS = [
   { id: "santa-casa", label: "Santa Casa SP" },
   { id: "sirio", label: "Sírio-Libanês" },
   { id: "einstein", label: "Einstein" },
+  { id: "fmabc", label: "FMABC" },
   { id: "iamspe", label: "IAMSPE / HSPE" },
   { id: "sus-sp", label: "SUS-SP" },
   { id: "puc-sp", label: "PUC-SP" },

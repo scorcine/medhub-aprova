@@ -8,7 +8,9 @@ const APROVA_QUESTION_FILES = [
   "data/questions-go.json",
   "data/questions-preventiva.json",
   "data/questions-sus-sp.json",
-  "data/questions-enare.json"
+  "data/questions-enare.json",
+  "data/questions-fmabc.json",
+  "data/questions-einstein.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -19,7 +21,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare1";
+const APROVA_QUESTION_CACHE_VER = "20260721fmabc1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
@@ -36,15 +38,16 @@ const APROVA_AREA_EXAM_WEIGHT = {
 /** Grupo de pack de prova (ex.: "SUS-SP 2026") — não é grupo do banco. */
 function aprovaIsProvaPackGroupLabel (group) {
   const g = String(group || "").trim();
-  return /^(SUS-SP|ENARE|ENAMED|USP-SP)\b/i.test(g) ||
-    /^ENARE\s*\/\s*ENAMED\b/i.test(g);
+  return /^(SUS-SP|ENARE|ENAMED|USP-SP|FMABC|Einstein)\b/i.test(g) ||
+    /^ENARE\s*\/\s*ENAMED\b/i.test(g) ||
+    /^Einstein\s*\(HIAE\)\b/i.test(g);
 }
 
 /**
  * Espelha questões das provas na íntegra no treino só quando o grupo já é
- * de banco (Cardiologia, Neonatologia…). Packs SUS-SP/ENARE com group
- * "SUS-SP YYYY" ficam só na Prova na íntegra — o banco curado vem de
- * data/questions-sus-sp.json / data/questions-enare.json (e similares).
+ * de banco (Cardiologia, Neonatologia…). Packs SUS-SP/ENARE/FMABC/Einstein
+ * com group "FMABC YYYY" etc. ficam só na Prova na íntegra — o banco curado
+ * vem de data/questions-*.json.
  */
 async function aprovaAppendProvasIntegraToBag (bag, seen) {
   try {
@@ -56,7 +59,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     for (const prova of provas) {
       if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
       // Packs com arquivo curado no banco; não espelhar o pack bruto.
-      if (/^(sus-sp|enare)/i.test(String(prova.exam || prova.id || ""))) continue;
+      if (/^(sus-sp|enare|fmabc|einstein)/i.test(String(prova.exam || prova.id || ""))) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
