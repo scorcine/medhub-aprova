@@ -1,0 +1,802 @@
+[
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 1,
+    "group": "Endocrinologia",
+    "theme": "CAD — hidratação antes de insulina",
+    "stem": "Homem de 24 anos, diabético tipo 1, chega ao pronto-socorro com dor abdominal, vômitos e respiração de Kussmaul há 12 horas. Glicemia capilar 480 mg/dL, cetonemia positiva, pH arterial 7,10, bicarbonato 8 mEq/L e potássio sérico 3,2 mEq/L. Está taquicárdico e com PA de 90x60 mmHg. Qual a primeira medida terapêutica?",
+    "correct": "Iniciar reposição volêmica vigorosa com solução salina isotônica antes de qualquer bólus de insulina, corrigindo a hipocalemia em paralelo.",
+    "wrongs": [
+      "Aplicar bólus intravenoso de insulina regular imediatamente, postergando a hidratação até a glicemia normalizar.",
+      "Iniciar bicarbonato de sódio intravenoso em dose plena para corrigir a acidose antes de hidratar o paciente.",
+      "Repor apenas potássio por via oral e manter em observação, sem hidratação intravenosa nem insulina neste momento.",
+      "Suspender toda insulina basal e aguardar nova gasometria em seis horas antes de qualquer outra intervenção."
+    ],
+    "explain": "Na cetoacidose diabética grave com hipocalemia, a hidratação com salina isotônica precede a insulina, pois esta desloca potássio para o intracelular e pode precipitar arritmia fatal se o potássio estiver abaixo de 3,3 mEq/L antes do esquema insulínico.",
+    "trap": "Iniciar insulina antes de corrigir o potássio abaixo de 3,3, gerando risco de arritmia grave por hipocalemia."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 2,
+    "group": "Endocrinologia",
+    "theme": "CAD — critérios para transição SC",
+    "stem": "Mulher de 19 anos internada em UTI por cetoacidose diabética evolui após 10 horas de tratamento com glicemia de 190 mg/dL, bicarbonato de 17 mEq/L, pH 7,32 e anion gap normalizado, já se alimentando por via oral. Qual a conduta mais adequada quanto à insulinoterapia?",
+    "correct": "Manter a infusão de insulina intravenosa por uma a duas horas após aplicar a primeira dose de insulina basal subcutânea, então suspender a bomba.",
+    "wrongs": [
+      "Suspender a insulina intravenosa imediatamente e iniciar apenas insulina basal subcutânea sem período de superposição.",
+      "Trocar diretamente para insulina prandial subcutânea isolada, sem componente basal, mantendo a bomba desligada.",
+      "Prolongar a insulina intravenosa por mais 24 horas mesmo após critérios de resolução, evitando qualquer via subcutânea.",
+      "Interromper toda insulinoterapia por 6 horas para reavaliação laboratorial antes de decidir a via de administração."
+    ],
+    "explain": "A insulina intravenosa tem meia-vida curtíssima; suspendê-la sem superposição com a basal subcutânea expõe o paciente a recidiva rápida da cetoacidose, mesmo com critérios bioquímicos de resolução já atingidos.",
+    "trap": "Desligar a bomba de insulina sem sobreposição com a dose basal subcutânea, causando novo pico de cetogênese."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 3,
+    "group": "Endocrinologia",
+    "theme": "CAD euglicêmica por iSGLT2",
+    "stem": "Mulher de 58 anos, diabética tipo 2 em uso de empagliflozina, é atendida no pronto-socorro com náuseas, dor abdominal e taquipneia após dieta hipocalórica para cirurgia bariátrica. Glicemia é de apenas 210 mg/dL, mas o pH arterial está em 7,18 com cetonúria intensa. Qual a interpretação e conduta corretas?",
+    "correct": "Reconhecer cetoacidose diabética euglicêmica associada ao inibidor de SGLT2, suspender a droga e tratar com insulina e hidratação como CAD clássica.",
+    "wrongs": [
+      "Descartar cetoacidose diabética pela glicemia pouco elevada e investigar apenas causas abdominais cirúrgicas.",
+      "Manter a empagliflozina e tratar apenas a náusea com antiemético, aguardando nova glicemia em 12 horas.",
+      "Classificar o quadro como acidose lática isolada por metformina e iniciar apenas bicarbonato intravenoso.",
+      "Iniciar apenas soro glicosado hipertônico para elevar a glicemia, sem insulina nem correção da acidose."
+    ],
+    "explain": "Inibidores de SGLT2 podem causar cetoacidose diabética com glicemia normal ou pouco elevada, sobretudo em jejum prolongado ou pós-operatório; o diagnóstico exige cetonemia e acidose, e o tratamento segue o protocolo padrão de CAD.",
+    "trap": "Excluir cetoacidose só porque a glicemia não está muito alta, atraso comum na euglicêmica por gliflozina."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 4,
+    "group": "Endocrinologia",
+    "theme": "Estado hiperosmolar hiperglicêmico",
+    "stem": "Idoso de 76 anos, diabético tipo 2, é trazido ao pronto-socorro após dias de baixa ingesta hídrica e confusão mental progressiva. Glicemia de 780 mg/dL, sódio corrigido de 152 mEq/L, osmolaridade sérica de 340 mOsm/kg, sem cetonemia significativa e bicarbonato normal. Qual o diagnóstico mais provável?",
+    "correct": "Estado hiperosmolar hiperglicêmico, exigindo hidratação cuidadosa e correção lenta da osmolaridade além do controle glicêmico.",
+    "wrongs": [
+      "Cetoacidose diabética clássica, devendo-se priorizar bicarbonato intravenoso em dose plena imediatamente.",
+      "Acidente vascular cerebral isquêmico agudo, com indicação de trombólise independentemente da glicemia.",
+      "Intoxicação exógena por sedativos, devendo-se administrar flumazenil empírico sem investigar a glicemia.",
+      "Hipoglicemia factícia com rebaixamento, exigindo apenas glicose hipertônica intravenosa em bólus único."
+    ],
+    "explain": "O estado hiperosmolar hiperglicêmico ocorre tipicamente em idosos com DM2, cursando com hiperglicemia extrema, hiperosmolaridade e desidratação grave, sem acidose relevante; a correção deve ser gradual para evitar edema cerebral.",
+    "trap": "Confundir com CAD e tratar com bicarbonato agressivo, quando o problema central é a hiperosmolaridade e desidratação."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 5,
+    "group": "Endocrinologia",
+    "theme": "EHH em cardiopata — hidratação cautelosa",
+    "stem": "Homem de 82 anos com insuficiência cardíaca conhecida é admitido em UTI com estado hiperosmolar hiperglicêmico, glicemia de 850 mg/dL e osmolaridade elevada. Apresenta estertores bibasais discretos ao exame. Qual a estratégia de reposição volêmica mais adequada?",
+    "correct": "Reidratar com solução isotônica em volumes menores e infusão mais lenta, monitorando sinais de sobrecarga cardíaca e ajustando conforme resposta clínica.",
+    "wrongs": [
+      "Infundir grandes volumes de salina isotônica em bólus rápido, priorizando a correção osmolar sobre a função cardíaca.",
+      "Restringir totalmente a hidratação intravenosa pelo risco cardíaco, tratando apenas com insulina isolada.",
+      "Utilizar exclusivamente solução glicosada a 5% para reidratação, evitando qualquer solução salina no idoso cardiopata.",
+      "Indicar diálise de urgência para correção osmolar antes de qualquer tentativa de hidratação intravenosa."
+    ],
+    "explain": "Em pacientes com estado hiperosmolar hiperglicêmico e comorbidade cardíaca, a hidratação deve ser feita com cautela, em ritmo mais lento e volumes reavaliados frequentemente, equilibrando a correção da desidratação com o risco de edema pulmonar.",
+    "trap": "Repetir o protocolo padrão de hidratação agressiva sem ajustar ao risco de descompensação cardíaca do idoso."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 6,
+    "group": "Endocrinologia",
+    "theme": "Hipoglicemia — paciente consciente",
+    "stem": "Mulher de 45 anos, diabética tipo 1, apresenta sudorese, tremores e fome súbita em ambulatório durante consulta de rotina. Glicemia capilar de 52 mg/dL, está orientada e conseguindo deglutir normalmente. Qual a conduta imediata mais adequada?",
+    "correct": "Oferecer 15 a 20 gramas de carboidrato de absorção rápida por via oral e reavaliar a glicemia em 15 minutos.",
+    "wrongs": [
+      "Aplicar glucagon intramuscular imediatamente, reservando a via oral apenas para casos assintomáticos.",
+      "Administrar glicose hipertônica intravenosa em bólus, mesmo com a paciente deglutindo normalmente.",
+      "Aumentar a dose de insulina basal da noite anterior para prevenir nova hipoglicemia nos próximos dias.",
+      "Orientar apenas repouso e reavaliação da glicemia após 2 horas, sem qualquer intervenção alimentar imediata."
+    ],
+    "explain": "Em hipoglicemia leve a moderada com paciente consciente e capaz de deglutir, o tratamento de escolha é carboidrato de absorção rápida por via oral, com reavaliação em 15 minutos antes de qualquer medida mais invasiva.",
+    "trap": "Recorrer a glucagon ou glicose intravenosa em paciente consciente e capaz de deglutir, medida desproporcional ao quadro."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 7,
+    "group": "Endocrinologia",
+    "theme": "Hipoglicemia grave com rebaixamento",
+    "stem": "Homem de 60 anos é encontrado inconsciente em casa por familiares, sem resposta a estímulos verbais. É diabético em uso de insulina. Glicemia capilar trazida pelo SAMU é de 38 mg/dL, sem acesso venoso disponível no domicílio. Qual a conduta mais adequada nesse momento?",
+    "correct": "Administrar glucagon por via intramuscular imediatamente, já que não há acesso venoso disponível para glicose intravenosa.",
+    "wrongs": [
+      "Aguardar chegada ao hospital para obter acesso venoso antes de qualquer tratamento da hipoglicemia.",
+      "Tentar administrar carboidrato por via oral apesar do rebaixamento do nível de consciência do paciente.",
+      "Aplicar insulina adicional para reduzir o risco de hiperglicemia rebote após a recuperação da consciência.",
+      "Realizar apenas estímulo doloroso repetido para tentar despertar o paciente antes de qualquer fármaco."
+    ],
+    "explain": "Na hipoglicemia grave com rebaixamento do nível de consciência e ausência de acesso venoso, o glucagon intramuscular é a alternativa eficaz e segura, evitando o risco de aspiração associado à oferta oral em paciente inconsciente.",
+    "trap": "Oferecer carboidrato por via oral a paciente inconsciente, com risco real de aspiração pulmonar."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 8,
+    "group": "Endocrinologia",
+    "theme": "Hipoglicemia factícia por sulfonilureia em DRC",
+    "stem": "Idosa de 79 anos com doença renal crônica é levada ao pronto-socorro após episódio de hipoglicemia sintomática, glicemia de 40 mg/dL, corrigida com glicose intravenosa. Usa glibenclamida há anos. Após 1 hora, glicemia volta a cair para 55 mg/dL. Qual a conduta mais adequada?",
+    "correct": "Internar para infusão contínua de glicose e monitorização prolongada, pois sulfonilureias em disfunção renal têm efeito hipoglicemiante recorrente e prolongado.",
+    "wrongs": [
+      "Liberar a paciente após a primeira correção, orientando apenas retorno se houver novos sintomas.",
+      "Substituir a glibenclamida por insulina de ação rápida em dose fixa antes da alta hospitalar imediata.",
+      "Repetir apenas um novo bólus de glicose hipertônica e reavaliar a glicemia somente no dia seguinte.",
+      "Suspender toda investigação renal, atribuindo a hipoglicemia exclusivamente a jejum prolongado da paciente."
+    ],
+    "explain": "Sulfonilureias como a glibenclamida têm metabólitos ativos que se acumulam na disfunção renal, causando hipoglicemia recorrente e prolongada mesmo após correção inicial, exigindo internação com glicose contínua e monitorização.",
+    "trap": "Liberar o paciente após uma única correção, ignorando o risco de recidiva prolongada por acúmulo do fármaco."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 9,
+    "group": "Endocrinologia",
+    "theme": "DM2 novo diagnóstico — primeira linha",
+    "stem": "Homem de 50 anos, obeso, assintomático, é diagnosticado em ambulatório com diabetes tipo 2 após HbA1c de 7,8% e glicemia de jejum de 158 mg/dL em duas ocasiões. Função renal normal e sem doença cardiovascular estabelecida. Qual a conduta terapêutica inicial mais adequada?",
+    "correct": "Iniciar metformina associada a mudanças de estilo de vida como primeira linha terapêutica nesse perfil de paciente.",
+    "wrongs": [
+      "Iniciar insulina basal em dose plena desde o diagnóstico, reservando os antidiabéticos orais para falha posterior.",
+      "Prescrever sulfonilureia isolada como primeira escolha, postergando a metformina para uma segunda etapa.",
+      "Indicar apenas dieta restritiva sem qualquer fármaco, reavaliando controle glicêmico somente após 1 ano.",
+      "Iniciar inibidor de SGLT2 isolado, reservando a metformina apenas se houver falha terapêutica futura."
+    ],
+    "explain": "Na ausência de doença cardiovascular ou renal estabelecida, a metformina associada a mudanças de estilo de vida permanece a primeira linha terapêutica no diabetes tipo 2 recém-diagnosticado, pelo perfil de eficácia, custo e segurança.",
+    "trap": "Partir direto para insulina ou sulfonilureia em paciente sem contraindicação à metformina, encarecendo e complicando o tratamento inicial."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 10,
+    "group": "Endocrinologia",
+    "theme": "LADA — diabetes autoimune latente do adulto",
+    "stem": "Mulher de 38 anos, magra, sem síndrome metabólica, é diagnosticada em ambulatório com diabetes, com glicemia de jejum de 210 mg/dL, e inicia metformina, mas mantém hiperglicemia progressiva em 6 meses. Anticorpos anti-GAD estão positivos e peptídeo C está reduzido. Qual a conduta mais adequada nesse momento?",
+    "correct": "Reconhecer diabetes autoimune latente do adulto e iniciar insulinoterapia precocemente, já que a reserva de células beta tende a declinar rapidamente.",
+    "wrongs": [
+      "Manter apenas metformina em dose máxima, pois a magreza da paciente exclui diabetes autoimune do adulto.",
+      "Associar sulfonilureia em dose alta, forçando a secreção residual de insulina pelas células beta remanescentes.",
+      "Repetir apenas a HbA1c em 6 meses sem qualquer ajuste terapêutico, aguardando maior deterioração glicêmica.",
+      "Suspender toda medicação e investigar exclusivamente causas psiquiátricas para a falha do controle glicêmico."
+    ],
+    "explain": "O LADA cursa com autoanticorpos positivos e peptídeo C baixo em adulto magro, evoluindo para insulinopenia mais rápido que o DM2 típico; por isso a insulinoterapia precoce é preferível a forçar secretagogos numa reserva beta em declínio.",
+    "trap": "Tratar como DM2 típico com secretagogos, acelerando a falência das células beta já comprometidas pela autoimunidade."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 11,
+    "group": "Endocrinologia",
+    "theme": "Manejo perioperatório de insulina",
+    "stem": "Mulher de 63 anos, diabética tipo 2 em uso de metformina e insulina basal, será submetida a colecistectomia eletiva pela manhã, internada em enfermaria, em jejum desde a noite anterior e com glicemia capilar de 140 mg/dL na admissão. Qual a orientação mais adequada quanto à medicação no dia da cirurgia?",
+    "correct": "Suspender a metformina no dia da cirurgia e manter cerca de 70 a 80% da dose habitual de insulina basal, com monitorização glicêmica frequente.",
+    "wrongs": [
+      "Manter a dose plena de metformina e de insulina basal exatamente como no dia a dia, sem qualquer ajuste.",
+      "Suspender totalmente a insulina basal no dia da cirurgia, mantendo apenas a metformina em jejum.",
+      "Aplicar dose extra de insulina de ação rápida pela manhã para compensar o jejum prolongado da paciente.",
+      "Suspender toda medicação diabética por 3 dias antes da cirurgia, independentemente do controle glicêmico."
+    ],
+    "explain": "No perioperatório, a metformina é suspensa no dia da cirurgia pelo risco de acidose lática em jejum e possível hipoperfusão, enquanto a insulina basal costuma ser mantida em dose reduzida para evitar tanto hipoglicemia quanto hiperglicemia perioperatória.",
+    "trap": "Suspender insulina basal por completo pensando em evitar hipoglicemia, o que na verdade favorece hiperglicemia e cetose no perioperatório."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 12,
+    "group": "Endocrinologia",
+    "theme": "Neuropatia diabética dolorosa",
+    "stem": "Homem de 55 anos, diabético tipo 2 há 12 anos, relata em ambulatório dor em queimação e formigamento nos pés, pior à noite, associada a hiperalgesia ao toque leve. Exame mostra reflexos aquileus reduzidos e sensibilidade vibratória diminuída. Qual a conduta farmacológica de primeira linha?",
+    "correct": "Iniciar gabapentina ou duloxetina como primeira linha para o controle da dor neuropática diabética.",
+    "wrongs": [
+      "Prescrever opioide de longa duração como primeira escolha para dor neuropática crônica desse paciente.",
+      "Indicar apenas anti-inflamatório não esteroidal em dose plena para o alívio da dor em queimação.",
+      "Iniciar corticoide sistêmico prolongado como tratamento específico da neuropatia diabética dolorosa.",
+      "Orientar apenas fisioterapia isolada, sem qualquer medicação, para o controle inicial da dor relatada."
+    ],
+    "explain": "A neuropatia diabética dolorosa tem como primeira linha terapêutica anticonvulsivantes como gabapentina ou antidepressivos duais como duloxetina, reservando-se opioides para casos refratários pelo risco de dependência sem benefício superior.",
+    "trap": "Recorrer a opioides como primeira escolha para dor neuropática, expondo o paciente a dependência sem ganho terapêutico comprovado superior."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 13,
+    "group": "Endocrinologia",
+    "theme": "Pé diabético — úlcera infectada",
+    "stem": "Homem de 68 anos, diabético, apresenta úlcera plantar de 3 cm com secreção purulenta, eritema perilesional e febre de 38,5°C. Pulsos pediais palpáveis. Radiografia do pé não mostra osteomielite. Qual a conduta inicial mais adequada?",
+    "correct": "Realizar desbridamento da lesão, coletar cultura e iniciar antibioticoterapia empírica cobrindo cocos Gram-positivos e considerar Gram-negativos.",
+    "wrongs": [
+      "Indicar amputação transmetatarsiana imediata, sem tentativa prévia de desbridamento e antibioticoterapia.",
+      "Prescrever apenas curativo oclusivo diário, sem antibiótico, já que os pulsos pediais estão palpáveis.",
+      "Solicitar apenas ressonância magnética e aguardar o resultado antes de iniciar qualquer antibiótico.",
+      "Encaminhar para hiperbárica isolada, sem desbridamento nem cobertura antimicrobiana neste momento."
+    ],
+    "explain": "Úlcera infectada em pé diabético com sinais sistêmicos exige desbridamento, cultura e antibioticoterapia empírica precoce; a amputação é reservada para casos com necrose extensa, isquemia crítica ou falha do tratamento conservador.",
+    "trap": "Indicar amputação primária sem antes tentar desbridamento e antibioticoterapia guiada por cultura."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 14,
+    "group": "Endocrinologia",
+    "theme": "Retinopatia diabética proliferativa",
+    "stem": "Mulher de 47 anos, diabética tipo 2 mal controlada, é encaminhada de ambulatório de oftalmologia com achado de neovascularização de retina e hemorragia vítrea leve em exame de fundo de olho. Acuidade visual ainda preservada. Qual a conduta mais adequada?",
+    "correct": "Encaminhar com urgência para fotocoagulação panretiniana a laser, visando reduzir o risco de hemorragia vítrea maciça e perda visual.",
+    "wrongs": [
+      "Apenas intensificar o controle glicêmico ambulatorial, sem necessidade de intervenção oftalmológica imediata.",
+      "Reavaliar o fundo de olho em 12 meses, já que a acuidade visual da paciente ainda está preservada.",
+      "Indicar vitrectomia cirúrgica de urgência antes de qualquer tentativa de fotocoagulação a laser.",
+      "Prescrever apenas colírio vasoconstritor tópico para controle da neovascularização retiniana observada."
+    ],
+    "explain": "A retinopatia diabética proliferativa com neovascularização exige fotocoagulação panretiniana precoce para reduzir o risco de hemorragia vítrea maciça e descolamento de retina, mesmo quando a acuidade visual ainda está preservada.",
+    "trap": "Postergar o tratamento a laser por a acuidade visual ainda estar boa, perdendo a janela de prevenção da complicação grave."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 15,
+    "group": "Endocrinologia",
+    "theme": "Tempestade tireotóxica",
+    "stem": "Mulher de 34 anos com histórico de doença de Graves, sem tratamento regular, é levada ao pronto-socorro com febre de 39,5°C, taquicardia de 160 bpm, agitação e confusão mental após quadro infeccioso respiratório. Qual a conduta terapêutica mais adequada?",
+    "correct": "Tratar como tempestade tireotóxica, associando betabloqueador, tionamida, iodo inorgânico e corticoide, além de suporte intensivo.",
+    "wrongs": [
+      "Iniciar apenas antitérmico e antibiótico para o quadro infeccioso, sem qualquer terapia tireoidiana específica.",
+      "Aguardar resultado de TSH e T4 livre antes de iniciar qualquer medicação, mesmo com instabilidade clínica atual.",
+      "Indicar radioiodoterapia de urgência como tratamento definitivo imediato da crise tireotóxica.",
+      "Prescrever apenas sedativo para controle da agitação, postergando qualquer abordagem da tireoide."
+    ],
+    "explain": "A tempestade tireotóxica é emergência clínica com alta mortalidade; o tratamento combina betabloqueador para os efeitos adrenérgicos, tionamida e iodo para bloquear a síntese e liberação hormonal, e corticoide para reduzir conversão periférica e possível insuficiência adrenal relativa.",
+    "trap": "Aguardar confirmação laboratorial antes de tratar, perdendo tempo crítico numa condição com risco iminente de vida."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 16,
+    "group": "Endocrinologia",
+    "theme": "Doença de Graves — tratamento inicial",
+    "stem": "Mulher de 28 anos, sem gestação, apresenta em ambulatório perda de peso, palpitações, exoftalmia leve e bócio difuso. TSH suprimido e TRAb positivo confirmam doença de Graves. Qual a droga de escolha para o tratamento inicial?",
+    "correct": "Iniciar metimazol como tionamida de escolha para o controle inicial do hipertireoidismo de Graves fora da gestação.",
+    "wrongs": [
+      "Iniciar propiltiouracila como primeira escolha, reservando o metimazol apenas para falha terapêutica posterior.",
+      "Indicar radioiodoterapia imediata como primeira linha, antes de qualquer tentativa com tionamida.",
+      "Prescrever levotiroxina em dose baixa para tentar reduzir o bócio difuso observado ao exame.",
+      "Indicar tireoidectomia total de urgência como primeira conduta, sem tentativa de tratamento medicamentoso."
+    ],
+    "explain": "Fora da gestação, o metimazol é a tionamida de escolha por menor hepatotoxicidade e posologia mais conveniente que a propiltiouracila, que fica reservada principalmente para o primeiro trimestre gestacional ou intolerância ao metimazol.",
+    "trap": "Escolher propiltiouracila como primeira linha fora do contexto gestacional, quando o metimazol é preferido pelo perfil de segurança."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 17,
+    "group": "Endocrinologia",
+    "theme": "Bócio multinodular tóxico em idoso",
+    "stem": "Idoso de 74 anos, cardiopata, é avaliado em ambulatório por fibrilação atrial de início recente, FC de 118 bpm, e perda de peso. TSH suprimido, cintilografia mostra múltiplos nódulos hiperfuncionantes. Qual a conduta terapêutica preferencial?",
+    "correct": "Indicar radioiodoterapia como tratamento preferencial, evitando cirurgia de maior risco anestésico nesse paciente idoso e cardiopata.",
+    "wrongs": [
+      "Indicar tireoidectomia total de urgência como única opção terapêutica válida para bócio multinodular tóxico.",
+      "Manter apenas betabloqueador isolado indefinidamente, sem qualquer tratamento definitivo da tireotoxicose.",
+      "Prescrever tionamida em dose baixa por tempo indefinido como estratégia definitiva de tratamento nesse idoso.",
+      "Aguardar resolução espontânea do bócio multinodular tóxico, reavaliando a função tireoidiana em 1 ano."
+    ],
+    "explain": "No bócio multinodular tóxico de idosos com comorbidade cardíaca, a radioiodoterapia costuma ser preferida à cirurgia pelo menor risco perioperatório, sendo a tionamida usada apenas como preparo transitório antes do tratamento definitivo.",
+    "trap": "Manter tionamida prolongada como tratamento definitivo, quando a doença nodular autônoma raramente entra em remissão espontânea."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 18,
+    "group": "Endocrinologia",
+    "theme": "Nódulo tireoidiano com TSH suprimido",
+    "stem": "Mulher de 42 anos apresenta nódulo tireoidiano palpável de 2 cm em ambulatório, com TSH suprimido em duas dosagens. Não há sinais de compressão local. Qual o próximo passo diagnóstico mais adequado antes de decidir sobre punção?",
+    "correct": "Solicitar cintilografia tireoidiana para avaliar se o nódulo é hiperfuncionante antes de indicar punção aspirativa por agulha fina.",
+    "wrongs": [
+      "Indicar punção aspirativa por agulha fina imediatamente, independentemente do resultado do TSH suprimido.",
+      "Solicitar apenas anticorpos antitireoidianos, dispensando qualquer avaliação de imagem funcional da tireoide.",
+      "Indicar tireoidectomia diagnóstica direta, sem qualquer investigação de imagem funcional prévia.",
+      "Repetir apenas a ultrassonografia em 6 meses, sem qualquer avaliação cintilográfica do nódulo."
+    ],
+    "explain": "Nódulos associados a TSH suprimido podem ser hiperfuncionantes, que raramente são malignos; a cintilografia identifica esse padrão e evita punção desnecessária em nódulos quentes, direcionando-se a PAAF apenas quando o nódulo for frio ou indeterminado.",
+    "trap": "Puncionar de rotina sem investigar a função do nódulo, ignorando que nódulos quentes raramente exigem citologia."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 19,
+    "group": "Endocrinologia",
+    "theme": "Nódulo tireoidiano — critérios ecográficos",
+    "stem": "Mulher de 50 anos, em seguimento ambulatorial, apresenta nódulo tireoidiano de 0,8 cm identificado incidentalmente em USG cervical, com TSH normal. O laudo descreve nódulo hipoecogênico, margens irregulares e microcalcificações. Qual a conduta mais adequada?",
+    "correct": "Indicar punção aspirativa por agulha fina apesar do tamanho reduzido, pelas características ecográficas de alto risco descritas.",
+    "wrongs": [
+      "Dispensar qualquer investigação citológica, já que nódulos menores que 1 cm nunca necessitam de punção.",
+      "Solicitar apenas dosagem de calcitonina sérica, sem necessidade de punção aspirativa nesse contexto ecográfico.",
+      "Repetir a ultrassonografia em 5 anos, considerando o tamanho pequeno como suficiente para tranquilizar a paciente.",
+      "Indicar tireoidectomia total empírica, sem confirmação citológica prévia do nódulo descrito."
+    ],
+    "explain": "Nódulos pequenos com características ecográficas de alto risco, como hipoecogenicidade, margens irregulares e microcalcificações, têm indicação de punção aspirativa mesmo abaixo de 1 cm, pelo maior risco de malignidade associado a esse padrão.",
+    "trap": "Dispensar a punção apenas pelo tamanho reduzido do nódulo, ignorando as características ecográficas de alto risco presentes."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 20,
+    "group": "Endocrinologia",
+    "theme": "Câncer papilífero com linfonodo positivo",
+    "stem": "Mulher de 39 anos, acompanhada em ambulatório, tem diagnóstico citológico de carcinoma papilífero de tireoide em nódulo de 1,5 cm, com linfonodo cervical lateral suspeito confirmado por punção. Qual a conduta cirúrgica mais adequada?",
+    "correct": "Indicar tireoidectomia total associada a esvaziamento cervical do compartimento comprometido pelo linfonodo positivo.",
+    "wrongs": [
+      "Indicar apenas lobectomia tireoidiana, sem qualquer abordagem do linfonodo cervical comprometido.",
+      "Realizar apenas biópsia excisional do linfonodo cervical, mantendo a tireoide integralmente preservada.",
+      "Indicar radioiodoterapia isolada como tratamento inicial, sem qualquer procedimento cirúrgico prévio.",
+      "Manter apenas seguimento ecográfico semestral, postergando qualquer intervenção cirúrgica neste momento."
+    ],
+    "explain": "Na presença de metástase linfonodal cervical confirmada, o carcinoma papilífero de tireoide tem indicação de tireoidectomia total associada a esvaziamento cervical do compartimento envolvido, otimizando controle locorregional e permitindo posterior radioiodoterapia se indicada.",
+    "trap": "Limitar a cirurgia à lobectomia quando já há doença linfonodal confirmada, subtratando a extensão real da doença."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 21,
+    "group": "Endocrinologia",
+    "theme": "Tireoidite subaguda de De Quervain",
+    "stem": "Mulher de 36 anos relata dor cervical anterior intensa há 10 dias, irradiada para mandíbula, associada a febre baixa e mal-estar após quadro viral recente. TSH suprimido, VHS e PCR elevados, captação de iodo reduzida na cintilografia. Qual a conduta mais adequada?",
+    "correct": "Tratar com anti-inflamatório ou corticoide para controle da dor e inflamação, sem indicar tionamida nessa fase tireotóxica transitória.",
+    "wrongs": [
+      "Iniciar metimazol em dose plena, tratando a tireotoxicose como se fosse doença de Graves clássica.",
+      "Indicar radioiodoterapia imediata, já que a captação está reduzida e o TSH está suprimido.",
+      "Indicar tireoidectomia total de urgência pela dor cervical intensa associada à tireotoxicose.",
+      "Prescrever apenas antibiótico empírico, assumindo tireoidite bacteriana supurativa como diagnóstico principal."
+    ],
+    "explain": "A tireoidite subaguda de De Quervain causa tireotoxicose transitória por destruição folicular, com captação de iodo reduzida na cintilografia; o tratamento é sintomático com anti-inflamatórios ou corticoide, já que tionamidas não têm papel nessa fase destrutiva.",
+    "trap": "Tratar a tireotoxicose transitória com tionamida como se fosse doença de Graves, terapia sem indicação nessa etiologia."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 22,
+    "group": "Endocrinologia",
+    "theme": "Hipotireoidismo — dose inicial em cardiopata",
+    "stem": "Idoso de 71 anos, coronariopata conhecido, é diagnosticado em ambulatório com hipotireoidismo primário, TSH de 65 mUI/L e T4 livre baixo. Qual a estratégia de reposição hormonal mais segura para esse paciente?",
+    "correct": "Iniciar levotiroxina em dose baixa e aumentar gradualmente, monitorando sintomas anginosos durante o ajuste.",
+    "wrongs": [
+      "Iniciar levotiroxina já na dose plena calculada pelo peso, corrigindo o hipotireoidismo o mais rápido possível.",
+      "Postergar qualquer reposição hormonal pelo risco cardíaco, tratando apenas os sintomas de fadiga sintomaticamente.",
+      "Iniciar liotironina isolada em dose plena, evitando o uso de levotiroxina nesse paciente coronariopata.",
+      "Indicar apenas suplementação de iodo, sem necessidade de hormônio tireoidiano exógeno nesse contexto."
+    ],
+    "explain": "Em idosos com doença coronariana, a reposição de levotiroxina deve começar em dose baixa e ser titulada gradualmente, pois a correção rápida do hipotireoidismo pode aumentar a demanda de oxigênio miocárdico e precipitar angina ou infarto.",
+    "trap": "Repor levotiroxina em dose plena de imediato em cardiopata, aumentando o risco de evento coronariano agudo pela demanda metabólica súbita."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 23,
+    "group": "Endocrinologia",
+    "theme": "Coma mixedematoso",
+    "stem": "Idosa de 80 anos, hipotireoidea sem tratamento regular, é trazida à UTI com hipotermia de 32°C, hipoglicemia, bradicardia e rebaixamento do nível de consciência após exposição ao frio. Qual a conduta terapêutica mais adequada?",
+    "correct": "Iniciar levotiroxina intravenosa associada a hidrocortisona empírica, além de suporte intensivo para hipotermia e hipoglicemia.",
+    "wrongs": [
+      "Aguardar confirmação laboratorial completa da função tireoidiana antes de iniciar qualquer hormônio tireoidiano.",
+      "Iniciar apenas reaquecimento externo rápido e intenso, sem qualquer reposição hormonal tireoidiana neste momento.",
+      "Prescrever levotiroxina oral em dose baixa, postergando qualquer suporte intensivo até estabilização espontânea.",
+      "Indicar apenas glicose intravenosa isolada, sem necessidade de hormônio tireoidiano nesse quadro grave."
+    ],
+    "explain": "O coma mixedematoso é emergência com alta mortalidade; o tratamento exige levotiroxina intravenosa, corticoide empírico pelo risco de insuficiência adrenal concomitante, e suporte intensivo para hipotermia, hipoglicemia e instabilidade hemodinâmica, sem aguardar confirmação laboratorial completa.",
+    "trap": "Aguardar resultados laboratoriais antes de tratar uma condição com mortalidade elevada e deterioração rápida."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 24,
+    "group": "Endocrinologia",
+    "theme": "Tireoidite pós-parto",
+    "stem": "Mulher de 30 anos, três meses pós-parto, relata palpitações e perda de peso leve em ambulatório. TSH suprimido, T4 livre discretamente elevado, sem dor cervical, com anti-TPO positivo. Qual a conduta mais adequada nessa fase?",
+    "correct": "Tratar apenas sintomaticamente com betabloqueador se necessário, sem tionamida, e reavaliar a função tireoidiana em semanas, pois a fase costuma ser transitória.",
+    "wrongs": [
+      "Iniciar metimazol em dose plena imediatamente, tratando como doença de Graves definitiva desde a primeira consulta.",
+      "Indicar radioiodoterapia precoce, aproveitando o período pós-parto para tratamento definitivo da tireotoxicose.",
+      "Suspender o aleitamento materno imediatamente como parte obrigatória do tratamento da tireotoxicose pós-parto.",
+      "Indicar tireoidectomia total de urgência, considerando a tireotoxicose pós-parto como indicação cirúrgica inevitável."
+    ],
+    "explain": "A tireoidite pós-parto costuma cursar com fase tireotóxica transitória seguida de possível hipotireoidismo, sem indicação de tionamida; o manejo é sintomático e a paciente deve ser seguida, pois pode haver recuperação espontânea da função tireoidiana.",
+    "trap": "Tratar a fase transitória como doença de Graves permanente, expondo a paciente a tratamento definitivo desnecessário."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 25,
+    "group": "Endocrinologia",
+    "theme": "Crise addisoniana",
+    "stem": "Mulher de 45 anos, com histórico de insuficiência adrenal primária, é trazida ao pronto-socorro com hipotensão refratária a volume, náuseas e confusão mental após interromper a medicação por gastroenterite. Glicemia baixa e sódio reduzido. Qual a conduta imediata mais adequada?",
+    "correct": "Administrar hidrocortisona intravenosa em dose de estresse imediatamente, sem aguardar confirmação laboratorial completa.",
+    "wrongs": [
+      "Colher cortisol e ACTH e aguardar o resultado antes de iniciar qualquer glicocorticoide intravenoso.",
+      "Iniciar apenas solução salina isotônica isolada, sem necessidade de reposição de glicocorticoide neste momento.",
+      "Administrar fludrocortisona oral isolada, postergando qualquer glicocorticoide de ação rápida intravenosa.",
+      "Indicar apenas antiemético e observação clínica, sem qualquer reposição hormonal específica nesse quadro."
+    ],
+    "explain": "A crise addisoniana é emergência com risco iminente de vida; a hidrocortisona intravenosa deve ser administrada imediatamente diante da suspeita clínica, já que aguardar confirmação laboratorial pode ser fatal em paciente hipotenso e confuso.",
+    "trap": "Aguardar dosagem de cortisol e ACTH antes de tratar, retardando uma intervenção que não pode esperar confirmação."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 26,
+    "group": "Endocrinologia",
+    "theme": "Doença de Addison — confirmação diagnóstica",
+    "stem": "Homem de 40 anos relata em ambulatório fadiga progressiva, hiperpigmentação cutânea e hipotensão postural há meses. Cortisol matinal está baixo e ACTH plasmático está elevado. Qual o exame confirmatório mais adequado para a hipótese diagnóstica?",
+    "correct": "Realizar o teste de estimulação com ACTH sintético, esperando resposta inadequada do cortisol na insuficiência adrenal primária.",
+    "wrongs": [
+      "Solicitar apenas ressonância magnética de hipófise, já que o achado hormonal sugere causa hipofisária isolada.",
+      "Repetir apenas o cortisol matinal em outro dia, sem necessidade de teste dinâmico de estimulação adrenal.",
+      "Indicar biópsia adrenal percutânea como exame confirmatório inicial da insuficiência adrenal suspeitada.",
+      "Solicitar apenas dosagem de aldosterona isolada, dispensando qualquer teste de reserva de cortisol."
+    ],
+    "explain": "Na suspeita de insuficiência adrenal primária, com cortisol baixo e ACTH elevado, o teste de estimulação com ACTH sintético confirma a incapacidade da glândula adrenal de responder adequadamente, consolidando o diagnóstico de doença de Addison.",
+    "trap": "Buscar causa hipofisária isolada quando o ACTH elevado já aponta para falência primária da própria glândula adrenal."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 27,
+    "group": "Endocrinologia",
+    "theme": "Síndrome de Cushing — screening",
+    "stem": "Mulher de 33 anos apresenta em ambulatório ganho de peso central, estrias violáceas largas, fraqueza muscular proximal e hipertensão de início recente. Qual o exame de triagem mais adequado para investigar a hipótese de síndrome de Cushing?",
+    "correct": "Solicitar cortisol salivar noturno ou teste de supressão com dexametasona em dose baixa como triagem inicial.",
+    "wrongs": [
+      "Solicitar diretamente ressonância magnética de hipófise, sem qualquer confirmação bioquímica prévia do hipercortisolismo.",
+      "Indicar dosagem isolada de cortisol matinal único, considerando-o suficiente para confirmar ou excluir o diagnóstico.",
+      "Solicitar apenas glicemia de jejum, assumindo que a hiperglicemia isolada confirma a síndrome de Cushing.",
+      "Indicar tomografia de abdome total como primeiro exame, antes de qualquer teste hormonal dinâmico."
+    ],
+    "explain": "A triagem para síndrome de Cushing utiliza testes que avaliam a perda do ritmo circadiano ou a resistência à supressão do cortisol, como o cortisol salivar noturno ou o teste de supressão com dexametasona em dose baixa, antes de qualquer exame de imagem.",
+    "trap": "Solicitar exame de imagem hipofisário ou adrenal antes de confirmar bioquimicamente o hipercortisolismo, invertendo a sequência diagnóstica correta."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 28,
+    "group": "Endocrinologia",
+    "theme": "Cushing — diferenciação ACTH-dependente",
+    "stem": "Homem de 37 anos, em seguimento ambulatorial, tem síndrome de Cushing confirmada bioquimicamente por múltiplos testes, com PA de 160x100 mmHg e fácies pletórica. Qual exame é mais adequado para diferenciar entre causa hipofisária e causa adrenal primária do hipercortisolismo?",
+    "correct": "Dosar ACTH plasmático, que estará elevado ou normal-alto nas formas hipofisárias e suprimido nas formas adrenais primárias.",
+    "wrongs": [
+      "Solicitar apenas cortisol urinário de 24 horas, exame já utilizado somente para confirmar o hipercortisolismo inicial.",
+      "Indicar biópsia adrenal bilateral empírica antes de qualquer dosagem hormonal adicional de ACTH.",
+      "Repetir apenas o teste de supressão com dexametasona em dose baixa, já realizado na fase de triagem inicial.",
+      "Solicitar apenas glicemia de jejum seriada, sem qualquer papel na diferenciação etiológica do hipercortisolismo."
+    ],
+    "explain": "Após confirmado o hipercortisolismo, a dosagem de ACTH plasmático diferencia as formas ACTH-dependentes, como adenoma hipofisário, das formas ACTH-independentes, como tumor adrenal primário, orientando a investigação de imagem subsequente.",
+    "trap": "Repetir apenas exames já usados na triagem inicial, sem avançar para a etapa que realmente diferencia a etiologia do hipercortisolismo."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 29,
+    "group": "Endocrinologia",
+    "theme": "Incidentaloma adrenal",
+    "stem": "Mulher de 55 anos realiza TC de abdome por outro motivo, em ambulatório, e é identificada massa adrenal de 2,5 cm, homogênea, com atenuação baixa, sem sintomas específicos. Qual a conduta inicial mais adequada?",
+    "correct": "Avaliar a funcionalidade hormonal da lesão, incluindo triagem para hipercortisolismo, feocromocitoma e hiperaldosteronismo, antes de decidir a conduta definitiva.",
+    "wrongs": [
+      "Indicar ressecção cirúrgica imediata pelo simples achado de massa adrenal, independentemente da avaliação funcional.",
+      "Descartar qualquer investigação adicional pela ausência de sintomas clínicos evidentes na paciente.",
+      "Repetir apenas a tomografia em 5 anos, sem qualquer avaliação hormonal da lesão adrenal encontrada.",
+      "Indicar biópsia percutânea da lesão como primeira conduta, antes de qualquer avaliação hormonal funcional."
+    ],
+    "explain": "Todo incidentaloma adrenal deve ser avaliado quanto à funcionalidade hormonal, mesmo assintomático, pois lesões produtoras de cortisol, catecolaminas ou aldosterona mudam a conduta terapêutica, e a biópsia é evitada pelo risco de crise em feocromocitoma não identificado.",
+    "trap": "Indicar biópsia direta sem excluir feocromocitoma, procedimento que pode desencadear crise hipertensiva grave nesse cenário."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 30,
+    "group": "Endocrinologia",
+    "theme": "Feocromocitoma — crise hipertensiva",
+    "stem": "Homem de 42 anos é atendido no pronto-socorro com episódios paroxísticos de cefaleia intensa, sudorese profusa e palpitações, associados a picos de PA de 220x120 mmHg. Investigação confirma feocromocitoma. Qual a conduta farmacológica inicial mais adequada antes da cirurgia?",
+    "correct": "Iniciar bloqueio alfa-adrenérgico e somente depois associar betabloqueador, evitando betabloqueio isolado inicial.",
+    "wrongs": [
+      "Iniciar betabloqueador isolado como primeira medida, controlando a taquicardia antes de qualquer bloqueio alfa.",
+      "Indicar cirurgia de urgência imediata, sem qualquer preparo farmacológico prévio com bloqueio adrenérgico.",
+      "Prescrever apenas diurético de alça para controle pressórico, sem necessidade de bloqueio adrenérgico específico.",
+      "Iniciar inibidor da enzima conversora de angiotensina como droga de escolha para esse tipo de crise hipertensiva."
+    ],
+    "explain": "No feocromocitoma, o bloqueio alfa-adrenérgico deve preceder o betabloqueio, pois o betabloqueio isolado permite ação alfa sem oposição, podendo precipitar crise hipertensiva grave por vasoconstrição não contrabalanceada.",
+    "trap": "Iniciar betabloqueador antes do bloqueio alfa, erro clássico que pode desencadear crise hipertensiva paradoxal grave."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 31,
+    "group": "Endocrinologia",
+    "theme": "Hiperaldosteronismo primário — triagem",
+    "stem": "Mulher de 48 anos, acompanhada em ambulatório, apresenta PA de 170x105 mmHg resistente a três classes de antihipertensivos, associada a hipocalemia persistente não explicada por diuréticos. Qual o exame de triagem mais adequado para investigar a hipótese diagnóstica?",
+    "correct": "Solicitar a relação aldosterona plasmática/atividade de renina plasmática como teste de triagem inicial.",
+    "wrongs": [
+      "Solicitar diretamente tomografia de adrenais, sem qualquer triagem hormonal bioquímica prévia da paciente.",
+      "Indicar cateterismo de veias adrenais como primeiro exame, antes de qualquer triagem hormonal sérica.",
+      "Repetir apenas o potássio sérico seriado, sem necessidade de qualquer avaliação hormonal adicional.",
+      "Solicitar apenas cortisol urinário de 24 horas, exame direcionado à investigação de hipercortisolismo."
+    ],
+    "explain": "A relação aldosterona/renina plasmática é o teste de triagem recomendado para hiperaldosteronismo primário em hipertensão resistente com hipocalemia, e exames de imagem ou cateterismo de veias adrenais são reservados para confirmação e lateralização após triagem positiva.",
+    "trap": "Solicitar exame de imagem adrenal antes da triagem hormonal, invertendo a sequência diagnóstica recomendada."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 32,
+    "group": "Endocrinologia",
+    "theme": "Insuficiência adrenal por corticoide crônico",
+    "stem": "Homem de 60 anos, em seguimento ambulatorial, usa prednisona 20 mg por dia há 8 meses para doença reumatológica e deseja suspender a medicação por melhora dos sintomas articulares, sem febre ou outras queixas atuais. Qual a orientação mais adequada quanto à suspensão do corticoide?",
+    "correct": "Realizar desmame gradual e lento da dose, pelo risco de insuficiência adrenal secundária pela supressão prolongada do eixo hipotálamo-hipófise-adrenal.",
+    "wrongs": [
+      "Suspender a prednisona de forma abrupta, já que a doença reumatológica está clinicamente controlada no momento.",
+      "Trocar diretamente para hidrocortisona em dose equivalente e suspender em 48 horas sem desmame adicional.",
+      "Manter a dose atual indefinidamente, considerando qualquer tentativa de redução como contraindicada permanentemente.",
+      "Suspender a medicação apenas nos fins de semana, mantendo dose plena nos dias úteis como estratégia de desmame."
+    ],
+    "explain": "O uso prolongado de corticoide em dose suprafisiológica suprime o eixo hipotálamo-hipófise-adrenal; a suspensão deve ser gradual, permitindo a recuperação funcional do eixo e evitando insuficiência adrenal aguda sintomática.",
+    "trap": "Suspender abruptamente o corticoide por melhora da doença de base, ignorando o risco de insuficiência adrenal pela supressão crônica do eixo."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 33,
+    "group": "Endocrinologia",
+    "theme": "Hiperparatireoidismo primário assintomático",
+    "stem": "Mulher de 58 anos, assintomática, tem achado incidental de cálcio sérico de 11,2 mg/dL em exame de rotina em ambulatório. PTH está elevado e função renal é normal, com densitometria mostrando osteopenia em coluna. Qual a conduta mais adequada?",
+    "correct": "Indicar paratireoidectomia, considerando os critérios de hipercalcemia significativa e comprometimento ósseo já presentes.",
+    "wrongs": [
+      "Apenas orientar hidratação oral abundante, sem necessidade de qualquer avaliação cirúrgica nesse momento.",
+      "Indicar calcitonina subcutânea contínua como tratamento definitivo do hiperparatireoidismo primário.",
+      "Prescrever bisfosfonato isolado como alternativa definitiva à cirurgia, independentemente dos critérios cirúrgicos.",
+      "Repetir apenas o cálcio sérico anualmente, sem necessidade de qualquer intervenção adicional na paciente."
+    ],
+    "explain": "No hiperparatireoidismo primário, mesmo assintomático, a paratireoidectomia está indicada quando há critérios como hipercalcemia significativa, comprometimento da densidade mineral óssea, nefrolitíase ou disfunção renal, sendo o tratamento definitivo mais eficaz que medidas conservadoras.",
+    "trap": "Tratar apenas com bisfosfonato ou hidratação quando já existem critérios cirúrgicos claros de indicação de paratireoidectomia."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 34,
+    "group": "Endocrinologia",
+    "theme": "Crise hipercalcêmica",
+    "stem": "Homem de 65 anos é levado ao pronto-socorro com confusão mental, poliúria intensa e desidratação. Cálcio sérico corrigido de 15,8 mg/dL, sugerindo doença maligna de base. Qual a conduta terapêutica inicial mais adequada?",
+    "correct": "Iniciar hidratação salina intravenosa vigorosa associada a bisfosfonato intravenoso e calcitonina para controle rápido da hipercalcemia grave.",
+    "wrongs": [
+      "Iniciar apenas restrição hídrica rigorosa, já que o excesso de líquidos poderia agravar a hipercalcemia observada.",
+      "Prescrever apenas diurético tiazídico para forçar a excreção urinária de cálcio nesse paciente desidratado.",
+      "Indicar apenas suplementação de vitamina D, aguardando normalização espontânea do cálcio sérico elevado.",
+      "Aguardar investigação oncológica completa antes de iniciar qualquer tratamento para a hipercalcemia grave."
+    ],
+    "explain": "A crise hipercalcêmica exige hidratação salina vigorosa para restaurar a excreção renal de cálcio, associada a bisfosfonato para ação mais sustentada e calcitonina para efeito rápido inicial, sem aguardar a investigação etiológica completa pelo risco de arritmia e coma.",
+    "trap": "Usar diurético tiazídico, que reduz a excreção urinária de cálcio e pode agravar a hipercalcemia em vez de corrigi-la."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 35,
+    "group": "Endocrinologia",
+    "theme": "Hipoparatireoidismo pós-tireoidectomia",
+    "stem": "Mulher de 44 anos, internada em enfermaria no primeiro dia pós-tireoidectomia total, relata formigamento perioral e nas mãos, com sinal de Chvostek positivo ao exame. Cálcio sérico de 6,8 mg/dL. Qual a conduta mais adequada?",
+    "correct": "Repor cálcio intravenoso imediatamente pelos sintomas neuromusculares, associando calcitriol e cálcio oral na sequência do tratamento.",
+    "wrongs": [
+      "Aguardar reavaliação laboratorial em 24 horas antes de iniciar qualquer reposição de cálcio na paciente sintomática.",
+      "Iniciar apenas sulfato de magnésio isolado, sem necessidade de reposição direta de cálcio nesse quadro.",
+      "Prescrever apenas analgésico para as parestesias, sem necessidade de qualquer reposição mineral específica.",
+      "Indicar reexploração cirúrgica cervical de urgência como conduta prioritária diante da hipocalcemia sintomática."
+    ],
+    "explain": "A lesão ou remoção inadvertida das paratireoides durante a tireoidectomia pode causar hipocalcemia sintomática precoce, que exige reposição intravenosa imediata de cálcio diante de sinais neuromusculares como o sinal de Chvostek positivo, seguida de calcitriol e cálcio oral.",
+    "trap": "Postergar a reposição de cálcio em paciente já sintomática, aguardando reavaliação laboratorial que pode chegar tarde demais."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 36,
+    "group": "Endocrinologia",
+    "theme": "Hipocalcemia grave — tetania",
+    "stem": "Homem de 50 anos, com doença renal crônica avançada, é levado ao pronto-socorro com espasmos musculares generalizados e sinal de Trousseau positivo. Cálcio sérico de 5,9 mg/dL e ECG mostra intervalo QT prolongado. Qual a conduta imediata mais adequada?",
+    "correct": "Administrar gluconato de cálcio intravenoso imediatamente, monitorando o ritmo cardíaco pelo risco de arritmia associada ao QT prolongado.",
+    "wrongs": [
+      "Iniciar apenas reposição oral de carbonato de cálcio, reservando a via intravenosa para casos assintomáticos.",
+      "Prescrever apenas diazepam para controle dos espasmos musculares, sem necessidade de reposição mineral específica.",
+      "Aguardar hemodiálise programada do dia seguinte antes de qualquer reposição imediata de cálcio.",
+      "Indicar apenas sulfato de magnésio isolado, sem necessidade de reposição direta de cálcio nesse quadro."
+    ],
+    "explain": "A hipocalcemia grave sintomática com tetania e QT prolongado exige reposição intravenosa imediata de cálcio, pelo risco de arritmia ventricular grave, sem aguardar procedimentos programados como a diálise de rotina.",
+    "trap": "Aguardar a hemodiálise programada, quando o risco imediato de arritmia por QT prolongado exige correção intravenosa urgente do cálcio."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 37,
+    "group": "Endocrinologia",
+    "theme": "Hipercalcemia de malignidade — PTH suprimido",
+    "stem": "Mulher de 62 anos, tabagista, com diagnóstico recente de carcinoma pulmonar, é internada em enfermaria com confusão leve, cálcio sérico de 13,5 mg/dL, PTH suprimido e PTHrp elevado. Qual a interpretação e conduta mais adequadas?",
+    "correct": "Reconhecer hipercalcemia humoral maligna por PTHrp e tratar com hidratação e bisfosfonato, independentemente de intervenção nas paratireoides.",
+    "wrongs": [
+      "Indicar paratireoidectomia de urgência, já que a hipercalcemia sempre decorre de hiperfunção das paratireoides.",
+      "Repetir apenas o PTH em nova amostra, considerando erro laboratorial como explicação mais provável do quadro.",
+      "Prescrever apenas vitamina D em dose plena, assumindo deficiência como causa da hipercalcemia observada.",
+      "Aguardar estadiamento oncológico completo antes de iniciar qualquer tratamento da hipercalcemia significativa."
+    ],
+    "explain": "Na hipercalcemia humoral da malignidade, o PTHrp produzido pelo tumor suprime o PTH endógeno; o tratamento é dirigido à hipercalcemia com hidratação e bisfosfonato, já que a origem não está nas paratireoides e não há indicação cirúrgica sobre essas glândulas.",
+    "trap": "Indicar paratireoidectomia quando o PTH suprimido já exclui causa paratireoidiana primária para a hipercalcemia."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 38,
+    "group": "Endocrinologia",
+    "theme": "Osteoporose com fratura de fragilidade",
+    "stem": "Mulher de 68 anos, pós-menopausa, é internada em enfermaria após fratura de fêmur por queda da própria altura, com dor intensa ao exame do quadril. Densitometria mostra T-score de -3,0 em coluna lombar. Qual a conduta terapêutica mais adequada além do tratamento ortopédico da fratura?",
+    "correct": "Iniciar bisfosfonato para tratamento da osteoporose, associado a cálcio e vitamina D conforme necessidade individual.",
+    "wrongs": [
+      "Indicar apenas suplementação isolada de cálcio, sem necessidade de qualquer fármaco antirreabsortivo específico.",
+      "Aguardar nova fratura para confirmar a necessidade real de tratamento farmacológico da osteoporose.",
+      "Prescrever apenas exercício físico isolado, sem necessidade de qualquer medicação para a densidade óssea.",
+      "Indicar reposição isolada de estrogênio em dose plena como primeira escolha terapêutica nessa faixa etária."
+    ],
+    "explain": "Fratura de fragilidade associada a T-score muito reduzido confirma osteoporose estabelecida com alto risco de novas fraturas, sendo indicado tratamento farmacológico com bisfosfonato, além de suplementação de cálcio e vitamina D quando necessário.",
+    "trap": "Tratar apenas com medidas gerais e aguardar nova fratura, quando já há indicação clara de terapia farmacológica específica."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 39,
+    "group": "Endocrinologia",
+    "theme": "Deficiência de vitamina D com hipocalcemia leve",
+    "stem": "Mulher de 55 anos relata em ambulatório dor óssea difusa e fraqueza muscular proximal. Cálcio sérico levemente reduzido, fósforo baixo, PTH elevado e 25-hidroxivitamina D de 8 ng/mL. Qual a conduta mais adequada?",
+    "correct": "Repor vitamina D em dose de ataque seguida de manutenção, corrigindo a deficiência como causa do quadro clínico e laboratorial.",
+    "wrongs": [
+      "Indicar paratireoidectomia, considerando o PTH elevado como sinal de hiperparatireoidismo primário isolado.",
+      "Prescrever apenas analgésico para a dor óssea, sem necessidade de qualquer reposição vitamínica específica.",
+      "Repor apenas cálcio intravenoso isolado, sem necessidade de qualquer reposição de vitamina D associada.",
+      "Aguardar reavaliação em 1 ano sem qualquer intervenção, considerando o quadro como variação laboratorial normal."
+    ],
+    "explain": "A deficiência grave de vitamina D causa hiperparatireoidismo secundário compensatório, com PTH elevado reativo e não primário; a reposição adequada de vitamina D corrige o quadro clínico e laboratorial, normalizando progressivamente o PTH.",
+    "trap": "Interpretar o PTH elevado como hiperparatireoidismo primário, ignorando que é resposta secundária à deficiência franca de vitamina D."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 40,
+    "group": "Endocrinologia",
+    "theme": "Síndrome de realimentação",
+    "stem": "Homem de 30 anos, com histórico de anorexia nervosa grave e desnutrição importante, inicia dieta enteral plena na enfermaria. No terceiro dia, apresenta fraqueza muscular intensa e arritmia, com fósforo sérico de 1,0 mg/dL. Qual a conduta mais adequada?",
+    "correct": "Reduzir o aporte calórico e repor fósforo, potássio e magnésio intravenosos, reconhecendo síndrome de realimentação.",
+    "wrongs": [
+      "Aumentar o aporte calórico enteral para acelerar a recuperação nutricional do paciente desnutrido grave.",
+      "Suspender toda reposição eletrolítica, aguardando apenas a evolução espontânea da fraqueza muscular relatada.",
+      "Indicar apenas transfusão de concentrado de hemácias, sem necessidade de reposição de eletrólitos específicos.",
+      "Manter a dieta inalterada e solicitar apenas eletrocardiograma seriado sem qualquer correção eletrolítica."
+    ],
+    "explain": "A síndrome de realimentação ocorre pela retomada abrupta do aporte calórico em pacientes desnutridos, causando hipofosfatemia, hipocalemia e hipomagnesemia graves por deslocamento intracelular; o manejo exige redução do aporte e reposição eletrolítica intensiva monitorada.",
+    "trap": "Aumentar o aporte calórico diante da fraqueza, quando a conduta correta é reduzir a oferta e repor os eletrólitos consumidos."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 41,
+    "group": "Endocrinologia",
+    "theme": "Prolactinoma — tratamento de primeira linha",
+    "stem": "Mulher de 27 anos relata amenorreia secundária e galactorreia em ambulatório. Prolactina sérica de 180 ng/mL e ressonância mostra macroadenoma hipofisário de 1,4 cm sem comprometimento visual. Qual a conduta terapêutica de primeira linha?",
+    "correct": "Iniciar agonista dopaminérgico, como cabergolina, mesmo diante de macroadenoma, reservando a cirurgia para falha ou intolerância medicamentosa.",
+    "wrongs": [
+      "Indicar ressecção transesfenoidal imediata, já que macroadenomas hipofisários sempre exigem tratamento cirúrgico primário.",
+      "Prescrever apenas contraceptivo oral combinado, sem necessidade de qualquer tratamento direcionado ao adenoma.",
+      "Indicar radioterapia hipofisária como primeira linha terapêutica antes de qualquer tentativa medicamentosa.",
+      "Aguardar apenas seguimento clínico anual, sem qualquer tratamento específico para o macroadenoma identificado."
+    ],
+    "explain": "Mesmo em macroprolactinomas, os agonistas dopaminérgicos costumam ser altamente eficazes em reduzir a prolactina e o tamanho tumoral, sendo a primeira linha terapêutica; a cirurgia é reservada para resistência, intolerância ou compressão visual não responsiva.",
+    "trap": "Indicar cirurgia como primeira linha só pelo tamanho macroadenoma, quando o tratamento medicamentoso costuma ser altamente eficaz mesmo nesses casos."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 42,
+    "group": "Endocrinologia",
+    "theme": "Acromegalia — confirmação diagnóstica",
+    "stem": "Homem de 48 anos relata em ambulatório aumento progressivo de mãos e pés, alteração da face e ressalta anel que não serve mais. Suspeita-se de acromegalia. Qual o exame mais adequado para confirmar o diagnóstico?",
+    "correct": "Dosar IGF-1 e confirmar com teste de supressão do GH após sobrecarga oral de glicose.",
+    "wrongs": [
+      "Solicitar apenas GH basal isolado em jejum, considerando-o suficiente para confirmar ou excluir a acromegalia.",
+      "Indicar diretamente ressonância de hipófise, dispensando qualquer confirmação bioquímica prévia do excesso de GH.",
+      "Solicitar apenas radiografia de mãos e pés, considerando-a suficiente para confirmação diagnóstica definitiva.",
+      "Repetir apenas a avaliação clínica em 1 ano, sem necessidade de qualquer exame bioquímico confirmatório."
+    ],
+    "explain": "O GH tem secreção pulsátil e pouco confiável isoladamente; a confirmação de acromegalia exige IGF-1 elevado associado à ausência de supressão adequada do GH após sobrecarga oral de glicose, exame padrão para o diagnóstico bioquímico.",
+    "trap": "Confiar em GH basal isolado, que pode estar normal em determinado momento do dia mesmo na presença de acromegalia ativa."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 43,
+    "group": "Endocrinologia",
+    "theme": "Diabetes insipidus central",
+    "stem": "Homem de 35 anos, após cirurgia de ressecção de craniofaringioma, desenvolve poliúria de grande volume e polidipsia intensa na enfermaria. Sódio sérico de 148 mEq/L e osmolaridade urinária baixa apesar da hipernatremia. Qual a conduta diagnóstica e terapêutica mais adequada?",
+    "correct": "Testar resposta à desmopressina, esperando concentração urinária adequada no diabetes insipidus central, e iniciar o fármaco para controle dos sintomas.",
+    "wrongs": [
+      "Restringir totalmente a ingesta hídrica do paciente, sem qualquer reposição hormonal específica para a poliúria.",
+      "Indicar diálise de urgência para correção da hipernatremia e da poliúria observadas no paciente.",
+      "Prescrever apenas diurético tiazídico, medida direcionada ao diabetes insipidus nefrogênico e não ao central.",
+      "Aguardar resolução espontânea da poliúria, considerando-a efeito transitório inevitável da cirurgia recente."
+    ],
+    "explain": "No diabetes insipidus central pós-cirúrgico, há deficiência de ADH; o teste com desmopressina mostra resposta adequada com concentração urinária, confirmando a origem central e orientando o tratamento com o próprio análogo hormonal.",
+    "trap": "Tratar com tiazídico, estratégia usada no diabetes insipidus nefrogênico e não na forma central por deficiência de ADH."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 44,
+    "group": "Endocrinologia",
+    "theme": "SIADH — hiponatremia euvolêmica",
+    "stem": "Idoso de 70 anos, internado por pneumonia, apresenta sódio sérico de 122 mEq/L, euvolêmico ao exame, com osmolaridade urinária inadequadamente elevada para a osmolaridade sérica baixa. Função tireoidiana e adrenal normais. Qual a conduta mais adequada?",
+    "correct": "Restringir a ingesta hídrica como medida inicial, reconhecendo SIADH associado ao processo infeccioso pulmonar.",
+    "wrongs": [
+      "Iniciar solução salina hipertônica em infusão rápida, independentemente da gravidade dos sintomas neurológicos atuais.",
+      "Indicar reposição de fludrocortisona, assumindo insuficiência adrenal como causa mais provável da hiponatremia.",
+      "Prescrever diurético de alça isolado, sem qualquer restrição hídrica associada ao manejo inicial.",
+      "Aumentar a oferta de líquidos intravenosos, assumindo desidratação como causa da hiponatremia observada."
+    ],
+    "explain": "A SIADH, comum em infecções pulmonares, cursa com hiponatremia euvolêmica e concentração urinária inadequadamente alta; a restrição hídrica é a medida inicial na hiponatremia leve a moderada assintomática, reservando-se salina hipertônica para sintomas neurológicos graves.",
+    "trap": "Aumentar a oferta de líquidos por suspeitar de desidratação, quando o problema é excesso relativo de água livre por SIADH."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 45,
+    "group": "Endocrinologia",
+    "theme": "Apoplexia hipofisária",
+    "stem": "Homem de 46 anos, com macroadenoma hipofisário conhecido, evolui na enfermaria com cefaleia súbita intensa, diplopia, ptose palpebral e queda da pressão arterial. Tomografia sugere hemorragia intratumoral aguda. Qual a conduta imediata mais adequada?",
+    "correct": "Iniciar hidrocortisona em dose de estresse imediatamente e acionar avaliação neurocirúrgica urgente pelo risco de compressão de estruturas adjacentes.",
+    "wrongs": [
+      "Aguardar ressonância magnética de maior detalhamento antes de qualquer intervenção medicamentosa ou cirúrgica.",
+      "Indicar apenas analgesia potente para a cefaleia, postergando qualquer avaliação hormonal ou neurocirúrgica.",
+      "Iniciar agonista dopaminérgico isolado, tratando o quadro como se fosse prolactinoma sintomático estável.",
+      "Prescrever apenas anticonvulsivante profilático, sem necessidade de reposição hormonal ou avaliação cirúrgica urgente."
+    ],
+    "explain": "A apoplexia hipofisária é emergência neuroendócrina; a hemorragia intratumoral pode causar insuficiência adrenal aguda e compressão de estruturas vizinhas, exigindo corticoide de estresse imediato e avaliação neurocirúrgica urgente sem aguardar exames adicionais.",
+    "trap": "Postergar o corticoide para aguardar exames de imagem mais detalhados, retardando tratamento de uma condição com risco imediato de vida."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 46,
+    "group": "Endocrinologia",
+    "theme": "Síndrome de Sheehan",
+    "stem": "Mulher de 31 anos, semanas após hemorragia obstétrica grave com necessidade de transfusão, relata em ambulatório falha na lactação, fadiga intensa e hipotensão postural. Cortisol basal baixo e TSH inadequadamente normal com T4 livre baixo. Qual a conduta prioritária?",
+    "correct": "Repor glicocorticoide antes de iniciar levotiroxina, investigando os demais eixos hipofisários na sequência.",
+    "wrongs": [
+      "Iniciar levotiroxina plena isoladamente, tratando apenas o hipotireoidismo aparente sem qualquer reposição de cortisol.",
+      "Indicar tireoidectomia diagnóstica, assumindo doença tireoidiana primária isolada como causa dos achados.",
+      "Prescrever apenas suplementação de ferro, assumindo anemia pós-hemorrágica como única explicação do quadro.",
+      "Aguardar apenas resolução espontânea dos sintomas, considerando-os efeito transitório do parto complicado."
+    ],
+    "explain": "A síndrome de Sheehan causa pan-hipopituitarismo após necrose hipofisária pós-parto; o cortisol deve ser reposto antes da levotiroxina, pois iniciar hormônio tireoidiano isoladamente pode precipitar crise adrenal em paciente com insuficiência de ambos os eixos.",
+    "trap": "Repor levotiroxina antes do glicocorticoide no hipopituitarismo, o que pode desencadear crise adrenal aguda grave."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 47,
+    "group": "Endocrinologia",
+    "theme": "Obesidade grave — indicação bariátrica",
+    "stem": "Mulher de 39 anos, acompanhada em ambulatório, com índice de massa corporal de 42 kg/m², diabetes tipo 2 e hipertensão, sem resposta adequada a múltiplas tentativas de tratamento clínico estruturado por 2 anos. Qual a conduta mais adequada nesse momento?",
+    "correct": "Indicar avaliação para cirurgia bariátrica, considerando o índice de massa corporal e as comorbidades associadas refratárias ao tratamento clínico.",
+    "wrongs": [
+      "Reiniciar apenas dieta restritiva isolada por mais 2 anos antes de considerar qualquer abordagem cirúrgica.",
+      "Indicar apenas medicação anorexígena isolada por tempo indefinido, sem necessidade de avaliação cirúrgica.",
+      "Prescrever apenas atividade física intensa supervisionada, postergando indefinidamente qualquer discussão cirúrgica.",
+      "Indicar internação psiquiátrica compulsória, assumindo transtorno alimentar como única explicação para a obesidade."
+    ],
+    "explain": "Pacientes com obesidade grave e comorbidades associadas, refratários a tratamento clínico estruturado adequado, têm indicação de avaliação para cirurgia bariátrica, que reduz significativamente o peso e melhora o controle de comorbidades metabólicas.",
+    "trap": "Insistir apenas em medidas clínicas já tentadas sem sucesso, postergando indefinidamente uma indicação cirúrgica já estabelecida pelos critérios."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 48,
+    "group": "Endocrinologia",
+    "theme": "Síndrome metabólica — critérios diagnósticos",
+    "stem": "Homem de 44 anos apresenta em ambulatório circunferência abdominal de 108 cm, triglicerídeos de 220 mg/dL, HDL de 32 mg/dL, PA de 138x88 mmHg e glicemia de jejum de 108 mg/dL. Qual a interpretação mais adequada desse conjunto de achados?",
+    "correct": "Classificar como síndrome metabólica, pois o paciente preenche múltiplos critérios entre obesidade abdominal, dislipidemia, pressão arterial e glicemia alterados.",
+    "wrongs": [
+      "Descartar síndrome metabólica, pois nenhum valor individual atinge critério diagnóstico definitivo isolado de doença específica.",
+      "Classificar apenas como dislipidemia isolada, ignorando os demais achados presentes na avaliação clínica.",
+      "Considerar apenas hipertensão arterial estágio 1 isolada, sem qualquer relação com os demais parâmetros metabólicos.",
+      "Classificar como diabetes mellitus estabelecido, já que a glicemia de jejum encontrada confirma esse diagnóstico isoladamente."
+    ],
+    "explain": "A síndrome metabólica é definida pela presença de múltiplos critérios entre obesidade abdominal, triglicerídeos elevados, HDL baixo, pressão arterial elevada e glicemia de jejum alterada, aumentando o risco cardiovascular global mesmo sem diagnóstico isolado de diabetes.",
+    "trap": "Exigir que cada critério isolado atinja diagnóstico de doença específica, quando a síndrome metabólica é definida pela combinação de alterações leves a moderadas."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 49,
+    "group": "Endocrinologia",
+    "theme": "Estatina de alta intensidade pós-IAM",
+    "stem": "Homem de 58 anos, três dias após infarto agudo do miocárdio, apresenta LDL de 165 mg/dL em ambulatório de seguimento. Qual a conduta terapêutica mais adequada quanto ao tratamento hipolipemiante?",
+    "correct": "Iniciar estatina de alta intensidade, buscando redução agressiva do LDL, independentemente do valor basal encontrado.",
+    "wrongs": [
+      "Iniciar estatina de baixa intensidade, reservando doses mais altas apenas para falha terapêutica futura comprovada.",
+      "Aguardar reavaliação do perfil lipídico em 6 meses antes de iniciar qualquer estatina nesse paciente.",
+      "Indicar apenas dieta isolada com restrição de gorduras, sem necessidade de qualquer estatina neste momento.",
+      "Prescrever fibrato isolado como primeira escolha hipolipemiante após evento coronariano agudo recente."
+    ],
+    "explain": "Após evento cardiovascular agudo como infarto do miocárdio, a estatina de alta intensidade é indicada independentemente do LDL basal, buscando redução agressiva para prevenção secundária, sendo o fibrato reservado a situações específicas de hipertrigliceridemia grave.",
+    "trap": "Iniciar estatina de baixa intensidade em prevenção secundária pós-infarto, quando a recomendação é justamente pela alta intensidade nesse contexto de alto risco."
+  },
+  {
+    "idPrefix": "cli-cm-endo1",
+    "n": 50,
+    "group": "Endocrinologia",
+    "theme": "Deficiência de B12 pós-bariátrica",
+    "stem": "Mulher de 36 anos, 3 anos após bypass gástrico, relata em ambulatório parestesias em mãos e pés, instabilidade de marcha e palidez. Hemograma mostra anemia macrocítica e dosagem de vitamina B12 está reduzida. Qual a conduta terapêutica mais adequada?",
+    "correct": "Iniciar reposição de vitamina B12 por via parenteral, já que a absorção intestinal está comprometida pela cirurgia bariátrica prévia.",
+    "wrongs": [
+      "Prescrever apenas suplementação oral de ferro isolado, assumindo deficiência de ferro como única causa da anemia.",
+      "Indicar apenas suplementação oral de vitamina B12 em dose padrão, sem considerar a via parenteral nesse contexto.",
+      "Aguardar reavaliação em 1 ano sem qualquer reposição vitamínica, considerando o quadro como variação esperada pós-cirúrgica.",
+      "Indicar transfusão de concentrado de hemácias isolada, sem necessidade de qualquer reposição vitamínica específica."
+    ],
+    "explain": "Após bypass gástrico, a absorção de vitamina B12 fica comprometida pela exclusão de segmentos intestinais relevantes; a reposição parenteral é preferível à oral nesse contexto, corrigindo tanto a anemia macrocítica quanto os sintomas neurológicos associados.",
+    "trap": "Optar pela via oral padrão em paciente com absorção intestinal comprometida pela cirurgia, quando a via parenteral garante correção mais confiável."
+  }
+]
