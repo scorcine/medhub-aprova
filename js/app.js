@@ -3305,7 +3305,6 @@ function aprovaRenderDashboard () {
 
   aprovaRenderToday();
   aprovaRenderExamStats();
-  aprovaRenderMateriaProgress();
 }
 
 let aprovaPerfilActiveTab = 0;
@@ -3693,6 +3692,7 @@ function aprovaRenderProgress () {
   }
 
   aprovaRenderExamStats();
+  aprovaRenderMateriaProgress();
 }
 
 function aprovaRenderMateriaProgress () {
