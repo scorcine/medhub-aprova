@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721foco1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721hoje1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -78,7 +78,7 @@
       <nav class="sidebar-nav">
         <p class="sidebar-label">Principal</p>
         <button type="button" class="side-link active" data-panel="inicio">Início</button>
-        <button type="button" class="side-link" data-panel="hoje">Revisão de hoje</button>
+        <button type="button" class="side-link" data-panel="hoje">Hoje</button>
         <button type="button" class="side-link" data-panel="flashcards">Flashcards</button>
         <button type="button" class="side-link" data-panel="questoes">Banco de questões</button>
 
@@ -139,8 +139,8 @@
             </button>
             <button type="button" class="dash-card" data-goto="hoje">
               <span class="dash-card-kicker">Agenda</span>
-              <strong>Revisão de hoje</strong>
-              <span id="dash-hoje-preview">Fila SRS · cards novos e revisões vencidas.</span>
+              <strong>Hoje</strong>
+              <span id="dash-hoje-preview">Metas do dia e atrasadas · fila de flashcards.</span>
             </button>
             <button type="button" class="dash-card" data-goto="flashcards">
               <span class="dash-card-kicker">Memória</span>
@@ -171,36 +171,61 @@
         </section>
 
         <section id="panel-hoje" class="panel" aria-labelledby="hoje-title" hidden>
-          <h2 id="hoje-title">Revisão de hoje</h2>
-          <p class="muted">Fila SRS: revisões vencidas primeiro, depois cards novos. Toque em começar para estudar.</p>
+          <h2 id="hoje-title">Hoje</h2>
+          <p class="muted">Metas de questões (hoje e atrasadas) em primeiro lugar · flashcards SRS em seguida.</p>
 
-          <div class="stat-grid" id="hoje-stat-grid" style="margin-bottom:1rem">
-            <article class="stat-card">
-              <span class="stat-card-label">Na fila</span>
-              <strong id="hoje-stat-pending">—</strong>
-            </article>
-            <article class="stat-card">
-              <span class="stat-card-label">Revisões</span>
-              <strong id="hoje-stat-due">—</strong>
-            </article>
-            <article class="stat-card">
-              <span class="stat-card-label">Novos</span>
-              <strong id="hoje-stat-new">—</strong>
-            </article>
-            <article class="stat-card">
-              <span class="stat-card-label">Estudados hoje</span>
-              <strong id="hoje-stat-done">—</strong>
-            </article>
+          <div class="study-card hoje-metas-card" id="hoje-metas-card">
+            <div class="label">Metas de questões</div>
+            <div id="hoje-metas-empty" class="hoje-metas-empty" hidden>
+              <p class="muted" style="margin:0.35rem 0 0.75rem">Configure o perfil para liberar as metas do dia.</p>
+              <button type="button" class="btn btn-primary btn-compact" data-goto="perfil">Abrir meu perfil</button>
+            </div>
+            <div id="hoje-metas-body" hidden>
+              <p class="hoje-metas-summary" id="hoje-metas-summary"></p>
+              <div class="dash-seu-plano-quota" id="hoje-metas-quota"></div>
+              <div id="hoje-metas-overdue-wrap" class="hoje-metas-overdue" hidden>
+                <div class="label">Atrasadas</div>
+                <ul class="prog-materia-rows" id="hoje-metas-overdue"></ul>
+              </div>
+              <div class="label" style="margin-top:0.65rem">Foco de hoje · o que mais cai</div>
+              <ul class="dash-task-themes" id="hoje-metas-themes"></ul>
+              <div class="actions-row" style="margin-top:0.75rem">
+                <button type="button" class="btn btn-primary" id="hoje-metas-start-day">Responder bloco de hoje</button>
+                <button type="button" class="btn btn-ghost" data-goto="metas">Plano completo</button>
+              </div>
+            </div>
           </div>
 
-          <div class="study-card" id="today-summary">
-            <div class="label">Agenda</div>
-            <p class="prompt" id="today-prompt">Carregando…</p>
-            <div class="actions-row">
-              <button type="button" class="btn btn-primary" id="today-start">Começar revisão</button>
-              <button type="button" class="btn btn-ghost" data-goto="flashcards">Escolher tema</button>
+          <div class="hoje-fc-block">
+            <div class="label">Flashcards · revisão espaçada</div>
+            <div class="stat-grid" id="hoje-stat-grid" style="margin-bottom:0.85rem">
+              <article class="stat-card">
+                <span class="stat-card-label">Na fila</span>
+                <strong id="hoje-stat-pending">—</strong>
+              </article>
+              <article class="stat-card">
+                <span class="stat-card-label">Revisões</span>
+                <strong id="hoje-stat-due">—</strong>
+              </article>
+              <article class="stat-card">
+                <span class="stat-card-label">Novos</span>
+                <strong id="hoje-stat-new">—</strong>
+              </article>
+              <article class="stat-card">
+                <span class="stat-card-label">Estudados hoje</span>
+                <strong id="hoje-stat-done">—</strong>
+              </article>
             </div>
-            <div class="stats" id="today-stats"></div>
+
+            <div class="study-card" id="today-summary">
+              <div class="label">Agenda de cards</div>
+              <p class="prompt" id="today-prompt">Carregando…</p>
+              <div class="actions-row">
+                <button type="button" class="btn btn-primary" id="today-start">Começar revisão</button>
+                <button type="button" class="btn btn-ghost" data-goto="flashcards">Escolher tema</button>
+              </div>
+              <div class="stats" id="today-stats"></div>
+            </div>
           </div>
         </section>
 
@@ -860,6 +885,6 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721day1"></script>
+  <script src="js/app-qui.js?v=20260721hoje1"></script>
 </body>
 </html>

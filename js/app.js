@@ -2,7 +2,7 @@
 
 const APROVA_PANEL_META = {
   inicio: { title: "Início", sub: "Escolha o que estudar agora" },
-  hoje: { title: "Revisão de hoje", sub: "Fila SRS · novos e vencidos" },
+  hoje: { title: "Hoje", sub: "Metas do dia e atrasadas · flashcards SRS" },
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
@@ -3218,6 +3218,203 @@ function aprovaFulfillMetaTheme (areaId, tema, cardsGoal) {
   }
 }
 
+function aprovaEscapeHtml (s) {
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+}
+
+function aprovaBuildMetasQThemesHtml (program, focusPack) {
+  const themes = (program && program.qThemes) || [];
+  if (!themes.length) {
+    return "<li class=\"muted\" style=\"list-style:none;padding:0.35rem 0\">Cadastre as provas no perfil para priorizar temas.</li>";
+  }
+  const esc = aprovaEscapeHtml;
+  return themes.map((th) => {
+    const freqCaption = typeof aprovaMetasThemeFreqCaption === "function"
+      ? aprovaMetasThemeFreqCaption(th.pct, focusPack || aprovaSeuFocoCache)
+      : (th.pct != null
+        ? (typeof aprovaFormatPct === "function"
+          ? aprovaFormatPct(th.pct)
+          : (String(th.pct).replace(".", ",") + "%"))
+        : "");
+    const status = th.status || "todo";
+    const done = th.progressDone | 0;
+    const goal = th.progressGoal | 0 || th.n | 0;
+    const targetAcc = (program.qQuota && program.qQuota.targetAccuracy) ||
+      (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
+    const tone = status === "done" && typeof aprovaMetaProgressTone === "function"
+      ? aprovaMetaProgressTone(th.progressPct, targetAcc)
+      : (status === "partial" ? "near" : (status === "done" ? "hit" : "todo"));
+    let statusTxt = "Não feito · 0/" + goal;
+    let cta = "Responder";
+    let warn = "";
+    if (status === "done") {
+      const pctBit = th.progressPct != null ? (" · " + th.progressPct + "% acerto") : "";
+      statusTxt = "Feito" + pctBit;
+      cta = "Revisar";
+      if (tone === "far") {
+        statusTxt += " · revisar o quanto antes";
+        warn = "<span class=\"metas-q-warn\">Consulte material de apoio</span>";
+      } else if (tone === "near") {
+        statusTxt += " · pouco abaixo da meta";
+      }
+    } else if (status === "partial") {
+      statusTxt = "Em andamento · " + done + "/" + goal +
+        (th.progressPct != null ? (" · " + th.progressPct + "%") : "");
+      cta = "Continuar";
+    }
+    const remain = status === "done"
+      ? Math.max(5, goal)
+      : Math.max(1, goal - done);
+    const toneClass = status === "todo"
+      ? "is-todo"
+      : (status === "partial"
+        ? "is-partial"
+        : ("is-done is-acc-" + tone));
+    const areaBit = th.areaLabel
+      ? (esc(th.areaLabel) + (freqCaption ? " — " : ""))
+      : "";
+    return (
+      "<li>" +
+        "<button type=\"button\" class=\"dash-task-theme-btn " + toneClass + "\"" +
+          " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
+          " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
+          " data-meta-q-n=\"" + remain + "\"" +
+          " data-meta-q-mode=\"" + (status === "done" ? "review" : "continue") + "\">" +
+          "<strong>" + (th.n | 0) + "</strong>" +
+          "<span class=\"dash-task-theme-copy\">" +
+            esc(th.tema) +
+            ((areaBit || freqCaption)
+              ? (" <span class=\"metas-q-freq\">" + areaBit + esc(freqCaption) + "</span>")
+              : "") +
+            "<span class=\"metas-q-status\">" + esc(statusTxt) + "</span>" +
+            warn +
+          "</span>" +
+          "<span class=\"dash-task-theme-go\">" + cta + "</span>" +
+        "</button>" +
+        (status === "done"
+          ? ("<button type=\"button\" class=\"dash-task-theme-more\"" +
+              " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
+              " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
+              " data-meta-q-n=\"" + Math.max(5, goal) + "\"" +
+              " data-meta-q-mode=\"more\">Praticar mais no banco</button>")
+          : "") +
+      "</li>"
+    );
+  }).join("");
+}
+
+function aprovaBindMetasQThemesClicks (el) {
+  if (!el || el.dataset.metaQBound) return;
+  el.dataset.metaQBound = "1";
+  el.addEventListener("click", (evt) => {
+    const btn = evt.target.closest("[data-meta-q-tema]");
+    if (!btn) return;
+    evt.preventDefault();
+    const mode = btn.getAttribute("data-meta-q-mode") || "continue";
+    if (typeof aprovaFulfillMetaQuestions === "function") {
+      aprovaFulfillMetaQuestions(
+        btn.getAttribute("data-meta-q-spec"),
+        btn.getAttribute("data-meta-q-tema"),
+        Number(btn.getAttribute("data-meta-q-n")) || 10,
+        { mode }
+      );
+    }
+  });
+}
+
+function aprovaRenderHojeMetas () {
+  const emptyEl = document.getElementById("hoje-metas-empty");
+  const bodyEl = document.getElementById("hoje-metas-body");
+  const summaryEl = document.getElementById("hoje-metas-summary");
+  const quotaEl = document.getElementById("hoje-metas-quota");
+  const themesEl = document.getElementById("hoje-metas-themes");
+  const overdueWrap = document.getElementById("hoje-metas-overdue-wrap");
+  const overdueEl = document.getElementById("hoje-metas-overdue");
+  if (!emptyEl && !bodyEl) return;
+
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
+
+  if (!complete) {
+    if (emptyEl) emptyEl.hidden = false;
+    if (bodyEl) bodyEl.hidden = true;
+    return;
+  }
+
+  if (emptyEl) emptyEl.hidden = true;
+  if (bodyEl) bodyEl.hidden = false;
+
+  let program = null;
+  if (typeof aprovaBuildStudyPlan === "function" && typeof aprovaBuildStudyProgram === "function") {
+    const plan = aprovaBuildStudyPlan(profile, aprovaSeuFocoCache, Date.now(), aprovaSeuFocoAreaId);
+    if (plan && plan.ok) {
+      program = aprovaBuildStudyProgram(plan, null, Date.now(), aprovaSeuFocoCache);
+    }
+  }
+
+  if (program && program.qProgress && program.qQuota) {
+    const qp = program.qProgress.daily;
+    if (summaryEl) {
+      summaryEl.textContent = qp.done + "/" + qp.goal + " questões hoje · meta " +
+        ((program.qQuota.targetAccuracy != null
+          ? program.qQuota.targetAccuracy
+          : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))) +
+        "% de acerto";
+    }
+    if (quotaEl) {
+      const ag = program.accuracyGoal || {};
+      quotaEl.innerHTML =
+        "<span class=\"dash-seu-plano-chip\">" + program.qQuota.daily + " questões/dia</span>" +
+        "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>" +
+        (ag.target != null
+          ? ("<span class=\"dash-seu-plano-chip\">Meta " + ag.target + "%</span>")
+          : "");
+    }
+  } else if (summaryEl) {
+    summaryEl.textContent = "Monte o perfil com provas para liberar o bloco do dia.";
+  }
+
+  if (themesEl) {
+    themesEl.innerHTML = aprovaBuildMetasQThemesHtml(program, aprovaSeuFocoCache);
+    aprovaBindMetasQThemesClicks(themesEl);
+  }
+
+  if (overdueWrap && overdueEl && typeof aprovaBuildMateriaBoard === "function") {
+    const board = aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 });
+    const late = board.overdue || [];
+    if (!late.length) {
+      overdueWrap.hidden = true;
+      overdueEl.innerHTML = "";
+    } else {
+      overdueWrap.hidden = false;
+      const esc = aprovaEscapeHtml;
+      overdueEl.innerHTML = late.slice(0, 8).map((row) => {
+        const status = (row.daysLate === 1 ? "1 dia atrasado" : (row.daysLate + " dias atrasados")) +
+          " · " + row.done + "/" + row.goal;
+        return (
+          "<li class=\"prog-materia-row is-late\">" +
+            "<div class=\"prog-materia-main\">" +
+              "<span class=\"prog-materia-name\">" + esc(row.tema) + "</span>" +
+              "<span class=\"prog-materia-meta\">" +
+                (row.areaLabel ? esc(row.areaLabel) + " · " : "") + status +
+              "</span>" +
+            "</div>" +
+            "<button type=\"button\" class=\"linkish\"" +
+              " data-meta-q-spec=\"" + esc(row.specialty) + "\"" +
+              " data-meta-q-tema=\"" + esc(row.tema) + "\"" +
+              " data-meta-q-n=\"" + (row.remaining || row.goal || 10) + "\"" +
+              " data-meta-q-mode=\"continue\">Recuperar</button>" +
+          "</li>"
+        );
+      }).join("");
+      aprovaBindMetasQThemesClicks(overdueEl);
+    }
+  }
+}
+
 function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const root = document.getElementById("dash-seu-plano");
   if (!root) return;
@@ -3375,103 +3572,8 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           : "Temas do dia com base no que mais cai. ") + freqBit;
       }
       if (qThemesEl) {
-        const esc = (s) => String(s || "")
-          .replace(/&/g, "&amp;")
-          .replace(/"/g, "&quot;")
-          .replace(/</g, "&lt;");
-        const themes = program.qThemes || [];
-        if (!themes.length) {
-          qThemesEl.innerHTML = "<li class=\"muted\" style=\"list-style:none;padding:0.35rem 0\">Cadastre as provas no perfil para priorizar temas.</li>";
-        } else {
-          qThemesEl.innerHTML = themes.map((th) => {
-            const freqCaption = typeof aprovaMetasThemeFreqCaption === "function"
-              ? aprovaMetasThemeFreqCaption(th.pct, focusPack || aprovaSeuFocoCache)
-              : (th.pct != null
-                ? (typeof aprovaFormatPct === "function"
-                  ? aprovaFormatPct(th.pct)
-                  : (String(th.pct).replace(".", ",") + "%"))
-                : "");
-            const status = th.status || "todo";
-            const done = th.progressDone | 0;
-            const goal = th.progressGoal | 0 || th.n | 0;
-            const targetAcc = (program.qQuota && program.qQuota.targetAccuracy) ||
-              (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
-            const tone = status === "done" && typeof aprovaMetaProgressTone === "function"
-              ? aprovaMetaProgressTone(th.progressPct, targetAcc)
-              : (status === "partial" ? "near" : (status === "done" ? "hit" : "todo"));
-            let statusTxt = "Não feito · 0/" + goal;
-            let cta = "Responder";
-            let warn = "";
-            if (status === "done") {
-              const pctBit = th.progressPct != null ? (" · " + th.progressPct + "% acerto") : "";
-              statusTxt = "Feito" + pctBit;
-              cta = "Revisar";
-              if (tone === "far") {
-                statusTxt += " · revisar o quanto antes";
-                warn = "<span class=\"metas-q-warn\">Consulte material de apoio</span>";
-              } else if (tone === "near") {
-                statusTxt += " · pouco abaixo da meta";
-              }
-            } else if (status === "partial") {
-              statusTxt = "Em andamento · " + done + "/" + goal +
-                (th.progressPct != null ? (" · " + th.progressPct + "%") : "");
-              cta = "Continuar";
-            }
-            const remain = status === "done"
-              ? Math.max(5, goal)
-              : Math.max(1, goal - done);
-            const toneClass = status === "todo"
-              ? "is-todo"
-              : (status === "partial"
-                ? "is-partial"
-                : ("is-done is-acc-" + tone));
-            const areaBit = th.areaLabel
-              ? (esc(th.areaLabel) + (freqCaption ? " — " : ""))
-              : "";
-            return (
-              "<li>" +
-                "<button type=\"button\" class=\"dash-task-theme-btn " + toneClass + "\"" +
-                  " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
-                  " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
-                  " data-meta-q-n=\"" + remain + "\"" +
-                  " data-meta-q-mode=\"" + (status === "done" ? "review" : "continue") + "\">" +
-                  "<strong>" + (th.n | 0) + "</strong>" +
-                  "<span class=\"dash-task-theme-copy\">" +
-                    esc(th.tema) +
-                    ((areaBit || freqCaption)
-                      ? (" <span class=\"metas-q-freq\">" + areaBit + esc(freqCaption) + "</span>")
-                      : "") +
-                    "<span class=\"metas-q-status\">" + esc(statusTxt) + "</span>" +
-                    warn +
-                  "</span>" +
-                  "<span class=\"dash-task-theme-go\">" + cta + "</span>" +
-                "</button>" +
-                (status === "done"
-                  ? ("<button type=\"button\" class=\"dash-task-theme-more\"" +
-                      " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
-                      " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
-                      " data-meta-q-n=\"" + Math.max(5, goal) + "\"" +
-                      " data-meta-q-mode=\"more\">Praticar mais no banco</button>")
-                  : "") +
-              "</li>"
-            );
-          }).join("");
-        }
-        if (!qThemesEl.dataset.metaQBound) {
-          qThemesEl.dataset.metaQBound = "1";
-          qThemesEl.addEventListener("click", (evt) => {
-            const btn = evt.target.closest("[data-meta-q-tema]");
-            if (!btn) return;
-            evt.preventDefault();
-            const mode = btn.getAttribute("data-meta-q-mode") || "continue";
-            aprovaFulfillMetaQuestions(
-              btn.getAttribute("data-meta-q-spec"),
-              btn.getAttribute("data-meta-q-tema"),
-              Number(btn.getAttribute("data-meta-q-n")) || 10,
-              { mode }
-            );
-          });
-        }
+        qThemesEl.innerHTML = aprovaBuildMetasQThemesHtml(program, focusPack || aprovaSeuFocoCache);
+        aprovaBindMetasQThemesClicks(qThemesEl);
       }
     }
 
@@ -3738,6 +3840,9 @@ function aprovaRenderSeuFoco () {
         true,
         pack
       );
+    }
+    if (typeof aprovaRenderHojeMetas === "function") {
+      aprovaRenderHojeMetas();
     }
 
     if (root && typeof aprovaBuildPersonalizedFocus === "function") {
@@ -4139,6 +4244,8 @@ function aprovaRenderToday () {
       studiedToday: summary.studiedToday || 0
     };
 
+  aprovaRenderHojeMetas();
+
   if (prompt) prompt.textContent = summary.prompt;
   if (stats) {
     stats.innerHTML = summary.stats.map(s => "<span>" + s + "</span>").join("");
@@ -4155,20 +4262,33 @@ function aprovaRenderToday () {
 
   const dashPreview = document.getElementById("dash-hoje-preview");
   if (dashPreview) {
+    let metaBit = "";
     let goalBit = "";
     if (typeof aprovaBuildStudyPlan === "function" && typeof aprovaBuildStudyProgram === "function" &&
         typeof aprovaLoadProfile === "function" && typeof aprovaProfileIsComplete === "function") {
       const profile = aprovaLoadProfile();
       if (aprovaProfileIsComplete(profile)) {
         const plan = aprovaBuildStudyPlan(profile, aprovaSeuFocoCache, Date.now(), aprovaSeuFocoAreaId);
-        const prog = plan && plan.ok ? aprovaBuildStudyProgram(plan, cardIds) : null;
+        const prog = plan && plan.ok ? aprovaBuildStudyProgram(plan, null, Date.now(), aprovaSeuFocoCache) : null;
+        if (prog && prog.qProgress && prog.qProgress.daily) {
+          metaBit = "Questões " + prog.qProgress.daily.done + "/" + prog.qProgress.daily.goal;
+        }
         if (prog && prog.quota) {
           const done = typeof aprovaActivityToday === "function" ? aprovaActivityToday() : (srs.studiedToday || 0);
-          goalBit = " · meta " + done + "/" + prog.quota.daily + " hoje";
+          goalBit = " · cards " + done + "/" + prog.quota.daily;
         }
       }
     }
-    if (!cardIds.length) {
+    let lateBit = "";
+    if (typeof aprovaBuildMateriaBoard === "function") {
+      const board = aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 });
+      const nLate = (board.overdue || []).length;
+      if (nLate) lateBit = " · " + nLate + " atrasada" + (nLate === 1 ? "" : "s");
+    }
+    if (metaBit) {
+      dashPreview.textContent = metaBit + lateBit +
+        (srs.pending ? (" · " + srs.pending + " cards na fila") : " · cards em dia") + goalBit;
+    } else if (!cardIds.length) {
       dashPreview.textContent = "Carregando flashcards…";
     } else if (srs.pending) {
       dashPreview.textContent = srs.pending + " na fila · " + srs.due + " revisão · " +
@@ -5424,6 +5544,9 @@ async function aprovaBoot () {
   });
 
   document.getElementById("metas-q-start-day")?.addEventListener("click", () => {
+    aprovaFulfillMetaQuestionsDay();
+  });
+  document.getElementById("hoje-metas-start-day")?.addEventListener("click", () => {
     aprovaFulfillMetaQuestionsDay();
   });
 
