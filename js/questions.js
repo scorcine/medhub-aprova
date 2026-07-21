@@ -7,7 +7,8 @@ const APROVA_QUESTION_FILES = [
   "data/questions-pediatria.json",
   "data/questions-go.json",
   "data/questions-preventiva.json",
-  "data/questions-sus-sp.json"
+  "data/questions-sus-sp.json",
+  "data/questions-enare.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -18,7 +19,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721sussp6";
+const APROVA_QUESTION_CACHE_VER = "20260721enare1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
@@ -38,7 +39,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     const provas = Array.isArray(catData) ? catData : (catData.provas || []);
     for (const prova of provas) {
       if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
-      if (/^sus-sp/i.test(String(prova.exam || prova.id || ""))) continue;
+      if (/^(sus-sp|enare)/i.test(String(prova.exam || prova.id || ""))) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
