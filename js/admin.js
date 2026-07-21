@@ -18,7 +18,7 @@ const APROVA_ADMIN_BANKS = [
 const SECTION_META = {
   overview: { title: "Visão geral", desc: "Resumo de conteúdo, contas locais e planos." },
   users: { title: "Usuários", desc: "Contas salvas neste navegador." },
-  access: { title: "Liberar acesso", desc: "Só e-mail: a pessoa completa o cadastro e os dados voltam para cá." },
+  access: { title: "Liberar acesso", desc: "Gere cupom pelo nome e pelos meses — ela completa o cadastro no celular." },
   coupons: { title: "Cupons embaixador", desc: "Gere códigos que liberam o app completo no cadastro." },
   content: { title: "Conteúdo", desc: "Inventário dos bancos publicados." },
   plans: { title: "Leads e planos", desc: "Teste grátis e cliques Free/Pro no cadastro." },
@@ -823,10 +823,22 @@ function adminBoot () {
     const url = input?.value || "";
     if (!url) return;
     navigator.clipboard?.writeText(url).then(() => {
-      adminSetStatus("admin-grant-status", "Link copiado. Envie para a pessoa.", true);
+      adminSetStatus("admin-grant-status", "Link copiado. Envie no WhatsApp.", true);
     }).catch(() => {
       input.select();
       adminSetStatus("admin-grant-status", "Selecione e copie o link manualmente.", true);
+    });
+  });
+
+  document.getElementById("admin-copy-grant-code")?.addEventListener("click", () => {
+    const input = document.getElementById("admin-grant-code");
+    const code = input?.value || "";
+    if (!code) return;
+    navigator.clipboard?.writeText(code).then(() => {
+      adminSetStatus("admin-grant-status", "Cupom copiado: " + code, true);
+    }).catch(() => {
+      input.select();
+      adminSetStatus("admin-grant-status", code, true);
     });
   });
 
@@ -854,26 +866,45 @@ function adminBoot () {
 
   document.getElementById("admin-grant-form")?.addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = document.getElementById("grant-email")?.value || "";
+    const name = String(document.getElementById("grant-name")?.value || "").trim();
     const type = document.getElementById("grant-type")?.value || "m3";
-    const result = adminGrantAccess(email, "", type, "");
-    adminSetStatus("admin-grant-status", result.msg, result.ok);
+    if (!name) {
+      adminSetStatus("admin-grant-status", "Informe o nome da pessoa.", false);
+      return;
+    }
+    if (typeof aprovaCouponGenerate !== "function") {
+      adminSetStatus("admin-grant-status", "Módulo de cupons indisponível.", false);
+      return;
+    }
+    const result = aprovaCouponGenerate({
+      type,
+      embassador: name,
+      qty: 1,
+      maxUses: 1
+    });
+    adminSetStatus(
+      "admin-grant-status",
+      result.ok
+        ? ("Cupom gerado para " + name + ". Envie o link — ela completa o cadastro no celular.")
+        : (result.msg || "Não foi possível gerar."),
+      result.ok
+    );
+    const created = result.created && result.created[0];
     const box = document.getElementById("admin-invite-box");
     const urlInput = document.getElementById("admin-invite-url");
-    if (result.ok && result.inviteUrl && box && urlInput) {
+    const codeInput = document.getElementById("admin-grant-code");
+    const personEl = document.getElementById("admin-grant-person");
+    if (result.ok && created && box && urlInput && codeInput) {
+      const url = typeof aprovaCouponSignupUrl === "function"
+        ? aprovaCouponSignupUrl(created.code)
+        : ("https://www.medhubr1.com.br/cadastro.html?cupom=" + encodeURIComponent(created.code));
       box.hidden = false;
-      urlInput.value = result.inviteUrl;
-    }
-    if (result.ok) {
-      const emailEl = document.getElementById("grant-email");
-      if (emailEl) emailEl.value = "";
-      const hidden = document.getElementById("grant-type");
-      if (hidden) hidden.value = type;
-      document.querySelectorAll("#grant-type-chips [data-grant-type]").forEach((btn) => {
-        btn.classList.toggle("is-active", btn.getAttribute("data-grant-type") === type);
-      });
-      adminRenderUsers();
-      adminRenderInvites();
+      codeInput.value = created.code;
+      urlInput.value = url;
+      if (personEl) personEl.textContent = name;
+      adminPushLog("coupon-grant", name + " → " + type + " " + created.code);
+      adminShowCreatedCoupons(result.created || []);
+      adminRenderCoupons();
     }
   });
 
