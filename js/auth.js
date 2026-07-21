@@ -137,7 +137,7 @@ function aprovaLogin (login, password, extras) {
     return false;
   }
 
-  // Convite na URL (?convite=) — aplica plano mesmo se ela já tinha conta free/trial.
+  // Convite (?convite=) ou cupom (?cupom= / campo) — aplica plano em conta free/trial.
   let grantMsg = "";
   const grant = extras?.grant || null;
   if (grant && typeof aprovaAccessApplyInviteOnLogin === "function") {
@@ -147,6 +147,15 @@ function aprovaLogin (login, password, extras) {
       return false;
     }
     if (applied && applied.ok) grantMsg = " " + (applied.msg || "Plano liberado.");
+  }
+  const coupon = String(extras?.coupon || "").trim();
+  if (coupon && typeof aprovaAccessApplyCoupon === "function") {
+    const applied = aprovaAccessApplyCoupon(login, coupon);
+    if (!applied.ok) {
+      aprovaShowAuthMsg(applied.msg || "Não foi possível aplicar o cupom.", false);
+      return false;
+    }
+    grantMsg = " " + (applied.msg || "Cupom aplicado.");
   }
 
   const access = aprovaCheckAccess(user.login);
@@ -403,7 +412,7 @@ function aprovaBootSignupPage () {
       if (checked.ok) {
         const planLabel = planLabels[checked.type] || checked.type;
         note.textContent = "Cupom de embaixador válido — acesso " + planLabel +
-          ". Complete o cadastro para liberar o app completo.";
+          ". Complete o cadastro (ou use o mesmo e-mail/senha se já tiver conta Free) para liberar o app.";
       } else {
         note.textContent = checked.msg || "Cupom inválido. Você pode corrigir o código abaixo.";
       }
@@ -453,14 +462,32 @@ function aprovaReadGrantFromUrl () {
   return null;
 }
 
+function aprovaReadCouponFromUrl () {
+  try {
+    return String(new URLSearchParams(window.location.search).get("cupom") || "").trim();
+  } catch {
+    return "";
+  }
+}
+
 function aprovaBootGateLogin () {
   const form = document.getElementById("gate-login-form");
   if (!form) return false;
 
+  const couponFromUrl = aprovaReadCouponFromUrl();
+  const couponInput = form.querySelector("[name=\"coupon\"]");
+  if (couponInput && couponFromUrl) {
+    couponInput.value = couponFromUrl.toUpperCase();
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
-    if (!aprovaLogin(login, password, { grant: aprovaReadGrantFromUrl() })) return;
+    const coupon = String(form.coupon?.value || couponFromUrl || "").trim();
+    if (!aprovaLogin(login, password, {
+      grant: aprovaReadGrantFromUrl(),
+      coupon
+    })) return;
     form.reset();
     aprovaEnterAppAfterLogin();
   });
@@ -478,7 +505,11 @@ function aprovaBootAuth () {
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
-    if (!aprovaLogin(login, password, { grant: aprovaReadGrantFromUrl() })) return;
+    const coupon = String(form.coupon?.value || aprovaReadCouponFromUrl() || "").trim();
+    if (!aprovaLogin(login, password, {
+      grant: aprovaReadGrantFromUrl(),
+      coupon
+    })) return;
     form.reset();
     aprovaRenderAuth();
     aprovaEnterAppAfterLogin();
@@ -490,6 +521,36 @@ function aprovaBootAuth () {
     aprovaRenderAuth();
     if (hasGate && typeof aprovaSyncAppAuthUI === "function") {
       aprovaSyncAppAuthUI();
+    }
+  });
+
+  document.getElementById("perfil-coupon-form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const msg = document.getElementById("perfil-coupon-msg");
+    const session = aprovaLoadAuth();
+    const code = String(document.getElementById("perfil-coupon-input")?.value || "").trim();
+    if (!session?.login) {
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = "Faça login para aplicar o cupom.";
+      }
+      return;
+    }
+    if (typeof aprovaAccessApplyCoupon !== "function") {
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = "Módulo de cupons indisponível.";
+      }
+      return;
+    }
+    const result = aprovaAccessApplyCoupon(session.login, code);
+    if (msg) {
+      msg.hidden = false;
+      msg.textContent = result.msg || (result.ok ? "Cupom aplicado." : "Não foi possível aplicar.");
+    }
+    if (result.ok) {
+      const input = document.getElementById("perfil-coupon-input");
+      if (input) input.value = "";
     }
   });
 

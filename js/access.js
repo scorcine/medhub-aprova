@@ -250,6 +250,66 @@ function aprovaAccessApplyInviteOnLogin (login, grantFromUrl) {
   return { ok: true, msg: "Plano de 12 meses (ou liberado) ativado na sua conta.", user };
 }
 
+/**
+ * Aplica cupom de embaixador a uma conta já logada / no login.
+ * O código é autovalidável — funciona em qualquer aparelho (não depende do admin).
+ */
+function aprovaAccessApplyCoupon (login, couponRaw) {
+  const key = String(login || "").trim().toLowerCase();
+  const code = String(couponRaw || "").trim();
+  if (!key) return { ok: false, msg: "Faça login para aplicar o cupom." };
+  if (!code) return { ok: false, msg: "Informe o cupom." };
+  if (typeof aprovaCouponValidate !== "function") {
+    return { ok: false, msg: "Módulo de cupons indisponível." };
+  }
+  const checked = aprovaCouponValidate(code);
+  if (!checked.ok) return { ok: false, msg: checked.msg || "Cupom inválido." };
+
+  const users = aprovaAccessLoadUsers();
+  const user = users[key];
+  if (!user || !user.password) {
+    return { ok: false, msg: "Conta não encontrada. Cadastre-se e cole o cupom no cadastro." };
+  }
+
+  const meta = aprovaAccessPlanMeta(checked.type);
+  aprovaAccessApplyGrantToUser(user, {
+    plan: meta.plan,
+    planUntil: meta.planUntil,
+    grantedAt: Date.now()
+  });
+  user.coupon = checked.code;
+  user.embassador = checked.embassador || user.embassador || "";
+  user.status = "active";
+  user.claimedAt = Date.now();
+  users[key] = user;
+  aprovaAccessSaveUsers(users);
+  aprovaCouponMarkUsed(checked.code, key);
+
+  void aprovaAccessNotifyAdminClaim({
+    name: user.name || "",
+    email: key,
+    phone: user.phone || "",
+    plan: user.plan,
+    planUntil: user.planUntil,
+    coupon: user.coupon || "",
+    embassador: user.embassador || ""
+  });
+
+  const labels = {
+    lifetime: "vitalício",
+    m1: "1 mês",
+    m3: "3 meses",
+    m6: "6 meses",
+    m12: "12 meses",
+    trial: "teste"
+  };
+  return {
+    ok: true,
+    msg: "Cupom aplicado — acesso " + (labels[user.plan] || user.plan) + " liberado.",
+    user
+  };
+}
+
 async function aprovaAccessNotifyAdminClaim (profile) {
   try {
     await fetch(

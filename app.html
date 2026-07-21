@@ -43,6 +43,10 @@
           <span>Senha</span>
           <input type="password" name="password" placeholder="Senha" autocomplete="current-password" required>
         </label>
+        <label class="field">
+          <span>Cupom de embaixador <em class="field-optional">(opcional)</em></span>
+          <input type="text" name="coupon" id="gate-login-coupon" placeholder="Ex.: AN12-A3K9-X2" autocomplete="off" spellcheck="false">
+        </label>
         <p class="auth-msg" id="auth-msg" hidden></p>
         <button type="submit" class="btn btn-primary signup-submit">Entrar no app</button>
       </form>
@@ -753,6 +757,19 @@
           <h2 id="perfil-title">Meu perfil</h2>
           <p class="muted">Escolha até 3 provas por ordem de prioridade e, se puder, a data provável de cada uma.</p>
 
+          <div class="study-card" id="perfil-coupon-card" style="margin-bottom:1rem">
+            <div class="label">Cupom de embaixador</div>
+            <p class="muted" style="margin:0.35rem 0 0.75rem">Já tem um código? Cole aqui para liberar o acesso completo nesta conta.</p>
+            <form id="perfil-coupon-form" class="signup-form" style="margin:0">
+              <label class="field" style="margin-bottom:0.65rem">
+                <span>Código</span>
+                <input type="text" id="perfil-coupon-input" name="coupon" placeholder="Ex.: AN12-A3K9-X2" autocomplete="off" spellcheck="false">
+              </label>
+              <button type="submit" class="btn btn-primary btn-compact">Aplicar cupom</button>
+              <p class="muted" id="perfil-coupon-msg" hidden style="margin:0.65rem 0 0"></p>
+            </form>
+          </div>
+
           <div class="aprova-banner aprova-banner--soft" style="margin-bottom:1rem">
             <strong>Datas prováveis = plano personalizado</strong>
             <p style="margin-bottom:0">Mesmo que a prova seja só no ano que vem, informe uma data estimada. O app ajusta o ritmo de estudo e revisão pelo tempo que você terá até lá.</p>
@@ -1154,8 +1171,8 @@
   </div>
 
   <script src="js/theme.js?v=20260718dd"></script>
-  <script src="js/access.js?v=20260721inv1"></script>
-  <script src="js/auth.js?v=20260721inv1"></script>
+  <script src="js/access.js?v=20260721cup1"></script>
+  <script src="js/auth.js?v=20260721cup1"></script>
   <script src="js/profile.js?v=20260721studymode1"></script>
   <script src="js/focus.js?v=20260721foco1"></script>
   <script src="js/plan.js?v=20260719h"></script>
