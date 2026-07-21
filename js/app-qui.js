@@ -2986,6 +2986,31 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
   aprovaRenderQuestion();
 }
 
+/** Monta entrada de resposta a partir do histórico (para anotar no bloco). */
+function aprovaPriorAnswerEntryFromHistory (q) {
+  if (!q || !q.id || typeof aprovaLoadQuestionHistory !== "function") return null;
+  const hist = aprovaLoadQuestionHistory().byId[q.id];
+  if (!hist || !hist.attempted) return null;
+  let choice = q.answer;
+  const ok = !!hist.lastOk;
+  if (hist.lastChoiceText && Array.isArray(q.choices)) {
+    const idx = q.choices.findIndex((c) => c === hist.lastChoiceText);
+    choice = idx >= 0 ? idx : (ok ? q.answer : -1);
+  } else if (Number.isFinite(hist.lastChoice)) {
+    choice = hist.lastChoice | 0;
+  } else if (!ok) {
+    choice = -1;
+  }
+  return {
+    id: q.id,
+    theme: q.theme,
+    specialty: q.specialty,
+    choice,
+    correct: q.answer,
+    ok
+  };
+}
+
 async function aprovaFulfillMetaQuestionsDay () {
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const focus = aprovaSeuFocoCache;
@@ -3007,38 +3032,115 @@ async function aprovaFulfillMetaQuestionsDay () {
     try { await AprovaQuestions.load(); } catch (e) { /* ignore */ }
   }
 
-  const bag = [];
+  AprovaQuestions.filters = {
+    specialty: "",
+    group: "",
+    theme: "bloco-hoje",
+    exam: "",
+    year: ""
+  };
+
+  const saved = AprovaQuestions.getResumableTreino(AprovaQuestions.filters, "meta-day");
+  if (saved) {
+    const resumed = AprovaQuestions.resumeTreino(saved);
+    if (resumed) {
+      aprovaShowQuestionViews("card");
+      aprovaRenderQuestion();
+      return;
+    }
+  }
+
+  const priorRows = [];
+  const freshBag = [];
+  const seen = Object.create(null);
+
   themes.forEach((th) => {
     const part = aprovaQPoolForTema(th.specialty, th.tema);
-    const used = typeof aprovaMateriaAnsweredIds === "function"
-      ? aprovaMateriaAnsweredIds(th.specialty, th.tema)
-      : Object.create(null);
-    const filtered = part.filter((q) => q && !used[q.id] &&
-      (typeof aprovaQuestionMatchesScope !== "function" || aprovaQuestionMatchesScope(q.id, "new")));
-    const source = filtered.length ? filtered : part.filter((q) => q && !used[q.id]);
-    const bagSrc = source.length ? source : part;
+    const idList = typeof aprovaMateriaAnsweredIdList === "function"
+      ? aprovaMateriaAnsweredIdList(th.specialty, th.tema)
+      : [];
+    const used = Object.create(null);
+    idList.forEach((id) => { used[id] = true; });
+
+    const byId = Object.create(null);
+    part.forEach((q) => {
+      if (q && q.id) byId[q.id] = q;
+    });
+
+    // Já feitas neste tema → entram anotadas
+    idList.forEach((id) => {
+      if (seen[id]) return;
+      const q = byId[id];
+      if (!q) return;
+      const entry = typeof aprovaPriorAnswerEntryFromHistory === "function"
+        ? aprovaPriorAnswerEntryFromHistory(q)
+        : null;
+      if (!entry) return;
+      seen[id] = true;
+      priorRows.push({ q, entry });
+    });
+
+    const done = th.progressDone | 0;
+    const goal = th.progressGoal | 0 || th.n | 0;
+    const remain = Math.max(0, goal - done);
+    if (remain <= 0) return;
+
+    const fresh = part.filter((q) => {
+      if (!q || !q.id || used[q.id] || seen[q.id]) return false;
+      if (typeof aprovaQuestionMatchesScope === "function" &&
+          !aprovaQuestionMatchesScope(q.id, "new")) {
+        return false;
+      }
+      return true;
+    });
     const shuffled = typeof aprovaShuffleArray === "function"
-      ? aprovaShuffleArray(bagSrc.slice())
-      : bagSrc.slice();
-    const take = Math.min(th.n | 0 || 5, shuffled.length);
-    for (let i = 0; i < take; i++) bag.push(shuffled[i]);
+      ? aprovaShuffleArray(fresh.slice())
+      : fresh.slice();
+    const take = Math.min(remain, shuffled.length);
+    for (let i = 0; i < take; i++) {
+      if (seen[shuffled[i].id]) continue;
+      seen[shuffled[i].id] = true;
+      freshBag.push(shuffled[i]);
+    }
   });
-  const unique = [];
-  const seen = Object.create(null);
-  bag.forEach((q) => {
-    if (!q || seen[q.id]) return;
-    seen[q.id] = true;
-    unique.push(q);
-  });
-  const goal = (program && program.qQuota && program.qQuota.daily) || 41;
-  const pool = typeof aprovaShuffleArray === "function"
-    ? aprovaShuffleArray(unique).slice(0, goal)
-    : unique.slice(0, goal);
-  if (!pool.length) {
+
+  if (!priorRows.length && !freshBag.length) {
+    // Tudo do dia já feito — abre revisão do que foi respondido
+    const reviewQs = [];
+    const reviewAns = [];
+    themes.forEach((th) => {
+      const part = aprovaQPoolForTema(th.specialty, th.tema);
+      const byId = Object.create(null);
+      part.forEach((q) => { if (q && q.id) byId[q.id] = q; });
+      const idList = typeof aprovaMateriaAnsweredIdList === "function"
+        ? aprovaMateriaAnsweredIdList(th.specialty, th.tema)
+        : [];
+      idList.forEach((id) => {
+        if (!byId[id] || seen[id + "::rev"]) return;
+        seen[id + "::rev"] = true;
+        const entry = aprovaPriorAnswerEntryFromHistory(byId[id]);
+        if (!entry) return;
+        reviewQs.push(byId[id]);
+        reviewAns.push(entry);
+      });
+    });
+    if (reviewQs.length && AprovaQuestions.startReviewTreino) {
+      AprovaQuestions.startReviewTreino(reviewQs, reviewAns);
+      aprovaShowQuestionViews("card");
+      aprovaRenderQuestion();
+      return;
+    }
+    aprovaGoTo("metas");
+    return;
+  }
+
+  const n = AprovaQuestions.startTreinoContinuing
+    ? AprovaQuestions.startTreinoContinuing(priorRows, freshBag, "meta-day")
+    : AprovaQuestions.startTreino(freshBag, "meta-day");
+  if (!n) {
     aprovaRenderQuestionBrowse();
     return;
   }
-  AprovaQuestions.startTreino(pool, "all");
   aprovaShowQuestionViews("card");
   aprovaRenderQuestion();
 }

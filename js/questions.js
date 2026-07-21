@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721prev4";
+const APROVA_QUESTION_CACHE_VER = "20260721day1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 
 function aprovaShuffleArray (arr) {
@@ -268,6 +268,50 @@ const AprovaQuestions = {
     return this.queue.length;
   },
 
+  /**
+   * Continua um bloco: questões já feitas vêm anotadas; as novas ainda sem resposta.
+   * priorRows: [{ q, entry: { id, choice, correct, ok } }]
+   */
+  startTreinoContinuing (priorRows, newPool, scope) {
+    this.clearSavedTreino();
+    this.resetSession("treino");
+
+    const queue = [];
+    const answers = [];
+    (Array.isArray(priorRows) ? priorRows : []).forEach((row) => {
+      if (!row || !row.q) return;
+      const q = row.q;
+      queue.push(Object.assign({}, q, {
+        choices: Array.isArray(q.choices) ? q.choices.slice() : [],
+        answer: q.answer
+      }));
+      if (row.entry) answers.push(row.entry);
+    });
+
+    const fresh = aprovaWithShuffledChoices(
+      aprovaShuffleArray(Array.isArray(newPool) ? newPool.slice() : [])
+    );
+    fresh.forEach((q) => queue.push(q));
+
+    if (!queue.length) return 0;
+
+    this.queue = queue;
+    this.session = {
+      scope: scope || "meta-day",
+      startedAt: Date.now(),
+      answers: answers.slice()
+    };
+    this.correct = answers.filter((a) => a && a.ok).length;
+    this.attempted = answers.length;
+
+    // Começa na primeira ainda sem resposta; se todas feitas, na última.
+    let startIdx = queue.findIndex((q) => q && !answers.some((a) => a && a.id === q.id));
+    if (startIdx < 0) startIdx = Math.max(0, queue.length - 1);
+    this.index = startIdx;
+    this.landOnCurrent();
+    return this.queue.length;
+  },
+
   startTreino (poolOverride, scope) {
     this.clearSavedTreino();
     this.resetSession("treino");
@@ -455,6 +499,9 @@ const AprovaQuestions = {
     if (!this.queue.length) return "Nenhuma quest\u00e3o com estes filtros.";
     if (this.mode === "simulado" && this.simulado) {
       return "Quest\u00e3o " + (this.index + 1) + " de " + this.simulado.size;
+    }
+    if (this.session && this.session.scope === "review") {
+      return "Revis\u00e3o " + (this.index + 1) + " de " + this.queue.length;
     }
     return "Quest\u00e3o " + (this.index + 1) + " de " + this.queue.length + " (filtro)";
   },
