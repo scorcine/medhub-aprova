@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-energy1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-energy2";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /** Legenda + fala (português do Brasil). */
@@ -18,9 +18,9 @@ const APROVA_MASCOT_SCRIPT_SPEECH =
   "Este é o aplicativo que irá revolucionar seus estudos. " +
   "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
-/** Mesmo roteiro · mais jovem e empolgante (sem acelerar demais). */
-const APROVA_MASCOT_SPEECH_RATE = 1.16;
-const APROVA_MASCOT_SPEECH_PITCH = 1.26;
+/** Mesmo roteiro · masculino jovem, empolgado com o lançamento. */
+const APROVA_MASCOT_SPEECH_RATE = 1.24;
+const APROVA_MASCOT_SPEECH_PITCH = 1.32;
 const APROVA_MASCOT_SPEECH_VOLUME = 1;
 const APROVA_MASCOT_VIDEO_RATE = 1;
 
