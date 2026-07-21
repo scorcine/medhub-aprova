@@ -154,14 +154,48 @@ function aprovaGetUserPlan (login) {
   return { plan: user.plan || "free", planUntil: until, expired: false };
 }
 
+function aprovaRevealAppShell () {
+  const gate = document.getElementById("login-gate");
+  const shell = document.getElementById("app-shell");
+  const sideUser = document.getElementById("sidebar-user-label");
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  if (!shell) return false;
+  if (gate) gate.hidden = true;
+  shell.hidden = false;
+  if (sideUser && session) {
+    sideUser.textContent = session.name || session.login || "";
+  }
+  return true;
+}
+
 function aprovaEnterAppAfterLogin () {
-  if (document.getElementById("app-shell")) {
-    if (typeof aprovaSyncAppAuthUI === "function") aprovaSyncAppAuthUI();
-    if (typeof aprovaBootStudyModules === "function") aprovaBootStudyModules();
-    if (typeof aprovaGoTo === "function") aprovaGoTo("inicio");
+  if (!document.getElementById("app-shell")) {
+    window.location.href = "app.html";
     return;
   }
-  window.location.href = "app.html";
+
+  // Sempre revela o shell após login bem-sucedido (não depende do app-qui.js).
+  aprovaRevealAppShell();
+
+  if (typeof aprovaSyncAppAuthUI === "function") {
+    try { aprovaSyncAppAuthUI(); } catch (e) { /* shell já aberto */ }
+  }
+
+  if (typeof aprovaBootStudyModules === "function") {
+    Promise.resolve()
+      .then(() => aprovaBootStudyModules())
+      .then(() => {
+        if (typeof aprovaGoTo === "function") aprovaGoTo("inicio");
+      })
+      .catch(() => {
+        // Sessão já salva — recarrega para montar o painel limpo.
+        window.location.reload();
+      });
+    return;
+  }
+
+  // app-qui.js não carregou: recarrega com a sessão já gravada.
+  window.setTimeout(() => { window.location.reload(); }, 80);
 }
 
 function aprovaBootSignupPage () {
@@ -175,14 +209,33 @@ function aprovaBootSignupPage () {
   }
 
   let grantFromUrl = null;
+  let couponFromUrl = "";
+  const planLabels = {
+    lifetime: "Vitalício",
+    m1: "1 mês",
+    m3: "3 meses",
+    m6: "6 meses",
+    m12: "12 meses",
+    "pro-mensal": "1 mês",
+    "pro-anual": "12 meses",
+    cortesia: "Cortesia / teste",
+    "trial-10": "10 dias"
+  };
+
   try {
     const params = new URLSearchParams(window.location.search);
     const token = params.get("convite") || "";
     if (token && typeof aprovaAccessDecodeInvite === "function") {
       grantFromUrl = aprovaAccessDecodeInvite(token);
     }
+    couponFromUrl = String(params.get("cupom") || "").trim();
   } catch {
     grantFromUrl = null;
+  }
+
+  const couponInput = document.getElementById("signup-coupon");
+  if (couponInput && couponFromUrl) {
+    couponInput.value = couponFromUrl.toUpperCase();
   }
 
   if (grantFromUrl) {
@@ -197,19 +250,25 @@ function aprovaBootSignupPage () {
     if (note) {
       const planLabel = typeof adminPlanLabel === "function"
         ? adminPlanLabel(grantFromUrl.plan)
-        : ({
-          lifetime: "Vitalício",
-          m1: "1 mês",
-          m3: "3 meses",
-          m6: "6 meses",
-          m12: "12 meses",
-          "pro-mensal": "1 mês",
-          "pro-anual": "12 meses",
-          cortesia: "Cortesia / teste"
-        }[grantFromUrl.plan] || grantFromUrl.plan || "liberado");
+        : (planLabels[grantFromUrl.plan] || grantFromUrl.plan || "liberado");
       note.hidden = false;
       note.textContent = "Acesso liberado: " + planLabel +
         ". Preencha nome, celular e senha para ativar sua conta.";
+    }
+  } else if (couponFromUrl && typeof aprovaCouponValidate === "function") {
+    const checked = aprovaCouponValidate(couponFromUrl);
+    const note = document.getElementById("signup-plan-note");
+    const phoneField = document.getElementById("signup-phone-field");
+    if (phoneField) phoneField.hidden = false;
+    if (note) {
+      note.hidden = false;
+      if (checked.ok) {
+        const planLabel = planLabels[checked.type] || checked.type;
+        note.textContent = "Cupom de embaixador válido — acesso " + planLabel +
+          ". Complete o cadastro para liberar o app completo.";
+      } else {
+        note.textContent = checked.msg || "Cupom inválido. Você pode corrigir o código abaixo.";
+      }
     }
   }
 
@@ -220,6 +279,7 @@ function aprovaBootSignupPage () {
     const password = String(form.password?.value || "");
     const password2 = String(form.password2?.value || "");
     const phone = String(form.phone?.value || "").trim();
+    const coupon = String(form.coupon?.value || couponInput?.value || "").trim();
 
     if (!name) {
       aprovaShowAuthMsg("Informe seu nome.", false);
@@ -233,7 +293,7 @@ function aprovaBootSignupPage () {
       aprovaShowAuthMsg("Use o e-mail para o qual o acesso foi liberado.", false);
       return;
     }
-    if (!aprovaRegister(login, password, { name, phone, grant: grantFromUrl })) return;
+    if (!aprovaRegister(login, password, { name, phone, grant: grantFromUrl, coupon })) return;
 
     window.setTimeout(() => {
       window.location.href = "app.html";

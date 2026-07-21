@@ -5996,7 +5996,6 @@ async function aprovaBoot () {
     if (didReset && typeof aprovaGoTo === "function") {
       aprovaGoTo("inicio");
     }
-  }
     aprovaRenderEspecialidades();
     aprovaRenderPerfil();
     aprovaRenderConfig();
