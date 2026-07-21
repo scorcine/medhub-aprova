@@ -19,6 +19,7 @@ const SECTION_META = {
   overview: { title: "Visão geral", desc: "Resumo de conteúdo, contas locais e planos." },
   users: { title: "Usuários", desc: "Contas salvas neste navegador." },
   access: { title: "Liberar acesso", desc: "Só e-mail: a pessoa completa o cadastro e os dados voltam para cá." },
+  coupons: { title: "Cupons embaixador", desc: "Gere códigos que liberam o app completo no cadastro." },
   content: { title: "Conteúdo", desc: "Inventário dos bancos publicados." },
   plans: { title: "Leads e planos", desc: "Teste grátis e cliques Free/Pro no cadastro." },
   marketing: { title: "Marketing", desc: "Links e contatos públicos." },
@@ -166,6 +167,7 @@ function adminGoto (section) {
   if (id === "access") {
     adminRenderInvites();
   }
+  if (id === "coupons") adminRenderCoupons();
   if (id === "content") adminRenderContent();
   if (id === "plans") adminRenderPlans();
   if (id === "marketing") adminFillMarketing();
@@ -245,6 +247,12 @@ function adminRenderUsers () {
     const statusPill = u.status === "pending"
       ? "<span class=\"admin-pill admin-pill--warn\">pendente</span>"
       : "<span class=\"admin-pill\">ativo</span>";
+    const invite = typeof aprovaAccessGetInviteForEmail === "function"
+      ? aprovaAccessGetInviteForEmail(u.login)
+      : null;
+    const inviteUrl = invite && typeof aprovaAccessInviteUrl === "function"
+      ? aprovaAccessInviteUrl(invite)
+      : "";
     return (
       "<article class=\"admin-user-card\">" +
         "<div class=\"admin-user-card-head\">" +
@@ -259,6 +267,14 @@ function adminRenderUsers () {
           "<div><dt>Validade</dt><dd>" + until + "</dd></div>" +
         "</dl>" +
         "<div class=\"admin-user-actions\">" +
+          (u.status === "pending" && inviteUrl
+            ? "<button type=\"button\" class=\"btn btn-primary btn-compact\" data-admin-copy-invite=\"" +
+                adminEscape(inviteUrl) + "\">Copiar link de cadastro</button>"
+            : "") +
+          (u.status === "pending"
+            ? "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-fill-sync=\"" +
+                adminEscape(u.login) + "\">Já cadastrou? Atualizar lista</button>"
+            : "") +
           "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-revoke=\"" +
             adminEscape(u.login) + "\">Revogar para Free</button>" +
         "</div>" +
@@ -284,9 +300,11 @@ function adminRenderInvites () {
     const status = inv.status === "claimed" || inv.status === "active"
       ? "ativo"
       : "pendente";
-    const url = inv.token
-      ? (location.origin + "/cadastro.html?convite=" + encodeURIComponent(inv.token))
-      : (typeof aprovaAccessInviteUrl === "function" ? aprovaAccessInviteUrl(inv) : "");
+    const url = typeof aprovaAccessInviteUrl === "function"
+      ? aprovaAccessInviteUrl(inv)
+      : (inv.token
+        ? ("https://www.medhubr1.com.br/cadastro.html?convite=" + encodeURIComponent(inv.token))
+        : "");
     return (
       "<article class=\"admin-user-card\">" +
         "<div class=\"admin-user-card-head\">" +
@@ -309,6 +327,80 @@ function adminRenderInvites () {
                 adminEscape(url) + "\">Copiar link</button>" +
             "</div>"
           : "") +
+      "</article>"
+    );
+  }).join("");
+}
+
+function adminRenderCoupons () {
+  const el = document.getElementById("admin-coupons-list");
+  if (!el) return;
+  const list = typeof aprovaCouponLoadCatalog === "function"
+    ? aprovaCouponLoadCatalog()
+    : [];
+  if (!list.length) {
+    el.innerHTML = "<p class=\"admin-muted\">Nenhum cupom gerado neste aparelho ainda.</p>";
+    return;
+  }
+  el.innerHTML = list.map((c) => {
+    const url = typeof aprovaCouponSignupUrl === "function"
+      ? aprovaCouponSignupUrl(c.code)
+      : (location.origin + "/cadastro.html?cupom=" + encodeURIComponent(c.code));
+    const usesLabel = (c.maxUses | 0) > 0
+      ? ((c.uses | 0) + " / " + (c.maxUses | 0))
+      : String(c.uses | 0);
+    return (
+      "<article class=\"admin-user-card\">" +
+        "<div class=\"admin-user-card-head\">" +
+          "<strong>" + adminEscape(c.code) + "</strong>" +
+          "<span class=\"admin-pill\">" + adminEscape(adminPlanLabel(c.type)) + "</span>" +
+          (c.disabled
+            ? "<span class=\"admin-pill admin-pill--warn\">desativado</span>"
+            : "") +
+        "</div>" +
+        "<dl class=\"admin-user-dl\">" +
+          "<div><dt>Embaixador</dt><dd>" + adminEscape(c.embassador || "—") + "</dd></div>" +
+          "<div><dt>Usos</dt><dd>" + adminEscape(usesLabel) + "</dd></div>" +
+          "<div><dt>Criado</dt><dd>" +
+            (c.createdAt ? new Date(c.createdAt).toLocaleString("pt-BR") : "—") +
+          "</dd></div>" +
+        "</dl>" +
+        "<div class=\"admin-user-actions\">" +
+          "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-copy-coupon=\"" +
+            adminEscape(c.code) + "\">Copiar código</button>" +
+          "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-copy-invite=\"" +
+            adminEscape(url) + "\">Copiar link</button>" +
+          (!c.disabled
+            ? "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-disable-coupon=\"" +
+                adminEscape(c.code) + "\">Desativar</button>"
+            : "") +
+        "</div>" +
+      "</article>"
+    );
+  }).join("");
+}
+
+function adminShowCreatedCoupons (created) {
+  const box = document.getElementById("admin-coupon-created");
+  const listEl = document.getElementById("admin-coupon-created-list");
+  if (!box || !listEl || !created?.length) return;
+  box.hidden = false;
+  listEl.innerHTML = created.map((c) => {
+    const url = typeof aprovaCouponSignupUrl === "function"
+      ? aprovaCouponSignupUrl(c.code)
+      : (location.origin + "/cadastro.html?cupom=" + encodeURIComponent(c.code));
+    return (
+      "<article class=\"admin-user-card\">" +
+        "<div class=\"admin-user-card-head\">" +
+          "<strong>" + adminEscape(c.code) + "</strong>" +
+          "<span class=\"admin-pill\">" + adminEscape(adminPlanLabel(c.type)) + "</span>" +
+        "</div>" +
+        "<div class=\"admin-user-actions\">" +
+          "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-copy-coupon=\"" +
+            adminEscape(c.code) + "\">Copiar código</button>" +
+          "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-copy-invite=\"" +
+            adminEscape(url) + "\">Copiar link</button>" +
+        "</div>" +
       "</article>"
     );
   }).join("");
@@ -629,6 +721,31 @@ function adminBoot () {
   document.getElementById("admin-filter-plan")?.addEventListener("change", adminRenderUsers);
 
   document.getElementById("admin-users-list")?.addEventListener("click", (e) => {
+    const copyBtn = e.target.closest("[data-admin-copy-invite]");
+    if (copyBtn) {
+      const url = copyBtn.getAttribute("data-admin-copy-invite") || "";
+      if (!url) return;
+      navigator.clipboard?.writeText(url).then(() => {
+        adminSetStatus("admin-users-status", "Link copiado (medhubr1.com.br). Envie no WhatsApp.", true);
+      }).catch(() => {
+        adminSetStatus("admin-users-status", url, true);
+      });
+      return;
+    }
+    const syncBtn = e.target.closest("[data-admin-fill-sync]");
+    if (syncBtn) {
+      const email = syncBtn.getAttribute("data-admin-fill-sync") || "";
+      adminGoto("access");
+      const emailEl = document.getElementById("claim-sync-email");
+      if (emailEl) emailEl.value = email;
+      document.getElementById("claim-sync-name")?.focus();
+      adminSetStatus(
+        "admin-claim-sync-status",
+        "Preencha o nome (e celular) que ela usou no celular e confirme. Isso só atualiza a lista deste PC — o plano dela vem do link de convite.",
+        true
+      );
+      return;
+    }
     const btn = e.target.closest("[data-admin-revoke]");
     if (!btn) return;
     adminRevoke(btn.getAttribute("data-admin-revoke"));
@@ -644,6 +761,61 @@ function adminBoot () {
     }).catch(() => {
       adminSetStatus("admin-grant-status", url, true);
     });
+  });
+
+  document.getElementById("admin-coupons-list")?.addEventListener("click", (e) => {
+    const copyCode = e.target.closest("[data-admin-copy-coupon]");
+    if (copyCode) {
+      const code = copyCode.getAttribute("data-admin-copy-coupon") || "";
+      navigator.clipboard?.writeText(code).then(() => {
+        adminSetStatus("admin-coupon-status", "Código copiado: " + code, true);
+      }).catch(() => {
+        adminSetStatus("admin-coupon-status", code, true);
+      });
+      return;
+    }
+    const copyLink = e.target.closest("[data-admin-copy-invite]");
+    if (copyLink) {
+      const url = copyLink.getAttribute("data-admin-copy-invite") || "";
+      navigator.clipboard?.writeText(url).then(() => {
+        adminSetStatus("admin-coupon-status", "Link de cadastro copiado.", true);
+      }).catch(() => {
+        adminSetStatus("admin-coupon-status", url, true);
+      });
+      return;
+    }
+    const disableBtn = e.target.closest("[data-admin-disable-coupon]");
+    if (disableBtn && typeof aprovaCouponDisable === "function") {
+      const code = disableBtn.getAttribute("data-admin-disable-coupon") || "";
+      const result = aprovaCouponDisable(code);
+      adminSetStatus("admin-coupon-status", result.msg, result.ok);
+      if (result.ok) {
+        adminPushLog("coupon-disable", code);
+        adminRenderCoupons();
+      }
+    }
+  });
+
+  document.getElementById("admin-coupon-created")?.addEventListener("click", (e) => {
+    const copyCode = e.target.closest("[data-admin-copy-coupon]");
+    if (copyCode) {
+      const code = copyCode.getAttribute("data-admin-copy-coupon") || "";
+      navigator.clipboard?.writeText(code).then(() => {
+        adminSetStatus("admin-coupon-status", "Código copiado: " + code, true);
+      }).catch(() => {
+        adminSetStatus("admin-coupon-status", code, true);
+      });
+      return;
+    }
+    const copyLink = e.target.closest("[data-admin-copy-invite]");
+    if (copyLink) {
+      const url = copyLink.getAttribute("data-admin-copy-invite") || "";
+      navigator.clipboard?.writeText(url).then(() => {
+        adminSetStatus("admin-coupon-status", "Link de cadastro copiado.", true);
+      }).catch(() => {
+        adminSetStatus("admin-coupon-status", url, true);
+      });
+    }
   });
 
   document.getElementById("admin-copy-invite")?.addEventListener("click", () => {
@@ -665,6 +837,17 @@ function adminBoot () {
     const hidden = document.getElementById("grant-type");
     if (hidden) hidden.value = type;
     document.querySelectorAll("#grant-type-chips [data-grant-type]").forEach((btn) => {
+      btn.classList.toggle("is-active", btn === chip);
+    });
+  });
+
+  document.getElementById("coupon-type-chips")?.addEventListener("click", (e) => {
+    const chip = e.target.closest("[data-coupon-type]");
+    if (!chip) return;
+    const type = chip.getAttribute("data-coupon-type") || "lifetime";
+    const hidden = document.getElementById("coupon-type");
+    if (hidden) hidden.value = type;
+    document.querySelectorAll("#coupon-type-chips [data-coupon-type]").forEach((btn) => {
       btn.classList.toggle("is-active", btn === chip);
     });
   });
@@ -691,6 +874,25 @@ function adminBoot () {
       });
       adminRenderUsers();
       adminRenderInvites();
+    }
+  });
+
+  document.getElementById("admin-coupon-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (typeof aprovaCouponGenerate !== "function") {
+      adminSetStatus("admin-coupon-status", "Módulo de cupons indisponível.", false);
+      return;
+    }
+    const type = document.getElementById("coupon-type")?.value || "lifetime";
+    const embassador = document.getElementById("coupon-embassador")?.value || "";
+    const qty = Number(document.getElementById("coupon-qty")?.value || 1);
+    const maxUses = Number(document.getElementById("coupon-max-uses")?.value || 0);
+    const result = aprovaCouponGenerate({ type, embassador, qty, maxUses });
+    adminSetStatus("admin-coupon-status", result.msg, result.ok);
+    if (result.ok) {
+      adminPushLog("coupon-generate", type + " x" + (result.created?.length || 0));
+      adminShowCreatedCoupons(result.created || []);
+      adminRenderCoupons();
     }
   });
 

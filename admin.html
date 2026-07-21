@@ -72,6 +72,7 @@
             <button type="button" class="admin-nav-btn is-active" data-admin-section="overview">Visão geral</button>
             <button type="button" class="admin-nav-btn" data-admin-section="users">Usuários</button>
             <button type="button" class="admin-nav-btn" data-admin-section="access">Liberar acesso</button>
+            <button type="button" class="admin-nav-btn" data-admin-section="coupons">Cupons embaixador</button>
             <button type="button" class="admin-nav-btn" data-admin-section="content">Conteúdo</button>
             <button type="button" class="admin-nav-btn" data-admin-section="plans">Leads / planos</button>
             <button type="button" class="admin-nav-btn" data-admin-section="marketing">Marketing</button>
@@ -102,6 +103,7 @@
             <div class="admin-quick-grid">
               <button type="button" class="admin-quick-card" data-admin-goto="users"><strong>Usuários</strong><span>Contas deste navegador</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="access"><strong>Liberar acesso</strong><span>Vitalício, 1 / 3 / 6 / 12 meses</span></button>
+              <button type="button" class="admin-quick-card" data-admin-goto="coupons"><strong>Cupons</strong><span>Embaixadores liberam o app completo</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="content"><strong>Conteúdo</strong><span>Bancos de questões e flashcards</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="plans"><strong>Planos</strong><span>Interesse no cadastro</span></button>
               <button type="button" class="admin-quick-card" data-admin-goto="marketing"><strong>Marketing</strong><span>Links e contatos</span></button>
@@ -131,6 +133,7 @@
                   <option value="free">Free</option>
                 </select>
               </div>
+              <p id="admin-users-status" class="admin-status" hidden></p>
               <div id="admin-users-list" class="admin-users-list"></div>
             </div>
           </div>
@@ -138,7 +141,7 @@
           <div class="admin-section" id="admin-section-access" data-admin-section="access" hidden>
             <div class="admin-card">
               <h2>Liberar acesso</h2>
-              <p class="admin-muted">Informe só o e-mail e o tipo de acesso. A pessoa completa nome, celular e senha pelo link. Quando ela cadastrar, o admin recebe os dados e a lista atualiza.</p>
+              <p class="admin-muted">Informe o e-mail e o plano, depois <strong>envie o link gerado</strong> (WhatsApp). O link usa medhubr1.com.br — não mande o endereço da Vercel. Se ela já se cadastrou sem o link (teste grátis), mande o link de novo: ela entra com a mesma senha e o plano é aplicado.</p>
               <form id="admin-grant-form" class="admin-grant-form">
                 <label for="grant-email">E-mail</label>
                 <input id="grant-email" type="email" required placeholder="usuario@email.com" autocomplete="off">
@@ -180,6 +183,41 @@
                 <button type="submit" class="btn btn-primary">Atualizar lista</button>
               </form>
               <p id="admin-claim-sync-status" class="admin-status" hidden></p>
+            </div>
+          </div>
+
+          <div class="admin-section" id="admin-section-coupons" data-admin-section="coupons" hidden>
+            <div class="admin-card">
+              <h2>Gerar cupom de embaixador</h2>
+              <p class="admin-muted">O código libera o app no cadastro (campo Cupom). Funciona em qualquer aparelho — o formato é autovalidável. Envie o código ou o link com <code>?cupom=</code>.</p>
+              <form id="admin-coupon-form" class="admin-grant-form">
+                <label id="coupon-type-label">Tipo de acesso</label>
+                <input type="hidden" id="coupon-type" name="coupon-type" value="lifetime">
+                <div class="admin-access-chips" id="coupon-type-chips" role="group" aria-labelledby="coupon-type-label">
+                  <button type="button" class="admin-access-chip is-active" data-coupon-type="lifetime">Vitalício</button>
+                  <button type="button" class="admin-access-chip" data-coupon-type="m1">1 mês</button>
+                  <button type="button" class="admin-access-chip" data-coupon-type="m3">3 meses</button>
+                  <button type="button" class="admin-access-chip" data-coupon-type="m6">6 meses</button>
+                  <button type="button" class="admin-access-chip" data-coupon-type="m12">12 meses</button>
+                </div>
+                <label for="coupon-embassador">Nome do embaixador (opcional)</label>
+                <input id="coupon-embassador" type="text" placeholder="Ex.: Ana — turma USP" autocomplete="off">
+                <label for="coupon-qty">Quantidade</label>
+                <input id="coupon-qty" type="number" min="1" max="50" value="1">
+                <label for="coupon-max-uses">Limite de usos neste aparelho (0 = ilimitado)</label>
+                <input id="coupon-max-uses" type="number" min="0" max="9999" value="0">
+                <button type="submit" class="btn btn-primary">Gerar cupom(ns)</button>
+              </form>
+              <p id="admin-coupon-status" class="admin-status" hidden></p>
+              <div id="admin-coupon-created" class="admin-invite-box" hidden>
+                <p class="admin-muted" style="margin:0 0 0.45rem">Últimos gerados — copie e envie:</p>
+                <div id="admin-coupon-created-list" class="admin-users-list"></div>
+              </div>
+            </div>
+            <div class="admin-card" style="margin-top:1rem">
+              <h2>Cupons gerados neste aparelho</h2>
+              <p class="admin-muted">Lista local para controle. Códigos válidos continuam funcionando no cadastro mesmo sem aparecer aqui.</p>
+              <div id="admin-coupons-list" class="admin-users-list"></div>
             </div>
           </div>
 
@@ -263,8 +301,8 @@
   </main>
 
   <script src="js/theme.js"></script>
-  <script src="js/access.js?v=4"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/admin.js?v=6"></script>
+  <script src="js/access.js?v=20260721inv1"></script>
+  <script src="js/auth.js?v=20260721inv1"></script>
+  <script src="js/admin.js?v=20260721inv1"></script>
 </body>
 </html>

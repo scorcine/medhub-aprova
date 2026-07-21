@@ -115,7 +115,7 @@ function aprovaRegister (login, password, extras) {
   return true;
 }
 
-function aprovaLogin (login, password) {
+function aprovaLogin (login, password, extras) {
   if (!login || !password) {
     aprovaShowAuthMsg("Informe e-mail e senha.", false);
     return false;
@@ -137,6 +137,18 @@ function aprovaLogin (login, password) {
     return false;
   }
 
+  // Convite na URL (?convite=) — aplica plano mesmo se ela já tinha conta free/trial.
+  let grantMsg = "";
+  const grant = extras?.grant || null;
+  if (grant && typeof aprovaAccessApplyInviteOnLogin === "function") {
+    const applied = aprovaAccessApplyInviteOnLogin(login, grant);
+    if (applied && !applied.ok) {
+      aprovaShowAuthMsg(applied.msg || "Não foi possível aplicar o convite.", false);
+      return false;
+    }
+    if (applied && applied.ok) grantMsg = " " + (applied.msg || "Plano liberado.");
+  }
+
   const access = aprovaCheckAccess(user.login);
   if (!access.ok) {
     aprovaSaveAuth(null);
@@ -144,8 +156,9 @@ function aprovaLogin (login, password) {
     return false;
   }
 
-  aprovaSaveAuth({ login: user.login, name: user.name || user.login, at: Date.now() });
-  aprovaShowAuthMsg("Sessão iniciada.", true);
+  const fresh = aprovaLoadUsers()[login.toLowerCase()] || user;
+  aprovaSaveAuth({ login: fresh.login, name: fresh.name || fresh.login, at: Date.now() });
+  aprovaShowAuthMsg("Sessão iniciada." + grantMsg, true);
   return true;
 }
 
@@ -378,7 +391,7 @@ function aprovaBootSignupPage () {
         : (planLabels[grantFromUrl.plan] || grantFromUrl.plan || "liberado");
       note.hidden = false;
       note.textContent = "Acesso liberado: " + planLabel +
-        ". Preencha nome, celular e senha para ativar sua conta.";
+        ". Se já tem conta, use a mesma senha e toque em cadastrar — o plano será aplicado. Se for a primeira vez, preencha nome, celular e senha.";
     }
   } else if (couponFromUrl && typeof aprovaCouponValidate === "function") {
     const checked = aprovaCouponValidate(couponFromUrl);
@@ -428,6 +441,18 @@ function aprovaBootSignupPage () {
   return true;
 }
 
+function aprovaReadGrantFromUrl () {
+  try {
+    const token = new URLSearchParams(window.location.search).get("convite") || "";
+    if (token && typeof aprovaAccessDecodeInvite === "function") {
+      return aprovaAccessDecodeInvite(token);
+    }
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
 function aprovaBootGateLogin () {
   const form = document.getElementById("gate-login-form");
   if (!form) return false;
@@ -435,7 +460,7 @@ function aprovaBootGateLogin () {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
-    if (!aprovaLogin(login, password)) return;
+    if (!aprovaLogin(login, password, { grant: aprovaReadGrantFromUrl() })) return;
     form.reset();
     aprovaEnterAppAfterLogin();
   });
@@ -453,7 +478,7 @@ function aprovaBootAuth () {
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
-    if (!aprovaLogin(login, password)) return;
+    if (!aprovaLogin(login, password, { grant: aprovaReadGrantFromUrl() })) return;
     form.reset();
     aprovaRenderAuth();
     aprovaEnterAppAfterLogin();

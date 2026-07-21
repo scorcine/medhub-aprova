@@ -5,6 +5,21 @@ const APROVA_INVITES_KEY = "medhub-aprova-invites-v1";
 const APROVA_COUPONS_KEY = "medhub-aprova-coupons-v1";
 const APROVA_COUPON_SALT = "medhub-r1-emb-2026";
 const APROVA_ACCESS_NOTIFY_EMAIL = "medhubr1@gmail.com";
+/** Domínio público — evita links com medhub-aprova.vercel.app no WhatsApp/Instagram. */
+const APROVA_PUBLIC_ORIGIN = "https://www.medhubr1.com.br";
+
+function aprovaAccessPublicOrigin (base) {
+  if (base) return String(base).replace(/\/$/, "");
+  try {
+    const host = String(location.hostname || "");
+    if (/vercel\.app$/i.test(host) || /localhost|127\.0\.0\.1/i.test(host)) {
+      return APROVA_PUBLIC_ORIGIN;
+    }
+    return String(location.origin || APROVA_PUBLIC_ORIGIN).replace(/\/$/, "");
+  } catch {
+    return APROVA_PUBLIC_ORIGIN;
+  }
+}
 
 function aprovaAccessLoadUsers () {
   try {
@@ -89,8 +104,8 @@ function aprovaAccessDecodeInvite (token) {
 }
 
 function aprovaAccessInviteUrl (payload, base) {
-  const origin = base || (typeof location !== "undefined" ? location.origin : "");
-  const token = aprovaAccessEncodeInvite(payload);
+  const origin = aprovaAccessPublicOrigin(base);
+  const token = payload?.token || aprovaAccessEncodeInvite(payload);
   return origin + "/cadastro.html?convite=" + encodeURIComponent(token);
 }
 
@@ -185,6 +200,56 @@ function aprovaAccessApplyGrantToUser (user, grant) {
   return user;
 }
 
+/**
+ * Aplica convite (token da URL) a uma conta que já existe — usado no login.
+ * Retorna { ok, msg, user } ou null se não houver grant.
+ */
+function aprovaAccessApplyInviteOnLogin (login, grantFromUrl) {
+  if (!grantFromUrl || !grantFromUrl.email) return null;
+  const key = String(login || "").trim().toLowerCase();
+  if (!key || grantFromUrl.email !== key) {
+    return { ok: false, msg: "Este convite é para outro e-mail." };
+  }
+  const users = aprovaAccessLoadUsers();
+  const user = users[key];
+  if (!user || !user.password) {
+    return { ok: false, msg: "Conta não encontrada. Complete o cadastro pelo link." };
+  }
+  aprovaAccessApplyGrantToUser(user, grantFromUrl);
+  user.status = "active";
+  user.claimedAt = Date.now();
+  users[key] = user;
+  aprovaAccessSaveUsers(users);
+
+  const invites = aprovaAccessLoadInvites();
+  invites[key] = {
+    ...(invites[key] || {}),
+    email: key,
+    plan: user.plan,
+    planUntil: user.planUntil,
+    status: "claimed",
+    name: user.name || "",
+    phone: user.phone || "",
+    grantedAt: user.grantedAt || Date.now(),
+    claimedAt: Date.now(),
+    createdAt: invites[key]?.createdAt || Date.now(),
+    token: invites[key]?.token || aprovaAccessEncodeInvite(grantFromUrl)
+  };
+  aprovaAccessSaveInvites(invites);
+
+  void aprovaAccessNotifyAdminClaim({
+    name: user.name || "",
+    email: key,
+    phone: user.phone || "",
+    plan: user.plan,
+    planUntil: user.planUntil,
+    coupon: user.coupon || "",
+    embassador: user.embassador || ""
+  });
+
+  return { ok: true, msg: "Plano de 12 meses (ou liberado) ativado na sua conta.", user };
+}
+
 async function aprovaAccessNotifyAdminClaim (profile) {
   try {
     await fetch(
@@ -268,11 +333,68 @@ function aprovaAccessClaimOrRegister (login, password, extras) {
         }
       : null);
 
-  if (user && user.password && user.status !== "pending") {
-    return { ok: false, msg: "Este e-mail já está cadastrado. Use Entrar." };
+  const now = Date.now();
+  const alreadyRegistered = Boolean(user && user.password && user.status !== "pending");
+
+  // Conta já existe: se veio convite/cupom, só aplica o plano (não pede cadastro de novo).
+  if (alreadyRegistered) {
+    if (!grant && !couponGrant) {
+      return { ok: false, msg: "Este e-mail já está cadastrado. Use Entrar." };
+    }
+    if (user.password !== password) {
+      return {
+        ok: false,
+        msg: "Este e-mail já tem conta. Entre com a senha dela para ativar o plano liberado."
+      };
+    }
+    if (grant) aprovaAccessApplyGrantToUser(user, grant);
+    if (couponGrant) {
+      aprovaAccessApplyGrantToUser(user, couponGrant);
+      user.coupon = couponGrant.coupon;
+      user.embassador = couponGrant.embassador || "";
+      aprovaCouponMarkUsed(couponGrant.coupon, key);
+    }
+    if (name) user.name = name;
+    if (phone) user.phone = phone;
+    user.status = "active";
+    user.claimedAt = now;
+    users[key] = user;
+    aprovaAccessSaveUsers(users);
+
+    const invitesUp = aprovaAccessLoadInvites();
+    if (invitesUp[key] || grant) {
+      invitesUp[key] = {
+        ...(invitesUp[key] || {}),
+        email: key,
+        plan: user.plan,
+        planUntil: user.planUntil,
+        status: "claimed",
+        name: user.name || name,
+        phone: user.phone || "",
+        grantedAt: user.grantedAt || now,
+        claimedAt: now,
+        createdAt: invitesUp[key]?.createdAt || now
+      };
+      aprovaAccessSaveInvites(invitesUp);
+    }
+    void aprovaAccessNotifyAdminClaim({
+      name: user.name || name,
+      email: key,
+      phone: user.phone || "",
+      plan: user.plan,
+      planUntil: user.planUntil,
+      coupon: user.coupon || "",
+      embassador: user.embassador || ""
+    });
+    return {
+      ok: true,
+      msg: "Plano liberado na sua conta existente. Bem-vindo!",
+      claimed: true,
+      user,
+      upgraded: true
+    };
   }
 
-  const now = Date.now();
   const unlocked = Boolean(user?.status === "pending" || grant || couponGrant);
 
   user = {
@@ -501,6 +623,6 @@ function aprovaCouponDisable (code) {
 }
 
 function aprovaCouponSignupUrl (code, base) {
-  const origin = base || (typeof location !== "undefined" ? location.origin : "");
+  const origin = aprovaAccessPublicOrigin(base);
   return origin + "/cadastro.html?cupom=" + encodeURIComponent(aprovaCouponNormalize(code));
 }
