@@ -2,32 +2,19 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-bright1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-voicefile1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
+/** Voz gravada do mascote (pasta Divulgação/Macote). */
+const APROVA_MASCOT_AUDIO_SRC = "/assets/mascote-welcome.mp3";
 
-/** Legenda + fala (português do Brasil). */
+/** Legenda + roteiro na tela (português do Brasil) — não alterar. */
 const APROVA_MASCOT_SCRIPT =
   "Olá, {nome}, este é o aplicativo que irá revolucionar seus estudos. " +
   "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
-/**
- * Versão falada: mesma mensagem, pontuação leve (sem pausa dramática no nome).
- */
-const APROVA_MASCOT_SCRIPT_SPEECH =
-  "Olá {nome}! " +
-  "Este é o aplicativo que irá revolucionar seus estudos. " +
-  "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
-
-/** Mesmo roteiro · tom claro/feliz (evita grave de “senhor”), ritmo empolgado. */
-const APROVA_MASCOT_SPEECH_RATE = 1.3;
-const APROVA_MASCOT_SPEECH_PITCH = 1.45;
-const APROVA_MASCOT_SPEECH_PITCH_DEEP = 1.55; // Antonio e afins (muito graves)
-const APROVA_MASCOT_SPEECH_VOLUME = 1;
-const APROVA_MASCOT_VIDEO_RATE = 1;
-
 let aprovaMascotReplayMode = false;
-let aprovaMascotSpeakTimer = null;
-let aprovaMascotCachedVoice = null;
+let aprovaMascotAudio = null;
+let aprovaMascotPlayGen = 0;
 
 function aprovaMascotFirstName () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
@@ -77,71 +64,52 @@ function aprovaMascotMaybeForceOwnerOnce () {
   }
 }
 
+function aprovaMascotGetAudio () {
+  if (aprovaMascotAudio) return aprovaMascotAudio;
+  const el = new Audio(APROVA_MASCOT_AUDIO_SRC);
+  el.preload = "auto";
+  el.volume = 1;
+  aprovaMascotAudio = el;
+  return el;
+}
+
 function aprovaMascotStopSpeech () {
-  if (aprovaMascotSpeakTimer) {
-    window.clearTimeout(aprovaMascotSpeakTimer);
-    aprovaMascotSpeakTimer = null;
+  const audio = aprovaMascotAudio;
+  if (audio) {
+    try {
+      audio.pause();
+      audio.currentTime = 0;
+    } catch (e) { /* ignore */ }
   }
   try {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
   } catch (e) { /* ignore */ }
 }
 
-function aprovaMascotVoiceIsDeep (voice) {
-  if (!voice) return false;
-  return /antonio|ant[oô]nio|ricardo|david|jorge/.test(String(voice.name || "").toLowerCase());
-}
-
-/** Prefere masculina clara/jovem (Daniel…). Evita Antonio grave quando houver opção. */
-function aprovaMascotPickPtVoice () {
-  try {
-    const voices = window.speechSynthesis.getVoices() || [];
-    if (!voices.length) return aprovaMascotCachedVoice;
-
-    const blob = (v) => (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
-    const isPtBr = (v) => /^pt-br/i.test(v.lang) || /brazil|brasil/.test(blob(v));
-    const isFemale = (v) =>
-      /maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina/.test(blob(v));
-
-    const score = (v) => {
-      if (!isPtBr(v) || isFemale(v)) return -1;
-      const b = blob(v);
-      let s = 0;
-      // Mais claros / jovens
-      if (/daniel|felipe|gustavo/.test(b)) s += 100;
-      else if (/male|masculin|homem/.test(b)) s += 50;
-      else if (/antonio|ant[oô]nio|ricardo/.test(b)) s += 15; // último recurso (grave)
-      else return -1;
-      if (v.localService) s += 8;
-      if (/online|neural/.test(b)) s += 5; // às vezes mais expressiva
-      return s;
-    };
-
-    let best = null;
-    let bestScore = -1;
-    voices.forEach((v) => {
-      const s = score(v);
-      if (s > bestScore) {
-        bestScore = s;
-        best = v;
-      }
-    });
-    if (best) aprovaMascotCachedVoice = best;
-    return best || aprovaMascotCachedVoice;
-  } catch (e) {
-    return aprovaMascotCachedVoice;
-  }
-}
-
-function aprovaMascotPlayVideo () {
+function aprovaMascotPauseVideo () {
   const video = document.getElementById("welcome-mascot-video");
   if (!video) return;
   try {
-    video.loop = true;
+    video.pause();
+  } catch (e) { /* ignore */ }
+}
+
+/** Vídeo mudo, alinhado ao áudio (para quando a fala acaba). */
+function aprovaMascotPlayVideoSynced (audioDuration) {
+  const video = document.getElementById("welcome-mascot-video");
+  if (!video) return;
+  try {
+    video.loop = false;
     video.muted = true;
     video.volume = 0;
-    video.playbackRate = APROVA_MASCOT_VIDEO_RATE;
     video.currentTime = 0;
+    const vDur = Number(video.duration);
+    if (audioDuration > 0 && vDur > 0 && isFinite(vDur)) {
+      // Acaba o gesto do avatar junto com o fim da fala
+      video.playbackRate = Math.max(0.85, Math.min(1.35, vDur / audioDuration));
+    } else {
+      video.playbackRate = 1;
+    }
   } catch (e) { /* ignore */ }
   video.play().catch(() => {});
 }
@@ -156,57 +124,74 @@ function aprovaMascotShowTapToHear () {
   if (tap) tap.hidden = false;
 }
 
-/** Chamado no gesto do usuário (Toque para ouvir / avatar). */
-function aprovaMascotSpeakWelcome (firstName) {
-  if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
-  const name = firstName || aprovaMascotFirstName();
-  const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT_SPEECH, name);
-
-  let needsGap = false;
+function aprovaMascotIdleVideo () {
+  const video = document.getElementById("welcome-mascot-video");
+  if (!video) return;
   try {
-    needsGap = !!(window.speechSynthesis.speaking || window.speechSynthesis.pending);
-    if (needsGap || aprovaMascotSpeakTimer) aprovaMascotStopSpeech();
-  } catch (e) {
-    needsGap = true;
-    aprovaMascotStopSpeech();
-  }
+    video.loop = true;
+    video.muted = true;
+    video.volume = 0;
+    video.playbackRate = 1;
+    video.currentTime = 0;
+  } catch (e) { /* ignore */ }
+  video.play().catch(() => {});
+}
 
-  aprovaMascotPlayVideo();
+/** Voz do arquivo do mascote + vídeo sincronizado até o fim da fala. */
+function aprovaMascotSpeakWelcome () {
+  const audio = aprovaMascotGetAudio();
+  const gen = ++aprovaMascotPlayGen;
+  aprovaMascotStopSpeech();
   aprovaMascotHideTapToHear();
 
-  const speak = () => {
-    aprovaMascotSpeakTimer = null;
-    try {
-      const voice = aprovaMascotPickPtVoice();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = "pt-BR";
-      u.rate = APROVA_MASCOT_SPEECH_RATE;
-      u.pitch = aprovaMascotVoiceIsDeep(voice)
-        ? APROVA_MASCOT_SPEECH_PITCH_DEEP
-        : APROVA_MASCOT_SPEECH_PITCH;
-      u.volume = APROVA_MASCOT_SPEECH_VOLUME;
-      if (voice) {
-        u.voice = voice;
-        if (voice.lang) u.lang = voice.lang;
-      }
-      u.onerror = () => aprovaMascotShowTapToHear();
-      window.speechSynthesis.speak(u);
-    } catch (e) {
-      aprovaMascotShowTapToHear();
+  const startPair = () => {
+    if (gen !== aprovaMascotPlayGen) return;
+    const dur = Number(audio.duration);
+    const audioDuration = dur > 0 && isFinite(dur) ? dur : 10.92;
+    aprovaMascotPlayVideoSynced(audioDuration);
+    audio.volume = 1;
+    const playPromise = audio.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        if (gen !== aprovaMascotPlayGen) return;
+        aprovaMascotShowTapToHear();
+        aprovaMascotIdleVideo();
+      });
     }
   };
 
-  // Gap só quando houve cancel — senão fala na hora (menos travamento)
-  aprovaMascotSpeakTimer = window.setTimeout(speak, needsGap ? 120 : 0);
+  audio.onended = () => {
+    if (gen !== aprovaMascotPlayGen) return;
+    aprovaMascotPauseVideo();
+  };
+  audio.onerror = () => {
+    if (gen !== aprovaMascotPlayGen) return;
+    aprovaMascotPauseVideo();
+    aprovaMascotShowTapToHear();
+  };
+
+  try {
+    audio.currentTime = 0;
+  } catch (e) { /* ignore */ }
+
+  if (audio.readyState >= 1 && audio.duration > 0) {
+    startPair();
+  } else {
+    audio.onloadedmetadata = () => {
+      audio.onloadedmetadata = null;
+      startPair();
+    };
+    try { audio.load(); } catch (e) { /* ignore */ }
+    window.setTimeout(() => {
+      if (gen === aprovaMascotPlayGen && audio.paused) startPair();
+    }, 400);
+  }
 
   return true;
 }
 
 function aprovaMascotHearNow () {
-  try {
-    if (window.speechSynthesis) window.speechSynthesis.getVoices();
-  } catch (e) { /* ignore */ }
-  return aprovaMascotSpeakWelcome(aprovaMascotFirstName());
+  return aprovaMascotSpeakWelcome();
 }
 
 function aprovaCloseWelcomeMascotModal () {
@@ -284,7 +269,7 @@ function aprovaOpenWelcomeMascotModal (opts) {
   modal.hidden = false;
   aprovaMascotShowTapToHear();
   aprovaMascotStopSpeech();
-  aprovaMascotPlayVideo();
+  aprovaMascotIdleVideo();
 
   if (aprovaMascotReplayMode) {
     aprovaMascotHearNow();
@@ -332,14 +317,8 @@ function aprovaBindWelcomeMascot () {
   if (!modal || modal.dataset.bound === "1") return;
   modal.dataset.bound = "1";
 
-  if (window.speechSynthesis) {
-    try {
-      window.speechSynthesis.getVoices();
-      window.speechSynthesis.onvoiceschanged = () => {
-        aprovaMascotPickPtVoice();
-      };
-    } catch (e) { /* ignore */ }
-  }
+  // Pré-carrega a voz do mascote
+  try { aprovaMascotGetAudio(); } catch (e) { /* ignore */ }
 
   modal.querySelectorAll("[data-welcome-mascot-close]").forEach((el) => {
     el.addEventListener("click", () => aprovaCloseWelcomeMascotModal());
