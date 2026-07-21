@@ -1,0 +1,642 @@
+[
+  {
+    "idPrefix": "go-obs5",
+    "n": 1,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HAS gestacional — classificação: hipertensão crônica",
+    "stem": "Gestante de 35 anos chega à primeira consulta de pré-natal com 10 semanas relatando pressão arterial de 150x100 mmHg já documentada em consultas anteriores à gestação. Não há proteinúria associada. Qual é a classificação mais adequada desse distúrbio hipertensivo?",
+    "correct": "Hipertensão arterial crônica, pois a pressão elevada já era conhecida antes da gestação",
+    "wrongs": [
+      "Pré-eclâmpsia, pois toda hipertensão detectada no pré-natal já define esse diagnóstico",
+      "Hipertensão gestacional, pois a elevação pressórica surgiu apenas na gestação atual",
+      "Pré-eclâmpsia sobreposta, pois há hipertensão prévia associada à gestação atual",
+      "Hipertensão gestacional transitória, pois se espera normalização espontânea precoce"
+    ],
+    "explain": "A hipertensão crônica na gestação é definida por pressão arterial igual ou superior a 140x90 mmHg antes da gestação ou identificada antes de 20 semanas, persistindo tipicamente além de 12 semanas pós-parto, sem proteinúria nova associada, salvo doença renal prévia concomitante.",
+    "trap": "Classificar como pré-eclâmpsia sobreposta um quadro sem qualquer sinal de piora ou proteinúria nova, apenas pela hipertensão prévia conhecida."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 2,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HAS gestacional — classificação: hipertensão gestacional",
+    "stem": "Gestante de 27 anos, previamente normotensa, apresenta pressão arterial de 148x94 mmHg com 30 semanas de gestação, sem proteinúria e sem sinais de disfunção de órgão-alvo. Qual é a classificação mais adequada desse achado?",
+    "correct": "Hipertensão gestacional, pela elevação pressórica após 20 semanas sem proteinúria ou gravidade",
+    "wrongs": [
+      "Hipertensão arterial crônica, pois toda elevação pressórica na gestação recebe essa classificação",
+      "Pré-eclâmpsia grave, pois qualquer hipertensão após 20 semanas já define gravidade",
+      "Eclâmpsia, pois a hipertensão isolada após 20 semanas já caracteriza esse diagnóstico",
+      "Síndrome HELLP, pois a hipertensão isolada já basta para esse diagnóstico laboratorial"
+    ],
+    "explain": "A hipertensão gestacional é definida por pressão arterial igual ou superior a 140x90 mmHg após 20 semanas em gestante previamente normotensa, sem proteinúria significativa e sem critérios de gravidade, com tendência a normalizar até cerca de 12 semanas pós-parto.",
+    "trap": "Classificar hipertensão gestacional isolada, sem proteinúria ou disfunção orgânica, como pré-eclâmpsia grave ou eclâmpsia."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 3,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HAS gestacional — definição de pré-eclâmpsia",
+    "stem": "Gestante de 24 anos, previamente normotensa, apresenta pressão arterial de 150x100 mmHg com 28 semanas de gestação, associada a proteinúria de 24 horas de 400 mg. Qual é o diagnóstico mais adequado?",
+    "correct": "Pré-eclâmpsia, pela hipertensão após 20 semanas associada a proteinúria significativa",
+    "wrongs": [
+      "Hipertensão gestacional isolada, pois a proteinúria encontrada não tem relevância clínica",
+      "Hipertensão arterial crônica, pois a elevação pressórica já seria prévia à gestação atual",
+      "Síndrome nefrótica isolada, sem qualquer relação com a gestação em curso",
+      "Infecção do trato urinário isolada, explicando toda a proteinúria encontrada"
+    ],
+    "explain": "A pré-eclâmpsia é definida classicamente por hipertensão arterial surgida após 20 semanas em gestante previamente normotensa, associada a proteinúria significativa (igual ou superior a 300 mg em 24 horas), podendo também ser definida por sinais de disfunção de órgão-alvo mesmo sem proteinúria pelos critérios mais atuais.",
+    "trap": "Desvalorizar proteinúria de 400 mg em 24 horas associada a hipertensão recente, quando esse valor já preenche o critério clássico de pré-eclâmpsia."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 4,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HAS gestacional — pré-eclâmpsia sobreposta",
+    "stem": "Gestante de 33 anos, com hipertensão arterial crônica prévia bem controlada, desenvolve proteinúria nova de 500 mg em 24 horas e piora abrupta dos níveis pressóricos a partir de 26 semanas de gestação. Qual é o diagnóstico mais adequado?",
+    "correct": "Pré-eclâmpsia sobreposta à hipertensão arterial crônica",
+    "wrongs": [
+      "Hipertensão gestacional isolada, pois a hipertensão crônica prévia não é relevante aqui",
+      "Hipertensão arterial crônica sem qualquer alteração adicional a ser considerada",
+      "Eclâmpsia, pois a piora pressórica isolada já basta para esse diagnóstico",
+      "Síndrome HELLP, pois a proteinúria isolada já define esse diagnóstico laboratorial"
+    ],
+    "explain": "A pré-eclâmpsia sobreposta ocorre em gestantes com hipertensão arterial crônica que desenvolvem proteinúria nova, piora abrupta da pressão arterial ou sinais e exames de gravidade após 20 semanas, exigindo vigilância mais intensa devido ao maior risco materno-fetal em comparação à hipertensão crônica isolada.",
+    "trap": "Ignorar a hipertensão crônica de base e classificar o quadro apenas como hipertensão gestacional isolada, subestimando o risco da sobreposição."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 5,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HAS gestacional — critérios modernos sem proteinúria",
+    "stem": "Gestante de 29 anos, previamente normotensa, apresenta pressão arterial de 155x105 mmHg com 31 semanas, sem proteinúria detectável, porém com plaquetopenia e elevação de transaminases hepáticas. Qual é a interpretação mais adequada desse quadro?",
+    "correct": "Pré-eclâmpsia, pois critérios atuais aceitam disfunção de órgão-alvo mesmo sem proteinúria",
+    "wrongs": [
+      "Hipertensão gestacional isolada, pois a ausência de proteinúria exclui pré-eclâmpsia",
+      "Hipertensão arterial crônica, pois a proteinúria ausente já descarta pré-eclâmpsia",
+      "Síndrome nefrótica isolada, sem qualquer relação com o quadro hipertensivo",
+      "Hepatite viral aguda isolada, sem qualquer relação com a hipertensão apresentada"
+    ],
+    "explain": "Os critérios diagnósticos atuais de pré-eclâmpsia reconhecem que a hipertensão após 20 semanas associada a sinais de disfunção de órgão-alvo, como plaquetopenia e elevação de transaminases, é suficiente para o diagnóstico, mesmo na ausência de proteinúria confirmada.",
+    "trap": "Excluir pré-eclâmpsia apenas pela ausência de proteinúria, ignorando que a disfunção orgânica isolada já sustenta o diagnóstico pelos critérios modernos."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 6,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HAS gestacional — pré-eclâmpsia como doença placentária",
+    "stem": "Gestante com mola hidatiforme completa de 16 semanas desenvolve hipertensão arterial e proteinúria significativa antes mesmo de completar 20 semanas de gestação. Qual conceito fisiopatológico explica esse achado precoce?",
+    "correct": "A pré-eclâmpsia é essencialmente uma doença placentária, podendo ocorrer mesmo só com tecido trofoblástico",
+    "wrongs": [
+      "A pré-eclâmpsia exige necessariamente feto viável presente para se manifestar clinicamente",
+      "A pré-eclâmpsia nunca ocorre antes de 20 semanas de gestação, independentemente da causa",
+      "A hipertensão nesse caso deve ser atribuída exclusivamente a doença renal prévia não diagnosticada",
+      "A proteinúria nesse caso deve ser atribuída exclusivamente a infecção urinária concomitante"
+    ],
+    "explain": "A pré-eclâmpsia decorre principalmente de disfunção do tecido trofoblástico placentário, podendo se manifestar precocemente mesmo em situações sem feto viável, como na mola hidatiforme, reforçando que sua resolução definitiva depende da retirada do tecido trofoblástico e não apenas do feto.",
+    "trap": "Assumir que a pré-eclâmpsia exige necessariamente feto viável, ignorando que o tecido trofoblástico isolado já pode desencadear o quadro."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 7,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — critérios de gravidade",
+    "stem": "Gestante de 31 anos, 33 semanas, com pré-eclâmpsia diagnosticada, apresenta PA de 168x114 mmHg, cefaleia intensa persistente e plaquetas de 90.000/mm³. Qual classificação é mais adequada para esse quadro?",
+    "correct": "Pré-eclâmpsia com sinais de gravidade, pela pressão muito elevada, sintomas e plaquetopenia",
+    "wrongs": [
+      "Pré-eclâmpsia sem sinais de gravidade, pois a proteinúria não foi mencionada no quadro",
+      "Hipertensão gestacional isolada, pois os sintomas não têm relação com a pressão arterial",
+      "Hipertensão arterial crônica descompensada, sem qualquer relação com a gestação atual",
+      "Síndrome nefrótica isolada, explicando toda a plaquetopenia encontrada nesse quadro"
+    ],
+    "explain": "Pressão arterial igual ou superior a 160x110 mmHg, sintomas como cefaleia intensa persistente e plaquetopenia são critérios clássicos de gravidade na pré-eclâmpsia, ao lado de elevação de creatinina, transaminases, edema pulmonar, HELLP e restrição ou sofrimento fetal.",
+    "trap": "Exigir proteinúria confirmada para classificar gravidade, quando os critérios de gravidade já se sustentam por pressão muito elevada, sintomas e plaquetopenia isoladamente."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 8,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — critério de proteinúria",
+    "stem": "Gestante de 26 anos, 29 semanas, com PA elevada e suspeita de pré-eclâmpsia, apresenta relação proteína/creatinina urinária de 0,35 em amostra isolada. Qual é a interpretação mais adequada desse resultado para fins diagnósticos?",
+    "correct": "Resultado compatível com proteinúria significativa, sustentando o diagnóstico de pré-eclâmpsia",
+    "wrongs": [
+      "Resultado normal, pois apenas a proteinúria de 24 horas tem valor diagnóstico reconhecido",
+      "Resultado inconclusivo, exigindo obrigatoriamente biópsia renal para confirmação diagnóstica",
+      "Resultado sugestivo apenas de infecção urinária, sem qualquer relação com pré-eclâmpsia",
+      "Resultado normal, pois valores abaixo de 1,0 sempre excluem proteinúria significativa"
+    ],
+    "explain": "A proteinúria significativa na pré-eclâmpsia pode ser definida por 300 mg ou mais em urina de 24 horas ou por relação proteína/creatinina igual ou superior a 0,3 em amostra isolada; o valor de 0,35 encontrado já sustenta esse critério diagnóstico sem necessidade de outros exames invasivos.",
+    "trap": "Exigir exclusivamente a coleta de urina de 24 horas para valorizar proteinúria, desconsiderando a relação proteína/creatinina como critério aceito."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 9,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — precoce × tardia",
+    "stem": "Gestante de 28 anos desenvolve pré-eclâmpsia com sinais de gravidade e PA muito elevada em 31 semanas de gestação, associada a restrição de crescimento fetal importante. Qual é a classificação mais adequada quanto ao momento de instalação desse quadro?",
+    "correct": "Pré-eclâmpsia precoce, por se instalar antes de 34 semanas de gestação",
+    "wrongs": [
+      "Pré-eclâmpsia tardia, por se instalar após 34 semanas de gestação completas",
+      "Hipertensão gestacional isolada, independentemente da idade gestacional de instalação",
+      "Eclâmpsia, pois a restrição de crescimento fetal já define esse diagnóstico específico",
+      "Síndrome HELLP, pois toda pré-eclâmpsia precoce já corresponde a essa síndrome"
+    ],
+    "explain": "A pré-eclâmpsia precoce, instalada antes de 34 semanas, associa-se mais frequentemente a comprometimento placentário importante, restrição de crescimento intrauterino e pior prognóstico materno-fetal, em contraste com a forma tardia, geralmente com melhor evolução relativa.",
+    "trap": "Classificar como tardia um quadro instalado antes de 34 semanas apenas por desconhecer o corte que define pré-eclâmpsia precoce."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 10,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — cura definitiva",
+    "stem": "Gestante de 30 anos, 32 semanas, com pré-eclâmpsia com sinais de gravidade e PA persistentemente elevada refratária ao tratamento clínico otimizado, questiona qual é o tratamento definitivo de sua condição. Qual é a resposta mais adequada?",
+    "correct": "A interrupção da gestação (parto), única medida capaz de curar definitivamente a pré-eclâmpsia",
+    "wrongs": [
+      "O uso isolado e prolongado de sulfato de magnésio, sem necessidade de resolução da gestação",
+      "O uso isolado e prolongado de anti-hipertensivos orais, sem necessidade de resolução da gestação",
+      "A dieta hipossódica rigorosa isolada, sem necessidade de qualquer outra intervenção",
+      "O repouso absoluto no leito por tempo indeterminado, sem necessidade de resolução da gestação"
+    ],
+    "explain": "A única cura definitiva da pré-eclâmpsia é a interrupção da gestação, com retirada da placenta; o tratamento clínico (anti-hipertensivos, sulfato de magnésio) apenas controla complicações agudas e permite ganhar tempo em casos selecionados, sem reverter a fisiopatologia de base.",
+    "trap": "Acreditar que anti-hipertensivos ou sulfato de magnésio isolados podem curar a pré-eclâmpsia sem a interrupção da gestação."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 11,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — conduta com gravidade antes de 34 semanas",
+    "stem": "Gestante de 27 anos, 30 semanas, com pré-eclâmpsia com sinais de gravidade, é internada na enfermaria de um centro terciário. Qual conjunto de condutas é mais adequado nesse momento, antes de decidir pela interrupção da gestação?",
+    "correct": "Anti-hipertensivo para crise, sulfato de magnésio e corticoide para maturação pulmonar fetal",
+    "wrongs": [
+      "Alta hospitalar com anti-hipertensivo oral e retorno ambulatorial em uma semana",
+      "Apenas repouso domiciliar rigoroso, sem qualquer medicação adicional nesse momento",
+      "Antibioticoterapia profilática isolada, sem qualquer anti-hipertensivo ou sulfato de magnésio",
+      "Tocólise isolada prolongada, sem qualquer outra medida de estabilização materna"
+    ],
+    "explain": "Na pré-eclâmpsia com sinais de gravidade antes de 34 semanas, a internação em centro terciário associa anti-hipertensivo para controle da crise pressórica, sulfato de magnésio para prevenção de convulsão e corticoide para maturação pulmonar fetal, geralmente seguidos de interrupção da gestação após completar o ciclo, salvo conduta expectante muito selecionada.",
+    "trap": "Optar por alta hospitalar com manejo ambulatorial em um quadro que já preenche critérios de gravidade e exige internação em centro terciário."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 12,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — anti-hipertensivos de manutenção",
+    "stem": "Gestante de 34 anos, com pré-eclâmpsia sem sinais de gravidade e PA de 148x96 mmHg, necessita de anti-hipertensivo de manutenção enquanto aguarda a evolução da gestação. Qual classe medicamentosa deve ser evitada nesse contexto?",
+    "correct": "Inibidores da enzima conversora de angiotensina e bloqueadores do receptor de angiotensina",
+    "wrongs": [
+      "Metildopa, medicação amplamente utilizada como anti-hipertensivo de manutenção na gestação",
+      "Nifedipina, medicação amplamente utilizada como anti-hipertensivo de manutenção na gestação",
+      "Labetalol, medicação utilizada como anti-hipertensivo de manutenção conforme disponibilidade",
+      "Hidralazina oral, medicação eventualmente utilizada como anti-hipertensivo na gestação"
+    ],
+    "explain": "Inibidores da enzima conversora de angiotensina e bloqueadores do receptor de angiotensina são teratogênicos e fetotóxicos, devendo ser evitados na gestação; entre os anti-hipertensivos de manutenção seguros e classicamente utilizados estão metildopa, nifedipina e labetalol, conforme disponibilidade e protocolo local.",
+    "trap": "Considerar metildopa ou nifedipina como medicações a serem evitadas, quando são justamente as opções seguras recomendadas na gestação."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 13,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Pré-eclâmpsia — manejo da crise hipertensiva",
+    "stem": "Gestante de 29 anos, com pré-eclâmpsia, apresenta PA de 172x116 mmHg, caracterizando crise hipertensiva. Qual é a conduta de primeira linha mais citada para esse manejo agudo?",
+    "correct": "Nifedipina oral, com possibilidade de repetição da dose conforme resposta pressórica",
+    "wrongs": [
+      "Inibidor da enzima conversora de angiotensina intravenoso em dose única de ataque",
+      "Diurético de alça intravenoso em dose plena como primeira medida da crise",
+      "Nitroprussiato de sódio intravenoso como primeira escolha antes de outras opções",
+      "Betabloqueador oral em dose única, isoladamente, como primeira conduta na crise"
+    ],
+    "explain": "Na crise hipertensiva da gestação, a nifedipina oral é frequentemente citada como primeira linha, podendo ser repetida conforme protocolo; hidralazina e labetalol intravenosos são alternativas, reservando-se o nitroprussiato para casos refratários pelo risco de toxicidade fetal.",
+    "trap": "Indicar nitroprussiato de sódio como primeira escolha na crise hipertensiva, quando deve ser reservado apenas para casos refratários às medidas iniciais."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 14,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Eclâmpsia — definição",
+    "stem": "Gestante de 24 anos, com pré-eclâmpsia diagnosticada, apresenta convulsão tônico-clônica generalizada durante o trabalho de parto, sem outra causa neurológica identificada. Qual é o diagnóstico mais adequado?",
+    "correct": "Eclâmpsia, definida pela convulsão no contexto de pré-eclâmpsia",
+    "wrongs": [
+      "Epilepsia gestacional isolada, sem qualquer relação com a pré-eclâmpsia de base",
+      "Acidente vascular encefálico isolado, sem qualquer relação com o quadro hipertensivo",
+      "Síndrome HELLP isolada, definida exclusivamente por convulsão tônico-clônica",
+      "Hipoglicemia materna grave, explicando isoladamente a convulsão apresentada"
+    ],
+    "explain": "A eclâmpsia é definida pela ocorrência de convulsão tônico-clônica generalizada no contexto de pré-eclâmpsia, podendo ocorrer anteparto, durante o parto ou no puerpério, sendo mais comum até 48 horas pós-parto, mas podendo se manifestar em até cerca de dez dias após o nascimento.",
+    "trap": "Buscar causas neurológicas alternativas para a convulsão antes de considerar eclâmpsia em gestante já com pré-eclâmpsia estabelecida."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 15,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Eclâmpsia — conduta imediata na convulsão",
+    "stem": "Gestante de 26 anos, no pronto-socorro obstétrico, apresenta convulsão tônico-clônica generalizada no contexto de pré-eclâmpsia grave. Qual é a conduta imediata mais adequada diante desse evento agudo?",
+    "correct": "Garantir via aérea, posicionar em decúbito lateral, oferecer oxigênio e administrar sulfato de magnésio",
+    "wrongs": [
+      "Administrar apenas anti-hipertensivo intravenoso, sem qualquer outra medida imediata",
+      "Realizar cesariana de emergência antes de qualquer estabilização materna prévia",
+      "Administrar apenas benzodiazepínico isolado como droga de escolha nesse contexto",
+      "Aguardar cessação espontânea da convulsão antes de qualquer intervenção medicamentosa"
+    ],
+    "explain": "Na convulsão eclâmptica, a conduta imediata inclui proteção da via aérea, decúbito lateral, oxigênio suplementar e proteção contra trauma, seguidos da administração de sulfato de magnésio, droga de escolha para prevenção de novas convulsões, antes de estabilizar e planejar a resolução da gestação.",
+    "trap": "Priorizar a cesariana imediata antes de estabilizar a paciente e administrar sulfato de magnésio, invertendo a sequência correta de atendimento."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 16,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "MgSO4 — mecanismo e esquemas clássicos",
+    "stem": "Gestante de 30 anos, internada na enfermaria de alto risco com eclâmpsia confirmada, recebe sulfato de magnésio conforme esquema de ataque seguido de manutenção intravenosa contínua em bomba de infusão. Qual é a principal ação farmacológica dessa medicação nesse contexto?",
+    "correct": "Ação anticonvulsivante, prevenindo novas crises, sem ser a droga de escolha para reduzir a pressão arterial",
+    "wrongs": [
+      "Ação anti-hipertensiva de primeira linha, substituindo a necessidade de outros fármacos",
+      "Ação diurética potente, reduzindo rapidamente a volemia materna circulante",
+      "Ação tocolítica isolada, sendo a primeira escolha para inibir contrações uterinas",
+      "Ação antibiótica de amplo espectro, prevenindo infecção puerperal associada"
+    ],
+    "explain": "O sulfato de magnésio tem ação predominantemente anticonvulsivante na pré-eclâmpsia/eclâmpsia, sendo administrado por esquemas clássicos como Zuspan (ataque intravenoso seguido de manutenção contínua) ou Pritchard (associação intravenosa e intramuscular); não é a droga de escolha para controle isolado da pressão arterial.",
+    "trap": "Considerar o sulfato de magnésio como anti-hipertensivo de primeira linha, quando sua principal finalidade nesse contexto é a prevenção de convulsões."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 17,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "MgSO4 — sinais de intoxicação",
+    "stem": "Gestante de 28 anos, em uso de sulfato de magnésio por pré-eclâmpsia grave, apresenta reflexos patelares ausentes, FR reduzida e sonolência importante. Qual é a conduta mais adequada diante desses achados?",
+    "correct": "Suspender o sulfato de magnésio e administrar gluconato de cálcio, com suporte ventilatório se necessário",
+    "wrongs": [
+      "Aumentar a velocidade de infusão do sulfato de magnésio para reforçar seu efeito",
+      "Associar benzodiazepínico ao esquema atual sem qualquer suspensão da medicação",
+      "Manter a infusão inalterada e reavaliar apenas na próxima hora programada",
+      "Substituir o sulfato de magnésio por fenitoína sem qualquer outra conduta adicional"
+    ],
+    "explain": "Reflexos ausentes, depressão respiratória e sonolência intensa sugerem intoxicação por magnésio; a conduta é suspender imediatamente a infusão e administrar gluconato de cálcio como antídoto, associando suporte ventilatório se houver depressão respiratória significativa.",
+    "trap": "Aumentar a infusão de sulfato de magnésio diante de sinais clínicos evidentes de intoxicação, agravando o risco de parada respiratória."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 18,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HELLP — definição",
+    "stem": "Gestante de 32 anos, com pré-eclâmpsia grave, apresenta dor em hipocôndrio direito, esquizócitos no sangue periférico, bilirrubina elevada, transaminases hepáticas elevadas e plaquetas de 70.000/mm³. Qual é o diagnóstico mais adequado?",
+    "correct": "Síndrome HELLP, forma grave de pré-eclâmpsia com hemólise, elevação de enzimas hepáticas e plaquetopenia",
+    "wrongs": [
+      "Hepatite viral aguda isolada, sem qualquer relação com a pré-eclâmpsia de base",
+      "Púrpura trombocitopênica trombótica isolada, sem qualquer relação com a gestação",
+      "Colecistite aguda isolada, explicando toda a dor em hipocôndrio direito apresentada",
+      "Anemia ferropriva isolada, explicando toda a elevação de bilirrubina encontrada"
+    ],
+    "explain": "A síndrome HELLP (hemólise, elevação de enzimas hepáticas e plaquetopenia) é uma forma grave de pré-eclâmpsia, manifestando-se com dor em hipocôndrio direito ou epigástrio, esquizócitos, bilirrubina elevada, transaminases elevadas e plaquetopenia, exigindo estabilização e interrupção da gestação.",
+    "trap": "Atribuir os achados a doenças hepáticas ou hematológicas isoladas, ignorando o contexto de pré-eclâmpsia que caracteriza a síndrome HELLP."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 19,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "HELLP — conduta",
+    "stem": "Gestante de 29 anos, 33 semanas, internada na enfermaria de alto risco com síndrome HELLP confirmada por critérios laboratoriais, apresenta plaquetopenia progressiva e coagulopatia leve. Qual é a conduta mais adequada nesse cenário?",
+    "correct": "Estabilizar a paciente, corrigir coagulopatia se necessário e interromper a gestação",
+    "wrongs": [
+      "Conduta expectante prolongada, aguardando maior maturidade fetal sem qualquer limite de tempo",
+      "Tratamento isolado com antibioticoterapia de amplo espectro, sem interrupção da gestação",
+      "Transfusão isolada de concentrado de hemácias, sem qualquer outra conduta associada",
+      "Alta hospitalar com acompanhamento ambulatorial semanal, sem necessidade de internação"
+    ],
+    "explain": "No HELLP, a conduta envolve estabilização materna (incluindo sulfato de magnésio e controle pressórico quando indicados), correção de coagulopatia associada e interrupção da gestação, já que a resolução do parto é essencial para deter a progressão da doença e suas complicações graves.",
+    "trap": "Manter conduta expectante prolongada em síndrome HELLP estabelecida, retardando a interrupção da gestação que é essencial ao tratamento."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 20,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "MgSO4 × anti-hipertensivo — pegadinha clássica",
+    "stem": "Gestante de 27 anos, em uso de sulfato de magnésio por eclâmpsia, mantém PA de 170x112 mmHg após a administração da medicação. A equipe questiona se deve aumentar a dose do sulfato de magnésio para controlar a pressão arterial. Qual é a orientação correta?",
+    "correct": "Não aumentar o sulfato de magnésio para tratar a pressão; associar anti-hipertensivo específico para a crise",
+    "wrongs": [
+      "Aumentar a dose do sulfato de magnésio, já que ele também atua como anti-hipertensivo eficaz",
+      "Suspender qualquer anti-hipertensivo, pois o sulfato de magnésio já controla a pressão arterial",
+      "Substituir o sulfato de magnésio por diurético de alça isolado para controlar a pressão",
+      "Aguardar normalização espontânea da pressão arterial sem qualquer intervenção adicional"
+    ],
+    "explain": "O sulfato de magnésio previne e trata convulsões, mas não substitui os anti-hipertensivos específicos, como nifedipina, hidralazina ou labetalol, no controle da crise pressórica; aumentar sua dose para tratar hipertensão não é eficaz e expõe a paciente a risco de intoxicação.",
+    "trap": "Aumentar a dose de sulfato de magnésio na tentativa de controlar a pressão arterial, confundindo seu papel anticonvulsivante com efeito anti-hipertensivo."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 21,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Diabetes na gestação — critérios de diabetes prévio (overt)",
+    "stem": "Gestante de 33 anos, na primeira consulta de pré-natal com 9 semanas, apresenta glicemia de jejum de 130 mg/dl em duas ocasiões distintas. Qual é a interpretação mais adequada desse resultado?",
+    "correct": "Diabetes mellitus prévio à gestação (overt), pela glicemia de jejum igual ou superior a 126 mg/dl",
+    "wrongs": [
+      "Diabetes mellitus gestacional clássico, definido exclusivamente por esse valor de jejum",
+      "Intolerância à glicose fisiológica da gestação, sem necessidade de qualquer investigação",
+      "Resultado normal para a idade gestacional, sem necessidade de conduta adicional",
+      "Hipoglicemia de jejum fisiológica da gestação, sem qualquer repercussão clínica relevante"
+    ],
+    "explain": "Glicemia de jejum igual ou superior a 126 mg/dl confirmada em mais de uma ocasião sugere diabetes mellitus prévio à gestação (overt), diagnosticado precocemente no pré-natal, distinguindo-se do diabetes mellitus gestacional, que surge tipicamente a partir da segunda metade da gestação.",
+    "trap": "Classificar como diabetes gestacional um quadro que já preenche critério de diabetes prévio pela glicemia de jejum muito elevada e confirmada."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 22,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Diabetes na gestação — rastreio inicial",
+    "stem": "Gestante de 26 anos realiza glicemia de jejum na primeira consulta de pré-natal, com resultado de 98 mg/dl. Qual é a conduta mais adequada quanto à investigação de diabetes mellitus gestacional a partir desse resultado?",
+    "correct": "Repetir a investigação com teste oral de tolerância à glicose de 75 g entre 24 e 28 semanas",
+    "wrongs": [
+      "Considerar a investigação encerrada, pois o valor de jejum já exclui diabetes gestacional",
+      "Indicar insulina profilática imediata, independentemente de qualquer outro exame",
+      "Repetir apenas a glicemia de jejum semanalmente até o parto, sem outro exame",
+      "Solicitar hemoglobina glicada isolada como único exame confirmatório necessário"
+    ],
+    "explain": "Quando a glicemia de jejum inicial está normal (abaixo de 92 mg/dl), a investigação de diabetes mellitus gestacional deve ser complementada com teste oral de tolerância à glicose de 75 g entre 24 e 28 semanas, período de maior resistência insulínica induzida pelos hormônios placentários.",
+    "trap": "Encerrar a investigação de diabetes gestacional apenas com a glicemia de jejum inicial normal, sem repetir a avaliação no segundo trimestre."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 23,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Diabetes na gestação — cortes do TOTG 75g",
+    "stem": "Gestante de 29 anos realiza teste oral de tolerância à glicose de 75 g entre 24 e 28 semanas, obtendo glicemia de jejum de 88 mg/dl, glicemia de 1 hora de 185 mg/dl e glicemia de 2 horas de 140 mg/dl. Qual é a interpretação mais adequada desse resultado?",
+    "correct": "Diabetes mellitus gestacional confirmado, pois o valor de 1 hora já está alterado isoladamente",
+    "wrongs": [
+      "Resultado normal, pois apenas o valor de jejum isolado deve ser considerado para o diagnóstico",
+      "Resultado normal, pois é necessário que todos os três valores estejam alterados simultaneamente",
+      "Resultado inconclusivo, exigindo repetição do exame em jejum mais prolongado",
+      "Pré-diabetes isolado, sem qualquer repercussão para a conduta obstétrica atual"
+    ],
+    "explain": "Pelos critérios do teste oral de tolerância à glicose de 75 g, qualquer valor igual ou superior aos cortes (jejum 92 mg/dl, 1 hora 180 mg/dl, 2 horas 153 mg/dl) já confirma diabetes mellitus gestacional; no caso descrito, o valor de 1 hora isoladamente alterado já é suficiente para o diagnóstico.",
+    "trap": "Exigir que todos os três valores estejam alterados simultaneamente, quando basta um único valor acima do corte para confirmar o diagnóstico."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 24,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Diabetes na gestação — fisiopatologia",
+    "stem": "Gestante de 31 anos, sem diabetes prévio, apresenta glicemia elevada a partir do segundo trimestre de gestação. Qual mecanismo fisiopatológico mais explica o surgimento do diabetes mellitus gestacional nesse período?",
+    "correct": "Resistência insulínica induzida por hormônios placentários, superando a capacidade compensatória materna",
+    "wrongs": [
+      "Destruição autoimune progressiva das células beta pancreáticas durante a gestação",
+      "Deficiência absoluta de insulina desde o início da gestação, sem qualquer resistência periférica",
+      "Infecção viral pancreática específica da gestação, levando à insulinopenia definitiva",
+      "Efeito direto do aumento do volume plasmático materno sobre a secreção pancreática"
+    ],
+    "explain": "Os hormônios placentários promovem resistência insulínica progressiva ao longo da gestação, exigindo hiperinsulinemia compensatória materna; quando essa compensação é insuficiente, instala-se o diabetes mellitus gestacional, geralmente evidente a partir do segundo trimestre.",
+    "trap": "Atribuir o diabetes gestacional a mecanismos autoimunes ou infecciosos, quando o principal mecanismo é a resistência insulínica hormonal da gestação."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 25,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Diabetes na gestação — complicações clássicas",
+    "stem": "Gestante de 34 anos com diabetes mellitus gestacional e glicemia mal controlada ao longo da gestação apresenta, na avaliação do terceiro trimestre, suspeita de macrossomia fetal e polidrâmnio. Qual complicação neonatal está mais associada a esse controle glicêmico inadequado?",
+    "correct": "Hipoglicemia neonatal, além de maior risco de distocia de ombro no parto",
+    "wrongs": [
+      "Hipertireoidismo neonatal transitório, sem qualquer relação com o controle glicêmico materno",
+      "Icterícia por incompatibilidade Rh, sem qualquer relação com o diabetes gestacional",
+      "Sífilis congênita, sem qualquer relação com o controle glicêmico materno na gestação",
+      "Toxoplasmose congênita, sem qualquer relação com o diabetes mellitus gestacional"
+    ],
+    "explain": "O diabetes mellitus gestacional mal controlado associa-se a macrossomia fetal, polidrâmnio, maior risco de distocia de ombro no parto e hipoglicemia neonatal por hiperinsulinismo fetal reativo, além de risco aumentado de pré-eclâmpsia e prematuridade na gestante.",
+    "trap": "Relacionar o diabetes gestacional a complicações infecciosas congênitas sem vínculo fisiopatológico, como sífilis ou toxoplasmose congênitas."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 26,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Diabetes na gestação — janela do TOTG",
+    "stem": "Gestante de 25 anos apresenta glicemia de jejum normal na primeira consulta de pré-natal. A equipe programa a realização do teste oral de tolerância à glicose de 75 g em uma janela específica da gestação para rastreio de diabetes mellitus gestacional. Qual é essa janela recomendada?",
+    "correct": "Entre 24 e 28 semanas de idade gestacional",
+    "wrongs": [
+      "Entre 6 e 10 semanas de idade gestacional, logo no início do pré-natal",
+      "Entre 34 e 36 semanas de idade gestacional, próximo ao termo da gestação",
+      "Apenas no puerpério imediato, após a resolução completa da gestação",
+      "Entre 12 e 16 semanas de idade gestacional, ao final do primeiro trimestre"
+    ],
+    "explain": "Quando a glicemia de jejum inicial é normal, o teste oral de tolerância à glicose de 75 g deve ser realizado entre 24 e 28 semanas de gestação, período de maior resistência insulínica induzida pelos hormônios placentários, otimizando a detecção do diabetes mellitus gestacional.",
+    "trap": "Programar o teste de tolerância à glicose muito precocemente ou muito tardiamente, perdendo a janela de maior sensibilidade diagnóstica."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 27,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — primeira linha de tratamento",
+    "stem": "Gestante de 30 anos, recém-diagnosticada com diabetes mellitus gestacional após glicemia alterada no teste de tolerância à glicose, inicia acompanhamento especializado. Qual é a conduta terapêutica inicial mais adequada nesse momento?",
+    "correct": "Orientação dietética, atividade física regular e automonitorização glicêmica",
+    "wrongs": [
+      "Insulinoterapia imediata em todas as gestantes diagnosticadas, independentemente de outros fatores",
+      "Metformina isolada em todas as gestantes diagnosticadas, sem tentativa dietética prévia",
+      "Restrição calórica extrema, sem qualquer orientação sobre atividade física associada",
+      "Internação hospitalar obrigatória para controle glicêmico rigoroso desde o diagnóstico"
+    ],
+    "explain": "O tratamento inicial do diabetes mellitus gestacional é a modificação do estilo de vida, com orientação dietética individualizada, atividade física regular e automonitorização glicêmica; grande parte das gestantes atinge controle adequado apenas com essas medidas, sem necessidade de farmacoterapia.",
+    "trap": "Iniciar insulina ou metformina imediatamente após o diagnóstico, sem oferecer previamente a chance de controle com dieta e atividade física."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 28,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — indicação de insulina",
+    "stem": "Gestante de 28 anos, com diabetes mellitus gestacional, mantém glicemia de jejum e glicemia pós-prandial persistentemente acima das metas após quatro semanas de dieta e atividade física bem orientadas. Qual é a conduta mais adequada nesse momento?",
+    "correct": "Iniciar insulinoterapia, droga de escolha quando a dieta isolada não atinge as metas glicêmicas",
+    "wrongs": [
+      "Intensificar apenas a restrição calórica, sem qualquer adição de tratamento farmacológico",
+      "Manter a conduta dietética isolada por tempo indeterminado, aguardando melhora espontânea",
+      "Indicar interrupção imediata da gestação, independentemente da idade gestacional atual",
+      "Suspender a automonitorização glicêmica, já que a dieta isolada não trouxe resultado"
+    ],
+    "explain": "Quando a dieta e a atividade física não atingem as metas glicêmicas estabelecidas, a insulina é a droga de escolha no diabetes mellitus gestacional, sendo ajustada conforme o perfil de glicemias de jejum e pós-prandiais registrado pela automonitorização.",
+    "trap": "Insistir apenas na dieta por tempo indeterminado diante de metas não atingidas, retardando o início da insulinoterapia necessária."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 29,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — papel da metformina",
+    "stem": "Gestante de 32 anos, com diabetes mellitus gestacional e glicemia persistentemente elevada, tem dificuldade de acesso a insulina e de adesão à via injetável, apesar de já necessitar de tratamento farmacológico. Qual é a orientação mais adequada quanto ao uso de metformina nesse contexto?",
+    "correct": "A metformina pode ser considerada em monoterapia quando há inviabilidade de acesso ou adesão à insulina",
+    "wrongs": [
+      "A metformina está absolutamente contraindicada em qualquer situação durante a gestação",
+      "A metformina deve substituir a insulina em todas as gestantes, independentemente da adesão",
+      "A metformina deve ser usada apenas em associação com sulfonilureia, nunca isoladamente",
+      "A metformina deve ser reservada exclusivamente para o período de puerpério, nunca na gestação"
+    ],
+    "explain": "A metformina pode ser considerada em monoterapia no diabetes mellitus gestacional quando há inviabilidade de acesso ou adesão à insulina, ou como adjuvante em gestantes que necessitam de doses muito altas de insulina, embora a insulina permaneça a droga de escolha na maioria dos protocolos.",
+    "trap": "Considerar a metformina absolutamente contraindicada na gestação, quando é uma alternativa aceita em situações específicas de acesso ou adesão limitada à insulina."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 30,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — metas glicêmicas e monitorização",
+    "stem": "Gestante de 29 anos, em tratamento para diabetes mellitus gestacional com dieta e insulina, mede a glicemia capilar antes e após as refeições. Qual é o principal objetivo dessa rotina de monitorização?",
+    "correct": "Ajustar a conduta terapêutica conforme as metas glicêmicas de jejum e pós-prandiais individualizadas",
+    "wrongs": [
+      "Substituir integralmente a necessidade de acompanhamento obstétrico periódico da gestação",
+      "Definir isoladamente a via de parto, independentemente de outros achados obstétricos",
+      "Confirmar exclusivamente a ausência de infecção urinária concomitante na gestante",
+      "Estimar isoladamente o peso fetal, sem necessidade de avaliação ultrassonográfica"
+    ],
+    "explain": "A automonitorização glicêmica capilar no diabetes mellitus gestacional permite ajustar dieta e, quando necessário, doses de insulina conforme metas de jejum e pós-prandiais individualizadas, evitando tanto hiperglicemia sustentada quanto episódios de hipoglicemia materna.",
+    "trap": "Considerar a automonitorização glicêmica como substituta do acompanhamento obstétrico geral, quando é apenas uma ferramenta complementar de ajuste terapêutico."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 31,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — timing do parto",
+    "stem": "Gestante de 31 anos, com diabetes mellitus gestacional bem controlado exclusivamente com dieta, sem macrossomia fetal ou outras intercorrências, está próxima do termo. Qual é a orientação mais adequada quanto ao momento do parto?",
+    "correct": "Aguardar evolução até próximo ao termo, individualizando conforme vitalidade fetal e controle glicêmico",
+    "wrongs": [
+      "Indicar interrupção sistemática da gestação em 34 semanas, independentemente do controle glicêmico",
+      "Indicar cesariana eletiva obrigatória em toda gestante com diagnóstico de diabetes gestacional",
+      "Indicar indução do parto imediata ao diagnóstico, independentemente da idade gestacional",
+      "Aguardar indefinidamente além de 41 semanas, sem qualquer vigilância adicional"
+    ],
+    "explain": "No diabetes mellitus gestacional bem controlado apenas com dieta e sem macrossomia ou outras complicações, frequentemente é possível aguardar a evolução até próximo ao termo; já nos casos com insulina, mau controle ou macrossomia, a antecipação do parto costuma ser individualizada, com vigilância fetal intensificada no terceiro trimestre.",
+    "trap": "Indicar interrupção sistemática precoce em toda gestante com diabetes gestacional, ignorando que o bom controle isolado com dieta permite aguardar mais próximo ao termo."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 32,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — puerpério e seguimento",
+    "stem": "Puérpera de 33 anos, com diagnóstico de diabetes mellitus gestacional durante a gestação, está no puerpério imediato. Qual é a conduta mais adequada quanto ao seguimento dessa condição após o parto?",
+    "correct": "Reavaliar a glicemia e realizar teste oral de tolerância à glicose entre 6 e 12 semanas pós-parto",
+    "wrongs": [
+      "Considerar a condição resolvida definitivamente após o parto, sem necessidade de qualquer reavaliação",
+      "Iniciar insulina de manutenção indefinida, independentemente dos valores glicêmicos pós-parto",
+      "Solicitar apenas hemoglobina glicada isolada no dia da alta hospitalar, sem outro exame",
+      "Repetir apenas a glicemia capilar diária por um ano, sem necessidade de teste oral"
+    ],
+    "explain": "Após o parto, recomenda-se reavaliação glicêmica com teste oral de tolerância à glicose entre 6 e 12 semanas pós-parto, já que mulheres com diabetes mellitus gestacional têm risco aumentado de desenvolver diabetes mellitus tipo 2 no futuro, justificando seguimento e orientação de estilo de vida.",
+    "trap": "Considerar a condição definitivamente resolvida após o parto, negligenciando o risco futuro de diabetes mellitus tipo 2 que exige seguimento."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 33,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "DMG — vigilância fetal no terceiro trimestre",
+    "stem": "Gestante de 27 anos, com diabetes mellitus gestacional em uso de insulina e glicemia ainda instável, está no terceiro trimestre de gestação. Qual é a conduta mais adequada quanto à vigilância do bem-estar fetal nesse período?",
+    "correct": "Intensificar a vigilância fetal, com avaliações seriadas de crescimento e vitalidade conforme protocolo",
+    "wrongs": [
+      "Suspender qualquer vigilância adicional, já que o uso de insulina normaliza todos os riscos fetais",
+      "Reservar a vigilância fetal exclusivamente para o momento do parto, sem avaliação antes",
+      "Realizar apenas uma ultrassonografia isolada no início do terceiro trimestre, sem repetição",
+      "Substituir toda vigilância fetal por dosagens maternas de hemoglobina glicada seriadas"
+    ],
+    "explain": "Gestantes com diabetes mellitus gestacional em uso de insulina apresentam maior risco de macrossomia, polidrâmnio e insuficiência placentária tardia, justificando vigilância fetal intensificada no terceiro trimestre, com avaliações seriadas de crescimento e vitalidade conforme o protocolo local.",
+    "trap": "Assumir que o uso de insulina normaliza totalmente o risco fetal, dispensando a vigilância intensificada recomendada nesse cenário."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 34,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — corionicidade como principal determinante de risco",
+    "stem": "Gestante de 29 anos com gestação gemelar identificada por ultrassom precoce questiona por que a equipe insiste tanto em determinar a corionicidade já no primeiro trimestre. Qual é a explicação mais adequada para essa prioridade?",
+    "correct": "A corionicidade determina o risco de complicações mais do que a zigotia isoladamente",
+    "wrongs": [
+      "A zigotia isoladamente determina todo o risco da gestação, independentemente da corionicidade",
+      "A determinação da corionicidade só é relevante para fins de curiosidade, sem impacto clínico",
+      "A corionicidade só pode ser determinada com segurança no terceiro trimestre da gestação",
+      "A corionicidade não influencia a escolha da via de parto em nenhuma circunstância"
+    ],
+    "explain": "A corionicidade (e a amnionicidade) é o principal determinante do risco em gestações múltiplas; gestações monocoriônicas têm morbimortalidade significativamente maior que dicoriônicas, por isso a determinação precoce dessa característica, idealmente no primeiro trimestre, orienta toda a vigilância subsequente.",
+    "trap": "Valorizar a zigotia como principal determinante de risco, quando a corionicidade é o fator que realmente orienta a estratificação de risco na prática clínica."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 35,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — zigotia e corionicidade",
+    "stem": "Gestante de 29 anos e seu parceiro recebem diagnóstico de gestação gemelar e perguntam se os gêmeos serão necessariamente idênticos, já que compartilham a mesma placenta identificada ao ultrassom. Qual é a explicação mais adequada?",
+    "correct": "Gêmeos monocoriônicos são sempre monozigóticos, mas a corionicidade depende do momento da divisão embrionária",
+    "wrongs": [
+      "Gêmeos dizigóticos podem compartilhar a mesma placenta com a mesma frequência que os monozigóticos",
+      "A corionicidade não tem qualquer relação com o momento da divisão do embrião monozigótico",
+      "Todos os gêmeos monozigóticos são necessariamente dicoriônicos, independentemente do momento da divisão",
+      "A determinação da corionicidade não permite inferir nada sobre a zigotia dos gêmeos"
+    ],
+    "explain": "Gêmeos dizigóticos (fraternos) são sempre dicoriônicos, pois resultam de duas fecundações distintas; já os monozigóticos (idênticos) podem ser dicoriônicos ou monocoriônicos, dependendo do momento da divisão do embrião único, sendo a monocorionicidade sempre indicativa de monozigotia.",
+    "trap": "Achar que dizigóticos podem compartilhar placenta com a mesma frequência que monozigóticos, quando a dicorionicidade é obrigatória nos dizigóticos."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 36,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — sinais ultrassonográficos de dicorionicidade",
+    "stem": "Gestante de 31 anos realiza ultrassom de primeiro trimestre por gestação gemelar, que evidencia duas massas placentárias distintas e uma membrana intergemelar espessa formando o sinal do lambda na inserção placentária. Qual é a interpretação mais adequada desses achados?",
+    "correct": "Gestação gemelar dicoriônica, pelos sinais clássicos de duas placentas e sinal do lambda",
+    "wrongs": [
+      "Gestação gemelar monocoriônica diamniótica, pela presença do sinal do lambda descrito",
+      "Gestação gemelar monoamniótica, pela ausência de membrana intergemelar identificável",
+      "Gestação tripla não diagnosticada previamente, pela presença de duas massas placentárias",
+      "Sequência de transfusão feto-fetal já instalada, pelos achados ultrassonográficos descritos"
+    ],
+    "explain": "Duas massas placentárias distintas, membrana intergemelar espessa e o sinal do lambda (twin peak) na inserção placentária são achados clássicos de gestação gemelar dicoriônica, geralmente associada a menor risco de complicações específicas da monocorionicidade.",
+    "trap": "Confundir o sinal do lambda, característico da dicorionicidade, com o sinal em T, que indica monocorionicidade diamniótica."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 37,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — reconhecimento da monocoriônica diamniótica",
+    "stem": "Gestante de 26 anos realiza ultrassom precoce de gestação gemelar que evidencia uma única massa placentária e membrana intergemelar fina, sem sinal do lambda na inserção, caracterizando o sinal em T. Qual é a classificação mais adequada dessa gestação?",
+    "correct": "Gestação gemelar monocoriônica diamniótica",
+    "wrongs": [
+      "Gestação gemelar dicoriônica diamniótica, pela presença de membrana intergemelar identificável",
+      "Gestação gemelar monoamniótica, pela ausência completa de membrana intergemelar",
+      "Gestação gemelar dicoriônica monoamniótica, combinação classicamente descrita na literatura",
+      "Gestação tripla monocoriônica, pela presença de uma única massa placentária identificada"
+    ],
+    "explain": "A gestação monocoriônica diamniótica caracteriza-se por uma única placenta, membrana intergemelar fina e ausência do sinal do lambda, sendo identificado o sinal em T na inserção da membrana; essa combinação de achados requer vigilância mais próxima pelo maior risco de complicações específicas.",
+    "trap": "Confundir monocoriônica diamniótica com monoamniótica apenas pela presença de membrana fina, quando a monoamniótica não apresenta membrana intergemelar alguma."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 38,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — complicações da monocorionicidade",
+    "stem": "Gestante de 28 anos com gestação gemelar monocoriônica diamniótica em acompanhamento por ultrassom seriado apresenta discordância importante de líquido amniótico entre os sacos, com polidrâmnio em um gemelar e oligodramnia no outro, além de discrepância de tamanho vesical. Qual é a hipótese diagnóstica mais provável?",
+    "correct": "Síndrome de transfusão feto-fetal, complicação típica da gestação monocoriônica",
+    "wrongs": [
+      "Gestação gemelar dicoriônica com crescimento discordante isolado, sem outra explicação",
+      "Placenta prévia isolada, explicando toda a discordância de líquido amniótico encontrada",
+      "Diabetes mellitus gestacional isolado, explicando toda a discordância entre os sacos gemelares",
+      "Rotura prematura de membranas em apenas um dos sacos gemelares, isoladamente"
+    ],
+    "explain": "A síndrome de transfusão feto-fetal é uma complicação típica de gestações monocoriônicas, decorrente de comunicações vasculares placentárias desequilibradas, manifestando-se por discordância de líquido amniótico (polidrâmnio-oligodramnia) e alterações do enchimento vesical entre os fetos.",
+    "trap": "Atribuir a discordância de líquido amniótico a causas isoladas como diabetes gestacional, quando o padrão descrito é característico da transfusão feto-fetal em monocoriônicas."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 39,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — riscos gerais da gestação múltipla",
+    "stem": "Gestante de 33 anos com gestação gemelar dicoriônica está em acompanhamento pré-natal de alto risco. Qual complicação, entre as listadas, apresenta risco claramente aumentado nas gestações múltiplas em comparação às gestações únicas?",
+    "correct": "Pré-eclâmpsia e trabalho de parto prematuro",
+    "wrongs": [
+      "Gestação ectópica, risco que não se altera significativamente pela gemelaridade",
+      "Mola hidatiforme completa, condição sem relação direta com a gemelaridade dicoriônica",
+      "Rotura de vasa prévia, risco que não se altera significativamente pela gemelaridade",
+      "Câncer de colo uterino, condição sem qualquer relação com a gestação múltipla"
+    ],
+    "explain": "As gestações múltiplas apresentam risco aumentado de prematuridade, pré-eclâmpsia, anemia, descolamento prematuro de placenta, cesárea, trabalho de parto prematuro, polidrâmnio e tromboembolismo, exigindo acompanhamento pré-natal mais intensivo do que nas gestações únicas.",
+    "trap": "Considerar condições sem relação fisiopatológica direta com a gemelaridade, como mola hidatiforme ou câncer de colo uterino, como riscos aumentados nessa situação."
+  },
+  {
+    "idPrefix": "go-obs5",
+    "n": 40,
+    "group": "HAS · Diabetes · Gemelaridade",
+    "theme": "Gemelaridade — via de parto",
+    "stem": "Gestante de 30 anos com gestação gemelar dicoriônica diamniótica, ambos os fetos em apresentação cefálica, sem outras complicações, está próxima do termo. Qual é a orientação mais adequada quanto à via de parto?",
+    "correct": "Parto vaginal pode ser considerado, já que o primeiro gemelar está em apresentação cefálica",
+    "wrongs": [
+      "Cesariana obrigatória em toda gestação gemelar, independentemente da apresentação fetal",
+      "Parto vaginal contraindicado sempre que houver mais de um feto na cavidade uterina",
+      "Indução do parto contraindicada em qualquer gestação gemelar, independentemente da apresentação",
+      "Cesariana indicada exclusivamente pela gemelaridade, sem necessidade de avaliar apresentação fetal"
+    ],
+    "explain": "Em gestação gemelar dicoriônica com o primeiro gemelar em apresentação cefálica e sem outras complicações, o parto vaginal pode ser considerado em muitos protocolos; via não cefálica do primeiro gemelar, monoamnionicidade ou complicações associadas costumam indicar cesariana, sendo a decisão individualizada.",
+    "trap": "Assumir cesariana obrigatória em toda gestação gemelar, ignorando que a apresentação cefálica do primeiro gemelar permite considerar via vaginal em casos selecionados."
+  }
+]
