@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-speechfix1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-unmute1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
@@ -16,7 +16,9 @@ const APROVA_MASCOT_SCRIPT =
 
 let aprovaMascotReplayMode = false;
 let aprovaMascotSyncingVolume = false;
-const APROVA_MASCOT_DEFAULT_VOLUME = 0.5;
+/** Volume da fala (voz do navegador). Player do vídeo fica sem mute na UI. */
+const APROVA_MASCOT_SPEECH_VOLUME = 1;
+const APROVA_MASCOT_DEFAULT_VOLUME = APROVA_MASCOT_SPEECH_VOLUME;
 
 function aprovaMascotFirstName () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
@@ -138,20 +140,20 @@ function aprovaMascotSpeakWelcome (firstName) {
     u.lang = "pt-BR";
     u.rate = 1.12;
     u.pitch = 1.1;
-    u.volume = APROVA_MASCOT_DEFAULT_VOLUME;
+    u.volume = APROVA_MASCOT_SPEECH_VOLUME;
     const voice = aprovaMascotPickPtVoice();
     if (voice) {
       u.voice = voice;
       if (voice.lang) u.lang = voice.lang;
     }
     const video = document.getElementById("welcome-mascot-video");
-    // Vídeo só visual — a trilha gravada NÃO fala (ela não tem o nome e erra palavras).
-    if (video) aprovaMascotSetVideoVolume(video, 0, true);
+    // Player sem ícone de mudo; volume 0 = trilha do vídeo silenciosa (só a fala do mascote).
+    if (video) aprovaMascotSetVideoVolume(video, 0, false);
     u.onend = () => {
-      if (video) aprovaMascotSetVideoVolume(video, 0, true);
+      if (video) aprovaMascotSetVideoVolume(video, 0, false);
     };
     u.onerror = () => {
-      if (video) aprovaMascotSetVideoVolume(video, 0, true);
+      if (video) aprovaMascotSetVideoVolume(video, 0, false);
     };
     window.speechSynthesis.speak(u);
     return true;
@@ -251,20 +253,29 @@ function aprovaOpenWelcomeMascotModal (opts) {
 
   modal.hidden = false;
 
-  // Vídeo mudo (só imagem). Fala = voz do navegador em 50%, COM o nome.
+  // Sem mute na UI. Trilha do vídeo em 0; fala do mascote em volume alto, COM o nome.
   aprovaMascotStopSpeech();
   if (video) {
     try {
       video.playbackRate = 1.08;
       video.currentTime = 0;
     } catch (e) { /* ignore */ }
-    aprovaMascotSetVideoVolume(video, 0, true);
+    aprovaMascotSetVideoVolume(video, 0, false);
     video.play().catch(() => {});
   }
-  // Pequena pausa para o título/caption com o nome já estarem na tela
   window.setTimeout(() => {
     aprovaMascotStartSpeechWhenReady(first);
   }, 120);
+
+  // Se o navegador bloquear fala automática, o 1º toque no modal dispara a voz.
+  if (!aprovaOpenWelcomeMascotModal._speechUnlock) {
+    aprovaOpenWelcomeMascotModal._speechUnlock = (ev) => {
+      if (!ev.target.closest("#welcome-mascot-modal")) return;
+      if (window.speechSynthesis && window.speechSynthesis.speaking) return;
+      aprovaMascotStartSpeechWhenReady(aprovaMascotFirstName());
+    };
+    document.addEventListener("pointerdown", aprovaOpenWelcomeMascotModal._speechUnlock, true);
+  }
 }
 
 function aprovaRenderInicioMascot () {
@@ -319,7 +330,7 @@ function aprovaBindWelcomeMascot () {
       try {
         video.playbackRate = 1.08;
         video.currentTime = 0;
-        aprovaMascotSetVideoVolume(video, 0, true);
+        aprovaMascotSetVideoVolume(video, 0, false);
         video.play().catch(() => {});
       } catch (e) { /* ignore */ }
     }
