@@ -2,36 +2,30 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-youngmale1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-reset1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
-/**
- * Legenda na tela (roteiro corrigido — transformar / configurando).
- */
+/** Legenda + fala (português do Brasil). */
 const APROVA_MASCOT_SCRIPT =
-  "Seja bem-vindo, {nome}. " +
-  "Este é o aplicativo que vai transformar os seus estudos. " +
-  "Comece configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
+  "Olá, {nome}, este é o aplicativo que irá revolucionar seus estudos. " +
+  "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
 /**
- * Texto falado: nome no começo (sem pausa dramática), tom motivante, fluído.
+ * Versão falada: mesma mensagem, pontuação leve (sem pausa dramática no nome).
  */
 const APROVA_MASCOT_SCRIPT_SPEECH =
   "Olá {nome}! " +
-  "Este é o aplicativo que vai transformar os seus estudos. " +
-  "Comece já configurando o seu perfil e personalize tudo de acordo com a sua prova!";
+  "Este é o aplicativo que irá revolucionar seus estudos. " +
+  "Inicie configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
-/** Ritmo da versão boa (motivante). Pitch um pouco mais alto = homem ~20 anos, com intensidade. */
-const APROVA_MASCOT_SPEECH_RATE = 1.38;
-const APROVA_MASCOT_SPEECH_RATE_SLOW_VOICE = 1.52;
-const APROVA_MASCOT_SPEECH_PITCH = 1.28;
+/** Velocidade natural · voz masculina jovem */
+const APROVA_MASCOT_SPEECH_RATE = 1.08;
+const APROVA_MASCOT_SPEECH_PITCH = 1.2;
 const APROVA_MASCOT_SPEECH_VOLUME = 1;
-const APROVA_MASCOT_VIDEO_RATE = 1.15;
+const APROVA_MASCOT_VIDEO_RATE = 1;
 
 let aprovaMascotReplayMode = false;
-let aprovaMascotSyncingVolume = false;
 let aprovaMascotSpeakTimer = null;
-let aprovaMascotKeepAlive = null;
 let aprovaMascotCachedVoice = null;
 
 function aprovaMascotFirstName () {
@@ -82,59 +76,36 @@ function aprovaMascotMaybeForceOwnerOnce () {
   }
 }
 
-function aprovaMascotClearKeepAlive () {
-  if (aprovaMascotKeepAlive) {
-    window.clearInterval(aprovaMascotKeepAlive);
-    aprovaMascotKeepAlive = null;
-  }
-}
-
 function aprovaMascotStopSpeech () {
   if (aprovaMascotSpeakTimer) {
     window.clearTimeout(aprovaMascotSpeakTimer);
     aprovaMascotSpeakTimer = null;
   }
-  aprovaMascotClearKeepAlive();
   try {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
   } catch (e) { /* ignore */ }
 }
 
-function aprovaMascotVoiceIsSlow (voice) {
-  if (!voice) return false;
-  const blob = String(voice.name || "").toLowerCase();
-  return /neural|natural|enhanced|premium|online/.test(blob);
-}
-
-/**
- * Voz masculina jovem pt-BR (prioridade: Daniel/Felipe > Antonio).
- * Pitch alto na fala reforça o tom de ~20 anos.
- */
+/** Voz masculina jovem em pt-BR (Daniel / Felipe / Antonio). */
 function aprovaMascotPickPtVoice () {
   try {
     const voices = window.speechSynthesis.getVoices() || [];
     if (!voices.length) return aprovaMascotCachedVoice;
 
-    const blobOf = (v) => (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
-    const isPtBr = (v) => /^pt-br/i.test(v.lang) || /brazil|brasil|portugu/.test(blobOf(v));
+    const blob = (v) => (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
+    const isPtBr = (v) => /^pt-br/i.test(v.lang) || /brazil|brasil/.test(blob(v));
     const isFemale = (v) =>
-      /maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina|woman/.test(blobOf(v));
-    const isMale = (v) => {
-      const b = blobOf(v);
-      if (isFemale(v)) return false;
-      return /antonio|ant[oô]nio|daniel|ricardo|felipe|gustavo|male|masculin|homem/.test(b);
-    };
+      /maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina/.test(blob(v));
 
     const score = (v) => {
-      if (!isPtBr(v) || !isMale(v)) return -1;
-      const b = blobOf(v);
-      let s = 40;
-      // Nomes que soam mais jovens / energéticos
-      if (/daniel|felipe|gustavo/.test(b)) s += 50;
-      else if (/ricardo/.test(b)) s += 25;
-      else if (/antonio|ant[oô]nio/.test(b)) s += 10; // ok, mas mais “adulto”
-      if (v.localService) s += 15;
-      if (/online|neural|natural|enhanced|premium/.test(b)) s -= 8;
+      if (!isPtBr(v) || isFemale(v)) return -1;
+      const b = blob(v);
+      let s = 0;
+      if (/daniel|felipe|gustavo/.test(b)) s += 80;
+      else if (/antonio|ant[oô]nio|ricardo/.test(b)) s += 55;
+      else if (/male|masculin|homem/.test(b)) s += 40;
+      else return -1;
+      if (v.localService) s += 10;
       return s;
     };
 
@@ -154,36 +125,17 @@ function aprovaMascotPickPtVoice () {
   }
 }
 
-function aprovaMascotSetVideoVolume (video, volume, muted) {
-  if (!video) return;
-  aprovaMascotSyncingVolume = true;
-  try {
-    video.volume = Math.max(0, Math.min(1, volume));
-    video.muted = !!muted;
-  } catch (e) { /* ignore */ }
-  window.setTimeout(() => { aprovaMascotSyncingVolume = false; }, 0);
-}
-
-function aprovaMascotRestartVideo () {
+function aprovaMascotPlayVideo () {
   const video = document.getElementById("welcome-mascot-video");
   if (!video) return;
   try {
     video.loop = true;
+    video.muted = true;
+    video.volume = 0;
     video.playbackRate = APROVA_MASCOT_VIDEO_RATE;
-    if (video.paused || video.ended || video.currentTime > 0.2) {
-      video.currentTime = 0;
-    }
+    video.currentTime = 0;
   } catch (e) { /* ignore */ }
-  aprovaMascotSetVideoVolume(video, 0, true);
   video.play().catch(() => {});
-}
-
-function aprovaMascotPauseVideoSoft () {
-  const video = document.getElementById("welcome-mascot-video");
-  if (!video) return;
-  try {
-    video.pause();
-  } catch (e) { /* ignore */ }
 }
 
 function aprovaMascotHideTapToHear () {
@@ -196,79 +148,44 @@ function aprovaMascotShowTapToHear () {
   if (tap) tap.hidden = false;
 }
 
-/** Precisa ser chamado no clique do usuário (gesto) para o som sair no Chrome/mobile. */
+/** Chamado no gesto do usuário (Toque para ouvir / avatar). */
 function aprovaMascotSpeakWelcome (firstName) {
   if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
   const name = firstName || aprovaMascotFirstName();
-  try {
-    try { window.speechSynthesis.getVoices(); } catch (e) { /* ignore */ }
-    try { window.speechSynthesis.resume(); } catch (e) { /* ignore */ }
-    aprovaMascotStopSpeech();
+  const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT_SPEECH, name);
 
-    const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT_SPEECH, name);
-    aprovaMascotRestartVideo();
-    aprovaMascotHideTapToHear();
+  aprovaMascotStopSpeech();
+  aprovaMascotPlayVideo();
+  aprovaMascotHideTapToHear();
 
-    const speakNow = () => {
-      try {
-        try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
-        try { window.speechSynthesis.resume(); } catch (e) { /* ignore */ }
-
-        const voice = aprovaMascotPickPtVoice();
-        const slow = aprovaMascotVoiceIsSlow(voice);
-        const u = new SpeechSynthesisUtterance(text);
-        u.lang = "pt-BR";
-        u.rate = slow ? APROVA_MASCOT_SPEECH_RATE_SLOW_VOICE : APROVA_MASCOT_SPEECH_RATE;
-        u.pitch = APROVA_MASCOT_SPEECH_PITCH;
-        u.volume = APROVA_MASCOT_SPEECH_VOLUME;
-        if (voice) {
-          u.voice = voice;
-          if (voice.lang) u.lang = voice.lang;
-        }
-
-        u.onstart = () => {
-          aprovaMascotRestartVideo();
-          aprovaMascotClearKeepAlive();
-          // Chrome às vezes “pausa” a fala no meio — resume mantém o fluxo
-          aprovaMascotKeepAlive = window.setInterval(() => {
-            try {
-              if (window.speechSynthesis.speaking) window.speechSynthesis.resume();
-            } catch (e) { /* ignore */ }
-          }, 4000);
-        };
-
-        u.onend = () => {
-          aprovaMascotClearKeepAlive();
-          // Fim da fala = fim da animação (sincronizado)
-          aprovaMascotPauseVideoSoft();
-        };
-
-        u.onerror = () => {
-          aprovaMascotClearKeepAlive();
-          aprovaMascotShowTapToHear();
-        };
-
-        window.speechSynthesis.speak(u);
-      } catch (e) {
-        aprovaMascotShowTapToHear();
+  // Um único speak, sem keepalive/resume (evita travamento no Chrome)
+  aprovaMascotSpeakTimer = window.setTimeout(() => {
+    aprovaMascotSpeakTimer = null;
+    try {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "pt-BR";
+      u.rate = APROVA_MASCOT_SPEECH_RATE;
+      u.pitch = APROVA_MASCOT_SPEECH_PITCH;
+      u.volume = APROVA_MASCOT_SPEECH_VOLUME;
+      const voice = aprovaMascotPickPtVoice();
+      if (voice) {
+        u.voice = voice;
+        if (voice.lang) u.lang = voice.lang;
       }
-    };
+      u.onerror = () => aprovaMascotShowTapToHear();
+      window.speechSynthesis.speak(u);
+    } catch (e) {
+      aprovaMascotShowTapToHear();
+    }
+  }, 80);
 
-    aprovaMascotSpeakTimer = window.setTimeout(() => {
-      aprovaMascotSpeakTimer = null;
-      speakNow();
-    }, 30);
-    return true;
-  } catch (e) {
-    aprovaMascotShowTapToHear();
-    return false;
-  }
+  return true;
 }
 
 function aprovaMascotHearNow () {
-  if (window.speechSynthesis) {
-    try { window.speechSynthesis.getVoices(); } catch (e) { /* ignore */ }
-  }
+  try {
+    if (window.speechSynthesis) window.speechSynthesis.getVoices();
+  } catch (e) { /* ignore */ }
   return aprovaMascotSpeakWelcome(aprovaMascotFirstName());
 }
 
@@ -347,7 +264,7 @@ function aprovaOpenWelcomeMascotModal (opts) {
   modal.hidden = false;
   aprovaMascotShowTapToHear();
   aprovaMascotStopSpeech();
-  aprovaMascotRestartVideo();
+  aprovaMascotPlayVideo();
 
   if (aprovaMascotReplayMode) {
     aprovaMascotHearNow();
@@ -408,17 +325,6 @@ function aprovaBindWelcomeMascot () {
     el.addEventListener("click", () => aprovaCloseWelcomeMascotModal());
   });
 
-  const videoEl = document.getElementById("welcome-mascot-video");
-  videoEl?.addEventListener("ended", () => {
-    const modalOpen = modal && !modal.hidden;
-    const speaking = window.speechSynthesis && window.speechSynthesis.speaking;
-    if (!modalOpen || !speaking) return;
-    try {
-      videoEl.currentTime = 0;
-      videoEl.play().catch(() => {});
-    } catch (e) { /* ignore */ }
-  });
-
   document.getElementById("welcome-mascot-tap")?.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -426,7 +332,6 @@ function aprovaBindWelcomeMascot () {
   });
 
   document.getElementById("welcome-mascot-replay")?.addEventListener("click", () => {
-    aprovaMascotRestartVideo();
     aprovaMascotHearNow();
   });
 
