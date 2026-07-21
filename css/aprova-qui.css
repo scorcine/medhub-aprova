@@ -2640,6 +2640,47 @@ html[data-theme="dark"] .aprova-modal-panel {
   opacity: 0.72;
 }
 
+.provas-area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.65rem;
+}
+
+.provas-area-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-sm, 0.5rem);
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.provas-area-chip-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: -0.02em;
+}
+
+.provas-area-chip-count {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.provas-area-chip:hover,
+.provas-area-chip:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
 .welcome-mascot-panel {
   width: min(28rem, 100%);
 }

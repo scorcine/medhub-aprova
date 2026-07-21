@@ -1,11 +1,26 @@
-/* Prova na íntegra — banca → ano → prova */
+/* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare2";
+const APROVA_PROVAS_CACHE_VER = "20260721enare3";
+
+const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
+const APROVA_PROVAS_AREA_LABELS = {
+  clinica: "Clínica médica",
+  cirurgia: "Cirurgia",
+  pediatria: "Pediatria",
+  go: "Ginecologia e obstetrícia",
+  preventiva: "Preventiva"
+};
 
 let aprovaProvasCatalogData = null;
 let aprovaProvasBound = false;
-let aprovaProvasView = { mode: "familias", familyId: null };
+let aprovaProvasPackCache = Object.create(null);
+let aprovaProvasView = {
+  mode: "familias", // familias | anos | modo
+  familyId: null,
+  year: null,
+  packId: null
+};
 
 function aprovaProvaExamLabel (examId) {
   const id = String(examId || "").toLowerCase();
@@ -14,6 +29,11 @@ function aprovaProvaExamLabel (examId) {
     if (hit) return hit.label;
   }
   return id ? id.toUpperCase() : "Banca";
+}
+
+function aprovaProvaAreaLabel (specialty) {
+  const id = String(specialty || "").toLowerCase();
+  return APROVA_PROVAS_AREA_LABELS[id] || specialty || "Outras";
 }
 
 async function aprovaLoadProvasCatalogData () {
@@ -30,10 +50,29 @@ async function aprovaLoadProvasCatalogData () {
 }
 
 async function aprovaLoadProvaFile (file) {
-  const url = String(file || "") + (String(file).indexOf("?") >= 0 ? "&" : "?") + "v=" + APROVA_PROVAS_CACHE_VER;
+  const key = String(file || "");
+  if (aprovaProvasPackCache[key]) return aprovaProvasPackCache[key];
+  const url = key + (key.indexOf("?") >= 0 ? "&" : "?") + "v=" + APROVA_PROVAS_CACHE_VER;
   const res = await fetch(url);
-  if (!res.ok) throw new Error("Arquivo da prova não encontrado");
-  return res.json();
+  if (!res.ok) throw new Error("Arquivo da prova não encontrado (" + res.status + ")");
+  const pack = await res.json();
+  aprovaProvasPackCache[key] = pack;
+  return pack;
+}
+
+function aprovaProvasQuestionsFromPack (pack) {
+  if (Array.isArray(pack)) return pack;
+  if (pack && Array.isArray(pack.questions)) return pack.questions;
+  return [];
+}
+
+function aprovaProvasCountByArea (questions) {
+  const counts = Object.create(null);
+  (questions || []).forEach((q) => {
+    const id = String((q && q.specialty) || "clinica").toLowerCase();
+    counts[id] = (counts[id] || 0) + 1;
+  });
+  return counts;
 }
 
 function aprovaProvasFindFamily (familyId, data) {
@@ -60,7 +99,13 @@ function aprovaBindProvasIntegra () {
   list.addEventListener("click", (e) => {
     const back = e.target.closest("[data-prova-back]");
     if (back) {
-      aprovaProvasView = { mode: "familias", familyId: null };
+      const to = back.getAttribute("data-prova-back") || "familias";
+      if (to === "anos") {
+        aprovaProvasView.mode = "anos";
+        aprovaProvasView.packId = null;
+      } else {
+        aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
+      }
       aprovaRenderProvasIntegra();
       return;
     }
@@ -69,7 +114,7 @@ function aprovaBindProvasIntegra () {
     if (familyBtn) {
       const id = familyBtn.getAttribute("data-prova-family");
       if (!id) return;
-      aprovaProvasView = { mode: "anos", familyId: id };
+      aprovaProvasView = { mode: "anos", familyId: id, year: null, packId: null };
       aprovaRenderProvasIntegra();
       return;
     }
@@ -79,7 +124,23 @@ function aprovaBindProvasIntegra () {
       if (yearBtn.disabled) return;
       const year = yearBtn.getAttribute("data-prova-year");
       const familyId = yearBtn.getAttribute("data-prova-family");
-      if (year && familyId) aprovaStartProvaIntegraByFamilyYear(familyId, year);
+      if (!year || !familyId) return;
+      aprovaProvasView = {
+        mode: "modo",
+        familyId,
+        year: Number(year),
+        packId: null
+      };
+      aprovaRenderProvasIntegra();
+      return;
+    }
+
+    const startBtn = e.target.closest("[data-prova-start]");
+    if (startBtn) {
+      if (startBtn.disabled) return;
+      const packId = startBtn.getAttribute("data-prova-start");
+      const area = startBtn.getAttribute("data-prova-area") || "";
+      if (packId) aprovaStartProvaIntegraById(packId, area || null);
     }
   });
 }
@@ -121,7 +182,7 @@ function aprovaRenderProvasFamilias (root, data) {
 function aprovaRenderProvasAnos (root, data, familyId) {
   const family = aprovaProvasFindFamily(familyId, data);
   if (!family) {
-    aprovaProvasView = { mode: "familias", familyId: null };
+    aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
     aprovaRenderProvasFamilias(root, data);
     return;
   }
@@ -133,7 +194,7 @@ function aprovaRenderProvasAnos (root, data, familyId) {
     const pack = aprovaProvasFindPack(family, y, data);
     const ready = !!pack;
     const title = ready
-      ? ("Iniciar " + String(family.label) + " " + y)
+      ? ("Abrir " + String(family.label) + " " + y)
       : (String(family.label) + " " + y + " — em breve");
     return (
       "<button type=\"button\" class=\"provas-year-chip" + (ready ? " is-ready" : "") + "\"" +
@@ -149,14 +210,84 @@ function aprovaRenderProvasAnos (root, data, familyId) {
 
   root.innerHTML =
     "<div class=\"provas-integra-year-wrap\">" +
-      "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back>← Voltar</button>" +
+      "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"familias\">← Voltar</button>" +
       "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
         "<div class=\"label\">" + String(family.label) + "</div>" +
         "<p class=\"prompt\" style=\"margin:0.35rem 0 0.85rem\"><strong>Escolha o ano</strong></p>" +
-        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">De 2021 a 2026. Anos sem conteúdo ficam como “Em breve”.</p>" +
+        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Depois você escolhe prova na íntegra ou por grande área.</p>" +
         "<div class=\"provas-year-grid\" role=\"list\">" + chips + "</div>" +
       "</article>" +
     "</div>";
+}
+
+async function aprovaRenderProvasModo (root, data) {
+  const family = aprovaProvasFindFamily(aprovaProvasView.familyId, data);
+  const year = Number(aprovaProvasView.year);
+  if (!family || !Number.isFinite(year)) {
+    aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
+    aprovaRenderProvasFamilias(root, data);
+    return;
+  }
+
+  const meta = aprovaProvasFindPack(family, year, data);
+  if (!meta) {
+    root.innerHTML =
+      "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
+      "<p class=\"muted\" style=\"margin-top:0.85rem\">A prova de " + year + " ainda está em montagem.</p>";
+    return;
+  }
+
+  aprovaProvasView.packId = meta.id;
+  root.innerHTML =
+    "<div class=\"provas-integra-year-wrap\">" +
+      "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
+      "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
+        "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
+        "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Como deseja fazer?</strong></p>" +
+        "<p class=\"muted\">Carregando opções…</p>" +
+      "</article>" +
+    "</div>";
+
+  try {
+    const pack = await aprovaLoadProvaFile(meta.file);
+    const questions = aprovaProvasQuestionsFromPack(pack);
+    const total = questions.length;
+    const byArea = aprovaProvasCountByArea(questions);
+    const areas = APROVA_PROVAS_AREA_ORDER
+      .filter((id) => (byArea[id] || 0) > 0)
+      .concat(Object.keys(byArea).filter((id) => APROVA_PROVAS_AREA_ORDER.indexOf(id) < 0 && byArea[id] > 0));
+
+    const areaBtns = areas.map((id) => {
+      const n = byArea[id] || 0;
+      return (
+        "<button type=\"button\" class=\"provas-area-chip\" data-prova-start=\"" +
+          String(meta.id) + "\" data-prova-area=\"" + id + "\">" +
+          "<span class=\"provas-area-chip-label\">" + aprovaProvaAreaLabel(id) + "</span>" +
+          "<span class=\"provas-area-chip-count\">" + n + " questões</span>" +
+        "</button>"
+      );
+    }).join("");
+
+    root.innerHTML =
+      "<div class=\"provas-integra-year-wrap\">" +
+        "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
+        "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
+          "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
+          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Como deseja fazer?</strong></p>" +
+          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Prova completa na ordem da banca, ou só uma grande área.</p>" +
+          "<div class=\"actions-row\" style=\"margin-bottom:1rem\">" +
+            "<button type=\"button\" class=\"btn btn-primary\" data-prova-start=\"" +
+              String(meta.id) + "\" data-prova-area=\"\">Prova na íntegra (" + total + ")</button>" +
+          "</div>" +
+          "<div class=\"label\" style=\"margin-bottom:0.5rem\">Por grande área</div>" +
+          "<div class=\"provas-area-grid\">" + areaBtns + "</div>" +
+        "</article>" +
+      "</div>";
+  } catch (err) {
+    root.innerHTML =
+      "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
+      "<p class=\"muted\" style=\"margin-top:0.85rem\">Não foi possível carregar a prova de " + year + ".</p>";
+  }
 }
 
 function aprovaRenderProvasIntegra () {
@@ -167,37 +298,37 @@ function aprovaRenderProvasIntegra () {
 
   aprovaLoadProvasCatalogData()
     .then((data) => {
+      if (aprovaProvasView.mode === "modo") {
+        return aprovaRenderProvasModo(root, data);
+      }
       if (aprovaProvasView.mode === "anos" && aprovaProvasView.familyId) {
         aprovaRenderProvasAnos(root, data, aprovaProvasView.familyId);
-      } else {
-        aprovaRenderProvasFamilias(root, data);
+        return null;
       }
+      aprovaRenderProvasFamilias(root, data);
+      return null;
     })
     .catch(() => {
       root.innerHTML = "<p class=\"muted\">Não foi possível carregar o catálogo de provas.</p>";
     });
 }
 
-async function aprovaStartProvaIntegraByFamilyYear (familyId, year) {
-  try {
-    const data = await aprovaLoadProvasCatalogData();
-    const family = aprovaProvasFindFamily(familyId, data);
-    if (!family) {
-      window.alert("Banca não encontrada.");
-      return;
-    }
-    const meta = aprovaProvasFindPack(family, year, data);
-    if (!meta) {
-      window.alert("A prova de " + year + " ainda está em montagem.");
-      return;
-    }
-    await aprovaStartProvaIntegraById(meta.id);
-  } catch (e) {
-    window.alert("Falha ao abrir a prova. Tente de novo.");
+function aprovaOpenProvaQuestionCard () {
+  if (typeof aprovaMarkNav === "function") aprovaMarkNav("questoes");
+  if (typeof aprovaGoTo === "function") {
+    aprovaGoTo("questoes");
+  } else if (typeof aprovaShowPanel === "function") {
+    aprovaShowPanel("questoes");
   }
+  if (typeof aprovaShowQuestionViews === "function") aprovaShowQuestionViews("card");
+  if (typeof aprovaRenderQuestion === "function") aprovaRenderQuestion();
 }
 
-async function aprovaStartProvaIntegraById (provaId) {
+/**
+ * @param {string} provaId
+ * @param {string|null} areaFilter specialty id ou vazio/null = prova completa
+ */
+async function aprovaStartProvaIntegraById (provaId, areaFilter) {
   try {
     const data = await aprovaLoadProvasCatalogData();
     const meta = (data.provas || []).find((p) => p.id === provaId);
@@ -206,20 +337,27 @@ async function aprovaStartProvaIntegraById (provaId) {
       return;
     }
     const pack = await aprovaLoadProvaFile(meta.file);
-    const questions = Array.isArray(pack)
-      ? pack
-      : (pack && Array.isArray(pack.questions) ? pack.questions : []);
+    let questions = aprovaProvasQuestionsFromPack(pack);
+    const area = String(areaFilter || "").trim().toLowerCase();
+    if (area) {
+      questions = questions.filter((q) => String((q && q.specialty) || "").toLowerCase() === area);
+    }
     if (!questions.length) {
-      window.alert("A prova está vazia.");
+      window.alert(area
+        ? ("Não há questões de " + aprovaProvaAreaLabel(area) + " nesta prova.")
+        : "A prova está vazia.");
       return;
     }
     if (typeof AprovaQuestions === "undefined" || typeof AprovaQuestions.startProvaIntegra !== "function") {
       window.alert("Módulo de questões indisponível.");
       return;
     }
+    const title = area
+      ? (String(meta.title || "Prova") + " · " + aprovaProvaAreaLabel(area))
+      : String(meta.title || (aprovaProvaExamLabel(meta.exam) + " " + meta.year));
     const n = AprovaQuestions.startProvaIntegra(questions, {
-      id: meta.id,
-      title: meta.title || (aprovaProvaExamLabel(meta.exam) + " " + meta.year),
+      id: meta.id + (area ? ("-" + area) : ""),
+      title,
       exam: meta.exam,
       year: meta.year
     });
@@ -227,12 +365,10 @@ async function aprovaStartProvaIntegraById (provaId) {
       window.alert("Não foi possível iniciar a prova.");
       return;
     }
-    if (typeof aprovaGoTo === "function") aprovaGoTo("questoes");
-    else if (typeof aprovaShowPanel === "function") aprovaShowPanel("questoes");
-    if (typeof aprovaShowQuestionViews === "function") aprovaShowQuestionViews("card");
-    if (typeof aprovaRenderQuestion === "function") aprovaRenderQuestion();
+    aprovaOpenProvaQuestionCard();
   } catch (e) {
-    window.alert("Falha ao abrir a prova. Tente de novo.");
+    const msg = e && e.message ? String(e.message) : "";
+    window.alert("Falha ao abrir a prova." + (msg ? (" " + msg) : " Tente de novo."));
   }
 }
 

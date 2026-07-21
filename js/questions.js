@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare2";
+const APROVA_QUESTION_CACHE_VER = "20260721enare3";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
@@ -193,8 +193,11 @@ const AprovaQuestions = {
     await aprovaAppendProvasIntegraToBag(bag, seen);
 
     this.catalog = bag;
-    this.resetSession("treino");
-    this.applyFilters(this.filters, { rebuild: true });
+    const provaAtiva = this.mode === "simulado" && this.simulado && !this.simulado.finished && this.queue.length;
+    if (!provaAtiva) {
+      this.resetSession("treino");
+      this.applyFilters(this.filters, { rebuild: true });
+    }
     return this.catalog;
   },
 

@@ -7,7 +7,7 @@ const APROVA_PANEL_META = {
   revisoes: { title: "Revisões", sub: "O que venceu para revisar agora" },
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
-  "provas-integra": { title: "Prova na íntegra", sub: "Provas reescritas por banca e ano" },
+  "provas-integra": { title: "Prova na íntegra", sub: "Banca, ano, íntegra ou grande área" },
   material: { title: "Material de apoio", sub: "Em construção" },
   videos: { title: "Vídeos", sub: "Em construção" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
