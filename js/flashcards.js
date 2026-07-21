@@ -297,7 +297,10 @@ const AprovaFlashcards = {
     if (!card) return null;
 
     if (typeof aprovaScheduleCard === "function") {
-      aprovaScheduleCard(card.id, knewIt);
+      aprovaScheduleCard(card.id, knewIt, {
+        tema: card.deckName || "",
+        deckName: card.deckName || ""
+      });
     }
 
     // Remove da fila; o próximo ocupa o mesmo índice

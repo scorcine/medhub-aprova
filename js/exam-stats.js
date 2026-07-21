@@ -128,6 +128,89 @@ function aprovaExamStatsSummary () {
   };
 }
 
+const APROVA_THEME_MIN_ATTEMPTS = 8;
+const APROVA_THEME_NEAR_BAND = 8;
+
+/**
+ * Faixa do tema vs meta de acerto da prova.
+ * hit = atingiu / near = perto / far = bem abaixo / cold = poucas tentativas
+ */
+function aprovaThemeAccuracyBand (tema, targetAccuracy, statsSummary) {
+  const target = typeof aprovaNormalizeTargetAccuracy === "function"
+    ? aprovaNormalizeTargetAccuracy(targetAccuracy)
+    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) || 70)));
+  const summary = statsSummary || (typeof aprovaExamStatsSummary === "function"
+    ? aprovaExamStatsSummary()
+    : null);
+  const norm = typeof aprovaFocusNormKey === "function"
+    ? aprovaFocusNormKey
+    : (s) => String(s || "").toLowerCase();
+  const key = norm(tema);
+  if (!key || !summary || !Array.isArray(summary.themes)) {
+    return { band: "cold", pct: null, attempted: 0, target, gap: target };
+  }
+
+  let best = null;
+  summary.themes.forEach((t) => {
+    const n = norm(t.name);
+    if (!n) return;
+    let score = 0;
+    if (n === key) score = 3;
+    else if (n.indexOf(key) >= 0 || key.indexOf(n) >= 0) score = 2;
+    else {
+      const words = key.split(" ").filter((w) => w.length > 3);
+      if (words.some((w) => n.indexOf(w) >= 0)) score = 1;
+    }
+    if (score && (!best || score > best.score || (score === best.score && t.attempted > best.attempted))) {
+      best = { score, attempted: t.attempted, pct: t.pct };
+    }
+  });
+
+  if (!best || best.attempted < APROVA_THEME_MIN_ATTEMPTS) {
+    return {
+      band: "cold",
+      pct: best ? best.pct : null,
+      attempted: best ? best.attempted : 0,
+      target,
+      gap: target
+    };
+  }
+
+  const gap = target - best.pct;
+  let band = "near";
+  if (best.pct >= target) band = "hit";
+  else if (gap > APROVA_THEME_NEAR_BAND) band = "far";
+
+  return { band, pct: best.pct, attempted: best.attempted, target, gap };
+}
+
+/** Multiplicador de peso em questões / SRS conforme faixa. */
+function aprovaThemeBandWeights (band) {
+  if (band === "hit") return { qWeight: 0.55, srsMult: 1.65, label: "Meta atingida — espaçar" };
+  if (band === "far") return { qWeight: 1.85, srsMult: 0.55, label: "Abaixo da meta — reforçar" };
+  if (band === "cold") return { qWeight: 1.25, srsMult: 0.8, label: "Poucas tentativas — medir" };
+  return { qWeight: 1, srsMult: 1, label: "Perto da meta" };
+}
+
+function aprovaWeakThemesVsTarget (targetAccuracy, limit, statsSummary) {
+  const summary = statsSummary || aprovaExamStatsSummary();
+  const target = typeof aprovaNormalizeTargetAccuracy === "function"
+    ? aprovaNormalizeTargetAccuracy(targetAccuracy)
+    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) || 70)));
+  const max = Math.max(1, limit | 0 || 5);
+  const rows = (summary.themes || [])
+    .filter((t) => t.attempted >= APROVA_THEME_MIN_ATTEMPTS && t.pct < target - 2)
+    .map((t) => ({
+      tema: t.name,
+      pct: t.pct,
+      attempted: t.attempted,
+      gap: target - t.pct,
+      band: t.pct < target - APROVA_THEME_NEAR_BAND ? "far" : "near"
+    }))
+    .sort((a, b) => b.gap - a.gap || b.attempted - a.attempted);
+  return rows.slice(0, max);
+}
+
 /* Atividade diária de questões (metas) */
 const APROVA_Q_ACTIVITY_KEY = "medhub-aprova-q-activity-v1";
 

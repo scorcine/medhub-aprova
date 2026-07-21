@@ -2797,6 +2797,10 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const qThemesEl = document.getElementById("metas-q-themes");
   const qWeekEl = document.getElementById("metas-q-week");
   const qPeriodsEl = document.getElementById("metas-q-periods");
+  const accGoalEl = document.getElementById("metas-accuracy-goal");
+  const wavesEl = document.getElementById("metas-review-waves");
+  const wavesListEl = document.getElementById("metas-waves-list");
+  const weakNudgeEl = document.getElementById("metas-weak-nudge");
 
   if (program) {
     const daily = (program.tasks || []).find((t) => t.id === "daily");
@@ -2818,6 +2822,23 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
             "/ano</span>" +
           "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>";
       }
+      if (accGoalEl) {
+        const ag = program.accuracyGoal || {};
+        const chips = [];
+        if (ag.target != null) {
+          chips.push("<span class=\"dash-seu-plano-chip\">Meta de acerto " + ag.target + "%</span>");
+        }
+        if (ag.current != null) {
+          chips.push("<span class=\"dash-seu-plano-chip\">Seu ritmo " + ag.current + "%</span>");
+        } else {
+          chips.push("<span class=\"dash-seu-plano-chip\">Ainda sem amostra de acertos</span>");
+        }
+        if (ag.gap != null && ag.gap > 0) {
+          chips.push("<span class=\"dash-seu-plano-chip\">Faltam " + ag.gap + " pp</span>");
+        }
+        accGoalEl.hidden = !chips.length;
+        accGoalEl.innerHTML = chips.join("");
+      }
       if (qPeriodsEl) {
         const rows = [
           ["Hoje", program.qProgress.daily.done, program.qProgress.daily.goal],
@@ -2829,10 +2850,46 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           "<li><strong>" + r[0] + "</strong><em>" + r[1] + "/" + r[2] + "</em></li>"
         )).join("");
       }
+      if (wavesEl && wavesListEl && program.reviewWaves && program.reviewWaves.waves) {
+        wavesEl.hidden = false;
+        wavesListEl.innerHTML = program.reviewWaves.waves.map((w) => (
+          "<li data-status=\"" + (w.status || "") + "\">" +
+            "<strong>" + w.label + (w.status === "current" ? " · agora" : "") + "</strong>" +
+            "<span>" + (w.intent || "") + "</span>" +
+            (w.focus && w.focus.length
+              ? ("<span>" + w.focus.slice(0, 4).join(" · ") +
+                (w.focus.length > 4 ? "…" : "") + "</span>")
+              : "") +
+          "</li>"
+        )).join("");
+      } else if (wavesEl) {
+        wavesEl.hidden = true;
+      }
+      if (weakNudgeEl) {
+        const weak = program.weakThemes || [];
+        if (weak.length) {
+          weakNudgeEl.hidden = false;
+          const names = weak.slice(0, 3).map((w) => w.tema + " (" + w.pct + "%)").join(", ");
+          weakNudgeEl.innerHTML =
+            "<strong>Abaixo da meta</strong> — " + names +
+            ". Revise antes e combine com flashcards destes temas." +
+            "<div class=\"actions-row\">" +
+              "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-goto=\"flashcards\">Abrir flashcards</button>" +
+            "</div>";
+        } else {
+          weakNudgeEl.hidden = true;
+          weakNudgeEl.innerHTML = "";
+        }
+      }
       if (qWeekEl) {
-        qWeekEl.textContent = "Equivalência de ~" +
-          (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") +
-          " questões/ano (padrão de cursinho).";
+        const t = program.qQuota.targetAccuracy;
+        qWeekEl.textContent = t
+          ? ("Volume calculado para meta de " + t + "% de acerto" +
+            (program.qQuota.currentAccuracy != null
+              ? (" (você em " + program.qQuota.currentAccuracy + "%)")
+              : "") +
+            " · ~" + (program.qQuota.annualTarget || 0).toLocaleString("pt-BR") + " questões/ano.")
+          : ("~" + (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") + " questões/ano.");
       }
       if (qThemesEl) {
         const esc = (s) => String(s || "")
@@ -2849,9 +2906,12 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                 ? aprovaFormatPct(th.pct)
                 : (String(th.pct).replace(".", ",") + "%"))
               : "";
+            const your = th.yourPct != null ? (" · você " + th.yourPct + "%") : "";
+            const bandHint = th.bandLabel ? (" · " + th.bandLabel) : "";
             return (
               "<li>" +
                 "<button type=\"button\" class=\"dash-task-theme-btn\"" +
+                  (th.band ? (" data-band=\"" + esc(th.band) + "\"") : "") +
                   " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
                   " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
                   " data-meta-q-n=\"" + (th.n | 0) + "\">" +
@@ -2860,6 +2920,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                     esc(th.tema) +
                     (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
                     (pctLabel ? (" <span class=\"metas-q-pct\">" + esc(pctLabel) + "</span>") : "") +
+                    esc(your + bandHint) +
                   "</span>" +
                   "<span class=\"dash-task-theme-go\">Responder</span>" +
                 "</button>" +
@@ -3267,6 +3328,7 @@ function aprovaPerfilSlotFromControls () {
   const select = document.getElementById("perfil-slot-select");
   const other = document.getElementById("perfil-slot-other");
   const dateEl = document.getElementById("perfil-slot-date");
+  const accEl = document.getElementById("perfil-slot-accuracy");
   if (!select) return null;
   const value = select.value;
   const date = dateEl && dateEl.value
@@ -3274,15 +3336,18 @@ function aprovaPerfilSlotFromControls () {
       ? aprovaNormalizeExamDate(dateEl.value)
       : dateEl.value)
     : null;
+  const targetAccuracy = typeof aprovaNormalizeTargetAccuracy === "function"
+    ? aprovaNormalizeTargetAccuracy(accEl && accEl.value)
+    : Math.max(50, Math.min(95, Math.round(Number(accEl && accEl.value) || 70)));
   if (!value || value === "") return null;
   if (value === "__other__") {
     const label = other ? String(other.value || "").trim() : "";
-    if (!label) return { kind: "other", label: "", incomplete: true, date: date || undefined };
-    const slot = { kind: "other", label };
+    if (!label) return { kind: "other", label: "", incomplete: true, date: date || undefined, targetAccuracy };
+    const slot = { kind: "other", label, targetAccuracy };
     if (date) slot.date = date;
     return slot;
   }
-  const slot = { kind: "exam", id: value };
+  const slot = { kind: "exam", id: value, targetAccuracy };
   if (date) slot.date = date;
   return slot;
 }
@@ -3292,6 +3357,7 @@ function aprovaPerfilCommitActiveSlot () {
   if (slot && slot.incomplete) {
     const keep = { kind: "other", label: "" };
     if (slot.date) keep.date = slot.date;
+    if (slot.targetAccuracy != null) keep.targetAccuracy = slot.targetAccuracy;
     aprovaPerfilDraft[aprovaPerfilActiveTab] = keep;
     return;
   }
@@ -3312,18 +3378,31 @@ function aprovaPerfilUpdateSummary () {
     } else if (slot && name && typeof aprovaYearEndExamIso === "function") {
       dateTxt = " · fim do ano (padrão)";
     }
+    const acc = slot && slot.targetAccuracy != null
+      ? (" · meta " + (typeof aprovaNormalizeTargetAccuracy === "function"
+        ? aprovaNormalizeTargetAccuracy(slot.targetAccuracy)
+        : slot.targetAccuracy) + "%")
+      : "";
     return "<li><strong>" + labels[i] + "</strong> — " +
-      (name || "não definida") + dateTxt + "</li>";
+      (name || "não definida") + dateTxt + acc + "</li>";
   }).join("");
 
   const preview = document.getElementById("perfil-plan-preview");
   if (preview && typeof aprovaBuildStudyPlan === "function") {
     const plan = aprovaBuildStudyPlan({ priorities: aprovaPerfilDraft }, null);
+    const primary = aprovaPerfilDraft.find(Boolean);
+    const target = primary && primary.targetAccuracy != null
+      ? (typeof aprovaNormalizeTargetAccuracy === "function"
+        ? aprovaNormalizeTargetAccuracy(primary.targetAccuracy)
+        : primary.targetAccuracy)
+      : 70;
     if (plan && plan.ok) {
       preview.textContent = "Após salvar, veja em Minhas metas: " + plan.horizon.label +
-        " · " + plan.daysLine + (plan.assumed ? " · data fim do ano." : ".");
+        " · " + plan.daysLine +
+        " · meta de acerto " + target + "%" +
+        (plan.assumed ? " · data fim do ano." : ".");
     } else {
-      preview.textContent = "Escolha a 1ª prova — as metas aparecem na aba Minhas metas.";
+      preview.textContent = "Escolha a 1ª prova e a % de acerto esperada — as metas aparecem em Minhas metas.";
     }
   }
 }
@@ -3399,6 +3478,19 @@ function aprovaRenderPerfilSlot () {
   if (dateEl) {
     dateEl.value = current && current.date ? current.date : "";
     dateEl.disabled = false;
+  }
+
+  const accEl = document.getElementById("perfil-slot-accuracy");
+  if (accEl) {
+    const def = typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined"
+      ? APROVA_DEFAULT_TARGET_ACCURACY
+      : 70;
+    accEl.value = current && current.targetAccuracy != null
+      ? String(typeof aprovaNormalizeTargetAccuracy === "function"
+        ? aprovaNormalizeTargetAccuracy(current.targetAccuracy)
+        : current.targetAccuracy)
+      : String(def);
+    accEl.disabled = !current;
   }
 
   document.querySelectorAll("[data-perfil-tab]").forEach(btn => {
@@ -4771,6 +4863,16 @@ async function aprovaBoot () {
   });
 
   document.getElementById("perfil-slot-date")?.addEventListener("change", () => {
+    aprovaPerfilCommitActiveSlot();
+    aprovaPerfilUpdateSummary();
+  });
+
+  document.getElementById("perfil-slot-accuracy")?.addEventListener("change", () => {
+    aprovaPerfilCommitActiveSlot();
+    aprovaPerfilUpdateSummary();
+  });
+
+  document.getElementById("perfil-slot-accuracy")?.addEventListener("input", () => {
     aprovaPerfilCommitActiveSlot();
     aprovaPerfilUpdateSummary();
   });

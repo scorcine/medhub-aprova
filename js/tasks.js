@@ -84,20 +84,36 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
 }
 
 /**
- * Meta de questões alinhada ao volume típico de cursinho/mentoria R1.
- * Referência: ~15.000 questões/ano → equivalências dia / semana / quinzena / mês.
- * (Independe do tamanho atual do banco — o banco continua crescendo.)
+ * Meta de questões derivada da % de acerto esperada no perfil + desempenho atual.
+ * Base ~9–16k/ano conforme ambição; sobe se está abaixo da meta.
  */
 const APROVA_Q_ANNUAL_TARGET = 15000;
 
-function aprovaPlanQuestionQuota (horizon, daysLeft) {
-  // Base calendário: 15000 / 365 ≈ 41,1 → 41/dia
-  let daily = Math.round(APROVA_Q_ANNUAL_TARGET / 365);
-  // Perto da prova: sobe um pouco (ainda na faixa realista de treino)
+function aprovaPlanQuestionQuota (horizon, daysLeft, opts) {
+  const o = opts || {};
+  const target = typeof aprovaNormalizeTargetAccuracy === "function"
+    ? aprovaNormalizeTargetAccuracy(o.targetAccuracy)
+    : Math.max(50, Math.min(95, Math.round(Number(o.targetAccuracy) || 70)));
+  const stats = o.stats || (typeof aprovaExamStatsSummary === "function"
+    ? aprovaExamStatsSummary()
+    : { attempted: 0, pct: 0 });
+  const current = Number(stats.pct) || 0;
+  const attempted = Number(stats.attempted) || 0;
+  const gap = Math.max(0, target - current);
+
+  // Ambição: 50% → ~9k/ano; 70% → ~12k; 85% → ~14,25k; 95% → ~15,75k
+  let annualTarget = Math.round(9000 + (target - 50) * 150);
+  // Atraso vs meta: até +35%
+  let boost = 1 + Math.min(0.35, gap / 100);
+  // Já acima da meta com amostra: alivia um pouco
+  if (attempted >= 40 && current >= target + 5) boost *= 0.88;
+  annualTarget = Math.round(annualTarget * boost);
+
+  let daily = Math.round(annualTarget / 365);
   if (daysLeft != null && daysLeft > 0 && daysLeft <= 21) daily = Math.round(daily * 1.25);
   else if (daysLeft != null && daysLeft > 0 && daysLeft <= 60) daily = Math.round(daily * 1.12);
   else if (daysLeft != null && daysLeft > 300) daily = Math.round(daily * 0.95);
-  daily = aprovaClampInt(daily, 35, 60);
+  daily = aprovaClampInt(daily, 25, 70);
 
   const weekly = daily * 7;
   const biweekly = daily * 14;
@@ -110,9 +126,101 @@ function aprovaPlanQuestionQuota (horizon, daysLeft) {
     biweekly,
     monthly,
     annual,
-    annualTarget: APROVA_Q_ANNUAL_TARGET,
+    annualTarget,
+    targetAccuracy: target,
+    currentAccuracy: attempted ? current : null,
+    accuracyGap: attempted ? gap : null,
+    attempted,
     minutesHint: Math.round(daily * 1.5) + "–" + Math.round(daily * 2.2) + " min"
   };
+}
+
+/**
+ * Três ondas de revisão dos assuntos até a prova (fundação → consolidação → afinamento).
+ */
+function aprovaBuildTopicReviewWaves (plan, focusPack, targetAccuracy, statsSummary) {
+  const daysLeft = plan && plan.anchor ? plan.anchor.days : null;
+  const totalDays = daysLeft != null && daysLeft > 0
+    ? daysLeft
+    : (plan && plan.weeks ? plan.weeks * 7 : 180);
+  const third = Math.max(14, Math.round(totalDays / 3));
+  const target = typeof aprovaNormalizeTargetAccuracy === "function"
+    ? aprovaNormalizeTargetAccuracy(targetAccuracy)
+    : 70;
+
+  const themes = typeof aprovaCollectCrossAreaThemes === "function"
+    ? aprovaCollectCrossAreaThemes(focusPack, 12, { perArea: 2 })
+    : [];
+
+  const weak = typeof aprovaWeakThemesVsTarget === "function"
+    ? aprovaWeakThemesVsTarget(target, 6, statsSummary)
+    : [];
+
+  // Quanto menos dias restam, mais avançada a onda
+  let currentIndex = 0;
+  if (daysLeft != null && daysLeft > 0) {
+    if (daysLeft <= third) currentIndex = 2;
+    else if (daysLeft <= third * 2) currentIndex = 1;
+    else currentIndex = 0;
+  }
+
+  const waveDefs = [
+    {
+      id: "fundacao",
+      label: "1ª revisão · Fundação",
+      intent: "Cobrir os temas que mais caem nas suas provas (primeira passagem).",
+      focus: themes.slice(0, 6).map((t) => t.tema)
+    },
+    {
+      id: "consolidacao",
+      label: "2ª revisão · Consolidação",
+      intent: "Segunda passagem; reforçar o que está abaixo da meta de " + target + "%.",
+      focus: (weak.length ? weak.map((w) => w.tema) : themes.slice(0, 8).map((t) => t.tema)).slice(0, 8)
+    },
+    {
+      id: "afinamento",
+      label: "3ª revisão · Afinamento",
+      intent: "Terceira passagem + drill nos temas fracos; combinar questões e flashcards.",
+      focus: (weak.length ? weak.map((w) => w.tema) : themes.slice(0, 6).map((t) => t.tema)).slice(0, 6)
+    }
+  ];
+
+  return {
+    ok: true,
+    targetAccuracy: target,
+    currentIndex,
+    current: waveDefs[currentIndex],
+    waves: waveDefs.map((w, i) => ({
+      ...w,
+      status: i < currentIndex ? "done" : (i === currentIndex ? "current" : "upcoming"),
+      windowHint: i === 0
+        ? "Primeiro terço até a prova"
+        : (i === 1 ? "Terço intermediário" : "Último terço (reta final)")
+    })),
+    weakThemes: weak
+  };
+}
+
+/** Ajusta pesos de temas pelo desempenho vs meta (para rateio de questões). */
+function aprovaWeightThemesByAccuracy (themes, targetAccuracy, statsSummary) {
+  const list = Array.isArray(themes) ? themes : [];
+  return list.map((t) => {
+    const bandInfo = typeof aprovaThemeAccuracyBand === "function"
+      ? aprovaThemeAccuracyBand(t.tema, targetAccuracy, statsSummary)
+      : { band: "near" };
+    const weights = typeof aprovaThemeBandWeights === "function"
+      ? aprovaThemeBandWeights(bandInfo.band)
+      : { qWeight: 1, label: "" };
+    const basePct = Math.max(0.5, Number(t.pct) || 1);
+    return {
+      ...t,
+      pct: basePct * weights.qWeight,
+      rawPct: t.pct,
+      band: bandInfo.band,
+      yourPct: bandInfo.pct,
+      bandLabel: weights.label
+    };
+  });
 }
 
 /**
@@ -543,7 +651,18 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
 
   const dailyTask = tasks.find(t => t.id === "daily");
 
-  const qQuota = aprovaPlanQuestionQuota(plan.horizon, daysLeft);
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const targetAccuracy = typeof aprovaProfileTargetAccuracy === "function"
+    ? aprovaProfileTargetAccuracy(profile)
+    : 70;
+  const statsSummary = typeof aprovaExamStatsSummary === "function"
+    ? aprovaExamStatsSummary()
+    : { attempted: 0, pct: 0, themes: [] };
+
+  const qQuota = aprovaPlanQuestionQuota(plan.horizon, daysLeft, {
+    targetAccuracy,
+    stats: statsSummary
+  });
   const qDone = typeof aprovaQActivityToday === "function" ? aprovaQActivityToday(now) : 0;
   const qWeekFrom = aprovaIsoOffset(-6, now);
   const qBiFrom = aprovaIsoOffset(-13, now);
@@ -562,19 +681,41 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     : 0;
   const qStatus = aprovaTaskStatus(qDone, qQuota.daily);
 
-  // Temas do dia (estatísticas das provas do perfil), não só a área genérica
-  const qFocusThemes = aprovaCollectCrossAreaThemes(focusPack, 8, { perArea: 2 });
-  const qDistributed = aprovaDistributeThemeCards(
-    qFocusThemes.length ? qFocusThemes : themeSets.daily,
-    qQuota.daily
+  const reviewWaves = aprovaBuildTopicReviewWaves(
+    plan,
+    focusPack,
+    targetAccuracy,
+    statsSummary
   );
-  const qThemes = qDistributed.map((t) => ({
-    specialty: t.areaId || "",
-    areaLabel: t.areaLabel || "",
-    tema: t.tema,
-    pct: t.pct,
-    n: t.cards
-  }));
+
+  // Temas do dia: estatísticas das provas + peso pelo desempenho vs meta
+  const qFocusThemes = aprovaCollectCrossAreaThemes(focusPack, 8, { perArea: 2 });
+  const qWeighted = aprovaWeightThemesByAccuracy(
+    qFocusThemes.length ? qFocusThemes : themeSets.daily,
+    targetAccuracy,
+    statsSummary
+  );
+  const qDistributed = aprovaDistributeThemeCards(qWeighted, qQuota.daily);
+  const qThemes = qDistributed.map((t) => {
+    const src = qWeighted.find((w) => w.tema === t.tema && (w.areaId || "") === (t.areaId || "")) || t;
+    return {
+      specialty: t.areaId || "",
+      areaLabel: t.areaLabel || "",
+      tema: t.tema,
+      pct: src.rawPct != null ? src.rawPct : t.pct,
+      n: t.cards,
+      band: src.band || null,
+      yourPct: src.yourPct != null ? src.yourPct : null,
+      bandLabel: src.bandLabel || ""
+    };
+  });
+
+  const accuracyGoal = {
+    target: targetAccuracy,
+    current: statsSummary.attempted ? statsSummary.pct : null,
+    attempted: statsSummary.attempted || 0,
+    gap: statsSummary.attempted ? Math.max(0, targetAccuracy - statsSummary.pct) : null
+  };
 
   return {
     quota,
@@ -586,6 +727,9 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
       monthly: { done: qMonthDone, goal: qQuota.monthly }
     },
     qThemes,
+    accuracyGoal,
+    reviewWaves,
+    weakThemes: (reviewWaves && reviewWaves.weakThemes) || [],
     tasks,
     themeProgram,
     themesForGoals: themeSets.daily,

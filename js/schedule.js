@@ -105,7 +105,7 @@ function aprovaPendingIds (cardIds, now = Date.now()) {
   });
 }
 
-function aprovaScheduleCard (cardId, knewIt) {
+function aprovaScheduleCard (cardId, knewIt, opts) {
   const map = aprovaLoadSrs();
   const now = Date.now();
   const prev = map[cardId];
@@ -117,6 +117,30 @@ function aprovaScheduleCard (cardId, knewIt) {
     intervalDays = Math.min(prev.intervalDays * 2, 30);
   } else {
     intervalDays = 3;
+  }
+
+  // Ajuste fino pelo desempenho do tema vs meta de acerto da prova
+  const o = opts || {};
+  let mult = Number(o.spacingMult);
+  if (!Number.isFinite(mult) || mult <= 0) {
+    const tema = o.tema || o.deckName || "";
+    if (tema && typeof aprovaThemeAccuracyBand === "function") {
+      const target = typeof aprovaProfileTargetAccuracy === "function"
+        ? aprovaProfileTargetAccuracy()
+        : 70;
+      const band = aprovaThemeAccuracyBand(tema, target);
+      const weights = typeof aprovaThemeBandWeights === "function"
+        ? aprovaThemeBandWeights(band.band)
+        : null;
+      mult = weights && weights.srsMult ? weights.srsMult : 1;
+    } else {
+      mult = 1;
+    }
+  }
+
+  if (knewIt && mult !== 1) {
+    intervalDays = Math.max(1, Math.round(intervalDays * mult));
+    intervalDays = Math.min(intervalDays, mult > 1 ? 45 : 30);
   }
 
   map[cardId] = {

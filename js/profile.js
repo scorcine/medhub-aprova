@@ -42,22 +42,44 @@ function aprovaNormalizeExamDate (value) {
   return s;
 }
 
+/** Meta de acerto esperada na prova (50–95%). Padrão 70. */
+const APROVA_DEFAULT_TARGET_ACCURACY = 70;
+
+function aprovaNormalizeTargetAccuracy (value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return APROVA_DEFAULT_TARGET_ACCURACY;
+  return Math.max(50, Math.min(95, Math.round(n)));
+}
+
 function aprovaNormalizePriority (slot) {
   if (!slot || typeof slot !== "object") return null;
   const date = aprovaNormalizeExamDate(slot.date);
+  const targetAccuracy = aprovaNormalizeTargetAccuracy(
+    slot.targetAccuracy != null ? slot.targetAccuracy : APROVA_DEFAULT_TARGET_ACCURACY
+  );
   if (slot.kind === "exam" && slot.id && APROVA_TARGET_EXAMS.some(e => e.id === slot.id)) {
-    const next = { kind: "exam", id: slot.id };
+    const next = { kind: "exam", id: slot.id, targetAccuracy };
     if (date) next.date = date;
     return next;
   }
   if (slot.kind === "other") {
     const label = String(slot.label || "").trim();
     if (!label) return null;
-    const next = { kind: "other", label };
+    const next = { kind: "other", label, targetAccuracy };
     if (date) next.date = date;
     return next;
   }
   return null;
+}
+
+/** Meta de acerto da 1ª prioridade preenchida (ou padrão). */
+function aprovaProfileTargetAccuracy (profile) {
+  const filled = aprovaProfileFilled(profile);
+  const first = filled[0];
+  if (first && first.targetAccuracy != null) {
+    return aprovaNormalizeTargetAccuracy(first.targetAccuracy);
+  }
+  return APROVA_DEFAULT_TARGET_ACCURACY;
 }
 
 /** Migra formato antigo { exams[], otherExam } → priorities[3]. */
@@ -165,12 +187,19 @@ function aprovaProfileSummary (profile) {
     }
     return (i + 1) + "ª · fim do ano";
   }).filter(Boolean);
+  const accBits = filled.map((s, i) => {
+    if (!s) return null;
+    const t = aprovaNormalizeTargetAccuracy(s.targetAccuracy);
+    return (i + 1) + "ª · meta " + t + "%";
+  }).filter(Boolean);
   return {
     complete: true,
     line: ordered.join(" · "),
-    detail: hasDates
+    detail: (hasDates
       ? ("Datas: " + dateBits.join(" · "))
-      : ("Plano com fim do ano como data estimada · " + dateBits.join(" · ")),
-    hasDates
+      : ("Plano com fim do ano como data estimada · " + dateBits.join(" · "))) +
+      (accBits.length ? (" · Acerto: " + accBits.join(" · ")) : ""),
+    hasDates,
+    targetAccuracy: aprovaProfileTargetAccuracy(p)
   };
 }

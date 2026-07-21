@@ -3045,6 +3045,89 @@ html[data-theme="dark"] .aprova-modal-panel {
   white-space: nowrap;
 }
 
+.metas-accuracy-goal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.55rem 0 0;
+}
+
+.metas-accuracy-goal .dash-seu-plano-chip {
+  font-size: 0.85rem;
+}
+
+.metas-review-waves {
+  margin-top: 0.85rem;
+}
+
+.metas-waves-list {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.metas-waves-list li {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.metas-waves-list li[data-status="current"] {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.metas-waves-list li[data-status="done"] {
+  opacity: 0.72;
+}
+
+.metas-waves-list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+}
+
+.metas-waves-list span {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.metas-weak-nudge {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.metas-weak-nudge .actions-row {
+  margin-top: 0.55rem;
+}
+
+.profile-accuracy-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.profile-accuracy-controls input {
+  max-width: 5.5rem;
+}
+
+.dash-task-theme-btn[data-band="far"] {
+  border-color: color-mix(in srgb, #c45c26 45%, var(--line));
+}
+
+.dash-task-theme-btn[data-band="hit"] {
+  opacity: 0.92;
+}
+
 button.linkish {
   display: inline;
   padding: 0;

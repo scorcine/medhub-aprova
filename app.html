@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721metas4">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721acc1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -573,6 +573,23 @@
               </p>
             </div>
 
+            <div class="profile-accuracy-row" style="margin-top:0.85rem">
+              <label class="profile-select-label" for="perfil-slot-accuracy">Acerto esperado nesta prova (%)</label>
+              <div class="profile-accuracy-controls">
+                <input
+                  type="number"
+                  id="perfil-slot-accuracy"
+                  class="profile-date-input"
+                  min="50"
+                  max="95"
+                  step="1"
+                  value="70"
+                  inputmode="numeric"
+                />
+                <span class="muted" style="font-size:0.85rem">Define o volume de questões e o espaçamento das revisões</span>
+              </div>
+            </div>
+
             <p class="muted" id="perfil-save-msg" hidden style="margin:0.85rem 0 0"></p>
             <div class="actions-row" style="margin-top:1rem">
               <button type="button" class="btn btn-primary" id="perfil-save">Salvar perfil</button>
@@ -626,7 +643,13 @@
                   <div class="metas-track-body">
                     <div class="dash-task-bar" aria-hidden="true"><i id="metas-q-bar" style="width:0%"></i></div>
                     <div class="dash-seu-plano-quota" id="metas-q-quota"></div>
+                    <div class="metas-accuracy-goal" id="metas-accuracy-goal" hidden></div>
                     <ul class="metas-q-periods" id="metas-q-periods"></ul>
+                    <div class="metas-review-waves" id="metas-review-waves" hidden>
+                      <div class="label">3 revisões dos assuntos até a prova</div>
+                      <ol class="metas-waves-list" id="metas-waves-list"></ol>
+                    </div>
+                    <div class="metas-weak-nudge" id="metas-weak-nudge" hidden></div>
                     <div class="label" style="margin-top:0.55rem">Foco de hoje · pelas suas provas</div>
                     <ul class="dash-task-themes" id="metas-q-themes"></ul>
                     <div class="actions-row" style="margin-top:0.75rem">
@@ -818,15 +841,15 @@
 
   <script src="js/theme.js?v=20260718dd"></script>
   <script src="js/auth.js?v=20260718dd"></script>
-  <script src="js/profile.js?v=20260719b"></script>
+  <script src="js/profile.js?v=20260721acc1"></script>
   <script src="js/focus.js?v=20260719h"></script>
   <script src="js/plan.js?v=20260719h"></script>
-  <script src="js/tasks.js?v=20260721metas4"></script>
-  <script src="js/schedule.js?v=20260719i"></script>
-  <script src="js/exam-stats.js?v=20260721metas2"></script>
-  <script src="js/flashcards.js?v=20260719f"></script>
+  <script src="js/tasks.js?v=20260721acc1"></script>
+  <script src="js/schedule.js?v=20260721acc1"></script>
+  <script src="js/exam-stats.js?v=20260721acc1"></script>
+  <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721metas4"></script>
+  <script src="js/app-qui.js?v=20260721acc1"></script>
 </body>
 </html>
