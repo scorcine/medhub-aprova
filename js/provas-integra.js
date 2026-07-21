@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare6";
+const APROVA_PROVAS_CACHE_VER = "20260721enare7";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -251,7 +251,7 @@ function aprovaRenderProvasAnos (root, data, familyId) {
       "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
         "<div class=\"label\">" + String(family.label) + "</div>" +
         "<p class=\"prompt\" style=\"margin:0.35rem 0 0.85rem\"><strong>Escolha o ano</strong></p>" +
-        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Toque no ano. Em seguida escolha prova na íntegra ou por grande área.</p>" +
+        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Toque no ano para abrir a prova na íntegra.</p>" +
         "<div class=\"provas-year-grid\" role=\"list\">" + chips + "</div>" +
       "</article>" +
     "</div>";
@@ -298,36 +298,46 @@ async function aprovaRenderProvasModo (root, data, seq) {
       return;
     }
 
-    const byArea = aprovaProvasCountByArea(questions);
-    const areas = APROVA_PROVAS_AREA_ORDER
-      .filter((id) => (byArea[id] || 0) > 0)
-      .concat(Object.keys(byArea).filter((id) => APROVA_PROVAS_AREA_ORDER.indexOf(id) < 0 && byArea[id] > 0));
-
-    const areaBtns = areas.map((id) => {
-      const n = byArea[id] || 0;
-      return (
-        "<button type=\"button\" class=\"provas-area-chip\" data-prova-start=\"" +
-          String(meta.id) + "\" data-prova-area=\"" + id + "\">" +
-          "<span class=\"provas-area-chip-label\">" + aprovaProvaAreaLabel(id) + "</span>" +
-          "<span class=\"provas-area-chip-count\">" + n + " questões</span>" +
-        "</button>"
-      );
-    }).join("");
+    // Recorte por área só quando o pacote tiver tags confiáveis (areasReady).
+    // Heurística automática inflava Clínica e quase zerava Preventiva — não publicar isso.
+    const areasReady = meta.areasReady === true;
+    let areaBlock = "";
+    if (areasReady) {
+      const byArea = aprovaProvasCountByArea(questions);
+      const areas = APROVA_PROVAS_AREA_ORDER
+        .filter((id) => (byArea[id] || 0) > 0)
+        .concat(Object.keys(byArea).filter((id) => APROVA_PROVAS_AREA_ORDER.indexOf(id) < 0 && byArea[id] > 0));
+      const areaBtns = areas.map((id) => {
+        const n = byArea[id] || 0;
+        return (
+          "<button type=\"button\" class=\"provas-area-chip\" data-prova-start=\"" +
+            String(meta.id) + "\" data-prova-area=\"" + id + "\">" +
+            "<span class=\"provas-area-chip-label\">" + aprovaProvaAreaLabel(id) + "</span>" +
+            "<span class=\"provas-area-chip-count\">" + n + " questões</span>" +
+          "</button>"
+        );
+      }).join("");
+      areaBlock =
+        "<div class=\"label\" style=\"margin:1rem 0 0.35rem\">Por grande área</div>" +
+        "<div class=\"provas-area-grid\">" + areaBtns + "</div>";
+    } else {
+      areaBlock =
+        "<p class=\"muted\" style=\"margin:1rem 0 0;font-size:0.85rem\">Recorte por grande área em curadoria " +
+        "(as contagens automáticas ainda não batem com a distribuição oficial da banca).</p>";
+    }
 
     root.innerHTML =
       "<div class=\"provas-integra-year-wrap\">" +
         "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
         "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
           "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
-          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Como deseja fazer?</strong></p>" +
-          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Prova completa na ordem da banca, ou um recorte por grande área.</p>" +
-          "<div class=\"actions-row\" style=\"margin-bottom:1rem\">" +
+          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Prova na íntegra</strong></p>" +
+          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">100 questões na ordem oficial da banca, com gabarito e anuladas.</p>" +
+          "<div class=\"actions-row\" style=\"margin-bottom:0.25rem\">" +
             "<button type=\"button\" class=\"btn btn-primary\" data-prova-start=\"" +
-              String(meta.id) + "\" data-prova-area=\"\">Prova na íntegra (" + total + ")</button>" +
+              String(meta.id) + "\" data-prova-area=\"\">Começar (" + total + ")</button>" +
           "</div>" +
-          "<div class=\"label\" style=\"margin-bottom:0.35rem\">Por grande área</div>" +
-          "<p class=\"muted\" style=\"margin:0 0 0.65rem;font-size:0.85rem\">Classificação automática MedHub R1 (aproximada). A prova na íntegra mantém a ordem oficial.</p>" +
-          "<div class=\"provas-area-grid\">" + areaBtns + "</div>" +
+          areaBlock +
         "</article>" +
       "</div>";
   } catch (err) {
