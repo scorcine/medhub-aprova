@@ -2854,10 +2854,6 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
     return;
   }
 
-  if (typeof aprovaSetMateriaCreditTarget === "function") {
-    aprovaSetMateriaCreditTarget({ tema, specialty });
-  }
-
   AprovaQuestions.filters = {
     specialty: specialty || "",
     group: "",
@@ -2865,6 +2861,30 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
     exam: "",
     year: ""
   };
+  aprovaQBrowse.specialty = specialty || "";
+  aprovaQBrowse.group = "";
+  aprovaQBrowse.theme = String(tema || "");
+  aprovaQBrowse.level = specialty ? "groups" : "areas";
+
+  // Banco completo do tema: aluno escolhe modo, escopo e quantidade.
+  if (mode === "more") {
+    if (typeof aprovaClearMateriaCreditTarget === "function") {
+      aprovaClearMateriaCreditTarget();
+    }
+    aprovaQBankPoolOverride = pool.slice();
+    aprovaQModalMode = "treino";
+    aprovaQModalScope = "all";
+    aprovaQModalForceSetup = true;
+    aprovaShowQuestionViews("browse");
+    aprovaRenderQuestionBrowse();
+    aprovaShowQuestionLaunch();
+    aprovaSyncQuestionModalUI();
+    return;
+  }
+
+  if (typeof aprovaSetMateriaCreditTarget === "function") {
+    aprovaSetMateriaCreditTarget({ tema, specialty });
+  }
 
   if (mode === "review") {
     const idList = typeof aprovaMateriaAnsweredIdList === "function"
@@ -2926,16 +2946,13 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
     return;
   }
 
-  const savedScope = mode === "more" ? "meta-more" : "meta";
-  if (mode !== "more") {
-    const saved = AprovaQuestions.getResumableTreino(AprovaQuestions.filters, savedScope);
-    if (saved) {
-      const resumed = AprovaQuestions.resumeTreino(saved);
-      if (resumed) {
-        aprovaShowQuestionViews("card");
-        aprovaRenderQuestion();
-        return;
-      }
+  const saved = AprovaQuestions.getResumableTreino(AprovaQuestions.filters, "meta");
+  if (saved) {
+    const resumed = AprovaQuestions.resumeTreino(saved);
+    if (resumed) {
+      aprovaShowQuestionViews("card");
+      aprovaRenderQuestion();
+      return;
     }
   }
 
@@ -2952,7 +2969,7 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
     return true;
   });
   const source = fresh.length ? fresh : pool.filter((q) => q && !used[q.id]);
-  const bag = source.length ? source : (mode === "more" ? pool : []);
+  const bag = source.length ? source : [];
   if (!bag.length) {
     return aprovaFulfillMetaQuestions(specialty, tema, want, { mode: "review" });
   }
@@ -2964,7 +2981,7 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
     aprovaRenderQuestionBrowse();
     return;
   }
-  AprovaQuestions.startTreino(shuffled.slice(0, size), savedScope);
+  AprovaQuestions.startTreino(shuffled.slice(0, size), "meta");
   aprovaShowQuestionViews("card");
   aprovaRenderQuestion();
 }
@@ -4506,6 +4523,8 @@ let aprovaQModalMode = "treino";
 let aprovaQModalScope = "all";
 /** Quando true, o modal mostra setup normal mesmo com save (após "Começar de novo"). */
 let aprovaQModalForceSetup = false;
+/** Pool completo do tema (metas → Praticar mais no banco). */
+let aprovaQBankPoolOverride = null;
 
 const APROVA_Q_UI_KEY = "medhub-aprova-q-ui-v1";
 const APROVA_Q_FONT_STEPS = ["sm", "md", "lg"];
@@ -4720,7 +4739,9 @@ function aprovaBindQuestionUiControls () {
 }
 
 function aprovaQModalPool (filters, scope) {
-  const base = AprovaQuestions.filteredCatalog(filters || aprovaReadQuestionFilters());
+  const base = Array.isArray(aprovaQBankPoolOverride) && aprovaQBankPoolOverride.length
+    ? aprovaQBankPoolOverride.slice()
+    : AprovaQuestions.filteredCatalog(filters || aprovaReadQuestionFilters());
   if (!scope || scope === "all" || typeof aprovaQuestionMatchesScope !== "function") {
     return base;
   }
@@ -4750,12 +4771,21 @@ function aprovaSyncQuestionModalUI () {
 
   const filters = aprovaReadQuestionFilters();
   const pool = aprovaQModalPool(filters, aprovaQModalScope);
-  const path = [
-    aprovaQSpecialtyLabel(aprovaQBrowse.specialty),
-    aprovaQBrowse.group,
-    aprovaQBrowse.theme
-  ].filter(Boolean).join(" · ");
-  if (titleEl) titleEl.textContent = path || "Iniciar estudo";
+  const path = aprovaQBankPoolOverride && aprovaQBankPoolOverride.length
+    ? ([
+        aprovaQSpecialtyLabel(aprovaQBrowse.specialty),
+        aprovaQBrowse.theme || aprovaQBrowse.group
+      ].filter(Boolean).join(" · ") || "Banco do tema")
+    : [
+        aprovaQSpecialtyLabel(aprovaQBrowse.specialty),
+        aprovaQBrowse.group,
+        aprovaQBrowse.theme
+      ].filter(Boolean).join(" · ");
+  if (titleEl) {
+    titleEl.textContent = path
+      ? (aprovaQBankPoolOverride ? ("Banco · " + path) : path)
+      : "Iniciar estudo";
+  }
 
   const saved = !aprovaQModalForceSetup
     ? AprovaQuestions.getResumableTreino(filters, aprovaQModalScope)
@@ -4781,9 +4811,16 @@ function aprovaSyncQuestionModalUI () {
       ? "novas"
       : (aprovaQModalScope === "wrong" ? "erradas" : "neste recorte");
     if (countEl) {
-      countEl.textContent = pool.length
-        ? (pool.length + (pool.length === 1 ? " questão" : " questões") + " " + scopeLabel)
-        : ("Nenhuma questão " + scopeLabel + " com estes filtros.");
+      if (!pool.length) {
+        countEl.textContent = "Nenhuma questão " + scopeLabel + " com estes filtros.";
+      } else if (aprovaQBankPoolOverride && aprovaQBankPoolOverride.length) {
+        countEl.textContent = pool.length +
+          (pool.length === 1 ? " questão" : " questões") +
+          " no banco deste tema (" + scopeLabel + "). Escolha treino ou simulado.";
+      } else {
+        countEl.textContent = pool.length +
+          (pool.length === 1 ? " questão" : " questões") + " " + scopeLabel;
+      }
     }
   }
   return pool.length;
@@ -4798,6 +4835,7 @@ function aprovaCloseQuestionModal () {
   if (modal) modal.hidden = true;
   document.body.classList.remove("modal-open");
   aprovaQModalForceSetup = false;
+  aprovaQBankPoolOverride = null;
 }
 
 function aprovaShowQuestionLaunch () {
