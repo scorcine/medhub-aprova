@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare9";
+const APROVA_PROVAS_CACHE_VER = "20260721enare10";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -17,10 +17,11 @@ let aprovaProvasBound = false;
 let aprovaProvasPackCache = Object.create(null);
 let aprovaProvasRenderSeq = 0;
 let aprovaProvasView = {
-  mode: "familias", // familias | anos | modo
+  mode: "familias", // familias | anos | modo | estilo
   familyId: null,
   year: null,
-  packId: null
+  packId: null,
+  area: ""
 };
 
 function aprovaProvaExamLabel (examId) {
@@ -97,14 +98,14 @@ function aprovaProvasFindPack (family, year, data) {
 }
 
 function aprovaProvasGoFamilias () {
-  aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
+  aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null, area: "" };
   aprovaRenderProvasIntegra();
 }
 
 function aprovaProvasGoAnos (familyId) {
   const id = String(familyId || "").trim();
   if (!id) return;
-  aprovaProvasView = { mode: "anos", familyId: id, year: null, packId: null };
+  aprovaProvasView = { mode: "anos", familyId: id, year: null, packId: null, area: "" };
   aprovaRenderProvasIntegra();
 }
 
@@ -112,11 +113,31 @@ function aprovaProvasGoModo (familyId, year) {
   const id = String(familyId || "").trim();
   const y = Number(year);
   if (!id || !Number.isFinite(y)) return;
-  aprovaProvasView = { mode: "modo", familyId: id, year: y, packId: null };
+  aprovaProvasView = { mode: "modo", familyId: id, year: y, packId: null, area: "" };
+  aprovaRenderProvasIntegra();
+}
+
+function aprovaProvasGoEstilo (familyId, year, packId, area) {
+  const id = String(familyId || "").trim();
+  const y = Number(year);
+  if (!id || !Number.isFinite(y) || !packId) return;
+  aprovaProvasView = {
+    mode: "estilo",
+    familyId: id,
+    year: y,
+    packId: String(packId),
+    area: String(area || "")
+  };
   aprovaRenderProvasIntegra();
 }
 
 function aprovaProvasBack () {
+  if (aprovaProvasView.mode === "estilo") {
+    aprovaProvasView.mode = "modo";
+    aprovaProvasView.area = "";
+    aprovaRenderProvasIntegra();
+    return;
+  }
   if (aprovaProvasView.mode === "modo") {
     aprovaProvasView.mode = "anos";
     aprovaProvasView.packId = null;
@@ -124,6 +145,42 @@ function aprovaProvasBack () {
     return;
   }
   aprovaProvasGoFamilias();
+}
+
+/** Volta do card de questão para a tela da prova (estilo). */
+function aprovaReturnToProvaHub () {
+  let familyId = aprovaProvasView.familyId;
+  let year = aprovaProvasView.year;
+  let packId = aprovaProvasView.packId;
+  let area = aprovaProvasView.area || "";
+  if (typeof AprovaQuestions !== "undefined" && AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession()) {
+    const sim = AprovaQuestions.simulado || {};
+    familyId = sim.familyId || familyId;
+    year = sim.year != null ? sim.year : year;
+    packId = sim.packId || packId;
+    area = sim.area || area;
+  }
+  if (!familyId || !year || !packId) {
+    const saved = typeof AprovaQuestions !== "undefined" && AprovaQuestions.loadSavedProva
+      ? AprovaQuestions.loadSavedProva()
+      : null;
+    if (saved) {
+      familyId = saved.familyId || familyId;
+      year = saved.year != null ? saved.year : year;
+      packId = saved.packId || packId;
+      area = saved.area || area;
+    }
+  }
+  if (typeof aprovaMarkNav === "function") aprovaMarkNav("provas-integra");
+  if (typeof aprovaGoTo === "function") aprovaGoTo("provas-integra");
+  else if (typeof aprovaShowPanel === "function") aprovaShowPanel("provas-integra");
+  if (familyId && year && packId) {
+    aprovaProvasGoEstilo(familyId, year, packId, area);
+  } else if (familyId && year) {
+    aprovaProvasGoModo(familyId, year);
+  } else {
+    aprovaProvasGoFamilias();
+  }
 }
 
 function aprovaBindProvasIntegra () {
@@ -141,9 +198,14 @@ function aprovaBindProvasIntegra () {
       e.preventDefault();
       e.stopPropagation();
       const to = back.getAttribute("data-prova-back") || "familias";
-      if (to === "anos") {
+      if (to === "modo") {
+        aprovaProvasView.mode = "modo";
+        aprovaProvasView.area = "";
+        aprovaRenderProvasIntegra();
+      } else if (to === "anos") {
         aprovaProvasView.mode = "anos";
         aprovaProvasView.packId = null;
+        aprovaProvasView.area = "";
         aprovaRenderProvasIntegra();
       } else {
         aprovaProvasGoFamilias();
@@ -173,14 +235,34 @@ function aprovaBindProvasIntegra () {
       return;
     }
 
-    const startBtn = el.closest("[data-prova-start]");
-    if (startBtn) {
+    const scopeBtn = el.closest("[data-prova-scope]");
+    if (scopeBtn) {
       e.preventDefault();
       e.stopPropagation();
-      if (startBtn.disabled) return;
-      const packId = startBtn.getAttribute("data-prova-start");
-      const area = startBtn.getAttribute("data-prova-area") || "";
-      if (packId) aprovaStartProvaIntegraById(packId, area || null);
+      const packId = scopeBtn.getAttribute("data-prova-scope");
+      const area = scopeBtn.getAttribute("data-prova-area") || "";
+      if (packId) {
+        aprovaProvasGoEstilo(
+          aprovaProvasView.familyId,
+          aprovaProvasView.year,
+          packId,
+          area
+        );
+      }
+      return;
+    }
+
+    const styleBtn = el.closest("[data-prova-style]");
+    if (styleBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const style = styleBtn.getAttribute("data-prova-style") || "simulado";
+      const action = styleBtn.getAttribute("data-prova-action") || "start";
+      aprovaStartProvaIntegraById(
+        aprovaProvasView.packId,
+        aprovaProvasView.area || null,
+        { style, action }
+      );
     }
   });
 }
@@ -307,10 +389,10 @@ async function aprovaRenderProvasModo (root, data, seq) {
       const areas = APROVA_PROVAS_AREA_ORDER
         .filter((id) => (byArea[id] || 0) > 0)
         .concat(Object.keys(byArea).filter((id) => APROVA_PROVAS_AREA_ORDER.indexOf(id) < 0 && byArea[id] > 0));
-      const areaBtns = areas.map((id) => {
+      const areaScopeBtns = areas.map((id) => {
         const n = byArea[id] || 0;
         return (
-          "<button type=\"button\" class=\"provas-area-chip\" data-prova-start=\"" +
+          "<button type=\"button\" class=\"provas-area-chip\" data-prova-scope=\"" +
             String(meta.id) + "\" data-prova-area=\"" + id + "\">" +
             "<span class=\"provas-area-chip-label\">" + aprovaProvaAreaLabel(id) + "</span>" +
             "<span class=\"provas-area-chip-count\">" + n + " questões</span>" +
@@ -320,7 +402,7 @@ async function aprovaRenderProvasModo (root, data, seq) {
       areaBlock =
         "<div class=\"label\" style=\"margin:1rem 0 0.35rem\">Por grande área</div>" +
         "<p class=\"muted\" style=\"margin:0 0 0.65rem;font-size:0.85rem\">Classificação MedHub R1 por enunciado (curada). A prova na íntegra mantém a ordem oficial.</p>" +
-        "<div class=\"provas-area-grid\">" + areaBtns + "</div>";
+        "<div class=\"provas-area-grid\">" + areaScopeBtns + "</div>";
     } else {
       areaBlock =
         "<p class=\"muted\" style=\"margin:1rem 0 0;font-size:0.85rem\">Recorte por grande área em curadoria.</p>";
@@ -331,10 +413,10 @@ async function aprovaRenderProvasModo (root, data, seq) {
         "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
         "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
           "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
-          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Como deseja fazer?</strong></p>" +
-          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Prova completa na ordem da banca, ou um recorte por grande área.</p>" +
+          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>O que deseja fazer?</strong></p>" +
+          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Escolha a prova completa ou um recorte por grande área. Em seguida você define o modo (simulado ou treino).</p>" +
           "<div class=\"actions-row\" style=\"margin-bottom:0.25rem\">" +
-            "<button type=\"button\" class=\"btn btn-primary\" data-prova-start=\"" +
+            "<button type=\"button\" class=\"btn btn-primary\" data-prova-scope=\"" +
               String(meta.id) + "\" data-prova-area=\"\">Prova na íntegra (" + total + ")</button>" +
           "</div>" +
           areaBlock +
@@ -354,6 +436,88 @@ async function aprovaRenderProvasModo (root, data, seq) {
   }
 }
 
+function aprovaRenderProvasEstilo (root, data) {
+  const family = aprovaProvasFindFamily(aprovaProvasView.familyId, data);
+  const year = Number(aprovaProvasView.year);
+  const packId = String(aprovaProvasView.packId || "");
+  const area = String(aprovaProvasView.area || "");
+  const meta = (data.provas || []).find((p) => p && p.id === packId) ||
+    aprovaProvasFindPack(family, year, data);
+  if (!family || !meta) {
+    aprovaProvasGoModo(aprovaProvasView.familyId, year);
+    return;
+  }
+
+  const scopeLabel = area
+    ? aprovaProvaAreaLabel(area)
+    : ("Prova na íntegra (" + (meta.count || 100) + ")");
+  const resumeSim = typeof AprovaQuestions !== "undefined" && AprovaQuestions.getResumableProva
+    ? AprovaQuestions.getResumableProva(meta.id, area, "simulado")
+    : null;
+  const resumeTreino = typeof AprovaQuestions !== "undefined" && AprovaQuestions.getResumableProva
+    ? AprovaQuestions.getResumableProva(meta.id, area, "treino")
+    : null;
+
+  function styleCard (style, title, blurb, resume) {
+    const done = resume && resume.answers ? resume.answers.filter((a) => a && !a.annulled).length : 0;
+    const total = resume && resume.queue ? resume.queue.length : (meta.count || 100);
+    const finished = !!(resume && resume.finished);
+    let actions = "";
+    if (resume && !finished && done > 0) {
+      actions =
+        "<div class=\"actions-row\" style=\"margin-top:0.65rem;flex-wrap:wrap;gap:0.5rem\">" +
+          "<button type=\"button\" class=\"btn btn-primary\" data-prova-style=\"" + style +
+            "\" data-prova-action=\"continue\">Continuar (" + done + "/" + total + ")</button>" +
+          "<button type=\"button\" class=\"btn btn-ghost\" data-prova-style=\"" + style +
+            "\" data-prova-action=\"restart\">Recomeçar</button>" +
+        "</div>";
+    } else if (resume && finished) {
+      actions =
+        "<div class=\"actions-row\" style=\"margin-top:0.65rem;flex-wrap:wrap;gap:0.5rem\">" +
+          "<button type=\"button\" class=\"btn btn-primary\" data-prova-style=\"" + style +
+            "\" data-prova-action=\"restart\">Fazer de novo</button>" +
+          "<button type=\"button\" class=\"btn btn-ghost\" data-prova-style=\"" + style +
+            "\" data-prova-action=\"continue\">Ver resultado</button>" +
+        "</div>";
+    } else {
+      actions =
+        "<div class=\"actions-row\" style=\"margin-top:0.65rem\">" +
+          "<button type=\"button\" class=\"btn btn-primary\" data-prova-style=\"" + style +
+            "\" data-prova-action=\"start\">Começar</button>" +
+        "</div>";
+    }
+    return (
+      "<article class=\"study-card provas-style-card\" style=\"margin-top:0.75rem\">" +
+        "<div class=\"label\">" + title + "</div>" +
+        "<p class=\"muted\" style=\"margin:0.35rem 0 0\">" + blurb + "</p>" +
+        actions +
+      "</article>"
+    );
+  }
+
+  root.innerHTML =
+    "<div class=\"provas-integra-year-wrap\">" +
+      "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"modo\">← Voltar</button>" +
+      "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
+        "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
+        "<p class=\"prompt\" style=\"margin:0.35rem 0 0.35rem\"><strong>" + scopeLabel + "</strong></p>" +
+        "<p class=\"muted\" style=\"margin:0\">Escolha o modo. Seu progresso nesta prova fica salvo neste aparelho.</p>" +
+      "</article>" +
+      styleCard(
+        "simulado",
+        "Simulado",
+        "Cronômetro ligado. Você marca a alternativa sem ver certo/errado na hora — o gabarito e o feedback vêm ao final.",
+        resumeSim
+      ) +
+      styleCard(
+        "treino",
+        "Treino",
+        "Com comentário e pegadinha após cada resposta — ideal para estudar o raciocínio da banca.",
+        resumeTreino
+      ) +
+    "</div>";
+}
+
 function aprovaRenderProvasIntegra () {
   aprovaBindProvasIntegra();
   const root = document.getElementById("provas-integra-list");
@@ -365,6 +529,10 @@ function aprovaRenderProvasIntegra () {
   aprovaLoadProvasCatalogData()
     .then((data) => {
       if (seq !== aprovaProvasRenderSeq) return null;
+      if (aprovaProvasView.mode === "estilo") {
+        aprovaRenderProvasEstilo(root, data);
+        return null;
+      }
       if (aprovaProvasView.mode === "modo") {
         return aprovaRenderProvasModo(root, data, seq);
       }
@@ -394,7 +562,10 @@ function aprovaOpenProvaQuestionCard () {
   if (typeof aprovaRenderQuestion === "function") aprovaRenderQuestion();
 }
 
-async function aprovaStartProvaIntegraById (provaId, areaFilter) {
+async function aprovaStartProvaIntegraById (provaId, areaFilter, opts) {
+  const options = opts || {};
+  const style = String(options.style || "simulado").toLowerCase() === "treino" ? "treino" : "simulado";
+  const action = String(options.action || "start");
   try {
     const data = await aprovaLoadProvasCatalogData();
     const meta = (data.provas || []).find((p) => p.id === provaId);
@@ -402,9 +573,49 @@ async function aprovaStartProvaIntegraById (provaId, areaFilter) {
       window.alert("Esta prova ainda não está disponível.");
       return;
     }
+    const area = String(areaFilter || "").trim().toLowerCase();
+    const sessionId = meta.id + (area ? ("-" + area) : "") + "-" + style;
+    const title = area
+      ? (String(meta.title || "Prova") + " · " + aprovaProvaAreaLabel(area))
+      : String(meta.title || (aprovaProvaExamLabel(meta.exam) + " " + meta.year));
+
+    if (typeof AprovaQuestions === "undefined" || typeof AprovaQuestions.startProvaIntegra !== "function") {
+      window.alert("Módulo de questões indisponível. Recarregue a página (Ctrl+Shift+R).");
+      return;
+    }
+
+    const resume = AprovaQuestions.getResumableProva(meta.id, area, style);
+    if (action === "continue" && resume) {
+      const n = AprovaQuestions.startProvaIntegra(null, {
+        id: sessionId,
+        packId: meta.id,
+        title: resume.provaTitle || title,
+        exam: meta.exam,
+        year: meta.year,
+        familyId: aprovaProvasView.familyId || resume.familyId,
+        area,
+        style
+      }, { resumeSnap: resume });
+      if (!n) {
+        window.alert("Não foi possível retomar a prova.");
+        return;
+      }
+      if (resume.finished && typeof aprovaRenderSimuladoResult === "function") {
+        AprovaQuestions.simulado.finished = true;
+        aprovaOpenProvaQuestionCard();
+        aprovaRenderSimuladoResult();
+        return;
+      }
+      aprovaOpenProvaQuestionCard();
+      return;
+    }
+
+    if (action === "restart" && typeof AprovaQuestions.clearSavedProva === "function") {
+      AprovaQuestions.clearSavedProva(meta.id, area, style);
+    }
+
     const pack = await aprovaLoadProvaFile(meta.file);
     let questions = aprovaProvasQuestionsFromPack(pack);
-    const area = String(areaFilter || "").trim().toLowerCase();
     if (area) {
       questions = questions.filter((q) => String((q && q.specialty) || "").toLowerCase() === area);
     }
@@ -414,19 +625,16 @@ async function aprovaStartProvaIntegraById (provaId, areaFilter) {
         : "A prova está vazia.");
       return;
     }
-    if (typeof AprovaQuestions === "undefined" || typeof AprovaQuestions.startProvaIntegra !== "function") {
-      window.alert("Módulo de questões indisponível. Recarregue a página (Ctrl+Shift+R).");
-      return;
-    }
-    const title = area
-      ? (String(meta.title || "Prova") + " · " + aprovaProvaAreaLabel(area))
-      : String(meta.title || (aprovaProvaExamLabel(meta.exam) + " " + meta.year));
     const n = AprovaQuestions.startProvaIntegra(questions, {
-      id: meta.id + (area ? ("-" + area) : ""),
+      id: sessionId,
+      packId: meta.id,
       title,
       exam: meta.exam,
-      year: meta.year
-    });
+      year: meta.year,
+      familyId: aprovaProvasView.familyId || "",
+      area,
+      style
+    }, { restart: true });
     if (!n) {
       window.alert("Não foi possível iniciar a prova.");
       return;
@@ -442,7 +650,9 @@ window.aprovaRenderProvasIntegra = aprovaRenderProvasIntegra;
 window.aprovaStartProvaIntegraById = aprovaStartProvaIntegraById;
 window.aprovaProvasGoAnos = aprovaProvasGoAnos;
 window.aprovaProvasGoModo = aprovaProvasGoModo;
+window.aprovaProvasGoEstilo = aprovaProvasGoEstilo;
 window.aprovaProvasBack = aprovaProvasBack;
+window.aprovaReturnToProvaHub = aprovaReturnToProvaHub;
 
 function aprovaProvasBootBind () {
   aprovaBindProvasIntegra();

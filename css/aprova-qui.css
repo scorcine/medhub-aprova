@@ -2061,6 +2061,21 @@ body.app-body {
   --q-choice-fs: 1.08rem;
 }
 
+#q-card .q-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.85rem;
+}
+
+#q-card .q-timer {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
 #q-card .q-stem.prompt {
   font-family: var(--font-body);
   font-size: var(--q-stem-fs);
@@ -2069,6 +2084,40 @@ body.app-body {
   line-height: 1.55;
   margin: 0 0 0.95rem;
   user-select: text;
+}
+
+.q-result-focus {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.q-result-focus-item {
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.q-result-focus-item strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.q-result-focus-item span {
+  color: var(--muted, #94a3b8);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.q-result-focus-item--alto {
+  border-color: rgba(248, 113, 113, 0.45);
+}
+
+.q-result-focus-item--baixo {
+  border-color: rgba(15, 159, 154, 0.4);
 }
 
 #q-card .q-images {

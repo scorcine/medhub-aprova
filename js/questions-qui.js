@@ -17,9 +17,19 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare9";
+const APROVA_QUESTION_CACHE_VER = "20260721enare10";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
+const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
+
+/** Peso relativo típico nas bancas nacionais (referência de priorização). */
+const APROVA_AREA_EXAM_WEIGHT = {
+  clinica: 28,
+  go: 21,
+  cirurgia: 19,
+  pediatria: 19,
+  preventiva: 12
+};
 
 /**
  * Espelha questões das provas na íntegra (status ready) no catálogo de treino.
@@ -328,35 +338,226 @@ const AprovaQuestions = {
   },
 
   /**
-   * Prova na íntegra: mantém a ordem das questões; só embaralha alternativas.
-   * meta: { id, title, exam, year }
+   * Prova na íntegra / por área.
+   * meta: { id, packId, title, exam, year, familyId, area, style }
+   * opts: { resumeSnap, restart }
+   * style: "simulado" (cronômetro, sem gabarito na hora) | "treino" (com explicação)
    */
-  startProvaIntegra (list, meta) {
+  startProvaIntegra (list, meta, opts) {
     const info = meta || {};
+    const options = opts || {};
+    const style = String(info.style || options.style || "simulado").toLowerCase() === "treino"
+      ? "treino"
+      : "simulado";
+    const snap = options.resumeSnap || null;
+
+    this.clearSavedTreino();
+    this.resetSession("simulado");
+
+    if (snap && Array.isArray(snap.queue) && snap.queue.length && !options.restart) {
+      this.queue = snap.queue.map((q) => Object.assign({}, q, {
+        choices: Array.isArray(q.choices) ? q.choices.slice() : [],
+        images: Array.isArray(q.images) ? q.images.slice() : []
+      }));
+      this.simulado = {
+        size: this.queue.length,
+        startedAt: snap.startedAt || Date.now(),
+        timerOffsetMs: Number(snap.timerOffsetMs) || 0,
+        finished: !!snap.finished,
+        answers: Array.isArray(snap.answers) ? snap.answers.slice() : [],
+        provaId: String(snap.provaId || info.id || ""),
+        packId: String(snap.packId || info.packId || ""),
+        provaTitle: String(snap.provaTitle || info.title || "Prova na íntegra"),
+        exam: String(snap.exam || info.exam || ""),
+        year: snap.year != null ? Number(snap.year) : (info.year != null ? Number(info.year) : null),
+        familyId: String(snap.familyId || info.familyId || ""),
+        area: String(snap.area || info.area || ""),
+        style,
+        feedback: style === "treino" ? "instant" : "deferred",
+        isProva: true
+      };
+      this.index = Math.max(0, Math.min(this.queue.length - 1, snap.index | 0));
+      this.correct = this.simulado.answers.filter((a) => a && a.ok && !a.annulled).length;
+      this.attempted = this.simulado.answers.filter((a) => a && !a.annulled).length;
+      this.simulado._timerAnchor = Date.now();
+      this.landOnCurrent();
+      return this.queue.length;
+    }
+
     const pool = [];
-    (list || []).forEach((raw, i) => {
+    (list || []).forEach((raw) => {
       const q = typeof aprovaNormalizeQuestion === "function"
         ? aprovaNormalizeQuestion(raw, info.id || "prova")
         : raw;
       if (q) pool.push(q);
     });
     if (!pool.length) return 0;
-    this.clearSavedTreino();
-    this.resetSession("simulado");
     this.queue = aprovaWithShuffledChoices(pool);
     this.simulado = {
       size: this.queue.length,
       startedAt: Date.now(),
+      timerOffsetMs: 0,
       finished: false,
       answers: [],
       provaId: String(info.id || ""),
+      packId: String(info.packId || info.id || ""),
       provaTitle: String(info.title || "Prova na íntegra"),
       exam: String(info.exam || ""),
-      year: info.year != null ? Number(info.year) : null
+      year: info.year != null ? Number(info.year) : null,
+      familyId: String(info.familyId || ""),
+      area: String(info.area || ""),
+      style,
+      feedback: style === "treino" ? "instant" : "deferred",
+      isProva: true
     };
     this.index = 0;
     this.answered = false;
+    this.simulado._timerAnchor = Date.now();
+    this.simulado.timerOffsetMs = 0;
+    this.saveProvaProgress();
     return this.queue.length;
+  },
+
+  isProvaSession () {
+    return !!(this.mode === "simulado" && this.simulado && this.simulado.isProva);
+  },
+
+  isProvaDeferredFeedback () {
+    return !!(this.isProvaSession() && this.simulado.feedback === "deferred");
+  },
+
+  provaSessionKey (packId, area, style) {
+    return [
+      String(packId || ""),
+      String(area || ""),
+      String(style || "simulado")
+    ].join("|");
+  },
+
+  snapshotProva () {
+    if (!this.isProvaSession()) return null;
+    const sim = this.simulado;
+    if (!sim.finished) this.freezeProvaTimerForSave();
+    return {
+      key: this.provaSessionKey(sim.packId || sim.provaId, sim.area, sim.style),
+      provaId: sim.provaId,
+      packId: sim.packId || sim.provaId,
+      area: sim.area || "",
+      style: sim.style || "simulado",
+      familyId: sim.familyId || "",
+      year: sim.year,
+      exam: sim.exam || "",
+      provaTitle: sim.provaTitle || "",
+      index: this.index,
+      startedAt: sim.startedAt,
+      timerOffsetMs: Number(sim.timerOffsetMs) || 0,
+      finished: !!sim.finished,
+      answers: Array.isArray(sim.answers) ? sim.answers.slice() : [],
+      queue: this.queue.map((q) => ({
+        id: q.id,
+        specialty: q.specialty,
+        group: q.group,
+        theme: q.theme,
+        exam: q.exam,
+        year: q.year,
+        stem: q.stem,
+        choices: Array.isArray(q.choices) ? q.choices.slice() : [],
+        answer: q.answer,
+        annulled: !!q.annulled,
+        explain: q.explain || "",
+        trap: q.trap || "",
+        images: Array.isArray(q.images) ? q.images.slice() : []
+      })),
+      savedAt: Date.now()
+    };
+  },
+
+  loadProvaStore () {
+    try {
+      const raw = localStorage.getItem(APROVA_PROVA_SESSION_KEY);
+      if (!raw) return { sessions: {} };
+      const data = JSON.parse(raw);
+      if (data && data.sessions && typeof data.sessions === "object") return data;
+      // legado: um único snap
+      if (data && Array.isArray(data.queue)) {
+        return { sessions: data.key ? { [data.key]: data } : {} };
+      }
+      return { sessions: {} };
+    } catch {
+      return { sessions: {} };
+    }
+  },
+
+  saveProvaProgress () {
+    const snap = this.snapshotProva();
+    if (!snap || !snap.key) return false;
+    try {
+      const store = this.loadProvaStore();
+      store.sessions[snap.key] = snap;
+      localStorage.setItem(APROVA_PROVA_SESSION_KEY, JSON.stringify(store));
+      return true;
+    } catch {
+      return false;
+    }
+  },
+
+  loadSavedProva (packId, area, style) {
+    const store = this.loadProvaStore();
+    if (packId != null) {
+      const key = this.provaSessionKey(packId, area, style);
+      const hit = store.sessions[key];
+      if (!hit || !Array.isArray(hit.queue) || !hit.queue.length) return null;
+      return hit;
+    }
+    // último salvo (para retorno genérico)
+    const keys = Object.keys(store.sessions || {});
+    if (!keys.length) return null;
+    let best = null;
+    keys.forEach((k) => {
+      const s = store.sessions[k];
+      if (!s) return;
+      if (!best || (s.savedAt || 0) > (best.savedAt || 0)) best = s;
+    });
+    return best;
+  },
+
+  clearSavedProva (packId, area, style) {
+    try {
+      if (packId == null) {
+        localStorage.removeItem(APROVA_PROVA_SESSION_KEY);
+        return;
+      }
+      const store = this.loadProvaStore();
+      const key = this.provaSessionKey(packId, area, style);
+      delete store.sessions[key];
+      localStorage.setItem(APROVA_PROVA_SESSION_KEY, JSON.stringify(store));
+    } catch {
+      /* ignore */
+    }
+  },
+
+  getResumableProva (packId, area, style) {
+    const saved = this.loadSavedProva(packId, area, style);
+    if (!saved) return null;
+    if (saved.finished) return saved;
+    if (!(saved.answers && saved.answers.length) && !(saved.index > 0)) return null;
+    return saved;
+  },
+
+  provaElapsedMs () {
+    if (!this.simulado) return 0;
+    const base = Number(this.simulado.timerOffsetMs) || 0;
+    if (this.simulado.finished && this.simulado.endedAt) {
+      return Math.max(base, Number(this.simulado.endedElapsedMs) || base);
+    }
+    const anchor = this.simulado._timerAnchor || this.simulado.startedAt || Date.now();
+    return base + Math.max(0, Date.now() - anchor);
+  },
+
+  freezeProvaTimerForSave () {
+    if (!this.simulado || this.simulado.finished) return;
+    this.simulado.timerOffsetMs = this.provaElapsedMs();
+    this.simulado._timerAnchor = Date.now();
   },
 
   /**
@@ -628,6 +829,7 @@ const AprovaQuestions = {
     };
     if (this.mode === "simulado" && this.simulado) {
       this.simulado.answers.push(entry);
+      if (this.simulado.isProva) this.saveProvaProgress();
     } else {
       // Sempre grava no teste — cria sessão se faltar (evita "sumir" ao voltar).
       if (!this.session) {
@@ -641,7 +843,8 @@ const AprovaQuestions = {
       annulled,
       explain: q.explain,
       trap: q.trap || "",
-      answer: q.answer
+      answer: q.answer,
+      deferred: this.isProvaDeferredFeedback()
     };
   },
 
@@ -665,10 +868,13 @@ const AprovaQuestions = {
       if (this.index + 1 >= this.queue.length) {
         this.simulado.finished = true;
         this.simulado.endedAt = Date.now();
+        this.simulado.endedElapsedMs = this.provaElapsedMs();
+        if (this.simulado.isProva) this.saveProvaProgress();
         return null;
       }
       this.index += 1;
       this.landOnCurrent();
+      if (this.simulado.isProva) this.saveProvaProgress();
       return this.current();
     }
 
@@ -712,6 +918,7 @@ const AprovaQuestions = {
     this.index -= 1;
     this.landOnCurrent();
     if (this.mode === "treino" && this.session) this.saveTreinoProgress();
+    if (this.isProvaSession()) this.saveProvaProgress();
     return this.current();
   },
 
@@ -729,7 +936,12 @@ const AprovaQuestions = {
 
   canGoNext () {
     if (!this.queue.length) return false;
-    if (this.mode === "simulado") return true;
+    if (this.mode === "simulado") {
+      if (this.isProvaSession()) {
+        return this.answered || this.hasAnsweredCurrent();
+      }
+      return true;
+    }
     if (this.session && this.session.scope === "review") {
       return true;
     }
@@ -819,22 +1031,117 @@ const AprovaQuestions = {
     const annulled = this.simulado.answers.filter((a) => a && a.annulled).length;
     const total = scored.length;
     const hits = scored.filter((a) => a.ok).length;
+    const wrong = total - hits;
     const pct = total ? Math.round((hits / total) * 100) : 0;
     const byTheme = Object.create(null);
-    scored.forEach((a) => {
-      if (!byTheme[a.theme]) byTheme[a.theme] = { ok: 0, n: 0 };
-      byTheme[a.theme].n += 1;
-      if (a.ok) byTheme[a.theme].ok += 1;
+    const byArea = Object.create(null);
+    const themeFreqInQueue = Object.create(null);
+    (this.queue || []).forEach((q) => {
+      const t = (q && q.theme) || "Geral";
+      themeFreqInQueue[t] = (themeFreqInQueue[t] || 0) + 1;
     });
-    const themes = Object.keys(byTheme).map((theme) => ({
-      theme,
-      ok: byTheme[theme].ok,
-      n: byTheme[theme].n,
-      pct: Math.round((byTheme[theme].ok / byTheme[theme].n) * 100)
-    })).sort((a, b) => a.pct - b.pct);
-    const ms = (this.simulado.endedAt || Date.now()) - (this.simulado.startedAt || Date.now());
+    scored.forEach((a) => {
+      const theme = a.theme || "Geral";
+      const area = String(a.specialty || "clinica").toLowerCase();
+      if (!byTheme[theme]) byTheme[theme] = { ok: 0, n: 0, specialty: area };
+      byTheme[theme].n += 1;
+      if (a.ok) byTheme[theme].ok += 1;
+      if (!byArea[area]) byArea[area] = { ok: 0, n: 0 };
+      byArea[area].n += 1;
+      if (a.ok) byArea[area].ok += 1;
+    });
+    const areaOrder = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
+    const areas = areaOrder
+      .filter((id) => byArea[id])
+      .concat(Object.keys(byArea).filter((id) => areaOrder.indexOf(id) < 0))
+      .map((id) => ({
+        id,
+        label: (typeof aprovaProvaAreaLabel === "function" ? aprovaProvaAreaLabel(id) : id),
+        ok: byArea[id].ok,
+        n: byArea[id].n,
+        wrong: byArea[id].n - byArea[id].ok,
+        pct: Math.round((byArea[id].ok / byArea[id].n) * 100),
+        weight: APROVA_AREA_EXAM_WEIGHT[id] || 10
+      }));
+    areas.sort((a, b) => a.pct - b.pct || b.weight - a.weight);
+
+    const globalStats = typeof aprovaLoadExamStats === "function" ? aprovaLoadExamStats() : null;
+    const themes = Object.keys(byTheme).map((theme) => {
+      const row = byTheme[theme];
+      const pctT = Math.round((row.ok / row.n) * 100);
+      const freq = themeFreqInQueue[theme] || row.n;
+      const g = globalStats && globalStats.byTheme ? globalStats.byTheme[theme] : null;
+      const specific = freq <= 1;
+      let tip = "";
+      if (pctT < 50 && !specific && row.n >= 2) {
+        tip = "Desempenho baixo em tema que se repetiu nesta prova — priorize revisão estruturada.";
+      } else if (pctT < 50 && specific) {
+        tip = "Erro em questão mais específica — revise o conceito, mas pese menos que áreas com vários erros.";
+      } else if (pctT >= 80) {
+        tip = "Bom domínio neste tema.";
+      } else {
+        tip = "Desempenho intermediário — vale um reforço pontual.";
+      }
+      if (g && g.attempted >= 8) {
+        const gPct = Math.round((g.correct / g.attempted) * 100);
+        tip += " No seu histórico geral deste tema: " + gPct + "% (" + g.attempted + " itens).";
+      }
+      const areaW = APROVA_AREA_EXAM_WEIGHT[row.specialty] || 10;
+      return {
+        theme,
+        specialty: row.specialty,
+        ok: row.ok,
+        n: row.n,
+        pct: pctT,
+        specific,
+        weight: areaW,
+        tip
+      };
+    }).sort((a, b) => a.pct - b.pct || b.weight - a.weight);
+
+    const focus = [];
+    areas.forEach((a) => {
+      if (a.n < 1) return;
+      if (a.pct < 60) {
+        focus.push({
+          level: "alto",
+          title: a.label,
+          text: "Foque mais em " + a.label + " (" + a.ok + "/" + a.n + ", " + a.pct +
+            "%). Nas bancas nacionais esta área costuma pesar cerca de " + a.weight + "% da prova."
+        });
+      } else if (a.pct >= 80 && a.n >= 3) {
+        focus.push({
+          level: "baixo",
+          title: a.label,
+          text: "Pode estudar um pouco menos " + a.label + " por enquanto (" + a.pct +
+            "% nesta sessão) e redistribuir tempo para áreas mais fracas."
+        });
+      }
+    });
+    themes.slice(0, 3).forEach((t) => {
+      if (t.pct >= 60) return;
+      focus.push({
+        level: t.specific ? "medio" : "alto",
+        title: t.theme,
+        text: t.tip
+      });
+    });
+
+    const ms = this.provaElapsedMs();
     const minutes = Math.max(1, Math.round(ms / 60000));
-    return { total, hits, pct, themes, minutes, annulled };
+    return {
+      total,
+      hits,
+      wrong,
+      pct,
+      themes,
+      areas,
+      focus,
+      minutes,
+      annulled,
+      style: this.simulado.style || "simulado",
+      isProva: !!this.simulado.isProva
+    };
   },
 
   statsText () {

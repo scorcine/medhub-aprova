@@ -2862,10 +2862,16 @@ function aprovaQPoolForTema (specialty, tema) {
 let aprovaQFromMetas = false;
 
 function aprovaReturnFromQuestionSession () {
+  const fromProva = !!(typeof AprovaQuestions !== "undefined" &&
+    AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession());
+  if (fromProva && typeof AprovaQuestions.saveProvaProgress === "function") {
+    AprovaQuestions.saveProvaProgress();
+  }
   AprovaQuestions.clearSavedTreino();
   if (typeof aprovaClearMateriaCreditTarget === "function") {
     aprovaClearMateriaCreditTarget();
   }
+  if (typeof aprovaStopProvaTimer === "function") aprovaStopProvaTimer();
   AprovaQuestions.resetSession("treino");
   AprovaQuestions.queue = [];
   const toMetas = aprovaQFromMetas;
@@ -2873,6 +2879,10 @@ function aprovaReturnFromQuestionSession () {
   if (toMetas) {
     aprovaGoTo("hoje");
     if (typeof aprovaHojePick === "function") aprovaHojePick("metas");
+    return;
+  }
+  if (fromProva && typeof aprovaReturnToProvaHub === "function") {
+    aprovaReturnToProvaHub();
     return;
   }
   aprovaRenderQuestionBrowse();
@@ -5689,11 +5699,63 @@ function aprovaRestartTreinoFromModal () {
 }
 
 function aprovaLeaveTreinoSession () {
+  if (AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession()) {
+    AprovaQuestions.saveProvaProgress();
+    aprovaReturnFromQuestionSession();
+    return;
+  }
   if (AprovaQuestions.hasTreinoProgress() &&
       !(AprovaQuestions.session && AprovaQuestions.session.scope === "review")) {
     AprovaQuestions.saveTreinoProgress();
   }
   aprovaReturnFromQuestionSession();
+}
+
+let aprovaProvaTimerId = null;
+
+function aprovaFormatProvaTimer (ms) {
+  const totalSec = Math.max(0, Math.floor((Number(ms) || 0) / 1000));
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  const pad = (n) => (n < 10 ? "0" : "") + n;
+  return h > 0 ? (h + ":" + pad(m) + ":" + pad(s)) : (pad(m) + ":" + pad(s));
+}
+
+function aprovaStopProvaTimer () {
+  if (aprovaProvaTimerId) {
+    clearInterval(aprovaProvaTimerId);
+    aprovaProvaTimerId = null;
+  }
+  const el = document.getElementById("q-timer");
+  if (el) {
+    el.hidden = true;
+    el.textContent = "";
+  }
+}
+
+function aprovaSyncProvaTimer () {
+  const el = document.getElementById("q-timer");
+  if (!el) return;
+  const sim = AprovaQuestions.simulado;
+  const show = !!(AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession() &&
+    sim && sim.style === "simulado" && !sim.finished);
+  if (!show) {
+    aprovaStopProvaTimer();
+    return;
+  }
+  el.hidden = false;
+  el.textContent = aprovaFormatProvaTimer(AprovaQuestions.provaElapsedMs());
+  if (!aprovaProvaTimerId) {
+    aprovaProvaTimerId = setInterval(() => {
+      if (!(AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession()) ||
+          !AprovaQuestions.simulado || AprovaQuestions.simulado.finished) {
+        aprovaStopProvaTimer();
+        return;
+      }
+      el.textContent = aprovaFormatProvaTimer(AprovaQuestions.provaElapsedMs());
+    }, 1000);
+  }
 }
 
 function aprovaShowQuestionViews (view) {
@@ -5867,23 +5929,64 @@ function aprovaRenderSimuladoResult () {
   const score = document.getElementById("q-result-score");
   const timeEl = document.getElementById("q-result-time");
   const themesEl = document.getElementById("q-result-themes");
+  const areasEl = document.getElementById("q-result-areas");
+  const focusEl = document.getElementById("q-result-focus");
+  const labelEl = document.querySelector("#q-result > .label");
+  const againBtn = document.getElementById("q-result-again");
+  const backBtn = document.getElementById("q-result-treino");
   const r = AprovaQuestions.simuladoResult();
+  aprovaStopProvaTimer();
   aprovaShowQuestionViews("result");
   if (!r) return;
   const sim = AprovaQuestions.simulado;
   const provaTitle = sim && sim.provaTitle ? String(sim.provaTitle) : "";
+  if (labelEl) {
+    labelEl.textContent = r.isProva
+      ? (r.style === "treino" ? "Resultado do treino" : "Resultado do simulado")
+      : "Resultado do simulado";
+  }
   if (score) {
     score.textContent = (provaTitle ? provaTitle + " · " : "") +
-      r.hits + "/" + r.total + " acertos (" + r.pct + "%)" +
+      r.hits + " acertos · " + (r.wrong != null ? r.wrong : (r.total - r.hits)) + " erros · " +
+      r.pct + "%" +
       (r.annulled ? (" · " + r.annulled + " anulada(s) fora do cálculo") : "");
   }
-  if (timeEl) timeEl.textContent = "Tempo aproximado: " + r.minutes + " min";
+  if (timeEl) timeEl.textContent = "Tempo: " + r.minutes + " min";
+  if (areasEl) {
+    const areasWrap = document.getElementById("q-result-areas-wrap");
+    if (areasWrap) areasWrap.hidden = !(r.areas && r.areas.length);
+    areasEl.innerHTML = (r.areas || []).length
+      ? r.areas.map((a) => (
+        "<li><span>" + a.label + "</span><em>" + a.ok + " acertos · " + a.wrong +
+          " erros · " + a.pct + "%</em></li>"
+      )).join("")
+      : "";
+  }
   if (themesEl) {
     themesEl.innerHTML = r.themes.length
-      ? r.themes.map(t => (
-        "<li><span>" + t.theme + "</span><em>" + t.ok + "/" + t.n + " · " + t.pct + "%</em></li>"
+      ? r.themes.map((t) => (
+        "<li><span>" + t.theme +
+          (t.specific ? " <small class=\"muted\">(específico)</small>" : "") +
+          "</span><em>" + t.ok + "/" + t.n + " · " + t.pct + "%</em></li>"
       )).join("")
       : "<li><span>Sem detalhe por tema</span></li>";
+  }
+  if (focusEl) {
+    const focusWrap = document.getElementById("q-result-focus-wrap");
+    if (focusWrap) focusWrap.hidden = !(r.focus && r.focus.length);
+    focusEl.innerHTML = (r.focus || []).length
+      ? (r.focus || []).map((f) => (
+        "<li class=\"q-result-focus-item q-result-focus-item--" + (f.level || "medio") + "\">" +
+          "<strong>" + f.title + "</strong>" +
+          "<span>" + f.text + "</span></li>"
+      )).join("")
+      : "";
+  }
+  if (againBtn) {
+    againBtn.textContent = r.isProva ? "Fazer de novo" : "Novo simulado";
+  }
+  if (backBtn) {
+    backBtn.textContent = r.isProva ? "Voltar à prova" : "Voltar às áreas";
   }
 }
 
@@ -5989,16 +6092,43 @@ function aprovaRenderQuestion () {
   if (explain) explain.textContent = "";
   if (trapWrap) trapWrap.hidden = true;
   if (trapEl) trapEl.textContent = "";
-  if (abortBtn) abortBtn.hidden = false;
-  if (backMetasBtn) backMetasBtn.hidden = false;
+  if (abortBtn) {
+    abortBtn.hidden = false;
+    abortBtn.textContent = (AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession())
+      ? "Sair da prova"
+      : "Encerrar";
+  }
+  if (backMetasBtn) {
+    backMetasBtn.hidden = !!(AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession());
+  }
   if (confirmBtn) confirmBtn.disabled = true;
   aprovaSyncQuestionNav();
   choices.innerHTML = "";
+
+  const deferred = !!(AprovaQuestions.isProvaDeferredFeedback && AprovaQuestions.isProvaDeferredFeedback());
 
   function aprovaShowQuestionFeedback (result, chosenIndex) {
     if (!result) return;
     if (confirmRow) confirmRow.hidden = true;
     if (confirmBtn) confirmBtn.disabled = true;
+
+    if (result.deferred || deferred) {
+      choices.querySelectorAll(".choice").forEach((el, idx) => {
+        el.disabled = true;
+        el.classList.toggle("selected", chosenIndex != null && idx === chosenIndex);
+        el.classList.remove("correct", "wrong", "choice--annulled");
+      });
+      if (feedback) feedback.hidden = true;
+      aprovaSyncQuestionNav();
+      if (stats) {
+        stats.textContent = deferred
+          ? ("Respondidas: " + AprovaQuestions.sessionAnswers().length + "/" + AprovaQuestions.queue.length)
+          : AprovaQuestions.statsText();
+      }
+      if (progress) progress.textContent = AprovaQuestions.progressText();
+      return;
+    }
+
     choices.querySelectorAll(".choice").forEach((el, idx) => {
       el.disabled = true;
       el.classList.remove("selected");
@@ -6048,7 +6178,7 @@ function aprovaRenderQuestion () {
   const prior = AprovaQuestions.priorAnswer();
   if (prior) AprovaQuestions.answered = true;
 
-  const confirmMode = aprovaQUi.answerMode === "confirm";
+  const confirmMode = !deferred && aprovaQUi.answerMode === "confirm";
   if (confirmRow) confirmRow.hidden = !confirmMode || !!prior;
 
   q.choices.forEach((text, i) => {
@@ -6058,8 +6188,12 @@ function aprovaRenderQuestion () {
     btn.textContent = (letters[i] || String(i + 1)) + ") " + text;
     if (prior) {
       btn.disabled = true;
-      if (i === prior.correct) btn.classList.add("correct");
-      if (i === prior.choice && !prior.ok) btn.classList.add("wrong");
+      if (deferred) {
+        if (i === prior.choice) btn.classList.add("selected");
+      } else {
+        if (i === prior.correct) btn.classList.add("correct");
+        if (i === prior.choice && !prior.ok) btn.classList.add("wrong");
+      }
     } else if (confirmMode) {
       btn.addEventListener("click", () => {
         aprovaQPendingChoice = i;
@@ -6084,11 +6218,17 @@ function aprovaRenderQuestion () {
       annulled: !!(prior.annulled || q.annulled),
       explain: q.explain,
       trap: q.trap || "",
-      answer: prior.correct
+      answer: prior.correct,
+      deferred
     }, prior.choice);
   }
 
-  if (stats) stats.textContent = AprovaQuestions.statsText();
+  if (stats) {
+    stats.textContent = deferred
+      ? ("Respondidas: " + AprovaQuestions.sessionAnswers().length + "/" + AprovaQuestions.queue.length)
+      : AprovaQuestions.statsText();
+  }
+  aprovaSyncProvaTimer();
 }
 
 function aprovaSyncAppAuthUI () {
@@ -6547,11 +6687,33 @@ async function aprovaBoot () {
   });
 
   document.getElementById("q-result-again")?.addEventListener("click", () => {
+    if (AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession()) {
+      const sim = AprovaQuestions.simulado || {};
+      const packId = sim.packId || String(sim.provaId || "").replace(/-(clinica|cirurgia|pediatria|go|preventiva)-(simulado|treino)$/, "");
+      const area = sim.area || "";
+      const style = sim.style || "simulado";
+      AprovaQuestions.clearSavedProva(packId, area, style);
+      AprovaQuestions.resetSession("treino");
+      AprovaQuestions.queue = [];
+      if (typeof aprovaStartProvaIntegraById === "function") {
+        aprovaStartProvaIntegraById(packId, area || null, { style, action: "restart" });
+      }
+      return;
+    }
     aprovaQModalMode = "simulado";
     aprovaShowQuestionLaunch();
   });
 
   document.getElementById("q-result-treino")?.addEventListener("click", () => {
+    if (AprovaQuestions.isProvaSession && AprovaQuestions.isProvaSession()) {
+      if (typeof aprovaReturnToProvaHub === "function") {
+        AprovaQuestions.saveProvaProgress();
+        AprovaQuestions.resetSession("treino");
+        AprovaQuestions.queue = [];
+        aprovaReturnToProvaHub();
+        return;
+      }
+    }
     AprovaQuestions.resetSession("treino");
     aprovaQBrowse.level = "areas";
     aprovaQBrowse.specialty = "";
