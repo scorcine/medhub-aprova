@@ -64,6 +64,29 @@
 
   <!-- App logado -->
   <div class="app-shell" id="app-shell" hidden>
+  <script>
+    /* Abre o painel se já houver sessão — não depende de app-qui.js em cache. */
+    (function () {
+      function aprovaInlineRevealFromSession () {
+        try {
+          var session = JSON.parse(localStorage.getItem("medhub-aprova-auth-v1") || "null");
+          var gate = document.getElementById("login-gate");
+          var shell = document.getElementById("app-shell");
+          var sideUser = document.getElementById("sidebar-user-label");
+          if (!gate || !shell) return;
+          if (session && session.login) {
+            gate.hidden = true;
+            shell.hidden = false;
+            if (sideUser) sideUser.textContent = session.name || session.login || "";
+          }
+        } catch (e) { /* ignore */ }
+      }
+      aprovaInlineRevealFromSession();
+      document.addEventListener("DOMContentLoaded", aprovaInlineRevealFromSession);
+      window.setTimeout(aprovaInlineRevealFromSession, 0);
+      window.setTimeout(aprovaInlineRevealFromSession, 250);
+    })();
+  </script>
     <aside class="app-sidebar" id="app-sidebar" aria-label="Menu do app">
       <div class="sidebar-brand">
         <a href="index.html" aria-label="MedHub R1">
@@ -1036,7 +1059,7 @@
   </div>
 
   <script src="js/theme.js?v=20260718dd"></script>
-  <script src="js/auth.js?v=20260721loginfix2"></script>
+  <script src="js/auth.js?v=20260721loginfix3"></script>
   <script src="js/profile.js?v=20260721studymode1"></script>
   <script src="js/focus.js?v=20260721foco1"></script>
   <script src="js/plan.js?v=20260719h"></script>
@@ -1046,7 +1069,7 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721loginfix2"></script>
+  <script src="js/app-qui.js?v=20260721loginfix3"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

@@ -168,34 +168,18 @@ function aprovaRevealAppShell () {
   return true;
 }
 
+/** Após login: sessão já está no localStorage — recarrega o app para montar o painel. */
 function aprovaEnterAppAfterLogin () {
-  if (!document.getElementById("app-shell")) {
-    window.location.href = "app.html";
-    return;
-  }
-
-  // Sempre revela o shell após login bem-sucedido (não depende do app-qui.js).
   aprovaRevealAppShell();
-
-  if (typeof aprovaSyncAppAuthUI === "function") {
-    try { aprovaSyncAppAuthUI(); } catch (e) { /* shell já aberto */ }
+  const path = (window.location.pathname && window.location.pathname !== "/")
+    ? window.location.pathname
+    : "app.html";
+  const target = path + "?ok=" + Date.now();
+  try {
+    window.location.replace(target);
+  } catch (e) {
+    window.location.href = target;
   }
-
-  if (typeof aprovaBootStudyModules === "function") {
-    Promise.resolve()
-      .then(() => aprovaBootStudyModules())
-      .then(() => {
-        if (typeof aprovaGoTo === "function") aprovaGoTo("inicio");
-      })
-      .catch(() => {
-        // Sessão já salva — recarrega para montar o painel limpo.
-        window.location.reload();
-      });
-    return;
-  }
-
-  // app-qui.js não carregou: recarrega com a sessão já gravada.
-  window.setTimeout(() => { window.location.reload(); }, 80);
 }
 
 function aprovaBootSignupPage () {
