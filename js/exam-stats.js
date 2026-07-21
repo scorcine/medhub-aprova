@@ -77,7 +77,7 @@ function aprovaRecordExamAnswer (theme, ok, questionId, meta) {
   }
 
   if (typeof aprovaCreditMateriaProgress === "function") {
-    aprovaCreditMateriaProgress(theme, meta && meta.specialty, meta && meta.group);
+    aprovaCreditMateriaProgress(theme, meta && meta.specialty, meta && meta.group, ok);
   }
 
   const id = String(questionId || "").trim();
@@ -322,7 +322,8 @@ function aprovaEnsureMateriaDay (iso, planned) {
       specialty,
       areaLabel: t.areaLabel || "",
       goal: Math.max(1, t.n | 0 || 5),
-      done: 0
+      done: 0,
+      correct: 0
     };
   }).filter((t) => t.tema);
 
@@ -351,39 +352,92 @@ function aprovaMateriaMatchScore (row, tema, specialty, group) {
   return score;
 }
 
+/** Tema ativo da sessão vinda das metas — credita nele mesmo se o label do banco diferir. */
+let aprovaMateriaCreditTarget = null;
+
+function aprovaSetMateriaCreditTarget (target) {
+  if (!target || !target.tema) {
+    aprovaMateriaCreditTarget = null;
+    return null;
+  }
+  aprovaMateriaCreditTarget = {
+    tema: String(target.tema || "").trim(),
+    specialty: String(target.specialty || "").trim()
+  };
+  return aprovaMateriaCreditTarget;
+}
+
+function aprovaClearMateriaCreditTarget () {
+  aprovaMateriaCreditTarget = null;
+}
+
+function aprovaFindMateriaRow (agenda, day, tema, specialty) {
+  const pack = agenda.days[day];
+  if (!pack || !Array.isArray(pack.themes)) return null;
+  const key = aprovaMateriaThemeKey(specialty, tema);
+  let idx = pack.themes.findIndex((row) => row.key === key);
+  if (idx < 0) {
+    idx = pack.themes.findIndex((row) => aprovaMateriaMatchScore(row, tema, specialty, "") >= 2);
+  }
+  if (idx < 0) return null;
+  return { day, idx, row: pack.themes[idx] };
+}
+
 /** Credita 1 questão na agenda (hoje primeiro; senão o atraso mais antigo do tema). */
-function aprovaCreditMateriaProgress (tema, specialty, group) {
+function aprovaCreditMateriaProgress (tema, specialty, group, ok) {
   const agenda = aprovaLoadMateriaAgenda();
   const today = typeof aprovaActivityDayKey === "function"
     ? aprovaActivityDayKey()
     : new Date().toISOString().slice(0, 10);
 
-  const dayKeys = Object.keys(agenda.days).sort();
-  // Prioridade: hoje → dias atrasados do mais antigo ao mais recente
-  const order = dayKeys.filter((d) => d === today)
-    .concat(dayKeys.filter((d) => d < today));
-
   let best = null;
-  order.forEach((day) => {
-    const pack = agenda.days[day];
-    if (!pack || !Array.isArray(pack.themes)) return;
-    pack.themes.forEach((row, idx) => {
-      if ((row.done | 0) >= (row.goal | 0)) return;
-      const score = aprovaMateriaMatchScore(row, tema, specialty, group);
-      if (score <= 0) return;
-      // Prefere hoje; depois maior score; depois dia mais antigo
-      const rank = (day === today ? 1000 : 0) + score * 10 - (today > day ? 0 : 1);
-      if (!best || rank > best.rank) {
-        best = { day, idx, rank };
-      }
+
+  if (aprovaMateriaCreditTarget) {
+    const hit = aprovaFindMateriaRow(
+      agenda,
+      today,
+      aprovaMateriaCreditTarget.tema,
+      aprovaMateriaCreditTarget.specialty
+    );
+    if (hit && (hit.row.done | 0) < (hit.row.goal | 0)) {
+      best = { day: hit.day, idx: hit.idx, rank: 9999 };
+    }
+  }
+
+  if (!best) {
+    const dayKeys = Object.keys(agenda.days).sort();
+    const order = dayKeys.filter((d) => d === today)
+      .concat(dayKeys.filter((d) => d < today));
+
+    order.forEach((day) => {
+      const pack = agenda.days[day];
+      if (!pack || !Array.isArray(pack.themes)) return;
+      pack.themes.forEach((row, idx) => {
+        if ((row.done | 0) >= (row.goal | 0)) return;
+        const score = aprovaMateriaMatchScore(row, tema, specialty, group);
+        if (score <= 0) return;
+        const rank = (day === today ? 1000 : 0) + score * 10;
+        if (!best || rank > best.rank) {
+          best = { day, idx, rank };
+        }
+      });
     });
-  });
+  }
 
   if (!best) return null;
   const row = agenda.days[best.day].themes[best.idx];
+  if (row.correct == null) row.correct = 0;
   row.done = Math.min(row.goal | 0, (row.done | 0) + 1);
+  if (ok) row.correct = (row.correct | 0) + 1;
   aprovaSaveMateriaAgenda(agenda);
-  return { day: best.day, tema: row.tema, done: row.done, goal: row.goal };
+  return {
+    day: best.day,
+    tema: row.tema,
+    done: row.done,
+    goal: row.goal,
+    correct: row.correct | 0,
+    pct: row.done ? Math.round(((row.correct | 0) / row.done) * 100) : null
+  };
 }
 
 function aprovaDaysBetweenIso (fromIso, toIso) {
@@ -426,17 +480,24 @@ function aprovaBuildMateriaBoard (now = Date.now(), opts) {
   const todayPack = agenda.days[today];
   if (todayPack && Array.isArray(todayPack.themes)) {
     todayPack.themes.forEach((row) => {
+      const done = row.done | 0;
+      const goal = row.goal | 0;
+      const correct = row.correct | 0;
+      const status = done >= goal && goal > 0 ? "done" : (done > 0 ? "partial" : "todo");
       const item = {
         tema: row.tema,
         specialty: row.specialty || "",
         areaLabel: row.areaLabel || "",
-        goal: row.goal | 0,
-        done: row.done | 0,
-        remaining: Math.max(0, (row.goal | 0) - (row.done | 0)),
+        goal,
+        done,
+        correct,
+        remaining: Math.max(0, goal - done),
+        pct: done ? Math.round((correct / done) * 100) : null,
+        status,
         day: today,
         daysLate: 0
       };
-      if (item.done >= item.goal) onTrack.push(item);
+      if (status === "done") onTrack.push(item);
       else pendingToday.push(item);
     });
   }

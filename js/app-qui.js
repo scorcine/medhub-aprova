@@ -2592,6 +2592,10 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n) {
     return;
   }
 
+  if (typeof aprovaSetMateriaCreditTarget === "function") {
+    aprovaSetMateriaCreditTarget({ tema, specialty });
+  }
+
   AprovaQuestions.filters = {
     specialty: specialty || "",
     group: "",
@@ -2895,19 +2899,37 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                 ? aprovaFormatPct(th.pct)
                 : (String(th.pct).replace(".", ",") + "%"))
               : "";
+            const status = th.status || "todo";
+            const done = th.progressDone | 0;
+            const goal = th.progressGoal | 0 || th.n | 0;
+            let statusTxt = "Não feito";
+            let cta = "Responder";
+            if (status === "done") {
+              statusTxt = "Feito" +
+                (th.progressPct != null ? (" · " + th.progressPct + "% acerto") : "");
+              cta = "Feito";
+            } else if (status === "partial") {
+              statusTxt = "Em andamento · " + done + "/" + goal +
+                (th.progressPct != null ? (" · " + th.progressPct + "%") : "");
+              cta = "Continuar";
+            } else {
+              statusTxt = "Não feito · 0/" + goal;
+            }
+            const remain = status === "done" ? goal : Math.max(1, goal - done);
             return (
               "<li>" +
-                "<button type=\"button\" class=\"dash-task-theme-btn\"" +
+                "<button type=\"button\" class=\"dash-task-theme-btn is-" + status + "\"" +
                   " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
                   " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
-                  " data-meta-q-n=\"" + (th.n | 0) + "\">" +
+                  " data-meta-q-n=\"" + remain + "\">" +
                   "<strong>" + (th.n | 0) + "</strong>" +
                   "<span class=\"dash-task-theme-copy\">" +
                     esc(th.tema) +
                     (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
                     (pctLabel ? (" <span class=\"metas-q-pct\">" + esc(pctLabel) + "</span>") : "") +
+                    "<span class=\"metas-q-status\">" + esc(statusTxt) + "</span>" +
                   "</span>" +
-                  "<span class=\"dash-task-theme-go\">Responder</span>" +
+                  "<span class=\"dash-task-theme-go\">" + cta + "</span>" +
                 "</button>" +
               "</li>"
             );
@@ -3715,8 +3737,10 @@ function aprovaRenderMateriaProgress () {
       ? ((row.daysLate === 1 ? "1 dia atrasado" : (row.daysLate + " dias atrasados")) +
         " · " + row.done + "/" + row.goal)
       : (ok
-        ? ("Cumprido · " + row.done + "/" + row.goal)
-        : (row.done + "/" + row.goal + " · faltam " + row.remaining));
+        ? ("Cumprido · " + row.done + "/" + row.goal +
+          (row.pct != null ? (" · " + row.pct + "% acerto") : ""))
+        : (row.done + "/" + row.goal + " · faltam " + row.remaining +
+          (row.pct != null ? (" · " + row.pct + "%") : "")));
     return (
       "<li class=\"prog-materia-row" + (late ? " is-late" : (ok ? " is-ok" : "")) + "\">" +
         "<div class=\"prog-materia-main\">" +
@@ -4455,6 +4479,9 @@ function aprovaRestartTreinoFromModal () {
 }
 
 function aprovaLeaveTreinoSession () {
+  if (typeof aprovaClearMateriaCreditTarget === "function") {
+    aprovaClearMateriaCreditTarget();
+  }
   if (AprovaQuestions.hasTreinoProgress()) {
     AprovaQuestions.saveTreinoProgress();
   }

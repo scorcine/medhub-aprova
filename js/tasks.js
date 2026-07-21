@@ -742,7 +742,12 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
       n: t.cards,
       band: src.band || null,
       yourPct: src.yourPct != null ? src.yourPct : null,
-      bandLabel: src.bandLabel || ""
+      bandLabel: src.bandLabel || "",
+      status: "todo",
+      progressDone: 0,
+      progressGoal: t.cards | 0,
+      progressCorrect: 0,
+      progressPct: null
     };
   });
 
@@ -768,6 +773,26 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
   const materiaBoard = typeof aprovaBuildMateriaBoard === "function"
     ? aprovaBuildMateriaBoard(now, { lookbackDays: 14 })
     : { onTrack: [], overdue: [], pendingToday: [] };
+
+  // Cruza progresso do dia nos temas das metas
+  const progressRows = []
+    .concat(materiaBoard.onTrack || [])
+    .concat(materiaBoard.pendingToday || []);
+  const norm = typeof aprovaFocusNormKey === "function"
+    ? aprovaFocusNormKey
+    : (s) => String(s || "").toLowerCase();
+  qThemes.forEach((th) => {
+    const hit = progressRows.find((row) => {
+      if (th.specialty && row.specialty && th.specialty !== row.specialty) return false;
+      return norm(row.tema) === norm(th.tema);
+    });
+    if (!hit) return;
+    th.status = hit.status || (hit.done >= hit.goal ? "done" : (hit.done > 0 ? "partial" : "todo"));
+    th.progressDone = hit.done | 0;
+    th.progressGoal = hit.goal | 0;
+    th.progressCorrect = hit.correct | 0;
+    th.progressPct = hit.pct;
+  });
 
   const accuracyGoal = {
     target: targetAccuracy,

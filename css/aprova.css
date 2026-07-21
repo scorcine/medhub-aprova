@@ -3039,6 +3039,40 @@ html[data-theme="dark"] .aprova-modal-panel {
   font-weight: 700;
 }
 
+.dash-task-theme-btn.is-done {
+  border-color: color-mix(in srgb, #2f9e6b 55%, var(--line));
+  background: color-mix(in srgb, #2f9e6b 14%, transparent);
+}
+
+.dash-task-theme-btn.is-partial {
+  border-color: color-mix(in srgb, #c9a227 55%, var(--line));
+  background: color-mix(in srgb, #c9a227 12%, transparent);
+}
+
+.dash-task-theme-btn.is-todo {
+  border-color: color-mix(in srgb, #c45c5c 45%, var(--line));
+  background: color-mix(in srgb, #c45c5c 10%, transparent);
+}
+
+.metas-q-status {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.dash-task-theme-btn.is-done .metas-q-status {
+  color: #2f9e6b;
+}
+
+.dash-task-theme-btn.is-partial .metas-q-status {
+  color: #c9a227;
+}
+
+.dash-task-theme-btn.is-todo .metas-q-status {
+  color: #c45c5c;
+}
+
 .metas-q-pct {
   color: var(--accent);
   font-weight: 600;
