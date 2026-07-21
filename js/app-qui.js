@@ -4364,7 +4364,7 @@ function aprovaHojePick (pick) {
     const title = document.getElementById("workspace-title");
     const sub = document.getElementById("workspace-sub");
     if (title) title.textContent = "Suas metas";
-    if (sub) sub.textContent = "Metas do dia e atrasadas";
+    if (sub) sub.textContent = "Metas do dia · questões e flashcards";
     aprovaRenderHojeMetas();
     return;
   }
@@ -4419,8 +4419,9 @@ function aprovaRenderToday () {
 
   const hubFc = document.getElementById("hoje-hub-fc-preview");
   if (hubFc) {
+    const dueLabel = srs.due === 1 ? "1 revisão" : (srs.due + " revisões");
     hubFc.textContent = srs.pending
-      ? (srs.pending + " na fila · " + srs.due + " revisão" + (srs.due === 1 ? "" : "ões"))
+      ? (srs.pending + " na fila · " + dueLabel)
       : (srs.studiedToday
         ? (srs.studiedToday + " estudados hoje · fila em dia")
         : "Fila em dia — nada pendente");
