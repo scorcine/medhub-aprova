@@ -115,9 +115,11 @@ function aprovaGoTo (id, options) {
   }
 
   if (id === "hoje") {
-    aprovaHojeShowHub();
     aprovaRenderToday();
     if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
+    // Hoje abre direto as metas do dia (hoje + atrasadas), não o banco completo.
+    if (typeof aprovaHojePick === "function") aprovaHojePick("metas");
+    else aprovaHojeShowHub();
   }
   if (id === "progresso") aprovaRenderProgress();
   if (id === "metas") aprovaRenderMetas();
@@ -2849,7 +2851,8 @@ function aprovaReturnFromQuestionSession () {
   const toMetas = aprovaQFromMetas;
   aprovaQFromMetas = false;
   if (toMetas) {
-    aprovaGoTo("metas");
+    aprovaGoTo("hoje");
+    if (typeof aprovaHojePick === "function") aprovaHojePick("metas");
     return;
   }
   aprovaRenderQuestionBrowse();
@@ -3033,6 +3036,13 @@ function aprovaPriorAnswerEntryFromHistory (q) {
   };
 }
 
+function aprovaOpenHojeMetasDay () {
+  aprovaShowPanel("hoje");
+  aprovaMarkNav("hoje");
+  if (typeof aprovaHojePick === "function") aprovaHojePick("metas");
+  else if (typeof aprovaRenderHojeMetas === "function") aprovaRenderHojeMetas();
+}
+
 async function aprovaFulfillMetaQuestionsDay () {
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const focus = aprovaSeuFocoCache;
@@ -3042,9 +3052,25 @@ async function aprovaFulfillMetaQuestionsDay () {
   const program = plan && plan.ok && typeof aprovaBuildStudyProgram === "function"
     ? aprovaBuildStudyProgram(plan, null, Date.now(), focus)
     : null;
-  const themes = (program && program.qThemes) || [];
+  let themes = (program && program.qThemes) || [];
+
+  // Sem foco do dia: tenta recuperar atrasadas em vez de abrir o banco completo.
+  if (!themes.length && typeof aprovaBuildMateriaBoard === "function") {
+    const late = (aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 }).overdue || []);
+    if (late.length) {
+      const first = late[0];
+      return aprovaFulfillMetaQuestions(
+        first.specialty || "",
+        first.tema,
+        first.remaining || first.goal || 10,
+        { mode: "continue" }
+      );
+    }
+    aprovaOpenHojeMetasDay();
+    return;
+  }
   if (!themes.length) {
-    aprovaGoTo("questoes");
+    aprovaOpenHojeMetasDay();
     return;
   }
 
@@ -3152,7 +3178,7 @@ async function aprovaFulfillMetaQuestionsDay () {
       aprovaRenderQuestion();
       return;
     }
-    aprovaGoTo("metas");
+    aprovaOpenHojeMetasDay();
     return;
   }
 
@@ -3160,7 +3186,7 @@ async function aprovaFulfillMetaQuestionsDay () {
     ? AprovaQuestions.startTreinoContinuing(priorRows, freshBag, "meta-day")
     : AprovaQuestions.startTreino(freshBag, "meta-day");
   if (!n) {
-    aprovaRenderQuestionBrowse();
+    aprovaOpenHojeMetasDay();
     return;
   }
   aprovaShowQuestionViews("card");
@@ -3250,7 +3276,9 @@ function aprovaEscapeHtml (s) {
 function aprovaBuildMetasQThemesHtml (program, focusPack) {
   const themes = (program && program.qThemes) || [];
   if (!themes.length) {
-    return "<li class=\"muted\" style=\"list-style:none;padding:0.35rem 0\">Cadastre as provas no perfil para priorizar temas.</li>";
+    return "<li class=\"muted\" style=\"list-style:none;padding:0.35rem 0\">" +
+      "Ainda sem temas do dia. Confira as atrasadas abaixo ou ajuste as provas em Meu perfil." +
+      "</li>";
   }
   const esc = aprovaEscapeHtml;
   return themes.map((th) => {
@@ -3467,9 +3495,6 @@ function aprovaRenderHojeMetas () {
         "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>" +
         (daily.newCards != null
           ? ("<span class=\"dash-seu-plano-chip\">" + daily.newCards + " novos</span>")
-          : "") +
-        (daily.reviewCards != null
-          ? ("<span class=\"dash-seu-plano-chip\">" + daily.reviewCards + " revisão</span>")
           : "");
     }
     if (fcTasksEl) {
@@ -4484,8 +4509,8 @@ function aprovaHojePick (pick) {
     aprovaHojeShowView("hoje-view-metas");
     const title = document.getElementById("workspace-title");
     const sub = document.getElementById("workspace-sub");
-    if (title) title.textContent = "Suas metas";
-    if (sub) sub.textContent = "Metas do dia · questões e flashcards";
+    if (title) title.textContent = "Metas do dia";
+    if (sub) sub.textContent = "O que fazer hoje e o que está atrasado";
     aprovaRenderHojeMetas();
     return;
   }
