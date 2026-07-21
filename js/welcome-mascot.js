@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-motiv1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-male1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
@@ -107,37 +107,40 @@ function aprovaMascotVoiceIsSlow (voice) {
 }
 
 /**
- * Prefere Google pt-BR (ágil). Se só houver neural, não força voz —
- * deixa o navegador com lang pt-BR (costuma soar menos “dramático”).
+ * Prefere voz masculina pt-BR ágil (Antonio, Daniel, Google masculino…).
+ * Se não houver, não força neural feminina — deixa o lang pt-BR do navegador.
  */
 function aprovaMascotPickPtVoice () {
   try {
     const voices = window.speechSynthesis.getVoices() || [];
     if (!voices.length) return aprovaMascotCachedVoice;
 
-    const isPtBr = (v) => {
-      const blob = (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
-      return /^pt-br/i.test(v.lang) || /brazil|brasil|portugu/.test(blob);
+    const blobOf = (v) => (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
+    const isPtBr = (v) => /^pt-br/i.test(v.lang) || /brazil|brasil|portugu/.test(blobOf(v));
+    const isSlow = (v) => /online|neural|natural|enhanced|premium/.test(blobOf(v));
+    const isMale = (v) => {
+      const b = blobOf(v);
+      if (/maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina|woman/.test(b)) {
+        return false;
+      }
+      return /antonio|ant[oô]nio|daniel|ricardo|felipe|gustavo|male|masculin|homem/.test(b);
     };
 
-    const google = voices.find((v) => isPtBr(v) && /google/i.test(v.name || ""));
-    if (google) {
-      aprovaMascotCachedVoice = google;
-      return google;
+    // 1) Masculina pt-BR local / Google
+    const maleSnappy = voices.find((v) => isPtBr(v) && isMale(v) && !isSlow(v));
+    if (maleSnappy) {
+      aprovaMascotCachedVoice = maleSnappy;
+      return maleSnappy;
     }
 
-    const snappyLocal = voices.find((v) => {
-      if (!isPtBr(v) || !v.localService) return false;
-      const n = String(v.name || "").toLowerCase();
-      if (/online|neural|natural|enhanced|premium/.test(n)) return false;
-      return /maria|francisca|luciana|fernanda|vit[oó]ria|daniela|heloisa/.test(n);
-    });
-    if (snappyLocal) {
-      aprovaMascotCachedVoice = snappyLocal;
-      return snappyLocal;
+    // 2) Qualquer masculina pt-BR (mesmo que online)
+    const maleAny = voices.find((v) => isPtBr(v) && isMale(v));
+    if (maleAny) {
+      aprovaMascotCachedVoice = maleAny;
+      return maleAny;
     }
 
-    // Sem voz boa: null → só lang pt-BR (evita neural arrastada forçada)
+    // 3) Sem masculina: null → lang pt-BR (não força voz feminina)
     return null;
   } catch (e) {
     return aprovaMascotCachedVoice;
