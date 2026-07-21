@@ -52,6 +52,7 @@
       <p class="auth-kicker">Conta MedHub R1</p>
       <h1 id="signup-title">Crie sua conta</h1>
       <p class="auth-lead">Cadastre-se para salvar sua rotina de estudo, revisar com agenda inteligente e treinar para as provas de residência.</p>
+      <p class="pricing-note" id="signup-plan-note" hidden></p>
 
       <form class="signup-form" id="signup-form" autocomplete="on">
         <label class="field">
@@ -98,5 +99,23 @@
 
   <script src="js/theme.js"></script>
   <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var plano = params.get("plano") || "";
+      var labels = {
+        free: "Plano Free — R$ 0",
+        "pro-mensal": "Plano Pro Mensal — R$ 59/mês (lançamento)",
+        "pro-anual": "Plano Pro Anual — R$ 447/ano (melhor custo · lançamento)"
+      };
+      var note = document.getElementById("signup-plan-note");
+      if (!note || !labels[plano]) return;
+      note.hidden = false;
+      note.textContent = labels[plano] + ". Pagamento online em breve — você entra na lista com este valor.";
+      try {
+        localStorage.setItem("medhub-aprova-plan-interest-v1", JSON.stringify({ plano: plano, ts: Date.now() }));
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
