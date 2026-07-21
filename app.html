@@ -183,7 +183,7 @@
             <nav class="hoje-hub-menu" aria-labelledby="hoje-hub-question">
               <button type="button" class="hoje-hub-item" data-hoje-pick="metas">
                 <span class="hoje-hub-item-label">Suas metas?</span>
-                <span class="hoje-hub-item-hint" id="hoje-hub-metas-preview">Metas do dia e atrasadas</span>
+                <span class="hoje-hub-item-hint" id="hoje-hub-metas-preview">Metas do dia · questões e flashcards</span>
               </button>
               <button type="button" class="hoje-hub-item" data-hoje-pick="flashcards">
                 <span class="hoje-hub-item-label">Flashcards</span>
@@ -207,7 +207,7 @@
           <div id="hoje-view-metas" class="hoje-view" hidden>
             <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
             <h2 class="hoje-view-title">Suas metas</h2>
-            <p class="muted">Metas de questões (hoje e atrasadas).</p>
+            <p class="muted">Metas do dia: questões e flashcards.</p>
 
             <div class="study-card hoje-metas-card" id="hoje-metas-card">
               <div class="label">Metas de questões</div>
@@ -228,6 +228,17 @@
                   <button type="button" class="btn btn-primary" id="hoje-metas-start-day">Responder bloco de hoje</button>
                   <button type="button" class="btn btn-ghost" data-goto="metas">Plano completo</button>
                 </div>
+              </div>
+            </div>
+
+            <div class="study-card hoje-metas-card" id="hoje-metas-fc-card" hidden>
+              <div class="label">Metas de flashcards</div>
+              <p class="hoje-metas-summary" id="hoje-metas-fc-summary"></p>
+              <div class="dash-seu-plano-quota" id="hoje-metas-fc-quota"></div>
+              <ul class="dash-seu-plano-tasks" id="hoje-metas-fc-tasks"></ul>
+              <div class="actions-row" style="margin-top:0.75rem">
+                <button type="button" class="btn btn-primary" id="hoje-metas-fc-start">Cumprir meta de hoje</button>
+                <button type="button" class="btn btn-ghost" data-goto="flashcards">Abrir flashcards</button>
               </div>
             </div>
           </div>
@@ -962,7 +973,7 @@
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721metasclosed1"></script>
+  <script src="js/app-qui.js?v=20260721metasfc1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

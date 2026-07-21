@@ -3340,6 +3340,10 @@ function aprovaRenderHojeMetas () {
   const themesEl = document.getElementById("hoje-metas-themes");
   const overdueWrap = document.getElementById("hoje-metas-overdue-wrap");
   const overdueEl = document.getElementById("hoje-metas-overdue");
+  const fcCard = document.getElementById("hoje-metas-fc-card");
+  const fcSummaryEl = document.getElementById("hoje-metas-fc-summary");
+  const fcQuotaEl = document.getElementById("hoje-metas-fc-quota");
+  const fcTasksEl = document.getElementById("hoje-metas-fc-tasks");
   if (!emptyEl && !bodyEl) return;
 
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
@@ -3350,6 +3354,7 @@ function aprovaRenderHojeMetas () {
   if (!complete) {
     if (emptyEl) emptyEl.hidden = false;
     if (bodyEl) bodyEl.hidden = true;
+    if (fcCard) fcCard.hidden = true;
     if (hubMetas) hubMetas.textContent = "Configure o perfil para liberar as metas";
     return;
   }
@@ -3365,22 +3370,24 @@ function aprovaRenderHojeMetas () {
     }
   }
 
+  const daily = program && (program.tasks || []).find((t) => t.id === "daily");
+  let qHub = "";
+  let fcHub = "";
+
   if (program && program.qProgress && program.qQuota) {
     const qp = program.qProgress.daily;
-    if (hubMetas) {
-      let lateBit = "";
-      if (typeof aprovaBuildMateriaBoard === "function") {
-        const nLate = (aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 }).overdue || []).length;
-        if (nLate) lateBit = " · " + nLate + " atrasada" + (nLate === 1 ? "" : "s");
-      }
-      hubMetas.textContent = qp.done + "/" + qp.goal + " questões hoje" + lateBit;
+    qHub = qp.done + "/" + qp.goal + " questões";
+    let lateBit = "";
+    if (typeof aprovaBuildMateriaBoard === "function") {
+      const nLate = (aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 }).overdue || []).length;
+      if (nLate) lateBit = " · " + nLate + " atrasada" + (nLate === 1 ? "" : "s");
     }
     if (summaryEl) {
       summaryEl.textContent = qp.done + "/" + qp.goal + " questões hoje · meta " +
         ((program.qQuota.targetAccuracy != null
           ? program.qQuota.targetAccuracy
           : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))) +
-        "% de acerto";
+        "% de acerto" + lateBit;
     }
     if (quotaEl) {
       const ag = program.accuracyGoal || {};
@@ -3393,7 +3400,6 @@ function aprovaRenderHojeMetas () {
     }
   } else if (summaryEl) {
     summaryEl.textContent = "Monte o perfil com provas para liberar o bloco do dia.";
-    if (hubMetas) hubMetas.textContent = "Metas do dia e atrasadas";
   }
 
   if (themesEl) {
@@ -3431,6 +3437,85 @@ function aprovaRenderHojeMetas () {
       }).join("");
       aprovaBindMetasQThemesClicks(overdueEl);
     }
+  }
+
+  if (fcCard && program && program.quota && daily) {
+    fcCard.hidden = false;
+    fcHub = daily.done + "/" + daily.goal + " cards";
+    if (fcSummaryEl) {
+      fcSummaryEl.textContent = daily.done + "/" + daily.goal + " flashcards hoje";
+    }
+    if (fcQuotaEl) {
+      const q = program.quota;
+      fcQuotaEl.innerHTML =
+        "<span class=\"dash-seu-plano-chip\">" + q.daily + " cards/dia</span>" +
+        "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>" +
+        (daily.newCards != null
+          ? ("<span class=\"dash-seu-plano-chip\">" + daily.newCards + " novos</span>")
+          : "") +
+        (daily.reviewCards != null
+          ? ("<span class=\"dash-seu-plano-chip\">" + daily.reviewCards + " revisão</span>")
+          : "");
+    }
+    if (fcTasksEl) {
+      const esc = aprovaEscapeHtml;
+      const themes = daily.showThemes && daily.themeCards && daily.themeCards.length
+        ? daily.themeCards
+        : [];
+      fcTasksEl.innerHTML =
+        "<li class=\"dash-task dash-task--" + (daily.status || "todo") + "\">" +
+          "<div class=\"dash-task-top\">" +
+            "<strong>" + esc(daily.label || "Hoje") + "</strong>" +
+            "<em>" + daily.done + "/" + daily.goal + " cards</em>" +
+          "</div>" +
+          "<div class=\"dash-task-bar\" aria-hidden=\"true\"><i style=\"width:" +
+            (daily.pct || 0) + "%\"></i></div>" +
+          (themes.length
+            ? ("<div class=\"label\" style=\"margin:0.65rem 0 0.35rem\">" +
+                esc(daily.themesLabel || "Foco de hoje") + "</div>" +
+              "<ul class=\"dash-task-themes\">" + themes.map((th) => (
+                "<li>" +
+                  "<button type=\"button\" class=\"dash-task-theme-btn\"" +
+                    " data-meta-area=\"" + esc(th.areaId) + "\"" +
+                    " data-meta-tema=\"" + esc(th.tema) + "\"" +
+                    " data-meta-cards=\"" + (th.cards | 0) + "\"" +
+                    " data-meta-credit=\"today\">" +
+                    "<strong>" + (th.cards | 0) + "</strong>" +
+                    "<span class=\"dash-task-theme-copy\">" + esc(th.tema) +
+                      (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
+                    "</span>" +
+                    "<span class=\"dash-task-theme-go\">Estudar</span>" +
+                  "</button>" +
+                "</li>"
+              )).join("") + "</ul>")
+            : "") +
+        "</li>";
+      if (!fcTasksEl.dataset.metaBound) {
+        fcTasksEl.dataset.metaBound = "1";
+        fcTasksEl.addEventListener("click", (evt) => {
+          const themeBtn = evt.target.closest("[data-meta-area]");
+          if (!themeBtn) return;
+          evt.preventDefault();
+          if (typeof aprovaApplyMetaCredit === "function") aprovaApplyMetaCredit("today");
+          if (typeof aprovaFulfillMetaTheme === "function") {
+            aprovaFulfillMetaTheme(
+              themeBtn.getAttribute("data-meta-area"),
+              themeBtn.getAttribute("data-meta-tema"),
+              Number(themeBtn.getAttribute("data-meta-cards")) || 0
+            );
+          }
+        });
+      }
+    }
+  } else if (fcCard) {
+    fcCard.hidden = true;
+  }
+
+  if (hubMetas) {
+    const bits = [qHub, fcHub].filter(Boolean);
+    hubMetas.textContent = bits.length
+      ? bits.join(" · ")
+      : "Metas do dia · questões e flashcards";
   }
 }
 
@@ -5654,6 +5739,9 @@ async function aprovaBoot () {
   });
   document.getElementById("hoje-metas-start-day")?.addEventListener("click", () => {
     aprovaFulfillMetaQuestionsDay();
+  });
+  document.getElementById("hoje-metas-fc-start")?.addEventListener("click", () => {
+    if (typeof aprovaFulfillDailyMeta === "function") aprovaFulfillDailyMeta();
   });
 
   document.querySelectorAll("[data-perfil-tab]").forEach(btn => {
