@@ -3044,6 +3044,22 @@ html[data-theme="dark"] .aprova-modal-panel {
   background: color-mix(in srgb, #2f9e6b 14%, transparent);
 }
 
+.dash-task-theme-btn.is-done.is-acc-hit {
+  border-color: color-mix(in srgb, #2f9e6b 55%, var(--line));
+  background: color-mix(in srgb, #2f9e6b 14%, transparent);
+}
+
+.dash-task-theme-btn.is-done.is-acc-near {
+  border-color: color-mix(in srgb, #c9a227 55%, var(--line));
+  background: color-mix(in srgb, #c9a227 14%, transparent);
+}
+
+.dash-task-theme-btn.is-done.is-acc-far,
+.dash-task-theme-btn.is-done.is-acc-none {
+  border-color: color-mix(in srgb, #c45c5c 50%, var(--line));
+  background: color-mix(in srgb, #c45c5c 12%, transparent);
+}
+
 .dash-task-theme-btn.is-partial {
   border-color: color-mix(in srgb, #c9a227 55%, var(--line));
   background: color-mix(in srgb, #c9a227 12%, transparent);
@@ -3061,16 +3077,49 @@ html[data-theme="dark"] .aprova-modal-panel {
   font-weight: 600;
 }
 
-.dash-task-theme-btn.is-done .metas-q-status {
+.dash-task-theme-btn.is-done.is-acc-hit .metas-q-status {
   color: #2f9e6b;
 }
 
+.dash-task-theme-btn.is-done.is-acc-near .metas-q-status,
 .dash-task-theme-btn.is-partial .metas-q-status {
   color: #c9a227;
 }
 
+.dash-task-theme-btn.is-done.is-acc-far .metas-q-status,
+.dash-task-theme-btn.is-done.is-acc-none .metas-q-status,
 .dash-task-theme-btn.is-todo .metas-q-status {
   color: #c45c5c;
+}
+
+.metas-q-warn {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c45c5c;
+}
+
+.dash-task-theme-more {
+  display: block;
+  width: 100%;
+  margin: 0.35rem 0 0.15rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px dashed color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent-deep);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dash-task-theme-more:hover,
+.dash-task-theme-more:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .metas-q-pct {

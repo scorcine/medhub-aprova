@@ -93,7 +93,8 @@ function aprovaPlanQuestionQuota (horizon, daysLeft, opts) {
   const o = opts || {};
   const target = typeof aprovaNormalizeTargetAccuracy === "function"
     ? aprovaNormalizeTargetAccuracy(o.targetAccuracy)
-    : Math.max(50, Math.min(95, Math.round(Number(o.targetAccuracy) || 70)));
+    : Math.max(50, Math.min(95, Math.round(Number(o.targetAccuracy) ||
+      (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))));
   const stats = o.stats || (typeof aprovaExamStatsSummary === "function"
     ? aprovaExamStatsSummary()
     : { attempted: 0, pct: 0 });
@@ -146,7 +147,7 @@ function aprovaBuildTopicReviewWaves (plan, focusPack, targetAccuracy, statsSumm
   const third = Math.max(14, Math.round(totalDays / 3));
   const target = typeof aprovaNormalizeTargetAccuracy === "function"
     ? aprovaNormalizeTargetAccuracy(targetAccuracy)
-    : 70;
+    : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
 
   const themes = typeof aprovaCollectCrossAreaThemes === "function"
     ? aprovaCollectCrossAreaThemes(focusPack, 12, { perArea: 2 })
@@ -694,7 +695,7 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const targetAccuracy = typeof aprovaProfileTargetAccuracy === "function"
     ? aprovaProfileTargetAccuracy(profile)
-    : 70;
+    : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
   const statsSummary = typeof aprovaExamStatsSummary === "function"
     ? aprovaExamStatsSummary()
     : { attempted: 0, pct: 0, themes: [] };

@@ -2571,18 +2571,39 @@ function aprovaQPoolForTema (specialty, tema) {
     .sort((a, b) => b.s - a.s)
     .map((row) => row.q);
 
-  // Se o tema não casar com o banco ainda, cai na especialidade inteira
   return ranked.length >= Math.min(5, pool.length) ? ranked : pool;
 }
 
-async function aprovaFulfillMetaQuestions (specialty, tema, n) {
+/** Sessão aberta a partir de Minhas metas → Encerrar/Concluir volta às metas. */
+let aprovaQFromMetas = false;
+
+function aprovaReturnFromQuestionSession () {
+  AprovaQuestions.clearSavedTreino();
+  if (typeof aprovaClearMateriaCreditTarget === "function") {
+    aprovaClearMateriaCreditTarget();
+  }
+  AprovaQuestions.resetSession("treino");
+  AprovaQuestions.queue = [];
+  const toMetas = aprovaQFromMetas;
+  aprovaQFromMetas = false;
+  if (toMetas) {
+    aprovaGoTo("metas");
+    return;
+  }
+  aprovaRenderQuestionBrowse();
+}
+
+async function aprovaFulfillMetaQuestions (specialty, tema, n, opts) {
+  const options = opts || {};
+  const mode = options.mode || "continue";
+  aprovaQFromMetas = true;
   aprovaGoTo("questoes");
   if (typeof AprovaQuestions === "undefined") return;
   if (!AprovaQuestions.catalog.length) {
     try { await AprovaQuestions.load(); } catch (e) { /* ignore */ }
   }
 
-  const want = Math.max(5, n | 0 || 10);
+  const want = Math.max(1, n | 0 || 10);
   const pool = aprovaQPoolForTema(specialty, tema);
   if (!pool.length) {
     aprovaQBrowse.specialty = specialty || "";
@@ -2600,15 +2621,110 @@ async function aprovaFulfillMetaQuestions (specialty, tema, n) {
   AprovaQuestions.filters = {
     specialty: specialty || "",
     group: "",
-    theme: "",
+    theme: String(tema || ""),
     exam: "",
     year: ""
   };
+
+  if (mode === "review") {
+    const idList = typeof aprovaMateriaAnsweredIdList === "function"
+      ? aprovaMateriaAnsweredIdList(specialty, tema)
+      : [];
+    const byId = Object.create(null);
+    pool.forEach((q) => {
+      if (q && q.id) byId[q.id] = q;
+    });
+    const reviewPool = [];
+    idList.forEach((id) => {
+      if (byId[id]) reviewPool.push(byId[id]);
+    });
+    if (!reviewPool.length) {
+      const hist = typeof aprovaLoadQuestionHistory === "function"
+        ? aprovaLoadQuestionHistory()
+        : { byId: {} };
+      pool.forEach((q) => {
+        const row = hist.byId[q.id];
+        if (row && row.attempted) reviewPool.push(q);
+      });
+    }
+    if (!reviewPool.length) {
+      return aprovaFulfillMetaQuestions(specialty, tema, want, { mode: "more" });
+    }
+    const answers = reviewPool.map((q) => {
+      const hist = typeof aprovaLoadQuestionHistory === "function"
+        ? aprovaLoadQuestionHistory().byId[q.id]
+        : null;
+      let choice = q.answer;
+      let ok = true;
+      if (hist && hist.attempted) {
+        ok = !!hist.lastOk;
+        if (hist.lastChoiceText && Array.isArray(q.choices)) {
+          const idx = q.choices.findIndex((c) => c === hist.lastChoiceText);
+          choice = idx >= 0 ? idx : (ok ? q.answer : -1);
+        } else if (Number.isFinite(hist.lastChoice)) {
+          choice = hist.lastChoice | 0;
+        } else if (!ok) {
+          choice = -1;
+        }
+      }
+      return {
+        id: q.id,
+        theme: q.theme,
+        specialty: q.specialty,
+        choice,
+        correct: q.answer,
+        ok
+      };
+    });
+    const nRev = AprovaQuestions.startReviewTreino(reviewPool, answers);
+    if (!nRev) {
+      aprovaRenderQuestionBrowse();
+      return;
+    }
+    aprovaShowQuestionViews("card");
+    aprovaRenderQuestion();
+    return;
+  }
+
+  const savedScope = mode === "more" ? "meta-more" : "meta";
+  if (mode !== "more") {
+    const saved = AprovaQuestions.getResumableTreino(AprovaQuestions.filters, savedScope);
+    if (saved) {
+      const resumed = AprovaQuestions.resumeTreino(saved);
+      if (resumed) {
+        aprovaShowQuestionViews("card");
+        aprovaRenderQuestion();
+        return;
+      }
+    }
+  }
+
+  const used = typeof aprovaMateriaAnsweredIds === "function"
+    ? aprovaMateriaAnsweredIds(specialty, tema)
+    : Object.create(null);
+  const fresh = pool.filter((q) => {
+    if (!q || !q.id) return false;
+    if (used[q.id]) return false;
+    if (typeof aprovaQuestionMatchesScope === "function" &&
+        !aprovaQuestionMatchesScope(q.id, "new")) {
+      return false;
+    }
+    return true;
+  });
+  const source = fresh.length ? fresh : pool.filter((q) => q && !used[q.id]);
+  const bag = source.length ? source : (mode === "more" ? pool : []);
+  if (!bag.length) {
+    return aprovaFulfillMetaQuestions(specialty, tema, want, { mode: "review" });
+  }
   const shuffled = typeof aprovaShuffleArray === "function"
-    ? aprovaShuffleArray(pool.slice())
-    : pool.slice();
+    ? aprovaShuffleArray(bag.slice())
+    : bag.slice();
   const size = Math.min(want, shuffled.length);
-  AprovaQuestions.startTreino(shuffled.slice(0, size), "all");
+  if (!size) {
+    aprovaRenderQuestionBrowse();
+    return;
+  }
+  AprovaQuestions.startTreino(shuffled.slice(0, size), savedScope);
   aprovaShowQuestionViews("card");
   aprovaRenderQuestion();
 }
@@ -2628,6 +2744,7 @@ async function aprovaFulfillMetaQuestionsDay () {
     return;
   }
 
+  aprovaQFromMetas = true;
   aprovaGoTo("questoes");
   if (!AprovaQuestions.catalog.length) {
     try { await AprovaQuestions.load(); } catch (e) { /* ignore */ }
@@ -2636,9 +2753,16 @@ async function aprovaFulfillMetaQuestionsDay () {
   const bag = [];
   themes.forEach((th) => {
     const part = aprovaQPoolForTema(th.specialty, th.tema);
+    const used = typeof aprovaMateriaAnsweredIds === "function"
+      ? aprovaMateriaAnsweredIds(th.specialty, th.tema)
+      : Object.create(null);
+    const filtered = part.filter((q) => q && !used[q.id] &&
+      (typeof aprovaQuestionMatchesScope !== "function" || aprovaQuestionMatchesScope(q.id, "new")));
+    const source = filtered.length ? filtered : part.filter((q) => q && !used[q.id]);
+    const bagSrc = source.length ? source : part;
     const shuffled = typeof aprovaShuffleArray === "function"
-      ? aprovaShuffleArray(part.slice())
-      : part.slice();
+      ? aprovaShuffleArray(bagSrc.slice())
+      : bagSrc.slice();
     const take = Math.min(th.n | 0 || 5, shuffled.length);
     for (let i = 0; i < take; i++) bag.push(shuffled[i]);
   });
@@ -2903,35 +3027,61 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
             const status = th.status || "todo";
             const done = th.progressDone | 0;
             const goal = th.progressGoal | 0 || th.n | 0;
-            let statusTxt = "Não feito";
+            const targetAcc = (program.qQuota && program.qQuota.targetAccuracy) ||
+              (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
+            const tone = status === "done" && typeof aprovaMetaProgressTone === "function"
+              ? aprovaMetaProgressTone(th.progressPct, targetAcc)
+              : (status === "partial" ? "near" : (status === "done" ? "hit" : "todo"));
+            let statusTxt = "Não feito · 0/" + goal;
             let cta = "Responder";
+            let warn = "";
             if (status === "done") {
-              statusTxt = "Feito" +
-                (th.progressPct != null ? (" · " + th.progressPct + "% acerto") : "");
-              cta = "Feito";
+              const pctBit = th.progressPct != null ? (" · " + th.progressPct + "% acerto") : "";
+              statusTxt = "Feito" + pctBit;
+              cta = "Revisar";
+              if (tone === "far") {
+                statusTxt += " · revisar o quanto antes";
+                warn = "<span class=\"metas-q-warn\">Consulte material de apoio</span>";
+              } else if (tone === "near") {
+                statusTxt += " · pouco abaixo da meta";
+              }
             } else if (status === "partial") {
               statusTxt = "Em andamento · " + done + "/" + goal +
                 (th.progressPct != null ? (" · " + th.progressPct + "%") : "");
               cta = "Continuar";
-            } else {
-              statusTxt = "Não feito · 0/" + goal;
             }
-            const remain = status === "done" ? goal : Math.max(1, goal - done);
+            const remain = status === "done"
+              ? Math.max(5, goal)
+              : Math.max(1, goal - done);
+            const toneClass = status === "todo"
+              ? "is-todo"
+              : (status === "partial"
+                ? "is-partial"
+                : ("is-done is-acc-" + tone));
             return (
               "<li>" +
-                "<button type=\"button\" class=\"dash-task-theme-btn is-" + status + "\"" +
+                "<button type=\"button\" class=\"dash-task-theme-btn " + toneClass + "\"" +
                   " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
                   " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
-                  " data-meta-q-n=\"" + remain + "\">" +
+                  " data-meta-q-n=\"" + remain + "\"" +
+                  " data-meta-q-mode=\"" + (status === "done" ? "review" : "continue") + "\">" +
                   "<strong>" + (th.n | 0) + "</strong>" +
                   "<span class=\"dash-task-theme-copy\">" +
                     esc(th.tema) +
                     (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
                     (pctLabel ? (" <span class=\"metas-q-pct\">" + esc(pctLabel) + "</span>") : "") +
                     "<span class=\"metas-q-status\">" + esc(statusTxt) + "</span>" +
+                    warn +
                   "</span>" +
                   "<span class=\"dash-task-theme-go\">" + cta + "</span>" +
                 "</button>" +
+                (status === "done"
+                  ? ("<button type=\"button\" class=\"dash-task-theme-more\"" +
+                      " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
+                      " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
+                      " data-meta-q-n=\"" + Math.max(5, goal) + "\"" +
+                      " data-meta-q-mode=\"more\">Praticar mais no banco</button>")
+                  : "") +
               "</li>"
             );
           }).join("");
@@ -2942,10 +3092,12 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
             const btn = evt.target.closest("[data-meta-q-tema]");
             if (!btn) return;
             evt.preventDefault();
+            const mode = btn.getAttribute("data-meta-q-mode") || "continue";
             aprovaFulfillMetaQuestions(
               btn.getAttribute("data-meta-q-spec"),
               btn.getAttribute("data-meta-q-tema"),
-              Number(btn.getAttribute("data-meta-q-n")) || 10
+              Number(btn.getAttribute("data-meta-q-n")) || 10,
+              { mode }
             );
           });
         }
@@ -3344,19 +3496,29 @@ function aprovaPerfilSlotFromControls () {
       ? aprovaNormalizeExamDate(dateEl.value)
       : dateEl.value)
     : null;
-  const targetAccuracy = typeof aprovaNormalizeTargetAccuracy === "function"
-    ? aprovaNormalizeTargetAccuracy(accEl && accEl.value)
-    : Math.max(50, Math.min(95, Math.round(Number(accEl && accEl.value) || 70)));
+  const rawAcc = accEl ? String(accEl.value || "").trim() : "";
+  const targetAccuracy = rawAcc === ""
+    ? null
+    : (typeof aprovaNormalizeTargetAccuracy === "function"
+      ? aprovaNormalizeTargetAccuracy(rawAcc)
+      : Math.max(50, Math.min(95, Math.round(Number(rawAcc) || 75))));
   if (!value || value === "") return null;
   if (value === "__other__") {
     const label = other ? String(other.value || "").trim() : "";
-    if (!label) return { kind: "other", label: "", incomplete: true, date: date || undefined, targetAccuracy };
-    const slot = { kind: "other", label, targetAccuracy };
+    if (!label) {
+      const incomplete = { kind: "other", label: "", incomplete: true };
+      if (date) incomplete.date = date;
+      if (targetAccuracy != null) incomplete.targetAccuracy = targetAccuracy;
+      return incomplete;
+    }
+    const slot = { kind: "other", label };
     if (date) slot.date = date;
+    if (targetAccuracy != null) slot.targetAccuracy = targetAccuracy;
     return slot;
   }
-  const slot = { kind: "exam", id: value, targetAccuracy };
+  const slot = { kind: "exam", id: value };
   if (date) slot.date = date;
+  if (targetAccuracy != null) slot.targetAccuracy = targetAccuracy;
   return slot;
 }
 
@@ -3399,11 +3561,11 @@ function aprovaPerfilUpdateSummary () {
   if (preview && typeof aprovaBuildStudyPlan === "function") {
     const plan = aprovaBuildStudyPlan({ priorities: aprovaPerfilDraft }, null);
     const primary = aprovaPerfilDraft.find(Boolean);
-    const target = primary && primary.targetAccuracy != null
+    const target = primary && primary.targetAccuracy != null && String(primary.targetAccuracy).trim() !== ""
       ? (typeof aprovaNormalizeTargetAccuracy === "function"
         ? aprovaNormalizeTargetAccuracy(primary.targetAccuracy)
         : primary.targetAccuracy)
-      : 70;
+      : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
     if (plan && plan.ok) {
       preview.textContent = "Após salvar, veja em Minhas metas: " + plan.horizon.label +
         " · " + plan.daysLine +
@@ -3492,12 +3654,16 @@ function aprovaRenderPerfilSlot () {
   if (accEl) {
     const def = typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined"
       ? APROVA_DEFAULT_TARGET_ACCURACY
-      : 70;
-    accEl.value = current && current.targetAccuracy != null
-      ? String(typeof aprovaNormalizeTargetAccuracy === "function"
+      : 75;
+    accEl.placeholder = String(def);
+    // Em branco = padrão; só preenche se o aluno cadastrou um valor.
+    if (current && current.targetAccuracy != null && String(current.targetAccuracy).trim() !== "") {
+      accEl.value = String(typeof aprovaNormalizeTargetAccuracy === "function"
         ? aprovaNormalizeTargetAccuracy(current.targetAccuracy)
-        : current.targetAccuracy)
-      : String(def);
+        : current.targetAccuracy);
+    } else {
+      accEl.value = "";
+    }
     accEl.disabled = !current;
   }
 
@@ -4480,15 +4646,11 @@ function aprovaRestartTreinoFromModal () {
 }
 
 function aprovaLeaveTreinoSession () {
-  if (typeof aprovaClearMateriaCreditTarget === "function") {
-    aprovaClearMateriaCreditTarget();
-  }
-  if (AprovaQuestions.hasTreinoProgress()) {
+  if (AprovaQuestions.hasTreinoProgress() &&
+      !(AprovaQuestions.session && AprovaQuestions.session.scope === "review")) {
     AprovaQuestions.saveTreinoProgress();
   }
-  AprovaQuestions.resetSession("treino");
-  AprovaQuestions.queue = [];
-  aprovaRenderQuestionBrowse();
+  aprovaReturnFromQuestionSession();
 }
 
 function aprovaShowQuestionViews (view) {
@@ -4769,9 +4931,14 @@ function aprovaRenderQuestion () {
     });
     if (feedback) feedback.hidden = false;
     if (verdictEl) {
-      verdictEl.textContent = result.ok
-        ? "Acertou — veja o raciocínio e a pegadinha."
-        : "Errou — veja por que a correta é outra e onde está a pegadinha.";
+      const review = AprovaQuestions.session && AprovaQuestions.session.scope === "review";
+      verdictEl.textContent = review
+        ? (result.ok
+          ? "Revisão — você tinha acertado. Releia o raciocínio."
+          : "Revisão — você tinha errado. Veja a correta e a pegadinha.")
+        : (result.ok
+          ? "Acertou — veja o raciocínio e a pegadinha."
+          : "Errou — veja por que a correta é outra e onde está a pegadinha.");
       verdictEl.className = "q-feedback-verdict " +
         (result.ok ? "q-feedback-verdict--ok" : "q-feedback-verdict--err");
     }
@@ -5161,6 +5328,10 @@ async function aprovaBoot () {
       aprovaRenderSimuladoResult();
       return;
     }
+    if (!next && AprovaQuestions.mode === "treino") {
+      aprovaReturnFromQuestionSession();
+      return;
+    }
     aprovaRenderQuestion();
   });
 
@@ -5178,8 +5349,8 @@ async function aprovaBoot () {
   });
 
   document.getElementById("q-back-metas")?.addEventListener("click", () => {
+    aprovaQFromMetas = true;
     aprovaLeaveTreinoSession();
-    aprovaGoTo("metas");
   });
 
   ["q-filter-size"].forEach(id => {

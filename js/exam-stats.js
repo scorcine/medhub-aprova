@@ -76,11 +76,12 @@ function aprovaRecordExamAnswer (theme, ok, questionId, meta) {
     aprovaLogQuestionActivity(1);
   }
 
+  const id = String(questionId || "").trim();
+
   if (typeof aprovaCreditMateriaProgress === "function") {
-    aprovaCreditMateriaProgress(theme, meta && meta.specialty, meta && meta.group, ok);
+    aprovaCreditMateriaProgress(theme, meta && meta.specialty, meta && meta.group, ok, id);
   }
 
-  const id = String(questionId || "").trim();
   if (id) {
     const hist = aprovaLoadQuestionHistory();
     if (!hist.byId[id]) {
@@ -92,6 +93,11 @@ function aprovaRecordExamAnswer (theme, ok, questionId, meta) {
     else row.wrong += 1;
     row.lastOk = !!ok;
     row.lastAt = Date.now();
+    if (meta && meta.choiceText != null) {
+      row.lastChoiceText = String(meta.choiceText);
+    } else if (meta && Number.isFinite(meta.choice)) {
+      row.lastChoice = meta.choice | 0;
+    }
     aprovaSaveQuestionHistory(hist);
   }
 
@@ -142,7 +148,8 @@ const APROVA_THEME_NEAR_BAND = 8;
 function aprovaThemeAccuracyBand (tema, targetAccuracy, statsSummary) {
   const target = typeof aprovaNormalizeTargetAccuracy === "function"
     ? aprovaNormalizeTargetAccuracy(targetAccuracy)
-    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) || 70)));
+    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) ||
+      (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))));
   const summary = statsSummary || (typeof aprovaExamStatsSummary === "function"
     ? aprovaExamStatsSummary()
     : null);
@@ -200,7 +207,8 @@ function aprovaWeakThemesVsTarget (targetAccuracy, limit, statsSummary) {
   const summary = statsSummary || aprovaExamStatsSummary();
   const target = typeof aprovaNormalizeTargetAccuracy === "function"
     ? aprovaNormalizeTargetAccuracy(targetAccuracy)
-    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) || 70)));
+    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) ||
+      (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))));
   const max = Math.max(1, limit | 0 || 5);
   const rows = (summary.themes || [])
     .filter((t) => t.attempted >= APROVA_THEME_MIN_ATTEMPTS && t.pct < target - 2)
@@ -383,12 +391,49 @@ function aprovaFindMateriaRow (agenda, day, tema, specialty) {
   return { day, idx, row: pack.themes[idx] };
 }
 
+/** Lista ordenada dos IDs respondidos na meta do tema (hoje). */
+function aprovaMateriaAnsweredIdList (specialty, tema) {
+  const today = typeof aprovaActivityDayKey === "function"
+    ? aprovaActivityDayKey()
+    : new Date().toISOString().slice(0, 10);
+  const agenda = aprovaLoadMateriaAgenda();
+  const hit = aprovaFindMateriaRow(agenda, today, tema, specialty);
+  if (!hit || !hit.row || !Array.isArray(hit.row.ids)) return [];
+  return hit.row.ids.map((id) => String(id || "")).filter(Boolean);
+}
+
+/**
+ * Faixa de acerto da meta do dia vs alvo do perfil.
+ * hit ≥ meta | near pouco abaixo | far bem abaixo | none sem % ainda
+ */
+function aprovaMetaProgressTone (progressPct, targetAccuracy) {
+  if (progressPct == null || !Number.isFinite(Number(progressPct))) return "none";
+  const pct = Math.round(Number(progressPct));
+  const target = typeof aprovaNormalizeTargetAccuracy === "function"
+    ? aprovaNormalizeTargetAccuracy(targetAccuracy)
+    : Math.max(50, Math.min(95, Math.round(Number(targetAccuracy) ||
+      (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))));
+  if (pct >= target) return "hit";
+  if (pct >= target - APROVA_THEME_NEAR_BAND) return "near";
+  return "far";
+}
+
+/** IDs já usados na meta do tema (hoje), para não repetir ao reabrir. */
+function aprovaMateriaAnsweredIds (specialty, tema) {
+  const out = Object.create(null);
+  aprovaMateriaAnsweredIdList(specialty, tema).forEach((id) => {
+    out[id] = true;
+  });
+  return out;
+}
+
 /** Credita 1 questão na agenda (hoje primeiro; senão o atraso mais antigo do tema). */
-function aprovaCreditMateriaProgress (tema, specialty, group, ok) {
+function aprovaCreditMateriaProgress (tema, specialty, group, ok, questionId) {
   const agenda = aprovaLoadMateriaAgenda();
   const today = typeof aprovaActivityDayKey === "function"
     ? aprovaActivityDayKey()
     : new Date().toISOString().slice(0, 10);
+  const qid = String(questionId || "").trim();
 
   let best = null;
 
@@ -399,8 +444,9 @@ function aprovaCreditMateriaProgress (tema, specialty, group, ok) {
       aprovaMateriaCreditTarget.tema,
       aprovaMateriaCreditTarget.specialty
     );
-    if (hit && (hit.row.done | 0) < (hit.row.goal | 0)) {
-      best = { day: hit.day, idx: hit.idx, rank: 9999 };
+    // Mesmo com meta já fechada, ainda registra o id (evita repetir ao reabrir).
+    if (hit) {
+      best = { day: hit.day, idx: hit.idx, rank: 9999, credit: (hit.row.done | 0) < (hit.row.goal | 0) };
     }
   }
 
@@ -413,12 +459,12 @@ function aprovaCreditMateriaProgress (tema, specialty, group, ok) {
       const pack = agenda.days[day];
       if (!pack || !Array.isArray(pack.themes)) return;
       pack.themes.forEach((row, idx) => {
-        if ((row.done | 0) >= (row.goal | 0)) return;
+        const open = (row.done | 0) < (row.goal | 0);
         const score = aprovaMateriaMatchScore(row, tema, specialty, group);
         if (score <= 0) return;
-        const rank = (day === today ? 1000 : 0) + score * 10;
+        const rank = (day === today ? 1000 : 0) + score * 10 + (open ? 5 : 0);
         if (!best || rank > best.rank) {
-          best = { day, idx, rank };
+          best = { day, idx, rank, credit: open };
         }
       });
     });
@@ -427,8 +473,12 @@ function aprovaCreditMateriaProgress (tema, specialty, group, ok) {
   if (!best) return null;
   const row = agenda.days[best.day].themes[best.idx];
   if (row.correct == null) row.correct = 0;
-  row.done = Math.min(row.goal | 0, (row.done | 0) + 1);
-  if (ok) row.correct = (row.correct | 0) + 1;
+  if (!Array.isArray(row.ids)) row.ids = [];
+  if (qid && row.ids.indexOf(qid) < 0) row.ids.push(qid);
+  if (best.credit !== false && (row.done | 0) < (row.goal | 0)) {
+    row.done = Math.min(row.goal | 0, (row.done | 0) + 1);
+    if (ok) row.correct = (row.correct | 0) + 1;
+  }
   aprovaSaveMateriaAgenda(agenda);
   return {
     day: best.day,

@@ -42,10 +42,11 @@ function aprovaNormalizeExamDate (value) {
   return s;
 }
 
-/** Meta de acerto esperada na prova (50–95%). Padrão 70. */
-const APROVA_DEFAULT_TARGET_ACCURACY = 70;
+/** Meta de acerto esperada na prova (50–95%). Em branco → 75%. */
+const APROVA_DEFAULT_TARGET_ACCURACY = 75;
 
 function aprovaNormalizeTargetAccuracy (value) {
+  if (value == null || String(value).trim() === "") return APROVA_DEFAULT_TARGET_ACCURACY;
   const n = Number(value);
   if (!Number.isFinite(n)) return APROVA_DEFAULT_TARGET_ACCURACY;
   return Math.max(50, Math.min(95, Math.round(n)));
@@ -54,18 +55,20 @@ function aprovaNormalizeTargetAccuracy (value) {
 function aprovaNormalizePriority (slot) {
   if (!slot || typeof slot !== "object") return null;
   const date = aprovaNormalizeExamDate(slot.date);
-  const targetAccuracy = aprovaNormalizeTargetAccuracy(
-    slot.targetAccuracy != null ? slot.targetAccuracy : APROVA_DEFAULT_TARGET_ACCURACY
-  );
+  const rawAcc = slot.targetAccuracy;
+  const hasAcc = rawAcc != null && String(rawAcc).trim() !== "";
+  const targetAccuracy = hasAcc ? aprovaNormalizeTargetAccuracy(rawAcc) : undefined;
   if (slot.kind === "exam" && slot.id && APROVA_TARGET_EXAMS.some(e => e.id === slot.id)) {
-    const next = { kind: "exam", id: slot.id, targetAccuracy };
+    const next = { kind: "exam", id: slot.id };
+    if (targetAccuracy != null) next.targetAccuracy = targetAccuracy;
     if (date) next.date = date;
     return next;
   }
   if (slot.kind === "other") {
     const label = String(slot.label || "").trim();
     if (!label) return null;
-    const next = { kind: "other", label, targetAccuracy };
+    const next = { kind: "other", label };
+    if (targetAccuracy != null) next.targetAccuracy = targetAccuracy;
     if (date) next.date = date;
     return next;
   }

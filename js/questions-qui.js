@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721prev3";
+const APROVA_QUESTION_CACHE_VER = "20260721mat6";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 
 function aprovaShuffleArray (arr) {
@@ -283,6 +283,32 @@ const AprovaQuestions = {
     return this.queue.length;
   },
 
+  /**
+   * Reabre questões já feitas: gabarito e comentário visíveis, sem nova resposta.
+   * answersOverride: [{ id, choice, correct, ok }]
+   */
+  startReviewTreino (poolOverride, answersOverride) {
+    this.clearSavedTreino();
+    this.resetSession("treino");
+    const pool = Array.isArray(poolOverride) ? poolOverride.slice() : [];
+    // Mantém ordem das alternativas do banco (sem embaralhar) para casar com o texto salvo.
+    this.queue = pool.map((q) => Object.assign({}, q, {
+      choices: Array.isArray(q.choices) ? q.choices.slice() : [],
+      answer: q.answer
+    }));
+    const answers = Array.isArray(answersOverride) ? answersOverride.slice() : [];
+    this.session = {
+      scope: "review",
+      startedAt: Date.now(),
+      answers
+    };
+    this.index = 0;
+    this.correct = answers.filter((a) => a && a.ok).length;
+    this.attempted = answers.length;
+    this.landOnCurrent();
+    return this.queue.length;
+  },
+
   sessionAnswers () {
     if (this.mode === "simulado" && this.simulado && Array.isArray(this.simulado.answers)) {
       return this.simulado.answers;
@@ -430,12 +456,16 @@ const AprovaQuestions = {
     if (this.mode === "simulado" && this.simulado) {
       return "Quest\u00e3o " + (this.index + 1) + " de " + this.simulado.size;
     }
+    if (this.session && this.session.scope === "review") {
+      return "Revis\u00e3o " + (this.index + 1) + " de " + this.queue.length;
+    }
     return "Quest\u00e3o " + (this.index + 1) + " de " + this.queue.length + " (filtro)";
   },
 
   choose (choiceIndex) {
     const q = this.current();
     if (!q || this.answered) return null;
+    if (this.session && this.session.scope === "review") return null;
     this.answered = true;
     this.attempted += 1;
     const ok = choiceIndex === q.answer;
@@ -443,7 +473,11 @@ const AprovaQuestions = {
     if (typeof aprovaRecordExamAnswer === "function") {
       aprovaRecordExamAnswer(q.theme, ok, q.id, {
         specialty: q.specialty,
-        group: q.group
+        group: q.group,
+        choice: choiceIndex,
+        choiceText: q.choices && q.choices[choiceIndex] != null
+          ? q.choices[choiceIndex]
+          : ""
       });
     }
     const entry = {
@@ -472,6 +506,21 @@ const AprovaQuestions = {
     };
   },
 
+  /** Todas as questões da fila já têm resposta nesta sessão. */
+  isTreinoFinished () {
+    if (this.mode !== "treino" || !this.queue.length) return false;
+    if (this.session && this.session.scope === "review") {
+      return this.index >= this.queue.length - 1 && this.hasAnsweredCurrent();
+    }
+    const answered = this.sessionAnswers();
+    if (!answered.length) return false;
+    const seen = Object.create(null);
+    answered.forEach((a) => {
+      if (a && a.id) seen[a.id] = true;
+    });
+    return this.queue.every((q) => q && seen[q.id]);
+  },
+
   next () {
     if (this.mode === "simulado" && this.simulado) {
       if (this.index + 1 >= this.queue.length) {
@@ -485,10 +534,38 @@ const AprovaQuestions = {
     }
 
     if (!this.queue.length) return null;
-    this.index = (this.index + 1) % this.queue.length;
-    this.landOnCurrent();
-    if (this.session) this.saveTreinoProgress();
-    return this.current();
+
+    // Revisão: navega em ordem por todas as questões já respondidas.
+    if (this.session && this.session.scope === "review") {
+      if (this.index + 1 >= this.queue.length) {
+        this.clearSavedTreino();
+        return null;
+      }
+      this.index += 1;
+      this.landOnCurrent();
+      if (this.session) this.saveTreinoProgress();
+      return this.current();
+    }
+
+    // Não volta ao início: avança só para questões ainda sem resposta.
+    const answered = Object.create(null);
+    this.sessionAnswers().forEach((a) => {
+      if (a && a.id) answered[a.id] = true;
+    });
+    for (let step = 1; step <= this.queue.length; step++) {
+      const idx = this.index + step;
+      if (idx >= this.queue.length) break;
+      const q = this.queue[idx];
+      if (q && !answered[q.id]) {
+        this.index = idx;
+        this.landOnCurrent();
+        if (this.session) this.saveTreinoProgress();
+        return this.current();
+      }
+    }
+    // Sessão concluída — limpa save para não reabrir o mesmo bloco.
+    if (this.isTreinoFinished()) this.clearSavedTreino();
+    return null;
   },
 
   prev () {
@@ -514,12 +591,45 @@ const AprovaQuestions = {
   canGoNext () {
     if (!this.queue.length) return false;
     if (this.mode === "simulado") return true;
-    return this.queue.length > 1;
+    if (this.session && this.session.scope === "review") {
+      return true;
+    }
+    if (!this.answered && !this.hasAnsweredCurrent()) return false;
+    const answered = Object.create(null);
+    this.sessionAnswers().forEach((a) => {
+      if (a && a.id) answered[a.id] = true;
+    });
+    for (let idx = this.index + 1; idx < this.queue.length; idx++) {
+      const q = this.queue[idx];
+      if (q && !answered[q.id]) return true;
+    }
+    // Última respondida: ainda mostra "Concluir"
+    return this.isTreinoFinished() || (this.hasAnsweredCurrent() && this.index >= this.queue.length - 1);
   },
 
   nextLabel () {
     if (this.mode === "simulado" && this.index + 1 >= this.queue.length) {
       return "Ver resultado";
+    }
+    if (this.mode === "treino" && this.session && this.session.scope === "review") {
+      return this.index + 1 >= this.queue.length ? "Voltar às metas" : "Pr\u00f3xima";
+    }
+    if (this.mode === "treino" && this.isTreinoFinished()) {
+      return "Concluir";
+    }
+    if (this.mode === "treino") {
+      const answered = Object.create(null);
+      this.sessionAnswers().forEach((a) => {
+        if (a && a.id) answered[a.id] = true;
+      });
+      let hasLater = false;
+      for (let idx = this.index + 1; idx < this.queue.length; idx++) {
+        if (this.queue[idx] && !answered[this.queue[idx].id]) {
+          hasLater = true;
+          break;
+        }
+      }
+      if (!hasLater && this.hasAnsweredCurrent()) return "Concluir";
     }
     return "Pr\u00f3xima";
   },
@@ -534,7 +644,30 @@ const AprovaQuestions = {
   priorAnswer () {
     const q = this.current();
     if (!q) return null;
-    return this.sessionAnswers().find((a) => a.id === q.id) || null;
+    const fromSession = this.sessionAnswers().find((a) => a.id === q.id);
+    if (fromSession) return fromSession;
+    if (!(this.session && this.session.scope === "review")) return null;
+    if (typeof aprovaLoadQuestionHistory !== "function") return null;
+    const row = aprovaLoadQuestionHistory().byId[q.id];
+    if (!row || !row.attempted) return null;
+    let choice = q.answer;
+    if (row.lastChoiceText && Array.isArray(q.choices)) {
+      const idx = q.choices.findIndex((c) => c === row.lastChoiceText);
+      if (idx >= 0) choice = idx;
+      else if (row.lastOk === false) choice = -1;
+    } else if (Number.isFinite(row.lastChoice)) {
+      choice = row.lastChoice | 0;
+    } else if (row.lastOk === false) {
+      choice = -1;
+    }
+    return {
+      id: q.id,
+      theme: q.theme,
+      specialty: q.specialty,
+      choice,
+      correct: q.answer,
+      ok: !!row.lastOk
+    };
   },
 
   isSimuladoFinished () {

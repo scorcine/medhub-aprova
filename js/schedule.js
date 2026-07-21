@@ -127,7 +127,7 @@ function aprovaScheduleCard (cardId, knewIt, opts) {
     if (tema && typeof aprovaThemeAccuracyBand === "function") {
       const target = typeof aprovaProfileTargetAccuracy === "function"
         ? aprovaProfileTargetAccuracy()
-        : 70;
+        : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75);
       const band = aprovaThemeAccuracyBand(tema, target);
       const weights = typeof aprovaThemeBandWeights === "function"
         ? aprovaThemeBandWeights(band.band)
