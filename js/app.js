@@ -282,6 +282,47 @@ function aprovaExamLabel (profile) {
   return profile.label || profile.id;
 }
 
+/**
+ * Rótulo da estatística usada nas metas (1ª prioridade do perfil / foco).
+ * Ex.: "SUS-SP", "Enamed", "Geral Brasil".
+ */
+function aprovaMetasStatsExamLabel (focusPack) {
+  const pack = focusPack || aprovaSeuFocoCache;
+  if (pack && pack.ok && Array.isArray(pack.exams) && pack.exams.length) {
+    const primary = pack.exams[0];
+    if (primary && primary.label) return primary.label;
+    if (primary && primary.id && typeof aprovaExamOptionLabel === "function") {
+      return aprovaExamOptionLabel(primary.id);
+    }
+  }
+  const id = typeof aprovaPreferredExamFocus === "function"
+    ? aprovaPreferredExamFocus()
+    : (typeof aprovaProfilePrimaryExamId === "function" ? aprovaProfilePrimaryExamId() : null);
+  if (!id || id === "geral") return "Geral Brasil";
+  if (typeof aprovaExamOptionLabel === "function") return aprovaExamOptionLabel(id);
+  if (id === "enamed") return "Enamed";
+  if (id === "sus-sp") return "SUS-SP";
+  return String(id);
+}
+
+/** Texto curto: "esse tema cai 44,1% na prova do SUS-SP". */
+function aprovaMetasThemeFreqCaption (pct, focusPack) {
+  if (pct == null || !Number.isFinite(Number(pct))) return "";
+  const pctTxt = typeof aprovaFormatPct === "function"
+    ? aprovaFormatPct(pct)
+    : (String(pct).replace(".", ",") + "%");
+  const exam = aprovaMetasStatsExamLabel(focusPack);
+  const pack = focusPack || aprovaSeuFocoCache;
+  const multi = pack && pack.ok && Array.isArray(pack.exams) && pack.exams.length > 1;
+  if (multi) {
+    return "esse tema cai " + pctTxt + " nas suas provas (ref. " + exam + ")";
+  }
+  if (exam === "Geral Brasil") {
+    return "esse tema cai " + pctTxt + " no Geral Brasil";
+  }
+  return "esse tema cai " + pctTxt + " na prova do " + exam;
+}
+
 function aprovaYearLabel (year) {
   if (!year || year === "geral") return "2024–2026";
   return String(year);
@@ -3005,9 +3046,15 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
       }
       if (qWeekEl) {
         const t = program.qQuota.targetAccuracy;
-        qWeekEl.textContent = t
-          ? ("Volume para meta de " + t + "% · temas rotacionam todo dia.")
-          : "Temas do dia com base no que mais cai nas suas provas.";
+        const examRef = typeof aprovaMetasStatsExamLabel === "function"
+          ? aprovaMetasStatsExamLabel(focusPack || aprovaSeuFocoCache)
+          : "";
+        const freqBit = examRef
+          ? ("Frequência = quanto o tema cai na estatística de " + examRef + ".")
+          : "Frequência = quanto o tema cai nas provas de residência.";
+        qWeekEl.textContent = (t
+          ? ("Volume para meta de " + t + "% · temas rotacionam todo dia. ")
+          : "Temas do dia com base no que mais cai. ") + freqBit;
       }
       if (qThemesEl) {
         const esc = (s) => String(s || "")
@@ -3019,11 +3066,13 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           qThemesEl.innerHTML = "<li class=\"muted\" style=\"list-style:none;padding:0.35rem 0\">Cadastre as provas no perfil para priorizar temas.</li>";
         } else {
           qThemesEl.innerHTML = themes.map((th) => {
-            const pctLabel = th.pct != null
-              ? (typeof aprovaFormatPct === "function"
-                ? aprovaFormatPct(th.pct)
-                : (String(th.pct).replace(".", ",") + "%"))
-              : "";
+            const freqCaption = typeof aprovaMetasThemeFreqCaption === "function"
+              ? aprovaMetasThemeFreqCaption(th.pct, focusPack || aprovaSeuFocoCache)
+              : (th.pct != null
+                ? (typeof aprovaFormatPct === "function"
+                  ? aprovaFormatPct(th.pct)
+                  : (String(th.pct).replace(".", ",") + "%"))
+                : "");
             const status = th.status || "todo";
             const done = th.progressDone | 0;
             const goal = th.progressGoal | 0 || th.n | 0;
@@ -3058,6 +3107,9 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
               : (status === "partial"
                 ? "is-partial"
                 : ("is-done is-acc-" + tone));
+            const areaBit = th.areaLabel
+              ? (esc(th.areaLabel) + (freqCaption ? " — " : ""))
+              : "";
             return (
               "<li>" +
                 "<button type=\"button\" class=\"dash-task-theme-btn " + toneClass + "\"" +
@@ -3068,8 +3120,9 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                   "<strong>" + (th.n | 0) + "</strong>" +
                   "<span class=\"dash-task-theme-copy\">" +
                     esc(th.tema) +
-                    (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
-                    (pctLabel ? (" <span class=\"metas-q-pct\">" + esc(pctLabel) + "</span>") : "") +
+                    ((areaBit || freqCaption)
+                      ? (" <span class=\"metas-q-freq\">" + areaBit + esc(freqCaption) + "</span>")
+                      : "") +
                     "<span class=\"metas-q-status\">" + esc(statusTxt) + "</span>" +
                     warn +
                   "</span>" +
