@@ -889,6 +889,14 @@
               <button type="button" class="btn btn-ghost" data-goto="metas">Minhas metas</button>
             </div>
           </div>
+          <div class="study-card" id="config-reset-card" style="margin-top:1rem" hidden>
+            <div class="label">Teste / progresso</div>
+            <p class="muted" style="margin:0.35rem 0 0.75rem">
+              Zera questões, flashcards SRS, metas do dia e revisões neste aparelho. Mantém conta e perfil de provas.
+            </p>
+            <button type="button" class="btn btn-ghost" id="config-reset-progress">Zerar meu progresso de estudo</button>
+            <p class="muted" id="config-reset-msg" hidden style="margin:0.65rem 0 0;font-size:0.85rem"></p>
+          </div>
         </section>
 
         <section id="panel-contato" class="panel" aria-labelledby="contato-title" hidden>
@@ -1033,7 +1041,7 @@
   <script src="js/focus.js?v=20260721foco1"></script>
   <script src="js/plan.js?v=20260719h"></script>
   <script src="js/tasks.js?v=20260721studymode1"></script>
-  <script src="js/schedule.js?v=20260721rev1"></script>
+  <script src="js/schedule.js?v=20260721reset1"></script>
   <script src="js/exam-stats.js?v=20260721rev1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>

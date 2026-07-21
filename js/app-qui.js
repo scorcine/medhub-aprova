@@ -4903,6 +4903,12 @@ function aprovaRenderConfig () {
       hint.textContent = "Cadastre as provas em Meu perfil. As metas diárias e por tema ficam em Minhas metas.";
     }
   }
+
+  const resetCard = document.getElementById("config-reset-card");
+  if (resetCard) {
+    const email = String(session && session.login || "").trim().toLowerCase();
+    resetCard.hidden = email !== "scorcine@gmail.com";
+  }
 }
 
 function aprovaRenderFlashcard () {
@@ -5973,15 +5979,24 @@ async function aprovaBoot () {
   aprovaApplyQuestionUiPrefs();
 
   const logged = aprovaSyncAppAuthUI();
+  let didReset = false;
+  if (logged && typeof aprovaMaybeOwnerProgressReset === "function") {
+    didReset = aprovaMaybeOwnerProgressReset();
+  }
 
   if (logged) {
     await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
     aprovaRenderDashboard();
     aprovaRenderToday();
+    if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
     aprovaShowFlashcardBrowse();
     aprovaRenderQuestoesPanel();
     aprovaRenderProgress();
     aprovaRenderExamStats();
+    if (didReset && typeof aprovaGoTo === "function") {
+      aprovaGoTo("inicio");
+    }
+  }
     aprovaRenderEspecialidades();
     aprovaRenderPerfil();
     aprovaRenderConfig();
@@ -6410,6 +6425,25 @@ async function aprovaBoot () {
   document.getElementById("config-logout")?.addEventListener("click", () => {
     document.getElementById("auth-logout")?.click();
   });
+
+  document.getElementById("config-reset-progress")?.addEventListener("click", () => {
+    const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+    const email = String(session && session.login || "").trim().toLowerCase();
+    if (email !== "scorcine@gmail.com") return;
+    const ok = window.confirm(
+      "Zerar todo o progresso de estudo neste aparelho?\n\n" +
+      "Apaga: questões feitas, SRS de flashcards, revisões e metas do dia.\n" +
+      "Mantém: conta e perfil de provas."
+    );
+    if (!ok) return;
+    if (typeof aprovaResetStudyProgress === "function") aprovaResetStudyProgress();
+    const msg = document.getElementById("config-reset-msg");
+    if (msg) {
+      msg.hidden = false;
+      msg.textContent = "Progresso zerado. Recarregando…";
+    }
+    window.setTimeout(() => { window.location.reload(); }, 500);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", aprovaBoot);
@@ -6417,9 +6451,13 @@ document.addEventListener("DOMContentLoaded", aprovaBoot);
 window.aprovaSyncAppAuthUI = aprovaSyncAppAuthUI;
 window.aprovaGoTo = aprovaGoTo;
 window.aprovaBootStudyModules = async function () {
+  if (typeof aprovaMaybeOwnerProgressReset === "function") {
+    aprovaMaybeOwnerProgressReset();
+  }
   await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
   aprovaRenderDashboard();
   aprovaRenderToday();
+  if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
   aprovaShowFlashcardBrowse();
   aprovaRenderQuestoesPanel();
   aprovaRenderProgress();

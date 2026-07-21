@@ -377,3 +377,58 @@ function aprovaBuildSimilarQuestionPool (theme, specialty, seedIds, n) {
   }
   return candidates.slice(0, want);
 }
+
+/** Zera progresso de estudo neste navegador (mantém conta e perfil de provas). */
+function aprovaResetStudyProgress () {
+  const keys = [
+    APROVA_SRS_KEY,
+    APROVA_ACTIVITY_KEY,
+    APROVA_Q_SRS_KEY,
+    "medhub-aprova-exam-stats-v1",
+    "medhub-aprova-q-history-v1",
+    "medhub-aprova-q-activity-v1",
+    "medhub-aprova-materia-v1",
+    "medhub-aprova-treino-v1",
+    "medhub-aprova-q-ui-v1",
+    "medhub-aprova-study-mode-v1"
+  ];
+  keys.forEach((k) => {
+    try { localStorage.removeItem(k); } catch (e) { /* ignore */ }
+  });
+  if (typeof AprovaQuestions !== "undefined") {
+    try {
+      if (typeof AprovaQuestions.clearSavedTreino === "function") AprovaQuestions.clearSavedTreino();
+      if (typeof AprovaQuestions.resetSession === "function") AprovaQuestions.resetSession("treino");
+      AprovaQuestions.queue = [];
+    } catch (e) { /* ignore */ }
+  }
+  if (typeof AprovaFlashcards !== "undefined" && typeof AprovaFlashcards.rebuildTodayQueue === "function") {
+    try { AprovaFlashcards.rebuildTodayQueue(); } catch (e) { /* ignore */ }
+  }
+  return true;
+}
+
+const APROVA_OWNER_PROGRESS_RESET_FLAG = "medhub-aprova-owner-progress-reset-v1";
+const APROVA_OWNER_PROGRESS_RESET_TOKEN = "20260721-test-studymodes-rev";
+
+/**
+ * One-shot: zera progresso do dono (scorcine@gmail.com) para testar funções novas.
+ * Só roda uma vez por token; conta e perfil de provas permanecem.
+ */
+function aprovaMaybeOwnerProgressReset () {
+  const auth = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+  const email = String(auth && auth.login || "").trim().toLowerCase();
+  if (email !== "scorcine@gmail.com") return false;
+  try {
+    if (localStorage.getItem(APROVA_OWNER_PROGRESS_RESET_FLAG) === APROVA_OWNER_PROGRESS_RESET_TOKEN) {
+      return false;
+    }
+  } catch (e) {
+    return false;
+  }
+  aprovaResetStudyProgress();
+  try {
+    localStorage.setItem(APROVA_OWNER_PROGRESS_RESET_FLAG, APROVA_OWNER_PROGRESS_RESET_TOKEN);
+  } catch (e) { /* ignore */ }
+  return true;
+}
