@@ -562,17 +562,19 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
     : 0;
   const qStatus = aprovaTaskStatus(qDone, qQuota.daily);
 
-  // Temas/áreas para atalhos de questões
-  const qThemes = [];
-  if (focusPack && focusPack.ok && Array.isArray(focusPack.areas)) {
-    focusPack.areas.slice(0, 4).forEach((area) => {
-      qThemes.push({
-        specialty: area.id,
-        label: area.label,
-        n: Math.max(5, Math.round(qQuota.daily / Math.min(4, focusPack.areas.length)))
-      });
-    });
-  }
+  // Temas do dia (estatísticas das provas do perfil), não só a área genérica
+  const qFocusThemes = aprovaCollectCrossAreaThemes(focusPack, 8, { perArea: 2 });
+  const qDistributed = aprovaDistributeThemeCards(
+    qFocusThemes.length ? qFocusThemes : themeSets.daily,
+    qQuota.daily
+  );
+  const qThemes = qDistributed.map((t) => ({
+    specialty: t.areaId || "",
+    areaLabel: t.areaLabel || "",
+    tema: t.tema,
+    pct: t.pct,
+    n: t.cards
+  }));
 
   return {
     quota,

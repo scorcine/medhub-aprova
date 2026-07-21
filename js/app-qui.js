@@ -2545,6 +2545,118 @@ function aprovaFulfillTomorrowMeta () {
   aprovaGoTo("flashcards", { study: true, mode: "today" });
 }
 
+function aprovaQPoolForTema (specialty, tema) {
+  if (typeof AprovaQuestions === "undefined" || !AprovaQuestions.catalog) return [];
+  const spec = String(specialty || "");
+  const key = typeof aprovaFocusNormKey === "function"
+    ? aprovaFocusNormKey(tema)
+    : String(tema || "").toLowerCase();
+  let pool = AprovaQuestions.catalog.filter((q) => !spec || q.specialty === spec);
+  if (!key || !pool.length) return pool;
+
+  const score = (q) => {
+    const g = typeof aprovaFocusNormKey === "function" ? aprovaFocusNormKey(q.group) : String(q.group || "").toLowerCase();
+    const t = typeof aprovaFocusNormKey === "function" ? aprovaFocusNormKey(q.theme) : String(q.theme || "").toLowerCase();
+    if (g === key || t === key) return 3;
+    if ((g && (g.indexOf(key) >= 0 || key.indexOf(g) >= 0)) ||
+        (t && (t.indexOf(key) >= 0 || key.indexOf(t) >= 0))) return 2;
+    const words = key.split(" ").filter((w) => w.length > 3);
+    if (words.some((w) => g.indexOf(w) >= 0 || t.indexOf(w) >= 0)) return 1;
+    return 0;
+  };
+
+  const ranked = pool
+    .map((q) => ({ q, s: score(q) }))
+    .filter((row) => row.s > 0)
+    .sort((a, b) => b.s - a.s)
+    .map((row) => row.q);
+
+  return ranked.length >= Math.min(5, pool.length) ? ranked : pool;
+}
+
+async function aprovaFulfillMetaQuestions (specialty, tema, n) {
+  aprovaGoTo("questoes");
+  if (typeof AprovaQuestions === "undefined") return;
+  if (!AprovaQuestions.catalog.length) {
+    try { await AprovaQuestions.load(); } catch (e) { /* ignore */ }
+  }
+
+  const want = Math.max(5, n | 0 || 10);
+  const pool = aprovaQPoolForTema(specialty, tema);
+  if (!pool.length) {
+    aprovaQBrowse.specialty = specialty || "";
+    aprovaQBrowse.level = specialty ? "groups" : "areas";
+    aprovaQBrowse.group = "";
+    aprovaQBrowse.theme = "";
+    aprovaRenderQuestionBrowse();
+    return;
+  }
+
+  AprovaQuestions.filters = {
+    specialty: specialty || "",
+    group: "",
+    theme: "",
+    exam: "",
+    year: ""
+  };
+  const shuffled = typeof aprovaShuffleArray === "function"
+    ? aprovaShuffleArray(pool.slice())
+    : pool.slice();
+  const size = Math.min(want, shuffled.length);
+  AprovaQuestions.startTreino(shuffled.slice(0, size), "all");
+  aprovaShowQuestionViews("card");
+  aprovaRenderQuestion();
+}
+
+async function aprovaFulfillMetaQuestionsDay () {
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const focus = aprovaSeuFocoCache;
+  const plan = typeof aprovaBuildStudyPlan === "function"
+    ? aprovaBuildStudyPlan(profile, focus && focus.ok ? focus : null)
+    : null;
+  const program = plan && plan.ok && typeof aprovaBuildStudyProgram === "function"
+    ? aprovaBuildStudyProgram(plan, null, Date.now(), focus)
+    : null;
+  const themes = (program && program.qThemes) || [];
+  if (!themes.length) {
+    aprovaGoTo("questoes");
+    return;
+  }
+
+  aprovaGoTo("questoes");
+  if (!AprovaQuestions.catalog.length) {
+    try { await AprovaQuestions.load(); } catch (e) { /* ignore */ }
+  }
+
+  const bag = [];
+  themes.forEach((th) => {
+    const part = aprovaQPoolForTema(th.specialty, th.tema);
+    const shuffled = typeof aprovaShuffleArray === "function"
+      ? aprovaShuffleArray(part.slice())
+      : part.slice();
+    const take = Math.min(th.n | 0 || 5, shuffled.length);
+    for (let i = 0; i < take; i++) bag.push(shuffled[i]);
+  });
+  const unique = [];
+  const seen = Object.create(null);
+  bag.forEach((q) => {
+    if (!q || seen[q.id]) return;
+    seen[q.id] = true;
+    unique.push(q);
+  });
+  const goal = (program && program.qQuota && program.qQuota.daily) || 41;
+  const pool = typeof aprovaShuffleArray === "function"
+    ? aprovaShuffleArray(unique).slice(0, goal)
+    : unique.slice(0, goal);
+  if (!pool.length) {
+    aprovaRenderQuestionBrowse();
+    return;
+  }
+  AprovaQuestions.startTreino(pool, "all");
+  aprovaShowQuestionViews("card");
+  aprovaRenderQuestion();
+}
+
 function aprovaApplyMetaCredit (credit) {
   if (credit === "tomorrow") {
     const tomorrowIso = typeof aprovaIsoOffset === "function" ? aprovaIsoOffset(1) : null;
@@ -2728,18 +2840,44 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           .replace(/</g, "&lt;");
         const themes = program.qThemes || [];
         if (!themes.length) {
-          qThemesEl.innerHTML = "";
+          qThemesEl.innerHTML = "<li class=\"muted\" style=\"list-style:none;padding:0.35rem 0\">Cadastre as provas no perfil para priorizar temas.</li>";
         } else {
-          qThemesEl.innerHTML = themes.map((th) => (
-            "<li>" +
-              "<button type=\"button\" class=\"dash-task-theme-btn\" data-goto=\"questoes\" data-meta-q-spec=\"" +
-                esc(th.specialty) + "\">" +
-                "<strong>" + th.n + "</strong>" +
-                "<span class=\"dash-task-theme-copy\">" + esc(th.label) + "</span>" +
-                "<span class=\"dash-task-theme-go\">Responder</span>" +
-              "</button>" +
-            "</li>"
-          )).join("");
+          qThemesEl.innerHTML = themes.map((th) => {
+            const pctLabel = th.pct != null
+              ? (typeof aprovaFormatPct === "function"
+                ? aprovaFormatPct(th.pct)
+                : (String(th.pct).replace(".", ",") + "%"))
+              : "";
+            return (
+              "<li>" +
+                "<button type=\"button\" class=\"dash-task-theme-btn\"" +
+                  " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
+                  " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
+                  " data-meta-q-n=\"" + (th.n | 0) + "\">" +
+                  "<strong>" + (th.n | 0) + "</strong>" +
+                  "<span class=\"dash-task-theme-copy\">" +
+                    esc(th.tema) +
+                    (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
+                    (pctLabel ? (" <span class=\"metas-q-pct\">" + esc(pctLabel) + "</span>") : "") +
+                  "</span>" +
+                  "<span class=\"dash-task-theme-go\">Responder</span>" +
+                "</button>" +
+              "</li>"
+            );
+          }).join("");
+        }
+        if (!qThemesEl.dataset.metaQBound) {
+          qThemesEl.dataset.metaQBound = "1";
+          qThemesEl.addEventListener("click", (evt) => {
+            const btn = evt.target.closest("[data-meta-q-tema]");
+            if (!btn) return;
+            evt.preventDefault();
+            aprovaFulfillMetaQuestions(
+              btn.getAttribute("data-meta-q-spec"),
+              btn.getAttribute("data-meta-q-tema"),
+              Number(btn.getAttribute("data-meta-q-n")) || 10
+            );
+          });
         }
       }
     }
@@ -4565,6 +4703,10 @@ async function aprovaBoot () {
 
   document.querySelectorAll("[data-goto]").forEach(btn => {
     btn.addEventListener("click", () => aprovaGoTo(btn.dataset.goto));
+  });
+
+  document.getElementById("metas-q-start-day")?.addEventListener("click", () => {
+    aprovaFulfillMetaQuestionsDay();
   });
 
   document.querySelectorAll("[data-perfil-tab]").forEach(btn => {
