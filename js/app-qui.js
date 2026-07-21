@@ -2,14 +2,17 @@
 
 const APROVA_PANEL_META = {
   inicio: { title: "Início", sub: "Escolha o que estudar agora" },
+  metas: { title: "Minhas metas", sub: "Diária, semanal e temas de flashcards" },
   hoje: { title: "Hoje", sub: "O que iremos estudar hoje?" },
+  revisoes: { title: "Revisões", sub: "O que venceu para revisar agora" },
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
+  material: { title: "Material de apoio", sub: "Em construção" },
+  videos: { title: "Vídeos", sub: "Em construção" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "O que mais caiu nas provas R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
-  metas: { title: "Minhas metas", sub: "Diária, semanal e temas de flashcards" },
   perfil: { title: "Meu perfil", sub: "Provas e datas que você pretende prestar" },
   config: { title: "Configurações", sub: "Conta e preferências" },
   contato: { title: "Contato", sub: "medhubr1@gmail.com" }
@@ -110,7 +113,16 @@ function aprovaGoTo (id, options) {
     if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
     aprovaShowPanel("hoje");
     aprovaMarkNav("revisoes");
+    aprovaSetWorkspaceMeta("revisoes");
     if (typeof aprovaHojePick === "function") aprovaHojePick("revisoes");
+    return;
+  }
+
+  // Material / Vídeos: tela “em breve” (reusa o painel Hoje)
+  if (id === "material" || id === "videos") {
+    aprovaShowPanel("hoje");
+    aprovaMarkNav(id);
+    if (typeof aprovaHojePick === "function") aprovaHojePick(id);
     return;
   }
 
