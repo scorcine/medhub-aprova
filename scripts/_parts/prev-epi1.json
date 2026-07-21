@@ -7,10 +7,10 @@
     "stem": "Uma equipe de pesquisadores recruta trabalhadores de uma fábrica de acordo com sua exposição ocupacional a determinado solvente, classificando-os em expostos e não expostos, e os acompanha por 15 anos para comparar a incidência de leucemia entre os dois grupos. Qual desenho epidemiológico esse estudo está utilizando?",
     "correct": "Estudo de coorte prospectiva, que parte da exposição, acompanha os participantes ao longo do tempo e mede diretamente a incidência do desfecho nos grupos expostos e não expostos",
     "wrongs": [
-      "Estudo caso-controle, que partiria dos casos de leucemia já diagnosticados para investigar exposição passada",
-      "Estudo transversal, que mediria exposição e desfecho no mesmo momento, sem acompanhamento temporal",
-      "Estudo ecológico, que utilizaria dados agregados populacionais em vez de dados individuais dos trabalhadores",
-      "Ensaio clínico randomizado, que exigiria alocação aleatória da exposição pelos próprios pesquisadores"
+      "Estudo caso-controle, que partiria dos casos de leucemia já diagnosticados para investigar exposição passada, partindo do desfecho para investigar exposição retrospectiva",
+      "Estudo transversal, que mediria exposição e desfecho no mesmo momento, sem acompanhamento temporal, sem acompanhamento longitudinal que permita calcular incidência",
+      "Estudo ecológico, que utilizaria dados agregados populacionais em vez de dados individuais dos trabalhadores, usando apenas dados agregados, sem informação individual",
+      "Ensaio clínico randomizado, que exigiria alocação aleatória da exposição pelos próprios pesquisadores, em desenho experimental com alocação controlada da exposição"
     ],
     "explain": "O estudo de coorte prospectiva define grupos por exposição no início do acompanhamento e observa a ocorrência do desfecho ao longo do tempo, permitindo o cálculo direto de incidência e risco relativo entre expostos e não expostos.",
     "trap": "Confundir coorte prospectiva com caso-controle, que parte do desfecho já ocorrido, e não da exposição inicial."
@@ -21,7 +21,7 @@
     "group": "Epidemiologia · estudos · testes",
     "theme": "Desenhos epidemiológicos · coorte · caso-controle · transversal · ecológico · ensaio · metanálise",
     "stem": "Um médico epidemiologista utiliza prontuários médicos arquivados de 2005 a 2015 para reconstruir a exposição ocupacional de trabalhadores de uma mineradora e verificar, a partir desses registros históricos, quem desenvolveu silicose até o ano de 2020, sem qualquer coleta de dados prospectiva a partir do início da pesquisa. Qual desenho epidemiológico esse estudo representa?",
-    "correct": "Estudo de coorte retrospectiva (ou histórica), em que tanto a exposição quanto o desfecho já ocorreram no passado, sendo reconstruídos a partir de registros existentes antes do início efetivo da pesquisa",
+    "correct": "Estudo de coorte retrospectiva (ou histórica), em que tanto a exposição quanto o desfecho já ocorreram no passado",
     "wrongs": [
       "Estudo de coorte prospectiva, pois a coleta de dados exige necessariamente acompanhamento a partir do momento presente",
       "Ensaio clínico randomizado, pois qualquer estudo com múltiplos anos de acompanhamento seria automaticamente experimental",
@@ -39,10 +39,10 @@
     "stem": "Uma equipe de pesquisadores estuda um câncer raro, com incidência estimada de 2 casos por 100.000 habitantes ao ano, e decide comparar pacientes recém-diagnosticados com um grupo de indivíduos sem a doença, investigando retrospectivamente a exposição a um determinado agroquímico em ambos os grupos. Por que esse desenho de estudo é o mais adequado para esse cenário?",
     "correct": "O estudo caso-controle é o mais eficiente para doenças raras, pois parte de casos já diagnosticados, exigindo amostra muito menor do que seria necessário para observar poucos eventos em uma coorte",
     "wrongs": [
-      "O estudo de coorte prospectiva seria mais eficiente, pois doenças raras exigem sempre acompanhamento mais longo e amostras menores",
-      "O ensaio clínico randomizado seria o único desenho eticamente aceitável para investigar exposições ambientais em humanos",
-      "O estudo ecológico seria o mais adequado, pois doenças raras devem ser sempre analisadas em nível populacional agregado",
-      "O estudo transversal seria equivalente ao caso-controle nesse cenário, pois ambos medem prevalência da exposição"
+      "O estudo de coorte prospectiva seria mais eficiente, pois doenças raras exigem sempre acompanhamento mais longo e amostras menores, com seguimento a partir do presente até o desfecho",
+      "O ensaio clínico randomizado seria o único desenho eticamente aceitável para investigar exposições ambientais em humanos, em desenho experimental com alocação controlada da exposição",
+      "O estudo ecológico seria o mais adequado, pois doenças raras devem ser sempre analisadas em nível populacional agregado, usando apenas dados agregados, sem informação individual",
+      "O estudo transversal seria equivalente ao caso-controle nesse cenário, pois ambos medem prevalência da exposição, sem acompanhamento longitudinal que permita calcular incidência"
     ],
     "explain": "Para doenças raras, o estudo caso-controle é particularmente eficiente porque parte dos casos já ocorridos, evitando a necessidade de acompanhar uma coorte enorme por muito tempo para observar poucos eventos, tornando-se mais viável em termos de tempo e custo.",
     "trap": "Achar que coorte seria mais eficiente para doenças raras, quando na realidade exigiria amostras e tempo de seguimento muito maiores para captar poucos eventos."
@@ -55,10 +55,10 @@
     "stem": "Em um estudo caso-controle sobre malformações congênitas, uma mulher cujo filho apresenta a malformação relata, com mais detalhes, exposições a medicamentos durante a gestação do que mulheres cujos filhos não apresentam a malformação, possivelmente porque associa retrospectivamente o desfecho a possíveis causas. Qual viés está sendo descrito nesse estudo?",
     "correct": "Viés de memória (recall bias), no qual a lembrança da exposição passada é influenciada pela ocorrência do desfecho, sendo mais comum e mais intensa entre os casos do que entre os controles",
     "wrongs": [
-      "Viés de confusão, decorrente de uma terceira variável associada tanto à exposição quanto ao desfecho estudado",
-      "Viés de seleção, decorrente da escolha inadequada dos controles em relação à população fonte dos casos",
-      "Viés de aferição, decorrente de erro sistemático na medição direta da exposição por instrumento inadequado",
-      "Viés de publicação, decorrente da maior probabilidade de publicação de estudos com resultados positivos"
+      "Viés de confusão, decorrente de uma terceira variável associada tanto à exposição quanto ao desfecho estudado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de seleção, decorrente da escolha inadequada dos controles em relação à população fonte dos casos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de aferição, decorrente de erro sistemático na medição direta da exposição por instrumento inadequado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de publicação, decorrente da maior probabilidade de publicação de estudos com resultados positivos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O viés de memória (recall bias) é uma limitação clássica de estudos caso-controle, em que indivíduos com o desfecho tendem a recordar e relatar exposições passadas de forma diferente (geralmente mais detalhada) dos controles, distorcendo a associação estimada.",
     "trap": "Confundir viés de memória com viés de confusão ou de seleção, que têm mecanismos distintos relacionados a variáveis externas ou à composição dos grupos, não à qualidade da lembrança."
@@ -71,10 +71,10 @@
     "stem": "Uma equipe de vigilância realiza um inquérito domiciliar em um único momento, coletando simultaneamente dados sobre hábito de fumar e presença de bronquite crônica em todos os moradores entrevistados, sem qualquer acompanhamento posterior. Qual medida epidemiológica esse desenho de estudo permite calcular diretamente?",
     "correct": "A prevalência de bronquite crônica e de tabagismo na população estudada naquele momento, além da associação entre as duas variáveis medidas simultaneamente",
     "wrongs": [
-      "A incidência de bronquite crônica ao longo dos próximos dez anos entre os fumantes identificados",
-      "O risco relativo de desenvolver bronquite crônica em fumantes comparados a não fumantes ao longo do tempo",
-      "A razão de chances ajustada para confundidores temporais de exposição ao tabaco durante décadas",
-      "A taxa de mortalidade específica por bronquite crônica atribuível ao tabagismo na população estudada"
+      "A incidência de bronquite crônica ao longo dos próximos dez anos entre os fumantes identificados, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O risco relativo de desenvolver bronquite crônica em fumantes comparados a não fumantes ao longo do tempo, comparando incidência entre expostos e não expostos",
+      "A razão de chances ajustada para confundidores temporais de exposição ao tabaco durante décadas, comparando chances de exposição entre casos e controles",
+      "A taxa de mortalidade específica por bronquite crônica atribuível ao tabagismo na população estudada, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O estudo transversal mede exposição e desfecho no mesmo momento, permitindo calcular a prevalência das condições estudadas e associações estatísticas, mas não permite calcular incidência ou risco relativo, que exigem acompanhamento temporal.",
     "trap": "Atribuir ao estudo transversal medidas de incidência ou risco relativo, que exigem necessariamente seguimento ao longo do tempo."
@@ -87,10 +87,10 @@
     "stem": "Um estudo transversal encontra associação estatística entre baixa escolaridade e hipertensão arterial em uma amostra representativa da população adulta de um município. Um médico clínico questiona se esse achado permite concluir que a baixa escolaridade causa hipertensão. Qual é a principal limitação desse desenho de estudo para essa conclusão?",
     "correct": "O estudo transversal mede exposição e desfecho no mesmo momento, não permitindo estabelecer a sequência temporal entre eles, o que impede afirmar causalidade com segurança",
     "wrongs": [
-      "O estudo transversal não permite calcular nenhum tipo de associação estatística entre variáveis, apenas descrever frequências isoladas",
-      "O estudo transversal exige obrigatoriamente randomização dos participantes, o que nesse caso não teria sido realizado",
-      "O estudo transversal é inválido para qualquer variável relacionada a doenças crônicas não transmissíveis",
-      "O estudo transversal só pode ser aplicado a doenças infecciosas agudas, nunca a condições crônicas como hipertensão"
+      "O estudo transversal não permite calcular nenhum tipo de associação estatística entre variáveis, apenas descrever frequências isoladas, sem acompanhamento longitudinal que permita calcular incidência",
+      "O estudo transversal exige obrigatoriamente randomização dos participantes, o que nesse caso não teria sido realizado, sem acompanhamento longitudinal que permita calcular incidência",
+      "O estudo transversal é inválido para qualquer variável relacionada a doenças crônicas não transmissíveis, sem acompanhamento longitudinal que permita calcular incidência",
+      "O estudo transversal só pode ser aplicado a doenças infecciosas agudas, nunca a condições crônicas como hipertensão, sem acompanhamento longitudinal que permita calcular incidência"
     ],
     "explain": "A principal limitação do estudo transversal é a impossibilidade de estabelecer temporalidade entre exposição e desfecho, já que ambos são medidos simultaneamente; isso impede a inferência causal direta, mesmo quando há associação estatística significativa.",
     "trap": "Achar que o estudo transversal simplesmente não permite calcular associação, quando na verdade ele permite associação estatística, mas não temporalidade/causalidade."
@@ -103,10 +103,10 @@
     "stem": "Uma equipe de pesquisadores compara o consumo médio de sal per capita entre diferentes países e a taxa de mortalidade por doença cardiovascular de cada país, utilizando dados agregados nacionais, sem informação individual sobre quais pessoas consomem mais sal e quais desenvolveram doença cardiovascular. Qual desenho de estudo está sendo utilizado, e qual é sua principal limitação?",
     "correct": "Estudo ecológico, cuja principal limitação é a impossibilidade de garantir que os indivíduos expostos (com maior consumo de sal) sejam os mesmos que desenvolveram o desfecho, caracterizando risco de falácia ecológica",
     "wrongs": [
-      "Estudo de coorte, cuja principal limitação seria o longo tempo necessário de acompanhamento dos países estudados",
-      "Ensaio clínico randomizado, cuja principal limitação seria a impossibilidade de mascaramento em nível populacional",
-      "Estudo caso-controle, cuja principal limitação seria a dificuldade de encontrar controles pareados entre países",
-      "Estudo transversal individual, cuja principal limitação seria a impossibilidade de calcular prevalência agregada por país"
+      "Estudo de coorte, cuja principal limitação seria o longo tempo necessário de acompanhamento dos países estudados, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "Ensaio clínico randomizado, cuja principal limitação seria a impossibilidade de mascaramento em nível populacional, em desenho experimental com alocação controlada da exposição, no arranjo institucional e epidemiológico do enunciado",
+      "Estudo caso-controle, cuja principal limitação seria a dificuldade de encontrar controles pareados entre países, partindo do desfecho para investigar exposição retrospectiva, no arranjo institucional e epidemiológico do enunciado",
+      "Estudo transversal individual, cuja principal limitação seria a impossibilidade de calcular prevalência agregada por país, sem acompanhamento longitudinal que permita calcular incidência, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "O estudo ecológico utiliza dados agregados de populações (e não de indivíduos), sendo útil para gerar hipóteses, mas sujeito à falácia ecológica: a associação observada no nível populacional pode não refletir a relação real no nível individual.",
     "trap": "Confundir estudo ecológico com coorte ou transversal individual, ignorando que a unidade de análise aqui é a população agregada, não a pessoa."
@@ -117,12 +117,12 @@
     "group": "Epidemiologia · estudos · testes",
     "theme": "Desenhos epidemiológicos · coorte · caso-controle · transversal · ecológico · ensaio · metanálise",
     "stem": "Uma equipe de pesquisadores testa um novo medicamento anti-hipertensivo, distribuindo aleatoriamente os participantes entre o grupo que recebe o fármaco e o grupo que recebe placebo, sem que pesquisadores ou pacientes saibam qual tratamento cada um recebeu. Qual é a principal vantagem desse desenho de estudo para a inferência causal, em comparação com estudos observacionais?",
-    "correct": "A randomização distribui de forma equilibrada tanto os fatores de confusão conhecidos quanto os desconhecidos entre os grupos, reduzindo o risco de viés de confusão e fortalecendo a inferência de causalidade",
+    "correct": "A randomização distribui de forma equilibrada tanto os fatores de confusão conhecidos quanto os desconhecidos entre os grupos",
     "wrongs": [
       "A randomização elimina completamente a necessidade de calcular o tamanho amostral do estudo antes do início da pesquisa",
-      "A randomização garante que o estudo nunca terá perdas de seguimento ao longo do acompanhamento dos participantes",
-      "A randomização dispensa a necessidade de comitê de ética, pois o desenho já é considerado eticamente neutro",
-      "A randomização impede automaticamente qualquer erro de mensuração dos desfechos durante o estudo"
+      "A randomização garante que o estudo nunca terá perdas de seguimento ao longo do acompanhamento dos participantes, em desenho experimental com alocação controlada da exposição",
+      "A randomização dispensa a necessidade de comitê de ética, pois o desenho já é considerado eticamente neutro, em desenho experimental com alocação controlada da exposição",
+      "A randomização impede automaticamente qualquer erro de mensuração dos desfechos durante o estudo, em desenho experimental com alocação controlada da exposição"
     ],
     "explain": "O ensaio clínico randomizado, ao alocar aleatoriamente os participantes entre os grupos, distribui de forma equilibrada tanto confundidores conhecidos quanto desconhecidos, sendo considerado o desenho mais robusto para estabelecer relações causais entre exposição e desfecho.",
     "trap": "Atribuir à randomização benefícios que não lhe são próprios, como eliminação de perdas de seguimento ou dispensa de exigências éticas e metodológicas."
@@ -135,10 +135,10 @@
     "stem": "Em um estudo sobre um novo analgésico, nenhum paciente participante e nenhum pesquisador que avalia os desfechos sabe qual grupo recebeu o medicamento ativo ou o placebo, sendo essa informação conhecida apenas por um estatístico externo ao estudo. Qual característica metodológica esse ensaio clínico incorpora, e qual viés ela busca reduzir principalmente?",
     "correct": "Duplo mascaramento (duplo-cego), que busca reduzir o viés de aferição e o efeito placebo/expectativa, tanto na percepção do paciente quanto na avaliação subjetiva do desfecho pelo pesquisador",
     "wrongs": [
-      "Restrição de amostra, que busca reduzir exclusivamente o viés de seleção dos participantes elegíveis para o estudo",
-      "Pareamento por idade e sexo, que busca reduzir exclusivamente o viés de confusão residual entre os grupos",
-      "Estratificação por gravidade da dor, que busca reduzir exclusivamente o viés de informação relacionado à intensidade do sintoma",
-      "Análise por intenção de tratar, que busca reduzir exclusivamente o viés decorrente de perdas de seguimento no estudo"
+      "Restrição de amostra, que busca reduzir exclusivamente o viés de seleção dos participantes elegíveis para o estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Pareamento por idade e sexo, que busca reduzir exclusivamente o viés de confusão residual entre os grupos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Estratificação por gravidade da dor, que busca reduzir exclusivamente o viés de informação relacionado à intensidade do sintoma, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Análise por intenção de tratar, que busca reduzir exclusivamente o viés decorrente de perdas de seguimento no estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O mascaramento duplo-cego reduz o viés de aferição relacionado à expectativa do paciente (efeito placebo) e à avaliação subjetiva do pesquisador sobre o desfecho, fortalecendo a validade dos resultados do ensaio clínico randomizado.",
     "trap": "Confundir mascaramento com outras técnicas metodológicas, como pareamento, estratificação ou análise por intenção de tratar, que abordam viéses distintos."
@@ -151,10 +151,10 @@
     "stem": "Um médico pesquisador reúne os resultados numéricos de doze ensaios clínicos randomizados sobre o uso de estatinas na prevenção secundária de infarto, combinando estatisticamente os efeitos individuais em uma única estimativa de efeito global, representada em um gráfico de forest plot. Qual tipo de estudo esse médico está realizando?",
     "correct": "Metanálise, que combina quantitativamente os resultados de múltiplos estudos primários semelhantes para gerar uma estimativa de efeito mais precisa e com maior poder estatístico",
     "wrongs": [
-      "Revisão narrativa, que resume qualitativamente a literatura sem qualquer combinação estatística formal dos resultados",
-      "Estudo ecológico, que analisaria dados agregados populacionais em vez de resultados de ensaios clínicos individuais",
-      "Estudo de coorte multicêntrico, que acompanharia diretamente pacientes em múltiplos centros de pesquisa",
-      "Ensaio clínico pragmático, que testaria a intervenção em condições de prática clínica real em um único centro"
+      "Revisão narrativa, que resume qualitativamente a literatura sem qualquer combinação estatística formal dos resultados, sem síntese estatística formal dos estudos incluídos",
+      "Estudo ecológico, que analisaria dados agregados populacionais em vez de resultados de ensaios clínicos individuais, usando apenas dados agregados, sem informação individual",
+      "Estudo de coorte multicêntrico, que acompanharia diretamente pacientes em múltiplos centros de pesquisa, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Ensaio clínico pragmático, que testaria a intervenção em condições de prática clínica real em um único centro, em desenho experimental com alocação controlada da exposição"
     ],
     "explain": "A metanálise é a síntese estatística quantitativa dos resultados de múltiplos estudos com metodologia semelhante, geralmente representada em forest plot, aumentando o poder estatístico e a precisão da estimativa de efeito em relação a estudos isolados.",
     "trap": "Confundir metanálise com revisão narrativa, que é apenas descritiva e qualitativa, sem combinação estatística formal dos resultados."
@@ -167,10 +167,10 @@
     "stem": "Um médico pesquisador realiza uma busca sistemática e estruturada da literatura sobre o efeito de determinada dieta na perda de peso, descreve criticamente os estudos encontrados, mas decide não combinar estatisticamente os resultados devido à grande heterogeneidade metodológica entre eles. Qual tipo de estudo esse médico produziu?",
     "correct": "Revisão sistemática sem metanálise, que segue metodologia rigorosa e protocolo predefinido de busca e seleção de estudos, mas não realiza combinação estatística quantitativa dos resultados",
     "wrongs": [
-      "Metanálise, pois toda revisão sistemática é obrigatoriamente acompanhada de combinação estatística dos resultados",
-      "Revisão narrativa tradicional, pois a ausência de metanálise significa automaticamente ausência de rigor metodológico",
-      "Estudo de coorte prospectiva, pois a revisão da literatura seria equivalente ao acompanhamento direto de pacientes",
-      "Ensaio clínico randomizado, pois a análise crítica de estudos publicados equivale à condução de um experimento próprio"
+      "Metanálise, pois toda revisão sistemática é obrigatoriamente acompanhada de combinação estatística dos resultados, combinando quantitativamente resultados de estudos semelhantes",
+      "Revisão narrativa tradicional, pois a ausência de metanálise significa automaticamente ausência de rigor metodológico, combinando quantitativamente resultados de estudos semelhantes",
+      "Estudo de coorte prospectiva, pois a revisão da literatura seria equivalente ao acompanhamento direto de pacientes, com seguimento a partir do presente até o desfecho, no arranjo institucional e epidemiológico do enunciado",
+      "Ensaio clínico randomizado, pois a análise crítica de estudos publicados equivale à condução de um experimento próprio, em desenho experimental com alocação controlada da exposição"
     ],
     "explain": "Uma revisão sistemática segue metodologia rigorosa e protocolo predefinido de busca, seleção e avaliação crítica de estudos, mas pode ou não incluir metanálise; quando a heterogeneidade é muito grande, os autores podem optar por não combinar estatisticamente os resultados.",
     "trap": "Achar que revisão sistemática e metanálise são sinônimos obrigatórios, quando a metanálise é um componente estatístico opcional dentro de uma revisão sistemática."
@@ -183,10 +183,10 @@
     "stem": "Um médico epidemiologista avalia se a associação entre exposição a um pesticida e uma malformação congênita é causal, verificando se a exposição sempre precede o desfecho, se a associação é forte e consistente entre estudos, se existe gradiente biológico dose-resposta e se há plausibilidade biológica para o mecanismo. Qual referencial metodológico esse médico está utilizando nesse estudo?",
     "correct": "Os critérios (postulados) de causalidade de Hill, um conjunto de aspectos utilizados para avaliar a probabilidade de uma associação epidemiológica ser causal, e não apenas coincidente ou confundida",
     "wrongs": [
-      "Os critérios de Jadad, utilizados exclusivamente para avaliar a qualidade metodológica de ensaios clínicos randomizados",
-      "Os critérios de Framingham, utilizados exclusivamente para estimar risco cardiovascular individual em dez anos",
-      "Os critérios de Bradford, utilizados exclusivamente para classificar a gravidade de surtos epidêmicos",
-      "Os critérios PICO, utilizados exclusivamente para estruturar perguntas de pesquisa em revisões sistemáticas"
+      "Os critérios de Jadad, utilizados exclusivamente para avaliar a qualidade metodológica de ensaios clínicos randomizados, em desenho experimental com alocação controlada da exposição",
+      "Os critérios de Framingham, utilizados exclusivamente para estimar risco cardiovascular individual em dez anos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Os critérios de Bradford, utilizados exclusivamente para classificar a gravidade de surtos epidêmicos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Os critérios PICO, utilizados exclusivamente para estruturar perguntas de pesquisa em revisões sistemáticas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Os critérios de causalidade de Hill (também conhecidos como postulados de Bradford Hill) incluem temporalidade, força da associação, consistência, gradiente biológico e plausibilidade, entre outros aspectos, orientando a avaliação de causalidade em estudos observacionais.",
     "trap": "Confundir os critérios de causalidade de Hill com outras ferramentas metodológicas específicas, como os critérios de Jadad (qualidade de ensaios clínicos) ou o formato PICO (estruturação de perguntas de pesquisa)."
@@ -199,10 +199,10 @@
     "stem": "Em uma coorte de 5.000 trabalhadores acompanhados por 10 anos, 30% dos participantes deixaram de responder aos questionários de acompanhamento antes do término do estudo, e essa perda foi maior entre os trabalhadores expostos que adoeceram e se afastaram do emprego. Qual viés esse estudo exemplifica, e como ele pode distorcer os resultados?",
     "correct": "Viés de seleção por perdas diferenciais de seguimento (viés de atrito), que pode subestimar a verdadeira incidência do desfecho entre os expostos, caso os que adoeceram e saíram do estudo sejam sistematicamente diferentes dos que permaneceram",
     "wrongs": [
-      "Viés de memória, pois perdas de seguimento estão relacionadas exclusivamente à qualidade da lembrança dos participantes sobre exposições passadas",
-      "Viés de publicação, pois a perda de participantes se relaciona à decisão dos pesquisadores de publicar apenas resultados favoráveis",
-      "Viés de confusão, pois a perda de seguimento seria causada por uma terceira variável associada tanto à exposição quanto ao desfecho",
-      "Viés de aferição, pois a perda de seguimento estaria relacionada a erro sistemático no instrumento de medição da exposição"
+      "Viés de memória, pois perdas de seguimento estão relacionadas exclusivamente à qualidade da lembrança dos participantes sobre exposições passadas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de publicação, pois a perda de participantes se relaciona à decisão dos pesquisadores de publicar apenas resultados favoráveis, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "Viés de confusão, pois a perda de seguimento seria causada por uma terceira variável associada tanto à exposição quanto ao desfecho, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "Viés de aferição, pois a perda de seguimento estaria relacionada a erro sistemático no instrumento de medição da exposição, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "Perdas de seguimento diferenciais entre grupos expostos e não expostos, especialmente quando relacionadas ao próprio desfecho (como adoecer e sair do estudo), caracterizam viés de seleção/atrito, podendo distorcer sistematicamente as estimativas de incidência e risco relativo.",
     "trap": "Confundir perdas de seguimento com viés de memória ou de aferição, que têm mecanismos distintos não relacionados à saída de participantes do estudo."
@@ -213,11 +213,11 @@
     "group": "Epidemiologia · estudos · testes",
     "theme": "Desenhos epidemiológicos · coorte · caso-controle · transversal · ecológico · ensaio · metanálise",
     "stem": "Um médico revisor de um estudo caso-controle sobre infarto agudo do miocárdio questiona se os controles, recrutados entre acompanhantes saudáveis de pacientes internados por trauma no mesmo hospital terciário de referência cardiológica onde os casos foram recrutados, representam adequadamente a população de origem dos casos. Qual princípio metodológico está em discussão nesse estudo?",
-    "correct": "O princípio de que os controles devem ser selecionados da mesma população fonte que geraria os casos caso desenvolvessem a doença, evitando viés de seleção na composição dos grupos comparados",
+    "correct": "O princípio de que os controles devem ser selecionados da mesma população fonte que geraria os casos caso desenvolvessem a doença",
     "wrongs": [
       "O princípio de que os controles devem necessariamente ter a mesma idade exata de cada caso, sem qualquer outro critério de seleção",
-      "O princípio de que os controles devem ser recrutados exclusivamente na comunidade, nunca em ambiente hospitalar",
-      "O princípio de que o número de controles deve ser sempre superior a dez vezes o número de casos recrutados",
+      "O princípio de que os controles devem ser recrutados exclusivamente na comunidade, nunca em ambiente hospitalar, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O princípio de que o número de controles deve ser sempre superior a dez vezes o número de casos recrutados, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
       "O princípio de que os controles devem ser aparentados geneticamente com os casos para reduzir viés de confusão genética"
     ],
     "explain": "Um princípio fundamental do estudo caso-controle é que os controles devem representar a população fonte da qual os casos emergiram, para que a comparação de exposições seja válida; controles hospitalares inadequados podem gerar viés de seleção significativo.",
@@ -231,10 +231,10 @@
     "stem": "Durante um surto de doença diarreica aguda em uma comunidade, um médico investigador descreve detalhadamente as características clínicas e demográficas dos primeiros 15 casos identificados, sem comparação com um grupo de indivíduos não afetados, com o objetivo de gerar hipóteses sobre a possível fonte da contaminação. Qual tipo de estudo epidemiológico esse médico está realizando?",
     "correct": "Série de casos, estudo descritivo que relata as características de um grupo de pacientes com determinada condição, sem grupo de comparação, útil para gerar hipóteses a serem testadas em estudos analíticos posteriores",
     "wrongs": [
-      "Estudo caso-controle, pois qualquer descrição de casos de doença já caracteriza automaticamente esse desenho analítico",
-      "Estudo de coorte, pois o acompanhamento de pacientes durante um surto exige necessariamente um grupo de comparação prospectivo",
-      "Ensaio clínico randomizado, pois a investigação de um surto envolve testar uma intervenção terapêutica nos pacientes afetados",
-      "Estudo transversal, pois a descrição de múltiplos casos em um único momento equivale automaticamente a esse desenho analítico"
+      "Estudo caso-controle, pois qualquer descrição de casos de doença já caracteriza automaticamente esse desenho analítico, partindo do desfecho para investigar exposição retrospectiva, no arranjo institucional e epidemiológico do enunciado",
+      "Estudo de coorte, pois o acompanhamento de pacientes durante um surto exige necessariamente um grupo de comparação prospectivo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Ensaio clínico randomizado, pois a investigação de um surto envolve testar uma intervenção terapêutica nos pacientes afetados, em desenho experimental com alocação controlada da exposição, no arranjo institucional e epidemiológico do enunciado",
+      "Estudo transversal, pois a descrição de múltiplos casos em um único momento equivale automaticamente a esse desenho analítico, sem acompanhamento longitudinal que permita calcular incidência, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "A série de casos é um estudo descritivo, sem grupo de comparação, frequentemente utilizado no início da investigação de surtos para caracterizar os casos e gerar hipóteses etiológicas, que depois podem ser testadas por estudos analíticos como caso-controle ou coorte.",
     "trap": "Classificar automaticamente qualquer descrição de casos como estudo analítico (caso-controle ou coorte), ignorando a ausência de grupo de comparação que define a série de casos como estudo descritivo."
@@ -247,10 +247,10 @@
     "stem": "Uma equipe de pesquisa precisa escolher entre um estudo de coorte e um estudo caso-controle para investigar a associação entre exposição a um agrotóxico raro (presente em menos de 1% da população da região) e o desenvolvimento de uma doença respiratória relativamente comum. Qual desenho de estudo seria mais eficiente nesse cenário específico, e por quê?",
     "correct": "Estudo de coorte, pois quando a exposição é rara, é mais eficiente identificar e acompanhar previamente os expostos, garantindo número suficiente de indivíduos com a exposição de interesse para observar o desfecho ao longo do tempo",
     "wrongs": [
-      "Estudo caso-controle, pois esse desenho é sempre mais eficiente independentemente da raridade da exposição ou do desfecho",
-      "Ensaio clínico randomizado, pois é sempre o desenho mais indicado para investigar exposições ambientais raras",
-      "Estudo ecológico, pois exposições raras devem ser sempre analisadas por meio de dados agregados populacionais",
-      "Estudo transversal, pois exposições raras são mais bem detectadas em um único corte temporal da população"
+      "Estudo caso-controle, pois esse desenho é sempre mais eficiente independentemente da raridade da exposição ou do desfecho, partindo do desfecho para investigar exposição retrospectiva, no arranjo institucional e epidemiológico do enunciado",
+      "Ensaio clínico randomizado, pois é sempre o desenho mais indicado para investigar exposições ambientais raras, em desenho experimental com alocação controlada da exposição, no arranjo institucional e epidemiológico do enunciado",
+      "Estudo ecológico, pois exposições raras devem ser sempre analisadas por meio de dados agregados populacionais, usando apenas dados agregados, sem informação individual, no arranjo institucional e epidemiológico do enunciado",
+      "Estudo transversal, pois exposições raras são mais bem detectadas em um único corte temporal da população, sem acompanhamento longitudinal que permita calcular incidência, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "Quando a exposição é rara, a coorte é mais eficiente, pois permite selecionar previamente um número adequado de expostos e acompanhá-los; já quando o desfecho é raro, o caso-controle é mais eficiente, por partir dos casos já ocorridos.",
     "trap": "Aplicar a regra de eficiência ao contrário, esquecendo que a escolha do desenho depende de qual dos dois — exposição ou desfecho — é raro no cenário estudado."
@@ -263,10 +263,10 @@
     "stem": "Em uma coorte de 1.000 fumantes e 1.000 não fumantes acompanhados por 20 anos, 80 fumantes e 20 não fumantes desenvolveram câncer de pulmão. Qual é o risco relativo (RR) de câncer de pulmão associado ao tabagismo nesse estudo?",
     "correct": "RR = 4, pois a incidência entre fumantes (80/1.000 = 8%) dividida pela incidência entre não fumantes (20/1.000 = 2%) resulta em 4",
     "wrongs": [
-      "RR = 0,25, calculado invertendo erroneamente o numerador e o denominador da razão de incidências",
-      "RR = 60, calculado pela diferença absoluta entre os números de casos, e não pela razão de incidências",
-      "RR = 1, pois o tabagismo não teria qualquer associação relevante com o câncer de pulmão nesse estudo",
-      "RR = 8, calculado dividindo apenas o número absoluto de casos entre fumantes por 10"
+      "RR = 0,25, calculado invertendo erroneamente o numerador e o denominador da razão de incidências, comparando incidência entre expostos e não expostos",
+      "RR = 60, calculado pela diferença absoluta entre os números de casos, e não pela razão de incidências, comparando incidência entre expostos e não expostos",
+      "RR = 1, pois o tabagismo não teria qualquer associação relevante com o câncer de pulmão nesse estudo, comparando incidência entre expostos e não expostos",
+      "RR = 8, calculado dividindo apenas o número absoluto de casos entre fumantes por 10, comparando incidência entre expostos e não expostos"
     ],
     "explain": "O risco relativo é calculado dividindo a incidência no grupo exposto (8% entre fumantes) pela incidência no grupo não exposto (2% entre não fumantes), resultando em RR = 4, indicando que fumantes têm risco quatro vezes maior de desenvolver a doença.",
     "trap": "Inverter numerador e denominador da razão de incidências, ou confundir risco relativo com diferença absoluta de casos."
@@ -279,10 +279,10 @@
     "stem": "Uma equipe de pesquisa conduz um estudo caso-controle sobre câncer de vesícula biliar: 40 dos 50 casos relatam histórico de colelitíase, enquanto 20 dos 100 controles relatam a mesma condição. Qual é a razão de chances (odds ratio) de câncer de vesícula associada à colelitíase nesse estudo?",
     "correct": "OR = 16, calculada pelo produto cruzado da tabela 2x2 — (40 casos expostos × 80 controles não expostos) dividido por (10 casos não expostos × 20 controles expostos)",
     "wrongs": [
-      "OR = 2, calculada apenas pela razão simples entre o número de casos expostos e o número de controles expostos",
-      "OR = 0,8, calculada invertendo erroneamente numerador e denominador da razão de chances",
-      "OR = 4, calculada dividindo a proporção de casos expostos (80%) pela proporção de controles expostos (20%)",
-      "OR = 50, calculada multiplicando diretamente o total de casos pelo total de controles expostos"
+      "OR = 2, calculada apenas pela razão simples entre o número de casos expostos e o número de controles expostos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "OR = 0,8, calculada invertendo erroneamente numerador e denominador da razão de chances, comparando chances de exposição entre casos e controles, no arranjo institucional e epidemiológico do enunciado",
+      "OR = 4, calculada dividindo a proporção de casos expostos (80%) pela proporção de controles expostos (20%), com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "OR = 50, calculada multiplicando diretamente o total de casos pelo total de controles expostos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A razão de chances é calculada por meio do produto cruzado da tabela 2x2: (a×d)/(b×c), em que a = casos expostos (40), b = casos não expostos (10), c = controles expostos (20) e d = controles não expostos (80); logo, OR = (40×80)/(10×20) = 16.",
     "trap": "Calcular a razão de prevalências ou de proporções diretamente, em vez de aplicar o produto cruzado correto da tabela 2x2 para obter a odds ratio."
@@ -295,10 +295,10 @@
     "stem": "Um médico pesquisador encontra um risco relativo (RR) de 0,6 para o uso regular de determinado suplemento alimentar em relação ao desenvolvimento de catarata em idosos acompanhados por 10 anos. Como esse resultado desse estudo deve ser interpretado?",
     "correct": "O suplemento está associado a uma redução de 40% no risco de desenvolver catarata entre os usuários, em comparação aos não usuários, sugerindo um possível efeito protetor",
     "wrongs": [
-      "O suplemento aumenta em 60% o risco de desenvolver catarata entre os usuários, em comparação aos não usuários",
-      "O suplemento não tem qualquer associação com o desenvolvimento de catarata, pois RR menor que 1 indica ausência de efeito",
-      "O suplemento está associado a uma redução de 6% no risco de catarata, pois o valor de RR deve ser interpretado como percentual direto",
-      "O suplemento aumenta o risco de catarata em 0,6 vez, o equivalente a uma redução de 4% no risco absoluto"
+      "O suplemento aumenta em 60% o risco de desenvolver catarata entre os usuários, em comparação aos não usuários, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O suplemento não tem qualquer associação com o desenvolvimento de catarata, pois RR menor que 1 indica ausência de efeito, comparando incidência entre expostos e não expostos",
+      "O suplemento está associado a uma redução de 6% no risco de catarata, pois o valor de RR deve ser interpretado como percentual direto, comparando incidência entre expostos e não expostos",
+      "O suplemento aumenta o risco de catarata em 0,6 vez, o equivalente a uma redução de 4% no risco absoluto, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Quando o RR é menor que 1, a exposição está associada a um efeito protetor; a redução percentual do risco é calculada como (1 − RR) × 100, ou seja, (1 − 0,6) × 100 = 40% de redução relativa de risco entre os usuários do suplemento.",
     "trap": "Interpretar RR < 1 como ausência de associação, quando na verdade indica associação protetora, ou confundir o valor de RR com percentual direto de redução."
@@ -311,10 +311,10 @@
     "stem": "Um médico pesquisador que conduziu um estudo caso-controle sobre uma doença rara (incidência inferior a 1% na população) obteve um OR de 3,2 e argumenta que esse valor pode ser interpretado como aproximação razoável do risco relativo verdadeiro. Sob qual condição essa aproximação entre OR e RR é considerada válida nesse estudo?",
     "correct": "Quando a doença estudada é rara na população, a odds ratio se aproxima numericamente do risco relativo, pois a diferença entre chance e risco se torna pequena para eventos pouco frequentes",
     "wrongs": [
-      "A aproximação é válida apenas quando a exposição estudada, e não a doença, é rara na população geral",
-      "A aproximação é válida sempre, independentemente da frequência da doença ou do desenho do estudo utilizado",
-      "A aproximação nunca é válida, pois OR e RR medem exatamente o mesmo conceito matemático em qualquer situação",
-      "A aproximação é válida apenas quando o estudo caso-controle utiliza controles pareados individualmente aos casos"
+      "A aproximação é válida apenas quando a exposição estudada, e não a doença, é rara na população geral, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "A aproximação é válida sempre, independentemente da frequência da doença ou do desenho do estudo utilizado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "A aproximação nunca é válida, pois OR e RR medem exatamente o mesmo conceito matemático em qualquer situação, comparando incidência entre expostos e não expostos, no arranjo institucional e epidemiológico do enunciado",
+      "A aproximação é válida apenas quando o estudo caso-controle utiliza controles pareados individualmente aos casos, partindo do desfecho para investigar exposição retrospectiva"
     ],
     "explain": "A conhecida 'suposição da doença rara' (rare disease assumption) estabelece que, quando a prevalência da doença é baixa, a odds ratio calculada em um estudo caso-controle se aproxima numericamente do risco relativo, facilitando a interpretação clínica do resultado.",
     "trap": "Aplicar a aproximação à raridade da exposição, quando o critério correto se refere à raridade do desfecho/doença estudada."
@@ -327,10 +327,10 @@
     "stem": "Em uma coorte acompanhada por uma equipe de pesquisa durante 10 anos, a incidência de infarto agudo do miocárdio foi de 12% entre indivíduos com diabetes e de 4% entre indivíduos sem diabetes. Qual é o risco atribuível (risco atribuível ao exposto) associado ao diabetes nesse estudo?",
     "correct": "8 pontos percentuais (12% − 4% = 8%), representando o excesso de risco de infarto atribuível diretamente à presença de diabetes entre os expostos",
     "wrongs": [
-      "3, calculado pela razão entre as incidências (12%/4%), o que corresponde ao risco relativo, não ao risco atribuível",
-      "12%, correspondente apenas à incidência bruta observada entre os indivíduos com diabetes, sem comparação com os não expostos",
-      "16%, calculado pela soma direta das duas incidências observadas nos dois grupos do estudo",
-      "0,08%, calculado erroneamente ao expressar a diferença de incidências em proporção decimal sem ajuste de escala"
+      "3, calculado pela razão entre as incidências (12%/4%), o que corresponde ao risco relativo, não ao risco atribuível, comparando incidência entre expostos e não expostos",
+      "12%, correspondente apenas à incidência bruta observada entre os indivíduos com diabetes, sem comparação com os não expostos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "16%, calculado pela soma direta das duas incidências observadas nos dois grupos do estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "0,08%, calculado erroneamente ao expressar a diferença de incidências em proporção decimal sem ajuste de escala, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O risco atribuível ao exposto é calculado pela diferença absoluta entre a incidência no grupo exposto e a incidência no grupo não exposto (12% − 4% = 8 pontos percentuais), representando o excesso de risco diretamente atribuível à exposição estudada.",
     "trap": "Confundir risco atribuível (diferença absoluta de incidências) com risco relativo (razão entre incidências), que são medidas distintas de associação e impacto."
@@ -343,10 +343,10 @@
     "stem": "Um gestor de saúde pública quer estimar quanto da incidência total de câncer de pulmão em seu município poderia ser evitado se o tabagismo fosse completamente eliminado da população, considerando tanto a força da associação quanto a proporção de fumantes na cidade. Qual medida epidemiológica esse gestor deve calcular?",
     "correct": "Risco atribuível populacional, que considera tanto o risco relativo associado ao tabagismo quanto a prevalência de fumantes na população, estimando o impacto potencial da eliminação da exposição sobre a incidência total da doença",
     "wrongs": [
-      "Risco atribuível ao exposto, que mede apenas o excesso de risco entre os fumantes, sem considerar a proporção de fumantes na população geral",
-      "Razão de chances, que mede a associação em estudos caso-controle e não o impacto populacional potencial de uma exposição",
-      "Número necessário para tratar (NNT), que se aplica a intervenções terapêuticas e não à eliminação de exposições ambientais",
-      "Sensibilidade do teste diagnóstico, medida relacionada à capacidade de detectar corretamente indivíduos doentes, e não ao impacto de exposições"
+      "Risco atribuível ao exposto, que mede apenas o excesso de risco entre os fumantes, sem considerar a proporção de fumantes na população geral, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Razão de chances, que mede a associação em estudos caso-controle e não o impacto populacional potencial de uma exposição, partindo do desfecho para investigar exposição retrospectiva, no arranjo institucional e epidemiológico do enunciado",
+      "Número necessário para tratar (NNT), que se aplica a intervenções terapêuticas e não à eliminação de exposições ambientais, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "Sensibilidade do teste diagnóstico, medida relacionada à capacidade de detectar corretamente indivíduos doentes, e não ao impacto de exposições, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "O risco atribuível populacional combina a força da associação (risco relativo) com a prevalência da exposição na população, permitindo estimar quanto da incidência total da doença poderia teoricamente ser evitado com a eliminação completa dessa exposição.",
     "trap": "Confundir risco atribuível ao exposto (impacto individual entre expostos) com risco atribuível populacional (impacto no conjunto da população, dependente também da prevalência da exposição)."
@@ -359,10 +359,10 @@
     "stem": "Um ensaio clínico mostra que a redução absoluta de risco de infarto com o uso de um novo anti-hipertensivo, comparado ao tratamento padrão, foi de 5 pontos percentuais em 5 anos de seguimento. Qual é o número necessário para tratar (NNT) nesse estudo para prevenir um infarto adicional nesse período?",
     "correct": "NNT = 20, calculado como o inverso da redução absoluta de risco (1/0,05 = 20), ou seja, é necessário tratar 20 pacientes durante cinco anos para prevenir um infarto adicional",
     "wrongs": [
-      "NNT = 5, correspondente diretamente ao valor percentual da redução absoluta de risco, sem qualquer cálculo adicional",
-      "NNT = 0,05, correspondente à redução absoluta de risco expressa em proporção decimal, sem inversão do valor",
-      "NNT = 100, calculado multiplicando a redução absoluta de risco por 20, sem base matemática correta",
-      "NNT = 2, calculado erroneamente pela raiz quadrada da redução absoluta de risco percentual"
+      "NNT = 5, correspondente diretamente ao valor percentual da redução absoluta de risco, sem qualquer cálculo adicional, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "NNT = 0,05, correspondente à redução absoluta de risco expressa em proporção decimal, sem inversão do valor, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "NNT = 100, calculado multiplicando a redução absoluta de risco por 20, sem base matemática correta, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "NNT = 2, calculado erroneamente pela raiz quadrada da redução absoluta de risco percentual, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O número necessário para tratar é calculado como o inverso da redução absoluta de risco (NNT = 1/RAR); com uma redução absoluta de 5% (0,05), o NNT é 1/0,05 = 20, significando que 20 pacientes precisam ser tratados para evitar um evento adicional.",
     "trap": "Confundir NNT com o próprio valor percentual da redução absoluta de risco, sem realizar a inversão matemática necessária para o cálculo correto."
@@ -375,10 +375,10 @@
     "stem": "Uma equipe realiza um estudo transversal com 500 adultos de uma comunidade e identifica que a proporção de hipertensos entre os que consomem dieta rica em sódio foi de 35%, enquanto entre os que consomem dieta pobre em sódio foi de 15%, medidos no mesmo momento da entrevista. Qual medida de associação é apropriada para expressar essa relação nesse desenho de estudo transversal?",
     "correct": "Razão de prevalência (RP), calculada dividindo a prevalência de hipertensão no grupo com dieta rica em sódio pela prevalência no grupo com dieta pobre em sódio (35%/15% ≈ 2,3)",
     "wrongs": [
-      "Risco relativo (RR), medida apropriada exclusivamente para estudos de coorte com acompanhamento longitudinal da incidência",
-      "Razão de chances (OR), medida apropriada exclusivamente para estudos caso-controle que partem do desfecho já ocorrido",
-      "Risco atribuível, medida que exige necessariamente dados de incidência ao longo de um período de acompanhamento",
-      "Número necessário para tratar, medida aplicável exclusivamente a ensaios clínicos com intervenções terapêuticas"
+      "Risco relativo (RR), medida apropriada exclusivamente para estudos de coorte com acompanhamento longitudinal da incidência, comparando incidência entre expostos e não expostos",
+      "Razão de chances (OR), medida apropriada exclusivamente para estudos caso-controle que partem do desfecho já ocorrido, partindo do desfecho para investigar exposição retrospectiva",
+      "Risco atribuível, medida que exige necessariamente dados de incidência ao longo de um período de acompanhamento, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Número necessário para tratar, medida aplicável exclusivamente a ensaios clínicos com intervenções terapêuticas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Em estudos transversais, que medem prevalência (e não incidência), a medida de associação apropriada é a razão de prevalência, análoga conceitualmente ao risco relativo, mas aplicada a dados obtidos em um único ponto no tempo.",
     "trap": "Utilizar risco relativo ou risco atribuível em dados transversais, medidas que pressupõem informação de incidência ao longo do tempo, indisponível nesse tipo de desenho."
@@ -391,10 +391,10 @@
     "stem": "Uma equipe de pesquisa realiza um estudo de coorte sobre aleitamento materno exclusivo e otite média aguda em lactentes e encontra um risco relativo de 0,4 para o desfecho entre crianças amamentadas exclusivamente, comparadas às que não foram amamentadas exclusivamente. Como essa associação desse estudo deve ser corretamente descrita em um relatório técnico?",
     "correct": "O aleitamento materno exclusivo está associado a uma redução de 60% no risco de otite média aguda, sendo um fator de proteção para esse desfecho nas crianças estudadas",
     "wrongs": [
-      "O aleitamento materno exclusivo aumenta em 40% o risco de otite média aguda, sendo um fator de risco relevante nas crianças estudadas",
-      "O aleitamento materno exclusivo não apresenta qualquer associação relevante com a otite média aguda nesse estudo",
-      "O aleitamento materno exclusivo está associado a uma redução de apenas 4% no risco de otite média aguda nas crianças estudadas",
-      "O valor de 0,4 representa a razão de chances do desfecho, e não o risco relativo, exigindo reinterpretação estatística completa"
+      "O aleitamento materno exclusivo aumenta em 40% o risco de otite média aguda, sendo um fator de risco relevante nas crianças estudadas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O aleitamento materno exclusivo não apresenta qualquer associação relevante com a otite média aguda nesse estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O aleitamento materno exclusivo está associado a uma redução de apenas 4% no risco de otite média aguda nas crianças estudadas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O valor de 0,4 representa a razão de chances do desfecho, e não o risco relativo, exigindo reinterpretação estatística completa, comparando incidência entre expostos e não expostos"
     ],
     "explain": "Um risco relativo de 0,4 indica fator de proteção, correspondendo a uma redução relativa de risco de (1 − 0,4) × 100 = 60% entre os expostos (amamentados exclusivamente) em comparação aos não expostos, um resultado clinicamente relevante.",
     "trap": "Interpretar RR < 1 como fator de risco em vez de proteção, ou calcular incorretamente o percentual de redução relativa do risco."
@@ -407,10 +407,10 @@
     "stem": "Um médico epidemiologista precisa decidir qual medida de associação calcular a partir dos dados brutos de diferentes estudos sobre exposição ao amianto e mesotelioma: um ensaio clínico não seria eticamente possível, então ele analisa uma coorte ocupacional e, separadamente, um estudo caso-controle populacional. Qual par de medidas de associação é apropriado para cada um desses estudos, respectivamente?",
     "correct": "Risco relativo (RR) para a coorte ocupacional, pois permite calcular incidência diretamente nos grupos expostos e não expostos, e razão de chances (OR) para o estudo caso-controle, pois este parte do desfecho já ocorrido",
     "wrongs": [
-      "Razão de chances (OR) para a coorte, e risco relativo (RR) para o caso-controle, invertendo a lógica usual de cada desenho",
-      "Razão de prevalência (RP) para ambos os estudos, pois essa medida é sempre preferível independentemente do desenho utilizado",
-      "Número necessário para tratar (NNT) para ambos os estudos, pois essa medida se aplica a qualquer desenho observacional",
-      "Risco atribuível populacional para ambos os estudos, medida válida independentemente da disponibilidade de dados de incidência"
+      "Razão de chances (OR) para a coorte, e risco relativo (RR) para o caso-controle, invertendo a lógica usual de cada desenho, partindo do desfecho para investigar exposição retrospectiva, no arranjo institucional e epidemiológico do enunciado",
+      "Razão de prevalência (RP) para ambos os estudos, pois essa medida é sempre preferível independentemente do desenho utilizado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Número necessário para tratar (NNT) para ambos os estudos, pois essa medida se aplica a qualquer desenho observacional, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "Risco atribuível populacional para ambos os estudos, medida válida independentemente da disponibilidade de dados de incidência, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A escolha da medida de associação depende do desenho do estudo: coortes permitem calcular risco relativo diretamente a partir da incidência observada nos grupos, enquanto estudos caso-controle, por partirem do desfecho, exigem o cálculo da razão de chances (OR).",
     "trap": "Inverter a lógica, atribuindo OR à coorte e RR ao caso-controle, ou aplicar medidas que exigem dados de incidência (como risco atribuível) a estudos caso-controle, que não fornecem essa informação diretamente."
@@ -423,10 +423,10 @@
     "stem": "Um médico residente encontra p = 0,03 ao comparar a pressão arterial média entre dois grupos de tratamento em um ensaio clínico e interpreta esse resultado como 'há 3% de chance de que a hipótese nula seja verdadeira'. Qual é a interpretação correta do valor de p nesse estudo?",
     "correct": "O valor de p representa a probabilidade de observar uma diferença igual ou mais extrema do que a encontrada, assumindo que a hipótese nula (ausência de diferença real) seja verdadeira, e não a probabilidade de a hipótese nula ser verdadeira",
     "wrongs": [
-      "O valor de p representa diretamente a probabilidade de a hipótese nula ser verdadeira, dado os dados observados no estudo",
-      "O valor de p representa a magnitude clínica do efeito do tratamento, independentemente do tamanho da amostra estudada",
-      "O valor de p representa a probabilidade de o tratamento ser eficaz na prática clínica para a maioria dos pacientes",
-      "O valor de p representa o percentual de pacientes que responderiam favoravelmente ao tratamento testado no estudo"
+      "O valor de p representa diretamente a probabilidade de a hipótese nula ser verdadeira, dado os dados observados no estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "O valor de p representa a magnitude clínica do efeito do tratamento, independentemente do tamanho da amostra estudada, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "O valor de p representa a probabilidade de o tratamento ser eficaz na prática clínica para a maioria dos pacientes, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "O valor de p representa o percentual de pacientes que responderiam favoravelmente ao tratamento testado no estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "O valor de p é a probabilidade de obter um resultado tão ou mais extremo que o observado, sob a suposição de que a hipótese nula é verdadeira; ele não indica a probabilidade de a hipótese nula ser verdadeira nem a magnitude ou relevância clínica do efeito.",
     "trap": "Interpretar o p-valor como probabilidade direta da hipótese nula ser verdadeira, erro conceitual muito comum na leitura de resultados estatísticos."
@@ -439,10 +439,10 @@
     "stem": "Um médico avalia um estudo que relata um risco relativo de 1,8 para o desenvolvimento de trombose venosa associado ao uso de determinado contraceptivo, com intervalo de confiança de 95% variando de 1,2 a 2,7. Qual é a interpretação estatística correta desse intervalo de confiança para esse médico?",
     "correct": "Há 95% de confiança de que o verdadeiro risco relativo na população esteja entre 1,2 e 2,7, e como o intervalo não inclui o valor 1, o resultado é estatisticamente significativo",
     "wrongs": [
-      "Há exatamente 95% de chance de que o risco relativo verdadeiro seja igual a 1,8, valor central do intervalo apresentado",
-      "O intervalo de confiança indica que o resultado não é estatisticamente significativo, pois inclui valores próximos de 1",
-      "O intervalo de confiança de 95% representa a faixa de valores observados individualmente em 95% dos participantes do estudo",
-      "Como o intervalo é amplo, o resultado deve ser considerado inválido e o estudo deve ser descartado"
+      "Há exatamente 95% de chance de que o risco relativo verdadeiro seja igual a 1,8, valor central do intervalo apresentado, comparando incidência entre expostos e não expostos",
+      "O intervalo de confiança indica que o resultado não é estatisticamente significativo, pois inclui valores próximos de 1, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O intervalo de confiança de 95% representa a faixa de valores observados individualmente em 95% dos participantes do estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Como o intervalo é amplo, o resultado deve ser considerado inválido e o estudo deve ser descartado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O intervalo de confiança de 95% expressa a faixa de valores plausíveis para o verdadeiro parâmetro populacional, com 95% de confiança; como o intervalo (1,2 a 2,7) não inclui o valor nulo (1, para medidas de razão), o resultado é considerado estatisticamente significativo.",
     "trap": "Achar que o intervalo de confiança precisa necessariamente excluir valores 'próximos' de 1 para ser significativo, ou confundir a interpretação do IC com variabilidade individual dos participantes."
@@ -455,10 +455,10 @@
     "stem": "Em um ensaio clínico, uma equipe de pesquisa conclui erroneamente que um novo medicamento é eficaz para reduzir a mortalidade, quando na realidade não há diferença real entre o medicamento e o placebo — a diferença observada nesse estudo ocorreu por acaso. Qual tipo de erro estatístico essa situação representa?",
     "correct": "Erro tipo I (falso positivo), no qual se rejeita a hipótese nula verdadeira, concluindo erroneamente que existe um efeito ou associação que, na realidade, não existe",
     "wrongs": [
-      "Erro tipo II (falso negativo), no qual se deixa de detectar um efeito real que de fato existe entre os grupos comparados",
-      "Viés de confusão, decorrente de uma terceira variável associada tanto à exposição quanto ao desfecho estudado",
-      "Viés de seleção, decorrente de uma escolha inadequada dos participantes incluídos no ensaio clínico",
-      "Erro de aferição, decorrente de instrumento de medição inadequado para avaliar o desfecho de mortalidade"
+      "Erro tipo II (falso negativo), no qual se deixa de detectar um efeito real que de fato existe entre os grupos comparados, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de confusão, decorrente de uma terceira variável associada tanto à exposição quanto ao desfecho estudado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de seleção, decorrente de uma escolha inadequada dos participantes incluídos no ensaio clínico, em desenho experimental com alocação controlada da exposição",
+      "Erro de aferição, decorrente de instrumento de medição inadequado para avaliar o desfecho de mortalidade, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O erro tipo I ocorre quando se rejeita indevidamente a hipótese nula verdadeira, concluindo por um efeito ou associação que não existe de fato; sua probabilidade máxima aceitável é o nível de significância (alfa), geralmente fixado em 5%.",
     "trap": "Confundir erro tipo I (concluir por um efeito que não existe) com erro tipo II (não detectar um efeito que realmente existe), que são erros opostos."
@@ -471,10 +471,10 @@
     "stem": "Uma equipe de pesquisa realiza um estudo com amostra pequena que não encontra diferença estatisticamente significativa entre dois tratamentos, mas análises posteriores com amostras maiores mostram que, de fato, existe uma diferença real relevante entre eles que o primeiro estudo não conseguiu detectar. Qual erro estatístico o primeiro estudo dessa equipe provavelmente cometeu?",
     "correct": "Erro tipo II (falso negativo), no qual se deixa de rejeitar a hipótese nula quando ela é, na realidade, falsa, frequentemente associado a baixo poder estatístico por tamanho amostral insuficiente",
     "wrongs": [
-      "Erro tipo I (falso positivo), no qual se rejeita erroneamente a hipótese nula verdadeira, concluindo por um efeito que não existe",
-      "Viés de publicação, decorrente da maior probabilidade de publicação de estudos com resultados estatisticamente significativos",
-      "Viés de memória, decorrente de erro sistemático na lembrança de exposições passadas pelos participantes do estudo",
-      "Erro de confusão residual, decorrente de ajuste estatístico incompleto para variáveis de confusão conhecidas"
+      "Erro tipo I (falso positivo), no qual se rejeita erroneamente a hipótese nula verdadeira, concluindo por um efeito que não existe, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de publicação, decorrente da maior probabilidade de publicação de estudos com resultados estatisticamente significativos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Viés de memória, decorrente de erro sistemático na lembrança de exposições passadas pelos participantes do estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Erro de confusão residual, decorrente de ajuste estatístico incompleto para variáveis de confusão conhecidas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O erro tipo II ocorre quando o estudo não detecta uma diferença ou associação que realmente existe, frequentemente por tamanho amostral insuficiente e, consequentemente, baixo poder estatístico para identificar o efeito verdadeiro.",
     "trap": "Confundir erro tipo II com erro tipo I, invertendo a lógica de qual erro está associado a 'não detectar um efeito real' versus 'detectar um efeito inexistente'."
@@ -485,10 +485,10 @@
     "group": "Epidemiologia · estudos · testes",
     "theme": "Significância estatística · p-valor · IC · teste t · qui-quadrado",
     "stem": "Antes de iniciar um ensaio clínico, uma equipe calcula o tamanho amostral necessário para garantir 80% de probabilidade de detectar uma diferença clinicamente relevante entre os grupos, caso ela realmente exista. Qual conceito estatístico esse cálculo de 80% representa nesse estudo?",
-    "correct": "Poder do estudo (1 − beta), que representa a probabilidade de detectar corretamente um efeito real quando ele de fato existe, evitando o erro tipo II",
+    "correct": "Poder do estudo (1 − beta), que representa a probabilidade de detectar corretamente um efeito real quando ele de fato existe",
     "wrongs": [
-      "Nível de significância (alfa), que representa a probabilidade máxima aceitável de cometer erro tipo I no estudo",
-      "Intervalo de confiança, que representa a faixa de valores plausíveis para o parâmetro estimado pelo estudo",
+      "Nível de significância (alfa), que representa a probabilidade máxima aceitável de cometer erro tipo I no estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Intervalo de confiança, que representa a faixa de valores plausíveis para o parâmetro estimado pelo estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
       "Valor de p, que representa a probabilidade de observar o resultado obtido, assumindo a hipótese nula como verdadeira",
       "Sensibilidade do desfecho clínico, medida relacionada à capacidade de um teste diagnóstico identificar corretamente doentes"
     ],
@@ -503,10 +503,10 @@
     "stem": "Um médico pesquisador quer comparar a média de glicemia de jejum entre dois grupos de pacientes submetidos a diferentes dietas, assumindo que a variável segue distribuição aproximadamente normal em ambos os grupos desse estudo. Qual teste estatístico é apropriado para essa comparação de médias entre dois grupos independentes?",
     "correct": "Teste t de Student para amostras independentes, apropriado para comparar médias de uma variável contínua com distribuição aproximadamente normal entre dois grupos",
     "wrongs": [
-      "Teste do qui-quadrado, apropriado para comparar frequências ou proporções entre variáveis categóricas, e não médias de variáveis contínuas",
+      "Teste do qui-quadrado, apropriado para comparar frequências ou proporções entre variáveis categóricas, e não médias de variáveis contínuas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
       "Coeficiente de correlação de Pearson, apropriado para avaliar associação linear entre duas variáveis contínuas, e não comparação de médias entre grupos",
-      "Teste exato de Fisher, apropriado para tabelas de contingência com amostras muito pequenas, e não para comparação de médias contínuas",
-      "Análise de sobrevida de Kaplan-Meier, apropriada para comparar tempo até um evento entre grupos, e não médias de glicemia isoladas"
+      "Teste exato de Fisher, apropriado para tabelas de contingência com amostras muito pequenas, e não para comparação de médias contínuas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Análise de sobrevida de Kaplan-Meier, apropriada para comparar tempo até um evento entre grupos, e não médias de glicemia isoladas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O teste t de Student é indicado para comparar as médias de uma variável contínua com distribuição aproximadamente normal entre dois grupos independentes, sendo a ferramenta estatística clássica para esse tipo de comparação, diferente de testes para variáveis categóricas.",
     "trap": "Escolher testes apropriados para variáveis categóricas (qui-quadrado, Fisher) quando a variável de interesse é contínua e a comparação é entre médias, não entre proporções."
@@ -519,9 +519,9 @@
     "stem": "Um médico pesquisador quer comparar a proporção de pacientes que apresentaram efeitos adversos entre dois grupos de tratamento nesse estudo, tratando o desfecho como uma variável categórica (presença ou ausência do evento). Qual teste estatístico é apropriado para essa comparação de proporções entre grupos?",
     "correct": "Teste do qui-quadrado, apropriado para comparar frequências ou proporções de uma variável categórica entre dois ou mais grupos independentes",
     "wrongs": [
-      "Teste t de Student, apropriado para comparar médias de variáveis contínuas, e não proporções de variáveis categóricas",
-      "Coeficiente de correlação de Pearson, apropriado para avaliar associação linear entre duas variáveis quantitativas contínuas",
-      "Análise de variância (ANOVA), apropriada para comparar médias entre três ou mais grupos de uma variável contínua",
+      "Teste t de Student, apropriado para comparar médias de variáveis contínuas, e não proporções de variáveis categóricas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Coeficiente de correlação de Pearson, apropriado para avaliar associação linear entre duas variáveis quantitativas contínuas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Análise de variância (ANOVA), apropriada para comparar médias entre três ou mais grupos de uma variável contínua, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
       "Regressão linear simples, apropriada para modelar a relação entre uma variável dependente contínua e uma ou mais variáveis independentes"
     ],
     "explain": "O teste do qui-quadrado é a ferramenta clássica para comparar frequências ou proporções de desfechos categóricos entre grupos, avaliando se a distribuição observada difere significativamente da esperada sob a hipótese de independência.",
@@ -535,10 +535,10 @@
     "stem": "Um estudo com 5.000 participantes encontra uma diferença estatisticamente significativa (p < 0,001) na pressão arterial sistólica média entre dois grupos, mas essa diferença é de apenas 1 mmHg. Um médico clínico questiona a relevância prática desse achado do estudo. Qual conceito estatístico explica por que um resultado pode ser estatisticamente significativo, mas clinicamente pouco relevante?",
     "correct": "Significância estatística não é sinônimo de relevância clínica; com amostras muito grandes, até diferenças pequenas e sem importância prática podem atingir significância estatística",
     "wrongs": [
-      "Um resultado com p < 0,001 é sempre clinicamente relevante, independentemente da magnitude absoluta da diferença observada",
-      "A significância estatística nesse caso indica necessariamente um erro de cálculo do valor de p pelos pesquisadores",
-      "Diferenças de 1 mmHg nunca podem atingir significância estatística, mesmo em amostras muito grandes como essa",
-      "O conceito de relevância clínica não existe na literatura estatística, sendo aplicável apenas a estudos qualitativos"
+      "Um resultado com p < 0,001 é sempre clinicamente relevante, independentemente da magnitude absoluta da diferença observada, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "A significância estatística nesse caso indica necessariamente um erro de cálculo do valor de p pelos pesquisadores, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Diferenças de 1 mmHg nunca podem atingir significância estatística, mesmo em amostras muito grandes como essa, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "O conceito de relevância clínica não existe na literatura estatística, sendo aplicável apenas a estudos qualitativos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Com amostras grandes, o poder estatístico aumenta a ponto de detectar diferenças mínimas como estatisticamente significativas, mesmo quando elas não têm relevância clínica prática; por isso, magnitude do efeito e significância estatística devem ser avaliadas separadamente.",
     "trap": "Assumir que todo resultado com p muito baixo é automaticamente importante na prática clínica, ignorando a magnitude absoluta do efeito encontrado."
@@ -551,10 +551,10 @@
     "stem": "Um médico pesquisador planeja um ensaio clínico com apenas 20 participantes por grupo, mesmo sabendo que o efeito esperado do tratamento nesse estudo é pequeno. Um estatístico alerta que esse tamanho amostral pode ser insuficiente. Qual é a principal consequência estatística de um tamanho amostral insuficiente diante de um efeito pequeno esperado?",
     "correct": "Aumento do risco de erro tipo II, ou seja, o estudo pode não ter poder estatístico suficiente para detectar um efeito real que de fato existe, levando a uma conclusão falso-negativa",
     "wrongs": [
-      "Aumento automático do risco de erro tipo I, tornando qualquer resultado positivo do estudo necessariamente um falso-positivo",
-      "Redução do intervalo de confiança, tornando as estimativas do estudo mais precisas do que estudos com amostras maiores",
-      "Eliminação da necessidade de calcular o valor de p, pois amostras pequenas dispensam testes de significância estatística",
-      "Garantia de que qualquer diferença encontrada será automaticamente considerada clinicamente relevante, independentemente do tamanho do efeito"
+      "Aumento automático do risco de erro tipo I, tornando qualquer resultado positivo do estudo necessariamente um falso-positivo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Redução do intervalo de confiança, tornando as estimativas do estudo mais precisas do que estudos com amostras maiores, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Eliminação da necessidade de calcular o valor de p, pois amostras pequenas dispensam testes de significância estatística, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Garantia de que qualquer diferença encontrada será automaticamente considerada clinicamente relevante, independentemente do tamanho do efeito, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Tamanhos amostrais pequenos, especialmente diante de efeitos esperados pequenos, reduzem o poder estatístico do estudo, aumentando o risco de erro tipo II — ou seja, de não detectar um efeito real que de fato existe na população.",
     "trap": "Associar amostra pequena a maior risco de erro tipo I, quando na realidade o problema central de baixo tamanho amostral é o aumento do risco de erro tipo II (falso-negativo)."
@@ -567,10 +567,10 @@
     "stem": "Uma equipe testa um novo exame rápido para detecção de dengue em 200 pacientes com diagnóstico confirmado por sorologia de referência: entre os 100 pacientes realmente com dengue, o teste rápido foi positivo em 85; entre os 100 pacientes sem dengue, o teste foi negativo em 90. Qual é a sensibilidade desse teste rápido nesse estudo?",
     "correct": "85%, calculada dividindo o número de verdadeiro-positivos (85) pelo total de pacientes realmente doentes (100), ou seja, VP/(VP+FN)",
     "wrongs": [
-      "90%, calculada erroneamente utilizando o número de verdadeiro-negativos em vez de verdadeiro-positivos",
-      "42,5%, calculada dividindo o número de verdadeiro-positivos pelo total geral de 200 pacientes testados",
-      "94,4%, calculada dividindo o número de verdadeiro-positivos pela soma de verdadeiro-positivos e falso-positivos",
-      "15%, correspondente ao complemento da sensibilidade, ou seja, a proporção de falso-negativos entre os doentes"
+      "90%, calculada erroneamente utilizando o número de verdadeiro-negativos em vez de verdadeiro-positivos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "42,5%, calculada dividindo o número de verdadeiro-positivos pelo total geral de 200 pacientes testados, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "94,4%, calculada dividindo o número de verdadeiro-positivos pela soma de verdadeiro-positivos e falso-positivos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "15%, correspondente ao complemento da sensibilidade, ou seja, a proporção de falso-negativos entre os doentes, proporção de verdadeiros positivos entre os doentes"
     ],
     "explain": "A sensibilidade é a proporção de indivíduos verdadeiramente doentes que o teste identifica corretamente como positivos: VP/(VP+FN) = 85/(85+15) = 85/100 = 85%, refletindo a capacidade do teste de detectar quem realmente tem a doença.",
     "trap": "Calcular sensibilidade usando o total geral de testados ou confundir verdadeiro-positivo com verdadeiro-negativo no cálculo."
@@ -583,10 +583,10 @@
     "stem": "Uma equipe verifica que, no mesmo estudo do teste rápido de dengue, entre os 100 pacientes sem a doença (confirmado por sorologia de referência), o teste foi negativo em 90 e positivo (falso-positivo) em 10. Qual é a especificidade desse teste nesse estudo?",
     "correct": "90%, calculada dividindo o número de verdadeiro-negativos (90) pelo total de pacientes realmente sem a doença (100), ou seja, VN/(VN+FP)",
     "wrongs": [
-      "85%, calculada erroneamente utilizando o número de verdadeiro-positivos entre os doentes, e não os não doentes",
-      "10%, correspondente à taxa de falso-positivos, e não à especificidade do teste",
-      "45%, calculada dividindo o número de verdadeiro-negativos pelo total geral de 200 pacientes testados no estudo",
-      "100%, assumindo erroneamente que nenhum resultado falso-positivo interfere no cálculo da especificidade"
+      "85%, calculada erroneamente utilizando o número de verdadeiro-positivos entre os doentes, e não os não doentes, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "10%, correspondente à taxa de falso-positivos, e não à especificidade do teste, proporção de verdadeiros negativos entre os não doentes",
+      "45%, calculada dividindo o número de verdadeiro-negativos pelo total geral de 200 pacientes testados no estudo, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "100%, assumindo erroneamente que nenhum resultado falso-positivo interfere no cálculo da especificidade, proporção de verdadeiros negativos entre os não doentes"
     ],
     "explain": "A especificidade é a proporção de indivíduos verdadeiramente sadios que o teste identifica corretamente como negativos: VN/(VN+FP) = 90/(90+10) = 90/100 = 90%, refletindo a capacidade do teste de excluir corretamente quem não tem a doença.",
     "trap": "Confundir especificidade com a taxa de falso-positivos (que é seu complemento) ou usar o total geral de testados como denominador."
@@ -599,10 +599,10 @@
     "stem": "Um exame de rastreamento para determinada doença é aplicado em uma população com prevalência de 2%. Entre os testados, o exame tem sensibilidade de 90% e especificidade de 95%. Um médico clínico interpreta um resultado positivo isolado desse exame. Qual é o efeito esperado da baixa prevalência sobre o valor preditivo positivo (VPP) desse teste, mesmo com boa sensibilidade e especificidade?",
     "correct": "O VPP tende a ser relativamente baixo, pois em populações de baixa prevalência a maioria dos resultados positivos corresponde a falso-positivos, mesmo quando sensibilidade e especificidade são elevadas",
     "wrongs": [
-      "O VPP será sempre próximo de 100%, pois sensibilidade e especificidade elevadas garantem automaticamente um VPP elevado, independentemente da prevalência",
-      "A prevalência da doença não interfere de forma alguma no valor preditivo positivo do teste, apenas na sensibilidade e especificidade",
-      "O VPP será exatamente igual à especificidade do teste, independentemente da prevalência da doença na população testada",
-      "O VPP se tornará inversamente proporcional à sensibilidade do teste, tornando-se menor quanto maior for a sensibilidade"
+      "O VPP será sempre próximo de 100%, pois sensibilidade e especificidade elevadas garantem automaticamente um VPP elevado, independentemente da prevalência, proporção de verdadeiros positivos entre os doentes",
+      "A prevalência da doença não interfere de forma alguma no valor preditivo positivo do teste, apenas na sensibilidade e especificidade, proporção de verdadeiros positivos entre os doentes",
+      "O VPP será exatamente igual à especificidade do teste, independentemente da prevalência da doença na população testada, proporção de verdadeiros negativos entre os não doentes, no arranjo institucional e epidemiológico do enunciado",
+      "O VPP se tornará inversamente proporcional à sensibilidade do teste, tornando-se menor quanto maior for a sensibilidade, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "O valor preditivo positivo depende diretamente da prevalência da doença na população testada: em populações de baixa prevalência, mesmo testes com boa sensibilidade e especificidade geram proporcionalmente muitos falso-positivos entre os resultados positivos, reduzindo o VPP.",
     "trap": "Achar que sensibilidade e especificidade elevadas garantem, por si só, um VPP elevado, ignorando o papel central da prevalência nesse cálculo."
@@ -615,10 +615,10 @@
     "stem": "Um médico avalia um exame utilizado para rastreamento de tuberculose latente, aplicado em uma comunidade indígena com prevalência estimada muito alta da infecção. Comparado a uma aplicação do mesmo teste em uma população de baixo risco, o que esse médico deve esperar em relação ao valor preditivo negativo (VPN) do exame na população de alta prevalência?",
     "correct": "O VPN tende a ser menor na população de alta prevalência, pois, mesmo com boa especificidade, uma proporção maior dos resultados negativos pode corresponder a falso-negativos quando a doença é mais frequente",
     "wrongs": [
-      "O VPN tende a ser maior na população de alta prevalência, pois quanto mais frequente a doença, mais confiável se torna um resultado negativo",
-      "O VPN permanece exatamente igual, independentemente da prevalência da doença na população testada, pois depende apenas da sensibilidade do teste",
-      "O VPN se torna sempre igual a 100% em populações de alta prevalência, dispensando confirmação diagnóstica adicional",
-      "O VPN depende exclusivamente da especificidade do teste, sendo totalmente independente tanto da sensibilidade quanto da prevalência"
+      "O VPN tende a ser maior na população de alta prevalência, pois quanto mais frequente a doença, mais confiável se torna um resultado negativo, probabilidade de ausência de doença entre os testes negativos",
+      "O VPN permanece exatamente igual, independentemente da prevalência da doença na população testada, pois depende apenas da sensibilidade do teste, proporção de verdadeiros positivos entre os doentes",
+      "O VPN se torna sempre igual a 100% em populações de alta prevalência, dispensando confirmação diagnóstica adicional, probabilidade de ausência de doença entre os testes negativos, no arranjo institucional e epidemiológico do enunciado",
+      "O VPN depende exclusivamente da especificidade do teste, sendo totalmente independente tanto da sensibilidade quanto da prevalência, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "O valor preditivo negativo diminui à medida que a prevalência da doença aumenta, pois, em cenários de alta prevalência, uma proporção maior das pessoas com resultado negativo pode, na realidade, estar doente (falso-negativo), reduzindo a confiabilidade de um resultado negativo isolado.",
     "trap": "Inverter a relação entre prevalência e VPN, achando que maior prevalência aumenta a confiabilidade de um resultado negativo, quando ocorre o contrário."
@@ -631,10 +631,10 @@
     "stem": "Uma equipe realiza um estudo de validação de um teste diagnóstico para hipotireoidismo: dos 500 pacientes testados, 440 tiveram resultado corretamente classificado (verdadeiro-positivo ou verdadeiro-negativo) e 60 tiveram resultado incorretamente classificado. Qual é a acurácia global desse teste nesse estudo?",
     "correct": "88%, calculada dividindo o número total de resultados corretamente classificados (440) pelo número total de pacientes testados (500)",
     "wrongs": [
-      "60%, calculada erroneamente utilizando o número de resultados incorretamente classificados como numerador principal",
-      "12%, correspondente à taxa de erro do teste, e não à sua acurácia global",
-      "100%, assumindo erroneamente que qualquer teste validado deve necessariamente ter acurácia perfeita",
-      "44%, calculada dividindo o número de resultados corretos por 1.000 em vez do total real de 500 pacientes testados"
+      "60%, calculada erroneamente utilizando o número de resultados incorretamente classificados como numerador principal, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "12%, correspondente à taxa de erro do teste, e não à sua acurácia global, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "100%, assumindo erroneamente que qualquer teste validado deve necessariamente ter acurácia perfeita, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "44%, calculada dividindo o número de resultados corretos por 1.000 em vez do total real de 500 pacientes testados, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A acurácia global de um teste diagnóstico é calculada pela proporção de resultados corretamente classificados (verdadeiro-positivos somados a verdadeiro-negativos) em relação ao total de indivíduos testados: 440/500 = 88%.",
     "trap": "Confundir acurácia com taxa de erro (seu complemento) ou usar um denominador incorreto no cálculo da proporção."
@@ -647,10 +647,10 @@
     "stem": "Uma equipe de triagem neonatal precisa escolher, entre dois testes com sensibilidade e especificidade diferentes, aquele mais adequado para rastrear uma doença metabólica grave e potencialmente fatal se não tratada precocemente, mesmo aceitando um número maior de resultados falso-positivos que serão investigados posteriormente com exame confirmatório. Qual característica do teste de triagem essa equipe deve priorizar nesse cenário?",
     "correct": "Alta sensibilidade, para minimizar o número de falso-negativos e evitar que recém-nascidos verdadeiramente afetados deixem de ser identificados precocemente pela triagem",
     "wrongs": [
-      "Alta especificidade, para minimizar o número de falso-positivos, mesmo que isso aumente o risco de deixar de identificar recém-nascidos afetados",
-      "Alto valor preditivo positivo, priorizando a certeza diagnóstica imediata sobre a exclusão segura de casos verdadeiros",
-      "Baixo custo do exame, priorizado sobre qualquer outra característica de desempenho diagnóstico do teste",
-      "Alta acurácia geral, sem qualquer distinção entre a importância relativa de sensibilidade e especificidade nesse contexto"
+      "Alta especificidade, para minimizar o número de falso-positivos, mesmo que isso aumente o risco de deixar de identificar recém-nascidos afetados, proporção de verdadeiros negativos entre os não doentes",
+      "Alto valor preditivo positivo, priorizando a certeza diagnóstica imediata sobre a exclusão segura de casos verdadeiros, probabilidade de doença entre os testes positivos",
+      "Baixo custo do exame, priorizado sobre qualquer outra característica de desempenho diagnóstico do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Alta acurácia geral, sem qualquer distinção entre a importância relativa de sensibilidade e especificidade nesse contexto, proporção de verdadeiros positivos entre os doentes"
     ],
     "explain": "Em triagens para doenças graves em que um falso-negativo pode ser catastrófico, prioriza-se um teste com alta sensibilidade, mesmo que isso implique mais falso-positivos, pois estes serão posteriormente esclarecidos por exames confirmatórios mais específicos.",
     "trap": "Priorizar especificidade em um cenário de triagem, quando o objetivo primário é não deixar escapar nenhum caso verdadeiro, o que exige alta sensibilidade."
@@ -663,10 +663,10 @@
     "stem": "Após um teste de triagem inicial com alta sensibilidade apresentar resultado positivo para determinada infecção, o médico solicita um segundo exame, com alta especificidade, para confirmar o diagnóstico antes de iniciar tratamento definitivo. Qual é a lógica dessa estratégia sequencial de testes utilizada pelo médico?",
     "correct": "Utilizar primeiro um teste sensível para não deixar escapar casos verdadeiros (triagem) e, em seguida, um teste específico para confirmar o diagnóstico e reduzir a chance de tratar falso-positivos (confirmação)",
     "wrongs": [
-      "Utilizar dois testes sensíveis em sequência, pois a combinação de sensibilidades sempre aumenta artificialmente a especificidade final",
-      "Utilizar primeiro o teste mais específico, pois testes específicos são sempre mais baratos e devem ser aplicados amplamente antes de qualquer triagem",
-      "A ordem dos testes é irrelevante, pois qualquer combinação de dois exames sempre garante o mesmo resultado final combinado",
-      "Utilizar dois testes idênticos em sequência, repetindo o mesmo exame para reduzir o risco de erro laboratorial aleatório"
+      "Utilizar dois testes sensíveis em sequência, pois a combinação de sensibilidades sempre aumenta artificialmente a especificidade final, proporção de verdadeiros negativos entre os não doentes",
+      "Utilizar primeiro o teste mais específico, pois testes específicos são sempre mais baratos e devem ser aplicados amplamente antes de qualquer triagem, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "A ordem dos testes é irrelevante, pois qualquer combinação de dois exames sempre garante o mesmo resultado final combinado, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Utilizar dois testes idênticos em sequência, repetindo o mesmo exame para reduzir o risco de erro laboratorial aleatório, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A estratégia clássica de triagem seguida de confirmação combina um teste sensível inicial (para não perder casos verdadeiros) com um teste específico subsequente (para confirmar o diagnóstico e evitar tratar indivíduos falso-positivos), otimizando a acurácia global do processo diagnóstico.",
     "trap": "Achar que a ordem dos testes é irrelevante ou que repetir o mesmo tipo de teste teria o mesmo efeito de combinar testes com características complementares."
@@ -679,10 +679,10 @@
     "stem": "Um paciente com forte suspeita clínica de determinada doença realiza um teste com altíssima especificidade (98%) e o resultado é positivo. Como esse resultado positivo desse paciente deve ser interpretado, considerando a característica principal desse teste?",
     "correct": "Um resultado positivo em um teste altamente específico é fortemente sugestivo de doença verdadeira, pois a alta especificidade reduz significativamente a chance de tratar-se de um falso-positivo (lógica do SpPin)",
     "wrongs": [
-      "Um resultado positivo em um teste altamente específico deve ser ignorado, pois testes específicos não são úteis para confirmar diagnósticos",
-      "Um resultado positivo em um teste altamente específico exige obrigatoriamente repetição do mesmo exame antes de qualquer interpretação clínica",
-      "A alta especificidade do teste torna irrelevante a avaliação de sua sensibilidade para qualquer decisão clínica subsequente",
-      "Um resultado positivo em um teste altamente específico é equivalente a um resultado negativo em um teste altamente sensível, tendo o mesmo significado clínico"
+      "Um resultado positivo em um teste altamente específico deve ser ignorado, pois testes específicos não são úteis para confirmar diagnósticos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Um resultado positivo em um teste altamente específico exige obrigatoriamente repetição do mesmo exame antes de qualquer interpretação clínica, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "A alta especificidade do teste torna irrelevante a avaliação de sua sensibilidade para qualquer decisão clínica subsequente, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "Um resultado positivo em um teste altamente específico é equivalente a um resultado negativo em um teste altamente sensível, tendo o mesmo significado clínico, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Testes com alta especificidade, quando positivos, são úteis para confirmar (rule in) o diagnóstico, pois há baixa probabilidade de falso-positivo; essa lógica é resumida pelo mnemônico SpPin (Specificity, Positive, rule in).",
     "trap": "Confundir a utilidade de um resultado positivo em teste específico (confirmar doença) com a utilidade de um resultado negativo em teste sensível (excluir doença), que seguem lógicas opostas (SpPin vs SnNout)."
@@ -695,10 +695,10 @@
     "stem": "Um paciente com baixa probabilidade pré-teste de trombose venosa profunda realiza um exame de D-dímero, conhecido por ter alta sensibilidade, mas baixa especificidade, e o resultado é negativo. Como esse resultado negativo desse paciente deve ser interpretado, considerando a característica principal desse teste?",
     "correct": "Um resultado negativo em um teste altamente sensível é útil para excluir a doença (rule out), pois a alta sensibilidade reduz significativamente a chance de um falso-negativo (lógica do SnNout)",
     "wrongs": [
-      "Um resultado negativo em um teste altamente sensível não tem qualquer valor para excluir a doença, sendo necessário sempre investigar mais",
-      "Um resultado negativo em um teste sensível deve ser interpretado da mesma forma que um resultado positivo em teste específico, com valor confirmatório",
-      "A baixa especificidade do teste invalida completamente a interpretação de qualquer resultado negativo obtido nesse exame",
-      "Um resultado negativo em teste sensível indica necessariamente erro laboratorial, exigindo repetição imediata do mesmo exame"
+      "Um resultado negativo em um teste altamente sensível não tem qualquer valor para excluir a doença, sendo necessário sempre investigar mais, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Um resultado negativo em um teste sensível deve ser interpretado da mesma forma que um resultado positivo em teste específico, com valor confirmatório, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "A baixa especificidade do teste invalida completamente a interpretação de qualquer resultado negativo obtido nesse exame, proporção de verdadeiros negativos entre os não doentes",
+      "Um resultado negativo em teste sensível indica necessariamente erro laboratorial, exigindo repetição imediata do mesmo exame, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Testes com alta sensibilidade, quando negativos, são úteis para excluir (rule out) a doença, pois há baixa probabilidade de falso-negativo; essa lógica é resumida pelo mnemônico SnNout (Sensitivity, Negative, rule out), amplamente aplicado ao D-dímero na suspeita de TVP.",
     "trap": "Inverter a lógica SnNout/SpPin, atribuindo valor confirmatório a um resultado negativo em teste sensível, quando seu valor real está em excluir a doença."
@@ -711,10 +711,10 @@
     "stem": "Uma equipe de laboratório precisa validar um novo teste rápido para HIV antes de sua distribuição em unidades de saúde de todo o país, comparando seus resultados com o exame de referência (padrão-ouro) em uma amostra de pacientes com e sem a infecção previamente confirmada. Qual é a finalidade metodológica central desse estudo de validação realizado pela equipe?",
     "correct": "Estimar sensibilidade, especificidade e demais medidas de desempenho do novo teste em relação ao padrão-ouro, avaliando sua validade antes da adoção em larga escala",
     "wrongs": [
-      "Estimar exclusivamente o custo de produção do novo teste em comparação ao exame de referência utilizado atualmente",
-      "Estimar exclusivamente a prevalência da infecção pelo HIV na população geral do país, sem qualquer relação com desempenho do teste",
-      "Substituir a necessidade de qualquer estudo epidemiológico populacional futuro sobre a doença investigada",
-      "Determinar diretamente o tratamento mais adequado para os pacientes diagnosticados durante a fase de validação do teste"
+      "Estimar exclusivamente o custo de produção do novo teste em comparação ao exame de referência utilizado atualmente, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Estimar exclusivamente a prevalência da infecção pelo HIV na população geral do país, sem qualquer relação com desempenho do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Substituir a necessidade de qualquer estudo epidemiológico populacional futuro sobre a doença investigada, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Determinar diretamente o tratamento mais adequado para os pacientes diagnosticados durante a fase de validação do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A validação de um novo teste diagnóstico exige comparação sistemática com um padrão-ouro em uma amostra de indivíduos com e sem a condição confirmada, permitindo calcular sensibilidade, especificidade e demais parâmetros de desempenho antes de sua adoção clínica ampla.",
     "trap": "Confundir a finalidade metodológica de validação diagnóstica com objetivos distintos, como estimativa de custo, prevalência populacional ou definição de conduta terapêutica."
@@ -727,10 +727,10 @@
     "stem": "Uma prova de residência médica apresenta uma tabela 2x2 de um teste diagnóstico e pede a um médico residente que calcule o valor preditivo positivo (VPP) a partir dos dados: 45 verdadeiro-positivos, 15 falso-positivos, 10 falso-negativos e 130 verdadeiro-negativos. Qual é o VPP desse teste nessa prova?",
     "correct": "75%, calculado dividindo o número de verdadeiro-positivos (45) pela soma de verdadeiro-positivos e falso-positivos (45+15=60), ou seja, VP/(VP+FP)",
     "wrongs": [
-      "81,8%, calculado erroneamente dividindo o número de verdadeiro-positivos pela soma de verdadeiro-positivos e falso-negativos",
-      "22,5%, calculado dividindo o número de verdadeiro-positivos pelo total geral de 200 pacientes da tabela",
+      "81,8%, calculado erroneamente dividindo o número de verdadeiro-positivos pela soma de verdadeiro-positivos e falso-negativos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "22,5%, calculado dividindo o número de verdadeiro-positivos pelo total geral de 200 pacientes da tabela, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
       "92,9%, calculado dividindo o número de verdadeiro-negativos pela soma de verdadeiro-negativos e falso-positivos, fórmula da especificidade",
-      "18,75%, calculado invertendo o numerador e o denominador da fórmula correta do valor preditivo positivo"
+      "18,75%, calculado invertendo o numerador e o denominador da fórmula correta do valor preditivo positivo, probabilidade de doença entre os testes positivos"
     ],
     "explain": "O valor preditivo positivo é calculado pela proporção de verdadeiro-positivos entre todos os resultados positivos do teste: VP/(VP+FP) = 45/(45+15) = 45/60 = 75%, representando a probabilidade de doença dado um resultado positivo.",
     "trap": "Confundir a fórmula do VPP com a da sensibilidade (que usa falso-negativos no denominador) ou com a da especificidade, aplicando o denominador errado ao cálculo."
@@ -743,10 +743,10 @@
     "stem": "Uma equipe testa diferentes pontos de corte para um novo biomarcador sanguíneo utilizado no diagnóstico de lesão renal aguda, plotando a sensibilidade contra a taxa de falso-positivos (1 − especificidade) para cada cutoff possível. Qual ferramenta gráfica essa equipe está construindo nesse estudo, e o que ela representa?",
     "correct": "Curva ROC (Receiver Operating Characteristic), que representa graficamente o desempenho de um teste diagnóstico em diferentes pontos de corte, relacionando sensibilidade e taxa de falso-positivos",
     "wrongs": [
-      "Curva de Kaplan-Meier, que representa a probabilidade de sobrevida ao longo do tempo em diferentes grupos de pacientes",
-      "Forest plot, que representa graficamente os resultados combinados de múltiplos estudos em uma metanálise",
-      "Curva de calibração, utilizada exclusivamente para avaliar a concordância entre risco predito e risco observado em modelos preditivos",
-      "Gráfico de dispersão simples, utilizado apenas para representar a correlação linear entre duas variáveis contínuas"
+      "Curva de Kaplan-Meier, que representa a probabilidade de sobrevida ao longo do tempo em diferentes grupos de pacientes, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Forest plot, que representa graficamente os resultados combinados de múltiplos estudos em uma metanálise, combinando quantitativamente resultados de estudos semelhantes, no arranjo institucional e epidemiológico do enunciado",
+      "Curva de calibração, utilizada exclusivamente para avaliar a concordância entre risco predito e risco observado em modelos preditivos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Gráfico de dispersão simples, utilizado apenas para representar a correlação linear entre duas variáveis contínuas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A curva ROC representa graficamente, para cada ponto de corte possível de um teste diagnóstico, a sensibilidade no eixo Y e a taxa de falso-positivos (1 − especificidade) no eixo X, permitindo avaliar o desempenho do teste ao longo de diferentes cutoffs.",
     "trap": "Confundir a curva ROC com outras representações gráficas usadas em epidemiologia, como Kaplan-Meier (sobrevida) ou forest plot (metanálise), que têm finalidades distintas."
@@ -759,10 +759,10 @@
     "stem": "Um médico pesquisador calcula a área sob a curva ROC (AUC) de dois biomarcadores para o diagnóstico de sepse: o biomarcador A tem AUC de 0,95, e o biomarcador B tem AUC de 0,60. Qual conclusão esse médico pode extrair dessa comparação nesse estudo?",
     "correct": "O biomarcador A tem desempenho discriminatório muito superior ao biomarcador B para distinguir pacientes com e sem sepse, já que uma AUC de 0,95 indica excelente capacidade discriminatória, próxima do valor máximo de 1,0",
     "wrongs": [
-      "O biomarcador B é superior ao biomarcador A, pois valores de AUC mais baixos indicam melhor desempenho diagnóstico do teste",
-      "Ambos os biomarcadores têm desempenho equivalente, pois a AUC não é uma medida válida para comparação entre diferentes testes diagnósticos",
-      "Uma AUC de 0,60 indica desempenho perfeito do biomarcador B, equivalente a um teste sem qualquer erro diagnóstico",
-      "A AUC de 0,95 indica que o biomarcador A tem especificidade de exatamente 95%, independentemente da sensibilidade observada"
+      "O biomarcador B é superior ao biomarcador A, pois valores de AUC mais baixos indicam melhor desempenho diagnóstico do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Ambos os biomarcadores têm desempenho equivalente, pois a AUC não é uma medida válida para comparação entre diferentes testes diagnósticos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Uma AUC de 0,60 indica desempenho perfeito do biomarcador B, equivalente a um teste sem qualquer erro diagnóstico, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "A AUC de 0,95 indica que o biomarcador A tem especificidade de exatamente 95%, independentemente da sensibilidade observada, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "A área sob a curva ROC (AUC) varia de 0,5 (sem capacidade discriminatória, equivalente ao acaso) a 1,0 (discriminação perfeita); uma AUC de 0,95 indica excelente desempenho, muito superior a uma AUC de 0,60, que indica discriminação apenas discretamente melhor que o acaso.",
     "trap": "Inverter a interpretação da escala de AUC, achando que valores menores indicam melhor desempenho, ou confundir AUC com um valor direto de especificidade."
@@ -775,10 +775,10 @@
     "stem": "Um médico ajusta o ponto de corte de um exame laboratorial para diagnóstico de diabetes, reduzindo o valor de glicemia considerado positivo, com o objetivo de identificar mais casos verdadeiros da doença nesse estudo. Qual é a consequência esperada dessa alteração sobre a sensibilidade e a especificidade do teste?",
     "correct": "A sensibilidade tende a aumentar, pois mais casos verdadeiros serão capturados, mas a especificidade tende a diminuir, pois mais indivíduos sem a doença também serão classificados como positivos",
     "wrongs": [
-      "Tanto a sensibilidade quanto a especificidade aumentarão simultaneamente, sem qualquer relação de compensação entre elas",
-      "A sensibilidade diminuirá e a especificidade aumentará, movimento inverso ao esperado ao reduzir o ponto de corte",
-      "Nem a sensibilidade nem a especificidade serão alteradas, pois o ponto de corte não influencia o desempenho do teste",
-      "A especificidade se tornará automaticamente igual a 100%, independentemente do novo ponto de corte escolhido"
+      "Tanto a sensibilidade quanto a especificidade aumentarão simultaneamente, sem qualquer relação de compensação entre elas, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "A sensibilidade diminuirá e a especificidade aumentará, movimento inverso ao esperado ao reduzir o ponto de corte, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "Nem a sensibilidade nem a especificidade serão alteradas, pois o ponto de corte não influencia o desempenho do teste, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "A especificidade se tornará automaticamente igual a 100%, independentemente do novo ponto de corte escolhido, proporção de verdadeiros negativos entre os não doentes, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "Ao reduzir o ponto de corte de um exame para torná-lo mais 'permissivo', a sensibilidade tende a aumentar (mais casos verdadeiros detectados), mas a especificidade tende a diminuir (mais falso-positivos), refletindo o clássico trade-off entre essas duas medidas ao longo da curva ROC.",
     "trap": "Achar que sensibilidade e especificidade podem aumentar simultaneamente ao simplesmente mudar o ponto de corte de um mesmo teste, ignorando a relação inversa entre elas."
@@ -791,10 +791,10 @@
     "stem": "Um médico pesquisador busca o ponto de corte ideal de um novo teste diagnóstico na curva ROC, escolhendo o ponto que maximiza a soma entre sensibilidade e especificidade, mais próximo do canto superior esquerdo do gráfico. Qual índice estatístico orienta essa escolha do ponto de corte ideal nesse estudo?",
     "correct": "Índice de Youden (sensibilidade + especificidade − 1), que identifica o ponto de corte que melhor equilibra sensibilidade e especificidade na curva ROC",
     "wrongs": [
-      "Valor de p do teste diagnóstico, que indica exclusivamente a significância estatística da associação entre o marcador e a doença",
-      "Risco atribuível populacional, medida utilizada para estimar o impacto de uma exposição sobre a incidência de uma doença",
-      "Número necessário para tratar, medida utilizada para avaliar o benefício de intervenções terapêuticas em ensaios clínicos",
-      "Razão de chances do estudo, medida de associação típica de estudos caso-controle, sem relação direta com escolha de cutoff"
+      "Valor de p do teste diagnóstico, que indica exclusivamente a significância estatística da associação entre o marcador e a doença, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Risco atribuível populacional, medida utilizada para estimar o impacto de uma exposição sobre a incidência de uma doença, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Número necessário para tratar, medida utilizada para avaliar o benefício de intervenções terapêuticas em ensaios clínicos, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Razão de chances do estudo, medida de associação típica de estudos caso-controle, sem relação direta com escolha de cutoff, partindo do desfecho para investigar exposição retrospectiva"
     ],
     "explain": "O índice de Youden (J = sensibilidade + especificidade − 1) é comumente utilizado para identificar, ao longo da curva ROC, o ponto de corte que maximiza conjuntamente sensibilidade e especificidade, geralmente correspondendo ao ponto mais próximo do canto superior esquerdo do gráfico.",
     "trap": "Confundir o índice de Youden com outras medidas estatísticas não relacionadas à escolha de ponto de corte em testes diagnósticos, como valor de p ou medidas de associação epidemiológica."
@@ -807,10 +807,10 @@
     "stem": "Um médico avalia um teste diagnóstico para determinada doença com sensibilidade de 80% e especificidade de 90%. Qual é a razão de verossimilhança positiva (RVP) desse teste nesse estudo, e como ela deve ser interpretada pelo médico?",
     "correct": "RVP = 8 (0,80/0,10), indicando que um resultado positivo nesse teste é oito vezes mais provável em quem tem a doença do que em quem não a tem, aumentando substancialmente a probabilidade pós-teste",
     "wrongs": [
-      "RVP = 0,89, calculada erroneamente dividindo a especificidade pela sensibilidade do teste, em vez da fórmula correta",
-      "RVP = 72, calculada erroneamente multiplicando sensibilidade e especificidade em vez de utilizar a razão correta entre elas",
-      "RVP = 0,2, correspondente ao complemento da sensibilidade, sem qualquer relação com a fórmula real da razão de verossimilhança positiva",
-      "RVP = 1,8, calculada somando sensibilidade e especificidade e depois subtraindo o valor de 1 dessa soma"
+      "RVP = 0,89, calculada erroneamente dividindo a especificidade pela sensibilidade do teste, em vez da fórmula correta, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "RVP = 72, calculada erroneamente multiplicando sensibilidade e especificidade em vez de utilizar a razão correta entre elas, proporção de verdadeiros positivos entre os doentes",
+      "RVP = 0,2, correspondente ao complemento da sensibilidade, sem qualquer relação com a fórmula real da razão de verossimilhança positiva, proporção de verdadeiros positivos entre os doentes",
+      "RVP = 1,8, calculada somando sensibilidade e especificidade e depois subtraindo o valor de 1 dessa soma, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "A razão de verossimilhança positiva é calculada como sensibilidade dividida por (1 − especificidade): 0,80/(1−0,90) = 0,80/0,10 = 8; quanto maior o valor, mais um resultado positivo aumenta a probabilidade de doença em relação à probabilidade pré-teste.",
     "trap": "Aplicar fórmulas incorretas, como multiplicar sensibilidade por especificidade ou usar diretamente o índice de Youden, em vez da razão específica entre sensibilidade e taxa de falso-positivos."
@@ -823,10 +823,10 @@
     "stem": "Um médico avalia, para o mesmo teste diagnóstico do exemplo anterior (sensibilidade 80%, especificidade 90%), qual é a razão de verossimilhança negativa (RVN) nesse estudo, e o que um valor baixo dela indica sobre a utilidade de um resultado negativo.",
     "correct": "RVN = 0,22 (0,20/0,90), e um valor baixo indica que um resultado negativo reduz substancialmente a probabilidade de doença, sendo útil para praticamente excluir o diagnóstico",
     "wrongs": [
-      "RVN = 4,5, calculada invertendo erroneamente a fórmula correta da razão de verossimilhança negativa",
-      "RVN = 0,9, correspondente diretamente ao valor da especificidade do teste, sem aplicar a fórmula correta",
-      "RVN = 8, valor idêntico ao da razão de verossimilhança positiva calculada no exemplo anterior",
-      "RVN = 1,0, indicando que o resultado negativo não altera em nada a probabilidade de doença estimada antes do teste"
+      "RVN = 4,5, calculada invertendo erroneamente a fórmula correta da razão de verossimilhança negativa, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "RVN = 0,9, correspondente diretamente ao valor da especificidade do teste, sem aplicar a fórmula correta, proporção de verdadeiros negativos entre os não doentes",
+      "RVN = 8, valor idêntico ao da razão de verossimilhança positiva calculada no exemplo anterior, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "RVN = 1,0, indicando que o resultado negativo não altera em nada a probabilidade de doença estimada antes do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "A razão de verossimilhança negativa é calculada como (1 − sensibilidade) dividida pela especificidade: (1−0,80)/0,90 = 0,20/0,90 ≈ 0,22; quanto mais próximo de zero, mais um resultado negativo diminui a probabilidade de doença, sendo mais útil para excluir o diagnóstico.",
     "trap": "Confundir a fórmula da RVN com a da RVP, ou assumir erroneamente que RVN próxima de zero indica pouca utilidade, quando na verdade indica alta utilidade para exclusão diagnóstica."
@@ -839,10 +839,10 @@
     "stem": "Um médico estima, nesse estudo de acurácia diagnóstica, que a probabilidade pré-teste de embolia pulmonar em um paciente, com base em escore clínico, é de 30%. Após um exame com razão de verossimilhança positiva de 6, esse médico deseja estimar a nova probabilidade pós-teste caso o resultado seja positivo. Qual ferramenta gráfica permite essa estimativa sem cálculos matemáticos complexos?",
     "correct": "Nomograma de Fagan, que permite estimar graficamente a probabilidade pós-teste a partir da probabilidade pré-teste e da razão de verossimilhança do resultado obtido, sem necessidade de cálculos manuais complexos",
     "wrongs": [
-      "Curva de Kaplan-Meier, ferramenta destinada à análise de sobrevida ao longo do tempo, sem relação com estimativa de probabilidade pós-teste",
-      "Forest plot, ferramenta destinada à representação gráfica de resultados combinados de múltiplos estudos em metanálises",
-      "Tabela de contingência 2x2 simples, que permite apenas calcular sensibilidade e especificidade, sem estimar diretamente a probabilidade pós-teste",
-      "Gráfico de dispersão de correlação, ferramenta destinada a avaliar associação linear entre duas variáveis contínuas quantitativas"
+      "Curva de Kaplan-Meier, ferramenta destinada à análise de sobrevida ao longo do tempo, sem relação com estimativa de probabilidade pós-teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Forest plot, ferramenta destinada à representação gráfica de resultados combinados de múltiplos estudos em metanálises, combinando quantitativamente resultados de estudos semelhantes, no arranjo institucional e epidemiológico do enunciado",
+      "Tabela de contingência 2x2 simples, que permite apenas calcular sensibilidade e especificidade, sem estimar diretamente a probabilidade pós-teste, proporção de verdadeiros positivos entre os doentes",
+      "Gráfico de dispersão de correlação, ferramenta destinada a avaliar associação linear entre duas variáveis contínuas quantitativas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "O nomograma de Fagan é uma ferramenta gráfica que conecta a probabilidade pré-teste, a razão de verossimilhança do resultado do teste e a probabilidade pós-teste resultante, permitindo estimativas rápidas na prática clínica sem cálculos matemáticos manuais.",
     "trap": "Confundir o nomograma de Fagan com outras ferramentas gráficas epidemiológicas de finalidades distintas, como curvas de sobrevida ou forest plots de metanálises."
@@ -855,10 +855,10 @@
     "stem": "Em um estudo de acurácia diagnóstica, um médico compara um novo exame de imagem, com razão de verossimilhança positiva de 15 para o diagnóstico de determinada condição, a outro exame mais antigo, com razão de verossimilhança positiva de 2 para a mesma condição. Qual interpretação clínica é apropriada para esse médico comparar a utilidade desses dois exames quando o resultado é positivo?",
     "correct": "O novo exame, com RVP de 15, é muito mais útil para confirmar o diagnóstico quando positivo do que o exame antigo, com RVP de 2, pois valores de RVP maiores indicam maior capacidade de aumentar a probabilidade de doença após um resultado positivo",
     "wrongs": [
-      "O exame antigo é mais útil, pois valores menores de RVP sempre indicam maior capacidade discriminatória do teste diagnóstico",
-      "Ambos os exames têm utilidade clínica idêntica, pois a razão de verossimilhança positiva não deve ser utilizada para comparação entre testes diferentes",
-      "Uma RVP de 15 indica que o exame tem sensibilidade de exatamente 15%, independentemente da especificidade observada",
-      "Uma RVP de 2 já é suficiente para confirmar o diagnóstico com a mesma certeza que uma RVP de 15, sem diferença clínica relevante entre elas"
+      "O exame antigo é mais útil, pois valores menores de RVP sempre indicam maior capacidade discriminatória do teste diagnóstico, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado",
+      "Ambos os exames têm utilidade clínica idêntica, pois a razão de verossimilhança positiva não deve ser utilizada para comparação entre testes diferentes, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Uma RVP de 15 indica que o exame tem sensibilidade de exatamente 15%, independentemente da especificidade observada, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "Uma RVP de 2 já é suficiente para confirmar o diagnóstico com a mesma certeza que uma RVP de 15, sem diferença clínica relevante entre elas, com redação completa sobre o mecanismo ou arranjo descrito na alternativa, no arranjo institucional e epidemiológico do enunciado"
     ],
     "explain": "Em geral, RVP acima de 10 é considerada forte evidência diagnóstica quando o resultado é positivo, enquanto valores próximos de 1 a 2 têm pouco impacto na probabilidade pós-teste; assim, o exame com RVP de 15 é claramente mais útil para confirmar o diagnóstico do que o de RVP 2.",
     "trap": "Inverter a escala de interpretação da RVP, achando que valores menores são mais informativos, quando na realidade valores mais altos indicam maior força diagnóstica de um resultado positivo."
@@ -871,10 +871,10 @@
     "stem": "Em um estudo de acurácia diagnóstica, um médico compara dois exames para o diagnóstico de determinada doença: o exame X tem razão de verossimilhança negativa de 0,05, e o exame Y tem razão de verossimilhança negativa de 0,60. Qual exame esse médico deve considerar mais útil quando o objetivo é excluir a doença a partir de um resultado negativo?",
     "correct": "O exame X, com RVN de 0,05, é muito mais útil para excluir a doença quando o resultado é negativo, pois valores de RVN mais próximos de zero indicam maior redução da probabilidade de doença após um resultado negativo",
     "wrongs": [
-      "O exame Y é mais útil, pois valores de RVN mais próximos de 1 indicam maior capacidade de excluir a doença com segurança",
-      "Ambos os exames são igualmente úteis para excluir a doença, pois a razão de verossimilhança negativa não varia conforme o desempenho do teste",
-      "Uma RVN de 0,05 indica que o exame tem especificidade de exatamente 5%, independentemente da sensibilidade observada",
-      "O exame Y deve ser preferido nesse cenário, pois valores mais altos de RVN sempre indicam melhor desempenho diagnóstico geral do teste"
+      "O exame Y é mais útil, pois valores de RVN mais próximos de 1 indicam maior capacidade de excluir a doença com segurança, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Ambos os exames são igualmente úteis para excluir a doença, pois a razão de verossimilhança negativa não varia conforme o desempenho do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa",
+      "Uma RVN de 0,05 indica que o exame tem especificidade de exatamente 5%, independentemente da sensibilidade observada, proporção de verdadeiros positivos entre os doentes, no arranjo institucional e epidemiológico do enunciado",
+      "O exame Y deve ser preferido nesse cenário, pois valores mais altos de RVN sempre indicam melhor desempenho diagnóstico geral do teste, com redação completa sobre o mecanismo ou arranjo descrito na alternativa"
     ],
     "explain": "Quanto mais próxima de zero a razão de verossimilhança negativa, maior a redução da probabilidade de doença após um resultado negativo; uma RVN de 0,05 (exame X) é muito mais informativa para excluir a doença do que uma RVN de 0,60 (exame Y), que reduz pouco essa probabilidade.",
     "trap": "Inverter a escala de interpretação da RVN, achando que valores mais altos (mais próximos de 1) indicam maior utilidade para exclusão diagnóstica, quando o contrário é verdadeiro."

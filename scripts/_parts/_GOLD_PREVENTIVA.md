@@ -23,3 +23,4 @@ Igual Cirurgia/GO: idPrefix, n, group, theme, stem, correct, wrongs[4], explain,
 - 1 correta + 4 near-miss; explain ≥ 100; trap ≥ 35
 - `theme` = nome do deck do flashcard correspondente
 - specialty no merge: `preventiva`
+- **Anti-viés de tamanho:** as 5 alternativas devem ter comprimento parecido. A correta **não** pode ser sistematicamente a mais longa/completa. Distratores também são frases fechadas e informativas (near-miss), não “versões curtas”.
