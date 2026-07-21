@@ -18,11 +18,17 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare3";
+const APROVA_QUESTION_CACHE_VER = "20260721sussp4";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
-/** Espelha provas ready no catálogo de treino (sem duplicar id). */
+function aprovaIsProvaPackGroupLabel (group) {
+  const g = String(group || "").trim();
+  return /^(SUS-SP|ENARE|ENAMED|USP-SP)\b/i.test(g) ||
+    /^ENARE\s*\/\s*ENAMED\b/i.test(g);
+}
+
+/** Espelha provas ready no treino só com grupo de banco (não "SUS-SP YYYY"). */
 async function aprovaAppendProvasIntegraToBag (bag, seen) {
   try {
     const catUrl = APROVA_PROVAS_CATALOG_FILE + "?v=" + APROVA_QUESTION_CACHE_VER;
@@ -32,6 +38,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     const provas = Array.isArray(catData) ? catData : (catData.provas || []);
     for (const prova of provas) {
       if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
+      if (/^sus-sp/i.test(String(prova.exam || prova.id || ""))) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
@@ -47,6 +54,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
           const q = aprovaNormalizeQuestion(raw, hint);
           if (!q || seen[q.id]) return;
           if (q.annulled) return;
+          if (aprovaIsProvaPackGroupLabel(q.group)) return;
           seen[q.id] = true;
           bag.push(q);
         });

@@ -18,7 +18,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721sussp3";
+const APROVA_QUESTION_CACHE_VER = "20260721sussp4";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
@@ -32,9 +32,18 @@ const APROVA_AREA_EXAM_WEIGHT = {
   preventiva: 12
 };
 
+/** Grupo de pack de prova (ex.: "SUS-SP 2026") — não é grupo do banco. */
+function aprovaIsProvaPackGroupLabel (group) {
+  const g = String(group || "").trim();
+  return /^(SUS-SP|ENARE|ENAMED|USP-SP)\b/i.test(g) ||
+    /^ENARE\s*\/\s*ENAMED\b/i.test(g);
+}
+
 /**
- * Espelha questões das provas na íntegra (status ready) no catálogo de treino.
- * Mesmo id → não duplica se já existir na área.
+ * Espelha questões das provas na íntegra no treino só quando o grupo já é
+ * de banco (Cardiologia, Neonatologia…). Packs SUS-SP/ENARE com group
+ * "SUS-SP YYYY" ficam só na Prova na íntegra — o banco curado vem de
+ * data/questions-sus-sp.json (e similares).
  */
 async function aprovaAppendProvasIntegraToBag (bag, seen) {
   try {
@@ -44,8 +53,9 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     const catData = await catRes.json();
     const provas = Array.isArray(catData) ? catData : (catData.provas || []);
     for (const prova of provas) {
-      // Só espelha no banco quando áreas (specialty/group/theme) estão curadas.
       if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
+      // SUS-SP já tem arquivo curado no banco; não espelhar o pack bruto.
+      if (/^sus-sp/i.test(String(prova.exam || prova.id || ""))) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
@@ -60,8 +70,8 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
         list.forEach((raw) => {
           const q = aprovaNormalizeQuestion(raw, hint);
           if (!q || seen[q.id]) return;
-          // Anuladas ficam na prova na íntegra, mas não entram no treino aleatório.
           if (q.annulled) return;
+          if (aprovaIsProvaPackGroupLabel(q.group)) return;
           seen[q.id] = true;
           bag.push(q);
         });
