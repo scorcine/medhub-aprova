@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721mat1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721mat2">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -519,6 +519,14 @@
               <strong id="stat-best-streak">0</strong>
             </article>
           </div>
+
+          <div class="prog-materia" style="margin-top:1.25rem">
+            <div class="label">Matéria em dia</div>
+            <ul class="prog-materia-rows" id="prog-materia-onday"></ul>
+            <div class="label" style="margin-top:1rem">Matéria atrasada</div>
+            <ul class="prog-materia-rows" id="prog-materia-late"></ul>
+          </div>
+
           <div class="study-card" style="margin-top:1rem">
             <div class="label">Por tema</div>
             <div id="stat-themes" class="stat-theme-list">
@@ -643,29 +651,14 @@
                   <div class="metas-track-body">
                     <div class="dash-task-bar" aria-hidden="true"><i id="metas-q-bar" style="width:0%"></i></div>
                     <div class="dash-seu-plano-quota" id="metas-q-quota"></div>
-                    <div class="metas-accuracy-goal" id="metas-accuracy-goal" hidden></div>
                     <ul class="metas-q-periods" id="metas-q-periods"></ul>
-                    <div class="metas-review-waves" id="metas-review-waves" hidden>
-                      <div class="label">3 revisões dos assuntos até a prova</div>
-                      <ol class="metas-waves-list" id="metas-waves-list"></ol>
+                    <div class="aprova-banner aprova-banner--soft metas-review-alert" id="metas-review-alert" hidden>
+                      <strong id="metas-review-alert-title">Revisão recomendada</strong>
+                      <p id="metas-review-alert-body"></p>
+                      <div class="actions-row" id="metas-review-alert-actions"></div>
                     </div>
-                    <div class="metas-weak-nudge" id="metas-weak-nudge" hidden></div>
-                    <div class="metas-materia" id="metas-materia">
-                      <div class="metas-materia-col">
-                        <div class="label">Matéria em dia</div>
-                        <ul class="metas-materia-list" id="metas-materia-onday"></ul>
-                      </div>
-                      <div class="metas-materia-col">
-                        <div class="label">Matéria atrasada</div>
-                        <ul class="metas-materia-list" id="metas-materia-late"></ul>
-                      </div>
-                    </div>
-                    <div class="label" style="margin-top:0.55rem">Foco de hoje · pelas suas provas</div>
+                    <div class="label" style="margin-top:0.55rem">Foco de hoje · o que mais cai</div>
                     <ul class="dash-task-themes" id="metas-q-themes"></ul>
-                    <details class="metas-details" style="margin-top:0.65rem">
-                      <summary>Prévia de amanhã</summary>
-                      <ul class="dash-task-themes" id="metas-q-themes-tomorrow" style="margin-top:0.55rem"></ul>
-                    </details>
                     <div class="actions-row" style="margin-top:0.75rem">
                       <button type="button" class="btn btn-primary" id="metas-q-start-day">Responder bloco de hoje</button>
                     </div>
@@ -858,12 +851,12 @@
   <script src="js/profile.js?v=20260721acc1"></script>
   <script src="js/focus.js?v=20260719h"></script>
   <script src="js/plan.js?v=20260719h"></script>
-  <script src="js/tasks.js?v=20260721mat1"></script>
+  <script src="js/tasks.js?v=20260721mat2"></script>
   <script src="js/schedule.js?v=20260721acc1"></script>
-  <script src="js/exam-stats.js?v=20260721mat1"></script>
+  <script src="js/exam-stats.js?v=20260721mat2"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721mat1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
-  <script src="js/app-qui.js?v=20260721mat1"></script>
+  <script src="js/app-qui.js?v=20260721mat2"></script>
 </body>
 </html>

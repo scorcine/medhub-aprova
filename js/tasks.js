@@ -762,20 +762,7 @@ function aprovaBuildStudyProgram (plan, cardIds, now = Date.now(), focusPack = n
   }));
 
   if (typeof aprovaEnsureMateriaDay === "function") {
-    // Trava o plano de hoje; gera ontem se faltar (para marcar 1 dia de atraso ao pular)
-    const daysToLock = [todayIso, aprovaIsoOffset(-1, now)];
-    daysToLock.forEach((iso) => {
-      const dayPool = aprovaPickThemesForDay(themePool.length ? themePool : themeSets.daily, iso, 8);
-      const dayWeighted = aprovaWeightThemesByAccuracy(dayPool, targetAccuracy, statsSummary);
-      const dayDist = aprovaDistributeThemeCards(dayWeighted, qQuota.daily);
-      const dayThemes = dayDist.map((t) => ({
-        specialty: t.areaId || "",
-        areaLabel: t.areaLabel || "",
-        tema: t.tema,
-        n: t.cards
-      }));
-      aprovaEnsureMateriaDay(iso, dayThemes);
-    });
+    aprovaEnsureMateriaDay(todayIso, qThemes);
   }
 
   const materiaBoard = typeof aprovaBuildMateriaBoard === "function"

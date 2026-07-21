@@ -291,17 +291,27 @@ function aprovaSaveMateriaAgenda (agenda) {
 
 /**
  * Trava o plano do dia na 1ª visita (não troca no meio do dia).
- * @param {string} iso
- * @param {{tema,specialty,areaLabel,n}[]} planned
+ * Só marca opened=true no dia corrente — dias passados sem opened não geram atraso fantasma.
  */
 function aprovaEnsureMateriaDay (iso, planned) {
   const day = String(iso || "");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) return null;
+  const today = typeof aprovaActivityDayKey === "function"
+    ? aprovaActivityDayKey()
+    : new Date().toISOString().slice(0, 10);
   const agenda = aprovaLoadMateriaAgenda();
   const existing = agenda.days[day];
+
   if (existing && Array.isArray(existing.themes) && existing.themes.length) {
+    if (day === today && !existing.opened) {
+      existing.opened = true;
+      aprovaSaveMateriaAgenda(agenda);
+    }
     return existing;
   }
+
+  // Não cria plano para dias passados (evita "atrasado" inventado)
+  if (day < today) return null;
 
   const themes = (Array.isArray(planned) ? planned : []).map((t) => {
     const tema = String(t.tema || "").trim();
@@ -316,7 +326,7 @@ function aprovaEnsureMateriaDay (iso, planned) {
     };
   }).filter((t) => t.tema);
 
-  agenda.days[day] = { themes, lockedAt: Date.now() };
+  agenda.days[day] = { themes, lockedAt: Date.now(), opened: day === today };
   aprovaSaveMateriaAgenda(agenda);
   return agenda.days[day];
 }
@@ -385,7 +395,7 @@ function aprovaDaysBetweenIso (fromIso, toIso) {
 }
 
 /**
- * Quadro: matéria em dia (cumprida hoje) + atrasada (com dias de atraso).
+ * Quadro: matéria em dia (cumprida hoje) + atrasada (só dias que o aluno abriu e não fechou).
  */
 function aprovaBuildMateriaBoard (now = Date.now(), opts) {
   const lookback = Math.max(1, (opts && opts.lookbackDays) || 14);
@@ -393,6 +403,21 @@ function aprovaBuildMateriaBoard (now = Date.now(), opts) {
   const today = typeof aprovaActivityDayKey === "function"
     ? aprovaActivityDayKey(now)
     : new Date(now).toISOString().slice(0, 10);
+
+  // Limpa atrasos fantasmas (dias passados nunca abertos / sem progresso e sem flag opened)
+  let pruned = false;
+  Object.keys(agenda.days).forEach((day) => {
+    if (day >= today) return;
+    const pack = agenda.days[day];
+    if (!pack) return;
+    if (pack.opened) return;
+    const anyDone = Array.isArray(pack.themes) && pack.themes.some((t) => (t.done | 0) > 0);
+    if (!anyDone) {
+      delete agenda.days[day];
+      pruned = true;
+    }
+  });
+  if (pruned) aprovaSaveMateriaAgenda(agenda);
 
   const onTrack = [];
   const pendingToday = [];
@@ -420,7 +445,7 @@ function aprovaBuildMateriaBoard (now = Date.now(), opts) {
     if (day >= today) return;
     if (aprovaDaysBetweenIso(day, today) > lookback) return;
     const pack = agenda.days[day];
-    if (!pack || !Array.isArray(pack.themes)) return;
+    if (!pack || !pack.opened || !Array.isArray(pack.themes)) return;
     const daysLate = aprovaDaysBetweenIso(day, today);
     pack.themes.forEach((row) => {
       if ((row.done | 0) >= (row.goal | 0)) return;

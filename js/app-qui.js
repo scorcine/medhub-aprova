@@ -2796,13 +2796,10 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const qThemesEl = document.getElementById("metas-q-themes");
   const qWeekEl = document.getElementById("metas-q-week");
   const qPeriodsEl = document.getElementById("metas-q-periods");
-  const accGoalEl = document.getElementById("metas-accuracy-goal");
-  const wavesEl = document.getElementById("metas-review-waves");
-  const wavesListEl = document.getElementById("metas-waves-list");
-  const weakNudgeEl = document.getElementById("metas-weak-nudge");
-  const materiaOnEl = document.getElementById("metas-materia-onday");
-  const materiaLateEl = document.getElementById("metas-materia-late");
-  const qTomorrowEl = document.getElementById("metas-q-themes-tomorrow");
+  const reviewAlert = document.getElementById("metas-review-alert");
+  const reviewAlertTitle = document.getElementById("metas-review-alert-title");
+  const reviewAlertBody = document.getElementById("metas-review-alert-body");
+  const reviewAlertActions = document.getElementById("metas-review-alert-actions");
 
   if (program) {
     const daily = (program.tasks || []).find((t) => t.id === "daily");
@@ -2817,29 +2814,16 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
       if (qSummary) qSummary.textContent = qp.done + "/" + qp.goal + " hoje";
       if (qBar) qBar.style.width = Math.min(100, qp.pct || 0) + "%";
       if (qQuotaEl) {
+        const ag = program.accuracyGoal || {};
         qQuotaEl.innerHTML =
           "<span class=\"dash-seu-plano-chip\">" + program.qQuota.daily + " questões/dia</span>" +
           "<span class=\"dash-seu-plano-chip\">~" +
             (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") +
             "/ano</span>" +
-          "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>";
-      }
-      if (accGoalEl) {
-        const ag = program.accuracyGoal || {};
-        const chips = [];
-        if (ag.target != null) {
-          chips.push("<span class=\"dash-seu-plano-chip\">Meta de acerto " + ag.target + "%</span>");
-        }
-        if (ag.current != null) {
-          chips.push("<span class=\"dash-seu-plano-chip\">Seu ritmo " + ag.current + "%</span>");
-        } else {
-          chips.push("<span class=\"dash-seu-plano-chip\">Ainda sem amostra de acertos</span>");
-        }
-        if (ag.gap != null && ag.gap > 0) {
-          chips.push("<span class=\"dash-seu-plano-chip\">Faltam " + ag.gap + " pp</span>");
-        }
-        accGoalEl.hidden = !chips.length;
-        accGoalEl.innerHTML = chips.join("");
+          "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>" +
+          (ag.target != null
+            ? ("<span class=\"dash-seu-plano-chip\">Meta " + ag.target + "%</span>")
+            : "");
       }
       if (qPeriodsEl) {
         const rows = [
@@ -2852,140 +2836,49 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           "<li><strong>" + r[0] + "</strong><em>" + r[1] + "/" + r[2] + "</em></li>"
         )).join("");
       }
-      if (wavesEl && wavesListEl && program.reviewWaves && program.reviewWaves.waves) {
-        wavesEl.hidden = false;
-        wavesListEl.innerHTML = program.reviewWaves.waves.map((w) => (
-          "<li data-status=\"" + (w.status || "") + "\">" +
-            "<strong>" + w.label + (w.status === "current" ? " · agora" : "") + "</strong>" +
-            "<span>" + (w.intent || "") + "</span>" +
-            (w.focus && w.focus.length
-              ? ("<span>" + w.focus.slice(0, 4).join(" · ") +
-                (w.focus.length > 4 ? "…" : "") + "</span>")
-              : "") +
-          "</li>"
-        )).join("");
-      } else if (wavesEl) {
-        wavesEl.hidden = true;
-      }
-      if (weakNudgeEl) {
+      // Aviso só quando precisa revisar (abaixo da meta) — sem lista de 3 ondas
+      if (reviewAlert) {
         const weak = program.weakThemes || [];
+        const wave = program.reviewWaves && program.reviewWaves.current;
         if (weak.length) {
-          weakNudgeEl.hidden = false;
-          const names = weak.slice(0, 3).map((w) => w.tema + " (" + w.pct + "%)").join(", ");
-          weakNudgeEl.innerHTML =
-            "<strong>Abaixo da meta</strong> — " + names +
-            ". Revise antes e combine com flashcards destes temas." +
-            "<div class=\"actions-row\">" +
+          reviewAlert.hidden = false;
+          if (reviewAlertTitle) reviewAlertTitle.textContent = "Revisão recomendada";
+          if (reviewAlertBody) {
+            reviewAlertBody.textContent = weak.slice(0, 3).map((w) => w.tema + " (" + w.pct + "%)").join(", ") +
+              " — abaixo da sua meta. Reforce com questões e flashcards.";
+          }
+          if (reviewAlertActions) {
+            reviewAlert.dataset.weakTema = weak[0].tema || "";
+            reviewAlertActions.innerHTML =
               "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-goto=\"flashcards\">Abrir flashcards</button>" +
-            "</div>";
+              "<button type=\"button\" class=\"btn btn-primary btn-compact\" data-metas-weak-start=\"1\">Responder fracos</button>";
+          }
+        } else if (wave && wave.id === "afinamento") {
+          reviewAlert.hidden = false;
+          if (reviewAlertTitle) reviewAlertTitle.textContent = "Reta final · 3ª revisão";
+          if (reviewAlertBody) {
+            reviewAlertBody.textContent = "Priorize drill nos temas que mais caem e combine com flashcards.";
+          }
+          if (reviewAlertActions) reviewAlertActions.innerHTML = "";
         } else {
-          weakNudgeEl.hidden = true;
-          weakNudgeEl.innerHTML = "";
+          reviewAlert.hidden = true;
         }
-      }
-      if (materiaOnEl || materiaLateEl) {
-        const esc = (s) => String(s || "")
-          .replace(/&/g, "&amp;")
-          .replace(/"/g, "&quot;")
-          .replace(/</g, "&lt;");
-        const board = program.materiaBoard || {};
-        const onDay = [].concat(board.onTrack || [], board.pendingToday || []);
-        if (materiaOnEl) {
-          if (!onDay.length) {
-            materiaOnEl.innerHTML = "<li class=\"muted\">Nada atribuído ainda — abra o foco de hoje.</li>";
-          } else {
-            materiaOnEl.innerHTML = onDay.map((row) => {
-              const ok = (row.done | 0) >= (row.goal | 0);
-              return (
-                "<li class=\"" + (ok ? "metas-materia--ok" : "") + "\">" +
-                  "<strong>" + esc(row.tema) + "</strong>" +
-                  "<span>" +
-                    (row.areaLabel ? esc(row.areaLabel) + " · " : "") +
-                    (ok
-                      ? ("Cumprido hoje · " + row.done + "/" + row.goal)
-                      : ("Hoje · " + row.done + "/" + row.goal + " · faltam " + row.remaining)) +
-                  "</span>" +
-                  (!ok
-                    ? ("<button type=\"button\" class=\"btn btn-ghost btn-compact\"" +
-                      " data-meta-q-spec=\"" + esc(row.specialty) + "\"" +
-                      " data-meta-q-tema=\"" + esc(row.tema) + "\"" +
-                      " data-meta-q-n=\"" + (row.remaining || row.goal) + "\">Responder</button>")
-                    : "") +
-                "</li>"
-              );
-            }).join("");
-          }
-        }
-        if (materiaLateEl) {
-          const late = board.overdue || [];
-          if (!late.length) {
-            materiaLateEl.innerHTML = "<li class=\"muted\">Nenhuma matéria atrasada.</li>";
-          } else {
-            materiaLateEl.innerHTML = late.slice(0, 8).map((row) => (
-              "<li class=\"metas-materia--late\">" +
-                "<strong>" + esc(row.tema) + "</strong>" +
-                "<span>" +
-                  (row.areaLabel ? esc(row.areaLabel) + " · " : "") +
-                  (row.daysLate === 1
-                    ? "1 dia atrasado"
-                    : (row.daysLate + " dias atrasados")) +
-                  " · " + row.done + "/" + row.goal +
-                  (row.remaining ? (" · faltam " + row.remaining) : "") +
-                "</span>" +
-                "<button type=\"button\" class=\"btn btn-ghost btn-compact\"" +
-                  " data-meta-q-spec=\"" + esc(row.specialty) + "\"" +
-                  " data-meta-q-tema=\"" + esc(row.tema) + "\"" +
-                  " data-meta-q-n=\"" + (row.remaining || row.goal) + "\">Recuperar</button>" +
-              "</li>"
-            )).join("");
-          }
-        }
-        const materiaRoot = document.getElementById("metas-materia");
-        if (materiaRoot && !materiaRoot.dataset.metaQBound) {
-          materiaRoot.dataset.metaQBound = "1";
-          materiaRoot.addEventListener("click", (evt) => {
-            const btn = evt.target.closest("[data-meta-q-tema]");
-            if (!btn) return;
+        if (!reviewAlert.dataset.bound) {
+          reviewAlert.dataset.bound = "1";
+          reviewAlert.addEventListener("click", (evt) => {
+            const startWeak = evt.target.closest("[data-metas-weak-start]");
+            if (!startWeak) return;
             evt.preventDefault();
-            aprovaFulfillMetaQuestions(
-              btn.getAttribute("data-meta-q-spec"),
-              btn.getAttribute("data-meta-q-tema"),
-              Number(btn.getAttribute("data-meta-q-n")) || 10
-            );
+            const tema = reviewAlert.dataset.weakTema || "";
+            if (tema) aprovaFulfillMetaQuestions("", tema, 15);
           });
-        }
-      }
-      if (qTomorrowEl) {
-        const esc = (s) => String(s || "")
-          .replace(/&/g, "&amp;")
-          .replace(/"/g, "&quot;")
-          .replace(/</g, "&lt;");
-        const tom = program.qThemesTomorrow || [];
-        if (!tom.length) {
-          qTomorrowEl.innerHTML = "<li class=\"muted\" style=\"list-style:none\">Sem prévia.</li>";
-        } else {
-          qTomorrowEl.innerHTML = tom.map((th) => (
-            "<li>" +
-              "<button type=\"button\" class=\"dash-task-theme-btn\" disabled>" +
-                "<strong>" + (th.n | 0) + "</strong>" +
-                "<span class=\"dash-task-theme-copy\">" +
-                  esc(th.tema) +
-                  (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
-                "</span>" +
-              "</button>" +
-            "</li>"
-          )).join("");
         }
       }
       if (qWeekEl) {
         const t = program.qQuota.targetAccuracy;
         qWeekEl.textContent = t
-          ? ("Volume calculado para meta de " + t + "% de acerto" +
-            (program.qQuota.currentAccuracy != null
-              ? (" (você em " + program.qQuota.currentAccuracy + "%)")
-              : "") +
-            " · ~" + (program.qQuota.annualTarget || 0).toLocaleString("pt-BR") + " questões/ano.")
-          : ("~" + (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") + " questões/ano.");
+          ? ("Volume para meta de " + t + "% · temas rotacionam todo dia.")
+          : "Temas do dia com base no que mais cai nas suas provas.";
       }
       if (qThemesEl) {
         const esc = (s) => String(s || "")
@@ -3002,12 +2895,9 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                 ? aprovaFormatPct(th.pct)
                 : (String(th.pct).replace(".", ",") + "%"))
               : "";
-            const your = th.yourPct != null ? (" · você " + th.yourPct + "%") : "";
-            const bandHint = th.bandLabel ? (" · " + th.bandLabel) : "";
             return (
               "<li>" +
                 "<button type=\"button\" class=\"dash-task-theme-btn\"" +
-                  (th.band ? (" data-band=\"" + esc(th.band) + "\"") : "") +
                   " data-meta-q-spec=\"" + esc(th.specialty) + "\"" +
                   " data-meta-q-tema=\"" + esc(th.tema) + "\"" +
                   " data-meta-q-n=\"" + (th.n | 0) + "\">" +
@@ -3016,7 +2906,6 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
                     esc(th.tema) +
                     (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
                     (pctLabel ? (" <span class=\"metas-q-pct\">" + esc(pctLabel) + "</span>") : "") +
-                    esc(your + bandHint) +
                   "</span>" +
                   "<span class=\"dash-task-theme-go\">Responder</span>" +
                 "</button>" +
@@ -3802,6 +3691,80 @@ function aprovaRenderProgress () {
   }
 
   aprovaRenderExamStats();
+  aprovaRenderMateriaProgress();
+}
+
+function aprovaRenderMateriaProgress () {
+  const onEl = document.getElementById("prog-materia-onday");
+  const lateEl = document.getElementById("prog-materia-late");
+  if (!onEl && !lateEl) return;
+
+  const esc = (s) => String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+
+  let board = { onTrack: [], pendingToday: [], overdue: [] };
+  if (typeof aprovaBuildMateriaBoard === "function") {
+    board = aprovaBuildMateriaBoard(Date.now(), { lookbackDays: 14 });
+  }
+
+  const rowHtml = (row, late) => {
+    const ok = !late && (row.done | 0) >= (row.goal | 0);
+    const status = late
+      ? ((row.daysLate === 1 ? "1 dia atrasado" : (row.daysLate + " dias atrasados")) +
+        " · " + row.done + "/" + row.goal)
+      : (ok
+        ? ("Cumprido · " + row.done + "/" + row.goal)
+        : (row.done + "/" + row.goal + " · faltam " + row.remaining));
+    return (
+      "<li class=\"prog-materia-row" + (late ? " is-late" : (ok ? " is-ok" : "")) + "\">" +
+        "<div class=\"prog-materia-main\">" +
+          "<span class=\"prog-materia-name\">" + esc(row.tema) + "</span>" +
+          "<span class=\"prog-materia-meta\">" +
+            (row.areaLabel ? esc(row.areaLabel) + " · " : "") + status +
+          "</span>" +
+        "</div>" +
+        ((!ok || late)
+          ? ("<button type=\"button\" class=\"linkish\"" +
+            " data-meta-q-spec=\"" + esc(row.specialty) + "\"" +
+            " data-meta-q-tema=\"" + esc(row.tema) + "\"" +
+            " data-meta-q-n=\"" + (row.remaining || row.goal || 10) + "\">" +
+            (late ? "Recuperar" : "Responder") + "</button>")
+          : "") +
+      "</li>"
+    );
+  };
+
+  if (onEl) {
+    const onDay = [].concat(board.onTrack || [], board.pendingToday || []);
+    onEl.innerHTML = onDay.length
+      ? onDay.map((r) => rowHtml(r, false)).join("")
+      : "<li class=\"prog-materia-empty muted\">Nenhuma matéria do dia ainda — abra Minhas metas.</li>";
+  }
+  if (lateEl) {
+    const late = board.overdue || [];
+    lateEl.innerHTML = late.length
+      ? late.slice(0, 10).map((r) => rowHtml(r, true)).join("")
+      : "<li class=\"prog-materia-empty muted\">Nenhuma matéria atrasada.</li>";
+  }
+
+  const root = document.querySelector(".prog-materia");
+  if (root && !root.dataset.metaQBound) {
+    root.dataset.metaQBound = "1";
+    root.addEventListener("click", (evt) => {
+      const btn = evt.target.closest("[data-meta-q-tema]");
+      if (!btn) return;
+      evt.preventDefault();
+      if (typeof aprovaFulfillMetaQuestions === "function") {
+        aprovaFulfillMetaQuestions(
+          btn.getAttribute("data-meta-q-spec"),
+          btn.getAttribute("data-meta-q-tema"),
+          Number(btn.getAttribute("data-meta-q-n")) || 10
+        );
+      }
+    });
+  }
 }
 
 function aprovaRenderConfig () {
