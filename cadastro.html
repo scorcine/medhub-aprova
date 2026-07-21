@@ -75,6 +75,10 @@
           <span>Confirmar senha</span>
           <input type="password" name="password2" id="signup-password2" placeholder="Repita a senha" autocomplete="new-password" required minlength="4">
         </label>
+        <label class="field">
+          <span>Cupom de embaixador <em class="field-optional">(opcional)</em></span>
+          <input type="text" name="coupon" id="signup-coupon" placeholder="Ex.: LIFE-A3K9-X2" autocomplete="off" spellcheck="false" inputmode="text">
+        </label>
 
         <p class="auth-msg" id="auth-msg" hidden></p>
 
@@ -102,8 +106,8 @@
   </footer>
 
   <script src="js/theme.js"></script>
-  <script src="js/access.js"></script>
-  <script src="js/auth.js"></script>
+  <script src="js/access.js?v=20260721trial2"></script>
+  <script src="js/auth.js?v=20260721trial2"></script>
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);

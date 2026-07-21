@@ -2,7 +2,9 @@
 
 const APROVA_USERS_KEY_ACCESS = "medhub-aprova-users-v1";
 const APROVA_INVITES_KEY = "medhub-aprova-invites-v1";
-const APROVA_ACCESS_NOTIFY_EMAIL = "scorcine@gmail.com";
+const APROVA_COUPONS_KEY = "medhub-aprova-coupons-v1";
+const APROVA_COUPON_SALT = "medhub-r1-emb-2026";
+const APROVA_ACCESS_NOTIFY_EMAIL = "medhubr1@gmail.com";
 
 function aprovaAccessLoadUsers () {
   try {
@@ -45,7 +47,9 @@ function aprovaAccessPlanMeta (type) {
   if (type === "m12" || type === "pro-anual") {
     return { plan: "m12", planUntil: now + 12 * month };
   }
-  if (type === "trial-10") return { plan: "m1", planUntil: now + 10 * day };
+  if (type === "trial-10" || type === "trial") {
+    return { plan: "trial", planUntil: now + 10 * day };
+  }
   if (type === "cortesia") return { plan: "m1", planUntil: now + 1 * month };
   return { plan: "m3", planUntil: now + 3 * month };
 }
@@ -202,6 +206,8 @@ async function aprovaAccessNotifyAdminClaim (profile) {
           validade: profile.planUntil
             ? new Date(profile.planUntil).toLocaleDateString("pt-BR")
             : "sem prazo",
+          cupom: profile.coupon || "",
+          embaixador: profile.embassador || "",
           status: "ativo"
         })
       }
@@ -218,6 +224,7 @@ async function aprovaAccessNotifyAdminClaim (profile) {
 function aprovaAccessClaimOrRegister (login, password, extras) {
   const name = String(extras?.name || "").trim();
   const phone = String(extras?.phone || "").trim();
+  const couponRaw = String(extras?.coupon || "").trim();
   const grantFromUrl = extras?.grant || null;
   const key = String(login || "").trim().toLowerCase();
 
@@ -229,6 +236,22 @@ function aprovaAccessClaimOrRegister (login, password, extras) {
   }
   if (!name) {
     return { ok: false, msg: "Informe seu nome." };
+  }
+
+  let couponGrant = null;
+  if (couponRaw) {
+    const checked = aprovaCouponValidate(couponRaw);
+    if (!checked.ok) {
+      return { ok: false, msg: checked.msg || "Cupom inválido." };
+    }
+    const meta = aprovaAccessPlanMeta(checked.type);
+    couponGrant = {
+      plan: meta.plan,
+      planUntil: meta.planUntil,
+      grantedAt: Date.now(),
+      coupon: checked.code,
+      embassador: checked.embassador || ""
+    };
   }
 
   const users = aprovaAccessLoadUsers();
@@ -250,7 +273,7 @@ function aprovaAccessClaimOrRegister (login, password, extras) {
   }
 
   const now = Date.now();
-  const claimed = Boolean(user?.status === "pending" || grant);
+  const unlocked = Boolean(user?.status === "pending" || grant || couponGrant);
 
   user = {
     login: String(login).trim(),
@@ -262,9 +285,17 @@ function aprovaAccessClaimOrRegister (login, password, extras) {
     status: "active",
     createdAt: user?.createdAt || now,
     grantedAt: user?.grantedAt || null,
-    claimedAt: now
+    claimedAt: now,
+    coupon: user?.coupon || null,
+    embassador: user?.embassador || ""
   };
   if (grant) aprovaAccessApplyGrantToUser(user, grant);
+  if (couponGrant) {
+    aprovaAccessApplyGrantToUser(user, couponGrant);
+    user.coupon = couponGrant.coupon;
+    user.embassador = couponGrant.embassador || "";
+    aprovaCouponMarkUsed(couponGrant.coupon, key);
+  }
   users[key] = user;
   aprovaAccessSaveUsers(users);
 
@@ -285,22 +316,26 @@ function aprovaAccessClaimOrRegister (login, password, extras) {
     aprovaAccessSaveInvites(invites);
   }
 
-  if (claimed) {
+  if (unlocked) {
     void aprovaAccessNotifyAdminClaim({
       name,
       email: key,
       phone: user.phone || "",
       plan: user.plan,
-      planUntil: user.planUntil
+      planUntil: user.planUntil,
+      coupon: user.coupon || "",
+      embassador: user.embassador || ""
     });
   }
 
   return {
     ok: true,
-    msg: claimed
-      ? "Conta ativada com o acesso liberado. Bem-vindo!"
-      : "Cadastro feito. Bem-vindo!",
-    claimed,
+    msg: couponGrant
+      ? "Conta criada com acesso completo via cupom. Bem-vindo!"
+      : (unlocked
+        ? "Conta ativada com o acesso liberado. Bem-vindo!"
+        : "Cadastro feito. Bem-vindo!"),
+    claimed: unlocked,
     user
   };
 }
@@ -310,4 +345,162 @@ function aprovaAccessListInvites () {
   return Object.keys(invites)
     .map((k) => invites[k])
     .sort((a, b) => (b.grantedAt || 0) - (a.grantedAt || 0));
+}
+
+/* ——— Cupons de embaixador (código autovalidável; funciona em qualquer aparelho) ——— */
+
+function aprovaCouponLoadCatalog () {
+  try {
+    const raw = JSON.parse(localStorage.getItem(APROVA_COUPONS_KEY) || "[]");
+    return Array.isArray(raw) ? raw : [];
+  } catch {
+    return [];
+  }
+}
+
+function aprovaCouponSaveCatalog (list) {
+  localStorage.setItem(APROVA_COUPONS_KEY, JSON.stringify((list || []).slice(0, 500)));
+}
+
+function aprovaCouponHash (str) {
+  let h = 2166136261;
+  const s = String(str || "");
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return (h >>> 0).toString(36).toUpperCase();
+}
+
+function aprovaCouponRandomId (len) {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let out = "";
+  for (let i = 0; i < (len || 4); i++) {
+    out += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return out;
+}
+
+function aprovaCouponTypeTag (type) {
+  const map = {
+    lifetime: "LIFE",
+    m1: "M1",
+    m3: "M3",
+    m6: "M6",
+    m12: "M12",
+    "trial-10": "T10"
+  };
+  return map[type] || "M3";
+}
+
+function aprovaCouponTypeFromTag (tag) {
+  const map = {
+    LIFE: "lifetime",
+    M1: "m1",
+    M3: "m3",
+    M6: "m6",
+    M12: "m12",
+    T10: "trial-10"
+  };
+  return map[String(tag || "").toUpperCase()] || null;
+}
+
+function aprovaCouponNormalize (code) {
+  return String(code || "").trim().toUpperCase().replace(/\s+/g, "");
+}
+
+function aprovaCouponMakeCode (type) {
+  const tag = aprovaCouponTypeTag(type);
+  const id = aprovaCouponRandomId(4);
+  const body = tag + "-" + id;
+  const chk = aprovaCouponHash(body + "|" + APROVA_COUPON_SALT).slice(0, 2);
+  return body + "-" + chk;
+}
+
+function aprovaCouponValidate (code) {
+  const raw = aprovaCouponNormalize(code);
+  const parts = raw.split("-");
+  if (parts.length !== 3) return { ok: false, msg: "Cupom inválido." };
+  const [tag, id, chk] = parts;
+  const type = aprovaCouponTypeFromTag(tag);
+  if (!type || !id || id.length < 3 || !chk) {
+    return { ok: false, msg: "Cupom inválido." };
+  }
+  const body = tag + "-" + id;
+  const expect = aprovaCouponHash(body + "|" + APROVA_COUPON_SALT).slice(0, 2);
+  if (expect !== chk) {
+    return { ok: false, msg: "Cupom inválido ou adulterado." };
+  }
+  const catalog = aprovaCouponLoadCatalog();
+  const row = catalog.find((c) => aprovaCouponNormalize(c.code) === raw);
+  if (row && row.disabled) {
+    return { ok: false, msg: "Este cupom foi desativado." };
+  }
+  if (row && row.maxUses > 0 && (row.uses | 0) >= (row.maxUses | 0)) {
+    return { ok: false, msg: "Este cupom já atingiu o limite de usos." };
+  }
+  return {
+    ok: true,
+    code: raw,
+    type,
+    embassador: row?.embassador || "",
+    maxUses: row?.maxUses || 0,
+    uses: row?.uses || 0
+  };
+}
+
+function aprovaCouponGenerate (opts) {
+  const type = opts?.type || "m12";
+  const embassador = String(opts?.embassador || "").trim();
+  const maxUses = Math.max(0, Number(opts?.maxUses) || 0);
+  const qty = Math.min(50, Math.max(1, Number(opts?.qty) || 1));
+  const list = aprovaCouponLoadCatalog();
+  const created = [];
+  const now = Date.now();
+  for (let i = 0; i < qty; i++) {
+    const code = aprovaCouponMakeCode(type);
+    const row = {
+      code,
+      type,
+      embassador,
+      maxUses,
+      uses: 0,
+      disabled: false,
+      createdAt: now,
+      redemptions: []
+    };
+    list.unshift(row);
+    created.push(row);
+  }
+  aprovaCouponSaveCatalog(list);
+  return { ok: true, created, msg: created.length + " cupom(ns) gerado(s)." };
+}
+
+function aprovaCouponMarkUsed (code, email) {
+  const raw = aprovaCouponNormalize(code);
+  const list = aprovaCouponLoadCatalog();
+  const idx = list.findIndex((c) => aprovaCouponNormalize(c.code) === raw);
+  if (idx < 0) return;
+  list[idx].uses = (list[idx].uses | 0) + 1;
+  list[idx].redemptions = (list[idx].redemptions || []).slice(0, 40);
+  list[idx].redemptions.unshift({
+    email: String(email || "").toLowerCase(),
+    at: Date.now()
+  });
+  aprovaCouponSaveCatalog(list);
+}
+
+function aprovaCouponDisable (code) {
+  const raw = aprovaCouponNormalize(code);
+  const list = aprovaCouponLoadCatalog();
+  const row = list.find((c) => aprovaCouponNormalize(c.code) === raw);
+  if (!row) return { ok: false, msg: "Cupom não encontrado neste aparelho." };
+  row.disabled = true;
+  aprovaCouponSaveCatalog(list);
+  return { ok: true, msg: "Cupom desativado." };
+}
+
+function aprovaCouponSignupUrl (code, base) {
+  const origin = base || (typeof location !== "undefined" ? location.origin : "");
+  return origin + "/cadastro.html?cupom=" + encodeURIComponent(aprovaCouponNormalize(code));
 }

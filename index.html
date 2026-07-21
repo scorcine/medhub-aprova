@@ -85,7 +85,7 @@
           </div>
           <button type="button" class="hero-trial-pitch" id="trial-pitch-btn" data-trial-open>
             <strong>10 dias grátis no lançamento</strong>
-            <span>Entre na lista agora — em 10 dias a gente te chama pra assinar o Pro.</span>
+            <span>Crie sua conta e o app abre na hora — avisamos quando faltarem 5 dias e 1 dia.</span>
           </button>
         </div>
       </div>
@@ -102,7 +102,7 @@
         </div>
         <button type="button" class="btn btn-ghost btn-compact" data-trial-close aria-label="Fechar">✕</button>
       </div>
-      <p class="trial-modal-lead">Deixe só nome, celular e e-mail. Guardamos seus dados e, em 10 dias, enviamos o convite para assinar.</p>
+      <p class="trial-modal-lead">Crie sua conta e o MedHub R1 abre na hora, com 10 dias de acesso. Avisamos quando faltarem 5 dias e 1 dia; ao vencer, o acesso é encerrado.</p>
       <form class="trial-form" id="trial-form" autocomplete="on">
         <label class="field">
           <span>Nome</span>
@@ -116,16 +116,23 @@
           <span>E-mail</span>
           <input type="email" name="email" id="trial-email" placeholder="seu@email.com" autocomplete="email" required maxlength="120">
         </label>
+        <label class="field">
+          <span>Senha</span>
+          <input type="password" name="password" id="trial-password" placeholder="Mínimo 4 caracteres" autocomplete="new-password" required minlength="4">
+        </label>
+        <label class="field">
+          <span>Confirmar senha</span>
+          <input type="password" name="password2" id="trial-password2" placeholder="Repita a senha" autocomplete="new-password" required minlength="4">
+        </label>
         <p class="auth-msg" id="trial-msg" hidden></p>
         <div class="aprova-modal-actions">
-          <button type="submit" class="btn btn-primary" id="trial-submit">Quero meu teste grátis</button>
+          <button type="submit" class="btn btn-primary" id="trial-submit">Começar meu teste de 10 dias</button>
           <a class="btn btn-ghost" href="#planos" data-trial-close>Ver preços</a>
         </div>
       </form>
       <div class="trial-success" id="trial-success" hidden>
-        <p class="trial-success-title">Pronto — você entrou na lista</p>
-        <p class="trial-success-body">Em até 10 dias entramos em contato no e-mail e no celular cadastrados com o link para assinar.</p>
-        <button type="button" class="btn btn-primary" data-trial-close>Fechar</button>
+        <p class="trial-success-title">Teste liberado</p>
+        <p class="trial-success-body">Abrindo o app…</p>
       </div>
     </div>
   </div>
@@ -312,7 +319,7 @@
         </article>
       </div>
 
-      <p class="pricing-fineprint">Lançamento com <strong>10 dias de teste grátis</strong>. Pagamento online em breve — ao entrar na lista, a gente te chama em 10 dias para assinar com o valor exibido acima.</p>
+      <p class="pricing-fineprint">Lançamento com <strong>10 dias de teste grátis</strong>: você cria a conta e já estuda. Avisamos com 5 dias e 1 dia restantes; ao vencer, o acesso encerra. Pagamento online em breve.</p>
     </section>
 
     <section class="wrap section" id="contato" aria-label="Contato">
@@ -346,8 +353,9 @@
   </footer>
 
   <script src="js/theme.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/trial-lead.js"></script>
+  <script src="js/access.js?v=20260721trial2"></script>
+  <script src="js/auth.js?v=20260721trial2"></script>
+  <script src="js/trial-lead.js?v=20260721trial2"></script>
   <script src="js/contact.js"></script>
 </body>
 </html>

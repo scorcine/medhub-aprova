@@ -29,7 +29,7 @@ function aprovaSaveUsers (users) {
 }
 
 function aprovaShowAuthMsg (text, ok) {
-  const msg = document.getElementById("auth-msg");
+  const msg = document.getElementById("auth-msg") || document.getElementById("trial-msg");
   if (!msg) return;
   msg.hidden = !text;
   msg.textContent = text || "";
@@ -137,6 +137,13 @@ function aprovaLogin (login, password) {
     return false;
   }
 
+  const access = aprovaCheckAccess(user.login);
+  if (!access.ok) {
+    aprovaSaveAuth(null);
+    aprovaShowAuthMsg(access.msg || "Seu acesso expirou.", false);
+    return false;
+  }
+
   aprovaSaveAuth({ login: user.login, name: user.name || user.login, at: Date.now() });
   aprovaShowAuthMsg("Sessão iniciada.", true);
   return true;
@@ -146,12 +153,145 @@ function aprovaLogin (login, password) {
 function aprovaGetUserPlan (login) {
   const users = aprovaLoadUsers();
   const user = users[String(login || "").toLowerCase()];
-  if (!user) return { plan: "free", planUntil: null };
+  if (!user) return { plan: "free", planUntil: null, expired: false };
   const until = user.planUntil || null;
-  if (until && Date.now() > until && user.plan !== "lifetime") {
-    return { plan: "free", planUntil: until, expired: true };
+  const plan = user.plan || "free";
+  if (plan === "lifetime") {
+    return { plan: "lifetime", planUntil: null, expired: false };
   }
-  return { plan: user.plan || "free", planUntil: until, expired: false };
+  if (until && Date.now() > until) {
+    return { plan, planUntil: until, expired: true };
+  }
+  return { plan, planUntil: until, expired: false };
+}
+
+/** Dias restantes do plano com validade (ceil). null = sem prazo. */
+function aprovaPlanDaysLeft (login) {
+  const plan = aprovaGetUserPlan(login);
+  if (!plan || plan.planUntil == null) return null;
+  if (plan.expired) return 0;
+  const ms = Number(plan.planUntil) - Date.now();
+  if (ms <= 0) return 0;
+  return Math.max(1, Math.ceil(ms / 86400000));
+}
+
+/**
+ * Acesso liberado?
+ * - lifetime / planos pagos ativos: ok
+ * - trial com planUntil futuro: ok
+ * - free sem prazo: ok (cadastro simples)
+ * - expirado: bloqueia
+ */
+function aprovaCheckAccess (login) {
+  const key = String(login || "").trim().toLowerCase();
+  if (!key) {
+    return { ok: false, msg: "Faça login para continuar." };
+  }
+  const plan = aprovaGetUserPlan(key);
+  if (plan.expired) {
+    const wasTrial = plan.plan === "trial" || plan.plan === "trial-10";
+    return {
+      ok: false,
+      expired: true,
+      plan: plan.plan,
+      msg: wasTrial
+        ? "Seu teste grátis de 10 dias acabou. Para continuar, fale conosco em medhubr1@gmail.com."
+        : "Seu acesso expirou. Fale conosco em medhubr1@gmail.com para renovar."
+    };
+  }
+  return {
+    ok: true,
+    plan: plan.plan,
+    planUntil: plan.planUntil,
+    daysLeft: aprovaPlanDaysLeft(key)
+  };
+}
+
+/** Se a sessão existir mas o plano expirou, desloga e devolve false. */
+function aprovaEnforceActiveAccess () {
+  const session = aprovaLoadAuth();
+  if (!session || !session.login) return false;
+  const access = aprovaCheckAccess(session.login);
+  if (access.ok) return true;
+  aprovaSaveAuth(null);
+  try {
+    sessionStorage.setItem("medhub-aprova-access-msg", access.msg || "Acesso encerrado.");
+  } catch (e) { /* ignore */ }
+  return false;
+}
+
+function aprovaConsumeAccessMsg () {
+  try {
+    const msg = sessionStorage.getItem("medhub-aprova-access-msg") || "";
+    if (msg) sessionStorage.removeItem("medhub-aprova-access-msg");
+    return msg;
+  } catch (e) {
+    return "";
+  }
+}
+
+const APROVA_TRIAL_WARN_KEY = "medhub-aprova-trial-warn-v1";
+
+function aprovaTrialWarnLoad () {
+  try {
+    return JSON.parse(localStorage.getItem(APROVA_TRIAL_WARN_KEY) || "{}") || {};
+  } catch {
+    return {};
+  }
+}
+
+function aprovaTrialWarnSave (map) {
+  localStorage.setItem(APROVA_TRIAL_WARN_KEY, JSON.stringify(map || {}));
+}
+
+/** Aviso único aos 5 dias e ao 1 dia restantes (plano trial). */
+function aprovaMaybeShowTrialWarning () {
+  const session = aprovaLoadAuth();
+  if (!session || !session.login) return;
+  const plan = aprovaGetUserPlan(session.login);
+  if (plan.plan !== "trial" && plan.plan !== "trial-10") return;
+  const daysLeft = aprovaPlanDaysLeft(session.login);
+  if (daysLeft == null || daysLeft <= 0) return;
+
+  const key = String(session.login).toLowerCase();
+  const map = aprovaTrialWarnLoad();
+  const row = map[key] && typeof map[key] === "object" ? map[key] : {};
+  let milestone = null;
+  if (daysLeft <= 1 && !row.d1) milestone = "d1";
+  else if (daysLeft <= 5 && !row.d5) milestone = "d5";
+  if (!milestone) return;
+
+  row[milestone] = Date.now();
+  map[key] = row;
+  aprovaTrialWarnSave(map);
+
+  const text = daysLeft <= 1
+    ? "Falta 1 dia para o fim do seu teste grátis. Depois disso o acesso será encerrado."
+    : ("Faltam " + daysLeft + " dias para o fim do seu teste grátis.");
+
+  let banner = document.getElementById("trial-access-banner");
+  if (!banner) {
+    banner = document.createElement("div");
+    banner.id = "trial-access-banner";
+    banner.className = "aprova-banner aprova-banner--trial";
+    banner.setAttribute("role", "status");
+    const main = document.querySelector(".app-main--shell") || document.getElementById("app-shell");
+    if (main) main.insertBefore(banner, main.firstChild);
+    else return;
+  }
+  banner.hidden = false;
+  banner.innerHTML =
+    "<strong>Teste grátis</strong>" +
+    "<p>" + text + " Dúvidas: <a href=\"mailto:medhubr1@gmail.com\">medhubr1@gmail.com</a>.</p>" +
+    "<div class=\"actions-row\">" +
+    "<button type=\"button\" class=\"btn btn-ghost btn-compact\" id=\"trial-access-banner-dismiss\">Entendi</button>" +
+    "</div>";
+  const dismiss = document.getElementById("trial-access-banner-dismiss");
+  if (dismiss) {
+    dismiss.addEventListener("click", () => {
+      banner.hidden = true;
+    });
+  }
 }
 
 function aprovaRevealAppShell () {
@@ -203,7 +343,8 @@ function aprovaBootSignupPage () {
     "pro-mensal": "1 mês",
     "pro-anual": "12 meses",
     cortesia: "Cortesia / teste",
-    "trial-10": "10 dias"
+    trial: "Teste grátis 10 dias",
+    "trial-10": "Teste grátis 10 dias"
   };
 
   try {

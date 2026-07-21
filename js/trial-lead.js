@@ -1,4 +1,4 @@
-/* Captura de leads — teste grátis 10 dias (landing) */
+/* Teste grátis 10 dias — cria conta, libera o app na hora e registra lead */
 
 const APROVA_TRIAL_LEADS_KEY = "medhub-aprova-trial-leads-v1";
 const APROVA_TRIAL_NOTIFY_EMAIL = "scorcine@gmail.com";
@@ -67,16 +67,17 @@ async function aprovaTrialNotifyOwner (lead) {
           Accept: "application/json"
         },
         body: JSON.stringify({
-          _subject: "MedHub R1 — lead teste grátis 10 dias",
+          _subject: "MedHub R1 — teste grátis ativado (10 dias)",
           _template: "table",
           _captcha: "false",
           nome: lead.name,
           celular: lead.phone,
           email: lead.email,
-          origem: "Landing — teste grátis lançamento",
-          followUpEm: lead.followUpAt
-            ? new Date(lead.followUpAt).toLocaleDateString("pt-BR")
-            : ""
+          origem: "Landing — teste grátis 10 dias (acesso liberado)",
+          validadeAte: lead.trialUntil
+            ? new Date(lead.trialUntil).toLocaleDateString("pt-BR")
+            : "",
+          status: "ativo"
         })
       }
     );
@@ -86,25 +87,69 @@ async function aprovaTrialNotifyOwner (lead) {
   }
 }
 
+function aprovaTrialBuildGrant (email) {
+  const meta = typeof aprovaAccessPlanMeta === "function"
+    ? aprovaAccessPlanMeta("trial-10")
+    : { plan: "trial", planUntil: Date.now() + 10 * 86400000 };
+  return {
+    email: String(email || "").trim().toLowerCase(),
+    plan: meta.plan || "trial",
+    planUntil: meta.planUntil,
+    grantedAt: Date.now(),
+    type: "trial-10"
+  };
+}
+
 async function aprovaTrialSubmit (event) {
   event.preventDefault();
   const form = event.currentTarget;
   const name = String(form.name?.value || "").trim();
   const phone = String(form.phone?.value || "").trim();
   const email = String(form.email?.value || "").trim().toLowerCase();
+  const password = String(form.password?.value || "");
+  const password2 = String(form.password2?.value || "");
   const phoneDigits = phone.replace(/\D/g, "");
 
   if (!name || !email || phoneDigits.length < 10) {
     aprovaTrialShowMsg("Preencha nome, celular com DDD e e-mail.", false);
     return;
   }
+  if (password.length < 4) {
+    aprovaTrialShowMsg("A senha precisa ter ao menos 4 caracteres.", false);
+    return;
+  }
+  if (password !== password2) {
+    aprovaTrialShowMsg("As senhas não coincidem.", false);
+    return;
+  }
+  if (typeof aprovaRegister !== "function") {
+    aprovaTrialShowMsg("Não foi possível criar a conta. Recarregue a página.", false);
+    return;
+  }
 
   const submit = document.getElementById("trial-submit");
   if (submit) {
     submit.disabled = true;
-    submit.textContent = "Enviando…";
+    submit.textContent = "Liberando acesso…";
   }
   aprovaTrialShowMsg("", false);
+
+  const grant = aprovaTrialBuildGrant(email);
+  const ok = aprovaRegister(email, password, { name, phone, grant });
+  if (!ok) {
+    if (submit) {
+      submit.disabled = false;
+      submit.textContent = "Começar meu teste de 10 dias";
+    }
+    // aprovaRegister já mostrou a mensagem em #auth-msg se existir; espelha em #trial-msg
+    const authMsg = document.getElementById("auth-msg");
+    if (authMsg && authMsg.textContent) {
+      aprovaTrialShowMsg(authMsg.textContent, false);
+    } else {
+      aprovaTrialShowMsg("Não foi possível ativar o teste. Se já tem conta, use Entrar.", false);
+    }
+    return;
+  }
 
   const now = Date.now();
   const lead = {
@@ -112,24 +157,27 @@ async function aprovaTrialSubmit (event) {
     phone,
     email,
     at: now,
-    followUpAt: now + 10 * 24 * 60 * 60 * 1000,
-    source: "landing-trial-10d"
+    trialUntil: grant.planUntil,
+    followUpAt: grant.planUntil,
+    source: "landing-trial-10d",
+    status: "active"
   };
-
   const list = aprovaTrialLoadLeads().filter((row) => row.email !== email);
   list.unshift(lead);
   aprovaTrialSaveLeads(list);
 
-  await aprovaTrialNotifyOwner(lead);
+  void aprovaTrialNotifyOwner(lead);
 
-  form.hidden = true;
-  const success = document.getElementById("trial-success");
-  if (success) success.hidden = false;
-  if (submit) {
-    submit.disabled = false;
-    submit.textContent = "Quero meu teste grátis";
-  }
-  form.reset();
+  aprovaTrialShowMsg("Teste liberado — abrindo o app…", true);
+  if (submit) submit.textContent = "Abrindo…";
+
+  window.setTimeout(() => {
+    if (typeof aprovaEnterAppAfterLogin === "function") {
+      aprovaEnterAppAfterLogin();
+    } else {
+      window.location.href = "app.html";
+    }
+  }, 400);
 }
 
 function aprovaInitTrialLead () {
@@ -145,10 +193,6 @@ function aprovaInitTrialLead () {
 
   document.querySelectorAll("[data-trial-close]").forEach((el) => {
     el.addEventListener("click", () => {
-      if (el.getAttribute("href") === "#planos") {
-        aprovaTrialCloseModal();
-        return;
-      }
       aprovaTrialCloseModal();
     });
   });
@@ -166,6 +210,13 @@ function aprovaInitTrialLead () {
 
   const form = document.getElementById("trial-form");
   if (form) form.addEventListener("submit", aprovaTrialSubmit);
+
+  try {
+    const params = new URLSearchParams(window.location.search || "");
+    if (params.get("trial") === "1" || window.location.hash === "#trial") {
+      aprovaTrialOpenModal();
+    }
+  } catch (e) { /* ignore */ }
 }
 
 if (document.readyState === "loading") {

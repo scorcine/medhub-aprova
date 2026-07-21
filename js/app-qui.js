@@ -6254,10 +6254,15 @@ function aprovaRenderQuestion () {
 }
 
 function aprovaSyncAppAuthUI () {
-  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const gate = document.getElementById("login-gate");
   const shell = document.getElementById("app-shell");
   const sideUser = document.getElementById("sidebar-user-label");
+
+  if (typeof aprovaEnforceActiveAccess === "function") {
+    aprovaEnforceActiveAccess();
+  }
+
+  const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
 
   if (!gate || !shell) return Boolean(session);
 
@@ -6265,12 +6270,21 @@ function aprovaSyncAppAuthUI () {
     gate.hidden = true;
     shell.hidden = false;
     if (sideUser) sideUser.textContent = session.name || session.login;
+    if (typeof aprovaMaybeShowTrialWarning === "function") {
+      aprovaMaybeShowTrialWarning();
+    }
     aprovaRenderDashboard();
     return true;
   }
 
   gate.hidden = false;
   shell.hidden = true;
+  if (typeof aprovaConsumeAccessMsg === "function") {
+    const msg = aprovaConsumeAccessMsg();
+    if (msg && typeof aprovaShowAuthMsg === "function") {
+      aprovaShowAuthMsg(msg, false);
+    }
+  }
   return false;
 }
 

@@ -3157,6 +3157,19 @@ html[data-theme="dark"] .provas-full-chip {
   background: rgba(8, 14, 28, 0.4);
 }
 
+.aprova-banner--trial {
+  border-color: color-mix(in srgb, #b45309 45%, var(--line-strong));
+  background: color-mix(in srgb, #b45309 12%, var(--panel));
+}
+
+.aprova-banner--trial strong {
+  color: #92400e;
+}
+
+html[data-theme="dark"] .aprova-banner--trial strong {
+  color: #fbbf24;
+}
+
 .aprova-banner {
   margin: 0 0 1.15rem;
   padding: 1rem 1.1rem 1.05rem;
