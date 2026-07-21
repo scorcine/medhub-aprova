@@ -2574,6 +2574,15 @@ html[data-theme="dark"] .aprova-modal-panel {
   background: linear-gradient(135deg, rgba(15, 159, 154, 0.12), rgba(15, 159, 154, 0.04));
 }
 
+.aprova-banner--pulse {
+  animation: aprovaBannerPulse 1.2s ease-in-out 2;
+}
+
+@keyframes aprovaBannerPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 159, 154, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(15, 159, 154, 0.28); }
+}
+
 .dash-seu-foco {
   margin: 0 0 1.25rem;
   padding: 1.1rem 1.15rem 1.15rem;

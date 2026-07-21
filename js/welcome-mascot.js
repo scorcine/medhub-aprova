@@ -5,12 +5,10 @@ const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
  * Roteiro da 1ª visita. Use {nome} onde o nome da pessoa deve entrar.
- * Troque este texto pelo roteiro definitivo quando tiver.
  */
 const APROVA_MASCOT_SCRIPT =
-  "Olá, {nome}! Seja bem-vindo ao MedHub R1. " +
-  "Aqui você vai estudar com metas do dia, flashcards e questões no ritmo certo. " +
-  "Nem sempre quantidade é qualidade — vamos com intenção.";
+  "Seja bem-vindo, {nome}, ao aplicativo que irá revolucionar seus estudos. " +
+  "Inicie preenchendo o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
 function aprovaMascotFirstName () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
@@ -89,6 +87,37 @@ function aprovaCloseWelcomeMascotModal () {
   if (modal) modal.hidden = true;
   aprovaMascotMarkWelcomeSeen();
   aprovaRenderInicioMascot();
+
+  // Depois da boas-vindas: Início pedindo o preenchimento do perfil.
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
+
+  if (typeof aprovaGoTo === "function") aprovaGoTo("inicio");
+  else if (typeof aprovaRenderDashboard === "function") aprovaRenderDashboard();
+
+  if (complete) return;
+
+  window.setTimeout(() => {
+    const banner = document.getElementById("dash-profile-banner");
+    const title = document.getElementById("dash-profile-banner-title");
+    const text = document.getElementById("dash-profile-banner-text");
+    const btn = document.getElementById("dash-profile-banner-btn");
+    if (title) title.textContent = "Personalize seu estudo";
+    if (text) {
+      text.textContent =
+        "Preencha seu perfil com as provas que você pretende prestar para liberar uma experiência personalizada.";
+    }
+    if (btn) {
+      btn.textContent = "Configurar meu perfil";
+      btn.setAttribute("data-goto", "perfil");
+      try { btn.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+    }
+    if (banner) {
+      try { banner.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) { /* ignore */ }
+      banner.classList.add("aprova-banner--pulse");
+      window.setTimeout(() => banner.classList.remove("aprova-banner--pulse"), 2400);
+    }
+  }, 120);
 }
 
 function aprovaOpenWelcomeMascotModal () {
