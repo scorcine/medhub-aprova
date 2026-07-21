@@ -350,8 +350,21 @@ function isStrongGO (text) {
   return /gestante|primigesta|pu[ée]rpera|puerp[eé]rio|pr[eé]-?natal|ces[aá]rea|ecl[aâ]mpsia|pr[eé]-ecl|\bNIC\b|Papanicolaou|papanicolau|colo do [uú]tero|mioma|endometriose|menopausa|climat[eé]rio|ondas de calor|sudorese noturna.{0,40}ins[oô]nia|\bDIU\b|sangramento uterino|metrorragia|menarca|vaginose|vulvovaginit|\bHPV\b|mamografia|BI-RADS|c[aâ]ncer de mama|n[oó]dulo de mama|core-biopsy|ov[aá]rios polic|\bSOP\b|placenta|mola hidatiforme|\bRPMO\b|HELLP|gravidez ect|amenorreia|oligomenorreia|dismenorreia|corrimento vaginal|histerectomia|Robson|trabalho de parto|parto pr[eé]-termo|Febrasgo|m[eé]todos contraceptivos|contraceptivo hormonal|assoalho p[eé]lvico|ginecol[oó]gic|prolapso|bola na vagina|sangramento ap[oó]s rela[cç][aã]o|ciclos menstruais|PS da Ginecologia|dispareunia|fluxo menstrual|infertilidade|abortamentos espont|urge-incontin|incontin[eê]ncia urin[aá]ria|profissional do sexo|sa[uú]de da fam[ií]lia.{0,40}vida sexual|antifosfol[ií]pide/i.test(t);
 }
 
+/** Acronym match that does not treat accented letters as word-boundaries (avoids SIM⊂simétricos). */
+function hasAcronym (text, ac) {
+  const re = new RegExp("(?:^|[^A-Za-zÀ-ÖØ-öø-ÿ])" + ac + "(?:[^A-Za-zÀ-ÖØ-öø-ÿ]|$)", "i");
+  return re.test(String(text || ""));
+}
+
 function isStrongPrev (text) {
-  return /\bPNAB\b|\bESF\b|\bAPS\b|aten[cç][aã]o prim[aá]ria|agente comunit[aá]rio|\bACS\b|Pol[ií]tica Nacional|financiamento do SUS|princ[ií]pios.{0,20}SUS|\bRAPS\b|\bCAPS\b|Redu[cç][aã]o de Danos|conselhos de sa[uú]de|caso-controle|coorte|meta-an[aá]lise|Swaroop|vigil[aâ]ncia|\bSINAN\b|C[oó]digo de [eÉ]tica|\bCFM\b|sigilo profissional|sa[uú]de do trabalhador|determinante social|promo[cç][aã]o da sa[uú]de|Programa Sa[uú]de na Escola|\bPSE\b|8[aª] Confer[eê]ncia|participa[cç][aã]o social|Reforma Psiqui[aá]trica|Medicina Preventiva|Epidemiologia|Boletins Epidemiol|Índice de Vulnerabilidade|\bIVS\b|\bGRADE\b|hierarquia das evid|medicina baseada em evid|rastreio|USPSTF|triagem da osteoporose|valor preditivo|sensibilidade e especificidade|raz[aã]o de verossimilhan|likelihood|agrupadas por sorteio|dois tipos distintos de interven|Calend[aá]rio Vacinal Nacional|doa[cç][aã]o.{0,30}[oó]rg[aã]os|NR6|Equipamento de Prote[cç][aã]o Individual|notifica[cç][aã]o compuls/i.test(text);
+  const t = String(text || "");
+  if (hasAcronym(t, "PNAB") || hasAcronym(t, "ESF") || hasAcronym(t, "APS") ||
+      hasAcronym(t, "ACS") || hasAcronym(t, "RAPS") || hasAcronym(t, "CAPS") ||
+      hasAcronym(t, "PSE") || hasAcronym(t, "SINAN") || hasAcronym(t, "CFM") ||
+      hasAcronym(t, "IVS") || hasAcronym(t, "GRADE") || hasAcronym(t, "USPSTF")) {
+    return true;
+  }
+  return /aten[cç][aã]o prim[aá]ria|agente comunit[aá]rio|Pol[ií]tica Nacional|financiamento do SUS|princ[ií]pios.{0,20}SUS|Redu[cç][aã]o de Danos|conselhos de sa[uú]de|caso-controle|\bestudo de coorte\b|meta-an[aá]lise|Swaroop|vigil[aâ]ncia|C[oó]digo de [eÉ]tica|sigilo profissional|sa[uú]de do trabalhador|determinante social|promo[cç][aã]o da sa[uú]de|Programa Sa[uú]de na Escola|8[aª] Confer[eê]ncia|participa[cç][aã]o social|Reforma Psiqui[aá]trica|Medicina Preventiva|Epidemiologia|Boletins Epidemiol|[IÍ]ndice de Vulnerabilidade|hierarquia das evid|medicina baseada em evid|rastreio|triagem da osteoporose|valor preditivo|sensibilidade e especificidade|raz[aã]o de verossimilhan|likelihood|agrupadas por sorteio|dois tipos distintos de interven|Calend[aá]rio Vacinal Nacional|doa[cç][aã]o.{0,30}[oó]rg[aã]os|NR6|Equipamento de Prote[cç][aã]o Individual|notifica[cç][aã]o compuls/i.test(t);
 }
 
 function isStrongCir (text) {
@@ -395,8 +408,15 @@ function resolveSpecialty (stem, rawStem) {
     return { specialty: "go", why: "obstetric-case" };
   }
 
+  // Pediatria antes de preventiva (caso clínico pediátrico > tags de epi/SUS)
+  if (ped) return { specialty: "pediatria", why: "pediatric-patient" };
+  if (/\b(crian[cç]as? menores de|escore-z|peso adequado para a idade|vacina BCG)\b/i.test(text)) {
+    return { specialty: "pediatria", why: "pediatric-theme" };
+  }
+
   // Preventiva / epi / SUS
-  if (/e-SUS|sistemas de informa[cç][aã]o do SUS|Boletins Epidemiol|[IÍ]ndice de Vulnerabilidade|\bIVS\b|\bGRADE\b|hierarquia das evid|valor preditivo|sensibilidade e especificidade|agrupadas por sorteio|USPSTF|triagem da osteoporose|Calend[aá]rio Vacinal Nacional|NR6|Equipamento de Prote[cç][aã]o|princ[ií]pios filos[oó]ficos do SUS|[oó]rg[aã]os e tecidos|doa[cç][aã]o.{0,40}[oó]rg[aã]os|efic[aá]cia de uma vacina|estudo sobre a efic|estudo com lavradores|surto de meningite|Sistema [UÚ]nico de Sa[uú]de|usu[aá]rio idoso do Sistema|[IÍ]ndice de Swaroop|dados do IBGE|taxa desde 2015|overall survival with neoadjuvant|publicaram recentemente|Preven[cç][aã]o Quatern[aá]ria|[Nn][ií]veis de Preven[cç][aã]o|foram noti[Oóf]cados \d|munic[ií]pio.{0,40}\d{1,3}\.?000 habitantes|100\.000 habitantes/i.test(text)) {
+  if (/e-SUS|sistemas de informa[cç][aã]o do SUS|Boletins Epidemiol|[IÍ]ndice de Vulnerabilidade|hierarquia das evid|valor preditivo|sensibilidade e especificidade|agrupadas por sorteio|triagem da osteoporose|Calend[aá]rio Vacinal Nacional|NR6|Equipamento de Prote[cç][aã]o|princ[ií]pios filos[oó]ficos do SUS|[oó]rg[aã]os e tecidos|doa[cç][aã]o.{0,40}[oó]rg[aã]os|efic[aá]cia de uma vacina|estudo sobre a efic|estudo com lavradores|surto de meningite|Sistema [UÚ]nico de Sa[uú]de|usu[aá]rio idoso do Sistema|[IÍ]ndice de Swaroop|dados do IBGE|taxa desde 2015|overall survival with neoadjuvant|publicaram recentemente|Preven[cç][aã]o Quatern[aá]ria|[Nn][ií]veis de Preven[cç][aã]o|foram noti[Oóf]cados \d|munic[ií]pio.{0,40}\d{1,3}\.?000 habitantes|100\.000 habitantes/i.test(text) ||
+      hasAcronym(text, "IVS") || hasAcronym(text, "GRADE") || hasAcronym(text, "USPSTF")) {
     return { specialty: "preventiva", why: "prev-core" };
   }
   if (/caso-controle|meta-an[aá]lise|revis[aã]o sistem[aá]tica|Bradford Hill|delineamento|vi[eé]s de sele[cç]|likelihood|raz[aã]o de chances|odds ratio|testes diagn[oó]sticos/i.test(text)) {
@@ -405,13 +425,9 @@ function resolveSpecialty (stem, rawStem) {
   if (/\bestudo de coorte\b|\bcoorte prospectiv|\bensaios? cl[ií]nicos?\b.*\b(aleatoriz|randomiz|placebo|grupo controle|sorteio)\b/i.test(text)) {
     return { specialty: "preventiva", why: "prev-epi-method" };
   }
-  if (/princ[ií]pios bio[eé]ticos|C[oó]digo de [eÉ]tica|Parecer CFM|Reforma Psiqui[aá]trica|\bRAPS\b|\bCAPS\b|Redu[cç][aã]o de Danos|PNAB|participa[cç][aã]o social|Confer[eê]ncia Nacional de Sa[uú]de|medicina baseada em evid/i.test(text)) {
+  if (/princ[ií]pios bio[eé]ticos|C[oó]digo de [eÉ]tica|Parecer CFM|Reforma Psiqui[aá]trica|Redu[cç][aã]o de Danos|PNAB|participa[cç][aã]o social|Confer[eê]ncia Nacional de Sa[uú]de|medicina baseada em evid/i.test(text) ||
+      hasAcronym(text, "RAPS") || hasAcronym(text, "CAPS")) {
     return { specialty: "preventiva", why: "prev-policy" };
-  }
-
-  if (ped) return { specialty: "pediatria", why: "pediatric-patient" };
-  if (/\b(crian[cç]as? menores de|escore-z|peso adequado para a idade|vacina BCG)\b/i.test(text)) {
-    return { specialty: "pediatria", why: "pediatric-theme" };
   }
 
   if (/durante a gesta[cç][aã]o|na (?:pr[eé]-?)?ecl[aâ]mpsia|na gesta[cç][aã]o/i.test(text)) {

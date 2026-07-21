@@ -268,12 +268,23 @@ function isPediatricPatient (text) {
   return false;
 }
 
+/** Acronym match that does not treat accented letters as word-boundaries (avoids SIM⊂simétricos). */
+function hasAcronym (text, ac) {
+  const re = new RegExp("(?:^|[^A-Za-zÀ-ÖØ-öø-ÿ])" + ac + "(?:[^A-Za-zÀ-ÖØ-öø-ÿ]|$)", "i");
+  return re.test(String(text || ""));
+}
+
 function isObstetricCase (text) {
-  if (/n[aã]o gestantes?/i.test(text) && !/primigesta|pr[eé]-?natal|pu[ée]rpera/i.test(text)) return false;
-  if (/\b(menino|menina|crian[cç]a|lactente)\b/i.test(text) && /vacina|BCG|puericultura|escore-z/i.test(text) && !/gestante|pr[eé]-natal/i.test(text)) {
+  const t = String(text || "");
+  if (/n[aã]o gestantes?/i.test(t) && !/primigesta|pr[eé]-?natal|pu[ée]rpera/i.test(t)) return false;
+  // Lactente/criança com antecedente de prematuridade ≠ caso obstétrico da mãe
+  if (/^(?:Lactente|Menino|Menina|Crian|Rec[eé]m-nasc|\bRN\b)/i.test(t.trim()) ||
+      (/\b(lactente|menino|menina|crian[cç]a)\b/i.test(t) && !/\b(gestante|primigesta|pu[ée]rpera|pr[eé]-?natal|parturiente)\b/i.test(t))) {
     return false;
   }
-  if (/primigesta|secundigesta|mult[ií]para|gestante|pr[eé]-?natal|trabalho de parto|parto pr[eé]-termo|pu[ée]rpera|puerp[eé]rio|semanas de gesta[cç]|partograma|parturiente|mecanismo de parto|p[oó]s-parto|\bHPP\b|G\dA\d|G\dP\d|atraso menstrual|Beta-hCG|parto p[eé]lvico|f[oó]rcipe|prematuridad/i.test(text)) return true;
+  if (/primigesta|secundigesta|mult[ií]para|gestante|pr[eé]-?natal|trabalho de parto|parto pr[eé]-termo|pu[ée]rpera|puerp[eé]rio|semanas de gesta[cç]|partograma|parturiente|mecanismo de parto|p[oó]s-parto|\bHPP\b|G\dA\d|G\dP\d|atraso menstrual|Beta-hCG|parto p[eé]lvico|f[oó]rcipe/i.test(t)) return true;
+  // prematuridade só conta no contexto materno/obstétrico
+  if (/prematuridad/i.test(t) && /\b(gestante|primigesta|pr[eé]-?natal|trabalho de parto|IG\b|idade gestacional)\b/i.test(t)) return true;
   return false;
 }
 
@@ -285,11 +296,19 @@ function isStrongGO (text) {
 }
 
 function isStrongPrev (text) {
-  return /\bPNAB\b|\bESF\b|\bAPS\b|aten[cç][aã]o prim[aá]ria|agente comunit[aá]rio|\bACS\b|Pol[ií]tica Nacional|financiamento do SUS|princ[ií]pios.{0,30}SUS|\bRAPS\b|Redu[cç][aã]o de Danos|conselhos de sa[uú]de|caso-controle|coorte|meta-an[aá]lise|Swaroop|vigil[aâ]ncia|\bSINAN\b|C[oó]digo de [eÉ]tica|\bCFM\b|sigilo profissional|sa[uú]de do trabalhador|determinante social|Determina[cç][aã]o Social|promo[cç][aã]o da sa[uú]de|Programa Sa[uú]de na Escola|\bPSE\b|8[aª] Confer[eê]ncia|participa[cç][aã]o social|Reforma Psiqui[aá]trica|Medicina Preventiva|Tipos de Estudos Epidemiol|N[ií]veis de Preven[cç][aã]o|Preven[cç][aã]o Quatern[aá]ria|Preven[cç][aã]o Secund[aá]ria|Sistema de Informa[cç][aã]o sobre Mortalidade|\bSIM\b|notifica[cç][aã]o compuls|Lista Nacional de Notifica[cç]|Guia Alimentar|rastreio|USPSTF|valor preditivo|sensibilidade e especificidade|indicadores de sa[uacute]de|indicadores de sa[uú]de|participa[cç][aã]o popular|Lei n.? ?8\.?142|Lei n.? ?8\.?080|mudan[cç]as epidemiol|Agravos de Notifica[cç]|cobertura vacinal|calend[aá]rio vacinal/i.test(text);
+  const t = String(text || "");
+  if (hasAcronym(t, "PNAB") || hasAcronym(t, "ESF") || hasAcronym(t, "APS") ||
+      hasAcronym(t, "ACS") || hasAcronym(t, "RAPS") || hasAcronym(t, "PSE") ||
+      hasAcronym(t, "SINAN") || hasAcronym(t, "CFM") || hasAcronym(t, "USPSTF")) {
+    return true;
+  }
+  return /aten[cç][aã]o prim[aá]ria|agente comunit[aá]rio|Pol[ií]tica Nacional|financiamento do SUS|princ[ií]pios.{0,30}SUS|Redu[cç][aã]o de Danos|conselhos de sa[uú]de|caso-controle|\bestudo de coorte\b|coorte prospectiv|meta-an[aá]lise|Swaroop|vigil[aâ]ncia epidemiol|C[oó]digo de [eÉ]tica|sigilo profissional|sa[uú]de do trabalhador|determinante social|Determina[cç][aã]o Social|promo[cç][aã]o da sa[uú]de|Programa Sa[uú]de na Escola|8[aª] Confer[eê]ncia|participa[cç][aã]o social|Reforma Psiqui[aá]trica|Medicina Preventiva|Tipos de Estudos Epidemiol|N[ií]veis de Preven[cç][aã]o|Preven[cç][aã]o Quatern[aá]ria|Preven[cç][aã]o Secund[aá]ria|Sistema de Informa[cç][aã]o sobre Mortalidade|notifica[cç][aã]o compuls|Lista Nacional de Notifica[cç]|Guia Alimentar|rastreamento|rastreio|valor preditivo|sensibilidade e especificidade|sensibilidade de 100%|indicadores de sa[uú]de|participa[cç][aã]o popular|Lei n.? ?8\.?142|Lei n.? ?8\.?080|mudan[cç]as epidemiol|Agravos de Notifica[cç]|cobertura vacinal|calend[aá]rio vacinal|triagem neonatal|teste do pezinho|Programa Nacional de Triagem|Unidades? de Sa[uú]de da Fam[ií]lia|Hist[oó]ria do Sistema [UÚ]nico|sa[uú]de p[uú]blica|letalidade|Odds Ratio|Raz[aã]o de Chances|\bNNT\b|Risco Relativo/i.test(t);
 }
 
 function isStrongCir (text) {
-  return /\bATLS\b|politraumat|abdome agudo|apendicite|diverticulite|Hartmann|colecistite|colecistectomia|obstru[cç][aã]o intestinal|queimadura|toracostomia|pneumot[oó]rax|\bTCE\b|trauma cranio|traumatismo|\bFAST\b|h[eé]rnia|bypass g[aá]strico|pr[eé]-operat[oó]rio|p[oó]s-operat[oó]rio|risco cir[uú]rgico|anastomose|pancreatite|isquemia mesent|Forrest|hepatectomia|tireoidectomia|anest[eé]sicos?(?: locais| inalat)|queloide|s[ií]ndrome compartimental|laparotomia|Le Fort|cricotireoid|via a[eé]rea dif[ií]cil|ferimento por arma|hemorroid|colectomia|eviscera|REMIT|Resposta End[oó]crino|jato urin[aá]rio|f[ií]stulas intestinais|cirurgias anteriores|tipo de anestesia/i.test(text);
+  const t = String(text || "");
+  if (hasAcronym(t, "ATLS") || hasAcronym(t, "FAST") || hasAcronym(t, "TCE")) return true;
+  return /politraumat|abdome agudo|apendicite|diverticulite|Hartmann|colecistite|colecistectomia|obstru[cç][aã]o intestinal|queimadura|toracostomia|pneumot[oó]rax|trauma cranio|traumatismo|h[eé]rnia|bypass g[aá]strico|cirurgia bari[aá]trica|pr[eé]-operat[oó]rio|p[oó]s-operat[oó]rio|risco cir[uú]rgico|anastomose|pancreatite aguda|isquemia mesent|isquemia intestinal|Forrest|hepatectomia|tireoidectomia|anest[eé]sicos?(?: locais| inalat)|queloide|s[ií]ndrome compartimental|laparotomia|Le Fort|cricotireoid|via a[eé]rea dif[ií]cil|ferimento por arma|hemorroid|colectomia|eviscera|REMIT|Resposta End[oó]crino|jato urin[aá]rio|f[ií]stulas intestinais|cirurgias anteriores|tipo de anestesia|s[ií]ndrome de Mirizzi|cistos? de col[eé]doco|Todani|art[eé]ria c[ií]stica|ves[ií]cula biliar|choque hemorr[aá]gico|fios? de sutura|antibioticoprofilaxia|grau de contamina[cç]|estomas?|manobra de Pringle|tr[ií]ade letal|S[ií]ndrome de Boerhaave|perfura[cç][aã]o esof[aá]gica|lit[ií]ase urin[aá]ria|c[aâ]ncer (?:do )?c[oó]lon|c[aâ]ncer col[oô]nico|n[oó]dulos hep[aá]ticos|Ambulat[oó]rio de Cirurgia|manejo cir[uú]rgico|tratamento cir[uú]rgico/i.test(t);
 }
 
 function isStrongClin (text) {
@@ -305,7 +324,7 @@ function resolveSpecialty (stem) {
   const clin = isStrongClin(text);
   const obst = isObstetricCase(text);
 
-  if (/\bNIC\b|Papanicolaou|papanicolau|colo do [uú]tero|colposcop|vulvovaginit|assoalho p[eé]lvico|partograma/i.test(text)) {
+  if (hasAcronym(text, "NIC") || /Papanicolaou|papanicolau|colo do [uú]tero|colposcop|vulvovaginit|assoalho p[eé]lvico|partograma/i.test(text)) {
     return { specialty: "go", why: "oncogin" };
   }
 
@@ -314,14 +333,30 @@ function resolveSpecialty (stem) {
       (/\b(rec[eé]m-nascido|rec[eé]m-nasc|\bRN\b)\b/i.test(text) && /apgar|taquipne|icter|aleitamento|choro|t[oô]nus|pele a pele/i.test(text))) {
     return { specialty: "pediatria", why: "rn-neonatal" };
   }
-  if (/sepse neonatal|Kawasaki/i.test(text)) return { specialty: "pediatria", why: "ped-theme" };
+  if (/sepse neonatal|meningite neonatal|hiperbilirrubinemia|Kawasaki|s[ií]ndrome inflamat[oó]ria multissist[eê]mica pedi/i.test(text)) {
+    return { specialty: "pediatria", why: "ped-theme" };
+  }
+  if (/\bescolar\b.{0,40}\b(intoxic|PSI|pronto)|Rec[eé]m-nascido,.+\bdias de vida\b/i.test(text)) {
+    return { specialty: "pediatria", why: "ped-theme" };
+  }
 
-  if (obst || (/trabalho de parto|primigesta|puerp[eé]rio|partograma|parturiente|mecanismo de parto|p[oó]s-parto|\bHPP\b/i.test(text) &&
-      !/^(RN\b|Rec[eé]m-nasc|Lactente|Crian)/i.test(text.trim()))) {
+  if (obst || (/trabalho de parto|primigesta|puerp[eé]rio|partograma|parturiente|mecanismo de parto|p[oó]s-parto|\bHPP\b|distocia de ombro|prolapso de cord[aã]o/i.test(text) &&
+      !/^(RN\b|Rec[eé]m-nasc|Lactente|Crian|Menino|Menina)/i.test(text.trim()))) {
     return { specialty: "go", why: "obstetric-case" };
   }
 
-  if (/Tipos de Estudos Epidemiol|N[ií]veis de Preven[cç]|Preven[cç][aã]o Quatern|Preven[cç][aã]o Secund|Sistema de Informa[cç].{0,20}Mortalidade|\bSIM\b|Declara[cç][aã]o de Nascido Vivo|\bDN\b.{0,40}Mortalidade|notifica[cç][aã]o compuls|Lista Nacional de Notifica[cç]|Guia Alimentar|Determina[cç][aã]o Social|participa[cç][aã]o popular|indicadores de sa[uú]de|Lei n.? ?8\.?142|Lei n.? ?8\.?080|Lei complementar|Lei Org[aâ]nica da Sa[uú]de|Agravos de Notifica[cç]|mudan[cç]as epidemiol|estudo realizado nos Estados Unidos|Framingham|acompanhadas 118|Odds Ratio|Raz[aã]o de Chances|\bNNT\b|Risco Relativo|coeficiente de mortalidade|mortalidade infantil|n[ií]veis de aten[cç][aã]o.{0,20}SUS|Tnanciamento do Sistema|[Ff]inanciamento do Sistema [UÚ]nico|Manual de Planejamento|epidemiologia cl[ií]nica|associa[cç][oõ]es revers[ií]veis/i.test(text)) {
+  // Pediatria ANTES de preventiva (evita falso positivo de acrônimos / epi em caso pediátrico)
+  if (ped) return { specialty: "pediatria", why: "pediatric-patient" };
+  if (/\b(crian[cç]as? menores de|escore-z|peso adequado para a idade|vacina BCG)\b/i.test(text) && !/gestante|pr[eé]-?natal/i.test(text)) {
+    return { specialty: "pediatria", why: "pediatric-theme" };
+  }
+  const age = ageYears(text);
+  if (age != null && age <= 12 && /^(?:Paciente|Menino|Menina|Crian|Escolar|Lactente)/i.test(text.trim())) {
+    return { specialty: "pediatria", why: "pediatric-age" };
+  }
+
+  if (/Tipos de Estudos Epidemiol|N[ií]veis de Preven[cç]|Preven[cç][aã]o Quatern|Preven[cç][aã]o Secund|Sistema de Informa[cç].{0,20}Mortalidade|Declara[cç][aã]o de Nascido Vivo|notifica[cç][aã]o compuls|Lista Nacional de Notifica[cç]|Guia Alimentar|Determina[cç][aã]o Social|participa[cç][aã]o popular|indicadores de sa[uú]de|Lei n.? ?8\.?142|Lei n.? ?8\.?080|Lei complementar|Lei Org[aâ]nica da Sa[uú]de|Agravos de Notifica[cç]|mudan[cç]as epidemiol|estudo realizado nos Estados Unidos|Framingham|acompanhadas 118|Odds Ratio|Raz[aã]o de Chances|Risco Relativo|coeficiente de mortalidade|mortalidade infantil|n[ií]veis de aten[cç][aã]o.{0,20}SUS|[Ff]inanciamento do Sistema [UÚ]nico|Manual de Planejamento|epidemiologia cl[ií]nica|associa[cç][oõ]es revers[ií]veis|triagem neonatal|teste do pezinho|exame de rastreamento|falsos? positivos?/i.test(text) ||
+      hasAcronym(text, "NNT") || hasAcronym(text, "SIM")) {
     return { specialty: "preventiva", why: "prev-core" };
   }
   if (/caso-controle|meta-an[aá]lise|revis[aã]o sistem[aá]tica|Bradford Hill|delineamento|valor preditivo|sensibilidade e especificidade|estudos epidemiol|fatores de risco de uma forma rara|ensaio cl[ií]nico randomizado|pesquisador deseja estudar/i.test(text)) {
@@ -330,26 +365,24 @@ function resolveSpecialty (stem) {
   if (/\bestudo de coorte\b|\bcoorte prospectiv|\bensaios? cl[ií]nicos?\b.*\b(aleatoriz|randomiz|placebo|grupo controle)\b|estudo de 1997 que acompanhou/i.test(text)) {
     return { specialty: "preventiva", why: "prev-epi-method" };
   }
-  if (/princ[ií]pios bio[eé]ticos|C[oó]digo de [eÉ]tica|Parecer CFM|Reforma Psiqui[aá]trica|\bRAPS\b|PNAB|participa[cç][aã]o social|Confer[eê]ncia Nacional|Programa Sa[uú]de na Escola|princ[ií]pios organizativos do SUS|Pol[ií]ticas de Sa[uú]de do Sistema [UÚ]nico/i.test(text)) {
+  if (/princ[ií]pios bio[eé]ticos|C[oó]digo de [eÉ]tica|Parecer CFM|Reforma Psiqui[aá]trica|PNAB|participa[cç][aã]o social|Confer[eê]ncia Nacional|Programa Sa[uú]de na Escola|princ[ií]pios organizativos do SUS|Pol[ií]ticas de Sa[uú]de do Sistema [UÚ]nico|Hist[oó]ria do Sistema [UÚ]nico|Unidades? de Sa[uú]de da Fam[ií]lia|sa[uú]de p[uú]blica|Winslow|popula[cç][aã]o em situa[cç][aã]o de rua|medica[cç][oõ]es de controle especial|delegado.{0,40}prontu[aá]rio|c[oó]pia de prontu[aá]rio/i.test(text) ||
+      hasAcronym(text, "RAPS")) {
     return { specialty: "preventiva", why: "prev-policy" };
   }
 
-  if (ped) return { specialty: "pediatria", why: "pediatric-patient" };
-  if (/\b(crian[cç]as? menores de|escore-z|peso adequado para a idade|vacina BCG|calend[aá]rio vacinal)\b/i.test(text) && !/prematuridade obstetr|gestante/i.test(text)) {
-    return { specialty: "pediatria", why: "pediatric-theme" };
+  if (/durante a gesta[cç][aã]o|na gesta[cç][aã]o|anticoncep|contracep|dor p[eé]lvica|secre[cç][aã]o vaginal|corrimento (?:mucopurulento|uretral|vaginal)|sangramento p[oó]s-coito|colpocitolog|ASCUS|\bAGC\b|fogachos|adenomiose|prurido vulvar|distopias? genitais|transmiss[aã]o vertical|assist[eê]ncia ao parto|tercigesta|distocia de ombro|prolapso (?:de )?cord/i.test(text)) {
+    return { specialty: "go", why: "go-gestation" };
   }
-
-  if (/durante a gesta[cç][aã]o|na gesta[cç][aã]o/i.test(text)) return { specialty: "go", why: "go-gestation" };
   if (go) return { specialty: "go", why: "go-strong" };
   if (prev) return { specialty: "preventiva", why: "prev-strong" };
 
-  if (/p[oó]s-operat|pr[eé]-operat|ferimento por arma|queimadura|hemorroid|colectomia|tireoidectomia|REMIT|jato urin[aá]rio|f[ií]stulas intestinais|politraumat|ATLS|abdome agudo|apendic|colecist|h[eé]rnia/i.test(text)) {
+  if (/p[oó]s-operat|pr[eé]-operat|ferimento por arma|queimadura|hemorroid|colectomia|tireoidectomia|REMIT|jato urin[aá]rio|f[ií]stulas (?:intestinais|digestivas)|politraumat|ATLS|abdome agudo|apendic|colecist|h[eé]rnia|cirurgia bari[aá]trica|Mirizzi|Todani|art[eé]ria c[ií]stica|Boerhaave|Pringle|tr[ií]ade letal|antibioticoprofilaxia|fios? de sutura|choque hemorr|Gustillo|n[oó] cir[uú]rgico|infec[cç][oõ]es? do s[ií]tio cir[uú]rgico|classifica[cç][aã]o START|agentes anest[eé]sicos|esofagectomia|aneurisma a[oó]rtico|sinal do iliopsoas|Sengstaken|Lauren|neoplasias? do p[aâ]ncreas|ressec[cç][aã]o hep[aá]tica|intestino curto|hemibolsa escrotal|By-pass g[aá]strico|bypass g[aá]strico|diverticul/i.test(text)) {
     return { specialty: "cirurgia", why: "cir-core" };
   }
   if (cir && !clin) return { specialty: "cirurgia", why: "cir-strong" };
   if (cir && clin) {
     return {
-      specialty: /h[eé]rnia|abdome agudo|apendic|colecist|trauma|ATLS|queimadura|anest[eé]sico|p[oó]s-operat|ferimento/i.test(text)
+      specialty: /h[eé]rnia|abdome agudo|apendic|colecist|trauma|ATLS|queimadura|anest[eé]sico|p[oó]s-operat|ferimento|bari[aá]trica|Mirizzi|diverticul|isquemia (?:mesent|intestinal)|estoma|sutura|profilaxia antibi[oó]tica/i.test(text)
         ? "cirurgia"
         : "clinica",
       why: "cir-clin-tie"

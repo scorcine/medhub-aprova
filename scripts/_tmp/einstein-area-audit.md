@@ -5,13 +5,13 @@ Total: **425** questões.
 | Ano | Clin | Cir | Ped | GO | Prev | Alts | Kept |
 |---|---:|---:|---:|---:|---:|---|---:|
 | 2021 | 11 | 8 | 10 | 11 | 10 | {"5":50} | 50 |
-| 2022 | 30 | 11 | 13 | 16 | 5 | {"4":75} | 75 |
-| 2023 | 27 | 9 | 18 | 19 | 2 | {"4":75} | 75 |
-| 2024 | 20 | 11 | 17 | 21 | 6 | {"4":75} | 75 |
-| 2025 | 34 | 7 | 15 | 12 | 7 | {"4":75} | 75 |
-| 2026 | 31 | 8 | 14 | 15 | 7 | {"4":75} | 75 |
+| 2022 | 25 | 12 | 14 | 19 | 5 | {"4":75} | 75 |
+| 2023 | 24 | 10 | 18 | 21 | 2 | {"4":75} | 75 |
+| 2024 | 20 | 12 | 17 | 21 | 5 | {"4":75} | 75 |
+| 2025 | 29 | 9 | 15 | 15 | 7 | {"4":75} | 75 |
+| 2026 | 29 | 10 | 14 | 15 | 7 | {"4":75} | 75 |
 
-**Totais:** clinica 153 · cirurgia 54 · pediatria 87 · go 94 · preventiva 37
+**Totais:** clinica 138 · cirurgia 61 · pediatria 88 · go 102 · preventiva 36
 
 > Packs em `data/provas/einstein-YYYY.json` (Prova na íntegra).
 > **Banco de questões ainda NÃO foi gerado** — confirme as áreas antes.
@@ -60,7 +60,7 @@ Total: **425** questões.
 - **Q3** (pediatric-patient): escolar, sexo feminino, 4 anos, em consulta de rotina com pediatra referem que as fotos de sua 8lha, quando tiradas com flash, apresentam a 
 - **Q4** (pediatric-patient): Menina, 8 anos de idade, chora e tem di8culdade ao caminhar. Ao exame físico apresenta hematomas nas nádegas e braços, além de joelho edemac
 - **Q5** (rn-neonatal): no RN Recém-nascido pré-termo tardio, com 36 semanas e 4 dias de idade gestacional, é levado ao pronto-socorro no quinto dia de vida com que
-- **Q7** (pediatric-patient): Lactente de 8 meses, previamente hígido, apresenta história de febre diária de 38,5° a 39 °C há 5 dias e irritabilidade. Há um dia apresenta
+- **Q6** (manual): Escarlatina MP, sexo feminino, 7 anos de idade, com queixa de dor de garganta e febre de 38,9 °C há 3 dias, lesões na pele há 1 dia e dor ab
 
 ### go
 - **Q18** (obstetric-case): na gestação DHEG Gestante de 32 anos, na 30ª semana de gestação, apresenta pressão arterial sistólica 156 mmHg e pressão arterial diastólica
@@ -71,8 +71,8 @@ Total: **425** questões.
 ### clinica
 - **Q1** (default): Paciente de 65 anos, feminina, com apatia, sensação de tristeza e de fardo para a família, sentimento de culpa e baixa autoestima, relatou q
 - **Q2** (default): uma Unidade de Pronto Atendimento com história de irritabilidade e recusa a andar ou 8car em pé há quatro dias. Nega anorexia e febre. Mãe r
-- **Q6** (default): Escarlatina MP, sexo feminino, 7 anos de idade, com queixa de dor de garganta e febre de 38,9 °C há 3 dias, lesões na pele há 1 dia e dor ab
 - **Q8** (default): Atividade Física As diretrizes de atividade física da OMS recomendam que
+- **Q30** (default): mulher de 66 anos apresenta linfoadenopatia (LAP) regional unilateral. A paciente relata aplicação de vacina Pfizer-BioNTech contra Covid-19
 
 ### cirurgia
 - **Q12** (cir-core): Paciente de 4 anos de idade previamente hígido estava internado com pneumonia bilateral na enfermaria. Evoluiu com insu8ciência respiratória
@@ -101,8 +101,8 @@ Total: **425** questões.
 ### clinica
 - **Q1** (clin-strong): Mulher de 30 anos apresenta crise de agitação intensa, nervosismo, choro e fala incoerente há 2 horas. Faz consultas com psicólogo por sinto
 - **Q2** (clin-strong): Uma mulher de 23 anos de idade foi encaminhada para a UTI, após tentativa de suicídio, com quadro de agitação, delirium, em midríase, hipert
-- **Q28** (default): Mulher, 26 anos de idade, proMssional do sexo, dá entrada em pronto-socorro com dor tipo cólica suprapúbica de moderada intensidade e sangra
 - **Q29** (default): Considere o caso abaixo para responder à questão Uma queixa frequente de pacientes que tiveram Covid-19 é de uma alteração cognitiva leve, c
+- **Q43** (default): Homem de 75 anos de idade retorna ao ambulatório por quadro de tosse há cerca de 3 semanas, com melhora parcial nos últimos dias. É hiperten
 
 ### cirurgia
 - **Q4** (cir-strong): Homem, 62 anos de idade, é levado a um pronto atendimento com queixa de tontura e sensação de que o ambiente está girando. Refere ter tido n
@@ -137,17 +137,17 @@ Total: **425** questões.
 - **Q41** (clin-strong): Mulher, 68 anos, com diagnóstico de DPOC, ex-tabagista com carga tabágica de 80 maços-ano, comparece em consulta de seguimento com queixa de
 
 ### cirurgia
+- **Q50** (manual): com história de enterorragia e perda ponderal de 8 kg vai ao pronto-socorro com fadiga, dores no ânus e hipogástrio há aproximadamente 2 mes
 - **Q52** (cir-strong): Paciente de 25 anos, usuário de crack é submetido a laparotomia por pneumoperitônio e sepse grave, necessitando de noradrenalina para manter
 - **Q66** (cir-core): Paciente de 73 anos está internada por quadro de distensão abdominal, inapetência e parada de eliminação de gases e fezes há 5 dias. Anteced
 - **Q67** (cir-strong): na Doença de Crohn Íleo Paralítico Paciente de 17 anos, IMC: 20 kg/m², vai ao pronto-socorro com dor abdominal difusa há 6 meses, contínua, 
-- **Q68** (cir-core): Paciente com 62 anos vai ao pronto-socorro com dor em hipocôndrio direito, com irradiação para o dorso, associada a náuseas e vômitos, há 1 
 
 ## 2025
 
 ### preventiva
 - **Q1** (prev-strong): Qual das alternativas a seguir descreve, corretamente, as características da população assistida pela Atenção Primária à Saúde (APS) no Bras
 - **Q2** (prev-policy): Uma paciente com transtorno por uso de álcool chega a um Centro de Atenção Psicossocial (CAPS) solicitando apoio para ficar abstinente. Cris
-- **Q24** (prev-strong): Filtro especial identificando o tipo de estudo epidemiológico pela descrição da metodologia Direção do Estudo prospectivo x retrospectivo Es
+- **Q24** (manual): Filtro especial identificando o tipo de estudo epidemiológico pela descrição da metodologia Direção do Estudo prospectivo x retrospectivo Es
 - **Q25** (prev-epi-method): Sobre revisão sistemática e meta-análise, assinale a alternativa correta.
 
 ### pediatria
@@ -160,19 +160,19 @@ Total: **425** questões.
 - **Q5** (obstetric-case): Ventilação com pressão positiva Recém-nascido a termo e adequado para a idade gestacional (39 semanas) apresenta hipotonia e apneia logo apó
 - **Q16** (obstetric-case): Assinale a alternativa correta em relação ao manejo pré-natal de gestante com tipagem sanguínea Rh negativo, aloimunizada.
 - **Q17** (obstetric-case): Gestante com sorologias de sí>lis não reagentes, no início do pré-natal, retorna na 28ª semana com teste treponêmico positivo. É correto afi
-- **Q21** (obstetric-case): Paciente de 30 anos, antecedente de hipotireoidismo e hipertensão crônica, encontra-se na primeira hora do puerpério de parto vaginal gemela
+- **Q20** (manual): Mulher de 28 anos, com atraso menstrual de 7 semanas, refere sangramento vaginal associado a dor em baixo ventre. Assinale a alternativa que
 
 ### clinica
 - **Q15** (default): Um paciente do sexo masculino de 37 anos de idade, portador de doença de Crohn, atualmente em uso de adalimumabe 40 mg em infusões quinzenai
 - **Q18** (default): Paciente de 40 anos comparece à consulta obstétrica pré-concepção. Encontra-se com obesidade grau I e diabetes tipo 2 há 8 anos, em uso de m
 - **Q19** (default): Paciente IIGIPN, 35 anos, primeira gestação com o atual parceiro, apresenta-se na 35ª semana gestacional com PA: 173 x 121 mmHg, confirmada 
-- **Q20** (default): Mulher de 28 anos, com atraso menstrual de 7 semanas, refere sangramento vaginal associado a dor em baixo ventre. Assinale a alternativa que
+- **Q22** (default): Avaliação do estreito superior Platipeloide Parturiente de 39 semanas, 22 anos, é submetida à pelvimetria clínica. Observam-se uma pelve ova
 
 ### cirurgia
 - **Q56** (cir-strong): Mulher, 70 anos, DM tipo 2 e HAS, ambas com controle adequado. Hematoquezia há 3 meses. Refere emagrecimento não intencional de 10 kg, em 6 
 - **Q57** (cir-core): Paciente do sexo masculino, 58 anos, vem por quadro de hematêmese e melena há 2 horas. Acompanhante refere que esse é o segundo episódio de 
-- **Q71** (cir-core): Homem, 22 anos, vítima de queda de motocicleta a 50 km/h, sem capacete, há 30 minutos. Trazido pelo resgate em prancha rígida e com colar ce
-- **Q72** (cir-strong): Homem, 22 anos, vítima de colisão de carro a 70 km/h contra um caminhão; o condutor estava sem cinto de segurança. Dados locais: PA 100 x 70
+- **Q68** (manual): Paciente de 68 anos, sexo feminino, apresenta quadro de icterícia progressiva, colúria e acolia, nos últimos 2 meses. Refere perda de peso d
+- **Q69** (manual): Paciente do sexo feminino, 12 anos, com quadro de dor em cólica intermitente em hipocôndrio direito há 2 meses. Realizou ultrassom de abdome
 
 ## 2026
 
@@ -202,7 +202,7 @@ Total: **425** questões.
 
 ### cirurgia
 - **Q40** (cir-core): Um paciente de 7 anos encontra-se internado em UTI pediátrica devido a queimaduras que acometem 40% da superfície corpórea. Está intubado e 
+- **Q53** (manual): Homem de 74 anos apresenta icterícia progressiva há 1 mês, colúria e prurido intenso. Relata também perda de 12 kg nos últimos 3 meses. Tem 
 - **Q55** (cir-core): Homem de 32 anos, previamente hígido, com história de dor abdominal em andar superior de forte intensidade há 2 dias, associada a dois episó
 - **Q64** (cir-core): Homem de 28 anos sofreu trauma doméstico com serra elétrica, evoluindo com perda de substância na ponta do II quirodáctilo direito, com expo
-- **Q67** (cir-core): Homem de 47 anos foi submetido a hemorroidectomia aberta por doença hemorroidária grau III pela técnica de Milligan- Morgan. Evoluiu bem no 
 

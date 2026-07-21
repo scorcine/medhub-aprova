@@ -4,14 +4,14 @@ Total: **600** questões.
 
 | Ano | Clin | Cir | Ped | GO | Prev | Alts |
 |---|---:|---:|---:|---:|---:|---|
-| 2021 | 38 | 6 | 17 | 19 | 20 | {"4":100} |
-| 2022 | 38 | 11 | 17 | 21 | 13 | {"5":100} |
-| 2023 | 43 | 4 | 17 | 17 | 19 | {"5":100} |
-| 2024 | 51 | 6 | 14 | 21 | 8 | {"5":100} |
-| 2025 | 55 | 4 | 14 | 18 | 9 | {"4":100} |
-| 2026 | 39 | 12 | 15 | 18 | 16 | {"4":100} |
+| 2021 | 23 | 13 | 20 | 22 | 22 | {"4":100} |
+| 2022 | 17 | 21 | 20 | 22 | 20 | {"5":100} |
+| 2023 | 24 | 13 | 20 | 21 | 22 | {"5":100} |
+| 2024 | 25 | 16 | 19 | 22 | 18 | {"5":100} |
+| 2025 | 25 | 18 | 17 | 24 | 16 | {"4":100} |
+| 2026 | 13 | 20 | 20 | 24 | 23 | {"4":100} |
 
-**Totais:** clinica 264 · cirurgia 43 · pediatria 94 · go 114 · preventiva 85
+**Totais:** clinica 127 · cirurgia 101 · pediatria 116 · go 135 · preventiva 121
 
 > Packs gravados em `data/provas/fmabc-YYYY.json` para Prova na íntegra.
 > **Banco de questões ainda NÃO foi gerado** — confirme as áreas antes.
@@ -20,9 +20,9 @@ Total: **600** questões.
 
 ### preventiva
 - **Q1** (prev-core): um ensaio clínico controlado de 12 semanas com 628 pacientes esquizofrênicos hospitalizados, 416 receberam clorpromazina e 212 receberam pla
-- **Q7** (prev-core): Menina, 3 anos de idade, no pronto atendimento com tosse há 12 dias e febre há 4 dias. Mãe refere que a criança há 3 dias vem apresentando d
-- **Q8** (prev-core): Menina, 3 anos de idade, no pronto atendimento com tosse há 12 dias e febre há 4 dias. Mãe refere que a criança há 3 dias vem apresentando d
+- **Q10** (prev-core): no Brasil na década de 70 para identi?car doenças que já se manifestam em recémnascidos. Desde 1992 o teste se tornou obrigatório, e em 2001
 - **Q29** (prev-epi-method): um ensaio clínico controlado de 12 semanas com 628 pacientes esquizofrênicos hospitalizados, 416 receberam clorpromazina e 212 receberam pla
+- **Q30** (prev-core): Tipos de Estudos Epidemiológicos Em 1948, 5.209 indivíduos de ambos os sexos entre as idades de 30 e 62 anos, sem histórico de doenças cardi
 
 ### pediatria
 - **Q2** (pediatric-patient): João, 10 anos de idade, em seguimento com pediatra geral, devido ao fato da escola ter encaminhado uma noti?cação relatando que o menino sof
@@ -31,29 +31,29 @@ Total: **600** questões.
 - **Q6** (pediatric-patient): Lactente de um ano, nascido a termo, iniciou há três dias febre alta, persistente, sem sintomas associados, sem toxemia. Hoje não apresentou
 
 ### go
-- **Q16** (obstetric-case): Lactente, menino, 4 meses de idade, com antecedente de prematuridade de 35 semanas, em consulta pediátrica devido ao aumento de volume na re
 - **Q19** (obstetric-case): Paciente primigesta, IG 29 semanas, comparece em consulta de pré-natal com resultados de exames de segunda rotina: Hb 12 g/dL; Ht 33%; plaqu
 - **Q20** (go-gestation): na gestação Das vacinas a seguir, qual NÃO deve ser realizada NUNCA durante a gestação?
 - **Q21** (obstetric-case): na gestação DHEG Obstetrícia Paciente G4P2A1, IG 37 semanas, em seguimento no pré-natal de alto risco devido a hipertensão arterial sistêmic
+- **Q22** (obstetric-case): Paciente G3P2, idade gestacional (IG) = 33 semanas, comparece ao pronto atendimento com queixa de dor abdominal, leucorreia fétida e febre a
 
 ### clinica
 - **Q3** (default): Mulher, 28 anos de idade, procura pronto-socorro por iniciar edema de lábios há 30 minutos, evoluindo com prurido generalizado, cólicas abdo
-- **Q10** (default): no Brasil na década de 70 para identi?car doenças que já se manifestam em recémnascidos. Desde 1992 o teste se tornou obrigatório, e em 2001
 - **Q31** (default): Mulher, 82 anos de idade, sofreu fratura no quadril ao cair acidentalmente em casa. Foi operada, permanecendo internada. No 7° dia de intern
-- **Q45** (default): Um grupo de mil pessoas é submetido a um exame de rastreamento de uma doença que possui prevalência de 0,5%. O exame ao qual são submetidos 
+- **Q59** (default): Mulher de 47 anos de idade, lúpica e hipertensa, com prescrição ambulatorial de hidroxicloroquina, azatioprina, prednisona, enalapril e hidr
+- **Q60** (default): Homem, 68 anos de idade, no ambulatório com queixa, há 5 anos, de tosse com expectoração clara. Há 2 anos com dispneia progressiva, atualmen
 
 ### cirurgia
-- **Q92** (cir-core): Mulher, 38 anos de idade, em pós-operatório recente de cirurgia bariátrica, comparece ao pronto-socorro com queixa de dor súbita e aumento d
-- **Q93** (cir-core): Homem, 30 anos de idade, com peso de 70kg, deu entrada no Pronto-Socorro trazido pelo resgate, com história de queimadura decorrente de comb
-- **Q94** (manual): Homem, 64 anos de idade, procura atendimento devido a queixa de jato urinário fraco e intermitente há 8 meses, esforço para iniciar a micção
-- **Q96** (cir-core): As hérnias abdominais são bastante frequentes, sendo que mais da metade ocorre na região inguino-crural. Em relação a este tema, assinale a 
+- **Q63** (cir-strong): Fatores de risco para formção do cálculo renal A litíase urinária é afecção bastante frequente, com maior prevalência em homens e pico entre
+- **Q70** (cir-strong): Tumores Hepáticos O exame de maior acurácia para o diagnóstico diferencial de nódulos hepáticos é:
+- **Q72** (cir-strong): Diagnóstico Estadiamento do Câncer do Cólon e do Reto Tratamento do Câncer Colônico Paciente, 62 anos de idade, com queixa de sangramento ao
+- **Q73** (manual): Mulher, 55 anos de idade, no pronto-socorro com queixa de “amarelão”. Há 2 meses iniciou icterícia, colúria e acolia fecal associadas a emag
 
 ## 2022
 
 ### preventiva
 - **Q1** (prev-policy): no Brasil Reforma Psiquiátrica Brasileira A política de saúde mental brasileira, resultado da mobilização de usuários, familiares e trabalha
-- **Q14** (prev-core): Menina, 3 anos de idade, caiu de balanço de uma altura estimada de 1,5 metro, há 30 minutos. Ao cair, ficou imóvel e pálida por poucos segun
 - **Q29** (prev-core): na Lei n 80801990 Bases legais de Saúde do Trabalhador Ainda de acordo com a Lei nº 8.080/1990, referida na questão anterior, entende-se por
+- **Q30** (prev-strong): uma doença cuja letalidade é alta, mas que diminui de maneira signiBcativa quando tratada precocemente, é importante que ele tenha alto(a)
 - **Q31** (prev-core): Odds Ratio ou Razão de Chances Se num estudo do tipo caso-controle envolvendo 30 pessoas, com igual número de casos e de controles, tivesse 
 
 ### pediatria
@@ -70,29 +70,29 @@ Total: **600** questões.
 
 ### clinica
 - **Q2** (default): A correta correlação entre tóxico e antídoto é:
-- **Q30** (default): uma doença cuja letalidade é alta, mas que diminui de maneira signiBcativa quando tratada precocemente, é importante que ele tenha alto(a)
-- **Q36** (default): Letalidade Num município hipotético, com população de 100000 pessoas, foram diagnosticados, ao longo de um ano, 10 casos de câncer de colo d
-- **Q38** (default): Processo saúdedoença Em 1920, Winslow, antigo professor de saúde pública da Universidade de Yale, apresentou a seguinte deBnição de saúde pú
+- **Q55** (default): Paciente, 74 anos, apresenta quadro de osteoartrite. O líquido sinovial mais provável de ser encontrado é:
+- **Q57** (default): Trombólise Endovenosa Tratamento da Fase Aguda do Acidente Vascular Cerebral Isquêmico Considerando-se a trombólise no acidente vascular cer
+- **Q60** (default): Paciente de 76 anos, morador de casa de repouso, apresenta quadro de tosse, febre e expectoração produtiva há dois dias. Está confuso, com f
 
 ### cirurgia
 - **Q77** (cir-core): Paciente de 42 anos trazido à urgência pelo SAMU, com história de ter sido resgatado de quarto de uma casa, o qual estava em chamas (sic). M
+- **Q78** (cir-strong): Doença Inflamatória Intestinal O manejo cirúrgico das Doenças InTamatórias Intestinais (Doença de Crohn e Retocolite Ulcerativa) deve ser ut
 - **Q79** (cir-core): Paciente de 43 anos, sexo masculino, submetido há 30 dias à apendicectomia devido a hipótese diagnóstica de apendicite aguda. O anatomopatol
 - **Q80** (manual): Paciente de 32 anos, masculino, foi vítima de ferimento por arma de fogo de grande calibre em face. Apresenta-se na urgência com quadro de f
-- **Q81** (cir-core): Durante a realização de uma colecistectomia há signiBcativo risco de lesão iatrogênica da via biliar principal. Buscando minimizar essa situ
 
 ## 2023
 
 ### preventiva
 - **Q1** (prev-core): Odds Ratio ou Razão de Chances NNT Medidas de Associação Risco Relativo Razão de Prevalência e Odds Ratio São exemplos de medidas para avali
-- **Q4** (prev-core): Menina, 4 anos de idade, saudável, brinca e participa das atividades da escola, mas tem os joelhos muito juntos, a mãe informa que ela també
+- **Q15** (manual): na janela de oportunidades dos primeiros mil dias de vida têm como resultado positivo
 - **Q29** (prev-core): No estudo da epidemiologia clínica, entende-se como associações reversíveis:
 - **Q31** (prev-core): Sistema de Informação de Agravos de Notificação SINAN Declaração de óbito DO Atestado de óbito ASP, 59 anos, tem como desfecho o óbito por d
 
 ### pediatria
+- **Q4** (pediatric-patient): Menina, 4 anos de idade, saudável, brinca e participa das atividades da escola, mas tem os joelhos muito juntos, a mãe informa que ela també
 - **Q5** (rn-neonatal): Exame físico do Recémnascido Recém-nascido, sexo masculino, 3 dias de vida, nascido a termo por parto normal, Apgar 9/10, apresenta lesões e
 - **Q6** (pediatric-patient): na Emergência Menino, 4 anos de idade, foi resgatado pelo pai da piscina de casa, segundo a família, com menos de 3 minutos de submersão. Re
 - **Q7** (pediatric-patient): Menina, 4 anos de idade, queixa-se de dor abdominal periumbelical com frequência nos últimos 2 meses. Evacua a cada 2 a 3 dias, fezes endure
-- **Q8** (pediatric-patient): Menino, 9 meses de idade, tem febre, diarreia e vômitos há 2 dias. Apresenta 6 a 8 evacuações líquidas ao dia, sem muco ou sangue. Ao exame,
 
 ### go
 - **Q18** (go-gestation): na gestação Definição Todos os médicos devem ter conhecimento da associação diabetes e gravidez, pois essa associação é de alta prevalência 
@@ -103,22 +103,22 @@ Total: **600** questões.
 ### clinica
 - **Q2** (default): Em relação aos quadros de intoxicação exógena, assinale a alternativa correta.
 - **Q3** (default): Paciente apresenta síndrome de abstinência alcoólica. É correto afirmar que
-- **Q15** (default): na janela de oportunidades dos primeiros mil dias de vida têm como resultado positivo
-- **Q17** (default): Na síndrome inflamatória multissistêmica pediátrica deflagrada pelo Sars-Cov-2, apesar da diversidade de apresentações, o achado clínico mai
+- **Q57** (default): uma doença que, ainda em nossos dias, tem seu diagnóstico postergado às vezes por anos até que se possa iniciar a terapêutica adequada. Fren
+- **Q60** (default): Paciente de 46 anos, com função renal normal, procura unidade de saúde, referindo dor há 8 horas no primeiro metatarso do pé direito. Relata
 
 ### cirurgia
-- **Q79** (cir-strong): Homem, 45 anos, hipertenso e diabético insulinodependente, dá entrada na unidade de emergência devido à queixa de hematêmese franca associad
-- **Q95** (cir-strong): Complicações Cirurgia Corresponde à classificação II de Hinchey para diverticulite aguda complicada:
-- **Q96** (cir-core): Fatores Favoráveis e Desfavoráveis para Fechamento de Fístulas Intestinais Cirurgia A maioria dos casos de fístulas enterocutâneas são iatro
-- **Q97** (cir-core): Mulher, 72 anos foi submetida à tratamento cirúrgico por quadro de abdome agudo perfurativo secundário à úlcera perfurada a cerca de um mês.
+- **Q72** (manual): Fisiopatologia A peritonite é a inNamação do peritônio e da cavidade peritoneal mais frequentemente associada à infecção localizada ou gener
+- **Q76** (manual): Classificação Histológica de Lauren O sistema de classiTcação proposto por Lauren em 1965 separa os adenocarcinomas gástricos em tipos intes
+- **Q77** (manual): Assinale a alternativa que apresenta um fator de risco para o desenvolvimento do câncer de estômago (adenocarcinoma).
+- **Q78** (manual): Balão de SengstakenBlakemore O sangramento de varizes esofagogástricas é a complicação mais temida em pacientes portadores de hipertensão po
 
 ## 2024
 
 ### preventiva
-- **Q9** (prev-core): Lactente, sexo feminino, 6 meses de idade, hígida, está em consulta de puericultura. Até o momento, se alimenta com leite materno exclusivo 
 - **Q31** (prev-epi-method): Um pesquisador deseja estudar os fatores de risco de uma forma rara de sarcoma. Ele descobriu o maior registro desta forma de câncer, mas a 
+- **Q32** (manual): Em relação ao uso e preenchimento da declaração de óbito (DO), é correto afirmar que:
 - **Q33** (prev-strong): Em relação à saúde do trabalhador, assinale a alternativa que descreve, com maior probabilidade, a pro'ssão de maior risco e doença ocupacio
-- **Q35** (prev-strong): Medicina Preventiva Agência Nacional de Saúde ANS Lei n 99612000 O Programa de Quali'cação dos Prestadores de Serviços de Saúde (Qualiss) da
+- **Q34** (manual): no Brasil Em relação ao Plano de ações estratégicas para o enfrentamento das doenças crónicas e agravos não transmissíveis no Brasil (2021-2
 
 ### pediatria
 - **Q1** (pediatric-patient): Lactente masculino, 1 ano e 6 meses de idade, está em consulta de rotina, acompanhado da mãe, sem queixas. Trata-se do terceiro 'lho, a mãe 
@@ -127,36 +127,36 @@ Total: **600** questões.
 - **Q6** (pediatric-patient): Vacina oral contra poliomielite Vacina inativada contra poliomielite Pediatria Em Julho de 2023, o Ministério da Saúde anunciou uma mudança 
 
 ### go
-- **Q10** (obstetric-case): Lactente, sexo masculino, 3 meses de vida, está em consulta ambulatorial de rotina. Tratase de uma criança prematura de 35 semanas e 2 dias 
 - **Q12** (obstetric-case): Ventilação com pressão positiva Recém-nascido, sexo feminino, nasce em hospital, por parto vaginal, com 39 semanas de gestação. Sabe-se que 
 - **Q13** (obstetric-case): na Unidade de Cuidados Intermediários Neonatais, com 2 horas de vida. Mãe de 38 anos, hígida, primigesta, sem intercorrências durante a gest
 - **Q14** (obstetric-case): Conduta Recém-nascido, sexo masculino, acaba de ser admitido em alojamento conjunto. Filho de mãe primigesta, 19 anos de idade, deu entrada 
+- **Q21** (manual): Transmissão vertical TV A taxa de transmissão vertical do HIV gira em torno de 30% se não há intervenção. Após intervenção, é possível reduz
 
 ### clinica
 - **Q3** (default): um tumor de cabeça e pescoço, assinale a alternativa correta.
 - **Q4** (default): Mulher de 38 anos, com diabete melito, apresenta dor subaguda e progressiva no ouvido direito com redução da audição e que dura mais de uma 
-- **Q11** (default): Adolescente, sexo feminino, 12 anos de idade, está em consulta de rotina. Ela refere estar incomodada, porque é mais baixa que a maioria das
-- **Q21** (clin-strong): Transmissão vertical TV A taxa de transmissão vertical do HIV gira em torno de 30% se não há intervenção. Após intervenção, é possível reduz
+- **Q42** (default): Qual das alternativas a seguir é uma afirmação verdadeira?
+- **Q48** (default): uma doença subdiagnosticada e de patogênese não esclarecida. Sobre sua patogênese:
 
 ### cirurgia
+- **Q55** (manual): Homem de 20 anos, não tabagista, sem antecedentes mórbidos, procura pronto socorro com queixa de dor torácica à direita há 25 minutos, de in
+- **Q63** (manual): paciente devem ser avaliados antes de decidir pela ressecção hepática. Com relação a este tema, assinale a alternativa correta.
+- **Q67** (manual): Neoplasias do Pâncreas Com relação às neoplasias do pâncreas, pode-se afirmar:
 - **Q87** (cir-core): Homem de 64 anos é submetido a colecistectomia por dor no quadrante superior direito. A análise da vesícula mostra parede muscular espessada
-- **Q88** (cir-strong): um de grande utilidade nas laparotomias, com intuito de facilitar o acesso e a visualização do conteúdo intracavitário. Esse instrumento é o
-- **Q91** (cir-core): Doença Arterial Coronariana Indicações de Revascularização Miocárdica Préoperatória Cirurgia A American College of Cardiology Foundation (AC
-- **Q94** (manual): paciente sobre cirurgias anteriores, tipo de anestesia e quaisquer complicações. História familiar de resposta adversa a anestésicos e histó
 
 ## 2025
 
 ### preventiva
+- **Q20** (prev-strong): Febre e choro persistentes Reações adversas vacinais DTPw Tríplice bacteriana infantil de células inteiras Heloísa, 4 meses, é trazida pela 
+- **Q35** (manual): Sobre os diferentes modelos de remuneração em saúde, assinale a alternativa INCORRETA.
+- **Q36** (manual): Assinale a alternativa que apresenta uma medida que permite avaliar o impacto clínico de uma intervenção na população em geral (com riscos i
 - **Q37** (prev-epi-method): Um estudo de 1997 que acompanhou 490 mil adultos sugeriu que o consumo moderado de vinho poderia estar associado a uma menor probabilidade d
-- **Q38** (prev-core): Lista Nacional de Notificação Compulsória de doenças agravos e eventos de saúde pública São considerados agravos de notificação compulsória 
-- **Q39** (prev-strong): Vigilância Sanitária A RDC Anvisa nº 306/2004 classi7ca os resíduos gerados em estabelecimentos de saúde em cinco grupos, sendo que os resíd
-- **Q40** (prev-core): Transição Nutricional Lançado em 2014, o “Guia Alimentar para a População Brasileira” consolidou-se como um dos documentos mais relevantes d
 
 ### pediatria
+- **Q1** (manual): escolar intoxicado por Clonazepam, de uso materno, chega ao PSI com rebaixamento do nível de consciência. Confirmada a origem da intoxicação
+- **Q3** (manual): Meningite neonatal Recém-nascido, 3 dias de vida, apresenta meningite neonatal com cultura positiva de líquor para Streptococcus do grupo B.
+- **Q4** (manual): Outros fatores de risco Fatores de risco para hiperbilirrubinemia Quais fatores de risco devem ser considerados para o desenvolvimento de hi
 - **Q6** (rn-neonatal): RN) de 40 semanas nasce de parto cesárea. Não apresenta choro e se encontra hipotônico. O clampeamento do cordão é realizado imediatamente, 
-- **Q8** (manual): Adolescente vai à consulta com pediatra e queixa-se do aparecimento de lesões elevadas, com edema central, circundada por eritema de diverso
-- **Q9** (pediatric-patient): Escolar, 8 anos, chega ao PSI em parada cárdiorespiratória, trazido pelo SAMU já com acesso periférico. Considerando que foi identificada as
-- **Q10** (pediatric-patient): Criança, 3 anos, é levada pelos pais ao pronto-socorro com quadro de febre há 2 dias e urina fétida. Considerando a hipótese diagnóstica de 
 
 ### go
 - **Q5** (obstetric-case): Gestante com 40 semanas de idade gestacional foi admitida em trabalho de parto. Dez consultas de pré-natal, segunda gestação. Com 11 semanas
@@ -165,24 +165,24 @@ Total: **600** questões.
 - **Q22** (obstetric-case): na gestação Tratamento da toxoplasmose na gestação Manifestações clínicas Gestante, 9 semanas de idade gestacional, apresenta sorologia IgG 
 
 ### clinica
-- **Q1** (default): escolar intoxicado por Clonazepam, de uso materno, chega ao PSI com rebaixamento do nível de consciência. Confirmada a origem da intoxicação
-- **Q2** (default): Sobre a classi7cação de Gustillo-Anderson para fraturas abertas, assinale a alternativa correta em relação ao tipo de fratura IIIA.
-- **Q3** (default): Meningite neonatal Recém-nascido, 3 dias de vida, apresenta meningite neonatal com cultura positiva de líquor para Streptococcus do grupo B.
-- **Q4** (default): Outros fatores de risco Fatores de risco para hiperbilirrubinemia Quais fatores de risco devem ser considerados para o desenvolvimento de hi
+- **Q57** (default): Síndrome Miofascial Pedro, 32 anos, médico, casado, 1 filho, busca atendimento referindo dorsalgia, associada à cefaleia em aperto. Os sinto
+- **Q58** (default): Imunidade inata e adaptativa As citocinas são glicoproteínas secretadas com a 7nalidade de alterar a função das células-alvo de uma maneira 
+- **Q59** (default): Desviar o potássio para dentro das células Perda da Capacidade de eliminação renal Causas de Hipercalemia A hipercalemia é de7nida como um [
+- **Q60** (default): Fisiopatologia da Doença Renal Crônica DRC Nefropatia diabética x Nefropatia não diabética Exames laboratoriais A manifestação mais precoce 
 
 ### cirurgia
+- **Q2** (manual): Sobre a classi7cação de Gustillo-Anderson para fraturas abertas, assinale a alternativa correta em relação ao tipo de fratura IIIA.
 - **Q71** (cir-core): Um homem, 55 anos, obesidade Grau I, hipertenso, em uso de losartana, queixa-se de azia e regurgitação. Ele tem diagnóstico de esteatose hep
-- **Q94** (cir-core): uma história detalhada do paciente com lesões esqueléticas é essencial para um diagnóstico acurado e o devido tratamento. Esse pode ser um d
-- **Q95** (cir-core): Em relação ao Advanced Trauma Life Support (ATLS), que categoriza o choque hemorrágico em quadro classes, assinale a alternativa correta.
-- **Q99** (manual): Fatores Favoráveis e Desfavoráveis para Fechamento de Fístulas Intestinais História Clínica e Exame físico Fatores de Risco Uma fístula repr
+- **Q72** (cir-core): Síndrome de Boerhaave O quadro decorrente da perfuração esofágica causada por vômitos recorrentes é descrito, na literatura, como síndrome d
+- **Q86** (cir-core): Exames de Imagem Síndrome de Mirizzi Exame Físico e História Clínica As patologias das vias biliares são achados importantes no cotidiano da
 
 ## 2026
 
 ### preventiva
 - **Q1** (prev-policy): Cleiton, 24 anos, solteiro, desempregado, procura atendimento solicitando auxílio da equipe de saúde para lidar com problemas decorrentes do
-- **Q17** (prev-core): Paciente do sexo masculino, com 5 anos, é levado pela mãe ao pronto atendimento devido a quadro de tosse há 5 dias. Mãe relata que a tosse, 
-- **Q35** (prev-epi-method): Qual dos seguintes exames tem sua interpretação fortemente baseada no conceito de Valor Preditivo Negativo?
-- **Q37** (prev-epi-method): um estudo de coorte realizado em uma comunidade rural, 1.200 indivíduos inicialmente livres de hipertensão arterial foram acompanhados por 1
+- **Q2** (manual): Paciente do sexo feminino, 32 anos, portadora de transtorno bipolar, em seguimento no CAPS, é trazida ao pronto atendimento por familiares a
+- **Q3** (manual): Paciente do sexo masculino, 84 anos, é atendido em sua Unidade Básica de Saúde com queixa de tristeza, desesperança e pensamentos recorrente
+- **Q33** (prev-policy): Sobre as medicações de controle especial, assinale a alternativa correta.
 
 ### pediatria
 - **Q4** (pediatric-patient): Menina de 9 anos, previamente hígida, com calendário vacinal atualizado, é levada pela mãe ao PA com queixa de coriza há 4 dias, congestão n
@@ -192,19 +192,19 @@ Total: **600** questões.
 
 ### go
 - **Q23** (obstetric-case): Gestante, 35 anos, G2P1, 27 semanas, sem comorbidades prévias, retorna para a consulta com o resultado do teste oral do tolerância à glicose
+- **Q24** (manual): Tercigesta, 37 semanas, apresenta cefaleia intensa, náuseas e visão turva há 12 horas. Refere edema de mãos e rosto. Ao exame: PA = 160 × 11
 - **Q25** (obstetric-case): Gestante, 37 semanas, internada na maternidade há 24 horas, encontra-se na fase latente do trabalho de parto. Ao exame: febre de 38,5 ℃, taq
 - **Q26** (obstetric-case): Primigesta, 30 anos, 38 semanas de gestação, procura à maternidade relatando dor abdominal há 5 horas, associada à perda de líquido vaginal.
-- **Q27** (obstetric-case): Gestante, 36 anos, G3P2 (2 cesarianas), 33 semanas, chega à emergência com sangramento vaginal indolor e vermelho- vivo, iniciado enquanto e
 
 ### clinica
-- **Q2** (clin-strong): Paciente do sexo feminino, 32 anos, portadora de transtorno bipolar, em seguimento no CAPS, é trazida ao pronto atendimento por familiares a
-- **Q3** (default): Paciente do sexo masculino, 84 anos, é atendido em sua Unidade Básica de Saúde com queixa de tristeza, desesperança e pensamentos recorrente
-- **Q8** (default): Paciente de 12 anos, previamente higido, é levado pela mãe para atendimento médico devido a quadro de urticária generalizada, pruriginosa, a
-- **Q10** (default): Paciente com 6 anos, sexo masculino, é levado pela mãe ao PA com queixa de lesões na cavidade oral, odinofagia e febre alta persistente de 3
+- **Q13** (default): Sobre as diarreias agudas, assinale a alternativa correta.
+- **Q62** (default): Paciente do sexo feminino, 54 anos, hígida. Inicia quadro de fraqueza muscular em perna direita com dificuldade para realizar dorsiSexão do 
+- **Q64** (default): Paciente do sexo feminino, 60 anos, relata aparecimento de nódulos por todo o braço direito. Relata que, há cerca de 1 mês, sofreu mordedura
+- **Q65** (default): Paciente sexo feminino, 59 anos, bancária procura atendimento devido a quadro de febre, dor torácica ventilatória dependente associada à dis
 
 ### cirurgia
 - **Q61** (manual): Paciente do sexo feminino, 65 anos, previamente hígida, é internada em centro de terapia intensiva devido a politrauma por atropelamento há 
 - **Q75** (manual): O tratamento de lesões de tireoide ainda tem a tireoidectomia como ferramenta utilizada. Como a maioria dos procedimentos cirúrgicos, compli
+- **Q83** (manual): uma patologia esofágica. Qual é a patologia apresentada e qual é o seu subtipo mais comum?
 - **Q84** (manual): As hemorroidas internas que apresentam prolapso, cuja redução somente é possível com auxílio manual são classificados como de grau
-- **Q88** (cir-core): um componente essencial na avaliação do abdome agudo. O médico estará apto a reunir valiosas informações a partir dessa etapa para melhorar 
 
