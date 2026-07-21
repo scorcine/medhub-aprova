@@ -2,12 +2,11 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-snappy1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-motiv1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
- * Roteiro (legenda na tela). Use {nome} para o primeiro nome.
- * Evita palavras que o TTS costuma errar (revolucionar / preenchendo).
+ * Legenda na tela (roteiro corrigido — transformar / configurando).
  */
 const APROVA_MASCOT_SCRIPT =
   "Seja bem-vindo, {nome}. " +
@@ -15,22 +14,24 @@ const APROVA_MASCOT_SCRIPT =
   "Comece configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
 /**
- * Texto falado: mesma mensagem, pontuação mais leve (menos pausa dramática).
+ * Texto falado: nome no começo (sem pausa dramática), tom motivante, fluído.
  */
 const APROVA_MASCOT_SCRIPT_SPEECH =
-  "Seja bem-vindo, {nome}! " +
-  "Este é o aplicativo que vai transformar os seus estudos, " +
-  "comece configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
+  "Olá {nome}! " +
+  "Este é o aplicativo que vai transformar os seus estudos. " +
+  "Comece já configurando o seu perfil e personalize tudo de acordo com a sua prova!";
 
-/** Voz ágil (como na versão boa) — evita neural lenta. */
-const APROVA_MASCOT_SPEECH_RATE = 1.22;
-const APROVA_MASCOT_SPEECH_PITCH = 1.12;
+/** Ritmo motivante — mais rápido e vivo. */
+const APROVA_MASCOT_SPEECH_RATE = 1.38;
+const APROVA_MASCOT_SPEECH_RATE_SLOW_VOICE = 1.52; // neural/online compensação
+const APROVA_MASCOT_SPEECH_PITCH = 1.18;
 const APROVA_MASCOT_SPEECH_VOLUME = 1;
-const APROVA_MASCOT_VIDEO_RATE = 1.12;
+const APROVA_MASCOT_VIDEO_RATE = 1.15;
 
 let aprovaMascotReplayMode = false;
 let aprovaMascotSyncingVolume = false;
 let aprovaMascotSpeakTimer = null;
+let aprovaMascotKeepAlive = null;
 let aprovaMascotCachedVoice = null;
 
 function aprovaMascotFirstName () {
@@ -81,60 +82,63 @@ function aprovaMascotMaybeForceOwnerOnce () {
   }
 }
 
+function aprovaMascotClearKeepAlive () {
+  if (aprovaMascotKeepAlive) {
+    window.clearInterval(aprovaMascotKeepAlive);
+    aprovaMascotKeepAlive = null;
+  }
+}
+
 function aprovaMascotStopSpeech () {
   if (aprovaMascotSpeakTimer) {
     window.clearTimeout(aprovaMascotSpeakTimer);
     aprovaMascotSpeakTimer = null;
   }
+  aprovaMascotClearKeepAlive();
   try {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
   } catch (e) { /* ignore */ }
 }
 
+function aprovaMascotVoiceIsSlow (voice) {
+  if (!voice) return false;
+  const blob = String(voice.name || "").toLowerCase();
+  return /neural|natural|enhanced|premium|online/.test(blob);
+}
+
 /**
- * Prefere voz pt-BR local e ágil (Google / Maria).
- * Evita neural/online — costumam ficar lentas, com pausas dramáticas.
+ * Prefere Google pt-BR (ágil). Se só houver neural, não força voz —
+ * deixa o navegador com lang pt-BR (costuma soar menos “dramático”).
  */
 function aprovaMascotPickPtVoice () {
   try {
     const voices = window.speechSynthesis.getVoices() || [];
     if (!voices.length) return aprovaMascotCachedVoice;
 
-    const score = (v) => {
-      const name = String(v.name || "");
-      const lang = String(v.lang || "");
-      const blob = (name + " " + lang).toLowerCase();
-      let s = 0;
-      if (/^pt-br/i.test(lang) || /brazil|brasil/.test(blob)) s += 50;
-      else if (/^pt/i.test(lang)) s += 20;
-      else return -1;
-
-      // Vozes rápidas e claras no Windows/Chrome/Edge
-      if (/google.*(portugu|brasil)/.test(blob)) s += 55;
-      if (/microsoft.*(maria|francisca)/.test(blob)) s += 45;
-      if (/luciana|fernanda|vit[oó]ria|daniela|heloisa/.test(blob)) s += 30;
-      if (/maria|francisca|female|feminina/.test(blob)) s += 15;
-
-      // Neural/online = pausas longas / tom “depressivo”
-      if (/neural|natural|enhanced|premium|online|desktop/.test(blob)) s -= 40;
-      if (/compact|mini|eloquence|siri|zira|david/.test(blob)) s -= 20;
-
-      if (v.localService) s += 25;
-      else s -= 15;
-      return s;
+    const isPtBr = (v) => {
+      const blob = (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
+      return /^pt-br/i.test(v.lang) || /brazil|brasil|portugu/.test(blob);
     };
 
-    let best = null;
-    let bestScore = -1;
-    voices.forEach((v) => {
-      const s = score(v);
-      if (s > bestScore) {
-        bestScore = s;
-        best = v;
-      }
+    const google = voices.find((v) => isPtBr(v) && /google/i.test(v.name || ""));
+    if (google) {
+      aprovaMascotCachedVoice = google;
+      return google;
+    }
+
+    const snappyLocal = voices.find((v) => {
+      if (!isPtBr(v) || !v.localService) return false;
+      const n = String(v.name || "").toLowerCase();
+      if (/online|neural|natural|enhanced|premium/.test(n)) return false;
+      return /maria|francisca|luciana|fernanda|vit[oó]ria|daniela|heloisa/.test(n);
     });
-    if (best) aprovaMascotCachedVoice = best;
-    return best || aprovaMascotCachedVoice;
+    if (snappyLocal) {
+      aprovaMascotCachedVoice = snappyLocal;
+      return snappyLocal;
+    }
+
+    // Sem voz boa: null → só lang pt-BR (evita neural arrastada forçada)
+    return null;
   } catch (e) {
     return aprovaMascotCachedVoice;
   }
@@ -156,10 +160,20 @@ function aprovaMascotRestartVideo () {
   try {
     video.loop = true;
     video.playbackRate = APROVA_MASCOT_VIDEO_RATE;
-    video.currentTime = 0;
+    if (video.paused || video.ended || video.currentTime > 0.2) {
+      video.currentTime = 0;
+    }
   } catch (e) { /* ignore */ }
   aprovaMascotSetVideoVolume(video, 0, true);
   video.play().catch(() => {});
+}
+
+function aprovaMascotPauseVideoSoft () {
+  const video = document.getElementById("welcome-mascot-video");
+  if (!video) return;
+  try {
+    video.pause();
+  } catch (e) { /* ignore */ }
 }
 
 function aprovaMascotHideTapToHear () {
@@ -187,36 +201,53 @@ function aprovaMascotSpeakWelcome (firstName) {
 
     const speakNow = () => {
       try {
+        try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
         try { window.speechSynthesis.resume(); } catch (e) { /* ignore */ }
+
+        const voice = aprovaMascotPickPtVoice();
+        const slow = aprovaMascotVoiceIsSlow(voice);
         const u = new SpeechSynthesisUtterance(text);
         u.lang = "pt-BR";
-        u.rate = APROVA_MASCOT_SPEECH_RATE;
+        u.rate = slow ? APROVA_MASCOT_SPEECH_RATE_SLOW_VOICE : APROVA_MASCOT_SPEECH_RATE;
         u.pitch = APROVA_MASCOT_SPEECH_PITCH;
         u.volume = APROVA_MASCOT_SPEECH_VOLUME;
-        const voice = aprovaMascotPickPtVoice();
         if (voice) {
           u.voice = voice;
           if (voice.lang) u.lang = voice.lang;
         }
-        // Mantém o vídeo animado enquanto a fala roda
-        u.onstart = () => aprovaMascotRestartVideo();
-        u.onend = () => {
-          const video = document.getElementById("welcome-mascot-video");
-          if (video) {
-            try { video.play().catch(() => {}); } catch (e) { /* ignore */ }
-          }
+
+        u.onstart = () => {
+          aprovaMascotRestartVideo();
+          aprovaMascotClearKeepAlive();
+          // Chrome às vezes “pausa” a fala no meio — resume mantém o fluxo
+          aprovaMascotKeepAlive = window.setInterval(() => {
+            try {
+              if (window.speechSynthesis.speaking) window.speechSynthesis.resume();
+            } catch (e) { /* ignore */ }
+          }, 4000);
         };
+
+        u.onend = () => {
+          aprovaMascotClearKeepAlive();
+          // Fim da fala = fim da animação (sincronizado)
+          aprovaMascotPauseVideoSoft();
+        };
+
+        u.onerror = () => {
+          aprovaMascotClearKeepAlive();
+          aprovaMascotShowTapToHear();
+        };
+
         window.speechSynthesis.speak(u);
       } catch (e) {
         aprovaMascotShowTapToHear();
       }
     };
 
-    // Pequeno gap só para o cancel() do Chrome não engolir a fala
     aprovaMascotSpeakTimer = window.setTimeout(() => {
       aprovaMascotSpeakTimer = null;
       speakNow();
-    }, 40);
+    }, 30);
     return true;
   } catch (e) {
     aprovaMascotShowTapToHear();
@@ -248,7 +279,6 @@ function aprovaCloseWelcomeMascotModal () {
   aprovaMascotMarkWelcomeSeen();
   aprovaRenderInicioMascot();
 
-  // Replay pelo avatar: só fecha, sem empurrar perfil de novo.
   if (wasReplay) return;
 
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
@@ -287,17 +317,16 @@ function aprovaOpenWelcomeMascotModal (opts) {
   aprovaMascotReplayMode = !!options.replay;
 
   const modal = document.getElementById("welcome-mascot-modal");
-  const video = document.getElementById("welcome-mascot-video");
   const title = document.getElementById("welcome-mascot-title");
   const caption = document.getElementById("welcome-mascot-caption");
   const closeBtn = modal && modal.querySelector("[data-welcome-mascot-close].btn-primary");
   const first = aprovaMascotFirstName();
-  const spoken = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, first);
+  const captionText = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, first);
 
   if (!modal) return;
 
   if (title) title.textContent = "Olá, " + first + "!";
-  if (caption) caption.textContent = spoken;
+  if (caption) caption.textContent = captionText;
   if (closeBtn) {
     closeBtn.textContent = aprovaMascotReplayMode ? "Fechar" : "Preencher meu perfil";
   }
@@ -310,7 +339,6 @@ function aprovaOpenWelcomeMascotModal (opts) {
   aprovaMascotStopSpeech();
   aprovaMascotRestartVideo();
 
-  // Clique no avatar = mesma fala ágil + roteiro corrigido
   if (aprovaMascotReplayMode) {
     aprovaMascotHearNow();
   }
@@ -357,7 +385,6 @@ function aprovaBindWelcomeMascot () {
   if (!modal || modal.dataset.bound === "1") return;
   modal.dataset.bound = "1";
 
-  // Pré-carrega vozes (Chrome às vezes demora a listar)
   if (window.speechSynthesis) {
     try {
       window.speechSynthesis.getVoices();
@@ -372,10 +399,10 @@ function aprovaBindWelcomeMascot () {
   });
 
   const videoEl = document.getElementById("welcome-mascot-video");
-  // Se o loop nativo falhar, reinicia o vídeo (evita avatar parado com som rolando)
   videoEl?.addEventListener("ended", () => {
     const modalOpen = modal && !modal.hidden;
-    if (!modalOpen) return;
+    const speaking = window.speechSynthesis && window.speechSynthesis.speaking;
+    if (!modalOpen || !speaking) return;
     try {
       videoEl.currentTime = 0;
       videoEl.play().catch(() => {});
