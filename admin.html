@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=admin1">
+  <link rel="stylesheet" href="css/aprova.css?v=admin2">
 </head>
 <body class="admin-page">
   <div class="page-bg" aria-hidden="true"></div>
@@ -134,25 +134,49 @@
           <div class="admin-section" id="admin-section-access" data-admin-section="access" hidden>
             <div class="admin-card">
               <h2>Liberar acesso</h2>
+              <p class="admin-muted">Informe só o e-mail e o tipo de acesso. A pessoa completa nome, celular e senha pelo link. Quando ela cadastrar, o admin recebe os dados e a lista atualiza.</p>
               <form id="admin-grant-form" class="admin-grant-form">
                 <label for="grant-email">E-mail</label>
-                <input id="grant-email" type="email" required placeholder="usuario@email.com">
-                <label for="grant-name">Nome (opcional)</label>
-                <input id="grant-name" type="text" placeholder="Nome para nova conta">
+                <input id="grant-email" type="email" required placeholder="usuario@email.com" autocomplete="off">
                 <label for="grant-type">Tipo de acesso</label>
                 <select id="grant-type">
-                  <option value="free">Free</option>
-                  <option value="pro-mensal">Pro mensal</option>
-                  <option value="pro-anual">Pro anual</option>
+                  <option value="trial-10">Teste grátis — 10 dias</option>
                   <option value="cortesia-1">Cortesia — 1 mês</option>
                   <option value="cortesia-3">Cortesia — 3 meses</option>
+                  <option value="pro-mensal">Pro mensal</option>
+                  <option value="pro-anual">Pro anual</option>
                   <option value="lifetime">Vitalício</option>
+                  <option value="free">Free</option>
                 </select>
-                <label for="grant-password">Senha (opcional — cria/redefine conta)</label>
-                <input id="grant-password" type="password" autocomplete="new-password" placeholder="Mín. 4 caracteres; vazio só altera plano">
-                <button type="submit" class="btn btn-primary">Salvar acesso</button>
+                <button type="submit" class="btn btn-primary">Liberar e gerar link</button>
               </form>
               <p id="admin-grant-status" class="admin-status" hidden></p>
+              <div id="admin-invite-box" class="admin-invite-box" hidden>
+                <p class="admin-muted" style="margin:0 0 0.45rem">Envie este link para a pessoa se cadastrar:</p>
+                <div class="admin-invite-row">
+                  <input id="admin-invite-url" type="text" readonly>
+                  <button type="button" class="btn btn-ghost btn-compact" id="admin-copy-invite">Copiar</button>
+                </div>
+              </div>
+            </div>
+            <div class="admin-card" style="margin-top:1rem">
+              <h2>Convites e cadastros</h2>
+              <p class="admin-muted">Pendentes = aguardando a pessoa preencher. Ativos = ela já cadastrou (no mesmo navegador a lista atualiza sozinha; de outro aparelho você recebe e-mail e pode registrar abaixo).</p>
+              <div id="admin-invites-list" class="admin-users-list"></div>
+            </div>
+            <div class="admin-card" style="margin-top:1rem">
+              <h2>Registrar cadastro recebido</h2>
+              <p class="admin-muted">Se a pessoa se cadastrou em outro dispositivo, cole aqui os dados do e-mail de confirmação para alimentar a lista.</p>
+              <form id="admin-claim-sync-form" class="admin-grant-form">
+                <label for="claim-sync-email">E-mail</label>
+                <input id="claim-sync-email" type="email" required placeholder="usuario@email.com">
+                <label for="claim-sync-name">Nome</label>
+                <input id="claim-sync-name" type="text" required placeholder="Nome que ela preencheu">
+                <label for="claim-sync-phone">Celular</label>
+                <input id="claim-sync-phone" type="tel" placeholder="(11) 99999-9999">
+                <button type="submit" class="btn btn-primary">Atualizar lista</button>
+              </form>
+              <p id="admin-claim-sync-status" class="admin-status" hidden></p>
             </div>
           </div>
 
@@ -236,7 +260,8 @@
   </main>
 
   <script src="js/theme.js"></script>
+  <script src="js/access.js?v=2"></script>
   <script src="js/auth.js"></script>
-  <script src="js/admin.js?v=2"></script>
+  <script src="js/admin.js?v=3"></script>
 </body>
 </html>

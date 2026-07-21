@@ -18,7 +18,7 @@ const APROVA_ADMIN_BANKS = [
 const SECTION_META = {
   overview: { title: "Visão geral", desc: "Resumo de conteúdo, contas locais e planos." },
   users: { title: "Usuários", desc: "Contas salvas neste navegador." },
-  access: { title: "Liberar acesso", desc: "Definir plano Free/Pro/cortesia." },
+  access: { title: "Liberar acesso", desc: "Só e-mail: a pessoa completa o cadastro e os dados voltam para cá." },
   content: { title: "Conteúdo", desc: "Inventário dos bancos publicados." },
   plans: { title: "Leads e planos", desc: "Teste grátis e cliques Free/Pro no cadastro." },
   marketing: { title: "Marketing", desc: "Links e contatos públicos." },
@@ -98,9 +98,12 @@ function adminPlanLabel (plan) {
 function adminNormalizeUser (u) {
   return {
     login: u.login,
-    name: u.name || u.login,
+    name: u.name || (u.status === "pending" ? "(aguardando cadastro)" : u.login),
+    phone: u.phone || "",
     password: u.password,
+    status: u.status || (u.password ? "active" : "pending"),
     createdAt: u.createdAt || null,
+    claimedAt: u.claimedAt || null,
     plan: u.plan || "free",
     planUntil: u.planUntil || null,
     grantedAt: u.grantedAt || null
@@ -155,6 +158,9 @@ function adminGoto (section) {
   window.location.hash = "#/" + id;
   if (id === "overview") adminRenderOverview();
   if (id === "users") adminRenderUsers();
+  if (id === "access") {
+    adminRenderInvites();
+  }
   if (id === "content") adminRenderContent();
   if (id === "plans") adminRenderPlans();
   if (id === "marketing") adminFillMarketing();
@@ -231,14 +237,19 @@ function adminRenderUsers () {
     const created = u.createdAt
       ? new Date(u.createdAt).toLocaleDateString("pt-BR")
       : "—";
+    const statusPill = u.status === "pending"
+      ? "<span class=\"admin-pill admin-pill--warn\">pendente</span>"
+      : "<span class=\"admin-pill\">ativo</span>";
     return (
       "<article class=\"admin-user-card\">" +
         "<div class=\"admin-user-card-head\">" +
           "<strong>" + adminEscape(u.login) + "</strong>" +
           "<span class=\"admin-pill\">" + adminEscape(adminPlanLabel(u.plan)) + "</span>" +
+          statusPill +
         "</div>" +
         "<dl class=\"admin-user-dl\">" +
           "<div><dt>Nome</dt><dd>" + adminEscape(u.name) + "</dd></div>" +
+          "<div><dt>Celular</dt><dd>" + adminEscape(u.phone || "—") + "</dd></div>" +
           "<div><dt>Criada</dt><dd>" + created + "</dd></div>" +
           "<div><dt>Validade</dt><dd>" + until + "</dd></div>" +
         "</dl>" +
@@ -246,6 +257,53 @@ function adminRenderUsers () {
           "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-revoke=\"" +
             adminEscape(u.login) + "\">Revogar para Free</button>" +
         "</div>" +
+      "</article>"
+    );
+  }).join("");
+}
+
+function adminRenderInvites () {
+  const el = document.getElementById("admin-invites-list");
+  if (!el) return;
+  const list = typeof aprovaAccessListInvites === "function"
+    ? aprovaAccessListInvites()
+    : [];
+  if (!list.length) {
+    el.innerHTML = "<p class=\"admin-muted\">Nenhum convite ainda. Liberar acesso acima gera o link.</p>";
+    return;
+  }
+  el.innerHTML = list.map((inv) => {
+    const until = inv.planUntil
+      ? new Date(inv.planUntil).toLocaleDateString("pt-BR")
+      : "—";
+    const status = inv.status === "claimed" || inv.status === "active"
+      ? "ativo"
+      : "pendente";
+    const url = inv.token
+      ? (location.origin + "/cadastro.html?convite=" + encodeURIComponent(inv.token))
+      : (typeof aprovaAccessInviteUrl === "function" ? aprovaAccessInviteUrl(inv) : "");
+    return (
+      "<article class=\"admin-user-card\">" +
+        "<div class=\"admin-user-card-head\">" +
+          "<strong>" + adminEscape(inv.email) + "</strong>" +
+          "<span class=\"admin-pill\">" + adminEscape(adminPlanLabel(inv.plan)) + "</span>" +
+          "<span class=\"admin-pill" + (status === "pendente" ? " admin-pill--warn" : "") + "\">" +
+            status + "</span>" +
+        "</div>" +
+        "<dl class=\"admin-user-dl\">" +
+          "<div><dt>Nome</dt><dd>" + adminEscape(inv.name || "(ainda não preencheu)") + "</dd></div>" +
+          "<div><dt>Celular</dt><dd>" + adminEscape(inv.phone || "—") + "</dd></div>" +
+          "<div><dt>Validade</dt><dd>" + until + "</dd></div>" +
+          "<div><dt>Liberado em</dt><dd>" +
+            (inv.grantedAt ? new Date(inv.grantedAt).toLocaleString("pt-BR") : "—") +
+          "</dd></div>" +
+        "</dl>" +
+        (url
+          ? "<div class=\"admin-user-actions\">" +
+              "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-admin-copy-invite=\"" +
+                adminEscape(url) + "\">Copiar link</button>" +
+            "</div>"
+          : "") +
       "</article>"
     );
   }).join("");
@@ -401,50 +459,58 @@ function adminExportCsv () {
 }
 
 function adminGrantAccess (email, name, type, password) {
-  const key = email.trim().toLowerCase();
-  const users = aprovaLoadUsers();
-  let user = users[key];
-  if (!user) {
-    if (!password || password.length < 4) {
-      return { ok: false, msg: "Conta nova exige senha (mín. 4)." };
+  void name;
+  void password;
+  if (typeof aprovaAccessGrantByEmail === "function") {
+    const result = aprovaAccessGrantByEmail(email, type);
+    if (result.ok) {
+      adminPushLog("grant", String(email).toLowerCase() + " → " + type);
     }
-    user = {
-      login: email.trim(),
-      password,
-      name: name || email.trim(),
-      createdAt: Date.now()
-    };
-  } else if (password && password.length >= 4) {
-    user.password = password;
+    return result;
   }
-  if (name) user.name = name;
+  return { ok: false, msg: "Módulo de acesso indisponível." };
+}
 
+function adminSyncClaimedProfile (email, name, phone) {
+  const key = String(email || "").trim().toLowerCase();
+  if (!key || !name) return { ok: false, msg: "Informe e-mail e nome." };
+  const users = aprovaLoadUsers();
+  const invites = typeof aprovaAccessLoadInvites === "function"
+    ? aprovaAccessLoadInvites()
+    : {};
   const now = Date.now();
-  const day = 86400000;
-  if (type === "free") {
-    user.plan = "free";
-    user.planUntil = null;
-  } else if (type === "lifetime") {
-    user.plan = "lifetime";
-    user.planUntil = null;
-  } else if (type === "pro-mensal") {
-    user.plan = "pro-mensal";
-    user.planUntil = now + 30 * day;
-  } else if (type === "pro-anual") {
-    user.plan = "pro-anual";
-    user.planUntil = now + 365 * day;
-  } else if (type === "cortesia-1") {
-    user.plan = "cortesia";
-    user.planUntil = now + 30 * day;
-  } else if (type === "cortesia-3") {
-    user.plan = "cortesia";
-    user.planUntil = now + 90 * day;
-  }
-  user.grantedAt = now;
-  users[key] = user;
+  const prev = users[key] || invites[key] || {};
+  users[key] = {
+    login: key,
+    password: users[key]?.password || "",
+    name: String(name).trim(),
+    phone: String(phone || "").trim(),
+    plan: prev.plan || users[key]?.plan || "free",
+    planUntil: prev.planUntil != null ? prev.planUntil : (users[key]?.planUntil || null),
+    status: users[key]?.password ? "active" : "claimed",
+    createdAt: users[key]?.createdAt || prev.createdAt || now,
+    grantedAt: users[key]?.grantedAt || prev.grantedAt || now,
+    claimedAt: now
+  };
   aprovaSaveUsers(users);
-  adminPushLog("grant", key + " → " + (user.plan || "free"));
-  return { ok: true, msg: "Acesso salvo para " + key + " (" + adminPlanLabel(user.plan) + ")." };
+  if (typeof aprovaAccessSaveInvites === "function") {
+    invites[key] = {
+      ...(invites[key] || {}),
+      email: key,
+      name: users[key].name,
+      phone: users[key].phone,
+      plan: users[key].plan,
+      planUntil: users[key].planUntil,
+      status: "claimed",
+      grantedAt: users[key].grantedAt,
+      claimedAt: now,
+      createdAt: invites[key]?.createdAt || now,
+      token: invites[key]?.token || null
+    };
+    aprovaAccessSaveInvites(invites);
+  }
+  adminPushLog("claim_sync", key);
+  return { ok: true, msg: "Lista atualizada com os dados de " + key + "." };
 }
 
 function adminRevoke (email) {
@@ -563,17 +629,61 @@ function adminBoot () {
     adminRevoke(btn.getAttribute("data-admin-revoke"));
   });
 
+  document.getElementById("admin-invites-list")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-admin-copy-invite]");
+    if (!btn) return;
+    const url = btn.getAttribute("data-admin-copy-invite") || "";
+    if (!url) return;
+    navigator.clipboard?.writeText(url).then(() => {
+      adminSetStatus("admin-grant-status", "Link copiado.", true);
+    }).catch(() => {
+      adminSetStatus("admin-grant-status", url, true);
+    });
+  });
+
+  document.getElementById("admin-copy-invite")?.addEventListener("click", () => {
+    const input = document.getElementById("admin-invite-url");
+    const url = input?.value || "";
+    if (!url) return;
+    navigator.clipboard?.writeText(url).then(() => {
+      adminSetStatus("admin-grant-status", "Link copiado. Envie para a pessoa.", true);
+    }).catch(() => {
+      input.select();
+      adminSetStatus("admin-grant-status", "Selecione e copie o link manualmente.", true);
+    });
+  });
+
   document.getElementById("admin-grant-form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("grant-email")?.value || "";
-    const name = document.getElementById("grant-name")?.value || "";
-    const type = document.getElementById("grant-type")?.value || "free";
-    const password = document.getElementById("grant-password")?.value || "";
-    const result = adminGrantAccess(email, name, type, password);
+    const type = document.getElementById("grant-type")?.value || "trial-10";
+    const result = adminGrantAccess(email, "", type, "");
     adminSetStatus("admin-grant-status", result.msg, result.ok);
+    const box = document.getElementById("admin-invite-box");
+    const urlInput = document.getElementById("admin-invite-url");
+    if (result.ok && result.inviteUrl && box && urlInput) {
+      box.hidden = false;
+      urlInput.value = result.inviteUrl;
+    }
+    if (result.ok) {
+      e.target.reset();
+      document.getElementById("grant-type").value = type;
+      adminRenderUsers();
+      adminRenderInvites();
+    }
+  });
+
+  document.getElementById("admin-claim-sync-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("claim-sync-email")?.value || "";
+    const name = document.getElementById("claim-sync-name")?.value || "";
+    const phone = document.getElementById("claim-sync-phone")?.value || "";
+    const result = adminSyncClaimedProfile(email, name, phone);
+    adminSetStatus("admin-claim-sync-status", result.msg, result.ok);
     if (result.ok) {
       e.target.reset();
       adminRenderUsers();
+      adminRenderInvites();
     }
   });
 

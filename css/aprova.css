@@ -3942,6 +3942,40 @@ button.linkish {
   font-weight: 700;
 }
 
+.admin-pill--warn {
+  background: rgba(217, 119, 6, 0.14);
+  color: #b45309;
+}
+
+html[data-theme="dark"] .admin-pill--warn {
+  color: #fbbf24;
+}
+
+.admin-invite-box {
+  margin-top: 1rem;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(15, 159, 154, 0.05);
+}
+
+.admin-invite-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-invite-row input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+}
+
 .admin-user-dl {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

@@ -69,6 +69,18 @@ function aprovaRenderAuth () {
 }
 
 function aprovaRegister (login, password, extras) {
+  if (typeof aprovaAccessClaimOrRegister === "function") {
+    const result = aprovaAccessClaimOrRegister(login, password, extras || {});
+    if (!result.ok) {
+      aprovaShowAuthMsg(result.msg, false);
+      return false;
+    }
+    const name = String(extras?.name || "").trim() || login;
+    aprovaSaveAuth({ login: String(login).trim(), name, at: Date.now() });
+    aprovaShowAuthMsg(result.msg, true);
+    return true;
+  }
+
   const name = String(extras?.name || "").trim();
   if (!login || !password) {
     aprovaShowAuthMsg("Informe e-mail e senha para cadastrar.", false);
@@ -81,7 +93,7 @@ function aprovaRegister (login, password, extras) {
 
   const users = aprovaLoadUsers();
   const key = login.toLowerCase();
-  if (users[key]) {
+  if (users[key] && users[key].password && users[key].status !== "pending") {
     aprovaShowAuthMsg("Este e-mail já está cadastrado. Use Entrar.", false);
     return false;
   }
@@ -90,7 +102,12 @@ function aprovaRegister (login, password, extras) {
     login,
     password,
     name: name || login,
-    createdAt: Date.now()
+    phone: String(extras?.phone || "").trim(),
+    plan: users[key]?.plan || "free",
+    planUntil: users[key]?.planUntil || null,
+    status: "active",
+    createdAt: users[key]?.createdAt || Date.now(),
+    grantedAt: users[key]?.grantedAt || null
   };
   aprovaSaveUsers(users);
   aprovaSaveAuth({ login, name: users[key].name, at: Date.now() });
@@ -106,8 +123,13 @@ function aprovaLogin (login, password) {
 
   const users = aprovaLoadUsers();
   const user = users[login.toLowerCase()];
-  if (!user) {
-    aprovaShowAuthMsg("Conta não encontrada. Cadastre-se para criar uma.", false);
+  if (!user || (!user.password && user.status === "pending")) {
+    aprovaShowAuthMsg(
+      user?.status === "pending"
+        ? "Seu acesso foi liberado — complete o cadastro em Cadastre-se."
+        : "Conta não encontrada. Cadastre-se para criar uma.",
+      false
+    );
     return false;
   }
   if (user.password !== password) {
@@ -152,12 +174,49 @@ function aprovaBootSignupPage () {
     return true;
   }
 
+  let grantFromUrl = null;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("convite") || "";
+    if (token && typeof aprovaAccessDecodeInvite === "function") {
+      grantFromUrl = aprovaAccessDecodeInvite(token);
+    }
+  } catch {
+    grantFromUrl = null;
+  }
+
+  if (grantFromUrl) {
+    const note = document.getElementById("signup-plan-note");
+    const emailInput = document.getElementById("signup-login");
+    const phoneField = document.getElementById("signup-phone-field");
+    if (emailInput) {
+      emailInput.value = grantFromUrl.email;
+      emailInput.readOnly = true;
+    }
+    if (phoneField) phoneField.hidden = false;
+    if (note) {
+      const planLabel = grantFromUrl.plan === "pro-mensal"
+        ? "Pro Mensal"
+        : grantFromUrl.plan === "pro-anual"
+          ? "Pro Anual"
+          : grantFromUrl.plan === "lifetime"
+            ? "Vitalício"
+            : grantFromUrl.plan === "cortesia"
+              ? "Cortesia / teste"
+              : "Free";
+      note.hidden = false;
+      note.textContent = "Acesso liberado: " + planLabel +
+        ". Preencha nome, celular e senha para ativar sua conta.";
+    }
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const name = String(form.name?.value || "").trim();
     const login = String(form.login?.value || "").trim();
     const password = String(form.password?.value || "");
     const password2 = String(form.password2?.value || "");
+    const phone = String(form.phone?.value || "").trim();
 
     if (!name) {
       aprovaShowAuthMsg("Informe seu nome.", false);
@@ -167,7 +226,11 @@ function aprovaBootSignupPage () {
       aprovaShowAuthMsg("As senhas não coincidem.", false);
       return;
     }
-    if (!aprovaRegister(login, password, { name })) return;
+    if (grantFromUrl && grantFromUrl.email !== login.toLowerCase()) {
+      aprovaShowAuthMsg("Use o e-mail para o qual o acesso foi liberado.", false);
+      return;
+    }
+    if (!aprovaRegister(login, password, { name, phone, grant: grantFromUrl })) return;
 
     window.setTimeout(() => {
       window.location.href = "app.html";

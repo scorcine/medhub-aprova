@@ -63,6 +63,10 @@
           <span>E-mail</span>
           <input type="email" name="login" id="signup-login" placeholder="seu@email.com" autocomplete="email" required>
         </label>
+        <label class="field" id="signup-phone-field" hidden>
+          <span>Celular</span>
+          <input type="tel" name="phone" id="signup-phone" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="tel">
+        </label>
         <label class="field">
           <span>Senha</span>
           <input type="password" name="password" id="signup-password" placeholder="Mínimo 4 caracteres" autocomplete="new-password" required minlength="4">
@@ -98,6 +102,7 @@
   </footer>
 
   <script src="js/theme.js"></script>
+  <script src="js/access.js"></script>
   <script src="js/auth.js"></script>
   <script>
     (function () {
