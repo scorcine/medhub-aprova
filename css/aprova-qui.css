@@ -2071,6 +2071,74 @@ body.app-body {
   user-select: text;
 }
 
+#q-card .q-images {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+#q-card .q-image-figure {
+  margin: 0;
+}
+
+#q-card .q-image-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.45);
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+html[data-theme="light"] #q-card .q-image-btn {
+  background: #fff;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+#q-card .q-image {
+  display: block;
+  width: 100%;
+  max-height: min(70vh, 520px);
+  object-fit: contain;
+  background: #0b1220;
+}
+
+html[data-theme="light"] #q-card .q-image {
+  background: #f8fafc;
+}
+
+#q-card .q-image-caption {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+}
+
+.q-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.88);
+  cursor: zoom-out;
+}
+
+.q-image-lightbox[hidden] {
+  display: none !important;
+}
+
+.q-image-lightbox img {
+  max-width: min(96vw, 1100px);
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  background: #fff;
+}
+
 #q-card .choice {
   font-size: var(--q-choice-fs);
   line-height: 1.45;

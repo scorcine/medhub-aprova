@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare8";
+const APROVA_QUESTION_CACHE_VER = "20260721enare9";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
@@ -123,6 +123,16 @@ function aprovaNormalizeQuestion (raw, fileHint) {
   const difficulty = String(raw.difficulty || raw.dificuldade || "").trim().toLowerCase();
   const explain = String(raw.explain || raw.explanation || raw.comentario || "").trim();
   const trap = String(raw.trap || raw.pegadinha || "").trim();
+  const images = [];
+  const rawImgs = raw.images || raw.image || raw.imgs || raw.figura;
+  if (Array.isArray(rawImgs)) {
+    rawImgs.forEach((src) => {
+      const s = String(src || "").trim();
+      if (s) images.push(s);
+    });
+  } else if (rawImgs != null && String(rawImgs).trim()) {
+    images.push(String(rawImgs).trim());
+  }
 
   return {
     id,
@@ -133,6 +143,7 @@ function aprovaNormalizeQuestion (raw, fileHint) {
     year: Number.isFinite(year) ? year : null,
     difficulty: difficulty || "",
     stem,
+    images,
     choices: choices.map(c => String(c)),
     answer: answer | 0,
     annulled,

@@ -5424,6 +5424,31 @@ function aprovaEnsureQuestionToolbar () {
   return toolbar;
 }
 
+function aprovaOpenQuestionImageLightbox (src) {
+  const url = String(src || "").trim();
+  if (!url) return;
+  let lb = document.getElementById("q-image-lightbox");
+  if (!lb) {
+    lb = document.createElement("div");
+    lb.id = "q-image-lightbox";
+    lb.className = "q-image-lightbox";
+    lb.hidden = true;
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "Imagem ampliada da questão");
+    lb.innerHTML = "<img alt=\"Figura ampliada da questão\">";
+    document.body.appendChild(lb);
+  }
+  const img = lb.querySelector("img");
+  if (img) img.src = url;
+  lb.hidden = false;
+}
+
+function aprovaCloseQuestionImageLightbox () {
+  const lb = document.getElementById("q-image-lightbox");
+  if (lb) lb.hidden = true;
+}
+
 function aprovaBindQuestionUiControls () {
   if (aprovaQUiBound) return;
   aprovaQUiBound = true;
@@ -5451,11 +5476,26 @@ function aprovaBindQuestionUiControls () {
       aprovaRenderQuestion();
       return;
     }
+    const imgBtn = e.target.closest("[data-q-image]");
+    if (imgBtn) {
+      e.preventDefault();
+      aprovaOpenQuestionImageLightbox(imgBtn.getAttribute("data-q-image"));
+      return;
+    }
+    const lb = e.target.closest("#q-image-lightbox");
+    if (lb) {
+      aprovaCloseQuestionImageLightbox();
+      return;
+    }
     const answerBtn = e.target.closest("[data-q-answer]");
     if (answerBtn && answerBtn.closest("#q-modal-answer-mode")) {
       aprovaSetQuestionAnswerMode(answerBtn.getAttribute("data-q-answer") || "instant");
       aprovaSyncQuestionModalUI();
     }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") aprovaCloseQuestionImageLightbox();
   });
 
   document.addEventListener("mouseup", (e) => {
@@ -5914,6 +5954,29 @@ function aprovaRenderQuestion () {
   if (theme) theme.textContent = meta.join(" · ");
   if (progress) progress.textContent = AprovaQuestions.progressText();
   stem.textContent = q.stem;
+  const imagesEl = document.getElementById("q-images");
+  if (imagesEl) {
+    const imgs = Array.isArray(q.images) ? q.images.filter(Boolean) : [];
+    if (!imgs.length) {
+      imagesEl.hidden = true;
+      imagesEl.innerHTML = "";
+    } else {
+      imagesEl.hidden = false;
+      imagesEl.innerHTML = imgs.map((src, i) => {
+        const url = String(src).replace(/"/g, "&quot;");
+        return (
+          "<figure class=\"q-image-figure\">" +
+            "<button type=\"button\" class=\"q-image-btn\" data-q-image=\"" + url + "\" aria-label=\"Ampliar imagem da questão\">" +
+              "<img class=\"q-image\" src=\"" + url + "\" alt=\"Figura da questão" +
+                (imgs.length > 1 ? (" (" + (i + 1) + ")") : "") +
+              "\" loading=\"lazy\" decoding=\"async\">" +
+            "</button>" +
+            "<figcaption class=\"muted q-image-caption\">Toque na imagem para ampliar</figcaption>" +
+          "</figure>"
+        );
+      }).join("");
+    }
+  }
   const annulledEl = document.getElementById("q-annulled");
   if (annulledEl) {
     annulledEl.hidden = !q.annulled;
