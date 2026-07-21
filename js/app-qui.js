@@ -4677,6 +4677,7 @@ function aprovaRenderQuestion () {
   const trapWrap = document.getElementById("q-trap-wrap");
   const trapEl = document.getElementById("q-trap");
   const abortBtn = document.getElementById("q-abort");
+  const backMetasBtn = document.getElementById("q-back-metas");
   const stats = document.getElementById("q-stats");
   const progress = document.getElementById("q-progress");
   const confirmRow = document.getElementById("q-confirm-row");
@@ -4723,6 +4724,7 @@ function aprovaRenderQuestion () {
   if (trapWrap) trapWrap.hidden = true;
   if (trapEl) trapEl.textContent = "";
   if (abortBtn) abortBtn.hidden = false;
+  if (backMetasBtn) backMetasBtn.hidden = false;
   if (confirmBtn) confirmBtn.disabled = true;
   aprovaSyncQuestionNav();
   choices.innerHTML = "";
@@ -5145,6 +5147,11 @@ async function aprovaBoot () {
 
   document.getElementById("q-abort")?.addEventListener("click", () => {
     aprovaLeaveTreinoSession();
+  });
+
+  document.getElementById("q-back-metas")?.addEventListener("click", () => {
+    aprovaLeaveTreinoSession();
+    aprovaGoTo("metas");
   });
 
   ["q-filter-size"].forEach(id => {
