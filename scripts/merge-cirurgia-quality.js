@@ -65,10 +65,19 @@ function itemOk (q) {
   return true;
 }
 
+/** Enquanto a reescrita não termina, publicar só partes 100% revisadas (whitelist). */
+const WHITELIST = new Set([
+  "cir-trauma-atls1.json",
+  "cir-trauma-atls2.json",
+  "cir-abdome1.json"
+  // cir-trauma-atls3.json — entra após validação 100%
+]);
+
 function main () {
   const files = fs.readdirSync(PARTS_DIR)
-    .filter((f) => /^cir-.+\.json$/i.test(f))
+    .filter((f) => /^cir-.+\.json$/i.test(f) && WHITELIST.has(f))
     .sort();
+  if (!files.length) throw new Error("Nenhum arquivo na whitelist de qualidade");
   const rng = createRng(seedToUint32(SEED_STR));
   const out = [];
   const skipped = [];
