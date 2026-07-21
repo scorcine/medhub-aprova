@@ -2,16 +2,17 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-vol50";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-speechfix1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
- * Roteiro da 1ª visita. Use {nome} onde o nome da pessoa deve entrar.
- * Frases pensadas para a voz do navegador (evita “precilando” / “revulucionar”).
+ * Roteiro falado (voz do navegador). Use {nome} para o primeiro nome.
+ * Evita palavras que o TTS costuma errar (ex.: preenchendo → “precindo”).
  */
 const APROVA_MASCOT_SCRIPT =
-  "Seja bem-vindo, {nome}, ao aplicativo que vai transformar os seus estudos. " +
-  "Comece a preencher o seu perfil para uma experiência personalizada de acordo com a sua prova.";
+  "Seja bem-vindo, {nome}. " +
+  "Este é o aplicativo que vai transformar os seus estudos. " +
+  "Comece configurando o seu perfil para uma experiência personalizada de acordo com a sua prova.";
 
 let aprovaMascotReplayMode = false;
 let aprovaMascotSyncingVolume = false;
@@ -125,13 +126,18 @@ function aprovaMascotSetVideoVolume (video, volume, muted) {
 
 function aprovaMascotSpeakWelcome (firstName) {
   if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
+  const name = firstName || aprovaMascotFirstName();
   try {
     aprovaMascotStopSpeech();
-    const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, firstName);
+    const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, name);
+    // Garante que o nome entrou no texto falado
+    if (text.indexOf(name) === -1) {
+      console.warn("[mascote] nome ausente no roteiro", { name, text });
+    }
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "pt-BR";
-    u.rate = 1.18;   // um pouco mais ágil
-    u.pitch = 1.12;  // tom um pouco mais animado / carismático
+    u.rate = 1.12;
+    u.pitch = 1.1;
     u.volume = APROVA_MASCOT_DEFAULT_VOLUME;
     const voice = aprovaMascotPickPtVoice();
     if (voice) {
@@ -139,15 +145,13 @@ function aprovaMascotSpeakWelcome (firstName) {
       if (voice.lang) u.lang = voice.lang;
     }
     const video = document.getElementById("welcome-mascot-video");
-    // Durante a fala: player continua “com som” (não mute), sem trilha do vídeo por cima.
-    u.onstart = () => {
-      if (video) aprovaMascotSetVideoVolume(video, 0, false);
-    };
+    // Vídeo só visual — a trilha gravada NÃO fala (ela não tem o nome e erra palavras).
+    if (video) aprovaMascotSetVideoVolume(video, 0, true);
     u.onend = () => {
-      if (video) aprovaMascotSetVideoVolume(video, APROVA_MASCOT_DEFAULT_VOLUME, false);
+      if (video) aprovaMascotSetVideoVolume(video, 0, true);
     };
     u.onerror = () => {
-      if (video) aprovaMascotSetVideoVolume(video, APROVA_MASCOT_DEFAULT_VOLUME, false);
+      if (video) aprovaMascotSetVideoVolume(video, 0, true);
     };
     window.speechSynthesis.speak(u);
     return true;
@@ -247,25 +251,20 @@ function aprovaOpenWelcomeMascotModal (opts) {
 
   modal.hidden = false;
 
-  // Primeira abertura / replay: som em 50% (não começa mudo).
-  // Fala = voz do navegador com o nome; vídeo na tela em 50%.
+  // Vídeo mudo (só imagem). Fala = voz do navegador em 50%, COM o nome.
   aprovaMascotStopSpeech();
   if (video) {
     try {
-      video.playbackRate = 1.12;
+      video.playbackRate = 1.08;
       video.currentTime = 0;
     } catch (e) { /* ignore */ }
-    aprovaMascotSetVideoVolume(video, APROVA_MASCOT_DEFAULT_VOLUME, false);
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {
-        // Autoplay com som bloqueado: tenta de novo em 50% após gesto (Ouvir de novo).
-        aprovaMascotSetVideoVolume(video, APROVA_MASCOT_DEFAULT_VOLUME, false);
-        video.play().catch(() => {});
-      });
-    }
+    aprovaMascotSetVideoVolume(video, 0, true);
+    video.play().catch(() => {});
   }
-  aprovaMascotStartSpeechWhenReady(first);
+  // Pequena pausa para o título/caption com o nome já estarem na tela
+  window.setTimeout(() => {
+    aprovaMascotStartSpeechWhenReady(first);
+  }, 120);
 }
 
 function aprovaRenderInicioMascot () {
@@ -318,9 +317,9 @@ function aprovaBindWelcomeMascot () {
     const video = document.getElementById("welcome-mascot-video");
     if (video) {
       try {
-        video.playbackRate = 1.12;
+        video.playbackRate = 1.08;
         video.currentTime = 0;
-        aprovaMascotSetVideoVolume(video, APROVA_MASCOT_DEFAULT_VOLUME, false);
+        aprovaMascotSetVideoVolume(video, 0, true);
         video.play().catch(() => {});
       } catch (e) { /* ignore */ }
     }
