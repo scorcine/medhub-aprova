@@ -658,6 +658,17 @@ function adminBoot () {
     });
   });
 
+  document.getElementById("grant-type-chips")?.addEventListener("click", (e) => {
+    const chip = e.target.closest("[data-grant-type]");
+    if (!chip) return;
+    const type = chip.getAttribute("data-grant-type") || "m3";
+    const hidden = document.getElementById("grant-type");
+    if (hidden) hidden.value = type;
+    document.querySelectorAll("#grant-type-chips [data-grant-type]").forEach((btn) => {
+      btn.classList.toggle("is-active", btn === chip);
+    });
+  });
+
   document.getElementById("admin-grant-form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("grant-email")?.value || "";
@@ -671,8 +682,13 @@ function adminBoot () {
       urlInput.value = result.inviteUrl;
     }
     if (result.ok) {
-      e.target.reset();
-      document.getElementById("grant-type").value = type;
+      const emailEl = document.getElementById("grant-email");
+      if (emailEl) emailEl.value = "";
+      const hidden = document.getElementById("grant-type");
+      if (hidden) hidden.value = type;
+      document.querySelectorAll("#grant-type-chips [data-grant-type]").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.getAttribute("data-grant-type") === type);
+      });
       adminRenderUsers();
       adminRenderInvites();
     }

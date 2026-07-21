@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aprova.css?v=admin4">
+  <link rel="stylesheet" href="css/aprova.css?v=admin5">
 </head>
 <body class="admin-page">
   <div class="page-bg" aria-hidden="true"></div>
@@ -142,14 +142,15 @@
               <form id="admin-grant-form" class="admin-grant-form">
                 <label for="grant-email">E-mail</label>
                 <input id="grant-email" type="email" required placeholder="usuario@email.com" autocomplete="off">
-                <label for="grant-type">Tipo de acesso</label>
-                <select id="grant-type">
-                  <option value="lifetime">Vitalício</option>
-                  <option value="m1">1 mês</option>
-                  <option value="m3" selected>3 meses</option>
-                  <option value="m6">6 meses</option>
-                  <option value="m12">12 meses</option>
-                </select>
+                <label id="grant-type-label">Tipo de acesso</label>
+                <input type="hidden" id="grant-type" name="grant-type" value="m3">
+                <div class="admin-access-chips" id="grant-type-chips" role="group" aria-labelledby="grant-type-label">
+                  <button type="button" class="admin-access-chip" data-grant-type="lifetime">Vitalício</button>
+                  <button type="button" class="admin-access-chip" data-grant-type="m1">1 mês</button>
+                  <button type="button" class="admin-access-chip is-active" data-grant-type="m3">3 meses</button>
+                  <button type="button" class="admin-access-chip" data-grant-type="m6">6 meses</button>
+                  <button type="button" class="admin-access-chip" data-grant-type="m12">12 meses</button>
+                </div>
                 <button type="submit" class="btn btn-primary">Liberar e gerar link</button>
               </form>
               <p id="admin-grant-status" class="admin-status" hidden></p>
@@ -262,8 +263,8 @@
   </main>
 
   <script src="js/theme.js"></script>
-  <script src="js/access.js?v=3"></script>
+  <script src="js/access.js?v=4"></script>
   <script src="js/auth.js"></script>
-  <script src="js/admin.js?v=4"></script>
+  <script src="js/admin.js?v=6"></script>
 </body>
 </html>
