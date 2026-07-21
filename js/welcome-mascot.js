@@ -256,12 +256,6 @@ function aprovaBindWelcomeMascot () {
     aprovaOpenWelcomeMascotModal({ replay: true });
   });
 
-  const video = document.getElementById("welcome-mascot-video");
-  video?.addEventListener("error", () => {
-    const fallback = document.getElementById("welcome-mascot-fallback");
-    if (fallback) fallback.hidden = false;
-    if (video) video.hidden = true;
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
