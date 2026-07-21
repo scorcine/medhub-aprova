@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare7";
+const APROVA_PROVAS_CACHE_VER = "20260721enare8";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -251,7 +251,7 @@ function aprovaRenderProvasAnos (root, data, familyId) {
       "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
         "<div class=\"label\">" + String(family.label) + "</div>" +
         "<p class=\"prompt\" style=\"margin:0.35rem 0 0.85rem\"><strong>Escolha o ano</strong></p>" +
-        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Toque no ano para abrir a prova na íntegra.</p>" +
+        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Toque no ano. Em seguida escolha prova na íntegra ou por grande área.</p>" +
         "<div class=\"provas-year-grid\" role=\"list\">" + chips + "</div>" +
       "</article>" +
     "</div>";
@@ -319,11 +319,11 @@ async function aprovaRenderProvasModo (root, data, seq) {
       }).join("");
       areaBlock =
         "<div class=\"label\" style=\"margin:1rem 0 0.35rem\">Por grande área</div>" +
+        "<p class=\"muted\" style=\"margin:0 0 0.65rem;font-size:0.85rem\">Classificação MedHub R1 por enunciado (curada). A prova na íntegra mantém a ordem oficial.</p>" +
         "<div class=\"provas-area-grid\">" + areaBtns + "</div>";
     } else {
       areaBlock =
-        "<p class=\"muted\" style=\"margin:1rem 0 0;font-size:0.85rem\">Recorte por grande área em curadoria " +
-        "(as contagens automáticas ainda não batem com a distribuição oficial da banca).</p>";
+        "<p class=\"muted\" style=\"margin:1rem 0 0;font-size:0.85rem\">Recorte por grande área em curadoria.</p>";
     }
 
     root.innerHTML =
@@ -331,11 +331,11 @@ async function aprovaRenderProvasModo (root, data, seq) {
         "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
         "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
           "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
-          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Prova na íntegra</strong></p>" +
-          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">100 questões na ordem oficial da banca, com gabarito e anuladas.</p>" +
+          "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>Como deseja fazer?</strong></p>" +
+          "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Prova completa na ordem da banca, ou um recorte por grande área.</p>" +
           "<div class=\"actions-row\" style=\"margin-bottom:0.25rem\">" +
             "<button type=\"button\" class=\"btn btn-primary\" data-prova-start=\"" +
-              String(meta.id) + "\" data-prova-area=\"\">Começar (" + total + ")</button>" +
+              String(meta.id) + "\" data-prova-area=\"\">Prova na íntegra (" + total + ")</button>" +
           "</div>" +
           areaBlock +
         "</article>" +
