@@ -1,16 +1,31 @@
-/* Mascote de boas-vindas — 1ª visita: vídeo; depois: foto no Início */
+/* Mascote de boas-vindas — 1ª visita: vídeo + fala com nome; depois: foto no Início */
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
-const APROVA_MASCOT_VIDEO = "/assets/mascote-welcome.mp4";
+
+/**
+ * Roteiro da 1ª visita. Use {nome} onde o nome da pessoa deve entrar.
+ * Troque este texto pelo roteiro definitivo quando tiver.
+ */
+const APROVA_MASCOT_SCRIPT =
+  "Olá, {nome}! Seja bem-vindo ao MedHub R1. " +
+  "Aqui você vai estudar com metas do dia, flashcards e questões no ritmo certo. " +
+  "Nem sempre quantidade é qualidade — vamos com intenção.";
 
 function aprovaMascotFirstName () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const raw = (session && (session.name || session.login)) || "estudante";
   const first = String(raw).trim().split(/\s+/)[0] || "estudante";
-  // E-mail → parte antes do @
   if (first.indexOf("@") !== -1) return first.split("@")[0] || "estudante";
   return first;
+}
+
+function aprovaMascotFillScript (template, firstName) {
+  const name = firstName || "estudante";
+  return String(template || APROVA_MASCOT_SCRIPT)
+    .replace(/\{nome\}/gi, name)
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function aprovaMascotHasSeenWelcome () {
@@ -33,16 +48,27 @@ function aprovaMascotStopSpeech () {
   } catch (e) { /* ignore */ }
 }
 
-/** Fala o nome com a voz do navegador (não altera o áudio do vídeo gravado). */
+function aprovaMascotPickPtVoice () {
+  try {
+    const voices = window.speechSynthesis.getVoices() || [];
+    const pt = voices.filter((v) => /^pt/i.test(v.lang || ""));
+    return pt.find((v) => /brazil|brasil|pt-BR/i.test(v.lang + " " + v.name)) || pt[0] || null;
+  } catch (e) {
+    return null;
+  }
+}
+
+/** Uma única fala personalizada (sem misturar com o áudio do vídeo). */
 function aprovaMascotSpeakWelcome (firstName) {
   if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
   try {
     aprovaMascotStopSpeech();
-    const u = new SpeechSynthesisUtterance(
-      "Olá, " + firstName + "! Seja bem-vindo ao MedHub R1. Vamos estudar com intenção."
-    );
+    const text = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, firstName);
+    const u = new SpeechSynthesisUtterance(text);
     u.lang = "pt-BR";
     u.rate = 1;
+    const voice = aprovaMascotPickPtVoice();
+    if (voice) u.voice = voice;
     window.speechSynthesis.speak(u);
     return true;
   } catch (e) {
@@ -71,27 +97,35 @@ function aprovaOpenWelcomeMascotModal () {
   const title = document.getElementById("welcome-mascot-title");
   const caption = document.getElementById("welcome-mascot-caption");
   const first = aprovaMascotFirstName();
+  const spoken = aprovaMascotFillScript(APROVA_MASCOT_SCRIPT, first);
 
   if (!modal) return;
 
   if (title) title.textContent = "Olá, " + first + "!";
-  if (caption) {
-    caption.textContent =
-      "Bem-vindo ao MedHub R1, " + first +
-      ". Esta mensagem aparece só na primeira vez — da próxima, o mascote fica aqui no Início.";
-  }
+  if (caption) caption.textContent = spoken;
 
   modal.hidden = false;
 
   if (video) {
-    // Vídeo gravado continua genérico; o nome aparece no texto (e opcionalmente na voz do navegador).
-    video.muted = false;
+    // Silencia o áudio gravado para não haver “duas vozes”.
+    video.muted = true;
+    video.volume = 0;
     const play = video.play();
     if (play && typeof play.catch === "function") {
-      play.catch(() => {
-        // Autoplay bloqueado: usuário usa o controle do vídeo.
-      });
+      play.catch(() => { /* autoplay bloqueado — usuário dá play */ });
     }
+  }
+
+  // Fala com o nome (única trilha de áudio da boas-vindas).
+  const startSpeech = () => aprovaMascotSpeakWelcome(first);
+  if (window.speechSynthesis && window.speechSynthesis.getVoices().length === 0) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      window.speechSynthesis.onvoiceschanged = null;
+      startSpeech();
+    };
+    window.setTimeout(startSpeech, 400);
+  } else {
+    window.setTimeout(startSpeech, 200);
   }
 }
 
@@ -101,6 +135,7 @@ function aprovaRenderInicioMascot () {
   if (!wrap || !img) return;
 
   const seen = aprovaMascotHasSeenWelcome();
+  // Foto só depois da 1ª visita (não junto com o modal).
   wrap.hidden = !seen;
   if (seen) {
     img.src = APROVA_MASCOT_IMG;
@@ -115,7 +150,6 @@ function aprovaMaybeShowWelcomeMascot () {
   aprovaRenderInicioMascot();
 
   if (aprovaMascotHasSeenWelcome()) return;
-  // Evita abrir duas vezes no mesmo boot
   if (aprovaMaybeShowWelcomeMascot._opened) return;
   aprovaMaybeShowWelcomeMascot._opened = true;
 
@@ -133,14 +167,19 @@ function aprovaBindWelcomeMascot () {
     el.addEventListener("click", () => aprovaCloseWelcomeMascotModal());
   });
 
-  document.getElementById("welcome-mascot-speak")?.addEventListener("click", () => {
+  document.getElementById("welcome-mascot-replay")?.addEventListener("click", () => {
+    const video = document.getElementById("welcome-mascot-video");
+    if (video) {
+      try {
+        video.muted = true;
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } catch (e) { /* ignore */ }
+    }
     aprovaMascotSpeakWelcome(aprovaMascotFirstName());
   });
 
   const video = document.getElementById("welcome-mascot-video");
-  video?.addEventListener("ended", () => {
-    // Mantém o modal aberto para o usuário confirmar; não fecha sozinho.
-  });
   video?.addEventListener("error", () => {
     const fallback = document.getElementById("welcome-mascot-fallback");
     if (fallback) fallback.hidden = false;
