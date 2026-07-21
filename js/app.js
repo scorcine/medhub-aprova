@@ -3787,6 +3787,10 @@ function aprovaRenderMetas () {
   const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(profile);
   if (empty) empty.hidden = complete;
 
+  document.querySelectorAll("#panel-metas details.metas-track, #panel-metas details.metas-details, #panel-metas details.dash-seu-foco-wrap").forEach((el) => {
+    el.open = false;
+  });
+
   const preview = document.getElementById("dash-metas-preview");
   if (preview) {
     if (!complete) {
