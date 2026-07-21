@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721prova4";
+const APROVA_QUESTION_CACHE_VER = "20260721enare1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
@@ -101,7 +101,11 @@ function aprovaNormalizeQuestion (raw, fileHint) {
     const letter = raw.gabarito.trim().toUpperCase();
     answer = letter.charCodeAt(0) - 65;
   }
-  if (!Number.isFinite(answer) || answer < 0 || answer >= choices.length) return null;
+  const annulled = !!(raw.annulled || raw.anulada || raw.annulledByBoard);
+  if (!annulled && (!Number.isFinite(answer) || answer < 0 || answer >= choices.length)) return null;
+  if (annulled && (!Number.isFinite(answer) || answer < 0 || answer >= choices.length)) {
+    answer = 0;
+  }
 
   const id = String(raw.id || "").trim() ||
     ((fileHint || "q") + "-" + Math.abs(aprovaHashString(stem)).toString(36));
@@ -128,6 +132,7 @@ function aprovaNormalizeQuestion (raw, fileHint) {
     stem,
     choices: choices.map(c => String(c)),
     answer: answer | 0,
+    annulled,
     explain,
     trap
   };
@@ -573,10 +578,11 @@ const AprovaQuestions = {
     if (!q || this.answered) return null;
     if (this.session && this.session.scope === "review") return null;
     this.answered = true;
-    this.attempted += 1;
-    const ok = choiceIndex === q.answer;
+    const annulled = !!q.annulled;
+    if (!annulled) this.attempted += 1;
+    const ok = !annulled && choiceIndex === q.answer;
     if (ok) this.correct += 1;
-    if (typeof aprovaRecordExamAnswer === "function") {
+    if (!annulled && typeof aprovaRecordExamAnswer === "function") {
       aprovaRecordExamAnswer(q.theme, ok, q.id, {
         specialty: q.specialty,
         group: q.group,
@@ -592,12 +598,12 @@ const AprovaQuestions = {
       specialty: q.specialty,
       choice: choiceIndex,
       correct: q.answer,
-      ok
+      ok,
+      annulled
     };
     if (this.mode === "simulado" && this.simulado) {
       this.simulado.answers.push(entry);
     } else {
-      // Sempre grava no teste — cria sessão se faltar (evita "sumir" ao voltar).
       if (!this.session) {
         this.session = { scope: "all", startedAt: Date.now(), answers: [] };
       }
@@ -606,6 +612,7 @@ const AprovaQuestions = {
     }
     return {
       ok,
+      annulled,
       explain: q.explain,
       trap: q.trap || "",
       answer: q.answer
@@ -782,16 +789,18 @@ const AprovaQuestions = {
 
   simuladoResult () {
     if (!this.simulado) return null;
-    const total = this.simulado.answers.length;
-    const hits = this.simulado.answers.filter(a => a.ok).length;
+    const scored = this.simulado.answers.filter((a) => a && !a.annulled);
+    const annulled = this.simulado.answers.filter((a) => a && a.annulled).length;
+    const total = scored.length;
+    const hits = scored.filter((a) => a.ok).length;
     const pct = total ? Math.round((hits / total) * 100) : 0;
     const byTheme = Object.create(null);
-    this.simulado.answers.forEach(a => {
+    scored.forEach((a) => {
       if (!byTheme[a.theme]) byTheme[a.theme] = { ok: 0, n: 0 };
       byTheme[a.theme].n += 1;
       if (a.ok) byTheme[a.theme].ok += 1;
     });
-    const themes = Object.keys(byTheme).map(theme => ({
+    const themes = Object.keys(byTheme).map((theme) => ({
       theme,
       ok: byTheme[theme].ok,
       n: byTheme[theme].n,
@@ -799,7 +808,7 @@ const AprovaQuestions = {
     })).sort((a, b) => a.pct - b.pct);
     const ms = (this.simulado.endedAt || Date.now()) - (this.simulado.startedAt || Date.now());
     const minutes = Math.max(1, Math.round(ms / 60000));
-    return { total, hits, pct, themes, minutes };
+    return { total, hits, pct, themes, minutes, annulled };
   },
 
   statsText () {

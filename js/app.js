@@ -5324,7 +5324,10 @@ function aprovaRenderSimuladoResult () {
   const r = AprovaQuestions.simuladoResult();
   aprovaShowQuestionViews("result");
   if (!r) return;
-  if (score) score.textContent = r.hits + "/" + r.total + " acertos (" + r.pct + "%)";
+  if (score) {
+    score.textContent = r.hits + "/" + r.total + " acertos (" + r.pct + "%)" +
+      (r.annulled ? (" · " + r.annulled + " anulada(s) fora do cálculo") : "");
+  }
   if (timeEl) timeEl.textContent = "Tempo aproximado: " + r.minutes + " min";
   if (themesEl) {
     themesEl.innerHTML = r.themes.length

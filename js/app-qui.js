@@ -5834,7 +5834,8 @@ function aprovaRenderSimuladoResult () {
   const provaTitle = sim && sim.provaTitle ? String(sim.provaTitle) : "";
   if (score) {
     score.textContent = (provaTitle ? provaTitle + " · " : "") +
-      r.hits + "/" + r.total + " acertos (" + r.pct + "%)";
+      r.hits + "/" + r.total + " acertos (" + r.pct + "%)" +
+      (r.annulled ? (" · " + r.annulled + " anulada(s) fora do cálculo") : "");
   }
   if (timeEl) timeEl.textContent = "Tempo aproximado: " + r.minutes + " min";
   if (themesEl) {
@@ -5913,6 +5914,10 @@ function aprovaRenderQuestion () {
   if (theme) theme.textContent = meta.join(" · ");
   if (progress) progress.textContent = AprovaQuestions.progressText();
   stem.textContent = q.stem;
+  const annulledEl = document.getElementById("q-annulled");
+  if (annulledEl) {
+    annulledEl.hidden = !q.annulled;
+  }
   if (feedback) feedback.hidden = true;
   if (verdictEl) {
     verdictEl.textContent = "";
@@ -5934,21 +5939,30 @@ function aprovaRenderQuestion () {
     choices.querySelectorAll(".choice").forEach((el, idx) => {
       el.disabled = true;
       el.classList.remove("selected");
-      if (idx === result.answer) el.classList.add("correct");
-      if (chosenIndex != null && idx === chosenIndex && !result.ok) el.classList.add("wrong");
+      if (result.annulled) {
+        el.classList.add("choice--annulled");
+      } else {
+        if (idx === result.answer) el.classList.add("correct");
+        if (chosenIndex != null && idx === chosenIndex && !result.ok) el.classList.add("wrong");
+      }
     });
     if (feedback) feedback.hidden = false;
     if (verdictEl) {
       const review = AprovaQuestions.session && AprovaQuestions.session.scope === "review";
-      verdictEl.textContent = review
-        ? (result.ok
-          ? "Revisão — você tinha acertado. Releia o raciocínio."
-          : "Revisão — você tinha errado. Veja a correta e a pegadinha.")
-        : (result.ok
-          ? "Acertou — veja o raciocínio e a pegadinha."
-          : "Errou — veja por que a correta é outra e onde está a pegadinha.");
-      verdictEl.className = "q-feedback-verdict " +
-        (result.ok ? "q-feedback-verdict--ok" : "q-feedback-verdict--err");
+      if (result.annulled) {
+        verdictEl.textContent = "Anulada pela banca — este item não entra no percentual de acertos.";
+        verdictEl.className = "q-feedback-verdict q-feedback-verdict--annulled";
+      } else {
+        verdictEl.textContent = review
+          ? (result.ok
+            ? "Revisão — você tinha acertado. Releia o raciocínio."
+            : "Revisão — você tinha errado. Veja a correta e a pegadinha.")
+          : (result.ok
+            ? "Acertou — veja o raciocínio e a pegadinha."
+            : "Errou — veja por que a correta é outra e onde está a pegadinha.");
+        verdictEl.className = "q-feedback-verdict " +
+          (result.ok ? "q-feedback-verdict--ok" : "q-feedback-verdict--err");
+      }
     }
     if (explain) {
       explain.textContent = result.explain ||
@@ -6004,6 +6018,7 @@ function aprovaRenderQuestion () {
   if (prior) {
     aprovaShowQuestionFeedback({
       ok: prior.ok,
+      annulled: !!(prior.annulled || q.annulled),
       explain: q.explain,
       trap: q.trap || "",
       answer: prior.correct

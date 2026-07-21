@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → prova */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721prova4";
+const APROVA_PROVAS_CACHE_VER = "20260721enare1";
 
 let aprovaProvasCatalogData = null;
 let aprovaProvasBound = false;
