@@ -7,14 +7,14 @@ const APROVA_PANEL_META = {
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
-  estatisticas: { title: "Estatísticas de provas", sub: "O que mais cai nas provas R1" },
+  estatisticas: { title: "Estatísticas de provas", sub: "O que mais caiu nas provas R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
   metas: { title: "Minhas metas", sub: "Diária, semanal e temas de flashcards" },
   perfil: { title: "Meu perfil", sub: "Provas e datas que você pretende prestar" },
   config: { title: "Configurações", sub: "Conta e preferências" }
 };
 
-/** "study" = Flashcards · "stats" = o que mais cai nas provas */
+/** "study" = Flashcards · "stats" = o que mais caiu nas provas */
 let aprovaEspMode = "study";
 
 function aprovaIsStatsMode () {
@@ -70,7 +70,7 @@ function aprovaMarkNav (panelId) {
 function aprovaGoTo (id, options) {
   const opts = options || {};
 
-  // Estatísticas de provas: explorer de “o que mais cai” (reusa o painel de áreas).
+  // Estatísticas de provas: explorer de “o que mais caiu” (reusa o painel de áreas).
   if (id === "estatisticas") {
     aprovaEspMode = "stats";
     aprovaRenderEspecialidades();
@@ -139,7 +139,7 @@ function aprovaShowFlashcardBrowse () {
   const hint = document.getElementById("fc-hint");
   if (browse) browse.hidden = false;
   if (card) card.hidden = true;
-  if (hint) hint.textContent = "Escolha a área para estudar · abaixo, o que mais cai nas provas.";
+  if (hint) hint.textContent = "Escolha a área para estudar · abaixo, o que mais caiu nas provas.";
   aprovaRenderFlashcardBrowse();
   aprovaRenderFlashcardHomeStats(null, aprovaPreferredExamFocus());
 }
@@ -634,7 +634,7 @@ function aprovaShowSpecialtyList () {
   }
   if (hint) {
     hint.textContent = aprovaIsStatsMode()
-      ? "Escolha a área e veja, prova a prova, o que mais cai."
+      ? "Escolha a área e veja, prova a prova, o que mais caiu."
       : "Escolha uma área e depois um subtema para estudar.";
   }
   aprovaActiveSpecialty = null;
@@ -658,35 +658,35 @@ function aprovaRenderEspecialidades () {
   const prevN = AprovaFlashcards.countBySpecialty("preventiva");
   if (cli) {
     cli.textContent = statsMode
-      ? "Cardio, infecto, endo e demais áreas · o que mais cai"
+      ? "Cardio, infecto, endo e demais áreas · o que mais caiu"
       : (cliN
         ? cliN + " flashcards · Cardio, infecto, endo e demais áreas"
         : "Cardio, infecto, endo e demais áreas.");
   }
   if (cir) {
     cir.textContent = statsMode
-      ? "Trauma, abdome, pós-op e especialidades · o que mais cai"
+      ? "Trauma, abdome, pós-op e especialidades · o que mais caiu"
       : (cirN
         ? cirN + " flashcards · trauma, abdome e pós-op"
         : "Trauma, abdome agudo e pós-operatório.");
   }
   if (ped) {
     ped.textContent = statsMode
-      ? "Neo, infecções, urgências e blocos clássicos · o que mais cai"
+      ? "Neo, infecções, urgências e blocos clássicos · o que mais caiu"
       : (pedN
         ? pedN + " flashcards · Pediatria R1 completa"
         : "Ped1–Ped6 + blocos clássicos do R1.");
   }
   if (go) {
     go.textContent = statsMode
-      ? "Ginecologia e Obstetrícia · o que mais cai"
+      ? "Ginecologia e Obstetrícia · o que mais caiu"
       : (goN
         ? goN + " flashcards · Ginecologia (+ Obstetrícia em breve)"
         : "Ginecologia e Obstetrícia.");
   }
   if (prev) {
     prev.textContent = statsMode
-      ? "SUS, epidemiologia, vigilância e indicadores · o que mais cai"
+      ? "SUS, epidemiologia, vigilância e indicadores · o que mais caiu"
       : (prevN
         ? prevN + " flashcards · Prev1–4 · 4 grupos"
         : "Epidemiologia, vacinas e SUS.");
@@ -1190,8 +1190,8 @@ function aprovaRenderPedOverviewStats (focusId, yearId) {
 
     if (title) {
       title.textContent = profile.id === "geral"
-        ? ("O que mais cai em " + meta.shortLabel + " · Geral Brasil · " + yearTxt)
-        : ("O que mais cai em " + meta.shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
+        ? ("O que mais caiu em " + meta.shortLabel + " · Geral Brasil · " + yearTxt)
+        : ("O que mais caiu em " + meta.shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
     }
     if (sub) {
       sub.textContent = typeLabel + " · ciclo " + yearTxt +
@@ -1319,8 +1319,8 @@ function aprovaRenderFlashcardHomeStats (specId, focusId, yearId) {
 
     if (title) {
       title.textContent = profile.id === "geral"
-        ? ("O que mais cai em " + shortLabel + " · Geral Brasil · " + yearTxt)
-        : ("O que mais cai em " + shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
+        ? ("O que mais caiu em " + shortLabel + " · Geral Brasil · " + yearTxt)
+        : ("O que mais caiu em " + shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
     }
     if (sub) {
       sub.textContent = typeLabel + " · ciclo " + yearTxt +
@@ -1408,7 +1408,7 @@ async function aprovaRenderGoAreaCards () {
     btn.type = "button";
     btn.className = "dash-card";
     const detail = aprovaIsStatsMode()
-      ? "Ver o que mais cai nesta área"
+      ? "Ver o que mais caiu nesta área"
       : (stats.groups
         ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
           " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
@@ -1456,7 +1456,7 @@ async function aprovaRenderCliAreaCards () {
     btn.type = "button";
     btn.className = "dash-card";
     const detail = aprovaIsStatsMode()
-      ? "Ver o que mais cai nesta área"
+      ? "Ver o que mais caiu nesta área"
       : (stats.groups
         ? (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
           " · " + stats.groups + " grupo" + (stats.groups === 1 ? "" : "s"))
@@ -1510,7 +1510,7 @@ async function aprovaRenderPedGroupCards (activeModuleId, options) {
       "<span class=\"dash-card-kicker\">" + (statsMode ? "Tema" : "Grupo") + "</span>" +
       "<strong>" + m.label + "</strong>" +
       "<span>" + (statsMode
-        ? "Ver o que mais cai neste tema"
+        ? "Ver o que mais caiu neste tema"
         : (stats.cards + " card" + (stats.cards === 1 ? "" : "s") +
           " · " + stats.decks + " subtema" + (stats.decks === 1 ? "" : "s"))) + "</span>";
     btn.addEventListener("click", e => {
@@ -2002,8 +2002,8 @@ async function aprovaRenderPediatriaStats (focusId, moduleId, yearId) {
   const yearTxt = aprovaYearLabel(aprovaActiveModuleYear);
   const moduleLabel = (modules.find(m => m.id === aprovaActivePedModule) || {}).label || meta.shortLabel;
   const chartTitle = profile.id === "geral"
-    ? ("O que mais cai · Geral Brasil · " + moduleLabel + " · " + yearTxt)
-    : ("O que mais cai · " + aprovaExamLabel(profile) + " · " + moduleLabel + " · " + yearTxt);
+    ? ("O que mais caiu · Geral Brasil · " + moduleLabel + " · " + yearTxt)
+    : ("O que mais caiu · " + aprovaExamLabel(profile) + " · " + moduleLabel + " · " + yearTxt);
 
   const sourceType = profile.sourceType || "estimativa";
   const typeLabel = sourceType === "levantamento"
@@ -2091,8 +2091,8 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
     sub.hidden = false;
     if (statsMode) {
       sub.textContent = hasAreas
-        ? ("O que mais cai em " + meta.shortLabel + " · toque em uma área para detalhar")
-        : ("O que mais cai em " + meta.shortLabel + " · escolha a prova e, se quiser, um tema");
+        ? ("O que mais caiu em " + meta.shortLabel + " · toque em uma área para detalhar")
+        : ("O que mais caiu em " + meta.shortLabel + " · escolha a prova e, se quiser, um tema");
     } else if (hasAreas) {
       sub.textContent = total
         ? (total + " flashcards · " + areas.length + " áreas · toque em uma área para ver os grupos")
@@ -2111,10 +2111,10 @@ async function aprovaOpenRichSpecialtyRoot (specialty) {
         : "Filtre por banca e ano · toque em um tema para ver o recorte mais fino.";
     } else {
       hint.textContent = isGo
-        ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas. Abaixo: o que mais cai na prova."
+        ? "Primeiro escolha Ginecologia ou Obstetrícia; depois um grupo; depois os subtemas. Abaixo: o que mais caiu na prova."
         : isCli
           ? "Veja as estatísticas da Clínica e escolha uma área (ex.: Cardiologia) para aprofundar."
-          : "Toque em um grupo para estudar · abaixo, o que mais cai na prova (banca e ano).";
+          : "Toque em um grupo para estudar · abaixo, o que mais caiu na prova (banca e ano).";
     }
   }
   if (back) {
@@ -2187,7 +2187,7 @@ async function aprovaOpenGoArea (areaId) {
   if (sub) {
     sub.hidden = false;
     if (statsMode) {
-      sub.textContent = "O que mais cai nesta área · toque em um tema para detalhar.";
+      sub.textContent = "O que mais caiu nesta área · toque em um tema para detalhar.";
     } else {
       sub.textContent = areaStats.groups
         ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
@@ -2198,7 +2198,7 @@ async function aprovaOpenGoArea (areaId) {
   if (hint) {
     hint.textContent = statsMode
       ? "Escolha a banca e o ano · depois um tema para o recorte fino."
-      : "Toque em um grupo para estudar · abaixo, o que mais cai nesta área.";
+      : "Toque em um grupo para estudar · abaixo, o que mais caiu nesta área.";
   }
   if (back) back.textContent = "← Voltar a Ginecologia e obstetrícia";
   if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
@@ -2259,7 +2259,7 @@ async function aprovaOpenCliArea (areaId) {
   if (sub) {
     sub.hidden = false;
     if (statsMode) {
-      sub.textContent = "O que mais cai nesta área · toque em um tema para detalhar.";
+      sub.textContent = "O que mais caiu nesta área · toque em um tema para detalhar.";
     } else {
       sub.textContent = areaStats.groups
         ? (areaStats.cards + " flashcards · " + areaStats.groups + " grupo" +
@@ -2270,7 +2270,7 @@ async function aprovaOpenCliArea (areaId) {
   if (hint) {
     hint.textContent = statsMode
       ? "Escolha a banca e o ano · depois um tema para o recorte fino."
-      : "Toque em um grupo para estudar · abaixo, o que mais cai nesta área.";
+      : "Toque em um grupo para estudar · abaixo, o que mais caiu nesta área.";
   }
   if (back) back.textContent = "← Voltar à Clínica médica";
   if (groupsLabel) groupsLabel.textContent = statsMode ? "Temas" : "Grupos";
@@ -2330,13 +2330,13 @@ async function aprovaOpenRichSpecialtyModule (specialty, moduleId) {
   if (sub) {
     sub.hidden = false;
     sub.textContent = statsMode
-      ? "Temas no topo · gráfico do que mais cai abaixo."
-      : "Grupos no topo · subtemas e o que mais cai abaixo.";
+      ? "Temas no topo · gráfico do que mais caiu abaixo."
+      : "Grupos no topo · subtemas e o que mais caiu abaixo.";
   }
   if (hint) {
     hint.textContent = statsMode
       ? "Filtre por banca e ano para ver o recorte deste tema."
-      : "Escolha um subtema ou mude de grupo. O gráfico mostra o que mais cai na prova.";
+      : "Escolha um subtema ou mude de grupo. O gráfico mostra o que mais caiu na prova.";
   }
   if (back) {
     if (meta.id === "go" && aprovaActiveGoArea) {
@@ -2496,7 +2496,7 @@ function aprovaRenderExamStats () {
 
   const preview = document.getElementById("dash-exam-stats-preview");
   if (preview) {
-    preview.textContent = "O que mais cai nas principais provas de R1.";
+    preview.textContent = "O que mais caiu nas principais provas de R1.";
   }
   const progPreview = document.getElementById("dash-progress-preview");
   if (progPreview) {
@@ -3569,7 +3569,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
           : "Frequência = quanto o tema cai nas provas de residência.";
         qWeekEl.textContent = (t
           ? ("Volume para meta de " + t + "% · temas rotacionam todo dia. ")
-          : "Temas do dia com base no que mais cai. ") + freqBit;
+          : "Temas do dia com base no que mais caiu. ") + freqBit;
       }
       if (qThemesEl) {
         qThemesEl.innerHTML = aprovaBuildMetasQThemesHtml(program, focusPack || aprovaSeuFocoCache);
@@ -3827,7 +3827,7 @@ function aprovaRenderSeuFoco () {
   if (root) {
     root.hidden = false;
     const moreEl = document.getElementById("dash-seu-foco-more");
-    if (moreEl) moreEl.innerHTML = "<p class=\"muted\">Carregando o que mais cai…</p>";
+    if (moreEl) moreEl.innerHTML = "<p class=\"muted\">Carregando o que mais caiu…</p>";
   }
 
   return focusPromise.then(pack => {
@@ -4599,7 +4599,7 @@ function aprovaRenderQuestionBrowseStats (specialty) {
     if (!data || !Array.isArray(data.profiles) || !data.profiles.length) {
       root.hidden = false;
       bars.innerHTML = "<p class=\"muted\">Estatísticas desta área em breve — os grupos abaixo já estão disponíveis para treino.</p>";
-      if (title) title.textContent = "O que mais cai · " + aprovaQSpecialtyLabel(specialty);
+      if (title) title.textContent = "O que mais caiu · " + aprovaQSpecialtyLabel(specialty);
       if (sub) sub.textContent = "Quando houver levantamento, ele aparece aqui para orientar o foco.";
       if (verdict) verdict.textContent = "";
       if (unitEl) unitEl.hidden = true;
@@ -4644,8 +4644,8 @@ function aprovaRenderQuestionBrowseStats (specialty) {
 
     if (title) {
       title.textContent = profile.id === "geral"
-        ? ("O que mais cai em " + shortLabel + " · Geral Brasil · " + yearTxt)
-        : ("O que mais cai em " + shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
+        ? ("O que mais caiu em " + shortLabel + " · Geral Brasil · " + yearTxt)
+        : ("O que mais caiu em " + shortLabel + " · " + aprovaExamLabel(profile) + " · " + yearTxt);
     }
     if (sub) {
       sub.textContent = typeLabel + " · ciclo " + yearTxt +
@@ -5218,7 +5218,7 @@ function aprovaRenderQuestionBrowse () {
   if (aprovaQBrowse.level === "groups") {
     if (hint) {
       hint.textContent = aprovaQSpecialtyLabel(aprovaQBrowse.specialty) +
-        " · veja o que mais cai e escolha o grupo para focar.";
+        " · veja o que mais caiu e escolha o grupo para focar.";
     }
 
     const groups = AprovaQuestions.groupOptions(aprovaQBrowse.specialty);
