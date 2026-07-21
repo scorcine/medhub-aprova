@@ -1,0 +1,642 @@
+[
+  {
+    "idPrefix": "go-gin2",
+    "n": 1,
+    "group": "SUA / miomatose",
+    "theme": "SUA · conceitos e padrões",
+    "stem": "Mulher de 35 anos relata sangramento menstrual muito intenso há 6 meses, com necessidade de trocar absorvente a cada hora nos primeiros dois dias do ciclo, apesar de ciclo menstrual regular. Segundo a nomenclatura atual da FIGO para sangramento uterino anormal, qual termo descreve corretamente esse padrão?",
+    "correct": "Sangramento menstrual intenso (heavy menstrual bleeding), termo que substituiu a antiga denominação de menorragia na classificação atual.",
+    "wrongs": [
+      "Sangramento intermenstrual, termo reservado a episódios de sangramento entre ciclos menstruais regulares e não durante eles.",
+      "Sangramento pós-coital, termo que descreve sangramento relacionado temporalmente à relação sexual, não ao próprio fluxo menstrual.",
+      "Sangramento uterino anormal agudo, categoria reservada a episódios únicos e graves que exigem intervenção imediata.",
+      "Spotting, termo que designa sangramento leve e escasso, incompatível com a intensidade relatada por essa paciente."
+    ],
+    "explain": "A terminologia atual da FIGO abandonou termos antigos como menorragia e metrorragia, adotando sangramento menstrual intenso para descrever fluxo volumoso ou prolongado, ainda que regular, e sangramento intermenstrual para episódios fora do período menstrual esperado.",
+    "trap": "Usar o termo antigo menorragia, que a nomenclatura atual da FIGO substituiu por sangramento menstrual intenso para maior padronização."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 2,
+    "group": "SUA / miomatose",
+    "theme": "SUA · conceitos e padrões",
+    "stem": "Mulher de 29 anos, com ciclo menstrual regular, relata episódios recorrentes de sangramento vaginal leve entre as menstruações, sem relação com relações sexuais. Qual termo da classificação de sangramento uterino anormal descreve corretamente esse padrão específico?",
+    "correct": "Sangramento intermenstrual, definido como episódios de sangramento que ocorrem entre os períodos menstruais regulares esperados.",
+    "wrongs": [
+      "Sangramento menstrual intenso, termo reservado a fluxo volumoso ou prolongado durante o próprio período menstrual.",
+      "Amenorreia secundária, termo que descreve ausência de menstruação por período prolongado, e não sangramento adicional.",
+      "Sangramento pós-menopausa, categoria exclusiva de mulheres que já atingiram a menopausa, o que não se aplica aqui.",
+      "Oligomenorreia, termo que descreve ciclos menstruais espaçados e infrequentes, não sangramento entre eles."
+    ],
+    "explain": "O sangramento intermenstrual é definido como episódios de sangramento entre ciclos menstruais regulares, podendo indicar causas estruturais como pólipos, sendo distinto do sangramento menstrual intenso, que ocorre durante o próprio fluxo menstrual esperado.",
+    "trap": "Confundir sangramento intermenstrual com aumento do fluxo menstrual, quando na verdade se refere a sangramento fora do período esperado."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 3,
+    "group": "SUA / miomatose",
+    "theme": "SUA · conceitos e padrões",
+    "stem": "Mulher de 27 anos, sexualmente ativa, procura o ambulatório por sangramento uterino anormal há 2 meses, com ciclo previamente regular. Antes de investigar causas estruturais ou hormonais desse sangramento, qual exame deve ser solicitado prioritariamente em toda mulher em idade reprodutiva com esse quadro?",
+    "correct": "Dosagem de beta-hCG sérico, para excluir gestação e suas complicações como causa do sangramento uterino anormal.",
+    "wrongs": [
+      "Histeroscopia diagnóstica imediata, procedimento que deve preceder qualquer outro exame nesse contexto clínico.",
+      "Dosagem isolada de hormônio antimülleriano, exame voltado à avaliação de reserva ovariana, não ao sangramento agudo.",
+      "Biópsia de endométrio por Pipelle, indicada de rotina antes de qualquer outro exame em todas as idades.",
+      "Cariótipo periférico, exame reservado a investigação de amenorreia primária, sem relação com esse quadro."
+    ],
+    "explain": "Em qualquer mulher em idade reprodutiva com sangramento uterino anormal, gestação e suas complicações, como abortamento e gestação ectópica, devem ser excluídas antes de qualquer outra investigação estrutural ou hormonal, pela gravidade potencial dessas condições.",
+    "trap": "Avançar direto para histeroscopia ou biópsia sem excluir gestação, o que pode atrasar diagnóstico de uma complicação obstétrica grave."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 4,
+    "group": "SUA / miomatose",
+    "theme": "SUA · conceitos e padrões",
+    "stem": "Mulher de 58 anos, na pós-menopausa há 6 anos, sem uso de terapia hormonal, apresenta um único episódio de sangramento vaginal de pequena quantidade. Qual é a conduta mais apropriada diante desse sangramento pós-menopausa, independentemente da quantidade relatada?",
+    "correct": "Investigar prontamente com USG transvaginal e considerar biópsia de endométrio, pois todo sangramento pós-menopausa deve excluir malignidade endometrial.",
+    "wrongs": [
+      "Tranquilizar a paciente e apenas reavaliar em consulta de rotina em um ano, já que episódios únicos são sempre benignos.",
+      "Iniciar terapia hormonal combinada empírica, conduta que resolveria o sangramento sem necessidade de investigação prévia.",
+      "Indicar apenas exame especular isolado, considerado suficiente para excluir toda causa relevante desse sangramento.",
+      "Solicitar apenas dosagem de CA-125 sérico, exame suficiente isoladamente para excluir malignidade endometrial nesse contexto."
+    ],
+    "explain": "Todo sangramento pós-menopausa, independentemente do volume ou da frequência, deve ser considerado sinal de alarme até prova em contrário, pois representa o principal sintoma do câncer de endométrio, exigindo avaliação por imagem e histopatológica prioritária.",
+    "trap": "Minimizar um episódio único e de pequena quantidade, quando qualquer sangramento pós-menopausa exige investigação obrigatória."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 5,
+    "group": "SUA / miomatose",
+    "theme": "PALM-COEIN",
+    "stem": "Mulher de 40 anos com sangramento uterino anormal crônico é avaliada segundo a classificação PALM-COEIN da FIGO. USG identifica útero com contorno irregular por nódulo submucoso. Segundo essa classificação, em qual categoria se encaixa essa causa estrutural identificada?",
+    "correct": "Categoria L (leiomioma), correspondente às causas estruturais por miomas uterinos dentro da classificação PALM-COEIN.",
+    "wrongs": [
+      "Categoria C (coagulopatia), reservada a distúrbios sistêmicos da coagulação, e não a alterações estruturais uterinas.",
+      "Categoria O (disfunção ovulatória), reservada a causas funcionais não estruturais de sangramento uterino anormal.",
+      "Categoria E (endométrio), reservada a disfunções primárias do próprio endométrio sem lesão estrutural focal.",
+      "Categoria N (não classificado), reservada a causas raras que não se encaixam nas demais categorias estabelecidas."
+    ],
+    "explain": "A classificação PALM-COEIN divide as causas de sangramento uterino anormal em estruturais (Pólipo, Adenomiose, Leiomioma, Malignidade/hiperplasia) e não estruturais (Coagulopatia, disfunção Ovulatória, disfunção Endometrial, Iatrogênica, não classificada); nódulo submucoso caracteriza a categoria L.",
+    "trap": "Confundir leiomioma com adenomiose na classificação, distinção que depende da identificação de um nódulo bem definido versus espessamento difuso miometrial."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 6,
+    "group": "SUA / miomatose",
+    "theme": "PALM-COEIN",
+    "stem": "Mulher de 52 anos com sangramento uterino anormal e obesidade importante realiza biópsia de endométrio que revela hiperplasia endometrial com atipia. Segundo a classificação PALM-COEIN, em qual categoria estrutural esse achado histopatológico se encaixa?",
+    "correct": "Categoria M (malignidade e hiperplasia), que abrange tanto neoplasias malignas quanto hiperplasias endometriais atípicas.",
+    "wrongs": [
+      "Categoria P (pólipo), reservada exclusivamente a lesões polipoides benignas e não a hiperplasias com atipia.",
+      "Categoria A (adenomiose), reservada à presença de tecido endometrial ectópico dentro do miométrio uterino.",
+      "Categoria O (disfunção ovulatória), reservada a causas funcionais de anovulação crônica sem achado histopatológico.",
+      "Categoria I (iatrogênica), reservada a causas relacionadas a medicações ou dispositivos, e não a achados histológicos."
+    ],
+    "explain": "A categoria M da classificação PALM-COEIN engloba tanto malignidades quanto hiperplasias endometriais, incluindo formas atípicas com risco de progressão para carcinoma, exigindo conduta específica conforme o grau de atipia encontrado na biópsia.",
+    "trap": "Classificar hiperplasia atípica como categoria E de disfunção endometrial funcional, quando na verdade pertence à categoria M por seu potencial neoplásico."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 7,
+    "group": "SUA / miomatose",
+    "theme": "PALM-COEIN",
+    "stem": "Adolescente de 14 anos apresenta sangramento menstrual intenso desde a menarca, com episódios de equimoses fáceis e sangramento gengival ocasional. Exames mostram tempo de sangramento prolongado e fator de von Willebrand reduzido. Segundo a classificação PALM-COEIN, essa causa se encaixa em qual categoria?",
+    "correct": "Categoria C (coagulopatia), representada nesse caso pela doença de von Willebrand, causa sistêmica não estrutural de sangramento uterino anormal.",
+    "wrongs": [
+      "Categoria L (leiomioma), incompatível com a idade da paciente e com os achados sistêmicos de coagulopatia relatados.",
+      "Categoria P (pólipo), causa estrutural focal que não explicaria as equimoses e o sangramento gengival associados.",
+      "Categoria O (disfunção ovulatória), categoria que não engloba distúrbios sistêmicos da coagulação como esse caso.",
+      "Categoria A (adenomiose), condição rara na adolescência e sem relação com os achados sistêmicos apresentados."
+    ],
+    "explain": "A doença de von Willebrand é a coagulopatia hereditária mais associada a sangramento menstrual intenso, especialmente quando presente desde a menarca; a investigação de coagulopatias é recomendada em adolescentes com esse padrão de sangramento e sinais sistêmicos.",
+    "trap": "Atribuir o sangramento intenso apenas a causa ginecológica funcional, sem investigar coagulopatia sistêmica em adolescente com sangramento desde a menarca."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 8,
+    "group": "SUA / miomatose",
+    "theme": "PALM-COEIN",
+    "stem": "Mulher de 24 anos com SOP e ciclos anovulatórios crônicos apresenta sangramento uterino anormal imprevisível, alternando períodos de amenorreia com episódios de sangramento intenso. USG transvaginal e biópsia de endométrio são normais, sem lesão estrutural. Qual categoria da classificação PALM-COEIN melhor explica esse sangramento?",
+    "correct": "Categoria O (disfunção ovulatória), pela anovulação crônica que gera estímulo estrogênico irregular sobre o endométrio sem oposição cíclica.",
+    "wrongs": [
+      "Categoria P (pólipo), incompatível com a ausência de lesão estrutural focal identificada na USG e na biópsia.",
+      "Categoria M (malignidade), incompatível com a biópsia de endométrio normal relatada nesse caso específico.",
+      "Categoria C (coagulopatia), hipótese menos provável diante do contexto claro de anovulação crônica por SOP.",
+      "Categoria I (iatrogênica), categoria reservada a causas medicamentosas, sem relação com o quadro anovulatório descrito."
+    ],
+    "explain": "Na disfunção ovulatória, típica do SOP, a ausência de ovulação regular gera exposição endometrial irregular ao estrogênio sem contraposição adequada de progesterona, resultando em padrões imprevisíveis de sangramento, mesmo sem qualquer lesão estrutural identificável.",
+    "trap": "Buscar necessariamente uma causa estrutural quando exames de imagem e biópsia são normais, situação típica da categoria funcional O."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 9,
+    "group": "SUA / miomatose",
+    "theme": "SUA · investigação",
+    "stem": "Mulher de 44 anos com sangramento uterino anormal crônico procura o ambulatório de ginecologia para investigação inicial. Beta-hCG é negativo. Qual exame de imagem deve ser solicitado como primeira linha para avaliar a cavidade uterina e o miométrio nesse contexto?",
+    "correct": "USG transvaginal, exame de primeira linha por sua disponibilidade, custo acessível e boa sensibilidade para achados estruturais uterinos.",
+    "wrongs": [
+      "Ressonância magnética pélvica, exame reservado a casos específicos e não indicado como primeira linha nesse contexto.",
+      "Tomografia computadorizada de abdome total, exame com baixa acurácia para avaliação detalhada do endométrio e miométrio.",
+      "Histerossalpingografia, exame voltado à avaliação da permeabilidade tubária, e não à investigação de sangramento uterino.",
+      "PET-CT de corpo inteiro, exame de alto custo e sem indicação para investigação inicial de sangramento uterino anormal."
+    ],
+    "explain": "A USG transvaginal é recomendada como exame de imagem inicial na investigação do sangramento uterino anormal por sua ampla disponibilidade, baixo custo e boa capacidade de detectar pólipos, miomas, espessamento endometrial e sinais sugestivos de adenomiose.",
+    "trap": "Solicitar ressonância magnética como primeiro exame, reservando-a corretamente para casos em que a USG for inconclusiva ou discordante."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 10,
+    "group": "SUA / miomatose",
+    "theme": "SUA · investigação",
+    "stem": "Mulher de 46 anos com sangramento uterino anormal e USG transvaginal mostrando imagem intracavitária hiperecogênica de contornos indefinidos, sugestiva de possível pólipo ou mioma submucoso. Qual exame é considerado padrão de referência para diagnóstico e tratamento simultâneo dessa lesão intracavitária?",
+    "correct": "Histeroscopia diagnóstica com biópsia dirigida, considerada padrão de referência por permitir visualização direta e ressecção da lesão.",
+    "wrongs": [
+      "Curetagem uterina cega, procedimento com menor acurácia diagnóstica por não permitir visualização direta da cavidade.",
+      "Ressonância magnética pélvica isolada, exame que caracteriza a lesão, mas não permite tratamento no mesmo procedimento.",
+      "Repetição seriada da USG transvaginal em três meses, conduta que atrasaria o diagnóstico definitivo dessa lesão.",
+      "Laparoscopia diagnóstica, procedimento voltado à avaliação da cavidade peritoneal, e não da cavidade uterina interna."
+    ],
+    "explain": "A histeroscopia permite visualização direta da cavidade uterina, biópsia dirigida das lesões suspeitas e, frequentemente, ressecção terapêutica no mesmo procedimento, sendo considerada padrão de referência para lesões intracavitárias como pólipos e miomas submucosos.",
+    "trap": "Optar pela curetagem cega, procedimento que pode falhar em amostrar corretamente lesões focais visualizadas apenas de forma indireta."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 11,
+    "group": "SUA / miomatose",
+    "theme": "SUA · investigação",
+    "stem": "Mulher de 47 anos, obesa, com sangramento uterino anormal e ciclo menstrual irregular há 8 meses, é atendida no ambulatório. Considerando a idade e os fatores de risco para hiperplasia endometrial, qual exame deve ser priorizado na investigação inicial desse sangramento?",
+    "correct": "Biópsia de endométrio, indicada em mulheres com 45 anos ou mais, ou mais jovens com fatores de risco, para excluir hiperplasia ou malignidade.",
+    "wrongs": [
+      "Dosagem isolada de CA-125 sérico, marcador tumoral sem indicação para triagem inicial de sangramento uterino anormal.",
+      "Laparoscopia diagnóstica exploradora, procedimento não indicado como primeira abordagem para avaliação endometrial.",
+      "Dosagem isolada de hormônio antimülleriano, exame voltado à avaliação de reserva ovariana, sem relação com o endométrio.",
+      "Cariótipo periférico, exame reservado à investigação de amenorreia primária, sem indicação nesse contexto clínico."
+    ],
+    "explain": "Mulheres com 45 anos ou mais com sangramento uterino anormal, ou mais jovens com fatores de risco como obesidade e anovulação crônica, devem ter o endométrio avaliado por biópsia para excluir hiperplasia endometrial ou carcinoma antes de definir o tratamento.",
+    "trap": "Focar apenas em causas funcionais pela idade reprodutiva, sem considerar que a obesidade e o ciclo irregular elevam o risco endometrial."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 12,
+    "group": "SUA / miomatose",
+    "theme": "SUA · investigação",
+    "stem": "Mulher de 39 anos com sangramento uterino anormal apresenta USG transvaginal com endométrio espessado, mas sem definição clara entre pólipo endometrial e mioma submucoso pequeno. Qual exame complementar melhor diferencia essas duas possibilidades antes da histeroscopia?",
+    "correct": "Histerossonografia com infusão salina, que distende a cavidade uterina e melhora a caracterização de lesões intracavitárias focais.",
+    "wrongs": [
+      "Tomografia computadorizada pélvica sem contraste, exame com baixa resolução para diferenciar lesões endometriais focais.",
+      "Dosagem de progesterona sérica na fase lútea, parâmetro hormonal sem capacidade de diferenciar lesões estruturais.",
+      "Radiografia simples de pelve, exame sem capacidade de avaliar partes moles ou lesões intracavitárias uterinas.",
+      "Repetição da USG transvaginal pelo mesmo examinador no mesmo dia, sem qualquer ganho diagnóstico adicional esperado."
+    ],
+    "explain": "A histerossonografia com infusão de solução salina distende a cavidade uterina e permite melhor delimitação de lesões intracavitárias, ajudando a diferenciar pólipos de miomas submucosos antes de indicar histeroscopia, especialmente quando a USG convencional é inconclusiva.",
+    "trap": "Indicar diretamente exames de menor acurácia para partes moles pélvicas, ignorando a histerossonografia como opção intermediária eficaz."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 13,
+    "group": "SUA / miomatose",
+    "theme": "SUA · tratamento",
+    "stem": "Mulher de 30 anos com SOP e sangramento uterino anormal por disfunção ovulatória, sem desejo de gravidez nos próximos anos, apresenta USG transvaginal e biópsia de endométrio normais. Qual é o tratamento clínico de primeira linha mais adequado para regularizar o sangramento nesse contexto?",
+    "correct": "Contraceptivo hormonal combinado ou DIU hormonal de levonorgestrel, opções eficazes para regularizar o sangramento e prevenir hiperplasia endometrial.",
+    "wrongs": [
+      "Ácido tranexâmico isolado em uso contínuo diário, sem qualquer supressão hormonal do ciclo anovulatório subjacente.",
+      "Histerectomia total como primeira linha, procedimento reservado a casos refratários ao tratamento clínico bem conduzido.",
+      "Observação clínica isolada sem qualquer tratamento, já que o SOP nunca eleva o risco endometrial a longo prazo.",
+      "Antibioticoterapia empírica prolongada, medida sem qualquer indicação para sangramento por disfunção ovulatória crônica."
+    ],
+    "explain": "No sangramento por disfunção ovulatória sem desejo de gravidez, contraceptivos hormonais combinados ou o DIU de levonorgestrel regularizam o padrão de sangramento e protegem o endométrio da exposição estrogênica não contraposta, sendo primeira linha terapêutica.",
+    "trap": "Tratar apenas o sintoma agudo do sangramento sem oferecer proteção endometrial contínua contra a anovulação crônica subjacente."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 14,
+    "group": "SUA / miomatose",
+    "theme": "SUA · tratamento",
+    "stem": "Mulher de 33 anos com sangramento menstrual intenso, USG transvaginal normal e biópsia de endométrio sem alterações, deseja tratamento não hormonal por planejar gestação em breve. Qual medicação administrada apenas durante o período menstrual reduz o volume de sangramento sem interferir na ovulação?",
+    "correct": "Ácido tranexâmico, antifibrinolítico que reduz o volume de sangramento menstrual sem interferir na ovulação nem no ciclo hormonal.",
+    "wrongs": [
+      "Contraceptivo hormonal combinado contínuo, medicação que suprimiria a ovulação e seria contrária ao desejo reprodutivo atual.",
+      "Análogo de GnRH contínuo, medicação que causaria hipoestrogenismo e suprimiria completamente a ovulação nesse período.",
+      "DIU hormonal de levonorgestrel, dispositivo eficaz, porém que também suprime parcialmente a ovulação nesse contexto.",
+      "Progestagênio oral contínuo diário, opção que pode inibir a ovulação e não seria a mais indicada nesse desejo reprodutivo."
+    ],
+    "explain": "O ácido tranexâmico atua reduzindo a fibrinólise no endométrio durante a menstruação, diminuindo o volume de sangramento sem qualquer efeito hormonal sobre o eixo reprodutivo, sendo indicado especialmente quando há desejo de gestação futura próxima.",
+    "trap": "Indicar métodos hormonais supressores da ovulação em mulher que deseja engravidar em breve, quando existe alternativa não hormonal eficaz."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 15,
+    "group": "SUA / miomatose",
+    "theme": "SUA · tratamento",
+    "stem": "Mulher de 45 anos chega ao pronto-socorro com sangramento uterino anormal volumoso e agudo, apresentando hipotensão leve e taquicardia compensatória, sem instabilidade hemodinâmica grave. Após estabilização inicial, qual é a conduta medicamentosa mais indicada para controle rápido do sangramento agudo?",
+    "correct": "Estrogênio conjugado em altas doses por via intravenosa, opção eficaz para controle rápido do sangramento uterino agudo grave.",
+    "wrongs": [
+      "Ácido tranexâmico isolado por via oral, opção com início de ação mais lento e menos indicada nesse cenário agudo grave.",
+      "Contraceptivo hormonal combinado oral iniciado apenas no próximo ciclo menstrual, conduta inadequada para sangramento agudo grave.",
+      "Observação isolada com reposição volêmica exclusiva, sem qualquer medida farmacológica direcionada ao sangramento uterino.",
+      "Histerectomia de urgência imediata, indicada apenas quando medidas clínicas falham e há instabilidade refratária grave."
+    ],
+    "explain": "No sangramento uterino agudo grave, o estrogênio conjugado intravenoso em altas doses promove rápida estabilização endometrial e controle do sangramento, sendo opção terapêutica de primeira linha antes de considerar tamponamento com balão ou cirurgia em casos refratários.",
+    "trap": "Escolher medidas de ação lenta para um quadro agudo grave, retardando o controle rápido necessário do sangramento volumoso."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 16,
+    "group": "SUA / miomatose",
+    "theme": "SUA · tratamento",
+    "stem": "Mulher de 48 anos com sangramento uterino anormal refratário ao tratamento clínico combinado, sem desejo reprodutivo, útero de tamanho normal e biópsia de endométrio benigna, deseja evitar cirurgia de grande porte. Qual procedimento minimamente invasivo é opção adequada para esse caso?",
+    "correct": "Ablação endometrial, procedimento que destrói a camada basal do endométrio e reduz significativamente o sangramento em mulheres sem desejo reprodutivo.",
+    "wrongs": [
+      "Histerectomia radical, procedimento de maior porte e morbidade, desproporcional ao contexto benigno descrito nesse caso.",
+      "Miomectomia abdominal, procedimento voltado à remoção de miomas, sem indicação diante de útero de tamanho normal.",
+      "Embolização de artérias uterinas, procedimento indicado principalmente para miomatose sintomática, e não para esse quadro.",
+      "Conização cervical, procedimento voltado ao tratamento de lesões cervicais, sem relação com sangramento uterino anormal refratário."
+    ],
+    "explain": "A ablação endometrial é opção minimamente invasiva para sangramento uterino anormal refratário ao tratamento clínico em mulheres sem desejo reprodutivo futuro e sem lesão estrutural relevante, reduzindo significativamente o sangramento sem a morbidade de uma histerectomia.",
+    "trap": "Indicar histerectomia de imediato sem considerar alternativas menos invasivas quando o útero é normal e a biópsia é benigna."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 17,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · clínica",
+    "stem": "Mulher de 38 anos com sangramento menstrual intenso e infertilidade há 2 anos realiza USG transvaginal que identifica nódulo miomatoso com mais da metade do seu volume projetando-se para a cavidade uterina. Segundo a classificação FIGO de localização dos miomas, qual tipo está mais associado a sangramento e infertilidade?",
+    "correct": "Mioma submucoso, tipo mais associado a sangramento uterino anormal e infertilidade por distorcer diretamente a cavidade endometrial.",
+    "wrongs": [
+      "Mioma subseroso, tipo que se projeta para a superfície externa do útero e raramente causa sangramento uterino relevante.",
+      "Mioma intramural puro, tipo que permanece totalmente contido no miométrio, sem qualquer contato com a cavidade uterina.",
+      "Mioma cervical, tipo raro localizado no colo uterino, sem relação direta com a distorção da cavidade endometrial.",
+      "Mioma pediculado subseroso, tipo conectado ao útero por pedículo fino, sem qualquer contato com a cavidade endometrial."
+    ],
+    "explain": "Miomas submucosos, por sua proximidade e distorção da cavidade endometrial, são os mais associados a sangramento uterino anormal intenso e a infertilidade, mesmo quando pequenos, diferentemente dos subserosos, que raramente causam sangramento relevante.",
+    "trap": "Assumir que o tamanho do mioma determina a gravidade dos sintomas, quando a localização submucosa é o fator mais relevante para sangramento."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 18,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · clínica",
+    "stem": "Gestante de 16 semanas, com miomatose uterina conhecida previamente, apresenta dor abdominal localizada intensa e súbita sobre um dos nódulos miomatosos, sem sangramento vaginal associado e sem sinais de trabalho de parto. USG mostra área de degeneração central no mioma. Qual é o diagnóstico mais provável?",
+    "correct": "Degeneração vermelha (carnosa) do mioma, comum na gestação por isquemia relativa do nódulo pelo crescimento uterino rápido.",
+    "wrongs": [
+      "Torção anexial associada, hipótese menos provável diante da dor localizada diretamente sobre o nódulo miomatoso já conhecido.",
+      "Descolamento prematuro de placenta, diagnóstico incompatível com a ausência de sangramento vaginal nesse quadro clínico.",
+      "Trabalho de parto prematuro, hipótese incompatível com a idade gestacional e a ausência de contrações relatadas.",
+      "Apendicite aguda, diagnóstico menos provável diante da correlação direta da dor com o nódulo miomatoso identificado na USG."
+    ],
+    "explain": "A degeneração vermelha ocorre quando o crescimento rápido do útero gravídico excede o suprimento vascular do mioma, causando necrose isquêmica dolorosa; o quadro costuma ser autolimitado e tratado com analgesia, sem necessidade de intervenção cirúrgica na maioria dos casos.",
+    "trap": "Indicar cirurgia de urgência para o mioma degenerado, quando o tratamento habitual é conservador com analgesia e observação."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 19,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · clínica",
+    "stem": "Mulher de 42 anos com miomatose uterina conhecida apresenta dor pélvica aguda intensa de início súbito, associada a náuseas, sem febre nem sangramento vaginal relevante. USG mostra mioma subseroso pediculado com sinais de comprometimento vascular do pedículo. Qual é a hipótese diagnóstica mais provável?",
+    "correct": "Torção aguda do mioma subseroso pediculado, causando isquemia súbita e dor intensa por comprometimento do pedículo vascular.",
+    "wrongs": [
+      "Degeneração vermelha do mioma, achado mais típico da gestação e menos associado a comprometimento vascular do pedículo.",
+      "Endometrite aguda, diagnóstico que cursaria tipicamente com febre e sangramento vaginal, ausentes nesse quadro clínico.",
+      "Mioma submucoso prolapsado pelo colo uterino, achado que cursaria com sangramento vaginal significativo associado.",
+      "Adenomiose sintomática isolada, condição que cursa com dor crônica progressiva, e não com dor aguda súbita como descrita."
+    ],
+    "explain": "Miomas subserosos pediculados podem torcer sobre seu próprio eixo vascular, causando isquemia aguda e dor intensa semelhante a um abdome agudo ginecológico, exigindo avaliação cirúrgica para confirmação e tratamento definitivo por miomectomia.",
+    "trap": "Confundir torção do mioma pediculado com degeneração carnosa, distinção importante pois a torção geralmente exige intervenção cirúrgica mais precoce."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 20,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · clínica",
+    "stem": "Mulher de 45 anos com miomatose uterina extensa relata sensação de peso pélvico, aumento da frequência urinária diurna e episódios de constipação intestinal, sem sangramento uterino anormal associado. USG mostra útero muito aumentado por múltiplos nódulos. Qual mecanismo explica esses sintomas compressivos relatados?",
+    "correct": "Efeito compressivo direto de nódulos miomatosos volumosos sobre estruturas pélvicas adjacentes, como bexiga e reto, independentemente de sangramento.",
+    "wrongs": [
+      "Infecção urinária concomitante não relacionada aos miomas, hipótese menos provável diante do contexto compressivo descrito.",
+      "Prolapso uterino associado, achado que exigiria descenso do órgão pélvico, não mencionado nesse caso clínico específico.",
+      "Disfunção do assoalho pélvico isolada, sem qualquer relação com o volume miomatoso identificado na USG.",
+      "Endometriose vesical concomitante, hipótese menos provável diante da ausência de dor cíclica associada aos sintomas relatados."
+    ],
+    "explain": "Miomas volumosos podem causar sintomas compressivos sobre órgãos pélvicos vizinhos, como aumento da frequência urinária pela compressão vesical e constipação pela compressão retal, mesmo na ausência de sangramento uterino anormal associado ao quadro.",
+    "trap": "Buscar exclusivamente causa urológica ou intestinal isolada, sem correlacionar os sintomas compressivos ao volume miomatoso identificado."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 21,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · tratamento",
+    "stem": "Mulher de 31 anos com mioma submucoso de 2,5 cm, sangramento uterino anormal e desejo de gravidez futura procura tratamento definitivo que preserve o útero e a fertilidade. Qual é a conduta cirúrgica mais adequada para essa lesão nesse contexto?",
+    "correct": "Miomectomia histeroscópica, procedimento que remove o mioma submucoso preservando o útero e a fertilidade da paciente.",
+    "wrongs": [
+      "Histerectomia total, procedimento contraindicado nesse contexto pela incompatibilidade absoluta com o desejo reprodutivo futuro.",
+      "Embolização de artérias uterinas, procedimento com dados menos favoráveis para preservação de fertilidade nesse contexto.",
+      "Ablação endometrial, procedimento que não trata diretamente o mioma e seria contraindicado em quem deseja gestação futura.",
+      "Análogo de GnRH isolado como tratamento definitivo, medicação que apenas reduz temporariamente o volume, sem tratamento definitivo."
+    ],
+    "explain": "A miomectomia histeroscópica é o tratamento de escolha para miomas submucosos sintomáticos em mulheres com desejo reprodutivo, pois remove a lesão intracavitária preservando o útero e a fertilidade, diferentemente de procedimentos que comprometem a cavidade uterina.",
+    "trap": "Indicar embolização ou ablação endometrial em mulher com desejo reprodutivo, procedimentos com impacto potencial sobre a fertilidade futura."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 22,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · tratamento",
+    "stem": "Mulher de 47 anos com miomatose sintomática extensa, sangramento uterino anormal recorrente e prole definida, sem desejo reprodutivo futuro, procura tratamento minimamente invasivo alternativo à cirurgia. Qual procedimento radiológico intervencionista é opção reconhecida para essa paciente?",
+    "correct": "Embolização das artérias uterinas, procedimento que reduz o suprimento sanguíneo aos miomas e diminui volume e sintomas associados.",
+    "wrongs": [
+      "Angioplastia das artérias renais, procedimento sem qualquer relação com o tratamento de miomatose uterina sintomática.",
+      "Radioterapia pélvica externa, modalidade sem indicação estabelecida para tratamento de miomatose uterina benigna.",
+      "Quimioembolização hepática, procedimento voltado a lesões hepáticas, sem qualquer relação com miomatose uterina.",
+      "Angiografia diagnóstica isolada sem embolização, procedimento sem qualquer efeito terapêutico sobre os miomas identificados."
+    ],
+    "explain": "A embolização das artérias uterinas interrompe o fluxo sanguíneo que nutre os miomas, promovendo redução de volume e melhora dos sintomas em pacientes sem desejo reprodutivo que preferem evitar cirurgia, mantendo o útero preservado anatomicamente.",
+    "trap": "Confundir esse procedimento com outras modalidades intervencionistas de nomes semelhantes voltadas a órgãos diferentes."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 23,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · tratamento",
+    "stem": "Mulher de 39 anos com miomatose volumosa e anemia importante por sangramento uterino anormal crônico será submetida a miomectomia programada em 8 semanas. Qual medicação pode ser utilizada no pré-operatório para reduzir o volume miomatoso e corrigir a anemia antes da cirurgia?",
+    "correct": "Análogo de GnRH, que induz hipoestrogenismo transitório, reduz o volume dos miomas e permite recuperação parcial da hemoglobina antes da cirurgia.",
+    "wrongs": [
+      "Estrogênio conjugado em altas doses, medicação que pioraria o sangramento uterino e a anemia antes do procedimento planejado.",
+      "Contraceptivo hormonal combinado em dose plena, medicação com efeito discreto sobre o volume miomatoso nesse contexto pré-operatório.",
+      "Corticosteroide sistêmico em dose alta, medicação sem qualquer efeito comprovado sobre volume miomatoso ou correção da anemia.",
+      "Antibiótico profilático isolado, medicação sem qualquer efeito sobre o volume do mioma ou sobre a anemia relatada."
+    ],
+    "explain": "O análogo de GnRH utilizado no pré-operatório induz estado hipoestrogênico transitório que reduz o volume dos miomas e o sangramento uterino, permitindo recuperação parcial dos níveis de hemoglobina e facilitando a cirurgia subsequente com menor perda sanguínea.",
+    "trap": "Escolher medicações que mantêm ou aumentam o estímulo estrogênico, o que perpetuaria o sangramento e a anemia antes da cirurgia."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 24,
+    "group": "SUA / miomatose",
+    "theme": "Miomatose · tratamento",
+    "stem": "Mulher de 50 anos com miomatose sintomática extensa, sangramento uterino anormal recorrente, prole definida e desejo expresso de resolução definitiva sem risco de recidiva, já tentou tratamento clínico sem sucesso. Qual é o tratamento cirúrgico definitivo mais indicado para essa paciente?",
+    "correct": "Histerectomia, tratamento definitivo que elimina o risco de recidiva dos miomas e do sangramento associado, indicado quando não há desejo reprodutivo.",
+    "wrongs": [
+      "Miomectomia isolada, procedimento associado a risco de recidiva dos miomas, menos indicado quando se busca resolução definitiva.",
+      "Ablação endometrial isolada, procedimento que não trata diretamente os nódulos miomatosos volumosos presentes nesse caso.",
+      "Embolização das artérias uterinas, procedimento com possibilidade de recidiva sintomática, menos alinhado ao desejo de resolução definitiva.",
+      "Análogo de GnRH em uso contínuo prolongado, medicação com efeitos adversos ósseos relevantes quando usada de forma definitiva."
+    ],
+    "explain": "Em mulheres sem desejo reprodutivo e com miomatose sintomática extensa refratária ao tratamento clínico, a histerectomia oferece resolução definitiva sem risco de recidiva dos miomas, sendo indicada quando outras opções conservadoras já foram tentadas ou são inadequadas.",
+    "trap": "Indicar procedimentos conservadores com risco de recidiva quando a paciente prioriza explicitamente resolução definitiva e não deseja nova gestação."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 25,
+    "group": "SUA / miomatose",
+    "theme": "Adenomiose",
+    "stem": "Mulher de 41 anos relata dismenorreia progressivamente pior nos últimos anos, associada a sangramento menstrual intenso. Ao exame, útero está globoso, aumentado de volume e discretamente doloroso à palpação bimanual, sem nódulos individualizáveis. Qual é a hipótese diagnóstica mais provável para esse quadro?",
+    "correct": "Adenomiose, caracterizada por útero globoso e doloroso associado a dismenorreia progressiva e sangramento menstrual intenso.",
+    "wrongs": [
+      "Miomatose uterina múltipla, condição que tipicamente apresenta nódulos individualizáveis à palpação, ausentes nesse exame.",
+      "Endometriose pélvica isolada, condição que não costuma alterar o volume ou a consistência do próprio útero ao exame.",
+      "Pólipo endometrial único, achado focal que não explicaria o aumento difuso e globoso do útero relatado no exame.",
+      "SOP com anovulação crônica, condição que não cursa com alteração do volume ou da consistência uterina ao exame físico."
+    ],
+    "explain": "A adenomiose caracteriza-se pela presença de tecido endometrial ectópico dentro do miométrio, causando aumento difuso e globoso do útero, dor à palpação, dismenorreia progressiva e sangramento menstrual intenso, sem nódulos bem definidos como ocorre na miomatose.",
+    "trap": "Confundir adenomiose com miomatose pelo aumento uterino, distinção que depende da ausência de nódulos individualizáveis e do caráter difuso do achado."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 26,
+    "group": "SUA / miomatose",
+    "theme": "Adenomiose",
+    "stem": "Mulher de 39 anos com suspeita clínica de adenomiose realiza USG transvaginal, que mostra heterogeneidade miometrial difusa e pequenos cistos miometriais, sem definição precisa dos limites entre endométrio e miométrio. Qual exame de imagem apresenta maior acurácia para confirmar esse diagnóstico antes de decisões terapêuticas definitivas?",
+    "correct": "Ressonância magnética pélvica, exame com maior acurácia diagnóstica para adenomiose ao definir com precisão a zona juncional endometrial-miometrial.",
+    "wrongs": [
+      "Radiografia simples de pelve, exame incapaz de diferenciar tecidos moles pélvicos e sem utilidade nesse diagnóstico.",
+      "Tomografia computadorizada de pelve sem contraste, exame com baixa resolução para avaliação detalhada do miométrio.",
+      "Histerossalpingografia, exame voltado à avaliação da permeabilidade tubária, sem capacidade de avaliar o miométrio.",
+      "Cintilografia óssea, exame destinado à avaliação de lesões ósseas, sem qualquer relação com o diagnóstico uterino."
+    ],
+    "explain": "Embora a USG transvaginal seja o exame inicial, a ressonância magnética pélvica oferece maior acurácia para adenomiose ao avaliar com precisão a espessura e a irregularidade da zona juncional entre endométrio e miométrio, sendo útil quando a USG é inconclusiva.",
+    "trap": "Considerar a USG suficiente em todos os casos, quando achados equívocos podem exigir ressonância para maior precisão diagnóstica."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 27,
+    "group": "SUA / miomatose",
+    "theme": "Adenomiose",
+    "stem": "Mulher de 52 anos com adenomiose sintomática confirmada por imagem, com dor pélvica crônica e sangramento menstrual intenso prévios, foi submetida a histerectomia total após falha do tratamento clínico. O exame histopatológico da peça cirúrgica confirmou o diagnóstico. Qual achado histopatológico específico confirma definitivamente a adenomiose nesse espécime?",
+    "correct": "Presença de glândulas e estroma endometriais ectópicos no interior do miométrio, geralmente a mais de 2,5 mm da junção endometrial-miometrial.",
+    "wrongs": [
+      "Presença de nódulos leiomiomatosos bem delimitados por pseudocápsula, achado característico de miomatose e não de adenomiose.",
+      "Infiltrado inflamatório agudo neutrofílico difuso no miométrio, achado mais compatível com endometrite aguda que com adenomiose.",
+      "Necrose isquêmica central do tecido miometrial, achado mais característico de degeneração de mioma que de adenomiose.",
+      "Hiperplasia glandular endometrial restrita à cavidade uterina, achado que caracteriza hiperplasia endometrial, não adenomiose."
+    ],
+    "explain": "O diagnóstico histopatológico definitivo de adenomiose exige a identificação de glândulas e estroma endometriais ectópicos dentro do miométrio, tipicamente a mais de 2,5 mm de profundidade da junção endometrial-miometrial, confirmando o achado suspeitado pela imagem.",
+    "trap": "Confundir esse achado com nódulos leiomiomatosos encapsulados, que caracterizam miomatose, uma entidade estrutural distinta da adenomiose."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 28,
+    "group": "SUA / miomatose",
+    "theme": "Adenomiose",
+    "stem": "Mulher de 36 anos com adenomiose sintomática, dismenorreia intensa e sangramento menstrual volumoso, ainda deseja engravidar futuramente e recusa histerectomia neste momento. Qual opção terapêutica clínica pode ser considerada para controle dos sintomas antes de decisão cirúrgica definitiva?",
+    "correct": "DIU hormonal de levonorgestrel, opção que reduz sangramento e dismenorreia na adenomiose, preservando o útero para eventual gestação futura.",
+    "wrongs": [
+      "Histerectomia total imediata, procedimento incompatível com o desejo reprodutivo futuro expresso pela paciente nesse momento.",
+      "Ablação endometrial isolada, procedimento que compromete a cavidade uterina e não é recomendado em quem deseja gestação futura.",
+      "Embolização das artérias uterinas, procedimento com indicação mais estabelecida para miomatose do que para adenomiose isolada.",
+      "Observação clínica exclusiva sem qualquer tratamento, conduta insuficiente diante da intensidade dos sintomas relatados pela paciente."
+    ],
+    "explain": "O DIU hormonal de levonorgestrel reduz significativamente o sangramento e a dismenorreia associados à adenomiose ao promover atrofia endometrial localizada, sendo opção conservadora que preserva o útero em mulheres com desejo reprodutivo futuro ainda não definido.",
+    "trap": "Indicar procedimentos que comprometem a cavidade ou a integridade uterina em paciente que ainda deseja gestação futura."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 29,
+    "group": "SUA / miomatose",
+    "theme": "Pólipo endometrial",
+    "stem": "Mulher de 43 anos relata sangramento intermenstrual recorrente há 4 meses, com ciclo menstrual regular entre os episódios. USG transvaginal identifica imagem focal hiperecogênica de 1,5 cm na cavidade endometrial, com pedículo vascular único ao Doppler. Qual é a hipótese diagnóstica mais provável?",
+    "correct": "Pólipo endometrial, lesão focal intracavitária tipicamente associada a sangramento intermenstrual e achado ecogênico com pedículo vascular único.",
+    "wrongs": [
+      "Mioma submucoso, lesão que costuma apresentar múltiplos vasos periféricos ao Doppler, e não um pedículo vascular único central.",
+      "Hiperplasia endometrial difusa, achado que se apresentaria como espessamento uniforme, e não como lesão focal bem definida.",
+      "Adenomiose focal, condição que se manifesta por heterogeneidade miometrial, e não por lesão intracavitária bem definida.",
+      "Câncer de endométrio inicial, hipótese menos provável diante do aspecto ecogênico bem definido e do pedículo vascular único."
+    ],
+    "explain": "O pólipo endometrial costuma se apresentar como lesão focal hiperecogênica intracavitária, frequentemente com um único pedículo vascular central ao Doppler, sendo causa comum de sangramento intermenstrual mesmo em mulheres com ciclo menstrual regular entre os episódios.",
+    "trap": "Confundir com mioma submucoso pelo padrão vascular ao Doppler, já que o pólipo tende a apresentar vascularização central única, e o mioma, periférica."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 30,
+    "group": "SUA / miomatose",
+    "theme": "Pólipo endometrial",
+    "stem": "Mulher de 40 anos com pólipo endometrial confirmado por USG e histerossonografia, sintomático por sangramento intermenstrual recorrente, deseja resolução definitiva com confirmação histopatológica simultânea. Qual é a conduta mais apropriada para essa paciente?",
+    "correct": "Polipectomia histeroscópica, procedimento que remove o pólipo sob visualização direta e permite análise histopatológica da peça retirada.",
+    "wrongs": [
+      "Curetagem uterina cega, procedimento com maior risco de amostragem incompleta ou de não remover totalmente a lesão focal.",
+      "Histerectomia total, procedimento desproporcional para tratamento de pólipo endometrial isolado e sintomático como esse caso.",
+      "Observação clínica isolada, conduta inadequada diante de sintomas recorrentes que já motivaram a paciente a buscar resolução.",
+      "Ablação endometrial isolada sem remoção do pólipo, procedimento que não trata adequadamente a lesão focal identificada."
+    ],
+    "explain": "A polipectomia histeroscópica permite a remoção completa e dirigida do pólipo sob visualização direta, com envio do material para análise histopatológica, sendo o tratamento de escolha para pólipos endometriais sintomáticos, com maior precisão que a curetagem às cegas.",
+    "trap": "Optar por curetagem cega, que pode deixar tecido polipoide residual por não permitir visualização direta da lesão focal."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 31,
+    "group": "SUA / miomatose",
+    "theme": "Pólipo endometrial",
+    "stem": "Mulher de 61 anos, na pós-menopausa, apresenta episódio de sangramento vaginal e USG transvaginal identifica pólipo endometrial de 1 cm, sem outras alterações. Qual é a conduta mais apropriada diante desse pólipo em contexto de sangramento pós-menopausa?",
+    "correct": "Indicar polipectomia histeroscópica com análise histopatológica, pois pólipos em mulheres na pós-menopausa com sangramento têm risco aumentado de malignidade.",
+    "wrongs": [
+      "Observação clínica isolada sem qualquer intervenção, já que pólipos endometriais são sempre benignos independente da idade.",
+      "Repetição da USG transvaginal em um ano, sem qualquer intervenção adicional diante do sangramento pós-menopausa relatado.",
+      "Indicar apenas terapia hormonal combinada, conduta que não trata a lesão estrutural nem investiga a causa do sangramento.",
+      "Prescrever apenas ácido tranexâmico para controle do sangramento, sem qualquer avaliação histopatológica da lesão identificada."
+    ],
+    "explain": "Pólipos endometriais em mulheres na pós-menopausa, especialmente quando associados a sangramento, apresentam risco aumentado de conterem hiperplasia atípica ou malignidade, justificando ressecção histeroscópica com avaliação histopatológica em vez de apenas observação clínica.",
+    "trap": "Assumir benignidade universal do pólipo pela sua frequência geral, ignorando o risco elevado associado ao contexto pós-menopausa com sangramento."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 32,
+    "group": "SUA / miomatose",
+    "theme": "Pólipo endometrial",
+    "stem": "Mulher de 37 anos com sangramento uterino anormal realiza histerossonografia com infusão salina para melhor caracterização de imagem intracavitária duvidosa à USG convencional. Qual achado à histerossonografia sugere mais fortemente pólipo endometrial em vez de mioma submucoso?",
+    "correct": "Lesão de contorno regular, ecogenicidade semelhante ao endométrio adjacente e pedículo estreito, que se move livremente com a distensão salina.",
+    "wrongs": [
+      "Lesão hipoecogênica sólida, fixa ao miométrio adjacente, sem qualquer mobilidade identificada durante a distensão salina realizada.",
+      "Componente miometrial contínuo à lesão, sem plano de clivagem identificável entre a lesão e o miométrio adjacente ao exame.",
+      "Sombra acústica posterior intensa, achado mais associado a calcificações densas do que a lesões polipoides intracavitárias.",
+      "Vascularização periférica múltipla circundando toda a base da lesão, padrão mais associado a miomas do que a pólipos."
+    ],
+    "explain": "À histerossonografia, pólipos endometriais costumam apresentar contorno regular, ecogenicidade semelhante à do endométrio e pedículo estreito que permite mobilidade da lesão com a distensão salina, diferentemente dos miomas submucosos, que são fixos ao miométrio e menos móveis.",
+    "trap": "Interpretar qualquer lesão intracavitária ecogênica como pólipo sem observar a mobilidade e a relação com o miométrio adjacente."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 33,
+    "group": "SUA / miomatose",
+    "theme": "Endometriose",
+    "stem": "Mulher de 28 anos relata dismenorreia progressiva intensa, dispareunia de profundidade e dificuldade para engravidar há 18 meses, sem alterações relevantes ao exame especular ou à USG transvaginal de rotina. Qual é a hipótese diagnóstica mais provável diante dessa tríade clássica de sintomas?",
+    "correct": "Endometriose pélvica, cuja tríade clássica inclui dismenorreia progressiva, dispareunia de profundidade e infertilidade associada.",
+    "wrongs": [
+      "SOP com anovulação crônica, condição que cursaria tipicamente com irregularidade menstrual, e não com dismenorreia progressiva intensa.",
+      "Miomatose uterina intramural pequena, achado que geralmente seria identificado na USG transvaginal de rotina realizada.",
+      "Dismenorreia primária isolada, hipótese menos provável diante da associação com dispareunia e infertilidade relatadas.",
+      "Doença inflamatória pélvica crônica, condição que cursaria tipicamente com história de infecção prévia, não mencionada aqui."
+    ],
+    "explain": "A tríade clássica de dismenorreia progressiva, dispareunia de profundidade e infertilidade é altamente sugestiva de endometriose pélvica, condição que frequentemente não apresenta alterações evidentes em exames de imagem convencionais, dificultando o diagnóstico inicial.",
+    "trap": "Descartar endometriose apenas porque a USG transvaginal de rotina é normal, já que muitos implantes peritoneais não são visíveis nesse exame."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 34,
+    "group": "SUA / miomatose",
+    "theme": "Endometriose",
+    "stem": "Mulher de 30 anos com forte suspeita clínica de endometriose pélvica, sintomática e refratária a tratamento clínico inicial com analgésicos e contraceptivo hormonal combinado contínuo, mantém dor pélvica intensa. Qual exame é considerado padrão de referência para diagnóstico definitivo dos implantes endometrióticos?",
+    "correct": "Laparoscopia com visualização direta dos implantes e biópsia confirmatória, considerada padrão de referência para diagnóstico definitivo da endometriose.",
+    "wrongs": [
+      "USG transvaginal isolada, exame que pode sugerir endometrioma, mas não confirma implantes peritoneais superficiais menores.",
+      "Ressonância magnética pélvica isolada, exame sensível para endometriose profunda, mas inferior à laparoscopia na confirmação definitiva.",
+      "Dosagem isolada de CA-125 sérico, marcador inespecífico que pode estar elevado, mas não confirma o diagnóstico definitivo.",
+      "Histeroscopia diagnóstica, exame voltado à avaliação da cavidade uterina, sem capacidade de visualizar implantes peritoneais externos."
+    ],
+    "explain": "Embora exames de imagem como USG e ressonância auxiliem no diagnóstico, especialmente de endometriomas e endometriose profunda, a laparoscopia com visualização direta dos implantes e biópsia confirmatória continua sendo considerada o padrão de referência diagnóstico definitivo.",
+    "trap": "Considerar exames de imagem suficientes para diagnóstico definitivo, quando implantes peritoneais superficiais podem não ser detectados por eles."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 35,
+    "group": "SUA / miomatose",
+    "theme": "Endometriose",
+    "stem": "Mulher de 32 anos com dismenorreia progressiva realiza USG transvaginal que identifica cisto ovariano unilateral de 4 cm, com conteúdo espesso e homogêneo descrito como aspecto em vidro fumê, sem septos ou vegetações. Qual é a hipótese diagnóstica mais provável para esse achado?",
+    "correct": "Endometrioma ovariano, cisto característico da endometriose com conteúdo espesso homogêneo em aspecto de vidro fumê à USG.",
+    "wrongs": [
+      "Cisto funcional simples, achado que tipicamente apresenta conteúdo anecoico e resolução espontânea em poucos ciclos menstruais.",
+      "Cistoadenoma seroso, lesão que costuma apresentar conteúdo anecoico e septos finos, diferente do aspecto descrito nesse caso.",
+      "Teratoma maduro ovariano, lesão que apresenta componentes heterogêneos com calcificações e áreas de gordura características.",
+      "Tumor maligno epitelial ovariano, hipótese menos provável diante da ausência de septos espessos ou vegetações sólidas ao exame."
+    ],
+    "explain": "O endometrioma ovariano apresenta classicamente conteúdo espesso e homogêneo, descrito como aspecto em vidro fumê à USG, resultante do acúmulo de sangue antigo dentro do cisto, sendo achado bastante característico embora não totalmente específico da endometriose.",
+    "trap": "Confundir o aspecto em vidro fumê com lesões malignas apenas pela presença de conteúdo espesso, sem considerar a ausência de septos ou vegetações."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 36,
+    "group": "SUA / miomatose",
+    "theme": "Endometriose",
+    "stem": "Mulher de 26 anos com dor pélvica cíclica intensa e suspeita clínica de endometriose leve a moderada, sem desejo de gravidez imediato, procura tratamento inicial antes de considerar laparoscopia. Qual é a conduta terapêutica de primeira linha mais apropriada nesse momento?",
+    "correct": "Tratamento hormonal empírico com contraceptivo combinado contínuo ou progestagênio, associado a analgésicos, antes de indicar laparoscopia.",
+    "wrongs": [
+      "Laparoscopia diagnóstica e terapêutica imediata, indicada como primeira conduta antes de qualquer tentativa de tratamento clínico.",
+      "Histerectomia total precoce, procedimento desproporcional e inadequado como primeira conduta em mulher jovem com esse quadro.",
+      "Observação clínica isolada sem qualquer tratamento, conduta insuficiente diante da intensidade dos sintomas relatados pela paciente.",
+      "Antibioticoterapia empírica prolongada, medida sem qualquer indicação para tratamento inicial de suspeita de endometriose."
+    ],
+    "explain": "Em mulheres com sintomas sugestivos de endometriose sem desejo reprodutivo imediato, o tratamento hormonal empírico com supressão da menstruação, associado a analgésicos, costuma ser tentado antes de exames invasivos, reservando a laparoscopia para casos refratários ou com dúvida diagnóstica relevante.",
+    "trap": "Indicar laparoscopia como primeira conduta em toda suspeita de endometriose, sem considerar o tratamento clínico empírico inicial."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 37,
+    "group": "SUA / miomatose",
+    "theme": "Dismenorreia",
+    "stem": "Adolescente de 15 anos, com menarca há 2 anos, relata dor pélvica cólica leve a moderada que surge no primeiro dia da menstruação e melhora com anti-inflamatório, sem outras queixas associadas e exame ginecológico normal. Qual é o diagnóstico mais provável para esse quadro doloroso?",
+    "correct": "Dismenorreia primária, dor menstrual cíclica sem doença pélvica identificável, tipicamente iniciada próximo à menarca e responsiva a AINE.",
+    "wrongs": [
+      "Dismenorreia secundária por endometriose, hipótese menos provável diante do exame ginecológico normal e da boa resposta ao anti-inflamatório.",
+      "Doença inflamatória pélvica crônica, condição que cursaria com história de infecção prévia e achados de exame alterados.",
+      "Adenomiose, condição rara nessa faixa etária e que cursaria com útero aumentado e doloroso ao exame físico.",
+      "Miomatose uterina sintomática, achado incompatível com a idade da paciente e com o exame ginecológico descrito como normal."
+    ],
+    "explain": "A dismenorreia primária é definida por dor menstrual cíclica sem doença pélvica subjacente identificável, geralmente iniciando próximo à menarca, respondendo bem a anti-inflamatórios não esteroidais e cursando com exame físico ginecológico sem alterações estruturais.",
+    "trap": "Suspeitar de causa secundária grave já no primeiro atendimento de uma adolescente com quadro típico, exame normal e boa resposta ao AINE."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 38,
+    "group": "SUA / miomatose",
+    "theme": "Dismenorreia",
+    "stem": "Mulher de 27 anos relata dor pélvica menstrual que começou de forma tardia, aos 24 anos, e vem piorando progressivamente nos últimos meses, associada agora a dispareunia de profundidade que não existia antes. Qual característica desse quadro mais fortemente sugere dismenorreia secundária, exigindo investigação adicional?",
+    "correct": "Início tardio da dor menstrual, associado a piora progressiva e ao surgimento de novos sintomas como a dispareunia relatada.",
+    "wrongs": [
+      "Início da dor menstrual próximo à menarca, achado que por si só já seria suficiente para caracterizar dismenorreia secundária.",
+      "Boa resposta da dor a anti-inflamatórios não esteroidais, achado que reforçaria a hipótese de causa secundária nesse caso.",
+      "Ausência completa de qualquer outro sintoma pélvico associado, achado que aumentaria a suspeita de causa secundária relevante.",
+      "Presença de ciclo menstrual regular ao longo de todo o período relatado, achado que sugeriria fortemente causa secundária."
+    ],
+    "explain": "Sinais de alerta para dismenorreia secundária incluem início tardio da dor (não próximo à menarca), piora progressiva ao longo do tempo e surgimento de novos sintomas associados, como dispareunia, achados que justificam investigação de causas como endometriose ou adenomiose.",
+    "trap": "Considerar apenas a intensidade da dor como critério de gravidade, sem valorizar o padrão temporal de início tardio e progressão."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 39,
+    "group": "SUA / miomatose",
+    "theme": "Dismenorreia",
+    "stem": "Mulher de 19 anos com dismenorreia primária típica, sem doença pélvica identificável, deseja compreender por que a dor menstrual ocorre predominantemente no primeiro e segundo dias do ciclo. Qual mecanismo fisiopatológico melhor explica a origem da dor nesse tipo de dismenorreia?",
+    "correct": "Produção excessiva de prostaglandinas, sobretudo PGF2α, pelo endométrio secretor, causando contrações uterinas intensas e isquemia miometrial transitória.",
+    "wrongs": [
+      "Infecção ascendente do trato genital superior, mecanismo típico de doença inflamatória pélvica, e não de dismenorreia primária.",
+      "Distorção mecânica da cavidade uterina por lesão estrutural focal, mecanismo mais relacionado à dismenorreia secundária.",
+      "Deficiência de progesterona lútea isolada, mecanismo que não explica diretamente a intensidade das contrações uterinas dolorosas.",
+      "Depósito ectópico de tecido endometrial fora da cavidade uterina, mecanismo característico da endometriose, não da forma primária."
+    ],
+    "explain": "Na dismenorreia primária, o endométrio secretor produz quantidades excessivas de prostaglandinas, especialmente PGF2α, que induzem contrações uterinas intensas e vasoconstrição, gerando isquemia miometrial transitória responsável pela dor cíclica típica do início da menstruação.",
+    "trap": "Atribuir a dor a uma causa estrutural ou infecciosa, quando na dismenorreia primária o mecanismo é predominantemente bioquímico e funcional."
+  },
+  {
+    "idPrefix": "go-gin2",
+    "n": 40,
+    "group": "SUA / miomatose",
+    "theme": "Dismenorreia",
+    "stem": "Mulher de 22 anos com dismenorreia primária confirmada, sem resposta satisfatória a anti-inflamatório não esteroidal isolado em dose adequada por três ciclos consecutivos, e sem desejo de gravidez no momento. Qual é a próxima opção terapêutica mais indicada para o controle da dor menstrual?",
+    "correct": "Contraceptivo hormonal combinado, que reduz a produção endometrial de prostaglandinas ao suprimir a ovulação e a proliferação endometrial cíclica.",
+    "wrongs": [
+      "Antibioticoterapia empírica de amplo espectro, medida sem qualquer indicação para dismenorreia primária sem evidência infecciosa.",
+      "Histerectomia total, procedimento desproporcional e inadequado para dismenorreia primária em mulher jovem sem prole definida.",
+      "Ablação endometrial, procedimento invasivo não indicado como segunda linha terapêutica para dismenorreia primária isolada.",
+      "Aumento isolado da dose de anti-inflamatório além do limite máximo recomendado, conduta que eleva risco sem melhorar a resposta."
+    ],
+    "explain": "Quando o anti-inflamatório isolado não controla adequadamente a dismenorreia primária, o contraceptivo hormonal combinado é a próxima opção terapêutica, pois suprime a ovulação e reduz a proliferação endometrial cíclica, diminuindo a produção de prostaglandinas responsáveis pela dor.",
+    "trap": "Elevar a dose do anti-inflamatório acima do recomendado em vez de associar ou trocar para terapia hormonal como segunda linha adequada."
+  }
+]

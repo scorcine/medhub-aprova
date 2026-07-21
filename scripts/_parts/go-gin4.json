@@ -1,0 +1,642 @@
+[
+  {
+    "idPrefix": "go-gin4",
+    "n": 1,
+    "group": "Mastologia / ovário",
+    "theme": "Rastreamento de mama",
+    "stem": "Mulher de 45 anos, assintomática, sem antecedentes familiares de câncer de mama, procura o ambulatório de mastologia para orientação sobre rastreamento. Qual a recomendação mais aceita para o início do rastreamento mamográfico de rotina em mulheres de risco habitual?",
+    "correct": "Iniciar mamografia de rastreamento a partir dos 40-50 anos (conforme diretriz adotada pelo serviço), repetindo periodicamente conforme protocolo local",
+    "wrongs": [
+      "Iniciar rastreamento apenas a partir dos 65 anos, independentemente do risco populacional considerado",
+      "Dispensar completamente a mamografia se o exame clínico das mamas for normal na consulta atual",
+      "Iniciar rastreamento com ressonância magnética das mamas como método primário em toda mulher de risco habitual",
+      "Realizar apenas ultrassonografia das mamas anualmente, sem necessidade de mamografia em qualquer idade"
+    ],
+    "explain": "As diretrizes brasileiras recomendam mamografia de rastreamento iniciando entre 40 e 50 anos em mulheres de risco habitual, repetida periodicamente; a ressonância é reservada para grupos de alto risco (mutação BRCA, forte história familiar), e a ultrassonografia complementa, mas não substitui a mamografia.",
+    "trap": "Substituir a mamografia por ultrassonografia ou ressonância como método primário de rastreamento em risco habitual."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 2,
+    "group": "Mastologia / ovário",
+    "theme": "Rastreamento de mama",
+    "stem": "Mulher de 32 anos, mãe e irmã com câncer de mama diagnosticado antes dos 40 anos, procura aconselhamento no ambulatório de mastologia. Qual conduta de rastreamento é mais apropriada dado o alto risco familiar?",
+    "correct": "Considerar rastreamento genético (BRCA1/2) e, se indicado, iniciar rastreamento de imagem mais precoce e intensivo, incluindo ressonância magnética das mamas",
+    "wrongs": [
+      "Aguardar até os 40 anos para iniciar qualquer rastreamento, independentemente da história familiar relatada",
+      "Indicar mastectomia bilateral profilática imediata sem qualquer avaliação genética prévia da paciente",
+      "Solicitar apenas autoexame mensal como única estratégia de vigilância nesse grupo de alto risco familiar",
+      "Repetir apenas exame clínico anual sem qualquer exame de imagem, mesmo diante de alto risco identificado"
+    ],
+    "explain": "Mulheres com forte história familiar (parentes de primeiro grau com câncer de mama pré-menopausa) devem ser encaminhadas para aconselhamento genético; se confirmado alto risco (ex.: mutação BRCA), o rastreamento de imagem inicia mais precocemente e inclui ressonância magnética anual associada à mamografia.",
+    "trap": "Indicar cirurgia profilática de imediato sem avaliação de risco genético e discussão compartilhada de decisão."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 3,
+    "group": "Mastologia / ovário",
+    "theme": "Rastreamento de mama",
+    "stem": "Mulher de 50 anos comparece ao ambulatório de mastologia para mamografia de rotina, sem queixas atuais. Qual achado mamográfico é considerado tipicamente benigno e não exige investigação adicional imediata?",
+    "correct": "Calcificações grosseiras, difusas e bilaterais, com aspecto típico de calcificação benigna, como a chamada calcificação em pipoca de fibroadenoma involutivo",
+    "wrongs": [
+      "Microcalcificações agrupadas, pleomórficas e com distribuição linear ou segmentar identificadas na mamografia",
+      "Massa espiculada com margens irregulares e distorção arquitetural associada visualizada no exame",
+      "Assimetria focal em crescimento quando comparada a mamografia anterior da mesma paciente",
+      "Linfonodo axilar aumentado e com perda do hilo gorduroso na mesma topografia da mama avaliada"
+    ],
+    "explain": "Calcificações grosseiras, tipo pipoca (fibroadenoma calcificado/involutivo), vasculares ou em casca de ovo são classicamente benignas (BI-RADS 2); já microcalcificações pleomórficas agrupadas, massas espiculadas e assimetrias em crescimento são suspeitas e exigem investigação com biópsia.",
+    "trap": "Classificar microcalcificações agrupadas pleomórficas como achado benigno que não necessita de biópsia."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 4,
+    "group": "Mastologia / ovário",
+    "theme": "Rastreamento de mama",
+    "stem": "Mulher de 38 anos, sem fatores de risco identificados, pergunta no ambulatório de mastologia sobre o autoexame das mamas como estratégia isolada de rastreamento. Qual orientação está mais alinhada às evidências atuais?",
+    "correct": "O autoexame das mamas não deve substituir a mamografia de rastreamento, pois isoladamente não reduz mortalidade; deve-se estimular o autoconhecimento corporal, associado ao exame clínico e à mamografia na idade apropriada",
+    "wrongs": [
+      "O autoexame mensal isolado é suficiente e substitui completamente a necessidade de mamografia periódica",
+      "O autoexame deve ser abandonado totalmente, pois qualquer atenção às mamas é considerada prejudicial",
+      "O autoexame das mamas deve ser realizado apenas por profissional de saúde, sendo proibido à própria paciente",
+      "O autoexame substitui a ultrassonografia das mamas em mulheres classificadas como de alto risco genético"
+    ],
+    "explain": "Estudos mostram que o autoexame isolado não reduz mortalidade por câncer de mama e pode aumentar biópsias de achados benignos; a orientação atual valoriza o autoconhecimento corporal como complemento ao exame clínico e à mamografia, não como substituto do rastreamento organizado.",
+    "trap": "Considerar o autoexame mensal isolado como estratégia suficiente de rastreamento populacional organizado."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 5,
+    "group": "Mastologia / ovário",
+    "theme": "Rastreamento de mama",
+    "stem": "Mulher de 42 anos, com mãe diagnosticada com câncer de ovário aos 45 anos e tia materna com câncer de mama aos 38 anos, procura aconselhamento genético no ambulatório de mastologia. Qual mutação deve ser prioritariamente investigada nesse contexto familiar?",
+    "correct": "Mutações em BRCA1/BRCA2, associadas a maior risco de câncer de mama e ovário hereditários, especialmente com múltiplos casos em idade precoce na família",
+    "wrongs": [
+      "Mutação do gene RET, associada exclusivamente a neoplasia endócrina múltipla tipo 2 nessa família",
+      "Mutação do gene APC, relacionada à polipose adenomatosa familiar do cólon e não à mama ou ao ovário",
+      "Mutação do gene RB1, associada ao retinoblastoma hereditário na infância e sem relação com esse quadro",
+      "Mutação do gene FMR1, relacionada à síndrome do X frágil e sem relação com neoplasias mamárias ou ovarianas"
+    ],
+    "explain": "A combinação de câncer de mama e ovário em idade precoce na mesma família é sugestiva da síndrome de câncer de mama e ovário hereditário, associada principalmente a mutações em BRCA1 e BRCA2; a identificação orienta rastreamento intensificado e discussão sobre cirurgia de redução de risco.",
+    "trap": "Confundir a síndrome BRCA com outras síndromes genéticas hereditárias sem relação com mama ou ovário."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 6,
+    "group": "Mastologia / ovário",
+    "theme": "Rastreamento de mama",
+    "stem": "Mulher de 47 anos, assintomática, realiza mamografia de rastreamento anual há 5 anos no ambulatório de mastologia, sem alterações identificadas. Qual é o principal benefício demonstrado do rastreamento mamográfico organizado nessa faixa etária?",
+    "correct": "Redução da mortalidade por câncer de mama por meio da detecção em estágios mais precoces e potencialmente curáveis",
+    "wrongs": [
+      "Eliminação completa do risco de desenvolver câncer de mama ao longo de toda a vida reprodutiva",
+      "Redução da incidência global de câncer de mama observada especificamente na população rastreada",
+      "Substituição definitiva da necessidade de qualquer exame clínico das mamas em consultas subsequentes",
+      "Prevenção do surgimento de lesões benignas, como fibroadenomas e cistos mamários, na população rastreada"
+    ],
+    "explain": "O rastreamento mamográfico não previne o câncer nem reduz sua incidência, mas permite detecção em fases iniciais, associando-se a redução de mortalidade por possibilitar tratamentos menos agressivos e com melhor prognóstico quando a doença é identificada precocemente.",
+    "trap": "Achar que o rastreamento reduz a incidência da doença, quando na verdade atua na detecção precoce e na mortalidade."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 7,
+    "group": "Mastologia / ovário",
+    "theme": "BI-RADS e imagem",
+    "stem": "Mulher de 55 anos realiza mamografia de rotina no ambulatório de mastologia que evidencia nódulo circunscrito, com margens bem definidas, classificado como BI-RADS 3. Qual a conduta recomendada?",
+    "correct": "Seguimento por imagem em intervalo curto (geralmente 6 meses), pois BI-RADS 3 tem probabilidade de malignidade inferior a 2% e não exige biópsia imediata",
+    "wrongs": [
+      "Biópsia percutânea imediata, considerada obrigatória em qualquer achado classificado como BI-RADS 3",
+      "Mastectomia diagnóstica, indicada como conduta padrão diante desse achado mamográfico específico",
+      "Alta sem qualquer seguimento, pois BI-RADS 3 é sinônimo de achado definitivamente benigno e resolvido",
+      "Repetir a mamografia apenas após 5 anos, por se tratar de achado de baixíssima relevância clínica"
+    ],
+    "explain": "BI-RADS 3 (provavelmente benigno) tem risco de malignidade inferior a 2%, sendo conduta padrão o seguimento por imagem em intervalos curtos (tipicamente 6, 12 e 24 meses) para confirmar estabilidade, reservando biópsia para achados que se modificam ou para pacientes com impossibilidade de seguimento adequado.",
+    "trap": "Indicar biópsia imediata para todo achado BI-RADS 3, quando a conduta padrão é o seguimento por imagem."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 8,
+    "group": "Mastologia / ovário",
+    "theme": "BI-RADS e imagem",
+    "stem": "Mulher de 60 anos, no ambulatório de mastologia, apresenta mamografia mostrando massa espiculada, margens irregulares e microcalcificações associadas, classificada como BI-RADS 5. Qual conduta é indicada?",
+    "correct": "Biópsia percutânea (core biopsy) para confirmação histológica, pois BI-RADS 5 indica alta probabilidade de malignidade, acima de 95%",
+    "wrongs": [
+      "Seguimento por imagem em 6 meses, já que BI-RADS 5 também seria considerado achado provavelmente benigno",
+      "Alta imediata sem qualquer investigação adicional, por tratar-se de achado incidental sem relevância clínica",
+      "Ressonância magnética isolada como método definitivo de diagnóstico, sem necessidade de biópsia da lesão",
+      "Repetição da mamografia em 12 meses antes de considerar qualquer biópsia da lesão identificada"
+    ],
+    "explain": "BI-RADS 5 corresponde a achado altamente suspeito de malignidade (probabilidade maior que 95%), exigindo biópsia percutânea guiada por imagem para confirmação histológica e planejamento terapêutico, sem justificativa para seguimento conservador nesse cenário.",
+    "trap": "Tratar um achado BI-RADS 5 como benigno, permitindo apenas seguimento por imagem em vez de biópsia."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 9,
+    "group": "Mastologia / ovário",
+    "theme": "BI-RADS e imagem",
+    "stem": "Mulher de 48 anos, no ambulatório de mastologia, apresenta nódulo mamário palpável, com mamografia inconclusiva por densidade glandular importante (mama densa). Qual exame complementar mais indicado para melhor caracterização?",
+    "correct": "Ultrassonografia mamária direcionada, útil para caracterizar nódulos em mamas densas onde a mamografia tem sensibilidade reduzida",
+    "wrongs": [
+      "Radiografia simples de tórax, exame sem qualquer capacidade de caracterizar lesões mamárias palpáveis",
+      "Tomografia de abdome total, sem indicação para avaliação de nódulo mamário palpável identificado",
+      "Cintilografia óssea, exame de rastreamento de metástase e não de caracterização local do nódulo",
+      "PET-CT de corpo inteiro como primeira escolha para nódulo mamário palpável ainda não estadiado"
+    ],
+    "explain": "Em mamas densas, a mamografia tem sensibilidade reduzida para detectar e caracterizar nódulos; a ultrassonografia mamária complementar ajuda a diferenciar lesões sólidas de císticas e orienta a necessidade de biópsia, sendo exame de escolha nesse cenário antes de exames de estadiamento sistêmico.",
+    "trap": "Solicitar exames de estadiamento sistêmico (PET-CT, cintilografia) antes de caracterizar adequadamente a lesão local."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 10,
+    "group": "Mastologia / ovário",
+    "theme": "BI-RADS e imagem",
+    "stem": "Mulher de 35 anos, no ambulatório de mastologia, apresenta nódulo mamário palpável; a ultrassonografia mostra lesão anecoica, com paredes finas e reforço acústico posterior. Qual a classificação e conduta mais provável?",
+    "correct": "Cisto simples (BI-RADS 2), achado benigno que geralmente não requer biópsia, apenas orientação e seguimento clínico se assintomático",
+    "wrongs": [
+      "Lesão sólida BI-RADS 4, achado que exigiria biópsia percutânea obrigatória e imediata da paciente",
+      "Fibroadenoma calcificado, achado que exigiria mastectomia parcial de rotina nessa faixa etária",
+      "Carcinoma ductal invasivo, diagnóstico definido apenas pelas características ultrassonográficas descritas",
+      "Abscesso mamário, exigindo drenagem cirúrgica de urgência independentemente de sinais infecciosos associados"
+    ],
+    "explain": "Cistos simples têm aspecto ultrassonográfico característico (anecoico, paredes finas, reforço acústico posterior) e são classificados como BI-RADS 2 (benigno), não necessitando biópsia; punção é reservada para cistos sintomáticos, complicados ou com componente sólido associado.",
+    "trap": "Indicar biópsia obrigatória para um achado com características ultrassonográficas clássicas de cisto simples benigno."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 11,
+    "group": "Mastologia / ovário",
+    "theme": "BI-RADS e imagem",
+    "stem": "Mulher de 44 anos, no ambulatório de mastologia, apresenta mamografia evidenciando distorção arquitetural focal sem nódulo definido, sem correlação com cirurgia ou trauma prévios. Qual a conduta mais apropriada?",
+    "correct": "Investigação adicional com exame de imagem complementar e biópsia percutânea, pois distorção arquitetural sem causa identificada é achado suspeito",
+    "wrongs": [
+      "Considerar achado normal relacionado à variação anatômica da mama, sem necessidade de qualquer investigação",
+      "Repetir apenas mamografia em 2 anos, já que distorções arquiteturais seriam sempre de baixa suspeição",
+      "Indicar radioterapia empírica da área, mesmo sem qualquer diagnóstico histológico confirmado previamente",
+      "Solicitar apenas hemograma completo, exame suficiente para excluir malignidade nesse achado radiológico"
+    ],
+    "explain": "A distorção arquitetural sem nódulo aparente, na ausência de antecedente cirúrgico ou traumático que a justifique, é achado suspeito (frequentemente BI-RADS 4-5) e requer investigação com imagem complementar e biópsia, pois pode representar carcinoma, especialmente o subtipo lobular invasivo.",
+    "trap": "Atribuir distorção arquitetural sem causa aparente a variação anatômica benigna, sem qualquer investigação adicional."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 12,
+    "group": "Mastologia / ovário",
+    "theme": "BI-RADS e imagem",
+    "stem": "Mulher de 68 anos, mastectomizada há 10 anos por câncer de mama à direita, realiza no ambulatório de mastologia mamografia de rotina da mama contralateral. Qual é o objetivo principal desse rastreamento anual?",
+    "correct": "Detectar precocemente um segundo câncer primário na mama contralateral, já que sobrevivente de câncer de mama tem risco aumentado de nova neoplasia mamária",
+    "wrongs": [
+      "Avaliar recidiva local no leito da mastectomia, o que dispensaria o exame físico da parede torácica",
+      "Rastrear exclusivamente metástases ósseas, sem qualquer relação com a mama remanescente da paciente",
+      "Substituir o seguimento oncológico clínico e os exames de imagem indicados para outros sítios metastáticos",
+      "Confirmar cura definitiva da doença, dispensando qualquer acompanhamento oncológico futuro da paciente"
+    ],
+    "explain": "Mulheres com história de câncer de mama têm risco aumentado de segundo primário na mama contralateral, justificando mamografia anual de rastreamento nessa mama; o seguimento da mastectomia inclui exame físico da parede torácica, mas a mamografia contralateral é específica para detecção de novo tumor primário.",
+    "trap": "Achar que a mamografia contralateral serve para avaliar recidiva local no leito cirúrgico, acompanhada por exame físico."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 13,
+    "group": "Mastologia / ovário",
+    "theme": "Afecções benignas da mama",
+    "stem": "Mulher de 24 anos, no ambulatório de mastologia com nódulo mamário móvel, indolor, bem delimitado, de crescimento lento há 6 meses. A ultrassonografia confirma lesão sólida, ovalada, hipoecoica, com margens regulares. Qual o diagnóstico mais provável?",
+    "correct": "Fibroadenoma, tumor benigno mais comum das mamas em mulheres jovens, com características clínicas e ultrassonográficas típicas descritas",
+    "wrongs": [
+      "Carcinoma ductal invasivo, diagnóstico mais provável nessa faixa etária mesmo diante de achados tipicamente benignos",
+      "Cisto mamário complicado, apesar da ausência de qualquer característica cística ao ultrassom realizado",
+      "Tumor filoide maligno, diagnóstico presuntivo obrigatório em qualquer nódulo sólido de mulher jovem",
+      "Mastite granulomatosa, condição tipicamente associada a nódulo indolor de crescimento lento e regular"
+    ],
+    "explain": "O fibroadenoma é o tumor benigno mais frequente da mama em mulheres jovens, apresentando-se como nódulo móvel, bem delimitado, indolor e de crescimento lento; ao ultrassom, tipicamente é sólido, ovalado, hipoecoico e com margens regulares, podendo ser acompanhado clinicamente se as características forem tranquilizadoras.",
+    "trap": "Considerar diagnósticos malignos como primeira hipótese diante de achados clínicos e ultrassonográficos clássicos de benignidade."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 14,
+    "group": "Mastologia / ovário",
+    "theme": "Afecções benignas da mama",
+    "stem": "Mulher de 30 anos, no ambulatório de mastologia, relata dor mamária cíclica bilateral, pior no período pré-menstrual, sem nódulo palpável ou descarga papilar. Exame físico e mamografia sem alterações. Qual é o diagnóstico mais provável e a conduta inicial?",
+    "correct": "Mastalgia cíclica relacionada a alterações hormonais do ciclo menstrual; a conduta inicial inclui sutiã de suporte adequado, analgesia e orientação, reservando medicação específica para casos refratários",
+    "wrongs": [
+      "Carcinoma inflamatório de mama, diagnóstico mais provável mesmo com exame físico e mamografia normais",
+      "Mastite puerperal, apesar da ausência de amamentação recente ou de sinais inflamatórios agudos identificados",
+      "Doença de Paget da mama, condição que cursaria tipicamente com dor cíclica isolada sem lesão cutânea",
+      "Ectasia ductal isolada, diagnóstico definido sem necessidade de correlação com o ciclo menstrual da paciente"
+    ],
+    "explain": "A mastalgia cíclica é queixa comum, relacionada a flutuações hormonais do ciclo menstrual, geralmente bilateral e associada à fase lútea; quando exame físico e imagem são normais, a conduta inicial é conservadora (sutiã adequado, analgesia simples), reservando-se tamoxifeno ou danazol para casos refratários e incapacitantes.",
+    "trap": "Suspeitar de malignidade diante de um quadro clássico de mastalgia cíclica com exames de imagem normais."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 15,
+    "group": "Mastologia / ovário",
+    "theme": "Afecções benignas da mama",
+    "stem": "Mulher de 55 anos, no ambulatório de mastologia com descarga papilar espontânea, unilateral, sanguinolenta, através de um único ducto. Exame físico sem nódulo palpável, mamografia sem alterações significativas. Qual a principal hipótese diagnóstica e a investigação recomendada?",
+    "correct": "Papiloma intraductal, principal causa de descarga papilar sanguinolenta unilateral por ducto único; a investigação inclui ultrassonografia direcionada e possível ductografia ou ressecção do ducto",
+    "wrongs": [
+      "Galactorreia fisiológica, achado esperado nessa idade e sem necessidade de qualquer investigação adicional",
+      "Mastite aguda, diagnóstico compatível mesmo na ausência de sinais inflamatórios locais identificados",
+      "Ectasia ductal simples, que tipicamente causa descarga bilateral espessa e não sanguinolenta unilateral",
+      "Fibroadenoma múltiplo, associado clinicamente a descarga papilar sanguinolenta espontânea por ducto único"
+    ],
+    "explain": "Descarga papilar espontânea, unilateral, sanguinolenta e por ducto único é sinal de alarme que sugere papiloma intraductal (causa mais comum) ou, mais raramente, carcinoma; deve-se investigar com ultrassonografia direcionada da região retroareolar e considerar ressecção do ducto envolvido para diagnóstico histológico definitivo.",
+    "trap": "Classificar descarga sanguinolenta unilateral por ducto único como galactorreia fisiológica sem investigação."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 16,
+    "group": "Mastologia / ovário",
+    "theme": "Afecções benignas da mama",
+    "stem": "Mulher de 26 anos, no ambulatório de mastologia com mastite puerperal, febre e área hiperemiada e dolorosa na mama esquerda, amamentando há 3 semanas. Qual a conduta inicial mais adequada?",
+    "correct": "Manter a amamentação (ou esvaziamento da mama) e iniciar antibioticoterapia oral, pois a maioria dos casos responde ao tratamento sem necessidade de suspensão do aleitamento",
+    "wrongs": [
+      "Suspender definitivamente a amamentação nessa mama até a resolução completa do quadro infeccioso",
+      "Indicar mastectomia parcial de urgência como tratamento inicial da mastite puerperal apresentada",
+      "Aguardar resolução espontânea sem qualquer antibioticoterapia, mesmo diante da febre já instalada",
+      "Iniciar quimioterapia empírica para tratar possível carcinoma inflamatório concomitante nessa paciente"
+    ],
+    "explain": "A mastite puerperal geralmente responde a antibioticoterapia (cobrindo Staphylococcus aureus) associada à manutenção do esvaziamento mamário (amamentação ou ordenha), que ajuda a resolver a obstrução ductal; suspender a amamentação não é necessário na maioria dos casos e pode piorar a estase láctea.",
+    "trap": "Suspender a amamentação por rotina diante de mastite puerperal não complicada, o que pode agravar a estase láctea."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 17,
+    "group": "Mastologia / ovário",
+    "theme": "Afecções benignas da mama",
+    "stem": "Mulher de 29 anos, amamentando há 4 semanas, evolui no ambulatório de mastologia com área fluctuante, dolorosa e hiperemiada na mama, sem melhora após 48 horas de antibioticoterapia oral para mastite. A ultrassonografia confirma coleção líquida. Qual a conduta mais adequada agora?",
+    "correct": "Drenagem do abscesso mamário (percutânea guiada por imagem ou cirúrgica), associada à manutenção da antibioticoterapia, pois abscesso confirmado não resolve apenas com antibiótico",
+    "wrongs": [
+      "Aumentar apenas a dose do mesmo antibiótico oral, sem necessidade de qualquer drenagem da coleção",
+      "Suspender todo tratamento e aguardar resolução espontânea da coleção líquida já confirmada por imagem",
+      "Indicar mastectomia total como tratamento definitivo do abscesso mamário puerperal apresentado",
+      "Trocar o antibiótico oral por outro da mesma classe, sem necessidade de drenagem da coleção confirmada"
+    ],
+    "explain": "Uma vez formado o abscesso mamário (coleção líquida confirmada por imagem), a antibioticoterapia isolada não é suficiente; é necessária drenagem (punção guiada por ultrassom ou drenagem cirúrgica) associada à manutenção do antibiótico e do esvaziamento mamário para resolução adequada.",
+    "trap": "Insistir apenas em antibioticoterapia quando já há abscesso confirmado, que necessita de drenagem da coleção."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 18,
+    "group": "Mastologia / ovário",
+    "theme": "Afecções benignas da mama",
+    "stem": "Mulher de 52 anos, tabagista importante, no ambulatório de mastologia com espessamento e retração da pele periareolar e mamilo invertido há alguns meses, sem nódulo palpável evidente. Qual condição benigna deve ser considerada, sem excluir a necessidade de investigação para malignidade?",
+    "correct": "Ectasia ductal com mastite periductal, mais comum em tabagistas, mas que exige exclusão de carcinoma pela semelhança de sinais com neoplasia",
+    "wrongs": [
+      "Fibroadenoma gigante, condição que tipicamente causaria retração mamilar e espessamento cutâneo periareolar",
+      "Cisto mamário simples, achado que classicamente cursaria com retração do mamilo e da pele adjacente",
+      "Galactocele, coleção láctea que ocorre exclusivamente durante a lactação e causaria retração mamilar",
+      "Lipoma mamário, tumor de tecido adiposo sem relação com alterações do complexo areolopapilar descrito"
+    ],
+    "explain": "A ectasia ductal com mastite periductal (mais frequente em tabagistas) pode causar retração mamilar, espessamento e alterações inflamatórias periareolares que mimetizam sinais de malignidade; por isso, mesmo suspeitando de condição benigna, deve-se investigar adequadamente com imagem e, se necessário, biópsia para excluir carcinoma.",
+    "trap": "Assumir diagnóstico benigno definitivo sem excluir adequadamente malignidade diante de sinais que mimetizam câncer."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 19,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · clínica",
+    "stem": "Mulher de 58 anos percebe nódulo endurecido, fixo, indolor na mama direita há 2 meses, com retração cutânea suprajacente, e procura o ambulatório de mastologia. Exame físico confirma nódulo de consistência endurecida e pouco móvel. Qual a conduta diagnóstica inicial mais apropriada?",
+    "correct": "Mamografia e ultrassonografia mamária seguidas de biópsia percutânea (core biopsy) do nódulo suspeito para confirmação histológica",
+    "wrongs": [
+      "Observação clínica por 6 meses antes de qualquer exame de imagem, dado o baixo risco aparente do achado",
+      "Mastectomia radical imediata sem confirmação histológica prévia do nódulo mamário identificado",
+      "Punção aspirativa por agulha fina isolada, suficiente e definitiva para todo o planejamento terapêutico",
+      "Prescrição de antibioticoterapia empírica por suspeita de mastite antes de investigar o nódulo apresentado"
+    ],
+    "explain": "Nódulo endurecido, fixo, com retração cutânea em mulher de risco etário para câncer de mama exige investigação com imagem (mamografia e ultrassonografia) seguida de biópsia percutânea para diagnóstico histológico, que orienta o planejamento terapêutico definitivo (cirurgia, quimioterapia, hormonioterapia).",
+    "trap": "Aceitar apenas punção aspirativa por agulha fina como suficiente para definir todo o planejamento terapêutico."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 20,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · clínica",
+    "stem": "Mulher de 61 anos, no ambulatório de mastologia com diagnóstico de carcinoma de mama, biópsia mostrando receptores de estrogênio e progesterona positivos, HER2 negativo. Qual implicação terapêutica esse perfil imuno-histoquímico sugere?",
+    "correct": "Boa resposta esperada à hormonioterapia (tamoxifeno ou inibidor de aromatase), sendo esse subtipo luminal associado a melhor prognóstico geral",
+    "wrongs": [
+      "Indicação obrigatória de terapia anti-HER2 (trastuzumabe) como pilar do tratamento sistêmico dessa paciente",
+      "Ausência de qualquer opção terapêutica sistêmica além da cirurgia isolada nesse perfil tumoral",
+      "Necessidade de quimioterapia isolada, sem qualquer papel da hormonioterapia diante desse perfil imuno-histoquímico",
+      "Pior prognóstico em relação aos subtipos triplo-negativo e HER2 positivo descritos na literatura"
+    ],
+    "explain": "Tumores com receptores hormonais positivos e HER2 negativo (subtipo luminal) respondem bem à hormonioterapia (tamoxifeno em pré-menopausa, inibidores de aromatase em pós-menopausa) e, em geral, têm melhor prognóstico comparado aos subtipos triplo-negativo e HER2 positivo, que exigem quimioterapia e/ou terapia-alvo anti-HER2.",
+    "trap": "Indicar terapia anti-HER2 (trastuzumabe) em tumor HER2 negativo, que não se beneficia dessa terapia-alvo."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 21,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · clínica",
+    "stem": "Mulher de 63 anos, no ambulatório de mastologia com câncer de mama localmente avançado, edema e hiperemia difusa de toda a mama, com pele em casca de laranja, sem nódulo dominante bem definido à palpação. Qual a apresentação clínica compatível e sua implicação prognóstica?",
+    "correct": "Carcinoma inflamatório de mama, apresentação clínica agressiva com pior prognóstico, frequentemente exigindo quimioterapia neoadjuvante antes da cirurgia",
+    "wrongs": [
+      "Mastite puerperal simples, com excelente prognóstico e resolução espontânea esperada nessa faixa etária",
+      "Fibroadenoma gigante, tumor benigno sem qualquer implicação prognóstica sistêmica para a paciente",
+      "Ectasia ductal isolada, condição benigna sem necessidade de qualquer tratamento oncológico sistêmico",
+      "Abscesso mamário simples, que se resolveria apenas com drenagem e antibioticoterapia isolada"
+    ],
+    "explain": "O carcinoma inflamatório de mama apresenta-se com edema difuso, hiperemia e pele em casca de laranja, sem massa dominante evidente, sendo diagnóstico clínico-patológico agressivo com pior prognóstico; a abordagem terapêutica geralmente inicia com quimioterapia neoadjuvante antes de considerar cirurgia e radioterapia.",
+    "trap": "Confundir carcinoma inflamatório com mastite ou abscesso, retardando o diagnóstico oncológico com antibioticoterapia isolada."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 22,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · clínica",
+    "stem": "Mulher de 66 anos, no ambulatório de mastologia com lesão eczematosa, descamativa e persistente no mamilo e aréola há 4 meses, sem melhora com corticoide tópico. Qual diagnóstico deve ser sempre excluído nesse quadro?",
+    "correct": "Doença de Paget da mama, que se manifesta com lesão eczematosa persistente do complexo areolopapilar e frequentemente associa-se a carcinoma ductal subjacente",
+    "wrongs": [
+      "Dermatite de contato simples, diagnóstico definitivo sem necessidade de biópsia mesmo sem resposta ao tratamento tópico",
+      "Psoríase mamilar isolada, condição sem qualquer associação com neoplasia mamária subjacente confirmada",
+      "Impetigo bacteriano, que responderia tipicamente apenas a antibioticoterapia tópica isolada e curta",
+      "Herpes zoster torácico, diagnóstico compatível com lesão eczematosa crônica e descamativa apresentada"
+    ],
+    "explain": "A doença de Paget da mama mimetiza dermatite eczematosa do complexo areolopapilar, sendo persistente e refratária a tratamentos tópicos convencionais; associa-se com frequência a carcinoma ductal in situ ou invasivo subjacente, exigindo biópsia da lesão para confirmação diagnóstica.",
+    "trap": "Tratar lesão eczematosa mamilar persistente apenas como dermatológica sem biópsia diante da falha terapêutica."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 23,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · clínica",
+    "stem": "Mulher de 45 anos, no ambulatório de mastologia com câncer de mama, biópsia axilar confirmando metástase em linfonodo sentinela. Qual a implicação dessa informação no estadiamento e na conduta cirúrgica axilar?",
+    "correct": "Linfonodo sentinela positivo indica comprometimento axilar, podendo exigir linfadenectomia axilar complementar ou radioterapia axilar, conforme critérios clínicos e carga tumoral linfonodal",
+    "wrongs": [
+      "Linfonodo sentinela positivo é sempre irrelevante para a decisão terapêutica, sem qualquer impacto no estadiamento",
+      "Exige obrigatoriamente amputação do membro superior ipsilateral como conduta padrão nesse cenário",
+      "Dispensa qualquer avaliação adicional da axila, pois um linfonodo positivo não alteraria o estadiamento",
+      "Indica cura espontânea da doença axilar sem necessidade de qualquer conduta adicional na paciente"
+    ],
+    "explain": "A positividade do linfonodo sentinela indica disseminação regional e influencia o estadiamento (N+); dependendo do número de linfonodos comprometidos, do tamanho da metástase e de outros fatores, pode-se optar por linfadenectomia axilar completa ou radioterapia axilar, conforme critérios validados em estudos como o ACOSOG Z0011.",
+    "trap": "Considerar o linfonodo sentinela positivo irrelevante para o estadiamento e a conduta axilar subsequente."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 24,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · clínica",
+    "stem": "Mulher de 39 anos, gestante de 22 semanas, percebe nódulo mamário endurecido de crescimento rápido e procura o ambulatório de mastologia. Biópsia confirma carcinoma invasivo. Qual princípio orienta o tratamento oncológico durante a gestação?",
+    "correct": "O tratamento do câncer de mama deve ser conduzido de forma multidisciplinar, adaptando as terapias (a cirurgia é geralmente segura em qualquer trimestre; a quimioterapia pode ser usada no segundo/terceiro trimestre) para preservar a gestação sempre que possível sem comprometer o prognóstico materno",
+    "wrongs": [
+      "Indicar interrupção obrigatória da gestação antes de iniciar qualquer tratamento oncológico planejado",
+      "Postergar todo o tratamento até o parto, independentemente da agressividade tumoral já confirmada",
+      "Contraindicar completamente a cirurgia durante toda a gestação, mesmo no segundo trimestre gestacional",
+      "Iniciar radioterapia torácica ampla imediatamente, sem considerar o risco fetal envolvido"
+    ],
+    "explain": "O câncer de mama na gestação exige manejo multidisciplinar; a cirurgia pode ser realizada com segurança relativa em qualquer trimestre, a quimioterapia é geralmente evitada no primeiro trimestre mas pode ser usada no segundo/terceiro, e a radioterapia costuma ser postergada para após o parto, buscando não comprometer a gestante nem, quando possível, a gestação.",
+    "trap": "Indicar interrupção da gestação como conduta obrigatória e universal diante do diagnóstico oncológico confirmado."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 25,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · tratamento",
+    "stem": "Mulher de 50 anos, no ambulatório de mastologia com carcinoma de mama T1N0, tumor de 1,8 cm, sem comprometimento linfonodal clínico, deseja preservação da mama. Qual a abordagem cirúrgica inicial mais indicada?",
+    "correct": "Cirurgia conservadora (setorectomia/quadrantectomia) com biópsia do linfonodo sentinela, seguida de radioterapia adjuvante da mama remanescente",
+    "wrongs": [
+      "Mastectomia radical à Halsted, técnica considerada padrão obrigatória independentemente do tamanho tumoral",
+      "Apenas biópsia diagnóstica sem qualquer ressecção cirúrgica do tumor mamário primário identificado",
+      "Linfadenectomia axilar completa isolada, sem qualquer abordagem do tumor mamário primário identificado",
+      "Quimioterapia isolada sem cirurgia, como tratamento definitivo de tumor classificado como T1N0"
+    ],
+    "explain": "Em tumores pequenos e sem comprometimento linfonodal clínico, a cirurgia conservadora (com margens livres) associada à avaliação do linfonodo sentinela e radioterapia adjuvante tem eficácia oncológica equivalente à mastectomia, com vantagem estética e funcional quando a paciente é candidata.",
+    "trap": "Indicar mastectomia radical como técnica obrigatória, ignorando a equivalência oncológica da cirurgia conservadora."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 26,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · tratamento",
+    "stem": "Mulher de 55 anos, pós-menopausa, no ambulatório de mastologia com câncer de mama receptor hormonal positivo, HER2 negativo, submetida a cirurgia conservadora. Qual a hormonioterapia adjuvante mais indicada?",
+    "correct": "Inibidor de aromatase (como anastrozol ou letrozol), preferido ao tamoxifeno em mulheres pós-menopáusicas com receptor hormonal positivo",
+    "wrongs": [
+      "Tamoxifeno exclusivo por toda a vida, sem qualquer possibilidade de troca por inibidor de aromatase",
+      "Trastuzumabe isolado, indicado apenas em tumores HER2 positivo e não nesse perfil imuno-histoquímico",
+      "Quimioterapia isolada sem qualquer papel da hormonioterapia diante desse subtipo tumoral luminal",
+      "Análogo de GnRH isolado, indicado preferencialmente em mulheres pré-menopáusicas e não nesse caso"
+    ],
+    "explain": "Em mulheres pós-menopáusicas com tumor receptor hormonal positivo, os inibidores de aromatase (que bloqueiam a conversão periférica de andrógenos em estrogênio) são preferidos ao tamoxifeno como hormonioterapia adjuvante, por eficácia superior nessa população, geralmente por 5 a 10 anos de uso.",
+    "trap": "Manter tamoxifeno como única opção em pós-menopausa, quando inibidores de aromatase são preferidos nesse contexto."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 27,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · tratamento",
+    "stem": "Mulher de 42 anos, pré-menopausa, no ambulatório de mastologia com câncer de mama HER2 positivo, tumor de 3 cm, linfonodo sentinela positivo. Qual terapia-alvo deve ser associada ao tratamento sistêmico?",
+    "correct": "Trastuzumabe (anticorpo monoclonal anti-HER2), associado à quimioterapia, por melhorar significativamente a sobrevida em tumores HER2 positivo",
+    "wrongs": [
+      "Tamoxifeno isolado, suficiente independentemente do status HER2 e sem necessidade de terapia-alvo específica",
+      "Nenhuma terapia-alvo é indicada, já que HER2 positivo não alteraria a conduta terapêutica sistêmica",
+      "Inibidor de aromatase isolado, substituindo completamente a necessidade de terapia anti-HER2 específica",
+      "Radioterapia isolada, suficiente para tratar a superexpressão de HER2 sem qualquer terapia sistêmica-alvo"
+    ],
+    "explain": "Tumores HER2 positivo se beneficiam de terapia-alvo anti-HER2 (trastuzumabe, podendo-se associar pertuzumabe em cenários selecionados) combinada à quimioterapia, com redução significativa de recidiva e mortalidade; hormonioterapia isolada não é suficiente quando há superexpressão de HER2 confirmada.",
+    "trap": "Considerar hormonioterapia isolada suficiente em tumor HER2 positivo, ignorando o benefício da terapia-alvo específica."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 28,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · tratamento",
+    "stem": "Mulher de 47 anos, no ambulatório de mastologia com câncer de mama triplo-negativo (receptores hormonais negativos e HER2 negativo), tumor de 2,5 cm, linfonodo clinicamente negativo. Qual estratégia terapêutica sistêmica é mais indicada?",
+    "correct": "Quimioterapia (neoadjuvante ou adjuvante), pois o subtipo triplo-negativo não se beneficia de hormonioterapia nem de terapia anti-HER2, sendo a quimioterapia o pilar do tratamento sistêmico",
+    "wrongs": [
+      "Hormonioterapia isolada com tamoxifeno, apesar da ausência de expressão de receptores hormonais no tumor",
+      "Trastuzumabe isolado, apesar da ausência de superexpressão de HER2 confirmada na biópsia realizada",
+      "Observação sem qualquer tratamento sistêmico, já que o triplo-negativo teria excelente prognóstico espontâneo",
+      "Inibidor de aromatase isolado, mesmo sem expressão de receptores hormonais identificada no tumor"
+    ],
+    "explain": "O subtipo triplo-negativo não expressa receptores hormonais nem HER2, não respondendo a hormonioterapia ou terapia anti-HER2; a quimioterapia é o principal pilar terapêutico sistêmico, frequentemente utilizada de forma neoadjuvante para avaliar resposta patológica e permitir cirurgia conservadora quando possível.",
+    "trap": "Prescrever hormonioterapia ou terapia anti-HER2 em tumor que não expressa esses alvos moleculares específicos."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 29,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · tratamento",
+    "stem": "Mulher de 62 anos, submetida a mastectomia com linfadenectomia axilar, apresenta no ambulatório de mastologia edema progressivo do braço ipsilateral 8 meses após a cirurgia, sem sinais infecciosos. Qual é a principal hipótese e conduta inicial?",
+    "correct": "Linfedema secundário à linfadenectomia axilar; a conduta inicial inclui fisioterapia especializada (drenagem linfática manual, exercícios e compressão), evitando procedimentos invasivos no membro afetado",
+    "wrongs": [
+      "Trombose venosa profunda, diagnóstico mais provável e que dispensaria qualquer avaliação clínica adicional",
+      "Recidiva tumoral local obrigatória, exigindo biópsia imediata do membro edemaciado dessa paciente",
+      "Celulite bacteriana, indicando antibioticoterapia isolada como única conduta necessária diante do quadro",
+      "Insuficiência cardíaca descompensada, causa mais provável de edema unilateral do braço apresentado"
+    ],
+    "explain": "O linfedema é complicação relativamente comum após linfadenectomia axilar (especialmente se associada à radioterapia), decorrente da interrupção da drenagem linfática; o tratamento inicial é conservador com fisioterapia especializada, e deve-se evitar procedimentos invasivos (punções, medida de PA) no membro afetado pelo risco de agravamento.",
+    "trap": "Presumir causa infecciosa ou cardíaca sem considerar a complicação esperada e mais provável após linfadenectomia axilar."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 30,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de mama · tratamento",
+    "stem": "Mulher de 44 anos, no ambulatório de mastologia com câncer de mama localmente avançado (T3N1), recebe quimioterapia neoadjuvante antes da cirurgia. Qual é o principal objetivo dessa estratégia terapêutica?",
+    "correct": "Reduzir o volume tumoral para possibilitar cirurgia conservadora e avaliar a resposta tumoral in vivo à quimioterapia, o que também tem valor prognóstico",
+    "wrongs": [
+      "Substituir definitivamente a necessidade de cirurgia em qualquer estágio tumoral avançado identificado",
+      "Eliminar completamente a necessidade de radioterapia adjuvante após a resposta à quimioterapia administrada",
+      "Aumentar o tamanho tumoral antes da cirurgia para facilitar a identificação intraoperatória da lesão",
+      "Dispensar a avaliação do status de receptores hormonais e HER2 antes de iniciar o tratamento planejado"
+    ],
+    "explain": "A quimioterapia neoadjuvante em tumores localmente avançados busca reduzir o tamanho tumoral (possibilitando cirurgia conservadora em casos que inicialmente exigiriam mastectomia) e permite avaliar a resposta patológica completa, que tem valor prognóstico importante, sem eliminar a necessidade de cirurgia subsequente.",
+    "trap": "Achar que a quimioterapia neoadjuvante substitui a necessidade de cirurgia, quando seu objetivo é otimizar o tratamento cirúrgico."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 31,
+    "group": "Mastologia / ovário",
+    "theme": "Massa anexial e tumores ovarianos",
+    "stem": "Mulher de 28 anos, no ambulatório de ginecologia com dor pélvica aguda há 6 horas; a ultrassonografia mostra cisto ovariano de 6 cm com aspecto simples (anecoico, paredes finas). Beta-hCG negativo. Qual a principal hipótese diagnóstica e a conduta inicial?",
+    "correct": "Cisto folicular ou cisto simples funcional; a conduta inicial é analgesia e seguimento ultrassonográfico, pois a maioria regride espontaneamente em mulheres em idade reprodutiva",
+    "wrongs": [
+      "Neoplasia maligna de ovário, diagnóstico mais provável e que exigiria cirurgia radical imediata da paciente",
+      "Gestação ectópica, hipótese mais provável apesar do beta-hCG negativo já confirmado no exame",
+      "Torção ovariana estabelecida, exigindo laparotomia de urgência independentemente do quadro clínico apresentado",
+      "Endometrioma volumoso, diagnóstico definido apenas pelo tamanho do cisto sem outras características associadas"
+    ],
+    "explain": "Cistos anexiais simples, anecoicos, com paredes finas em mulher jovem em idade reprodutiva são tipicamente funcionais (foliculares ou de corpo lúteo) e frequentemente regridem espontaneamente; a conduta inicial é conservadora com analgesia e reavaliação ultrassonográfica em 6-8 semanas, reservando cirurgia para persistência, crescimento ou características suspeitas.",
+    "trap": "Indicar cirurgia radical imediata para um cisto simples com características ultrassonográficas benignas em mulher jovem."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 32,
+    "group": "Mastologia / ovário",
+    "theme": "Massa anexial e tumores ovarianos",
+    "stem": "Mulher de 25 anos, no pronto-socorro com dor pélvica súbita e intensa, náuseas e vômitos; a ultrassonografia com Doppler mostra ovário aumentado com ausência de fluxo. Qual é o diagnóstico mais provável e a conduta?",
+    "correct": "Torção anexial; a conduta é cirurgia de urgência (laparoscopia preferencialmente) para detorção e, se viável, preservação do ovário",
+    "wrongs": [
+      "Cisto funcional simples, condição que dispensaria qualquer intervenção cirúrgica de urgência nessa paciente",
+      "Doença inflamatória pélvica, diagnóstico mais provável mesmo sem febre ou corrimento vaginal associados",
+      "Endometriose profunda, diagnóstico definitivo apenas pelo achado isolado de ausência de fluxo ao Doppler",
+      "Gestação ectópica íntegra, hipótese mais provável independentemente do contexto clínico descrito acima"
+    ],
+    "explain": "A ausência de fluxo Doppler em ovário aumentado com dor súbita e intensa sugere torção anexial, emergência cirúrgica que exige laparoscopia precoce para detorção; tentar preservar o ovário é preferível à ooforectomia sempre que a viabilidade tecidual permitir, mesmo com aspecto isquêmico inicial.",
+    "trap": "Optar por ooforectomia sistemática sem tentar a detorção e a avaliação de viabilidade ovariana intraoperatória."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 33,
+    "group": "Mastologia / ovário",
+    "theme": "Massa anexial e tumores ovarianos",
+    "stem": "Mulher de 45 anos, no ambulatório de ginecologia com massa anexial de 8 cm; a ultrassonografia mostra componente sólido-cístico, septações espessas e fluxo Doppler central positivo. CA-125 elevado. Qual conduta é mais apropriada?",
+    "correct": "Encaminhamento para cirurgia por ginecologista oncológico, pois características de imagem suspeitas associadas a CA-125 elevado aumentam a probabilidade de malignidade",
+    "wrongs": [
+      "Seguimento ultrassonográfico ambulatorial em 6 meses, já que a massa não necessitaria de avaliação cirúrgica imediata",
+      "Punção guiada por imagem para drenagem do componente cístico, adotada como tratamento definitivo da massa",
+      "Tratamento hormonal isolado com anticoncepcional combinado para redução do tamanho da massa identificada",
+      "Antibioticoterapia empírica prolongada, presumindo abscesso tubo-ovariano sem outros achados sugestivos desse quadro"
+    ],
+    "explain": "Massas anexiais com características ultrassonográficas suspeitas (septações espessas, componente sólido, fluxo Doppler central) associadas a CA-125 elevado devem ser encaminhadas para avaliação e cirurgia por ginecologista oncológico, permitindo estadiamento cirúrgico adequado caso confirmada malignidade.",
+    "trap": "Realizar punção da massa suspeita, procedimento contraindicado pelo risco de disseminação de células neoplásicas na cavidade."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 34,
+    "group": "Mastologia / ovário",
+    "theme": "Massa anexial e tumores ovarianos",
+    "stem": "Mulher de 35 anos, no ambulatório de ginecologia com dismenorreia progressiva, dispareunia e massa anexial de 5 cm com aspecto de vidro moído à ultrassonografia. Qual o diagnóstico mais provável?",
+    "correct": "Endometrioma ovariano, cisto de conteúdo hemático antigo característico da endometriose, com aspecto ecográfico típico em vidro moído",
+    "wrongs": [
+      "Cistoadenoma seroso simples, achado que tipicamente se apresentaria anecoico e sem relação com dismenorreia",
+      "Teratoma maduro, lesão que classicamente apresentaria componentes de gordura e calcificação, não aspecto em vidro moído",
+      "Abscesso tubo-ovariano, diagnóstico mais provável na ausência de febre ou leucocitose associadas ao quadro",
+      "Fibroma ovariano, tumor sólido que não apresentaria o aspecto ecográfico hemático descrito acima"
+    ],
+    "explain": "O endometrioma tem aspecto ultrassonográfico característico em vidro moído (conteúdo hemático espesso e homogêneo), frequentemente associado a dismenorreia progressiva, dispareunia e infertilidade, sendo a principal hipótese diante desse quadro clínico-ecográfico típico de endometriose ovariana.",
+    "trap": "Confundir o aspecto ecográfico típico do endometrioma com outras lesões ovarianas sem correlação clínica de endometriose."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 35,
+    "group": "Mastologia / ovário",
+    "theme": "Massa anexial e tumores ovarianos",
+    "stem": "Mulher de 20 anos, no ambulatório de ginecologia com massa anexial de 7 cm; a ultrassonografia mostra componente com calcificações grosseiras e áreas de gordura (nível gorduroso). Qual é o diagnóstico mais provável e a conduta?",
+    "correct": "Teratoma maduro (cisto dermoide), tumor benigno de ovário mais comum em mulheres jovens; a conduta é cistectomia com preservação do tecido ovariano saudável quando possível",
+    "wrongs": [
+      "Carcinoma de células claras, diagnóstico mais provável nessa faixa etária mesmo com achados típicos de teratoma",
+      "Endometrioma típico, apesar da ausência do aspecto característico em vidro moído descrito no exame",
+      "Abscesso tubo-ovariano, diagnóstico compatível com as calcificações e o componente gorduroso identificados",
+      "Fibroma ovariano sólido, tumor que não apresentaria os componentes heterogêneos descritos na imagem"
+    ],
+    "explain": "O teratoma maduro (cisto dermoide) é o tumor ovariano benigno mais comum em mulheres jovens, caracterizado por componentes heterogêneos como gordura, calcificações e às vezes dente ou pelos ao ultrassom; a conduta cirúrgica preferencial é a cistectomia preservando o parênquima ovariano saudável.",
+    "trap": "Suspeitar de malignidade diante de achados de imagem clássicos e característicos de teratoma maduro benigno."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 36,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de ovário",
+    "stem": "Mulher de 58 anos, no ambulatório de ginecologia com distensão abdominal progressiva, saciedade precoce e perda ponderal há 3 meses. A TC de abdome mostra massa ovariana complexa bilateral, ascite e implantes peritoneais. Qual a conduta inicial mais apropriada?",
+    "correct": "Encaminhamento para cirurgia de estadiamento e citorredução por ginecologista oncológico, pois o quadro sugere câncer de ovário avançado",
+    "wrongs": [
+      "Tratamento com diurético isolado para controle da ascite, sem investigação adequada da causa de base",
+      "Punção de ascite isolada como tratamento definitivo, sem qualquer necessidade de avaliação cirúrgica",
+      "Quimioterapia empírica sem qualquer confirmação histológica ou estadiamento cirúrgico prévio da doença",
+      "Observação clínica por 3 meses antes de qualquer intervenção diagnóstica ou terapêutica sobre o quadro"
+    ],
+    "explain": "O quadro de massa ovariana complexa bilateral, ascite e implantes peritoneais é altamente sugestivo de câncer de ovário avançado; a conduta padrão envolve cirurgia de estadiamento e citorredução (idealmente sem doença residual macroscópica) por ginecologista oncológico, seguida de quimioterapia adjuvante.",
+    "trap": "Tratar a ascite isoladamente ou iniciar quimioterapia sem estadiamento cirúrgico adequado da doença apresentada."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 37,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de ovário",
+    "stem": "Mulher de 62 anos, em seguimento no ambulatório de ginecologia após cirurgia de citorredução e quimioterapia para câncer de ovário epitelial estágio III, apresenta CA-125 em elevação progressiva em três dosagens consecutivas, ainda assintomática. Qual a interpretação mais adequada?",
+    "correct": "Sugestivo de recidiva bioquímica, que pode preceder a recidiva clínica ou radiológica; deve-se correlacionar com exames de imagem e considerar reavaliação oncológica antes de decidir sobre novo tratamento",
+    "wrongs": [
+      "CA-125 elevado isoladamente é sempre um erro laboratorial e deve ser ignorado sem qualquer investigação adicional",
+      "Indica cura definitiva da doença, já que a elevação isolada não teria qualquer significado clínico relevante",
+      "Exige quimioterapia de resgate imediata independentemente de exames de imagem ou do estado clínico atual",
+      "Reflete apenas processo inflamatório intestinal benigno, sem qualquer relação com a neoplasia ovariana tratada"
+    ],
+    "explain": "O CA-125 é marcador útil no seguimento do câncer de ovário; sua elevação progressiva pode indicar recidiva bioquímica, antecedendo por vezes semanas a meses a recidiva clínica/radiológica; a decisão de retratamento imediato versus aguardar recidiva clínica é individualizada, sem indicação automática de quimioterapia apenas pela elevação do marcador.",
+    "trap": "Iniciar quimioterapia de resgate apenas pela elevação do CA-125 sem correlação clínica e radiológica adequada."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 38,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de ovário",
+    "stem": "Mulher de 50 anos, no ambulatório de ginecologia com forte história familiar de câncer de ovário e mama, teste genético confirmando mutação BRCA1. Qual estratégia de redução de risco pode ser considerada após conclusão da prole?",
+    "correct": "Salpingo-ooforectomia bilateral profilática, que reduz significativamente o risco de câncer de ovário e também de mama nessa população de alto risco",
+    "wrongs": [
+      "Histerectomia total isolada sem remoção das tubas e ovários, suficiente para reduzir o risco de câncer de ovário",
+      "Rastreamento isolado com CA-125 e ultrassom anual, com eficácia comprovada equivalente à cirurgia profilática",
+      "Quimioprevenção com quimioterapia sistêmica contínua, estratégia validada para redução de risco em portadoras de BRCA1",
+      "Observação sem qualquer intervenção, já que a mutação BRCA1 não modificaria significativamente esse risco"
+    ],
+    "explain": "Em mulheres com mutação BRCA1/2 e prole completa, a salpingo-ooforectomia bilateral profilática reduz significativamente o risco de câncer de ovário/tuba e também de mama (por redução da exposição hormonal), sendo estratégia validada de redução de risco, geralmente recomendada entre 35-40 anos ou conforme a mutação específica.",
+    "trap": "Considerar o rastreamento com CA-125 e ultrassom equivalente em eficácia à cirurgia de redução de risco."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 39,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de ovário",
+    "stem": "Mulher de 55 anos, no ambulatório de ginecologia, submetida a cirurgia por massa ovariana, com resultado histopatológico definindo carcinoma epitelial seroso de alto grau, estágio IC (tumor limitado aos ovários com ruptura capsular). Qual conduta adjuvante é indicada?",
+    "correct": "Quimioterapia adjuvante à base de platina e taxano, indicada mesmo em estágios iniciais quando há fatores de alto risco como alto grau histológico ou ruptura capsular",
+    "wrongs": [
+      "Apenas observação clínica, já que o estágio I não se beneficiaria de qualquer tratamento adjuvante disponível",
+      "Radioterapia pélvica isolada, modalidade considerada padrão de tratamento adjuvante para esse tipo tumoral",
+      "Hormonioterapia isolada com tamoxifeno, suficiente para o tratamento adjuvante desse carcinoma seroso de alto grau",
+      "Nova cirurgia de estadiamento em todos os casos antes de considerar qualquer tratamento adjuvante indicado"
+    ],
+    "explain": "Mesmo em estágios iniciais do câncer de ovário epitelial, características de alto risco (alto grau histológico, ruptura capsular, subtipo de células claras) indicam quimioterapia adjuvante à base de platina e taxano, pois esses fatores aumentam o risco de recidiva em comparação a tumores de baixo grau sem ruptura.",
+    "trap": "Optar por observação isolada em estágio I quando há fatores histológicos de alto risco que indicam quimioterapia adjuvante."
+  },
+  {
+    "idPrefix": "go-gin4",
+    "n": 40,
+    "group": "Mastologia / ovário",
+    "theme": "Câncer de ovário",
+    "stem": "Mulher de 45 anos, no ambulatório de ginecologia com massa ovariana removida cirurgicamente; o histopatológico confirma tumor de células da granulosa, estágio I. Qual característica clínica é classicamente associada a esse tipo de tumor, decorrente de sua atividade hormonal?",
+    "correct": "Produção de estrogênio, podendo causar sangramento uterino anormal, puberdade precoce (se em crianças) ou hiperplasia/câncer de endométrio associado em adultas",
+    "wrongs": [
+      "Produção isolada de hCG, levando a quadros clínicos semelhantes à gestação em praticamente qualquer idade",
+      "Atividade hormonal androgênica isolada, causando virilização franca em praticamente todos os casos descritos",
+      "Ausência completa de atividade hormonal, sendo esse tumor estritamente não funcionante em qualquer contexto",
+      "Produção excessiva de cortisol, levando a um quadro clínico de síndrome de Cushing florida na paciente"
+    ],
+    "explain": "O tumor de células da granulosa é neoplasia ovariana de cordões sexuais-estroma com atividade estrogênica característica, podendo causar sangramento uterino anormal em adultas (por estímulo endometrial e risco de hiperplasia/carcinoma associado) ou puberdade precoce isossexual quando ocorre em crianças, refletindo sua função hormonal.",
+    "trap": "Atribuir a esse tumor produção androgênica ou de hCG, quando sua característica clássica é a produção estrogênica."
+  }
+]
