@@ -106,6 +106,7 @@ function aprovaGoTo (id, options) {
   if (id === "hoje") {
     aprovaHojeShowHub();
     aprovaRenderToday();
+    if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
   }
   if (id === "progresso") aprovaRenderProgress();
   if (id === "metas") aprovaRenderMetas();
@@ -4339,7 +4340,7 @@ function aprovaSavePerfilFromForm () {
 
 function aprovaHojeShowHub () {
   const hub = document.getElementById("hoje-hub");
-  const views = ["hoje-view-metas", "hoje-view-flashcards", "hoje-view-soon"];
+  const views = ["hoje-view-metas", "hoje-view-revisoes", "hoje-view-flashcards", "hoje-view-soon"];
   if (hub) hub.hidden = false;
   views.forEach((id) => {
     const el = document.getElementById(id);
@@ -4351,7 +4352,7 @@ function aprovaHojeShowHub () {
 function aprovaHojeShowView (viewId) {
   const hub = document.getElementById("hoje-hub");
   if (hub) hub.hidden = true;
-  ["hoje-view-metas", "hoje-view-flashcards", "hoje-view-soon"].forEach((id) => {
+  ["hoje-view-metas", "hoje-view-revisoes", "hoje-view-flashcards", "hoje-view-soon"].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.hidden = id !== viewId;
   });
@@ -4366,6 +4367,15 @@ function aprovaHojePick (pick) {
     if (title) title.textContent = "Suas metas";
     if (sub) sub.textContent = "Metas do dia · questões e flashcards";
     aprovaRenderHojeMetas();
+    return;
+  }
+  if (key === "revisoes") {
+    aprovaHojeShowView("hoje-view-revisoes");
+    const title = document.getElementById("workspace-title");
+    const sub = document.getElementById("workspace-sub");
+    if (title) title.textContent = "Revisões";
+    if (sub) sub.textContent = "Flashcards iguais · questões similares";
+    aprovaRenderHojeRevisoes();
     return;
   }
   if (key === "flashcards") {
@@ -4398,6 +4408,133 @@ function aprovaHojePick (pick) {
     }
     if (wsSub) wsSub.textContent = "Em construção";
   }
+}
+
+function aprovaRenderHojeRevisoes () {
+  const fcSum = document.getElementById("hoje-rev-fc-summary");
+  const qSum = document.getElementById("hoje-rev-q-summary");
+  const qThemes = document.getElementById("hoje-rev-q-themes");
+  const qUp = document.getElementById("hoje-rev-q-upcoming");
+  const hubPrev = document.getElementById("hoje-hub-revisoes-preview");
+  const fcStart = document.getElementById("hoje-rev-fc-start");
+  const qStart = document.getElementById("hoje-rev-q-start");
+
+  const cardIds = typeof AprovaFlashcards !== "undefined" ? AprovaFlashcards.allIds() : [];
+  const srs = typeof aprovaSrsProgressSummary === "function"
+    ? aprovaSrsProgressSummary(cardIds)
+    : { due: 0, pending: 0 };
+  const dueFc = srs.due | 0;
+
+  if (fcSum) {
+    fcSum.textContent = dueFc
+      ? (dueFc + " flashcard" + (dueFc === 1 ? "" : "s") + " vencido" + (dueFc === 1 ? "" : "s") + " hoje")
+      : "Nenhum flashcard vencido agora";
+  }
+  if (fcStart) fcStart.disabled = dueFc === 0;
+
+  const dueThemes = typeof aprovaQSrsDueList === "function" ? aprovaQSrsDueList() : [];
+  if (qSum) {
+    qSum.textContent = dueThemes.length
+      ? (dueThemes.length + " tema" + (dueThemes.length === 1 ? "" : "s") + " com revisão de questões hoje")
+      : "Nenhuma revisão de questões vencida — responda questões para agendar";
+  }
+  if (qStart) qStart.disabled = dueThemes.length === 0;
+
+  if (qThemes) {
+    if (!dueThemes.length) {
+      qThemes.innerHTML = "";
+    } else {
+      const esc = typeof aprovaEscapeHtml === "function"
+        ? aprovaEscapeHtml
+        : (s) => String(s || "");
+      qThemes.innerHTML = dueThemes.slice(0, 8).map((row) => (
+        "<li>" +
+          "<button type=\"button\" class=\"dash-task-theme-btn\" data-hoje-rev-tema=\"" +
+            esc(row.theme) + "\" data-hoje-rev-spec=\"" + esc(row.specialty || "") + "\">" +
+            "<strong>~10</strong>" +
+            "<span class=\"dash-task-theme-copy\">" + esc(row.theme) +
+              (row.specialty ? (" <span>· " + esc(row.specialty) + "</span>") : "") +
+            "</span>" +
+            "<span class=\"dash-task-theme-go\">Similares</span>" +
+          "</button>" +
+        "</li>"
+      )).join("");
+    }
+  }
+
+  if (qUp && typeof aprovaQSrsUpcoming === "function") {
+    const upcoming = aprovaQSrsUpcoming(Date.now(), 14).slice(0, 4);
+    if (!upcoming.length) {
+      qUp.textContent = dueThemes.length
+        ? ""
+        : "Intervalos: errou → 3 dias · acertou → 7 → 14 → 28…";
+    } else {
+      qUp.textContent = "Próximas: " + upcoming.map((u) => {
+        const d = Math.max(1, Math.ceil((u.due - Date.now()) / APROVA_DAY_MS));
+        return u.theme + " (" + d + "d)";
+      }).join(" · ");
+    }
+  }
+
+  if (hubPrev) {
+    const bits = [];
+    if (dueFc) bits.push(dueFc + " cards");
+    if (dueThemes.length) bits.push(dueThemes.length + " tema" + (dueThemes.length === 1 ? "" : "s") + " Q");
+    hubPrev.textContent = bits.length
+      ? ("Hoje: " + bits.join(" · "))
+      : "Flashcards iguais · questões similares";
+  }
+}
+
+async function aprovaStartHojeRevisaoFlashcards () {
+  aprovaGoTo("flashcards", { study: true, mode: "today" });
+}
+
+async function aprovaStartHojeRevisaoQuestoes (tema, specialty) {
+  if (typeof AprovaQuestions === "undefined") return;
+  if (!AprovaQuestions.catalog.length) {
+    try { await AprovaQuestions.load(); } catch (e) { /* ignore */ }
+  }
+
+  let due = typeof aprovaQSrsDueList === "function" ? aprovaQSrsDueList() : [];
+  if (tema) {
+    const t = String(tema);
+    const s = String(specialty || "");
+    due = due.filter((row) => row.theme === t && (!s || row.specialty === s));
+    if (!due.length && typeof aprovaLoadQSrs === "function") {
+      const key = typeof aprovaQSrsThemeKey === "function"
+        ? aprovaQSrsThemeKey(t, s)
+        : "";
+      const map = aprovaLoadQSrs();
+      if (key && map[key]) due = [map[key]];
+    }
+  }
+  if (!due.length) return;
+
+  const pool = [];
+  const used = Object.create(null);
+  due.forEach((row) => {
+    const part = typeof aprovaBuildSimilarQuestionPool === "function"
+      ? aprovaBuildSimilarQuestionPool(row.theme, row.specialty, row.seedIds || [], 8)
+      : [];
+    part.forEach((q) => {
+      if (!q || !q.id || used[q.id]) return;
+      used[q.id] = true;
+      pool.push(q);
+    });
+  });
+
+  if (!pool.length) {
+    const first = due[0];
+    return aprovaFulfillMetaQuestions(first.specialty || "", first.theme, 10, { mode: "more" });
+  }
+
+  aprovaQFromMetas = false;
+  aprovaGoTo("questoes");
+  const n = AprovaQuestions.startTreino(pool.slice(0, 20), "similar-review");
+  if (!n) return;
+  aprovaShowQuestionViews("card");
+  aprovaRenderQuestion();
 }
 
 function aprovaRenderToday () {
@@ -5743,6 +5880,20 @@ async function aprovaBoot () {
   });
   document.getElementById("hoje-metas-fc-start")?.addEventListener("click", () => {
     if (typeof aprovaFulfillDailyMeta === "function") aprovaFulfillDailyMeta();
+  });
+  document.getElementById("hoje-rev-fc-start")?.addEventListener("click", () => {
+    aprovaStartHojeRevisaoFlashcards();
+  });
+  document.getElementById("hoje-rev-q-start")?.addEventListener("click", () => {
+    aprovaStartHojeRevisaoQuestoes();
+  });
+  document.getElementById("hoje-rev-q-themes")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-hoje-rev-tema]");
+    if (!btn) return;
+    aprovaStartHojeRevisaoQuestoes(
+      btn.getAttribute("data-hoje-rev-tema"),
+      btn.getAttribute("data-hoje-rev-spec") || ""
+    );
   });
 
   document.querySelectorAll("[data-perfil-tab]").forEach(btn => {

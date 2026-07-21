@@ -111,12 +111,13 @@ function aprovaScheduleCard (cardId, knewIt, opts) {
   const prev = map[cardId];
   let intervalDays;
 
+  // Errou → 3 dias · Acertou → 7 · Acertou de novo → 14 → 28 → … (máx. 60)
   if (!knewIt) {
-    intervalDays = 1;
-  } else if (prev && prev.intervalDays >= 1) {
-    intervalDays = Math.min(prev.intervalDays * 2, 30);
-  } else {
     intervalDays = 3;
+  } else if (prev && prev.intervalDays >= 7) {
+    intervalDays = Math.min(prev.intervalDays * 2, 60);
+  } else {
+    intervalDays = 7;
   }
 
   // Ajuste fino pelo desempenho do tema vs meta de acerto da prova
@@ -139,8 +140,8 @@ function aprovaScheduleCard (cardId, knewIt, opts) {
   }
 
   if (knewIt && mult !== 1) {
-    intervalDays = Math.max(1, Math.round(intervalDays * mult));
-    intervalDays = Math.min(intervalDays, mult > 1 ? 45 : 30);
+    intervalDays = Math.max(3, Math.round(intervalDays * mult));
+    intervalDays = Math.min(intervalDays, mult > 1 ? 60 : 45);
   }
 
   map[cardId] = {
@@ -250,4 +251,129 @@ function aprovaTodaySummary (cardIds, questionCount) {
       questionCount + " questões amostra"
     ]
   };
+}
+
+/* ——— Revisões de questões por tema (questões similares, nunca as mesmas) ——— */
+
+const APROVA_Q_SRS_KEY = "medhub-aprova-q-srs-v1";
+
+function aprovaLoadQSrs () {
+  try {
+    return JSON.parse(localStorage.getItem(APROVA_Q_SRS_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function aprovaSaveQSrs (data) {
+  localStorage.setItem(APROVA_Q_SRS_KEY, JSON.stringify(data || {}));
+}
+
+function aprovaQSrsThemeKey (theme, specialty) {
+  const t = String(theme || "").trim().toLowerCase();
+  const s = String(specialty || "").trim().toLowerCase();
+  return s + "|" + t;
+}
+
+/** Mesmos intervalos dos flashcards: errou 3 · acertou 7 → 14 → 28… */
+function aprovaScheduleThemeReview (theme, specialty, knewIt, questionId) {
+  const tema = String(theme || "").trim();
+  if (!tema) return null;
+  const key = aprovaQSrsThemeKey(tema, specialty);
+  const map = aprovaLoadQSrs();
+  const now = Date.now();
+  const prev = map[key];
+  let intervalDays;
+  if (!knewIt) {
+    intervalDays = 3;
+  } else if (prev && prev.intervalDays >= 7) {
+    intervalDays = Math.min(prev.intervalDays * 2, 60);
+  } else {
+    intervalDays = 7;
+  }
+
+  const seedIds = Array.isArray(prev?.seedIds) ? prev.seedIds.slice() : [];
+  const qid = String(questionId || "").trim();
+  if (qid) {
+    seedIds.unshift(qid);
+  }
+  const uniq = [];
+  const seen = Object.create(null);
+  seedIds.forEach((id) => {
+    const s = String(id || "");
+    if (!s || seen[s]) return;
+    seen[s] = true;
+    uniq.push(s);
+  });
+
+  map[key] = {
+    theme: tema,
+    specialty: String(specialty || "").trim(),
+    due: now + intervalDays * APROVA_DAY_MS,
+    last: now,
+    ease: knewIt ? "easy" : "hard",
+    intervalDays,
+    seedIds: uniq.slice(0, 60)
+  };
+  aprovaSaveQSrs(map);
+  return map[key];
+}
+
+function aprovaQSrsDueList (now = Date.now()) {
+  const map = aprovaLoadQSrs();
+  return Object.keys(map)
+    .map((k) => map[k])
+    .filter((row) => row && row.theme && typeof row.due === "number" && row.due <= now)
+    .sort((a, b) => a.due - b.due);
+}
+
+function aprovaQSrsUpcoming (now = Date.now(), days = 14) {
+  const map = aprovaLoadQSrs();
+  const until = now + Math.max(1, days | 0) * APROVA_DAY_MS;
+  return Object.keys(map)
+    .map((k) => map[k])
+    .filter((row) => row && row.theme && typeof row.due === "number" && row.due > now && row.due <= until)
+    .sort((a, b) => a.due - b.due);
+}
+
+/**
+ * Questões semelhantes ao tema (mesmo assunto), excluindo as IDs já feitas que geraram a revisão.
+ */
+function aprovaBuildSimilarQuestionPool (theme, specialty, seedIds, n) {
+  const want = Math.max(1, Math.min(40, n | 0 || 10));
+  if (typeof aprovaQPoolForTema !== "function") return [];
+  const pool = aprovaQPoolForTema(specialty, theme);
+  const exclude = Object.create(null);
+  (Array.isArray(seedIds) ? seedIds : []).forEach((id) => {
+    const s = String(id || "");
+    if (s) exclude[s] = true;
+  });
+
+  let candidates = pool.filter((q) => q && q.id && !exclude[String(q.id)]);
+  if (!candidates.length && specialty) {
+    // Fallback: mesmo specialty, outros temas — ainda sem as IDs iguais
+    if (typeof AprovaQuestions !== "undefined" && AprovaQuestions.catalog) {
+      candidates = AprovaQuestions.catalog.filter((q) =>
+        q && q.id && !exclude[String(q.id)] && q.specialty === specialty
+      );
+    }
+  }
+
+  const hist = typeof aprovaLoadQuestionHistory === "function"
+    ? aprovaLoadQuestionHistory()
+    : { byId: {} };
+
+  candidates = candidates.slice().sort((a, b) => {
+    const aa = hist.byId[a.id]?.attempted | 0;
+    const ba = hist.byId[b.id]?.attempted | 0;
+    if (aa !== ba) return aa - ba;
+    return Math.random() - 0.5;
+  });
+
+  if (typeof aprovaShuffleArray === "function") {
+    const fresh = candidates.filter((q) => !(hist.byId[q.id]?.attempted));
+    const rest = candidates.filter((q) => hist.byId[q.id]?.attempted);
+    return aprovaShuffleArray(fresh).concat(aprovaShuffleArray(rest)).slice(0, want);
+  }
+  return candidates.slice(0, want);
 }

@@ -185,6 +185,10 @@
                 <span class="hoje-hub-item-label">Suas metas?</span>
                 <span class="hoje-hub-item-hint" id="hoje-hub-metas-preview">Metas do dia · questões e flashcards</span>
               </button>
+              <button type="button" class="hoje-hub-item" data-hoje-pick="revisoes">
+                <span class="hoje-hub-item-label">Revisões</span>
+                <span class="hoje-hub-item-hint" id="hoje-hub-revisoes-preview">Flashcards iguais · questões similares</span>
+              </button>
               <button type="button" class="hoje-hub-item" data-hoje-pick="flashcards">
                 <span class="hoje-hub-item-label">Flashcards</span>
                 <span class="hoje-hub-item-hint" id="hoje-hub-fc-preview">Fila de revisão do dia</span>
@@ -239,6 +243,33 @@
               <div class="actions-row" style="margin-top:0.75rem">
                 <button type="button" class="btn btn-primary" id="hoje-metas-fc-start">Cumprir meta de hoje</button>
                 <button type="button" class="btn btn-ghost" data-goto="flashcards">Abrir flashcards</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="hoje-view-revisoes" class="hoje-view" hidden>
+            <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
+            <h2 class="hoje-view-title">Revisões</h2>
+            <p class="muted">Flashcards: os mesmos cards. Questões: temas semelhantes — nunca a mesma pergunta.</p>
+
+            <div class="study-card hoje-metas-card">
+              <div class="label">Flashcards · mesmos cards</div>
+              <p class="hoje-metas-summary" id="hoje-rev-fc-summary">Carregando…</p>
+              <p class="muted" id="hoje-rev-fc-hint" style="margin:0.35rem 0 0.75rem;font-size:0.88rem">
+                Errou → 3 dias · Acertou → 7 → 14 → 28…
+              </p>
+              <div class="actions-row">
+                <button type="button" class="btn btn-primary" id="hoje-rev-fc-start">Revisar flashcards</button>
+              </div>
+            </div>
+
+            <div class="study-card hoje-metas-card">
+              <div class="label">Questões · similares (não iguais)</div>
+              <p class="hoje-metas-summary" id="hoje-rev-q-summary">Carregando…</p>
+              <ul class="dash-task-themes" id="hoje-rev-q-themes" style="margin-top:0.65rem"></ul>
+              <p class="muted" id="hoje-rev-q-upcoming" style="margin:0.65rem 0 0;font-size:0.85rem"></p>
+              <div class="actions-row" style="margin-top:0.75rem">
+                <button type="button" class="btn btn-primary" id="hoje-rev-q-start">Revisar questões similares</button>
               </div>
             </div>
           </div>
@@ -968,8 +999,8 @@
   <script src="js/focus.js?v=20260721foco1"></script>
   <script src="js/plan.js?v=20260719h"></script>
   <script src="js/tasks.js?v=20260721acc2"></script>
-  <script src="js/schedule.js?v=20260721acc2"></script>
-  <script src="js/exam-stats.js?v=20260721mat6"></script>
+  <script src="js/schedule.js?v=20260721rev1"></script>
+  <script src="js/exam-stats.js?v=20260721rev1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
   <script src="js/questions-qui.js?v=20260721day1"></script>
   <script src="js/revisao.js?v=20260718rr"></script>

@@ -99,6 +99,10 @@ function aprovaRecordExamAnswer (theme, ok, questionId, meta) {
       row.lastChoice = meta.choice | 0;
     }
     aprovaSaveQuestionHistory(hist);
+
+    if (typeof aprovaScheduleThemeReview === "function") {
+      aprovaScheduleThemeReview(key, meta && meta.specialty, ok, id);
+    }
   }
 
   return stats;
