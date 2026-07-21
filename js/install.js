@@ -140,14 +140,11 @@
       androidPrompt.addEventListener("click", () => {
         if (deferredPrompt) {
           void aprovaTriggerInstall();
-        } else {
-          const note = document.getElementById("aprova-install-status");
-          if (note) {
-            note.textContent = "Use o menu � {
-          const note = document.getElementById("aprova-install-status");
-          if (note) {
-            note.textContent = "Use o menu ⋮ do Chrome → Instalar app (ou Adicionar à tela inicial).";
-          }
+          return;
+        }
+        const note = document.getElementById("aprova-install-status");
+        if (note) {
+          note.textContent = "Use o menu ⋮ do Chrome → Instalar app (ou Adicionar à tela inicial).";
         }
       });
     }
