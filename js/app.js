@@ -2659,19 +2659,15 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   if (daysEl) {
     daysEl.textContent = plan.horizon.label + " · " + plan.daysLine;
   }
-  if (toneEl) toneEl.textContent = plan.tone || plan.horizon.tone;
+  if (toneEl) {
+    toneEl.textContent = "";
+    toneEl.hidden = true;
+  }
   if (metaEl) {
-    const weights = (focusPack && focusPack.ok && focusPack.weightLine)
-      || plan.weightLine
-      || "";
     metaEl.innerHTML =
       (plan.assumed
-        ? "<span class=\"dash-seu-plano-chip\">Data: fim do ano (padrão)</span>"
+        ? "<span class=\"dash-seu-plano-chip\">Data padrão: fim do ano</span>"
         : "") +
-      (weights
-        ? "<span class=\"dash-seu-plano-chip dash-seu-plano-chip--accent\">Pesos: " + weights + "</span>"
-        : "") +
-      "<span class=\"dash-seu-plano-chip\">" + plan.mixLine + "</span>" +
       "<span class=\"dash-seu-plano-chip\">" + plan.dailyLine + "</span>";
   }
 
@@ -2682,88 +2678,83 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const divisionEl = document.getElementById("dash-seu-plano-division");
   const quotaEl = document.getElementById("dash-seu-plano-quota");
   const tasksEl = document.getElementById("dash-seu-plano-tasks");
+  const tasksMoreEl = document.getElementById("dash-seu-plano-tasks-more");
 
   if (program) {
-    if (progSum) progSum.textContent = program.summaryLine;
-    if (divisionEl) divisionEl.textContent = program.divisionLine;
+    if (progSum) {
+      // Uma linha prática: progresso de hoje
+      const daily = (program.tasks || []).find((t) => t.id === "daily");
+      progSum.textContent = daily
+        ? ("Hoje: " + daily.done + "/" + daily.goal + " flashcards")
+        : (program.summaryLine || "");
+    }
+    if (divisionEl) {
+      divisionEl.textContent = "";
+      divisionEl.hidden = true;
+    }
     if (quotaEl) {
       const q = program.quota;
-      const until = program.untilExamCards != null
-        ? ("~" + program.untilExamCards + " flashcards até a prova neste ritmo")
-        : "";
-      const reviewChip = q.dailyReview > 0
-        ? ("<span class=\"dash-seu-plano-chip\">" + q.dailyReview + " revisões na fila</span>")
-        : "<span class=\"dash-seu-plano-chip\">sem revisões vencidas</span>";
       quotaEl.innerHTML =
-        "<span class=\"dash-seu-plano-chip\">" + q.daily + " flashcards/dia</span>" +
-        "<span class=\"dash-seu-plano-chip\">" + q.dailyNew + " novos</span>" +
-        reviewChip +
-        "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>" +
-        (until
-          ? "<span class=\"dash-seu-plano-chip dash-seu-plano-chip--soft\">" + until + "</span>"
-          : "");
+        "<span class=\"dash-seu-plano-chip\">" + q.daily + " cards/dia</span>" +
+        "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>";
     }
+
+    const renderTaskLi = (t) => {
+      const esc = (s) => String(s || "")
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;");
+      let themesBlock = "";
+      if (t.showThemes && t.themeCards && t.themeCards.length) {
+        const fulfillId = t.id === "daily" || t.id === "tomorrow" ? t.id : "";
+        themesBlock =
+          "<div class=\"dash-task-themes-head\">" +
+            "<div class=\"label\" style=\"margin:0\">" + esc(t.themesLabel || "Temas") + "</div>" +
+            (fulfillId
+              ? ("<button type=\"button\" class=\"btn " +
+                (t.id === "tomorrow" ? "btn-ghost" : "btn-primary") +
+                " btn-compact\" data-meta-fulfill=\"" + fulfillId + "\">" +
+                esc(t.cta || "Estudar") + "</button>")
+              : "") +
+          "</div>" +
+          "<ul class=\"dash-task-themes\">" + t.themeCards.map((th) => (
+            "<li>" +
+              "<button type=\"button\" class=\"dash-task-theme-btn\"" +
+                " data-meta-area=\"" + esc(th.areaId) + "\"" +
+                " data-meta-tema=\"" + esc(th.tema) + "\"" +
+                " data-meta-cards=\"" + (th.cards | 0) + "\"" +
+                " data-meta-credit=\"" + esc(t.credit || "today") + "\">" +
+                "<strong>" + th.cards + "</strong>" +
+                "<span class=\"dash-task-theme-copy\">" + esc(th.tema) +
+                  (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
+                "</span>" +
+                "<span class=\"dash-task-theme-go\">Estudar</span>" +
+              "</button>" +
+            "</li>"
+          )).join("") + "</ul>";
+      }
+
+      return (
+        "<li class=\"dash-task dash-task--" + t.status +
+          (t.id === "tomorrow" ? " dash-task--advance" : "") + "\">" +
+          "<div class=\"dash-task-top\">" +
+            "<strong>" + t.label + "</strong>" +
+            "<em>" + t.done + "/" + t.goal + " cards</em>" +
+          "</div>" +
+          "<div class=\"dash-task-bar\" aria-hidden=\"true\"><i style=\"width:" + t.pct + "%\"></i></div>" +
+          themesBlock +
+        "</li>"
+      );
+    };
+
+    const primary = (program.tasks || []).filter((t) => t.id === "daily" || t.id === "tomorrow");
+    const secondary = (program.tasks || []).filter((t) => t.id !== "daily" && t.id !== "tomorrow");
+
     if (tasksEl) {
-      tasksEl.innerHTML = program.tasks.map(t => {
-        const esc = s => String(s || "")
-          .replace(/&/g, "&amp;")
-          .replace(/"/g, "&quot;")
-          .replace(/</g, "&lt;");
-        let themesBlock = "";
-        if (t.showThemes && t.themeCards && t.themeCards.length) {
-          const fulfillId = t.id === "daily" || t.id === "tomorrow" ? t.id : "";
-          themesBlock =
-            "<div class=\"dash-task-themes-head\">" +
-              "<div>" +
-                "<div class=\"label\" style=\"margin:0\">" + esc(t.themesLabel || "Temas") + "</div>" +
-                (t.themesHint
-                  ? ("<p class=\"muted dash-task-themes-hint\">" + esc(t.themesHint) + "</p>")
-                  : "") +
-              "</div>" +
-              (fulfillId
-                ? ("<button type=\"button\" class=\"btn " +
-                  (t.id === "tomorrow" ? "btn-ghost" : "btn-primary") +
-                  " btn-compact\" data-meta-fulfill=\"" + fulfillId + "\">" +
-                  esc(t.cta || "Estudar") + "</button>")
-                : "") +
-            "</div>" +
-            "<ul class=\"dash-task-themes\">" + t.themeCards.map(th => (
-              "<li>" +
-                "<button type=\"button\" class=\"dash-task-theme-btn\"" +
-                  " data-meta-area=\"" + esc(th.areaId) + "\"" +
-                  " data-meta-tema=\"" + esc(th.tema) + "\"" +
-                  " data-meta-cards=\"" + (th.cards | 0) + "\"" +
-                  " data-meta-credit=\"" + esc(t.credit || "today") + "\">" +
-                  "<strong>" + th.cards + "</strong>" +
-                  "<span class=\"dash-task-theme-copy\">" + esc(th.tema) +
-                    (th.areaLabel ? (" <span>· " + esc(th.areaLabel) + "</span>") : "") +
-                  "</span>" +
-                  "<span class=\"dash-task-theme-go\">Estudar</span>" +
-                "</button>" +
-              "</li>"
-            )).join("") + "</ul>";
-        } else if (t.themesHint) {
-          themesBlock = "<p class=\"muted\" style=\"margin:0.45rem 0 0\">" + esc(t.themesHint) + "</p>";
-        }
-
-        return (
-          "<li class=\"dash-task dash-task--" + t.status +
-            (t.id === "tomorrow" ? " dash-task--advance" : "") + "\">" +
-            "<div class=\"dash-task-top\">" +
-              "<strong>" + t.label + "</strong>" +
-              "<em>" + t.done + "/" + t.goal + " cards</em>" +
-            "</div>" +
-            "<div class=\"dash-task-bar\" aria-hidden=\"true\"><i style=\"width:" + t.pct + "%\"></i></div>" +
-            "<span>" + t.window + " · " + t.detail + "</span>" +
-            themesBlock +
-            "<span class=\"dash-task-feedback\">" + t.feedback + "</span>" +
-          "</li>"
-        );
-      }).join("");
-
+      tasksEl.innerHTML = primary.map(renderTaskLi).join("");
       if (!tasksEl.dataset.metaBound) {
         tasksEl.dataset.metaBound = "1";
-        tasksEl.addEventListener("click", evt => {
+        const onTaskClick = (evt) => {
           const fulfill = evt.target.closest("[data-meta-fulfill]");
           if (fulfill) {
             evt.preventDefault();
@@ -2782,8 +2773,13 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
               Number(themeBtn.getAttribute("data-meta-cards")) || 0
             );
           }
-        });
+        };
+        tasksEl.addEventListener("click", onTaskClick);
+        if (tasksMoreEl) tasksMoreEl.addEventListener("click", onTaskClick);
       }
+    }
+    if (tasksMoreEl) {
+      tasksMoreEl.innerHTML = secondary.map(renderTaskLi).join("");
     }
 
     aprovaRenderCurriculumMap(program.curriculum);
@@ -2792,6 +2788,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
     if (divisionEl) divisionEl.textContent = "";
     if (quotaEl) quotaEl.innerHTML = "";
     if (tasksEl) tasksEl.innerHTML = "";
+    if (tasksMoreEl) tasksMoreEl.innerHTML = "";
     aprovaRenderCurriculumMap(null);
   }
 
@@ -2822,10 +2819,9 @@ function aprovaRenderCurriculumMap (curriculum) {
 
   root.hidden = false;
   if (noteEl) {
-    noteEl.textContent = curriculum.note +
-      (curriculum.untilExamCards
-        ? (" Estimativa neste ritmo: ~" + curriculum.untilExamCards + " flashcards até a prova, repartidos pelos temas.")
-        : "");
+    noteEl.textContent = curriculum.untilExamCards
+      ? ("~" + curriculum.untilExamCards + " cards até a prova neste ritmo")
+      : "";
   }
 
   const esc = s => String(s || "")
