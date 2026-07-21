@@ -2798,6 +2798,100 @@ html[data-theme="dark"] .aprova-modal-panel {
   background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
+.provas-full-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+  width: 100%;
+  margin: 0 0 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm, 0.5rem);
+  border: 1px solid transparent;
+  background: #f8fafc;
+  color: #0f172a;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+html[data-theme="dark"] .provas-full-chip {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.provas-full-chip-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.provas-full-chip:hover,
+.provas-full-chip:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.provas-prog {
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.provas-prog-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.65rem;
+  margin-bottom: 0.3rem;
+}
+
+.provas-prog-done {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.provas-full-chip .provas-prog-done {
+  color: #475569;
+}
+
+.provas-prog-pct {
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.provas-prog-pct--good { color: #22c55e; }
+.provas-prog-pct--mid { color: #eab308; }
+.provas-prog-pct--low { color: #ef4444; }
+.provas-prog-pct--none { color: var(--ink-soft); }
+
+.provas-prog-bar {
+  height: 0.35rem;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.28);
+  overflow: hidden;
+}
+
+.provas-full-chip .provas-prog-bar {
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.provas-prog-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #94a3b8;
+}
+
+.provas-prog-bar-fill--good { background: #22c55e; }
+.provas-prog-bar-fill--mid { background: #eab308; }
+.provas-prog-bar-fill--low { background: #ef4444; }
+
+.q-result-focus-item--medio {
+  border-color: rgba(234, 179, 8, 0.45);
+}
+
 .welcome-mascot-panel {
   width: min(28rem, 100%);
 }

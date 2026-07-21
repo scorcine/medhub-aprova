@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721enare10">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721enare11">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -480,10 +480,15 @@
               <div class="label" style="margin-top:0.85rem">Por grande área</div>
               <ul class="q-result-themes" id="q-result-areas"></ul>
             </div>
+            <div id="q-result-wrong-wrap" hidden>
+              <div class="label" style="margin-top:0.85rem">Temas com mais erros (e importância)</div>
+              <p class="muted" style="margin:0.35rem 0 0;font-size:0.85rem">Prioriza erros em temas recorrentes e em áreas que mais caem nas bancas.</p>
+              <ul class="q-result-focus" id="q-result-wrong-themes"></ul>
+            </div>
             <div class="label" style="margin-top:0.85rem">Por tema</div>
             <ul class="q-result-themes" id="q-result-themes"></ul>
             <div id="q-result-focus-wrap" hidden>
-              <div class="label" style="margin-top:0.85rem">Onde focar</div>
+              <div class="label" style="margin-top:0.85rem">Plano de foco</div>
               <ul class="q-result-focus" id="q-result-focus"></ul>
             </div>
             <div class="actions-row" style="margin-top:1rem">
@@ -1133,11 +1138,11 @@
   <script src="js/schedule.js?v=20260721reset1"></script>
   <script src="js/exam-stats.js?v=20260721rev1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
-  <script src="js/questions-qui.js?v=20260721enare10"></script>
-  <script src="js/provas-integra.js?v=20260721enare10"></script>
+  <script src="js/questions-qui.js?v=20260721enare11"></script>
+  <script src="js/provas-integra.js?v=20260721enare11"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260721enare10"></script>
+  <script src="js/app-qui.js?v=20260721enare11"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

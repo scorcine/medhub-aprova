@@ -5930,6 +5930,7 @@ function aprovaRenderSimuladoResult () {
   const timeEl = document.getElementById("q-result-time");
   const themesEl = document.getElementById("q-result-themes");
   const areasEl = document.getElementById("q-result-areas");
+  const wrongEl = document.getElementById("q-result-wrong-themes");
   const focusEl = document.getElementById("q-result-focus");
   const labelEl = document.querySelector("#q-result > .label");
   const againBtn = document.getElementById("q-result-again");
@@ -5946,19 +5947,40 @@ function aprovaRenderSimuladoResult () {
       : "Resultado do simulado";
   }
   if (score) {
-    score.textContent = (provaTitle ? provaTitle + " · " : "") +
+    const tone = r.pct >= 70 ? "good" : (r.pct >= 50 ? "mid" : "low");
+    score.innerHTML = (provaTitle ? provaTitle + " · " : "") +
       r.hits + " acertos · " + (r.wrong != null ? r.wrong : (r.total - r.hits)) + " erros · " +
-      r.pct + "%" +
+      "<span class=\"provas-prog-pct provas-prog-pct--" + tone + "\">" + r.pct + "%</span>" +
       (r.annulled ? (" · " + r.annulled + " anulada(s) fora do cálculo") : "");
   }
-  if (timeEl) timeEl.textContent = "Tempo: " + r.minutes + " min";
+  if (timeEl) timeEl.textContent = "Tempo: " + r.minutes + " min · Meta de acerto: 70%";
   if (areasEl) {
     const areasWrap = document.getElementById("q-result-areas-wrap");
     if (areasWrap) areasWrap.hidden = !(r.areas && r.areas.length);
     areasEl.innerHTML = (r.areas || []).length
-      ? r.areas.map((a) => (
-        "<li><span>" + a.label + "</span><em>" + a.ok + " acertos · " + a.wrong +
-          " erros · " + a.pct + "%</em></li>"
+      ? r.areas.map((a) => {
+        const tone = a.pct >= 70 ? "good" : (a.pct >= 50 ? "mid" : "low");
+        return (
+          "<li><span>" + a.label +
+            " <small class=\"muted\">(~" + a.weight + "% nas bancas)</small></span>" +
+            "<em>" + a.ok + " acertos · " + a.wrong + " erros · " +
+            "<span class=\"provas-prog-pct provas-prog-pct--" + tone + "\">" + a.pct + "%</span></em></li>"
+        );
+      }).join("")
+      : "";
+  }
+  if (wrongEl) {
+    const wrongWrap = document.getElementById("q-result-wrong-wrap");
+    const list = r.wrongThemes || [];
+    if (wrongWrap) wrongWrap.hidden = !list.length;
+    wrongEl.innerHTML = list.length
+      ? list.map((t) => (
+        "<li class=\"q-result-focus-item q-result-focus-item--" +
+          (t.importanceLabel === "alta" ? "alto" : (t.importanceLabel === "média" ? "medio" : "baixo")) +
+          "\"><strong>" + t.theme +
+          " · " + t.wrong + " erro(s)" +
+          (t.specific ? " · específico" : " · recorrente") +
+          "</strong><span>" + t.tip + "</span></li>"
       )).join("")
       : "";
   }

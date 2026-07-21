@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare10";
+const APROVA_PROVAS_CACHE_VER = "20260721enare11";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -11,6 +11,9 @@ const APROVA_PROVAS_AREA_LABELS = {
   go: "Ginecologia e obstetrícia",
   preventiva: "Preventiva"
 };
+
+/** Meta de acerto para cor do progresso (verde / amarelo / vermelho). */
+const APROVA_PROVA_META_PCT = 70;
 
 let aprovaProvasCatalogData = null;
 let aprovaProvasBound = false;
@@ -36,6 +39,74 @@ function aprovaProvaExamLabel (examId) {
 function aprovaProvaAreaLabel (specialty) {
   const id = String(specialty || "").toLowerCase();
   return APROVA_PROVAS_AREA_LABELS[id] || specialty || "Outras";
+}
+
+function aprovaProvaAccTone (pct) {
+  const n = Number(pct);
+  if (!Number.isFinite(n)) return "none";
+  if (n >= APROVA_PROVA_META_PCT) return "good";
+  if (n >= 50) return "mid";
+  return "low";
+}
+
+/** Resumo de progresso salvo (simulado ou treino) para um recorte da prova. */
+function aprovaProvaProgressSummary (packId, area, totalHint) {
+  if (typeof AprovaQuestions === "undefined" || !AprovaQuestions.loadSavedProva) {
+    return null;
+  }
+  const a = String(area || "");
+  const candidates = ["simulado", "treino"]
+    .map((style) => AprovaQuestions.loadSavedProva(packId, a, style))
+    .filter(Boolean);
+  if (!candidates.length) return null;
+
+  candidates.sort((x, y) => {
+    const ax = (x.answers || []).length;
+    const ay = (y.answers || []).length;
+    if (ay !== ax) return ay - ax;
+    if (!!y.finished !== !!x.finished) return y.finished ? 1 : -1;
+    return (y.savedAt || 0) - (x.savedAt || 0);
+  });
+  const snap = candidates[0];
+  const total = (snap.queue && snap.queue.length) || Number(totalHint) || 0;
+  const answers = (snap.answers || []).filter((row) => row && !row.annulled);
+  const done = answers.length;
+  const hits = answers.filter((row) => row.ok).length;
+  const pct = done ? Math.round((hits / done) * 100) : null;
+  return {
+    done,
+    total,
+    hits,
+    pct,
+    finished: !!snap.finished,
+    style: snap.style || "",
+    tone: done ? aprovaProvaAccTone(pct) : "none"
+  };
+}
+
+function aprovaProvaProgressHtml (summary) {
+  if (!summary || !(summary.done > 0 || summary.finished)) return "";
+  const total = summary.total || 0;
+  const doneLabel = summary.finished
+    ? ("Concluído " + (total || summary.done) + "/" + (total || summary.done))
+    : ("Concluído " + summary.done + "/" + (total || "—"));
+  const pctHtml = summary.pct == null
+    ? ""
+    : ("<span class=\"provas-prog-pct provas-prog-pct--" + summary.tone + "\">" +
+        summary.pct + "% acerto</span>");
+  const fill = total > 0 ? Math.min(100, Math.round((summary.done / total) * 100)) : 0;
+  return (
+    "<div class=\"provas-prog\">" +
+      "<div class=\"provas-prog-row\">" +
+        "<span class=\"provas-prog-done\">" + doneLabel + "</span>" +
+        pctHtml +
+      "</div>" +
+      "<div class=\"provas-prog-bar\" aria-hidden=\"true\">" +
+        "<span class=\"provas-prog-bar-fill provas-prog-bar-fill--" + summary.tone +
+          "\" style=\"width:" + fill + "%\"></span>" +
+      "</div>" +
+    "</div>"
+  );
 }
 
 function aprovaProvasClickEl (target) {
@@ -381,8 +452,9 @@ async function aprovaRenderProvasModo (root, data, seq) {
     }
 
     // Recorte por área só quando o pacote tiver tags confiáveis (areasReady).
-    // Heurística automática inflava Clínica e quase zerava Preventiva — não publicar isso.
     const areasReady = meta.areasReady === true;
+    const fullProg = aprovaProvaProgressSummary(meta.id, "", total);
+    const fullProgHtml = aprovaProvaProgressHtml(fullProg);
     let areaBlock = "";
     if (areasReady) {
       const byArea = aprovaProvasCountByArea(questions);
@@ -391,17 +463,22 @@ async function aprovaRenderProvasModo (root, data, seq) {
         .concat(Object.keys(byArea).filter((id) => APROVA_PROVAS_AREA_ORDER.indexOf(id) < 0 && byArea[id] > 0));
       const areaScopeBtns = areas.map((id) => {
         const n = byArea[id] || 0;
+        const prog = aprovaProvaProgressSummary(meta.id, id, n);
+        const progHtml = aprovaProvaProgressHtml(prog);
         return (
-          "<button type=\"button\" class=\"provas-area-chip\" data-prova-scope=\"" +
-            String(meta.id) + "\" data-prova-area=\"" + id + "\">" +
+          "<button type=\"button\" class=\"provas-area-chip" +
+            (prog && prog.done ? " has-progress" : "") +
+            "\" data-prova-scope=\"" + String(meta.id) + "\" data-prova-area=\"" + id + "\">" +
             "<span class=\"provas-area-chip-label\">" + aprovaProvaAreaLabel(id) + "</span>" +
             "<span class=\"provas-area-chip-count\">" + n + " questões</span>" +
+            progHtml +
           "</button>"
         );
       }).join("");
       areaBlock =
         "<div class=\"label\" style=\"margin:1rem 0 0.35rem\">Por grande área</div>" +
-        "<p class=\"muted\" style=\"margin:0 0 0.65rem;font-size:0.85rem\">Classificação MedHub R1 por enunciado (curada). A prova na íntegra mantém a ordem oficial.</p>" +
+        "<p class=\"muted\" style=\"margin:0 0 0.65rem;font-size:0.85rem\">Classificação MedHub R1 por enunciado (curada). Progresso e % de acerto vêm do que você já respondeu (meta " +
+          APROVA_PROVA_META_PCT + "%).</p>" +
         "<div class=\"provas-area-grid\">" + areaScopeBtns + "</div>";
     } else {
       areaBlock =
@@ -415,10 +492,12 @@ async function aprovaRenderProvasModo (root, data, seq) {
           "<div class=\"label\">" + String(family.label) + " · " + year + "</div>" +
           "<p class=\"prompt\" style=\"margin:0.35rem 0 0.55rem\"><strong>O que deseja fazer?</strong></p>" +
           "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Escolha a prova completa ou um recorte por grande área. Em seguida você define o modo (simulado ou treino).</p>" +
-          "<div class=\"actions-row\" style=\"margin-bottom:0.25rem\">" +
-            "<button type=\"button\" class=\"btn btn-primary\" data-prova-scope=\"" +
-              String(meta.id) + "\" data-prova-area=\"\">Prova na íntegra (" + total + ")</button>" +
-          "</div>" +
+          "<button type=\"button\" class=\"provas-full-chip" +
+            (fullProg && fullProg.done ? " has-progress" : "") +
+            "\" data-prova-scope=\"" + String(meta.id) + "\" data-prova-area=\"\">" +
+            "<span class=\"provas-full-chip-title\">Prova na íntegra (" + total + ")</span>" +
+            fullProgHtml +
+          "</button>" +
           areaBlock +
         "</article>" +
       "</div>";
@@ -459,9 +538,25 @@ function aprovaRenderProvasEstilo (root, data) {
     : null;
 
   function styleCard (style, title, blurb, resume) {
-    const done = resume && resume.answers ? resume.answers.filter((a) => a && !a.annulled).length : 0;
+    const answers = resume && resume.answers
+      ? resume.answers.filter((a) => a && !a.annulled)
+      : [];
+    const done = answers.length;
+    const hits = answers.filter((a) => a.ok).length;
     const total = resume && resume.queue ? resume.queue.length : (meta.count || 100);
     const finished = !!(resume && resume.finished);
+    const pct = done ? Math.round((hits / done) * 100) : null;
+    const tone = done ? aprovaProvaAccTone(pct) : "none";
+    const progHtml = (done > 0 || finished)
+      ? aprovaProvaProgressHtml({
+        done: finished ? total : done,
+        total,
+        hits,
+        pct,
+        finished,
+        tone
+      })
+      : "";
     let actions = "";
     if (resume && !finished && done > 0) {
       actions =
@@ -490,6 +585,7 @@ function aprovaRenderProvasEstilo (root, data) {
       "<article class=\"study-card provas-style-card\" style=\"margin-top:0.75rem\">" +
         "<div class=\"label\">" + title + "</div>" +
         "<p class=\"muted\" style=\"margin:0.35rem 0 0\">" + blurb + "</p>" +
+        progHtml +
         actions +
       "</article>"
     );

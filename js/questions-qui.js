@@ -17,7 +17,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721enare10";
+const APROVA_QUESTION_CACHE_VER = "20260721enare11";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
@@ -1069,35 +1069,52 @@ const AprovaQuestions = {
     const themes = Object.keys(byTheme).map((theme) => {
       const row = byTheme[theme];
       const pctT = Math.round((row.ok / row.n) * 100);
+      const wrongN = row.n - row.ok;
       const freq = themeFreqInQueue[theme] || row.n;
       const g = globalStats && globalStats.byTheme ? globalStats.byTheme[theme] : null;
       const specific = freq <= 1;
-      let tip = "";
-      if (pctT < 50 && !specific && row.n >= 2) {
-        tip = "Desempenho baixo em tema que se repetiu nesta prova — priorize revisão estruturada.";
-      } else if (pctT < 50 && specific) {
-        tip = "Erro em questão mais específica — revise o conceito, mas pese menos que áreas com vários erros.";
-      } else if (pctT >= 80) {
-        tip = "Bom domínio neste tema.";
-      } else {
-        tip = "Desempenho intermediário — vale um reforço pontual.";
-      }
-      if (g && g.attempted >= 8) {
-        const gPct = Math.round((g.correct / g.attempted) * 100);
-        tip += " No seu histórico geral deste tema: " + gPct + "% (" + g.attempted + " itens).";
-      }
       const areaW = APROVA_AREA_EXAM_WEIGHT[row.specialty] || 10;
+      // Importância relativa: erros × peso da grande área × recorrência na prova
+      const importance = wrongN * (areaW / 10) * (specific ? 0.7 : 1.35);
+      let importanceLabel = "baixa";
+      if (importance >= 4) importanceLabel = "alta";
+      else if (importance >= 2) importanceLabel = "média";
+
+      let tip = "";
+      if (wrongN <= 0) {
+        tip = "Sem erros neste tema nesta sessão.";
+      } else if (!specific && wrongN >= 2) {
+        tip = "Você errou " + wrongN + " questão(ões) neste tema, que voltou a aparecer na prova — prioridade alta de revisão.";
+      } else if (specific) {
+        tip = "Erro em item mais específico (apareceu 1× nesta prova). Revise o conceito, mas pese menos que temas recorrentes.";
+      } else {
+        tip = "Erros neste tema merecem reforço antes da próxima prova.";
+      }
+      tip += " A grande área costuma representar ~" + areaW + "% das bancas nacionais.";
+      if (g && g.attempted >= 5) {
+        const gPct = Math.round((g.correct / g.attempted) * 100);
+        tip += " No seu histórico geral: " + gPct + "% em " + g.attempted + " itens deste tema.";
+      }
+
       return {
         theme,
         specialty: row.specialty,
         ok: row.ok,
         n: row.n,
+        wrong: wrongN,
         pct: pctT,
         specific,
         weight: areaW,
+        importance,
+        importanceLabel,
         tip
       };
     }).sort((a, b) => a.pct - b.pct || b.weight - a.weight);
+
+    const wrongThemes = themes
+      .filter((t) => t.wrong > 0)
+      .sort((a, b) => b.importance - a.importance || b.wrong - a.wrong)
+      .slice(0, 8);
 
     const focus = [];
     areas.forEach((a) => {
@@ -1118,10 +1135,9 @@ const AprovaQuestions = {
         });
       }
     });
-    themes.slice(0, 3).forEach((t) => {
-      if (t.pct >= 60) return;
+    wrongThemes.slice(0, 5).forEach((t) => {
       focus.push({
-        level: t.specific ? "medio" : "alto",
+        level: t.importanceLabel === "alta" ? "alto" : (t.specific ? "medio" : "alto"),
         title: t.theme,
         text: t.tip
       });
@@ -1135,6 +1151,7 @@ const AprovaQuestions = {
       wrong,
       pct,
       themes,
+      wrongThemes,
       areas,
       focus,
       minutes,
