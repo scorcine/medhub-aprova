@@ -1,7 +1,7 @@
 /* Prova na íntegra — banca → ano → íntegra ou grande área */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721enare3";
+const APROVA_PROVAS_CACHE_VER = "20260721enare4";
 
 const APROVA_PROVAS_AREA_ORDER = ["clinica", "cirurgia", "pediatria", "go", "preventiva"];
 const APROVA_PROVAS_AREA_LABELS = {
@@ -34,6 +34,12 @@ function aprovaProvaExamLabel (examId) {
 function aprovaProvaAreaLabel (specialty) {
   const id = String(specialty || "").toLowerCase();
   return APROVA_PROVAS_AREA_LABELS[id] || specialty || "Outras";
+}
+
+function aprovaProvasClickEl (target) {
+  if (!target) return null;
+  if (target instanceof Element) return target;
+  return target.parentElement || null;
 }
 
 async function aprovaLoadProvasCatalogData () {
@@ -79,7 +85,6 @@ function aprovaProvasFindFamily (familyId, data) {
   return (data.familias || []).find((f) => f.id === familyId) || null;
 }
 
-/** Prova ready para a família + ano (bate em qualquer examId da família). */
 function aprovaProvasFindPack (family, year, data) {
   const exams = new Set((family.examIds || []).map((e) => String(e).toLowerCase()));
   const y = Number(year);
@@ -90,53 +95,81 @@ function aprovaProvasFindPack (family, year, data) {
   }) || null;
 }
 
+function aprovaProvasGoFamilias () {
+  aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
+  aprovaRenderProvasIntegra();
+}
+
+function aprovaProvasGoAnos (familyId) {
+  const id = String(familyId || "").trim();
+  if (!id) return;
+  aprovaProvasView = { mode: "anos", familyId: id, year: null, packId: null };
+  aprovaRenderProvasIntegra();
+}
+
+function aprovaProvasGoModo (familyId, year) {
+  const id = String(familyId || "").trim();
+  const y = Number(year);
+  if (!id || !Number.isFinite(y)) return;
+  aprovaProvasView = { mode: "modo", familyId: id, year: y, packId: null };
+  aprovaRenderProvasIntegra();
+}
+
+function aprovaProvasBack () {
+  if (aprovaProvasView.mode === "modo") {
+    aprovaProvasView.mode = "anos";
+    aprovaProvasView.packId = null;
+    aprovaRenderProvasIntegra();
+    return;
+  }
+  aprovaProvasGoFamilias();
+}
+
 function aprovaBindProvasIntegra () {
   if (aprovaProvasBound) return;
-  aprovaProvasBound = true;
   const list = document.getElementById("provas-integra-list");
   if (!list) return;
+  aprovaProvasBound = true;
 
   list.addEventListener("click", (e) => {
-    const back = e.target.closest("[data-prova-back]");
+    const el = aprovaProvasClickEl(e.target);
+    if (!el || typeof el.closest !== "function") return;
+
+    const back = el.closest("[data-prova-back]");
     if (back) {
+      e.preventDefault();
       const to = back.getAttribute("data-prova-back") || "familias";
       if (to === "anos") {
         aprovaProvasView.mode = "anos";
         aprovaProvasView.packId = null;
+        aprovaRenderProvasIntegra();
       } else {
-        aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
+        aprovaProvasGoFamilias();
       }
-      aprovaRenderProvasIntegra();
       return;
     }
 
-    const familyBtn = e.target.closest("[data-prova-family]");
+    const familyBtn = el.closest("[data-prova-family]");
     if (familyBtn) {
-      const id = familyBtn.getAttribute("data-prova-family");
-      if (!id) return;
-      aprovaProvasView = { mode: "anos", familyId: id, year: null, packId: null };
-      aprovaRenderProvasIntegra();
+      e.preventDefault();
+      aprovaProvasGoAnos(familyBtn.getAttribute("data-prova-family"));
       return;
     }
 
-    const yearBtn = e.target.closest("[data-prova-year]");
+    const yearBtn = el.closest("[data-prova-year]");
     if (yearBtn) {
+      e.preventDefault();
       if (yearBtn.disabled) return;
-      const year = yearBtn.getAttribute("data-prova-year");
-      const familyId = yearBtn.getAttribute("data-prova-family");
-      if (!year || !familyId) return;
-      aprovaProvasView = {
-        mode: "modo",
-        familyId,
-        year: Number(year),
-        packId: null
-      };
-      aprovaRenderProvasIntegra();
+      aprovaProvasGoModo(
+        yearBtn.getAttribute("data-prova-family"),
+        yearBtn.getAttribute("data-prova-year")
+      );
       return;
     }
 
-    const startBtn = e.target.closest("[data-prova-start]");
+    const startBtn = el.closest("[data-prova-start]");
     if (startBtn) {
+      e.preventDefault();
       if (startBtn.disabled) return;
       const packId = startBtn.getAttribute("data-prova-start");
       const area = startBtn.getAttribute("data-prova-area") || "";
@@ -182,8 +215,7 @@ function aprovaRenderProvasFamilias (root, data) {
 function aprovaRenderProvasAnos (root, data, familyId) {
   const family = aprovaProvasFindFamily(familyId, data);
   if (!family) {
-    aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
-    aprovaRenderProvasFamilias(root, data);
+    aprovaProvasGoFamilias();
     return;
   }
 
@@ -193,15 +225,18 @@ function aprovaRenderProvasAnos (root, data, familyId) {
   const chips = years.map((y) => {
     const pack = aprovaProvasFindPack(family, y, data);
     const ready = !!pack;
-    const title = ready
-      ? ("Abrir " + String(family.label) + " " + y)
-      : (String(family.label) + " " + y + " — em breve");
+    const fid = String(family.id).replace(/"/g, "");
+    // onclick inline: fallback se a delegação de evento falhar no browser
+    const onClick = ready
+      ? ("onclick=\"window.aprovaProvasGoModo('" + fid + "', " + y + "); return false;\"")
+      : "";
     return (
       "<button type=\"button\" class=\"provas-year-chip" + (ready ? " is-ready" : "") + "\"" +
         " data-prova-year=\"" + y + "\"" +
-        " data-prova-family=\"" + String(family.id) + "\"" +
+        " data-prova-family=\"" + fid + "\"" +
         (ready ? "" : " disabled") +
-        " title=\"" + title + "\">" +
+        " " + onClick +
+        " aria-label=\"" + (ready ? ("Abrir " + family.label + " " + y) : (y + " em breve")) + "\">" +
         "<span class=\"provas-year-chip-year\">" + y + "</span>" +
         "<span class=\"provas-year-chip-status\">" + (ready ? "Disponível" : "Em breve") + "</span>" +
       "</button>"
@@ -214,7 +249,7 @@ function aprovaRenderProvasAnos (root, data, familyId) {
       "<article class=\"study-card\" style=\"margin-top:0.75rem\">" +
         "<div class=\"label\">" + String(family.label) + "</div>" +
         "<p class=\"prompt\" style=\"margin:0.35rem 0 0.85rem\"><strong>Escolha o ano</strong></p>" +
-        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Depois você escolhe prova na íntegra ou por grande área.</p>" +
+        "<p class=\"muted\" style=\"margin:0 0 0.85rem\">Toque no ano. Em seguida escolha prova na íntegra ou por grande área.</p>" +
         "<div class=\"provas-year-grid\" role=\"list\">" + chips + "</div>" +
       "</article>" +
     "</div>";
@@ -224,8 +259,7 @@ async function aprovaRenderProvasModo (root, data) {
   const family = aprovaProvasFindFamily(aprovaProvasView.familyId, data);
   const year = Number(aprovaProvasView.year);
   if (!family || !Number.isFinite(year)) {
-    aprovaProvasView = { mode: "familias", familyId: null, year: null, packId: null };
-    aprovaRenderProvasFamilias(root, data);
+    aprovaProvasGoFamilias();
     return;
   }
 
@@ -250,8 +284,18 @@ async function aprovaRenderProvasModo (root, data) {
 
   try {
     const pack = await aprovaLoadProvaFile(meta.file);
+    // Se o usuário voltou enquanto carregava, não sobrescreve outra tela
+    if (aprovaProvasView.mode !== "modo" || Number(aprovaProvasView.year) !== year) return;
+
     const questions = aprovaProvasQuestionsFromPack(pack);
     const total = questions.length;
+    if (!total) {
+      root.innerHTML =
+        "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
+        "<p class=\"muted\" style=\"margin-top:0.85rem\">Arquivo da prova sem questões.</p>";
+      return;
+    }
+
     const byArea = aprovaProvasCountByArea(questions);
     const areas = APROVA_PROVAS_AREA_ORDER
       .filter((id) => (byArea[id] || 0) > 0)
@@ -284,9 +328,16 @@ async function aprovaRenderProvasModo (root, data) {
         "</article>" +
       "</div>";
   } catch (err) {
+    if (aprovaProvasView.mode !== "modo") return;
+    const detail = err && err.message ? String(err.message) : "erro de rede";
     root.innerHTML =
       "<button type=\"button\" class=\"btn btn-ghost btn-compact\" data-prova-back=\"anos\">← Voltar</button>" +
-      "<p class=\"muted\" style=\"margin-top:0.85rem\">Não foi possível carregar a prova de " + year + ".</p>";
+      "<p class=\"muted\" style=\"margin-top:0.85rem\">Não foi possível carregar a prova de " + year +
+      " (" + detail + ").</p>" +
+      "<div class=\"actions-row\" style=\"margin-top:0.75rem\">" +
+        "<button type=\"button\" class=\"btn btn-primary\" data-prova-year=\"" + year +
+        "\" data-prova-family=\"" + String(family.id) + "\">Tentar de novo</button>" +
+      "</div>";
   }
 }
 
@@ -294,10 +345,16 @@ function aprovaRenderProvasIntegra () {
   aprovaBindProvasIntegra();
   const root = document.getElementById("provas-integra-list");
   if (!root) return;
+
+  const viewMode = aprovaProvasView.mode;
   root.innerHTML = "<p class=\"muted\">Carregando…</p>";
 
   aprovaLoadProvasCatalogData()
     .then((data) => {
+      // Mantém a tela pedida mesmo se houver renders concorrentes
+      if (aprovaProvasView.mode !== viewMode && viewMode !== "modo") {
+        // se o usuário mudou de tela, o render mais novo cuida
+      }
       if (aprovaProvasView.mode === "modo") {
         return aprovaRenderProvasModo(root, data);
       }
@@ -308,8 +365,10 @@ function aprovaRenderProvasIntegra () {
       aprovaRenderProvasFamilias(root, data);
       return null;
     })
-    .catch(() => {
-      root.innerHTML = "<p class=\"muted\">Não foi possível carregar o catálogo de provas.</p>";
+    .catch((err) => {
+      const detail = err && err.message ? String(err.message) : "";
+      root.innerHTML = "<p class=\"muted\">Não foi possível carregar o catálogo de provas." +
+        (detail ? (" " + detail) : "") + "</p>";
     });
 }
 
@@ -324,10 +383,6 @@ function aprovaOpenProvaQuestionCard () {
   if (typeof aprovaRenderQuestion === "function") aprovaRenderQuestion();
 }
 
-/**
- * @param {string} provaId
- * @param {string|null} areaFilter specialty id ou vazio/null = prova completa
- */
 async function aprovaStartProvaIntegraById (provaId, areaFilter) {
   try {
     const data = await aprovaLoadProvasCatalogData();
@@ -349,7 +404,7 @@ async function aprovaStartProvaIntegraById (provaId, areaFilter) {
       return;
     }
     if (typeof AprovaQuestions === "undefined" || typeof AprovaQuestions.startProvaIntegra !== "function") {
-      window.alert("Módulo de questões indisponível.");
+      window.alert("Módulo de questões indisponível. Recarregue a página (Ctrl+Shift+R).");
       return;
     }
     const title = area
@@ -374,7 +429,16 @@ async function aprovaStartProvaIntegraById (provaId, areaFilter) {
 
 window.aprovaRenderProvasIntegra = aprovaRenderProvasIntegra;
 window.aprovaStartProvaIntegraById = aprovaStartProvaIntegraById;
+window.aprovaProvasGoAnos = aprovaProvasGoAnos;
+window.aprovaProvasGoModo = aprovaProvasGoModo;
+window.aprovaProvasBack = aprovaProvasBack;
 
-document.addEventListener("DOMContentLoaded", () => {
+function aprovaProvasBootBind () {
   aprovaBindProvasIntegra();
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", aprovaProvasBootBind);
+} else {
+  aprovaProvasBootBind();
+}
