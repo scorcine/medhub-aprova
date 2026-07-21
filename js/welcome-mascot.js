@@ -2,7 +2,7 @@
 
 const APROVA_MASCOT_SEEN_KEY = "medhub-aprova-mascot-welcome-v1";
 const APROVA_MASCOT_FORCE_KEY = "medhub-aprova-mascot-force-v1";
-const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-male1";
+const APROVA_MASCOT_FORCE_TOKEN = "20260721-scorcine-youngmale1";
 const APROVA_MASCOT_IMG = "/assets/mascote.png";
 
 /**
@@ -21,10 +21,10 @@ const APROVA_MASCOT_SCRIPT_SPEECH =
   "Este é o aplicativo que vai transformar os seus estudos. " +
   "Comece já configurando o seu perfil e personalize tudo de acordo com a sua prova!";
 
-/** Ritmo motivante — mais rápido e vivo. */
+/** Ritmo da versão boa (motivante). Pitch um pouco mais alto = homem ~20 anos, com intensidade. */
 const APROVA_MASCOT_SPEECH_RATE = 1.38;
-const APROVA_MASCOT_SPEECH_RATE_SLOW_VOICE = 1.52; // neural/online compensação
-const APROVA_MASCOT_SPEECH_PITCH = 1.18;
+const APROVA_MASCOT_SPEECH_RATE_SLOW_VOICE = 1.52;
+const APROVA_MASCOT_SPEECH_PITCH = 1.28;
 const APROVA_MASCOT_SPEECH_VOLUME = 1;
 const APROVA_MASCOT_VIDEO_RATE = 1.15;
 
@@ -107,8 +107,8 @@ function aprovaMascotVoiceIsSlow (voice) {
 }
 
 /**
- * Prefere voz masculina pt-BR ágil (Antonio, Daniel, Google masculino…).
- * Se não houver, não força neural feminina — deixa o lang pt-BR do navegador.
+ * Voz masculina jovem pt-BR (prioridade: Daniel/Felipe > Antonio).
+ * Pitch alto na fala reforça o tom de ~20 anos.
  */
 function aprovaMascotPickPtVoice () {
   try {
@@ -117,31 +117,38 @@ function aprovaMascotPickPtVoice () {
 
     const blobOf = (v) => (String(v.name || "") + " " + String(v.lang || "")).toLowerCase();
     const isPtBr = (v) => /^pt-br/i.test(v.lang) || /brazil|brasil|portugu/.test(blobOf(v));
-    const isSlow = (v) => /online|neural|natural|enhanced|premium/.test(blobOf(v));
+    const isFemale = (v) =>
+      /maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina|woman/.test(blobOf(v));
     const isMale = (v) => {
       const b = blobOf(v);
-      if (/maria|francisca|thalita|luciana|fernanda|vit[oó]ria|daniela|heloisa|female|feminina|woman/.test(b)) {
-        return false;
-      }
+      if (isFemale(v)) return false;
       return /antonio|ant[oô]nio|daniel|ricardo|felipe|gustavo|male|masculin|homem/.test(b);
     };
 
-    // 1) Masculina pt-BR local / Google
-    const maleSnappy = voices.find((v) => isPtBr(v) && isMale(v) && !isSlow(v));
-    if (maleSnappy) {
-      aprovaMascotCachedVoice = maleSnappy;
-      return maleSnappy;
-    }
+    const score = (v) => {
+      if (!isPtBr(v) || !isMale(v)) return -1;
+      const b = blobOf(v);
+      let s = 40;
+      // Nomes que soam mais jovens / energéticos
+      if (/daniel|felipe|gustavo/.test(b)) s += 50;
+      else if (/ricardo/.test(b)) s += 25;
+      else if (/antonio|ant[oô]nio/.test(b)) s += 10; // ok, mas mais “adulto”
+      if (v.localService) s += 15;
+      if (/online|neural|natural|enhanced|premium/.test(b)) s -= 8;
+      return s;
+    };
 
-    // 2) Qualquer masculina pt-BR (mesmo que online)
-    const maleAny = voices.find((v) => isPtBr(v) && isMale(v));
-    if (maleAny) {
-      aprovaMascotCachedVoice = maleAny;
-      return maleAny;
-    }
-
-    // 3) Sem masculina: null → lang pt-BR (não força voz feminina)
-    return null;
+    let best = null;
+    let bestScore = -1;
+    voices.forEach((v) => {
+      const s = score(v);
+      if (s > bestScore) {
+        bestScore = s;
+        best = v;
+      }
+    });
+    if (best) aprovaMascotCachedVoice = best;
+    return best || aprovaMascotCachedVoice;
   } catch (e) {
     return aprovaMascotCachedVoice;
   }
