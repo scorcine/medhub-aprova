@@ -1,7 +1,7 @@
 /* Prova na íntegra — catálogo por banca/ano + início de simulado ordenado */
 
 const APROVA_PROVAS_CATALOG_URL = "data/provas/catalog.json";
-const APROVA_PROVAS_CACHE_VER = "20260721prova1";
+const APROVA_PROVAS_CACHE_VER = "20260721prova2";
 
 let aprovaProvasCatalog = null;
 let aprovaProvasBound = false;

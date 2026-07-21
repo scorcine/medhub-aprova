@@ -17,8 +17,41 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721day1";
+const APROVA_QUESTION_CACHE_VER = "20260721prova2";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
+const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
+
+/** Espelha provas ready no catálogo de treino (sem duplicar id). */
+async function aprovaAppendProvasIntegraToBag (bag, seen) {
+  try {
+    const catUrl = APROVA_PROVAS_CATALOG_FILE + "?v=" + APROVA_QUESTION_CACHE_VER;
+    const catRes = await fetch(catUrl);
+    if (!catRes.ok) return;
+    const catData = await catRes.json();
+    const provas = Array.isArray(catData) ? catData : (catData.provas || []);
+    for (const prova of provas) {
+      if (!prova || prova.status !== "ready" || !prova.file) continue;
+      try {
+        const url = String(prova.file) +
+          (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
+          "v=" + APROVA_QUESTION_CACHE_VER;
+        const res = await fetch(url);
+        if (!res.ok) continue;
+        const data = await res.json();
+        const list = Array.isArray(data)
+          ? data
+          : (data && Array.isArray(data.questions) ? data.questions : []);
+        const hint = String(prova.id || "prova");
+        list.forEach((raw) => {
+          const q = aprovaNormalizeQuestion(raw, hint);
+          if (!q || seen[q.id]) return;
+          seen[q.id] = true;
+          bag.push(q);
+        });
+      } catch (e) { /* pacote ausente */ }
+    }
+  } catch (e) { /* catálogo ausente */ }
+}
 
 function aprovaShuffleArray (arr) {
   const out = arr.slice();
@@ -151,6 +184,8 @@ const AprovaQuestions = {
         /* arquivo ausente */
       }
     }
+
+    await aprovaAppendProvasIntegraToBag(bag, seen);
 
     this.catalog = bag;
     this.resetSession("treino");
