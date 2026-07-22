@@ -27,7 +27,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260722cirstage4";
+const APROVA_QUESTION_CACHE_VER = "20260722cirstage5";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
