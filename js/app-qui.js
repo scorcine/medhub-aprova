@@ -5244,7 +5244,7 @@ function aprovaSyncQuestionBankFilters () {
   const exams = typeof AprovaQuestions.examOptions === "function"
     ? AprovaQuestions.examOptions()
     : [];
-  const preferred = ["revalida", "santa-casa", "unifesp", "usp-sp", "unitau", "sus-sp", "enare", "enamed", "fmabc", "einstein"];
+  const preferred = ["staging", "revalida", "santa-casa", "unifesp", "usp-sp", "unitau", "sus-sp", "enare", "enamed", "fmabc", "einstein"];
   exams.sort((a, b) => {
     const ia = preferred.indexOf(a.id);
     const ib = preferred.indexOf(b.id);
@@ -5890,11 +5890,18 @@ function aprovaRenderQuestionBrowse () {
     }
 
     const groups = AprovaQuestions.groupOptions(aprovaQBrowse.specialty)
-      .filter((group) => aprovaCountQuestions({
-        specialty: aprovaQBrowse.specialty,
-        group,
-        theme: ""
-      }) > 0);
+      .filter((group) => {
+        const isStaging = /^Staging\b/i.test(group);
+        // Staging fica visível mesmo com filtro de banca/ano (revisão interna).
+        const n = aprovaCountQuestions({
+          specialty: aprovaQBrowse.specialty,
+          group,
+          theme: "",
+          exam: isStaging ? "" : undefined,
+          year: isStaging ? "" : undefined
+        });
+        return n > 0;
+      });
     const allN = aprovaCountQuestions({
       specialty: aprovaQBrowse.specialty,
       group: "",
@@ -5905,18 +5912,25 @@ function aprovaRenderQuestionBrowse () {
       grid.innerHTML = "";
       const priorities = (slice && slice.priorities) || [];
       const ranked = groups.map((group) => {
+        const isStaging = /^Staging\b/i.test(group);
         const match = aprovaQMatchStatPct(group, priorities);
         return {
           group,
           n: aprovaCountQuestions({
             specialty: aprovaQBrowse.specialty,
             group,
-            theme: ""
+            theme: "",
+            exam: isStaging ? "" : undefined,
+            year: isStaging ? "" : undefined
           }),
           pct: match ? match.pct : 0,
-          match
+          match,
+          staging: isStaging
         };
-      }).sort((a, b) => (b.pct - a.pct) || a.group.localeCompare(b.group, "pt-BR"));
+      }).sort((a, b) => {
+        if (a.staging !== b.staging) return a.staging ? -1 : 1;
+        return (b.pct - a.pct) || a.group.localeCompare(b.group, "pt-BR");
+      });
 
       aprovaQBrowseGroupWeights = Object.create(null);
       ranked.forEach((row) => {
@@ -5940,11 +5954,14 @@ function aprovaRenderQuestionBrowse () {
       ranked.forEach((row, idx) => {
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "dash-card" + (idx < 3 && row.pct > 0 ? " dash-card--focus" : "");
+        btn.className = "dash-card" +
+          (row.staging ? " dash-card--featured" : (idx < 3 && row.pct > 0 ? " dash-card--focus" : ""));
         const focusLine = row.match
           ? (" · cai ~" + aprovaFormatPct(row.pct) + " nas provas")
           : "";
-        const kicker = idx < 3 && row.pct > 0 ? "Prioridade" : "Grupo";
+        const kicker = row.staging
+          ? "Revisão"
+          : (idx < 3 && row.pct > 0 ? "Prioridade" : "Grupo");
         btn.innerHTML =
           "<span class=\"dash-card-kicker\">" + kicker + "</span>" +
           "<strong>" + row.group + "</strong>" +
@@ -5952,6 +5969,15 @@ function aprovaRenderQuestionBrowse () {
         btn.addEventListener("click", () => {
           aprovaQBrowse.group = row.group;
           aprovaQBrowse.theme = "";
+          if (row.staging) {
+            // Evita fila vazia se outra banca/ano estiver selecionada no filtro.
+            aprovaQBrowse.exam = "staging";
+            aprovaQBrowse.year = "";
+            const examEl = document.getElementById("q-filter-exam");
+            const yearEl = document.getElementById("q-filter-year");
+            if (examEl) examEl.value = "staging";
+            if (yearEl) yearEl.value = "";
+          }
           aprovaShowQuestionLaunch();
         });
         grid.appendChild(btn);
