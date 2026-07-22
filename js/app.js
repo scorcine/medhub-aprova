@@ -4525,7 +4525,9 @@ let aprovaQBrowse = {
   level: "areas", // areas | groups (themes removido do fluxo)
   specialty: "",
   group: "",
-  theme: ""
+  theme: "",
+  exam: "",
+  year: ""
 };
 
 let aprovaQBrowseStatsFocus = "";
@@ -4705,13 +4707,43 @@ function aprovaQSpecialtyLabel (id) {
 }
 
 function aprovaReadQuestionFilters () {
+  const examEl = document.getElementById("q-filter-exam");
+  const yearEl = document.getElementById("q-filter-year");
+  if (examEl) aprovaQBrowse.exam = examEl.value || "";
+  if (yearEl) aprovaQBrowse.year = yearEl.value || "";
   return {
     specialty: aprovaQBrowse.specialty || "",
     group: aprovaQBrowse.group || "",
     theme: aprovaQBrowse.theme || "",
-    exam: "",
-    year: ""
+    exam: aprovaQBrowse.exam || "",
+    year: aprovaQBrowse.year || ""
   };
+}
+
+function aprovaSyncQuestionBankFilters () {
+  const examEl = document.getElementById("q-filter-exam");
+  const yearEl = document.getElementById("q-filter-year");
+  if (typeof AprovaQuestions === "undefined" || !AprovaQuestions.catalog) return;
+  const exams = typeof AprovaQuestions.examOptions === "function"
+    ? AprovaQuestions.examOptions()
+    : [];
+  const preferred = ["revalida", "sus-sp", "enare", "enamed", "fmabc", "einstein", "usp-sp"];
+  exams.sort((a, b) => {
+    const ia = preferred.indexOf(a.id);
+    const ib = preferred.indexOf(b.id);
+    if (ia >= 0 || ib >= 0) {
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    }
+    return String(a.label || a.id).localeCompare(String(b.label || b.id), "pt-BR");
+  });
+  aprovaFillQuestionFilterSelect(examEl, exams, "Todas as bancas", aprovaQBrowse.exam);
+  const yearSet = new Set();
+  AprovaQuestions.catalog.forEach((q) => {
+    if (aprovaQBrowse.exam && q.exam !== aprovaQBrowse.exam) return;
+    if (q.year != null) yearSet.add(q.year);
+  });
+  const years = Array.from(yearSet).sort((a, b) => b - a);
+  aprovaFillQuestionFilterSelect(yearEl, years, "Todos os anos", aprovaQBrowse.year);
 }
 
 function aprovaFillQuestionFilterSelect (el, options, allLabel, selected) {
@@ -4741,12 +4773,13 @@ function aprovaFillQuestionFilterSelect (el, options, allLabel, selected) {
 }
 
 function aprovaCountQuestions (partial) {
+  const base = aprovaReadQuestionFilters();
   return AprovaQuestions.filteredCatalog({
-    specialty: (partial && partial.specialty) || "",
-    group: (partial && partial.group) || "",
-    theme: (partial && partial.theme) || "",
-    exam: (partial && partial.exam) || "",
-    year: (partial && partial.year) || ""
+    specialty: (partial && partial.specialty != null) ? partial.specialty : base.specialty,
+    group: (partial && partial.group != null) ? partial.group : "",
+    theme: (partial && partial.theme != null) ? partial.theme : "",
+    exam: (partial && partial.exam != null) ? partial.exam : base.exam,
+    year: (partial && partial.year != null) ? partial.year : base.year
   }).length;
 }
 
@@ -5181,13 +5214,27 @@ function aprovaRenderQuestionBrowse () {
   if (!grid) return;
 
   aprovaShowQuestionViews("browse");
+  aprovaSyncQuestionBankFilters();
   grid.innerHTML = "";
   if (launch) launch.hidden = true;
   if (back) back.hidden = aprovaQBrowse.level === "areas";
 
+  const bankFilters = aprovaReadQuestionFilters();
+  const examLabel = bankFilters.exam
+    ? ((typeof AprovaQuestions.examOptions === "function"
+      ? AprovaQuestions.examOptions()
+      : []).find((e) => e.id === bankFilters.exam)?.label || bankFilters.exam)
+    : "";
+  const yearLabel = bankFilters.year ? String(bankFilters.year) : "";
+  const bankScope = [examLabel, yearLabel].filter(Boolean).join(" · ");
+
   if (aprovaQBrowse.level === "areas") {
     aprovaQHideBrowseStats();
-    if (hint) hint.textContent = "Escolha a área para estudar questões.";
+    if (hint) {
+      hint.textContent = bankScope
+        ? ("Banco · " + bankScope + " — escolha a área.")
+        : "Escolha a banca (ex.: Revalida) e a área para estudar.";
+    }
     const specs = AprovaQuestions.specialtyOptions();
     const order = typeof APROVA_SPECIALTY_LABELS !== "undefined"
       ? Object.keys(APROVA_SPECIALTY_LABELS)
@@ -5198,7 +5245,7 @@ function aprovaRenderQuestionBrowse () {
     });
 
     ids.forEach(id => {
-      const n = aprovaCountQuestions({ specialty: id });
+      const n = aprovaCountQuestions({ specialty: id, group: "", theme: "" });
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "dash-card" + (n ? "" : " dash-card--muted");
@@ -5226,12 +5273,24 @@ function aprovaRenderQuestionBrowse () {
 
   if (aprovaQBrowse.level === "groups") {
     if (hint) {
-      hint.textContent = aprovaQSpecialtyLabel(aprovaQBrowse.specialty) +
-        " · veja o que mais caiu e escolha o grupo para focar.";
+      hint.textContent = [
+        aprovaQSpecialtyLabel(aprovaQBrowse.specialty),
+        bankScope,
+        "veja o que mais caiu e escolha o grupo para focar"
+      ].filter(Boolean).join(" · ") + ".";
     }
 
-    const groups = AprovaQuestions.groupOptions(aprovaQBrowse.specialty);
-    const allN = aprovaCountQuestions({ specialty: aprovaQBrowse.specialty });
+    const groups = AprovaQuestions.groupOptions(aprovaQBrowse.specialty)
+      .filter((group) => aprovaCountQuestions({
+        specialty: aprovaQBrowse.specialty,
+        group,
+        theme: ""
+      }) > 0);
+    const allN = aprovaCountQuestions({
+      specialty: aprovaQBrowse.specialty,
+      group: "",
+      theme: ""
+    });
 
     const paintGroups = (slice) => {
       grid.innerHTML = "";
@@ -5242,7 +5301,8 @@ function aprovaRenderQuestionBrowse () {
           group,
           n: aprovaCountQuestions({
             specialty: aprovaQBrowse.specialty,
-            group
+            group,
+            theme: ""
           }),
           pct: match ? match.pct : 0,
           match
@@ -5855,6 +5915,42 @@ async function aprovaBoot () {
   document.getElementById("q-back-metas")?.addEventListener("click", () => {
     aprovaQFromMetas = true;
     aprovaLeaveTreinoSession();
+  });
+
+  ["q-filter-exam", "q-filter-year"].forEach((id) => {
+    document.getElementById(id)?.addEventListener("change", () => {
+      const examEl = document.getElementById("q-filter-exam");
+      const yearEl = document.getElementById("q-filter-year");
+      aprovaQBrowse.exam = examEl ? (examEl.value || "") : "";
+      aprovaQBrowse.year = yearEl ? (yearEl.value || "") : "";
+      if (aprovaQBrowse.specialty) {
+        const n = aprovaCountQuestions({
+          specialty: aprovaQBrowse.specialty,
+          group: "",
+          theme: ""
+        });
+        if (!n) {
+          aprovaQBrowse.specialty = "";
+          aprovaQBrowse.group = "";
+          aprovaQBrowse.theme = "";
+          aprovaQBrowse.level = "areas";
+        } else if (aprovaQBrowse.group) {
+          const gn = aprovaCountQuestions({
+            specialty: aprovaQBrowse.specialty,
+            group: aprovaQBrowse.group,
+            theme: ""
+          });
+          if (!gn) {
+            aprovaQBrowse.group = "";
+            aprovaQBrowse.theme = "";
+          }
+        }
+      }
+      aprovaRenderQuestionBrowse();
+      if (!document.getElementById("q-start-modal")?.hidden) {
+        aprovaSyncQuestionModalUI();
+      }
+    });
   });
 
   ["q-filter-size"].forEach(id => {
