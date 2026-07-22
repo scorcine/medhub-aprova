@@ -4727,7 +4727,7 @@ function aprovaSyncQuestionBankFilters () {
   const exams = typeof AprovaQuestions.examOptions === "function"
     ? AprovaQuestions.examOptions()
     : [];
-  const preferred = ["revalida", "sus-sp", "enare", "enamed", "fmabc", "einstein", "usp-sp"];
+  const preferred = ["revalida", "santa-casa", "sus-sp", "enare", "enamed", "fmabc", "einstein", "usp-sp"];
   exams.sort((a, b) => {
     const ia = preferred.indexOf(a.id);
     const ib = preferred.indexOf(b.id);

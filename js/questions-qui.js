@@ -11,7 +11,8 @@ const APROVA_QUESTION_FILES = [
   "data/questions-enare.json",
   "data/questions-fmabc.json",
   "data/questions-einstein.json",
-  "data/questions-revalida.json"
+  "data/questions-revalida.json",
+  "data/questions-santa-casa.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -22,7 +23,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721revalida3";
+const APROVA_QUESTION_CACHE_VER = "20260721santacasa1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVA_SESSION_KEY = "medhub-aprova-prova-session-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
@@ -39,9 +40,10 @@ const APROVA_AREA_EXAM_WEIGHT = {
 /** Grupo de pack de prova (ex.: "SUS-SP 2026") — não é grupo do banco. */
 function aprovaIsProvaPackGroupLabel (group) {
   const g = String(group || "").trim();
-  return /^(SUS-SP|ENARE|ENAMED|USP-SP|FMABC|Einstein|Revalida)\b/i.test(g) ||
+  return /^(SUS-SP|ENARE|ENAMED|USP-SP|FMABC|Einstein|Revalida|Santa Casa)\b/i.test(g) ||
     /^ENARE\s*\/\s*ENAMED\b/i.test(g) ||
-    /^Einstein\s*\(HIAE\)\b/i.test(g);
+    /^Einstein\s*\(HIAE\)\b/i.test(g) ||
+    /^Santa Casa SP\b/i.test(g);
 }
 
 /**
@@ -60,7 +62,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     for (const prova of provas) {
       if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
       // Packs com arquivo curado no banco; não espelhar o pack bruto.
-      if (/^(sus-sp|enare|fmabc|einstein|revalida)/i.test(String(prova.exam || prova.id || ""))) continue;
+      if (/^(sus-sp|enare|fmabc|einstein|revalida|santa-casa)/i.test(String(prova.exam || prova.id || ""))) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +
