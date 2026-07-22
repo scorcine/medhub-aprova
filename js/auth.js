@@ -127,13 +127,16 @@ function aprovaLogin (login, password, extras) {
     aprovaShowAuthMsg(
       user?.status === "pending"
         ? "Seu acesso foi liberado — complete o cadastro em Cadastre-se."
-        : "Conta não encontrada. Cadastre-se para criar uma.",
+        : "Conta não encontrada neste aparelho. O login ainda não sincroniza entre celular e computador — toque em Cadastre-se e use o mesmo e-mail e senha neste dispositivo.",
       false
     );
     return false;
   }
   if (user.password !== password) {
-    aprovaShowAuthMsg("Senha incorreta.", false);
+    aprovaShowAuthMsg(
+      "Senha incorreta neste aparelho. Se você criou a conta em outro dispositivo, cadastre-se de novo aqui com o mesmo e-mail e senha.",
+      false
+    );
     return false;
   }
 
