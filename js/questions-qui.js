@@ -38,7 +38,7 @@ const APROVA_AREA_EXAM_WEIGHT = {
 /** Grupo de pack de prova (ex.: "SUS-SP 2026") — não é grupo do banco. */
 function aprovaIsProvaPackGroupLabel (group) {
   const g = String(group || "").trim();
-  return /^(SUS-SP|ENARE|ENAMED|USP-SP|FMABC|Einstein)\b/i.test(g) ||
+  return /^(SUS-SP|ENARE|ENAMED|USP-SP|FMABC|Einstein|Revalida)\b/i.test(g) ||
     /^ENARE\s*\/\s*ENAMED\b/i.test(g) ||
     /^Einstein\s*\(HIAE\)\b/i.test(g);
 }
@@ -59,7 +59,7 @@ async function aprovaAppendProvasIntegraToBag (bag, seen) {
     for (const prova of provas) {
       if (!prova || prova.status !== "ready" || !prova.file || prova.areasReady !== true) continue;
       // Packs com arquivo curado no banco; não espelhar o pack bruto.
-      if (/^(sus-sp|enare|fmabc|einstein)/i.test(String(prova.exam || prova.id || ""))) continue;
+      if (/^(sus-sp|enare|fmabc|einstein|revalida)/i.test(String(prova.exam || prova.id || ""))) continue;
       try {
         const url = String(prova.file) +
           (String(prova.file).indexOf("?") >= 0 ? "&" : "?") +

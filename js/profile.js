@@ -7,7 +7,7 @@ const APROVA_PROFILE_MAX = 3;
 const APROVA_TARGET_EXAMS = [
   { id: "enare", label: "Enare" },
   { id: "enamed", label: "Enamed" },
-  { id: "revalida", label: "Revalida" },
+  { id: "revalida", label: "Revalida (INEP)" },
   { id: "usp", label: "USP" },
   { id: "unifesp", label: "UNIFESP" },
   { id: "unicamp", label: "UNICAMP" },
