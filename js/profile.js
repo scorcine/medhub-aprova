@@ -8,7 +8,7 @@ const APROVA_TARGET_EXAMS = [
   { id: "enare", label: "Enare" },
   { id: "enamed", label: "Enamed" },
   { id: "revalida", label: "Revalida (INEP)" },
-  { id: "usp", label: "USP" },
+  { id: "usp-sp", label: "USP-SP" },
   { id: "unifesp", label: "UNIFESP" },
   { id: "unicamp", label: "UNICAMP" },
   { id: "amp", label: "AMP" },

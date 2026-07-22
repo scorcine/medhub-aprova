@@ -261,7 +261,7 @@ const APROVA_EXAM_RANK = {
   geral: 0,
   enare: 1,
   enamed: 2,
-  usp: 3,
+  "usp-sp": 3,
   unifesp: 4,
   revalida: 5,
   amp: 6,
@@ -4727,7 +4727,7 @@ function aprovaSyncQuestionBankFilters () {
   const exams = typeof AprovaQuestions.examOptions === "function"
     ? AprovaQuestions.examOptions()
     : [];
-  const preferred = ["revalida", "santa-casa", "unifesp", "sus-sp", "enare", "enamed", "fmabc", "einstein", "usp-sp"];
+  const preferred = ["revalida", "santa-casa", "unifesp", "usp-sp", "sus-sp", "enare", "enamed", "fmabc", "einstein"];
   exams.sort((a, b) => {
     const ia = preferred.indexOf(a.id);
     const ib = preferred.indexOf(b.id);
