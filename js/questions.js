@@ -10,7 +10,8 @@ const APROVA_QUESTION_FILES = [
   "data/questions-sus-sp.json",
   "data/questions-enare.json",
   "data/questions-fmabc.json",
-  "data/questions-einstein.json"
+  "data/questions-einstein.json",
+  "data/questions-revalida.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -21,7 +22,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260721fmabc1";
+const APROVA_QUESTION_CACHE_VER = "20260721revalida1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
