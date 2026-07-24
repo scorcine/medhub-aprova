@@ -4439,6 +4439,20 @@ function aprovaBuildAtualizacoesHtml (data, filter) {
   return { html, total, latestCount, weeks, latest: weeks[0] || null };
 }
 
+function aprovaFindAtualizacaoByKey (data, focusKey) {
+  const parts = String(focusKey || "").split("-");
+  const wi = Number(parts[0]);
+  const ii = Number(parts[1]);
+  if (!Number.isFinite(wi) || !Number.isFinite(ii)) return null;
+  const weeks = aprovaNormalizeNovidadesWeeks(data);
+  const week = weeks[wi];
+  if (!week || !Array.isArray(week.items)) return null;
+  const items = week.items.filter((it) => it && (it.title || it.summary || it.text));
+  const item = items[ii];
+  if (!item) return null;
+  return { week, item };
+}
+
 function aprovaPaintInicioTitleCards (data) {
   const block = document.getElementById("inicio-atualizacoes-block");
   const cardsRoot = document.getElementById("inicio-atualizacoes-cards");
@@ -4473,21 +4487,30 @@ function aprovaPaintInicioTitleCards (data) {
   }).join("");
 }
 
-function aprovaFocusAtualizacaoInModal (focusKey) {
-  const modalBody = document.getElementById("atualizacoes-modal-body");
-  if (!modalBody) return;
-  modalBody.querySelectorAll("details.inicio-novidades-details").forEach((d) => {
-    d.open = false;
-  });
-  if (!focusKey) return;
-  const detail = document.getElementById("novidade-detail-" + focusKey);
-  const details = detail && detail.closest("details");
-  if (details) {
-    details.open = true;
-    try {
-      details.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    } catch (e) { /* ignore */ }
-  }
+function aprovaPaintAtualizacaoModalSingle (item) {
+  const body = document.getElementById("atualizacoes-modal-body");
+  const title = document.getElementById("atualizacoes-modal-title");
+  const areaEl = document.getElementById("atualizacoes-modal-area");
+  if (!body || !item) return;
+
+  if (areaEl) areaEl.textContent = item.area || "Atualizações";
+  if (title) title.textContent = item.title || "Atualização";
+
+  const summary = item.summary || item.text || "";
+  const detailHtml = aprovaNovidadesDetailHtml(item.detail);
+  const ref = item.reference
+    ? "<p class=\"inicio-novidades-ref\"><strong>Fonte:</strong> " + aprovaEscapeHtml(item.reference) + "</p>"
+    : "";
+  const link = item.href
+    ? "<p class=\"inicio-novidades-ref\"><a href=\"" + aprovaEscapeHtml(item.href) +
+      "\" target=\"_blank\" rel=\"noopener noreferrer\">Abrir referência</a></p>"
+    : "";
+
+  body.innerHTML =
+    (summary ? "<p class=\"atualizacoes-modal-summary\">" + aprovaEscapeHtml(summary) + "</p>" : "") +
+    (detailHtml || "") +
+    ref +
+    link;
 }
 
 function aprovaPaintAtualizacoes (data) {
@@ -4503,20 +4526,11 @@ function aprovaPaintAtualizacoes (data) {
     }
   }
 
-  const modalBody = document.getElementById("atualizacoes-modal-body");
-  if (modalBody) {
-    const modalBuilt = aprovaBuildAtualizacoesHtml(data, "todas");
-    modalBody.innerHTML = modalBuilt.html ||
-      "<p class=\"muted\">Ainda não há atualizações cadastradas.</p>";
-  }
-
   aprovaPaintInicioTitleCards(data);
 
   const preview = document.getElementById("dash-atualizacoes-preview");
-  const teaser = document.getElementById("inicio-atualizacoes-teaser");
   const teaserTitle = document.getElementById("inicio-atualizacoes-teaser-title");
   const teaserText = document.getElementById("inicio-atualizacoes-teaser-text");
-  const modalTitle = document.getElementById("atualizacoes-modal-title");
   const latest = built.latest;
   const latestCount = built.latestCount;
   const totalAll = aprovaBuildAtualizacoesHtml(data, "todas").total;
@@ -4526,28 +4540,25 @@ function aprovaPaintAtualizacoes (data) {
       ? (latest.label + " · " + latestCount + " atualizaç" + (latestCount === 1 ? "ão" : "ões"))
       : "Protocolos e condutas novas que podem cair em prova.";
   }
-  if (teaser) {
-    const weekBit = latest && latest.label
-      ? String(latest.label).replace(/^Semana\s+de\s+/i, "Semana de ")
-      : "Semana";
-    if (teaserTitle) teaserTitle.textContent = "Novidades · " + weekBit;
-    if (teaserText) {
-      teaserText.textContent = latestCount + " desta semana · " + totalAll +
-        " no acervo · toque para abrir";
-    }
-  }
-  if (modalTitle && latest) {
-    modalTitle.textContent = "Novidades · " + (latest.label || "semana");
+  const weekBit = latest && latest.label
+    ? String(latest.label).replace(/^Semana\s+de\s+/i, "Semana de ")
+    : "Semana";
+  if (teaserTitle) teaserTitle.textContent = "Novidades · " + weekBit;
+  if (teaserText) {
+    teaserText.textContent = latestCount + " desta semana · " + totalAll +
+      " no acervo · toque em um card";
   }
 }
 
 function aprovaOpenAtualizacoesModal (focusKey) {
   const modal = document.getElementById("atualizacoes-modal");
   if (!modal) return;
-  aprovaLoadNovidades().then(() => {
+  aprovaLoadNovidades().then((data) => {
+    const found = aprovaFindAtualizacaoByKey(data, focusKey);
+    if (!found) return;
+    aprovaPaintAtualizacaoModalSingle(found.item);
     modal.hidden = false;
     document.body.classList.add("aprova-modal-open");
-    window.setTimeout(() => aprovaFocusAtualizacaoInModal(focusKey || ""), 40);
   });
 }
 
@@ -4558,11 +4569,6 @@ function aprovaCloseAtualizacoesModal () {
 }
 
 function aprovaBindAtualizacoesModal () {
-  const teaser = document.getElementById("inicio-atualizacoes-teaser");
-  if (teaser && !teaser.dataset.bound) {
-    teaser.dataset.bound = "1";
-    teaser.addEventListener("click", () => aprovaOpenAtualizacoesModal());
-  }
   const cardsRoot = document.getElementById("inicio-atualizacoes-cards");
   if (cardsRoot && !cardsRoot.dataset.bound) {
     cardsRoot.dataset.bound = "1";
@@ -4605,7 +4611,7 @@ function aprovaRenderAtualizacoesPanel () {
 function aprovaLoadNovidades () {
   aprovaBindAtualizacoesModal();
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd3")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd4")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }

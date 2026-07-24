@@ -2860,18 +2860,28 @@ html[data-theme="dark"] .aprova-modal-panel {
     var(--panel, #fff);
   color: inherit;
   text-align: left;
-  cursor: pointer;
-  font: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.inicio-atualizacoes-teaser:hover {
-  border-color: rgba(15, 159, 154, 0.85);
-  box-shadow: 0 8px 22px rgba(15, 159, 154, 0.12);
+.atualizacoes-modal-single {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
 }
 
-.inicio-atualizacoes-teaser:active {
-  transform: translateY(1px);
+.atualizacoes-modal-single p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.atualizacoes-modal-summary {
+  margin: 0 !important;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm, 0.5rem);
+  background: rgba(15, 159, 154, 0.1);
+  color: var(--ink-soft, #5b6b7c) !important;
+  font-size: 0.9rem !important;
 }
 
 .inicio-atualizacoes-teaser .inicio-novidades-kicker {
