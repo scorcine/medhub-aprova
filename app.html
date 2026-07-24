@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724nov3">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724upd1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -154,6 +154,7 @@
         <button type="button" class="side-link" data-panel="simulados">Simulados</button>
         <button type="button" class="side-link" data-panel="estatisticas">Estatísticas de provas</button>
         <button type="button" class="side-link" data-panel="calendario">Calendário de provas</button>
+        <button type="button" class="side-link" data-panel="atualizacoes">Atualizações</button>
         <button type="button" class="side-link" data-panel="progresso">Meu progresso</button>
 
         <p class="sidebar-label">Estudo</p>
@@ -209,14 +210,11 @@
             </div>
           </div>
 
-          <section class="inicio-novidades" id="inicio-novidades" hidden aria-labelledby="inicio-novidades-title">
-            <div class="inicio-novidades-head">
-              <p class="inicio-novidades-kicker">Atualizações</p>
-              <h3 id="inicio-novidades-title" class="inicio-novidades-title">Novidades da semana</h3>
-              <p class="inicio-novidades-hint muted">Toque no card para abrir o resumo completo.</p>
-            </div>
-            <ul class="inicio-novidades-list" id="inicio-novidades-list"></ul>
-          </section>
+          <button type="button" class="inicio-atualizacoes-teaser" id="inicio-atualizacoes-teaser" data-goto="atualizacoes" hidden>
+            <span class="inicio-novidades-kicker">Atualizações</span>
+            <strong id="inicio-atualizacoes-teaser-title">Novidades médicas da semana</strong>
+            <span id="inicio-atualizacoes-teaser-text" class="muted">Protocolos e condutas que podem cair em prova — toque para ver todas.</span>
+          </button>
 
           <div class="aprova-install-banner" data-aprova-install-banner hidden>
             <p><strong>Instale o MedHub R1</strong> na tela inicial e abra como app.</p>
@@ -280,6 +278,11 @@
               <span class="dash-card-kicker">Agenda</span>
               <strong>Calendário de provas</strong>
               <span id="dash-calendario-preview">Datas de inscrição e provas do ciclo 2026/2027.</span>
+            </button>
+            <button type="button" class="dash-card" data-goto="atualizacoes">
+              <span class="dash-card-kicker">Medicina</span>
+              <strong>Atualizações</strong>
+              <span id="dash-atualizacoes-preview">Protocolos e condutas novas que podem cair em prova.</span>
             </button>
             <button type="button" class="dash-card" data-goto="progresso">
               <span class="dash-card-kicker">Acompanhar</span>
@@ -741,6 +744,22 @@
           </div>
           <div id="calendario-list" class="calendario-list" aria-live="polite">
             <p class="muted">Carregando calendário…</p>
+          </div>
+        </section>
+
+        <section id="panel-atualizacoes" class="panel" aria-labelledby="atualizacoes-title" hidden>
+          <h2 id="atualizacoes-title">Atualizações</h2>
+          <p class="muted">Protocolos e condutas novas que podem cair em prova. Acervo acumulativo — toque no card para abrir o resumo.</p>
+          <div class="calendario-filters" id="atualizacoes-filters">
+            <button type="button" class="btn btn-ghost btn-compact atualizacoes-filter active" data-upd-filter="todas">Todas</button>
+            <button type="button" class="btn btn-ghost btn-compact atualizacoes-filter" data-upd-filter="Clínica">Clínica</button>
+            <button type="button" class="btn btn-ghost btn-compact atualizacoes-filter" data-upd-filter="Preventiva">Preventiva</button>
+            <button type="button" class="btn btn-ghost btn-compact atualizacoes-filter" data-upd-filter="Cirurgia">Cirurgia</button>
+            <button type="button" class="btn btn-ghost btn-compact atualizacoes-filter" data-upd-filter="GO">GO</button>
+            <button type="button" class="btn btn-ghost btn-compact atualizacoes-filter" data-upd-filter="Pediatria">Pediatria</button>
+          </div>
+          <div id="atualizacoes-root" class="atualizacoes-root" aria-live="polite">
+            <p class="muted">Carregando atualizações…</p>
           </div>
         </section>
 
@@ -1281,7 +1300,7 @@
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260724nov3"></script>
+  <script src="js/app-qui.js?v=20260724upd1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

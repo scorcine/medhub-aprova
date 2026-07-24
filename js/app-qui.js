@@ -14,6 +14,7 @@ const APROVA_PANEL_META = {
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "O que mais caiu nas provas R1" },
   calendario: { title: "Calendário de provas", sub: "Inscrições e datas do ciclo R1" },
+  atualizacoes: { title: "Atualizações", sub: "Protocolos e condutas que podem cair em prova" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
   perfil: { title: "Meu perfil", sub: "Provas e datas que você pretende prestar" },
   config: { title: "Configurações", sub: "Conta e preferências" },
@@ -137,6 +138,7 @@ function aprovaGoTo (id, options) {
   }
   if (id === "progresso") aprovaRenderProgress();
   if (id === "calendario") aprovaRenderCalendarioProvas();
+  if (id === "atualizacoes") aprovaRenderAtualizacoesPanel();
   if (id === "metas") aprovaRenderMetas();
   if (id === "provas-integra" && typeof aprovaRenderProvasIntegra === "function") {
     aprovaRenderProvasIntegra();
@@ -4329,6 +4331,10 @@ function aprovaRenderCalendarioProvas () {
   });
 }
 
+let aprovaAtualizacoesData = null;
+let aprovaAtualizacoesFilter = "todas";
+let aprovaAtualizacoesBound = false;
+
 function aprovaNovidadesDetailHtml (detail) {
   if (Array.isArray(detail)) {
     return detail
@@ -4340,71 +4346,151 @@ function aprovaNovidadesDetailHtml (detail) {
   return "";
 }
 
-function aprovaRenderNovidades (data) {
-  const root = document.getElementById("inicio-novidades");
-  const title = document.getElementById("inicio-novidades-title");
-  const list = document.getElementById("inicio-novidades-list");
-  if (!root || !list) return;
+function aprovaNormalizeNovidadesWeeks (data) {
+  if (!data) return [];
+  if (Array.isArray(data.weeks) && data.weeks.length) {
+    return data.weeks
+      .filter((w) => w && Array.isArray(w.items) && w.items.length)
+      .slice()
+      .sort((a, b) => String(b.id || b.label || "").localeCompare(String(a.id || a.label || "")));
+  }
+  // Compatibilidade com formato antigo (uma semana só)
+  if (Array.isArray(data.items) && data.items.length) {
+    return [{
+      id: "legacy",
+      label: data.weekLabel || "Novidades",
+      items: data.items
+    }];
+  }
+  return [];
+}
 
-  const items = Array.isArray(data && data.items)
-    ? data.items.filter((it) => it && (it.title || it.summary || it.text))
-    : [];
-  if (!items.length) {
-    root.hidden = true;
-    list.innerHTML = "";
+function aprovaNovidadeCardHtml (it, key) {
+  const area = it.area
+    ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
+    : "";
+  const itemTitle = aprovaEscapeHtml(it.title || "Atualização");
+  const summary = aprovaEscapeHtml(it.summary || it.text || "Toque para ver o resumo completo.");
+  const detailHtml = aprovaNovidadesDetailHtml(it.detail);
+  const ref = it.reference
+    ? "<p class=\"inicio-novidades-ref\"><strong>Fonte:</strong> " + aprovaEscapeHtml(it.reference) + "</p>"
+    : "";
+  const link = it.href
+    ? "<p class=\"inicio-novidades-ref\"><a href=\"" + aprovaEscapeHtml(it.href) +
+      "\" target=\"_blank\" rel=\"noopener noreferrer\">Abrir referência</a></p>"
+    : "";
+  const body = detailHtml || ("<p>" + summary + "</p>");
+  return (
+    "<li class=\"inicio-novidades-card\">" +
+      "<details class=\"inicio-novidades-details\">" +
+        "<summary class=\"inicio-novidades-summary\">" +
+          "<span class=\"inicio-novidades-summary-main\">" +
+            area +
+            "<strong class=\"inicio-novidades-item-title\">" + itemTitle + "</strong>" +
+            "<span class=\"inicio-novidades-item-text\">" + summary + "</span>" +
+          "</span>" +
+          "<span class=\"inicio-novidades-chevron\" aria-hidden=\"true\">▾</span>" +
+        "</summary>" +
+        "<div class=\"inicio-novidades-detail\" id=\"novidade-detail-" + aprovaEscapeHtml(key) + "\">" +
+          body + ref + link +
+        "</div>" +
+      "</details>" +
+    "</li>"
+  );
+}
+
+function aprovaBindAtualizacoesFilters () {
+  if (aprovaAtualizacoesBound) return;
+  const root = document.getElementById("atualizacoes-filters");
+  if (!root) return;
+  aprovaAtualizacoesBound = true;
+  root.addEventListener("click", (ev) => {
+    const btn = ev.target.closest("[data-upd-filter]");
+    if (!btn) return;
+    aprovaAtualizacoesFilter = btn.getAttribute("data-upd-filter") || "todas";
+    root.querySelectorAll(".atualizacoes-filter").forEach((el) => {
+      el.classList.toggle("active", el === btn);
+    });
+    if (aprovaAtualizacoesData) aprovaPaintAtualizacoes(aprovaAtualizacoesData);
+    else aprovaRenderAtualizacoesPanel();
+  });
+}
+
+function aprovaPaintAtualizacoes (data) {
+  const root = document.getElementById("atualizacoes-root");
+  if (!root) return;
+  const weeks = aprovaNormalizeNovidadesWeeks(data);
+  const filter = aprovaAtualizacoesFilter;
+  let total = 0;
+  const html = weeks.map((week, wi) => {
+    let items = (week.items || []).filter((it) => it && (it.title || it.summary || it.text));
+    if (filter && filter !== "todas") {
+      items = items.filter((it) => String(it.area || "").toLowerCase() === String(filter).toLowerCase());
+    }
+    if (!items.length) return "";
+    total += items.length;
+    const cards = items.map((it, ii) => aprovaNovidadeCardHtml(it, wi + "-" + ii)).join("");
+    return (
+      "<section class=\"atualizacoes-week\">" +
+        "<h3 class=\"atualizacoes-week-title\">" + aprovaEscapeHtml(week.label || "Semana") + "</h3>" +
+        "<ul class=\"inicio-novidades-list\">" + cards + "</ul>" +
+      "</section>"
+    );
+  }).filter(Boolean).join("");
+
+  if (!html) {
+    root.innerHTML = filter === "todas"
+      ? "<p class=\"muted\">Ainda não há atualizações cadastradas.</p>"
+      : "<p class=\"muted\">Nenhuma atualização nesta área ainda.</p>";
     return;
   }
+  root.innerHTML = html;
 
-  if (title) {
-    title.textContent = (data && data.weekLabel)
-      ? ("Novidades · " + data.weekLabel)
-      : "Novidades da semana";
+  const preview = document.getElementById("dash-atualizacoes-preview");
+  const teaser = document.getElementById("inicio-atualizacoes-teaser");
+  const teaserTitle = document.getElementById("inicio-atualizacoes-teaser-title");
+  const teaserText = document.getElementById("inicio-atualizacoes-teaser-text");
+  const latest = weeks[0];
+  const latestCount = latest && Array.isArray(latest.items) ? latest.items.length : 0;
+  if (preview) {
+    preview.textContent = latest
+      ? (latest.label + " · " + latestCount + " atualizaç" + (latestCount === 1 ? "ão" : "ões"))
+      : "Protocolos e condutas novas que podem cair em prova.";
   }
+  if (teaser) {
+    teaser.hidden = !latestCount;
+    if (teaserTitle) teaserTitle.textContent = latest ? ("Novidades · " + latest.label) : "Atualizações médicas";
+    if (teaserText) {
+      teaserText.textContent = total
+        ? (latestCount + " desta semana · " + total + " no acervo · toque para abrir")
+        : "Protocolos e condutas que podem cair em prova.";
+    }
+  }
+}
 
-  list.innerHTML = items.map((it, idx) => {
-    const area = it.area
-      ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
-      : "";
-    const itemTitle = aprovaEscapeHtml(it.title || "Atualização");
-    const summary = aprovaEscapeHtml(it.summary || it.text || "Toque para ver o resumo completo.");
-    const detailHtml = aprovaNovidadesDetailHtml(it.detail);
-    const ref = it.reference
-      ? "<p class=\"inicio-novidades-ref\"><strong>Fonte:</strong> " + aprovaEscapeHtml(it.reference) + "</p>"
-      : "";
-    const link = it.href
-      ? "<p class=\"inicio-novidades-ref\"><a href=\"" + aprovaEscapeHtml(it.href) +
-        "\" target=\"_blank\" rel=\"noopener noreferrer\">Abrir referência</a></p>"
-      : "";
-    const body = detailHtml || ("<p>" + summary + "</p>");
-    return (
-      "<li class=\"inicio-novidades-card\">" +
-        "<details class=\"inicio-novidades-details\">" +
-          "<summary class=\"inicio-novidades-summary\">" +
-            "<span class=\"inicio-novidades-summary-main\">" +
-              area +
-              "<strong class=\"inicio-novidades-item-title\">" + itemTitle + "</strong>" +
-              "<span class=\"inicio-novidades-item-text\">" + summary + "</span>" +
-            "</span>" +
-            "<span class=\"inicio-novidades-chevron\" aria-hidden=\"true\">▾</span>" +
-          "</summary>" +
-          "<div class=\"inicio-novidades-detail\" id=\"novidade-detail-" + idx + "\">" +
-            body + ref + link +
-          "</div>" +
-        "</details>" +
-      "</li>"
-    );
-  }).join("");
-  root.hidden = false;
+function aprovaRenderAtualizacoesPanel () {
+  aprovaBindAtualizacoesFilters();
+  const root = document.getElementById("atualizacoes-root");
+  if (root && !aprovaNovidadesPromise) {
+    root.innerHTML = "<p class=\"muted\">Carregando atualizações…</p>";
+  }
+  return aprovaLoadNovidades().then((data) => {
+    if (!data && root) {
+      root.innerHTML = "<p class=\"muted\">Não foi possível carregar as atualizações.</p>";
+    }
+    return data;
+  });
 }
 
 function aprovaLoadNovidades () {
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724nov3")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd1")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }
   return aprovaNovidadesPromise.then((data) => {
-    aprovaRenderNovidades(data);
+    aprovaAtualizacoesData = data;
+    aprovaPaintAtualizacoes(data || { weeks: [] });
     return data;
   });
 }
