@@ -126,13 +126,14 @@ const AprovaFlashcards = {
       "data/flashcards-atualizacoes-go1.json",
       "data/flashcards-atualizacoes-cir1.json",
       "data/flashcards-atualizacoes-ped1.json",
+      "data/flashcards-atualizacoes-ped2.json",
       "data/flashcards-prev1.json",
       "data/flashcards-prev2.json",
       "data/flashcards-prev3.json",
       "data/flashcards-prev4.json"
     ];
     const decks = [];
-    const cacheVer = "20260724upd14";
+    const cacheVer = "20260724upd15";
     for (const file of files) {
       try {
         const res = await fetch(file + (file.includes("?") ? "&" : "?") + "v=" + cacheVer);
