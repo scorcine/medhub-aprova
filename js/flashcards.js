@@ -133,7 +133,7 @@ const AprovaFlashcards = {
       "data/flashcards-prev4.json"
     ];
     const decks = [];
-    const cacheVer = "20260724upd15";
+    const cacheVer = "20260724upd16";
     for (const file of files) {
       try {
         const res = await fetch(file + (file.includes("?") ? "&" : "?") + "v=" + cacheVer);
