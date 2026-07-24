@@ -4365,6 +4365,28 @@ function aprovaNormalizeNovidadesWeeks (data) {
   return [];
 }
 
+function aprovaNormalizeNovidadesAreas (data) {
+  if (!data) return [];
+  if (Array.isArray(data.areas) && data.areas.length) {
+    return data.areas.filter((a) => a && Array.isArray(a.items) && a.items.length);
+  }
+  // Fallback: agrupa itens das semanas por área
+  const map = new Map();
+  aprovaNormalizeNovidadesWeeks(data).forEach((week) => {
+    (week.items || []).forEach((it) => {
+      if (!it) return;
+      const label = it.area || "Geral";
+      if (!map.has(label)) map.set(label, []);
+      map.get(label).push(it);
+    });
+  });
+  return Array.from(map.entries()).map(([label, items]) => ({
+    id: String(label).toLowerCase(),
+    label,
+    items
+  }));
+}
+
 function aprovaNovidadeCardHtml (it, key) {
   const area = it.area
     ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
@@ -4418,25 +4440,34 @@ function aprovaBindAtualizacoesFilters () {
 
 function aprovaBuildAtualizacoesHtml (data, filter) {
   const weeks = aprovaNormalizeNovidadesWeeks(data);
+  const areas = aprovaNormalizeNovidadesAreas(data);
+  const latest = weeks[0] || null;
+  const latestCount = latest && Array.isArray(latest.items)
+    ? latest.items.filter((it) => it && (it.title || it.summary || it.text)).length
+    : 0;
+
   let total = 0;
-  let latestCount = 0;
-  const html = weeks.map((week, wi) => {
-    let items = (week.items || []).filter((it) => it && (it.title || it.summary || it.text));
-    if (wi === 0) latestCount = items.length;
+  const html = areas.map((area, ai) => {
+    let items = (area.items || []).filter((it) => it && (it.title || it.summary || it.text));
     if (filter && filter !== "todas") {
-      items = items.filter((it) => String(it.area || "").toLowerCase() === String(filter).toLowerCase());
+      const f = String(filter).toLowerCase();
+      items = items.filter((it) =>
+        String(it.area || area.label || "").toLowerCase() === f ||
+        String(area.label || "").toLowerCase() === f
+      );
     }
     if (!items.length) return "";
     total += items.length;
-    const cards = items.map((it, ii) => aprovaNovidadeCardHtml(it, wi + "-" + ii)).join("");
+    const cards = items.map((it, ii) => aprovaNovidadeCardHtml(it, "a" + ai + "-" + ii)).join("");
     return (
-      "<section class=\"atualizacoes-week\">" +
-        "<h3 class=\"atualizacoes-week-title\">" + aprovaEscapeHtml(week.label || "Semana") + "</h3>" +
+      "<section class=\"atualizacoes-week\" id=\"atualizacoes-area-" + aprovaEscapeHtml(area.id || ai) + "\">" +
+        "<h3 class=\"atualizacoes-week-title\">" + aprovaEscapeHtml(area.label || "Área") +
+          " <span class=\"atualizacoes-week-count\">" + items.length + "</span></h3>" +
         "<ul class=\"inicio-novidades-list\">" + cards + "</ul>" +
       "</section>"
     );
   }).filter(Boolean).join("");
-  return { html, total, latestCount, weeks, latest: weeks[0] || null };
+  return { html, total, latestCount, weeks, areas, latest };
 }
 
 function aprovaFindAtualizacaoByKey (data, focusKey) {
@@ -4611,7 +4642,7 @@ function aprovaRenderAtualizacoesPanel () {
 function aprovaLoadNovidades () {
   aprovaBindAtualizacoesModal();
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd4")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd5")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }
