@@ -4162,6 +4162,50 @@ function aprovaRenderSeuFoco () {
   });
 }
 
+let aprovaNovidadesPromise = null;
+
+function aprovaRenderNovidades (data) {
+  const root = document.getElementById("inicio-novidades");
+  const title = document.getElementById("inicio-novidades-title");
+  const list = document.getElementById("inicio-novidades-list");
+  if (!root || !list) return;
+
+  const items = Array.isArray(data && data.items) ? data.items.filter((it) => it && it.text) : [];
+  if (!items.length) {
+    root.hidden = true;
+    list.innerHTML = "";
+    return;
+  }
+
+  if (title) {
+    title.textContent = (data && data.weekLabel)
+      ? ("Novidades · " + data.weekLabel)
+      : "Novidades da semana";
+  }
+
+  list.innerHTML = items.map((it) => {
+    const text = aprovaEscapeHtml(it.text);
+    if (it.href) {
+      const href = aprovaEscapeHtml(it.href);
+      return "<li><a href=\"" + href + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + text + "</a></li>";
+    }
+    return "<li>" + text + "</li>";
+  }).join("");
+  root.hidden = false;
+}
+
+function aprovaLoadNovidades () {
+  if (!aprovaNovidadesPromise) {
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724nov1")
+      .then((res) => (res.ok ? res.json() : null))
+      .catch(() => null);
+  }
+  return aprovaNovidadesPromise.then((data) => {
+    aprovaRenderNovidades(data);
+    return data;
+  });
+}
+
 function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
@@ -4170,6 +4214,7 @@ function aprovaRenderDashboard () {
     const first = String(raw).trim().split(/\s+/)[0] || "estudante";
     hello.textContent = first;
   }
+  aprovaLoadNovidades();
 
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const summary = typeof aprovaProfileSummary === "function"
