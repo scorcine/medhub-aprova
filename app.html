@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724nov2">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724cal1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -153,6 +153,7 @@
         <button type="button" class="side-link" data-panel="revisoes">Revisões</button>
         <button type="button" class="side-link" data-panel="simulados">Simulados</button>
         <button type="button" class="side-link" data-panel="estatisticas">Estatísticas de provas</button>
+        <button type="button" class="side-link" data-panel="calendario">Calendário de provas</button>
         <button type="button" class="side-link" data-panel="progresso">Meu progresso</button>
 
         <p class="sidebar-label">Estudo</p>
@@ -273,6 +274,11 @@
               <span class="dash-card-kicker">Provas</span>
               <strong>Estatísticas de provas</strong>
               <span id="dash-exam-stats-preview">O que mais caiu nas principais provas de R1.</span>
+            </button>
+            <button type="button" class="dash-card" data-goto="calendario">
+              <span class="dash-card-kicker">Agenda</span>
+              <strong>Calendário de provas</strong>
+              <span id="dash-calendario-preview">Datas de inscrição e provas do ciclo 2026/2027.</span>
             </button>
             <button type="button" class="dash-card" data-goto="progresso">
               <span class="dash-card-kicker">Acompanhar</span>
@@ -721,6 +727,20 @@
           <!-- Conteúdo real abre em panel-especialidades no modo estatísticas -->
           <h2 id="stats-title">Estatísticas de provas</h2>
           <p class="muted">Abrindo o que mais caiu nas provas…</p>
+        </section>
+
+        <section id="panel-calendario" class="panel" aria-labelledby="calendario-title" hidden>
+          <h2 id="calendario-title">Calendário de provas</h2>
+          <p class="muted" id="calendario-cycle">Ciclo de residência — datas de inscrição e provas.</p>
+          <p class="calendario-note" id="calendario-note" hidden></p>
+          <div class="calendario-filters" id="calendario-filters">
+            <button type="button" class="btn btn-ghost btn-compact calendario-filter active" data-cal-filter="proximas">Próximas</button>
+            <button type="button" class="btn btn-ghost btn-compact calendario-filter" data-cal-filter="todas">Todas</button>
+            <button type="button" class="btn btn-ghost btn-compact calendario-filter" data-cal-filter="perfil">Minhas provas</button>
+          </div>
+          <div id="calendario-list" class="calendario-list" aria-live="polite">
+            <p class="muted">Carregando calendário…</p>
+          </div>
         </section>
 
         <section id="panel-progresso" class="panel" aria-labelledby="prog-title" hidden>
@@ -1260,7 +1280,7 @@
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260724nov2"></script>
+  <script src="js/app-qui.js?v=20260724cal1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

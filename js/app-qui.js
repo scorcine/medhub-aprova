@@ -13,6 +13,7 @@ const APROVA_PANEL_META = {
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
   estatisticas: { title: "Estatísticas de provas", sub: "O que mais caiu nas provas R1" },
+  calendario: { title: "Calendário de provas", sub: "Inscrições e datas do ciclo R1" },
   progresso: { title: "Meu progresso", sub: "Acompanhe sua rotina" },
   perfil: { title: "Meu perfil", sub: "Provas e datas que você pretende prestar" },
   config: { title: "Configurações", sub: "Conta e preferências" },
@@ -135,6 +136,7 @@ function aprovaGoTo (id, options) {
     else aprovaHojeShowHub();
   }
   if (id === "progresso") aprovaRenderProgress();
+  if (id === "calendario") aprovaRenderCalendarioProvas();
   if (id === "metas") aprovaRenderMetas();
   if (id === "provas-integra" && typeof aprovaRenderProvasIntegra === "function") {
     aprovaRenderProvasIntegra();
@@ -4163,6 +4165,169 @@ function aprovaRenderSeuFoco () {
 }
 
 let aprovaNovidadesPromise = null;
+let aprovaCalendarioPromise = null;
+let aprovaCalendarioData = null;
+let aprovaCalendarioFilter = "proximas";
+let aprovaCalendarioBound = false;
+
+function aprovaFormatExamDateBr (iso) {
+  const s = String(iso || "").trim();
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return s || "A definir";
+  return m[3] + "/" + m[2] + "/" + m[1];
+}
+
+function aprovaCalendarioStatusLabel (status) {
+  const st = String(status || "").toLowerCase();
+  if (st === "confirmado") return { label: "Confirmado", cls: "calendario-chip--ok" };
+  if (st === "previsao") return { label: "Previsão", cls: "calendario-chip--warn" };
+  return { label: "Aguardando edital", cls: "calendario-chip--wait" };
+}
+
+function aprovaProfileExamIds () {
+  const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+  const ids = new Set();
+  const slots = (profile && Array.isArray(profile.priorities)) ? profile.priorities : [];
+  slots.forEach((slot) => {
+    if (slot && slot.id) ids.add(String(slot.id));
+  });
+  return ids;
+}
+
+function aprovaSortCalendarioExams (exams) {
+  return exams.slice().sort((a, b) => {
+    const da = a.examDate || "9999-99-99";
+    const db = b.examDate || "9999-99-99";
+    if (da !== db) return da < db ? -1 : 1;
+    return String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
+  });
+}
+
+function aprovaBindCalendarioFilters () {
+  if (aprovaCalendarioBound) return;
+  const root = document.getElementById("calendario-filters");
+  if (!root) return;
+  aprovaCalendarioBound = true;
+  root.addEventListener("click", (ev) => {
+    const btn = ev.target.closest("[data-cal-filter]");
+    if (!btn) return;
+    aprovaCalendarioFilter = btn.getAttribute("data-cal-filter") || "proximas";
+    root.querySelectorAll(".calendario-filter").forEach((el) => {
+      el.classList.toggle("active", el === btn);
+    });
+    if (aprovaCalendarioData) aprovaRenderCalendarioList(aprovaCalendarioData);
+    else aprovaRenderCalendarioProvas();
+  });
+}
+
+function aprovaRenderCalendarioList (data) {
+  const list = document.getElementById("calendario-list");
+  const cycleEl = document.getElementById("calendario-cycle");
+  const noteEl = document.getElementById("calendario-note");
+  const preview = document.getElementById("dash-calendario-preview");
+  if (!list) return;
+
+  if (cycleEl && data && data.cycle) cycleEl.textContent = data.cycle;
+  if (noteEl) {
+    if (data && data.note) {
+      noteEl.hidden = false;
+      noteEl.textContent = data.note;
+    } else {
+      noteEl.hidden = true;
+      noteEl.textContent = "";
+    }
+  }
+
+  const today = new Date();
+  const todayIso = today.getFullYear() + "-" +
+    String(today.getMonth() + 1).padStart(2, "0") + "-" +
+    String(today.getDate()).padStart(2, "0");
+
+  const mine = aprovaProfileExamIds();
+  let exams = Array.isArray(data && data.exams) ? data.exams.filter((e) => e && e.name) : [];
+  exams = aprovaSortCalendarioExams(exams);
+
+  if (aprovaCalendarioFilter === "perfil") {
+    exams = exams.filter((e) => mine.has(String(e.id || "")));
+  } else if (aprovaCalendarioFilter === "proximas") {
+    exams = exams.filter((e) => !e.examDate || e.examDate >= todayIso);
+  }
+
+  if (preview) {
+    const next = aprovaSortCalendarioExams(
+      (data && data.exams || []).filter((e) => e && e.examDate && e.examDate >= todayIso)
+    )[0];
+    preview.textContent = next
+      ? ("Próxima: " + next.name + " · " + aprovaFormatExamDateBr(next.examDate))
+      : "Datas de inscrição e provas do ciclo 2026/2027.";
+  }
+
+  if (!exams.length) {
+    list.innerHTML = aprovaCalendarioFilter === "perfil"
+      ? "<p class=\"muted\">Nenhuma das suas provas do perfil está no calendário ainda. Cadastre provas em Meu perfil ou veja Todas.</p>"
+      : "<p class=\"muted\">Nenhuma prova neste filtro.</p>";
+    return;
+  }
+
+  list.innerHTML = exams.map((exam) => {
+    const st = aprovaCalendarioStatusLabel(exam.status);
+    const isMine = mine.has(String(exam.id || ""));
+    const isPast = exam.examDate && exam.examDate < todayIso;
+    const cls = "calendario-card" +
+      (isMine ? " calendario-card--mine" : "") +
+      (isPast ? " calendario-card--past" : "");
+    const dateLabel = exam.examDate ? aprovaFormatExamDateBr(exam.examDate) : "A definir";
+    const region = exam.region
+      ? "<span class=\"calendario-chip\">" + aprovaEscapeHtml(exam.region) + "</span>"
+      : "";
+    const mineChip = isMine ? "<span class=\"calendario-chip calendario-chip--ok\">No meu perfil</span>" : "";
+    const note = exam.note
+      ? "<p class=\"calendario-card-line\">" + aprovaEscapeHtml(exam.note) + "</p>"
+      : "";
+    const link = exam.url
+      ? "<a href=\"" + aprovaEscapeHtml(exam.url) + "\" target=\"_blank\" rel=\"noopener noreferrer\">Ver fonte oficial</a>"
+      : "";
+    return (
+      "<article class=\"" + cls + "\">" +
+        "<div class=\"calendario-card-top\">" +
+          "<strong class=\"calendario-card-name\">" + aprovaEscapeHtml(exam.name) + "</strong>" +
+          "<span class=\"calendario-card-date\">" + aprovaEscapeHtml(dateLabel) + "</span>" +
+        "</div>" +
+        "<div class=\"calendario-card-meta\">" +
+          region +
+          "<span class=\"calendario-chip " + st.cls + "\">" + aprovaEscapeHtml(st.label) + "</span>" +
+          mineChip +
+        "</div>" +
+        "<p class=\"calendario-card-line\"><strong>Inscrições:</strong> " +
+          aprovaEscapeHtml(exam.inscription || "A divulgar") + "</p>" +
+        note +
+        link +
+      "</article>"
+    );
+  }).join("");
+}
+
+function aprovaRenderCalendarioProvas () {
+  aprovaBindCalendarioFilters();
+  const list = document.getElementById("calendario-list");
+  if (list && !aprovaCalendarioPromise) {
+    list.innerHTML = "<p class=\"muted\">Carregando calendário…</p>";
+  }
+  if (!aprovaCalendarioPromise) {
+    aprovaCalendarioPromise = fetch("data/calendario-provas.json?v=20260724cal1")
+      .then((res) => (res.ok ? res.json() : null))
+      .catch(() => null);
+  }
+  return aprovaCalendarioPromise.then((data) => {
+    if (!data) {
+      if (list) list.innerHTML = "<p class=\"muted\">Não foi possível carregar o calendário.</p>";
+      return null;
+    }
+    aprovaCalendarioData = data;
+    aprovaRenderCalendarioList(data);
+    return data;
+  });
+}
 
 function aprovaRenderNovidades (data) {
   const root = document.getElementById("inicio-novidades");
@@ -4268,6 +4433,7 @@ function aprovaRenderDashboard () {
 
   aprovaRenderToday();
   aprovaRenderExamStats();
+  aprovaRenderCalendarioProvas();
 
   if (typeof aprovaMaybeShowWelcomeMascot === "function") {
     aprovaMaybeShowWelcomeMascot();

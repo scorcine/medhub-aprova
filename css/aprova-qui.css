@@ -2886,6 +2886,138 @@ html[data-theme="dark"] .inicio-novidades-list li {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.calendario-note {
+  margin: 0 0 0.85rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-sm, 0.5rem);
+  border: 1px solid rgba(15, 159, 154, 0.25);
+  background: rgba(15, 159, 154, 0.08);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--ink-soft, #5b6b7c);
+}
+
+.calendario-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+}
+
+.calendario-filter.active {
+  border-color: rgba(15, 159, 154, 0.55);
+  background: rgba(15, 159, 154, 0.14);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.calendario-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.calendario-card {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line-strong, rgba(15, 27, 45, 0.12));
+  border-radius: var(--radius);
+  background: var(--panel, #fff);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.calendario-card--mine {
+  border-color: rgba(15, 159, 154, 0.45);
+  background:
+    linear-gradient(145deg, rgba(15, 159, 154, 0.1), transparent 55%),
+    var(--panel, #fff);
+}
+
+.calendario-card--past {
+  opacity: 0.62;
+}
+
+.calendario-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 0.75rem;
+}
+
+.calendario-card-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.calendario-card-date {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--accent, #0f8f8b);
+  font-size: 0.95rem;
+}
+
+.calendario-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.calendario-chip {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(15, 27, 45, 0.06);
+  color: var(--ink-soft, #5b6b7c);
+}
+
+.calendario-chip--ok {
+  background: rgba(15, 159, 154, 0.16);
+  color: var(--accent, #0f8f8b);
+}
+
+.calendario-chip--warn {
+  background: rgba(200, 140, 20, 0.16);
+  color: #a87300;
+}
+
+.calendario-chip--wait {
+  background: rgba(15, 27, 45, 0.08);
+}
+
+.calendario-card-line {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink-soft, #5b6b7c);
+}
+
+.calendario-card-line strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.calendario-card a {
+  width: fit-content;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--accent, #0f8f8b);
+}
+
+html[data-theme="dark"] .calendario-card {
+  background: var(--panel);
+}
+
+html[data-theme="dark"] .calendario-chip {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .provas-integra-list {
   display: grid;
   gap: 0.85rem;
