@@ -4387,37 +4387,15 @@ function aprovaNormalizeNovidadesAreas (data) {
   }));
 }
 
-function aprovaNovidadeCardHtml (it, key) {
-  const area = it.area
-    ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
-    : "";
-  const itemTitle = aprovaEscapeHtml(it.title || "Atualização");
-  const summary = aprovaEscapeHtml(it.summary || it.text || "Toque para ver o resumo completo.");
-  const detailHtml = aprovaNovidadesDetailHtml(it.detail);
-  const ref = it.reference
-    ? "<p class=\"inicio-novidades-ref\"><strong>Fonte:</strong> " + aprovaEscapeHtml(it.reference) + "</p>"
-    : "";
-  const link = it.href
-    ? "<p class=\"inicio-novidades-ref\"><a href=\"" + aprovaEscapeHtml(it.href) +
-      "\" target=\"_blank\" rel=\"noopener noreferrer\">Abrir referência</a></p>"
-    : "";
-  const body = detailHtml || ("<p>" + summary + "</p>");
+function aprovaAtualizacaoTitleCardHtml (it, key, areaLabel) {
+  const area = aprovaEscapeHtml(it.area || areaLabel || "");
   return (
-    "<li class=\"inicio-novidades-card\">" +
-      "<details class=\"inicio-novidades-details\">" +
-        "<summary class=\"inicio-novidades-summary\">" +
-          "<span class=\"inicio-novidades-summary-main\">" +
-            area +
-            "<strong class=\"inicio-novidades-item-title\">" + itemTitle + "</strong>" +
-            "<span class=\"inicio-novidades-item-text\">" + summary + "</span>" +
-          "</span>" +
-          "<span class=\"inicio-novidades-chevron\" aria-hidden=\"true\">▾</span>" +
-        "</summary>" +
-        "<div class=\"inicio-novidades-detail\" id=\"novidade-detail-" + aprovaEscapeHtml(key) + "\">" +
-          body + ref + link +
-        "</div>" +
-      "</details>" +
-    "</li>"
+    "<button type=\"button\" class=\"inicio-atualizacao-title-card\" data-atualizacao-focus=\"" +
+      aprovaEscapeHtml(key) + "\" aria-haspopup=\"dialog\">" +
+      (area ? "<span class=\"inicio-novidades-area\">" + area + "</span>" : "") +
+      "<strong>" + aprovaEscapeHtml(it.title || "Atualização") + "</strong>" +
+      "<span class=\"inicio-atualizacao-title-hint\">Toque para ler</span>" +
+    "</button>"
   );
 }
 
@@ -4458,12 +4436,14 @@ function aprovaBuildAtualizacoesHtml (data, filter) {
     }
     if (!items.length) return "";
     total += items.length;
-    const cards = items.map((it, ii) => aprovaNovidadeCardHtml(it, "a" + ai + "-" + ii)).join("");
+    const cards = items
+      .map((it, ii) => aprovaAtualizacaoTitleCardHtml(it, "a" + ai + "-" + ii, area.label))
+      .join("");
     return (
       "<section class=\"atualizacoes-week\" id=\"atualizacoes-area-" + aprovaEscapeHtml(area.id || ai) + "\">" +
         "<h3 class=\"atualizacoes-week-title\">" + aprovaEscapeHtml(area.label || "Área") +
           " <span class=\"atualizacoes-week-count\">" + items.length + "</span></h3>" +
-        "<ul class=\"inicio-novidades-list\">" + cards + "</ul>" +
+        "<div class=\"inicio-atualizacoes-cards\">" + cards + "</div>" +
       "</section>"
     );
   }).filter(Boolean).join("");
@@ -4471,7 +4451,21 @@ function aprovaBuildAtualizacoesHtml (data, filter) {
 }
 
 function aprovaFindAtualizacaoByKey (data, focusKey) {
-  const parts = String(focusKey || "").split("-");
+  const key = String(focusKey || "");
+  // Chaves da aba: a0-12  |  chaves do Início: 0-2
+  const areaMatch = key.match(/^a(\d+)-(\d+)$/i);
+  if (areaMatch) {
+    const ai = Number(areaMatch[1]);
+    const ii = Number(areaMatch[2]);
+    const areas = aprovaNormalizeNovidadesAreas(data);
+    const area = areas[ai];
+    if (!area || !Array.isArray(area.items)) return null;
+    const items = area.items.filter((it) => it && (it.title || it.summary || it.text));
+    const item = items[ii];
+    if (!item) return null;
+    return { area, item };
+  }
+  const parts = key.split("-");
   const wi = Number(parts[0]);
   const ii = Number(parts[1]);
   if (!Number.isFinite(wi) || !Number.isFinite(ii)) return null;
@@ -4502,20 +4496,9 @@ function aprovaPaintInicioTitleCards (data) {
   }
 
   block.hidden = false;
-  cardsRoot.innerHTML = items.map((it, ii) => {
-    const key = "0-" + ii;
-    const area = it.area
-      ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
-      : "";
-    return (
-      "<button type=\"button\" class=\"inicio-atualizacao-title-card\" data-atualizacao-focus=\"" +
-        aprovaEscapeHtml(key) + "\" aria-haspopup=\"dialog\">" +
-        area +
-        "<strong>" + aprovaEscapeHtml(it.title || "Atualização") + "</strong>" +
-        "<span class=\"inicio-atualizacao-title-hint\">Toque para ler</span>" +
-      "</button>"
-    );
-  }).join("");
+  cardsRoot.innerHTML = items
+    .map((it, ii) => aprovaAtualizacaoTitleCardHtml(it, "0-" + ii))
+    .join("");
 }
 
 function aprovaPaintAtualizacaoModalSingle (item) {
@@ -4609,6 +4592,15 @@ function aprovaBindAtualizacoesModal () {
       aprovaOpenAtualizacoesModal(btn.getAttribute("data-atualizacao-focus") || "");
     });
   }
+  const archiveRoot = document.getElementById("atualizacoes-root");
+  if (archiveRoot && !archiveRoot.dataset.bound) {
+    archiveRoot.dataset.bound = "1";
+    archiveRoot.addEventListener("click", (ev) => {
+      const btn = ev.target.closest("[data-atualizacao-focus]");
+      if (!btn) return;
+      aprovaOpenAtualizacoesModal(btn.getAttribute("data-atualizacao-focus") || "");
+    });
+  }
   document.querySelectorAll("[data-atualizacoes-modal-close]").forEach((el) => {
     if (el.dataset.bound) return;
     el.dataset.bound = "1";
@@ -4642,7 +4634,7 @@ function aprovaRenderAtualizacoesPanel () {
 function aprovaLoadNovidades () {
   aprovaBindAtualizacoesModal();
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd5")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd6")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }

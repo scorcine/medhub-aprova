@@ -2805,14 +2805,14 @@ html[data-theme="dark"] .aprova-modal-panel {
 
 .inicio-atualizacao-title-card {
   display: grid;
-  gap: 0.28rem;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.45rem;
+  min-height: 7.5rem;
   margin: 0;
-  padding: 0.85rem 0.95rem;
-  border: 1px solid rgba(15, 159, 154, 0.45);
+  padding: 0.95rem 1rem 0.9rem;
+  border: 1px solid rgba(15, 159, 154, 0.55);
   border-radius: var(--radius);
-  background:
-    linear-gradient(155deg, rgba(15, 159, 154, 0.14), transparent 70%),
-    var(--panel, #fff);
+  background: color-mix(in srgb, var(--panel, #fff) 92%, rgba(15, 159, 154, 0.08));
   color: inherit;
   text-align: left;
   cursor: pointer;
@@ -2821,7 +2821,7 @@ html[data-theme="dark"] .aprova-modal-panel {
 }
 
 .inicio-atualizacao-title-card:hover {
-  border-color: rgba(15, 159, 154, 0.9);
+  border-color: rgba(15, 159, 154, 0.95);
   box-shadow: 0 8px 20px rgba(15, 159, 154, 0.14);
 }
 
@@ -2831,20 +2831,28 @@ html[data-theme="dark"] .aprova-modal-panel {
 
 .inicio-atualizacao-title-card .inicio-novidades-area {
   margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
 }
 
 .inicio-atualizacao-title-card strong {
   font-family: var(--font-display);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.3;
+  line-height: 1.28;
   color: var(--ink);
+  align-self: start;
 }
 
 .inicio-atualizacao-title-card span.inicio-atualizacao-title-hint {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--ink-soft, #5b6b7c);
+  align-self: end;
+}
+
+.atualizacoes-week .inicio-atualizacoes-cards {
+  margin-top: 0.15rem;
 }
 
 .inicio-atualizacoes-teaser {
