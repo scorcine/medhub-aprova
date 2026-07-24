@@ -4665,6 +4665,7 @@ function aprovaPaintAtualizacoes (data) {
     teaserText.textContent = featuredCount + " desta semana · " + totalAll +
       " no acervo · troca todo domingo às 20h";
   }
+}
 
 function aprovaOpenAtualizacoesModal (focusKey) {
   const modal = document.getElementById("atualizacoes-modal");
@@ -4674,14 +4675,14 @@ function aprovaOpenAtualizacoesModal (focusKey) {
     if (!found) return;
     aprovaPaintAtualizacaoModalSingle(found.item);
     modal.hidden = false;
-    document.body.classList.add("aprova-modal-open");
+    document.body.classList.add("modal-open");
   });
 }
 
 function aprovaCloseAtualizacoesModal () {
   const modal = document.getElementById("atualizacoes-modal");
   if (modal) modal.hidden = true;
-  document.body.classList.remove("aprova-modal-open");
+  document.body.classList.remove("modal-open");
 }
 
 function aprovaBindAtualizacoesModal () {
