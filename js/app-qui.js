@@ -4184,19 +4184,24 @@ function aprovaRenderNovidades (data) {
   }
 
   list.innerHTML = items.map((it) => {
-    const text = aprovaEscapeHtml(it.text);
+    const area = it.area ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>" : "";
+    const title = it.title
+      ? "<strong class=\"inicio-novidades-item-title\">" + aprovaEscapeHtml(it.title) + "</strong>"
+      : "";
+    const text = "<span class=\"inicio-novidades-item-text\">" + aprovaEscapeHtml(it.text) + "</span>";
+    const body = area + title + text;
     if (it.href) {
       const href = aprovaEscapeHtml(it.href);
-      return "<li><a href=\"" + href + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + text + "</a></li>";
+      return "<li><a href=\"" + href + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + body + "</a></li>";
     }
-    return "<li>" + text + "</li>";
+    return "<li>" + body + "</li>";
   }).join("");
   root.hidden = false;
 }
 
 function aprovaLoadNovidades () {
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724nov1")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724nov2")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }
