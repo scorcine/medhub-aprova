@@ -4329,13 +4329,26 @@ function aprovaRenderCalendarioProvas () {
   });
 }
 
+function aprovaNovidadesDetailHtml (detail) {
+  if (Array.isArray(detail)) {
+    return detail
+      .filter((p) => p && String(p).trim())
+      .map((p) => "<p>" + aprovaEscapeHtml(p) + "</p>")
+      .join("");
+  }
+  if (detail) return "<p>" + aprovaEscapeHtml(detail) + "</p>";
+  return "";
+}
+
 function aprovaRenderNovidades (data) {
   const root = document.getElementById("inicio-novidades");
   const title = document.getElementById("inicio-novidades-title");
   const list = document.getElementById("inicio-novidades-list");
   if (!root || !list) return;
 
-  const items = Array.isArray(data && data.items) ? data.items.filter((it) => it && it.text) : [];
+  const items = Array.isArray(data && data.items)
+    ? data.items.filter((it) => it && (it.title || it.summary || it.text))
+    : [];
   if (!items.length) {
     root.hidden = true;
     list.innerHTML = "";
@@ -4348,25 +4361,45 @@ function aprovaRenderNovidades (data) {
       : "Novidades da semana";
   }
 
-  list.innerHTML = items.map((it) => {
-    const area = it.area ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>" : "";
-    const title = it.title
-      ? "<strong class=\"inicio-novidades-item-title\">" + aprovaEscapeHtml(it.title) + "</strong>"
+  list.innerHTML = items.map((it, idx) => {
+    const area = it.area
+      ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
       : "";
-    const text = "<span class=\"inicio-novidades-item-text\">" + aprovaEscapeHtml(it.text) + "</span>";
-    const body = area + title + text;
-    if (it.href) {
-      const href = aprovaEscapeHtml(it.href);
-      return "<li><a href=\"" + href + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + body + "</a></li>";
-    }
-    return "<li>" + body + "</li>";
+    const itemTitle = aprovaEscapeHtml(it.title || "Atualização");
+    const summary = aprovaEscapeHtml(it.summary || it.text || "Toque para ver o resumo completo.");
+    const detailHtml = aprovaNovidadesDetailHtml(it.detail);
+    const ref = it.reference
+      ? "<p class=\"inicio-novidades-ref\"><strong>Fonte:</strong> " + aprovaEscapeHtml(it.reference) + "</p>"
+      : "";
+    const link = it.href
+      ? "<p class=\"inicio-novidades-ref\"><a href=\"" + aprovaEscapeHtml(it.href) +
+        "\" target=\"_blank\" rel=\"noopener noreferrer\">Abrir referência</a></p>"
+      : "";
+    const body = detailHtml || ("<p>" + summary + "</p>");
+    return (
+      "<li class=\"inicio-novidades-card\">" +
+        "<details class=\"inicio-novidades-details\">" +
+          "<summary class=\"inicio-novidades-summary\">" +
+            "<span class=\"inicio-novidades-summary-main\">" +
+              area +
+              "<strong class=\"inicio-novidades-item-title\">" + itemTitle + "</strong>" +
+              "<span class=\"inicio-novidades-item-text\">" + summary + "</span>" +
+            "</span>" +
+            "<span class=\"inicio-novidades-chevron\" aria-hidden=\"true\">▾</span>" +
+          "</summary>" +
+          "<div class=\"inicio-novidades-detail\" id=\"novidade-detail-" + idx + "\">" +
+            body + ref + link +
+          "</div>" +
+        "</details>" +
+      "</li>"
+    );
   }).join("");
   root.hidden = false;
 }
 
 function aprovaLoadNovidades () {
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724nov2")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724nov3")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }
