@@ -5,7 +5,7 @@ const APROVA_PROFILE_MAX = 3;
 
 /** Provas disponíveis no app (sem “Geral Brasil”). */
 const APROVA_TARGET_EXAMS = [
-  { id: "staging", label: "Staging · Revisões (Cirurgia · Clínica · Prev · GO)" },
+  { id: "staging", label: "Staging · Revisões (Cirurgia · Clínica · Prev · GO · Ped)" },
   { id: "enare", label: "Enare" },
   { id: "enamed", label: "Enamed" },
   { id: "revalida", label: "Revalida (INEP)" },
