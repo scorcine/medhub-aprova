@@ -8,6 +8,7 @@ const APROVA_QUESTION_FILES = [
   "data/questions-go.json",
   "data/questions-preventiva.json",
   "data/questions-sus-sp.json",
+  "data/questions-sus-sp-estilo-2026-staging.json",
   "data/questions-enare.json",
   "data/questions-fmabc.json",
   "data/questions-einstein.json",
@@ -15,8 +16,7 @@ const APROVA_QUESTION_FILES = [
   "data/questions-santa-casa.json",
   "data/questions-unifesp.json",
   "data/questions-usp-sp.json",
-  "data/questions-unitau.json",
-  "data/questions-cirurgia-staging.json"
+  "data/questions-unitau.json"
 ];
 
 const APROVA_QUESTION_SPECIALTIES = [
@@ -27,7 +27,7 @@ const APROVA_QUESTION_SPECIALTIES = [
   { id: "preventiva", label: "Preventiva" }
 ];
 
-const APROVA_QUESTION_CACHE_VER = "20260722cirstage6";
+const APROVA_QUESTION_CACHE_VER = "20260724updcli1";
 const APROVA_TREINO_SAVE_KEY = "medhub-aprova-treino-v1";
 const APROVA_PROVAS_CATALOG_FILE = "data/provas/catalog.json";
 
