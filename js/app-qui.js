@@ -4478,26 +4478,132 @@ function aprovaFindAtualizacaoByKey (data, focusKey) {
   return { week, item };
 }
 
+/** Partes de data/hora em America/Sao_Paulo. */
+function aprovaSaoPauloParts (date) {
+  const d = date || new Date();
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Sao_Paulo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23"
+  }).formatToParts(d);
+  const get = (type) => {
+    const hit = parts.find((p) => p.type === type);
+    return hit ? hit.value : "";
+  };
+  const wd = String(get("weekday")).slice(0, 3).toLowerCase();
+  const weekdayMap = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6 };
+  return {
+    year: Number(get("year")),
+    month: Number(get("month")),
+    day: Number(get("day")),
+    hour: Number(get("hour")),
+    minute: Number(get("minute")),
+    weekday: weekdayMap[wd] != null ? weekdayMap[wd] : 0
+  };
+}
+
+/** Domingo 20:00 (Brasília) que inicia o ciclo atual de destaque. */
+function aprovaFeaturedWeekStartKey (date) {
+  const p = aprovaSaoPauloParts(date);
+  // UTC date only for calendar math (Y/M/D in SP)
+  const utcNoon = Date.UTC(p.year, p.month - 1, p.day, 12, 0, 0);
+  const sundayNoon = utcNoon - p.weekday * 24 * 60 * 60 * 1000;
+  const sun = new Date(sundayNoon);
+  let y = sun.getUTCFullYear();
+  let m = sun.getUTCMonth() + 1;
+  let d = sun.getUTCDate();
+  // Se ainda não chegou domingo 20:00 desta semana, usa o domingo anterior
+  const nowMin = p.hour * 60 + p.minute;
+  if (p.weekday === 0 && nowMin < 20 * 60) {
+    const prev = new Date(sundayNoon - 7 * 24 * 60 * 60 * 1000);
+    y = prev.getUTCFullYear();
+    m = prev.getUTCMonth() + 1;
+    d = prev.getUTCDate();
+  }
+  return y + "-" + String(m).padStart(2, "0") + "-" + String(d).padStart(2, "0");
+}
+
+function aprovaFeaturedWeekLabel (weekKey) {
+  const m = String(weekKey || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return "Semana";
+  const start = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12));
+  const end = new Date(start.getTime() + 6 * 24 * 60 * 60 * 1000);
+  const months = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+  const d1 = start.getUTCDate();
+  const d2 = end.getUTCDate();
+  const m1 = months[start.getUTCMonth()];
+  const m2 = months[end.getUTCMonth()];
+  if (m1 === m2) return "Semana de " + d1 + "–" + d2 + " " + m1;
+  return "Semana de " + d1 + " " + m1 + " – " + d2 + " " + m2;
+}
+
+function aprovaSeededShuffle (list, seedStr) {
+  const arr = list.slice();
+  let h = 2166136261;
+  const s = String(seedStr || "medhub");
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  const rand = () => {
+    h += 0x6d2b79f5;
+    let t = h;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    const tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+  }
+  return arr;
+}
+
+/** 4 cards do acervo, fixos de domingo 20:00 até o próximo domingo 20:00. */
+function aprovaPickFeaturedAtualizacoes (data, count) {
+  const n = count || 4;
+  const areas = aprovaNormalizeNovidadesAreas(data);
+  const pool = [];
+  areas.forEach((area, ai) => {
+    const items = (area.items || []).filter((it) => it && (it.title || it.summary || it.text));
+    items.forEach((it, ii) => {
+      pool.push({ item: it, key: "a" + ai + "-" + ii });
+    });
+  });
+  if (!pool.length) return { weekKey: "", label: "Semana", picks: [] };
+  const weekKey = aprovaFeaturedWeekStartKey();
+  const picks = aprovaSeededShuffle(pool, "atualizacoes|" + weekKey).slice(0, Math.min(n, pool.length));
+  return {
+    weekKey,
+    label: aprovaFeaturedWeekLabel(weekKey),
+    picks
+  };
+}
+
 function aprovaPaintInicioTitleCards (data) {
   const block = document.getElementById("inicio-atualizacoes-block");
   const cardsRoot = document.getElementById("inicio-atualizacoes-cards");
   if (!block || !cardsRoot) return;
 
-  const weeks = aprovaNormalizeNovidadesWeeks(data);
-  const latest = weeks[0];
-  const items = latest && Array.isArray(latest.items)
-    ? latest.items.filter((it) => it && (it.title || it.summary || it.text))
-    : [];
+  const featured = aprovaPickFeaturedAtualizacoes(data, 4);
+  const picks = featured.picks || [];
 
-  if (!items.length) {
+  if (!picks.length) {
     block.hidden = true;
     cardsRoot.innerHTML = "";
     return;
   }
 
   block.hidden = false;
-  cardsRoot.innerHTML = items
-    .map((it, ii) => aprovaAtualizacaoTitleCardHtml(it, "0-" + ii))
+  cardsRoot.innerHTML = picks
+    .map((p) => aprovaAtualizacaoTitleCardHtml(p.item, p.key))
     .join("");
 }
 
@@ -4545,24 +4651,20 @@ function aprovaPaintAtualizacoes (data) {
   const preview = document.getElementById("dash-atualizacoes-preview");
   const teaserTitle = document.getElementById("inicio-atualizacoes-teaser-title");
   const teaserText = document.getElementById("inicio-atualizacoes-teaser-text");
-  const latest = built.latest;
-  const latestCount = built.latestCount;
-  const totalAll = aprovaBuildAtualizacoesHtml(data, "todas").total;
+  const featured = aprovaPickFeaturedAtualizacoes(data, 4);
+  const featuredCount = (featured.picks || []).length;
+  const totalAll = built.total;
 
   if (preview) {
-    preview.textContent = latest
-      ? (latest.label + " · " + latestCount + " atualizaç" + (latestCount === 1 ? "ão" : "ões"))
+    preview.textContent = featuredCount
+      ? (featured.label + " · " + featuredCount + " destaques")
       : "Protocolos e condutas novas que podem cair em prova.";
   }
-  const weekBit = latest && latest.label
-    ? String(latest.label).replace(/^Semana\s+de\s+/i, "Semana de ")
-    : "Semana";
-  if (teaserTitle) teaserTitle.textContent = "Novidades · " + weekBit;
+  if (teaserTitle) teaserTitle.textContent = "Novidades · " + (featured.label || "Semana");
   if (teaserText) {
-    teaserText.textContent = latestCount + " desta semana · " + totalAll +
-      " no acervo · toque em um card";
+    teaserText.textContent = featuredCount + " desta semana · " + totalAll +
+      " no acervo · troca todo domingo às 20h";
   }
-}
 
 function aprovaOpenAtualizacoesModal (focusKey) {
   const modal = document.getElementById("atualizacoes-modal");
@@ -4634,7 +4736,7 @@ function aprovaRenderAtualizacoesPanel () {
 function aprovaLoadNovidades () {
   aprovaBindAtualizacoesModal();
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd6")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd7")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }
