@@ -2793,29 +2793,53 @@ html[data-theme="dark"] .aprova-modal-panel {
 
 .inicio-atualizacoes-teaser {
   display: grid;
-  gap: 0.2rem;
+  gap: 0.28rem;
   width: 100%;
   margin: 0 0 1.15rem;
-  padding: 0.95rem 1.05rem 1rem;
-  border: 1px solid rgba(15, 159, 154, 0.28);
+  padding: 0.95rem 1.1rem 1.05rem;
+  border: 1px solid rgba(15, 159, 154, 0.55);
   border-radius: var(--radius);
   background:
-    linear-gradient(145deg, rgba(15, 159, 154, 0.1), transparent 60%),
+    linear-gradient(145deg, rgba(15, 159, 154, 0.12), transparent 62%),
     var(--panel, #fff);
   color: inherit;
   text-align: left;
   cursor: pointer;
   font: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .inicio-atualizacoes-teaser:hover {
-  border-color: rgba(15, 159, 154, 0.5);
+  border-color: rgba(15, 159, 154, 0.85);
+  box-shadow: 0 8px 22px rgba(15, 159, 154, 0.12);
+}
+
+.inicio-atualizacoes-teaser:active {
+  transform: translateY(1px);
+}
+
+.inicio-atualizacoes-teaser .inicio-novidades-kicker {
+  margin: 0;
 }
 
 .inicio-atualizacoes-teaser strong {
   font-family: var(--font-display);
-  font-size: 1.02rem;
+  font-size: 1.08rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.inicio-atualizacoes-teaser-meta {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink-soft, #5b6b7c);
+}
+
+.atualizacoes-modal-panel {
+  width: min(40rem, 100%);
+  max-height: min(90vh, 46rem);
 }
 
 .inicio-novidades {

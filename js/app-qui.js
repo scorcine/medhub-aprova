@@ -4416,14 +4416,13 @@ function aprovaBindAtualizacoesFilters () {
   });
 }
 
-function aprovaPaintAtualizacoes (data) {
-  const root = document.getElementById("atualizacoes-root");
-  if (!root) return;
+function aprovaBuildAtualizacoesHtml (data, filter) {
   const weeks = aprovaNormalizeNovidadesWeeks(data);
-  const filter = aprovaAtualizacoesFilter;
   let total = 0;
+  let latestCount = 0;
   const html = weeks.map((week, wi) => {
     let items = (week.items || []).filter((it) => it && (it.title || it.summary || it.text));
+    if (wi === 0) latestCount = items.length;
     if (filter && filter !== "todas") {
       items = items.filter((it) => String(it.area || "").toLowerCase() === String(filter).toLowerCase());
     }
@@ -4437,39 +4436,98 @@ function aprovaPaintAtualizacoes (data) {
       "</section>"
     );
   }).filter(Boolean).join("");
+  return { html, total, latestCount, weeks, latest: weeks[0] || null };
+}
 
-  if (!html) {
-    root.innerHTML = filter === "todas"
-      ? "<p class=\"muted\">Ainda não há atualizações cadastradas.</p>"
-      : "<p class=\"muted\">Nenhuma atualização nesta área ainda.</p>";
-    return;
+function aprovaPaintAtualizacoes (data) {
+  const root = document.getElementById("atualizacoes-root");
+  const built = aprovaBuildAtualizacoesHtml(data, aprovaAtualizacoesFilter);
+  if (root) {
+    if (!built.html) {
+      root.innerHTML = aprovaAtualizacoesFilter === "todas"
+        ? "<p class=\"muted\">Ainda não há atualizações cadastradas.</p>"
+        : "<p class=\"muted\">Nenhuma atualização nesta área ainda.</p>";
+    } else {
+      root.innerHTML = built.html;
+    }
   }
-  root.innerHTML = html;
+
+  const modalBody = document.getElementById("atualizacoes-modal-body");
+  if (modalBody) {
+    const modalBuilt = aprovaBuildAtualizacoesHtml(data, "todas");
+    modalBody.innerHTML = modalBuilt.html ||
+      "<p class=\"muted\">Ainda não há atualizações cadastradas.</p>";
+  }
 
   const preview = document.getElementById("dash-atualizacoes-preview");
   const teaser = document.getElementById("inicio-atualizacoes-teaser");
   const teaserTitle = document.getElementById("inicio-atualizacoes-teaser-title");
   const teaserText = document.getElementById("inicio-atualizacoes-teaser-text");
-  const latest = weeks[0];
-  const latestCount = latest && Array.isArray(latest.items) ? latest.items.length : 0;
+  const modalTitle = document.getElementById("atualizacoes-modal-title");
+  const latest = built.latest;
+  const latestCount = built.latestCount;
+  const totalAll = aprovaBuildAtualizacoesHtml(data, "todas").total;
+
   if (preview) {
     preview.textContent = latest
       ? (latest.label + " · " + latestCount + " atualizaç" + (latestCount === 1 ? "ão" : "ões"))
       : "Protocolos e condutas novas que podem cair em prova.";
   }
   if (teaser) {
-    teaser.hidden = !latestCount;
-    if (teaserTitle) teaserTitle.textContent = latest ? ("Novidades · " + latest.label) : "Atualizações médicas";
+    teaser.hidden = !totalAll;
+    const weekBit = latest && latest.label
+      ? String(latest.label).replace(/^Semana\s+de\s+/i, "Semana de ")
+      : "Semana";
+    if (teaserTitle) teaserTitle.textContent = "Novidades · " + weekBit;
     if (teaserText) {
-      teaserText.textContent = total
-        ? (latestCount + " desta semana · " + total + " no acervo · toque para abrir")
-        : "Protocolos e condutas que podem cair em prova.";
+      teaserText.textContent = latestCount + " desta semana · " + totalAll +
+        " no acervo · toque para abrir";
     }
+  }
+  if (modalTitle && latest) {
+    modalTitle.textContent = "Novidades · " + (latest.label || "semana");
+  }
+}
+
+function aprovaOpenAtualizacoesModal () {
+  const modal = document.getElementById("atualizacoes-modal");
+  if (!modal) return;
+  aprovaLoadNovidades().then(() => {
+    modal.hidden = false;
+    document.body.classList.add("aprova-modal-open");
+  });
+}
+
+function aprovaCloseAtualizacoesModal () {
+  const modal = document.getElementById("atualizacoes-modal");
+  if (modal) modal.hidden = true;
+  document.body.classList.remove("aprova-modal-open");
+}
+
+function aprovaBindAtualizacoesModal () {
+  const teaser = document.getElementById("inicio-atualizacoes-teaser");
+  if (teaser && !teaser.dataset.bound) {
+    teaser.dataset.bound = "1";
+    teaser.addEventListener("click", () => aprovaOpenAtualizacoesModal());
+  }
+  document.querySelectorAll("[data-atualizacoes-modal-close]").forEach((el) => {
+    if (el.dataset.bound) return;
+    el.dataset.bound = "1";
+    el.addEventListener("click", () => aprovaCloseAtualizacoesModal());
+  });
+  const openTab = document.getElementById("atualizacoes-modal-open-tab");
+  if (openTab && !openTab.dataset.bound) {
+    openTab.dataset.bound = "1";
+    openTab.addEventListener("click", () => {
+      aprovaCloseAtualizacoesModal();
+      aprovaGoTo("atualizacoes");
+    });
   }
 }
 
 function aprovaRenderAtualizacoesPanel () {
   aprovaBindAtualizacoesFilters();
+  aprovaBindAtualizacoesModal();
   const root = document.getElementById("atualizacoes-root");
   if (root && !aprovaNovidadesPromise) {
     root.innerHTML = "<p class=\"muted\">Carregando atualizações…</p>";
@@ -4483,8 +4541,9 @@ function aprovaRenderAtualizacoesPanel () {
 }
 
 function aprovaLoadNovidades () {
+  aprovaBindAtualizacoesModal();
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd1")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd2")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }

@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724upd1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724upd2">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -210,10 +210,10 @@
             </div>
           </div>
 
-          <button type="button" class="inicio-atualizacoes-teaser" id="inicio-atualizacoes-teaser" data-goto="atualizacoes" hidden>
+          <button type="button" class="inicio-atualizacoes-teaser" id="inicio-atualizacoes-teaser" hidden aria-haspopup="dialog">
             <span class="inicio-novidades-kicker">Atualizações</span>
-            <strong id="inicio-atualizacoes-teaser-title">Novidades médicas da semana</strong>
-            <span id="inicio-atualizacoes-teaser-text" class="muted">Protocolos e condutas que podem cair em prova — toque para ver todas.</span>
+            <strong id="inicio-atualizacoes-teaser-title">Novidades · Semana</strong>
+            <span id="inicio-atualizacoes-teaser-text" class="inicio-atualizacoes-teaser-meta">Toque para abrir</span>
           </button>
 
           <div class="aprova-install-banner" data-aprova-install-banner hidden>
@@ -1143,6 +1143,25 @@
     </div>
   </div>
 
+  <div id="atualizacoes-modal" class="aprova-modal" hidden>
+    <div class="aprova-modal-backdrop" data-atualizacoes-modal-close></div>
+    <div class="aprova-modal-panel atualizacoes-modal-panel" role="dialog" aria-modal="true" aria-labelledby="atualizacoes-modal-title">
+      <div class="aprova-modal-head">
+        <div>
+          <p class="inicio-novidades-kicker" style="margin:0 0 0.2rem">Atualizações</p>
+          <h3 id="atualizacoes-modal-title" class="esp-decks-title" style="margin:0">Novidades médicas</h3>
+        </div>
+        <button type="button" class="btn btn-ghost btn-compact" data-atualizacoes-modal-close aria-label="Fechar">✕</button>
+      </div>
+      <p class="muted" style="margin:0.35rem 0 0.85rem">Toque em cada card para ler o resumo completo. O acervo é acumulativo.</p>
+      <div id="atualizacoes-modal-body" class="atualizacoes-root"></div>
+      <div class="aprova-modal-actions" style="margin-top:1.1rem">
+        <button type="button" class="btn btn-ghost" data-atualizacoes-modal-close>Fechar</button>
+        <button type="button" class="btn btn-primary" id="atualizacoes-modal-open-tab">Abrir aba Atualizações</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Fora do app-shell para não herdar hidden/stacking e o quadro abrir sobre o app -->
   <div id="welcome-mascot-modal" class="aprova-modal" hidden>
     <div class="aprova-modal-backdrop" data-welcome-mascot-close></div>
@@ -1300,7 +1319,7 @@
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260724upd1"></script>
+  <script src="js/app-qui.js?v=20260724upd2"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>
