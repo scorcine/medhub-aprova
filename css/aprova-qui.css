@@ -2292,15 +2292,129 @@ html[data-theme="dark"] #q-card .q-stem .q-hl {
 }
 
 .study-card .answer {
-  margin: 0 0 1rem;
-  padding-top: 0.9rem;
+  margin: 0 0 1.1rem;
+  padding-top: 0.95rem;
   border-top: 1px solid var(--line);
-  color: var(--ink-soft);
+  color: var(--ink);
   font-weight: 500;
 }
 
 .study-card .answer[hidden] {
   display: none;
+}
+
+.fc-answer {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.fc-answer-plain {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.fc-answer-keys {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.fc-answer-keys li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line-strong));
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.fc-answer-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.fc-answer-point {
+  position: relative;
+  margin: 0;
+  padding: 0.55rem 0.75rem 0.55rem 1.05rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ink) 3%, var(--panel));
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.fc-answer-point::before {
+  content: "";
+  position: absolute;
+  left: 0.45rem;
+  top: 0.85rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.fc-answer-point--labeled {
+  display: grid;
+  gap: 0.2rem;
+  padding-left: 0.85rem;
+}
+
+.fc-answer-point--labeled::before {
+  display: none;
+}
+
+.fc-answer-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  font-family: var(--font-display);
+}
+
+.fc-answer-value {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  font-weight: 550;
+}
+
+#fc-card .fc-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+#fc-card .fc-actions #fc-reveal,
+#fc-card .fc-actions #fc-back-hoje,
+#fc-card .fc-actions #fc-back-browse,
+#fc-card .fc-actions #fc-back-esp {
+  grid-column: 1 / -1;
+}
+
+#fc-card .fc-actions .btn {
+  width: 100%;
+  justify-content: center;
 }
 
 .actions-row {

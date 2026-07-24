@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260721pwa1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724fc1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -40,8 +40,7 @@
       <h1>Entre para estudar</h1>
       <p>Acesse sua conta MedHub R1 para abrir o painel de estudo.</p>
       <p class="muted" style="margin:0 0 0.85rem;font-size:0.9rem">
-        Conta neste aparelho: se você se cadastrou no computador, no celular é preciso
-        <a href="cadastro.html">cadastrar de novo</a> com o mesmo e-mail e senha (ainda sem sincronização entre dispositivos).
+        Mesmo e-mail e senha no celular e no computador. Se for a primeira vez neste aparelho, entre normalmente — a conta é criada/sincronizada sozinha.
       </p>
       <form class="signup-form" id="gate-login-form" autocomplete="on">
         <label class="field">
@@ -453,8 +452,8 @@
           <div class="study-card" id="fc-card" hidden>
             <div class="label" id="fc-deck-label">Deck</div>
             <p class="prompt" id="fc-front">—</p>
-            <p class="answer" id="fc-back" hidden>—</p>
-            <div class="actions-row">
+            <div class="answer" id="fc-back" hidden></div>
+            <div class="actions-row fc-actions">
               <button type="button" class="btn btn-ghost" id="fc-reveal">Mostrar resposta</button>
               <button type="button" class="btn btn-primary" id="fc-easy" hidden>Acertei</button>
               <button type="button" class="btn btn-ghost" id="fc-hard" hidden>Errei</button>
@@ -1238,21 +1237,22 @@
   </div>
 
   <script src="js/theme.js?v=20260718dd"></script>
-  <script src="js/install.js?v=20260721pwa1"></script>
-  <script src="js/access.js?v=20260721cup1"></script>
-  <script src="js/auth.js?v=20260722auth1"></script>
-  <script src="js/profile.js?v=20260722cirstage6"></script>
+  <script src="js/install.js?v=20260722pwa3"></script>
+  <script src="js/access.js?v=20260722cloud4"></script>
+  <script src="js/auth-cloud.js?v=20260722cloud4"></script>
+  <script src="js/auth.js?v=20260722cloud4"></script>
+  <script src="js/profile.js?v=20260722cirdist1"></script>
   <script src="js/focus.js?v=20260721foco1"></script>
   <script src="js/plan.js?v=20260719h"></script>
   <script src="js/tasks.js?v=20260721studymode1"></script>
   <script src="js/schedule.js?v=20260721reset1"></script>
   <script src="js/exam-stats.js?v=20260721rev1"></script>
   <script src="js/flashcards.js?v=20260721acc1"></script>
-  <script src="js/questions-qui.js?v=20260722cirstage6"></script>
+  <script src="js/questions-qui.js?v=20260722cirdist1"></script>
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260722cirstage6"></script>
+  <script src="js/app-qui.js?v=20260724fc1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

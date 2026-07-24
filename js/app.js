@@ -4463,6 +4463,78 @@ function aprovaRenderConfig () {
   }
 }
 
+function aprovaEscapeHtml (value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** Converte verso "a · b · Conduta: x" em layout limpo (chips + lista). */
+function aprovaFormatFlashcardBack (raw) {
+  const text = String(raw || "").trim();
+  if (!text) return "";
+  if (!/\s·\s/.test(text)) {
+    return "<p class=\"fc-answer-plain\">" + aprovaEscapeHtml(text) + "</p>";
+  }
+
+  const parts = text.split(/\s*·\s*/).map((p) => p.trim()).filter(Boolean);
+  if (parts.length <= 1) {
+    return "<p class=\"fc-answer-plain\">" + aprovaEscapeHtml(text) + "</p>";
+  }
+
+  const chips = [];
+  let i = 0;
+  while (i < parts.length) {
+    const part = parts[i];
+    const words = part.split(/\s+/).filter(Boolean).length;
+    const isChip = part.indexOf(":") < 0 && words <= 4 && part.length <= 42;
+    if (isChip && chips.length < 6) {
+      chips.push(part);
+      i += 1;
+      continue;
+    }
+    break;
+  }
+
+  const rest = parts.slice(i);
+  if (chips.length === 1) {
+    rest.unshift(chips.pop());
+  }
+
+  let html = "<div class=\"fc-answer\">";
+  if (chips.length >= 2) {
+    html += "<ul class=\"fc-answer-keys\" aria-label=\"Pontos-chave\">";
+    chips.forEach((chip) => {
+      html += "<li>" + aprovaEscapeHtml(chip) + "</li>";
+    });
+    html += "</ul>";
+  }
+
+  if (rest.length) {
+    html += "<ul class=\"fc-answer-points\">";
+    rest.forEach((part) => {
+      const colon = part.indexOf(":");
+      if (colon > 0 && colon <= 34) {
+        const label = part.slice(0, colon).trim();
+        const value = part.slice(colon + 1).trim();
+        html +=
+          "<li class=\"fc-answer-point fc-answer-point--labeled\">" +
+          "<span class=\"fc-answer-label\">" + aprovaEscapeHtml(label) + "</span>" +
+          "<span class=\"fc-answer-value\">" + aprovaEscapeHtml(value) + "</span>" +
+          "</li>";
+      } else {
+        html += "<li class=\"fc-answer-point\">" + aprovaEscapeHtml(part) + "</li>";
+      }
+    });
+    html += "</ul>";
+  }
+
+  html += "</div>";
+  return html;
+}
+
 function aprovaRenderFlashcard () {
   const studyCard = document.getElementById("fc-card");
   if (studyCard && studyCard.hidden) return;
@@ -4488,8 +4560,10 @@ function aprovaRenderFlashcard () {
     front.textContent = fromDeck
       ? "Sem cards novos ou vencidos neste tema agora. Os que você já fez voltam só na data de revisão."
       : "Nada pendente — agenda em dia.";
-    back.hidden = true;
-    back.textContent = "";
+    if (back) {
+      back.hidden = true;
+      back.innerHTML = "";
+    }
     revealBtn.hidden = true;
     easyBtn.hidden = true;
     hardBtn.hidden = true;
@@ -4507,8 +4581,10 @@ function aprovaRenderFlashcard () {
   const left = AprovaFlashcards.remaining();
   label.textContent = card.deckName + " · " + left + " restante" + (left === 1 ? "" : "s");
   front.textContent = card.front;
-  back.textContent = card.back;
-  back.hidden = !AprovaFlashcards.revealed;
+  if (back) {
+    back.innerHTML = aprovaFormatFlashcardBack(card.back);
+    back.hidden = !AprovaFlashcards.revealed;
+  }
   revealBtn.hidden = AprovaFlashcards.revealed;
   easyBtn.hidden = !AprovaFlashcards.revealed;
   hardBtn.hidden = !AprovaFlashcards.revealed;
