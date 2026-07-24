@@ -4439,6 +4439,57 @@ function aprovaBuildAtualizacoesHtml (data, filter) {
   return { html, total, latestCount, weeks, latest: weeks[0] || null };
 }
 
+function aprovaPaintInicioTitleCards (data) {
+  const block = document.getElementById("inicio-atualizacoes-block");
+  const cardsRoot = document.getElementById("inicio-atualizacoes-cards");
+  if (!block || !cardsRoot) return;
+
+  const weeks = aprovaNormalizeNovidadesWeeks(data);
+  const latest = weeks[0];
+  const items = latest && Array.isArray(latest.items)
+    ? latest.items.filter((it) => it && (it.title || it.summary || it.text))
+    : [];
+
+  if (!items.length) {
+    block.hidden = true;
+    cardsRoot.innerHTML = "";
+    return;
+  }
+
+  block.hidden = false;
+  cardsRoot.innerHTML = items.map((it, ii) => {
+    const key = "0-" + ii;
+    const area = it.area
+      ? "<span class=\"inicio-novidades-area\">" + aprovaEscapeHtml(it.area) + "</span>"
+      : "";
+    return (
+      "<button type=\"button\" class=\"inicio-atualizacao-title-card\" data-atualizacao-focus=\"" +
+        aprovaEscapeHtml(key) + "\" aria-haspopup=\"dialog\">" +
+        area +
+        "<strong>" + aprovaEscapeHtml(it.title || "Atualização") + "</strong>" +
+        "<span class=\"inicio-atualizacao-title-hint\">Toque para ler</span>" +
+      "</button>"
+    );
+  }).join("");
+}
+
+function aprovaFocusAtualizacaoInModal (focusKey) {
+  const modalBody = document.getElementById("atualizacoes-modal-body");
+  if (!modalBody) return;
+  modalBody.querySelectorAll("details.inicio-novidades-details").forEach((d) => {
+    d.open = false;
+  });
+  if (!focusKey) return;
+  const detail = document.getElementById("novidade-detail-" + focusKey);
+  const details = detail && detail.closest("details");
+  if (details) {
+    details.open = true;
+    try {
+      details.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } catch (e) { /* ignore */ }
+  }
+}
+
 function aprovaPaintAtualizacoes (data) {
   const root = document.getElementById("atualizacoes-root");
   const built = aprovaBuildAtualizacoesHtml(data, aprovaAtualizacoesFilter);
@@ -4459,6 +4510,8 @@ function aprovaPaintAtualizacoes (data) {
       "<p class=\"muted\">Ainda não há atualizações cadastradas.</p>";
   }
 
+  aprovaPaintInicioTitleCards(data);
+
   const preview = document.getElementById("dash-atualizacoes-preview");
   const teaser = document.getElementById("inicio-atualizacoes-teaser");
   const teaserTitle = document.getElementById("inicio-atualizacoes-teaser-title");
@@ -4474,7 +4527,6 @@ function aprovaPaintAtualizacoes (data) {
       : "Protocolos e condutas novas que podem cair em prova.";
   }
   if (teaser) {
-    teaser.hidden = !totalAll;
     const weekBit = latest && latest.label
       ? String(latest.label).replace(/^Semana\s+de\s+/i, "Semana de ")
       : "Semana";
@@ -4489,12 +4541,13 @@ function aprovaPaintAtualizacoes (data) {
   }
 }
 
-function aprovaOpenAtualizacoesModal () {
+function aprovaOpenAtualizacoesModal (focusKey) {
   const modal = document.getElementById("atualizacoes-modal");
   if (!modal) return;
   aprovaLoadNovidades().then(() => {
     modal.hidden = false;
     document.body.classList.add("aprova-modal-open");
+    window.setTimeout(() => aprovaFocusAtualizacaoInModal(focusKey || ""), 40);
   });
 }
 
@@ -4509,6 +4562,15 @@ function aprovaBindAtualizacoesModal () {
   if (teaser && !teaser.dataset.bound) {
     teaser.dataset.bound = "1";
     teaser.addEventListener("click", () => aprovaOpenAtualizacoesModal());
+  }
+  const cardsRoot = document.getElementById("inicio-atualizacoes-cards");
+  if (cardsRoot && !cardsRoot.dataset.bound) {
+    cardsRoot.dataset.bound = "1";
+    cardsRoot.addEventListener("click", (ev) => {
+      const btn = ev.target.closest("[data-atualizacao-focus]");
+      if (!btn) return;
+      aprovaOpenAtualizacoesModal(btn.getAttribute("data-atualizacao-focus") || "");
+    });
   }
   document.querySelectorAll("[data-atualizacoes-modal-close]").forEach((el) => {
     if (el.dataset.bound) return;
@@ -4543,7 +4605,7 @@ function aprovaRenderAtualizacoesPanel () {
 function aprovaLoadNovidades () {
   aprovaBindAtualizacoesModal();
   if (!aprovaNovidadesPromise) {
-    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd2")
+    aprovaNovidadesPromise = fetch("data/novidades.json?v=20260724upd3")
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
   }
