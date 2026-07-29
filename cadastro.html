@@ -55,7 +55,7 @@
     <section class="auth-panel" aria-labelledby="signup-title">
       <p class="auth-kicker">Conta MedHub R1</p>
       <h1 id="signup-title">Crie sua conta</h1>
-      <p class="auth-lead">Cadastre-se para salvar sua rotina de estudo, revisar com agenda inteligente e treinar para as provas de residência.</p>
+      <p class="auth-lead">Cadastre-se uma vez — a mesma conta funciona no celular e no computador. Cupom de embaixador é opcional.</p>
       <p class="pricing-note" id="signup-plan-note" hidden></p>
 
       <form class="signup-form" id="signup-form" autocomplete="on">
@@ -122,24 +122,43 @@
   </footer>
 
   <script src="js/theme.js"></script>
-  <script src="js/install.js?v=20260721pwa1"></script>
-  <script src="js/access.js?v=20260721cup1"></script>
-  <script src="js/auth.js?v=20260722auth1"></script>
+  <script src="js/install.js?v=20260722pwa3"></script>
+  <script src="js/access.js?v=20260729stripe1"></script>
+  <script src="js/auth-cloud.js?v=20260729stripe1"></script>
+  <script src="js/auth.js?v=20260729stripe1"></script>
+  <script src="js/billing.js?v=20260729stripe1"></script>
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
       var plano = params.get("plano") || "";
+      var checkout = params.get("checkout") || "";
       var labels = {
-        free: "Plano Free — R$ 0",
-        "pro-mensal": "Plano Pro Mensal — R$ 59/mês (lançamento)",
-        "pro-anual": "Plano Pro Anual — R$ 447/ano (melhor custo · lançamento)"
+        free: "Plano Free — R$ 0. Crie a conta e comece a estudar.",
+        "pro-mensal": "Plano Pro Mensal — R$ 59/mês. Após cadastrar, você será levado ao pagamento seguro (Stripe).",
+        "pro-anual": "Plano Pro Anual — R$ 447/ano. Após cadastrar, você será levado ao pagamento seguro (Stripe)."
       };
       var note = document.getElementById("signup-plan-note");
-      if (!note || !labels[plano]) return;
-      note.hidden = false;
-      note.textContent = labels[plano] + ". Pagamento online em breve — você entra na lista com este valor.";
+      if (note && labels[plano]) {
+        note.hidden = false;
+        note.textContent = labels[plano];
+        if (checkout === "cancel") {
+          note.textContent += " Pagamento cancelado — você pode tentar de novo ao concluir o cadastro (ou se já tiver conta, use Assinar na home).";
+        }
+      }
+      if (typeof aprovaBillingRememberPlan === "function") aprovaBillingRememberPlan(plano);
+
+      // Já logado + plano pago → checkout direto
       try {
-        localStorage.setItem("medhub-aprova-plan-interest-v1", JSON.stringify({ plano: plano, ts: Date.now() }));
+        var session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
+        var token = typeof aprovaCloudLoadToken === "function" ? aprovaCloudLoadToken() : "";
+        var paid = typeof aprovaBillingNormalizePlan === "function" ? aprovaBillingNormalizePlan(plano) : "";
+        if (session && session.login && token && paid && checkout !== "cancel") {
+          if (note) {
+            note.hidden = false;
+            note.textContent = "Conta encontrada. Redirecionando ao pagamento…";
+          }
+          void aprovaBillingStartCheckout(paid);
+        }
       } catch (e) {}
     })();
   </script>

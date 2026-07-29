@@ -1,4 +1,4 @@
-/* Login / cadastro local (protótipo) — localStorage */
+/* Login / cadastro — nuvem (celular + PC) com cache local */
 
 const APROVA_AUTH_KEY = "medhub-aprova-auth-v1";
 const APROVA_USERS_KEY = "medhub-aprova-users-v1";
@@ -68,98 +68,252 @@ function aprovaRenderAuth () {
   }
 }
 
-function aprovaRegister (login, password, extras) {
+function aprovaFinishSession (login, name, msg, ok) {
+  aprovaSaveAuth({ login: String(login).trim(), name: name || login, at: Date.now() });
+  aprovaShowAuthMsg(msg || "", Boolean(ok));
+  return Boolean(ok);
+}
+
+async function aprovaPushLocalUserToCloud (login, password, migrate) {
+  if (typeof aprovaCloudRegister !== "function") {
+    return { ok: false, unavailable: true };
+  }
+  const users = aprovaLoadUsers();
+  const u = users[String(login).toLowerCase()];
+  if (!u) return { ok: false, msg: "Usuário local ausente." };
+  return aprovaCloudRegister({
+    email: u.login || login,
+    password,
+    name: u.name || login,
+    phone: u.phone || "",
+    plan: u.plan || "free",
+    planUntil: u.planUntil || null,
+    grantedAt: u.grantedAt || null,
+    coupon: u.coupon || null,
+    embassador: u.embassador || "",
+    migrate: Boolean(migrate),
+    // Na migração a partir do login local, a senha digitada vira a da nuvem
+    replacePassword: Boolean(migrate)
+  });
+}
+
+async function aprovaRegister (login, password, extras) {
+  aprovaShowAuthMsg("Criando conta…", true);
+
+  let result = null;
   if (typeof aprovaAccessClaimOrRegister === "function") {
-    const result = aprovaAccessClaimOrRegister(login, password, extras || {});
+    result = aprovaAccessClaimOrRegister(login, password, extras || {});
     if (!result.ok) {
       aprovaShowAuthMsg(result.msg, false);
       return false;
     }
-    const name = String(extras?.name || "").trim() || login;
-    aprovaSaveAuth({ login: String(login).trim(), name, at: Date.now() });
-    aprovaShowAuthMsg(result.msg, true);
-    return true;
+  } else {
+    const name = String(extras?.name || "").trim();
+    if (!login || !password) {
+      aprovaShowAuthMsg("Informe e-mail e senha para cadastrar.", false);
+      return false;
+    }
+    if (password.length < 4) {
+      aprovaShowAuthMsg("A senha precisa ter ao menos 4 caracteres.", false);
+      return false;
+    }
+    const users = aprovaLoadUsers();
+    const key = login.toLowerCase();
+    if (users[key] && users[key].password && users[key].status !== "pending") {
+      aprovaShowAuthMsg("Este e-mail já está cadastrado. Use Entrar.", false);
+      return false;
+    }
+    users[key] = {
+      login,
+      password,
+      name: name || login,
+      phone: String(extras?.phone || "").trim(),
+      plan: users[key]?.plan || "free",
+      planUntil: users[key]?.planUntil || null,
+      status: "active",
+      createdAt: users[key]?.createdAt || Date.now(),
+      grantedAt: users[key]?.grantedAt || null
+    };
+    aprovaSaveUsers(users);
+    result = { ok: true, msg: "Cadastro feito. Bem-vindo!", user: users[key] };
   }
 
-  const name = String(extras?.name || "").trim();
-  if (!login || !password) {
-    aprovaShowAuthMsg("Informe e-mail e senha para cadastrar.", false);
-    return false;
-  }
-  if (password.length < 4) {
-    aprovaShowAuthMsg("A senha precisa ter ao menos 4 caracteres.", false);
+  const name = String(extras?.name || result?.user?.name || "").trim() || login;
+  const cloud = await aprovaPushLocalUserToCloud(login, password, Boolean(result?.upgraded));
+
+  if (cloud.unavailable) {
+    if (typeof aprovaCloudIsLocalDev === "function" && aprovaCloudIsLocalDev()) {
+      return aprovaFinishSession(login, name, result.msg + " (só neste computador — em produção a conta sincroniza).", true);
+    }
+    aprovaShowAuthMsg(
+      cloud.msg ||
+        "Não foi possível sincronizar sua conta na nuvem. Verifique a internet e tente de novo.",
+      false
+    );
     return false;
   }
 
-  const users = aprovaLoadUsers();
-  const key = login.toLowerCase();
-  if (users[key] && users[key].password && users[key].status !== "pending") {
-    aprovaShowAuthMsg("Este e-mail já está cadastrado. Use Entrar.", false);
+  if (!cloud.ok && cloud.code === "EXISTS") {
+    // Já existe na nuvem: tenta entrar com a mesma senha
+    const loginCloud = typeof aprovaCloudLogin === "function"
+      ? await aprovaCloudLogin(login, password)
+      : { ok: false };
+    if (loginCloud.ok) {
+      return aprovaFinishSession(
+        login,
+        loginCloud.user?.name || name,
+        "Conta já existia — sessão iniciada em todos os aparelhos.",
+        true
+      );
+    }
+    aprovaShowAuthMsg(cloud.msg || "Este e-mail já está cadastrado. Use Entrar.", false);
     return false;
   }
 
-  users[key] = {
-    login,
-    password,
-    name: name || login,
-    phone: String(extras?.phone || "").trim(),
-    plan: users[key]?.plan || "free",
-    planUntil: users[key]?.planUntil || null,
-    status: "active",
-    createdAt: users[key]?.createdAt || Date.now(),
-    grantedAt: users[key]?.grantedAt || null
-  };
-  aprovaSaveUsers(users);
-  aprovaSaveAuth({ login, name: users[key].name, at: Date.now() });
-  aprovaShowAuthMsg("Cadastro feito. Bem-vindo!", true);
-  return true;
+  if (!cloud.ok) {
+    aprovaShowAuthMsg(cloud.msg || "Não foi possível criar a conta na nuvem.", false);
+    return false;
+  }
+
+  return aprovaFinishSession(login, cloud.user?.name || name, result.msg || "Cadastro feito. Bem-vindo!", true);
 }
 
-function aprovaLogin (login, password, extras) {
-  if (!login || !password) {
-    aprovaShowAuthMsg("Informe e-mail e senha.", false);
-    return false;
-  }
-
-  const users = aprovaLoadUsers();
-  const user = users[login.toLowerCase()];
-  if (!user || (!user.password && user.status === "pending")) {
-    aprovaShowAuthMsg(
-      user?.status === "pending"
-        ? "Seu acesso foi liberado — complete o cadastro em Cadastre-se."
-        : "Conta não encontrada neste aparelho. O login ainda não sincroniza entre celular e computador — toque em Cadastre-se e use o mesmo e-mail e senha neste dispositivo.",
-      false
-    );
-    return false;
-  }
-  if (user.password !== password) {
-    aprovaShowAuthMsg(
-      "Senha incorreta neste aparelho. Se você criou a conta em outro dispositivo, cadastre-se de novo aqui com o mesmo e-mail e senha.",
-      false
-    );
-    return false;
-  }
-
-  // Convite (?convite=) ou cupom (?cupom= / campo) — aplica plano em conta free/trial.
+async function aprovaLoginApplyExtras (login, extras) {
   let grantMsg = "";
   const grant = extras?.grant || null;
   if (grant && typeof aprovaAccessApplyInviteOnLogin === "function") {
     const applied = aprovaAccessApplyInviteOnLogin(login, grant);
     if (applied && !applied.ok) {
-      aprovaShowAuthMsg(applied.msg || "Não foi possível aplicar o convite.", false);
-      return false;
+      return { ok: false, msg: applied.msg || "Não foi possível aplicar o convite." };
     }
-    if (applied && applied.ok) grantMsg = " " + (applied.msg || "Plano liberado.");
+    if (applied && applied.ok) {
+      grantMsg = " " + (applied.msg || "Plano liberado.");
+      const fresh = aprovaLoadUsers()[String(login).toLowerCase()];
+      if (fresh && typeof aprovaCloudSyncProfile === "function") {
+        void aprovaCloudSyncProfile(login, {
+          plan: fresh.plan,
+          planUntil: fresh.planUntil,
+          grantedAt: fresh.grantedAt,
+          coupon: fresh.coupon,
+          embassador: fresh.embassador,
+          name: fresh.name,
+          phone: fresh.phone
+        });
+      }
+    }
   }
   const coupon = String(extras?.coupon || "").trim();
   if (coupon && typeof aprovaAccessApplyCoupon === "function") {
     const applied = aprovaAccessApplyCoupon(login, coupon);
     if (!applied.ok) {
-      aprovaShowAuthMsg(applied.msg || "Não foi possível aplicar o cupom.", false);
-      return false;
+      return { ok: false, msg: applied.msg || "Não foi possível aplicar o cupom." };
     }
     grantMsg = " " + (applied.msg || "Cupom aplicado.");
+    const fresh = aprovaLoadUsers()[String(login).toLowerCase()];
+    if (fresh && typeof aprovaCloudSyncProfile === "function") {
+      void aprovaCloudSyncProfile(login, {
+        plan: fresh.plan,
+        planUntil: fresh.planUntil,
+        grantedAt: fresh.grantedAt,
+        coupon: fresh.coupon,
+        embassador: fresh.embassador
+      });
+    }
   }
+  return { ok: true, grantMsg };
+}
+
+async function aprovaLogin (login, password, extras) {
+  if (!login || !password) {
+    aprovaShowAuthMsg("Informe e-mail e senha.", false);
+    return false;
+  }
+
+  aprovaShowAuthMsg("Entrando…", true);
+
+  let cloud = null;
+  // 1) Nuvem primeiro (funciona em qualquer aparelho)
+  if (typeof aprovaCloudLogin === "function") {
+    cloud = await aprovaCloudLogin(login, password);
+    if (cloud.ok && cloud.user) {
+      const applied = await aprovaLoginApplyExtras(login, extras);
+      if (!applied.ok) {
+        aprovaShowAuthMsg(applied.msg, false);
+        return false;
+      }
+      const access = aprovaCheckAccess(login);
+      if (!access.ok) {
+        aprovaSaveAuth(null);
+        aprovaShowAuthMsg(access.msg || "Seu acesso expirou.", false);
+        return false;
+      }
+      const fresh = aprovaLoadUsers()[login.toLowerCase()] || cloud.user;
+      return aprovaFinishSession(
+        fresh.login || login,
+        fresh.name || cloud.user.name || login,
+        "Sessão iniciada." + (applied.grantMsg || ""),
+        true
+      );
+    }
+  }
+
+  // 2) Conta local antiga neste aparelho → entra e sincroniza na nuvem
+  const users = aprovaLoadUsers();
+  const user = users[login.toLowerCase()];
+  const hasLocal = Boolean(user && user.password && user.status !== "pending");
+
+  if (cloud && !cloud.unavailable && cloud.code === "BAD_PASSWORD" && !hasLocal) {
+    aprovaShowAuthMsg("Senha incorreta.", false);
+    return false;
+  }
+
+  if (!hasLocal) {
+    if (user?.status === "pending") {
+      aprovaShowAuthMsg("Seu acesso foi liberado — complete o cadastro em Cadastre-se.", false);
+      return false;
+    }
+    if (cloud && cloud.code === "BAD_PASSWORD") {
+      aprovaShowAuthMsg("Senha incorreta.", false);
+      return false;
+    }
+    if (cloud && cloud.http >= 500) {
+      aprovaShowAuthMsg(cloud.msg || "Servidor indisponível. Tente de novo em instantes.", false);
+      return false;
+    }
+    if (cloud && cloud.code === "NETWORK") {
+      aprovaShowAuthMsg(cloud.msg || "Sem conexão. Verifique a internet e tente de novo.", false);
+      return false;
+    }
+    // 3) Conta ainda não existe na nuvem → cria sozinha (sem admin)
+    if (password.length < 4) {
+      aprovaShowAuthMsg("A senha precisa ter ao menos 4 caracteres.", false);
+      return false;
+    }
+    const nameGuess = String(extras?.name || "")
+      .trim() ||
+      String(login).split("@")[0].replace(/[._-]+/g, " ").trim() ||
+      login;
+    aprovaShowAuthMsg("Primeira vez — criando sua conta…", true);
+    const created = await aprovaRegister(login, password, {
+      name: nameGuess,
+      phone: String(extras?.phone || "").trim(),
+      grant: extras?.grant || null,
+      coupon: extras?.coupon || ""
+    });
+    return created;
+  }
+
+  if (user.password !== password) {
+    aprovaShowAuthMsg("Senha incorreta.", false);
+    return false;
+  }
+
+  const applied = await aprovaLoginApplyExtras(login, extras);
+  if (!applied.ok) {
+    aprovaShowAuthMsg(applied.msg, false);
+    return false;
+  }
+  let grantMsg = applied.grantMsg || "";
 
   const access = aprovaCheckAccess(user.login);
   if (!access.ok) {
@@ -168,10 +322,15 @@ function aprovaLogin (login, password, extras) {
     return false;
   }
 
+  const migrate = await aprovaPushLocalUserToCloud(login, password, true);
+  if (migrate.ok) {
+    grantMsg += " Conta pronta no celular e no computador.";
+  } else if (!migrate.unavailable && migrate.msg) {
+    grantMsg += " (" + migrate.msg + ")";
+  }
+
   const fresh = aprovaLoadUsers()[login.toLowerCase()] || user;
-  aprovaSaveAuth({ login: fresh.login, name: fresh.name || fresh.login, at: Date.now() });
-  aprovaShowAuthMsg("Sessão iniciada." + grantMsg, true);
-  return true;
+  return aprovaFinishSession(fresh.login, fresh.name || fresh.login, "Sessão iniciada." + grantMsg, true);
 }
 
 /** Lista/atualiza plano do usuário (admin / gates futuras). */
@@ -220,8 +379,8 @@ function aprovaCheckAccess (login) {
       expired: true,
       plan: plan.plan,
       msg: wasTrial
-        ? "Seu teste grátis de 10 dias acabou. Para continuar, fale conosco em medhubr1@gmail.com."
-        : "Seu acesso expirou. Fale conosco em medhubr1@gmail.com para renovar."
+        ? "Seu teste grátis de 10 dias acabou. Assine o Pro em medhubr1.com.br (#planos) ou fale em medhubr1@gmail.com."
+        : "Seu acesso expirou. Renove o Pro em medhubr1.com.br (#planos) ou fale em medhubr1@gmail.com."
     };
   }
   return {
@@ -307,14 +466,25 @@ function aprovaMaybeShowTrialWarning () {
   banner.hidden = false;
   banner.innerHTML =
     "<strong>Teste grátis</strong>" +
-    "<p>" + text + " Dúvidas: <a href=\"mailto:medhubr1@gmail.com\">medhubr1@gmail.com</a>.</p>" +
+    "<p>" + text + "</p>" +
     "<div class=\"actions-row\">" +
+    "<button type=\"button\" class=\"btn btn-primary btn-compact\" id=\"trial-access-banner-subscribe\">Assinar Pro</button>" +
     "<button type=\"button\" class=\"btn btn-ghost btn-compact\" id=\"trial-access-banner-dismiss\">Entendi</button>" +
     "</div>";
   const dismiss = document.getElementById("trial-access-banner-dismiss");
   if (dismiss) {
     dismiss.addEventListener("click", () => {
       banner.hidden = true;
+    });
+  }
+  const sub = document.getElementById("trial-access-banner-subscribe");
+  if (sub) {
+    sub.addEventListener("click", () => {
+      if (typeof aprovaBillingStartCheckout === "function") {
+        void aprovaBillingStartCheckout("pro-anual");
+      } else {
+        window.location.href = "index.html#planos";
+      }
     });
   }
 }
@@ -422,7 +592,14 @@ function aprovaBootSignupPage () {
     }
   }
 
-  form.addEventListener("submit", (event) => {
+  let planoFromUrl = "";
+  try {
+    planoFromUrl = String(new URLSearchParams(window.location.search).get("plano") || "").trim();
+  } catch {
+    planoFromUrl = "";
+  }
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const name = String(form.name?.value || "").trim();
     const login = String(form.login?.value || "").trim();
@@ -430,24 +607,40 @@ function aprovaBootSignupPage () {
     const password2 = String(form.password2?.value || "");
     const phone = String(form.phone?.value || "").trim();
     const coupon = String(form.coupon?.value || couponInput?.value || "").trim();
+    const submitBtn = form.querySelector("[type=\"submit\"]");
+    if (submitBtn) submitBtn.disabled = true;
 
-    if (!name) {
-      aprovaShowAuthMsg("Informe seu nome.", false);
-      return;
-    }
-    if (password !== password2) {
-      aprovaShowAuthMsg("As senhas não coincidem.", false);
-      return;
-    }
-    if (grantFromUrl && grantFromUrl.email !== login.toLowerCase()) {
-      aprovaShowAuthMsg("Use o e-mail para o qual o acesso foi liberado.", false);
-      return;
-    }
-    if (!aprovaRegister(login, password, { name, phone, grant: grantFromUrl, coupon })) return;
+    try {
+      if (!name) {
+        aprovaShowAuthMsg("Informe seu nome.", false);
+        return;
+      }
+      if (password !== password2) {
+        aprovaShowAuthMsg("As senhas não coincidem.", false);
+        return;
+      }
+      if (grantFromUrl && grantFromUrl.email !== login.toLowerCase()) {
+        aprovaShowAuthMsg("Use o e-mail para o qual o acesso foi liberado.", false);
+        return;
+      }
+      const ok = await aprovaRegister(login, password, { name, phone, grant: grantFromUrl, coupon });
+      if (!ok) return;
 
-    window.setTimeout(() => {
-      window.location.href = "app.html";
-    }, 600);
+      const paidPlan =
+        typeof aprovaBillingNormalizePlan === "function"
+          ? aprovaBillingNormalizePlan(planoFromUrl)
+          : "";
+      if (paidPlan && typeof aprovaBillingAfterSignup === "function") {
+        await aprovaBillingAfterSignup(paidPlan);
+        return;
+      }
+
+      window.setTimeout(() => {
+        window.location.href = "app.html";
+      }, 600);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   return true;
@@ -483,16 +676,23 @@ function aprovaBootGateLogin () {
     couponInput.value = couponFromUrl.toUpperCase();
   }
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
     const coupon = String(form.coupon?.value || couponFromUrl || "").trim();
-    if (!aprovaLogin(login, password, {
-      grant: aprovaReadGrantFromUrl(),
-      coupon
-    })) return;
-    form.reset();
-    aprovaEnterAppAfterLogin();
+    const submitBtn = form.querySelector("[type=\"submit\"]");
+    if (submitBtn) submitBtn.disabled = true;
+    try {
+      const ok = await aprovaLogin(login, password, {
+        grant: aprovaReadGrantFromUrl(),
+        coupon
+      });
+      if (!ok) return;
+      form.reset();
+      aprovaEnterAppAfterLogin();
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   return true;
@@ -505,21 +705,29 @@ function aprovaBootAuth () {
   const form = document.getElementById("auth-form");
   const logoutBtn = document.getElementById("auth-logout");
 
-  form?.addEventListener("submit", (event) => {
+  form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const { login, password } = aprovaReadCredentials(form);
     const coupon = String(form.coupon?.value || aprovaReadCouponFromUrl() || "").trim();
-    if (!aprovaLogin(login, password, {
-      grant: aprovaReadGrantFromUrl(),
-      coupon
-    })) return;
-    form.reset();
-    aprovaRenderAuth();
-    aprovaEnterAppAfterLogin();
+    const submitBtn = form.querySelector("[type=\"submit\"]");
+    if (submitBtn) submitBtn.disabled = true;
+    try {
+      const ok = await aprovaLogin(login, password, {
+        grant: aprovaReadGrantFromUrl(),
+        coupon
+      });
+      if (!ok) return;
+      form.reset();
+      aprovaRenderAuth();
+      aprovaEnterAppAfterLogin();
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   logoutBtn?.addEventListener("click", () => {
     aprovaSaveAuth(null);
+    if (typeof aprovaCloudSaveToken === "function") aprovaCloudSaveToken("");
     aprovaShowAuthMsg("");
     aprovaRenderAuth();
     if (hasGate && typeof aprovaSyncAppAuthUI === "function") {
