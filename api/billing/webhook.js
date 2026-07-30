@@ -1,11 +1,11 @@
-const { cors, json, cloudConfigured } = require("../auth/_lib");
+const { cors, json, cloudConfigured } = require("../../lib/aprova-server");
 const {
   stripeConfigured,
   getStripe,
   planFromPriceId,
   applyEntitlement,
   readRawBody
-} = require("./_lib");
+} = require("../../lib/aprova-billing");
 
 module.exports.config = {
   api: {
@@ -29,9 +29,7 @@ async function entitlementFromSubscription (subscription) {
     stripeCustomerId: String(subscription?.customer || ""),
     stripeSubscriptionId: String(subscription?.id || ""),
     stripePriceId: priceId,
-    status: subscription?.status === "active" || subscription?.status === "trialing"
-      ? "active"
-      : "active"
+    status: "active"
   };
 }
 

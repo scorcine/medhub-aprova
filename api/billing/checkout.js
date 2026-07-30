@@ -6,13 +6,13 @@ const {
   verifyToken,
   getUser,
   readBody
-} = require("../auth/_lib");
+} = require("../../lib/aprova-server");
 const {
   stripeConfigured,
   getStripe,
   resolveCheckoutPlan,
   publicOrigin
-} = require("./_lib");
+} = require("../../lib/aprova-billing");
 
 module.exports = async function handler (req, res) {
   cors(res);

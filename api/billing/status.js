@@ -1,5 +1,5 @@
-const { cors, json } = require("../auth/_lib");
-const { stripeConfigured, resolveCheckoutPlan } = require("./_lib");
+const { cors, json } = require("../../lib/aprova-server");
+const { stripeConfigured, resolveCheckoutPlan } = require("../../lib/aprova-billing");
 
 module.exports = async function handler (req, res) {
   cors(res);
