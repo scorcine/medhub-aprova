@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260803mat1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260803mat2">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -323,7 +323,7 @@
               </button>
               <button type="button" class="hoje-hub-item" data-hoje-pick="material">
                 <span class="hoje-hub-item-label">Material de apoio</span>
-                <span class="hoje-hub-item-hint">5 grandes áreas</span>
+                <span class="hoje-hub-item-hint">Resumos e esquemas · 5 áreas</span>
               </button>
               <button type="button" class="hoje-hub-item is-soon" data-hoje-pick="videos">
                 <span class="hoje-hub-item-label">Vídeos</span>
@@ -475,9 +475,16 @@
                 <button type="button" class="btn btn-ghost btn-compact" id="material-area-back">← Voltar às áreas</button>
               </div>
               <h3 class="hoje-view-title" id="material-area-title" style="margin-top:0">Área</h3>
-              <div class="study-card">
-                <p class="prompt" id="material-area-text">Material desta área em breve no MedHub R1.</p>
+              <p class="muted" id="material-area-count">Temas com resumo e esquema</p>
+              <div class="dash-grid dash-grid--sm" id="material-theme-grid"></div>
+              <p class="muted" id="material-theme-empty" hidden>Ainda não há material nesta área. Em breve no MedHub R1.</p>
+            </div>
+
+            <div id="material-article-wrap" hidden>
+              <div class="actions-row" style="margin-bottom:0.85rem">
+                <button type="button" class="btn btn-ghost btn-compact" id="material-article-back">← Voltar aos temas</button>
               </div>
+              <article class="material-article" id="material-article"></article>
             </div>
           </div>
 
@@ -1366,7 +1373,8 @@
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260803mat1"></script>
+  <script src="js/material.js?v=20260803mat2"></script>
+  <script src="js/app-qui.js?v=20260803mat2"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

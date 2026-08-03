@@ -8,7 +8,7 @@ const APROVA_PANEL_META = {
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   "provas-integra": { title: "Prova na íntegra", sub: "Banca, ano, íntegra ou grande área" },
-  material: { title: "Material de apoio", sub: "Escolha a grande área" },
+  material: { title: "Material de apoio", sub: "Resumos e esquemas por grande área" },
   videos: { title: "Vídeos", sub: "Em construção" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
@@ -5117,39 +5117,6 @@ const APROVA_HOJE_VIEWS = [
   "hoje-view-soon"
 ];
 
-const APROVA_MATERIAL_AREA_LABELS = {
-  clinica: "Clínica médica",
-  cirurgia: "Cirurgia",
-  preventiva: "Preventiva",
-  pediatria: "Pediatria",
-  go: "Ginecologia e obstetrícia"
-};
-
-function aprovaMaterialShowList () {
-  const list = document.getElementById("material-area-list");
-  const detail = document.getElementById("material-area-detail");
-  if (list) list.hidden = false;
-  if (detail) detail.hidden = true;
-}
-
-function aprovaMaterialOpenArea (areaId) {
-  const id = String(areaId || "");
-  const label = APROVA_MATERIAL_AREA_LABELS[id];
-  if (!label) return;
-  const list = document.getElementById("material-area-list");
-  const detail = document.getElementById("material-area-detail");
-  const title = document.getElementById("material-area-title");
-  const text = document.getElementById("material-area-text");
-  if (list) list.hidden = true;
-  if (detail) detail.hidden = false;
-  if (title) title.textContent = label;
-  if (text) {
-    text.textContent = "Material de " + label + " em breve no MedHub R1.";
-  }
-  const wsSub = document.getElementById("workspace-sub");
-  if (wsSub) wsSub.textContent = label;
-}
-
 function aprovaHojeShowHub () {
   const hub = document.getElementById("hoje-hub");
   if (hub) hub.hidden = false;
@@ -7125,13 +7092,26 @@ async function aprovaBoot () {
       aprovaHojePick(pick.getAttribute("data-hoje-pick"));
       return;
     }
+    const materialItem = e.target.closest("[data-material-item]");
+    if (materialItem) {
+      if (typeof aprovaMaterialOpenItem === "function") {
+        aprovaMaterialOpenItem(materialItem.getAttribute("data-material-item"));
+      }
+      return;
+    }
     const materialArea = e.target.closest("[data-material-area]");
     if (materialArea) {
-      aprovaMaterialOpenArea(materialArea.getAttribute("data-material-area"));
+      if (typeof aprovaMaterialOpenArea === "function") {
+        aprovaMaterialOpenArea(materialArea.getAttribute("data-material-area"));
+      }
+      return;
+    }
+    if (e.target.closest("#material-article-back")) {
+      if (typeof aprovaMaterialBackFromArticle === "function") aprovaMaterialBackFromArticle();
       return;
     }
     if (e.target.closest("#material-area-back")) {
-      aprovaMaterialShowList();
+      if (typeof aprovaMaterialShowList === "function") aprovaMaterialShowList();
       const wsSub = document.getElementById("workspace-sub");
       if (wsSub) wsSub.textContent = "Escolha a grande área";
       return;

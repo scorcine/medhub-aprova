@@ -1,0 +1,302 @@
+{
+  "version": 1,
+  "disclaimer": "Material de estudo para residência (R1). Não substitui protocolo institucional nem conduta clínica.",
+  "catalog": [
+    {
+      "id": "cli-sca",
+      "area": "clinica",
+      "title": "SCA · dor torácica e conduta inicial",
+      "blurb": "Triagem, ECG, estratificação e primeiros passos que mais caem em prova.",
+      "readMinutes": 5,
+      "tags": ["Cardiologia", "Urgência"]
+    },
+    {
+      "id": "cir-queimaduras",
+      "area": "cirurgia",
+      "title": "Queimaduras · regra dos 9 e Parkland",
+      "blurb": "Superfície queimada, fórmula de Parkland e sinais de via aérea.",
+      "readMinutes": 4,
+      "tags": ["Trauma", "Emergência"]
+    },
+    {
+      "id": "ped-desidratacao",
+      "area": "pediatria",
+      "title": "Desidratação · classificação e TRO",
+      "blurb": "Leve, moderada e grave · quando TRO, quando EV.",
+      "readMinutes": 4,
+      "tags": ["Gastro", "Atenção básica"]
+    },
+    {
+      "id": "go-pe",
+      "area": "go",
+      "title": "Pré-eclâmpsia · critérios e conduta",
+      "blurb": "Diagnóstico, sinais de gravidade e momentos de resolução.",
+      "readMinutes": 5,
+      "tags": ["Obstetrícia", "Hipertensão"]
+    },
+    {
+      "id": "prev-niveis",
+      "area": "preventiva",
+      "title": "Níveis de prevenção · Leavell & Clark",
+      "blurb": "Primordial, primária, secundária, terciária e quaternária com exemplos de prova.",
+      "readMinutes": 3,
+      "tags": ["Epidemiologia", "SUS"]
+    }
+  ],
+  "items": {
+    "cli-sca": {
+      "id": "cli-sca",
+      "area": "clinica",
+      "title": "SCA · dor torácica e conduta inicial",
+      "lead": "Na prova, a sequência importa: ABC → ECG rápido → estratificar → anti-isquêmicos e decisão de reperfusão.",
+      "sections": [
+        {
+          "type": "callout",
+          "tone": "remember",
+          "title": "Pegue o ECG cedo",
+          "body": "ECG em até 10 minutos na chegada com dor torácica suspeita. Comparar com ECG prévio quando houver."
+        },
+        {
+          "type": "figure",
+          "src": "assets/material/cli-sca.svg",
+          "caption": "Fluxo resumido da SCA no pronto atendimento."
+        },
+        {
+          "type": "bullets",
+          "title": "Suspeita alta — o que não esquecer",
+          "items": [
+            "Dor/opressão retroesternal, irradiação, náusea, sudorese, dispneia",
+            "Equivalente angioso em idosos, diabéticos e mulheres (dispneia, epigastralgia, fadiga)",
+            "Fatores: tabagismo, DM, HAS, dislipidemia, história familiar, DRC"
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Estratificação prática",
+          "headers": ["Cenário", "Achado-chave", "Conduta-chave"],
+          "rows": [
+            ["IAMCSST", "Supra de ST / equivalente", "Reperfusão imediata (ICP preferencial)"],
+            ["IAMSSST / AI", "Troponina ± infra / T invertido", "Anti-isquêmico + risco (TIMI/GRACE)"],
+            ["Baixa probabilidade", "ECG e troponina negativos", "Observação / escore / investigação eletiva"]
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Medidas iniciais (salvo contraindicação)",
+          "items": [
+            "AAS 150–300 mg mastigado (dose de ataque)",
+            "Anticoagulação conforme protocolo (enoxaparina/heparina)",
+            "Inibidor P2Y12 conforme estratégia de reperfusão",
+            "Nitrato se dor e PA adequada; morfina se dor refratária",
+            "Oxigênio só se hipoxemia (não rotina em SpO₂ normal)"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "alert",
+          "title": "Armadilha de prova",
+          "body": "Nitrato é contraindicado com uso recente de inibidor de PDE-5 e na suspeita de IAM de ventrículo direito (infra em DII/DIII/aVF com pré-carga dependente)."
+        }
+      ]
+    },
+    "cir-queimaduras": {
+      "id": "cir-queimaduras",
+      "area": "cirurgia",
+      "title": "Queimaduras · regra dos 9 e Parkland",
+      "lead": "Calcule a superfície corporal queimada (SCQ), proteja via aérea e inicie reposição volêmica precoce nas queimaduras maiores.",
+      "sections": [
+        {
+          "type": "figure",
+          "src": "assets/material/cir-queimaduras.svg",
+          "caption": "Regra dos 9 no adulto (Wallace) — valores aproximados para prova."
+        },
+        {
+          "type": "bullets",
+          "title": "Regra dos 9 (adulto)",
+          "items": [
+            "Cabeça e pescoço: 9%",
+            "Cada membro superior: 9%",
+            "Face anterior do tronco: 18% · face posterior: 18%",
+            "Cada membro inferior: 18%",
+            "Períneo/genital: 1%",
+            "Palma da mão do paciente ≈ 1% (útil em áreas irregulares)"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "tip",
+          "title": "Parkland (clássica de prova)",
+          "body": "Volume nas primeiras 24 h = 4 mL × peso (kg) × % SCQ. Metade nas primeiras 8 h a partir da queimadura; metade nas 16 h seguintes. Em geral com Ringer lactato."
+        },
+        {
+          "type": "bullets",
+          "title": "Sinais de via aérea / inalação",
+          "items": [
+            "Queimadura em face, vibrissas chamuscadas, escarro carbonáceo",
+            "Estridor, rouquidão, confusão, ambiente fechado com fumaça",
+            "Antecipe via aérea definitiva precocemente — edema progride"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Critérios frequentes de transferência / gravidade",
+          "items": [
+            "SCQ elevada (em adulto, atenção a partir de ~20% em 2º/3º grau — seguir protocolo local)",
+            "Queimadura circunferencial de tórax ou membro",
+            "Envolvimento de face, mãos, pés, genitália, grandes articulações",
+            "Queimadura elétrica, química ou associada a trauma"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "alert",
+          "title": "Armadilha",
+          "body": "A regra dos 9 da criança é diferente (cabeça proporcionalmente maior). Em lactentes, não aplique a tabela do adulto sem ajuste."
+        }
+      ]
+    },
+    "ped-desidratacao": {
+      "id": "ped-desidratacao",
+      "area": "pediatria",
+      "title": "Desidratação · classificação e TRO",
+      "lead": "Classifique pela clínica, prefira terapia de reidratação oral (TRO) quando possível e reserve EV para choque ou falha da via oral.",
+      "sections": [
+        {
+          "type": "figure",
+          "src": "assets/material/ped-desidratacao.svg",
+          "caption": "Escada prática: leve → moderada → grave / choque."
+        },
+        {
+          "type": "table",
+          "title": "Classificação clínica (visão de prova)",
+          "headers": ["", "Leve", "Moderada", "Grave"],
+          "rows": [
+            ["Estado geral", "Alerta, inquieto", "Irritado / sonolento", "Letárgico / choque"],
+            ["Olhos / fontanela", "Normais", "Fundos", "Muito fundos"],
+            ["Lágrimas / mucosa", "Presentes / úmida", "↓ lágrimas / seca", "Ausentes / muito seca"],
+            ["Turgor", "Normal", "Diminuído", "Sinal da prega"],
+            ["Diurese", "Normal / ↓ leve", "Reduzida", "Oligúria / anúria"]
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Conduta-resumo",
+          "items": [
+            "Leve/moderada sem vômitos incoercíveis: TRO com SRO (OMS) em pequenos volumes frequentes",
+            "Manter aleitamento; evitar sucos e refrigerantes como 'reidratação'",
+            "Grave / choque: acesso EV, expansão conforme protocolo (ex.: SF 0,9% em bolus) e reavaliação",
+            "Zinco em diarreia aguda (quando indicado pela diretriz) e orientar sinais de alarme"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "remember",
+          "title": "Plano A / B / C (MS)",
+          "body": "Plano A: prevenção da desidratação em casa. Plano B: TRO supervisionada na unidade. Plano C: reidratação venosa na desidratação grave."
+        },
+        {
+          "type": "callout",
+          "tone": "alert",
+          "title": "Armadilha",
+          "body": "Criança 'só um pouco quieta' com pulso fino e extremidades frias pode já estar em choque — trate como grave."
+        }
+      ]
+    },
+    "go-pe": {
+      "id": "go-pe",
+      "area": "go",
+      "title": "Pré-eclâmpsia · critérios e conduta",
+      "lead": "HAS gestacional + proteinúria ou disfunção de órgão-alvo após 20 semanas. Gravidade e idade gestacional guiam a resolução.",
+      "sections": [
+        {
+          "type": "figure",
+          "src": "assets/material/go-pe.svg",
+          "caption": "Mapa mental: diagnóstico → gravidade → conduta."
+        },
+        {
+          "type": "bullets",
+          "title": "Diagnóstico (ideia central)",
+          "items": [
+            "PA ≥ 140×90 mmHg após 20 semanas em gestante previamente normotensa",
+            "Associada a proteinúria (ex.: ≥ 300 mg/24 h ou relação proteína/creatinina ≥ 0,3) OU",
+            "Sinais de disfunção de órgão-alvo mesmo sem proteinúria (PE com critérios de gravidade)"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Critérios de gravidade (alto rendimento)",
+          "items": [
+            "PA ≥ 160×110 mmHg",
+            "Plaquetopenia, elevação de enzimas hepáticas, creatinina elevada",
+            "Edema pulmonar, cefaleia intensa / escotomas / epigastralgia",
+            "Restrição de crescimento fetal / alterações de bem-estar fetal"
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Conduta em uma frase",
+          "headers": ["Situação", "Foco"],
+          "rows": [
+            ["PE sem gravidade, IG prematura", "Controle pressórico + vigilância materna/fetal"],
+            ["PE com gravidade", "Estabilizar, MgSO₄, anti-hipertensivo, planejar resolução"],
+            ["Eclâmpsia", "ABC, MgSO₄, estabilizar e resolver a gestação"],
+            ["Cura definitiva", "Resolução da gestação (parto) no momento adequado"]
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "tip",
+          "title": "MgSO₄",
+          "body": "Indicação clássica: prevenção/tratamento de convulsão na PE grave/eclâmpsia. Monitore reflexos, diurese e FR — toxicidade → suspender e gluconato de cálcio."
+        },
+        {
+          "type": "callout",
+          "tone": "alert",
+          "title": "Armadilha",
+          "body": "HAS crônica ≠ PE. Em hipertensa crônica, suspeite de PE sobreposta se houver piora pressórica + proteinúria nova ou disfunção de órgão após 20 semanas."
+        }
+      ]
+    },
+    "prev-niveis": {
+      "id": "prev-niveis",
+      "area": "preventiva",
+      "title": "Níveis de prevenção · Leavell & Clark",
+      "lead": "Classifique a ação pelo momento na história natural da doença — pergunta clássica de preventiva/SUS.",
+      "sections": [
+        {
+          "type": "figure",
+          "src": "assets/material/prev-niveis.svg",
+          "caption": "Linha do tempo da prevenção na história natural."
+        },
+        {
+          "type": "table",
+          "title": "Níveis e exemplos que caem",
+          "headers": ["Nível", "Momento", "Exemplo"],
+          "rows": [
+            ["Primordial", "Antes dos fatores de risco", "Políticas contra pobreza, urbanismo saudável"],
+            ["Primária", "Pré-patogênese (evitar doença)", "Vacina, saneamento, educação em saúde"],
+            ["Secundária", "Doença pré-clínica / início", "Rastreamento (mamografia, Papanicolaou)"],
+            ["Terciária", "Doença estabelecida", "Reabilitação, evitar sequelas"],
+            ["Quaternária", "Excesso de intervenção", "Evitar medicalização / overdiagnosis"]
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Como não errar na prova",
+          "items": [
+            "Pergunte: a doença já existe? Já há sequela? É só ambiente/determinante?",
+            "Rastreamento de assintomático = secundária (na maioria dos itens clássicos)",
+            "Fisioterapia pós-AVC = terciária",
+            "Lei antitabaco / promoção ampla = primordial ou primária (leia o enunciado)"
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "remember",
+          "title": "Truque rápido",
+          "body": "Primária evita a doença. Secundária detecta cedo. Terciária limita dano. Quaternária evita o excesso de medicina."
+        }
+      ]
+    }
+  }
+}
