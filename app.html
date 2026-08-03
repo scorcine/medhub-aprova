@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260724fix1">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260803mat1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -321,9 +321,9 @@
                 <span class="hoje-hub-item-label">Questões</span>
                 <span class="hoje-hub-item-hint">Banco no formato da prova</span>
               </button>
-              <button type="button" class="hoje-hub-item is-soon" data-hoje-pick="material">
+              <button type="button" class="hoje-hub-item" data-hoje-pick="material">
                 <span class="hoje-hub-item-label">Material de apoio</span>
-                <span class="hoje-hub-item-hint">Em construção</span>
+                <span class="hoje-hub-item-hint">5 grandes áreas</span>
               </button>
               <button type="button" class="hoje-hub-item is-soon" data-hoje-pick="videos">
                 <span class="hoje-hub-item-label">Vídeos</span>
@@ -433,6 +433,50 @@
                   <button type="button" class="btn btn-ghost" data-goto="flashcards">Escolher tema</button>
                 </div>
                 <div class="stats" id="today-stats"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="hoje-view-material" class="hoje-view" hidden>
+            <button type="button" class="btn btn-ghost btn-compact hoje-back" data-hoje-back>← Voltar</button>
+            <h2 class="hoje-view-title">Material de apoio</h2>
+            <div id="material-area-list">
+              <p class="muted">Escolha a grande área.</p>
+              <div class="dash-grid dash-grid--sm">
+                <button type="button" class="dash-card" data-material-area="clinica">
+                  <span class="dash-card-kicker">Grande área</span>
+                  <strong>Clínica médica</strong>
+                  <span>Resumos e esquemas para R1</span>
+                </button>
+                <button type="button" class="dash-card" data-material-area="cirurgia">
+                  <span class="dash-card-kicker">Grande área</span>
+                  <strong>Cirurgia</strong>
+                  <span>Resumos e esquemas para R1</span>
+                </button>
+                <button type="button" class="dash-card" data-material-area="preventiva">
+                  <span class="dash-card-kicker">Grande área</span>
+                  <strong>Preventiva</strong>
+                  <span>Resumos e esquemas para R1</span>
+                </button>
+                <button type="button" class="dash-card" data-material-area="pediatria">
+                  <span class="dash-card-kicker">Grande área</span>
+                  <strong>Pediatria</strong>
+                  <span>Resumos e esquemas para R1</span>
+                </button>
+                <button type="button" class="dash-card" data-material-area="go">
+                  <span class="dash-card-kicker">Grande área</span>
+                  <strong>Ginecologia e obstetrícia</strong>
+                  <span>Resumos e esquemas para R1</span>
+                </button>
+              </div>
+            </div>
+            <div id="material-area-detail" hidden>
+              <div class="actions-row" style="margin-bottom:0.85rem">
+                <button type="button" class="btn btn-ghost btn-compact" id="material-area-back">← Voltar às áreas</button>
+              </div>
+              <h3 class="hoje-view-title" id="material-area-title" style="margin-top:0">Área</h3>
+              <div class="study-card">
+                <p class="prompt" id="material-area-text">Material desta área em breve no MedHub R1.</p>
               </div>
             </div>
           </div>
@@ -1322,7 +1366,7 @@
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/app-qui.js?v=20260724fix1"></script>
+  <script src="js/app-qui.js?v=20260803mat1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

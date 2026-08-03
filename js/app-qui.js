@@ -8,7 +8,7 @@ const APROVA_PANEL_META = {
   flashcards: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   questoes: { title: "Banco de questões", sub: "Treino no formato da prova" },
   "provas-integra": { title: "Prova na íntegra", sub: "Banca, ano, íntegra ou grande área" },
-  material: { title: "Material de apoio", sub: "Em construção" },
+  material: { title: "Material de apoio", sub: "Escolha a grande área" },
   videos: { title: "Vídeos", sub: "Em construção" },
   especialidades: { title: "Flashcards", sub: "Escolha a área e o tema para estudar" },
   simulados: { title: "Simulados", sub: "Blocos no estilo R1" },
@@ -5109,11 +5109,51 @@ function aprovaSavePerfilFromForm () {
   return saved;
 }
 
+const APROVA_HOJE_VIEWS = [
+  "hoje-view-metas",
+  "hoje-view-revisoes",
+  "hoje-view-flashcards",
+  "hoje-view-material",
+  "hoje-view-soon"
+];
+
+const APROVA_MATERIAL_AREA_LABELS = {
+  clinica: "Clínica médica",
+  cirurgia: "Cirurgia",
+  preventiva: "Preventiva",
+  pediatria: "Pediatria",
+  go: "Ginecologia e obstetrícia"
+};
+
+function aprovaMaterialShowList () {
+  const list = document.getElementById("material-area-list");
+  const detail = document.getElementById("material-area-detail");
+  if (list) list.hidden = false;
+  if (detail) detail.hidden = true;
+}
+
+function aprovaMaterialOpenArea (areaId) {
+  const id = String(areaId || "");
+  const label = APROVA_MATERIAL_AREA_LABELS[id];
+  if (!label) return;
+  const list = document.getElementById("material-area-list");
+  const detail = document.getElementById("material-area-detail");
+  const title = document.getElementById("material-area-title");
+  const text = document.getElementById("material-area-text");
+  if (list) list.hidden = true;
+  if (detail) detail.hidden = false;
+  if (title) title.textContent = label;
+  if (text) {
+    text.textContent = "Material de " + label + " em breve no MedHub R1.";
+  }
+  const wsSub = document.getElementById("workspace-sub");
+  if (wsSub) wsSub.textContent = label;
+}
+
 function aprovaHojeShowHub () {
   const hub = document.getElementById("hoje-hub");
-  const views = ["hoje-view-metas", "hoje-view-revisoes", "hoje-view-flashcards", "hoje-view-soon"];
   if (hub) hub.hidden = false;
-  views.forEach((id) => {
+  APROVA_HOJE_VIEWS.forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.hidden = true;
   });
@@ -5123,7 +5163,7 @@ function aprovaHojeShowHub () {
 function aprovaHojeShowView (viewId) {
   const hub = document.getElementById("hoje-hub");
   if (hub) hub.hidden = true;
-  ["hoje-view-metas", "hoje-view-revisoes", "hoje-view-flashcards", "hoje-view-soon"].forEach((id) => {
+  APROVA_HOJE_VIEWS.forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.hidden = id !== viewId;
   });
@@ -5162,21 +5202,24 @@ function aprovaHojePick (pick) {
     aprovaGoTo("questoes");
     return;
   }
-  if (key === "material" || key === "videos") {
+  if (key === "material") {
+    aprovaHojeShowView("hoje-view-material");
+    aprovaMaterialShowList();
+    const wsTitle = document.getElementById("workspace-title");
+    const wsSub = document.getElementById("workspace-sub");
+    if (wsTitle) wsTitle.textContent = "Material de apoio";
+    if (wsSub) wsSub.textContent = "Escolha a grande área";
+    return;
+  }
+  if (key === "videos") {
     aprovaHojeShowView("hoje-view-soon");
     const soonTitle = document.getElementById("hoje-soon-title");
     const soonText = document.getElementById("hoje-soon-text");
     const wsTitle = document.getElementById("workspace-title");
     const wsSub = document.getElementById("workspace-sub");
-    if (key === "material") {
-      if (soonTitle) soonTitle.textContent = "Material de apoio";
-      if (soonText) soonText.textContent = "Material de apoio em construção. Em breve no MedHub R1.";
-      if (wsTitle) wsTitle.textContent = "Material de apoio";
-    } else {
-      if (soonTitle) soonTitle.textContent = "Vídeos";
-      if (soonText) soonText.textContent = "Vídeos em construção. Em breve no MedHub R1.";
-      if (wsTitle) wsTitle.textContent = "Vídeos";
-    }
+    if (soonTitle) soonTitle.textContent = "Vídeos";
+    if (soonText) soonText.textContent = "Vídeos em construção. Em breve no MedHub R1.";
+    if (wsTitle) wsTitle.textContent = "Vídeos";
     if (wsSub) wsSub.textContent = "Em construção";
   }
 }
@@ -7080,6 +7123,17 @@ async function aprovaBoot () {
     const pick = e.target.closest("[data-hoje-pick]");
     if (pick) {
       aprovaHojePick(pick.getAttribute("data-hoje-pick"));
+      return;
+    }
+    const materialArea = e.target.closest("[data-material-area]");
+    if (materialArea) {
+      aprovaMaterialOpenArea(materialArea.getAttribute("data-material-area"));
+      return;
+    }
+    if (e.target.closest("#material-area-back")) {
+      aprovaMaterialShowList();
+      const wsSub = document.getElementById("workspace-sub");
+      if (wsSub) wsSub.textContent = "Escolha a grande área";
       return;
     }
     if (e.target.closest("[data-hoje-back]")) {
