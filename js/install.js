@@ -152,8 +152,10 @@
 
   function aprovaRegisterSw () {
     if (!("serviceWorker" in navigator)) return;
-    const swUrl = "/sw.js?v=r1-pwa-1";
-    navigator.serviceWorker.register(swUrl).catch(() => undefined);
+    const swUrl = "/sw.js?v=r1-pwa-4";
+    navigator.serviceWorker.register(swUrl).then((reg) => {
+      if (reg && reg.update) reg.update().catch(() => undefined);
+    }).catch(() => undefined);
   }
 
   function aprovaEnsureInstallModal () {

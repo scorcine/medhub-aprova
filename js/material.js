@@ -1,7 +1,7 @@
 /* Material de apoio — resumos e esquemas por grande área */
 
 const AprovaMaterial = {
-  url: "data/material.json?v=20260803mat2",
+  url: "data/material.json?v=20260803mat3",
   data: null,
   loading: null,
   areaId: null,
@@ -216,7 +216,9 @@ async function aprovaMaterialOpenArea (areaId) {
   if (wsSub) wsSub.textContent = label;
 
   const grid = document.getElementById("material-theme-grid");
-  if (grid) grid.innerHTML = "<p class=\"muted\">Carregando temas…</p>";
+  if (grid && !AprovaMaterial.data) {
+    grid.innerHTML = "<p class=\"muted\">Carregando temas…</p>";
+  }
 
   try {
     await AprovaMaterial.load();

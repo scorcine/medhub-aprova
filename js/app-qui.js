@@ -7062,7 +7062,13 @@ async function aprovaBoot () {
   }
 
   if (logged) {
-    await Promise.all([AprovaFlashcards.load(), AprovaQuestions.load()]);
+    await Promise.all([
+      AprovaFlashcards.load(),
+      AprovaQuestions.load(),
+      (typeof AprovaMaterial !== "undefined" && AprovaMaterial.load
+        ? AprovaMaterial.load().catch(() => null)
+        : Promise.resolve())
+    ]);
     aprovaRenderDashboard();
     aprovaRenderToday();
     if (typeof aprovaRenderHojeRevisoes === "function") aprovaRenderHojeRevisoes();
