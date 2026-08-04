@@ -1,7 +1,7 @@
 /* Material de apoio — resumos e esquemas por grande área */
 
 const AprovaMaterial = {
-  url: "/data/material.json?v=20260803mat5",
+  url: "/data/material.json?v=20260803mat6",
   data: null,
   loading: null,
   areaId: null,
@@ -204,6 +204,20 @@ function aprovaMaterialRenderItem (itemId) {
   if (bar) bar.hidden = false;
 }
 
+function aprovaMaterialUpdateAreaCounts () {
+  const areas = ["clinica", "cirurgia", "preventiva", "pediatria", "go"];
+  areas.forEach((areaId) => {
+    const btn = document.querySelector("[data-material-area=\"" + areaId + "\"]");
+    if (!btn) return;
+    const span = btn.querySelector("span:last-child");
+    if (!span || span.classList.contains("dash-card-kicker")) return;
+    const n = AprovaMaterial.listByArea(areaId).length;
+    span.textContent = n
+      ? (n + " tema" + (n === 1 ? "" : "s") + " · resumo e PDF")
+      : "Em breve";
+  });
+}
+
 async function aprovaMaterialShowList () {
   AprovaMaterial.itemId = null;
   const list = document.getElementById("material-area-list");
@@ -212,6 +226,10 @@ async function aprovaMaterialShowList () {
   if (list) list.hidden = false;
   if (detail) detail.hidden = true;
   if (articleWrap) articleWrap.hidden = true;
+  try {
+    await AprovaMaterial.load();
+    aprovaMaterialUpdateAreaCounts();
+  } catch (e) { /* ignore */ }
 }
 
 async function aprovaMaterialOpenArea (areaId) {

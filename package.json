@@ -3,7 +3,8 @@
   "private": true,
   "description": "MedHub R1 — revisão programada para provas de residência (flashcards + banco de questões)",
   "scripts": {
-    "start": "npx --yes serve -l 4173"
+    "start": "npx --yes serve -l 4173",
+    "material:build": "node scripts/material/build-all.cjs"
   },
   "dependencies": {
     "pdfjs-dist": "^4.10.38",
