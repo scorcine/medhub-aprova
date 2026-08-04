@@ -1,0 +1,1289 @@
+{
+  "cli-sca": {
+    "intro": "Escores e critérios de SCA orientam estratificação, decisão de reperfusão e terapia anti-isquêmica nas provas de R1.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "TIMI UA/NSTEMI (7 itens)",
+        "subtitle": "1 ponto cada; risco 0-7",
+        "caption": "Quanto maior o TIMI, maior risco de eventos e benefício de estratégia invasiva precoce.",
+        "footer": "0-2 baixo | 3-4 intermediario | 5-7 alto",
+        "nodes": [
+          { "label": "Idade >= 65 anos", "pts": "1" },
+          { "label": ">= 3 FRs coronarianos", "pts": "1" },
+          { "label": "Estenose coronaria conhecida >= 50%", "pts": "1" },
+          { "label": "AAS nos ultimos 7 dias", "pts": "1" },
+          { "label": "Angina severa recente (>= 2 episodios/24h)", "pts": "1" },
+          { "label": "Desvio ST >= 0,5 mm", "pts": "1" },
+          { "label": "Troponina/CK-MB elevada", "pts": "1" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Criterios de supra (STEMI)",
+        "subtitle": "ECG - elevacao de ST",
+        "caption": "Novo supra em >= 2 derivações contíguas (ou BRE novo/equivalente) + contexto clínico = ativar reperfusão.",
+        "footer": "Homens: V2-V3 >= 2 mm (ou >= 2,5 mm <40a); mulheres V2-V3 >= 1,5 mm; demais >= 1 mm",
+        "nodes": [
+          { "label": "Dor toracica / equivalente isquemico" },
+          { "label": "Supra ST em >= 2 derivacoes contiguas" },
+          { "label": "Ou BRE novo / equivalente de supra" },
+          { "label": "Tempo ate PCI ou fibrinolise" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "Killip (ICC na SCA)",
+        "subtitle": "Classe clinica a beira-leito",
+        "caption": "Preditor clássico de mortalidade no IAM.",
+        "footer": "I sem IC | II congestao leve | III edema agudo | IV choque",
+        "nodes": [
+          { "label": "I - sem sinais de IC", "pts": "I" },
+          { "label": "II - estertores / B3 / congestao", "pts": "II" },
+          { "label": "III - edema agudo de pulmao", "pts": "III" },
+          { "label": "IV - choque cardiogenico", "pts": "IV" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "GRACE (ideia de prova)",
+        "body": "GRACE estima mortalidade hospitalar/6 meses com idade, FC, PAS, creatinina, Killip, PCR cardíaca, desvio ST e troponina elevada. TIMI é mais memorizável; GRACE é o mais robusto."
+      },
+      {
+        "type": "bullets",
+        "title": "Mnemônico anti-isquêmico (MONA-BASH / ABC)",
+        "items": [
+          "AAS 162–325 mg mastigado + P2Y12 (clopi/ticagrelor/prasugrel conforme cenário)",
+          "Anticoagulação (enoxaparina/heparina/fondaparinux conforme protocolo)",
+          "Betabloqueador se sem contraindicação (choque, BAV, broncoespasmo grave)",
+          "Estatina alta intensidade + IECA/BRA (especialmente FE↓, DM, IAM anterior)",
+          "Nitrato/morfina só se dor/congestão — cuidado em IAM inferior/DVD e hipotensão",
+          "O2 se SpO2 < 90–94% (não oxigenar rotineiramente se normoxêmico)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Reperfusão no supra",
+        "headers": ["Meta", "Tempo"],
+        "rows": [
+          ["Porta-balão (PCI primária)", "≤ 90 min (ideal)"],
+          ["Fibrinólise se PCI > 120 min", "≤ 30 min porta-agulha"],
+          ["Janela fibrinólise típica", "até 12 h do início dos sintomas"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "IAM inferior + hipotensão: pense em DVD / extensão VD — evite nitratos e volume criterioso."
+      }
+    ]
+  },
+
+  "cli-sepse": {
+    "intro": "qSOFA, SOFA e o Hour-1 Bundle são o núcleo da sepse nas provas — reconhecimento rápido e reanimação precoce.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "qSOFA (3 itens)",
+        "subtitle": "Bedside; >= 2 = alto risco",
+        "caption": "Não diagnostica sepse sozinho; dispara avaliação de disfunção orgânica (SOFA).",
+        "footer": "FR >= 22 | PAS <= 100 | alteracao mental",
+        "nodes": [
+          { "label": "FR >= 22 irpm", "pts": "1" },
+          { "label": "PAS <= 100 mmHg", "pts": "1" },
+          { "label": "Alteracao do nivel de consciencia", "pts": "1" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Hour-1 Bundle (SSC)",
+        "subtitle": "Primeira hora",
+        "caption": "Pacote da 1ª hora: medir, cultivar, antibiótico, volume e vasopressor se preciso.",
+        "footer": "Antibiotico apos culturas, sem atrasar se gravidade",
+        "nodes": [
+          { "label": "Lactato (repetir se > 2)" },
+          { "label": "Hemoculturas antes do ATB" },
+          { "label": "Antibiotico IV amplo precoce" },
+          { "label": "Cristaloide 30 mL/kg se hipotensao/lactato >= 4" },
+          { "label": "Vasopressor se PAM < 65 apos volume" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Definições Sepsis-3",
+        "body": "Sepse = infecção + disfunção orgânica (ΔSOFA ≥ 2). Choque séptico = sepse + vasopressor para PAM ≥ 65 e lactato > 2 mmol/L apesar de volume adequado."
+      },
+      {
+        "type": "table",
+        "title": "SOFA — ideia dos sistemas",
+        "headers": ["Sistema", "Marcador clássico"],
+        "rows": [
+          ["Respiratório", "PaO2/FiO2"],
+          ["Coagulação", "Plaquetas"],
+          ["Hepático", "Bilirrubina"],
+          ["Cardiovascular", "PAM / dose de vasopressor"],
+          ["SNC", "ECG Glasgow"],
+          ["Renal", "Creatinina / débito urinário"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Metas iniciais de prova",
+        "items": [
+          "PAM ≥ 65 mmHg (noradrenalina 1ª linha no choque)",
+          "Reavaliar volume com perfusão (lactato, tempo de enchimento, débito urinário)",
+          "Controle de foco (dreno, retirada de cateter, cirurgia)",
+          "Corticoide (hidrocortisona) se choque refratário"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Não atrase antibiótico",
+        "body": "Em choque séptico, ATB na 1ª hora. Culturas preferenciais, mas não atrasam tratamento se o paciente estiver grave."
+      }
+    ]
+  },
+
+  "cli-avc": {
+    "intro": "NIHSS, janela de trombólise e ABCD2 (AIT) decidem urgência e elegibilidade no AVC isquêmico.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "ABCD2 (AIT)",
+        "subtitle": "Risco de AVC em 2/7 dias",
+        "caption": "Estratifica AIT; escore alto → observação/investigação mais agressiva.",
+        "footer": "0-3 baixo | 4-5 moderado | 6-7 alto",
+        "nodes": [
+          { "label": "A - Age >= 60 anos", "pts": "1" },
+          { "label": "B - BP >= 140/90", "pts": "1" },
+          { "label": "C - Clinical: hemiparesia", "pts": "2" },
+          { "label": "C - Clinical: fala sem fraqueza", "pts": "1" },
+          { "label": "D - Duration >= 60 min", "pts": "2" },
+          { "label": "D - Duration 10-59 min", "pts": "1" },
+          { "label": "D2 - Diabetes", "pts": "1" }
+        ]
+      },
+      {
+        "type": "timeline",
+        "title": "Janelas de reperfusao",
+        "subtitle": "AVC isquemico",
+        "caption": "Tempo é cérebro: trombólise IV e trombectomia com critérios de imagem/tempo.",
+        "footer": "Sempre excluir hemorragia em TC/RM antes",
+        "nodes": [
+          { "label": "0-4,5 h: alteplase IV (criterios)" },
+          { "label": "Ate ~6 h: trombectomia LVO tipica" },
+          { "label": "6-24 h: selecao por imagem (DAWN/DEFUSE ideia)" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "NIHSS — ideia",
+        "body": "Escala 0–42 de gravidade neurológica (consciência, olhar, campos, face, motor, ataxia, sensibilidade, linguagem, disartria, extinção). Não memorizar item a item; saber que guia gravidade e elegibilidade."
+      },
+      {
+        "type": "table",
+        "title": "Metas de PA na fase aguda (ideia)",
+        "headers": ["Cenário", "Conduta típica de prova"],
+        "rows": [
+          ["Pré-trombólise", "PA < 185/110 antes; manter < 180/105 após"],
+          ["Sem reperfusão", "só tratar se PA muito alta (ex. > 220/120) ou emergência associada"],
+          ["AVC hemorrágico", "meta mais baixa (ex. PAS ~140 se PAS 150–220), conforme protocolo"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Checklist rápido AVC suspeito",
+        "items": [
+          "Horário do último visto bem",
+          "Glicemia (hipoglicemia mimetiza AVC)",
+          "TC sem contraste urgente (sangue?)",
+          "Contraindicações à alteplase (cirurgia recente, coagulopatia, sangramento ativo etc.)",
+          "AAS após excluir hemorragia se sem trombólise / após janela conforme protocolo"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "FAST / SAMU",
+        "body": "Face caída, Assimetria de braço, Speech alterada, Time — ativar via AVC."
+      }
+    ]
+  },
+
+  "cli-cetoacidose": {
+    "intro": "Critérios laboratoriais da CAD, ânion gap e reposição de volume/K/insulina são clássicos de prova.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Criterios laboratoriais CAD",
+        "subtitle": "Triade classica",
+        "caption": "Hiperglicemia + acidose metabólica com gap ↑ + cetonemia/cetonúria.",
+        "footer": "Variantes: euglicemica (SGLT2) — cetoacidose com glicose perto do normal",
+        "nodes": [
+          { "label": "Glicose tipicamente > 250 mg/dL" },
+          { "label": "pH < 7,3 ou HCO3 < 18" },
+          { "label": "Cetona positiva (sangue/urina)" },
+          { "label": "Anion gap elevado" }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "Anion gap e agua",
+        "subtitle": "Formulas de prova",
+        "caption": "Gap e déficit de água guiam interpretação e reposição.",
+        "footer": "K pode cair com insulina — repor antes se K baixo",
+        "nodes": [
+          { "label": "AG = Na - (Cl + HCO3)" },
+          { "label": "AG alto se > 12 (ref. lab)" },
+          { "label": "Deficit agua ~ 0,6 x P x (Na/140 - 1)" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Severidade da CAD (ideia ADA)",
+        "headers": ["Parâmetro", "Leve", "Grave"],
+        "rows": [
+          ["pH", "7,25–7,30", "< 7,00"],
+          ["HCO3", "15–18", "< 10"],
+          ["Ânion gap", "> 10", "> 12"],
+          ["Sensorium", "alerta", "estupor/coma"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Tratamento em 4 pilares",
+        "items": [
+          "Volume: SF 0,9% inicial (ex. 1 L/h na 1ª hora se choque/desidratação grave, depois ajustar)",
+          "Insulina: bolo ± infusão contínua (ex. 0,1 U/kg/h) até fechamento do gap / resolução da cetose",
+          "Potássio: se K < 3,3 → repor antes de insulina; se 3,3–5,2 → repor com insulina",
+          "Tratar precipitante: infecção, IAM, omissão de insulina, SGLT2, gestação"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Quando adicionar glicose",
+        "body": "Quando glicemia ~200–250 mg/dL, trocar para SG (D5) + insulina para continuar fechando o gap sem hipoglicemia."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "CAD vs EHH",
+        "body": "EHH: glicose muito alta (>600), osmolaridade ↑↑, pH e HCO3 relativamente preservados, cetose mínima/ausente, mais comum no idoso tipo 2."
+      }
+    ]
+  },
+
+  "cli-icc": {
+    "intro": "Perfis Forrester (congestão × perfusão) e NYHA organizam o manejo da insuficiência cardíaca aguda e crônica.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Forrester / perfis clinicos",
+        "subtitle": "Congestao x perfusao",
+        "caption": "Quente-seco, quente-úmido, frio-úmido, frio-seco — guia diurético, vasodilatador e inotrópico.",
+        "footer": "Mais comum na aguda: quente-umido (congestao com perfusao ok)",
+        "nodes": [
+          { "label": "Quente-seco: sem congestao, perfusao ok" },
+          { "label": "Quente-umido: congestao, perfusao ok" },
+          { "label": "Frio-umido: congestao + hipoperfusao" },
+          { "label": "Frio-seco: hipoperfusao sem congestao" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "NYHA",
+        "subtitle": "Limitacao funcional",
+        "caption": "Classificação funcional clássica; não é etiologia nem FE.",
+        "footer": "I assintomatico | IV sintoma em repouso",
+        "nodes": [
+          { "label": "I - sem limitacao", "pts": "I" },
+          { "label": "II - leve aos esforcos habituais", "pts": "II" },
+          { "label": "III - marcada aos pequenos esforcos", "pts": "III" },
+          { "label": "IV - sintoma em repouso", "pts": "IV" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta por perfil (ideia)",
+        "headers": ["Perfil", "Ênfase"],
+        "rows": [
+          ["Quente-úmido", "Diurético de alça ± vasodilatador se PA ok"],
+          ["Frio-úmido", "Inotrópico / vasopressor + descongestão; UTI"],
+          ["Frio-seco", "Volume criterioso se hipovolemia; investigar baixo débito"],
+          ["Quente-seco", "Otimizar terapia oral da IC"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Terapia modificadora (FE reduzida) — prova",
+        "items": [
+          "IECA/BRA/ARNI",
+          "Betabloqueador evidência (carvedilol, bisoprolol, metoprolol succ.)",
+          "Antagonista mineralocorticoide (espironolactona/eplerenona)",
+          "iSGLT2 (dapagliflozina/empagliflozina)",
+          "Diurético para sintoma/congestão (não reduz mortalidade sozinho)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "BNP/NT-proBNP",
+        "body": "Úteis para exclusão/diagnóstico diferencial de dispneia; elevam-se na IC, mas sobem também em IRA, idade avançada, TEP, sepse."
+      }
+    ]
+  },
+
+  "cli-dpoc": {
+    "intro": "GOLD/mMRC e critérios de hospitalização definem gravidade e onde tratar a exacerbação de DPOC.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "mMRC (dispneia)",
+        "subtitle": "0 a 4",
+        "caption": "Componente sintomático do GOLD ABE (junto com CAT).",
+        "footer": "mMRC >= 2 = mais sintomatico",
+        "nodes": [
+          { "label": "0 - so em exercicio intenso", "pts": "0" },
+          { "label": "1 - ao andar depressa / ladeira", "pts": "1" },
+          { "label": "2 - anda mais devagar que pares", "pts": "2" },
+          { "label": "3 - para apos ~100 m", "pts": "3" },
+          { "label": "4 - nao sai de casa / ao vestir", "pts": "4" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Hospitalizar exacerbacao?",
+        "subtitle": "Criterios de prova",
+        "caption": "Marcar gravidade: falência respiratória, comorbidades, suporte social.",
+        "footer": "VNI se acidose respiratoria / trabalho ventilatorio",
+        "nodes": [
+          { "label": "Dispneia intensa / cianose / confusao" },
+          { "label": "Hipoxemia grave / hipercapnia / acidose" },
+          { "label": "Falha de tratamento ambulatorial" },
+          { "label": "Comorbidades importantes (IC, arritmia)" },
+          { "label": "Suporte domiciliar inadequado" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "GOLD — ideia",
+        "body": "Diagnóstico: VEF1/CVF < 0,7 pós-broncodilatador. Gravidade espirométrica por VEF1 (%): GOLD 1≥80, 2 50–79, 3 30–49, 4<30. Grupos A/B/E por sintomas e exacerbações (≥2 moderadas ou ≥1 com hospitalização → E)."
+      },
+      {
+        "type": "table",
+        "title": "Exacerbação — tratamento base",
+        "headers": ["Item", "Conduta"],
+        "rows": [
+          ["Broncodilatador", "SABA ± SAMA nebulizado/inalado"],
+          ["Corticoide", "Prednisona ~40 mg/d × 5 dias (tipico)"],
+          ["Antibiótico", "se escarro purulento / critérios Anthonisen / ventilação"],
+          ["O2", "alvo SpO2 88–92% (retenção de CO2)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Anthonisen (indicação de ATB)",
+        "items": [
+          "Aumento da dispneia",
+          "Aumento do volume do escarro",
+          "Aumento da purulência do escarro",
+          "ATB se 2–3 critérios (purulência tem peso) ou se VNI/IOT"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Manutenção",
+        "body": "LAMA/LABA ± ICS se eosinófilos altos/exacerbações; vacinas; cessação do tabaco; reabilitação pulmonar."
+      }
+    ]
+  },
+
+  "cli-tea": {
+    "intro": "Wells (e YEARS) estratificam probabilidade de TEP e guiam D-dímero vs imagem.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Wells TEP",
+        "subtitle": "Probabilidade clinica",
+        "caption": "Baixa/intermediária → D-dímero; alta → CTPA (ou V/Q) direto.",
+        "footer": "Tradicional: <=4 improvavel | >4 provavel; ou 3 estratos 0-1 / 2-6 / >=7",
+        "nodes": [
+          { "label": "Sinais de TVP", "pts": "3" },
+          { "label": "TEP mais provavel que alternativa", "pts": "3" },
+          { "label": "FC > 100", "pts": "1,5" },
+          { "label": "Imobilizacao/cirurgia (4 sem)", "pts": "1,5" },
+          { "label": "TEP/TVP previa", "pts": "1,5" },
+          { "label": "Hemoptise", "pts": "1" },
+          { "label": "Neoplasia ativa", "pts": "1" }
+        ]
+      },
+      {
+        "type": "triage3",
+        "title": "YEARS (opcional)",
+        "subtitle": "Algoritmo simplificado",
+        "caption": "Itens YEARS: sinais de TVP, hemoptise, TEP mais provável. Corte de D-dímero muda com itens.",
+        "footer": "0 itens: D-dimero < 1000 exclui | >=1 item: corte 500",
+        "nodes": [
+          { "label": "0 itens YEARS" },
+          { "label": ">= 1 item YEARS" },
+          { "label": "Imagem se D-dimero acima do corte" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Estratificação de gravidade TEP",
+        "headers": ["Risco", "Marcadores"],
+        "rows": [
+          ["Alto (maciço)", "Choque / hipotensão sustentada"],
+          ["Intermediário", "VD disfunção (Eco/CT) ± troponina/BNP ↑, sem choque"],
+          ["Baixo", "Estável, sem disfunção de VD / biomarcadores"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta-chave",
+        "items": [
+          "Anticoagulação precoce se alta probabilidade e baixo risco de sangramento",
+          "Trombólise sistêmica: TEP de alto risco (choque) sem contraindicação",
+          "Intermediário: anticoagular; trombólise só se deterioração",
+          "Wells TVP é outro escore (não misturar pontos)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "D-dímero",
+        "body": "Bom para exclusão em baixa/intermediária probabilidade. Positivo não confirma TEP — seguir para imagem."
+      }
+    ]
+  },
+
+  "cli-asmag": {
+    "intro": "Sinais de gravidade GINA e conduta da crise asmática são cobrados como protocolo de emergência.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Sinais de gravidade / ameaca a vida",
+        "subtitle": "Crise asmatica",
+        "caption": "Reconhecer crise grave/ameaçadora muda local de tratamento e uso de sulfato de Mg / VNI / IOT.",
+        "footer": "Silencio toracico + confusao = ameaca a vida",
+        "nodes": [
+          { "label": "Fala entrecortada / ortopneia" },
+          { "label": "FR alta / uso de musculatura acessoria" },
+          { "label": "FC elevada / SpO2 < 90-92%" },
+          { "label": "PFE <= 50% (grave) ou <= 33% (ameaca)" },
+          { "label": "Silencio toracico / cianose / confusao" }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Fluxo GINA crise",
+        "subtitle": "Primeiros passos",
+        "caption": "SABA repetido + O2 + corticoide sistêmico precoces.",
+        "footer": "Reavaliar em 1 h; internar se nao melhorar",
+        "nodes": [
+          { "label": "1. SABA (salbutamol) +/- SAMA" },
+          { "label": "2. O2 alvo SpO2 93-95%" },
+          { "label": "3. Corticoide sistemico precoce" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Gravidade da crise (ideia)",
+        "headers": ["", "Moderada", "Grave / ameaça"],
+        "rows": [
+          ["Fala", "frases", "palavras / incapaz"],
+          ["SpO2", "≥ 92–95%", "< 90–92%"],
+          ["PFE", "> 50%", "≤ 50% (≤33% ameaça)"],
+          ["PaCO2", "normal/↓", "normal/↑ (exaustão)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Escalonamento",
+        "items": [
+          "Corticoide: prednisona 40–50 mg VO ou hidrocortisona/metilprednisolona IV",
+          "Sulfato de magnésio IV na crise grave sem resposta",
+          "Evitar sedação; IOT por exaustão/parada iminente (especialista)",
+          "Alta só com melhora clínica + PFE melhorando + plano de prednisona/inalatório"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha gasométrica",
+        "body": "PaCO2 'normal' em crise grave pode significar fadiga — não tranquiliza."
+      }
+    ]
+  },
+
+  "cli-ira": {
+    "intro": "Estágios KDIGO por creatinina e débito urinário padronizam o diagnóstico e a gravidade da LRA.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "KDIGO LRA - creatinina",
+        "subtitle": "Estagios 1-3",
+        "caption": "Basta creatinina OU débito urinário para estagiar (o pior prevalece).",
+        "footer": "Criterio tempo: aumento em 48h ou 7 dias",
+        "nodes": [
+          { "label": "1: Cr x1,5-1,9 ou +0,3 mg/dL em 48h", "pts": "1" },
+          { "label": "2: Cr x2,0-2,9", "pts": "2" },
+          { "label": "3: Cr x3 ou >=4 ou TRS", "pts": "3" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "KDIGO LRA - debito urinario",
+        "subtitle": "Oliguria",
+        "caption": "Débito urinário complementar ao estágio por creatinina.",
+        "footer": "Anuria 12h = estagio 3",
+        "nodes": [
+          { "label": "1: <0,5 mL/kg/h por 6-12h", "pts": "1" },
+          { "label": "2: <0,5 mL/kg/h por >=12h", "pts": "2" },
+          { "label": "3: <0,3 mL/kg/h >=24h ou anuria 12h", "pts": "3" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Pré-renal vs intrínseca (ideia)",
+        "headers": ["", "Pré-renal", "NTA (intrínseca)"],
+        "rows": [
+          ["FeNa", "< 1%", "> 2%"],
+          ["U/P creatinina", "> 40", "< 20"],
+          ["Sedimento", "sem cilindros/escasso", "cilindros granulosos"],
+          ["Resposta a volume", "melhora", "pouca/nenhuma"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Indicações clássicas de diálise (AEIOU)",
+        "items": [
+          "A — Acidose refratária",
+          "E — Eletrólitos (hiperK refratária)",
+          "I — Intoxicações dialisáveis",
+          "O — Overload (edema pulmonar refratário)",
+          "U — Uremia sintomática (pericardite, encefalopatia)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Conduta inicial",
+        "body": "Suspender nefrotóxicos, ajustar doses, hidratar se hipovolemia, tratar obstrução (pós-renal), monitorar K e volume."
+      }
+    ]
+  },
+
+  "cli-hipoNa": {
+    "intro": "Classificar por volume e osmolaridade e respeitar limites de correção evita mielinólise osmótica.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Classificacao por volume",
+        "subtitle": "Hiponatremia hipotonica",
+        "caption": "Hipovolêmica × euvolêmica (SIADH) × hipervolêmica muda o tratamento.",
+        "footer": "Sempre dosar osm plasmatica e urinaria",
+        "nodes": [
+          { "label": "Hipovolemica: perdas / 3o espaco" },
+          { "label": "Euvolemica: SIADH, hipoT, glicocort" },
+          { "label": "Hipervolemica: IC, cirrose, SNefro" }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "Limites de correcao",
+        "subtitle": "Risco de ODS",
+        "caption": "Correção excessiva → desmielinização osmótica (ODS).",
+        "footer": "Sintomatica grave: bolo de NaCl 3% e reavaliar",
+        "nodes": [
+          { "label": "Meta tipica: +4 a +6 mEq/L nas 1as horas se grave" },
+          { "label": "Limite 24h: em geral <= 8-10 mEq/L" },
+          { "label": "Alto risco ODS: <= 8 mEq/L/24h" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Passo diagnóstico",
+        "headers": ["Passo", "Pergunta"],
+        "rows": [
+          ["1", "Osm plasmática? (hipo / iso / hiper)"],
+          ["2", "Se hipo: estado de volume?"],
+          ["3", "Osm urinária e Na urinário?"],
+          ["4", "SIADH: euvolêmico, OsmU alta, NaU tipicamente > 40, tireoide/adrenal ok"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta por tipo",
+        "items": [
+          "Hipovolêmica: SF 0,9% (ou volume isotônico)",
+          "SIADH: restrição hídrica ± sal / vaptanos em cenários selecionados",
+          "Hipervolêmica: restrição hídrica + tratar causa (diurético na IC)",
+          "Sintomas graves (convulsão/coma): NaCl 3% em bolos controlados"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "ODS / mielinólise",
+        "body": "Risco maior em Na crônica muito baixa, alcoolismo, desnutrição, hepatopatia. Se corrigir demais: desacelere / considere DDAVP + SG conforme protocolo."
+      }
+    ]
+  },
+
+  "cli-fa": {
+    "intro": "CHA2DS2-VASc indica anticoagulação e HAS-BLED estima risco de sangramento na fibrilação atrial.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "CHA2DS2-VASc",
+        "subtitle": "Risco tromboembolico",
+        "caption": "Homem ≥2 ou mulher ≥3: anticoagular (DOAC preferencial na maioria).",
+        "footer": "C H F = 1 cada; A2 = 2; D = 1; S2 = 2; V A Sc = 1 cada",
+        "nodes": [
+          { "label": "C - ICC / FE reduzida", "pts": "1" },
+          { "label": "H - HAS", "pts": "1" },
+          { "label": "A2 - Idade >= 75", "pts": "2" },
+          { "label": "D - Diabetes", "pts": "1" },
+          { "label": "S2 - Stroke/AIT/TE previo", "pts": "2" },
+          { "label": "V - Doenca vascular", "pts": "1" },
+          { "label": "A - Idade 65-74", "pts": "1" },
+          { "label": "Sc - Sexo feminino", "pts": "1" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "HAS-BLED",
+        "subtitle": "Risco de sangramento",
+        "caption": "≥3 = alto risco — corrigir fatores modificáveis; não é contraindicação absoluta isolada.",
+        "footer": "H A S B L E D = 1 ponto cada (em geral)",
+        "nodes": [
+          { "label": "H - Hipertensao (PAS > 160)", "pts": "1" },
+          { "label": "A - Funcao renal/hepatica anormal", "pts": "1+1" },
+          { "label": "S - Stroke previo", "pts": "1" },
+          { "label": "B - Sangramento previo / diatese", "pts": "1" },
+          { "label": "L - INR labile (se varfarina)", "pts": "1" },
+          { "label": "E - Idoso > 65", "pts": "1" },
+          { "label": "D - Drugs/alcool (antiagregante/AINE/etanol)", "pts": "1+1" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Controle de frequência vs ritmo",
+        "headers": ["Estratégia", "Quando"],
+        "rows": [
+          ["Frequência", "maioria estável; meta FC em repouso geralmente < 110 se assintomático"],
+          ["Ritmo", "sintomas refratários, 1º episódio selecionado, IC com FA de início recente"],
+          ["Cardioversão elétrica", "instabilidade (choque, isquemia, edema agudo)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Anticoagulação — pontos de prova",
+        "items": [
+          "DOAC preferível à varfarina na FA não valvar (salvo contraindicação)",
+          "Valva mecânica / estenose mitral moderada-grave: varfarina",
+          "Se FA > 48 h ou duração incerta: anticoagular 3 sem antes de CVE eletiva ou EcoTE",
+          "Pós-CVE: anticoagular ≥ 4 semanas"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Drogas de frequência",
+        "body": "Betabloqueador ou antagonista de cálcio não DHP (verapamil/diltiazem) se FE preservada; digoxina adjuvante/sedentário; amiodarona se IC descompensada selecionada."
+      }
+    ]
+  },
+
+  "cli-has": {
+    "intro": "Estadiamento da PA e a distinção emergência × urgência hipertensiva mudam a velocidade e a via de redução pressórica.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Estadios de PA (SBC ideia)",
+        "subtitle": "Consultorio",
+        "caption": "Classificação para diagnóstico e meta terapêutica.",
+        "footer": "Diagnostico com medias repetidas / MAPA/MRPA quando duvida",
+        "nodes": [
+          { "label": "Normal: < 120/80", "pts": "N" },
+          { "label": "Pre-HAS: 120-139 / 80-89", "pts": "P" },
+          { "label": "HAS 1: 140-159 / 90-99", "pts": "1" },
+          { "label": "HAS 2: 160-179 / 100-109", "pts": "2" },
+          { "label": "HAS 3: >= 180 / >= 110", "pts": "3" }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Urgencia vs emergencia",
+        "subtitle": "PA muito elevada",
+        "caption": "Emergência = lesão aguda de órgão-alvo → reduzir PA em minutos–horas com droga IV.",
+        "footer": "Urgencia: sem LTA aguda → VO, reducao gradual em 24-48h",
+        "nodes": [
+          { "label": "Emergencia: encefalopatia, SCA, EAP, disseccao, eclampsia, AVEH" },
+          { "label": "Urgencia: PA alta sem dano agudo de orgao" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Metas de redução na emergência (ideia)",
+        "headers": ["Cenário", "Meta"],
+        "rows": [
+          ["Maioria das emergências", "reduzir PAM ~20–25% na 1ª hora"],
+          ["Dissecção aórtica", "PAS < 120 rapidamente (beta → vasodilatador)"],
+          ["AVC isquêmico pós-trombólise", "ver metas específicas (<185/110 pré)"],
+          ["Urgência hipertensiva", "redução gradual VO em 24–48 h"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Lesão de órgão-alvo aguda",
+        "items": [
+          "Neuro: encefalopatia hipertensiva, AVC hemorrágico, papiledema",
+          "Cardio: SCA, edema agudo de pulmão, dissecção aórtica",
+          "Renal: LRA aguda com hematúria/proteinúria marcante",
+          "Gestação: pré-eclâmpsia grave / eclâmpsia"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Não faça",
+        "body": "Evitar queda abrupta excessiva de PA na urgência (risco de isquemia cerebral/renal/coronária)."
+      }
+    ]
+  },
+
+  "cli-tireoide": {
+    "intro": "Tempestade tireotóxica e coma mixedematoso são emergências com critérios clínicos e suporte intensivo.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Tempestade tireotoxica (Burch-Wartofsky ideia)",
+        "subtitle": "Pontuacao clinica",
+        "caption": "Diagnóstico clínico: hipertermia, taquicardia, SNC, GI/hepático + fator precipitante.",
+        "footer": ">=45: tempestade provavel | 25-44: iminente | <25: improvavel",
+        "nodes": [
+          { "label": "Temperatura (ate 30 pts)", "pts": "var" },
+          { "label": "SNC (agitacao a coma)", "pts": "var" },
+          { "label": "GI/hepatico (diarreia a ictericia)", "pts": "var" },
+          { "label": "Taquicardia / ICC / FA", "pts": "var" },
+          { "label": "Fator precipitante", "pts": "var" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Mixedema / coma mixedematoso",
+        "subtitle": "Emergencia hipotiroidiana",
+        "caption": "Hipotermia + rebaixamento + precipitante em hipotireoidismo grave.",
+        "footer": "Tratar antes de confirmar labs se alta suspeita",
+        "nodes": [
+          { "label": "Hipotermia" },
+          { "label": "Alteracao mental / coma" },
+          { "label": "Bradcardia / hipoventilacao / hipoNa" },
+          { "label": "Precipitante (infeccao, frio, sedativo)" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Ordem do tratamento na tempestade",
+        "headers": ["Passo", "Droga"],
+        "rows": [
+          ["1 — bloqueio periférico", "Betabloqueador (propranolol)"],
+          ["2 — síntese", "PTU (ou metimazol) — PTU também bloqueia T4→T3"],
+          ["3 — bloqueio de liberação", "Iodo (lugol/SSKI) ≥1 h após tionamida"],
+          ["4 — suporte", "Corticoide (bloqueia conversão) + UTI + tratar precipitante"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Mixedema — conduta",
+        "items": [
+          "T4 IV (± T3 em protocolos) com cuidado cardíaco",
+          "Hidrocortisona empírico (possível insuficiência adrenal associada)",
+          "Aquecimento passivo, suporte ventilatório, ATB se infecção",
+          "Corrigir hiponatremia com cautela"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Labs",
+        "body": "Tempestade: TSH↓, T4/T3↑ (mas gravidade é clínica). Mixedema: TSH↑ (primário) com T4↓; cortisol pode estar baixo."
+      }
+    ]
+  },
+
+  "cli-anemia": {
+    "intro": "Classificar pelo VCM e interpretar ferritina/ferro/TIBC separa ferropenia de anemia de doença crônica e macro/micro padrões.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Classificacao por VCM",
+        "subtitle": "Primeiro ramo",
+        "caption": "Micro × normo × macro direciona a propedêutica.",
+        "footer": "Sempre ver reticulocitos (producao vs perda/hemolise)",
+        "nodes": [
+          { "label": "Microcitica: ferro, talassemia, ACD, sideroblastica" },
+          { "label": "Normocitica: ACD, LRA/DRC, hemorragia aguda, hemolise precoce" },
+          { "label": "Macro: B12/folato, mielodisplasia, figado, hipoT, farmacos" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "Ferropenia vs ACD",
+        "subtitle": "Labs classicos",
+        "caption": "Ferritina baixa fecha ferropenia; na ACD ferritina normal/alta com ferro sérico baixo.",
+        "footer": "Ferro baixo + TIBC alto + ferritina baixa = ferropenia",
+        "nodes": [
+          { "label": "Ferropenia: ferritina baixa", "pts": "Fe" },
+          { "label": "Ferropenia: TIBC/transferrina alta", "pts": "Fe" },
+          { "label": "ACD: ferritina N/alta", "pts": "ACD" },
+          { "label": "ACD: TIBC baixo/normal", "pts": "ACD" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Painel de ferro",
+        "headers": ["", "Ferropenia", "Doença crônica"],
+        "rows": [
+          ["Ferro sérico", "↓", "↓"],
+          ["Ferritina", "↓", "N/↑"],
+          ["TIBC", "↑", "↓/N"],
+          ["Saturação transferrina", "↓", "↓/N"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Achados que fecham prova",
+        "items": [
+          "Ferropenia no homem/mulher pós-menopausa: investigar perda GI",
+          "B12: VCM↑, neutrófilos hipersegmentados, neuropatia, LDH↑/BID↑ se grave",
+          "Hemólise: retic↑, LDH↑, hapto↓, BID↑ ± Coombs",
+          "Talassemia menor: microcitose desproporcional, RDW mais estável, ferro ok"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Reticulócitos",
+        "body": "Baixos = hipoproliferativa (falta de substrato/medula). Altos = perda ou hemólise."
+      }
+    ]
+  },
+
+  "cli-hiv": {
+    "intro": "Critérios de AIDS e limiares de CD4 para infecções oportunistas clássicas são favoritos de prova.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "CD4 e oportunistas classicas",
+        "subtitle": "Limiares de prova",
+        "caption": "Associar contagem de CD4 à infecção oportunista típica.",
+        "footer": "Profilaxia: PCP <200 | Toxo <100 IgG+ | MAC <50 (cenarios)",
+        "nodes": [
+          { "label": "CD4 < 200: Pneumocystis (PCP)", "pts": "<200" },
+          { "label": "CD4 < 100: Toxoplasmose cerebral", "pts": "<100" },
+          { "label": "CD4 < 50: CMV, MAC, criptococo", "pts": "<50" },
+          { "label": "Qualquer CD4: TB, Candida oral", "pts": "var" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Definicao AIDS (ideia)",
+        "subtitle": "CDC / prova",
+        "caption": "AIDS = CD4 < 200 ou condição definidora de AIDS, independentemente do CD4.",
+        "footer": "TARV para todos; urgencia se oportunista / gestacao / aguda",
+        "nodes": [
+          { "label": "CD4 < 200 cel/mm3" },
+          { "label": "Ou doenca definidora (PCP, Toxo, Cripto, Sarcoma Kaposi...)" },
+          { "label": "Candidiase esofagica / TVP cerebral etc." }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Profilaxias clássicas",
+        "headers": ["Condição", "Quando", "Droga típica"],
+        "rows": [
+          ["PCP", "CD4 < 200", "SMX-TMP"],
+          ["Toxo", "CD4 < 100 + IgG+", "SMX-TMP"],
+          ["MAC", "CD4 < 50 (se sem TARV imediata)", "Azitromicina"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Condutas de prova",
+        "items": [
+          "Iniciar TARV em todos os HIV+ (ideal precoce)",
+          "IRIS: piora paradoxal após TARV — não suspender de rotina",
+          "TB/HIV: tratar TB e iniciar TARV em semanas (mais cedo se CD4 muito baixo)",
+          "Criptococose meníngea: anfo B ± flucitosina → fluconazol; atrasar TARV ~5 semanas"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Diagnóstico",
+        "body": "Triagem com teste rápido/Ag-Ac 4ª geração; confirmar. Carga viral e CD4 para seguimento."
+      }
+    ]
+  },
+
+  "cli-hepatite": {
+    "intro": "Child-Pugh e MELD quantificam gravidade da cirrose e priorizam prognóstico/transplante.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Child-Pugh",
+        "subtitle": "A B C (5-15 pts)",
+        "caption": "Bilirrubina, albumina, INR/TP, ascite e encefalopatia — 1 a 3 pontos cada.",
+        "footer": "A 5-6 | B 7-9 | C 10-15",
+        "nodes": [
+          { "label": "Bilirrubina", "pts": "1-3" },
+          { "label": "Albumina", "pts": "1-3" },
+          { "label": "INR / TP", "pts": "1-3" },
+          { "label": "Ascite", "pts": "1-3" },
+          { "label": "Encefalopatia", "pts": "1-3" }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "MELD (ideia)",
+        "subtitle": "Escore continuo",
+        "caption": "Usa bilirrubina, INR e creatinina (± Na no MELD-Na). Prioriza fila de transplante.",
+        "footer": "Quanto maior, pior o prognostico em 3 meses",
+        "nodes": [
+          { "label": "MELD ~ f(Bili, INR, Cr)" },
+          { "label": "MELD-Na incorpora sodio" },
+          { "label": "Dialise: Cr pontua no teto" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Child-Pugh — cortes clássicos",
+        "headers": ["Variável", "1 pt", "2 pts", "3 pts"],
+        "rows": [
+          ["Bilirrubina (mg/dL)", "< 2", "2–3", "> 3"],
+          ["Albumina (g/dL)", "> 3,5", "2,8–3,5", "< 2,8"],
+          ["INR", "< 1,7", "1,7–2,2", "> 2,2"],
+          ["Ascite", "ausente", "leve/controlada", "tensa/refratária"],
+          ["Encefalopatia", "ausente", "Grau I–II", "Grau III–IV"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Descompensações da cirrose",
+        "items": [
+          "Ascite: espironolactona ± furosemida; paracentese se tensa; albumina se grande volume",
+          "PBE: PMN ≥ 250 no líquido; ATB + albumina em selecionados",
+          "HDA varizes: vasoativo (terlipressina/octreotide) + ATB + endoscopia",
+          "Encefalopatia: lactulose ± rifaximina; achar precipitante"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Hepatites virais (prova rápida)",
+        "body": "HAV: IgM anti-HAV. HBV agudo: AgHBs + IgM anti-HBc. HBV crônico: AgHBs > 6 meses. HCV: anti-HCV + carga viral."
+      }
+    ]
+  },
+
+  "cli-lupus": {
+    "intro": "Critérios classificatórios e classes de nefrite lúpica organizam diagnóstico e tratamento no LES.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Criterios classificatorios (ideia EULAR/ACR)",
+        "subtitle": "Entrada: FAN >= 1:80",
+        "caption": "FAN positivo como critério de entrada + pontos clínicos/imunológicos (artrite, cutâneo, renal, anti-DNA, Sm, AAF, complemento ↓).",
+        "footer": "Prova ainda cita criterios ACR antigos (malar, discoide, fotossens., ulcera, artrite...)",
+        "nodes": [
+          { "label": "Entrada: FAN positivo" },
+          { "label": "Dominios clinicos (pele, artic, renal, neuro, serosite...)" },
+          { "label": "Dominios imunologicos (DNA, Sm, AAF, C3/C4)" },
+          { "label": "Somar pontos >= limiar classificatorio" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "Nefrite lupica (ISN/RPS)",
+        "subtitle": "Classes I-VI",
+        "caption": "Classe III/IV = proliferativa (imunossupressão agressiva). V = membranosa.",
+        "footer": "III/IV: MMF ou ciclofosfamida + corticoide",
+        "nodes": [
+          { "label": "I - mesangial minima", "pts": "I" },
+          { "label": "II - mesangial proliferativa", "pts": "II" },
+          { "label": "III - focal proliferativa", "pts": "III" },
+          { "label": "IV - difusa proliferativa", "pts": "IV" },
+          { "label": "V - membranosa", "pts": "V" },
+          { "label": "VI - esclerose avancada", "pts": "VI" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Anticorpos e associação",
+        "headers": ["Anticorpo", "Associação clássica"],
+        "rows": [
+          ["Anti-dsDNA", "atividade / nefrite"],
+          ["Anti-Sm", "alta especificidade LES"],
+          ["Anti-Ro/La", "neonatal, SCLE, Sjögren"],
+          ["Antifosfolípides", "trombose / abortamento"],
+          ["C3/C4 baixos", "atividade, especialmente renal"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Tratamento base",
+        "items": [
+          "Hidroxicloroquina para quase todos",
+          "Corticoide na atividade; poupar dose com imunossupressor",
+          "Nefrite III/IV: MMF ou ciclofosfamida + glicocorticoide",
+          "Evitar gravidez em atividade alta; planejamento"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Emergências",
+        "body": "Nefrite grave, CNS lupus, trombocitopenia grave, pneumonite — corticoide IV ± imunossupressão e suporte."
+      }
+    ]
+  },
+
+  "cli-gout": {
+    "intro": "Critérios clínicos e urato sérico sustentam a crise de gota e a decisão entre anti-inflamatório e hipouricemiante.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Diagnostico de gota (ideia)",
+        "subtitle": "Clinico + lab + cristal",
+        "caption": "Padrão-ouro: cristais de urato monossódico no líquido (birrefringência negativa).",
+        "footer": "Urato pode estar normal na crise aguda",
+        "nodes": [
+          { "label": "Monoartrite aguda (1a MTP = podagra)" },
+          { "label": "Inicio rapido, dor intensa, eritema" },
+          { "label": "Hiperuricemia (suporte, nao obrigatoria na crise)" },
+          { "label": "Cristais UMS no liquido sinovial" },
+          { "label": "Resposta rapida a colchicina/AINE/corticoide" }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Agudo vs cronico",
+        "subtitle": "Duas fases",
+        "caption": "Na crise: anti-inflamatório. Hipouricemiante depois, com profilaxia de flare.",
+        "footer": "Nao iniciar alopurinol na crise sem experiencia/protocolo — em geral apos resolucao",
+        "nodes": [
+          { "label": "Agudo: AINE / colchicina / corticoide" },
+          { "label": "Cronico: alopurinol/febuxostate + profilaxia" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Gota vs pseudogota",
+        "headers": ["", "Gota (UMS)", "Pseudogota (CPPD)"],
+        "rows": [
+          ["Cristal", "agulhas; birrefringência (−)", "romboides; birrefringência (+)"],
+          ["Articulação típica", "1ª MTP, podagra", "joelho"],
+          ["Rx", "punched-out / tofos", "condrocalcinose"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Tratamento",
+        "items": [
+          "Crise: AINE ou colchicina precoce ou corticoide (articular/sistêmico)",
+          "Meta urato crônico: geralmente < 6 mg/dL (< 5 se tofos)",
+          "Alopurinol: 1ª linha; ajustar na DRC; HLA-B*5801 em riscos",
+          "Profilaxia de flare ao iniciar hipouricemiante (colchicina baixa dose)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Precipitantes",
+        "body": "Álcool, frutos do mar/carnes purínicas, diuréticos, desidratação, cirurgia, internação."
+      }
+    ]
+  },
+
+  "cli-meningite-adulto": {
+    "intro": "Tríade clínica, contraindicações à punção e timing do corticoide definem a conduta na meningite bacteriana do adulto.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Triade e red flags",
+        "subtitle": "Suspeita clinica",
+        "caption": "Febre + rigidez de nuca + alteração mental — mas a tríade completa é incompleta em muitos casos.",
+        "footer": "Cefaleia e vomitos sao comuns; petequias → meningococo",
+        "nodes": [
+          { "label": "Febre" },
+          { "label": "Rigidez de nuca" },
+          { "label": "Alteracao do estado mental" },
+          { "label": "Cefaleia / fotofobia / vomitos" },
+          { "label": "Purpura / petequias (N. meningitidis)" }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Sequencia na emergencia",
+        "subtitle": "Hemocoltura -> ATB -> imagem? -> LCR",
+        "caption": "Não atrasar antibiótico se punção/TC forem demorar.",
+        "footer": "Dexametasona junto/antes do ATB se suspeita pneumococo",
+        "nodes": [
+          { "label": "1. Hemoculturas + dexametasona" },
+          { "label": "2. Antibiotico empirico imediato" },
+          { "label": "3. TC se indicada -> puncao lombar" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Contraindicações / TC antes da PL",
+        "headers": ["Indicação de TC pré-PL", "Exemplos"],
+        "rows": [
+          ["Sinais de hipertensão IC / massa", "papiledema, déficit focal, convulsão recente"],
+          ["Imunossupressão grave", "HIV avançado, transplantado"],
+          ["Rebaixamento marcado", "Glasgow baixo / coma"],
+          ["História de SNC", "neoplasia, cirurgia, AVC recente"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "ATB empírico adulto (ideia comunitária)",
+        "items": [
+          "Ceftriaxona/cefotaxima + vancomicina (cobertura pneumococo resistente)",
+          "Ampicilina se >50 anos / alcoolismo / imunossupressão (Listeria)",
+          "Dexametasona: idealmente antes ou com a 1ª dose de ATB; manter se pneumococo",
+          "Isolamento gotículas se meningococo até 24 h de ATB"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "LCR bacteriano típico",
+        "body": "Pressão ↑, celularidade ↑ (PMN), proteínas ↑, glicose ↓, bacterioscopia/cultura ± PCR."
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Timing do corticoide",
+        "body": "Dexametasona 10 mg IV q6h (adulto) — iniciar com o ATB; benefício mais claro no pneumococo (reduz mortalidade/sequela)."
+      }
+    ]
+  },
+
+  "cli-sindrome-nefrotico": {
+    "intro": "Critérios laboratoriais (proteinúria maciça e hipoalbuminemia) fecham a síndrome nefrótica e guiam complicações.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Criterios da sindrome nefrotica",
+        "subtitle": "Labs classicos",
+        "caption": "Proteinúria ≥ 3,5 g/dia + hipoalbuminemia (+ edema ± dislipidemia).",
+        "footer": "Relacao proteina/creatinina urinaria pode substituir 24h",
+        "nodes": [
+          { "label": "Proteinuria >= 3,5 g/24h" },
+          { "label": "Hipoalbuminemia (tipicamente < 3,0 g/dL)" },
+          { "label": "Edema" },
+          { "label": "Hiperlipidemia / lipiduria (suporte)" }
+        ]
+      },
+      {
+        "type": "triage3",
+        "title": "Causas por idade (ideia)",
+        "subtitle": "Associacoes de prova",
+        "caption": "Criança: doença de lesões mínimas. Adulto: membranosa, FSGS, diabete.",
+        "footer": "Sempre pensar secundarias: LES, HBV/HCV, neoplasias, farmacos",
+        "nodes": [
+          { "label": "Crianca: lesoes minimas" },
+          { "label": "Adulto: membranosa / FSGS" },
+          { "label": "Secundaria: DM, LES, virus, ca, drogas" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Nefrótico vs nefrítico",
+        "headers": ["", "Nefrótico", "Nefrítico"],
+        "rows": [
+          ["Proteinúria", "≥ 3,5 g/dia", "leve-moderada"],
+          ["Albumina", "↓↓", "normal/pouco ↓"],
+          ["Hematúria", "ausente/leve", "ativa (disomorfa, cilindros)"],
+          ["HAS/IRA", "menos marcantes", "comuns"],
+          ["Edema", "+++", "+/++"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Complicações clássicas",
+        "items": [
+          "Trombose (perda de antitrombina; incluindo veia renal)",
+          "Infecções (perda de Ig)",
+          "Hiperlipidemia e risco aterosclerótico",
+          "LRA pré-renal / hipovolemia intravascular com edema"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Conduta inicial",
+        "body": "Restrição salina, diurético, IECA/BRA, estatina se dislipidemia, anticoagular se trombose (e considerar se albumina muito baixa + membranosa). Biópsia no adulto na maioria dos casos."
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Membranosa no adulto",
+        "body": "Anti-PLA2R ajuda etiologia primária; associar a câncer, HBV, lúpus, fármacos quando secundária."
+      }
+    ]
+  }
+}

@@ -115,6 +115,46 @@ function branch2 (d) {
   return shell(640, 310, d.title, "", body);
 }
 
+function scorecard (d) {
+  const nodes = (d.nodes || []).slice(0, 10);
+  const rowH = 28;
+  const top = 88;
+  const h = Math.max(280, top + 36 + nodes.length * rowH + 50);
+  let body =
+    "  <rect x=\"32\" y=\"78\" width=\"576\" height=\"" + (nodes.length * rowH + 24) + "\" rx=\"12\" fill=\"#1e293b\" stroke=\"#334155\"/>\n";
+  nodes.forEach((n, i) => {
+    const y = top + i * rowH;
+    body +=
+      "  <text x=\"48\" y=\"" + y + "\" fill=\"#e2e8f0\" font-family=\"Arial, sans-serif\" font-size=\"12\">" + esc(n.label) + "</text>\n" +
+      "  <text x=\"580\" y=\"" + y + "\" text-anchor=\"end\" fill=\"#5eead4\" font-family=\"Arial, sans-serif\" font-size=\"13\" font-weight=\"700\">" + esc(n.pts || "") + "</text>\n";
+  });
+  if (d.footer) {
+    body +=
+      "  <text x=\"32\" y=\"" + (top + nodes.length * rowH + 28) + "\" fill=\"#fbbf24\" font-family=\"Arial, sans-serif\" font-size=\"12\" font-weight=\"700\">" + esc(d.footer) + "</text>\n";
+  }
+  return shell(640, h, d.title, d.subtitle, body);
+}
+
+function checklist (d) {
+  const nodes = (d.nodes || []).slice(0, 8);
+  const rowH = 34;
+  const top = 96;
+  const h = Math.max(260, top + nodes.length * rowH + 40);
+  let body = "";
+  nodes.forEach((n, i) => {
+    const y = top + i * rowH;
+    body +=
+      "  <circle cx=\"52\" cy=\"" + (y - 4) + "\" r=\"12\" fill=\"#134e4a\" stroke=\"#2dd4bf\"/>\n" +
+      "  <text x=\"52\" y=\"" + y + "\" text-anchor=\"middle\" fill=\"#5eead4\" font-family=\"Arial, sans-serif\" font-size=\"12\" font-weight=\"700\">" + (i + 1) + "</text>\n" +
+      "  <text x=\"76\" y=\"" + y + "\" fill=\"#e2e8f0\" font-family=\"Arial, sans-serif\" font-size=\"13\">" + esc(n.label) + "</text>\n";
+  });
+  if (d.footer) {
+    body +=
+      "  <text x=\"32\" y=\"" + (top + nodes.length * rowH + 16) + "\" fill=\"#fbbf24\" font-family=\"Arial, sans-serif\" font-size=\"12\" font-weight=\"700\">" + esc(d.footer) + "</text>\n";
+  }
+  return shell(640, h, d.title, d.subtitle, body);
+}
+
 function renderDiagram (diagram) {
   const d = diagram || {};
   switch (d.type) {
@@ -122,6 +162,8 @@ function renderDiagram (diagram) {
     case "timeline": return timeline(d);
     case "formula": return formula(d);
     case "branch2": return branch2(d);
+    case "scorecard": return scorecard(d);
+    case "checklist": return checklist(d);
     case "flow3":
     default: return flow3(d);
   }

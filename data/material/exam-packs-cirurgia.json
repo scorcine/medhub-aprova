@@ -1,0 +1,1174 @@
+{
+  "cir-queimaduras": {
+    "intro": "Queimaduras em R1: calcular SCQ (Wallace), reanimar com Parkland, proteger via aérea e reconhecer critérios de transferência.",
+    "extraDiagrams": [
+      {
+        "type": "formula",
+        "title": "Parkland (reanimacao)",
+        "subtitle": "Primeiras 24 h - cristaloides",
+        "caption": "Metade do volume nas primeiras 8 h a partir da queimadura; o restante nas 16 h seguintes. Ajuste pela diurese.",
+        "nodes": [
+          {
+            "formula": "4 mL x kg x %SCQ (SF 0,9% / Ringer)",
+            "note": "1/2 em 8h + 1/2 em 16h; alvo tipico diurese ~0,5 mL/kg/h adulto"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Wallace - regra dos 9s",
+        "subtitle": "SCQ adulto (ASCII)",
+        "caption": "Lembrete clássico de SCQ no adulto; criança: cabeça maior e membros menores — use tabela/Lund-Browder se cair.",
+        "footer": "Palma da mao do pcte ~1% SCQ",
+        "nodes": [
+          { "label": "Cabeca + pescoco = 9%" },
+          { "label": "Cada membro superior = 9%" },
+          { "label": "Face anterior do tronco = 18%" },
+          { "label": "Face posterior do tronco = 18%" },
+          { "label": "Cada membro inferior = 18%" },
+          { "label": "Perineo / genitais = 1%" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "O que entra no %SCQ",
+        "body": "Conte 2º e 3º graus. Eritema isolado de 1º grau não entra no cálculo de Parkland."
+      },
+      {
+        "type": "bullets",
+        "title": "Prioridades iniciais",
+        "items": [
+          "ABC: via aérea se queimadura facial, fuligem, rouquidão, espaço fechado",
+          "Remover roupas/jóias; resfriar com água morna (evitar hipotermia)",
+          "Dois acessos calibrosos; aquecer fluidos se grande superfície",
+          "Analgesia, profilaxia tétano, curativo limpo; criteriar centro de queimados"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais de alerta / transferência",
+        "headers": ["Situação", "Por quê"],
+        "rows": [
+          ["Face, mãos, pés, genitais, articulações", "Função e risco alto"],
+          ["Circunferencial / tórax", "Síndrome compartimental / ventilação"],
+          ["Elétrica / química / inalação", "Lesão oculta e via aérea"],
+          ["Grande %SCQ ou criança/idoso", "Reanimação e suporte especializado"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Parkland é ponto de partida — não ‘fixe’ o volume se oligúria ou sobrecarga. Elétrica: SCQ externa subestima dano profundo."
+      }
+    ]
+  },
+  "cir-atls": {
+    "intro": "ATLS: exame primário ABCDE salva vida antes do diagnóstico etiológico completo. Memorize a ordem e as ameaças de cada letra.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "ABCDE - exame primario",
+        "subtitle": "ATLS - ordem obrigatoria",
+        "caption": "Trate ameaças na ordem em que aparecem; só avance quando a letra atual estiver controlada.",
+        "footer": "Reavaliar ABCDE apos cada intervencao",
+        "nodes": [
+          { "label": "A - Airway + protecao cervical" },
+          { "label": "B - Breathing / ventilacao" },
+          { "label": "C - Circulation + controle hemorragia" },
+          { "label": "D - Disability (neuro / glicemia)" },
+          { "label": "E - Exposure + ambiente (hipotermia)" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Ameças clássicas por letra",
+        "headers": ["Letra", "Ameaça / conduta-chave"],
+        "rows": [
+          ["A", "Obstrução, trauma facial; C-spine; via definitiva se necessário"],
+          ["B", "PNT hipertensivo, aberto, hemotórax massivo, tórax instável"],
+          ["C", "Choque hemorrágico; compressão; acesso; sangue; FAST/radiografia"],
+          ["D", "ECG/pupilas; Glasgow; glicemia; lateralizar se lateralização"],
+          ["E", "Expor totalmente; prevenir hipotermia; log-roll com proteção"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Adjuncts do primário",
+        "body": "Monitorização, oximetria, EtCO₂ se intubado, gasometria, Rx cervical/tórax/pelve, FAST, sonda gástrica/vesical quando indicados — sem atrasar tratamento salva-vidas."
+      },
+      {
+        "type": "bullets",
+        "title": "Exame secundário (ideia)",
+        "items": [
+          "História AMPLE (alergias, meds, passado, last meal, eventos)",
+          "Cabeça-a-pés após estabilização do primário",
+          "Reavaliar continuamente — deterioração = voltar ao ABCDE"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Prova",
+        "body": "Pneumotórax hipertensivo é diagnóstico clínico — não atrase descompressão para ‘confirmar no Rx’ no instável."
+      }
+    ]
+  },
+  "cir-apendicite": {
+    "intro": "Apendicite: clínica + Alvarado/MANTRELS orientam imagem e cirurgia. Corte clássico de escore é ponto alto de prova.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Alvarado / MANTRELS",
+        "subtitle": "Escore 0-10 (pontos)",
+        "caption": "MANTRELS = Migration, Anorexia, Nausea/vomiting, Tenderness FID, Rebound, Elevation temp, Leukocytosis, Shift left.",
+        "footer": "0-4 improvavel | 5-6 possivel | 7-10 provavel",
+        "nodes": [
+          { "label": "Migracao da dor para FID", "pts": "1" },
+          { "label": "Anorexia", "pts": "1" },
+          { "label": "Nausea / vomitos", "pts": "1" },
+          { "label": "Dor a palpacao em FID", "pts": "2" },
+          { "label": "Rebound / descompressao", "pts": "1" },
+          { "label": "Febre (>=37,3 C)", "pts": "1" },
+          { "label": "Leucocitose (>10.000)", "pts": "2" },
+          { "label": "Desvio a esquerda (Shift)", "pts": "1" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Interpretação do Alvarado",
+        "body": "0–4: apendicite improvável (considerar outras causas / observação). 5–6: possível — imagem (USG/TC) ajuda. 7–10: provável — preparar para apendicectomia conforme protocolo local."
+      },
+      {
+        "type": "table",
+        "title": "Clínica e imagem",
+        "headers": ["Item", "Destaque de prova"],
+        "rows": [
+          ["Dor", "Epigástrio/periumbilical → migra para FID"],
+          ["Sinais", "Blumberg, Rovsing, psoas/obturador (retrocecal/pélvico)"],
+          ["USG", "1ª linha em criança/gestante; operador-dependente"],
+          ["TC", "Alta acurácia no adulto quando dúvida persiste"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Jejum, volume, analgesia, ATB se perfurada/abscesso ou no perioperatório",
+          "Não perfurada: apendicectomia (videolaparoscopia comum)",
+          "Plastrão/abscesso selecionado: ATB ± drenagem e intervalo conforme caso"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Gestante e criança",
+        "body": "Útero grávico desloca o apêndice — dor pode ser mais alta. Criança: USG preferencial; evite irradiação desnecessária."
+      }
+    ]
+  },
+  "cir-choque": {
+    "intro": "Choque hemorrágico no trauma: classificar perda volêmica (ATLS I–IV) guia reposição, sangue e controle da fonte.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Classes ATLS - hemorragia",
+        "subtitle": "Perda volemica estimada (adulto ~70 kg)",
+        "caption": "Classe III já costuma ter queda de PA; classe IV = risco iminente. Use o conjunto clínico, não um número isolado.",
+        "footer": "I <15% | II 15-30% | III 30-40% | IV >40%",
+        "nodes": [
+          { "label": "Classe I - perda <15% (~<750 mL)", "pts": "PA normal" },
+          { "label": "Classe II - 15-30% (~750-1500)", "pts": "PA ok / FC+" },
+          { "label": "Classe III - 30-40% (~1500-2000)", "pts": "PA cai" },
+          { "label": "Classe IV - >40% (>2000 mL)", "pts": "Choque grave" },
+          { "label": "Classe I - fillip / anxiedade", "pts": "Minima" },
+          { "label": "Classe II - sede, FC 100-120", "pts": "DEB leve" },
+          { "label": "Classe III - confusao, oliguria", "pts": "DEB claro" },
+          { "label": "Classe IV - letargia, FC >140", "pts": "DEB critico" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Classes de hemorragia (síntese ATLS)",
+        "headers": ["Classe", "% perda", "FC", "PA", "Débito urinário", "CNS"],
+        "rows": [
+          ["I", "<15%", "Normal / ↑ leve", "Normal", "Normal", "Ansiedade leve"],
+          ["II", "15–30%", "100–120", "Normal (PA diferencial ↓)", "20–30 mL/h", "Ansiedade"],
+          ["III", "30–40%", "120–140", "Diminuída", "5–15 mL/h", "Confusão"],
+          ["IV", ">40%", ">140", "Muito baixa", "Desprezível", "Letargia"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Conduta-chave",
+        "body": "Controle da hemorragia + reanimação com sangue/produtos precoces no hemorrágico grave. Cristaloide excessivo dilui e esfria — conceito damage control resuscitation."
+      },
+      {
+        "type": "bullets",
+        "title": "Fontes ocultas no trauma",
+        "items": [
+          "Tórax, abdome, retroperitônio, pelve, ossos longos (‘piso’)",
+          "Compressão externa, estabilização pélvica, FAST/Rx",
+          "Evite tríade letal: hipotermia, acidose, coagulopatia"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "PA normal não exclui choque classe II — olhe taquicardia, pele, sensorium e débito urinário."
+      }
+    ]
+  },
+  "cir-obstrucao": {
+    "intro": "Obstrução intestinal: diferenciar mecânica de íleo e, sobretudo, detectar estrangulamento — indicação cirúrgica urgente.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Obstrucao intestinal",
+        "subtitle": "Sem sofrimento vs sinais de estrangulamento",
+        "caption": "Ramificação clássica: estável sem peritonite → reanimação + SNG + imagem; estrangulamento → cirurgia urgente.",
+        "nodes": [
+          {
+            "title": "Sem sofrimento",
+            "lines": ["Dor em colica", "Jejum + SNG + volume", "TC e observar"]
+          },
+          {
+            "title": "Estrangulamento",
+            "lines": ["Dor continua / peritonite", "Febre, leucocitose, lactato+", "Cirurgia urgente"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Sinais de estrangulamento (não omitir)",
+        "items": [
+          "Dor contínua e progressiva (deixa de ser cólica)",
+          "Sinais peritoneais / defesa",
+          "Febre, taquicardia, toxemia",
+          "Leucocitose importante, acidose, lactato↑",
+          "TC: pneumatose, gás portal, falta de realce parietal, líquido/perfurado"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Delgado vs cólon (ideia)",
+        "headers": ["", "Delgado", "Cólon"],
+        "rows": [
+          ["Causas", "Bridas, hérnia, tumor", "Câncer, volvo, diverticulite"],
+          ["Vômitos", "Precoce", "Mais tardio"],
+          ["Distensão", "Central", "Periférica / assimétrica"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Conduta inicial",
+        "body": "Nada VO, sonda nasogástrica, volume e eletrólitos, ATB se suspeita de sofrimento/perfuração. Cirurgia se estrangulamento, peritonite, hernia encarcerada irredutível ou falha do tratamento conservador."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Íleo adinâmico",
+        "body": "Pós-op, eletrólitos, fármacos, sepse — ruídos diminuídos, menos cólica; trate a causa, não ‘desobstrua’ às cegas."
+      }
+    ]
+  },
+  "cir-pancreatite": {
+    "intro": "Pancreatite aguda: diagnosticar (2/3 critérios), estratificar gravidade (Atlanta/BISAP/Ranson) e suporte — ATB só se infecção documentada.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Gravidade - Atlanta",
+        "subtitle": "Leve / moderada / grave",
+        "caption": "Atlanta guia prova: falência orgânica persistente ≥48 h define grave.",
+        "nodes": [
+          {
+            "title": "Leve",
+            "lines": ["Sem falencia organica", "Sem complicacao local", "Suporte / alta precoce"],
+            "foot": "Maioria dos casos"
+          },
+          {
+            "title": "Moderada",
+            "lines": ["Falencia <48 h", "Ou complicacao local", "Internar / observar"],
+            "foot": "Necrose / liquido"
+          },
+          {
+            "title": "Grave",
+            "lines": ["Falencia >=48 h", "UTI / suporte", "Complicacoes frequentes"],
+            "foot": "Alta mortalidade"
+          }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "BISAP (0-5)",
+        "subtitle": "Escore rapido a beira do leito",
+        "caption": "BISAP ≥3 associa-se a maior risco de gravidade/mortalidade — use junto com clínica e Atlanta.",
+        "footer": "BUN>25 | Impaired mental | SIRS | Age>60 | Pleural effusion",
+        "nodes": [
+          { "label": "BUN > 25 mg/dL", "pts": "1" },
+          { "label": "Impaired mental status", "pts": "1" },
+          { "label": "SIRS (>=2 criterios)", "pts": "1" },
+          { "label": "Age > 60 anos", "pts": "1" },
+          { "label": "Pleural effusion", "pts": "1" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Diagnóstico (2 de 3)",
+        "body": "Dor típica epigástrica em faixa + lipase/amilase ≥3× + achados de imagem. Imagem não é obrigatória se clínica + enzima fecham."
+      },
+      {
+        "type": "table",
+        "title": "Ranson (conceito clássico)",
+        "headers": ["Momento", "Variáveis (ideia)"],
+        "rows": [
+          ["Admissão", "Idade, leucócitos, glicose, LDH, AST"],
+          ["48 h", "Queda Ht, ↑BUN, Ca↓, PaO₂↓, déficit base, sequestro líquido"],
+          ["Leitura", "Mais critérios = maior gravidade (corte clássico ≥3)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta inicial",
+        "items": [
+          "Volume agressivo precoce (cristaloides), analgesia, oxigenação",
+          "Nutrição enteral precoce se tolerar; evitar jejum prolongado desnecessário",
+          "Cálculo: USG; CPRE se colangite / obstrução biliar persistente",
+          "ATB profilático de rotina: não; se necrose infectada → ATB + drenagem/necrosectomia escalonada"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "TC precoce demais pode subestimar necrose; use para dúvida diagnóstica ou deterioração — não ‘só para completar’ nas primeiras horas se já diagnosticado."
+      }
+    ]
+  },
+  "cir-colecistite": {
+    "intro": "Colecistite vs colangite: Charcot e Reynolds são diferenciais clássicos. Tokyo guia diagnóstico/gravidade da colecistite aguda.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Triade de Charcot",
+        "subtitle": "Colangite - classico",
+        "caption": "Charcot = infecção da via biliar com obstrução. Pense CPRE + ATB + suporte.",
+        "footer": "Febre + ictericia + dor em HCD",
+        "nodes": [
+          { "label": "Febre / calafrios" },
+          { "label": "Ictericia" },
+          { "label": "Dor em hipocondrio direito" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Pentade de Reynolds",
+        "subtitle": "Colangite grave / choque",
+        "caption": "Reynolds = Charcot + disfunção de órgãos: emergência biliar com risco de óbito.",
+        "footer": "Charcot + hipotensao + alteracao mental",
+        "nodes": [
+          { "label": "Febre" },
+          { "label": "Ictericia" },
+          { "label": "Dor em HCD" },
+          { "label": "Hipotensao / choque" },
+          { "label": "Alteracao do nivel mental" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Colecistite vs colangite",
+        "headers": ["", "Colecistite", "Colangite"],
+        "rows": [
+          ["Quadro", "Dor HCD, Murphy+, febre", "Charcot / Reynolds"],
+          ["Lab", "Leucocitose; bilirrubina ±", "Colestase mais marcada"],
+          ["Imagem", "USG: parede, líquido, cálculo", "Dilatação VBP ± cálculo"],
+          ["Conduta-chave", "ATB + colecistectomia", "ATB + descompressão (CPRE)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Tokyo (colecistite) — ideia útil",
+        "items": [
+          "A: sinais locais (Murphy, massa/ dor HCD)",
+          "B: sistêmicos (febre, PCR/leucocitose)",
+          "C: imagem compatível",
+          "Diagnóstico suspeito: A+B; definitivo: (A+B)+C ou achado típico forte",
+          "Gravidade I–III guia timing operatório e necessidade de drenagem/UTI"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Conduta colecistite",
+        "body": "Jejum, volume, ATB, analgesia. Colecistectomia precoce (idealmente na internação índice) se apto. Grave/instável: suporte ± drenagem percutânea e cirurgia diferida."
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Não confunda",
+        "body": "Murphy+ sem icterícia/obstrução → colecistite. Charcot/Reynolds → colangite até prova em contrário — priorize via biliar."
+      }
+    ]
+  },
+  "cir-trauma-torax": {
+    "intro": "Trauma torácico ATLS: lethal six no exame primário e hidden six no secundário — padrão clássico de prova.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Lethal six",
+        "subtitle": "Ameacas do exame primario",
+        "caption": "As seis lesões que matam rápido — trate no ABCDE, muitas vezes clinicamente.",
+        "footer": "Primario = lethal six",
+        "nodes": [
+          { "label": "Obstrucao de via aerea" },
+          { "label": "Pneumotorax hipertensivo" },
+          { "label": "Pneumotorax aberto" },
+          { "label": "Hemotorax massivo" },
+          { "label": "Torax instavel (flail chest)" },
+          { "label": "Tamponamento cardiaco" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Hidden six",
+        "subtitle": "Ameacas do exame secundario",
+        "caption": "Podem passar despercebidas no primário — busque no secundário e com imagem.",
+        "footer": "Secundario = hidden six",
+        "nodes": [
+          { "label": "Ruptura aortica / grande vaso" },
+          { "label": "Contusao miocardica" },
+          { "label": "Contusao pulmonar" },
+          { "label": "Ruptura diafragmatica" },
+          { "label": "Ruptura traqueobronquica" },
+          { "label": "Ruptura esofagica" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Condutas salva-vidas (B/C)",
+        "headers": ["Lesão", "Conduta clássica"],
+        "rows": [
+          ["PNT hipertensivo", "Descompressão imediata + dreno"],
+          ["PNT aberto", "Curativo de 3 pontas + toracostomia"],
+          ["Hemotórax massivo", "Dreno; sangue; toracotomia se critério"],
+          ["Tamponamento", "FAST; pericardiocentese/janela; cirurgia"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Hemotórax — indicação cirúrgica (ideia)",
+        "body": "Drenagem inicial ~≥1500 mL ou débito alto persistente (ex.: ≥200 mL/h por 2–4 h) + instabilidade → pensar toracotomia (valores de protocolo local)."
+      },
+      {
+        "type": "bullets",
+        "title": "Lembretes",
+        "items": [
+          "Flail: oxigenação, analgesia multimodal, VNI/IOT se falência",
+          "Contusão pulmonar: piora em horas — evite sobrecarga hídrica",
+          "Diafragma: Rx com NGT ‘no tórax’; TC/cirurgia conforme lado/estabilidade"
+        ]
+      }
+    ]
+  },
+  "cir-hernia": {
+    "intro": "Hérnia complicada: encarcerada (irredutível) ≠ estrangulada (isquemia). Critérios de sofrimento mandam cirurgia urgente.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Hernia complicada",
+        "subtitle": "Encarcerada vs estrangulada",
+        "caption": "Irredutível sem toxemia pode tentar redução cautelosa e programar cirurgia; isquemia = sala imediata.",
+        "nodes": [
+          {
+            "title": "Encarcerada",
+            "lines": ["Irredutivel", "Sem isquemia clara", "Reducao +/- eletiva"]
+          },
+          {
+            "title": "Estrangulada",
+            "lines": ["Isquemia / toxicidade", "Nao forcar reducao", "Cirurgia urgente"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Critérios de estrangulamento",
+        "items": [
+          "Dor intensa desproporcional / contínua",
+          "Sinais inflamatórios locais (eritema, calor) sobre o saco",
+          "Febre, taquicardia, toxicidade sistêmica",
+          "Sinais de obstrução com sofrimento ou peritonite",
+          "Lactato↑ / acidose / leucocitose importante"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Conduta",
+        "body": "Suspeita de estrangulamento: não insistir em redução — jejum, volume, ATB e cirurgia. Encarcerada sem sofrimento: tentativa única cuidadosa pode ser aceitável; se reduzir, operar em caráter precoce/eletivo."
+      },
+      {
+        "type": "table",
+        "title": "Tipos que caem",
+        "headers": ["Tipo", "Ponto"],
+        "rows": [
+          ["Inguinal indireta", "Lateral aos vasos; pode ir ao escroto"],
+          ["Direta", "Triângulo de Hesselbach; raramente estrangula"],
+          ["Femoral", "Abaixo do ligamento inguinal; alto risco de estrangular"],
+          ["Umbilical / incisional", "Comum em obesos; risco se colo estreito"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Hérnia femoral em mulher idosa com vômitos = pense obstrução/estrangulamento até excluir."
+      }
+    ]
+  },
+  "cir-hemorragia": {
+    "intro": "HDA: ressuscitar, IBP, estratificar Forrest na EDA — classificação que define terapia endoscópica e risco de ressangramento.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Forrest - HDA ulcerosa",
+        "subtitle": "Classificacao endoscopica",
+        "caption": "Forrest I e IIa/IIb = alto risco → terapia endoscópica + IBP. IIc/III = baixo risco.",
+        "footer": "Ia jato | Ib babando | IIa vaso | IIb coagulo | IIc hematina | III base limpa",
+        "nodes": [
+          { "label": "Ia - sangramento jato arterial", "pts": "Alto" },
+          { "label": "Ib - sangramento babando", "pts": "Alto" },
+          { "label": "IIa - vaso visivel nao sangrante", "pts": "Alto" },
+          { "label": "IIb - coagulo aderido", "pts": "Alto*" },
+          { "label": "IIc - mancha de hematina", "pts": "Baixo" },
+          { "label": "III - base limpa / fibrina", "pts": "Baixo" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Conduta inicial",
+        "body": "ABC, 2 acessos, tipagem, reposição criteriosa, IBP EV precoce. Suspeita de variz: vasoativo (terlipressina/octreotide) + ATB + EDA. Úlcera: EDA com terapia se Forrest de risco."
+      },
+      {
+        "type": "bullets",
+        "title": "Fluxo HDA (prova)",
+        "items": [
+          "Ressuscitar e proteger via aérea se hematêmese maciça",
+          "IBP EV; vasoativo + ATB se provável variz",
+          "EDA precoce para diagnóstico e terapia (Forrest)"
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Forrest e conduta",
+        "items": [
+          "Ia/Ib/IIa: terapia endoscópica (injeção, clip, termocoagulação) + IBP alto",
+          "IIb: remover/inspecionar coagulo quando seguro; tratar se lesão de risco sob ele",
+          "IIc/III: IBP; alta precoce possível se estável e sem outros riscos",
+          "Falha endoscópica / instabilidade refratária: embolização ou cirurgia"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Variz vs úlcera",
+        "body": "Hepatopatia, ascite, estigmas de hipertensão portal → trate como variz até a EDA. Rockall/Glasgow-Blatchford ajudam risco, mas Forrest manda na úlcera."
+      }
+    ]
+  },
+  "cir-perfuracao": {
+    "intro": "Perfuração de víscera oca: pneumoperitônio no Rx/TC + peritonite = cirurgia de urgência após reanimação breve.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Sinais de perfuracao (Rx/TC)",
+        "subtitle": "Pneumoperitonio e equivalentes",
+        "caption": "Ar livre + clínica de abdome agudo perfurativo fecha indicação na maioria dos casos.",
+        "footer": "TC e mais sensivel que Rx",
+        "nodes": [
+          { "label": "Rx: ar sob diafragma (ortostase)" },
+          { "label": "Rx: Rigler / ar em flanco (decubito)" },
+          { "label": "TC: ar livre peritoneal" },
+          { "label": "TC: extravasamento de contraste" },
+          { "label": "TC: liquido livre / inflamacao focal" },
+          { "label": "Clinica: peritonite difusa" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Causas clássicas",
+        "body": "Úlcera péptica perfurada, diverticulite perfurada, apendicite perfurada, trauma, corpo estranho, anastomose. Localização da dor inicial dá pista (epigástrio vs FID vs flanco)."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Jejum, volume, ATB amplo (aeróbios + anaeróbios), analgesia",
+          "Sonda se distensão/vômitos; corrigir eletrólitos",
+          "Cirurgia (geralmente laparoscopia/laparotomia) para controle da fonte",
+          "Selecionados estáveis com perfurado selado podem ter via não operatória sob vigilância estreita"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Rx vs TC",
+        "headers": ["Exame", "Papel"],
+        "rows": [
+          ["Rx tórax/abd ortostático", "Ar subdiafragmático — rápido e barato"],
+          ["Rx em decúbito lateral", "Se não puder ficar em pé"],
+          ["TC com contraste", "Confirma, localiza e vê complicações"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Rx normal não exclui perfuração — se alta suspeita clínica, vá para TC ou sala conforme gravidade."
+      }
+    ]
+  },
+  "cir-diverticulite": {
+    "intro": "Diverticulite aguda: Hinchey classifica complicação e guia ATB, drenagem ou cirurgia.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Hinchey - diverticulite",
+        "subtitle": "Classificacao de complicacao",
+        "caption": "I–II: muitas vezes ATB ± drenagem. III–IV: peritonite — cirurgia de urgência.",
+        "footer": "I abscesso pericolico | II abscesso distante | III purulenta | IV fecal",
+        "nodes": [
+          { "label": "I - abscesso / fleimao pericolico", "pts": "ATB +/- drenar" },
+          { "label": "II - abscesso pelvico / distante", "pts": "Drenagem + ATB" },
+          { "label": "III - peritonite purulenta", "pts": "Cirurgia" },
+          { "label": "IV - peritonite fecal", "pts": "Cirurgia" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Clínica e diagnóstico",
+        "body": "Dor em FIE, febre, alteração do hábito intestinal. TC com contraste é o exame de escolha para confirmar e estadiar."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta por gravidade",
+        "items": [
+          "Não complicada: ATB ± ambulatorial se estável e sem comorbidade grave",
+          "Abscesso: ATB; drenagem percutânea se >~3–4 cm (critério usual de prova)",
+          "Peritonite (Hinchey III/IV): ressuscitação + cirurgia (Hartmann ou anastomose selecionada)",
+          "Colonoscopia: após resolução do quadro agudo, para excluir neoplasia quando indicado"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais de gravidade",
+        "headers": ["Achado", "Significado"],
+        "rows": [
+          ["Ar livre / extravasamento", "Perfuração"],
+          ["Abscesso", "Hinchey I–II"],
+          ["Líquido livre / peritonite", "Cirurgia"],
+          ["Fístula / estenose", "Doença crônica complicada"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Prova",
+        "body": "Não faça colonoscopia na fase aguda de diverticulite — risco e baixo rendimento."
+      }
+    ]
+  },
+  "cir-isquemia-mesenterica": {
+    "intro": "Isquemia mesentérica aguda: tríade clássica + dor desproporcional. Tempo é intestino — angiografia/TC e revascularização precoces.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Triade classica",
+        "subtitle": "Isquemia mesenterica aguda",
+        "caption": "Dor intensa com exame abdominal pobre no início é o alarme. Não espere peritonite para agir.",
+        "footer": "Dor + coracao + intestino (historia)",
+        "nodes": [
+          { "label": "Dor abdominal intensa (desproporcional)" },
+          { "label": "Doenca cardiaca / emboligena (FA etc.)" },
+          { "label": "Esvaziamento intestinal (vomito / diarreia)" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Dor desproporcional",
+        "body": "Exame ainda ‘mole’ com dor extrema + FA/aterosclerose = peça angioTC de vasos mesentéricos. Lactato↑ é tardio — normal não exclui."
+      },
+      {
+        "type": "table",
+        "title": "Tipos",
+        "headers": ["Tipo", "Pista"],
+        "rows": [
+          ["Embólica arterial", "FA, sopro; início súbito"],
+          ["Trombótica arterial", "Aterosclerose; angina pós-prandial prévia"],
+          ["Venosa", "Hipercoagulabilidade; mais insidiosa"],
+          ["Não oclusiva (NOMI)", "Choque, vasopressores, baixo fluxo"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Ressuscitação, ATB, anticoagulação se sem contraindicação (equipe)",
+          "AngioTC; cirurgia se peritonite / necrose",
+          "Revascularização (embolectomia, bypass, endovascular) + 2ª look se necessário",
+          "Ressecção só do intestino inviável — preserve o viável"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Crônica",
+        "body": "Tríade crônica clássica: dor pós-prandial, medo de comer e perda ponderal — diferente da emergência oclusiva aguda."
+      }
+    ]
+  },
+  "cir-aaa": {
+    "intro": "AAA: diâmetro e sintomas definem eletivo vs ruptura. Hipotensão + dor lombar/abdominal + massa pulsátil = ruptura até prova em contrário.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "AAA - conduta por cenario",
+        "subtitle": "Assintomatico / sintomatico / ruptura",
+        "caption": "Corte clássico de reparo eletivo ~≥5,5 cm (♂) ou crescimento rápido; ruptura = sala/endovascular de urgência.",
+        "nodes": [
+          {
+            "title": "Assintomatico",
+            "lines": ["USG/TC surveillance", "Reparo se >=5,5 cm", "Ou cresce >=0,5-1 cm/ano"],
+            "foot": "Eletivo"
+          },
+          {
+            "title": "Sintomatico",
+            "lines": ["Dor / embolizacao", "Internar", "Reparo precoce"],
+            "foot": "Urgente"
+          },
+          {
+            "title": "Ruptura",
+            "lines": ["Choque + dor + massa", "Volume prudente", "EVAR/cirurgia ja"],
+            "foot": "Emergencia"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Critérios de ruptura / alta suspeita",
+        "items": [
+          "Tríade: dor abdominal/lombar + hipotensão + massa pulsátil",
+          "Síncope, anemia aguda, equimose de flanco (Grey Turner) em contexto compatível",
+          "Instável com alta suspeita: não atrase transferência à sala por TC ‘completa’"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Indicações de reparo (ideia de prova)",
+        "headers": ["Indicação", "Detalhe"],
+        "rows": [
+          ["Diâmetro", "Geralmente ≥5,5 cm em homens; limiar menor em mulheres em muitas diretrizes"],
+          ["Crescimento", "Rápido (ex.: ≥0,5 cm/6 meses ou ≥1 cm/ano)"],
+          ["Sintomático", "Dor atribuível, embolia distal, inflamatório"],
+          ["Roto / iminente", "Cirurgia/EVAR de emergência"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Reanimação na ruptura",
+        "body": "Hipotensão permissiva cautelosa (evitar hipertensão e sobrecarga) até o controle do sangramento — conceito clássico."
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Rastreio",
+        "body": "Homem idoso tabagista: USG de rastreio é tema frequente. Controle de HAS e cessação do tabaco reduzem risco."
+      }
+    ]
+  },
+  "cir-tvp": {
+    "intro": "TVP: probabilidade pré-teste com Wells → D-dímero ou Doppler. Anticoagular conforme risco e contraindicações.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Wells - TVP",
+        "subtitle": "Probabilidade pre-teste",
+        "caption": "Some pontos; diagnóstico alternativo tão ou mais provável subtrai 2. Corte clássico: <2 improvável; ≥2 provável (ou regras de 2 níveis).",
+        "footer": "<2 improvavel | >=2 provavel (-2 se alt. diagnostico)",
+        "nodes": [
+          { "label": "Cancer ativo", "pts": "1" },
+          { "label": "Paralisia / imobilizacao recente MMII", "pts": "1" },
+          { "label": "Cirurgia / acamado >3d (4 sem)", "pts": "1" },
+          { "label": "Dor no trajeto venoso profundo", "pts": "1" },
+          { "label": "Edema de toda a perna", "pts": "1" },
+          { "label": "Edema panturrilha >3 cm", "pts": "1" },
+          { "label": "Edema com cacifo no lado sintomatico", "pts": "1" },
+          { "label": "Veias superficiais colaterais", "pts": "1" },
+          { "label": "TVP previa documentada", "pts": "1" },
+          { "label": "Diagnostico alternativo tao provavel", "pts": "-2" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Fluxo",
+        "body": "Wells baixo + D-dímero negativo ≈ exclui. Wells alto ou D-dímero positivo → USG compressão (Doppler). Não atrase anticoagulação se alta probabilidade e sem contraindicação enquanto espera exame."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Anticoagulação (DOAC ou heparina → varfarina conforme cenário)",
+          "Duração típica: 3 meses se provocada; mais longa se não provocada/recorrente/câncer",
+          "Filtro de VICava: contraindicação à anticoagulação + TVP proximal / embolia",
+          "Pense TEP se dispneia/dor torácica"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Diferenças úteis",
+        "headers": ["Quadro", "Pista"],
+        "rows": [
+          ["TVP", "Edema assimétrico, dor panturrilha, Wells"],
+          ["Celulite", "Eritema quente, febre local"],
+          ["Ruptura de cisto de Baker", "Dor súbita; USG diferencia"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Profilaxia",
+        "body": "Cirurgia / hospitalização: meias + HBPM/DOAC conforme risco. Ponto clássico pós-op ortopédico e oncológico."
+      }
+    ]
+  },
+  "cir-fratura-exposta": {
+    "intro": "Fratura exposta: ATLS primeiro, depois Gustilo-Anderson para ATB, lavagem e timing de cobertura/fixação.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Gustilo-Anderson",
+        "subtitle": "Fratura exposta - tipos",
+        "caption": "Tipo III tem lesão de partes moles grave; IIIC = lesão arterial que requer reparo.",
+        "footer": "I limpa <1cm | II >1cm moderada | IIIA cobertura | IIIB precisa retalho | IIIC arterial",
+        "nodes": [
+          { "label": "I - ferida limpa <1 cm", "pts": "Baixa energia" },
+          { "label": "II - >1 cm, contusao moderada", "pts": "Energia media" },
+          { "label": "IIIA - ampla, cobertura ossea ok", "pts": "Alta energia" },
+          { "label": "IIIB - precisa de retalho / cobertura", "pts": "Periosteo ruim" },
+          { "label": "IIIC - lesao arterial associada", "pts": "Reparo vascular" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Sequência inicial",
+        "body": "ABCDE, hemorragia, alinhar e imobilizar, cobrir com curativo úmido estéril, ATB precoce + tétano, foto se possível, irrigação/desbridamento em centro cirúrgico."
+      },
+      {
+        "type": "table",
+        "title": "ATB empírico (ideia clássica)",
+        "headers": ["Tipo", "Cobertura"],
+        "rows": [
+          ["I–II", "Cefalosporina 1ª geração (Gram+)"],
+          ["III", "Adicionar Gram− (aminoglicosídeo / equivalente)"],
+          ["Solo / fazenda", "Considerar penicilina (Clostridium)"],
+          ["Água / especial", "Cobertura conforme exposição"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de prova",
+        "items": [
+          "ATB o mais cedo possível reduz infecção",
+          "Desbridamento cirúrgico; fixação provisória/definitiva conforme lesão",
+          "IIIB/C: equipe plástica/vascular; cobertura precoce da exposição óssea",
+          "Não ‘enterrar’ contaminação — lavagem abundante sob visão"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Síndrome compartimental",
+        "body": "Dor desproporcional, dor à extensão passiva, tensão — fasciotomia. Pulso presente não exclui."
+      }
+    ]
+  },
+  "cir-tce": {
+    "intro": "TCE: Glasgow completo (O+V+M) estratifica gravidade e conduta. ABC, glicemia e TC conforme critérios.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Glasgow Coma Scale",
+        "subtitle": "Olho + Verbal + Motor (3-15)",
+        "caption": "Some os melhores escores. Grave ≤8 (via aérea), moderado 9–12, leve 13–15.",
+        "footer": "Leve 13-15 | Moderado 9-12 | Grave <=8",
+        "nodes": [
+          { "label": "O4 - espontanea", "pts": "4" },
+          { "label": "O3 - a voz | O2 - a dor | O1 - nenhuma", "pts": "3-1" },
+          { "label": "V5 - orientada", "pts": "5" },
+          { "label": "V4 - confusa | V3 - palavras | V2 - sons | V1 - 0", "pts": "4-1" },
+          { "label": "M6 - obedece comandos", "pts": "6" },
+          { "label": "M5 - localiza dor", "pts": "5" },
+          { "label": "M4 - flexao retirada", "pts": "4" },
+          { "label": "M3 - flexao anormal (decorticada)", "pts": "3" },
+          { "label": "M2 - extensao (descerebrada)", "pts": "2" },
+          { "label": "M1 - nenhuma resposta motora", "pts": "1" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Componentes GCS (referência)",
+        "headers": ["Domínio", "Pontuação"],
+        "rows": [
+          ["Abertura ocular (O)", "4 espontânea · 3 voz · 2 dor · 1 nenhuma"],
+          ["Resposta verbal (V)", "5 orientada · 4 confusa · 3 palavras · 2 sons · 1 nenhuma"],
+          ["Resposta motora (M)", "6 obedece · 5 localiza · 4 retira · 3 flexão anormal · 2 extensão · 1 nenhuma"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta por gravidade",
+        "items": [
+          "Leve: observação, critérios de TC (vômitos, idade, anticoagulante, déficit, mecanismo)",
+          "Moderado: TC, internação, reavaliações seriais de GCS",
+          "Grave (≤8): via aérea definitiva, ventilação, evitar hipóxia/hipotensão, TC, neurocirurgia",
+          "Sinais de herniação: hiperventilação temporária, manitol/SSHhipertônica, descompressão"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Metas",
+        "body": "Evitar lesão secundária: SatO₂ adequada, PAS alvo conforme idade/diretriz, normoglicemia, normotermia, elevação da cabeceira se sem CI de coluna."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Hematoma clássico",
+        "body": "Epidural: intervalo lúcido + lente biconvexa. Subdural: crescentérico, mais em idosos/anticoagulados. Sobretudo: deterioração de GCS → imagem e neurocirurgia."
+      }
+    ]
+  },
+  "cir-abdome-agudo": {
+    "intro": "Abdome agudo: separar peritonite (cirúrgico) de cólica/obstrutivo visceral muda imagem, timing e indicação operatória.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Abdome agudo - abordagem",
+        "subtitle": "Peritonite vs colica / visceral",
+        "caption": "Peritonite = defesa/rigidez e pouca mobilidade → rumo à cirurgia. Cólica = inquietação, intervalos → cálculo, obstrução inicial, isquemia precoce.",
+        "nodes": [
+          {
+            "title": "Peritonite",
+            "lines": ["Dor continua", "Defesa / Blumberg", "Cirurgia / TC rapida"]
+          },
+          {
+            "title": "Colica visceral",
+            "lines": ["Dor em ondas", "Pcte inquieto", "USG/TC conforme causa"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Contraste clínico",
+        "headers": ["", "Peritonite", "Cólica / visceral"],
+        "rows": [
+          ["Dor", "Contínua, piora com movimento", "Em cólicas, com intervalos"],
+          ["Postura", "Imóvel, joelhos fletidos", "Inquieto, anda/rola"],
+          ["Exame", "Defesa, rigidez, descompressão+", "Pode ser pobre entre crises"],
+          ["Exemplos", "Perfuração, apendicite avançada", "Litiase ureteral, obstrução inicial, biliar"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Abordagem prática",
+        "items": [
+          "ABC, volume, jejum, analgesia (não ‘mascara’ indicação se reavaliar)",
+          "Lab: hemograma, PCR, β-HCG em mulher, lipase, função renal, lactato se grave",
+          "Imagem dirigida: USG (biliar/gineco), TC (maioria dos adultos dúbios), Rx se perfuração/obstrução",
+          "Cirurgião cedo se peritonite, instabilidade ou ar livre"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Idoso e imunossuprimido",
+        "body": "Sinais peritoneais podem ser pobres — limiar baixo para TC e avaliação cirúrgica."
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Mulher em idade fértil",
+        "body": "β-HCG sempre. Diferencial: ectópica, TORÇÃO de anexos, DIP — USG pélvico."
+      }
+    ]
+  },
+  "cir-ureterolitase": {
+    "intro": "Ureterolitíase: dor em cólica + hematúria. Conduta por tamanho, localização, infecção e função renal.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Conduta por tamanho",
+        "subtitle": "Calculo ureteral - ideia de prova",
+        "caption": "Infecção com obstrução = emergência (descompressão). Tamanho guia chance de expulsão vs urologia.",
+        "nodes": [
+          {
+            "title": "<=5 mm",
+            "lines": ["Alta chance espontanea", "Analgesia + hidratacao", "Alfa-bloqueador +/-"],
+            "foot": "Observar"
+          },
+          {
+            "title": "5-10 mm",
+            "lines": ["Expulsao variavel", "Tamsulosina frequente", "Urologia se falha"],
+            "foot": "Individualizar"
+          },
+          {
+            "title": ">10 mm / infectado",
+            "lines": ["Baixa expulsao espontanea", "LECO/ureteroscopia", "Dreno se sepsis"],
+            "foot": "Intervir"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Imagem",
+        "headers": ["Exame", "Papel"],
+        "rows": [
+          ["TC sem contraste", "Padrão-ouro: tamanho, local, densidade"],
+          ["USG", "Hidronefrose; útil em gestante"],
+          ["Rx KUB", "Cálculos radiopacos; seguimento"],
+          ["Lab", "Urina I, creatinina, PCR/cultura se febre"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Critérios de conduta",
+        "items": [
+          "Cólica simples: AINE (± opioide), antiemético, filtro de urina",
+          "Indicações de internação/intervenção: dor refratária, vômitos, IRA, rim único, infecção",
+          "Pielonefrite obstrutiva / sepse: ATB + descompressão urgente (duplo J ou nefrostomia)",
+          "≤5 mm: expectativa; >10 mm: pouco provável expulsão espontânea"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Não erre",
+        "body": "Febre + cálculo obstrutivo ≠ ‘só analgésico’. Descomprimir a via urinária é prioridade."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Localização",
+        "body": "Junção ureterovesical é sítio comum; cálculo distal pequeno tem melhor chance de eliminação que proximal do mesmo tamanho."
+      }
+    ]
+  },
+  "cir-preop": {
+    "intro": "Avaliação pré-operatória: ASA Physical Status resume reserva fisiológica e comunica risco — memorize I–VI.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "ASA Physical Status",
+        "subtitle": "Classificacao de risco anestesiologico",
+        "caption": "ASA não sozinho cancela cirurgia — comunica comorbidade. Emergent (E) adiciona urgência ao status.",
+        "footer": "I sadio | II sistemica leve | III grave | IV ameaca constante | V moribundo | VI morte encefalica",
+        "nodes": [
+          { "label": "ASA I - saudavel, sem doenca sistemica", "pts": "I" },
+          { "label": "ASA II - doenca sistemica leve", "pts": "II" },
+          { "label": "ASA III - doenca sistemica grave", "pts": "III" },
+          { "label": "ASA IV - ameaca constante a vida", "pts": "IV" },
+          { "label": "ASA V - moribundo, sem cirurgia pode morrer", "pts": "V" },
+          { "label": "ASA VI - morte encefalica (doacao orgaos)", "pts": "VI" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Exemplos clássicos",
+        "headers": ["ASA", "Exemplos de prova"],
+        "rows": [
+          ["I", "Jovem saudável, sem comorbidades"],
+          ["II", "HAS controlada, DM controlado, obesidade leve, tabagista"],
+          ["III", "DM com lesão de órgão, DPOC limitante, ICC compensada, IAM antigo"],
+          ["IV", "ICC descompensada, IAM recente, sepse, IRA grave"],
+          ["V", "Ruptura de aneurisma com choque, trauma devastador"],
+          ["VI", "Morte encefálica — captação de órgãos"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Checklist pré-op útil",
+        "items": [
+          "Jejum, vias aéreas, alergias, anticoagulantes/antiagregantes",
+          "Otimizar HAS, glicemia, anemia e infecção quando eletivo",
+          "Risco cardíaco: capacidade funcional (METs) + tipo de cirurgia",
+          "Tromboprofilaxia e antibioticoprofilaxia no timing correto"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Emergência",
+        "body": "Em cirurgia de urgência/emergência, não atrase o salva-vidas por ‘liberação clínica’ completa — estabilize o possível e documente risco (ASA + E)."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Prova",
+        "body": "ASA II vs III: a diferença é doença sistêmica leve/controlada versus grave com limitação funcional ou lesão de órgão."
+      }
+    ]
+  }
+}

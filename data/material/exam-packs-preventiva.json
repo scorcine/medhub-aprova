@@ -1,0 +1,1940 @@
+{
+  "prev-niveis": {
+    "intro": "Níveis de prevenção fecham enunciados de APS: memorize primordial → primária → secundária → terciária → quaternária com exemplos clássicos.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Niveis de prevencao",
+        "subtitle": "Do risco populacional a iatrogenia",
+        "caption": "Linha clássica de prova: antes do risco → evitar doença → detectar cedo → limitar dano → evitar excesso.",
+        "nodes": [
+          {
+            "label": "Primordial",
+            "sub": "determinantes"
+          },
+          {
+            "label": "Primaria",
+            "sub": "evitar doenca"
+          },
+          {
+            "label": "Secundaria",
+            "sub": "rastreio/Dx precoce"
+          },
+          {
+            "label": "Terciaria",
+            "sub": "reabilitacao"
+          },
+          {
+            "label": "Quaternaria",
+            "sub": "evitar excesso"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Exemplos de prova",
+        "subtitle": "Associe nivel x conduta",
+        "caption": "Checklist rápido para classificar a intervenção do enunciado.",
+        "nodes": [
+          {
+            "label": "Primordial: lei antitabaco, saneamento, reducao de pobreza"
+          },
+          {
+            "label": "Primaria: vacina, preservativo, fluor, orientacao alimentar"
+          },
+          {
+            "label": "Secundaria: mamografia, Papanicolau, PA em assintomatico"
+          },
+          {
+            "label": "Terciaria: fisioterapia pos-AVC, reabilitacao cardiaca"
+          },
+          {
+            "label": "Quaternaria: nao rastrear sem criterio; deprescrever"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Níveis × foco × exemplo",
+        "headers": [
+          "Nível",
+          "Foco",
+          "Exemplo clássico"
+        ],
+        "rows": [
+          [
+            "Primordial",
+            "Determinantes sociais/ambientais",
+            "Política antitabaco, urbanismo saudável"
+          ],
+          [
+            "Primária",
+            "Impedir o surgimento da doença",
+            "Vacinação, uso de cinto, educação em saúde"
+          ],
+          [
+            "Secundária",
+            "Diagnóstico precoce / rastreamento",
+            "Mamografia, glicemia/PA em assintomático"
+          ],
+          [
+            "Terciária",
+            "Limitar dano e reabilitar",
+            "Reabilitação pós-AVC, controle de sequelas"
+          ],
+          [
+            "Quaternária",
+            "Evitar medicalização excessiva",
+            "Não solicitar exame sem indicação; deprescrição"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Pegadinha frequente",
+        "body": "Tratar HAS já estabelecida é controle/terciária (evitar complicação), não primária. Primária evita a doença; secundária acha cedo; terciária reduz sequela."
+      },
+      {
+        "type": "bullets",
+        "title": "Como classificar em 10 segundos",
+        "items": [
+          "Ainda não há doença nem fator individual? → primordial (política/ambiente)",
+          "Há risco, mas sem doença? → primária",
+          "Busca doença oculta / fase inicial? → secundária",
+          "Doença estabelecida, evita piora/sequela? → terciária",
+          "Intervenção desnecessária ou dano do cuidado? → quaternária"
+        ]
+      }
+    ]
+  },
+  "prev-indicadores": {
+    "intro": "Incidência, prevalência, mortalidade e letalidade caem trocando numerador/denominador — memorize as fórmulas e a relação P ≈ I × D.",
+    "extraDiagrams": [
+      {
+        "type": "formula",
+        "title": "Incidencia cumulativa",
+        "subtitle": "Casos novos / populacao sob risco",
+        "caption": "Fórmula mental: novos casos no período sobre quem ainda podia adoecer no início.",
+        "nodes": [
+          {
+            "formula": "IC = casos novos / populacao sob risco",
+            "note": "No periodo definido; exclua prevalentes do denominador"
+          }
+        ]
+      },
+      {
+        "type": "triage3",
+        "title": "Tres indicadores-chave",
+        "subtitle": "Incidencia / prevalencia / letalidade",
+        "caption": "Separe fluxo de novos casos, estoque e óbitos entre doentes.",
+        "nodes": [
+          {
+            "title": "Incidencia",
+            "lines": [
+              "Casos novos",
+              "Periodo",
+              "Risco / velocidade"
+            ],
+            "foot": "Taxa"
+          },
+          {
+            "title": "Prevalencia",
+            "lines": [
+              "Casos existentes",
+              "Momento ou periodo",
+              "Carga da doenca"
+            ],
+            "foot": "Estoque"
+          },
+          {
+            "title": "Letalidade",
+            "lines": [
+              "Obitos pela doenca",
+              "Casos da doenca",
+              "Gravidade"
+            ],
+            "foot": "≠ mortalidade"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Fórmulas clássicas de prova",
+        "headers": [
+          "Indicador",
+          "Fórmula",
+          "Interpretação"
+        ],
+        "rows": [
+          [
+            "Incidência cumulativa",
+            "Casos novos / população sob risco (início)",
+            "Probabilidade de adoecer no período"
+          ],
+          [
+            "Densidade de incidência",
+            "Casos novos / pessoa-tempo",
+            "Velocidade de ocorrência"
+          ],
+          [
+            "Prevalência pontual",
+            "Casos no instante t / população em t",
+            "Carga no momento"
+          ],
+          [
+            "Mortalidade",
+            "Óbitos / população média (× constante)",
+            "Risco de morrer na população"
+          ],
+          [
+            "Letalidade",
+            "Óbitos pela doença / casos da doença",
+            "Gravidade entre doentes"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Relações que a banca ama",
+        "items": [
+          "Prevalência ≈ incidência × duração média (estado estacionário)",
+          "Doença crônica longa → prevalência alta mesmo com incidência baixa",
+          "Doença fulminante → incidência pode ser alta e prevalência baixa",
+          "Mortalidade alta + letalidade baixa: doença comum, pouco grave",
+          "Letalidade alta + mortalidade baixa: doença rara e grave"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não chame de mortalidade o que é letalidade. Mortalidade usa população no denominador; letalidade usa casos."
+      }
+    ]
+  },
+  "prev-notificacao": {
+    "intro": "Notificação compulsória: imediata (horas) vs semanal — e exemplos clássicos de cada lista. Suspeita já notifica quando a lista exige.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Prazo da notificacao",
+        "subtitle": "Imediata (horas) vs semanal",
+        "caption": "Classifique o agravo pelo prazo: bloqueio urgente × monitoramento de rotina.",
+        "nodes": [
+          {
+            "title": "Imediata",
+            "lines": [
+              "Botulismo / polio",
+              "Sarampo / colera",
+              "Raiva humana"
+            ]
+          },
+          {
+            "title": "Semanal",
+            "lines": [
+              "Agravos de rotina",
+              "Portaria vigente",
+              "Fluxo SINAN"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Fluxo da notificacao",
+        "subtitle": "Suspeita -> ficha -> vigilancia",
+        "caption": "Não espere confirmação laboratorial quando a lista exige notificação pela suspeita.",
+        "nodes": [
+          {
+            "label": "Suspeitar",
+            "sub": "agravo da lista"
+          },
+          {
+            "label": "Notificar",
+            "sub": "imediata ou semanal"
+          },
+          {
+            "label": "Investigar",
+            "sub": "SINAN / controle"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Imediata vs semanal — exemplos clássicos",
+        "headers": [
+          "Prazo",
+          "Exemplos de prova",
+          "Por quê"
+        ],
+        "rows": [
+          [
+            "Imediata (em horas)",
+            "Botulismo, poliomielite, sarampo, cólera, raiva humana, meningite meningocócica (suspeita)",
+            "Bloqueio vacinal / profilaxia / surto"
+          ],
+          [
+            "Semanal / rotina",
+            "Muitos agravos da portaria (ex.: TB, hanseníase, dengue conforme regra local)",
+            "Monitoramento contínuo no SINAN"
+          ],
+          [
+            "Surto / evento",
+            "Aglomerado inesperado de casos / ESPIN",
+            "Investigação e resposta imediata"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Princípios",
+        "items": [
+          "Obrigação legal do profissional e do serviço de saúde",
+          "Notifica suspeita quando indicado — confirmação vem depois",
+          "Sigilo e uso epidemiológico dos dados",
+          "Lista nacional (MS) + eventuais listas estaduais/municipais"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Esperar o ‘resultado positivo’ para notificar sarampo ou doença meningocócica atrasa bloqueio e quimioprofilaxia."
+      }
+    ]
+  },
+  "prev-vacinas": {
+    "intro": "Vacinas em prova: vivo atenuado vs inativado/toxoide e a contraindicação geral (gestação e imunossupressão grave para vivas).",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Tipos de vacina",
+        "subtitle": "Viva atenuada vs inativada",
+        "caption": "Regra prática: vivas exigem cautela em gestante e imunossuprimido; inativadas costumam ser seguras quando indicadas.",
+        "nodes": [
+          {
+            "title": "Vivas",
+            "lines": [
+              "SCR, FA, varicela",
+              "BCG, rotavirus",
+              "Cuidado gestante/imuno"
+            ]
+          },
+          {
+            "title": "Inativadas",
+            "lines": [
+              "Influenza, Hep B",
+              "dT / dTpa",
+              "Em geral OK na gestacao"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Contraindicacao geral",
+        "subtitle": "Quando NAO aplicar viva",
+        "caption": "Checklist clássico de contraindicação verdadeira (não confundir com precaução).",
+        "nodes": [
+          {
+            "label": "Gestacao (vacinas vivas atenuadas)"
+          },
+          {
+            "label": "Imunossupressao grave / corticoterapia alta"
+          },
+          {
+            "label": "Anafilaxia previa ao componente da vacina"
+          },
+          {
+            "label": "Doenca febril grave aguda (adiar, nao e CI absoluta tipica)"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Vivo vs inativado — princípios",
+        "headers": [
+          "Tipo",
+          "Exemplos",
+          "Cuidado de prova"
+        ],
+        "rows": [
+          [
+            "Vivas atenuadas",
+            "SCR, FA, varicela, BCG",
+            "Evitar em gestação e imunossupressão grave"
+          ],
+          [
+            "Inativadas / toxoides",
+            "Influenza, hepatite B, dT/dTpa",
+            "Seguras na gestação quando indicadas"
+          ],
+          [
+            "Polissacarídicas / conjugadas",
+            "Pneumocócicas",
+            "Esquema por idade e risco"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Contraindicação geral (ideia de prova)",
+        "items": [
+          "Anafilaxia prévia a componente da vacina → contraindicação verdadeira",
+          "Vacina viva + gestação ou imunossupressão grave → não aplicar",
+          "Doença febril grave: geralmente adia; resfriado leve não contra-indica",
+          "Alergia a ovo: influenza moderna em geral pode ser aplicada com manejo — leia o enunciado"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Gestante",
+        "body": "dTpa a cada gestação + influenza na estação. SCR e FA são vivas — não na gestação."
+      }
+    ]
+  },
+  "prev-rastreamento": {
+    "intro": "Rastreamento bom obedece princípios tipo Wilson-Jungner: doença importante, história natural conhecida, teste aceitável e tratamento que muda desfecho.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Wilson-Jungner (ideia)",
+        "subtitle": "Criterios classicos de rastreio",
+        "caption": "Checklist mental: só rastreie se doença, teste e tratamento fizerem sentido populacional.",
+        "nodes": [
+          {
+            "label": "Doenca importante (carga / gravidade)"
+          },
+          {
+            "label": "Historia natural conhecida; fase latente detectavel"
+          },
+          {
+            "label": "Teste sensivel, especifico, aceitavel e acessivel"
+          },
+          {
+            "label": "Tratamento eficaz que muda prognostico"
+          },
+          {
+            "label": "Politica clara de quem tratar; custo aceitavel"
+          },
+          {
+            "label": "Rastreio continuo, nao episódio unico"
+          }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "Valor preditivo",
+        "subtitle": "Prevalencia manda no VPP",
+        "caption": "Mesmo com boa especificidade, VPP cai se a prevalência for baixa.",
+        "nodes": [
+          {
+            "formula": "VPP sobe com prevalencia",
+            "note": "Rastreio em baixo risco → muitos falso-positivos"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Wilson-Jungner — versão de prova",
+        "headers": [
+          "Critério",
+          "Pergunta-chave"
+        ],
+        "rows": [
+          [
+            "Importância da doença",
+            "Há carga relevante de morbimortalidade?"
+          ],
+          [
+            "História natural",
+            "Existe fase pré-clínica detectável?"
+          ],
+          [
+            "Teste",
+            "É aceitável, confiável e disponível?"
+          ],
+          [
+            "Tratamento",
+            "Intervir cedo melhora desfecho?"
+          ],
+          [
+            "Programa",
+            "Há consenso, recursos e seguimento?"
+          ],
+          [
+            "Equilíbrio",
+            "Benefício supera danos e custos?"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Danos do rastreamento",
+        "items": [
+          "Falso-positivo → ansiedade, exames invasivos",
+          "Overdiagnosis → tratar o que não iria prejudicar",
+          "Falso-negativo → falsa segurança",
+          "Lead time / length bias — parecer que ‘vive mais’ sem ganho real"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Ter teste disponível não basta. Sem tratamento eficaz ou sem população-alvo definida, rastrear pode só gerar dano."
+      }
+    ]
+  },
+  "prev-tipos-estudo": {
+    "intro": "Hierarquia da evidência + quando usar caso-controle vs coorte: raro/desfecho vs exposição → incidência.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Hierarquia da evidencia",
+        "subtitle": "Do mais fraco ao mais forte (ideia)",
+        "caption": "Pirâmide simplificada de prova: sobe qualidade/controle de viés (com nuances).",
+        "nodes": [
+          {
+            "label": "Serie",
+            "sub": "relato"
+          },
+          {
+            "label": "Transversal",
+            "sub": "prevalencia"
+          },
+          {
+            "label": "Caso-ctrl",
+            "sub": "OR"
+          },
+          {
+            "label": "Coorte",
+            "sub": "RR/incidencia"
+          },
+          {
+            "label": "ECR/meta",
+            "sub": "intervencao"
+          }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Caso-controle vs coorte",
+        "subtitle": "Qual desenho escolher?",
+        "caption": "Doença rara ou múltiplas exposições → caso-controle. Exposição rara ou incidência → coorte.",
+        "nodes": [
+          {
+            "title": "Caso-controle",
+            "lines": [
+              "Doenca rara",
+              "Parte do desfecho",
+              "Estima OR"
+            ]
+          },
+          {
+            "title": "Coorte",
+            "lines": [
+              "Expo rara / incidencia",
+              "Segue no tempo",
+              "Estima RR"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Desenhos × pergunta",
+        "headers": [
+          "Estudo",
+          "Parte de",
+          "Medida típica",
+          "Uso clássico"
+        ],
+        "rows": [
+          [
+            "Transversal",
+            "População em um corte",
+            "Prevalência / OR transversal",
+            "Carga e associação cruzada"
+          ],
+          [
+            "Caso-controle",
+            "Doentes × não doentes",
+            "OR",
+            "Doença rara; múltiplas exposições"
+          ],
+          [
+            "Coorte",
+            "Expostos × não expostos",
+            "RR / incidência",
+            "Exposição rara; história natural"
+          ],
+          [
+            "ECR",
+            "Randomização",
+            "RR / NNT",
+            "Eficácia de intervenção"
+          ],
+          [
+            "Metanálise",
+            "Síntese de estudos",
+            "Estimativa combinada",
+            "Topo da hierarquia (se boa)"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Caso-controle vs coorte — regra de ouro",
+        "items": [
+          "Caso-controle: eficiente para desfecho raro; cuidado com viés de memória/seleção",
+          "Coorte: permite incidência e RR; mais cara/demorada; perda de seguimento",
+          "OR ≈ RR só quando a doença é rara (premissa da doença rara)",
+          "ECR responde causalidade de intervenção melhor que observacional"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Hierarquia (ideia de prova)",
+        "body": "Metanálise de ECR bem feitos > ECR > coorte > caso-controle > transversal > relato. Qualidade do estudo individual pode inverter a ‘posição na pirâmide’."
+      }
+    ]
+  },
+  "prev-sus": {
+    "intro": "Princípios do SUS no macete UIEPD: Universalidade, Integralidade, Equidade, Participação, Decentralização (e hierarquização/regionalização no arranjo).",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Principios SUS (UIEPD)",
+        "subtitle": "Checklist de prova",
+        "caption": "Decore UIEPD e saiba dar um exemplo operacional de cada letra.",
+        "nodes": [
+          {
+            "label": "U — Universalidade: acesso a todos"
+          },
+          {
+            "label": "I — Integralidade: promocao a reabilitacao"
+          },
+          {
+            "label": "E — Equidade: tratar desiguais desigualmente"
+          },
+          {
+            "label": "P — Participacao social: conselhos/conferencias"
+          },
+          {
+            "label": "D — Descentralizacao: gestao municipal/estadual"
+          }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "Doutrinas x organizacao",
+        "subtitle": "Separe principio de diretriz",
+        "caption": "Em prova, não misture princípio doutrinário com diretriz organizativa.",
+        "footer": "UIE = doutrinarios | PD (+ hierarquizacao) = organizativos",
+        "nodes": [
+          {
+            "label": "Universalidade",
+            "pts": "D"
+          },
+          {
+            "label": "Integralidade",
+            "pts": "D"
+          },
+          {
+            "label": "Equidade",
+            "pts": "D"
+          },
+          {
+            "label": "Participacao",
+            "pts": "O"
+          },
+          {
+            "label": "Descentralizacao",
+            "pts": "O"
+          },
+          {
+            "label": "Hierarquizacao / regionalizacao",
+            "pts": "O"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "UIEPD — o que cai",
+        "headers": [
+          "Princípio",
+          "Significado",
+          "Exemplo"
+        ],
+        "rows": [
+          [
+            "Universalidade",
+            "Saúde como direito de todos",
+            "Atendimento sem barreiras de cidadania"
+          ],
+          [
+            "Integralidade",
+            "Cuidado contínuo e ações completas",
+            "Promoção + prevenção + tratamento + reabilitação"
+          ],
+          [
+            "Equidade",
+            "Mais a quem precisa mais",
+            "Recursos conforme vulnerabilidade"
+          ],
+          [
+            "Participação",
+            "Controle social",
+            "Conselhos e conferências de saúde"
+          ],
+          [
+            "Descentralização",
+            "Repasse de gestão/poder",
+            "Município como gestor da atenção"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Organizativos que acompanham",
+        "items": [
+          "Hierarquização: níveis de atenção (APS → especializada → hospitalar)",
+          "Regionalização: territórios e redes de cuidado",
+          "Resolutividade e referência/contrarreferência"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Equidade ≠ igualdade simples. Dar o mesmo a todos pode violar equidade se as necessidades forem diferentes."
+      }
+    ]
+  },
+  "prev-vigilancia": {
+    "intro": "Vigilância epidemiológica: passiva (notificação rotineira), ativa (busca intencional) e sentinela (postos/unidades estratégicas).",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Tipos de vigilancia",
+        "subtitle": "Passiva / ativa / sentinela",
+        "caption": "Três modos clássicos de captura de informação epidemiológica.",
+        "nodes": [
+          {
+            "title": "Passiva",
+            "lines": [
+              "Notificacao rotina",
+              "Servico informa",
+              "Barata; subnotifica"
+            ],
+            "foot": "SINAN tipico"
+          },
+          {
+            "title": "Ativa",
+            "lines": [
+              "Busca intencional",
+              "Surto / caso raro",
+              "Mais cara e completa"
+            ],
+            "foot": "Investigacao"
+          },
+          {
+            "title": "Sentinela",
+            "lines": [
+              "Unidades piloto",
+              "Tendencia / virus",
+              "Amostra estrategica"
+            ],
+            "foot": "Sinalizador"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Comparativo de prova",
+        "headers": [
+          "Tipo",
+          "Como funciona",
+          "Vantagem",
+          "Limite"
+        ],
+        "rows": [
+          [
+            "Passiva",
+            "Serviços notificam espontaneamente",
+            "Cobertura ampla, baixo custo",
+            "Subnotificação"
+          ],
+          [
+            "Ativa",
+            "Equipe busca casos/dados",
+            "Mais completa e oportuna",
+            "Custo e logística"
+          ],
+          [
+            "Sentinela",
+            "Unidades selecionadas monitoram",
+            "Detecta tendência cedo",
+            "Não é censo populacional"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Quando cada uma aparece no enunciado",
+        "items": [
+          "Passiva: ficha de notificação no cotidiano do serviço",
+          "Ativa: busca de comunicantes, surto hospitalar, doença rara",
+          "Sentinela: rede de influenza/síndromes, monitorar circulação viral"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Objetivos da vigilância",
+        "body": "Detectar, analisar, difundir e orientar ação de controle — informação para intervenção, não arquivo morto."
+      }
+    ]
+  },
+  "prev-endemia": {
+    "intro": "Endemia, epidemia, pandemia e surto: compare ocorrência esperada × excesso × extensão geográfica.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Definicoes classicas",
+        "subtitle": "Endemia / epidemia / pandemia / surto",
+        "caption": "Checklist: ancore cada termo em ‘esperado’, ‘excesso’ e ‘escala’.",
+        "nodes": [
+          {
+            "label": "Endemia: ocorre habitualmente em area (incidencia esperada)"
+          },
+          {
+            "label": "Epidemia: aumento alem do esperado em tempo/lugar"
+          },
+          {
+            "label": "Pandemia: epidemia em larga escala (paises/continentes)"
+          },
+          {
+            "label": "Surto: epidemia restrita (local, instituicao, grupo)"
+          }
+        ]
+      },
+      {
+        "type": "triage3",
+        "title": "Escala do evento",
+        "subtitle": "Surto -> epidemia -> pandemia",
+        "caption": "A diferença prática é extensão e magnitude além do esperado.",
+        "nodes": [
+          {
+            "title": "Surto",
+            "lines": [
+              "Localizado",
+              "Escola/hospital",
+              "Resposta rapida"
+            ],
+            "foot": "Foco"
+          },
+          {
+            "title": "Epidemia",
+            "lines": [
+              "> esperado",
+              "Comunidade/regiao",
+              "Curva epidemica"
+            ],
+            "foot": "Excesso"
+          },
+          {
+            "title": "Pandemia",
+            "lines": [
+              "Multiplos paises",
+              "Transmissao sustentada",
+              "Impacto global"
+            ],
+            "foot": "Global"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Definições checklist",
+        "headers": [
+          "Termo",
+          "Definição de prova",
+          "Chave"
+        ],
+        "rows": [
+          [
+            "Endemia",
+            "Presença constante / habitual em determinada área",
+            "Esperado para o lugar"
+          ],
+          [
+            "Epidemia",
+            "Aumento claramente acima do esperado",
+            "Excesso temporal"
+          ],
+          [
+            "Pandemia",
+            "Epidemia de grande extensão internacional",
+            "Escala global"
+          ],
+          [
+            "Surto",
+            "Aglomerado localizado de casos (epidemia restrita)",
+            "Foco circunscrito"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Nuances",
+        "items": [
+          "Doença pode ser endêmica e ter epidemias sazonais sobrepostas",
+          "Um único caso de doença erradicada/eliminada pode configurar surto/evento",
+          "Hiperendemia: níveis persistentemente altos na área"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "‘Muitos casos’ isolado não define epidemia — compare com a linha de base esperada daquele tempo e lugar."
+      }
+    ]
+  },
+  "prev-medida": {
+    "intro": "RR, OR e NNT são a linguagem da associação e do benefício absoluto — memorize fórmulas e quando cada uma aparece.",
+    "extraDiagrams": [
+      {
+        "type": "formula",
+        "title": "Risco relativo (RR)",
+        "subtitle": "Incidencia expostos / nao expostos",
+        "caption": "RR > 1 aumenta risco; RR < 1 protege; RR = 1 sem associação.",
+        "nodes": [
+          {
+            "formula": "RR = Ie / Ine",
+            "note": "Ie = incidencia nos expostos; Ine = nao expostos"
+          }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "NNT",
+        "subtitle": "1 / reducao absoluta do risco",
+        "caption": "NNT = 1 / RAR; quanto menor o NNT, maior o benefício prático.",
+        "nodes": [
+          {
+            "formula": "NNT = 1 / (RDc - RDt)",
+            "note": "RAR = risco controle - risco tratamento"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Fórmulas essenciais",
+        "headers": [
+          "Medida",
+          "Fórmula",
+          "Uso"
+        ],
+        "rows": [
+          [
+            "RR",
+            "Incidência expostos / incidência não expostos",
+            "Coorte / ECR"
+          ],
+          [
+            "OR",
+            "(a/c) / (b/d) ou ad/bc na tabela 2×2",
+            "Caso-controle (e outros)"
+          ],
+          [
+            "RAR",
+            "Risco controle − risco tratamento",
+            "Benefício absoluto"
+          ],
+          [
+            "RRR",
+            "RAR / risco controle",
+            "Benefício relativo"
+          ],
+          [
+            "NNT",
+            "1 / RAR",
+            "Quantos tratar para evitar 1 evento"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Interpretação rápida",
+        "items": [
+          "RR ou OR = 1 → sem associação",
+          "OR aproxima RR se a doença for rara",
+          "NNT só faz sentido com RAR > 0 (benefício)",
+          "Cuidado: RRR grande com RAR minúscula → NNT enorme"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Tabela 2×2",
+        "body": "a=exposto doente; b=exposto sadio; c=não exposto doente; d=não exposto sadio. OR = ad/bc."
+      }
+    ]
+  },
+  "prev-imc": {
+    "intro": "IMC adulto OMS: faixas de baixo peso ao obesidade grau III — números redondos que a banca cobra direto.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "IMC adulto (OMS)",
+        "subtitle": "Faixas classicas em kg/m2",
+        "caption": "Memorize os cortes 18,5 / 25 / 30 / 35 / 40.",
+        "footer": "IMC = peso(kg) / altura(m)^2",
+        "nodes": [
+          {
+            "label": "Baixo peso",
+            "pts": "< 18,5"
+          },
+          {
+            "label": "Eutrofia",
+            "pts": "18,5-24,9"
+          },
+          {
+            "label": "Sobrepeso",
+            "pts": "25-29,9"
+          },
+          {
+            "label": "Obesidade I",
+            "pts": "30-34,9"
+          },
+          {
+            "label": "Obesidade II",
+            "pts": "35-39,9"
+          },
+          {
+            "label": "Obesidade III",
+            "pts": ">= 40"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Classificação OMS — adultos",
+        "headers": [
+          "Classificação",
+          "IMC (kg/m²)"
+        ],
+        "rows": [
+          [
+            "Baixo peso",
+            "< 18,5"
+          ],
+          [
+            "Eutrofia (adequado)",
+            "18,5 – 24,9"
+          ],
+          [
+            "Sobrepeso",
+            "25,0 – 29,9"
+          ],
+          [
+            "Obesidade grau I",
+            "30,0 – 34,9"
+          ],
+          [
+            "Obesidade grau II",
+            "35,0 – 39,9"
+          ],
+          [
+            "Obesidade grau III",
+            "≥ 40,0"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de prova",
+        "items": [
+          "IMC é rastreio populacional — não diferencia massa magra de gordura",
+          "Circunferência abdominal complementa risco cardiometabólico",
+          "Idosos e atletas: interpretar com contexto clínico",
+          "Crianças/adolescentes usam curvas/escores Z — não a tabela adulta"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Fórmula",
+        "body": "IMC = peso (kg) / [altura (m)]². Ex.: 80 kg e 1,75 m → 80 / 3,0625 ≈ 26,1 (sobrepeso)."
+      }
+    ]
+  },
+  "prev-tabagismo": {
+    "intro": "Intervenção breve no tabagismo: modelo 5A (Ask, Advise, Assess, Assist, Arrange) — roteiro clássico de APS.",
+    "extraDiagrams": [
+      {
+        "type": "flow3",
+        "title": "5A - intervencao breve",
+        "subtitle": "Ask -> Advise/Assess -> Assist/Arrange",
+        "caption": "Fluxo 5A condensado: perguntar → aconselhar/avaliar → ajudar e agendar seguimento.",
+        "nodes": [
+          {
+            "label": "Ask + Advise",
+            "sub": "pergunte e aconselhe"
+          },
+          {
+            "label": "Assess",
+            "sub": "prontidao para parar"
+          },
+          {
+            "label": "Assist/Arrange",
+            "sub": "plano + retorno"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Os 5A",
+        "subtitle": "Checklist completo",
+        "caption": "Cinco passos da intervenção breve baseada em evidência.",
+        "nodes": [
+          {
+            "label": "Ask — perguntar sobre uso em toda consulta"
+          },
+          {
+            "label": "Advise — aconselhar a parar de forma clara"
+          },
+          {
+            "label": "Assess — avaliar motivacao/prontidao"
+          },
+          {
+            "label": "Assist — plano, TRN/farmaco, suporte"
+          },
+          {
+            "label": "Arrange — agendar seguimento"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "5A — o que fazer",
+        "headers": [
+          "A",
+          "Ação",
+          "Frase/conduta"
+        ],
+        "rows": [
+          [
+            "Ask",
+            "Perguntar",
+            "‘Você fuma ou usa tabaco?’ em toda consulta"
+          ],
+          [
+            "Advise",
+            "Aconselhar",
+            "Conselho claro, personalizado e breve"
+          ],
+          [
+            "Assess",
+            "Avaliar",
+            "Quer parar agora? Estágio de mudança"
+          ],
+          [
+            "Assist",
+            "Ajudar",
+            "Data para parar, TRN/bupropiona/vareniclina, gatilhos"
+          ],
+          [
+            "Arrange",
+            "Agendar",
+            "Retorno precoce; reforço e prevenção de recaída"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Intervenção breve — ideia",
+        "items": [
+          "Mesmo 3–5 minutos aumentam chance de cessação",
+          "Combinar aconselhamento + farmacoterapia quando indicado",
+          "Se não pronto para parar: abordagem 5R (Relevance, Risks, Rewards, Roadblocks, Repetition)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Fagerström (ideia)",
+        "body": "Avalia dependência nicotínica (1º cigarro da manhã e quantidade/dia são itens-chave) e ajuda a escolher intensidade do suporte."
+      }
+    ]
+  },
+  "prev-alcool": {
+    "intro": "Rastreio de risco alcoólico: ideia do AUDIT-C (frequência, quantidade, binge) e definição operacional de binge/episódio pesado.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "AUDIT-C (ideia)",
+        "subtitle": "3 perguntas de rastreio",
+        "caption": "AUDIT-C: frequência × dose típica × binge. Pontuação alta → AUDIT completo / intervenção.",
+        "nodes": [
+          {
+            "label": "Com que frequencia bebe?"
+          },
+          {
+            "label": "Quantas doses em um dia tipico?"
+          },
+          {
+            "label": "Com que frequencia >= 5-6 doses (binge)?"
+          }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Rastreio alcoolico",
+        "subtitle": "AUDIT-C baixo vs alto",
+        "caption": "Baixo risco: reforço breve. Alto: avaliação completa e intervenção.",
+        "nodes": [
+          {
+            "title": "Baixo risco",
+            "lines": [
+              "Escore baixo",
+              "Reforco educativo",
+              "Reavaliar periodicamente"
+            ]
+          },
+          {
+            "title": "Risco / binge",
+            "lines": [
+              "Escore elevado",
+              "AUDIT completo",
+              "Intervencao breve +/- encaminhar"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "AUDIT-C — ideia de prova",
+        "headers": [
+          "Pergunta",
+          "O que mede"
+        ],
+        "rows": [
+          [
+            "Frequência de consumo",
+            "Com que frequência bebe álcool"
+          ],
+          [
+            "Quantidade típica",
+            "Doses em um dia típico de consumo"
+          ],
+          [
+            "Binge / episódio pesado",
+            "Frequência de ≥ 5–6 doses em uma ocasião"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Binge — conceito operacional",
+        "items": [
+          "Episódio de consumo pesado em curta janela (ideia: ≥ 5 doses homens / ≥ 4 mulheres — valores variam por protocolo)",
+          "Associado a trauma, violência, pancreatite e risco agudo",
+          "Pode existir binge mesmo sem dependência estabelecida",
+          "Intervenção breve na APS reduz consumo de risco"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Negar ‘alcoolismo’ não exclui uso de risco. Rastreie padrão (AUDIT-C), não só a autodeclaração de dependência."
+      }
+    ]
+  },
+  "prev-violencia": {
+    "intro": "Violência interpessoal/doméstica: notificação compulsória + acolhimento, privacidade e rede de proteção — conduta ética e sanitária.",
+    "extraDiagrams": [
+      {
+        "type": "flow3",
+        "title": "Abordagem da violencia",
+        "subtitle": "Acolher -> cuidar -> notificar/rede",
+        "caption": "Fluxo de prova: segurança e cuidado primeiro; notificação e rede em paralelo.",
+        "nodes": [
+          {
+            "label": "Acolher",
+            "sub": "privacidade / vinculo"
+          },
+          {
+            "label": "Cuidar",
+            "sub": "lesoes / IST / suporte"
+          },
+          {
+            "label": "Notificar",
+            "sub": "ficha + rede protecao"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Conduta minima",
+        "subtitle": "O que nao esquecer",
+        "caption": "Checklist operacional para atendimento e vigilância.",
+        "nodes": [
+          {
+            "label": "Atender em ambiente privado, sem julgar"
+          },
+          {
+            "label": "Avaliar risco iminente e plano de seguranca"
+          },
+          {
+            "label": "Cuidado clinico (trauma, IST, anticoncepcao emergencia)"
+          },
+          {
+            "label": "Notificacao compulsoria do agravo"
+          },
+          {
+            "label": "Acionar rede (CRAS/CREAS, delegacia, conselho tutelár)"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Notificação × abordagem",
+        "headers": [
+          "Eixo",
+          "Conduta"
+        ],
+        "rows": [
+          [
+            "Notificação",
+            "Violência interpessoal/autoprovocada é agravo de notificação (SINAN)"
+          ],
+          [
+            "Sigilo",
+            "Preservar privacidade; compartilhar só o necessário à proteção"
+          ],
+          [
+            "Clínica",
+            "Tratar lesões; profilaxias; contracepção de emergência se indicada"
+          ],
+          [
+            "Rede",
+            "Encaminhar proteção social/jurídica conforme idade e risco"
+          ],
+          [
+            "Criança/adolescente",
+            "Comunicar Conselho Tutelar / autoridade competente"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Abordagem na consulta",
+        "items": [
+          "Perguntar com empatia quando houver sinais de alerta",
+          "Nunca confrontar a vítima na frente do possível agressor",
+          "Documentar de forma objetiva no prontuário",
+          "Notificar não substitui cuidado nem acionamento da rede"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Medo de ‘quebrar sigilo’ não impede notificação/comunicação protetiva quando a lei e o risco exigem — proteção da pessoa prevalece."
+      }
+    ]
+  },
+  "prev-etica": {
+    "intro": "Princípios da bioética principialista: autonomia, beneficência, não-maleficência e justiça — base de dilemas em prova.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "4 principios da bioetica",
+        "subtitle": "Beauchamp e Childress",
+        "caption": "Os quatro princípios clássicos — associe o conflito do enunciado a um deles.",
+        "footer": "Autonomia | Beneficencia | Nao-maleficencia | Justica",
+        "nodes": [
+          {
+            "label": "Autonomia",
+            "pts": "decidir"
+          },
+          {
+            "label": "Beneficencia",
+            "pts": "fazer o bem"
+          },
+          {
+            "label": "Nao-maleficencia",
+            "pts": "nao prejudicar"
+          },
+          {
+            "label": "Justica",
+            "pts": "equidade"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Princípios × significado",
+        "headers": [
+          "Princípio",
+          "Núcleo",
+          "Exemplo de prova"
+        ],
+        "rows": [
+          [
+            "Autonomia",
+            "Respeito à decisão informada",
+            "Recusa de tratamento por paciente capaz"
+          ],
+          [
+            "Beneficência",
+            "Promover o melhor interesse",
+            "Indicar terapia com benefício líquido"
+          ],
+          [
+            "Não-maleficência",
+            "Primum non nocere",
+            "Evitar procedimento fútil/danoso"
+          ],
+          [
+            "Justiça",
+            "Equidade na distribuição",
+            "Priorizar UTI por critério clínico, não social"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conflitos típicos",
+        "items": [
+          "Autonomia × beneficência: paciente recusa conduta ‘benéfica’",
+          "Beneficência × não-maleficência: risco do tratamento vs benefício",
+          "Justiça: escassez de recursos e critérios de priorização",
+          "Capacidade decisória e representação legal mudam o peso da autonomia"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Ordem prática",
+        "body": "Não há hierarquia fixa absoluta — sopese o caso. Em prova, identifique qual princípio está em tensão e justifique a conduta."
+      }
+    ]
+  },
+  "prev-bioetica-consent": {
+    "intro": "TCLE válido exige informação adequada, compreensão, voluntariedade e capacidade — sem coerção e com direito de recusar.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Elementos do TCLE",
+        "subtitle": "Consentimento valido",
+        "caption": "Checklist dos elementos clássicos do termo/processo de consentimento livre e esclarecido.",
+        "nodes": [
+          {
+            "label": "Informacao: riscos, beneficios, alternativas"
+          },
+          {
+            "label": "Compreensao: linguagem acessivel"
+          },
+          {
+            "label": "Voluntariedade: sem coercao"
+          },
+          {
+            "label": "Capacidade: agente competente"
+          },
+          {
+            "label": "Autorizacao: aceite explicito (e registro)"
+          }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Processo do consentimento",
+        "subtitle": "Informar -> compreender -> decidir",
+        "caption": "Consentimento é processo, não só assinatura de papel.",
+        "nodes": [
+          {
+            "label": "Informar",
+            "sub": "riscos/beneficios"
+          },
+          {
+            "label": "Checar",
+            "sub": "compreensao"
+          },
+          {
+            "label": "Registrar",
+            "sub": "aceite ou recusa"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Elementos do TCLE / consentimento",
+        "headers": [
+          "Elemento",
+          "Conteúdo mínimo"
+        ],
+        "rows": [
+          [
+            "Informação",
+            "Procedimento, riscos, benefícios, alternativas, possibilidade de recusa"
+          ],
+          [
+            "Compreensão",
+            "Linguagem clara; tempo para perguntas"
+          ],
+          [
+            "Voluntariedade",
+            "Sem pressão indevida de equipe, família ou instituição"
+          ],
+          [
+            "Capacidade",
+            "Paciente capaz; senão, representante legal"
+          ],
+          [
+            "Registro",
+            "Documentação adequada (TCLE quando aplicável)"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Pesquisa × clínica",
+        "items": [
+          "Em pesquisa: TCLE + ética em pesquisa (CEP/Conep no Brasil)",
+          "Urgência com risco iminente pode justificar exceção temporária — documente",
+          "Recusa informada de capaz deve ser respeitada (autonomia)",
+          "Assinatura sem compreensão ≠ consentimento válido"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "‘Assinou o termo’ não basta se não houve esclarecimento real. A banca cobra o processo, não o formulário."
+      }
+    ]
+  },
+  "prev-atraso-diag": {
+    "intro": "Erros e vieses cognitivos atrasam diagnóstico; no outro polo, overdiagnosis encontra ‘doença’ que não traria benefício ao tratar.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Dois polos do erro",
+        "subtitle": "Atraso diagnostico vs overdiagnosis",
+        "caption": "Um polo perde a doença; o outro rotula demais sem benefício líquido.",
+        "nodes": [
+          {
+            "title": "Atraso / erro",
+            "lines": [
+              "Vies de ancora",
+              "Fechamento precoce",
+              "Falha de follow-up"
+            ]
+          },
+          {
+            "title": "Overdiagnosis",
+            "lines": [
+              "Achado indolente",
+              "Rastreio excessivo",
+              "Dano do tratamento"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Vieses classicos",
+        "subtitle": "Reconheca no enunciado",
+        "caption": "Checklist dos vieses que mais explicam atraso diagnóstico em prova.",
+        "nodes": [
+          {
+            "label": "Ancoragem: grudar na 1a hipotese"
+          },
+          {
+            "label": "Confirmacao: buscar so o que confirma"
+          },
+          {
+            "label": "Disponibilidade: lembrar do caso recente"
+          },
+          {
+            "label": "Fechamento prematuro: parar de investigar cedo"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Vieses × overdiagnosis",
+        "headers": [
+          "Conceito",
+          "Definição",
+          "Antídoto"
+        ],
+        "rows": [
+          [
+            "Ancoragem",
+            "Fixar na primeira hipótese",
+            "Reabrir diferencial se evolução atípica"
+          ],
+          [
+            "Confirmação",
+            "Buscar só o que confirma",
+            "Perguntar ‘o que fala contra?’"
+          ],
+          [
+            "Disponibilidade",
+            "Superestimar o recente/marcante",
+            "Usar base rates / protocolos"
+          ],
+          [
+            "Overdiagnosis",
+            "Diagnosticar o que não causaria dano",
+            "Rastrear só com critério; shared decision"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Overdiagnosis — ideia",
+        "items": [
+          "Não é falso-positivo: a ‘doença’ existe, mas é indolente",
+          "Tratar pode gerar só dano (cirurgia, ansiedade, custo)",
+          "Comum em discussões de rastreamento (ex.: achados subclínicos)",
+          "Difere de overtreatment (tratar em excesso o que talvez não precise)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Para a prova",
+        "body": "Atraso diagnóstico ↔ vieses e falhas de sistema. Overdiagnosis ↔ excesso de detecção sem benefício — princípio da prevenção quaternária."
+      }
+    ]
+  },
+  "prev-pnct": {
+    "intro": "PNCT: diagnóstico com baciloscopia e/ou TRM-TB, e isolamento respiratório do sintomático/bacilífero até critérios de liberação.",
+    "extraDiagrams": [
+      {
+        "type": "flow3",
+        "title": "Fluxo PNCT (ideia)",
+        "subtitle": "Suspeita -> TRM/bacilo -> tratar/isolar",
+        "caption": "Suspeita clínica → teste rápido molecular/baciloscopia → tratamento e controle de infecção.",
+        "nodes": [
+          {
+            "label": "Suspeita",
+            "sub": "SR / contatos"
+          },
+          {
+            "label": "TRM +/- bacilo",
+            "sub": "diagnostico"
+          },
+          {
+            "label": "TTO + isolamento",
+            "sub": "ate liberar"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Controle de infeccao",
+        "subtitle": "Isolamento respiratorio",
+        "caption": "Medidas mínimas enquanto houver risco de transmissão.",
+        "nodes": [
+          {
+            "label": "Isolamento respiratorio do bacilifero / suspeito"
+          },
+          {
+            "label": "Mascara cirurgica no paciente; N95 na equipe"
+          },
+          {
+            "label": "Ambiente preferencialmente ventilado / isolamento"
+          },
+          {
+            "label": "Coleta de escarro com biosseguranca"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Diagnóstico e isolamento — PNCT",
+        "headers": [
+          "Item",
+          "Conduta de prova"
+        ],
+        "rows": [
+          [
+            "TRM-TB",
+            "Teste rápido molecular: detecta M. tuberculosis e resistência à rifampicina"
+          ],
+          [
+            "Baciloscopia",
+            "Esfregaço de escarro; útil para carga bacilar e acompanhamento"
+          ],
+          [
+            "Cultura",
+            "Padrão para confirmação/sensibilidade quando indicada"
+          ],
+          [
+            "Isolamento",
+            "Suspeito/bacilífero: precauções respiratórias até critérios de liberação"
+          ],
+          [
+            "TDO",
+            "Tratamento diretamente observado — adesão e cura"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de alto rendimento",
+        "items": [
+          "Não atrase tratamento do bacilífero por ‘esperar cultura’",
+          "TRM positivo para TB + resistência à R → fluxo de DR-TB",
+          "Isolamento reduz transmissão nosocomial e domiciliar",
+          "Investigar contatos é parte do programa"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Baciloscopia negativa não exclui TB (especialmente em crianças e formas extrapulmonares). Integre clínica, imagem e TRM/cultura."
+      }
+    ]
+  },
+  "prev-hanseniase": {
+    "intro": "Hanseníase: classificação operacional paucibacilar (PB) vs multibacilar (MB) guia o esquema PQT (duração e drogas).",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Classificacao operacional",
+        "subtitle": "PB vs MB",
+        "caption": "Corte clássico: número de lesões cutâneas (± baciloscopia) define PB ou MB.",
+        "nodes": [
+          {
+            "title": "PB",
+            "lines": [
+              "1 a 5 lesoes",
+              "Baciloscopia -",
+              "PQT mais curta"
+            ]
+          },
+          {
+            "title": "MB",
+            "lines": [
+              ">= 6 lesoes",
+              "Baciloscopia +",
+              "PQT mais longa"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "PQT - ideia de prova",
+        "subtitle": "Esquema poliquimioterapico",
+        "caption": "PQT-OMS/MS: rifampicina + dapsona (± clofazimina no MB) sob supervisão mensal.",
+        "nodes": [
+          {
+            "label": "PB: rifampicina mensal + dapsona diaria (6 doses/6 meses)"
+          },
+          {
+            "label": "MB: + clofazimina; esquema mais longo (12 doses/12 meses)"
+          },
+          {
+            "label": "Dose supervisionada mensal (TDO/ideia de adesao)"
+          },
+          {
+            "label": "Notificar e examinar contatos"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "PB × MB + PQT (ideia)",
+        "headers": [
+          "Item",
+          "Paucibacilar (PB)",
+          "Multibacilar (MB)"
+        ],
+        "rows": [
+          [
+            "Lesões cutâneas",
+            "1 a 5",
+            "≥ 6 (ou envolvimento mais extenso)"
+          ],
+          [
+            "Baciloscopia",
+            "Negativa",
+            "Positiva (se disponível)"
+          ],
+          [
+            "PQT — ideia",
+            "Rifampicina + dapsona (ciclo mais curto)",
+            "R + D + clofazimina (ciclo mais longo)"
+          ],
+          [
+            "Duração típica (MS/OMS)",
+            "6 doses mensais em até 9 meses",
+            "12 doses mensais em até 18 meses"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Clínica que ancora o diagnóstico",
+        "items": [
+          "Lesão(ões) com alteração de sensibilidade",
+          "Acometimento de nervos periféricos (espessamento, déficit)",
+          "Não precisa histologia para iniciar se critérios clínicos claros",
+          "Reações hansênicas ≠ falha terapêutica automática"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Contatos",
+        "body": "Examine comunicantes e siga protocolo de quimioprofilaxia/vacinação BCG conforme norma vigente do MS."
+      }
+    ]
+  },
+  "prev-tb": {
+    "intro": "Sintomático respiratório (SR): tosse por tempo-limiar (ideia ≥ 2–3 semanas) → coletar escarro; clássico pedir 2 baciloscopias (e TRM conforme rede).",
+    "extraDiagrams": [
+      {
+        "type": "flow3",
+        "title": "Sintomatico respiratorio",
+        "subtitle": "Tosse -> 2 amostras -> conduta",
+        "caption": "Fluxo APS: identificar SR → coletar amostras → TRM/baciloscopia → tratar/isolar se TB.",
+        "nodes": [
+          {
+            "label": "Identificar SR",
+            "sub": "tosse persistente"
+          },
+          {
+            "label": "2 baciloscopias",
+            "sub": "+/- TRM-TB"
+          },
+          {
+            "label": "Tratar / isolar",
+            "sub": "se confirmada"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Criterios SR e coleta",
+        "subtitle": "O essencial de prova",
+        "caption": "Critérios e coleta clássicos do sintomático respiratório.",
+        "nodes": [
+          {
+            "label": "SR: tosse por >= 2-3 semanas (ideia de prova/MS)"
+          },
+          {
+            "label": "Coletar escarro: ideal 2 amostras"
+          },
+          {
+            "label": "Preferir TRM-TB onde disponivel"
+          },
+          {
+            "label": "Bacilo + = alta transmissibilidade: isolar/tratar"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "SR e diagnóstico baciloscópico",
+        "headers": [
+          "Item",
+          "Ideia clássica de prova"
+        ],
+        "rows": [
+          [
+            "Sintomático respiratório",
+            "Tosse por ≥ 2–3 semanas (conferir protocolo vigente no enunciado)"
+          ],
+          [
+            "1ª amostra",
+            "No momento da identificação (escarro espontâneo)"
+          ],
+          [
+            "2ª amostra",
+            "Preferencialmente no dia seguinte (jejum/manhã)"
+          ],
+          [
+            "TRM-TB",
+            "Priorizar na rede — mais sensível e informa rifampicina"
+          ],
+          [
+            "Se baciloscopia +",
+            "Iniciar fluxo de TB pulmonar bacilífera + isolamento"
+          ]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Por que 2 baciloscopias?",
+        "items": [
+          "Aumenta sensibilidade frente a uma única amostra",
+          "Ajuda a estimar carga bacilar e transmissibilidade",
+          "Negativas seriadas não excluem TB — siga investigação se alta suspeita",
+          "Em crianças a coleta pode ser gástrica/induzida — enunciado guia"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Tratar só ‘pneumonia ambulatorial’ sem pensar em SR/TB atrasa diagnóstico e mantém transmissão. Em tosse persistente, peça escarro."
+      }
+    ]
+  }
+}

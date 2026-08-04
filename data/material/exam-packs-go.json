@@ -1,0 +1,1014 @@
+{
+  "go-pe": {
+    "intro": "Pré-eclâmpsia fecha com critérios diagnósticos, marcadores de gravidade, sinais de iminência de eclâmpsia e toxicidade do MgSO4.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "PE - criterios de gravidade",
+        "subtitle": "PA alta + disfuncao de orgao-alvo",
+        "caption": "Checklist clássico de PE com critérios de gravidade (prova).",
+        "footer": "Qualquer 1 criterio = PE com gravidade",
+        "nodes": [
+          { "label": "PA >= 160 x 110 mmHg" },
+          { "label": "Plaquetas < 100.000" },
+          { "label": "TGO/TGP elevadas (2x)" },
+          { "label": "Creatinina elevada / oliguria" },
+          { "label": "Edema pulmonar" },
+          { "label": "Cefaleia / escotomas / epigastralgia" },
+          { "label": "Restricao / sofrimento fetal" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "MgSO4 - toxicidade",
+        "subtitle": "Monitorar e reverter",
+        "caption": "Sinais de toxicidade do sulfato de magnésio e antídoto.",
+        "footer": "Antidoto: gluconato de calcio EV",
+        "nodes": [
+          { "label": "Perda de reflexo patelar", "pts": "alerta" },
+          { "label": "FR < 12 / depressao respiratoria", "pts": "grave" },
+          { "label": "Oliguria (acumulo)", "pts": "risco" },
+          { "label": "Sonolencia / confusao", "pts": "alerta" },
+          { "label": "Parada cardiorrespiratoria", "pts": "emerg" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Diagnóstico de PE (ideia de prova)",
+        "headers": ["Item", "Critério clássico"],
+        "rows": [
+          ["Momento", "Após 20 semanas (prévia normotensa)"],
+          ["PA", "≥ 140 × 90 mmHg (2 medidas)"],
+          ["Proteinúria", "≥ 300 mg/24 h ou P/C ≥ 0,3 ou fita ≥ 1+"],
+          ["Sem proteinúria", "PE se houver disfunção de órgão-alvo"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Iminência de eclâmpsia (tríade clássica +)",
+        "items": [
+          "Cefaleia intensa e persistente",
+          "Distúrbios visuais (escotomas, visão turva, fotopsia)",
+          "Dor epigástrica / hipocôndrio direito",
+          "Hiperreflexia, agitação — pensar MgSO4 e resolução"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Conduta-chave",
+        "body": "PE com gravidade ou eclâmpsia: estabilizar + MgSO4 + anti-hipertensivo + planejar resolução. Cura definitiva = parto no momento certo."
+      }
+    ]
+  },
+  "go-hpp": {
+    "intro": "Hemorragia pós-parto: memorizar 4T (tom, trauma, tecido, trombina) e tratar a causa enquanto reanima.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "HPP - 4T",
+        "subtitle": "Causas classicas de prova",
+        "caption": "Mnemônico 4T da hemorragia pós-parto.",
+        "footer": "Tone e a causa #1 (~70%)",
+        "nodes": [
+          { "label": "Tone - atonia uterina" },
+          { "label": "Trauma - laceracao / utero / hematoma" },
+          { "label": "Tissue - restos placentarios / acretismo" },
+          { "label": "Thrombin - coagulopatia" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "4T → conduta inicial",
+        "headers": ["T", "Pista clínica", "Conduta"],
+        "rows": [
+          ["Tone", "Útero amolecido, fundo alto", "Massagem + ocitocina ± uterotônicos"],
+          ["Trauma", "Útero contraído, sangramento ativo", "Revisão de canal + sutura"],
+          ["Tissue", "Placenta incompleta / lóquios", "Revisão de cavidade / curetagem"],
+          ["Thrombin", "Sangramento difuso, exams alterados", "Corrigir coagulação / protocolo"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Definição útil",
+        "body": "HPP precoce: perda excessiva nas primeiras 24 h. Em prova, atonia vem primeiro — massageie e use uterotônicos enquanto avalia os outros T."
+      },
+      {
+        "type": "bullets",
+        "title": "Não esquecer no ABCD obstétrico",
+        "items": [
+          "Acesso calibroso ×2, cristaloides, tipagem/RH, hemocomponentes",
+          "Esvaziar bexiga; compressão bimanual se necessário",
+          "Se falha: balão, ligaduras, embolização, histerectomia de salvamento"
+        ]
+      }
+    ]
+  },
+  "go-parto": {
+    "intro": "Bishop score prevê sucesso da indução; fases do parto organizam dilatância, expulsão e dequitação.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Bishop score",
+        "subtitle": "0-3 pts por item (total 0-13)",
+        "caption": "Componentes do Bishop score para indução do parto.",
+        "footer": "Favoravel: geralmente >= 8 | Desfavoravel: <= 5",
+        "nodes": [
+          { "label": "Dilatacao cervical (cm)", "pts": "0-3" },
+          { "label": "Apagamento / shortening (%)", "pts": "0-3" },
+          { "label": "Estacao da apresentacao", "pts": "0-3" },
+          { "label": "Consistencia (firme-mole)", "pts": "0-2" },
+          { "label": "Posicao (post-medio-ant)", "pts": "0-2" }
+        ]
+      },
+      {
+        "type": "timeline",
+        "title": "Fases do parto",
+        "subtitle": "Latente -> ativa -> expulsivo -> dequitacao",
+        "caption": "Linha do tempo clássica das fases do trabalho de parto.",
+        "nodes": [
+          { "label": "Latente", "sub": "dilatacao lenta" },
+          { "label": "Ativa", "sub": "~6 cm+" },
+          { "label": "Expulsivo", "sub": "10 cm -> nascimento" },
+          { "label": "Dequitacao", "sub": "placenta" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Fases — o que a prova quer",
+        "headers": ["Fase", "Marco", "Ponto-chave"],
+        "rows": [
+          ["1ª — latente", "Início das contrações até dilatância acelerada", "Pode ser longa; evite cesárea por 'falha' precoce"],
+          ["1ª — ativa", "Dilatação acelerada (~6 cm em muitos protocolos)", "Avaliar progressão e bem-estar fetal"],
+          ["2ª — expulsivo", "Dilatação completa → nascimento", "Puxos, desproporção, assistência"],
+          ["3ª — dequitação", "Nascimento → saída da placenta", "Prevenir HPP (ocitocina, tração controlada)"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Bishop na prática de prova",
+        "body": "Colo favorável → indução com ocitocina tende a ir melhor. Colo desfavorável → amadurecimento (misoprostol/sonda) antes de forçar indução."
+      }
+    ]
+  },
+  "go-dip": {
+    "intro": "Doença inflamatória pélvica: critérios CDC mínimos + critérios adicionais/específicos fecham diagnóstico e urgência.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "DIP - criterios CDC",
+        "subtitle": "Minimos + adicionais + especificos",
+        "caption": "Checklist diagnóstico de DIP segundo critérios CDC.",
+        "footer": "Tratar empiricamente se minimos + risco",
+        "nodes": [
+          { "label": "MIN: dor a mobilizacao cervical" },
+          { "label": "MIN: dor a palpacao uterina" },
+          { "label": "MIN: dor a palpacao anexial" },
+          { "label": "ADD: febre > 38,3 C" },
+          { "label": "ADD: leucocitose / PCR-VHS altas" },
+          { "label": "ADD: mucopus cervical / IST+" },
+          { "label": "ESP: abscesso / histologia / laparoscopia" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Camadas diagnósticas CDC",
+        "headers": ["Nível", "Conteúdo", "Uso"],
+        "rows": [
+          ["Mínimos", "Dor à mobilização cervical e/ou útero e/ou anexos", "Iniciar tratamento empírico se sexualmente ativa + dor pélvica"],
+          ["Adicionais", "Febre, mucopus, leucocitose, PCR/VHS, IST+", "Aumentam probabilidade"],
+          ["Específicos", "Abscesso no US/TC, histologia, laparoscopia", "Confirmam; nem sempre disponíveis"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não espere cultura/imagem para tratar se critérios mínimos + contexto. Atraso aumenta risco de abscesso, infertilidade e GEU."
+      },
+      {
+        "type": "bullets",
+        "title": "Internação clássica",
+        "items": [
+          "Abscesso tubo-ovariano, peritonite, sepse",
+          "Gestação, imunodepressão, falha ambulatorial",
+          "Náuseas/vômitos que impedem VO; dúvida diagnóstica importante"
+        ]
+      }
+    ]
+  },
+  "go-aborto": {
+    "intro": "Tipos de abortamento (ameaça → infectado) são classificados por colo, eliminação de restos e infecção — tabela clássica de prova.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Tipos de abortamento",
+        "subtitle": "Colo / restos / clinica",
+        "caption": "Tabela mental dos tipos clássicos de abortamento.",
+        "footer": "Colo fechado + vitalidade = ameaca",
+        "nodes": [
+          { "label": "Ameaca - colo fechado, utero viavel", "pts": "repouso" },
+          { "label": "Inevitavel - colo dilatado, sangramento", "pts": "esvaziar" },
+          { "label": "Incompleto - restos + colo aberto", "pts": "curetagem" },
+          { "label": "Completo - esvaziado, colo fecha", "pts": "observar" },
+          { "label": "Retido - ovo morto, colo fechado", "pts": "esvaziar" },
+          { "label": "Infectado - febre + restos/colo", "pts": "ATB+esvaz" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Comparativo clássico",
+        "headers": ["Tipo", "Colo", "Conteúdo uterino", "Conduta-ideia"],
+        "rows": [
+          ["Ameaça", "Fechado", "Embrião/feto viável", "Repouso relativo, observação, βHCG/US"],
+          ["Inevitável", "Dilatando/aberto", "Gestação em vias de expulsão", "Esvaziamento"],
+          ["Incompleto", "Aberto", "Restos", "Esvaziamento (AMIÚ/curetagem)"],
+          ["Completo", "Fecha após", "Vazio", "Observação + orientação"],
+          ["Retido", "Fechado", "Produto morto retido", "Esvaziamento programado"],
+          ["Infectado", "Variável", "Restos + infecção", "ATB + esvaziamento urgente"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Definição de prova",
+        "body": "Abortamento: interrupção espontânea antes de 20–22 semanas (ou peso < 500 g, conforme protocolo local citado na banca)."
+      }
+    ]
+  },
+  "go-ectopica": {
+    "intro": "GEU: zona discriminatória do βHCG + US sem saco intrauterino; ruptura é emergência com peritonismo e choque.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "GEU - estabilidade",
+        "subtitle": "Estavel vs ruptura / instavel",
+        "caption": "Ramificação: conduta expectante/médica versus cirurgia de emergência.",
+        "nodes": [
+          {
+            "title": "Estavel + GEU nao rota",
+            "lines": ["MTX se criterios", "ou cirurgia eletiva", "seguir beta"]
+          },
+          {
+            "title": "Ruptura / instavel",
+            "lines": ["Dor aguda + choque", "hemoperitonio", "cirurgia urgente"]
+          }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "Zona discriminatoria",
+        "subtitle": "beta-hCG vs saco IUP no US",
+        "caption": "Ideia da zona discriminatória do βHCG transvaginal.",
+        "nodes": [
+          {
+            "formula": "beta ~1500-2000 + TVUS sem IUP => GEU?",
+            "note": "Valor exato varia por servico; conceito e o que cai"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Critérios/sinais de ruptura (clássicos)",
+        "items": [
+          "Dor abdominal aguda intensa + defesa/peritonismo",
+          "Sinais de hipovolemia/choque",
+          "US: líquido livre abundante / hemoperitônio",
+          "Colapso + sangramento vaginal variável (pode ser discreto)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Ideia diagnóstica",
+        "headers": ["Ferramenta", "Achado útil"],
+        "rows": [
+          ["βHCG", "Positivo; curva inadequada ou platô suspeito"],
+          ["TVUS", "Útero vazio + massa anexial / saco ectópico / líquido"],
+          ["Zona discriminatória", "βHCG acima do limiar sem IUP visível → alta suspeita de GEU"],
+          ["Culdocentese (clássico)", "Sangue não coagulável — menos usado hoje"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "MTX — lembrar contraindicações",
+        "body": "Instabilidade, ruptura, contraindicação a metotrexato, massa grande/batimentos (conforme protocolo) → cirurgia, não MTX."
+      }
+    ]
+  },
+  "go-dpp": {
+    "intro": "DPP vs placenta prévia: dor + sangramento escuro + hipertonia versus sangramento vermelho indolor — diferencial clássico.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Sangramento 3o trimestre",
+        "subtitle": "DPP vs placenta previa",
+        "caption": "Comparativo clássico DPP × placenta prévia.",
+        "nodes": [
+          {
+            "title": "DPP (descolamento)",
+            "lines": ["Dor + hipertonia", "sangue escuro", "sofrimento fetal"]
+          },
+          {
+            "title": "Placenta previa",
+            "lines": ["Sangramento indolor", "vermelho vivo", "utero mole / basico"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Tabela clássica de prova",
+        "headers": ["Achado", "DPP", "Placenta prévia"],
+        "rows": [
+          ["Dor", "Presente, intensa", "Ausente (clássico)"],
+          ["Sangramento", "Escuro; pode ser oculto", "Vermelho vivo, exteriorizado"],
+          ["Útero", "Hipertônico, sensível", "Mole, indolor"],
+          ["Toque vaginal", "Não é o foco; emergência obstétrica", "Contraindicado até US excluir prévia"],
+          ["Feto", "Sofrimento frequente", "Frequentemente ok no início"],
+          ["Fator associado", "HAS/PE, trauma, cocaína", "Cesáreas prévias, multiparidade"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Pegadinha",
+        "body": "DPP pode ter pouco sangramento externo (retroplacentário oculto) com choque desproporcional. Estabilize e resolva se grave."
+      }
+    ]
+  },
+  "go-rpm": {
+    "intro": "RPM: latência, corticóide, antibiótico e tocolítico seguem regras de IG e contraindicações — protocolo clássico de prova.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "RPM - regras de conduta",
+        "subtitle": "Latencia + corticoide + ATB + tocolise",
+        "caption": "Checklist de condutas na rotura prematura de membranas.",
+        "footer": "Infeccao / sofrimento = interromper latencia",
+        "nodes": [
+          { "label": "Confirmar RPM (liquido / nitrazina / US)" },
+          { "label": "Corticoide se IG prematura elegivel" },
+          { "label": "ATB de latencia (ex. ampicilina+azitromicina)" },
+          { "label": "Tocolitico: so curto p/ corticoide (se indicado)" },
+          { "label": "Vigilancia infeccao / bem-estar fetal" },
+          { "label": "Resolver se corioamnionite / TFPP" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Regras que caem",
+        "headers": ["Item", "Ideia de prova"],
+        "rows": [
+          ["Latência", "Expectante em IG selecionada sem infecção/sofrimento; ganhando maturidade"],
+          ["Corticóide", "Indicado na prematuridade (janela típica ~24–34 sem; siga protocolo local)"],
+          ["ATB", "Prolonga latência e reduz infecção — esquema clássico de latência"],
+          ["Tocolítico", "Não é tratamento prolongado da RPM; uso breve só se ajudar corticóide/transferência e sem contraindicação"],
+          ["Interromper", "Corioamnionite, sofrimento fetal, DPP, trabalho de parto avançado, IG a termo"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Toque e conduta",
+        "body": "Evite toques desnecessários (aumenta infecção). Em a termo com RPM: induzir se trabalho não iniciar (tempo conforme protocolo)."
+      }
+    ]
+  },
+  "go-antic": {
+    "intro": "Anticoncepção: método + elegibilidade (MEC/categorias 1–4) — conceito de risco que a prova ama.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "MEC - categorias (ideia)",
+        "subtitle": "1 seguro -> 4 contraindicado",
+        "caption": "Ideia das categorias MEC (WHO) de elegibilidade contraceptiva.",
+        "nodes": [
+          {
+            "title": "Cat 1-2",
+            "lines": ["1: sem restricao", "2: vantagens > riscos", "usar com cuidado"],
+            "foot": "Pode usar"
+          },
+          {
+            "title": "Cat 3",
+            "lines": ["Riscos > vantagens", "evitar se houver", "alternativa melhor"],
+            "foot": "Evitar"
+          },
+          {
+            "title": "Cat 4",
+            "lines": ["Risco inaceitavel", "contraindicacao", "absoluta pratica"],
+            "foot": "Nao usar"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Exemplos clássicos (conceito MEC)",
+        "headers": ["Condição", "Método hormonal combinado (ideia)", "Categoria-ideia"],
+        "rows": [
+          ["Migrânea com aura", "ACO combinado", "4 (contraindicado)"],
+          ["TEV atual / alto risco trombótico", "ACO combinado", "4"],
+          ["Tabagismo ≥ 35 anos + intenso", "ACO combinado", "4"],
+          ["Amamentação exclusiva precoce", "Combinado", "3/4 conforme tempo (prova cita protocolo)"],
+          ["DIU de cobre", "Nullípara / multipara saudável", "1–2 em geral"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Como a banca pergunta",
+        "items": [
+          "Categoria 4 = não oferecer o método",
+          "Categoria 3 = só se não houver alternativa melhor e com acompanhamento",
+          "Distinguir método combinado (estrogênio) vs só progestagênio vs DIU/implante"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Macete",
+        "body": "Quando o enunciado traz risco trombótico/migrânea com aura/tabagismo em >35, fuja do combinado — pense progestagênio ou cobre."
+      }
+    ]
+  },
+  "go-sangramento": {
+    "intro": "Sangramento uterino anormal: PALM-COEIN separa causas estruturais (PALM) das não estruturais (COEIN).",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "PALM-COEIN",
+        "subtitle": "FIGO - causas de SUA",
+        "caption": "Mnemônico PALM-COEIN para sangramento uterino anormal.",
+        "footer": "PALM = estrutural | COEIN = nao estrutural",
+        "nodes": [
+          { "label": "P - Polipo" },
+          { "label": "A - Adenomiose" },
+          { "label": "L - Leiomioma (mioma)" },
+          { "label": "M - Malignidade / hiperplasia" },
+          { "label": "C - Coagulopatia" },
+          { "label": "O - Ovulatoria (disfuncao)" },
+          { "label": "E - Endometrial" },
+          { "label": "I - Iatrogenica" },
+          { "label": "N - Nao classificada" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Como usar na prova",
+        "headers": ["Grupo", "Investigação típica", "Exemplo"],
+        "rows": [
+          ["PALM", "US / histeroscopia / anatomia", "Mioma submucoso, pólipo, câncer"],
+          ["COEIN", "História, labs, fármacos", "von Willebrand, anovulação, anticoagulante"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Primeiro passo",
+        "body": "Sempre excluir gravidez (βHCG) na mulher em idade reprodutiva com sangramento anormal antes de fechar PALM-COEIN."
+      },
+      {
+        "type": "bullets",
+        "title": "Red flags de malignidade",
+        "items": [
+          "Pós-menopausa com qualquer sangramento",
+          "Sangramento irregular persistente, anemia grave",
+          "Fatores de risco para hiperplasia/câncer de endométrio"
+        ]
+      }
+    ]
+  },
+  "go-mioma": {
+    "intro": "Mioma: classificação FIGO (0–8) pela relação com endométrio/serosa e indicações cirúrgicas clássicas.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "FIGO mioma (ideia)",
+        "subtitle": "Tipos 0-8 por localizacao",
+        "caption": "Ideia da classificação FIGO de leiomiomas.",
+        "footer": "0-2 submucosos | 3-5 intramurais | 6-7 subserosos | 8 outros",
+        "nodes": [
+          { "label": "0 - pediculado intracavitario", "pts": "submuc" },
+          { "label": "1 - <50% intramural", "pts": "submuc" },
+          { "label": "2 - >=50% intramural", "pts": "submuc" },
+          { "label": "3-5 - contato endometrio / intramural", "pts": "intra" },
+          { "label": "6-7 - subseroso (+/- pediculo)", "pts": "subser" },
+          { "label": "8 - cervical / parasita / outros", "pts": "outro" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Indicações clássicas de cirurgia",
+        "items": [
+          "Sangramento refratário / anemia sintomática",
+          "Dor ou compressão (bexiga, ureter, intestino) refratária",
+          "Infertilidade/aborto relacionados a mioma submucoso (ou distorção cavidade)",
+          "Crescimento rápido suspeito / dúvida com sarcoma (raro, mas banca cita)",
+          "Mioma pediculado torsionado / necrose sintomática"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Via — ideia rápida",
+        "headers": ["Cenário", "Opção clássica"],
+        "rows": [
+          ["Submucoso 0–1 sintomático", "Histeroscopia (miomectomia)"],
+          ["Desejo reprodutivo + intramural", "Miomectomia (aberta/laparoscópica)"],
+          ["Multipara, sintomas refratários, sem desejo gestacional", "Histerectomia"],
+          ["Urgência hemorrágica", "Estabilizar ± cirurgia conforme recurso"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Prova",
+        "body": "Submucoso sangra mais; subseroso comprime. FIGO ajuda a escolher histeroscopia vs miomectomia/histerectomia."
+      }
+    ]
+  },
+  "go-endometriose": {
+    "intro": "Endometriose: dor pélvica cíclica + infertilidade; estágios rAFS/ASRM descrevem extensão anatômica, não intensidade da dor.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Endometriose - estagios (ideia)",
+        "subtitle": "ASRM / rAFS simplificado",
+        "caption": "Ideia dos estágios de endometriose (extensão anatômica).",
+        "nodes": [
+          {
+            "title": "I-II leve",
+            "lines": ["Implantes focais", "aderencias finas", "pouca anatomia"],
+            "foot": "Minima/leve"
+          },
+          {
+            "title": "III moderada",
+            "lines": ["Implantes multiplos", "endometrioma", "aderencias"],
+            "foot": "Moderada"
+          },
+          {
+            "title": "IV severa",
+            "lines": ["Doenca extensa", "aderencias densas", "anatomia distorcida"],
+            "foot": "Severa"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Clínica de alto rendimento",
+        "items": [
+          "Dismenorreia progressiva, dispareunia de profundidade, dor à defecação cíclica",
+          "Infertilidade; endometrioma ovariano ('chocolate')",
+          "Exame: nódulos em fundo de saco, útero fixo (pode ser normal)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Estágio ≠ dor",
+        "body": "Estágio ASRM mede extensão cirúrgica/anatômica. Dor intensa pode existir em doença mínima — não use estágio só para explicar sintoma."
+      },
+      {
+        "type": "table",
+        "title": "Conduta-ideia",
+        "headers": ["Objetivo", "Linha"],
+        "rows": [
+          ["Dor sem desejo gestacional imediato", "AINE + progestagênio/ACO/DIU-LNG; GnRH em refratários"],
+          ["Infertilidade", "Cirurgia selecionada ± reprodução assistida"],
+          ["Endometrioma / dúvida neoplásica", "US especializado; cirurgia se indicado"]
+        ]
+      }
+    ]
+  },
+  "go-sop": {
+    "intro": "SOP: critérios de Rotterdam — 2 de 3 (oligo/anovulação, hiperandrogenismo, morfologia ovariana policística), excluindo diferenciais.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Rotterdam - checklist",
+        "subtitle": "2 de 3 + exclusao de diferenciais",
+        "caption": "Checklist dos critérios de Rotterdam para SOP.",
+        "footer": "Diagnostico: 2/3 criterios presentes",
+        "nodes": [
+          { "label": "1) Oligo e/ou anovulacao" },
+          { "label": "2) Hiperandrogenismo clinico e/ou lab" },
+          { "label": "3) Ovarios policisticos no US" },
+          { "label": "Excluir: tireoide, hiperprolactina, HCCC" },
+          { "label": "Adolescente: cuidado com US isolado" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Critérios em uma linha",
+        "headers": ["Critério", "Como cai na prova"],
+        "rows": [
+          ["Oligo/anovulação", "Ciclos longos, amenorreia, infertilidade"],
+          ["Hiperandrogenismo", "Hirsutismo, acne; ↑ testosterona/androgênios"],
+          ["US policístico", "≥ 20 folículos/ovário ou volume ↑ (critérios atualizados; banca pode citar ≥ 12 clássico)"],
+          ["Exclusões", "Hiperplasia adrenal, Cushing, tumores, hiperprolactinemia, tireoidopatia"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Fenótipos",
+        "body": "Rotterdam gera fenótipos (com/sem hiperandrogenismo ou US). Em prova, foque no '2 de 3' e na exclusão de diferenciais."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta-ideia",
+        "items": [
+          "Metas: ciclo, androgênios, fertilidade, risco metabólico",
+          "ACO se sem desejo gestacional; metformina se resistência/DM",
+          "Indução de ovulação (clomifeno/letrozol) se gravidez desejada"
+        ]
+      }
+    ]
+  },
+  "go-climaterio": {
+    "intro": "Climatério/menopausa: STRAW marca estágios; sintomas vasomotores e indicação de TH são o núcleo de prova.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "STRAW - ideia",
+        "subtitle": "Transicao -> menopausa -> pos",
+        "caption": "Linha do tempo simplificada STRAW (+10/−2 em torno da FUP).",
+        "nodes": [
+          { "label": "-2", "sub": "transicao precoce" },
+          { "label": "-1", "sub": "transicao tardia" },
+          { "label": "0", "sub": "FUP / menopausa" },
+          { "label": "+1", "sub": "pos precoce" },
+          { "label": "+2", "sub": "pos tardia" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "bullets",
+        "title": "Sintomas clássicos",
+        "items": [
+          "Fogachos / suores noturnos (vasomotores)",
+          "Distúrbios do sono, humor, concentração",
+          "Síndrome geniturinária da menopausa (secura, dispareunia, ITU de repetição)",
+          "Menopausa: 12 meses sem menstruação (FUP = última menstruação)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "TH — indicação ideia",
+        "headers": ["Cenário", "Ideia"],
+        "rows": [
+          ["Fogachos moderados/graves, sem contraindicação", "TH sistêmica (menor dose efetiva, janela precoce)"],
+          ["Só sintomas geniturinários", "Estrogênio local / tópico"],
+          ["Útero presente", "Estrogênio + progestagênio (proteger endométrio)"],
+          ["Histerectomizada", "Estrogênio só (em geral)"],
+          ["Contraindicações", "Câncer mama, TEV ativo/alto risco, sangramento vaginal não esclarecido, hepatopatia grave"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Janela",
+        "body": "Melhor relação risco-benefício da TH sistêmica: início próximo da menopausa (<60 anos ou <10 anos da FUP), individualizando riscos."
+      }
+    ]
+  },
+  "go-incontinencia": {
+    "intro": "Incontinência: esforço × urgência × mista; pad test e diário miccional ajudam a objetivar perda.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Incontinencia - tipos",
+        "subtitle": "Esforco / urgencia / mista",
+        "caption": "Três tipos clássicos de incontinência urinária feminina.",
+        "nodes": [
+          {
+            "title": "Esforco",
+            "lines": ["Tosse / riso", "sem urgencia", "hipermobilidade"],
+            "foot": "SUI"
+          },
+          {
+            "title": "Urgencia",
+            "lines": ["Urgencia sudden", "bexiga hiperativa", "perda com urge"],
+            "foot": "UUI / OAB"
+          },
+          {
+            "title": "Mista",
+            "lines": ["Esforco + urge", "tratar dominante", "avaliar ambos"],
+            "foot": "MUI"
+          }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "Pad test (ideia)",
+        "subtitle": "Quantificar perda urinaria",
+        "caption": "Ideia do pad test (absorvente pesado antes/depois).",
+        "nodes": [
+          {
+            "formula": "peso final - peso inicial = perda (g)",
+            "note": "Protocolos 1h ou 24h; >1-2 g em 1h sugere perda significativa"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta inicial por tipo",
+        "headers": ["Tipo", "1ª linha", "Avançado"],
+        "rows": [
+          ["Esforço", "Piso pélvico, perda de peso", "Sling / cirurgia se refratária"],
+          ["Urgência", "Treino vesical, anticolinérgico/β3", "Toxina, neuromodulação"],
+          ["Mista", "Tratar componente dominante", "Combinar medidas"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Avaliação básica",
+        "body": "Diário miccional, exame, EAS/cultura se ITU suspeita, residuo pós-miccional. Pad test objetiva a queixa para prova/clínica."
+      }
+    ]
+  },
+  "go-cancer-colo": {
+    "intro": "Colo uterino: Bethesda interpreta a citologia; rastreamento por faixas etárias (citologia/HPV) é pergunta fixa.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Bethesda - ideia",
+        "subtitle": "Resultados citologicos classicos",
+        "caption": "Categorias Bethesda de alto rendimento em prova.",
+        "footer": "ASC-US -> HPV / repetir | HSIL/AGC -> colposcopia",
+        "nodes": [
+          { "label": "NILM - negativo", "pts": "rotina" },
+          { "label": "ASC-US", "pts": "HPV/rep" },
+          { "label": "LSIL (NIC1)", "pts": "seguir" },
+          { "label": "ASC-H", "pts": "colpo" },
+          { "label": "HSIL (NIC2/3)", "pts": "colpo" },
+          { "label": "AGC / cancer", "pts": "urgente" }
+        ]
+      },
+      {
+        "type": "timeline",
+        "title": "Rastreamento colo (faixas)",
+        "subtitle": "Ideia MS / protocolos BR",
+        "caption": "Faixas etárias clássicas de rastreamento do câncer de colo.",
+        "nodes": [
+          { "label": "<25", "sub": "nao rotina*" },
+          { "label": "25-64", "sub": "citologia" },
+          { "label": "apos 2 OK", "sub": "3/3 anos" },
+          { "label": ">64", "sub": "parar se OK" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Rastreamento — faixas (ideia MS)",
+        "headers": ["Faixa", "Conduta clássica"],
+        "rows": [
+          ["Início", "25 anos (sexualmente ativas) — citologia"],
+          ["Intervalo", "Após 2 anuais consecutivos normais → a cada 3 anos"],
+          ["Término", "Após 64 anos com históricos adequados negativos"],
+          ["HPV / coteste", "Protocolos novos podem incorporar HPV; cite o do enunciado"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Conduta citológica",
+        "body": "ASC-US: HPV ou repetir citologia. ASC-H/HSIL/AGC: colposcopia. Nunca tratar só pelo Pap sem correlação."
+      },
+      {
+        "type": "bullets",
+        "title": "Vacina HPV (contexto)",
+        "items": [
+          "Prevenção primária — não substitui rastreamento",
+          "Faixas e doses conforme calendário vigente no enunciado"
+        ]
+      }
+    ]
+  },
+  "go-cancer-mama": {
+    "intro": "Mama: BI-RADS estratifica imagem; rastreamento com mamografia por faixa etária é clássico de preventiva/GO.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "BI-RADS (ideia)",
+        "subtitle": "0 a 6 - conduta mental",
+        "caption": "Categorias BI-RADS e conduta associada.",
+        "footer": "4-5 = biopsia | 3 = controle curto | 1-2 = rotina",
+        "nodes": [
+          { "label": "0 - incompleto", "pts": "mais imgs" },
+          { "label": "1 - negativo", "pts": "rotina" },
+          { "label": "2 - benigno", "pts": "rotina" },
+          { "label": "3 - provavelmente benigno", "pts": "6 meses" },
+          { "label": "4 - suspeito", "pts": "biopsia" },
+          { "label": "5 - altamente sugestivo", "pts": "biopsia" },
+          { "label": "6 - ca conhecido", "pts": "tratar" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Rastreamento mamário (ideia MS/INCA)",
+        "headers": ["Público", "Conduta clássica de prova"],
+        "rows": [
+          ["50–69 anos, risco habitual", "Mamografia a cada 2 anos"],
+          ["40–49 anos", "Não é rastreamento populacional universal no MS; individualizar"],
+          ["Alto risco (ex.: mutação, irradiação)", "Início mais cedo ± RM — protocolo especializado"],
+          ["Achado palpável", "Não 'esperar mamografia de rotina' — investigar"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "BI-RADS na prova",
+        "body": "BI-RADS 3 = seguimento curto. 4 e 5 = biópsia. 0 = exame incompleto — completar imagem antes de categorizar definitivo."
+      },
+      {
+        "type": "bullets",
+        "title": "Clínica suspeita",
+        "items": [
+          "Nódulo duro, irregular, fixo; retração cutânea/mamilo",
+          "Secreção sanguinolenta unilateral por único ducto",
+          "Linfonodo axilar suspeito"
+        ]
+      }
+    ]
+  },
+  "go-diabetes-gest": {
+    "intro": "Diabetes gestacional: rastreamento e diagnóstico — aqui usamos critérios IADPSG (TOTG 75 g) amplamente cobrados.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "DMG - IADPSG (TOTG 75g)",
+        "subtitle": "1 valor alterado fecha diagnostico",
+        "caption": "Critérios IADPSG no TOTG 75 g (0–1–2 h).",
+        "footer": "Jejum >=92 | 1h >=180 | 2h >=153 mg/dL",
+        "nodes": [
+          { "label": "Jejum >= 92 mg/dL" },
+          { "label": "1 hora >= 180 mg/dL" },
+          { "label": "2 horas >= 153 mg/dL" },
+          { "label": "Qualquer 1 ponto = DMG" },
+          { "label": "Rastreio tipico 24-28 semanas" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Rastreamento / diagnóstico (IADPSG)",
+        "headers": ["Etapa", "Conduta"],
+        "rows": [
+          ["1ª consulta", "Glicemia de jejum: se muito alta, pensar DM prévio; se jejum 92–125 → já pode fechar DMG (protocolo)"],
+          ["24–28 semanas", "TOTG 75 g (jejum, 1 h, 2 h) — padrão IADPSG"],
+          ["Diagnóstico", "≥ 1 valor nos cortes IADPSG"],
+          ["Nota MS", "Alguns serviços BR usam estratégia em 2 passos (50 g + 100 g); se a banca citar MS antigo, siga o enunciado"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Critério usado neste pack",
+        "body": "IADPSG / ADA one-step (TOTG 75 g). Cortes: jejum ≥ 92; 1 h ≥ 180; 2 h ≥ 153 mg/dL — um valor basta."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta-ideia",
+        "items": [
+          "Dieta + atividade; automonitorização",
+          "Insulina se metas não atingidas (metformina conforme protocolo/banca)",
+          "Reavaliar no puerpério (TOTG 6–12 semanas) — risco de DM2"
+        ]
+      }
+    ]
+  },
+  "go-isoimunizacao": {
+    "intro": "Isoimunização Rh: Coombs indireto na gestante Rh− e profilaxia anti-D nos momentos clássicos evitam aloimunização.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Anti-D - momentos classicos",
+        "subtitle": "Profilaxia na gestante Rh- / Coombs-",
+        "caption": "Momentos clássicos de imunoglobulina anti-D.",
+        "nodes": [
+          { "label": "28 sem", "sub": "rotina" },
+          { "label": "Parto RN+", "sub": "72 h" },
+          { "label": "Aborto/GEU", "sub": "evento" },
+          { "label": "Sangramento", "sub": "sensibiliz." },
+          { "label": "Procedimento", "sub": "amnio/versao" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Coombs / logica Rh",
+        "subtitle": "Quem recebe anti-D",
+        "caption": "Checklist lógico da profilaxia anti-D.",
+        "footer": "Nao dar se ja aloimunizada (Coombs+ anti-D)",
+        "nodes": [
+          { "label": "Mae Rh negativo" },
+          { "label": "Coombs indireto negativo" },
+          { "label": "Pai/RN Rh positivo ou desconhecido" },
+          { "label": "Evento sensibilizante ou 28 sem / pos-parto" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Testes",
+        "headers": ["Teste", "Significado"],
+        "rows": [
+          ["Tipagem ABO/Rh", "Identifica gestante Rh− candidata"],
+          ["Coombs indireto", "Detecta anticorpos irregulares na mãe"],
+          ["Coombs direto (RN)", "Anticorpos ligados às hemácias do bebê"],
+          ["Anti-D profilático", "Imunoglobulina — previne, não trata aloimunização já instalada"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Não confundir",
+        "body": "Se Coombs indireto já positivo para anti-D (aloimunizada), profilaxia não reverte — monitorar anemia fetal (MCA-PSV etc.)."
+      }
+    ]
+  },
+  "go-tocolise": {
+    "intro": "Tocolise ganha tempo para corticóide/transferência; contraindicações clássicas impedem atrasar o parto.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Tocolise - contraindicacoes",
+        "subtitle": "Quando NAO inibir o parto",
+        "caption": "Contraindicações clássicas da tocólise.",
+        "footer": "Objetivo: 48h para corticoide / traslado",
+        "nodes": [
+          { "label": "Sofrimento / obito fetal" },
+          { "label": "Corioamnionite / infeccao intra-uterina" },
+          { "label": "DPP significativo / sangramento grave" },
+          { "label": "Pre-eclampsia grave / eclampsia" },
+          { "label": "IG limite a termo / dilatacao avancada" },
+          { "label": "Malformacao letal / contraindicacao materna ao farmaco" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Agentes — ideia de prova",
+        "headers": ["Classe", "Exemplo", "Lembrete"],
+        "rows": [
+          ["Bloqueador Ca", "Nifedipina", "Muito usado; evitar com MgSO4 em alguns protocolos"],
+          ["Antagonista ocitocina", "Atosibano", "Bom perfil; custo/disponibilidade"],
+          ["β-agonista", "Terbutalina", "Efeitos cardíacos maternos"],
+          ["Inibidor COX", "Indometacina", "Cuidado >32 sem / ducto / oligúria fetal"],
+          ["MgSO4", "Neuroproteção", "Mais neuroproteção fetal que tocólise prolongada"]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Papel real",
+        "body": "Tocolise não 'segura a gestação por semanas' como objetivo único. Use janela curta para corticóide, MgSO4 neuroprotetor e transferência in utero."
+      },
+      {
+        "type": "bullets",
+        "title": "Pacote prematuridade",
+        "items": [
+          "Corticóide antenal se IG elegível",
+          "MgSO4 para neuroproteção em IG muito prematura",
+          "ATB se RPM; estreptococo B conforme protocolo",
+          "Não tocolisar se contraindicação listada"
+        ]
+      }
+    ]
+  }
+}

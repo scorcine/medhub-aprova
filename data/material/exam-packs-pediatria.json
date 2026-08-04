@@ -1,0 +1,1287 @@
+{
+  "ped-desidratacao": {
+    "intro": "Planos A/B/C do MS e a classificação clínica de desidratação são clássicos de R1: definem TRO vs EV e o local de cuidado.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Planos MS - desidratacao",
+        "subtitle": "A / B / C",
+        "caption": "Plano A em casa; B = TRO supervisionada; C = reidratação EV na desidratação grave/choque.",
+        "nodes": [
+          {
+            "title": "Plano A",
+            "lines": ["Sem desidratacao", "SRO apos cada evacuacao", "Manter alimentacao"],
+            "foot": "Domicilio"
+          },
+          {
+            "title": "Plano B",
+            "lines": ["Desidratacao", "TRO 4h supervisionada", "Reavaliar e decidir"],
+            "foot": "URS / UPA"
+          },
+          {
+            "title": "Plano C",
+            "lines": ["Grave / choque", "SF 0,9% EV em bolus", "Internacao"],
+            "foot": "Urgencia"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Sinais de classificacao",
+        "subtitle": "Clinica guia o plano",
+        "caption": "Quanto mais sinais de gravidade, mais próximo do Plano C.",
+        "footer": "Choque = Plano C imediato",
+        "nodes": [
+          { "label": "Estado geral (alerta vs letargico)" },
+          { "label": "Olhos / fontanela (fundos)" },
+          { "label": "Lagrimas e mucosas" },
+          { "label": "Turgor / sinal da prega" },
+          { "label": "Diurese e sede" },
+          { "label": "Enchimento capilar / pulso" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Classificação clínica (prova)",
+        "headers": ["Sinal", "Leve", "Moderada", "Grave"],
+        "rows": [
+          ["Estado geral", "Alerta", "Irritado/sonolento", "Letárgico/choque"],
+          ["Olhos/fontanela", "Normais", "Fundos", "Muito fundos"],
+          ["Lágrimas/mucosa", "Presentes/úmida", "↓ / seca", "Ausentes/muito seca"],
+          ["Turgor", "Normal", "Diminuído", "Prega persistente"],
+          ["Diurese", "Normal/↓ leve", "Reduzida", "Oligúria/anúria"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta-chave",
+        "items": [
+          "Preferir SRO/OMS em pequenos volumes frequentes (Plano A/B)",
+          "Manter aleitamento; evitar sucos/refrigerantes como reidratação",
+          "Plano C: acesso EV, SF 0,9% em bolus e reavaliação contínua",
+          "Zinco na diarreia aguda quando indicado (protocolo OMS/MS)"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Criança ‘só quietinha’ com pulso fino e extremidades frias já pode estar em choque — trate como Plano C, não espere anúria."
+      }
+    ]
+  },
+  "ped-bronquiolite": {
+    "intro": "Critérios de gravidade e internamento na bronquiolite viral evitam tratamento inútil (β2/corticoide de rotina) e identificam quem precisa de O₂/suporte.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Bronquiolite - gravidade",
+        "subtitle": "Leve / moderada / grave",
+        "caption": "Classifique por esforço respiratório, SatO₂, alimentação e apneia.",
+        "nodes": [
+          {
+            "title": "Leve",
+            "lines": ["FR pouco elevada", "SatO2 boa", "Alimenta bem"],
+            "foot": "Casa"
+          },
+          {
+            "title": "Moderada",
+            "lines": ["Tiragem", "SatO2 limiar", "Ingesta reduzida"],
+            "foot": "Observar / O2"
+          },
+          {
+            "title": "Grave",
+            "lines": ["Batimento de asa", "Hipoxemia / apneia", "Letargia"],
+            "foot": "Internar"
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Criterios de internamento",
+        "subtitle": "Quando nao liberar",
+        "caption": "Um critério forte (apneia, hipoxemia, falência alimentar) já justifica internação.",
+        "footer": "Risco: <3 meses / prematuro / cardiopata",
+        "nodes": [
+          { "label": "Apneia ou pausas respiratorias" },
+          { "label": "SatO2 persistentemente baixa" },
+          { "label": "Dificuldade respiratoria importante" },
+          { "label": "Recusa / desidratacao" },
+          { "label": "Fator de risco + quadro borderline" },
+          { "label": "Ambiente social inseguro" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Fazer × evitar de rotina",
+        "headers": ["Fazer", "Evitar de rotina"],
+        "rows": [
+          ["O₂ se hipoxemia", "Broncodilatador sistemático"],
+          ["Hidratação / fracionar dietas", "Corticóide isolado"],
+          ["Aspiração de VAS", "Antibiótico sem coinfecção"],
+          ["Suporte / VNI se indicado", "RX e lab ‘de rotina’"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de prova",
+        "items": [
+          "Primeiro quadro de sibilância em lactente; agente clássico: VSR",
+          "Diagnóstico clínico; imagem só se dúvida de pneumonia/complicação",
+          "Fatores de risco: prematuridade, cardiopatia, imunodeficiência, < 3 meses"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não trate bronquiolite típica como asma do lactente: β2 e corticoide não são primeira linha na maioria dos casos."
+      }
+    ]
+  },
+  "ped-meningite": {
+    "intro": "Tríade clássica, corticoide no timing certo e ATB empírico por idade são o núcleo de meningite bacteriana pediátrica em prova.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Triade e sinais",
+        "subtitle": "Febre + cefaleia + rigidez",
+        "caption": "Na criança maior: tríade. No lactente, irritabilidade, fontanela e convulsão podem substituir a rigidez.",
+        "footer": "Petequias = meningococo ate prova em contrario",
+        "nodes": [
+          { "label": "Febre" },
+          { "label": "Cefaleia / vomitos" },
+          { "label": "Rigidez de nuca" },
+          { "label": "Kernig / Brudzinski" },
+          { "label": "Fontanela abaulada (lactente)" },
+          { "label": "Petequias / purpura" }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "1a hora - meningite",
+        "subtitle": "Nao atrase ATB",
+        "caption": "Estabilizar → coletar o possível → ATB ± dexametasona sem demora.",
+        "nodes": [
+          { "label": "Estabilizar", "sub": "ABC + glicemia" },
+          { "label": "Coletar", "sub": "Hemocultura +/- LCR" },
+          { "label": "Tratar", "sub": "ATB +/- dexametasona" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "ATB empírico por idade (ideia de prova)",
+        "headers": ["Faixa", "Esquema típico", "Cobertura-chave"],
+        "rows": [
+          ["Neonato", "Ampicilina + cefotaxima (± genta)", "GBS, E. coli, Listeria"],
+          ["Lactente/criança", "Ceftriaxona/cefotaxima ± vancomicina", "Pneumococo, meningococo, H. influenzae"],
+          ["Risco Listeria / imunossupressão", "Associar ampicilina", "L. monocytogenes"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Dexametasona",
+        "items": [
+          "Indicação clássica: suspeita de pneumococo / meningite bacteriana comunitária na criança maior",
+          "Dar junto ou pouco antes da 1ª dose de ATB",
+          "Benefício principal: reduzir sequelas (ex.: surdez) no pneumococo",
+          "Não atrase ATB se não puder puncionar imediatamente"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Sinais de HIC, instabilidade ou foco: imagem e ATB sem atrasar — hemocultura + antibiótico primeiro; PL quando seguro."
+      }
+    ]
+  },
+  "ped-ictericia": {
+    "intro": "Nomograma de Bhutani (idade em horas × risco) e limiares conceituais de fototerapia/exsanguíneo evitam kernicterus e icterícia ‘fisiológica’ mal classificada.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Ictericia por tempo",
+        "subtitle": "Inicio guia urgencia",
+        "caption": "Ideia Bhutani: bilirrubina plotada por horas de vida e zona de risco define fototerapia vs observação.",
+        "nodes": [
+          { "label": "<24 h", "sub": "patologica" },
+          { "label": "D2-D3", "sub": "fisiologica?" },
+          { "label": "Fototerapia", "sub": "zona de risco" },
+          { "label": "Exsanguineo", "sub": "nivel critico" }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Fototerapia vs exsanguineo",
+        "subtitle": "Nivel + clinica neurologica",
+        "caption": "Fototerapia sobe com idade em horas e fatores de risco; exsanguíneo se nível crítico ou encefalopatia.",
+        "nodes": [
+          {
+            "title": "Fototerapia",
+            "lines": ["Nomograma por horas", "Fatores de risco sobem limiar", "Hidratacao / acompanhar BT"]
+          },
+          {
+            "title": "Exsanguineo",
+            "lines": ["BT critica / falha foto", "Sinais de encefalopatia", "Hemolise intensa"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Fisiológica × patológica",
+        "headers": ["Pista", "Fisiológica", "Patológica"],
+        "rows": [
+          ["Início", "Após 24 h", "< 24 h"],
+          ["Velocidade", "Lenta", "Subida rápida / nível alto"],
+          ["Direta", "Normal", "↑ direta = colestase até prova em contrário"],
+          ["Clínica", "RN bem", "Anemia, hepatoespleno, toxemia, neuro"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conceito Bhutani / conduta",
+        "items": [
+          "Eixo X = horas de vida; eixo Y = bilirrubina total; zonas de risco guiam conduta",
+          "Fatores de risco (prematuridade, hemólise, asfixia, sepse) abaixam limiar de tratamento",
+          "Exsanguíneo: níveis críticos ou sinais de encefalopatia bilirrubínica",
+          "Icterícia do leite materno ≠ colestase: bilirrubina direta alta muda tudo"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Predomínio de bilirrubina direta não se resolve só com fototerapia — investigue colestase (ex.: atresia de vias biliares)."
+      }
+    ]
+  },
+  "ped-pneumonia": {
+    "intro": "Critérios de internamento separam pneumonia comunitária tratável em casa de casos que precisam de O₂, hidratação EV e vigilância.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Criterios de internamento",
+        "subtitle": "Pneumonia pediatrica",
+        "caption": "SatO₂, esforço respiratório, idade e capacidade de ingerir líquidos decidem a via de cuidado.",
+        "footer": "Toxemia / apneia = internar",
+        "nodes": [
+          { "label": "SatO2 baixa em ar ambiente" },
+          { "label": "Tiragem importante / FR muito alta" },
+          { "label": "Apneia ou cianose" },
+          { "label": "Desidratacao / vomitos incoerciveis" },
+          { "label": "Lactente jovem / imunocomprometido" },
+          { "label": "Complicacao (derrame, sepse)" }
+        ]
+      },
+      {
+        "type": "triage3",
+        "title": "Gravidade clinica",
+        "subtitle": "Ambulatorio / enfermaria / grave",
+        "caption": "Leve em casa com ATB oral; moderada/grave com O₂ e ATB EV.",
+        "nodes": [
+          {
+            "title": "Leve",
+            "lines": ["Bom estado", "SatO2 ok", "Aceita VO"],
+            "foot": "Casa + ATB VO"
+          },
+          {
+            "title": "Moderada",
+            "lines": ["Tiragem", "SatO2 limiar", "Ingesta baixa"],
+            "foot": "Internar"
+          },
+          {
+            "title": "Grave",
+            "lines": ["Distress", "Choque / sepse", "Falencia respiratoria"],
+            "foot": "UTI / suporte"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Etiologia por idade (visão clássica)",
+        "headers": ["Idade", "Agentes frequentes"],
+        "rows": [
+          ["Neonato", "GBS, gram-negativos, Listeria"],
+          ["1–3 meses", "Vírus, Chlamydia, bactérias típicas"],
+          ["Pré-escolar", "Vírus, pneumococo"],
+          ["Escolar/adolescente", "Pneumococo, Mycoplasma"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Amoxicilina VO é clássica na pneumonia típica ambulatorial",
+          "O₂ se hipoxemia; hidratação e antitérmico de suporte",
+          "RX não atrasa ATB se clínica clara e gravidade",
+          "Pensar derrame/empiema se febre persistente ou assimetria"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Sibilância isolada em lactente no inverno pode ser bronquiolite — não rotule tudo como pneumonia bacteriana."
+      }
+    ]
+  },
+  "ped-asma": {
+    "intro": "A classificação da crise asmática (leve/moderada/grave/parada iminente) define salbutamol, corticoide e necessidade de suporte avançado.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Crise asmatica - gravidade",
+        "subtitle": "Leve / moderada / grave",
+        "caption": "Fale em frases? Tiragem? SatO₂? Pico de fluxo? Isso estratifica a crise.",
+        "nodes": [
+          {
+            "title": "Leve",
+            "lines": ["Fala frases", "Sibilos leves", "SatO2 boa"],
+            "foot": "SABA +/- corticoide"
+          },
+          {
+            "title": "Moderada",
+            "lines": ["Fala frases curtas", "Tiragem", "SatO2 limiar"],
+            "foot": "SABA seriado + corticoide"
+          },
+          {
+            "title": "Grave",
+            "lines": ["Fala palavras", "Silencio toracico", "SatO2 baixa"],
+            "foot": "Emergencia / UTI"
+          }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "Sinais de gravidade",
+        "subtitle": "Checklist mental da crise",
+        "caption": "Quanto mais itens ‘vermelhos’, mais agressiva a conduta e a observação.",
+        "footer": "Parada iminente: silencio + bradicardia + confusao",
+        "nodes": [
+          { "label": "Dificuldade para falar", "pts": "+" },
+          { "label": "Tiragem / uso de musculo acessorio", "pts": "+" },
+          { "label": "SatO2 < 92-94%", "pts": "+" },
+          { "label": "PFE muito reduzido", "pts": "+" },
+          { "label": "Cianose / confusao", "pts": "++" },
+          { "label": "Silencio toracico", "pts": "++" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta da crise (prova)",
+        "headers": ["Passo", "Conduta"],
+        "rows": [
+          ["1º", "Salbutamol inalatório com espaçador (ou neb) seriado"],
+          ["2º", "Corticóide sistêmico precoce (prednisolona/dexametasona)"],
+          ["O₂", "Se hipoxemia — alvo usual ~94–98%"],
+          ["Refratária", "Sulfato de magnésio IV; avaliar UTI/VNI"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Manutenção (resumo)",
+        "items": [
+          "Educação + técnica inalatória + plano de ação",
+          "Corticóide inalatório se crises recorrentes / controle ruim",
+          "Evitar gatilhos; tratar rinite/DRGE quando relevantes"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Silêncio torácico não é melhora — é gravidade extrema. Lactente sibilante no 1º episódio de inverno: pense bronquiolite antes de ‘asma’."
+      }
+    ]
+  },
+  "ped-itu": {
+    "intro": "Separar cistite de pielonefrite e saber quando pedir USG/DMSA é o que mais cai em ITU pediátrica de prova.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Cistite vs PNA",
+        "subtitle": "Baixa vs alta",
+        "caption": "Febre, toxemia e dor lombar apontam para PNA; disúria sem febre sugere cistite em criança maior.",
+        "nodes": [
+          {
+            "title": "Cistite",
+            "lines": ["Disuria / polaciuria", "Sem febre alta", "ATB VO curto"]
+          },
+          {
+            "title": "PNA",
+            "lines": ["Febre / toxemia", "Dor lombar / vomito", "ATB e imagem se criterio"]
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Quando USG / DMSA",
+        "subtitle": "Ideia de prova",
+        "caption": "USG: anatomia/complicações. DMSA: cicatriz/pielonefrite confirmada em cenários selecionados.",
+        "footer": "ITU atipica ou recorrente = investigar",
+        "nodes": [
+          { "label": "USG: 1a ITU febril em lactente" },
+          { "label": "USG: ITU atipica / massa / falha terapeutica" },
+          { "label": "DMSA: cicatriz apos PNA selecionada" },
+          { "label": "Cistouretrografia: refluxo se indicado" },
+          { "label": "Urocultura antes do ATB sempre que possivel" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "PNA × cistite",
+        "headers": ["Achado", "Cistite", "PNA"],
+        "rows": [
+          ["Febre", "Ausente/baixa", "Alta, frequentemente"],
+          ["Estado geral", "Bom", "Toxemia / vômitos"],
+          ["Dor", "Suprapúbica", "Lombar/flanco"],
+          ["Internação", "Rara", "Comum se lactente/vómitos/dúvida"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Diagnóstico e conduta",
+        "items": [
+          "Coleta adequada: jato médio (treinada), saco com cautela, cateter/punção no lactente",
+          "ATB empírico guiado por idade/gravidade; ajustar pela cultura",
+          "ITU atípica: massa, fluxo fraco, patogeno incomum, septicemia, falha — imagem precoce",
+          "Profilaxia contínua não é rotina para toda ITU única"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Saco coletor positivo isolado não confirma ITU — confirme com método confiável antes de cronificar ATB e investigação invasiva."
+      }
+    ]
+  },
+  "ped-convulsao": {
+    "intro": "Critérios de convulsão febril simples vs complexa definem investigação, internação e o risco de epilepsia futura.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Convulsao febril",
+        "subtitle": "Simples vs complexa",
+        "caption": "Simples: generalizada, <15 min, única em 24 h, 6 meses–5 anos, recuperação completa.",
+        "nodes": [
+          {
+            "title": "Simples",
+            "lines": ["Generalizada", "<15 min", "1x em 24 h"]
+          },
+          {
+            "title": "Complexa",
+            "lines": ["Focal", ">=15 min", "Recorrente em 24 h"]
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Criterios - simples",
+        "subtitle": "Todos devem caber",
+        "caption": "Fora da faixa etária, déficits focais ou múltiplas crises → tratar como complexa/investigar mais.",
+        "footer": "Sempre excluir meningite se duvida",
+        "nodes": [
+          { "label": "Idade tipica 6 meses a 5 anos" },
+          { "label": "Febre presente" },
+          { "label": "Crise tonico-clonica generalizada" },
+          { "label": "Duracao < 15 minutos" },
+          { "label": "Unica em 24 h" },
+          { "label": "Exame neurologico normal apos" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta prática",
+        "headers": ["Situação", "Conduta"],
+        "rows": [
+          ["Crise ativa", "ABC; BZD (midazolam/diazepam) se >5 min"],
+          ["Simples típica", "Orientação; sem EEG/TC de rotina"],
+          ["Complexa / déficit", "Investigar; considerar internação/imagem"],
+          ["Suspeita de SNC", "PL/ATB conforme clínica — não ‘febre = só CF’"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de prova",
+        "items": [
+          "Profilaxia contínua com anticonvulsivante não é rotina na CF simples",
+          "Diazepam intermitente em febre: uso selecionado; educar pais sobre recidiva",
+          "Primeira crise afebril ≠ convulsão febril"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Lactente <6 meses com ‘crise febril’ merece investigação ampla — meningite/metabólico até prova em contrário."
+      }
+    ]
+  },
+  "ped-desnutricao": {
+    "intro": "Z-score OMS (peso/altura, altura/idade, IMC/idade) e a distinção kwashiorkor vs marasmo são linguagem obrigatória de desnutrição pediátrica.",
+    "extraDiagrams": [
+      {
+        "type": "formula",
+        "title": "Z-score OMS (ideia)",
+        "subtitle": "Desvio em relacao a mediana",
+        "caption": "Z = (valor observado − mediana de referência) / DP da referência. <-2 = desnutrição; <-3 = grave.",
+        "nodes": [
+          { "formula": "Z = (x - mediana) / DP", "note": "P/A, A/I, IMC/I - curvas OMS" }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Marasmo vs kwashiorkor",
+        "subtitle": "Fenotipos classicos",
+        "caption": "Marasmo: emaciação sem edema. Kwashiorkor: edema + alterações de pele/cabelo ± fígado gorduroso.",
+        "nodes": [
+          {
+            "title": "Marasmo",
+            "lines": ["Emaciacao grave", "Sem edema", "Deficit calorico global"]
+          },
+          {
+            "title": "Kwashiorkor",
+            "lines": ["Edema", "Pele / cabelo alterados", "Deficit proteico marcado"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Índices antropométricos (OMS)",
+        "headers": ["Índice", "Interpretação clássica"],
+        "rows": [
+          ["Peso/altura (P/A)", "Emaciação / desnutrição aguda"],
+          ["Altura/idade (A/I)", "Baixa estatura / crônica"],
+          ["IMC/idade", "Sobrepeso/obesidade ou magreza"],
+          ["Z < -3", "Desnutrição aguda grave (ideia)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta high-yield",
+        "items": [
+          "Estabilizar: hipoglicemia, hipotermia, desidratação (protocolo específico), infecção",
+          "Realimentação cuidadosa — risco de síndrome de realimentação",
+          "Kwashiorkor: edema não é ‘só volume’ — manejo nutricional protocolado",
+          "Investigar causa: ingestão, absorção, doença crônica, abuso/negligência"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não use Plano C ‘padrão’ agressivo de diarreia no desnutrido grave sem protocolo — risco de sobrecarga e morte."
+      }
+    ]
+  },
+  "ped-neo-sepsis": {
+    "intro": "Early-onset vs late-onset e fatores de risco (GBS, corioamnionite, prematuridade) guiam ATB empírico e a urgência no RN.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Sepse neonatal - tempo",
+        "subtitle": "Early vs late",
+        "caption": "Early-onset: até ~72 h (transmissão vertical). Late-onset: após ~72 h (nosocomial/comunitária).",
+        "nodes": [
+          { "label": "Parto", "sub": "fatores de risco" },
+          { "label": "<72 h", "sub": "early-onset" },
+          { "label": ">72 h", "sub": "late-onset" },
+          { "label": "ATB empirico", "sub": "por faixa" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Fatores de risco (early)",
+        "subtitle": "Transmissao vertical",
+        "caption": "GBS materno, corioamnionite, RPM prolongada e prematuridade elevam risco de sepse precoce.",
+        "footer": "Clinica inespecifica: apneia, letargia, hipo/hiperglicemia",
+        "nodes": [
+          { "label": "Colonizacao GBS materna" },
+          { "label": "Corioamnionite / febre intraparto" },
+          { "label": "RPM prolongada" },
+          { "label": "Prematuridade / baixo peso" },
+          { "label": "Bacteriuria GBS na gestacao" },
+          { "label": "Irmao previo com sepse GBS" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Early × late (visão clássica)",
+        "headers": ["", "Early-onset", "Late-onset"],
+        "rows": [
+          ["Tempo", "≤ ~72 h", "> ~72 h"],
+          ["Via", "Vertical", "Nosocomial/comunitária"],
+          ["Agentes", "GBS, E. coli, Listeria", "Staph, gram-neg, Candida…"],
+          ["Foco", "Pneumonia/sepse/meningite", "Bacteremia, meningite, ITU, foco hospitalar"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Culturas + ATB empírico sem demora se sepse provável",
+          "Early típico: ampicilina + aminoglicosídeo/cefalosporina 3ª (protocolo local)",
+          "Avaliar LCR conforme estabilidade e suspeita de meningite",
+          "Suporte: glicemia, temperatura, volume, ventilação"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "RN ‘só com dificuldade de mamar’ e má perfusão pode estar séptico — clínica é inespecífica; não espere febre alta."
+      }
+    ]
+  },
+  "ped-otite": {
+    "intro": "Critérios diagnósticos de OMA (início agudo + efusão + inflamação) evitam ATB por ‘tímpano vermelho’ isolado.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Criterios diagnosticos OMA",
+        "subtitle": "Precisa dos 3 pilares",
+        "caption": "AOM = início agudo + sinais de efusão em orelha média + sinais de inflamação/otalgia.",
+        "footer": "So hiperemia no choro nao fecha OMA",
+        "nodes": [
+          { "label": "Inicio agudo de sintomas" },
+          { "label": "Efusao (abaulamento / imobilidade)" },
+          { "label": "Inflamacao (otalgia / hiperemia intensa)" },
+          { "label": "Otorreia aguda (alternativa diagnostica)" }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "ATB imediato vs observar",
+        "subtitle": "Idade e gravidade",
+        "caption": "<6 meses, toxicidade, otorreia ou OMA bilateral grave → ATB; muitos ≥2 anos leves podem observar 48–72 h.",
+        "nodes": [
+          {
+            "title": "ATB imediato",
+            "lines": ["<6 meses", "Toxica / otorreia", "Bilateral grave <2 a"]
+          },
+          {
+            "title": "Observar",
+            "lines": [">=2 anos leve", "Pai orientado", "Retorno se piora"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta antimicrobiana",
+        "headers": ["Cenário", "Escolha"],
+        "rows": [
+          ["1ª linha", "Amoxicilina dose alta (80–90 mg/kg/dia)"],
+          ["Falha / uso recente", "Amoxicilina-clavulanato"],
+          ["Alergia não grave", "Cefalosporina conforme guia"],
+          ["Analgesia", "Parte do tratamento (dipirona/ibuprofeno)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Diferenciais",
+        "items": [
+          "OME (secretora): efusão sem inflamação aguda",
+          "Otite externa: dor ao tragar pavilhão",
+          "Mastoidite: protrusão de orelha, toxemia — emergência ORL"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não prolongue ATB oral se houver deslocamento do pavilhão e edema retroauricular — pense mastoidite."
+      }
+    ]
+  },
+  "ped-faringoamig": {
+    "intro": "Centor/McIsaac estratifica probabilidade de SGA e reduz ATB desnecessário em faringite viral.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "McIsaac / Centor modificado",
+        "subtitle": "Escore para SGA",
+        "caption": "Somar pontos: febre, ausência de tosse, adenopatia, exsudato e ajuste por idade.",
+        "footer": "Baixo: sintomatico; intermediario: teste; alto: tratar/testar",
+        "nodes": [
+          { "label": "Febre > 38 C", "pts": "1" },
+          { "label": "Ausencia de tosse", "pts": "1" },
+          { "label": "Adenopatia cervical anterior", "pts": "1" },
+          { "label": "Exsudato / inflamacao tonsilar", "pts": "1" },
+          { "label": "Idade 3-14 anos", "pts": "1" },
+          { "label": "Idade 15-44 anos", "pts": "0" },
+          { "label": "Idade >= 45 anos", "pts": "-1" }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Fluxo faringite",
+        "subtitle": "Escore -> teste -> ATB",
+        "caption": "Coriza/tosse apontam viral. SGA confirmado: penicilina/amoxicilina.",
+        "nodes": [
+          { "label": "Escore", "sub": "McIsaac" },
+          { "label": "Teste/cultura", "sub": "se disponivel" },
+          { "label": "Penicilina", "sub": "se SGA" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Interpretação prática do escore",
+        "headers": ["Pontuação", "Conduta típica"],
+        "rows": [
+          ["0–1", "Baixa probabilidade — sintomáticos; sem ATB de rotina"],
+          ["2–3", "Teste rápido/cultura se disponível"],
+          ["≥4", "Alta probabilidade — tratar ou testar conforme recurso"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Tratamento SGA",
+        "items": [
+          "1ª linha: penicilina V ou amoxicilina; benzatina se adesão duvidosa",
+          "Objetivo: sintomas + prevenção de febre reumática",
+          "Retorno escolar após 24 h de ATB se afebril",
+          "Abscesso peritonsilar: voz abafada, trismo — drenagem"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não use amoxicilina empírico em mononucleose suspeita (rash). Em <3 anos, SGA clássico é menos típico — maioria viral."
+      }
+    ]
+  },
+  "ped-diarreia": {
+    "intro": "Na diarreia aguda, classificação de desidratação + planos A/B/C + zinco formam o pacote OMS/MS que mais cai em prova.",
+    "extraDiagrams": [
+      {
+        "type": "triage3",
+        "title": "Diarreia - planos A/B/C",
+        "subtitle": "Hidratacao primeiro",
+        "caption": "Sem desidratação = A; com desidratação = B; grave/choque = C.",
+        "nodes": [
+          {
+            "title": "Plano A",
+            "lines": ["Sem desidratacao", "SRO domiciliar", "Manter dieta"],
+            "foot": "Casa"
+          },
+          {
+            "title": "Plano B",
+            "lines": ["Desidratacao", "TRO 4h", "Reavaliar"],
+            "foot": "Unidade"
+          },
+          {
+            "title": "Plano C",
+            "lines": ["Grave / choque", "SF EV", "Internar"],
+            "foot": "Urgencia"
+          }
+        ]
+      },
+      {
+        "type": "formula",
+        "title": "Zinco na diarreia",
+        "subtitle": "OMS / MS - conceito",
+        "caption": "Zinco por 10–14 dias reduz duração e gravidade em crianças elegíveis (protocolo local/OMS).",
+        "nodes": [
+          { "formula": "Zn 10-14 dias", "note": "Complementa SRO; nao substitui hidratacao" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Sinais → plano",
+        "headers": ["Achado", "Plano"],
+        "rows": [
+          ["Bem, diurese ok, mucosas úmidas", "A"],
+          ["Olhos fundos, sede, turgor ↓", "B"],
+          ["Letargia, enchimento lento, choque", "C"],
+          ["Sangue + toxemia", "Avaliar ATB / internar"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Manter leite materno; evitar loperamida em crianças pequenas",
+          "ATB só em disenteria selecionada / Shigella / cólera em surto — não rotina viral",
+          "Ondansetrona pode ajudar sucesso da TRO em vômitos selecionados",
+          "Desnutrido grave: protocolo específico de reidratação"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Vômito bilioso + distensão ≠ ‘gastroenterite simples’ — pense obstrução e avalie cirurgia."
+      }
+    ]
+  },
+  "ped-exantema": {
+    "intro": "O calendário clássico das doenças exantemáticas (dia do rash, Koplik, lixa, defervescência) é memória pura de prova.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Exantemas classicos",
+        "subtitle": "Dia do rash / pista",
+        "caption": "Sarampo (Koplik, D3–D7), escarlatina (lixa), rubéola (occipital), roseola (após febre), varicela (polimorfismo).",
+        "nodes": [
+          { "label": "Sarampo", "sub": "D3-D7; Koplik" },
+          { "label": "Escarlatina", "sub": "lixa + SGA" },
+          { "label": "Rubeola", "sub": "adenopatia" },
+          { "label": "Roseola", "sub": "apos defervescencia" },
+          { "label": "Varicela", "sub": "surtos / crostas" }
+        ]
+      },
+      {
+        "type": "scorecard",
+        "title": "Pistas diagnosticas",
+        "subtitle": "Atalhos de prova",
+        "caption": "Associe pródromo + morfologia + cronologia antes de pedir sorologia.",
+        "footer": "Purpura + toxemia = meningococo",
+        "nodes": [
+          { "label": "Tosse + coriza + conjuntivite", "pts": "Sarampo" },
+          { "label": "Lingua em framboesa / Pastia", "pts": "Escarlatina" },
+          { "label": "Adenopatia occipital", "pts": "Rubeola" },
+          { "label": "Rash apos febre alta 3 dias", "pts": "Roseola" },
+          { "label": "Polimorfismo em crostas", "pts": "Varicela" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Calendário / prevenção",
+        "headers": ["Doença", "Marca registrada", "Prevenção"],
+        "rows": [
+          ["Sarampo", "Koplik + cefalocaudal", "Tríplice viral"],
+          ["Rubéola", "Rash brando + occipital", "Tríplice viral"],
+          ["Varicela", "Surtos de vesículas", "Vacina varicela"],
+          ["Escarlatina", "Lixa + SGA", "Tratar estreptococo"],
+          ["Roseola (HHV-6)", "Rash pós-febre", "Suporte"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Diferenciais perigosos",
+        "items": [
+          "Meningococcemia: púrpura fulminans — ATB imediato",
+          "Kawasaki: febre ≥5 dias + critérios mucocutâneos",
+          "Doença mão-pé-boca: vesículas orais/extremidades"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Sarampo é notificação e bloqueio vacinal de contactantes — não trate só como ‘virose exantemática’."
+      }
+    ]
+  },
+  "ped-puberdade": {
+    "intro": "Estágios de Tanner e a distinção telarca vs pubarca (e volume testicular) definem precoce/atrasada e o que investigar.",
+    "extraDiagrams": [
+      {
+        "type": "timeline",
+        "title": "Tanner - ideia",
+        "subtitle": "Progressao puberal",
+        "caption": "Tanner 1 = pré-púbere; 2 = início (telarca/volume ≥4 mL); 3–4 estirão; 5 adulto.",
+        "nodes": [
+          { "label": "T1", "sub": "pre-pubere" },
+          { "label": "T2", "sub": "inicio" },
+          { "label": "T3-4", "sub": "estirão" },
+          { "label": "T5", "sub": "adulto" }
+        ]
+      },
+      {
+        "type": "branch2",
+        "title": "Telarca vs pubarca",
+        "subtitle": "Primeiro sinal importa",
+        "caption": "Telarca = início feminino típico. Pubarca isolada pode ser adrenarca prematura benigna — veja progressão e estatura.",
+        "nodes": [
+          {
+            "title": "Telarca",
+            "lines": ["Broto mamario", "Eixo gonadotropico", "Menarca ~2-2,5 a depois"]
+          },
+          {
+            "title": "Pubarca",
+            "lines": ["Pelos pubianos", "Pode ser adrenarca", "Avaliar progressao"]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Cortes clássicos",
+        "headers": ["Situação", "Corte"],
+        "rows": [
+          ["Puberdade precoce ♀", "< 8 anos"],
+          ["Puberdade precoce ♂", "< 9 anos"],
+          ["Atraso ♀", "Sem caracteres aos 13 anos"],
+          ["Atraso ♂", "Sem caracteres aos 14 anos / volume <4 mL"],
+          ["Início masculino", "Volume testicular ≥ 4 mL"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Propedêutica",
+        "items": [
+          "Idade óssea + LH/FSH (± GnRH) + esteroides sexuais",
+          "RM de SNC na precoce central (sobretudo meninos / progressão rápida)",
+          "Central (GnRH-dependente) vs periférica muda imagem e tratamento",
+          "Atraso: constitucional, crônicas, Turner, Kallmann"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Pubarca isolada ≠ telarca. Em meninos, precoce tem maior chance de patologia de SNC — não observe indefinidamente."
+      }
+    ]
+  },
+  "ped-anemia-ferro": {
+    "intro": "Labs clássicos (VCM baixo, ferritina baixa, RDW alto) e cortes de Hb por idade fecham anemia ferropriva e a resposta ao ferro.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Labs da ferropriva",
+        "subtitle": "Padrao classico",
+        "caption": "Microcítica hipocrômica + estoques baixos. Resposta reticulocitária confirma terapêutica.",
+        "footer": "Ferritina baixa e o melhor estoque simples",
+        "nodes": [
+          { "label": "Hb baixa para idade", "pts": "+" },
+          { "label": "VCM / HCM baixos", "pts": "+" },
+          { "label": "RDW alto", "pts": "+" },
+          { "label": "Ferritina baixa", "pts": "++" },
+          { "label": "Sat. transferrina baixa", "pts": "+" },
+          { "label": "Reticulocitos sobem c/ ferro", "pts": "confirma" }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Cortes de Hb (ideia)",
+        "subtitle": "Por faixa etaria",
+        "caption": "Valores de referência variam por guia; memorize a ideia: RN alto → nadir lactente → sobe na infância.",
+        "footer": "Usar tabela local / OMS do servico",
+        "nodes": [
+          { "label": "RN termo: Hb tipicamente alta" },
+          { "label": "2-3 meses: nadir fisiologico" },
+          { "label": "6-59 meses: corte classico ~11 g/dL" },
+          { "label": "5-11 anos: corte um pouco maior" },
+          { "label": "Adolescente: difere por sexo" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Tratamento",
+        "headers": ["Item", "Conduta"],
+        "rows": [
+          ["Dose", "Ferro elemental ~3–6 mg/kg/dia"],
+          ["Resposta", "Reticulócitos ↑ em 1–2 semanas; Hb sobe ~1 mês"],
+          ["Duração", "2–3 meses após normalizar Hb (repor estoques)"],
+          ["Profilaxia", "Prematuros e lactentes em risco (princípio MS)"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Fatores de risco",
+        "items": [
+          "Prematuridade / baixo peso",
+          "Leite de vaca integral precoce (<1 ano)",
+          "Baixa ingestão de ferro / desmame inadequado",
+          "Perda digestiva oculta se refratária"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não feche talassemia minor sem ferritina — e não ignore ferropenia só porque há ‘história familiar de microcitose’."
+      }
+    ]
+  },
+  "ped-alergia-leite": {
+    "intro": "Separar APLV IgE-mediada (imediata/anafilaxia) da não IgE (GI tardia/proctocolite) muda teste, fórmula e urgência.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "APLV IgE vs nao IgE",
+        "subtitle": "Fenotipo guia conduta",
+        "caption": "Imediata: urticária/vômito/anafilaxia + IgE/prick. Não IgE: sangue nas fezes, refluxo, enterocolite — exclusão e provocação.",
+        "nodes": [
+          {
+            "title": "IgE / imediata",
+            "lines": ["Minutos a 2 h", "Urticaria / anafilaxia", "IgE / prick + adrenalina"]
+          },
+          {
+            "title": "Nao IgE",
+            "lines": ["Horas a dias", "Proctocolite / FPIES", "Exclusao + provocacao"]
+          }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Manejo alimentar",
+        "subtitle": "Exclusao -> formula -> provocacao",
+        "caption": "Extensamente hidrolisada na maioria; aminoácidos se falha/anafilaxia grave.",
+        "nodes": [
+          { "label": "Excluir PLV", "sub": "mae ou formula" },
+          { "label": "Formula adequada", "sub": "eHF / AA" },
+          { "label": "Provocacao", "sub": "confirmar tolerancia" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Cenários clássicos",
+        "headers": ["Quadro", "Tipo", "Conduta-chave"],
+        "rows": [
+          ["Proctocolite do lactente", "Não IgE", "Exclusão; bom prognóstico"],
+          ["Urticária/anafilaxia", "IgE", "Adrenalina IM + AA se grave"],
+          ["FPIES", "Não IgE", "Reanimação; evitar gatilho"],
+          ["Dúvida", "—", "Especialista + diário"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Fórmulas",
+        "items": [
+          "1ª linha: fórmula extensamente hidrolisada (eHF)",
+          "Falha/anafilaxia grave/malabsorção: aminoácidos livres",
+          "Soja: uso restrito por idade/fenótipo",
+          "Parcialmente hidrolisada / leite de cabra não tratam APLV estabelecida"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Intolerância à lactose ≠ APLV (açúcar vs proteína). Não troque só a ‘marca’ do leite integral."
+      }
+    ]
+  },
+  "ped-refluxo": {
+    "intro": "Sinais de alarme separam regurgitação fisiológica do lactente de DRGE/obstrução que precisam investigar — e evitam IBP empírico eterno.",
+    "extraDiagrams": [
+      {
+        "type": "branch2",
+        "title": "Refluxo do lactente",
+        "subtitle": "Fisiologico vs alarme",
+        "caption": "Ganho ponderal bom e ausência de alarme = orientação. Bilioso, hemático, falha de crescimento = investigar.",
+        "nodes": [
+          {
+            "title": "Fisiologico",
+            "lines": ["Ganho OK", "Sem engasgos graves", "Orientar / esperar"]
+          },
+          {
+            "title": "Alarme / DRGE",
+            "lines": ["Baixo ganho / sangue", "Bilioso / apneia", "Investigar +/- IBP"]
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "title": "Sinais de alarme",
+        "subtitle": "Nao e so cuspe",
+        "caption": "Qualquer item de alarme muda o fluxo: imagem, exclusão de APLV ou avaliação cirúrgica conforme o quadro.",
+        "footer": "Bilioso = obstrucao ate prova em contrario",
+        "nodes": [
+          { "label": "Vomito bilioso ou hematemese" },
+          { "label": "Ma evolucao ponderal / anemia" },
+          { "label": "Apneia / BRUE associados" },
+          { "label": "Jato persistente (estenose?)" },
+          { "label": "Inicio apos 6 meses ou piora progressiva" },
+          { "label": "Sinais de abdome cirurgico" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta",
+        "headers": ["Cenário", "Papel"],
+        "rows": [
+          ["Fisiológico", "Sem IBP/pró-cinético de rotina"],
+          ["DRGE/esofagite", "IBP em curso definido"],
+          ["Suspeita APLV", "Exclusão antes de cronificar IBP"],
+          ["Estenose pilórica", "USG; cirurgia"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Medidas iniciais",
+        "items": [
+          "Volumes menores e mais frequentes; manter aleitamento",
+          "Espessar seletivamente; evitar tabaco",
+          "Sono seguro em decúbito dorsal — elevação tem evidência fraca"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "IBP empírico prolongado em lactente que ‘cuspe’ sem alarme não é boa medicina nem boa prova."
+      }
+    ]
+  },
+  "ped-invaginacao": {
+    "intro": "A tríade clássica (dor cólica intermitente + massa em salsicha + fezes em geleia de morango) + USG em alvo fecha invaginação.",
+    "extraDiagrams": [
+      {
+        "type": "checklist",
+        "title": "Triade classica",
+        "subtitle": "Invaginacao intestinal",
+        "caption": "Tríade completa é tardia; dor intermitente + letargia já devem disparar USG.",
+        "footer": "Ausencia de geleia nao exclui",
+        "nodes": [
+          { "label": "Dor abdominal intermitente / choro em crise" },
+          { "label": "Massa palpavel em salsicha" },
+          { "label": "Fezes em geleia de morango" },
+          { "label": "Letargia entre as crises (pista forte)" }
+        ]
+      },
+      {
+        "type": "flow3",
+        "title": "Fluxo invaginacao",
+        "subtitle": "Clinica -> USG -> reducao",
+        "caption": "USG alvo → enema terapêutico se estável; cirurgia se peritonite/choque/falha.",
+        "nodes": [
+          { "label": "Suspeita", "sub": "dor + letargia" },
+          { "label": "USG alvo", "sub": "target sign" },
+          { "label": "Enema / CX", "sub": "conforme estabilidade" }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Clínica e conduta",
+        "headers": ["Item", "Nota"],
+        "rows": [
+          ["Idade", "Pico 3–36 meses; ileocólica idiopática pós-viral"],
+          ["USG", "Sinal do alvo / doughnut"],
+          ["Redução", "Enema ar/contraste se sem peritonite"],
+          ["Cirurgia", "Falha, perfuração, choque, lead point"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Lead point (pensar se atípico)",
+        "items": [
+          "Divertículo de Meckel",
+          "Pólipo",
+          "Púrpura de Henoch-Schönlein",
+          "Fora da faixa etária / recorrência"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Não atrase imagem esperando geleia de morango. Peritonite = centro cirúrgico, não enema terapêutico."
+      }
+    ]
+  },
+  "ped-croup": {
+    "intro": "O Westley Croup Score (estridor, retração, entrada de ar, cianose, consciência) estratifica crupe e indica adrenalina nebulizada.",
+    "extraDiagrams": [
+      {
+        "type": "scorecard",
+        "title": "Westley Croup Score",
+        "subtitle": "Pontos por dominio",
+        "caption": "Somar: estridor, retração, entrada de ar, cianose e nível de consciência. Leve ≤2; moderado 3–5; grave ≥6 (cortes clássicos).",
+        "footer": "Leve <=2 | Moderado 3-5 | Grave >=6",
+        "nodes": [
+          { "label": "Estridor (nenhum / esforco / repouso)", "pts": "0-2" },
+          { "label": "Retracao (nenhuma a grave)", "pts": "0-3" },
+          { "label": "Entrada de ar (normal a muito ↓)", "pts": "0-2" },
+          { "label": "Cianose (nenhuma / com esforco / repouso)", "pts": "0-5" },
+          { "label": "Consciencia (normal / desorientado)", "pts": "0-5" }
+        ]
+      },
+      {
+        "type": "triage3",
+        "title": "Crupe por Westley",
+        "subtitle": "Leve / moderado / grave",
+        "caption": "Corticoide em todos os sintomáticos; adrenalina no moderado-grave com observação para rebote.",
+        "nodes": [
+          {
+            "title": "Leve",
+            "lines": ["Westley <=2", "Dexametasona VO", "Alta orientada"],
+            "foot": "Maioria"
+          },
+          {
+            "title": "Moderado",
+            "lines": ["Westley 3-5", "Dexametasona", "Adrenalina neb"],
+            "foot": "Observar"
+          },
+          {
+            "title": "Grave",
+            "lines": ["Westley >=6", "Adrenalina seriada", "Via aerea / UTI"],
+            "foot": "Emergencia"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "type": "table",
+        "title": "Conduta",
+        "headers": ["Nível", "Conduta"],
+        "rows": [
+          ["Leve", "Dexametasona 0,15–0,6 mg/kg; alta"],
+          ["Moderado", "Dexametasona + adrenalina nebulizada; observar 2–3 h"],
+          ["Grave", "Adrenalina seriada + via aérea pronta"],
+          ["Rx (se feito)", "Sinal do campanário — não obrigatório"]
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Diferenciais",
+        "items": [
+          "Epiglotite: toxemia, baba, tripé — não force exame de garganta",
+          "Corpo estranho: início súbito sem pródromo",
+          "Traqueíte bacteriana: piora tóxica após crupe",
+          "Abscesso retrofaríngeo: febre + limitação cervical"
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha",
+        "body": "Após adrenalina, observe — pode haver rebote. Minimal handling na criança com estridor grave."
+      }
+    ]
+  }
+}
