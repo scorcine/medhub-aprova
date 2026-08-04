@@ -1,7 +1,7 @@
 /* Material de apoio — resumos e esquemas por grande área */
 
 const AprovaMaterial = {
-  url: "/data/material.json?v=20260803mat6",
+  url: "/data/material.json?v=20260803mat7",
   data: null,
   loading: null,
   areaId: null,
