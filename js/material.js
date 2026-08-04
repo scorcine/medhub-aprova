@@ -1,7 +1,7 @@
 /* Material de apoio — resumos e esquemas por grande área */
 
 const AprovaMaterial = {
-  url: "/data/material.json?v=20260803mat4",
+  url: "/data/material.json?v=20260803mat5",
   data: null,
   loading: null,
   areaId: null,
@@ -189,13 +189,19 @@ function aprovaMaterialRenderItem (itemId) {
       (item.lead ? "<p class=\"material-lead\">" + esc(item.lead) + "</p>" : "") +
     "</header>" +
     "<div class=\"material-article-body\">" + body + "</div>" +
-    "<div class=\"material-download\">" +
-      "<a class=\"btn btn-primary\" href=\"" + esc(pdfHref) + "\" download=\"" + esc(pdfName) + "\">Baixar PDF</a>" +
-      "<p class=\"muted material-download-hint\">Versão para estudar offline / imprimir.</p>" +
-    "</div>" +
     (disclaimer
       ? "<p class=\"material-disclaimer\">" + esc(disclaimer) + "</p>"
       : "");
+
+  ["material-pdf-top", "material-pdf-bottom"].forEach((id) => {
+    const link = document.getElementById(id);
+    if (!link) return;
+    link.href = pdfHref;
+    link.setAttribute("download", pdfName);
+    link.hidden = false;
+  });
+  const bar = document.getElementById("material-download-bar");
+  if (bar) bar.hidden = false;
 }
 
 async function aprovaMaterialShowList () {

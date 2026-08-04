@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260803mat4">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260803mat5">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -481,10 +481,15 @@
             </div>
 
             <div id="material-article-wrap" hidden>
-              <div class="actions-row" style="margin-bottom:0.85rem">
+              <div class="actions-row" style="margin-bottom:0.85rem;flex-wrap:wrap;gap:0.5rem">
                 <button type="button" class="btn btn-ghost btn-compact" id="material-article-back">← Voltar aos temas</button>
+                <a class="btn btn-primary btn-compact" id="material-pdf-top" href="#" download hidden>Baixar PDF</a>
               </div>
               <article class="material-article" id="material-article"></article>
+              <div class="material-download" id="material-download-bar" hidden>
+                <a class="btn btn-primary" id="material-pdf-bottom" href="#" download>Baixar PDF</a>
+                <p class="muted material-download-hint">Versão para estudar offline / imprimir.</p>
+              </div>
             </div>
           </div>
 
@@ -1373,8 +1378,8 @@
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
-  <script src="js/material.js?v=20260803mat3"></script>
-  <script src="js/app-qui.js?v=20260803mat3"></script>
+  <script src="js/material.js?v=20260803mat5"></script>
+  <script src="js/app-qui.js?v=20260803mat5"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>
