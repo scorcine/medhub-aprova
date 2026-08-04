@@ -1,7 +1,7 @@
 /* Material de apoio — resumos e esquemas por grande área */
 
 const AprovaMaterial = {
-  url: "data/material.json?v=20260803mat3",
+  url: "/data/material.json?v=20260803mat4",
   data: null,
   loading: null,
   areaId: null,
@@ -61,9 +61,13 @@ function aprovaMaterialSectionHtml (section) {
   const type = section && section.type;
 
   if (type === "figure") {
+    let src = String(section.src || "");
+    if (src && src.charAt(0) !== "/" && !/^https?:/i.test(src)) {
+      src = "/" + src.replace(/^\.\//, "");
+    }
     return (
       "<figure class=\"material-figure\">" +
-        "<img src=\"" + esc(section.src) + "\" alt=\"" + esc(section.caption || "Esquema") + "\" loading=\"lazy\">" +
+        "<img src=\"" + esc(src) + "\" alt=\"" + esc(section.caption || "Esquema") + "\" loading=\"lazy\">" +
         (section.caption ? "<figcaption>" + esc(section.caption) + "</figcaption>" : "") +
       "</figure>"
     );
@@ -173,6 +177,11 @@ function aprovaMaterialRenderItem (itemId) {
   const disclaimer = (AprovaMaterial.data && AprovaMaterial.data.disclaimer) || "";
   const body = (item.sections || []).map(aprovaMaterialSectionHtml).join("");
 
+  const pdfHref = item.pdf
+    ? (item.pdf.charAt(0) === "/" ? item.pdf : "/" + item.pdf)
+    : ("/assets/material/pdf/" + encodeURIComponent(item.id) + ".pdf");
+  const pdfName = (item.id || "material") + "-medhub-r1.pdf";
+
   article.innerHTML =
     "<header class=\"material-article-head\">" +
       "<p class=\"material-kicker\">" + esc(AprovaMaterial.areaLabel(item.area)) + "</p>" +
@@ -180,6 +189,10 @@ function aprovaMaterialRenderItem (itemId) {
       (item.lead ? "<p class=\"material-lead\">" + esc(item.lead) + "</p>" : "") +
     "</header>" +
     "<div class=\"material-article-body\">" + body + "</div>" +
+    "<div class=\"material-download\">" +
+      "<a class=\"btn btn-primary\" href=\"" + esc(pdfHref) + "\" download=\"" + esc(pdfName) + "\">Baixar PDF</a>" +
+      "<p class=\"muted material-download-hint\">Versão para estudar offline / imprimir.</p>" +
+    "</div>" +
     (disclaimer
       ? "<p class=\"material-disclaimer\">" + esc(disclaimer) + "</p>"
       : "");

@@ -8,7 +8,10 @@
       "title": "SCA · dor torácica e conduta inicial",
       "blurb": "Triagem, ECG, estratificação e primeiros passos que mais caem em prova.",
       "readMinutes": 5,
-      "tags": ["Cardiologia", "Urgência"]
+      "tags": [
+        "Cardiologia",
+        "Urgência"
+      ]
     },
     {
       "id": "cir-queimaduras",
@@ -16,7 +19,10 @@
       "title": "Queimaduras · regra dos 9 e Parkland",
       "blurb": "Superfície queimada, fórmula de Parkland e sinais de via aérea.",
       "readMinutes": 4,
-      "tags": ["Trauma", "Emergência"]
+      "tags": [
+        "Trauma",
+        "Emergência"
+      ]
     },
     {
       "id": "ped-desidratacao",
@@ -24,7 +30,10 @@
       "title": "Desidratação · classificação e TRO",
       "blurb": "Leve, moderada e grave · quando TRO, quando EV.",
       "readMinutes": 4,
-      "tags": ["Gastro", "Atenção básica"]
+      "tags": [
+        "Gastro",
+        "Atenção básica"
+      ]
     },
     {
       "id": "go-pe",
@@ -32,7 +41,10 @@
       "title": "Pré-eclâmpsia · critérios e conduta",
       "blurb": "Diagnóstico, sinais de gravidade e momentos de resolução.",
       "readMinutes": 5,
-      "tags": ["Obstetrícia", "Hipertensão"]
+      "tags": [
+        "Obstetrícia",
+        "Hipertensão"
+      ]
     },
     {
       "id": "prev-niveis",
@@ -40,7 +52,10 @@
       "title": "Níveis de prevenção · Leavell & Clark",
       "blurb": "Primordial, primária, secundária, terciária e quaternária com exemplos de prova.",
       "readMinutes": 3,
-      "tags": ["Epidemiologia", "SUS"]
+      "tags": [
+        "Epidemiologia",
+        "SUS"
+      ]
     }
   ],
   "items": {
@@ -58,7 +73,7 @@
         },
         {
           "type": "figure",
-          "src": "assets/material/cli-sca.svg",
+          "src": "/assets/material/cli-sca.svg",
           "caption": "Fluxo resumido da SCA no pronto atendimento."
         },
         {
@@ -73,11 +88,27 @@
         {
           "type": "table",
           "title": "Estratificação prática",
-          "headers": ["Cenário", "Achado-chave", "Conduta-chave"],
+          "headers": [
+            "Cenário",
+            "Achado-chave",
+            "Conduta-chave"
+          ],
           "rows": [
-            ["IAMCSST", "Supra de ST / equivalente", "Reperfusão imediata (ICP preferencial)"],
-            ["IAMSSST / AI", "Troponina ± infra / T invertido", "Anti-isquêmico + risco (TIMI/GRACE)"],
-            ["Baixa probabilidade", "ECG e troponina negativos", "Observação / escore / investigação eletiva"]
+            [
+              "IAMCSST",
+              "Supra de ST / equivalente",
+              "Reperfusão imediata (ICP preferencial)"
+            ],
+            [
+              "IAMSSST / AI",
+              "Troponina ± infra / T invertido",
+              "Anti-isquêmico + risco (TIMI/GRACE)"
+            ],
+            [
+              "Baixa probabilidade",
+              "ECG e troponina negativos",
+              "Observação / escore / investigação eletiva"
+            ]
           ]
         },
         {
@@ -97,7 +128,8 @@
           "title": "Armadilha de prova",
           "body": "Nitrato é contraindicado com uso recente de inibidor de PDE-5 e na suspeita de IAM de ventrículo direito (infra em DII/DIII/aVF com pré-carga dependente)."
         }
-      ]
+      ],
+      "pdf": "/assets/material/pdf/cli-sca.pdf"
     },
     "cir-queimaduras": {
       "id": "cir-queimaduras",
@@ -107,7 +139,7 @@
       "sections": [
         {
           "type": "figure",
-          "src": "assets/material/cir-queimaduras.svg",
+          "src": "/assets/material/cir-queimaduras.svg",
           "caption": "Regra dos 9 no adulto (Wallace) — valores aproximados para prova."
         },
         {
@@ -153,7 +185,8 @@
           "title": "Armadilha",
           "body": "A regra dos 9 da criança é diferente (cabeça proporcionalmente maior). Em lactentes, não aplique a tabela do adulto sem ajuste."
         }
-      ]
+      ],
+      "pdf": "/assets/material/pdf/cir-queimaduras.pdf"
     },
     "ped-desidratacao": {
       "id": "ped-desidratacao",
@@ -163,19 +196,49 @@
       "sections": [
         {
           "type": "figure",
-          "src": "assets/material/ped-desidratacao.svg",
+          "src": "/assets/material/ped-desidratacao.svg",
           "caption": "Escada prática: leve → moderada → grave / choque."
         },
         {
           "type": "table",
           "title": "Classificação clínica (visão de prova)",
-          "headers": ["", "Leve", "Moderada", "Grave"],
+          "headers": [
+            "",
+            "Leve",
+            "Moderada",
+            "Grave"
+          ],
           "rows": [
-            ["Estado geral", "Alerta, inquieto", "Irritado / sonolento", "Letárgico / choque"],
-            ["Olhos / fontanela", "Normais", "Fundos", "Muito fundos"],
-            ["Lágrimas / mucosa", "Presentes / úmida", "↓ lágrimas / seca", "Ausentes / muito seca"],
-            ["Turgor", "Normal", "Diminuído", "Sinal da prega"],
-            ["Diurese", "Normal / ↓ leve", "Reduzida", "Oligúria / anúria"]
+            [
+              "Estado geral",
+              "Alerta, inquieto",
+              "Irritado / sonolento",
+              "Letárgico / choque"
+            ],
+            [
+              "Olhos / fontanela",
+              "Normais",
+              "Fundos",
+              "Muito fundos"
+            ],
+            [
+              "Lágrimas / mucosa",
+              "Presentes / úmida",
+              "↓ lágrimas / seca",
+              "Ausentes / muito seca"
+            ],
+            [
+              "Turgor",
+              "Normal",
+              "Diminuído",
+              "Sinal da prega"
+            ],
+            [
+              "Diurese",
+              "Normal / ↓ leve",
+              "Reduzida",
+              "Oligúria / anúria"
+            ]
           ]
         },
         {
@@ -200,7 +263,8 @@
           "title": "Armadilha",
           "body": "Criança 'só um pouco quieta' com pulso fino e extremidades frias pode já estar em choque — trate como grave."
         }
-      ]
+      ],
+      "pdf": "/assets/material/pdf/ped-desidratacao.pdf"
     },
     "go-pe": {
       "id": "go-pe",
@@ -210,7 +274,7 @@
       "sections": [
         {
           "type": "figure",
-          "src": "assets/material/go-pe.svg",
+          "src": "/assets/material/go-pe.svg",
           "caption": "Mapa mental: diagnóstico → gravidade → conduta."
         },
         {
@@ -235,12 +299,27 @@
         {
           "type": "table",
           "title": "Conduta em uma frase",
-          "headers": ["Situação", "Foco"],
+          "headers": [
+            "Situação",
+            "Foco"
+          ],
           "rows": [
-            ["PE sem gravidade, IG prematura", "Controle pressórico + vigilância materna/fetal"],
-            ["PE com gravidade", "Estabilizar, MgSO₄, anti-hipertensivo, planejar resolução"],
-            ["Eclâmpsia", "ABC, MgSO₄, estabilizar e resolver a gestação"],
-            ["Cura definitiva", "Resolução da gestação (parto) no momento adequado"]
+            [
+              "PE sem gravidade, IG prematura",
+              "Controle pressórico + vigilância materna/fetal"
+            ],
+            [
+              "PE com gravidade",
+              "Estabilizar, MgSO₄, anti-hipertensivo, planejar resolução"
+            ],
+            [
+              "Eclâmpsia",
+              "ABC, MgSO₄, estabilizar e resolver a gestação"
+            ],
+            [
+              "Cura definitiva",
+              "Resolução da gestação (parto) no momento adequado"
+            ]
           ]
         },
         {
@@ -255,7 +334,8 @@
           "title": "Armadilha",
           "body": "HAS crônica ≠ PE. Em hipertensa crônica, suspeite de PE sobreposta se houver piora pressórica + proteinúria nova ou disfunção de órgão após 20 semanas."
         }
-      ]
+      ],
+      "pdf": "/assets/material/pdf/go-pe.pdf"
     },
     "prev-niveis": {
       "id": "prev-niveis",
@@ -265,19 +345,43 @@
       "sections": [
         {
           "type": "figure",
-          "src": "assets/material/prev-niveis.svg",
+          "src": "/assets/material/prev-niveis.svg",
           "caption": "Linha do tempo da prevenção na história natural."
         },
         {
           "type": "table",
           "title": "Níveis e exemplos que caem",
-          "headers": ["Nível", "Momento", "Exemplo"],
+          "headers": [
+            "Nível",
+            "Momento",
+            "Exemplo"
+          ],
           "rows": [
-            ["Primordial", "Antes dos fatores de risco", "Políticas contra pobreza, urbanismo saudável"],
-            ["Primária", "Pré-patogênese (evitar doença)", "Vacina, saneamento, educação em saúde"],
-            ["Secundária", "Doença pré-clínica / início", "Rastreamento (mamografia, Papanicolaou)"],
-            ["Terciária", "Doença estabelecida", "Reabilitação, evitar sequelas"],
-            ["Quaternária", "Excesso de intervenção", "Evitar medicalização / overdiagnosis"]
+            [
+              "Primordial",
+              "Antes dos fatores de risco",
+              "Políticas contra pobreza, urbanismo saudável"
+            ],
+            [
+              "Primária",
+              "Pré-patogênese (evitar doença)",
+              "Vacina, saneamento, educação em saúde"
+            ],
+            [
+              "Secundária",
+              "Doença pré-clínica / início",
+              "Rastreamento (mamografia, Papanicolaou)"
+            ],
+            [
+              "Terciária",
+              "Doença estabelecida",
+              "Reabilitação, evitar sequelas"
+            ],
+            [
+              "Quaternária",
+              "Excesso de intervenção",
+              "Evitar medicalização / overdiagnosis"
+            ]
           ]
         },
         {
@@ -296,7 +400,8 @@
           "title": "Truque rápido",
           "body": "Primária evita a doença. Secundária detecta cedo. Terciária limita dano. Quaternária evita o excesso de medicina."
         }
-      ]
+      ],
+      "pdf": "/assets/material/pdf/prev-niveis.pdf"
     }
   }
 }

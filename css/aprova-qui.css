@@ -5539,3 +5539,23 @@ button.linkish {
   color: var(--ink-soft);
   line-height: 1.4;
 }
+
+.material-download {
+  margin-top: 1.35rem;
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+}
+
+.material-download .btn {
+  text-decoration: none;
+}
+
+.material-download-hint {
+  margin: 0;
+  font-size: 0.86rem;
+}
