@@ -1,0 +1,4354 @@
+[
+  {
+    "id": "cli-fa",
+    "area": "clinica",
+    "title": "Fibrilação atrial · ritmo e anticoagulação",
+    "blurb": "Estabilidade, controle de frequência, CHA₂DS₂-VASc e quando cardioverter.",
+    "readMinutes": 5,
+    "tags": [
+      "Cardiologia",
+      "Arritmia"
+    ],
+    "lead": "Na FA, primeiro estabilize (ABC e frequência). Depois decida anticoagulação pelo risco embólico e escolha controle de frequência versus ritmo conforme duração, sintomas e risco de trombo.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Abordagem da FA",
+      "subtitle": "Estabilizar -> anticoagular -> estrategia",
+      "caption": "Fluxo de prova: tratar instabilidade primeiro; anticoagulação é decisão paralela ao controle de FC/ritmo.",
+      "nodes": [
+        {
+          "label": "Estabilizar",
+          "sub": "ABC / FC / PA"
+        },
+        {
+          "label": "Anticoagular",
+          "sub": "CHA2DS2-VASc"
+        },
+        {
+          "label": "FC ou ritmo",
+          "sub": "sintomas / duracao"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Instabilidade = cardioversão",
+        "body": "Hipotensão, choque, isquemia miocárdica, EAP ou rebaixamento atribuíveis à FA → cardioversão elétrica sincronizada sem atrasar por jejum/anticoagulação plena se risco de vida."
+      },
+      {
+        "type": "bullets",
+        "title": "Controle de frequência (estável)",
+        "items": [
+          "Betabloqueador ou antagonista de cálcio não-di-hidropiridínico (diltiazem/verapamil) se FE preservada",
+          "Digoxina: útil em IC/hipotensão relativa; menos eficaz no esforço",
+          "Amiodarona EV: opção quando há IC com FE reduzida e necessidade de controle",
+          "Alvo usual de FC em repouso ~ <110 bpm na estratégia leniente, se assintomático"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Anticoagulação — visão de prova",
+        "headers": [
+          "Cenário",
+          "Conduta típica"
+        ],
+        "rows": [
+          [
+            "CHA₂DS₂-VASc ≥2 ♂ / ≥3 ♀",
+            "Anticoagular (DOAC preferencial se elegível)"
+          ],
+          [
+            "FA ≥48 h ou duração incerta",
+            "Anticoagular ≥3 sem antes de cardioversão eletiva (ou ETE sem trombo)"
+          ],
+          [
+            "Pós-cardioversão",
+            "Anticoagular ≥4 sem se risco elevado / duração longa"
+          ],
+          [
+            "Valvulopatia reumática/prótese mecânica",
+            "Varfarina (não DOAC)"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não cardioverta eletivamente FA de duração >48 h sem anticoagulação adequada ou exclusão de trombo atrial (ETE). Risco de embolia sistêmica é clássico em R1."
+      }
+    ]
+  },
+  {
+    "id": "cli-has",
+    "area": "clinica",
+    "title": "Hipertensão arterial · crise e crônica",
+    "blurb": "Meta pressórica, combinações e emergência hipertensiva.",
+    "readMinutes": 4,
+    "tags": [
+      "Cardiologia",
+      "Clínica Médica"
+    ],
+    "lead": "Separe HAS crônica (adesão e combinação) de emergência hipertensiva (lesão de órgão-alvo aguda). Na emergência, reduza PA de forma controlada — não ‘normalize’ em minutos.",
+    "diagram": {
+      "type": "branch2",
+      "title": "PA muito elevada",
+      "subtitle": "Com lesao de orgao-alvo vs sem lesao aguda",
+      "caption": "Ramificação: lesão aguda = emergência (EV, UTI); sem lesão = urgência/ajuste oral e investigação.",
+      "nodes": [
+        {
+          "title": "Emergencia",
+          "lines": [
+            "Encefalopatia, SCA, EAP",
+            "Disseccao, eclampsia",
+            "Droga EV + queda gradual"
+          ]
+        },
+        {
+          "title": "Sem lesao aguda",
+          "lines": [
+            "Urgencia hipertensiva",
+            "Reiniciar/ajustar oral",
+            "Observar e orientar"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Combinação inicial",
+        "body": "Em estágios mais altos ou risco CV, prefira associação (IECA/BRA + BCC ou tiazídico). Monoterapia raramente basta quando PA está muito acima da meta."
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de conduta crônica",
+        "items": [
+          "Confirmar com MAPA/MRPA quando dúvida diagnóstica ou efeito do avental branco",
+          "IECA/BRA: preferir em DM, proteinúria, IC; monitorar creatinina e K⁺",
+          "Betabloqueador: não é 1ª linha isolada salvo pós-IAM, FA, IC",
+          "Investigar secundária se início jovem, resistente, hipoK, sopro ou piora abrupta"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Emergência — exemplos de droga",
+        "headers": [
+          "Cenário",
+          "Preferência clássica"
+        ],
+        "rows": [
+          [
+            "EAP hipertensivo",
+            "Nitroglicerina / nitroprussiato"
+          ],
+          [
+            "SCA",
+            "Nitrato + betabloqueador se apto"
+          ],
+          [
+            "Dissecção de aorta",
+            "Betabloqueador primeiro, depois vasodilatador"
+          ],
+          [
+            "Encefalopatia hipertensiva",
+            "Nitroprussiato / nicardipino (queda controlada)"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não use nifedipina sublingual de ‘rescate’ na emergência hipertensiva — queda imprevisível e risco isquêmico. Evite reduzir PA >25% na 1ª hora (exceto dissecção/eclampsia, com metas específicas)."
+      }
+    ]
+  },
+  {
+    "id": "cli-tireoide",
+    "area": "clinica",
+    "title": "Tireoide · hipo, hipertireoidismo e tormenta",
+    "blurb": "TSH/T4L, Basedow, tireotoxicose e coma mixedematoso.",
+    "readMinutes": 5,
+    "tags": [
+      "Endocrinologia",
+      "Urgência"
+    ],
+    "lead": "Interprete sempre TSH + T4L no contexto clínico. Distinga tireotoxicose por hipertireoidismo verdadeiro de destruição glandular — a conduta com antitireoidiano muda.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Sindromes tireoidianas",
+      "subtitle": "Hipo / hiper / emergencia",
+      "caption": "Triagem de prova: sintomas + TSH/T4L definem via; emergências exigem suporte e hormônio/bloqueio imediato.",
+      "nodes": [
+        {
+          "title": "Hipotireoidismo",
+          "lines": [
+            "TSH alto, T4L baixo",
+            "Levotiroxina",
+            "Cuidado em idoso/CAD"
+          ],
+          "foot": "Hashimoto comum"
+        },
+        {
+          "title": "Hipertireoidismo",
+          "lines": [
+            "TSH baixo, T4L alto",
+            "ATD +/- betabloqueador",
+            "Cintilo se duvida"
+          ],
+          "foot": "Basedow / nodulo"
+        },
+        {
+          "title": "Emergencia",
+          "lines": [
+            "Tormenta tireotoxica",
+            "Coma mixedematoso",
+            "UTI + protocolo"
+          ],
+          "foot": "Alta mortalidade"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Basedow × tireoidite",
+        "body": "Basedow: TRAb+, captação alta, oftalmopatia possível → metimazol/PTU. Tireoidite: captação baixa, fase destrutiva → betabloqueador e suporte; antitireoidiano não ajuda."
+      },
+      {
+        "type": "bullets",
+        "title": "Tormenta tireotóxica — pilares",
+        "items": [
+          "Suporte: ABC, resfriamento, volume, tratar precipitante (infecção, cirurgia)",
+          "Betabloqueador (propanolol) para sintomas adrenérgicos",
+          "Tionamida (PTU preferido na gravidez 1ºT / tormenta por inibir conversão) + iodo após ATD",
+          "Corticoide para bloquear conversão T4→T3 e insuficiência adrenal relativa"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Achados laboratoriais",
+        "headers": [
+          "Condição",
+          "Padrão típico"
+        ],
+        "rows": [
+          [
+            "Hipo primário",
+            "TSH ↑, T4L ↓"
+          ],
+          [
+            "Hiper primário",
+            "TSH ↓, T4L ↑ (± T3 ↑)"
+          ],
+          [
+            "Hipo central",
+            "TSH baixo/inadequado + T4L ↓"
+          ],
+          [
+            "Tiroxina excesso",
+            "TSH ↓; diferenciar exógena × endógena"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "No coma mixedematoso: aquecer passivamente, hidrocortisona antes/junto da levotiroxina (pode haver insuficiência adrenal associada) e tratar precipitante. Não atrase hormônio esperando ‘todos os exames’."
+      }
+    ]
+  },
+  {
+    "id": "cli-anemia",
+    "area": "clinica",
+    "title": "Anemia · VCM e investigação dirigida",
+    "blurb": "Micro, normo e macrocítica: ferritina, reticulócitos e B12/folato.",
+    "readMinutes": 4,
+    "tags": [
+      "Hematologia",
+      "Clínica Médica"
+    ],
+    "lead": "Comece pelo VCM e pelos reticulócitos. Anemia microcítica pede ferro/talassemia; macrocítica, B12/folato/álcool; normocítica, perda aguda, doença crônica ou hemólise/medula.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Raciocinio da anemia",
+      "subtitle": "VCM -> reticulocitos -> causa",
+      "caption": "Fluxo clássico de R1: classifique → veja se há resposta medular → escolha o painel etiológico.",
+      "nodes": [
+        {
+          "label": "VCM",
+          "sub": "micro / normo / macro"
+        },
+        {
+          "label": "Reticulocitos",
+          "sub": "hipo vs hiperprolif"
+        },
+        {
+          "label": "Causa",
+          "sub": "ferro, B12, hemolise..."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Ferritina com nuance",
+        "body": "Ferritina baixa confirma deficiência de ferro. Ferritina ‘normal’ na inflamação não exclui — use saturação de transferrina e ferro sérico no contexto clínico."
+      },
+      {
+        "type": "bullets",
+        "title": "Achados que caem em prova",
+        "items": [
+          "Ferropênica: VCM↓, ferritina↓; investigar sangramento (GI, menstrual)",
+          "Talassemia minor: VCM muito baixo com anemia leve e RDW relativamente estável",
+          "B12: macrocitose, neuropatia, LDH↑, hipersegmentação; repor parenteral se grave/neurológico",
+          "Hemólise: retic↑, LDH↑, bilirrubina indireta↑, haptoglobina↓"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Microcítica — diferenciação rápida",
+        "headers": [
+          "Achado",
+          "Ferropênica",
+          "Talassemia minor"
+        ],
+        "rows": [
+          [
+            "Anemia",
+            "Variável / sintomática",
+            "Leve"
+          ],
+          [
+            "VCM",
+            "↓",
+            "↓↓ desproporcional"
+          ],
+          [
+            "Ferritina",
+            "Baixa",
+            "Normal/alta"
+          ],
+          [
+            "RDW",
+            "Alto",
+            "Normal/leve↑"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não feche ‘anemia de doença crônica’ sem excluir ferro e sangramento oculto quando houver indício. Em idoso com ferropenia, pense em neoplasia GI até prova em contrário."
+      }
+    ]
+  },
+  {
+    "id": "cli-hiv",
+    "area": "clinica",
+    "title": "HIV · diagnóstico, profilaxias e IRIS",
+    "blurb": "Teste, CD4, TARV precoce e infecções oportunistas.",
+    "readMinutes": 5,
+    "tags": [
+      "Infectologia",
+      "Imunodeficiência"
+    ],
+    "lead": "Todo paciente com HIV deve iniciar TARV o mais cedo possível. Use CD4 e clínica para decidir profilaxias e investigar oportunistas antes de atribuir tudo a ‘efeito da medicação’.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Linha do CD4 e risco",
+      "subtitle": "Limiares classicos de prova",
+      "caption": "Memorize limiares: quanto menor o CD4, maior o espectro de oportunistas e necessidade de profilaxia.",
+      "nodes": [
+        {
+          "label": "Qualquer CD4",
+          "sub": "Iniciar TARV"
+        },
+        {
+          "label": "CD4 <200",
+          "sub": "PcP - SMX-TMP"
+        },
+        {
+          "label": "CD4 <100",
+          "sub": "Toxoplasmose se IgG+"
+        },
+        {
+          "label": "CD4 <50",
+          "sub": "MAC em cenarios selecionados"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Diagnóstico",
+        "body": "Triagem com teste rápido/4ª geração e confirmação conforme fluxo. Em infecção aguda, carga viral pode fechar diagnóstico quando sorologia ainda é negativa/indeterminada."
+      },
+      {
+        "type": "bullets",
+        "title": "Oportunistas high-yield",
+        "items": [
+          "PcP: dispneia + hipoxemia + LDH↑; SMX-TMP ± corticoide se PaO₂ baixa",
+          "Neurotoxoplasmose: múltiplas lesões anelares; tratar empírico se alta probabilidade",
+          "Criptococose: cefaleia/meningite subaguda; latência de TARV após início do tratamento",
+          "TB: sempre pensar; iniciar tratamento da TB e TARV com timing conforme meningite/CD4"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Profilaxias clássicas",
+        "headers": [
+          "Condição",
+          "Profilaxia"
+        ],
+        "rows": [
+          [
+            "PcP (CD4 <200)",
+            "SMX-TMP"
+          ],
+          [
+            "Toxoplasmose (CD4 <100 + IgG+)",
+            "SMX-TMP"
+          ],
+          [
+            "Exposição sexual de risco",
+            "PEP o mais cedo (≤72 h)"
+          ],
+          [
+            "Parceiro sorodiscordante / risco contínuo",
+            "PrEP (seguir protocolo)"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "IRIS: piora paradoxal após início da TARV com recuperação imune. Não suspenda TARV rotineiramente — trate o oportunista e suporte; exceções raras (ex.: criptococose grave do SNC) seguem protocolo específico de timing."
+      }
+    ]
+  },
+  {
+    "id": "cli-hepatite",
+    "area": "clinica",
+    "title": "Hepatites virais · A, B, C e agudização",
+    "blurb": "Sorologias, cronificação, indicação de antiviral e profilaxia.",
+    "readMinutes": 5,
+    "tags": [
+      "Infectologia",
+      "Gastroenterologia"
+    ],
+    "lead": "Leia o painel sorológico como uma história temporal. HAV é aguda/fecal-oral; HBV pode cronificar e tem vacina; HCV cronifica com frequência e tem cura com DAAs.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Hepatites virais",
+      "subtitle": "HAV / HBV / HCV",
+      "caption": "Triagem R1: via de transmissão + sorologia típica + desfecho (cura × cronicidade).",
+      "nodes": [
+        {
+          "title": "HAV",
+          "lines": [
+            "Fecal-oral",
+            "IgM anti-HAV",
+            "Nao cronifica"
+          ],
+          "foot": "Suporte"
+        },
+        {
+          "title": "HBV",
+          "lines": [
+            "Parenteral/sexual",
+            "HBsAg + anti-HBc",
+            "Vacina / antiviral"
+          ],
+          "foot": "Risco cronico"
+        },
+        {
+          "title": "HCV",
+          "lines": [
+            "Parenteral",
+            "Anti-HCV + CV",
+            "DAA - cura"
+          ],
+          "foot": "Alta cronificacao"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Painel HBV em uma linha",
+        "body": "HBsAg+ = infecção. Anti-HBs+ isolado = vacina. Anti-HBc+ com anti-HBs+ = infecção pregressa. IgM anti-HBc+ sugere agudo."
+      },
+      {
+        "type": "bullets",
+        "title": "Condutas que caem",
+        "items": [
+          "HAV: suporte; imunoglobulina/vacina em contatos conforme cenário",
+          "HBV agudo: suporte; antivirais em falência grave / reativação / imunossupressão",
+          "HCV: genótipo menos decisivo hoje — tratar com DAA após confirmação de viremia",
+          "Coinfecção HBV/HDV e HIV: piora evolução — sempre rastrear fatores de risco"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Marcadores — atalhos",
+        "headers": [
+          "Marcador",
+          "Significado"
+        ],
+        "rows": [
+          [
+            "IgM anti-HAV",
+            "Hepatite A aguda"
+          ],
+          [
+            "HBsAg",
+            "Infecção HBV (aguda ou crônica)"
+          ],
+          [
+            "HBeAg",
+            "Alta replicação / infectividade"
+          ],
+          [
+            "Anti-HCV + RNA-HCV",
+            "Infecção HCV ativa"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Antes de imunossupressão/quimioterapia em HBsAg+ ou anti-HBc+, considere profilaxia antiviral — reativação de HBV pode ser fulminante. Não confunda anti-HBs vacinal com infecção ativa."
+      }
+    ]
+  },
+  {
+    "id": "cli-lupus",
+    "area": "clinica",
+    "title": "Lúpus eritematoso sistêmico · flares e nefrite",
+    "blurb": "Critérios clínicos, FAN, anti-DNA e urgências (nefrite, CNS, CAPS).",
+    "readMinutes": 5,
+    "tags": [
+      "Reumatologia",
+      "Imunologia"
+    ],
+    "lead": "LES é doença multissistêmica: combine clínica + autoanticorpos. Em prova, nefrite lúpica, serosite, citopenias e acometimento de SNC são os flares que mudam conduta.",
+    "diagram": {
+      "type": "branch2",
+      "title": "Suspeita de LES",
+      "subtitle": "Doenca estavel vs flare grave",
+      "caption": "Ramifique: manutenção com HCQ versus imunossupressão/internação no órgão-alvo grave.",
+      "nodes": [
+        {
+          "title": "Estavel / leve",
+          "lines": [
+            "Hidroxicloroquina",
+            "Fotoprotecao",
+            "AINEs pontuais"
+          ]
+        },
+        {
+          "title": "Orgao-alvo grave",
+          "lines": [
+            "Nefrite / CNS / hemato",
+            "Corticoide + imuno",
+            "Biopsia / UTI se preciso"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Anticorpos",
+        "body": "FAN é sensível, pouco específico. Anti-dsDNA e anti-Sm são mais específicos; anti-dsDNA correlaciona com atividade e nefrite. Antifosfolípides: trombose/aborto — pense SAF secundária."
+      },
+      {
+        "type": "bullets",
+        "title": "Manejo high-yield",
+        "items": [
+          "Hidroxicloroquina para quase todos (salvo contraindicação) — reduz flares e trombose",
+          "Nefrite: HA + proteinúria + sedimento ativo → corticoterapia + MMF/ciclofosfamida conforme classe",
+          "Evitar gestação em doença ativa; planejar com HCQ e times multidisciplinares",
+          "Vacinas inativadas OK; atenção a imunossupressão e infecções oportunistas"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Achados clássicos",
+        "headers": [
+          "Sistema",
+          "Manifestação de prova"
+        ],
+        "rows": [
+          [
+            "Pele/mucosa",
+            "Malar, discoide, úlceras orais, fotossensibilidade"
+          ],
+          [
+            "Rim",
+            "Proteinúria, cilindros, ↑creatinina"
+          ],
+          [
+            "Hematológico",
+            "Anemia hemolítica, leucopenia, trombocitopenia"
+          ],
+          [
+            "Sorologia",
+            "FAN, anti-dsDNA, consumo de complemento"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não atribua febre só a ‘atividade de LES’ sem excluir infecção — imunossuprimidos infectam. Em dor torácica, pense pericardite/serosite, mas também TEP se antifosfolípide."
+      }
+    ]
+  },
+  {
+    "id": "cli-gout",
+    "area": "clinica",
+    "title": "Gota · crise aguda e prevenção",
+    "blurb": "Monoartrite, cristal, anti-inflamatório e hipouricemiante.",
+    "readMinutes": 4,
+    "tags": [
+      "Reumatologia",
+      "Metabólico"
+    ],
+    "lead": "Crise de gota = artrite inflamatória aguda, classicamente 1ª MTP. Trate a inflamação na crise; deixe o hipouricemiante para a estratégia de longo prazo, com profilaxia ao iniciar.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Manejo da gota",
+      "subtitle": "Crise -> resolucao -> prevencao",
+      "caption": "Não misture fases: primeiro apague o fogo articular; depois baixe o urato com plano.",
+      "nodes": [
+        {
+          "label": "Crise",
+          "sub": "AINE / colchicina / CE"
+        },
+        {
+          "label": "Confirmar",
+          "sub": "cristal / acido urico"
+        },
+        {
+          "label": "Prevenir",
+          "sub": "alopurinol + profilaxia"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Diagnóstico",
+        "body": "Padrão-ouro: cristais de urato (-) birefringentes no líquido sinovial. Ácido úrico pode estar normal na crise — não exclui gota."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Crise: AINE, colchicina precoce ou corticoide (via oral/intra-articular) conforme comorbidades",
+          "Evitar iniciar/ajustar alopurinol no auge da crise sem cobertura anti-inflamatória",
+          "Alvo de uricemia tipicamente <6 mg/dL (<5 se tofos/doença grave)",
+          "Ajustar alopurinol na IRC; atenção a interação com azatioprina"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Gota × pseudogota",
+        "headers": [
+          "Item",
+          "Gota (urato)",
+          "Pseudogota (CPP)"
+        ],
+        "rows": [
+          [
+            "Articulação típica",
+            "1ª MTP / pé",
+            "Joelho / punho"
+          ],
+          [
+            "Cristal",
+            "Agulha, birefringência (−)",
+            "Romboide, birefringência (+)"
+          ],
+          [
+            "Radiografia",
+            "Tofos / erosões",
+            "Condrocalcinose"
+          ],
+          [
+            "Contexto",
+            "Hiperuricemia, diurético",
+            "Idoso, metabólico"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Monoartrite aguda é artrite séptica até prova em contrário se houver febre/risco — puncione. Não ‘trate gota no escuro’ sem considerar infecção."
+      }
+    ]
+  },
+  {
+    "id": "cli-meningite-adulto",
+    "area": "clinica",
+    "title": "Meningite bacteriana no adulto · porta",
+    "blurb": "ATB precoce, dexametasona, TC antes da LP e isolamento.",
+    "readMinutes": 5,
+    "tags": [
+      "Infectologia",
+      "Emergência",
+      "Neurologia"
+    ],
+    "lead": "Suspeita de meningite bacteriana: hemoculturas + antibiótico empírico sem demora. A LP confirma, mas não atrasa o tratamento se houver sinal de alarme ou atraso de imagem.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Meningite suspeita",
+      "subtitle": "ABC -> ATB -> LP / TC",
+      "caption": "Ordem que a prova ama: estabilizar e tratar primeiro; depois documentar LCR quando seguro.",
+      "nodes": [
+        {
+          "label": "Hemocultura",
+          "sub": "antes do ATB se possivel"
+        },
+        {
+          "label": "ATB +/- dexameta",
+          "sub": "empirico imediato"
+        },
+        {
+          "label": "LP (TC se alarme)",
+          "sub": "confirmar e ajustar"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Quando TC antes da LP",
+        "body": "Imunocomprometido, história de SNC, papiledema, déficit focal, convulsão recente ou rebaixamento grave — faça TC antes da LP, mas não atrase ATB."
+      },
+      {
+        "type": "bullets",
+        "title": "Empírico clássico (adulto)",
+        "items": [
+          "Cefalosporina 3ª (ceftriaxona/cefotaxima) + vancomicina (pneumococo resistente)",
+          "Ampicilina se risco de Listeria (>50 anos, gestante, imunossuprimido, álcool)",
+          "Dexametasona antes ou com a 1ª dose de ATB (benefício no pneumococo)",
+          "Isolamento gotículas até 24 h de ATB eficaz (meningococo)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "LCR — padrões",
+        "headers": [
+          "Tipo",
+          "Células",
+          "Glicose / proteína"
+        ],
+        "rows": [
+          [
+            "Bacteriana",
+            "PMN ↑↑",
+            "Glicose ↓ / proteína ↑"
+          ],
+          [
+            "Viral",
+            "Linfo ↑",
+            "Glicose N / proteína ±"
+          ],
+          [
+            "TB/fungo",
+            "Linfo ↑",
+            "Glicose ↓ / proteína ↑↑"
+          ],
+          [
+            "Listeria",
+            "Pode ter linfo",
+            "Pensar no contexto"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Nunca atrase antibiótico esperando TC/LP em meningite fulminante. Profilaxia de contatos no meningococo (rifampicina/cipro/ceftriaxona) conforme protocolo — item clássico."
+      }
+    ]
+  },
+  {
+    "id": "cli-sindrome-nefrotico",
+    "area": "clinica",
+    "title": "Síndrome nefrótica · edema e proteinúria",
+    "blurb": "Critérios, complicações trombóticas e causas por idade.",
+    "readMinutes": 4,
+    "tags": [
+      "Nefrologia",
+      "Clínica Médica"
+    ],
+    "lead": "Nefrótico = proteinúria maciça + hipoalbuminemia + edema (± hiperlipidemia). Trate edema e impeça complicações; a biópsia define etiologia no adulto.",
+    "diagram": {
+      "type": "formula",
+      "title": "Criterios de sindrome nefrotica",
+      "subtitle": "Proteinuria + hipoalbuminemia + edema",
+      "caption": "Fórmula mental de prova: >3,5 g/dia + albumina baixa + edema; lipidemia e lipidúria completam o quadro.",
+      "nodes": [
+        {
+          "formula": "Prot >3,5 g/dia + Alb baixa + edema",
+          "note": "Adulto: biopsia costuma guiar; crianca: LESOES MINIMAS empiricas em cenario tipico"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Causas por faixa",
+        "body": "Criança: lesões mínimas. Adulto: membranosa, FSGS, amiloidose, diabete. Sempre rastrear HBV/HCV/HIV, LES e neoplasias quando indicado."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta de suporte",
+        "items": [
+          "Restrição salina + diurético de alça (cuidado com intravascular efetivo)",
+          "IECA/BRA para reduzir proteinúria se função renal permitir",
+          "Estatina conforme lipidemia; anticoagular se trombose ou risco muito alto (albuminúria grave)",
+          "Vacinas e vigilância de infecção (peritonite espontânea em ascite nefrótica)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Nefrótico × nefrítico",
+        "headers": [
+          "Item",
+          "Nefrótico",
+          "Nefrítico"
+        ],
+        "rows": [
+          [
+            "Proteinúria",
+            "Maciça (>3,5 g/dia)",
+            "Leve-moderada"
+          ],
+          [
+            "Hematuria",
+            "Ausente/leve",
+            "Disforma + cilindros"
+          ],
+          [
+            "HAS / IRA",
+            "Variável",
+            "Comuns"
+          ],
+          [
+            "Edema",
+            "Intenso / anasarca",
+            "Presente, menos lipídico"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Risco trombótico (incluindo veia renal) é alto na membranosa e na hipoalbuminemia grave. Dor no flanco + hematúria/ piora de função → pense trombose de veia renal."
+      }
+    ]
+  },
+  {
+    "id": "cir-perfuracao",
+    "area": "cirurgia",
+    "title": "Perfuração de víscera oca · abdome agudo",
+    "blurb": "Pneumoperitônio, sepse abdominal e laparotomia/videolaparoscopia.",
+    "readMinutes": 4,
+    "tags": [
+      "Aparelho Digestivo",
+      "Urgência"
+    ],
+    "lead": "Perfuração = ar livre + peritonite. Ressuscite, antibiótico de amplo espectro e controle de foco cirúrgico precoce — atraso eleva mortalidade.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Perfuracao oca",
+      "subtitle": "Suspeita -> imagem -> controle de foco",
+      "caption": "Fluxo: clínica de peritonite → Rx/TC com ar livre → cirurgia de urgência após estabilização.",
+      "nodes": [
+        {
+          "label": "Peritonite",
+          "sub": "dor + defesa + febre"
+        },
+        {
+          "label": "Ar livre",
+          "sub": "Rx / TC"
+        },
+        {
+          "label": "Cirurgia",
+          "sub": "ATB + foco"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Causas clássicas",
+        "body": "Úlcera péptica perfurada, diverticulite perfurada, apendicite furada, trauma e corpo estranho. Em úlcera, epigastralgia súbita ‘em punhalada’ é o clichê."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta perioperatória",
+        "items": [
+          "ABC, volume, correção eletrolítica e sonda se íleo",
+          "ATB cobrindo Gram− e anaeróbios (e Gram+ conforme protocolo local)",
+          "TC se estável e dúvida; Rx tórax/abdômen pode mostrar pneumoperitônio",
+          "Cirurgia: lavagem, fechamento/ressecção e drenagem conforme sítio e contaminação"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais de alerta",
+        "headers": [
+          "Achado",
+          "Significado"
+        ],
+        "rows": [
+          [
+            "Defesa/rigidez difusa",
+            "Peritonite generalizada"
+          ],
+          [
+            "Ar sob diafragma",
+            "Perfuração oca até prova em contrário"
+          ],
+          [
+            "Lactato↑ / hipotensão",
+            "Sepse abdominal — urgência"
+          ],
+          [
+            "Imunossuprimido",
+            "Clínica pode ser atenuada"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não trate perfuração com ‘observação prolongada’ se há peritonite difusa. Antibiótico isolado não substitui controle de foco. Em úlcera, lembrar Helicobacter no follow-up — mas a urgência é cirúrgica."
+      }
+    ]
+  },
+  {
+    "id": "cir-diverticulite",
+    "area": "cirurgia",
+    "title": "Diverticulite aguda · Hinchey e conduta",
+    "blurb": "Não complicada clínica × abscesso × perfurada com peritonite.",
+    "readMinutes": 4,
+    "tags": [
+      "Coloproctologia",
+      "Urgência"
+    ],
+    "lead": "Diverticulite esquerda no idoso é clássica. TC classifica complicação; não complicada pode ser conservadora, abscesso pode drenar e peritonite vai à cirurgia.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Diverticulite por gravidade",
+      "subtitle": "Nao complicada / abscesso / peritonite",
+      "caption": "Escale terapia conforme imagem e status sistêmico — Hinchey orienta a prova.",
+      "nodes": [
+        {
+          "title": "Nao complicada",
+          "lines": [
+            "Dor FIE + inflamacao",
+            "ATB +/- ambulatorio",
+            "Dieta e analgesia"
+          ],
+          "foot": "Maioria"
+        },
+        {
+          "title": "Abscesso",
+          "lines": [
+            "Colecao localizada",
+            "ATB + drenagem se >3-5 cm",
+            "Cirurgia se falha"
+          ],
+          "foot": "Hinchey I-II"
+        },
+        {
+          "title": "Peritonite",
+          "lines": [
+            "Furada com difusao",
+            "Ressuscitacao + ATB",
+            "Cirurgia urgencia"
+          ],
+          "foot": "Hinchey III-IV"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Diagnóstico",
+        "body": "TC com contraste é o exame de escolha na suspeita. Colonoscopia não na fase aguda — agende após resolução para excluir neoplasia."
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de conduta",
+        "items": [
+          "Não complicada selecionada: manejo conservador; ATB nem sempre obrigatório em imunocompetentes leves (fique atento ao que a banca adota)",
+          "Abscesso: drenagem percutânea quando acessível e tamanho significativo",
+          "Cirurgia de urgência: Hartmann ou anastomose primária conforme estabilidade e contaminação",
+          "Recorrências frequentes / complicações: eletiva individualizada"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Hinchey (resumo)",
+        "headers": [
+          "Grau",
+          "Achado"
+        ],
+        "rows": [
+          [
+            "0 / I",
+            "Flegmão / abscesso pericólico"
+          ],
+          [
+            "II",
+            "Abscesso pélvico / distante"
+          ],
+          [
+            "III",
+            "Peritonite purulenta"
+          ],
+          [
+            "IV",
+            "Peritonite fecal"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não faça colonoscopia na diverticulite aguda — risco de perfuração. Primeiro episódio ‘típico’ no jovem ou alarm signals: exclua outras causas e programe avaliação colônica após."
+      }
+    ]
+  },
+  {
+    "id": "cir-isquemia-mesenterica",
+    "area": "cirurgia",
+    "title": "Isquemia mesentérica · dor desproporcional",
+    "blurb": "Embolia, trombose, não oclusiva e venous; TC angiográfica.",
+    "readMinutes": 5,
+    "tags": [
+      "Vascular",
+      "Urgência",
+      "Digestivo"
+    ],
+    "lead": "Dor abdominal intensa com exame físico ainda pobre = pense isquemia mesentérica. Tempo é intestino: angiotomografia e revascularização/ressecção precoces.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Evolucao da isquemia",
+      "subtitle": "Da dor a necrose",
+      "caption": "Janela estreita: quanto mais tarde o diagnóstico, maior a necrose e a sepse.",
+      "nodes": [
+        {
+          "label": "Dor intensa",
+          "sub": "exame pobre"
+        },
+        {
+          "label": "Isquemia",
+          "sub": "leucocitose / lactato"
+        },
+        {
+          "label": "Infarto",
+          "sub": "peritonite"
+        },
+        {
+          "label": "Sepse",
+          "sub": "choque / IRA"
+        },
+        {
+          "label": "Obito",
+          "sub": "se atraso"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Tipos",
+        "body": "Embolia arterial (FA), trombose arterial (aterosclerose), não oclusiva/NOMI (choque, vasopressores) e trombose venosa mesentérica (trombofilia). Cada uma tem nuance terapêutica."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Ressuscitação, ATB se necrose/perfuração suspeita, anticoagulação quando indicada",
+          "AngioTC mesentérica = exame de escolha no estável",
+          "Embolia/trombose: cirurgia/endovascular para restaurar fluxo + avaliar vitalidade",
+          "Ressecar apenas alças inviáveis; second-look frequente"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Pistas etiológicas",
+        "headers": [
+          "Tipo",
+          "Pista"
+        ],
+        "rows": [
+          [
+            "Embolia",
+            "FA, IAM, sopro; início súbito"
+          ],
+          [
+            "Trombose arterial",
+            "Claudicação abdominal prévia / aterosclerose"
+          ],
+          [
+            "NOMI",
+            "UTI, baixo débito, drogas vasoativas"
+          ],
+          [
+            "Venosa",
+            "Trombofilia, pancreatectomia, hipertensão portal"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Lactato normal não exclui isquemia precoce. Dor desproporcional + FA = angioTC, não ‘analgésico e observar’ até peritonite."
+      }
+    ]
+  },
+  {
+    "id": "cir-aaa",
+    "area": "cirurgia",
+    "title": "Aneurisma de aorta abdominal · ruptura",
+    "blurb": "Tríade clássica, limiar de reparo eletivo e emergência.",
+    "readMinutes": 4,
+    "tags": [
+      "Vascular",
+      "Emergência"
+    ],
+    "lead": "AAA sintomático ou roto é emergência vascular. Eletivo repara-se tipicamente a partir de ~5,5 cm (homem) ou crescimento rápido/sintomas — confirme o critério da banca.",
+    "diagram": {
+      "type": "branch2",
+      "title": "AAA",
+      "subtitle": "Eletivo vs roto / sintomatico",
+      "caption": "Dois mundos: vigilância/reparo programado versus sala de emergência e reanimação permissiva.",
+      "nodes": [
+        {
+          "title": "Eletivo",
+          "lines": [
+            ">=5,5 cm (H) tipico",
+            "Crescimento rapido",
+            "Endovascular ou aberto"
+          ]
+        },
+        {
+          "title": "Roto / sintomatico",
+          "lines": [
+            "Dor + hipotensao + massa",
+            "Permissive hypotension",
+            "Cirurgia imediata"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Tríade da ruptura",
+        "body": "Dor abdominal/lombar + hipotensão + massa pulsátil. Nem sempre completa — em idoso tabagista com sincope e dor lombar, pense AAA."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Roto: acesso venoso grosso, tipagem, não buscar normotensão agressiva (hipotensão permissiva)",
+          "TC só se estável o suficiente e diagnóstico incerto; instável vai direto à cirurgia se alta probabilidade",
+          "EVAR vs aberto conforme anatomia, estabilidade e expertise",
+          "Rastreio: homens idosos tabagistas — USG (protocolos de prevenção)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Limiares úteis",
+        "headers": [
+          "Situação",
+          "Conduta típica"
+        ],
+        "rows": [
+          [
+            "<4–4,5 cm",
+            "Vigilância com imagem"
+          ],
+          [
+            "≥5,5 cm (♂)",
+            "Indicação eletiva frequente"
+          ],
+          [
+            "Sintomático",
+            "Reparar (urgência)"
+          ],
+          [
+            "Roto",
+            "Emergência operatória"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não faça colonoscopia/endoscopia ou reposição volêmica agressiva buscando PA ‘normal’ no AAA roto — pode romper tampão. Evite palpação brutal da massa."
+      }
+    ]
+  },
+  {
+    "id": "cir-tvp",
+    "area": "cirurgia",
+    "title": "Trombose venosa profunda · diagnóstico e anticoagulação",
+    "blurb": "Wells, D-dímero, USG e duração da anticoagulação.",
+    "readMinutes": 4,
+    "tags": [
+      "Vascular",
+      "Clínica Cirúrgica"
+    ],
+    "lead": "TVP proximal exige anticoagulação pronta se não houver contraindicação. Use probabilidade pré-teste + USG; trombólise/filtro de VCI são exceções.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Suspeita de TVP",
+      "subtitle": "Wells -> exame -> tratar",
+      "caption": "Baixa probabilidade pode usar D-dímero; alta vai à imagem e anticoagulação.",
+      "nodes": [
+        {
+          "label": "Wells",
+          "sub": "probabilidade"
+        },
+        {
+          "label": "USG / D-dimero",
+          "sub": "conforme risco"
+        },
+        {
+          "label": "Anticoagular",
+          "sub": "HBPM / DOAC / HNF"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Proximal × distal",
+        "body": "Ilíaco-femoral-poplítea: tratar. Distal isolada: pode observar com USG seriado em baixo risco ou anticoagular conforme sintomas/extensão — bancas variam; priorize proximal."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Anticoagulação ≥3 meses na provocada; mais longa se não provocada/recorrente/câncer",
+          "DOAC preferencial em muitos cenários ambulatoriais elegíveis",
+          "Gestação: HBPM (sem DOAC/varfarina no 1ºT conforme regra)",
+          "Filtro de VCI: contraindicação à anticoagulação ou falha documentada"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais e fatores",
+        "headers": [
+          "Item",
+          "Exemplos"
+        ],
+        "rows": [
+          [
+            "Clínica",
+            "Edema assimétrico, dor, cordão, calor"
+          ],
+          [
+            "Provocadores",
+            "Cirurgia, imobilização, câncer, viagem longa"
+          ],
+          [
+            "Exame",
+            "USG compressivo duplex"
+          ],
+          [
+            "Complicação",
+            "TEP, síndrome pós-trombótica"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não massageie a perna nem atrase anticoagulação esperando ‘confirmação perfeita’ em alta probabilidade com USG positivo. Investigar câncer occulto de forma dirigida, não painel cego universal."
+      }
+    ]
+  },
+  {
+    "id": "cir-fratura-exposta",
+    "area": "cirurgia",
+    "title": "Fratura exposta · Gustilo e ATB precoce",
+    "blurb": "Classificação, profilaxia antitetânica, lavagem e fixação.",
+    "readMinutes": 4,
+    "tags": [
+      "Ortopedia",
+      "Trauma"
+    ],
+    "lead": "Fratura exposta é emergência: ATB precoce, antitetânico, limpeza cirúrgica e estabilização. A classificação de Gustilo orienta cobertura e urgência.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Gustilo-Anderson",
+      "subtitle": "I / II / III",
+      "caption": "Quanto maior a energia e a lesão de partes moles, maior a chance de infecção e necessidade de cobertura.",
+      "nodes": [
+        {
+          "title": "Tipo I",
+          "lines": [
+            "Ferida <1 cm",
+            "Limpa, baixa energia",
+            "ATB + desbridamento"
+          ],
+          "foot": "Menor risco"
+        },
+        {
+          "title": "Tipo II",
+          "lines": [
+            "Ferida 1-10 cm",
+            "Contusao moderada",
+            "ATB + limpeza"
+          ],
+          "foot": "Intermediario"
+        },
+        {
+          "title": "Tipo III",
+          "lines": [
+            ">10 cm / alta energia",
+            "IIIA/B/C (cobertura/vaso)",
+            "ATB amplo + ortopedia"
+          ],
+          "foot": "Maior risco"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "ATB de porta",
+        "body": "Inicie o mais cedo possível (ideal <3 h). Cefalosporina 1ª/2ª para I–II; acrescente Gram− (aminoglicosídeo ou equivalente) e, se contaminação rural/clostruídios, penicilina conforme protocolo."
+      },
+      {
+        "type": "bullets",
+        "title": "Passos obrigatórios",
+        "items": [
+          "ABC do trauma, controle de hemorragia, alinhamento e imobilização",
+          "Cobertura estéril úmida; não ‘explorar’ ferida na sala de emergência",
+          "Profilaxia antitetânica conforme histórico vacinal",
+          "Centro cirúrgico: irrigação abundante, desbridamento, fixação (externa se grave)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "III — subtipos",
+        "headers": [
+          "Subtipo",
+          "Característica"
+        ],
+        "rows": [
+          [
+            "IIIA",
+            "Cobertura óssea possível com partes moles"
+          ],
+          [
+            "IIIB",
+            "Precisa retalho / perda extensa"
+          ],
+          [
+            "IIIC",
+            "Lesão arterial que exige reparo"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Atraso de antibiótico aumenta infecção — priorize ATB sobre ‘espera do ortopedista’. Tipo IIIC: ameaça de membro; vascular + ortopedia juntos."
+      }
+    ]
+  },
+  {
+    "id": "cir-tce",
+    "area": "cirurgia",
+    "title": "TCE · Glasgow, TC e hipertensão intracraniana",
+    "blurb": "ABC, normoxia/normotensão, quando intubar e sinais de herniação.",
+    "readMinutes": 5,
+    "tags": [
+      "Neurocirurgia",
+      "Trauma"
+    ],
+    "lead": "No TCE, evite hipóxia e hipotensão — são os maiores determinantes de lesão secundária. Classifique por Glasgow, obtenha TC e trate HIC/herniação sem demora.",
+    "diagram": {
+      "type": "flow3",
+      "title": "TCE na porta",
+      "subtitle": "ABC -> ECG -> TC / neurocirurgia",
+      "caption": "Fluxo ATLS: via aérea com proteção cervical, oxigenação, PA e avaliação neurológica seriada.",
+      "nodes": [
+        {
+          "label": "ABC + cervical",
+          "sub": "O2 e PA"
+        },
+        {
+          "label": "Glasgow",
+          "sub": "pupilas / deficit"
+        },
+        {
+          "label": "TC / NSC",
+          "sub": "lesao massiva?"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Indicações de IOT",
+        "body": "ECG ≤8, queda progressiva, agitação incompatível com proteção de via, hipoxemia/hipoventilação ou necessidade de hiperventilação temporária na herniação."
+      },
+      {
+        "type": "bullets",
+        "title": "Manejo da HIC / herniação",
+        "items": [
+          "Cabeceira 30°, colo neutro, sedação adequada, normocapnia",
+          "Manitol ou SF hipertônico na herniação iminente",
+          "Hiperventilação breve só como ponte para cirurgia",
+          "Hematoma epidural/subdural com efeito de massa → neurocirurgia"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Lesões clássicas",
+        "headers": [
+          "Lesão",
+          "Pista"
+        ],
+        "rows": [
+          [
+            "Epidural",
+            "Intervalo lúcido; lente biconvexa"
+          ],
+          [
+            "Subdural",
+            "Idoso/álcool; crescente"
+          ],
+          [
+            "Difusa axonal",
+            "Coma, TC pode ser pobre"
+          ],
+          [
+            "Base de crânio",
+            "Battles, raccoon, otorraquia"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não faça sonda nasogástrica se houver suspeita de fratura de base de crânio — use via oral. Evite hipotensão com cristaloides/sangue; PAM baixa piora isquemia cerebral."
+      }
+    ]
+  },
+  {
+    "id": "cir-abdome-agudo",
+    "area": "cirurgia",
+    "title": "Abdome agudo · raciocínio e prioridades",
+    "blurb": "Peritonite, isquemia, obstrução e causas clínicas que imitam cirurgia.",
+    "readMinutes": 4,
+    "tags": [
+      "Cirurgia Geral",
+      "Urgência"
+    ],
+    "lead": "Abdome agudo exige decidir rápido: há peritonite ou instabilidade que imponha cirurgia? TC ajuda no estável; no instável com abdome cirúrgico, vá ao centro cirúrgico.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Abdome agudo",
+      "subtitle": "Peritonite / obstrutivo / clinico",
+      "caption": "Separe quem opera agora, quem investiga com imagem e quem tem causa clínica (cetoacidose, pneumonia basal, IAM).",
+      "nodes": [
+        {
+          "title": "Peritonite",
+          "lines": [
+            "Defesa / rigidez",
+            "Ressuscitacao + ATB",
+            "Cirurgia"
+          ],
+          "foot": "Furada / isquemia"
+        },
+        {
+          "title": "Obstrutivo",
+          "lines": [
+            "Distensao + vomitos",
+            "SNG + TC",
+            "Operar se estrangulamento"
+          ],
+          "foot": "Aderencia / hernia"
+        },
+        {
+          "title": "Mimetico clinico",
+          "lines": [
+            "ECG, glicemia, Rx torax",
+            "Cetoacidose / IAM",
+            "Evita laparotomia"
+          ],
+          "foot": "Nao operar"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Exame dirigido",
+        "body": "Localização da dor, irradiação, febre, parada seletiva de eliminações, hérnia encarcerada e toque retal fazem parte do exame mínimo de prova."
+      },
+      {
+        "type": "bullets",
+        "title": "Checklist da porta",
+        "items": [
+          "ABC, acesso, analgésico (não ‘mascara’ diagnóstico moderno — alivie dor)",
+          "Labs: hemograma, PCR, lactato, função renal, β-hCG em mulher fértil",
+          "Imagem: Rx se perfuração/obstrução; TC contrastada no estável duvidoso",
+          "Cirurgião cedo se defesa, ar livre, isquemia ou hernia estrangulada"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Dor por quadrante (atalhos)",
+        "headers": [
+          "Local",
+          "Pensar em"
+        ],
+        "rows": [
+          [
+            "QSD",
+            "Colecistite, úlcera, pneumonia"
+          ],
+          [
+            "QSE",
+            "Pancreatite, úlcera, baço"
+          ],
+          [
+            "FIE",
+            "Diverticulite"
+          ],
+          [
+            "FID",
+            "Apendicite, anexial, ileíte"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Toda mulher em idade fértil com dor abdominal: β-hCG antes de imagem ionizante/cirurgia eletiva. Idoso: apendicite e isquemia apresentam-se atípicas — limiar baixo para TC."
+      }
+    ]
+  },
+  {
+    "id": "cir-ureterolitase",
+    "area": "cirurgia",
+    "title": "Ureterolitíase · cólica e critérios de drenagem",
+    "blurb": "Analgesia, tamanho do cálculo, infecção obstrutiva e urologia.",
+    "readMinutes": 4,
+    "tags": [
+      "Urologia",
+      "Urgência"
+    ],
+    "lead": "Cólica nefrética típica: dor lombar em cólica + hematúria. Analgesia potente é prioridade; infecção com obstrução = drenagem de urgência.",
+    "diagram": {
+      "type": "branch2",
+      "title": "Calculo ureteral",
+      "subtitle": "Sem infeccao vs pielonefrite obstrutiva",
+      "caption": "A bifurcação que salva rim e vida: febre + obstrução não espera eliminação espontânea.",
+      "nodes": [
+        {
+          "title": "Nao complicada",
+          "lines": [
+            "Analgesia + hidratacao",
+            "Alfa-bloqueador se apto",
+            "Observar se <5-6 mm"
+          ]
+        },
+        {
+          "title": "Complicada",
+          "lines": [
+            "Febre / sepse / anuria",
+            "Creatinina em rim unico",
+            "Drenar (duplo J / nefrostomia)"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Diagnóstico",
+        "body": "TC sem contraste é o padrão-ouro. USG + Rx úteis na gestante/criança ou follow-up. Hematuria ajuda, mas ausência não exclui."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "AINE (se função renal OK) ± opioide; antiemético",
+          "Cálculos ≤5 mm: alta chance de eliminação; orientar filtro e retorno se febre",
+          "≥7–10 mm ou proximal persistente: maior chance de intervenção urológica",
+          "Metafilaxia: análise do cálculo, volume hídrico, metabólico selecionado"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Indicações de drenagem urgente",
+        "headers": [
+          "Indicação",
+          "Motivo"
+        ],
+        "rows": [
+          [
+            "Pielonefrite obstrutiva",
+            "Risco de sepse"
+          ],
+          [
+            "Anúria / rim único",
+            "Insuficiência renal"
+          ],
+          [
+            "Dor refratária",
+            "Falência do conservador"
+          ],
+          [
+            "Creatinina em elevação",
+            "Obstrução significativa"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Cólica + febre + dilatação piélica: ATB e desobstrução — não alta com ‘analgésico e água’. AAA roto pode mimetizar cólica no idoso."
+      }
+    ]
+  },
+  {
+    "id": "cir-preop",
+    "area": "cirurgia",
+    "title": "Avaliação pré-operatória · risco e jejum",
+    "blurb": "ASA, risco cardíaco, suspensão de drogas e antibioticoprofilaxia.",
+    "readMinutes": 4,
+    "tags": [
+      "Anestesia",
+      "Cirurgia Geral"
+    ],
+    "lead": "Pré-operatório bem feito reduz cancelamento e evento CV. Estime risco do paciente × risco do procedimento; peça exames só se mudarem conduta.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Linha do preoperatorio",
+      "subtitle": "Dias antes ate inducao",
+      "caption": "Organize: otimizar comorbidades → suspender/manter drogas → jejum → ATB na indução.",
+      "nodes": [
+        {
+          "label": "Risco ASA/CV",
+          "sub": "otimizar"
+        },
+        {
+          "label": "Exames dirigidos",
+          "sub": "se mudam conduta"
+        },
+        {
+          "label": "Ajustar drogas",
+          "sub": "anticoag / ADO"
+        },
+        {
+          "label": "Jejum",
+          "sub": "6h solido / 2h claro"
+        },
+        {
+          "label": "ATB profilatico",
+          "sub": "60 min antes"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Risco cardíaco",
+        "body": "Procedimento de risco alto + fatores clínicos (DAC, IC, DM, IRC, AVC) → avaliação adicional. Emergência opera com otimização possível — não atrase trauma/peritonite por ‘check-up completo’."
+      },
+      {
+        "type": "bullets",
+        "title": "Drogas e jejum",
+        "items": [
+          "Manter betabloqueador e estatina se já em uso crônico (em geral)",
+          "IECA/BRA: muitos protocolos suspendem no dia (hipotensão anestésica)",
+          "Metformina: suspender em risco de hipoperfusão/contraste — evitar acidose láctica",
+          "Jejum: 8/6 h sólidos (conforme guia) e 2 h líquidos claros"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Profilaxia antimicrobiana",
+        "headers": [
+          "Cirurgia",
+          "Exemplo clássico"
+        ],
+        "rows": [
+          [
+            "Limpa com prótese",
+            "Cefazolina"
+          ],
+          [
+            "Digestiva alta/baixa",
+            "Cobertura anaeróbia conforme sítio"
+          ],
+          [
+            "Via biliar",
+            "Cefazolina ± Gram−"
+          ],
+          [
+            "Alergia grave a beta-lactâmico",
+            "Clinda ± vancomicina / protocolo"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "ATB profilática deve estar na pele antes da incisão (janela ~60 min; vancomicina mais cedo). Dose única costuma bastar — não ‘prolonge 7 dias’ sem infecção."
+      }
+    ]
+  },
+  {
+    "id": "ped-otite",
+    "area": "pediatria",
+    "title": "Otite média aguda · critérios e ATB",
+    "blurb": "Otalgia, otoscopia, observação vigilante e amoxicilina.",
+    "readMinutes": 4,
+    "tags": [
+      "Otorrino",
+      "Infectologia Pediátrica"
+    ],
+    "lead": "OMA = início agudo + sinais de efusão + inflamação/otalgia. Nem todo caso precisa ATB imediato — idade, gravidade e bilateralidade decidem.",
+    "diagram": {
+      "type": "branch2",
+      "title": "OMA pediatrica",
+      "subtitle": "Observacao vigilante vs ATB imediato",
+      "caption": "Criança tóxica, <6 meses ou OMA bilateral grave → ATB; muitos ≥2 anos leves podem observar 48–72 h.",
+      "nodes": [
+        {
+          "title": "ATB imediato",
+          "lines": [
+            "<6 meses",
+            "Toxica / otorreia",
+            "Bilateral em <2 anos"
+          ]
+        },
+        {
+          "title": "Observar",
+          "lines": [
+            ">=2 anos, leve",
+            "Pai orientado",
+            "Retorno se piora"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Primeira escolha",
+        "body": "Amoxicilina em dose alta (80–90 mg/kg/dia). Se falha ou uso recente: amoxicilina-clavulanato. Analgesia com dipirona/ibuprofeno é parte do tratamento."
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos clínicos",
+        "items": [
+          "Otoscopia: abaulamento, opacidade, mobilidade reduzida, hiperemia",
+          "Não diagnosticar só por ‘tímpano vermelho’ em criança chorando",
+          "Otorreia em otorragia/tubo: tratar como OMA com drenagem",
+          "Recorrência: investigar creche, fumo passivo, adenoides; critérios de tubo de ventilação"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Diagnósticos diferenciais",
+        "headers": [
+          "Condição",
+          "Pista"
+        ],
+        "rows": [
+          [
+            "OMA",
+            "Abaulamento + otalgia aguda"
+          ],
+          [
+            "Otite externa",
+            "Dor ao tragar pavilhão / conduto"
+          ],
+          [
+            "OME (secretora)",
+            "Efusão sem inflamação aguda"
+          ],
+          [
+            "Mastoidite",
+            "Protrusão de orelha, febre, toxicidade"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Mastoidite aguda é emergência ORL — não prolongue ATB oral se houver deslocamento do pavilhão, edema retroauricular e toxemia."
+      }
+    ]
+  },
+  {
+    "id": "ped-faringoamig",
+    "area": "pediatria",
+    "title": "Faringoamigdalite · viral × estreptococo",
+    "blurb": "Centor/McIsaac pediátrico, teste rápido e penicilina.",
+    "readMinutes": 4,
+    "tags": [
+      "Infectologia Pediátrica",
+      "ORL"
+    ],
+    "lead": "Maioria é viral. Trate estreptococo do grupo A para abreviar sintomas e prevenir febre reumática — use critérios + teste quando disponível.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Faringite pediatrica",
+      "subtitle": "Clinica -> teste -> ATB se SGA",
+      "caption": "Evite ATB ‘por precaução’ em coriza/tosse — padrão viral.",
+      "nodes": [
+        {
+          "label": "Escore",
+          "sub": "febre, exsudato, adenopatia"
+        },
+        {
+          "label": "Teste/cultura",
+          "sub": "se disponivel"
+        },
+        {
+          "label": "Penicilina",
+          "sub": "se SGA"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Clínica de SGA",
+        "body": "Febre, dor de garganta, exsudato, adenomegalia cervical dolorosa, ausência de tosse/coriza. Petéquias de palato e rash escarlatiniforme reforçam."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "1ª linha: penicilina V ou amoxicilina; benzatina se adesão duvidosa",
+          "Alergia não anafilática: cefalosporina; anafilaxia: macrolídeo/clinda conforme guia",
+          "Retorno escolar após 24 h de ATB se afebril",
+          "Abscesso peritonsilar: voz abafada, trismo — drenagem + ATB"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Viral × bacteriana",
+        "headers": [
+          "Pista",
+          "Viral",
+          "SGA"
+        ],
+        "rows": [
+          [
+            "Coriza/tosse",
+            "Comum",
+            "Rara"
+          ],
+          [
+            "Exsudato",
+            "Variável",
+            "Frequente"
+          ],
+          [
+            "Idade <3 anos",
+            "Mais viral",
+            "SGA menos típico"
+          ],
+          [
+            "ATB",
+            "Não",
+            "Sim se confirmado/alta probabilidade"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não use amoxicilina empírico em mononucleose suspeita (rash). Em faringite + dificuldade respiratória, pense epiglotite/abscesso — via aérea primeiro."
+      }
+    ]
+  },
+  {
+    "id": "ped-diarreia",
+    "area": "pediatria",
+    "title": "Diarreia aguda · hidratação e zinco",
+    "blurb": "Plano A/B/C, sinais de choque e quando usar ATB.",
+    "readMinutes": 4,
+    "tags": [
+      "Gastro Pediátrica",
+      "Atenção Primária"
+    ],
+    "lead": "Na diarreia aguda pediátrica, a hidratação salva vidas. Classifique desidratação e aplique planos A, B ou C; zinco reduz duração em contextos de risco.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Planos de hidratacao",
+      "subtitle": "A / B / C",
+      "caption": "Memória obrigatória de pediatria de R1 e APS.",
+      "nodes": [
+        {
+          "title": "Plano A",
+          "lines": [
+            "Sem desidratacao",
+            "Soro caseiro/ORS",
+            "Manter alimentacao"
+          ],
+          "foot": "Domicilio"
+        },
+        {
+          "title": "Plano B",
+          "lines": [
+            "Desidratacao",
+            "TRO supervisionada",
+            "Reavaliar 4h"
+          ],
+          "foot": "URS / UPA"
+        },
+        {
+          "title": "Plano C",
+          "lines": [
+            "Choque / grave",
+            "SF 0,9% EV",
+            "Internacao"
+          ],
+          "foot": "Urgencia"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Sinais de desidratação",
+        "body": "Olhos fundos, sede, elasticidade cutânea ↓, mucosas secas, fontanela deprimida, diurese ↓, letargia/irritabilidade. Sangue no choque: extremidades frias, TE enchimento >2–3 s, pulso fino."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Manter leite materno; evitar antidiarréicos inibidores de motilidade",
+          "Ondansetrona pode ajudar vômitos e sucesso da TRO em selecionados",
+          "ATB: disenteria com sangue + febre / Shigella suspeita / cólera em surto — não rotina viral",
+          "Zinco por 10–14 dias conforme protocolo OMS/MS em crianças elegíveis"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Red flags",
+        "headers": [
+          "Sinal",
+          "Ação"
+        ],
+        "rows": [
+          [
+            "Sangue + toxemia",
+            "Avaliar bacteriana / internar"
+          ],
+          [
+            "Fontanela abaulada",
+            "Pensar meningite associada"
+          ],
+          [
+            "Bilioso / distensão",
+            "Obstrução — cirurgia"
+          ],
+          [
+            "Desnutrido grave",
+            "Protocolo específico de reidratação"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não use loperamida em crianças pequenas. No plano C, volume inicial de SF 0,9% em bolos e reavaliação — cuidado com desnutrido grave (risco de sobrecarga/ falência)."
+      }
+    ]
+  },
+  {
+    "id": "ped-exantema",
+    "area": "pediatria",
+    "title": "Exantemas clássicos · sarampo ao roseola",
+    "blurb": "Cronologia, sinal de Koplik, vacinas e quando isolar.",
+    "readMinutes": 5,
+    "tags": [
+      "Infectologia Pediátrica",
+      "Dermatologia"
+    ],
+    "lead": "Exantema + febre exige calendário vacinal e cronologia. Diferencie morbiliforme, vesicular e escarlatiniforme — isolamento e notificação importam no sarampo.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Exantemas por tempo",
+      "subtitle": "Dia do rash (classicos)",
+      "caption": "Atalho clássico: varicela ‘em surtos’; sarampo face→corpo; rubéola mais brando; roseola rash após defervescência.",
+      "nodes": [
+        {
+          "label": "Sarampo",
+          "sub": "D3-D7; Koplik"
+        },
+        {
+          "label": "Escarlatina",
+          "sub": "lixa + SGA"
+        },
+        {
+          "label": "Rubeola",
+          "sub": "adenopatia occipital"
+        },
+        {
+          "label": "Roseola",
+          "sub": "rash apos febre"
+        },
+        {
+          "label": "Varicela",
+          "sub": "poliformismo"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Sarampo — lembrar",
+        "body": "Tosse, coriza, conjuntivite + Koplik + exantema cefalocaudal. Notificação compulsória e bloqueio vacinal de contactantes."
+      },
+      {
+        "type": "bullets",
+        "title": "Diferenciais high-yield",
+        "items": [
+          "Escarlatina: lixa, sinal de Pastia, língua em framboesa; tratar SGA",
+          "Doença mão-pé-boca: vesículas dolorosas; suporte",
+          "Meningococcemia: púrpura fulminans — ATB imediato",
+          "Kawasaki: febre ≥5 dias + critérios mucocutâneos — AAS + IGI"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Rash × vacina",
+        "headers": [
+          "Doença",
+          "Prevenção"
+        ],
+        "rows": [
+          [
+            "Sarampo/rubéola/caxumba",
+            "Tríplice viral"
+          ],
+          [
+            "Varicela",
+            "Vacina varicela"
+          ],
+          [
+            "Escarlatina",
+            "Não vacinal — tratar SGA"
+          ],
+          [
+            "Hepatite A (não exantema típico)",
+            "Vacina HAV"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Púrpura + toxemia ≠ ‘virose exantemática’: pense meningococo e trate. Aspirina em criança com viral: risco de Reye — cuidado (exceto protocolos como Kawasaki)."
+      }
+    ]
+  },
+  {
+    "id": "ped-puberdade",
+    "area": "pediatria",
+    "title": "Puberdade · precoce, atrasada e Tanner",
+    "blurb": "Telarca, menarca, volumetria testicular e quando investigar.",
+    "readMinutes": 4,
+    "tags": [
+      "Endocrinologia Pediátrica",
+      "Crescimento"
+    ],
+    "lead": "Puberdade precoce: <8 anos meninas / <9 meninos. Atrasada: ausência de caracteres aos 13 (♀) ou 14 (♂). Tanner + velocidade de crescimento guiam a propedêutica.",
+    "diagram": {
+      "type": "branch2",
+      "title": "Desvio puberal",
+      "subtitle": "Precoce vs atrasada",
+      "caption": "Central (GnRH-dependente) versus periférica muda exame e imagem.",
+      "nodes": [
+        {
+          "title": "Precoce",
+          "lines": [
+            "<8F / <9M",
+            "GnRH stim / RM",
+            "Agonista GnRH se central"
+          ]
+        },
+        {
+          "title": "Atrasada",
+          "lines": [
+            "Sem Tanner 13F/14M",
+            "Funcao / cariotipo",
+            "Tratar causa"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Primeiro sinal",
+        "body": "Meninas: telarca. Meninos: volume testicular ≥4 mL. Pelarca isolada pode ser prematura benigna — avalie contexto e progressão."
+      },
+      {
+        "type": "bullets",
+        "title": "Propedêutica",
+        "items": [
+          "Idade óssea, estradiol/testosterona, LH/FSH (± estímulo GnRH)",
+          "RM de SNC se precoce central, especialmente meninos ou progressão rápida",
+          "USG pélvico em meninas; excluir tumores secretores se periférica",
+          "Atraso: pensar constitucional, doenças crônicas, Turner, Kallmann"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Marcos",
+        "headers": [
+          "Evento",
+          "Idade aproximada"
+        ],
+        "rows": [
+          [
+            "Telarca",
+            "~8–13 anos"
+          ],
+          [
+            "Menarca",
+            "~2–2,5 anos após telarca"
+          ],
+          [
+            "Volume testicular 4 mL",
+            "Início masculino"
+          ],
+          [
+            "Estirão",
+            "Tanner 3–4"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Puberdade precoce em meninos tem maior chance de patologia de SNC — não ‘observe eternamente’. Telarca sob exposições estrogênicas exógenas também existe."
+      }
+    ]
+  },
+  {
+    "id": "ped-anemia-ferro",
+    "area": "pediatria",
+    "title": "Anemia ferropriva na criança · profilaxia",
+    "blurb": "Fatores de risco, suplementação e resposta à ferroterapia.",
+    "readMinutes": 4,
+    "tags": [
+      "Hematologia Pediátrica",
+      "Nutrição"
+    ],
+    "lead": "Ferropenia é a causa nº 1 de anemia na infância. Profilaxia com ferro e alimentação adequada previnem; tratamento confirma-se pela resposta reticulocitária.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Anemia ferropriva",
+      "subtitle": "Risco -> diagnostico -> ferro",
+      "caption": "Identifique risco (prematuridade, leite de vaca precoce, baixa ingestão) e trate com ferro oral.",
+      "nodes": [
+        {
+          "label": "Rastrear risco",
+          "sub": "prematuro / dieta"
+        },
+        {
+          "label": "Lab",
+          "sub": "Hb, VCM, ferritina"
+        },
+        {
+          "label": "Ferro oral",
+          "sub": "3-6 mg/kg/dia"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Profilaxia (MS — conceito)",
+        "body": "Suplementação preventiva de ferro em lactentes conforme idade gestacional e aleitamento — memorize o princípio: prematuros e termo em risco recebem ferro profilático."
+      },
+      {
+        "type": "bullets",
+        "title": "Tratamento",
+        "items": [
+          "Ferro elemental ~3–6 mg/kg/dia; longe de leite/cálcio se possível",
+          "Resposta: ↑reticulócitos em ~1–2 semanas; Hb sobe em ~1 mês",
+          "Manter 2–3 meses após normalizar Hb para repor estoques",
+          "Investigar perda/ sangramento se refratária ou idade atípica"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Labs típicos",
+        "headers": [
+          "Exame",
+          "Achado"
+        ],
+        "rows": [
+          [
+            "VCM/HCM",
+            "Baixos"
+          ],
+          [
+            "RDW",
+            "Alto"
+          ],
+          [
+            "Ferritina",
+            "Baixa"
+          ],
+          [
+            "Saturação de transferrina",
+            "Baixa"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Leite de vaca integral precoce (<1 ano) é fator clássico de ferropenia/enteropatia. Não feche talassemia sem ferritina — e vice-versa."
+      }
+    ]
+  },
+  {
+    "id": "ped-alergia-leite",
+    "area": "pediatria",
+    "title": "Alergia à proteína do leite de vaca · APLV",
+    "blurb": "IgE × não IgE, fórmulas extensamente hidrolisadas e provocação.",
+    "readMinutes": 4,
+    "tags": [
+      "Alergia",
+      "Nutrição",
+      "Gastro"
+    ],
+    "lead": "APLV pode ser imediata (IgE) ou tardia (não IgE/GI). O tratamento é exclusão da proteína com fórmula adequada ou dieta materna orientada — não ‘trocar marca de leite’.",
+    "diagram": {
+      "type": "branch2",
+      "title": "APLV",
+      "subtitle": "IgE mediada vs nao IgE / GE",
+      "caption": "Fenótipo guia urgência e teste: anafilaxia ≠ proctocolite do lactente.",
+      "nodes": [
+        {
+          "title": "IgE / imediata",
+          "lines": [
+            "Urticaria, vomito, anafilaxia",
+            "IgE especifica / prick",
+            "Adrenalina se anafilaxia"
+          ]
+        },
+        {
+          "title": "Nao IgE",
+          "lines": [
+            "Sangue nas fezes, refluxo",
+            "Exclusao diagnostica",
+            "Provocacao supervisionada"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Fórmulas",
+        "body": "1ª linha na maioria: fórmula extensamente hidrolisada. Falha/anafilaxia grave/malabsorção: aminoácidos livres. Soja: uso restrito (idade, IgE)."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Aleitamento: mãe exclui leite/derivados com suplementação de cálcio",
+          "Evitar teste de exclusão eterno sem plano de reintrodução",
+          "Provocação oral é padrão para confirmar e avaliar tolerância",
+          "Diferenciar da intolerância à lactose (açúcar, não proteína)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Cenários",
+        "headers": [
+          "Quadro",
+          "Conduta-chave"
+        ],
+        "rows": [
+          [
+            "Proctocolite do lactente",
+            "Exclusão; bom prognóstico"
+          ],
+          [
+            "Anafilaxia",
+            "Adrenalina IM + fórmula de aminoácidos"
+          ],
+          [
+            "Enterocolite (FPIES)",
+            "Reanimação; evitar gatilho"
+          ],
+          [
+            "Dúvida diagnóstica",
+            "Especialista + diário alimentar"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Fórmula parcialmente hidrolisada / ‘HA’ de supermercado não trata APLV estabelecida. Leite de outros mamíferos (cabra) costuma cruzar — não é alternativa segura."
+      }
+    ]
+  },
+  {
+    "id": "ped-refluxo",
+    "area": "pediatria",
+    "title": "Refluxo GE · fisiológico × DRGE",
+    "blurb": "Regurgitação do lactente, sinais de alarme e quando usar IBP.",
+    "readMinutes": 4,
+    "tags": [
+      "Gastro Pediátrica",
+      "Neonatologia"
+    ],
+    "lead": "Regurgitação sem sofrimento é fisiológica na maioria dos lactentes. DRGE implica sintomas ou complicações — evite medicar refluxo benigno.",
+    "diagram": {
+      "type": "branch2",
+      "title": "Regurgitacao do lactente",
+      "subtitle": "Fisiologico vs DRGE / alarme",
+      "caption": "Ramificação: tranquilizar e posicionar versus investigar alarme e tratar complicação.",
+      "nodes": [
+        {
+          "title": "Fisiologico",
+          "lines": [
+            "Ganho ponderal OK",
+            "Sem engasgos graves",
+            "Orientacao e espera"
+          ]
+        },
+        {
+          "title": "DRGE / alarme",
+          "lines": [
+            "Baixo ganho, sangramento",
+            "Apneia, bilioso",
+            "Investigar +/- IBP"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Medidas iniciais",
+        "body": "Espessar seletivamente, volumes menores e mais frequentes, evitar tabaco, manter aleitamento. Elevação do berço tem evidência fraca — cuidado com sono seguro (decúbito dorsal)."
+      },
+      {
+        "type": "bullets",
+        "title": "Sinais de alarme",
+        "items": [
+          "Vômito bilioso, hemático ou em jato persistente",
+          "Má evolução ponderal, anemia, arquearão com choro (Sandifer)",
+          "Sintomas respiratórios graves / ALTE-BRUE associados",
+          "Início após 6 meses ou piora progressiva — pensar outras causas"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Conduta farmacológica",
+        "headers": [
+          "Cenário",
+          "Papel"
+        ],
+        "rows": [
+          [
+            "Refluxo fisiológico",
+            "Sem IBP/pró-cinético de rotina"
+          ],
+          [
+            "Esofagite / DRGE clara",
+            "IBP em curso definido"
+          ],
+          [
+            "Suspeita de APLV",
+            "Teste de exclusão antes de cronificar IBP"
+          ],
+          [
+            "Estenose hipertrófica",
+            "USG; cirurgia — não é ‘refluxo’"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não use IBP empírico prolongado em lactente ‘que cuspe’. Vômito bilioso = obstrução até prova em contrário."
+      }
+    ]
+  },
+  {
+    "id": "ped-invaginacao",
+    "area": "pediatria",
+    "title": "Invaginação intestinal · dor intermitente",
+    "blurb": "Tríade clássica, USG em alvo e enema terapêutico.",
+    "readMinutes": 4,
+    "tags": [
+      "Cirurgia Pediátrica",
+      "Urgência"
+    ],
+    "lead": "Lactente/pré-escolar com cólica intermitente, letargia e fezes em geleia de morango: pense invaginação. USG confirma; redução hidrostática/pneumática se estável.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Invaginacao",
+      "subtitle": "Clinica -> USG -> reducao",
+      "caption": "Fluxo: suspeita clínica → imagem em alvo → redução guiada ou cirurgia se peritonite/choque.",
+      "nodes": [
+        {
+          "label": "Dor + letargia",
+          "sub": "fezes em geleia"
+        },
+        {
+          "label": "USG alvo",
+          "sub": "target / doughnut"
+        },
+        {
+          "label": "Enema / cirurgia",
+          "sub": "conforme estabilidade"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Idade e causa",
+        "body": "Pico 3–36 meses, muitas vezes ileocólica idiopática pós-viral. > instáveis / fora da faixa: pensar lead point (Meckel, pólipo, Púrpura de Henoch-Schönlein)."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Estabilizar, jejum, acesso, cirurgia ciente",
+          "USG: sinal do alvo em corte transversal",
+          "Redução por enema com ar/contraste se sem peritonite",
+          "Cirurgia se falha, perfuração, choque ou massa/lead point"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Clínica",
+        "headers": [
+          "Achado",
+          "Nota"
+        ],
+        "rows": [
+          [
+            "Dor intermitente",
+            "Criança ‘olha o vazio’ entre crises"
+          ],
+          [
+            "Vômitos",
+            "Podem tornar-se biliosos"
+          ],
+          [
+            "Geleia de morango",
+            "Tardio; ausência não exclui"
+          ],
+          [
+            "Massa em salsicha",
+            "QSD / epigástrio"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não atrase imagem esperando geleia de morango. Peritonite = centro cirúrgico, não enema terapêutico."
+      }
+    ]
+  },
+  {
+    "id": "ped-croup",
+    "area": "pediatria",
+    "title": "Crupe (laringotraqueíte) · estridor",
+    "blurb": "Westley, dexametasona e adrenalina nebulizada.",
+    "readMinutes": 4,
+    "tags": [
+      "Pneumologia Pediátrica",
+      "Emergência"
+    ],
+    "lead": "Crupe viral: tosse metálica, rouquidão e estridor inspiratório. Corticoide é a base; adrenalina nebulizada na obstrução moderada-grave.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Gravidade do crupe",
+      "subtitle": "Leve / moderado / grave",
+      "caption": "Escore de Westley (conceito): estridor em repouso e retrações definem intensificação.",
+      "nodes": [
+        {
+          "title": "Leve",
+          "lines": [
+            "Tosse sem estridor repouso",
+            "Dexametasona VO",
+            "Alta com orientacao"
+          ],
+          "foot": "Maioria"
+        },
+        {
+          "title": "Moderado",
+          "lines": [
+            "Estridor + retracao",
+            "Dexametasona",
+            "Adrenalina neb +/-"
+          ],
+          "foot": "Observar"
+        },
+        {
+          "title": "Grave",
+          "lines": [
+            "Distress / hipoxia",
+            "Adrenalina + corticoide",
+            "Via aerea / UTI"
+          ],
+          "foot": "Emergencia"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Droga-chave",
+        "body": "Dexametasona 0,15–0,6 mg/kg (dose única; tetos conforme protocolo) reduz sintomas e retorno. Budesonida neb é alternativa se VO inviável."
+      },
+      {
+        "type": "bullets",
+        "title": "Diferenciais",
+        "items": [
+          "Epiglotite: toxemia, babão, posição em tripé — não examine a garganta à força",
+          "Corpo estranho: início súbito sem pródromo viral",
+          "Abscesso retrofaríngeo: febre, cervicalgia, limitação",
+          "Traqueíte bacteriana: piora tóxica após crupe"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Conduta por gravidade",
+        "headers": [
+          "Nível",
+          "Conduta"
+        ],
+        "rows": [
+          [
+            "Leve",
+            "Dexametasona; alta"
+          ],
+          [
+            "Moderado",
+            "Dexametasona + adrenalina; observar 2–3 h"
+          ],
+          [
+            "Grave",
+            "Adrenalina seriada + via aérea pronta"
+          ],
+          [
+            "Rx (se feito)",
+            "Sinal do campanário — não obrigatório"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Após adrenalina, observe — efeito pode rebote. Não agite criança com estridor grave; O₂ suplementar e minimal handling."
+      }
+    ]
+  },
+  {
+    "id": "go-mioma",
+    "area": "go",
+    "title": "Mioma uterino · sangramento e cirurgia",
+    "blurb": "Tipos FIGO, anemia, AINE/hormônio e miomectomia/histerectomia.",
+    "readMinutes": 4,
+    "tags": [
+      "Ginecologia",
+      "Sangramento uterino"
+    ],
+    "lead": "Leiomioma é causa comum de sangramento uterino anormal e massa pélvica. Conduta segue sintomas, desejo reprodutivo e localização (submucoso sangra mais).",
+    "diagram": {
+      "type": "triage3",
+      "title": "Mioma por sintoma",
+      "subtitle": "Assintomatico / SUA / compressivo",
+      "caption": "Assintomático observa; SUA trata clinicamente; falha ou compressão caminha para procedimento.",
+      "nodes": [
+        {
+          "title": "Assintomatico",
+          "lines": [
+            "Achado de exame/USG",
+            "Observacao",
+            "Seguir crescimento"
+          ],
+          "foot": "Conservador"
+        },
+        {
+          "title": "SUA / anemia",
+          "lines": [
+            "AINE, antifibrinolitico",
+            "Hormonio / DIU-LNG",
+            "Anemia: ferro"
+          ],
+          "foot": "Clinico 1o"
+        },
+        {
+          "title": "Cirurgico",
+          "lines": [
+            "Submucoso: histeroscopia",
+            "Miomectomia se fertilidade",
+            "Histerectomia definitiva"
+          ],
+          "foot": "Falha / desejo"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Localização",
+        "body": "Submucoso (FIGO 0–2): sangramento. Intramural: volume/SUA. Subseroso: compressão. Pediculado pode torcer (abdome agudo)."
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de prova",
+        "items": [
+          "USG pélvico é 1ª imagem; RNM se mapeamento cirúrgico complexo",
+          "DIU-LNG e agonistas de GnRH reduzem sangramento (GnRH temporário)",
+          "Embolização: opção em selecionadas sem desejo imediato de gestar",
+          "Crescimento rápido na pós-menopausa: excluir sarcoma (raro, mas cai)"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Procedimento × objetivo",
+        "headers": [
+          "Objetivo",
+          "Opção"
+        ],
+        "rows": [
+          [
+            "Preservar útero/fertilidade",
+            "Miomectomia"
+          ],
+          [
+            "Submucoso sangrante",
+            "Histeroscopia resectoscópica"
+          ],
+          [
+            "Definitivo sem fertilidade",
+            "Histerectomia"
+          ],
+          [
+            "Má candidato cirúrgico",
+            "Embolização / clínico"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "SUA em >45 anos ou com critérios de risco: excluir hiperplasia/câncer de endométrio antes de atribuir tudo a mioma."
+      }
+    ]
+  },
+  {
+    "id": "go-endometriose",
+    "area": "go",
+    "title": "Endometriose · dor pélvica e infertilidade",
+    "blurb": "Dismenorreia progressiva, endometrioma, AINE/hormônio e laparoscopia.",
+    "readMinutes": 4,
+    "tags": [
+      "Ginecologia",
+      "Dor pélvica"
+    ],
+    "lead": "Endometriose = endométrio ectópico com inflamação crônica. Dor cíclica refratária e infertilidade são as vias clássicas de prova; tratamento é individualizado.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Endometriose",
+      "subtitle": "Clinica -> imagem -> tratar",
+      "caption": "Diagnóstico clínico-empírico é aceitável; laparoscopia confirma e trata em selecionadas.",
+      "nodes": [
+        {
+          "label": "Dor ciclica",
+          "sub": "dismenorreia / dispareunia"
+        },
+        {
+          "label": "USG / RNM",
+          "sub": "endometrioma"
+        },
+        {
+          "label": "Hormonio / cirurgia",
+          "sub": "conforme meta"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Clínica clássica",
+        "body": "Dismenorreia progressiva, dispareunia profunda, dor à defecação cíclica, infertilidade. Exame: nódulos em fundo de saco, útero fixo, endometrioma."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "1ª linha dor: AINE + contraceptivo combinado ou progestagênio contínuo",
+          "DIU-LNG e agonistas/antagonistas de GnRH em refratárias",
+          "Endometrioma: USG típico; cirurgia se dor/infertilidade/dúvida neoplásica",
+          "Infertilidade: considerar FIV precocemente em doença avançada"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Achados",
+        "headers": [
+          "Método",
+          "Papel"
+        ],
+        "rows": [
+          [
+            "USG TV",
+            "Endometrioma; sinais indiretos"
+          ],
+          [
+            "RNM",
+            "Doença profunda / mapeamento"
+          ],
+          [
+            "CA-125",
+            "Inespecífico — não diagnostica"
+          ],
+          [
+            "Laparoscopia",
+            "Padrão-ouro diagnóstico/terapêutico"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não dependa de CA-125 para diagnosticar endometriose. Cirurgia de endometrioma pode reduzir reserva ovariana — sopese fertilidade."
+      }
+    ]
+  },
+  {
+    "id": "go-sop",
+    "area": "go",
+    "title": "Síndrome dos ovários policísticos · Rotterdam",
+    "blurb": "Hiperandrogenismo, anovulação, metabolismo e indução de ovulação.",
+    "readMinutes": 5,
+    "tags": [
+      "Ginecologia",
+      "Endocrinologia"
+    ],
+    "lead": "SOP exige ≥2 critérios de Rotterdam: hiperandrogenismo, ovulação disfuncional, morfologia multicística — com exclusão de mimetizadores (tireoide, hiperprolactinemia, HAC).",
+    "diagram": {
+      "type": "formula",
+      "title": "Rotterdam (conceito)",
+      "subtitle": "2 de 3 criterios + exclusoes",
+      "caption": "Fórmula de prova: hiperandrogenismo + anovulação + USG multicístico (2/3), após excluir outras causas.",
+      "nodes": [
+        {
+          "formula": "HA clinico/lab + anovulacao + USG (2/3)",
+          "note": "Excluir: TSH, prolactina, 17-OHP; gestacao se amenorreia"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Metabolismo",
+        "body": "Rastreie DM/intolerância, dislipidemia e HAS. Mudança de estilo de vida é base — mesmo sem desejo gestacional imediato."
+      },
+      {
+        "type": "bullets",
+        "title": "Tratamento por meta",
+        "items": [
+          "Ciclos/hiperandrogenismo sem gestar: ACO combinado (se sem CI)",
+          "Hirsutismo: ACO ± antiandrógeno (espironolactona) com contracepção",
+          "Resistência insulínica/DM: metformina como adjuvante",
+          "Infertilidade anovulatória: letrozol (1ª em muitas diretrizes) / citrato de clomifeno"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Diferenciais",
+        "headers": [
+          "Condição",
+          "Pista"
+        ],
+        "rows": [
+          [
+            "Hiperprolactinemia",
+            "Galactorreia; PRL ↑"
+          ],
+          [
+            "Hipotireoidismo",
+            "TSH ↑"
+          ],
+          [
+            "HAC forma não clássica",
+            "17-OHP ↑; acne/hirsutismo precoce"
+          ],
+          [
+            "Tumores androgênicos",
+            "Virilização rápida; testosterona muito alta"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "USG ‘multifolicular’ sozinho não fecha SOP em adolescente. Amenorreia prolongada: proteger endométrio (progestagênio/ACO) — risco de hiperplasia."
+      }
+    ]
+  },
+  {
+    "id": "go-climaterio",
+    "area": "go",
+    "title": "Climatério e menopausa · TH e riscos",
+    "blurb": "Fogachos, geniturinário, densitometria e terapia hormonal.",
+    "readMinutes": 4,
+    "tags": [
+      "Ginecologia",
+      "Endocrinologia"
+    ],
+    "lead": "Menopausa = 12 meses sem menstruação. Trate sintomas vasomotores e sindrome geniturinária conforme risco CV/câncer — TH não é ‘para todas’.",
+    "diagram": {
+      "type": "branch2",
+      "title": "Sintomas da menopausa",
+      "subtitle": "Candidata a TH vs contraindicacao",
+      "caption": "Janela de oportunidade e ausência de CI definem TH sistêmica; local trata GSM sem os mesmos riscos.",
+      "nodes": [
+        {
+          "title": "TH possivel",
+          "lines": [
+            "Fogachos moderados-graves",
+            "<60 anos / <10 a pos",
+            "Estrogenio +/- progestagenio"
+          ]
+        },
+        {
+          "title": "Evitar TH sistemica",
+          "lines": [
+            "Ca mama, TEV, CAD ativa",
+            "AVC / hepatopatia grave",
+            "Nao hormonais / local"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Útero presente",
+        "body": "Estrogênio sistêmico sempre com progestagênio (proteger endométrio). Sem útero: estrogênio isolado."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta prática",
+        "items": [
+          "Não hormonais: ISRS/IRSN, gabapentina, climatério comportamental",
+          "GSM (secura, dispareunia): estrogênio vaginal de baixa dose",
+          "Osso: cálcio/vit D, exercício; densitometria conforme risco; TH ajuda se indicada para sintomas",
+          "Sangramento pós-menopausa: investigar endométrio — nunca ‘é só TH’"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Contraindicações clássicas à TH",
+        "headers": [
+          "CI",
+          "Exemplo"
+        ],
+        "rows": [
+          [
+            "Neoplasia",
+            "Câncer de mama hormônio-dependente"
+          ],
+          [
+            "Trombose",
+            "TEV prévio / trombofilia de alto risco"
+          ],
+          [
+            "CV",
+            "DAC ativa, AVC recente"
+          ],
+          [
+            "Hepática",
+            "Doença hepática grave"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não inicie TH só para prevenção primária de CVD ou demência. Sangramento na pós-menopausa = biópsia/avaliação endometrial até prova em contrário."
+      }
+    ]
+  },
+  {
+    "id": "go-incontinencia",
+    "area": "go",
+    "title": "Incontinência urinária feminina · esforço × urgência",
+    "blurb": "Diário miccional, Kegel, anticolinérgico e sling.",
+    "readMinutes": 4,
+    "tags": [
+      "Uroginecologia",
+      "Ginecologia"
+    ],
+    "lead": "Separe incontinência de esforço (tosse/impacto) da de urgência (bexiga hiperativa). Mista é frequente — trate o componente dominante e invista em terapia comportamental.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Incontinencia urinaria",
+      "subtitle": "Esforco / urgencia / mista",
+      "caption": "Classificar pelo gatilho muda a 1ª linha: Kegel/sling versus bexiga hiperativa.",
+      "nodes": [
+        {
+          "title": "Esforco",
+          "lines": [
+            "Tosse, riso, corrida",
+            "Kegel / pessario",
+            "Sling se falha"
+          ],
+          "foot": "Hipermobilidade"
+        },
+        {
+          "title": "Urgencia",
+          "lines": [
+            "Desire imperioso",
+            "Treino vesical",
+            "Antimuscarinico / beta3"
+          ],
+          "foot": "Bexiga hiperativa"
+        },
+        {
+          "title": "Mista",
+          "lines": [
+            "Ambos componentes",
+            "Tratar dominante",
+            "Evitar cirurgia precoce"
+          ],
+          "foot": "Comum"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Avaliação inicial",
+        "body": "História, exame, EAS/urocultura (excluir ITU), diário miccional. Urodinâmica: antes de cirurgia em casos complexos/refratários — não obrigatória em esforço puro típico."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Perda de peso, reduzir cafeína, tratar constipação e tosse crônica",
+          "Fisioterapia do assoalho pélvico (Kegel supervisionado)",
+          "Urgência: oxibutinina/outras anticolinérgicas ou mirabegron",
+          "Esforço refratário: sling miduretral (TVT/TOT) em selecionadas"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Red flags",
+        "headers": [
+          "Sinal",
+          "Pensar em"
+        ],
+        "rows": [
+          [
+            "Hematúria",
+            "Tumor / litíase"
+          ],
+          [
+            "Neurológico",
+            "Bexiga neurogênica"
+          ],
+          [
+            "Fístula",
+            "Perda contínua pós-cirurgia/parto"
+          ],
+          [
+            "Prolapso avançado",
+            "Avaliação uroginecológica conjunta"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não opere esforço sem falha de conservador (salvo exceções). Anticolinérgicos em idosas: delirium e retenção — dose e CI importam."
+      }
+    ]
+  },
+  {
+    "id": "go-cancer-colo",
+    "area": "go",
+    "title": "Câncer do colo · rastreio e condutas",
+    "blurb": "Citologia, HPV, colposcopia e estadiamento básico.",
+    "readMinutes": 5,
+    "tags": [
+      "Ginecologia Oncológica",
+      "Prevenção"
+    ],
+    "lead": "Quase todo câncer cervical liga-se ao HPV. Rastreio com citologia/HPV detecta pré-malignos; vacina previne. Lesão invasiva muda para estadiamento e tratamento oncológico.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Historia natural HPV",
+      "subtitle": "Infeccao -> NIC -> invasao",
+      "caption": "Décadas de janela: rastreio intercepta NIC antes da invasão.",
+      "nodes": [
+        {
+          "label": "Infeccao HPV",
+          "sub": "maioria limpa"
+        },
+        {
+          "label": "Persistencia",
+          "sub": "alto risco"
+        },
+        {
+          "label": "NIC 2/3",
+          "sub": "tratar"
+        },
+        {
+          "label": "Invasao",
+          "sub": "estadiar"
+        },
+        {
+          "label": "Metastase",
+          "sub": "doenca avancada"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Rastreio (conceito MS)",
+        "body": "Citologia de 25–64 anos, após dois anuais normais → a cada 3 anos. Teste de HPV entra em protocolos atualizados — siga a banca/MS vigente."
+      },
+      {
+        "type": "bullets",
+        "title": "Condutas high-yield",
+        "items": [
+          "ASC-US/LSIL: repetir ou tipagem HPV conforme fluxo etário",
+          "HSIL/ASC-H/AGC: colposcopia; tratar NIC 2/3 (excisão)",
+          "Invasivo inicial: cirurgia (conização/histerectomia radical conforme estágio)",
+          "Localmente avançado: radio + quimio (cisplatina) clássica"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais de invasão",
+        "headers": [
+          "Achado",
+          "Nota"
+        ],
+        "rows": [
+          [
+            "Sangramento de contato",
+            "Pós-coito clássico"
+          ],
+          [
+            "Corrimento fétido",
+            "Tumor avançado"
+          ],
+          [
+            "Dor pélvica / linfedema",
+            "Doença avançada"
+          ],
+          [
+            "Citologia com células invasivas",
+            "Referência oncológica"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Gestante com citologia alterada: colposcopia é segura; evita-se excisão desnecessária no 1ºT sem invasão. Vacina HPV não trata infecção já estabelecida — previne."
+      }
+    ]
+  },
+  {
+    "id": "go-cancer-mama",
+    "area": "go",
+    "title": "Câncer de mama · rastreio e biópsia",
+    "blurb": "Mamografia, BIRADS, core biopsy e receptores.",
+    "readMinutes": 5,
+    "tags": [
+      "Mastologia",
+      "Ginecologia Oncológica"
+    ],
+    "lead": "Nódulo suspeito ou mamografia alterada exige diagnóstico histológico por core biopsy. Receptores (RE/RP/HER2) e estádio guiam cirurgia, sistêmico e radioterapia.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Nodulo / mamografia",
+      "subtitle": "Imagem -> biopsia -> estadiar",
+      "caption": "Não opere no escuro: histologia antes da conduta definitiva sempre que possível.",
+      "nodes": [
+        {
+          "label": "Mamografia/USG",
+          "sub": "BIRADS"
+        },
+        {
+          "label": "Core biopsy",
+          "sub": "histologia + IHC"
+        },
+        {
+          "label": "Estadio / Rx",
+          "sub": "cirurgia +/- sistemico"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Rastreio",
+        "body": "Mamografia bienal tipicamente 50–69 anos no SUS (MS); sociedades podem sugerir início aos 40–45. Alto risco (BRCA/familiar): protocolo específico + RNM."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "BIRADS 4–5: biópsia; 3: controle; 0: imagem adicional",
+          "Cirurgia conservadora + RT se elegível; mastectomia conforme extensão/desejo",
+          "Axila: biopsia de sentinela se clinicamente negativa",
+          "Adjuvância: hormônio se RE+; anti-HER2 se HER2+; QT conforme risco"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais de alarme clínicos",
+        "headers": [
+          "Achado",
+          "Conduta"
+        ],
+        "rows": [
+          [
+            "Nódulo duro fixo",
+            "Imagem + biópsia"
+          ],
+          [
+            "Retracão/pele em casca de laranja",
+            "Urgente mastologia"
+          ],
+          [
+            "Secreção sanguinolenta unilaterial",
+            "Investigar ducto/papiloma/Ca"
+          ],
+          [
+            "Linfonodo axilar",
+            "Estadiar; biópsia"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "PAAF negativa não exclui câncer — prefira core. Gestação: massa suspeita também se biopsia; não atrase por ‘esperar o parto’ sem avaliação."
+      }
+    ]
+  },
+  {
+    "id": "go-diabetes-gest",
+    "area": "go",
+    "title": "Diabetes gestacional · rastreio e metas",
+    "blurb": "TOTG, dieta, insulina e timing do parto.",
+    "readMinutes": 4,
+    "tags": [
+      "Obstetrícia",
+      "Endocrinologia"
+    ],
+    "lead": "DMG aumenta macrossomia, distocia e DM futuro. Rastreie no pré-natal, trate com terapia médica nutricional e inicie insulina se metas falharem.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Linha do DMG",
+      "subtitle": "Rastreio ao pos-parto",
+      "caption": "Do TOTG no 2º trimestre ao reteste puerperal — a banca ama o follow-up.",
+      "nodes": [
+        {
+          "label": "1o trim",
+          "sub": "glicemia jejum"
+        },
+        {
+          "label": "24-28 sem",
+          "sub": "TOTG"
+        },
+        {
+          "label": "Tratamento",
+          "sub": "dieta / insulina"
+        },
+        {
+          "label": "Parto",
+          "sub": "vigilar ombro"
+        },
+        {
+          "label": "Puerperio",
+          "sub": "TOTG 4-12 sem"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Diagnóstico (conceito)",
+        "body": "TOTG 75 g: pontos de corte em jejum/1 h/2 h conforme IADPSG/MS. Um valor alterado já diagnostica em muitos protocolos."
+      },
+      {
+        "type": "bullets",
+        "title": "Manejo",
+        "items": [
+          "Automonitorização; metas de jejum e pós-prandiais rigorosas",
+          "Insulina é padrão se dieta insuficiente; metformina em protocolos selecionados",
+          "USG para crescimento; atenção a polidrâmnio e macrossomia",
+          "RN: risco de hipoglicemia neonatal — aleitamento precoce"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Complicações",
+        "headers": [
+          "Momento",
+          "Risco"
+        ],
+        "rows": [
+          [
+            "Fetal/neonatal",
+            "Macrossomia, hipoglicemia, icterícia"
+          ],
+          [
+            "Parto",
+            "Distocia de ombro, laceração, cesárea"
+          ],
+          [
+            "Materno",
+            "HAS/pré-eclâmpsia, infecção"
+          ],
+          [
+            "Longo prazo",
+            "DM2 materno; obesidade na prole"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não ‘liberar’ sem reteste puerperal — muitas persistem com DM/intolerância. Hiperglicemia no 1º trimestre: pense DM prévio desconhecido, não só DMG."
+      }
+    ]
+  },
+  {
+    "id": "go-isoimunizacao",
+    "area": "go",
+    "title": "Isoimunização Rh · profilaxia com anti-D",
+    "blurb": "Tipagem, Coombs indireto, dose nas 28 semanas e pós-parto.",
+    "readMinutes": 4,
+    "tags": [
+      "Obstetrícia",
+      "Medicina Fetal"
+    ],
+    "lead": "Mulher Rh− não sensibilizada recebe imunoglobulina anti-D para prevenir aloimunização. Se já sensibilizada, o foco muda para monitorar anemia fetal.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Gestante Rh negativo",
+      "subtitle": "Coombs -> profilaxia -> RN",
+      "caption": "Coombs indireto negativo = elegível à profilaxia; positivo = acompanhar aloimunização.",
+      "nodes": [
+        {
+          "label": "Tipagem + Coombs",
+          "sub": "pai/RN se preciso"
+        },
+        {
+          "label": "Anti-D 28 sem",
+          "sub": "se nao sensibilizada"
+        },
+        {
+          "label": "Pos-parto 72h",
+          "sub": "se RN Rh+"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Quando dar anti-D também",
+        "body": "Abortamento, gestação ectópica, mola, procedimentos invasivos, sangramento, versão cefálica externa e trauma abdominal — além do esquema de 28 semanas e pós-parto."
+      },
+      {
+        "type": "bullets",
+        "title": "Aloimunização estabelecida",
+        "items": [
+          "Títulos/anticorpos e Doppler da ACM para anemia fetal",
+          "Transfusão intrauterina em anemia grave",
+          "Parto em centro com neonatologia; fototerapia/exsanguíneo no RN",
+          "Anti-D não reverte sensibilização já instalada"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Cenários de profilaxia",
+        "headers": [
+          "Situação",
+          "Anti-D?"
+        ],
+        "rows": [
+          [
+            "Rh−, Coombs−, 28 sem",
+            "Sim"
+          ],
+          [
+            "Pós-parto RN Rh+",
+            "Sim (≤72 h)"
+          ],
+          [
+            "Rh−, Coombs+ (sensibilizada)",
+            "Não (não previne)"
+          ],
+          [
+            "Mãe Rh+",
+            "Não"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Esquecer a dose pós-parto quando o RN é Rh+ é erro clássico. Se tipagem do RN atrasar, não perca a janela de 72 h — profilaxe se indicado."
+      }
+    ]
+  },
+  {
+    "id": "go-tocolise",
+    "area": "go",
+    "title": "Tocolise · trabalho de parto prematuro",
+    "blurb": "Critérios, agentes, corticosteroide e sulfato de magnésio.",
+    "readMinutes": 5,
+    "tags": [
+      "Obstetrícia",
+      "Prematuridade"
+    ],
+    "lead": "Tocolise ganha tempo para corticoide e transferência — não prolonga gestação indefinidamente. Confirme TPP verdadeiro e exclua contraindicações (infecção, DPP, sofrimento).",
+    "diagram": {
+      "type": "flow3",
+      "title": "TPP com tocolise",
+      "subtitle": "Diagnosticar -> corticoide -> tocolitico",
+      "caption": "Objetivo: 48 h de janela + neuroproteção com MgSO₄ se <32 sem.",
+      "nodes": [
+        {
+          "label": "TPP verdadeiro",
+          "sub": "dinamica + colo"
+        },
+        {
+          "label": "Corticoide",
+          "sub": "betametasona"
+        },
+        {
+          "label": "Tocolise +/- Mg",
+          "sub": "48h / <32 sem"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Agentes",
+        "body": "Nifedipina e atosibana são opções frequentes; indometacina em janelas precoces (<32 sem) com cuidado fetal. β-agonistas caíram por efeitos maternos."
+      },
+      {
+        "type": "bullets",
+        "title": "Pacote de prematuridade",
+        "items": [
+          "Corticosteroide antenatal para maturidade pulmonar",
+          "MgSO₄ para neuroproteção se parto iminente <32 semanas",
+          "ATB se RPM/GBS conforme protocolo — não ‘profilaxia cega’ em TPP sem RPM",
+          "Transferir para centro com UTI neonatal"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Contraindicações à tocolise",
+        "headers": [
+          "Situação",
+          "Motivo"
+        ],
+        "rows": [
+          [
+            "Sofrimento fetal",
+            "Parto urgente"
+          ],
+          [
+            "DPP / sangramento grave",
+            "Risco materno"
+          ],
+          [
+            "Corioamnionite",
+            "Esvaziar útero"
+          ],
+          [
+            "Óbito fetal / malformação letal",
+            "Sem benefício"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não some nifedipina com MgSO₄ em doses que gerem bloqueio neuromuscular/hipotensão grave sem monitoramento. Tocolise após 34–34+6 sem raramente se justifica."
+      }
+    ]
+  },
+  {
+    "id": "prev-imc",
+    "area": "preventiva",
+    "title": "IMC e estado nutricional · classificação",
+    "blurb": "Faixas OMS, circunferência abdominal e abordagem breve.",
+    "readMinutes": 3,
+    "tags": [
+      "Nutrição",
+      "APS"
+    ],
+    "lead": "IMC classifica baixo peso, eutrofia, sobrepeso e obesidade. Combine com circunferência abdominal para risco CV e foque em metas realistas na APS.",
+    "diagram": {
+      "type": "formula",
+      "title": "IMC",
+      "subtitle": "peso / altura^2",
+      "caption": "Fórmula clássica; interprete por faixas OMS no adulto.",
+      "nodes": [
+        {
+          "formula": "IMC = peso (kg) / altura (m)^2",
+          "note": "Adulto: <18,5 baixo; 18,5-24,9 eutrofia; 25-29,9 sobrepeso; >=30 obesidade"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Circunferência abdominal",
+        "body": "Risco aumentado: ≥88 cm (♀) e ≥102 cm (♂) em pontos clássicos de prova — marque risco cardiometabólico mesmo com IMC limítrofe."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta na APS",
+        "items": [
+          "Avaliar hábitos, depressão, medicamentos e endocrinopatias selecionadas",
+          "Meta: perda de 5–10% já reduz comorbidades",
+          "Atividade física + dieta; farmacoterapia/cirurgia em critérios",
+          "Crianças: use curvas/z-score — não IMC adulto cru"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Obesidade — classes (adulto)",
+        "headers": [
+          "Classe",
+          "IMC"
+        ],
+        "rows": [
+          [
+            "I",
+            "30–34,9"
+          ],
+          [
+            "II",
+            "35–39,9"
+          ],
+          [
+            "III",
+            "≥40"
+          ],
+          [
+            "Sobrepeso",
+            "25–29,9"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "IMC elevado em atleta pode ser massa magra — use contexto e CA. Idoso com perda ponderal involuntária: investigar neoplasia/depressão, não celebrar ‘emagrecimento’."
+      }
+    ]
+  },
+  {
+    "id": "prev-tabagismo",
+    "area": "preventiva",
+    "title": "Tabagismo · abordagem e cessação",
+    "blurb": "5As, dependência, TSN e bupropiona/vareniclina.",
+    "readMinutes": 4,
+    "tags": [
+      "APS",
+      "Saúde do Adulto"
+    ],
+    "lead": "Pergunte, aconselhe e ofereça tratamento a todo tabagista. Combinação de aconselhamento + farmacoterapia dobra chances de cessação.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Abordagem 5As",
+      "subtitle": "Ask-Advise-Assess-Assist-Arrange",
+      "caption": "Fluxo breve da consulta: identificar → aconselhar → avaliar prontidão → ajudar → agendar retorno.",
+      "nodes": [
+        {
+          "label": "Ask / Advise",
+          "sub": "perguntar e aconselhar"
+        },
+        {
+          "label": "Assess",
+          "sub": "prontidao"
+        },
+        {
+          "label": "Assist / Arrange",
+          "sub": "farmaco + retorno"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Farmacoterapia",
+        "body": "TSN (adesivo/goma), bupropiona e vareniclina são pilares. Escolha conforme CI (convulsão × bupropiona; humor × vareniclina — individualize)."
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos de prova",
+        "items": [
+          "Carga tabágica: maços-ano = (maços/dia) × anos",
+          "Benefício CV começa cedo após parar; risco de Ca cai com o tempo",
+          "Gestante: aconselhamento intensivo; TSN só se benefício > risco",
+          "Exposição passiva também adoece — ambiente livre de fumo"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "5As (português)",
+        "headers": [
+          "A",
+          "Ação"
+        ],
+        "rows": [
+          [
+            "Avaliar/Ask",
+            "Identificar uso"
+          ],
+          [
+            "Aconselhar",
+            "Pare de forma clara"
+          ],
+          [
+            "Apreciar prontidão",
+            "Estágio de mudança"
+          ],
+          [
+            "Assistir / Agendar",
+            "Plano + follow-up"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não diga só ‘pare de fumar’ sem oferecer método. Narguilé/cigarro eletrônico também são exposição tóxica — não são ‘estratégia segura’ de cessação na prova."
+      }
+    ]
+  },
+  {
+    "id": "prev-alcool",
+    "area": "preventiva",
+    "title": "Álcool · rastreio e intervenção breve",
+    "blurb": "AUDIT-C, padrões de uso, abstinência e tiamina.",
+    "readMinutes": 4,
+    "tags": [
+      "APS",
+      "Saúde Mental"
+    ],
+    "lead": "Rastreie consumo com perguntas padronizadas e faça intervenção breve no uso de risco. Dependência exige manejo de abstinência e rede de atenção psicossocial.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Uso de alcool",
+      "subtitle": "Baixo risco / risco / dependencia",
+      "caption": "Triagem define: orientação, intervenção breve ou tratamento especializado.",
+      "nodes": [
+        {
+          "title": "Baixo risco",
+          "lines": [
+            "Consumo esporadico",
+            "Orientar limites",
+            "Reforcar prevencao"
+          ],
+          "foot": "Educacao"
+        },
+        {
+          "title": "Uso de risco",
+          "lines": [
+            "AUDIT elevado",
+            "Intervencao breve",
+            "Metas de reducao"
+          ],
+          "foot": "APS"
+        },
+        {
+          "title": "Dependencia",
+          "lines": [
+            "Perda de controle",
+            "CAPS / CE",
+            "Abstinencia segura"
+          ],
+          "foot": "Especializado"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Abstinência",
+        "body": "Tremores, taquicardia, HA, convulsão e delirium tremens. Benzodiazepínico + tiamina (antes da glicose se risco de Wernicke)."
+      },
+      {
+        "type": "bullets",
+        "title": "High-yield",
+        "items": [
+          "Gestação: abstinência total — SAF é prevenível",
+          "Intervenção breve: feedback, responsabilidade, menu de opções, empatia",
+          "CAGE/AUDIT: ferramentas clássicas de rastreio",
+          "Comorbidades: trauma, depressão, pancreatite, cirrose"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Sinais de gravidade",
+        "headers": [
+          "Achado",
+          "Conduta"
+        ],
+        "rows": [
+          [
+            "Convulsão / DT",
+            "Internação / BDZ"
+          ],
+          [
+            "Wernicke",
+            "Tiamina EV"
+          ],
+          [
+            "Ideação suicida",
+            "Risco + rede"
+          ],
+          [
+            "Gestante usuária",
+            "Acolhimento sem moralizar"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Glicose sem tiamina em desnutrido etilista pode precipitar Wernicke. Não subestime abstinência em ‘cirurgia eletiva’ — história alcoólica faz parte do pré-op."
+      }
+    ]
+  },
+  {
+    "id": "prev-violencia",
+    "area": "preventiva",
+    "title": "Violência · notificação e acolhimento",
+    "blurb": "Violência doméstica, sexual e contra criança/idoso na APS.",
+    "readMinutes": 4,
+    "tags": [
+      "APS",
+      "Ética",
+      "Notificação"
+    ],
+    "lead": "Violência é problema de saúde. Acolha em privacidade, garanta segurança, documente e notifique conforme legislação — sem culpar a vítima.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Atencao a violencia",
+      "subtitle": "Acolher -> proteger -> notificar",
+      "caption": "Fluxo ético-assistencial: vínculo e proteção vêm antes da burocracia, mas a notificação é dever.",
+      "nodes": [
+        {
+          "label": "Acolher",
+          "sub": "privacidade / escuta"
+        },
+        {
+          "label": "Proteger",
+          "sub": "risco iminente?"
+        },
+        {
+          "label": "Notificar / rede",
+          "sub": "ficha + referencia"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Notificação",
+        "body": "Violência doméstica/sexual e violência contra criança/adolescente/idoso são de notificação compulsória. Use ficha do SINAN/fluxos locais."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta",
+        "items": [
+          "Entreviste a pessoa sozinha (sem o possível agressor na sala)",
+          "Cuidados clínicos: IST/contracepção de emergência na violência sexual",
+          "Criança: Conselho Tutelar / autoridade policial conforme risco",
+          "Plano de segurança e referência a serviços especializados"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Pistas clínicas",
+        "headers": [
+          "Grupo",
+          "Sinais"
+        ],
+        "rows": [
+          [
+            "Mulher",
+            "Lesões em áreas cobertas, atrasos, parceiro controlador"
+          ],
+          [
+            "Criança",
+            "Lesões em estágios, relato discordante, medo"
+          ],
+          [
+            "Idoso",
+            "Desnutrição, hematomas, abandono"
+          ],
+          [
+            "Sexual",
+            "Trauma genital, IST, gravidez"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não condicione atendimento à B.O. Nem devolva criança ao agressor se risco persistir. Segredo profissional cede diante de dever legal de proteção/notificação."
+      }
+    ]
+  },
+  {
+    "id": "prev-etica",
+    "area": "preventiva",
+    "title": "Ética médica · princípios e CFM",
+    "blurb": "Autonomia, beneficência, não maleficência, justiça e sigilo.",
+    "readMinutes": 4,
+    "tags": [
+      "Ética",
+      "Medicina Preventiva"
+    ],
+    "lead": "Quatro princípios clássicos orientam conflitos. Sigilo, consentimento e limites da relação profissional-paciente caem sempre em R1.",
+    "diagram": {
+      "type": "triage3",
+      "title": "Principios bioeticos",
+      "subtitle": "Autonomia / beneficencia / justica",
+      "caption": "Não maleficência completa o quarteto — use-os para justificar a alternativa menos lesiva.",
+      "nodes": [
+        {
+          "title": "Autonomia",
+          "lines": [
+            "Consentimento",
+            "Recusa informada",
+            "Capacidade"
+          ],
+          "foot": "Decisao do paciente"
+        },
+        {
+          "title": "Beneficencia / Nao malef",
+          "lines": [
+            "Beneficiar",
+            "Evitar dano",
+            "Proporcionalidade"
+          ],
+          "foot": "Melhor interesse"
+        },
+        {
+          "title": "Justica",
+          "lines": [
+            "Equidade",
+            "Recursos finitos",
+            "Nao discriminar"
+          ],
+          "foot": "SUS / acesso"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Sigilo",
+        "body": "Dever geral de sigilo. Quebras justificadas: risco a terceiros, dever legal (notificação), menor em situação de violência, doenças de notificação — sempre na medida necessária."
+      },
+      {
+        "type": "bullets",
+        "title": "Temas frequentes",
+        "items": [
+          "Recusa terapêutica do paciente capaz deve ser respeitada após informação clara",
+          "Distanásia × ortotanásia × eutanásia — conceitos distintos (eutanásia ilícita no Brasil)",
+          "Publicidade médica e conflito de interesse regulados pelo CFM",
+          "Erro médico: comunicar com honestidade; prontuário completo"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Conflitos clássicos",
+        "headers": [
+          "Situação",
+          "Princípio em destaque"
+        ],
+        "rows": [
+          [
+            "Testemunha de Jeová e sangue",
+            "Autonomia × beneficência"
+          ],
+          [
+            "Escassez de leitos",
+            "Justiça"
+          ],
+          [
+            "Tratamento fútil",
+            "Não maleficência"
+          ],
+          [
+            "Quebra de sigilo por risco",
+            "Beneficência a terceiros"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Menor maduro/adolescente: sexualidade e sigilo têm nuances — priorize acolhimento e proteção; violência sexual não se ‘guarda em segredo absoluto’."
+      }
+    ]
+  },
+  {
+    "id": "prev-bioetica-consent",
+    "area": "preventiva",
+    "title": "Consentimento informado · capacidade e TCLE",
+    "blurb": "Elementos do consentimento, recusa e pesquisa clínica.",
+    "readMinutes": 4,
+    "tags": [
+      "Bioética",
+      "Ética"
+    ],
+    "lead": "Consentimento válido exige informação adequada, capacidade, voluntariedade e compreensão. Documento ajuda, mas não substitui o processo dialógico.",
+    "diagram": {
+      "type": "formula",
+      "title": "Consentimento valido",
+      "subtitle": "Informacao + capacidade + voluntariedade",
+      "caption": "Sem um dos pilares, o consentimento é frágil — mesmo com assinatura.",
+      "nodes": [
+        {
+          "formula": "Info clara + capacidade + ausencia de coacao",
+          "note": "Inclui riscos, beneficios, alternativas e direito de recusar"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Emergência",
+        "body": "Risco iminente de morte/lesão grave sem tempo para consentimento: trate pelo estado de necessidade / consentimento presumido — documente."
+      },
+      {
+        "type": "bullets",
+        "title": "Aplicações",
+        "items": [
+          "Pesquisa: TCLE + CEP (Resolução CNS); vulneráveis com salvaguardas",
+          "Recusa: registre o que foi informado e a decisão",
+          "Representante legal: incapazes; busque melhor interesse e voz do paciente",
+          "Procedimentos estéticos/ eletivos: informação ainda mais explícita de riscos"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Vícios do consentimento",
+        "headers": [
+          "Vício",
+          "Exemplo"
+        ],
+        "rows": [
+          [
+            "Coação",
+            "Ameaça de abandono de cuidado"
+          ],
+          [
+            "Informação insuficiente",
+            "Omitir risco frequente grave"
+          ],
+          [
+            "Incapacidade",
+            "Delirium sem avaliação"
+          ],
+          [
+            "Fraude",
+            "Promessa irrealista de cura"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Assinatura no TCLE sem explicação ≠ consentimento. Em pesquisa, médico assistente não pode pressionar paciente dependente do cuidado."
+      }
+    ]
+  },
+  {
+    "id": "prev-atraso-diag",
+    "area": "preventiva",
+    "title": "Atraso diagnóstico · vieses e segurança",
+    "blurb": "Vieses cognitivos, handoff e barreiras de acesso no SUS.",
+    "readMinutes": 4,
+    "tags": [
+      "Qualidade",
+      "APS",
+      "Segurança do Paciente"
+    ],
+    "lead": "Atraso diagnóstico mistura vieses do profissional, falhas de sistema e barreiras de acesso. Segurança do paciente exige checklists, comunicação e follow-up de exames.",
+    "diagram": {
+      "type": "timeline",
+      "title": "Cadeia do atraso",
+      "subtitle": "Sintoma ao tratamento",
+      "caption": "Cada elo pode falhar: percepção do paciente, acesso, hipótese, exame e retorno do resultado.",
+      "nodes": [
+        {
+          "label": "Sintoma",
+          "sub": "atraso do paciente"
+        },
+        {
+          "label": "Acesso",
+          "sub": "fila / territorio"
+        },
+        {
+          "label": "Hipotese",
+          "sub": "vies cognitivo"
+        },
+        {
+          "label": "Exame",
+          "sub": "perda de resultado"
+        },
+        {
+          "label": "Tratamento",
+          "sub": "atraso terapeutico"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Vieses clássicos",
+        "body": "Ancoragem, fechamento prematuro, fadiga de alerta e viés de disponibilidade. Combata com diagnóstico diferencial explícito e ‘e se eu estiver errado?’."
+      },
+      {
+        "type": "bullets",
+        "title": "Práticas que reduzem atraso",
+        "items": [
+          "Sistema de alerta para resultados críticos",
+          "Handoff estruturado (SBAR) na transferência de cuidado",
+          "Rastreios organizados com busca ativa de faltosos",
+          "Reavaliação quando a evolução não fecha com a hipótese"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Exemplos de prova",
+        "headers": [
+          "Cenário",
+          "Falha típica"
+        ],
+        "rows": [
+          [
+            "Ca colo sem Papanicolaou",
+            "Falha de rastreio/acesso"
+          ],
+          [
+            "TEP rotulado como ansiedade",
+            "Fechamento prematuro"
+          ],
+          [
+            "Rx alterado sem aviso",
+            "Falha de comunicação"
+          ],
+          [
+            "IAM em mulher/idoso",
+            "Viés de representação"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Culpar só o paciente pelo atraso ignora determinantes e falhas do sistema. Resultado crítico sem comunicação é erro de processo — prevenível."
+      }
+    ]
+  },
+  {
+    "id": "prev-pnct",
+    "area": "preventiva",
+    "title": "PNCT · controle do tabagismo no SUS",
+    "blurb": "Rede de cessação, tratamento farmacológico e legislação.",
+    "readMinutes": 3,
+    "tags": [
+      "Políticas de Saúde",
+      "Tabagismo"
+    ],
+    "lead": "O Programa Nacional de Controle do Tabagismo articula prevenção, ambientes livres de fumo e tratamento da dependência na rede. Médico da APS é porta de entrada.",
+    "diagram": {
+      "type": "flow3",
+      "title": "PNCT na pratica",
+      "subtitle": "Identificar -> tratar -> seguir",
+      "caption": "Integre abordagem breve, materiais de apoio e farmacoterapia disponível no SUS.",
+      "nodes": [
+        {
+          "label": "APS identifica",
+          "sub": "todo contato"
+        },
+        {
+          "label": "Tratamento",
+          "sub": "grupo / farmaco"
+        },
+        {
+          "label": "Seguimento",
+          "sub": "recaida comum"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Pilares de política",
+        "body": "Preços/impostos, proibição de publicidade, advertências, ambientes fechados livres de fumo e apoio à cessação (MPOWER/OMS como referência conceitual)."
+      },
+      {
+        "type": "bullets",
+        "title": "Papel do médico",
+        "items": [
+          "Registrar tabagismo na história e oferecer tratamento",
+          "Conhecer fluxos locais de grupos de cessação",
+          "Prescrever TSN/bupropiona conforme disponibilidade e CI",
+          "Abordar recaída como parte do processo, sem estigma"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Níveis de ação",
+        "headers": [
+          "Nível",
+          "Exemplo"
+        ],
+        "rows": [
+          [
+            "Individual",
+            "5As na consulta"
+          ],
+          [
+            "Serviço",
+            "Grupo de cessação"
+          ],
+          [
+            "Intersetorial",
+            "Lei antifumo / escolas"
+          ],
+          [
+            "Avaliação",
+            "Prevalência / metas"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "PNCT não é só ‘campanha de cartaz’: inclui tratamento clínico da dependência. Recaída ≠ falha moral — reabordar."
+      }
+    ]
+  },
+  {
+    "id": "prev-hanseniase",
+    "area": "preventiva",
+    "title": "Hanseníase · diagnóstico, PQT e contatos",
+    "blurb": "Manchas com alteração de sensibilidade, classificação e rifampicina.",
+    "readMinutes": 5,
+    "tags": [
+      "Dermatologia Sanitária",
+      "Infectologia"
+    ],
+    "lead": "Hanseníase diagnostica-se clinicamente: lesão cutânea com alteração de sensibilidade e/ou nervo espessado. PQT cura; examinar contatos interrompe transmissão.",
+    "diagram": {
+      "type": "branch2",
+      "title": "Hanseniase",
+      "subtitle": "Paucibacilar vs multibacilar",
+      "caption": "Número de lesões/carga bacilar define esquema de PQT e duração.",
+      "nodes": [
+        {
+          "title": "Paucibacilar",
+          "lines": [
+            "Ate 5 lesoes",
+            "PQT-PB",
+            "Rifampicina + dapsona"
+          ]
+        },
+        {
+          "title": "Multibacilar",
+          "lines": [
+            ">5 lesoes / baciloscopia+",
+            "PQT-MB",
+            "R + D + clofazimina"
+          ]
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Achado-chave",
+        "body": "Hipostesia em placa hipocrômica/eritematosa é o clichê. Neural pura existe — avalie nervos periféricos (ulnar, tibial posterior etc.)."
+      },
+      {
+        "type": "bullets",
+        "title": "Conduta de vigilância",
+        "items": [
+          "Notificação compulsória; tratamento gratuito no SUS",
+          "Exame de contatos domiciliários; BCG conforme protocolo de contatos",
+          "Reações tipo 1 e 2: corticoide / talidomida (eritema nodoso) com regras estritas",
+          "Prevenção de incapacidade: inspeção de pés, orifícios e fisioterapia"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Diferenciais",
+        "headers": [
+          "Condição",
+          "Pista"
+        ],
+        "rows": [
+          [
+            "Pitiríase versicolor",
+            "Sensibilidade normal"
+          ],
+          [
+            "Tinha do corpo",
+            "Bordas ativas; KOH"
+          ],
+          [
+            "Vitiligo",
+            "Acromia sem anestesia"
+          ],
+          [
+            "Neuropatia diabética",
+            "Sem lesões típicas de hanseníase"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não isole o paciente sob estigma — após início da PQT a transmissão cai drasticamente. Gestante: ajustar esquema (evitar talidomida absolutamente)."
+      }
+    ]
+  },
+  {
+    "id": "prev-tb",
+    "area": "preventiva",
+    "title": "Tuberculose · diagnóstico, TRM e PQT",
+    "blurb": "Sintomático respiratório, teste rápido molecular, esquema RIPE e TLT.",
+    "readMinutes": 5,
+    "tags": [
+      "Infectologia",
+      "Vigilância",
+      "APS"
+    ],
+    "lead": "TB pulmonar: tosse ≥2–3 semanas pede investigação. TRM-TB agiliza diagnóstico e resistência à rifampicina; tratamento básico é RIPE supervisionado.",
+    "diagram": {
+      "type": "flow3",
+      "title": "Sintomatico respiratorio",
+      "subtitle": "Rastrear -> TRM/escarro -> tratar",
+      "caption": "Busca ativa na APS + confirmação laboratorial + início precoce do esquema.",
+      "nodes": [
+        {
+          "label": "Tosse >=2-3 sem",
+          "sub": "sintomatico"
+        },
+        {
+          "label": "TRM / baciloscopia",
+          "sub": "cultura se preciso"
+        },
+        {
+          "label": "RIPE + TDO",
+          "sub": "notificar"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "callout",
+        "tone": "remember",
+        "title": "Esquema básico (conceito)",
+        "body": "2 meses RHZE + 4 meses RH no adulto sensível (doses/ajuste pediátrico e situações especiais conforme Manual MS). TDO melhora adesão."
+      },
+      {
+        "type": "bullets",
+        "title": "Pontos high-yield",
+        "items": [
+          "Notificação compulsória; examinar contatos; TLT (IGRA/PPD) em elegíveis",
+          "HIV: testar todo caso de TB; ajustar timing de TARV",
+          "Extrapulmimar: pensar em miliare, meníngea, pleural — cultura/histologia",
+          "Falha/resistência: TRM com rifampicina resistente → referência"
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Ferramentas diagnósticas",
+        "headers": [
+          "Teste",
+          "Papel"
+        ],
+        "rows": [
+          [
+            "TRM-TB",
+            "Diagnóstico rápido ± rif-R"
+          ],
+          [
+            "Baciloscopia",
+            "Acompanhamento / disponibilidade"
+          ],
+          [
+            "Cultura + TS",
+            "Padrão e resistência"
+          ],
+          [
+            "Rx tórax",
+            "Apoio; não confirma sozinho"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "alert",
+        "title": "Armadilha de prova",
+        "body": "Não suspenda RHZE por ‘hepatite leve’ sem critérios — mas hepatotoxicidade grave exige conduta específica. Contato de TB bacilífera: avaliar TLT; BCG não trata infecção latente."
+      }
+    ]
+  }
+]
