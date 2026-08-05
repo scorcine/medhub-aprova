@@ -164,6 +164,85 @@ function aprovaEnsurePlanStartFromProfile (profile, now = Date.now()) {
   } catch { /* ignore */ }
 }
 
+const APROVA_IDLE_NUDGE_DISMISS_KEY = "medhub-aprova-idle-nudge-dismiss-v1";
+const APROVA_IDLE_NUDGE_DAYS = 2;
+
+function aprovaDayStudyCount (iso) {
+  let n = 0;
+  if (typeof aprovaQActivitySumRange === "function") {
+    n += Number(aprovaQActivitySumRange(iso, iso)) || 0;
+  }
+  if (typeof aprovaActivitySumRange === "function") {
+    n += Number(aprovaActivitySumRange(iso, iso)) || 0;
+  }
+  return n;
+}
+
+/**
+ * Dias seguidos sem questões nem flashcards.
+ * Conta só dias já fechados (a partir de ontem); se estudou hoje, retorna 0.
+ */
+function aprovaStudyIdleDays (now = Date.now()) {
+  const today = aprovaIsoOffset(0, now);
+  if (aprovaDayStudyCount(today) > 0) return 0;
+  const planStart = aprovaPlanStartIso(now);
+  let idle = 0;
+  for (let i = 1; i <= 60; i++) {
+    const iso = aprovaIsoOffset(-i, now);
+    if (planStart && iso < planStart) break;
+    if (aprovaDayStudyCount(iso) > 0) break;
+    idle += 1;
+  }
+  return idle;
+}
+
+function aprovaIdleNudgeDismissedToday (now = Date.now()) {
+  try {
+    return localStorage.getItem(APROVA_IDLE_NUDGE_DISMISS_KEY) === aprovaIsoOffset(0, now);
+  } catch {
+    return false;
+  }
+}
+
+function aprovaIdleNudgeDismiss (now = Date.now()) {
+  try {
+    localStorage.setItem(APROVA_IDLE_NUDGE_DISMISS_KEY, aprovaIsoOffset(0, now));
+  } catch { /* ignore */ }
+}
+
+/**
+ * Aviso ao ficar 2+ dias sem estudar.
+ * Retorna { show, idleDays, title, body }.
+ */
+function aprovaIdleNudgeState (now = Date.now()) {
+  const idleDays = aprovaStudyIdleDays(now);
+  const empty = { show: false, idleDays, title: "", body: "" };
+  if (idleDays < APROVA_IDLE_NUDGE_DAYS) return empty;
+  try {
+    const p = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+    if (typeof aprovaProfileIsComplete === "function" && !aprovaProfileIsComplete(p)) {
+      return empty;
+    }
+  } catch { /* ignore */ }
+  if (aprovaIdleNudgeDismissedToday(now)) {
+    return { show: false, idleDays, title: "", body: "", dismissed: true };
+  }
+
+  let title;
+  let body;
+  if (idleDays === 2) {
+    title = "2 dias sem estudar";
+    body = "Um bloco curto hoje já recupera o ritmo. A meta foi ajustada aos poucos até a prova — sem precisar fazer tudo de uma vez.";
+  } else if (idleDays < 7) {
+    title = idleDays + " dias sem estudar";
+    body = "Vale retomar agora. A meta do dia já considera o atraso espalhado até a prova.";
+  } else {
+    title = "Há " + idleDays + " dias sem treinar";
+    body = "Volte com o bloco de hoje. O importante é retomar a rotina — a meta sobe com o ritmo, sem somar tudo neste dia.";
+  }
+  return { show: true, idleDays, title, body };
+}
+
 function aprovaInclusiveDayCount (fromIso, toIso) {
   const a = new Date(String(fromIso) + "T12:00:00");
   const b = new Date(String(toIso) + "T12:00:00");

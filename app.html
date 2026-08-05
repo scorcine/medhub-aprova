@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="css/aprova-qui.css?v=20260803mat9">
+  <link rel="stylesheet" href="css/aprova-qui.css?v=20260804idle1">
 </head>
 <body class="app-body">
   <div class="page-bg page-bg--app" aria-hidden="true"></div>
@@ -233,6 +233,15 @@
             </button>
           </div>
 
+          <div id="dash-idle-banner" class="aprova-banner aprova-banner--idle" hidden role="status">
+            <strong id="dash-idle-banner-title">2 dias sem estudar</strong>
+            <p id="dash-idle-banner-text">Um bloco curto hoje já recupera o ritmo.</p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" data-goto="metas" id="dash-idle-banner-btn">Retomar metas</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="dash-idle-banner-dismiss">Agora não</button>
+            </div>
+          </div>
+
           <div id="dash-profile-banner" class="aprova-banner">
             <strong id="dash-profile-banner-title">Personalize seu estudo</strong>
             <p id="dash-profile-banner-text">Para uma experiência personalizada, configure seu perfil com as provas que você pretende prestar (até 3, por prioridade) e a data — ou “Não sei”. As metas diárias e por tema ficam em Minhas metas.</p>
@@ -301,6 +310,14 @@
         </section>
 
         <section id="panel-hoje" class="panel" aria-labelledby="hoje-title" hidden>
+          <div id="hoje-idle-banner" class="aprova-banner aprova-banner--idle" hidden role="status">
+            <strong id="hoje-idle-banner-title">2 dias sem estudar</strong>
+            <p id="hoje-idle-banner-text">Um bloco curto hoje já recupera o ritmo.</p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" data-hoje-pick="metas" id="hoje-idle-banner-btn">Abrir metas do dia</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="hoje-idle-banner-dismiss">Agora não</button>
+            </div>
+          </div>
           <div id="hoje-hub" class="hoje-hub">
             <h2 id="hoje-title" class="sr-only">Hoje</h2>
             <p class="hoje-hub-question" id="hoje-hub-question">O que iremos estudar hoje?</p>
@@ -1012,6 +1029,15 @@
             </div>
           </div>
 
+          <div id="metas-idle-banner" class="aprova-banner aprova-banner--idle" hidden role="status">
+            <strong id="metas-idle-banner-title">2 dias sem estudar</strong>
+            <p id="metas-idle-banner-text">Um bloco curto hoje já recupera o ritmo.</p>
+            <div class="actions-row">
+              <button type="button" class="btn btn-primary" id="metas-idle-banner-btn">Responder bloco de hoje</button>
+              <button type="button" class="btn btn-ghost btn-compact" id="metas-idle-banner-dismiss">Agora não</button>
+            </div>
+          </div>
+
           <div id="dash-seu-plano" class="dash-seu-plano" hidden>
             <div class="dash-seu-plano-head">
               <strong>Até a prova</strong>
@@ -1372,14 +1398,14 @@
   <script src="js/plan.js?v=20260719h"></script>
   <script src="js/schedule.js?v=20260721reset1"></script>
   <script src="js/exam-stats.js?v=20260721rev1"></script>
-  <script src="js/tasks.js?v=20260804pace1"></script>
+  <script src="js/tasks.js?v=20260804idle1"></script>
   <script src="js/flashcards.js?v=20260724upd16"></script>
   <script src="js/questions-qui.js?v=20260724pedupd1"></script>
   <script src="js/provas-integra.js?v=20260722cirstage6"></script>
   <script src="js/revisao.js?v=20260718rr"></script>
   <script src="js/welcome-mascot.js?v=20260721mascot26"></script>
   <script src="js/material.js?v=20260803mat9"></script>
-  <script src="js/app-qui.js?v=20260804pace1"></script>
+  <script src="js/app-qui.js?v=20260804idle1"></script>
   <script src="js/contact.js?v=1"></script>
 </body>
 </html>

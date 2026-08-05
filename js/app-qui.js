@@ -3681,6 +3681,7 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
   const reviewAlertActions = document.getElementById("metas-review-alert-actions");
 
   if (program) {
+    aprovaRenderIdleNudge();
     if (typeof aprovaRenderStudyModePicker === "function") {
       aprovaRenderStudyModePicker(program.studyMode);
     }
@@ -4772,6 +4773,56 @@ function aprovaLoadNovidades () {
   });
 }
 
+function aprovaBindIdleNudgeOnce () {
+  if (aprovaBindIdleNudgeOnce._done) return;
+  aprovaBindIdleNudgeOnce._done = true;
+  const dismiss = () => {
+    if (typeof aprovaIdleNudgeDismiss === "function") aprovaIdleNudgeDismiss();
+    aprovaRenderIdleNudge();
+  };
+  document.getElementById("dash-idle-banner-dismiss")?.addEventListener("click", dismiss);
+  document.getElementById("hoje-idle-banner-dismiss")?.addEventListener("click", dismiss);
+  document.getElementById("metas-idle-banner-dismiss")?.addEventListener("click", dismiss);
+  document.getElementById("metas-idle-banner-btn")?.addEventListener("click", () => {
+    if (typeof aprovaIdleNudgeDismiss === "function") aprovaIdleNudgeDismiss();
+    aprovaRenderIdleNudge();
+    const start = document.getElementById("metas-q-start-day");
+    if (start) start.click();
+    else if (typeof aprovaGoTo === "function") aprovaGoTo("questoes");
+  });
+}
+
+function aprovaFillIdleBanner (prefix, state) {
+  const root = document.getElementById(prefix + "-idle-banner");
+  if (!root) return;
+  if (!state || !state.show) {
+    root.hidden = true;
+    return;
+  }
+  root.hidden = false;
+  const title = document.getElementById(prefix + "-idle-banner-title");
+  const text = document.getElementById(prefix + "-idle-banner-text");
+  if (title) title.textContent = state.title;
+  if (text) text.textContent = state.body;
+}
+
+function aprovaRenderIdleNudge () {
+  aprovaBindIdleNudgeOnce();
+  const state = typeof aprovaIdleNudgeState === "function"
+    ? aprovaIdleNudgeState()
+    : { show: false };
+  aprovaFillIdleBanner("dash", state);
+  aprovaFillIdleBanner("hoje", state);
+  aprovaFillIdleBanner("metas", state);
+
+  const hubQ = document.getElementById("hoje-hub-question");
+  if (hubQ) {
+    hubQ.textContent = state.show
+      ? "Que tal retomar o estudo hoje?"
+      : "O que iremos estudar hoje?";
+  }
+}
+
 function aprovaRenderDashboard () {
   const session = typeof aprovaLoadAuth === "function" ? aprovaLoadAuth() : null;
   const hello = document.getElementById("dash-hello");
@@ -4781,6 +4832,7 @@ function aprovaRenderDashboard () {
     hello.textContent = first;
   }
   aprovaLoadNovidades();
+  aprovaRenderIdleNudge();
 
   const profile = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
   const summary = typeof aprovaProfileSummary === "function"
@@ -5355,6 +5407,7 @@ async function aprovaStartHojeRevisaoQuestoes (tema, specialty) {
 }
 
 function aprovaRenderToday () {
+  aprovaRenderIdleNudge();
   const prompt = document.getElementById("today-prompt");
   const stats = document.getElementById("today-stats");
   const startBtn = document.getElementById("today-start");
