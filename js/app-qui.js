@@ -3462,16 +3462,25 @@ function aprovaRenderHojeMetas () {
       if (nLate) lateBit = " · " + nLate + " atrasada" + (nLate === 1 ? "" : "s");
     }
     if (summaryEl) {
+      const paceUp = program.qQuota.paceCatchUp || 0;
+      const paceBit = paceUp
+        ? (" · ritmo +" + paceUp + " (atraso espalhado até a prova)")
+        : "";
       summaryEl.textContent = qp.done + "/" + qp.goal + " questões hoje · meta " +
         ((program.qQuota.targetAccuracy != null
           ? program.qQuota.targetAccuracy
           : (typeof APROVA_DEFAULT_TARGET_ACCURACY !== "undefined" ? APROVA_DEFAULT_TARGET_ACCURACY : 75))) +
-        "% de acerto" + lateBit;
+        "% de acerto" + lateBit + paceBit;
     }
     if (quotaEl) {
       const ag = program.accuracyGoal || {};
+      const paceUp = program.qQuota.paceCatchUp || 0;
+      const baseQ = program.qQuota.baseDaily || program.qQuota.daily;
       quotaEl.innerHTML =
         "<span class=\"dash-seu-plano-chip\">" + program.qQuota.daily + " questões/dia</span>" +
+        (paceUp
+          ? ("<span class=\"dash-seu-plano-chip\">base " + baseQ + " · +" + paceUp + " ritmo</span>")
+          : "") +
         "<span class=\"dash-seu-plano-chip\">" + program.qQuota.minutesHint + "</span>" +
         (ag.target != null
           ? ("<span class=\"dash-seu-plano-chip\">Meta " + ag.target + "%</span>")
@@ -3526,8 +3535,13 @@ function aprovaRenderHojeMetas () {
     }
     if (fcQuotaEl) {
       const q = program.quota;
+      const paceUp = q.paceCatchUp || 0;
       fcQuotaEl.innerHTML =
         "<span class=\"dash-seu-plano-chip\">" + q.daily + " cards/dia</span>" +
+        (paceUp
+          ? ("<span class=\"dash-seu-plano-chip\">base " + (q.baseDaily || q.daily) +
+              " · +" + paceUp + " ritmo</span>")
+          : "") +
         "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>" +
         (daily.newCards != null
           ? ("<span class=\"dash-seu-plano-chip\">" + daily.newCards + " novos</span>")
@@ -3683,8 +3697,13 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
       if (qBar) qBar.style.width = Math.min(100, qp.pct || 0) + "%";
       if (qQuotaEl) {
         const ag = program.accuracyGoal || {};
+        const paceUp = program.qQuota.paceCatchUp || 0;
+        const baseQ = program.qQuota.baseDaily || program.qQuota.daily;
         qQuotaEl.innerHTML =
           "<span class=\"dash-seu-plano-chip\">" + program.qQuota.daily + " questões/dia</span>" +
+          (paceUp
+            ? ("<span class=\"dash-seu-plano-chip\">base " + baseQ + " · +" + paceUp + " ritmo</span>")
+            : "") +
           "<span class=\"dash-seu-plano-chip\">~" +
             (program.qQuota.annualTarget || 15000).toLocaleString("pt-BR") +
             "/ano</span>" +
@@ -3786,8 +3805,13 @@ function aprovaRenderSeuPlano (plan, profileComplete, focusPack) {
     }
     if (quotaEl) {
       const q = program.quota;
+      const paceUp = q.paceCatchUp || 0;
       quotaEl.innerHTML =
         "<span class=\"dash-seu-plano-chip\">" + q.daily + " cards/dia</span>" +
+        (paceUp
+          ? ("<span class=\"dash-seu-plano-chip\">base " + (q.baseDaily || q.daily) +
+              " · +" + paceUp + " ritmo</span>")
+          : "") +
         "<span class=\"dash-seu-plano-chip\">" + q.minutesMin + "–" + q.minutesMax + " min</span>";
     }
 

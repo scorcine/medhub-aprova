@@ -36,6 +36,16 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
 
   daily = aprovaClampInt(daily, 15, 80);
 
+  const baseDaily = daily;
+  const pace = aprovaPlanPaceCatchUp(baseDaily, daysLeft, {
+    sumRange: typeof aprovaActivitySumRange === "function" ? aprovaActivitySumRange : null
+  });
+  daily = aprovaClampInt(
+    baseDaily + (pace.catchUp || 0) - (pace.ease || 0),
+    15,
+    pace.catchUp ? 95 : 80
+  );
+
   const due = (srs && srs.due) || 0;
   const newCards = (srs && srs.newCards) || 0;
 
@@ -66,6 +76,10 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
 
   return {
     daily,
+    baseDaily,
+    paceCatchUp: pace.catchUp || 0,
+    paceEase: pace.ease || 0,
+    pace,
     dailyNew,
     dailyReview,
     weekly,
@@ -86,8 +100,157 @@ function aprovaPlanCardQuota (horizon, daysLeft, srs, currentPhase) {
 /**
  * Meta de questões derivada da % de acerto esperada no perfil + desempenho atual.
  * Base ~9–16k/ano conforme ambição; sobe se está abaixo da meta.
+ * Ritmo: déficit recente é redistribuído pelos dias até a prova (sem somar tudo hoje).
  */
 const APROVA_Q_ANNUAL_TARGET = 15000;
+
+const APROVA_PLAN_START_KEY = "medhub-aprova-plan-start-v2";
+const APROVA_TASKS_DAY_MS = 24 * 60 * 60 * 1000;
+
+function aprovaTasksDayKey (ts) {
+  if (typeof aprovaActivityDayKey === "function") return aprovaActivityDayKey(ts);
+  const d = new Date(ts == null ? Date.now() : ts);
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + "-" + m + "-" + day;
+}
+
+/** Dia em que o plano passou a valer (não inventa atraso antes disso). */
+function aprovaPlanStartIso (now = Date.now()) {
+  try {
+    const saved = localStorage.getItem(APROVA_PLAN_START_KEY);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(saved || "")) return saved;
+  } catch { /* ignore */ }
+
+  let iso = null;
+
+  // 1) Primeira atividade de questões registrada
+  try {
+    const raw = localStorage.getItem("medhub-aprova-q-activity-v1");
+    const map = raw ? JSON.parse(raw) : {};
+    const keys = Object.keys(map || {})
+      .filter((k) => /^\d{4}-\d{2}-\d{2}$/.test(k))
+      .sort();
+    if (keys.length) iso = keys[0];
+  } catch { /* ignore */ }
+
+  // 2) Perfil completo: usa updatedAt (alunos antigos ociosos entram na janela)
+  if (!iso) {
+    try {
+      const p = typeof aprovaLoadProfile === "function" ? aprovaLoadProfile() : null;
+      const complete = typeof aprovaProfileIsComplete === "function" && aprovaProfileIsComplete(p);
+      if (complete && p && p.updatedAt) {
+        iso = aprovaTasksDayKey(p.updatedAt);
+      } else if (complete) {
+        // Perfil sem data — assume janela recente para o ritmo poder reagir
+        iso = aprovaIsoOffset(-14, now);
+      }
+    } catch { /* ignore */ }
+  }
+
+  if (!iso) iso = aprovaIsoOffset(0, now);
+  try { localStorage.setItem(APROVA_PLAN_START_KEY, iso); } catch { /* ignore */ }
+  return iso;
+}
+
+/** Grava início do plano na 1ª vez que o perfil fica completo (não move depois). */
+function aprovaEnsurePlanStartFromProfile (profile, now = Date.now()) {
+  try {
+    if (localStorage.getItem(APROVA_PLAN_START_KEY)) return;
+  } catch { /* ignore */ }
+  if (typeof aprovaProfileIsComplete !== "function" || !aprovaProfileIsComplete(profile)) return;
+  try {
+    localStorage.setItem(APROVA_PLAN_START_KEY, aprovaIsoOffset(0, now));
+  } catch { /* ignore */ }
+}
+
+function aprovaInclusiveDayCount (fromIso, toIso) {
+  const a = new Date(String(fromIso) + "T12:00:00");
+  const b = new Date(String(toIso) + "T12:00:00");
+  if (Number.isNaN(a.getTime()) || Number.isNaN(b.getTime()) || b < a) return 0;
+  return Math.round((b.getTime() - a.getTime()) / APROVA_TASKS_DAY_MS) + 1;
+}
+
+/**
+ * Calcula extra diário por atraso de ritmo.
+ * deficit ≈ (meta_base × dias_janela − feitos) × 0,55 → divide pelos dias até a prova.
+ * Não soma o atraso inteiro na meta de hoje.
+ */
+function aprovaPlanPaceCatchUp (baseDaily, daysLeft, opts) {
+  const o = opts || {};
+  const now = o.now || Date.now();
+  const base = Math.max(1, Math.round(Number(baseDaily) || 0));
+  const lookbackDays = Math.min(21, Math.max(7, Number(o.lookbackDays) || 21));
+  const sumRange = typeof o.sumRange === "function"
+    ? o.sumRange
+    : (typeof aprovaQActivitySumRange === "function" ? aprovaQActivitySumRange : null);
+
+  const empty = {
+    catchUp: 0,
+    ease: 0,
+    deficit: 0,
+    idleDays: 0,
+    lookbackDays: 0,
+    doneInWindow: 0,
+    expectedInWindow: 0
+  };
+
+  const yesterday = aprovaIsoOffset(-1, now);
+  const planStart = aprovaPlanStartIso(now);
+  // Janela: no máx. N dias atrás, mas nunca antes do início do plano
+  let windowStart = aprovaIsoOffset(-lookbackDays, now);
+  if (planStart && planStart > windowStart) windowStart = planStart;
+  if (!windowStart || windowStart > yesterday) return empty;
+
+  const pastDays = aprovaInclusiveDayCount(windowStart, yesterday);
+  if (pastDays < 3) return empty; // plano novo demais — sem ajuste ainda
+
+  const expected = base * pastDays;
+  const done = sumRange ? (sumRange(windowStart, yesterday) || 0) : 0;
+
+  // Não recupera 100% do buraco de uma vez — só parte, espalhada até a prova
+  let deficit = Math.max(0, expected - done);
+  deficit = Math.round(deficit * 0.55);
+
+  const remain = (daysLeft != null && daysLeft > 0) ? daysLeft : 120;
+  let catchUp = Math.round(deficit / remain);
+
+  // Teto: +40% da base ou +22 absolutos (o que for menor)
+  catchUp = Math.min(catchUp, Math.round(base * 0.4), 22);
+
+  let idleDays = 0;
+  if (sumRange) {
+    const maxIdle = Math.min(pastDays, lookbackDays);
+    for (let i = 1; i <= maxIdle; i++) {
+      const iso = aprovaIsoOffset(-i, now);
+      if (iso < windowStart) break;
+      if ((sumRange(iso, iso) || 0) > 0) break;
+      idleDays += 1;
+    }
+  }
+  // Idle longo: piso mínimo de ajuste (cresce com o tempo parado)
+  if (idleDays >= 5) {
+    const floorPct = idleDays >= 12 ? 0.28 : (idleDays >= 8 ? 0.22 : 0.15);
+    catchUp = Math.max(catchUp, Math.round(base * floorPct));
+    catchUp = Math.min(catchUp, Math.round(base * 0.4), 22);
+  }
+
+  // Ritmo adiantado: alivia um pouco a meta do dia
+  let ease = 0;
+  if (done > expected * 1.15 && idleDays === 0) {
+    ease = Math.min(Math.round(base * 0.12), 8);
+  }
+
+  return {
+    catchUp,
+    ease,
+    deficit,
+    idleDays,
+    lookbackDays: pastDays,
+    doneInWindow: done,
+    expectedInWindow: expected
+  };
+}
 
 function aprovaPlanQuestionQuota (horizon, daysLeft, opts) {
   const o = opts || {};
@@ -104,7 +267,7 @@ function aprovaPlanQuestionQuota (horizon, daysLeft, opts) {
 
   // Ambição: 50% → ~9k/ano; 70% → ~12k; 85% → ~14,25k; 95% → ~15,75k
   let annualTarget = Math.round(9000 + (target - 50) * 150);
-  // Atraso vs meta: até +35%
+  // Atraso vs meta de acerto: até +35%
   let boost = 1 + Math.min(0.35, gap / 100);
   // Já acima da meta com amostra: alivia um pouco
   if (attempted >= 40 && current >= target + 5) boost *= 0.88;
@@ -116,6 +279,16 @@ function aprovaPlanQuestionQuota (horizon, daysLeft, opts) {
   else if (daysLeft != null && daysLeft > 300) daily = Math.round(daily * 0.95);
   daily = aprovaClampInt(daily, 25, 70);
 
+  const baseDaily = daily;
+  const pace = aprovaPlanPaceCatchUp(baseDaily, daysLeft, {
+    now: o.now,
+    lookbackDays: o.lookbackDays,
+    sumRange: typeof aprovaQActivitySumRange === "function" ? aprovaQActivitySumRange : null
+  });
+  daily = baseDaily + (pace.catchUp || 0) - (pace.ease || 0);
+  // Com catch-up permite ir um pouco além do teto usual
+  daily = aprovaClampInt(daily, 25, pace.catchUp ? 85 : 70);
+
   const weekly = daily * 7;
   const biweekly = daily * 14;
   const monthly = daily * 30;
@@ -123,6 +296,10 @@ function aprovaPlanQuestionQuota (horizon, daysLeft, opts) {
 
   return {
     daily,
+    baseDaily,
+    paceCatchUp: pace.catchUp || 0,
+    paceEase: pace.ease || 0,
+    pace,
     weekly,
     biweekly,
     monthly,

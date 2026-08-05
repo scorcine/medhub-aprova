@@ -209,6 +209,7 @@ function aprovaLoadProfile () {
 }
 
 function aprovaSaveProfile (profile) {
+  const wasComplete = aprovaProfileIsComplete(aprovaLoadProfile());
   const raw = (profile && profile.priorities) || [];
   const priorities = [0, 1, 2].map(i => aprovaNormalizePriority(raw[i]));
   // Remove buracos: prioridade 1 preenchida antes da 2/3
@@ -218,6 +219,11 @@ function aprovaSaveProfile (profile) {
     updatedAt: Date.now()
   };
   localStorage.setItem(APROVA_PROFILE_KEY, JSON.stringify(next));
+  // Marca início do plano só na 1ª vez que o perfil fica completo
+  if (!wasComplete && aprovaProfileIsComplete(next) &&
+      typeof aprovaEnsurePlanStartFromProfile === "function") {
+    aprovaEnsurePlanStartFromProfile(next);
+  }
   return next;
 }
 
